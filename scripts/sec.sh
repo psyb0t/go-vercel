@@ -65,7 +65,11 @@ semgrep_targets=(
 	scripts
 	./*.go
 )
+# The excluded rule flags json.Unmarshal into interface{}. oapi-codegen emits
+# exactly that for schemas with free-form additionalProperties, where the spec
+# itself says the value can be any JSON, so there is no concrete type to use.
 semgrep scan --config p/golang --config p/security-audit \
+	--exclude-rule go.lang.security.deserialization.unsafe-deserialization-interface.go-unsafe-deserialization-interface \
 	--no-git-ignore --sarif --output "$tmp/semgrep.sarif" \
 	--metrics=off --error "${semgrep_targets[@]}" || sg_rc=$?
 
