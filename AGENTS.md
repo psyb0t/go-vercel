@@ -42,6 +42,7 @@ make sec       # gitleaks, govulncheck, semgrep
 - `make dep` before the first `make generate` drops `github.com/oapi-codegen/runtime` from `go.mod`, because nothing imports it yet. Run `make dep` again after generating.
 - The spec changes upstream without notice. A regeneration can rename types or break on a new shape; fix it in `patch-spec.sh`.
 - CI skips the generate drift check, since the spec moves upstream.
+- `.github/workflows/regen.yml` regenerates the client every day and releases the result. When the checks fail, Claude edits the repository to fix them, but a fix may not touch the paths listed under `fix_protected_paths` in that workflow: the workflows, the Makefile, `AGENTS.md`, `.agents/rules/`, the lint, security and spec download scripts and their configs. A problem that needs a change there fails the run and needs a manual fix.
 
 ## Rules
 

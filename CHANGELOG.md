@@ -2,6 +2,10 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.1.2, 2026-10-17
+
+- Documentation only. The README and `AGENTS.md` describe the daily regeneration workflow: what it checks, how it fixes failing checks, how it picks the next version and which paths a fix may not touch.
+
 ## v0.1.1, 2026-10-16
 
 - `make sec` skips semgrep's `go-unsafe-deserialization-interface` rule. oapi-codegen emits `json.Unmarshal` into `interface{}` for schemas with free-form `additionalProperties`, so the rule failed every scan of the generated client.
