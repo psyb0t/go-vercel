@@ -7,6 +7,575 @@ import (
 	"encoding/json"
 )
 
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Valid defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Valid bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 = []struct {
+	Action *struct {
+		Mitigate *struct {
+			Action         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateAction           `json:"action"`
+			ActionDuration *string                                                                                                       `json:"actionDuration,omitempty"`
+			BypassSystem   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateBypassSystem    `json:"bypassSystem,omitempty"`
+			LogHeaders     *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
+			RateLimit      *struct {
+				Action *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAction `json:"action,omitempty"`
+				Algo   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                                                                      `json:"keys"`
+				Limit  float32                                                                                                       `json:"limit"`
+				Window float32                                                                                                       `json:"window"`
+			} `json:"rateLimit,omitempty"`
+			Redirect *struct {
+				Location  string                                                                                                         `json:"location"`
+				Permanent CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent `json:"permanent"`
+			} `json:"redirect,omitempty"`
+		} `json:"mitigate,omitempty"`
+	} `json:"action,omitempty"`
+	Active         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0Active `json:"active"`
+	ConditionGroup []struct {
+		Conditions []struct {
+			Key   *string                                                                                                            `json:"key,omitempty"`
+			Neg   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsNeg        `json:"neg,omitempty"`
+			Op    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsOp          `json:"op"`
+			Type  CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsType        `json:"type"`
+			Value *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+		} `json:"conditions"`
+	} `json:"conditionGroup"`
+	Description *string `json:"description,omitempty"`
+	Id          string  `json:"id"`
+	Name        string  `json:"name"`
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateBypassSystem defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateBypassSystem bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0Active defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0Active bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsNeg defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsNeg bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsOp defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsOp string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsType defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsType string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 = string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 = float32
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 map[string]struct {
+	Action         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1Action         `json:"action"`
+	ActionDuration *string                                                                                       `json:"actionDuration,omitempty"`
+	BypassSystem   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1BypassSystem  `json:"bypassSystem,omitempty"`
+	LogHeaders     *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders `json:"logHeaders,omitempty"`
+	RateLimit      *struct {
+		Action *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAction `json:"action,omitempty"`
+		Algo   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAlgo    `json:"algo"`
+		Keys   []string                                                                                        `json:"keys"`
+		Limit  float32                                                                                         `json:"limit"`
+		Window float32                                                                                         `json:"window"`
+	} `json:"rateLimit,omitempty"`
+	Redirect *struct {
+		Location  string                                                                                           `json:"location"`
+		Permanent CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RedirectPermanent `json:"permanent"`
+	} `json:"redirect,omitempty"`
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1Action defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1Action string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1BypassSystem defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1BypassSystem bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAlgo defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAlgo string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RedirectPermanent defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RedirectPermanent bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets struct {
+	union json.RawMessage
+}
+
+// GetSecurityFirewallEventsParams defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEventsParams struct {
+	Sort           *GetSecurityFirewallEventsParamsSort         `form:"sort,omitempty" json:"sort,omitempty"`
+	Limit          *float32                                     `form:"limit,omitempty" json:"limit,omitempty"`
+	Cursor         *string                                      `form:"cursor,omitempty" json:"cursor,omitempty"`
+	ProjectId      string                                       `form:"projectId" json:"projectId"`
+	StartTimestamp *float32                                     `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
+	EndTimestamp   *float32                                     `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
+	Hosts          *string                                      `form:"hosts,omitempty" json:"hosts,omitempty"`
+	Ip             *[]string                                    `form:"ip,omitempty" json:"ip,omitempty"`
+	IsActive       *bool                                        `form:"isActive,omitempty" json:"isActive,omitempty"`
+	Action         *[]GetSecurityFirewallEventsParamsAction     `form:"action,omitempty" json:"action,omitempty"`
+	ActionType     *[]GetSecurityFirewallEventsParamsActionType `form:"actionType,omitempty" json:"actionType,omitempty"`
+	RuleKind       *GetSecurityFirewallEventsParamsRuleKind     `form:"ruleKind,omitempty" json:"ruleKind,omitempty"`
+	RuleId         *[]string                                    `form:"ruleId,omitempty" json:"ruleId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetSecurityFirewallEventsParamsSort defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEventsParamsSort string
+
+// GetSecurityFirewallEventsParamsAction defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEventsParamsAction string
+
+// GetSecurityFirewallEventsParamsActionType defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEventsParamsActionType string
+
+// GetSecurityFirewallEventsParamsRuleKind defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEventsParamsRuleKind string
+
+// GetSecurityFirewallEvents200JSONResponseBodyActionsIsActive defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEvents200JSONResponseBodyActionsIsActive bool
+
+// GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore defines parameters for GetSecurityFirewallEvents.
+type GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore bool
+
+// GetSecurityFirewallEventsSummaryParams defines parameters for GetSecurityFirewallEventsSummary.
+type GetSecurityFirewallEventsSummaryParams struct {
+	ProjectId      string                                              `form:"projectId" json:"projectId"`
+	StartTimestamp *float32                                            `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
+	EndTimestamp   *float32                                            `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
+	Hosts          *string                                             `form:"hosts,omitempty" json:"hosts,omitempty"`
+	Ip             *[]string                                           `form:"ip,omitempty" json:"ip,omitempty"`
+	IsActive       *bool                                               `form:"isActive,omitempty" json:"isActive,omitempty"`
+	Action         *[]GetSecurityFirewallEventsSummaryParamsAction     `form:"action,omitempty" json:"action,omitempty"`
+	ActionType     *[]GetSecurityFirewallEventsSummaryParamsActionType `form:"actionType,omitempty" json:"actionType,omitempty"`
+	RuleKind       *GetSecurityFirewallEventsSummaryParamsRuleKind     `form:"ruleKind,omitempty" json:"ruleKind,omitempty"`
+	RuleId         *[]string                                           `form:"ruleId,omitempty" json:"ruleId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetSecurityFirewallEventsSummaryParamsAction defines parameters for GetSecurityFirewallEventsSummary.
+type GetSecurityFirewallEventsSummaryParamsAction string
+
+// GetSecurityFirewallEventsSummaryParamsActionType defines parameters for GetSecurityFirewallEventsSummary.
+type GetSecurityFirewallEventsSummaryParamsActionType string
+
+// GetSecurityFirewallEventsSummaryParamsRuleKind defines parameters for GetSecurityFirewallEventsSummary.
+type GetSecurityFirewallEventsSummaryParamsRuleKind string
+
+// CreateIntegrationStoreDirectJSONBody defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBody struct {
+	// BillingPlanId ID of the billing plan for paid resources. Get available plans from GET /integrations/integration/{id}/products/{productId}/plans. If not provided, automatically discovers free billing plans.
+	//
+	// Example: bp_abc123def456
+	BillingPlanId *string `json:"billingPlanId,omitempty"`
+
+	// ExternalId Optional external identifier for tracking purposes
+	//
+	// Example: dev-db-001
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// IntegrationConfigurationId ID of your integration configuration. Get this from GET /v1/integrations/configurations
+	//
+	// Example: icfg_cuwj0AdCdH3BwWT4LPijCC7t
+	IntegrationConfigurationId string `json:"integrationConfigurationId"`
+
+	// IntegrationProductIdOrSlug ID or slug of the integration product. Get available products from GET /v1/integrations/configuration/{id}/products
+	//
+	// Example: iap_postgres_db
+	IntegrationProductIdOrSlug string `json:"integrationProductIdOrSlug"`
+
+	// Metadata Optional key-value pairs for resource metadata
+	//
+	// Example: {"environment":"development","project":"my-app","tags":["database","postgres"]}
+	Metadata *map[string]CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties `json:"metadata,omitempty"`
+
+	// Name Human-readable name for the storage resource
+	//
+	// Example: my-dev-database
+	Name string `json:"name"`
+
+	// PaymentMethodId Payment method ID for paid resources. Optional - uses default payment method if not provided.
+	//
+	// Example: pm_1AbcDefGhiJklMno
+	PaymentMethodId *string `json:"paymentMethodId,omitempty"`
+
+	// PrepaymentAmountCents Amount in cents for prepayment billing plans. Required only for prepayment plans with variable amounts.
+	//
+	// Example: 5000
+	PrepaymentAmountCents *float32 `json:"prepaymentAmountCents,omitempty"`
+
+	// ProtocolSettings Protocol-specific configuration settings
+	//
+	// Example: {"experimentation":{"edgeConfigSyncingEnabled":true}}
+	ProtocolSettings *map[string]interface{} `json:"protocolSettings,omitempty"`
+
+	// Source Source of the store creation request
+	//
+	// Example: marketplace
+	Source *CreateIntegrationStoreDirectJSONBodySource `json:"source,omitempty"`
+}
+
+// CreateIntegrationStoreDirectParams defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateIntegrationStoreDirectJSONBodyMetadata0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBodyMetadata0 = string
+
+// CreateIntegrationStoreDirectJSONBodyMetadata1 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBodyMetadata1 = float32
+
+// CreateIntegrationStoreDirectJSONBodyMetadata2 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBodyMetadata2 = bool
+
+// CreateIntegrationStoreDirectJSONBodyMetadata3 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBodyMetadata3 = []string
+
+// CreateIntegrationStoreDirectJSONBodyMetadata4 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBodyMetadata4 = []float32
+
+// CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// CreateIntegrationStoreDirectJSONBodySource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirectJSONBodySource string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanPaymentMethodRequired defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanPaymentMethodRequired bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanScope defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanScope string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanType defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanType string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAgentTools defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAgentTools bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAutoSensitive defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAutoSensitive bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesBillable defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesBillable bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcp defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcp bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcpReadonly defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcpReadonly bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesProjects defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesProjects bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 struct {
+	CustomRotationWarning *string `json:"customRotationWarning,omitempty"`
+	MaxDelayHours         float32 `json:"maxDelayHours"`
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 bool
+
+// CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation struct {
+	union json.RawMessage
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretsSync defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretsSync bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSso defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSso bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesTransferable defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesTransferable bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesV0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesV0 bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreExternalResourceStatus defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreExternalResourceStatus string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 = string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 = float32
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 = []string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 = []float32
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 bool
+
+// CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreNotificationLevel defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreNotificationLevel string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreOwnership defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreOwnership string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAgentTools defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAgentTools bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAutoSensitive defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAutoSensitive bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesBillable defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesBillable bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesConnectedImportResource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesConnectedImportResource bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesDatabaseUI defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesDatabaseUI bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesImportResource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesImportResource bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesLinking defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesLinking bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcp defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcp bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcpReadonly defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcpReadonly bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesNativeImportResource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesNativeImportResource bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesProjects defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesProjects bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSandbox defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSandbox bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 struct {
+	CustomRotationWarning *string `json:"customRotationWarning,omitempty"`
+	MaxDelayHours         float32 `json:"maxDelayHours"`
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 bool
+
+// CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation struct {
+	union json.RawMessage
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretsSync defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretsSync bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSso defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSso bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesTransferable defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesTransferable bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0 bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0Flavors defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0Flavors bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductDisableResourceRenaming defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductDisableResourceRenaming bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductGuidesStepsActionsType defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductGuidesStepsActionsType string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 struct {
+	CustomRotationWarning *string `json:"customRotationWarning,omitempty"`
+	MaxDelayHours         float32 `json:"maxDelayHours"`
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 bool
+
+// CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation struct {
+	union json.RawMessage
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationSupportsInstallationBillingPlans defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationSupportsInstallationBillingPlans bool
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductLogDrainStatus defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductLogDrainStatus string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0 struct {
+	Default          *string                                                                                                  `json:"default,omitempty"`
+	Description      *string                                                                                                  `json:"description,omitempty"`
+	Enum             *[]string                                                                                                `json:"enum,omitempty"`
+	MaxLength        *float32                                                                                                 `json:"maxLength,omitempty"`
+	MinLength        *float32                                                                                                 `json:"minLength,omitempty"`
+	Pattern          *string                                                                                                  `json:"pattern,omitempty"`
+	Type             CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0Type                 `json:"type"`
+	UiControl        CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiControl            `json:"ui:control"`
+	UiDescription    *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden      *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden   `json:"ui:hidden,omitempty"`
+	UiLabel       *string                                                                                               `json:"ui:label,omitempty"`
+	UiPaidOnly    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiPaidOnly       `json:"ui:paid-only,omitempty"`
+	UiPlaceholder *string                                                                                               `json:"ui:placeholder,omitempty"`
+	UiReadOnly    *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0Type defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0Type string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiControl defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiControl string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 = string
+
+// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 defines parameters for CreateIntegrationStoreDirect.
+type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
 // CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription defines parameters for CreateIntegrationStoreDirect.
 type CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription struct {
 	union json.RawMessage
@@ -17217,7 +17786,7 @@ type CreateDeployment200JSONResponseBody1 struct {
 	ResourceConfig *struct {
 		// BuildMachine Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
 		BuildMachine *struct {
-			// Cores Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
+			// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
 			Cores *float32 `json:"cores,omitempty"`
 
 			// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
@@ -17226,7 +17795,7 @@ type CreateDeployment200JSONResponseBody1 struct {
 			// MachineSelectionType Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
 			MachineSelectionType *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachineMachineSelectionType `json:"machineSelectionType,omitempty"`
 
-			// Memory Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
+			// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
 			Memory *float32 `json:"memory,omitempty"`
 
 			// PurchaseType Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
@@ -19437,572 +20006,3 @@ type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 struct {
 	Re   *string                                                                        `json:"re,omitempty"`
 	Suf  *string                                                                        `json:"suf,omitempty"`
 }
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing1 struct {
-	Key   string                                                                    `json:"key"`
-	Type  CreateDeployment200JSONResponseBody1Services1HeadersMissing1Type          `json:"type"`
-	Value *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value `json:"value,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Type string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                       `json:"gt,omitempty"`
-	Gte  *float32                                                                       `json:"gte,omitempty"`
-	Inc  *[]string                                                                      `json:"inc,omitempty"`
-	Lt   *float32                                                                       `json:"lt,omitempty"`
-	Lte  *float32                                                                       `json:"lte,omitempty"`
-	Neq  *string                                                                        `json:"neq,omitempty"`
-	Ninc *[]string                                                                      `json:"ninc,omitempty"`
-	Pre  *string                                                                        `json:"pre,omitempty"`
-	Re   *string                                                                        `json:"re,omitempty"`
-	Suf  *string                                                                        `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1RedirectsHas0Type         `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Type string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                     `json:"gt,omitempty"`
-	Gte  *float32                                                                     `json:"gte,omitempty"`
-	Inc  *[]string                                                                    `json:"inc,omitempty"`
-	Lt   *float32                                                                     `json:"lt,omitempty"`
-	Lte  *float32                                                                     `json:"lte,omitempty"`
-	Neq  *string                                                                      `json:"neq,omitempty"`
-	Ninc *[]string                                                                    `json:"ninc,omitempty"`
-	Pre  *string                                                                      `json:"pre,omitempty"`
-	Re   *string                                                                      `json:"re,omitempty"`
-	Suf  *string                                                                      `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas1 struct {
-	Key   string                                                                  `json:"key"`
-	Type  CreateDeployment200JSONResponseBody1Services1RedirectsHas1Type          `json:"type"`
-	Value *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value `json:"value,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Type string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                     `json:"gt,omitempty"`
-	Gte  *float32                                                                     `json:"gte,omitempty"`
-	Inc  *[]string                                                                    `json:"inc,omitempty"`
-	Lt   *float32                                                                     `json:"lt,omitempty"`
-	Lte  *float32                                                                     `json:"lte,omitempty"`
-	Neq  *string                                                                      `json:"neq,omitempty"`
-	Ninc *[]string                                                                    `json:"ninc,omitempty"`
-	Pre  *string                                                                      `json:"pre,omitempty"`
-	Re   *string                                                                      `json:"re,omitempty"`
-	Suf  *string                                                                      `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Type         `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Type string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                         `json:"gt,omitempty"`
-	Gte  *float32                                                                         `json:"gte,omitempty"`
-	Inc  *[]string                                                                        `json:"inc,omitempty"`
-	Lt   *float32                                                                         `json:"lt,omitempty"`
-	Lte  *float32                                                                         `json:"lte,omitempty"`
-	Neq  *string                                                                          `json:"neq,omitempty"`
-	Ninc *[]string                                                                        `json:"ninc,omitempty"`
-	Pre  *string                                                                          `json:"pre,omitempty"`
-	Re   *string                                                                          `json:"re,omitempty"`
-	Suf  *string                                                                          `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1 struct {
-	Key   string                                                                      `json:"key"`
-	Type  CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Type          `json:"type"`
-	Value *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value `json:"value,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Type string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                         `json:"gt,omitempty"`
-	Gte  *float32                                                                         `json:"gte,omitempty"`
-	Inc  *[]string                                                                        `json:"inc,omitempty"`
-	Lt   *float32                                                                         `json:"lt,omitempty"`
-	Lte  *float32                                                                         `json:"lte,omitempty"`
-	Neq  *string                                                                          `json:"neq,omitempty"`
-	Ninc *[]string                                                                        `json:"ninc,omitempty"`
-	Pre  *string                                                                          `json:"pre,omitempty"`
-	Re   *string                                                                          `json:"re,omitempty"`
-	Suf  *string                                                                          `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RedirectsPermanent defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RedirectsPermanent bool
-
-// CreateDeployment200JSONResponseBody1Services1RewritesDestination0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesDestination0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesDestination1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesDestination1 struct {
-	// Path Routing-only path used to select a route inside the target service.
-	Path    *string `json:"path,omitempty"`
-	Service string  `json:"service"`
-
-	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-	Type *CreateDeployment200JSONResponseBody1Services1RewritesDestination1Type `json:"type,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesDestination1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesDestination1Type string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1RewritesHas0Type         `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas0Type string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                    `json:"gt,omitempty"`
-	Gte  *float32                                                                    `json:"gte,omitempty"`
-	Inc  *[]string                                                                   `json:"inc,omitempty"`
-	Lt   *float32                                                                    `json:"lt,omitempty"`
-	Lte  *float32                                                                    `json:"lte,omitempty"`
-	Neq  *string                                                                     `json:"neq,omitempty"`
-	Ninc *[]string                                                                   `json:"ninc,omitempty"`
-	Pre  *string                                                                     `json:"pre,omitempty"`
-	Re   *string                                                                     `json:"re,omitempty"`
-	Suf  *string                                                                     `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas1 struct {
-	Key   string                                                                 `json:"key"`
-	Type  CreateDeployment200JSONResponseBody1Services1RewritesHas1Type          `json:"type"`
-	Value *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value `json:"value,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas1Type string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                    `json:"gt,omitempty"`
-	Gte  *float32                                                                    `json:"gte,omitempty"`
-	Inc  *[]string                                                                   `json:"inc,omitempty"`
-	Lt   *float32                                                                    `json:"lt,omitempty"`
-	Lte  *float32                                                                    `json:"lte,omitempty"`
-	Neq  *string                                                                     `json:"neq,omitempty"`
-	Ninc *[]string                                                                   `json:"ninc,omitempty"`
-	Pre  *string                                                                     `json:"pre,omitempty"`
-	Re   *string                                                                     `json:"re,omitempty"`
-	Suf  *string                                                                     `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1RewritesMissing0Type         `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Type string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                        `json:"gt,omitempty"`
-	Gte  *float32                                                                        `json:"gte,omitempty"`
-	Inc  *[]string                                                                       `json:"inc,omitempty"`
-	Lt   *float32                                                                        `json:"lt,omitempty"`
-	Lte  *float32                                                                        `json:"lte,omitempty"`
-	Neq  *string                                                                         `json:"neq,omitempty"`
-	Ninc *[]string                                                                       `json:"ninc,omitempty"`
-	Pre  *string                                                                         `json:"pre,omitempty"`
-	Re   *string                                                                         `json:"re,omitempty"`
-	Suf  *string                                                                         `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing1 struct {
-	Key   string                                                                     `json:"key"`
-	Type  CreateDeployment200JSONResponseBody1Services1RewritesMissing1Type          `json:"type"`
-	Value *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value `json:"value,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Type string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                        `json:"gt,omitempty"`
-	Gte  *float32                                                                        `json:"gte,omitempty"`
-	Inc  *[]string                                                                       `json:"inc,omitempty"`
-	Lt   *float32                                                                        `json:"lt,omitempty"`
-	Lte  *float32                                                                        `json:"lte,omitempty"`
-	Neq  *string                                                                         `json:"neq,omitempty"`
-	Ninc *[]string                                                                       `json:"ninc,omitempty"`
-	Pre  *string                                                                         `json:"pre,omitempty"`
-	Re   *string                                                                         `json:"re,omitempty"`
-	Suf  *string                                                                         `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1RewritesRespectOriginCacheControl defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesRespectOriginCacheControl bool
-
-// CreateDeployment200JSONResponseBody1Services1RewritesTransformsOp defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesTransformsOp string
-
-// CreateDeployment200JSONResponseBody1Services1RewritesTransformsType defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1RewritesTransformsType string
-
-// CreateDeployment200JSONResponseBody1Services1Routes0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0 struct {
-	CaseSensitive *CreateDeployment200JSONResponseBody1Services1Routes0CaseSensitive     `json:"caseSensitive,omitempty"`
-	Check         *CreateDeployment200JSONResponseBody1Services1Routes0Check             `json:"check,omitempty"`
-	Continue      *CreateDeployment200JSONResponseBody1Services1Routes0Continue          `json:"continue,omitempty"`
-	Dest          *string                                                                `json:"dest,omitempty"`
-	Destination   *CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination `json:"destination,omitempty"`
-	Env           *[]string                                                              `json:"env,omitempty"`
-	Has           *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item  `json:"has,omitempty"`
-	Headers       *map[string]string                                                     `json:"headers,omitempty"`
-	Important     *CreateDeployment200JSONResponseBody1Services1Routes0Important         `json:"important,omitempty"`
-	Locale        *struct {
-		Cookie   *string            `json:"cookie,omitempty"`
-		Redirect *map[string]string `json:"redirect,omitempty"`
-	} `json:"locale,omitempty"`
-	Methods *[]string `json:"methods,omitempty"`
-
-	// Middleware A middleware index in the `middleware` key under the build result
-	Middleware *float32 `json:"middleware,omitempty"`
-
-	// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
-	MiddlewarePath *string `json:"middlewarePath,omitempty"`
-
-	// MiddlewareRawSrc The original middleware matchers.
-	MiddlewareRawSrc *[]string                                                                 `json:"middlewareRawSrc,omitempty"`
-	Missing          *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item `json:"missing,omitempty"`
-	Mitigate         *struct {
-		Action CreateDeployment200JSONResponseBody1Services1Routes0MitigateAction `json:"action"`
-	} `json:"mitigate,omitempty"`
-	Override                  *CreateDeployment200JSONResponseBody1Services1Routes0Override                  `json:"override,omitempty"`
-	RespectOriginCacheControl *CreateDeployment200JSONResponseBody1Services1Routes0RespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
-
-	// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
-	Source     *string                                                                      `json:"source,omitempty"`
-	Src        string                                                                       `json:"src"`
-	Status     *float32                                                                     `json:"status,omitempty"`
-	StatusCode *float32                                                                     `json:"statusCode,omitempty"`
-	Transforms *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item `json:"transforms,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1Routes0CaseSensitive defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0CaseSensitive bool
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Check defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Check bool
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Continue defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Continue bool
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Destination0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Destination0 = string
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Destination1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Destination1 struct {
-	// Path Routing-only path used to select a route inside the target service.
-	Path    *string `json:"path,omitempty"`
-	Service string  `json:"service"`
-
-	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-	Type *CreateDeployment200JSONResponseBody1Services1Routes0Destination1Type `json:"type,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Destination1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Destination1Type string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Has0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Has0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1Routes0Has0Type          `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Has0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Has0Type string
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                    `json:"gt,omitempty"`
-	Gte  *float32                                                                    `json:"gte,omitempty"`
-	Inc  *[]string                                                                   `json:"inc,omitempty"`
-	Lt   *float32                                                                    `json:"lt,omitempty"`
-	Lte  *float32                                                                    `json:"lte,omitempty"`
-	Neq  *string                                                                     `json:"neq,omitempty"`
-	Ninc *[]string                                                                   `json:"ninc,omitempty"`
-	Pre  *string                                                                     `json:"pre,omitempty"`
-	Re   *string                                                                     `json:"re,omitempty"`
-	Suf  *string                                                                     `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 = float32

@@ -13,6 +13,1814 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseCreateSandboxesByNameForkV2Response parses an HTTP response from a CreateSandboxesByNameForkV2WithResponse call
+func ParseCreateSandboxesByNameForkV2Response(rsp *http.Response) (*CreateSandboxesByNameForkV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesByNameForkV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamsResponse parses an HTTP response from a GetTeamsWithResponse call
+func ParseGetTeamsResponse(rsp *http.Response) (*GetTeamsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination                               `json:"pagination"`
+			Teams      []GetTeams200JSONResponseBody_Teams_Item `json:"teams"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamResponse parses an HTTP response from a GetTeamWithResponse call
+func ParseGetTeamResponse(rsp *http.Response) (*GetTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Team
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchTeamResponse parses an HTTP response from a PatchTeamWithResponse call
+func ParsePatchTeamResponse(rsp *http.Response) (*PatchTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Team
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 428:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListTeamFlagsV2Response parses an HTTP response from a ListTeamFlagsV2WithResponse call
+func ParseListTeamFlagsV2Response(rsp *http.Response) (*ListTeamFlagsV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListTeamFlagsV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data       []ListTeamFlagsV2200JSONResponseBody_Data_Item `json:"data"`
+			Pagination struct {
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseInviteUserToTeamResponse parses an HTTP response from a InviteUserToTeamWithResponse call
+func ParseInviteUserToTeamResponse(rsp *http.Response) (*InviteUserToTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &InviteUserToTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest InvitedTeamMember
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAuthUserResponse parses an HTTP response from a GetAuthUserWithResponse call
+func ParseGetAuthUserResponse(rsp *http.Response) (*GetAuthUserResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAuthUserResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			User GetAuthUser200JSONResponseBody_User `json:"user"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 302:
+		break // No content-type
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiBranchesResponse parses an HTTP response from a ListVercelCiBranchesWithResponse call
+func ParseListVercelCiBranchesResponse(rsp *http.Response) (*ListVercelCiBranchesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiBranchesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Branches []struct {
+				Count float32 `json:"count"`
+				Name  string  `json:"name"`
+			} `json:"branches"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiInvocationsResponse parses an HTTP response from a ListVercelCiInvocationsWithResponse call
+func ParseListVercelCiInvocationsResponse(rsp *http.Response) (*ListVercelCiInvocationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiInvocationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Invocations []struct {
+				Attempt             float32 `json:"attempt"`
+				BootstrappingFailed *struct {
+					Reason string `json:"reason"`
+				} `json:"bootstrappingFailed,omitempty"`
+				BootstrappingStarted *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"bootstrappingStarted,omitempty"`
+				CommitSha string `json:"commitSha"`
+				Completed *struct {
+					CompletedAt float32                                                                      `json:"completedAt"`
+					Conclusion  *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion `json:"conclusion,omitempty"`
+				} `json:"completed,omitempty"`
+				CreatedAt             float32 `json:"createdAt"`
+				InvocationId          string  `json:"invocationId"`
+				JobDefinitionsCreated *struct {
+					Names       []string                                                                             `json:"names"`
+					ScheduledAt *float32                                                                             `json:"scheduledAt,omitempty"`
+					Source      *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source `json:"source,omitempty"`
+				} `json:"jobDefinitionsCreated,omitempty"`
+				Ref           string `json:"ref"`
+				RepositoryKey string `json:"repositoryKey"`
+
+				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
+				RunConclusion *struct {
+					Result ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result `json:"result"`
+				} `json:"runConclusion,omitempty"`
+				SandboxNamed *struct {
+					ReadyAt          *float32 `json:"readyAt,omitempty"`
+					SandboxName      string   `json:"sandboxName"`
+					WorkingDirectory string   `json:"workingDirectory"`
+				} `json:"sandboxNamed,omitempty"`
+				SandboxSnapshotted *struct {
+					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
+					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
+					WorkingDirectory  string   `json:"workingDirectory"`
+				} `json:"sandboxSnapshotted,omitempty"`
+
+				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
+				SetupConclusion *struct {
+					Result ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result `json:"result"`
+				} `json:"setupConclusion,omitempty"`
+				Skipped *struct {
+					Reason string `json:"reason"`
+				} `json:"skipped,omitempty"`
+				Source ListVercelCiInvocations200JSONResponseBody_Invocations_Source `json:"source"`
+				Status ListVercelCiInvocations200JSONResponseBody_Invocations_Status `json:"status"`
+				TeamId string                                                        `json:"teamId"`
+			} `json:"invocations"`
+			Pagination struct {
+				NextCursor *string `json:"nextCursor,omitempty"`
+			} `json:"pagination"`
+			Repositories map[string]interface{} `json:"repositories"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse parses an HTTP response from a CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithResponse call
+func ParseCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse(rsp *http.Response) (*CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse parses an HTTP response from a DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse call
+func ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse(rsp *http.Response) (*DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse parses an HTTP response from a HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse call
+func ParseHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse(rsp *http.Response) (*HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameTagsListWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Name string   `json:"name"`
+			Tags []string `json:"tags"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDeploymentEventsResponse parses an HTTP response from a GetDeploymentEventsWithResponse call
+func ParseGetDeploymentEventsResponse(rsp *http.Response) (*GetDeploymentEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDeploymentEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.Header.Get("Content-Type") == "application/json" && rsp.StatusCode == 200:
+		var dest []*GetDeploymentEvents200JSONResponseBody_Item
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.Header.Get("Content-Type") == "application/stream+json" && rsp.StatusCode == 200:
+		var dest GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationstreamJSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchDomainResponse parses an HTTP response from a PatchDomainWithResponse call
+func ParsePatchDomainResponse(rsp *http.Response) (*PatchDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PatchDomain200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListUserEventsResponse parses an HTTP response from a ListUserEventsWithResponse call
+func ParseListUserEventsResponse(rsp *http.Response) (*ListUserEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListUserEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Events Array of events generated by the User.
+			Events []UserEvent `json:"events"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesV3Response parses an HTTP response from a CreateSandboxesV3WithResponse call
+func ParseCreateSandboxesV3Response(rsp *http.Response) (*CreateSandboxesV3Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesV3Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesSessionsBySessionIdSnapshotV3Response parses an HTTP response from a CreateSandboxesSessionsBySessionIdSnapshotV3WithResponse call
+func ParseCreateSandboxesSessionsBySessionIdSnapshotV3Response(rsp *http.Response) (*CreateSandboxesSessionsBySessionIdSnapshotV3Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesSessionsBySessionIdSnapshotV3Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesByNameForkV3Response parses an HTTP response from a CreateSandboxesByNameForkV3WithResponse call
+func ParseCreateSandboxesByNameForkV3Response(rsp *http.Response) (*CreateSandboxesByNameForkV3Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesByNameForkV3Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamMembersResponse parses an HTTP response from a GetTeamMembersWithResponse call
+func ParseGetTeamMembersResponse(rsp *http.Response) (*GetTeamMembersResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamMembersResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			EmailInviteCodes *[]struct {
+				AccessGroups    *[]string                                                             `json:"accessGroups,omitempty"`
+				CreatedAt       *float32                                                              `json:"createdAt,omitempty"`
+				Email           *string                                                               `json:"email,omitempty"`
+				Entitlements    *[]string                                                             `json:"entitlements,omitempty"`
+				Expired         *GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired             `json:"expired,omitempty"`
+				Id              string                                                                `json:"id"`
+				IsDSyncUser     GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser          `json:"isDSyncUser"`
+				Projects        *map[string]GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects `json:"projects,omitempty"`
+				Role            *GetTeamMembers200JSONResponseBodyEmailInviteCodesRole                `json:"role,omitempty"`
+				TeamPermissions *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions   `json:"teamPermissions,omitempty"`
+				TeamRoles       *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles         `json:"teamRoles,omitempty"`
+			} `json:"emailInviteCodes,omitempty"`
+			Members []struct {
+				// AccessRequestedAt Timestamp in milliseconds for when this team member was accepted by an owner.
+				//
+				// Example: 1588820733602
+				AccessRequestedAt *float32 `json:"accessRequestedAt,omitempty"`
+
+				// Avatar ID of the file for the Avatar of this member.
+				//
+				// Example: 123a6c5209bc3778245d011443644c8d27dc2c50
+				Avatar *string `json:"avatar,omitempty"`
+
+				// Bitbucket Information about the Bitbucket account of this user.
+				Bitbucket *struct {
+					Login *string `json:"login,omitempty"`
+				} `json:"bitbucket,omitempty"`
+
+				// Confirmed Boolean that indicates if this member was confirmed by an owner.
+				//
+				// Example: true
+				Confirmed GetTeamMembers200JSONResponseBodyMembersConfirmed `json:"confirmed"`
+
+				// CreatedAt Timestamp in milliseconds when this member was added.
+				//
+				// Example: 1588720733602
+				CreatedAt float32 `json:"createdAt"`
+
+				// Email The email of this member.
+				//
+				// Example: jane.doe@example.com
+				Email string `json:"email"`
+
+				// Github Information about the GitHub account for this user.
+				Github *struct {
+					Login *string `json:"login,omitempty"`
+				} `json:"github,omitempty"`
+
+				// Gitlab Information about the GitLab account of this user.
+				Gitlab *struct {
+					Login *string `json:"login,omitempty"`
+				} `json:"gitlab,omitempty"`
+
+				// IsEnterpriseManaged Indicates whether the user is managed by an enterprise.
+				IsEnterpriseManaged *GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged `json:"isEnterpriseManaged,omitempty"`
+
+				// JoinedFrom Map with information about the members origin if they joined by requesting access.
+				JoinedFrom *struct {
+					CommitId         *string                                                         `json:"commitId,omitempty"`
+					DsyncConnectedAt *float32                                                        `json:"dsyncConnectedAt,omitempty"`
+					DsyncUserId      *string                                                         `json:"dsyncUserId,omitempty"`
+					GitUserId        *GetTeamMembers200JSONResponseBody_Members_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
+					GitUserLogin     *string                                                         `json:"gitUserLogin,omitempty"`
+					IdpUserId        *string                                                         `json:"idpUserId,omitempty"`
+					Origin           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin        `json:"origin"`
+					RepoId           *string                                                         `json:"repoId,omitempty"`
+					RepoPath         *string                                                         `json:"repoPath,omitempty"`
+					SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
+					SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
+				} `json:"joinedFrom,omitempty"`
+
+				// Name The name of this user.
+				//
+				// Example: Jane Doe
+				Name *string `json:"name,omitempty"`
+
+				// Projects Array of project memberships
+				Projects *[]struct {
+					Id   string                                                `json:"id"`
+					Name string                                                `json:"name"`
+					Role *GetTeamMembers200JSONResponseBodyMembersProjectsRole `json:"role,omitempty"`
+				} `json:"projects,omitempty"`
+
+				// Role Role of this user in the team.
+				//
+				// Example: OWNER
+				Role GetTeamMembers200JSONResponseBodyMembersRole `json:"role"`
+
+				// Uid The ID of this user.
+				//
+				// Example: zTuNVUXEAvvnNN3IaqinkyMw
+				Uid string `json:"uid"`
+
+				// Username The unique username of this user.
+				//
+				// Example: jane-doe
+				Username string `json:"username"`
+			} `json:"members"`
+			Pagination struct {
+				// Count Amount of items in the current page.
+				//
+				// Example: 20
+				Count   float32                                            `json:"count"`
+				HasNext GetTeamMembers200JSONResponseBodyPaginationHasNext `json:"hasNext"`
+
+				// Next Timestamp that must be used to request the next page.
+				//
+				// Example: 1540095775951
+				Next *float32 `json:"next"`
+
+				// Prev Timestamp that must be used to request the previous page.
+				//
+				// Example: 1540095775951
+				Prev *float32 `json:"prev"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAuthTokenResponse parses an HTTP response from a CreateAuthTokenWithResponse call
+func ParseCreateAuthTokenResponse(rsp *http.Response) (*CreateAuthTokenResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAuthTokenResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// BearerToken The authentication token's actual value. This token is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
+			//
+			// Example: uRKJSTt0L4RaSkiMj41QTkxM
+			BearerToken string `json:"bearerToken"`
+
+			// Token Authentication token metadata.
+			Token AuthToken `json:"token"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAuthTokenResponse parses an HTTP response from a DeleteAuthTokenWithResponse call
+func ParseDeleteAuthTokenResponse(rsp *http.Response) (*DeleteAuthTokenResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAuthTokenResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// TokenId The unique identifier of the token that was deleted.
+			//
+			// Example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
+			TokenId string `json:"tokenId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListAliasesResponse parses an HTTP response from a ListAliasesWithResponse call
+func ParseListAliasesResponse(rsp *http.Response) (*ListAliasesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAliasesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Aliases []struct {
+				// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
+				//
+				// Example: my-alias.vercel.app
+				Alias string `json:"alias"`
+
+				// Created The date when the alias was created
+				//
+				// Example: 2017-04-26T23:00:34.232Z
+				Created time.Time `json:"created"`
+
+				// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
+				//
+				// Example: 1540095775941
+				CreatedAt *float32 `json:"createdAt,omitempty"`
+
+				// Creator Information of the user who created the alias
+				Creator *struct {
+					// Email Email of the user who created the alias
+					//
+					// Example: john-doe@gmail.com
+					Email *string `json:"email,omitempty"`
+
+					// Uid ID of the user who created the alias
+					//
+					// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
+					Uid string `json:"uid"`
+
+					// Username Username of the user who created the alias
+					//
+					// Example: john-doe
+					Username *string `json:"username,omitempty"`
+				} `json:"creator,omitempty"`
+
+				// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
+				//
+				// Example: 1540095775941
+				DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+				// Deployment A map with the deployment ID, URL and metadata
+				Deployment *struct {
+					// Id The deployment unique identifier
+					//
+					// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
+					Id string `json:"id"`
+
+					// Meta The deployment metadata
+					//
+					// Example: {}
+					Meta *string `json:"meta,omitempty"`
+
+					// Url The deployment unique URL
+					//
+					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+					Url *string `json:"url,omitempty"`
+				} `json:"deployment,omitempty"`
+
+				// DeploymentId The deployment ID
+				//
+				// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
+				DeploymentId *string `json:"deploymentId"`
+
+				// Microfrontends The microfrontends for the alias including the routing configuration
+				Microfrontends *struct {
+					Applications ListAliases200JSONResponseBody_Aliases_Microfrontends_Applications `json:"applications"`
+					DefaultApp   struct {
+						ProjectId string `json:"projectId"`
+					} `json:"defaultApp"`
+				} `json:"microfrontends,omitempty"`
+
+				// ProjectId The unique identifier of the project
+				//
+				// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
+				ProjectId *string `json:"projectId"`
+
+				// ProtectionBypass The protection bypass for the alias
+				ProtectionBypass *map[string]ListAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+
+				// Redirect Target destination domain for redirect when the alias is a redirect
+				Redirect *string `json:"redirect,omitempty"`
+
+				// RedirectStatusCode Status code to be used on redirect
+				RedirectStatusCode *ListAliases200JSONResponseBodyAliasesRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+
+				// Uid The unique identifier of the alias
+				Uid string `json:"uid"`
+
+				// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
+				//
+				// Example: 1540095775941
+				UpdatedAt *float32 `json:"updatedAt,omitempty"`
+			} `json:"aliases"`
+
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGetAliasResponse parses an HTTP response from a GetAliasWithResponse call
 func ParseGetAliasResponse(rsp *http.Response) (*GetAliasResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)

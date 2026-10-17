@@ -10,6 +10,486 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsOtherStatus defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsOtherStatus string
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplEnabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplEnabled bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplSupportsReadOnlyMode defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplSupportsReadOnlyMode bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageStatus defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageStatus string
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainFormat defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainFormat string
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainStatus defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainStatus string
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsVideoStatus defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsVideoStatus string
+
+// GetConfigurationProducts200JSONResponseBodyProductsProtocolsWorkflowStatus defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsProtocolsWorkflowStatus string
+
+// GetConfigurationsParams defines parameters for GetConfigurations.
+type GetConfigurationsParams struct {
+	View             GetConfigurationsParamsView              `form:"view" json:"view"`
+	InstallationType *GetConfigurationsParamsInstallationType `form:"installationType,omitempty" json:"installationType,omitempty"`
+
+	// IntegrationIdOrSlug ID of the integration
+	IntegrationIdOrSlug *string `form:"integrationIdOrSlug,omitempty" json:"integrationIdOrSlug,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetConfigurationsParamsView defines parameters for GetConfigurations.
+type GetConfigurationsParamsView string
+
+// GetConfigurationsParamsInstallationType defines parameters for GetConfigurations.
+type GetConfigurationsParamsInstallationType string
+
+// GetConfigurations200JSONResponseBody0 defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody0 = []struct {
+	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
+
+	// CompletedAt A timestamp that tells you when the configuration was installed successfully
+	//
+	// Example: 1558531915505
+	CompletedAt *float32 `json:"completedAt,omitempty"`
+
+	// CreatedAt A timestamp that tells you when the configuration was created
+	//
+	// Example: 1558531915505
+	CreatedAt *float32 `json:"createdAt,omitempty"`
+
+	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
+
+	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+	//
+	// Example: 1558531915505
+	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
+
+	// DeletedAt A timestamp that tells you when the configuration was deleted.
+	//
+	// Example: 1558531915505
+	DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+	//
+	// Example: 1558531915505
+	DisabledAt     *float32                                             `json:"disabledAt,omitempty"`
+	DisabledReason *GetConfigurations200JSONResponseBody0DisabledReason `json:"disabledReason,omitempty"`
+
+	// ExternalId An external identifier defined by the integration vendor.
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// Id The unique identifier of the configuration
+	//
+	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+	Id *string `json:"id,omitempty"`
+
+	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+	InstallationType *GetConfigurations200JSONResponseBody0InstallationType `json:"installationType,omitempty"`
+
+	// IntegrationId The unique identifier of the app the configuration was created for
+	//
+	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
+	IntegrationId *string `json:"integrationId,omitempty"`
+
+	// OwnerId The user or team ID that owns the configuration
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	OwnerId *string `json:"ownerId,omitempty"`
+
+	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+	//
+	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
+	Projects *[]string `json:"projects,omitempty"`
+
+	// Scopes The resources that are allowed to be accessed by the configuration.
+	//
+	// Example: ["read:project","read-write:log-drain"]
+	Scopes *[]string `json:"scopes,omitempty"`
+
+	// Slug The slug of the integration the configuration is created for.
+	//
+	// Example: slack
+	Slug *string `json:"slug,omitempty"`
+
+	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+	//
+	// Example: marketplace
+	Source *GetConfigurations200JSONResponseBody0Source `json:"source,omitempty"`
+
+	// Status The configuration status. Optional. If not defined, assume 'ready'.
+	Status *GetConfigurations200JSONResponseBody0Status `json:"status,omitempty"`
+
+	// TeamId When the configuration was created for a team, this will show the ID of the team.
+	//
+	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
+	TeamId *string                                    `json:"teamId,omitempty"`
+	Type   *GetConfigurations200JSONResponseBody0Type `json:"type,omitempty"`
+
+	// UpdatedAt A timestamp that tells you when the configuration was updated.
+	//
+	// Example: 1558531915505
+	UpdatedAt *float32 `json:"updatedAt,omitempty"`
+
+	// UserId The ID of the user that created the configuration.
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	UserId *string `json:"userId,omitempty"`
+}
+
+// GetConfigurations200JSONResponseBody0DisabledReason defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody0DisabledReason string
+
+// GetConfigurations200JSONResponseBody0InstallationType defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody0InstallationType string
+
+// GetConfigurations200JSONResponseBody0Source defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody0Source string
+
+// GetConfigurations200JSONResponseBody0Status defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody0Status string
+
+// GetConfigurations200JSONResponseBody0Type defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody0Type string
+
+// GetConfigurations200JSONResponseBody1 defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1 = []struct {
+	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
+
+	// CompletedAt A timestamp that tells you when the configuration was installed successfully
+	//
+	// Example: 1558531915505
+	CompletedAt *float32 `json:"completedAt,omitempty"`
+
+	// CreatedAt A timestamp that tells you when the configuration was created
+	//
+	// Example: 1558531915505
+	CreatedAt float32 `json:"createdAt"`
+
+	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
+
+	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+	//
+	// Example: 1558531915505
+	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
+
+	// DeletedAt A timestamp that tells you when the configuration was deleted.
+	//
+	// Example: 1558531915505
+	DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+	//
+	// Example: 1558531915505
+	DisabledAt     *float32                                             `json:"disabledAt,omitempty"`
+	DisabledReason *GetConfigurations200JSONResponseBody1DisabledReason `json:"disabledReason,omitempty"`
+
+	// ExternalId An external identifier defined by the integration vendor.
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// Id The unique identifier of the configuration
+	//
+	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+	Id string `json:"id"`
+
+	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+	InstallationType *GetConfigurations200JSONResponseBody1InstallationType `json:"installationType,omitempty"`
+	Integration      struct {
+		AssignedBetaLabelAt *float32                                                  `json:"assignedBetaLabelAt,omitempty"`
+		Flags               *[]string                                                 `json:"flags,omitempty"`
+		Icon                string                                                    `json:"icon"`
+		IsLegacy            GetConfigurations200JSONResponseBody1IntegrationIsLegacy  `json:"isLegacy"`
+		Name                string                                                    `json:"name"`
+		TagIds              *[]GetConfigurations200JSONResponseBody1IntegrationTagIds `json:"tagIds,omitempty"`
+	} `json:"integration"`
+
+	// IntegrationId The unique identifier of the app the configuration was created for
+	//
+	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
+	IntegrationId string `json:"integrationId"`
+
+	// OwnerId The user or team ID that owns the configuration
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	OwnerId string `json:"ownerId"`
+
+	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+	//
+	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
+	Projects *[]string `json:"projects,omitempty"`
+
+	// Scopes The resources that are allowed to be accessed by the configuration.
+	//
+	// Example: ["read:project","read-write:log-drain"]
+	Scopes []string `json:"scopes"`
+
+	// Slug The slug of the integration the configuration is created for.
+	//
+	// Example: slack
+	Slug string `json:"slug"`
+
+	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+	//
+	// Example: marketplace
+	Source *GetConfigurations200JSONResponseBody1Source `json:"source,omitempty"`
+
+	// Status The configuration status. Optional. If not defined, assume 'ready'.
+	Status *GetConfigurations200JSONResponseBody1Status `json:"status,omitempty"`
+
+	// TeamId When the configuration was created for a team, this will show the ID of the team.
+	//
+	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
+	TeamId *string                                   `json:"teamId,omitempty"`
+	Type   GetConfigurations200JSONResponseBody1Type `json:"type"`
+
+	// UpdatedAt A timestamp that tells you when the configuration was updated.
+	//
+	// Example: 1558531915505
+	UpdatedAt float32 `json:"updatedAt"`
+
+	// UserId The ID of the user that created the configuration.
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	UserId string `json:"userId"`
+}
+
+// GetConfigurations200JSONResponseBody1DisabledReason defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1DisabledReason string
+
+// GetConfigurations200JSONResponseBody1InstallationType defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1InstallationType string
+
+// GetConfigurations200JSONResponseBody1IntegrationIsLegacy defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1IntegrationIsLegacy bool
+
+// GetConfigurations200JSONResponseBody1IntegrationTagIds defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1IntegrationTagIds string
+
+// GetConfigurations200JSONResponseBody1Source defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1Source string
+
+// GetConfigurations200JSONResponseBody1Status defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1Status string
+
+// GetConfigurations200JSONResponseBody1Type defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody1Type string
+
+// GetConfigurations200JSONResponseBody defines parameters for GetConfigurations.
+type GetConfigurations200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GitNamespacesParams defines parameters for GitNamespaces.
+type GitNamespacesParams struct {
+	// Host The custom Git host if using a custom Git provider, like GitHub Enterprise Server
+	Host     *string     `form:"host,omitempty" json:"host,omitempty"`
+	Provider interface{} `form:"provider,omitempty" json:"provider,omitempty"`
+
+	// ViewerMetadata When true, includes the viewer object for each namespace.
+	ViewerMetadata *bool `form:"viewerMetadata,omitempty" json:"viewerMetadata,omitempty"`
+}
+
+// GitNamespaces200JSONResponseBodyId0 defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyId0 = string
+
+// GitNamespaces200JSONResponseBodyId1 defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyId1 = float32
+
+// GitNamespaces200JSONResponseBody_Id defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBody_Id struct {
+	union json.RawMessage
+}
+
+// GitNamespaces200JSONResponseBodyIsAccessRestricted defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyIsAccessRestricted bool
+
+// GitNamespaces200JSONResponseBodyRequireReauth defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyRequireReauth bool
+
+// GitNamespaces200JSONResponseBodyViewerCanCreateApp defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyViewerCanCreateApp bool
+
+// GitNamespaces200JSONResponseBodyViewerRole0 defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyViewerRole0 = string
+
+// GitNamespaces200JSONResponseBodyViewerRole1 defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBodyViewerRole1 = float32
+
+// GitNamespaces200JSONResponseBody_Viewer_Role defines parameters for GitNamespaces.
+type GitNamespaces200JSONResponseBody_Viewer_Role struct {
+	union json.RawMessage
+}
+
+// ConnectIntegrationResourceToProjectJSONBody defines parameters for ConnectIntegrationResourceToProject.
+type ConnectIntegrationResourceToProjectJSONBody struct {
+	EnvVarEnvironments   *[]string `json:"envVarEnvironments,omitempty"`
+	MakeEnvVarsSensitive *bool     `json:"makeEnvVarsSensitive,omitempty"`
+	ProjectId            string    `json:"projectId"`
+}
+
+// ConnectIntegrationResourceToProjectParams defines parameters for ConnectIntegrationResourceToProject.
+type ConnectIntegrationResourceToProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetBillingPlansParams defines parameters for GetBillingPlans.
+type GetBillingPlansParams struct {
+	IntegrationConfigurationId *string                      `form:"integrationConfigurationId,omitempty" json:"integrationConfigurationId,omitempty"`
+	Metadata                   *string                      `form:"metadata,omitempty" json:"metadata,omitempty"`
+	Source                     *GetBillingPlansParamsSource `form:"source,omitempty" json:"source,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetBillingPlansParamsSource defines parameters for GetBillingPlans.
+type GetBillingPlansParamsSource string
+
+// GetBillingPlans200JSONResponseBodyPlansDisabled defines parameters for GetBillingPlans.
+type GetBillingPlans200JSONResponseBodyPlansDisabled bool
+
+// GetBillingPlans200JSONResponseBodyPlansPaymentMethodRequired defines parameters for GetBillingPlans.
+type GetBillingPlans200JSONResponseBodyPlansPaymentMethodRequired bool
+
+// GetBillingPlans200JSONResponseBodyPlansScope defines parameters for GetBillingPlans.
+type GetBillingPlans200JSONResponseBodyPlansScope string
+
+// GetBillingPlans200JSONResponseBodyPlansType defines parameters for GetBillingPlans.
+type GetBillingPlans200JSONResponseBodyPlansType string
+
+// DeleteIntegrationLogDrainParams defines parameters for DeleteIntegrationLogDrain.
+type DeleteIntegrationLogDrainParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// SearchRepoParams defines parameters for SearchRepo.
+type SearchRepoParams struct {
+	Query       *string `form:"query,omitempty" json:"query,omitempty"`
+	NamespaceId *struct {
+		union json.RawMessage
+	} `form:"namespaceId,omitempty" json:"namespaceId,omitempty"`
+	Provider       interface{} `form:"provider,omitempty" json:"provider,omitempty"`
+	InstallationId *string     `form:"installationId,omitempty" json:"installationId,omitempty"`
+
+	// Host The custom Git host if using a custom Git provider, like GitHub Enterprise Server
+	Host *string `form:"host,omitempty" json:"host,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// SearchRepoParamsNamespaceId0 defines parameters for SearchRepo.
+type SearchRepoParamsNamespaceId0 = string
+
+// SearchRepoParamsNamespaceId1 defines parameters for SearchRepo.
+type SearchRepoParamsNamespaceId1 = float32
+
+// SearchRepoParamsNamespaceId2 defines parameters for SearchRepo.
+type SearchRepoParamsNamespaceId2 = string
+
+// SearchRepoParamsNamespaceId3 defines parameters for SearchRepo.
+type SearchRepoParamsNamespaceId3 = float32
+
+// SearchRepo200JSONResponseBody0 defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody0 = map[string]interface{}
+
+// SearchRepo200JSONResponseBody1 defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody1 struct {
+	Error struct {
+		Code    SearchRepo200JSONResponseBody1ErrorCode `json:"code"`
+		Message string                                  `json:"message"`
+	} `json:"error"`
+}
+
+// SearchRepo200JSONResponseBody1ErrorCode defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody1ErrorCode string
+
+// SearchRepo200JSONResponseBody2 defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody2 struct {
+	GitAccount struct {
+		NamespaceId *string `json:"namespaceId"`
+		Provider    string  `json:"provider"`
+	} `json:"gitAccount"`
+	Repos []struct {
+		DefaultBranch string `json:"defaultBranch"`
+		Id            string `json:"id"`
+		Name          string `json:"name"`
+		Namespace     string `json:"namespace"`
+		Owner         struct {
+			Id   string `json:"id"`
+			Name string `json:"name"`
+		} `json:"owner"`
+		OwnerType SearchRepo200JSONResponseBody2ReposOwnerType `json:"ownerType"`
+		Private   SearchRepo200JSONResponseBody2ReposPrivate   `json:"private"`
+		Provider  SearchRepo200JSONResponseBody2ReposProvider  `json:"provider"`
+		Slug      string                                       `json:"slug"`
+		UpdatedAt float32                                      `json:"updatedAt"`
+		Url       string                                       `json:"url"`
+	} `json:"repos"`
+}
+
+// SearchRepo200JSONResponseBody2ReposOwnerType defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody2ReposOwnerType string
+
+// SearchRepo200JSONResponseBody2ReposPrivate defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody2ReposPrivate bool
+
+// SearchRepo200JSONResponseBody2ReposProvider defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody2ReposProvider string
+
+// SearchRepo200JSONResponseBody3 defines parameters for SearchRepo.
+type SearchRepo200JSONResponseBody3 struct {
+	GitAccount struct {
+		NamespaceId *SearchRepo200JSONResponseBody_3_GitAccount_NamespaceId `json:"namespaceId"`
+		Provider    SearchRepo200JSONResponseBody3GitAccountProvider        `json:"provider"`
+	} `json:"gitAccount"`
+	Repos []struct {
+		DefaultBranch string                                   `json:"defaultBranch"`
+		Id            SearchRepo200JSONResponseBody_3_Repos_Id `json:"id"`
+		Name          string                                   `json:"name"`
+		Namespace     string                                   `json:"namespace"`
+		Owner         struct {
+			Id   SearchRepo200JSONResponseBody_3_Repos_Owner_Id `json:"id"`
+			Name string                                         `json:"name"`
+		} `json:"owner"`
+		OwnerType SearchRepo200JSONResponseBody3ReposOwnerType `json:"ownerType"`
+		Private   SearchRepo200JSONResponseBody3ReposPrivate   `json:"private"`
+		Provider  SearchRepo200JSONResponseBody3ReposProvider  `json:"provider"`
+		Slug      string                                       `json:"slug"`
+		UpdatedAt float32                                      `json:"updatedAt"`
+		Url       string                                       `json:"url"`
+	} `json:"repos"`
+}
+
 // SearchRepo200JSONResponseBody3GitAccountNamespaceId0 defines parameters for SearchRepo.
 type SearchRepo200JSONResponseBody3GitAccountNamespaceId0 = string
 
@@ -3179,6 +3659,94 @@ type UpdateObservabilityConfigurationProjectParams struct {
 
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateOrganizationJSONBody defines parameters for CreateOrganization.
+type CreateOrganizationJSONBody struct {
+	// Name The desired name for the organization. Generated from the slug if not provided.
+	Name *string `json:"name,omitempty"`
+
+	// Slug The desired slug for the organization.
+	Slug string `json:"slug"`
+}
+
+// CreateOrganizationParams defines parameters for CreateOrganization.
+type CreateOrganizationParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetOrganizationParams defines parameters for GetOrganization.
+type GetOrganizationParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateOrganizationJSONBody defines parameters for UpdateOrganization.
+type UpdateOrganizationJSONBody struct {
+	// Avatar The hash value of an uploaded image, or `null` to clear the organization avatar. Omit to leave it unchanged.
+	Avatar *string `json:"avatar,omitempty"`
+
+	// Name The new display name for the organization.
+	Name *string `json:"name,omitempty"`
+
+	// Slug The new slug for the organization.
+	Slug *string `json:"slug,omitempty"`
+}
+
+// ListOrganizationTeamsParams defines parameters for ListOrganizationTeams.
+type ListOrganizationTeamsParams struct {
+	// Cursor Pagination cursor.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// IncludeMemberCount When true, includes each team's member count in the response.
+	IncludeMemberCount *bool `form:"includeMemberCount,omitempty" json:"includeMemberCount,omitempty"`
+}
+
+// AddOrganizationTeamJSONBody defines parameters for AddOrganizationTeam.
+type AddOrganizationTeamJSONBody struct {
+	BillingPlan *AddOrganizationTeamJSONBodyBillingPlan `json:"billingPlan,omitempty"`
+
+	// Mode Whether to create a new team under the organization (\"create\") or link an existing one (\"link\").
+	Mode AddOrganizationTeamJSONBodyMode `json:"mode"`
+
+	// Name The display name for a new team. Required in create mode; rejected in link mode.
+	Name *string `json:"name,omitempty"`
+
+	// Slug The slug of an existing team to link, or the slug for a new team to create.
+	Slug *string `json:"slug,omitempty"`
+
+	// TeamId The ID of an existing team to add to the organization (link mode).
+	TeamId *string `json:"teamId,omitempty"`
+	union  json.RawMessage
+}
+
+// AddOrganizationTeamJSONBodyBillingPlan defines parameters for AddOrganizationTeam.
+type AddOrganizationTeamJSONBodyBillingPlan string
+
+// AddOrganizationTeamJSONBodyMode defines parameters for AddOrganizationTeam.
+type AddOrganizationTeamJSONBodyMode string
+
+// AddOrganizationTeamJSONBody0 defines parameters for AddOrganizationTeam.
+type AddOrganizationTeamJSONBody0 struct {
+	Mode interface{} `json:"mode"`
+	Name interface{} `json:"name"`
+}
+
+// AddOrganizationTeamJSONBody1 defines parameters for AddOrganizationTeam.
+type AddOrganizationTeamJSONBody1 struct {
+	Mode interface{} `json:"mode"`
+}
+
+// AddOrganizationTeamJSONBody2 defines parameters for AddOrganizationTeam.
+type AddOrganizationTeamJSONBody2 struct {
+	Mode interface{} `json:"mode"`
 }
 
 // GetProjectTraceParams defines parameters for GetProjectTrace.
@@ -19441,572 +20009,3 @@ type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules
 
 // CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
 type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 = []string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Valid defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Valid bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item struct {
-	union json.RawMessage
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 = []struct {
-	Action *struct {
-		Mitigate *struct {
-			Action         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateAction           `json:"action"`
-			ActionDuration *string                                                                                                       `json:"actionDuration,omitempty"`
-			BypassSystem   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateBypassSystem    `json:"bypassSystem,omitempty"`
-			LogHeaders     *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                                                      `json:"keys"`
-				Limit  float32                                                                                                       `json:"limit"`
-				Window float32                                                                                                       `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                                         `json:"location"`
-				Permanent CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action,omitempty"`
-	Active         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                                            `json:"key,omitempty"`
-			Neg   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsNeg        `json:"neg,omitempty"`
-			Op    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsOp          `json:"op"`
-			Type  CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsType        `json:"type"`
-			Value *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description *string `json:"description,omitempty"`
-	Id          string  `json:"id"`
-	Name        string  `json:"name"`
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateAction string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateBypassSystem defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateBypassSystem bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 = []string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAction string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0Active defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0Active bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsNeg defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsNeg bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsOp defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsOp string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsType defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsType string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 = string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 = float32
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 = []string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 map[string]struct {
-	Action         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1Action         `json:"action"`
-	ActionDuration *string                                                                                       `json:"actionDuration,omitempty"`
-	BypassSystem   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1BypassSystem  `json:"bypassSystem,omitempty"`
-	LogHeaders     *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders `json:"logHeaders,omitempty"`
-	RateLimit      *struct {
-		Action *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAction `json:"action,omitempty"`
-		Algo   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAlgo    `json:"algo"`
-		Keys   []string                                                                                        `json:"keys"`
-		Limit  float32                                                                                         `json:"limit"`
-		Window float32                                                                                         `json:"window"`
-	} `json:"rateLimit,omitempty"`
-	Redirect *struct {
-		Location  string                                                                                           `json:"location"`
-		Permanent CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RedirectPermanent `json:"permanent"`
-	} `json:"redirect,omitempty"`
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1Action defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1Action string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1BypassSystem defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1BypassSystem bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 = []string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders struct {
-	union json.RawMessage
-}
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAction string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAlgo defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RateLimitAlgo string
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RedirectPermanent defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1RedirectPermanent bool
-
-// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
-type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallEventsParams defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEventsParams struct {
-	Sort           *GetSecurityFirewallEventsParamsSort         `form:"sort,omitempty" json:"sort,omitempty"`
-	Limit          *float32                                     `form:"limit,omitempty" json:"limit,omitempty"`
-	Cursor         *string                                      `form:"cursor,omitempty" json:"cursor,omitempty"`
-	ProjectId      string                                       `form:"projectId" json:"projectId"`
-	StartTimestamp *float32                                     `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
-	EndTimestamp   *float32                                     `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
-	Hosts          *string                                      `form:"hosts,omitempty" json:"hosts,omitempty"`
-	Ip             *[]string                                    `form:"ip,omitempty" json:"ip,omitempty"`
-	IsActive       *bool                                        `form:"isActive,omitempty" json:"isActive,omitempty"`
-	Action         *[]GetSecurityFirewallEventsParamsAction     `form:"action,omitempty" json:"action,omitempty"`
-	ActionType     *[]GetSecurityFirewallEventsParamsActionType `form:"actionType,omitempty" json:"actionType,omitempty"`
-	RuleKind       *GetSecurityFirewallEventsParamsRuleKind     `form:"ruleKind,omitempty" json:"ruleKind,omitempty"`
-	RuleId         *[]string                                    `form:"ruleId,omitempty" json:"ruleId,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetSecurityFirewallEventsParamsSort defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEventsParamsSort string
-
-// GetSecurityFirewallEventsParamsAction defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEventsParamsAction string
-
-// GetSecurityFirewallEventsParamsActionType defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEventsParamsActionType string
-
-// GetSecurityFirewallEventsParamsRuleKind defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEventsParamsRuleKind string
-
-// GetSecurityFirewallEvents200JSONResponseBodyActionsIsActive defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEvents200JSONResponseBodyActionsIsActive bool
-
-// GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore defines parameters for GetSecurityFirewallEvents.
-type GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore bool
-
-// GetSecurityFirewallEventsSummaryParams defines parameters for GetSecurityFirewallEventsSummary.
-type GetSecurityFirewallEventsSummaryParams struct {
-	ProjectId      string                                              `form:"projectId" json:"projectId"`
-	StartTimestamp *float32                                            `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
-	EndTimestamp   *float32                                            `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
-	Hosts          *string                                             `form:"hosts,omitempty" json:"hosts,omitempty"`
-	Ip             *[]string                                           `form:"ip,omitempty" json:"ip,omitempty"`
-	IsActive       *bool                                               `form:"isActive,omitempty" json:"isActive,omitempty"`
-	Action         *[]GetSecurityFirewallEventsSummaryParamsAction     `form:"action,omitempty" json:"action,omitempty"`
-	ActionType     *[]GetSecurityFirewallEventsSummaryParamsActionType `form:"actionType,omitempty" json:"actionType,omitempty"`
-	RuleKind       *GetSecurityFirewallEventsSummaryParamsRuleKind     `form:"ruleKind,omitempty" json:"ruleKind,omitempty"`
-	RuleId         *[]string                                           `form:"ruleId,omitempty" json:"ruleId,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetSecurityFirewallEventsSummaryParamsAction defines parameters for GetSecurityFirewallEventsSummary.
-type GetSecurityFirewallEventsSummaryParamsAction string
-
-// GetSecurityFirewallEventsSummaryParamsActionType defines parameters for GetSecurityFirewallEventsSummary.
-type GetSecurityFirewallEventsSummaryParamsActionType string
-
-// GetSecurityFirewallEventsSummaryParamsRuleKind defines parameters for GetSecurityFirewallEventsSummary.
-type GetSecurityFirewallEventsSummaryParamsRuleKind string
-
-// CreateIntegrationStoreDirectJSONBody defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBody struct {
-	// BillingPlanId ID of the billing plan for paid resources. Get available plans from GET /integrations/integration/{id}/products/{productId}/plans. If not provided, automatically discovers free billing plans.
-	//
-	// Example: bp_abc123def456
-	BillingPlanId *string `json:"billingPlanId,omitempty"`
-
-	// ExternalId Optional external identifier for tracking purposes
-	//
-	// Example: dev-db-001
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// IntegrationConfigurationId ID of your integration configuration. Get this from GET /v1/integrations/configurations
-	//
-	// Example: icfg_cuwj0AdCdH3BwWT4LPijCC7t
-	IntegrationConfigurationId string `json:"integrationConfigurationId"`
-
-	// IntegrationProductIdOrSlug ID or slug of the integration product. Get available products from GET /v1/integrations/configuration/{id}/products
-	//
-	// Example: iap_postgres_db
-	IntegrationProductIdOrSlug string `json:"integrationProductIdOrSlug"`
-
-	// Metadata Optional key-value pairs for resource metadata
-	//
-	// Example: {"environment":"development","project":"my-app","tags":["database","postgres"]}
-	Metadata *map[string]CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties `json:"metadata,omitempty"`
-
-	// Name Human-readable name for the storage resource
-	//
-	// Example: my-dev-database
-	Name string `json:"name"`
-
-	// PaymentMethodId Payment method ID for paid resources. Optional - uses default payment method if not provided.
-	//
-	// Example: pm_1AbcDefGhiJklMno
-	PaymentMethodId *string `json:"paymentMethodId,omitempty"`
-
-	// PrepaymentAmountCents Amount in cents for prepayment billing plans. Required only for prepayment plans with variable amounts.
-	//
-	// Example: 5000
-	PrepaymentAmountCents *float32 `json:"prepaymentAmountCents,omitempty"`
-
-	// ProtocolSettings Protocol-specific configuration settings
-	//
-	// Example: {"experimentation":{"edgeConfigSyncingEnabled":true}}
-	ProtocolSettings *map[string]interface{} `json:"protocolSettings,omitempty"`
-
-	// Source Source of the store creation request
-	//
-	// Example: marketplace
-	Source *CreateIntegrationStoreDirectJSONBodySource `json:"source,omitempty"`
-}
-
-// CreateIntegrationStoreDirectParams defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateIntegrationStoreDirectJSONBodyMetadata0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBodyMetadata0 = string
-
-// CreateIntegrationStoreDirectJSONBodyMetadata1 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBodyMetadata1 = float32
-
-// CreateIntegrationStoreDirectJSONBodyMetadata2 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBodyMetadata2 = bool
-
-// CreateIntegrationStoreDirectJSONBodyMetadata3 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBodyMetadata3 = []string
-
-// CreateIntegrationStoreDirectJSONBodyMetadata4 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBodyMetadata4 = []float32
-
-// CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// CreateIntegrationStoreDirectJSONBodySource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirectJSONBodySource string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanPaymentMethodRequired defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanPaymentMethodRequired bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanScope defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanScope string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanType defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanType string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAgentTools defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAgentTools bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAutoSensitive defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAutoSensitive bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesBillable defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesBillable bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcp defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcp bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcpReadonly defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcpReadonly bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesProjects defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesProjects bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 struct {
-	CustomRotationWarning *string `json:"customRotationWarning,omitempty"`
-	MaxDelayHours         float32 `json:"maxDelayHours"`
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 bool
-
-// CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation struct {
-	union json.RawMessage
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretsSync defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretsSync bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSso defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSso bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesTransferable defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesTransferable bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesV0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesV0 bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreExternalResourceStatus defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreExternalResourceStatus string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 = string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 = float32
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 = []string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 = []float32
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 bool
-
-// CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreNotificationLevel defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreNotificationLevel string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreOwnership defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreOwnership string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAgentTools defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAgentTools bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAutoSensitive defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAutoSensitive bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesBillable defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesBillable bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesConnectedImportResource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesConnectedImportResource bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesDatabaseUI defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesDatabaseUI bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesImportResource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesImportResource bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesLinking defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesLinking bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcp defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcp bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcpReadonly defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcpReadonly bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesNativeImportResource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesNativeImportResource bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesProjects defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesProjects bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSandbox defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSandbox bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 struct {
-	CustomRotationWarning *string `json:"customRotationWarning,omitempty"`
-	MaxDelayHours         float32 `json:"maxDelayHours"`
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 bool
-
-// CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation struct {
-	union json.RawMessage
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretsSync defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretsSync bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSso defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSso bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesTransferable defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesTransferable bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0 bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0Flavors defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0Flavors bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductDisableResourceRenaming defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductDisableResourceRenaming bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductGuidesStepsActionsType defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductGuidesStepsActionsType string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 struct {
-	CustomRotationWarning *string `json:"customRotationWarning,omitempty"`
-	MaxDelayHours         float32 `json:"maxDelayHours"`
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 bool
-
-// CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation struct {
-	union json.RawMessage
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationSupportsInstallationBillingPlans defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationSupportsInstallationBillingPlans bool
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductLogDrainStatus defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductLogDrainStatus string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0 struct {
-	Default          *string                                                                                                  `json:"default,omitempty"`
-	Description      *string                                                                                                  `json:"description,omitempty"`
-	Enum             *[]string                                                                                                `json:"enum,omitempty"`
-	MaxLength        *float32                                                                                                 `json:"maxLength,omitempty"`
-	MinLength        *float32                                                                                                 `json:"minLength,omitempty"`
-	Pattern          *string                                                                                                  `json:"pattern,omitempty"`
-	Type             CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0Type                 `json:"type"`
-	UiControl        CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiControl            `json:"ui:control"`
-	UiDescription    *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden      *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel       *string                                                                                               `json:"ui:label,omitempty"`
-	UiPaidOnly    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiPaidOnly       `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                               `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0Type defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0Type string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiControl defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiControl string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 = string
-
-// CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 defines parameters for CreateIntegrationStoreDirect.
-type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 struct {
-	Expr string `json:"expr"`
-}

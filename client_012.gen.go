@@ -10,6 +10,575 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing1 struct {
+	Key   string                                                                    `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Services1HeadersMissing1Type          `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Type string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                       `json:"gt,omitempty"`
+	Gte  *float32                                                                       `json:"gte,omitempty"`
+	Inc  *[]string                                                                      `json:"inc,omitempty"`
+	Lt   *float32                                                                       `json:"lt,omitempty"`
+	Lte  *float32                                                                       `json:"lte,omitempty"`
+	Neq  *string                                                                        `json:"neq,omitempty"`
+	Ninc *[]string                                                                      `json:"ninc,omitempty"`
+	Pre  *string                                                                        `json:"pre,omitempty"`
+	Re   *string                                                                        `json:"re,omitempty"`
+	Suf  *string                                                                        `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1RedirectsHas0Type         `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Type string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas1 struct {
+	Key   string                                                                  `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Services1RedirectsHas1Type          `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Type string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Type         `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Type string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                         `json:"gt,omitempty"`
+	Gte  *float32                                                                         `json:"gte,omitempty"`
+	Inc  *[]string                                                                        `json:"inc,omitempty"`
+	Lt   *float32                                                                         `json:"lt,omitempty"`
+	Lte  *float32                                                                         `json:"lte,omitempty"`
+	Neq  *string                                                                          `json:"neq,omitempty"`
+	Ninc *[]string                                                                        `json:"ninc,omitempty"`
+	Pre  *string                                                                          `json:"pre,omitempty"`
+	Re   *string                                                                          `json:"re,omitempty"`
+	Suf  *string                                                                          `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1 struct {
+	Key   string                                                                      `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Type          `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Type string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                         `json:"gt,omitempty"`
+	Gte  *float32                                                                         `json:"gte,omitempty"`
+	Inc  *[]string                                                                        `json:"inc,omitempty"`
+	Lt   *float32                                                                         `json:"lt,omitempty"`
+	Lte  *float32                                                                         `json:"lte,omitempty"`
+	Neq  *string                                                                          `json:"neq,omitempty"`
+	Ninc *[]string                                                                        `json:"ninc,omitempty"`
+	Pre  *string                                                                          `json:"pre,omitempty"`
+	Re   *string                                                                          `json:"re,omitempty"`
+	Suf  *string                                                                          `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RedirectsPermanent defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RedirectsPermanent bool
+
+// CreateDeployment200JSONResponseBody1Services1RewritesDestination0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesDestination0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesDestination1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesDestination1 struct {
+	// Path Routing-only path used to select a route inside the target service.
+	Path    *string `json:"path,omitempty"`
+	Service string  `json:"service"`
+
+	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+	Type *CreateDeployment200JSONResponseBody1Services1RewritesDestination1Type `json:"type,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesDestination1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesDestination1Type string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1RewritesHas0Type         `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas0Type string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                    `json:"gt,omitempty"`
+	Gte  *float32                                                                    `json:"gte,omitempty"`
+	Inc  *[]string                                                                   `json:"inc,omitempty"`
+	Lt   *float32                                                                    `json:"lt,omitempty"`
+	Lte  *float32                                                                    `json:"lte,omitempty"`
+	Neq  *string                                                                     `json:"neq,omitempty"`
+	Ninc *[]string                                                                   `json:"ninc,omitempty"`
+	Pre  *string                                                                     `json:"pre,omitempty"`
+	Re   *string                                                                     `json:"re,omitempty"`
+	Suf  *string                                                                     `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas1 struct {
+	Key   string                                                                 `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Services1RewritesHas1Type          `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas1Type string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                    `json:"gt,omitempty"`
+	Gte  *float32                                                                    `json:"gte,omitempty"`
+	Inc  *[]string                                                                   `json:"inc,omitempty"`
+	Lt   *float32                                                                    `json:"lt,omitempty"`
+	Lte  *float32                                                                    `json:"lte,omitempty"`
+	Neq  *string                                                                     `json:"neq,omitempty"`
+	Ninc *[]string                                                                   `json:"ninc,omitempty"`
+	Pre  *string                                                                     `json:"pre,omitempty"`
+	Re   *string                                                                     `json:"re,omitempty"`
+	Suf  *string                                                                     `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1RewritesMissing0Type         `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Type string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                        `json:"gt,omitempty"`
+	Gte  *float32                                                                        `json:"gte,omitempty"`
+	Inc  *[]string                                                                       `json:"inc,omitempty"`
+	Lt   *float32                                                                        `json:"lt,omitempty"`
+	Lte  *float32                                                                        `json:"lte,omitempty"`
+	Neq  *string                                                                         `json:"neq,omitempty"`
+	Ninc *[]string                                                                       `json:"ninc,omitempty"`
+	Pre  *string                                                                         `json:"pre,omitempty"`
+	Re   *string                                                                         `json:"re,omitempty"`
+	Suf  *string                                                                         `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing1 struct {
+	Key   string                                                                     `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Services1RewritesMissing1Type          `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Type string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                        `json:"gt,omitempty"`
+	Gte  *float32                                                                        `json:"gte,omitempty"`
+	Inc  *[]string                                                                       `json:"inc,omitempty"`
+	Lt   *float32                                                                        `json:"lt,omitempty"`
+	Lte  *float32                                                                        `json:"lte,omitempty"`
+	Neq  *string                                                                         `json:"neq,omitempty"`
+	Ninc *[]string                                                                       `json:"ninc,omitempty"`
+	Pre  *string                                                                         `json:"pre,omitempty"`
+	Re   *string                                                                         `json:"re,omitempty"`
+	Suf  *string                                                                         `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1RewritesRespectOriginCacheControl defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesRespectOriginCacheControl bool
+
+// CreateDeployment200JSONResponseBody1Services1RewritesTransformsOp defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesTransformsOp string
+
+// CreateDeployment200JSONResponseBody1Services1RewritesTransformsType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1RewritesTransformsType string
+
+// CreateDeployment200JSONResponseBody1Services1Routes0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0 struct {
+	CaseSensitive *CreateDeployment200JSONResponseBody1Services1Routes0CaseSensitive     `json:"caseSensitive,omitempty"`
+	Check         *CreateDeployment200JSONResponseBody1Services1Routes0Check             `json:"check,omitempty"`
+	Continue      *CreateDeployment200JSONResponseBody1Services1Routes0Continue          `json:"continue,omitempty"`
+	Dest          *string                                                                `json:"dest,omitempty"`
+	Destination   *CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination `json:"destination,omitempty"`
+	Env           *[]string                                                              `json:"env,omitempty"`
+	Has           *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item  `json:"has,omitempty"`
+	Headers       *map[string]string                                                     `json:"headers,omitempty"`
+	Important     *CreateDeployment200JSONResponseBody1Services1Routes0Important         `json:"important,omitempty"`
+	Locale        *struct {
+		Cookie   *string            `json:"cookie,omitempty"`
+		Redirect *map[string]string `json:"redirect,omitempty"`
+	} `json:"locale,omitempty"`
+	Methods *[]string `json:"methods,omitempty"`
+
+	// Middleware A middleware index in the `middleware` key under the build result
+	Middleware *float32 `json:"middleware,omitempty"`
+
+	// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+	MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+	// MiddlewareRawSrc The original middleware matchers.
+	MiddlewareRawSrc *[]string                                                                 `json:"middlewareRawSrc,omitempty"`
+	Missing          *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item `json:"missing,omitempty"`
+	Mitigate         *struct {
+		Action CreateDeployment200JSONResponseBody1Services1Routes0MitigateAction `json:"action"`
+	} `json:"mitigate,omitempty"`
+	Override                  *CreateDeployment200JSONResponseBody1Services1Routes0Override                  `json:"override,omitempty"`
+	RespectOriginCacheControl *CreateDeployment200JSONResponseBody1Services1Routes0RespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+	// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+	Source     *string                                                                      `json:"source,omitempty"`
+	Src        string                                                                       `json:"src"`
+	Status     *float32                                                                     `json:"status,omitempty"`
+	StatusCode *float32                                                                     `json:"statusCode,omitempty"`
+	Transforms *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item `json:"transforms,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1Routes0CaseSensitive defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0CaseSensitive bool
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Check defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Check bool
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Continue defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Continue bool
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Destination0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Destination0 = string
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Destination1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Destination1 struct {
+	// Path Routing-only path used to select a route inside the target service.
+	Path    *string `json:"path,omitempty"`
+	Service string  `json:"service"`
+
+	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+	Type *CreateDeployment200JSONResponseBody1Services1Routes0Destination1Type `json:"type,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Destination1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Destination1Type string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Has0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Has0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1Routes0Has0Type          `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Has0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Has0Type string
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                    `json:"gt,omitempty"`
+	Gte  *float32                                                                    `json:"gte,omitempty"`
+	Inc  *[]string                                                                   `json:"inc,omitempty"`
+	Lt   *float32                                                                    `json:"lt,omitempty"`
+	Lte  *float32                                                                    `json:"lte,omitempty"`
+	Neq  *string                                                                     `json:"neq,omitempty"`
+	Ninc *[]string                                                                   `json:"ninc,omitempty"`
+	Pre  *string                                                                     `json:"pre,omitempty"`
+	Re   *string                                                                     `json:"re,omitempty"`
+	Suf  *string                                                                     `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 = float32
+
 // CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq struct {
 	union json.RawMessage
@@ -799,7 +1368,7 @@ type GetDeployment200JSONResponseBody1 struct {
 	ResourceConfig *struct {
 		// BuildMachine Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
 		BuildMachine *struct {
-			// Cores Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
+			// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
 			Cores *float32 `json:"cores,omitempty"`
 
 			// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
@@ -808,7 +1377,7 @@ type GetDeployment200JSONResponseBody1 struct {
 			// MachineSelectionType Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
 			MachineSelectionType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachineMachineSelectionType `json:"machineSelectionType,omitempty"`
 
-			// Memory Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
+			// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
 			Memory *float32 `json:"memory,omitempty"`
 
 			// PurchaseType Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
@@ -17583,6 +18152,15 @@ type UpdatePrivateLinkEndpointJSONRequestBody UpdatePrivateLinkEndpointJSONBody
 // UpdateObservabilityConfigurationProjectJSONRequestBody defines body for UpdateObservabilityConfigurationProject for application/json ContentType.
 type UpdateObservabilityConfigurationProjectJSONRequestBody UpdateObservabilityConfigurationProjectJSONBody
 
+// CreateOrganizationJSONRequestBody defines body for CreateOrganization for application/json ContentType.
+type CreateOrganizationJSONRequestBody CreateOrganizationJSONBody
+
+// UpdateOrganizationJSONRequestBody defines body for UpdateOrganization for application/json ContentType.
+type UpdateOrganizationJSONRequestBody UpdateOrganizationJSONBody
+
+// AddOrganizationTeamJSONRequestBody defines body for AddOrganizationTeam for application/json ContentType.
+type AddOrganizationTeamJSONRequestBody AddOrganizationTeamJSONBody
+
 // CreateTraceSessionJSONRequestBody defines body for CreateTraceSession for application/json ContentType.
 type CreateTraceSessionJSONRequestBody CreateTraceSessionJSONBody
 
@@ -19491,522 +20069,4 @@ func (a ConnectConnectorUpdateData_0_ServerConfig) MarshalJSON() ([]byte, error)
 		}
 	}
 	return json.Marshal(object)
-}
-
-// Getter for additional properties for ConnectError_Error. Returns the specified
-// element and whether it was found
-func (a ConnectError_Error) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for ConnectError_Error
-func (a *ConnectError_Error) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for ConnectError_Error to handle AdditionalProperties
-func (a *ConnectError_Error) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["code"]; found {
-		err = json.Unmarshal(raw, &a.Code)
-		if err != nil {
-			return fmt.Errorf("error reading 'code': %w", err)
-		}
-		delete(object, "code")
-	}
-
-	if raw, found := object["message"]; found {
-		err = json.Unmarshal(raw, &a.Message)
-		if err != nil {
-			return fmt.Errorf("error reading 'message': %w", err)
-		}
-		delete(object, "message")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for ConnectError_Error to handle AdditionalProperties
-func (a ConnectError_Error) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	object["code"], err = json.Marshal(a.Code)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'code': %w", err)
-	}
-
-	object["message"], err = json.Marshal(a.Message)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'message': %w", err)
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// Getter for additional properties for Team. Returns the specified
-// element and whether it was found
-func (a Team) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for Team
-func (a *Team) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for Team to handle AdditionalProperties
-func (a *Team) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["apiKeysInvalidatedAt"]; found {
-		err = json.Unmarshal(raw, &a.ApiKeysInvalidatedAt)
-		if err != nil {
-			return fmt.Errorf("error reading 'apiKeysInvalidatedAt': %w", err)
-		}
-		delete(object, "apiKeysInvalidatedAt")
-	}
-
-	if raw, found := object["appTokensInvalidatedAt"]; found {
-		err = json.Unmarshal(raw, &a.AppTokensInvalidatedAt)
-		if err != nil {
-			return fmt.Errorf("error reading 'appTokensInvalidatedAt': %w", err)
-		}
-		delete(object, "appTokensInvalidatedAt")
-	}
-
-	if raw, found := object["avatar"]; found {
-		err = json.Unmarshal(raw, &a.Avatar)
-		if err != nil {
-			return fmt.Errorf("error reading 'avatar': %w", err)
-		}
-		delete(object, "avatar")
-	}
-
-	if raw, found := object["billing"]; found {
-		err = json.Unmarshal(raw, &a.Billing)
-		if err != nil {
-			return fmt.Errorf("error reading 'billing': %w", err)
-		}
-		delete(object, "billing")
-	}
-
-	if raw, found := object["connect"]; found {
-		err = json.Unmarshal(raw, &a.Connect)
-		if err != nil {
-			return fmt.Errorf("error reading 'connect': %w", err)
-		}
-		delete(object, "connect")
-	}
-
-	if raw, found := object["createdAt"]; found {
-		err = json.Unmarshal(raw, &a.CreatedAt)
-		if err != nil {
-			return fmt.Errorf("error reading 'createdAt': %w", err)
-		}
-		delete(object, "createdAt")
-	}
-
-	if raw, found := object["creatorId"]; found {
-		err = json.Unmarshal(raw, &a.CreatorId)
-		if err != nil {
-			return fmt.Errorf("error reading 'creatorId': %w", err)
-		}
-		delete(object, "creatorId")
-	}
-
-	if raw, found := object["defaultContinuousUsageKind"]; found {
-		err = json.Unmarshal(raw, &a.DefaultContinuousUsageKind)
-		if err != nil {
-			return fmt.Errorf("error reading 'defaultContinuousUsageKind': %w", err)
-		}
-		delete(object, "defaultContinuousUsageKind")
-	}
-
-	if raw, found := object["defaultDeploymentProtection"]; found {
-		err = json.Unmarshal(raw, &a.DefaultDeploymentProtection)
-		if err != nil {
-			return fmt.Errorf("error reading 'defaultDeploymentProtection': %w", err)
-		}
-		delete(object, "defaultDeploymentProtection")
-	}
-
-	if raw, found := object["defaultExpirationSettings"]; found {
-		err = json.Unmarshal(raw, &a.DefaultExpirationSettings)
-		if err != nil {
-			return fmt.Errorf("error reading 'defaultExpirationSettings': %w", err)
-		}
-		delete(object, "defaultExpirationSettings")
-	}
-
-	if raw, found := object["defaultPassport"]; found {
-		err = json.Unmarshal(raw, &a.DefaultPassport)
-		if err != nil {
-			return fmt.Errorf("error reading 'defaultPassport': %w", err)
-		}
-		delete(object, "defaultPassport")
-	}
-
-	if raw, found := object["defaultProjectJobs"]; found {
-		err = json.Unmarshal(raw, &a.DefaultProjectJobs)
-		if err != nil {
-			return fmt.Errorf("error reading 'defaultProjectJobs': %w", err)
-		}
-		delete(object, "defaultProjectJobs")
-	}
-
-	if raw, found := object["defaultRoles"]; found {
-		err = json.Unmarshal(raw, &a.DefaultRoles)
-		if err != nil {
-			return fmt.Errorf("error reading 'defaultRoles': %w", err)
-		}
-		delete(object, "defaultRoles")
-	}
-
-	if raw, found := object["deploymentPolicy"]; found {
-		err = json.Unmarshal(raw, &a.DeploymentPolicy)
-		if err != nil {
-			return fmt.Errorf("error reading 'deploymentPolicy': %w", err)
-		}
-		delete(object, "deploymentPolicy")
-	}
-
-	if raw, found := object["deploymentStorageRollout"]; found {
-		err = json.Unmarshal(raw, &a.DeploymentStorageRollout)
-		if err != nil {
-			return fmt.Errorf("error reading 'deploymentStorageRollout': %w", err)
-		}
-		delete(object, "deploymentStorageRollout")
-	}
-
-	if raw, found := object["description"]; found {
-		err = json.Unmarshal(raw, &a.Description)
-		if err != nil {
-			return fmt.Errorf("error reading 'description': %w", err)
-		}
-		delete(object, "description")
-	}
-
-	if raw, found := object["disableHardAutoBlocks"]; found {
-		err = json.Unmarshal(raw, &a.DisableHardAutoBlocks)
-		if err != nil {
-			return fmt.Errorf("error reading 'disableHardAutoBlocks': %w", err)
-		}
-		delete(object, "disableHardAutoBlocks")
-	}
-
-	if raw, found := object["disableRepositoryDispatchEvents"]; found {
-		err = json.Unmarshal(raw, &a.DisableRepositoryDispatchEvents)
-		if err != nil {
-			return fmt.Errorf("error reading 'disableRepositoryDispatchEvents': %w", err)
-		}
-		delete(object, "disableRepositoryDispatchEvents")
-	}
-
-	if raw, found := object["disjunctiveProductionSecretPolicy"]; found {
-		err = json.Unmarshal(raw, &a.DisjunctiveProductionSecretPolicy)
-		if err != nil {
-			return fmt.Errorf("error reading 'disjunctiveProductionSecretPolicy': %w", err)
-		}
-		delete(object, "disjunctiveProductionSecretPolicy")
-	}
-
-	if raw, found := object["dpAccessRequestsMode"]; found {
-		err = json.Unmarshal(raw, &a.DpAccessRequestsMode)
-		if err != nil {
-			return fmt.Errorf("error reading 'dpAccessRequestsMode': %w", err)
-		}
-		delete(object, "dpAccessRequestsMode")
-	}
-
-	if raw, found := object["emailDomain"]; found {
-		err = json.Unmarshal(raw, &a.EmailDomain)
-		if err != nil {
-			return fmt.Errorf("error reading 'emailDomain': %w", err)
-		}
-		delete(object, "emailDomain")
-	}
-
-	if raw, found := object["enablePreviewFeedback"]; found {
-		err = json.Unmarshal(raw, &a.EnablePreviewFeedback)
-		if err != nil {
-			return fmt.Errorf("error reading 'enablePreviewFeedback': %w", err)
-		}
-		delete(object, "enablePreviewFeedback")
-	}
-
-	if raw, found := object["enableProductionFeedback"]; found {
-		err = json.Unmarshal(raw, &a.EnableProductionFeedback)
-		if err != nil {
-			return fmt.Errorf("error reading 'enableProductionFeedback': %w", err)
-		}
-		delete(object, "enableProductionFeedback")
-	}
-
-	if raw, found := object["hideIpAddresses"]; found {
-		err = json.Unmarshal(raw, &a.HideIpAddresses)
-		if err != nil {
-			return fmt.Errorf("error reading 'hideIpAddresses': %w", err)
-		}
-		delete(object, "hideIpAddresses")
-	}
-
-	if raw, found := object["hideIpAddressesInLogDrains"]; found {
-		err = json.Unmarshal(raw, &a.HideIpAddressesInLogDrains)
-		if err != nil {
-			return fmt.Errorf("error reading 'hideIpAddressesInLogDrains': %w", err)
-		}
-		delete(object, "hideIpAddressesInLogDrains")
-	}
-
-	if raw, found := object["id"]; found {
-		err = json.Unmarshal(raw, &a.Id)
-		if err != nil {
-			return fmt.Errorf("error reading 'id': %w", err)
-		}
-		delete(object, "id")
-	}
-
-	if raw, found := object["integrationTokensInvalidatedAt"]; found {
-		err = json.Unmarshal(raw, &a.IntegrationTokensInvalidatedAt)
-		if err != nil {
-			return fmt.Errorf("error reading 'integrationTokensInvalidatedAt': %w", err)
-		}
-		delete(object, "integrationTokensInvalidatedAt")
-	}
-
-	if raw, found := object["inviteCode"]; found {
-		err = json.Unmarshal(raw, &a.InviteCode)
-		if err != nil {
-			return fmt.Errorf("error reading 'inviteCode': %w", err)
-		}
-		delete(object, "inviteCode")
-	}
-
-	if raw, found := object["ipBuckets"]; found {
-		err = json.Unmarshal(raw, &a.IpBuckets)
-		if err != nil {
-			return fmt.Errorf("error reading 'ipBuckets': %w", err)
-		}
-		delete(object, "ipBuckets")
-	}
-
-	if raw, found := object["limited"]; found {
-		err = json.Unmarshal(raw, &a.Limited)
-		if err != nil {
-			return fmt.Errorf("error reading 'limited': %w", err)
-		}
-		delete(object, "limited")
-	}
-
-	if raw, found := object["membership"]; found {
-		err = json.Unmarshal(raw, &a.Membership)
-		if err != nil {
-			return fmt.Errorf("error reading 'membership': %w", err)
-		}
-		delete(object, "membership")
-	}
-
-	if raw, found := object["name"]; found {
-		err = json.Unmarshal(raw, &a.Name)
-		if err != nil {
-			return fmt.Errorf("error reading 'name': %w", err)
-		}
-		delete(object, "name")
-	}
-
-	if raw, found := object["nsnbConfig"]; found {
-		err = json.Unmarshal(raw, &a.NsnbConfig)
-		if err != nil {
-			return fmt.Errorf("error reading 'nsnbConfig': %w", err)
-		}
-		delete(object, "nsnbConfig")
-	}
-
-	if raw, found := object["orgRootTeamId"]; found {
-		err = json.Unmarshal(raw, &a.OrgRootTeamId)
-		if err != nil {
-			return fmt.Errorf("error reading 'orgRootTeamId': %w", err)
-		}
-		delete(object, "orgRootTeamId")
-	}
-
-	if raw, found := object["parentId"]; found {
-		err = json.Unmarshal(raw, &a.ParentId)
-		if err != nil {
-			return fmt.Errorf("error reading 'parentId': %w", err)
-		}
-		delete(object, "parentId")
-	}
-
-	if raw, found := object["personalAccessTokensInvalidatedAt"]; found {
-		err = json.Unmarshal(raw, &a.PersonalAccessTokensInvalidatedAt)
-		if err != nil {
-			return fmt.Errorf("error reading 'personalAccessTokensInvalidatedAt': %w", err)
-		}
-		delete(object, "personalAccessTokensInvalidatedAt")
-	}
-
-	if raw, found := object["platform"]; found {
-		err = json.Unmarshal(raw, &a.Platform)
-		if err != nil {
-			return fmt.Errorf("error reading 'platform': %w", err)
-		}
-		delete(object, "platform")
-	}
-
-	if raw, found := object["previewDeploymentSuffix"]; found {
-		err = json.Unmarshal(raw, &a.PreviewDeploymentSuffix)
-		if err != nil {
-			return fmt.Errorf("error reading 'previewDeploymentSuffix': %w", err)
-		}
-		delete(object, "previewDeploymentSuffix")
-	}
-
-	if raw, found := object["remoteCaching"]; found {
-		err = json.Unmarshal(raw, &a.RemoteCaching)
-		if err != nil {
-			return fmt.Errorf("error reading 'remoteCaching': %w", err)
-		}
-		delete(object, "remoteCaching")
-	}
-
-	if raw, found := object["requireVerifiedCommits"]; found {
-		err = json.Unmarshal(raw, &a.RequireVerifiedCommits)
-		if err != nil {
-			return fmt.Errorf("error reading 'requireVerifiedCommits': %w", err)
-		}
-		delete(object, "requireVerifiedCommits")
-	}
-
-	if raw, found := object["resourceConfig"]; found {
-		err = json.Unmarshal(raw, &a.ResourceConfig)
-		if err != nil {
-			return fmt.Errorf("error reading 'resourceConfig': %w", err)
-		}
-		delete(object, "resourceConfig")
-	}
-
-	if raw, found := object["saml"]; found {
-		err = json.Unmarshal(raw, &a.Saml)
-		if err != nil {
-			return fmt.Errorf("error reading 'saml': %w", err)
-		}
-		delete(object, "saml")
-	}
-
-	if raw, found := object["sensitiveEnvironmentVariablePolicy"]; found {
-		err = json.Unmarshal(raw, &a.SensitiveEnvironmentVariablePolicy)
-		if err != nil {
-			return fmt.Errorf("error reading 'sensitiveEnvironmentVariablePolicy': %w", err)
-		}
-		delete(object, "sensitiveEnvironmentVariablePolicy")
-	}
-
-	if raw, found := object["slug"]; found {
-		err = json.Unmarshal(raw, &a.Slug)
-		if err != nil {
-			return fmt.Errorf("error reading 'slug': %w", err)
-		}
-		delete(object, "slug")
-	}
-
-	if raw, found := object["stagingPrefix"]; found {
-		err = json.Unmarshal(raw, &a.StagingPrefix)
-		if err != nil {
-			return fmt.Errorf("error reading 'stagingPrefix': %w", err)
-		}
-		delete(object, "stagingPrefix")
-	}
-
-	if raw, found := object["strictConnectors"]; found {
-		err = json.Unmarshal(raw, &a.StrictConnectors)
-		if err != nil {
-			return fmt.Errorf("error reading 'strictConnectors': %w", err)
-		}
-		delete(object, "strictConnectors")
-	}
-
-	if raw, found := object["strictDeploymentProtectionSettings"]; found {
-		err = json.Unmarshal(raw, &a.StrictDeploymentProtectionSettings)
-		if err != nil {
-			return fmt.Errorf("error reading 'strictDeploymentProtectionSettings': %w", err)
-		}
-		delete(object, "strictDeploymentProtectionSettings")
-	}
-
-	if raw, found := object["strictPasswordProtectionSettings"]; found {
-		err = json.Unmarshal(raw, &a.StrictPasswordProtectionSettings)
-		if err != nil {
-			return fmt.Errorf("error reading 'strictPasswordProtectionSettings': %w", err)
-		}
-		delete(object, "strictPasswordProtectionSettings")
-	}
-
-	if raw, found := object["strictShareableLinks"]; found {
-		err = json.Unmarshal(raw, &a.StrictShareableLinks)
-		if err != nil {
-			return fmt.Errorf("error reading 'strictShareableLinks': %w", err)
-		}
-		delete(object, "strictShareableLinks")
-	}
-
-	if raw, found := object["updatedAt"]; found {
-		err = json.Unmarshal(raw, &a.UpdatedAt)
-		if err != nil {
-			return fmt.Errorf("error reading 'updatedAt': %w", err)
-		}
-		delete(object, "updatedAt")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
 }

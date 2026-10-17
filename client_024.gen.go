@@ -7,6 +7,985 @@ import (
 	"net/http"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetRollingReleaseConfigResponse) GetJSON200() *struct {
+	// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
+	RollingRelease *struct {
+		// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
+		//
+		// Example: false
+		CanaryResponseHeader *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
+
+		// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
+		Gate *struct {
+			// Action What to do when the gate trips: pause the rollout, or roll it back.
+			Action GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateAction `json:"action"`
+
+			// Checks The checks to evaluate. An empty array means nothing is evaluated.
+			Checks []struct {
+				// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
+				//
+				// Example: ["/api/health"]
+				ExcludePaths *[]string `json:"excludePaths,omitempty"`
+
+				// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
+				//
+				// Example: [503]
+				ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
+
+				// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
+				//
+				// Example: 30
+				IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
+
+				// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
+				//
+				// Example: 0.05
+				SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
+
+				// Type The metric this check evaluates.
+				Type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
+			} `json:"checks"`
+
+			// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
+			DryRun GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
+
+			// Enabled Whether automated gating is enabled for this project's rollouts.
+			Enabled GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
+
+			// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
+			//
+			// Example: 3
+			FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+
+			// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
+			//
+			// Example: 5
+			WindowSize *float32 `json:"windowSize,omitempty"`
+		} `json:"gate,omitempty"`
+
+		// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
+		Stages *[]struct {
+			// Duration Duration in minutes for automatic advancement to the next stage
+			//
+			// Example: 600
+			Duration *float32 `json:"duration,omitempty"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			//
+			// Example: false
+			RequireApproval *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"stages,omitempty"`
+
+		// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
+		//
+		// Example: production
+		Target string `json:"target"`
+	} `json:"rollingRelease"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetRollingReleaseConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetRollingReleaseConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetRollingReleaseConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetRollingReleaseConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateRollingReleaseConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *UpdateRollingReleaseConfig200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateRollingReleaseConfigResponse) GetJSON200() *UpdateRollingReleaseConfig200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateRollingReleaseConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateRollingReleaseConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateRollingReleaseConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateRollingReleaseConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type StartRollingReleaseResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
+		RollingRelease *struct {
+			// ActiveStage The currently active stage, null if the rollout is aborted
+			//
+			// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
+			ActiveStage *struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"activeStage"`
+
+			// AdvancementType The advancement type of the rolling release
+			//
+			// Example: manual-approval
+			AdvancementType StartRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
+
+			// CanaryDeployment The canary deployment being rolled out
+			//
+			// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
+			CanaryDeployment *struct {
+				// CreatedAt A number containing the date when the deployment was created in milliseconds
+				//
+				// Example: 1540257589405
+				CreatedAt float32 `json:"createdAt"`
+
+				// Id A string holding the unique ID of the deployment
+				//
+				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+				Id string `json:"id"`
+
+				// Name The name of the project associated with the deployment at the time that the deployment was created
+				//
+				// Example: my-project
+				Name string `json:"name"`
+
+				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+				//
+				// Example: READY
+				ReadyState   StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
+				ReadyStateAt *float32                                                                       `json:"readyStateAt,omitempty"`
+
+				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+				//
+				// Example: cli
+				Source *StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
+
+				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+				Target *StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
+
+				// Url A string with the unique URL of the deployment
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url string `json:"url"`
+			} `json:"canaryDeployment"`
+
+			// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+			CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
+
+			// CurrentDeployment The current deployment receiving production traffic
+			//
+			// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
+			CurrentDeployment *struct {
+				// CreatedAt A number containing the date when the deployment was created in milliseconds
+				//
+				// Example: 1540257589405
+				CreatedAt float32 `json:"createdAt"`
+
+				// Id A string holding the unique ID of the deployment
+				//
+				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+				Id string `json:"id"`
+
+				// Name The name of the project associated with the deployment at the time that the deployment was created
+				//
+				// Example: my-project
+				Name string `json:"name"`
+
+				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+				//
+				// Example: READY
+				ReadyState   StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
+				ReadyStateAt *float32                                                                        `json:"readyStateAt,omitempty"`
+
+				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+				//
+				// Example: cli
+				Source *StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
+
+				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+				Target *StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
+
+				// Url A string with the unique URL of the deployment
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url string `json:"url"`
+			} `json:"currentDeployment"`
+
+			// NextStage The next stage to be activated, null if not in ACTIVE state
+			//
+			// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
+			NextStage *struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"nextStage"`
+
+			// QueuedDeploymentId The ID of a deployment queued for the next rolling release
+			//
+			// Example: dpl_ghi789
+			QueuedDeploymentId *string `json:"queuedDeploymentId"`
+
+			// Stages All stages configured for this rolling release
+			//
+			// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
+			Stages []struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"stages"`
+
+			// StartedAt Unix timestamp in milliseconds when the rolling release started
+			//
+			// Example: 1716210500000
+			StartedAt float32 `json:"startedAt"`
+
+			// State The current state of the rolling release
+			//
+			// Example: ACTIVE
+			State StartRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
+
+			// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+			Substate *StartRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
+
+			// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
+			//
+			// Example: 1716210600000
+			UpdatedAt float32 `json:"updatedAt"`
+		} `json:"rollingRelease"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r StartRollingReleaseResponse) GetJSON200() *struct {
+	// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
+	RollingRelease *struct {
+		// ActiveStage The currently active stage, null if the rollout is aborted
+		//
+		// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
+		ActiveStage *struct {
+			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+			Duration *float32 `json:"duration"`
+
+			// Index The zero-based index of the stage
+			//
+			// Example: 0
+			Index float32 `json:"index"`
+
+			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+			//
+			// Example: false
+			IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"activeStage"`
+
+		// AdvancementType The advancement type of the rolling release
+		//
+		// Example: manual-approval
+		AdvancementType StartRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
+
+		// CanaryDeployment The canary deployment being rolled out
+		//
+		// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
+		CanaryDeployment *struct {
+			// CreatedAt A number containing the date when the deployment was created in milliseconds
+			//
+			// Example: 1540257589405
+			CreatedAt float32 `json:"createdAt"`
+
+			// Id A string holding the unique ID of the deployment
+			//
+			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+			Id string `json:"id"`
+
+			// Name The name of the project associated with the deployment at the time that the deployment was created
+			//
+			// Example: my-project
+			Name string `json:"name"`
+
+			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+			//
+			// Example: READY
+			ReadyState   StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
+			ReadyStateAt *float32                                                                       `json:"readyStateAt,omitempty"`
+
+			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+			//
+			// Example: cli
+			Source *StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
+
+			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+			Target *StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
+
+			// Url A string with the unique URL of the deployment
+			//
+			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+			Url string `json:"url"`
+		} `json:"canaryDeployment"`
+
+		// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+		CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
+
+		// CurrentDeployment The current deployment receiving production traffic
+		//
+		// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
+		CurrentDeployment *struct {
+			// CreatedAt A number containing the date when the deployment was created in milliseconds
+			//
+			// Example: 1540257589405
+			CreatedAt float32 `json:"createdAt"`
+
+			// Id A string holding the unique ID of the deployment
+			//
+			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+			Id string `json:"id"`
+
+			// Name The name of the project associated with the deployment at the time that the deployment was created
+			//
+			// Example: my-project
+			Name string `json:"name"`
+
+			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+			//
+			// Example: READY
+			ReadyState   StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
+			ReadyStateAt *float32                                                                        `json:"readyStateAt,omitempty"`
+
+			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+			//
+			// Example: cli
+			Source *StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
+
+			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+			Target *StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
+
+			// Url A string with the unique URL of the deployment
+			//
+			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+			Url string `json:"url"`
+		} `json:"currentDeployment"`
+
+		// NextStage The next stage to be activated, null if not in ACTIVE state
+		//
+		// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
+		NextStage *struct {
+			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+			Duration *float32 `json:"duration"`
+
+			// Index The zero-based index of the stage
+			//
+			// Example: 0
+			Index float32 `json:"index"`
+
+			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+			//
+			// Example: false
+			IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"nextStage"`
+
+		// QueuedDeploymentId The ID of a deployment queued for the next rolling release
+		//
+		// Example: dpl_ghi789
+		QueuedDeploymentId *string `json:"queuedDeploymentId"`
+
+		// Stages All stages configured for this rolling release
+		//
+		// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
+		Stages []struct {
+			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+			Duration *float32 `json:"duration"`
+
+			// Index The zero-based index of the stage
+			//
+			// Example: 0
+			Index float32 `json:"index"`
+
+			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+			//
+			// Example: false
+			IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"stages"`
+
+		// StartedAt Unix timestamp in milliseconds when the rolling release started
+		//
+		// Example: 1716210500000
+		StartedAt float32 `json:"startedAt"`
+
+		// State The current state of the rolling release
+		//
+		// Example: ACTIVE
+		State StartRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
+
+		// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+		Substate *StartRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
+
+		// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
+		//
+		// Example: 1716210600000
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"rollingRelease"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r StartRollingReleaseResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r StartRollingReleaseResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r StartRollingReleaseResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r StartRollingReleaseResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateStaticIpsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *[]struct {
+		Aws *struct {
+			SecurityGroupId *string  `json:"securityGroupId,omitempty"`
+			SubnetIds       []string `json:"subnetIds"`
+		} `json:"aws,omitempty"`
+		BuildsEnabled          UpdateStaticIps200JSONResponseBodyBuildsEnabled `json:"buildsEnabled"`
+		ConnectConfigurationId string                                          `json:"connectConfigurationId"`
+		CreatedAt              float32                                         `json:"createdAt"`
+		Dc                     *string                                         `json:"dc,omitempty"`
+		EnvId                  UpdateStaticIps200JSONResponseBody_EnvId        `json:"envId"`
+		Passive                UpdateStaticIps200JSONResponseBodyPassive       `json:"passive"`
+		UpdatedAt              float32                                         `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateStaticIpsResponse) GetJSON200() *[]struct {
+	Aws *struct {
+		SecurityGroupId *string  `json:"securityGroupId,omitempty"`
+		SubnetIds       []string `json:"subnetIds"`
+	} `json:"aws,omitempty"`
+	BuildsEnabled          UpdateStaticIps200JSONResponseBodyBuildsEnabled `json:"buildsEnabled"`
+	ConnectConfigurationId string                                          `json:"connectConfigurationId"`
+	CreatedAt              float32                                         `json:"createdAt"`
+	Dc                     *string                                         `json:"dc,omitempty"`
+	EnvId                  UpdateStaticIps200JSONResponseBody_EnvId        `json:"envId"`
+	Passive                UpdateStaticIps200JSONResponseBodyPassive       `json:"passive"`
+	UpdatedAt              float32                                         `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateStaticIpsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateStaticIpsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateStaticIpsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateStaticIpsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectTokenResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Token string `json:"token"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectTokenResponse) GetJSON200() *struct {
+	Token string `json:"token"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectTokenResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectTokenResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectTokenResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectTokenResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListFlagsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data       []Flag `json:"data"`
+		Pagination struct {
+			Next *string `json:"next"`
+		} `json:"pagination"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListFlagsResponse) GetJSON200() *struct {
+	Data       []Flag `json:"data"`
+	Pagination struct {
+		Next *string `json:"next"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListFlagsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListFlagsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListFlagsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListFlagsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateFlagResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		CreatedAt    float32 `json:"createdAt"`
+		CreatedBy    string  `json:"createdBy"`
+		Description  *string `json:"description,omitempty"`
+		Environments map[string]struct {
+			Active        CreateFlag201JSONResponseBodyEnvironmentsActive        `json:"active"`
+			Fallthrough   CreateFlag201JSONResponseBody_Environments_Fallthrough `json:"fallthrough"`
+			PausedOutcome struct {
+				Type      CreateFlag201JSONResponseBodyEnvironmentsPausedOutcomeType `json:"type"`
+				VariantId string                                                     `json:"variantId"`
+			} `json:"pausedOutcome"`
+			Reuse *struct {
+				Active      CreateFlag201JSONResponseBodyEnvironmentsReuseActive `json:"active"`
+				Environment string                                               `json:"environment"`
+			} `json:"reuse,omitempty"`
+			Revision *float32 `json:"revision,omitempty"`
+			Rules    []struct {
+				Conditions []struct {
+					Cmp        CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
+					CmpOptions *struct {
+						IgnoreCase *CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
+					} `json:"cmpOptions,omitempty"`
+					Lhs CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
+					Rhs *CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
+				} `json:"conditions"`
+				Id      string                                                   `json:"id"`
+				Outcome CreateFlag201JSONResponseBody_Environments_Rules_Outcome `json:"outcome"`
+			} `json:"rules"`
+			Targets *map[string]map[string]map[string][]struct {
+				Note  *string `json:"note,omitempty"`
+				Value string  `json:"value"`
+			} `json:"targets,omitempty"`
+		} `json:"environments"`
+		Id               string                                         `json:"id"`
+		Kind             CreateFlag201JSONResponseBodyKind              `json:"kind"`
+		MaintainerIds    *[]string                                      `json:"maintainerIds,omitempty"`
+		OwnerId          string                                         `json:"ownerId"`
+		Permanent        *CreateFlag201JSONResponseBodyPermanent        `json:"permanent,omitempty"`
+		ProjectId        string                                         `json:"projectId"`
+		Revision         float32                                        `json:"revision"`
+		Seed             float32                                        `json:"seed"`
+		SeenInProduction *CreateFlag201JSONResponseBodySeenInProduction `json:"seenInProduction,omitempty"`
+		Slug             string                                         `json:"slug"`
+		State            CreateFlag201JSONResponseBodyState             `json:"state"`
+		Tags             *[]string                                      `json:"tags,omitempty"`
+		TypeName         CreateFlag201JSONResponseBodyTypeName          `json:"typeName"`
+		UpdatedAt        float32                                        `json:"updatedAt"`
+		UpdatedBy        *string                                        `json:"updatedBy,omitempty"`
+		Variants         []struct {
+			Description *string                                       `json:"description,omitempty"`
+			Id          string                                        `json:"id"`
+			Label       *string                                       `json:"label,omitempty"`
+			Value       *CreateFlag201JSONResponseBody_Variants_Value `json:"value"`
+		} `json:"variants"`
+	}
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r CreateFlagResponse) GetJSON201() *struct {
+	CreatedAt    float32 `json:"createdAt"`
+	CreatedBy    string  `json:"createdBy"`
+	Description  *string `json:"description,omitempty"`
+	Environments map[string]struct {
+		Active        CreateFlag201JSONResponseBodyEnvironmentsActive        `json:"active"`
+		Fallthrough   CreateFlag201JSONResponseBody_Environments_Fallthrough `json:"fallthrough"`
+		PausedOutcome struct {
+			Type      CreateFlag201JSONResponseBodyEnvironmentsPausedOutcomeType `json:"type"`
+			VariantId string                                                     `json:"variantId"`
+		} `json:"pausedOutcome"`
+		Reuse *struct {
+			Active      CreateFlag201JSONResponseBodyEnvironmentsReuseActive `json:"active"`
+			Environment string                                               `json:"environment"`
+		} `json:"reuse,omitempty"`
+		Revision *float32 `json:"revision,omitempty"`
+		Rules    []struct {
+			Conditions []struct {
+				Cmp        CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
+				CmpOptions *struct {
+					IgnoreCase *CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
+				} `json:"cmpOptions,omitempty"`
+				Lhs CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
+				Rhs *CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
+			} `json:"conditions"`
+			Id      string                                                   `json:"id"`
+			Outcome CreateFlag201JSONResponseBody_Environments_Rules_Outcome `json:"outcome"`
+		} `json:"rules"`
+		Targets *map[string]map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"targets,omitempty"`
+	} `json:"environments"`
+	Id               string                                         `json:"id"`
+	Kind             CreateFlag201JSONResponseBodyKind              `json:"kind"`
+	MaintainerIds    *[]string                                      `json:"maintainerIds,omitempty"`
+	OwnerId          string                                         `json:"ownerId"`
+	Permanent        *CreateFlag201JSONResponseBodyPermanent        `json:"permanent,omitempty"`
+	ProjectId        string                                         `json:"projectId"`
+	Revision         float32                                        `json:"revision"`
+	Seed             float32                                        `json:"seed"`
+	SeenInProduction *CreateFlag201JSONResponseBodySeenInProduction `json:"seenInProduction,omitempty"`
+	Slug             string                                         `json:"slug"`
+	State            CreateFlag201JSONResponseBodyState             `json:"state"`
+	Tags             *[]string                                      `json:"tags,omitempty"`
+	TypeName         CreateFlag201JSONResponseBodyTypeName          `json:"typeName"`
+	UpdatedAt        float32                                        `json:"updatedAt"`
+	UpdatedBy        *string                                        `json:"updatedBy,omitempty"`
+	Variants         []struct {
+		Description *string                                       `json:"description,omitempty"`
+		Id          string                                        `json:"id"`
+		Label       *string                                       `json:"label,omitempty"`
+		Value       *CreateFlag201JSONResponseBody_Variants_Value `json:"value"`
+	} `json:"variants"`
+} {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateFlagResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateFlagResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateFlagResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateFlagResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteFlagResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteFlagResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteFlagResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteFlagResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteFlagResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetFlagResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *Flag
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetFlagResponse) GetJSON200() *Flag {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetFlagResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetFlagResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
 // StatusCode returns HTTPResponse.StatusCode
 func (r GetFlagResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
@@ -19293,1055 +20272,6 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		HasData    *CreateProject200JSONResponseBodyWebAnalyticsHasData `json:"hasData,omitempty"`
 		Id         string                                               `json:"id"`
 	} `json:"webAnalytics,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateProjectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateProjectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateProjectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateProjectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CancelDeploymentResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Alias A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
-		//
-		// Example: []
-		Alias *[]string `json:"alias,omitempty"`
-
-		// AliasAssigned A boolean that will be true when the aliases from the alias property were assigned successfully
-		//
-		// Example: true
-		AliasAssigned   CancelDeployment200JSONResponseBodyAliasAssigned     `json:"aliasAssigned"`
-		AliasAssignedAt *CancelDeployment200JSONResponseBody_AliasAssignedAt `json:"aliasAssignedAt,omitempty"`
-
-		// AliasError An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-		AliasError *struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"aliasError,omitempty"`
-		AliasFinal   *string `json:"aliasFinal,omitempty"`
-		AliasWarning *struct {
-			Action  *string `json:"action,omitempty"`
-			Code    string  `json:"code"`
-			Link    *string `json:"link,omitempty"`
-			Message string  `json:"message"`
-		} `json:"aliasWarning,omitempty"`
-		AlwaysRefuseToBuild *CancelDeployment200JSONResponseBodyAlwaysRefuseToBuild `json:"alwaysRefuseToBuild,omitempty"`
-		Atproto             *CancelDeployment200JSONResponseBody_Atproto            `json:"atproto,omitempty"`
-
-		// Attribution Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
-		Attribution *struct {
-			// CommitMeta Commit metadata from the git commit author
-			CommitMeta *struct {
-				// Email Email from git commit author
-				Email *string `json:"email,omitempty"`
-
-				// IsVerified Whether the commit was signed/verified (GitHub only, others return undefined)
-				IsVerified *CancelDeployment200JSONResponseBodyAttributionCommitMetaIsVerified `json:"isVerified,omitempty"`
-
-				// Name Name from git commit author
-				Name *string `json:"name,omitempty"`
-			} `json:"commitMeta,omitempty"`
-
-			// GitUser Git provider user associated with the commit author email (only set if resolved)
-			GitUser *struct {
-				Id CancelDeployment200JSONResponseBody_Attribution_GitUser_Id `json:"id"`
-
-				// Login Git provider username/login
-				Login string `json:"login"`
-
-				// Provider The git provider (github, gitlab, bitbucket)
-				Provider *string `json:"provider,omitempty"`
-
-				// Type User type
-				Type *string `json:"type,omitempty"`
-			} `json:"gitUser,omitempty"`
-
-			// VercelUser Vercel user linked to the git provider account (only set if resolved)
-			VercelUser *struct {
-				// Id Vercel user ID
-				Id string `json:"id"`
-
-				// TeamRoles Team roles at time of deployment
-				TeamRoles *[]string `json:"teamRoles,omitempty"`
-
-				// Username Vercel username
-				Username string `json:"username"`
-			} `json:"vercelUser,omitempty"`
-		} `json:"attribution,omitempty"`
-
-		// AutoAssignCustomDomains applies to custom domains only, defaults to `true`
-		AutoAssignCustomDomains *CancelDeployment200JSONResponseBodyAutoAssignCustomDomains `json:"autoAssignCustomDomains,omitempty"`
-		AutomaticAliases        *[]string                                                   `json:"automaticAliases,omitempty"`
-		BootedAt                float32                                                     `json:"bootedAt"`
-		Build                   struct {
-			Env []string `json:"env"`
-		} `json:"build"`
-		BuildArtifactUrls *[]string `json:"buildArtifactUrls,omitempty"`
-
-		// BuildContainerFinishedAt Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
-		BuildContainerFinishedAt *float32                                        `json:"buildContainerFinishedAt,omitempty"`
-		BuildErrorAt             *float32                                        `json:"buildErrorAt,omitempty"`
-		BuildSkipped             CancelDeployment200JSONResponseBodyBuildSkipped `json:"buildSkipped"`
-		BuildingAt               float32                                         `json:"buildingAt"`
-		Builds                   *[]struct {
-			Config *map[string]interface{} `json:"config,omitempty"`
-			Src    *string                 `json:"src,omitempty"`
-			Use    string                  `json:"use"`
-		} `json:"builds,omitempty"`
-		CanceledAt *float32 `json:"canceledAt,omitempty"`
-		Checks     *struct {
-			// DeploymentAlias Condensed check data. Retrieve individual check and check run data using api-checks v2 routes.
-			DeploymentAlias struct {
-				CompletedAt *float32                                                      `json:"completedAt,omitempty"`
-				StartedAt   float32                                                       `json:"startedAt"`
-				State       CancelDeployment200JSONResponseBodyChecksDeploymentAliasState `json:"state"`
-			} `json:"deployment-alias"`
-		} `json:"checks,omitempty"`
-		ChecksConclusion *CancelDeployment200JSONResponseBodyChecksConclusion `json:"checksConclusion,omitempty"`
-		ChecksState      *CancelDeployment200JSONResponseBodyChecksState      `json:"checksState,omitempty"`
-
-		// Config Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
-		Config *struct {
-			FunctionMemoryType CancelDeployment200JSONResponseBodyConfigFunctionMemoryType `json:"functionMemoryType"`
-			FunctionTimeout    *float32                                                    `json:"functionTimeout"`
-			FunctionType       CancelDeployment200JSONResponseBodyConfigFunctionType       `json:"functionType"`
-			IsUsingActiveCPU   *CancelDeployment200JSONResponseBodyConfigIsUsingActiveCPU  `json:"isUsingActiveCPU,omitempty"`
-
-			// ResourceConfig Build resource configuration snapshot for this deployment.
-			ResourceConfig *struct {
-				BuildMachine *struct {
-					// PurchaseType Machine type that was used for the build.
-					PurchaseType *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
-				} `json:"buildMachine,omitempty"`
-
-				// BuildQueue Build resource configuration snapshot for this deployment.
-				BuildQueue *struct {
-					// Configuration Build resource configuration snapshot for this deployment.
-					Configuration *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-				} `json:"buildQueue,omitempty"`
-
-				// ElasticConcurrency When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues
-				ElasticConcurrency *CancelDeployment200JSONResponseBodyConfigResourceConfigElasticConcurrency `json:"elasticConcurrency,omitempty"`
-			} `json:"resourceConfig,omitempty"`
-			SecureComputeFallbackRegion *string  `json:"secureComputeFallbackRegion"`
-			SecureComputePrimaryRegion  *string  `json:"secureComputePrimaryRegion"`
-			Version                     *float32 `json:"version,omitempty"`
-		} `json:"config,omitempty"`
-		ConnectBuildsEnabled   *CancelDeployment200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-		ConnectConfigurationId *string                                                  `json:"connectConfigurationId,omitempty"`
-
-		// CreatedAt A number containing the date when the deployment was created in milliseconds
-		//
-		// Example: 1540257589405
-		CreatedAt float32 `json:"createdAt"`
-		CreatedIn string  `json:"createdIn"`
-
-		// Creator Information about the deployment creator
-		Creator struct {
-			// Avatar The avatar of the user that created the deployment
-			Avatar *string `json:"avatar,omitempty"`
-
-			// Type Principal type of the deployment creator.
-			Type *CancelDeployment200JSONResponseBodyCreatorType `json:"type,omitempty"`
-
-			// Uid Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
-			//
-			// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
-			Uid string `json:"uid"`
-
-			// Username The username of the user that created the deployment
-			//
-			// Example: john-doe
-			Username *string `json:"username,omitempty"`
-		} `json:"creator"`
-		Crons *[]struct {
-			Path     string `json:"path"`
-			Schedule string `json:"schedule"`
-		} `json:"crons,omitempty"`
-		CustomEnvironment *CancelDeployment200JSONResponseBody_CustomEnvironment `json:"customEnvironment,omitempty"`
-
-		// DefaultRoute Computed field that is only available for deployments with a microfrontend configuration.
-		DefaultRoute *string `json:"defaultRoute,omitempty"`
-
-		// DeletedAt A number containing the date when the deployment was deleted at milliseconds
-		//
-		// Example: 1540257589405
-		DeletedAt *float32 `json:"deletedAt,omitempty"`
-		Duration  struct {
-			// EndTime Unix timestamp in milliseconds when the build container exited.
-			EndTime *float32 `json:"endTime,omitempty"`
-
-			// EndTimeCapped Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
-			EndTimeCapped *float32 `json:"endTimeCapped,omitempty"`
-
-			// StartTime Unix timestamp in milliseconds when the deployment entered BUILDING.
-			StartTime *float32 `json:"startTime,omitempty"`
-
-			// TimeForBilling Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
-			TimeForBilling *float32 `json:"timeForBilling,omitempty"`
-
-			// TimeToContainerExit Milliseconds from entering BUILDING until the build container exited, without the billing cap.
-			TimeToContainerExit *float32 `json:"timeToContainerExit,omitempty"`
-
-			// TimeToContainerExitCapped Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
-			TimeToContainerExitCapped *float32 `json:"timeToContainerExitCapped,omitempty"`
-
-			// TimeToReady Milliseconds from entering BUILDING until the deployment reached its current ready state.
-			TimeToReady *float32 `json:"timeToReady,omitempty"`
-		} `json:"duration"`
-		Env          []string                                   `json:"env"`
-		ErrorCode    *string                                    `json:"errorCode,omitempty"`
-		ErrorLink    *string                                    `json:"errorLink,omitempty"`
-		ErrorMessage *string                                    `json:"errorMessage,omitempty"`
-		ErrorStep    *string                                    `json:"errorStep,omitempty"`
-		Flags        *CancelDeployment200JSONResponseBody_Flags `json:"flags,omitempty"`
-		Functions    *map[string]struct {
-			Affinity *struct {
-				Mode CancelDeployment200JSONResponseBodyFunctionsAffinityMode `json:"mode"`
-			} `json:"affinity,omitempty"`
-			Architecture            *CancelDeployment200JSONResponseBodyFunctionsArchitecture                  `json:"architecture,omitempty"`
-			ExcludeFiles            *string                                                                    `json:"excludeFiles,omitempty"`
-			ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
-			FunctionFailoverRegions *[]string                                                                  `json:"functionFailoverRegions,omitempty"`
-			IncludeFiles            *string                                                                    `json:"includeFiles,omitempty"`
-			MaxConcurrency          *float32                                                                   `json:"maxConcurrency,omitempty"`
-			MaxDuration             *CancelDeployment200JSONResponseBody_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-			Memory                  *float32                                                                   `json:"memory,omitempty"`
-			Regions                 *[]string                                                                  `json:"regions,omitempty"`
-			Runtime                 *string                                                                    `json:"runtime,omitempty"`
-			SupportsCancellation    *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation          `json:"supportsCancellation,omitempty"`
-		} `json:"functions,omitempty"`
-		GitRepo   *CancelDeployment200JSONResponseBody_GitRepo   `json:"gitRepo,omitempty"`
-		GitSource *CancelDeployment200JSONResponseBody_GitSource `json:"gitSource,omitempty"`
-
-		// Id A string holding the unique ID of the deployment
-		//
-		// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-		Id     string `json:"id"`
-		Images *struct {
-			ContentDispositionType *CancelDeployment200JSONResponseBodyImagesContentDispositionType `json:"contentDispositionType,omitempty"`
-			ContentSecurityPolicy  *string                                                          `json:"contentSecurityPolicy,omitempty"`
-			DangerouslyAllowSVG    *CancelDeployment200JSONResponseBodyImagesDangerouslyAllowSVG    `json:"dangerouslyAllowSVG,omitempty"`
-			Domains                *[]string                                                        `json:"domains,omitempty"`
-			Formats                *[]CancelDeployment200JSONResponseBodyImagesFormats              `json:"formats,omitempty"`
-			LocalPatterns          *[]struct {
-				// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
-				Pathname *string `json:"pathname,omitempty"`
-
-				// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
-				Search *string `json:"search,omitempty"`
-			} `json:"localPatterns,omitempty"`
-			MinimumCacheTTL *float32   `json:"minimumCacheTTL,omitempty"`
-			Qualities       *[]float32 `json:"qualities,omitempty"`
-			RemotePatterns  *[]struct {
-				// Hostname Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any number of subdomains.
-				Hostname string `json:"hostname"`
-
-				// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
-				Pathname *string `json:"pathname,omitempty"`
-
-				// Port Can be literal port such as `8080` or empty string meaning no port.
-				Port *string `json:"port,omitempty"`
-
-				// Protocol Must be `http` or `https`.
-				Protocol *CancelDeployment200JSONResponseBodyImagesRemotePatternsProtocol `json:"protocol,omitempty"`
-
-				// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
-				Search *string `json:"search,omitempty"`
-			} `json:"remotePatterns,omitempty"`
-			Sizes *[]float32 `json:"sizes,omitempty"`
-		} `json:"images,omitempty"`
-		InitReadyAt  *float32 `json:"initReadyAt,omitempty"`
-		InspectorUrl *string  `json:"inspectorUrl"`
-		Integrations *struct {
-			ClaimedAt   *float32                                              `json:"claimedAt,omitempty"`
-			CompletedAt *float32                                              `json:"completedAt,omitempty"`
-			SkippedAt   *float32                                              `json:"skippedAt,omitempty"`
-			SkippedBy   *string                                               `json:"skippedBy,omitempty"`
-			StartedAt   float32                                               `json:"startedAt"`
-			Status      CancelDeployment200JSONResponseBodyIntegrationsStatus `json:"status"`
-		} `json:"integrations,omitempty"`
-		IsFirstBranchDeployment   *CancelDeployment200JSONResponseBodyIsFirstBranchDeployment  `json:"isFirstBranchDeployment,omitempty"`
-		IsInConcurrentBuildsQueue CancelDeployment200JSONResponseBodyIsInConcurrentBuildsQueue `json:"isInConcurrentBuildsQueue"`
-		IsInSystemBuildsQueue     CancelDeployment200JSONResponseBodyIsInSystemBuildsQueue     `json:"isInSystemBuildsQueue"`
-
-		// IsInstantStatic Whether this deployment completed through the instant static fast path.
-		IsInstantStatic *CancelDeployment200JSONResponseBodyIsInstantStatic `json:"isInstantStatic,omitempty"`
-		Lambdas         *[]struct {
-			CreatedAt  *float32 `json:"createdAt,omitempty"`
-			Entrypoint *string  `json:"entrypoint,omitempty"`
-			Id         string   `json:"id"`
-			Output     []struct {
-				FunctionName string `json:"functionName"`
-				Path         string `json:"path"`
-			} `json:"output"`
-			ReadyState   *CancelDeployment200JSONResponseBodyLambdasReadyState `json:"readyState,omitempty"`
-			ReadyStateAt *float32                                              `json:"readyStateAt,omitempty"`
-		} `json:"lambdas,omitempty"`
-
-		// ManualProvisioning Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
-		ManualProvisioning *struct {
-			// CompletedAt Timestamp when manual provisioning completed
-			CompletedAt *float32 `json:"completedAt,omitempty"`
-
-			// State Current provisioning state
-			State CancelDeployment200JSONResponseBodyManualProvisioningState `json:"state"`
-		} `json:"manualProvisioning,omitempty"`
-		Meta            map[string]string                                   `json:"meta"`
-		Microfrontends  *CancelDeployment200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
-		MonorepoManager *string                                             `json:"monorepoManager,omitempty"`
-
-		// Name The name of the project associated with the deployment at the time that the deployment was created
-		//
-		// Example: my-project
-		Name string `json:"name"`
-
-		// NodeVersion If set it overrides the `projectSettings.nodeVersion` for this deployment.
-		NodeVersion     *CancelDeployment200JSONResponseBodyNodeVersion `json:"nodeVersion,omitempty"`
-		OidcTokenClaims *struct {
-			Aud                 string    `json:"aud"`
-			CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-			DeploymentId        *string   `json:"deployment_id,omitempty"`
-			Environment         string    `json:"environment"`
-			Iss                 string    `json:"iss"`
-			MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-			Owner               string    `json:"owner"`
-			OwnerId             string    `json:"owner_id"`
-			Plan                *string   `json:"plan,omitempty"`
-			Project             string    `json:"project"`
-			ProjectId           string    `json:"project_id"`
-			Scope               string    `json:"scope"`
-			Sub                 string    `json:"sub"`
-		} `json:"oidcTokenClaims,omitempty"`
-		OomReport         *CancelDeployment200JSONResponseBodyOomReport `json:"oomReport,omitempty"`
-		OriginCacheRegion *string                                       `json:"originCacheRegion,omitempty"`
-		OwnerId           string                                        `json:"ownerId"`
-
-		// PassiveConnectConfigurationId Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)
-		PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
-
-		// PassiveRegions Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
-		PassiveRegions *[]string                               `json:"passiveRegions,omitempty"`
-		Plan           CancelDeployment200JSONResponseBodyPlan `json:"plan"`
-
-		// Platform Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
-		Platform *struct {
-			// Creator The user on the external platform who triggered the deployment.
-			Creator struct {
-				// Avatar URL of the platform user's avatar image.
-				Avatar *string `json:"avatar,omitempty"`
-
-				// Name Display name of the platform user.
-				Name string `json:"name"`
-			} `json:"creator"`
-
-			// Meta Arbitrary key-value metadata provided by the platform.
-			Meta *map[string]string `json:"meta,omitempty"`
-
-			// Origin Reference back to the entity on the platform that initiated the deployment.
-			Origin struct {
-				// Type Whether the value is an opaque identifier or a URL.
-				Type CancelDeployment200JSONResponseBodyPlatformOriginType `json:"type"`
-
-				// Value The identifier or URL pointing to the originating entity.
-				Value string `json:"value"`
-			} `json:"origin"`
-
-			// Source The external platform that created the deployment (e.g. its display name).
-			Source struct {
-				// Name Display name of the platform.
-				Name string `json:"name"`
-			} `json:"source"`
-		} `json:"platform,omitempty"`
-		Prebuilt *CancelDeployment200JSONResponseBodyPrebuilt `json:"prebuilt,omitempty"`
-
-		// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-		//
-		// Example: false
-		PreviewCommentsEnabled *CancelDeployment200JSONResponseBodyPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-
-		// Project The public project information associated with the deployment.
-		Project *struct {
-			Framework *string `json:"framework,omitempty"`
-			Id        string  `json:"id"`
-			Name      string  `json:"name"`
-		} `json:"project,omitempty"`
-		ProjectId       string `json:"projectId"`
-		ProjectSettings struct {
-			BuildCommand                *string                                                        `json:"buildCommand,omitempty"`
-			CommandForIgnoringBuildStep *string                                                        `json:"commandForIgnoringBuildStep,omitempty"`
-			DevCommand                  *string                                                        `json:"devCommand,omitempty"`
-			Framework                   *CancelDeployment200JSONResponseBodyProjectSettingsFramework   `json:"framework,omitempty"`
-			InstallCommand              *string                                                        `json:"installCommand,omitempty"`
-			NodeVersion                 *CancelDeployment200JSONResponseBodyProjectSettingsNodeVersion `json:"nodeVersion,omitempty"`
-			OutputDirectory             *string                                                        `json:"outputDirectory,omitempty"`
-			SpeedInsights               *struct {
-				CanceledAt *float32 `json:"canceledAt,omitempty"`
-
-				// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
-				DataReceivedAt *float32                                                                `json:"dataReceivedAt,omitempty"`
-				DisabledAt     *float32                                                                `json:"disabledAt,omitempty"`
-				EnabledAt      *float32                                                                `json:"enabledAt,omitempty"`
-				HasData        *CancelDeployment200JSONResponseBodyProjectSettingsSpeedInsightsHasData `json:"hasData,omitempty"`
-				Id             string                                                                  `json:"id"`
-				PaidAt         *float32                                                                `json:"paidAt,omitempty"`
-			} `json:"speedInsights,omitempty"`
-			WebAnalytics *struct {
-				CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
-				DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
-				EnabledAt  *float32                                                               `json:"enabledAt,omitempty"`
-				HasData    *CancelDeployment200JSONResponseBodyProjectSettingsWebAnalyticsHasData `json:"hasData,omitempty"`
-				Id         string                                                                 `json:"id"`
-			} `json:"webAnalytics,omitempty"`
-		} `json:"projectSettings"`
-
-		// Public A boolean representing if the deployment is public or not. By default this is `false`
-		//
-		// Example: false
-		Public CancelDeployment200JSONResponseBodyPublic `json:"public"`
-		Ready  *float32                                  `json:"ready,omitempty"`
-
-		// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-		//
-		// Example: READY
-		ReadyState       CancelDeployment200JSONResponseBodyReadyState `json:"readyState"`
-		ReadyStateReason *string                                       `json:"readyStateReason,omitempty"`
-
-		// ReadySubstate Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
-		ReadySubstate *CancelDeployment200JSONResponseBodyReadySubstate `json:"readySubstate,omitempty"`
-
-		// Regions The regions the deployment exists in
-		//
-		// Example: ["sfo1"]
-		Regions        []string `json:"regions"`
-		ResourceConfig *struct {
-			// BuildMachine Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
-			BuildMachine *struct {
-				// Cores Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
-				Cores *float32 `json:"cores,omitempty"`
-
-				// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
-				DefaultPurchaseType *CancelDeployment200JSONResponseBodyResourceConfigBuildMachineDefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
-
-				// MachineSelectionType Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
-				MachineSelectionType *CancelDeployment200JSONResponseBodyResourceConfigBuildMachineMachineSelectionType `json:"machineSelectionType,omitempty"`
-
-				// Memory Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
-				Memory *float32 `json:"memory,omitempty"`
-
-				// PurchaseType Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
-				PurchaseType *CancelDeployment200JSONResponseBodyResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
-
-				// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
-				SelectionSource *CancelDeployment200JSONResponseBodyResourceConfigBuildMachineSelectionSource `json:"selectionSource,omitempty"`
-			} `json:"buildMachine,omitempty"`
-		} `json:"resourceConfig,omitempty"`
-		Routes *[]CancelDeployment200JSONResponseBody_Routes_Item `json:"routes"`
-
-		// SeatBlock NSNB Blocked metadata
-		SeatBlock *struct {
-			// BlockCode The NSNB decision code for the seat block. TODO: We should consolidate block types.
-			BlockCode CancelDeployment200JSONResponseBodySeatBlockBlockCode `json:"blockCode"`
-
-			// GitProvider The git provider type associated with gitUserId.
-			GitProvider *CancelDeployment200JSONResponseBodySeatBlockGitProvider `json:"gitProvider,omitempty"`
-			GitUserId   *CancelDeployment200JSONResponseBody_SeatBlock_GitUserId `json:"gitUserId,omitempty"`
-
-			// IsVerified Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
-			IsVerified *CancelDeployment200JSONResponseBodySeatBlockIsVerified `json:"isVerified,omitempty"`
-
-			// UserId The blocked vercel user ID.
-			UserId *string `json:"userId,omitempty"`
-		} `json:"seatBlock,omitempty"`
-
-		// Services Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
-		Services *[]CancelDeployment200JSONResponseBody_Services_Item `json:"services,omitempty"`
-
-		// SoftDeletedByRetention flag to indicate if the deployment was deleted by retention policy
-		//
-		// Example: true
-		SoftDeletedByRetention *CancelDeployment200JSONResponseBodySoftDeletedByRetention `json:"softDeletedByRetention,omitempty"`
-
-		// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-		//
-		// Example: cli
-		Source *CancelDeployment200JSONResponseBodySource `json:"source,omitempty"`
-		Status CancelDeployment200JSONResponseBodyStatus  `json:"status"`
-
-		// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-		Target *CancelDeployment200JSONResponseBodyTarget `json:"target,omitempty"`
-
-		// Team The team that owns the deployment if any
-		Team *struct {
-			Avatar *string `json:"avatar,omitempty"`
-			Id     string  `json:"id"`
-			Name   string  `json:"name"`
-			Slug   string  `json:"slug"`
-		} `json:"team,omitempty"`
-		TtyBuildLogs *CancelDeployment200JSONResponseBodyTtyBuildLogs `json:"ttyBuildLogs,omitempty"`
-		Type         CancelDeployment200JSONResponseBodyType          `json:"type"`
-
-		// UndeletedAt A number containing the date when the deployment was undeleted at milliseconds
-		//
-		// Example: 1540257589405
-		UndeletedAt *float32 `json:"undeletedAt,omitempty"`
-
-		// Url A string with the unique URL of the deployment
-		//
-		// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-		Url string `json:"url"`
-
-		// UserAliases An array of domains that were provided by the user when creating the Deployment.
-		//
-		// Example: ["sub1.example.com","sub2.example.com"]
-		UserAliases *[]string `json:"userAliases,omitempty"`
-
-		// UserConfiguredDeploymentId Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
-		//
-		// Example: abc123
-		UserConfiguredDeploymentId *string `json:"userConfiguredDeploymentId,omitempty"`
-
-		// Version The platform version that was used to create the deployment.
-		//
-		// Example: 2
-		Version CancelDeployment200JSONResponseBodyVersion `json:"version"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CancelDeploymentResponse) GetJSON200() *struct {
-	// Alias A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
-	//
-	// Example: []
-	Alias *[]string `json:"alias,omitempty"`
-
-	// AliasAssigned A boolean that will be true when the aliases from the alias property were assigned successfully
-	//
-	// Example: true
-	AliasAssigned   CancelDeployment200JSONResponseBodyAliasAssigned     `json:"aliasAssigned"`
-	AliasAssignedAt *CancelDeployment200JSONResponseBody_AliasAssignedAt `json:"aliasAssignedAt,omitempty"`
-
-	// AliasError An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-	AliasError *struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"aliasError,omitempty"`
-	AliasFinal   *string `json:"aliasFinal,omitempty"`
-	AliasWarning *struct {
-		Action  *string `json:"action,omitempty"`
-		Code    string  `json:"code"`
-		Link    *string `json:"link,omitempty"`
-		Message string  `json:"message"`
-	} `json:"aliasWarning,omitempty"`
-	AlwaysRefuseToBuild *CancelDeployment200JSONResponseBodyAlwaysRefuseToBuild `json:"alwaysRefuseToBuild,omitempty"`
-	Atproto             *CancelDeployment200JSONResponseBody_Atproto            `json:"atproto,omitempty"`
-
-	// Attribution Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
-	Attribution *struct {
-		// CommitMeta Commit metadata from the git commit author
-		CommitMeta *struct {
-			// Email Email from git commit author
-			Email *string `json:"email,omitempty"`
-
-			// IsVerified Whether the commit was signed/verified (GitHub only, others return undefined)
-			IsVerified *CancelDeployment200JSONResponseBodyAttributionCommitMetaIsVerified `json:"isVerified,omitempty"`
-
-			// Name Name from git commit author
-			Name *string `json:"name,omitempty"`
-		} `json:"commitMeta,omitempty"`
-
-		// GitUser Git provider user associated with the commit author email (only set if resolved)
-		GitUser *struct {
-			Id CancelDeployment200JSONResponseBody_Attribution_GitUser_Id `json:"id"`
-
-			// Login Git provider username/login
-			Login string `json:"login"`
-
-			// Provider The git provider (github, gitlab, bitbucket)
-			Provider *string `json:"provider,omitempty"`
-
-			// Type User type
-			Type *string `json:"type,omitempty"`
-		} `json:"gitUser,omitempty"`
-
-		// VercelUser Vercel user linked to the git provider account (only set if resolved)
-		VercelUser *struct {
-			// Id Vercel user ID
-			Id string `json:"id"`
-
-			// TeamRoles Team roles at time of deployment
-			TeamRoles *[]string `json:"teamRoles,omitempty"`
-
-			// Username Vercel username
-			Username string `json:"username"`
-		} `json:"vercelUser,omitempty"`
-	} `json:"attribution,omitempty"`
-
-	// AutoAssignCustomDomains applies to custom domains only, defaults to `true`
-	AutoAssignCustomDomains *CancelDeployment200JSONResponseBodyAutoAssignCustomDomains `json:"autoAssignCustomDomains,omitempty"`
-	AutomaticAliases        *[]string                                                   `json:"automaticAliases,omitempty"`
-	BootedAt                float32                                                     `json:"bootedAt"`
-	Build                   struct {
-		Env []string `json:"env"`
-	} `json:"build"`
-	BuildArtifactUrls *[]string `json:"buildArtifactUrls,omitempty"`
-
-	// BuildContainerFinishedAt Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
-	BuildContainerFinishedAt *float32                                        `json:"buildContainerFinishedAt,omitempty"`
-	BuildErrorAt             *float32                                        `json:"buildErrorAt,omitempty"`
-	BuildSkipped             CancelDeployment200JSONResponseBodyBuildSkipped `json:"buildSkipped"`
-	BuildingAt               float32                                         `json:"buildingAt"`
-	Builds                   *[]struct {
-		Config *map[string]interface{} `json:"config,omitempty"`
-		Src    *string                 `json:"src,omitempty"`
-		Use    string                  `json:"use"`
-	} `json:"builds,omitempty"`
-	CanceledAt *float32 `json:"canceledAt,omitempty"`
-	Checks     *struct {
-		// DeploymentAlias Condensed check data. Retrieve individual check and check run data using api-checks v2 routes.
-		DeploymentAlias struct {
-			CompletedAt *float32                                                      `json:"completedAt,omitempty"`
-			StartedAt   float32                                                       `json:"startedAt"`
-			State       CancelDeployment200JSONResponseBodyChecksDeploymentAliasState `json:"state"`
-		} `json:"deployment-alias"`
-	} `json:"checks,omitempty"`
-	ChecksConclusion *CancelDeployment200JSONResponseBodyChecksConclusion `json:"checksConclusion,omitempty"`
-	ChecksState      *CancelDeployment200JSONResponseBodyChecksState      `json:"checksState,omitempty"`
-
-	// Config Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
-	Config *struct {
-		FunctionMemoryType CancelDeployment200JSONResponseBodyConfigFunctionMemoryType `json:"functionMemoryType"`
-		FunctionTimeout    *float32                                                    `json:"functionTimeout"`
-		FunctionType       CancelDeployment200JSONResponseBodyConfigFunctionType       `json:"functionType"`
-		IsUsingActiveCPU   *CancelDeployment200JSONResponseBodyConfigIsUsingActiveCPU  `json:"isUsingActiveCPU,omitempty"`
-
-		// ResourceConfig Build resource configuration snapshot for this deployment.
-		ResourceConfig *struct {
-			BuildMachine *struct {
-				// PurchaseType Machine type that was used for the build.
-				PurchaseType *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
-			} `json:"buildMachine,omitempty"`
-
-			// BuildQueue Build resource configuration snapshot for this deployment.
-			BuildQueue *struct {
-				// Configuration Build resource configuration snapshot for this deployment.
-				Configuration *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-			} `json:"buildQueue,omitempty"`
-
-			// ElasticConcurrency When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues
-			ElasticConcurrency *CancelDeployment200JSONResponseBodyConfigResourceConfigElasticConcurrency `json:"elasticConcurrency,omitempty"`
-		} `json:"resourceConfig,omitempty"`
-		SecureComputeFallbackRegion *string  `json:"secureComputeFallbackRegion"`
-		SecureComputePrimaryRegion  *string  `json:"secureComputePrimaryRegion"`
-		Version                     *float32 `json:"version,omitempty"`
-	} `json:"config,omitempty"`
-	ConnectBuildsEnabled   *CancelDeployment200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-	ConnectConfigurationId *string                                                  `json:"connectConfigurationId,omitempty"`
-
-	// CreatedAt A number containing the date when the deployment was created in milliseconds
-	//
-	// Example: 1540257589405
-	CreatedAt float32 `json:"createdAt"`
-	CreatedIn string  `json:"createdIn"`
-
-	// Creator Information about the deployment creator
-	Creator struct {
-		// Avatar The avatar of the user that created the deployment
-		Avatar *string `json:"avatar,omitempty"`
-
-		// Type Principal type of the deployment creator.
-		Type *CancelDeployment200JSONResponseBodyCreatorType `json:"type,omitempty"`
-
-		// Uid Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
-		//
-		// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
-		Uid string `json:"uid"`
-
-		// Username The username of the user that created the deployment
-		//
-		// Example: john-doe
-		Username *string `json:"username,omitempty"`
-	} `json:"creator"`
-	Crons *[]struct {
-		Path     string `json:"path"`
-		Schedule string `json:"schedule"`
-	} `json:"crons,omitempty"`
-	CustomEnvironment *CancelDeployment200JSONResponseBody_CustomEnvironment `json:"customEnvironment,omitempty"`
-
-	// DefaultRoute Computed field that is only available for deployments with a microfrontend configuration.
-	DefaultRoute *string `json:"defaultRoute,omitempty"`
-
-	// DeletedAt A number containing the date when the deployment was deleted at milliseconds
-	//
-	// Example: 1540257589405
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-	Duration  struct {
-		// EndTime Unix timestamp in milliseconds when the build container exited.
-		EndTime *float32 `json:"endTime,omitempty"`
-
-		// EndTimeCapped Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
-		EndTimeCapped *float32 `json:"endTimeCapped,omitempty"`
-
-		// StartTime Unix timestamp in milliseconds when the deployment entered BUILDING.
-		StartTime *float32 `json:"startTime,omitempty"`
-
-		// TimeForBilling Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
-		TimeForBilling *float32 `json:"timeForBilling,omitempty"`
-
-		// TimeToContainerExit Milliseconds from entering BUILDING until the build container exited, without the billing cap.
-		TimeToContainerExit *float32 `json:"timeToContainerExit,omitempty"`
-
-		// TimeToContainerExitCapped Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
-		TimeToContainerExitCapped *float32 `json:"timeToContainerExitCapped,omitempty"`
-
-		// TimeToReady Milliseconds from entering BUILDING until the deployment reached its current ready state.
-		TimeToReady *float32 `json:"timeToReady,omitempty"`
-	} `json:"duration"`
-	Env          []string                                   `json:"env"`
-	ErrorCode    *string                                    `json:"errorCode,omitempty"`
-	ErrorLink    *string                                    `json:"errorLink,omitempty"`
-	ErrorMessage *string                                    `json:"errorMessage,omitempty"`
-	ErrorStep    *string                                    `json:"errorStep,omitempty"`
-	Flags        *CancelDeployment200JSONResponseBody_Flags `json:"flags,omitempty"`
-	Functions    *map[string]struct {
-		Affinity *struct {
-			Mode CancelDeployment200JSONResponseBodyFunctionsAffinityMode `json:"mode"`
-		} `json:"affinity,omitempty"`
-		Architecture            *CancelDeployment200JSONResponseBodyFunctionsArchitecture                  `json:"architecture,omitempty"`
-		ExcludeFiles            *string                                                                    `json:"excludeFiles,omitempty"`
-		ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
-		FunctionFailoverRegions *[]string                                                                  `json:"functionFailoverRegions,omitempty"`
-		IncludeFiles            *string                                                                    `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                   `json:"maxConcurrency,omitempty"`
-		MaxDuration             *CancelDeployment200JSONResponseBody_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                   `json:"memory,omitempty"`
-		Regions                 *[]string                                                                  `json:"regions,omitempty"`
-		Runtime                 *string                                                                    `json:"runtime,omitempty"`
-		SupportsCancellation    *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation          `json:"supportsCancellation,omitempty"`
-	} `json:"functions,omitempty"`
-	GitRepo   *CancelDeployment200JSONResponseBody_GitRepo   `json:"gitRepo,omitempty"`
-	GitSource *CancelDeployment200JSONResponseBody_GitSource `json:"gitSource,omitempty"`
-
-	// Id A string holding the unique ID of the deployment
-	//
-	// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-	Id     string `json:"id"`
-	Images *struct {
-		ContentDispositionType *CancelDeployment200JSONResponseBodyImagesContentDispositionType `json:"contentDispositionType,omitempty"`
-		ContentSecurityPolicy  *string                                                          `json:"contentSecurityPolicy,omitempty"`
-		DangerouslyAllowSVG    *CancelDeployment200JSONResponseBodyImagesDangerouslyAllowSVG    `json:"dangerouslyAllowSVG,omitempty"`
-		Domains                *[]string                                                        `json:"domains,omitempty"`
-		Formats                *[]CancelDeployment200JSONResponseBodyImagesFormats              `json:"formats,omitempty"`
-		LocalPatterns          *[]struct {
-			// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
-			Pathname *string `json:"pathname,omitempty"`
-
-			// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
-			Search *string `json:"search,omitempty"`
-		} `json:"localPatterns,omitempty"`
-		MinimumCacheTTL *float32   `json:"minimumCacheTTL,omitempty"`
-		Qualities       *[]float32 `json:"qualities,omitempty"`
-		RemotePatterns  *[]struct {
-			// Hostname Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any number of subdomains.
-			Hostname string `json:"hostname"`
-
-			// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
-			Pathname *string `json:"pathname,omitempty"`
-
-			// Port Can be literal port such as `8080` or empty string meaning no port.
-			Port *string `json:"port,omitempty"`
-
-			// Protocol Must be `http` or `https`.
-			Protocol *CancelDeployment200JSONResponseBodyImagesRemotePatternsProtocol `json:"protocol,omitempty"`
-
-			// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
-			Search *string `json:"search,omitempty"`
-		} `json:"remotePatterns,omitempty"`
-		Sizes *[]float32 `json:"sizes,omitempty"`
-	} `json:"images,omitempty"`
-	InitReadyAt  *float32 `json:"initReadyAt,omitempty"`
-	InspectorUrl *string  `json:"inspectorUrl"`
-	Integrations *struct {
-		ClaimedAt   *float32                                              `json:"claimedAt,omitempty"`
-		CompletedAt *float32                                              `json:"completedAt,omitempty"`
-		SkippedAt   *float32                                              `json:"skippedAt,omitempty"`
-		SkippedBy   *string                                               `json:"skippedBy,omitempty"`
-		StartedAt   float32                                               `json:"startedAt"`
-		Status      CancelDeployment200JSONResponseBodyIntegrationsStatus `json:"status"`
-	} `json:"integrations,omitempty"`
-	IsFirstBranchDeployment   *CancelDeployment200JSONResponseBodyIsFirstBranchDeployment  `json:"isFirstBranchDeployment,omitempty"`
-	IsInConcurrentBuildsQueue CancelDeployment200JSONResponseBodyIsInConcurrentBuildsQueue `json:"isInConcurrentBuildsQueue"`
-	IsInSystemBuildsQueue     CancelDeployment200JSONResponseBodyIsInSystemBuildsQueue     `json:"isInSystemBuildsQueue"`
-
-	// IsInstantStatic Whether this deployment completed through the instant static fast path.
-	IsInstantStatic *CancelDeployment200JSONResponseBodyIsInstantStatic `json:"isInstantStatic,omitempty"`
-	Lambdas         *[]struct {
-		CreatedAt  *float32 `json:"createdAt,omitempty"`
-		Entrypoint *string  `json:"entrypoint,omitempty"`
-		Id         string   `json:"id"`
-		Output     []struct {
-			FunctionName string `json:"functionName"`
-			Path         string `json:"path"`
-		} `json:"output"`
-		ReadyState   *CancelDeployment200JSONResponseBodyLambdasReadyState `json:"readyState,omitempty"`
-		ReadyStateAt *float32                                              `json:"readyStateAt,omitempty"`
-	} `json:"lambdas,omitempty"`
-
-	// ManualProvisioning Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
-	ManualProvisioning *struct {
-		// CompletedAt Timestamp when manual provisioning completed
-		CompletedAt *float32 `json:"completedAt,omitempty"`
-
-		// State Current provisioning state
-		State CancelDeployment200JSONResponseBodyManualProvisioningState `json:"state"`
-	} `json:"manualProvisioning,omitempty"`
-	Meta            map[string]string                                   `json:"meta"`
-	Microfrontends  *CancelDeployment200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
-	MonorepoManager *string                                             `json:"monorepoManager,omitempty"`
-
-	// Name The name of the project associated with the deployment at the time that the deployment was created
-	//
-	// Example: my-project
-	Name string `json:"name"`
-
-	// NodeVersion If set it overrides the `projectSettings.nodeVersion` for this deployment.
-	NodeVersion     *CancelDeployment200JSONResponseBodyNodeVersion `json:"nodeVersion,omitempty"`
-	OidcTokenClaims *struct {
-		Aud                 string    `json:"aud"`
-		CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-		DeploymentId        *string   `json:"deployment_id,omitempty"`
-		Environment         string    `json:"environment"`
-		Iss                 string    `json:"iss"`
-		MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-		Owner               string    `json:"owner"`
-		OwnerId             string    `json:"owner_id"`
-		Plan                *string   `json:"plan,omitempty"`
-		Project             string    `json:"project"`
-		ProjectId           string    `json:"project_id"`
-		Scope               string    `json:"scope"`
-		Sub                 string    `json:"sub"`
-	} `json:"oidcTokenClaims,omitempty"`
-	OomReport         *CancelDeployment200JSONResponseBodyOomReport `json:"oomReport,omitempty"`
-	OriginCacheRegion *string                                       `json:"originCacheRegion,omitempty"`
-	OwnerId           string                                        `json:"ownerId"`
-
-	// PassiveConnectConfigurationId Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)
-	PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
-
-	// PassiveRegions Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
-	PassiveRegions *[]string                               `json:"passiveRegions,omitempty"`
-	Plan           CancelDeployment200JSONResponseBodyPlan `json:"plan"`
-
-	// Platform Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
-	Platform *struct {
-		// Creator The user on the external platform who triggered the deployment.
-		Creator struct {
-			// Avatar URL of the platform user's avatar image.
-			Avatar *string `json:"avatar,omitempty"`
-
-			// Name Display name of the platform user.
-			Name string `json:"name"`
-		} `json:"creator"`
-
-		// Meta Arbitrary key-value metadata provided by the platform.
-		Meta *map[string]string `json:"meta,omitempty"`
-
-		// Origin Reference back to the entity on the platform that initiated the deployment.
-		Origin struct {
-			// Type Whether the value is an opaque identifier or a URL.
-			Type CancelDeployment200JSONResponseBodyPlatformOriginType `json:"type"`
-
-			// Value The identifier or URL pointing to the originating entity.
-			Value string `json:"value"`
-		} `json:"origin"`
-
-		// Source The external platform that created the deployment (e.g. its display name).
-		Source struct {
-			// Name Display name of the platform.
-			Name string `json:"name"`
-		} `json:"source"`
-	} `json:"platform,omitempty"`
-	Prebuilt *CancelDeployment200JSONResponseBodyPrebuilt `json:"prebuilt,omitempty"`
-
-	// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-	//
-	// Example: false
-	PreviewCommentsEnabled *CancelDeployment200JSONResponseBodyPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-
-	// Project The public project information associated with the deployment.
-	Project *struct {
-		Framework *string `json:"framework,omitempty"`
-		Id        string  `json:"id"`
-		Name      string  `json:"name"`
-	} `json:"project,omitempty"`
-	ProjectId       string `json:"projectId"`
-	ProjectSettings struct {
-		BuildCommand                *string                                                        `json:"buildCommand,omitempty"`
-		CommandForIgnoringBuildStep *string                                                        `json:"commandForIgnoringBuildStep,omitempty"`
-		DevCommand                  *string                                                        `json:"devCommand,omitempty"`
-		Framework                   *CancelDeployment200JSONResponseBodyProjectSettingsFramework   `json:"framework,omitempty"`
-		InstallCommand              *string                                                        `json:"installCommand,omitempty"`
-		NodeVersion                 *CancelDeployment200JSONResponseBodyProjectSettingsNodeVersion `json:"nodeVersion,omitempty"`
-		OutputDirectory             *string                                                        `json:"outputDirectory,omitempty"`
-		SpeedInsights               *struct {
-			CanceledAt *float32 `json:"canceledAt,omitempty"`
-
-			// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
-			DataReceivedAt *float32                                                                `json:"dataReceivedAt,omitempty"`
-			DisabledAt     *float32                                                                `json:"disabledAt,omitempty"`
-			EnabledAt      *float32                                                                `json:"enabledAt,omitempty"`
-			HasData        *CancelDeployment200JSONResponseBodyProjectSettingsSpeedInsightsHasData `json:"hasData,omitempty"`
-			Id             string                                                                  `json:"id"`
-			PaidAt         *float32                                                                `json:"paidAt,omitempty"`
-		} `json:"speedInsights,omitempty"`
-		WebAnalytics *struct {
-			CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
-			DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
-			EnabledAt  *float32                                                               `json:"enabledAt,omitempty"`
-			HasData    *CancelDeployment200JSONResponseBodyProjectSettingsWebAnalyticsHasData `json:"hasData,omitempty"`
-			Id         string                                                                 `json:"id"`
-		} `json:"webAnalytics,omitempty"`
-	} `json:"projectSettings"`
-
-	// Public A boolean representing if the deployment is public or not. By default this is `false`
-	//
-	// Example: false
-	Public CancelDeployment200JSONResponseBodyPublic `json:"public"`
-	Ready  *float32                                  `json:"ready,omitempty"`
-
-	// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-	//
-	// Example: READY
-	ReadyState       CancelDeployment200JSONResponseBodyReadyState `json:"readyState"`
-	ReadyStateReason *string                                       `json:"readyStateReason,omitempty"`
-
-	// ReadySubstate Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
-	ReadySubstate *CancelDeployment200JSONResponseBodyReadySubstate `json:"readySubstate,omitempty"`
-
-	// Regions The regions the deployment exists in
-	//
-	// Example: ["sfo1"]
-	Regions        []string `json:"regions"`
-	ResourceConfig *struct {
-		// BuildMachine Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
-		BuildMachine *struct {
-			// Cores Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
-			Cores *float32 `json:"cores,omitempty"`
-
-			// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
-			DefaultPurchaseType *CancelDeployment200JSONResponseBodyResourceConfigBuildMachineDefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
-
-			// MachineSelectionType Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
-			MachineSelectionType *CancelDeployment200JSONResponseBodyResourceConfigBuildMachineMachineSelectionType `json:"machineSelectionType,omitempty"`
-
-			// Memory Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
-			Memory *float32 `json:"memory,omitempty"`
-
-			// PurchaseType Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
-			PurchaseType *CancelDeployment200JSONResponseBodyResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
-
-			// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
-			SelectionSource *CancelDeployment200JSONResponseBodyResourceConfigBuildMachineSelectionSource `json:"selectionSource,omitempty"`
-		} `json:"buildMachine,omitempty"`
-	} `json:"resourceConfig,omitempty"`
-	Routes *[]CancelDeployment200JSONResponseBody_Routes_Item `json:"routes"`
-
-	// SeatBlock NSNB Blocked metadata
-	SeatBlock *struct {
-		// BlockCode The NSNB decision code for the seat block. TODO: We should consolidate block types.
-		BlockCode CancelDeployment200JSONResponseBodySeatBlockBlockCode `json:"blockCode"`
-
-		// GitProvider The git provider type associated with gitUserId.
-		GitProvider *CancelDeployment200JSONResponseBodySeatBlockGitProvider `json:"gitProvider,omitempty"`
-		GitUserId   *CancelDeployment200JSONResponseBody_SeatBlock_GitUserId `json:"gitUserId,omitempty"`
-
-		// IsVerified Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
-		IsVerified *CancelDeployment200JSONResponseBodySeatBlockIsVerified `json:"isVerified,omitempty"`
-
-		// UserId The blocked vercel user ID.
-		UserId *string `json:"userId,omitempty"`
-	} `json:"seatBlock,omitempty"`
-
-	// Services Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
-	Services *[]CancelDeployment200JSONResponseBody_Services_Item `json:"services,omitempty"`
-
-	// SoftDeletedByRetention flag to indicate if the deployment was deleted by retention policy
-	//
-	// Example: true
-	SoftDeletedByRetention *CancelDeployment200JSONResponseBodySoftDeletedByRetention `json:"softDeletedByRetention,omitempty"`
-
-	// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-	//
-	// Example: cli
-	Source *CancelDeployment200JSONResponseBodySource `json:"source,omitempty"`
-	Status CancelDeployment200JSONResponseBodyStatus  `json:"status"`
-
-	// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-	Target *CancelDeployment200JSONResponseBodyTarget `json:"target,omitempty"`
-
-	// Team The team that owns the deployment if any
-	Team *struct {
-		Avatar *string `json:"avatar,omitempty"`
-		Id     string  `json:"id"`
-		Name   string  `json:"name"`
-		Slug   string  `json:"slug"`
-	} `json:"team,omitempty"`
-	TtyBuildLogs *CancelDeployment200JSONResponseBodyTtyBuildLogs `json:"ttyBuildLogs,omitempty"`
-	Type         CancelDeployment200JSONResponseBodyType          `json:"type"`
-
-	// UndeletedAt A number containing the date when the deployment was undeleted at milliseconds
-	//
-	// Example: 1540257589405
-	UndeletedAt *float32 `json:"undeletedAt,omitempty"`
-
-	// Url A string with the unique URL of the deployment
-	//
-	// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-	Url string `json:"url"`
-
-	// UserAliases An array of domains that were provided by the user when creating the Deployment.
-	//
-	// Example: ["sub1.example.com","sub2.example.com"]
-	UserAliases *[]string `json:"userAliases,omitempty"`
-
-	// UserConfiguredDeploymentId Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
-	//
-	// Example: abc123
-	UserConfiguredDeploymentId *string `json:"userConfiguredDeploymentId,omitempty"`
-
-	// Version The platform version that was used to create the deployment.
-	//
-	// Example: 2
-	Version CancelDeployment200JSONResponseBodyVersion `json:"version"`
 } {
 	return r.JSON200
 }

@@ -7,6 +7,305 @@ import (
 	"encoding/json"
 )
 
+// Defines values for GetTeamMembers200JSONResponseBodyMembersProjectsRole.
+const (
+	GetTeamMembers200JSONResponseBodyMembersProjectsRoleADMIN            GetTeamMembers200JSONResponseBodyMembersProjectsRole = "ADMIN"
+	GetTeamMembers200JSONResponseBodyMembersProjectsRolePROJECTDEVELOPER GetTeamMembers200JSONResponseBodyMembersProjectsRole = "PROJECT_DEVELOPER"
+	GetTeamMembers200JSONResponseBodyMembersProjectsRolePROJECTGUEST     GetTeamMembers200JSONResponseBodyMembersProjectsRole = "PROJECT_GUEST"
+	GetTeamMembers200JSONResponseBodyMembersProjectsRolePROJECTVIEWER    GetTeamMembers200JSONResponseBodyMembersProjectsRole = "PROJECT_VIEWER"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyMembersProjectsRole enum.
+func (e GetTeamMembers200JSONResponseBodyMembersProjectsRole) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyMembersProjectsRoleADMIN:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersProjectsRolePROJECTDEVELOPER:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersProjectsRolePROJECTGUEST:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersProjectsRolePROJECTVIEWER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyMembersRole.
+const (
+	GetTeamMembers200JSONResponseBodyMembersRoleBILLING       GetTeamMembers200JSONResponseBodyMembersRole = "BILLING"
+	GetTeamMembers200JSONResponseBodyMembersRoleCONTRIBUTOR   GetTeamMembers200JSONResponseBodyMembersRole = "CONTRIBUTOR"
+	GetTeamMembers200JSONResponseBodyMembersRoleDEVELOPER     GetTeamMembers200JSONResponseBodyMembersRole = "DEVELOPER"
+	GetTeamMembers200JSONResponseBodyMembersRoleMEMBER        GetTeamMembers200JSONResponseBodyMembersRole = "MEMBER"
+	GetTeamMembers200JSONResponseBodyMembersRoleOWNER         GetTeamMembers200JSONResponseBodyMembersRole = "OWNER"
+	GetTeamMembers200JSONResponseBodyMembersRoleSECURITY      GetTeamMembers200JSONResponseBodyMembersRole = "SECURITY"
+	GetTeamMembers200JSONResponseBodyMembersRoleVIEWER        GetTeamMembers200JSONResponseBodyMembersRole = "VIEWER"
+	GetTeamMembers200JSONResponseBodyMembersRoleVIEWERFORPLUS GetTeamMembers200JSONResponseBodyMembersRole = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyMembersRole enum.
+func (e GetTeamMembers200JSONResponseBodyMembersRole) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyMembersRoleBILLING:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleCONTRIBUTOR:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleDEVELOPER:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleMEMBER:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleOWNER:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleSECURITY:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleVIEWER:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersRoleVIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyPaginationHasNext.
+const (
+	GetTeamMembers200JSONResponseBodyPaginationHasNextFalse GetTeamMembers200JSONResponseBodyPaginationHasNext = false
+	GetTeamMembers200JSONResponseBodyPaginationHasNextTrue  GetTeamMembers200JSONResponseBodyPaginationHasNext = true
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyPaginationHasNext enum.
+func (e GetTeamMembers200JSONResponseBodyPaginationHasNext) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyPaginationHasNextFalse:
+		return true
+	case GetTeamMembers200JSONResponseBodyPaginationHasNextTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteAuthTokenParamsReason.
+const (
+	DeleteAuthTokenParamsReasonLogout DeleteAuthTokenParamsReason = "logout"
+)
+
+// Valid indicates whether the value is a known member of the DeleteAuthTokenParamsReason enum.
+func (e DeleteAuthTokenParamsReason) Valid() bool {
+	switch e {
+	case DeleteAuthTokenParamsReasonLogout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteAuthTokenParamsLogoutSource.
+const (
+	DeleteAuthTokenParamsLogoutSourceV0     DeleteAuthTokenParamsLogoutSource = "v0"
+	DeleteAuthTokenParamsLogoutSourceVercel DeleteAuthTokenParamsLogoutSource = "vercel"
+)
+
+// Valid indicates whether the value is a known member of the DeleteAuthTokenParamsLogoutSource enum.
+func (e DeleteAuthTokenParamsLogoutSource) Valid() bool {
+	switch e {
+	case DeleteAuthTokenParamsLogoutSourceV0:
+		return true
+	case DeleteAuthTokenParamsLogoutSourceVercel:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAliases200JSONResponseBodyAliasesProtectionBypass0Scope.
+const (
+	ListAliases200JSONResponseBodyAliasesProtectionBypass0ScopeShareableLink ListAliases200JSONResponseBodyAliasesProtectionBypass0Scope = "shareable-link"
+)
+
+// Valid indicates whether the value is a known member of the ListAliases200JSONResponseBodyAliasesProtectionBypass0Scope enum.
+func (e ListAliases200JSONResponseBodyAliasesProtectionBypass0Scope) Valid() bool {
+	switch e {
+	case ListAliases200JSONResponseBodyAliasesProtectionBypass0ScopeShareableLink:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAliases200JSONResponseBodyAliasesProtectionBypass1Access.
+const (
+	ListAliases200JSONResponseBodyAliasesProtectionBypass1AccessGranted   ListAliases200JSONResponseBodyAliasesProtectionBypass1Access = "granted"
+	ListAliases200JSONResponseBodyAliasesProtectionBypass1AccessRequested ListAliases200JSONResponseBodyAliasesProtectionBypass1Access = "requested"
+)
+
+// Valid indicates whether the value is a known member of the ListAliases200JSONResponseBodyAliasesProtectionBypass1Access enum.
+func (e ListAliases200JSONResponseBodyAliasesProtectionBypass1Access) Valid() bool {
+	switch e {
+	case ListAliases200JSONResponseBodyAliasesProtectionBypass1AccessGranted:
+		return true
+	case ListAliases200JSONResponseBodyAliasesProtectionBypass1AccessRequested:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAliases200JSONResponseBodyAliasesProtectionBypass1Scope.
+const (
+	ListAliases200JSONResponseBodyAliasesProtectionBypass1ScopeUser ListAliases200JSONResponseBodyAliasesProtectionBypass1Scope = "user"
+)
+
+// Valid indicates whether the value is a known member of the ListAliases200JSONResponseBodyAliasesProtectionBypass1Scope enum.
+func (e ListAliases200JSONResponseBodyAliasesProtectionBypass1Scope) Valid() bool {
+	switch e {
+	case ListAliases200JSONResponseBodyAliasesProtectionBypass1ScopeUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAliases200JSONResponseBodyAliasesProtectionBypass2Scope.
+const (
+	ListAliases200JSONResponseBodyAliasesProtectionBypass2ScopeAliasProtectionOverride ListAliases200JSONResponseBodyAliasesProtectionBypass2Scope = "alias-protection-override"
+)
+
+// Valid indicates whether the value is a known member of the ListAliases200JSONResponseBodyAliasesProtectionBypass2Scope enum.
+func (e ListAliases200JSONResponseBodyAliasesProtectionBypass2Scope) Valid() bool {
+	switch e {
+	case ListAliases200JSONResponseBodyAliasesProtectionBypass2ScopeAliasProtectionOverride:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAliases200JSONResponseBodyAliasesProtectionBypass3Scope.
+const (
+	ListAliases200JSONResponseBodyAliasesProtectionBypass3ScopeEmailInvite ListAliases200JSONResponseBodyAliasesProtectionBypass3Scope = "email_invite"
+)
+
+// Valid indicates whether the value is a known member of the ListAliases200JSONResponseBodyAliasesProtectionBypass3Scope enum.
+func (e ListAliases200JSONResponseBodyAliasesProtectionBypass3Scope) Valid() bool {
+	switch e {
+	case ListAliases200JSONResponseBodyAliasesProtectionBypass3ScopeEmailInvite:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAliases200JSONResponseBodyAliasesRedirectStatusCode.
+const (
+	ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN301 ListAliases200JSONResponseBodyAliasesRedirectStatusCode = 301
+	ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN302 ListAliases200JSONResponseBodyAliasesRedirectStatusCode = 302
+	ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN307 ListAliases200JSONResponseBodyAliasesRedirectStatusCode = 307
+	ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN308 ListAliases200JSONResponseBodyAliasesRedirectStatusCode = 308
+)
+
+// Valid indicates whether the value is a known member of the ListAliases200JSONResponseBodyAliasesRedirectStatusCode enum.
+func (e ListAliases200JSONResponseBodyAliasesRedirectStatusCode) Valid() bool {
+	switch e {
+	case ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN301:
+		return true
+	case ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN302:
+		return true
+	case ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN307:
+		return true
+	case ListAliases200JSONResponseBodyAliasesRedirectStatusCodeN308:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAlias200JSONResponseBodyProtectionBypass0Scope.
+const (
+	GetAlias200JSONResponseBodyProtectionBypass0ScopeShareableLink GetAlias200JSONResponseBodyProtectionBypass0Scope = "shareable-link"
+)
+
+// Valid indicates whether the value is a known member of the GetAlias200JSONResponseBodyProtectionBypass0Scope enum.
+func (e GetAlias200JSONResponseBodyProtectionBypass0Scope) Valid() bool {
+	switch e {
+	case GetAlias200JSONResponseBodyProtectionBypass0ScopeShareableLink:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAlias200JSONResponseBodyProtectionBypass1Access.
+const (
+	GetAlias200JSONResponseBodyProtectionBypass1AccessGranted   GetAlias200JSONResponseBodyProtectionBypass1Access = "granted"
+	GetAlias200JSONResponseBodyProtectionBypass1AccessRequested GetAlias200JSONResponseBodyProtectionBypass1Access = "requested"
+)
+
+// Valid indicates whether the value is a known member of the GetAlias200JSONResponseBodyProtectionBypass1Access enum.
+func (e GetAlias200JSONResponseBodyProtectionBypass1Access) Valid() bool {
+	switch e {
+	case GetAlias200JSONResponseBodyProtectionBypass1AccessGranted:
+		return true
+	case GetAlias200JSONResponseBodyProtectionBypass1AccessRequested:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAlias200JSONResponseBodyProtectionBypass1Scope.
+const (
+	GetAlias200JSONResponseBodyProtectionBypass1ScopeUser GetAlias200JSONResponseBodyProtectionBypass1Scope = "user"
+)
+
+// Valid indicates whether the value is a known member of the GetAlias200JSONResponseBodyProtectionBypass1Scope enum.
+func (e GetAlias200JSONResponseBodyProtectionBypass1Scope) Valid() bool {
+	switch e {
+	case GetAlias200JSONResponseBodyProtectionBypass1ScopeUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAlias200JSONResponseBodyProtectionBypass2Scope.
+const (
+	GetAlias200JSONResponseBodyProtectionBypass2ScopeAliasProtectionOverride GetAlias200JSONResponseBodyProtectionBypass2Scope = "alias-protection-override"
+)
+
+// Valid indicates whether the value is a known member of the GetAlias200JSONResponseBodyProtectionBypass2Scope enum.
+func (e GetAlias200JSONResponseBodyProtectionBypass2Scope) Valid() bool {
+	switch e {
+	case GetAlias200JSONResponseBodyProtectionBypass2ScopeAliasProtectionOverride:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAlias200JSONResponseBodyProtectionBypass3Scope.
+const (
+	GetAlias200JSONResponseBodyProtectionBypass3ScopeEmailInvite GetAlias200JSONResponseBodyProtectionBypass3Scope = "email_invite"
+)
+
+// Valid indicates whether the value is a known member of the GetAlias200JSONResponseBodyProtectionBypass3Scope enum.
+func (e GetAlias200JSONResponseBodyProtectionBypass3Scope) Valid() bool {
+	switch e {
+	case GetAlias200JSONResponseBodyProtectionBypass3ScopeEmailInvite:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAlias200JSONResponseBodyRedirectStatusCode.
+const (
+	GetAlias200JSONResponseBodyRedirectStatusCodeN301 GetAlias200JSONResponseBodyRedirectStatusCode = 301
+	GetAlias200JSONResponseBodyRedirectStatusCodeN302 GetAlias200JSONResponseBodyRedirectStatusCode = 302
+	GetAlias200JSONResponseBodyRedirectStatusCodeN307 GetAlias200JSONResponseBodyRedirectStatusCode = 307
+	GetAlias200JSONResponseBodyRedirectStatusCodeN308 GetAlias200JSONResponseBodyRedirectStatusCode = 308
+)
+
 // Valid indicates whether the value is a known member of the GetAlias200JSONResponseBodyRedirectStatusCode enum.
 func (e GetAlias200JSONResponseBodyRedirectStatusCode) Valid() bool {
 	switch e {
@@ -16367,7 +16666,7 @@ type ConnectConnector struct {
 	// Target Which of the service's products/surfaces this connector points at.
 	Target *string `json:"target,omitempty"`
 
-	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
 	TriggerDestinations *[]ConnectTriggerDestination `json:"triggerDestinations,omitempty"`
 
 	// Triggers Incoming trigger configuration. Only present when enabled.
@@ -17238,7 +17537,7 @@ type ConnectConnectorCreateResult struct {
 	// Target Which of the service's products/surfaces this connector points at.
 	Target *string `json:"target,omitempty"`
 
-	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
 	TriggerDestinations *[]ConnectTriggerDestination `json:"triggerDestinations,omitempty"`
 
 	// Triggers Incoming trigger configuration. Only present when enabled.
@@ -18343,7 +18642,7 @@ type ConnectTriggerConfiguration struct {
 // ConnectTriggerConfigurationEnabled Whether incoming triggers are enabled for the connector.
 type ConnectTriggerConfigurationEnabled bool
 
-// ConnectTriggerDestination Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+// ConnectTriggerDestination Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
 type ConnectTriggerDestination struct {
 	// Branch Git branch used to select a preview deployment.
 	Branch *string `json:"branch,omitempty"`
@@ -19671,458 +19970,68 @@ type OrderTooExpensiveCode string
 // OrderTooExpensiveStatus defines model for OrderTooExpensive.Status.
 type OrderTooExpensiveStatus float32
 
-// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-type Pagination struct {
-	// Count Amount of items in the current page.
-	//
-	// Example: 20
-	Count float32 `json:"count"`
+// Organization defines model for Organization.
+type Organization struct {
+	Avatar    *string `json:"avatar"`
+	CreatedAt string  `json:"createdAt"`
 
-	// Next Timestamp that must be used to request the next page.
-	//
-	// Example: 1540095775951
-	Next *float32 `json:"next"`
+	// Name The organization's display name. Optional: organizations created before the name attribute existed have no stored value. New orgs always get one (provided or slug-derived) via the service layer.
+	Name           *string `json:"name,omitempty"`
+	OrganizationId string  `json:"organizationId"`
+	OwnerId        string  `json:"ownerId"`
+	Slug           string  `json:"slug"`
+	TeamCount      float32 `json:"teamCount"`
+	TeamId         string  `json:"teamId"`
+	UpdatedAt      string  `json:"updatedAt"`
 
-	// Prev Timestamp that must be used to request the previous page.
-	//
-	// Example: 1540095775951
-	Prev *float32 `json:"prev"`
+	// UserRole The authenticated user's role in the organization. Present on read endpoints when the user holds an organization role.
+	UserRole *string `json:"userRole,omitempty"`
 }
 
-// PrivateLinkEndpoint A PrivateLink endpoint, which connects a project to an AWS VPC endpoint service in a single region so that traffic reaches the service over AWS PrivateLink rather than the public internet.
-type PrivateLinkEndpoint struct {
-	// AwsDnsEntries The regional DNS names assigned to the endpoint by AWS. Use these to reach the service when private DNS is not enabled.
-	//
-	// Example: ["vpce-0123456789abcdef0-a1b2c3d4.vpce-svc-0123456789abcdef0.us-east-1.vpce.amazonaws.com"]
-	AwsDnsEntries *[]string `json:"awsDnsEntries,omitempty"`
+// OrganizationTeam defines model for OrganizationTeam.
+type OrganizationTeam struct {
+	// BillingPlan The child team's billing profile within the organization. Optional: links created before this attribute existed have no stored value.
+	BillingPlan    *OrganizationTeamBillingPlan `json:"billingPlan,omitempty"`
+	CreatedAt      string                       `json:"createdAt"`
+	OrganizationId string                       `json:"organizationId"`
+	SsoMode        OrganizationTeamSsoMode      `json:"ssoMode"`
+	TeamId         string                       `json:"teamId"`
+	UpdatedAt      string                       `json:"updatedAt"`
+}
 
-	// AwsServiceName The AWS VPC endpoint service the endpoint connects to.
-	//
-	// Example: com.amazonaws.vpce.us-east-1.vpce-svc-0123456789abcdef0
-	AwsServiceName string `json:"awsServiceName"`
+// OrganizationTeamBillingPlan The child team's billing profile within the organization. Optional: links created before this attribute existed have no stored value.
+type OrganizationTeamBillingPlan string
 
-	// CreatedAt Timestamp in milliseconds since the UNIX epoch for when the endpoint was created.
-	//
-	// Example: 1610963878358
-	CreatedAt float32 `json:"createdAt"`
+// OrganizationTeamSsoMode defines model for OrganizationTeam.SsoMode.
+type OrganizationTeamSsoMode string
 
-	// EndpointId The unique identifier of the PrivateLink endpoint.
-	//
-	// Example: ple_a1b2c3d4e5f6g7h8
-	EndpointId string `json:"endpointId"`
+// OrganizationTeamListItem An org-team link enriched with the linked team's display fields, as returned by the list-teams endpoint. We project to an explicit flat interface instead of spreading the ElectroDB `OrganizationTeamItem` because its recursive generics break the OpenAPI generator (which would silently drop the route).
+type OrganizationTeamListItem struct {
+	// Avatar The ID of the file used as the Team's avatar, or `null` if none.
+	Avatar *string `json:"avatar"`
 
-	// Name The name of the PrivateLink endpoint, shown in the Vercel dashboard.
-	//
-	// Example: payments-db
-	Name string `json:"name"`
+	// BillingPlan Billing profile of the organization link: how this team settles within the organization. This is not the team's billing.plan or planIteration. Links with `enterprise` billing participate in organization-level billing and usage rollups. This field is optional for legacy links that have no stored profile.
+	BillingPlan *OrganizationTeamListItemBillingPlan `json:"billingPlan,omitempty"`
 
-	// PrivateDnsNames The private DNS names of the endpoint service, populated when private DNS is enabled for the endpoint.
-	//
-	// Example: ["payments.internal.example.com"]
-	PrivateDnsNames *[]string `json:"privateDnsNames,omitempty"`
+	// CreatedAt ISO timestamp of when the team was linked to the organization.
+	CreatedAt string `json:"createdAt"`
 
-	// ProjectId The identifier of the project the PrivateLink endpoint belongs to.
-	//
-	// Example: prj_a1b2c3d4e5f6g7h8
-	ProjectId string `json:"projectId"`
+	// MemberCount Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships. Excludes email invitations that do not have a membership record.
+	MemberCount *float32 `json:"memberCount,omitempty"`
 
-	// Status The current state of the endpoint. - `creating`: the endpoint is being created. - `pending-acceptance`: waiting for the endpoint service owner to accept the connection. Only occurs for services that require manual acceptance. - `provisioning`: the connection was accepted and AWS is finishing setup. - `available`: the endpoint is fully provisioned and ready to use. - `rejected`: the endpoint service owner rejected the connection. - `failed`: the endpoint could not be provisioned. - `deleting`: the endpoint is being deleted.
-	//
-	// Example: available
-	Status PrivateLinkEndpointStatus `json:"status"`
+	// Name The Team's display name, or `null` if none has been set.
+	Name *string `json:"name"`
 
-	// StatusMessage A human-readable explanation of why the endpoint could not be provisioned. Only set when `status` is `failed`, and absent for every other status including `rejected`, since AWS does not report a rejection reason.
-	//
-	// Example: Endpoint did not become available in time. Try deleting and recreating, or visit https://vercel.com/help if the issue persists.
-	StatusMessage *string `json:"statusMessage,omitempty"`
+	// OrganizationId The ID of the organization the team belongs to.
+	OrganizationId string `json:"organizationId"`
 
-	// TeamId The identifier of the team that owns the PrivateLink endpoint.
-	//
-	// Example: team_a1b2c3d4e5f6g7h8
+	// Slug The Team's slug, unique across Vercel.
+	Slug    string                          `json:"slug"`
+	SsoMode OrganizationTeamListItemSsoMode `json:"ssoMode"`
+
+	// TeamId The Team's unique identifier.
 	TeamId string `json:"teamId"`
 
-	// UpdatedAt Timestamp in milliseconds since the UNIX epoch for when the endpoint was last updated.
-	//
-	// Example: 1610963878358
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// VercelRegion The Vercel region the endpoint is provisioned in.
-	//
-	// Example: iad1
-	VercelRegion string `json:"vercelRegion"`
-
-	// VpcEndpointId The identifier of the underlying AWS VPC endpoint. Absent until AWS has created the endpoint.
-	//
-	// Example: vpce-0123456789abcdef0
-	VpcEndpointId *string `json:"vpcEndpointId,omitempty"`
-}
-
-// PrivateLinkEndpointStatus The current state of the endpoint. - `creating`: the endpoint is being created. - `pending-acceptance`: waiting for the endpoint service owner to accept the connection. Only occurs for services that require manual acceptance. - `provisioning`: the connection was accepted and AWS is finishing setup. - `available`: the endpoint is fully provisioned and ready to use. - `rejected`: the endpoint service owner rejected the connection. - `failed`: the endpoint could not be provisioned. - `deleting`: the endpoint is being deleted.
-//
-// Example: available
-type PrivateLinkEndpointStatus string
-
-// PropertyKey defines model for PropertyKey.
-type PropertyKey struct {
-	union json.RawMessage
-}
-
-// PropertyKey0 defines model for PropertyKey.0.
-type PropertyKey0 = string
-
-// PropertyKey1 defines model for PropertyKey.1.
-type PropertyKey1 = float32
-
-// PropertyKey2 an object to be decoded into a globally shared symbol
-type PropertyKey2 struct {
-	UnderscoreTag PropertyKey2Tag `json:"_tag"`
-	Key           string          `json:"key"`
-}
-
-// PropertyKey2Tag defines model for PropertyKey.2.Tag.
-type PropertyKey2Tag string
-
-// SandboxInjectionRule HTTP header injection rules for outgoing requests matching specific domains.
-type SandboxInjectionRule struct {
-	// Domain The domain (or pattern) that this injection rule applies to. Supports wildcards like *.vercel.com.
-	//
-	// Example: api.vercel.com
-	Domain string `json:"domain"`
-
-	// HeaderNames The names of HTTP headers that have value that will be injected for requests to this domain.
-	//
-	// Example: ["Authorization","X-API-Key"]
-	HeaderNames *[]string `json:"headerNames,omitempty"`
-}
-
-// SandboxNetworkPolicy The network policy applied to this sandbox, if any.
-type SandboxNetworkPolicy struct {
-	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to.
-	//
-	// Example: ["10.0.0.0/8"]
-	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
-
-	// AllowedDomains List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g., "*.vercel.com" matches all subdomains).
-	//
-	// Example: ["api.vercel.com","*.example.com"]
-	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
-
-	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-	//
-	// Example: ["10.0.0.0/8"]
-	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
-
-	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains.
-	InjectionRules *[]SandboxInjectionRule `json:"injectionRules,omitempty"`
-
-	// Mode The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
-	//
-	// Example: custom
-	Mode SandboxNetworkPolicyMode `json:"mode"`
-}
-
-// SandboxNetworkPolicyMode The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
-//
-// Example: custom
-type SandboxNetworkPolicyMode string
-
-// SandboxPublicRoute This object represents a public route in a Vercel Sandbox.
-type SandboxPublicRoute struct {
-	// Port The user port number that the route is mapped to.
-	Port float32 `json:"port"`
-
-	// Subdomain The subdomain assigned to this route.
-	Subdomain string `json:"subdomain"`
-
-	// System Whether the route is reserved by the system (e.g. for internal use).
-	System *SandboxPublicRouteSystem `json:"system,omitempty"`
-
-	// Url A public URL to access the corresponding port in the Sandbox.
-	Url string `json:"url"`
-}
-
-// SandboxPublicRouteSystem Whether the route is reserved by the system (e.g. for internal use).
-type SandboxPublicRouteSystem bool
-
-// Segment defines model for Segment.
-type Segment struct {
-	CreatedAt float32 `json:"createdAt"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	Data      struct {
-		Exclude *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"exclude,omitempty"`
-		Include *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"include,omitempty"`
-		Rules *[]struct {
-			Conditions []struct {
-				Cmp        SegmentDataRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *SegmentDataRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs Segment_Data_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *Segment_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                     `json:"id"`
-			Outcome Segment_Data_Rules_Outcome `json:"outcome"`
-		} `json:"rules,omitempty"`
-	} `json:"data"`
-	Description *string `json:"description,omitempty"`
-	Hint        string  `json:"hint"`
-	Id          string  `json:"id"`
-	Label       string  `json:"label"`
-	Metadata    *struct {
-		Creator *struct {
-			Id   string `json:"id"`
-			Name string `json:"name"`
-		} `json:"creator,omitempty"`
-	} `json:"metadata,omitempty"`
-	ProjectId      string          `json:"projectId"`
-	Slug           string          `json:"slug"`
-	TypeName       SegmentTypeName `json:"typeName"`
-	UpdatedAt      float32         `json:"updatedAt"`
-	UsedByFlags    *[]string       `json:"usedByFlags,omitempty"`
-	UsedBySegments *[]string       `json:"usedBySegments,omitempty"`
-}
-
-// SegmentDataRulesConditionsCmp defines model for Segment.Data.Rules.Conditions.Cmp.
-type SegmentDataRulesConditionsCmp string
-
-// SegmentDataRulesConditionsCmpOptionsIgnoreCase defines model for Segment.Data.Rules.Conditions.CmpOptions.IgnoreCase.
-type SegmentDataRulesConditionsCmpOptionsIgnoreCase bool
-
-// SegmentDataRulesConditionsLhs0 defines model for Segment.Data.Rules.Conditions.Lhs.0.
-type SegmentDataRulesConditionsLhs0 struct {
-	Type SegmentDataRulesConditionsLhs0Type `json:"type"`
-}
-
-// SegmentDataRulesConditionsLhs0Type defines model for Segment.Data.Rules.Conditions.Lhs.0.Type.
-type SegmentDataRulesConditionsLhs0Type string
-
-// SegmentDataRulesConditionsLhs1 defines model for Segment.Data.Rules.Conditions.Lhs.1.
-type SegmentDataRulesConditionsLhs1 struct {
-	Attribute string                             `json:"attribute"`
-	Kind      string                             `json:"kind"`
-	Type      SegmentDataRulesConditionsLhs1Type `json:"type"`
-}
-
-// SegmentDataRulesConditionsLhs1Type defines model for Segment.Data.Rules.Conditions.Lhs.1.Type.
-type SegmentDataRulesConditionsLhs1Type string
-
-// Segment_Data_Rules_Conditions_Lhs defines model for Segment.Data.Rules.Conditions.Lhs.
-type Segment_Data_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// SegmentDataRulesConditionsRhs0 defines model for Segment.Data.Rules.Conditions.Rhs.0.
-type SegmentDataRulesConditionsRhs0 = string
-
-// SegmentDataRulesConditionsRhs1 defines model for Segment.Data.Rules.Conditions.Rhs.1.
-type SegmentDataRulesConditionsRhs1 = float32
-
-// SegmentDataRulesConditionsRhs2 defines model for Segment.Data.Rules.Conditions.Rhs.2.
-type SegmentDataRulesConditionsRhs2 struct {
-	Items []Segment_Data_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  SegmentDataRulesConditionsRhs2Type               `json:"type"`
-}
-
-// SegmentDataRulesConditionsRhs2Items0 defines model for Segment.Data.Rules.Conditions.Rhs.2.Items.0.
-type SegmentDataRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// SegmentDataRulesConditionsRhs2Items1 defines model for Segment.Data.Rules.Conditions.Rhs.2.Items.1.
-type SegmentDataRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// Segment_Data_Rules_Conditions_Rhs_2_Items_Item defines model for Segment.Data.Rules.Conditions.Rhs.2.Items.Item.
-type Segment_Data_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// SegmentDataRulesConditionsRhs2Type defines model for Segment.Data.Rules.Conditions.Rhs.2.Type.
-type SegmentDataRulesConditionsRhs2Type string
-
-// SegmentDataRulesConditionsRhs3 defines model for Segment.Data.Rules.Conditions.Rhs.3.
-type SegmentDataRulesConditionsRhs3 struct {
-	Flags   string                             `json:"flags"`
-	Pattern string                             `json:"pattern"`
-	Type    SegmentDataRulesConditionsRhs3Type `json:"type"`
-}
-
-// SegmentDataRulesConditionsRhs3Type defines model for Segment.Data.Rules.Conditions.Rhs.3.Type.
-type SegmentDataRulesConditionsRhs3Type string
-
-// SegmentDataRulesConditionsRhs4 defines model for Segment.Data.Rules.Conditions.Rhs.4.
-type SegmentDataRulesConditionsRhs4 bool
-
-// Segment_Data_Rules_Conditions_Rhs defines model for Segment.Data.Rules.Conditions.Rhs.
-type Segment_Data_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// SegmentDataRulesOutcome0 defines model for Segment.Data.Rules.Outcome.0.
-type SegmentDataRulesOutcome0 struct {
-	Type SegmentDataRulesOutcome0Type `json:"type"`
-}
-
-// SegmentDataRulesOutcome0Type defines model for Segment.Data.Rules.Outcome.0.Type.
-type SegmentDataRulesOutcome0Type string
-
-// SegmentDataRulesOutcome1 defines model for Segment.Data.Rules.Outcome.1.
-type SegmentDataRulesOutcome1 struct {
-	Base struct {
-		Attribute string                           `json:"attribute"`
-		Kind      string                           `json:"kind"`
-		Type      SegmentDataRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	PassPromille float32                      `json:"passPromille"`
-	Type         SegmentDataRulesOutcome1Type `json:"type"`
-}
-
-// SegmentDataRulesOutcome1BaseType defines model for Segment.Data.Rules.Outcome.1.Base.Type.
-type SegmentDataRulesOutcome1BaseType string
-
-// SegmentDataRulesOutcome1Type defines model for Segment.Data.Rules.Outcome.1.Type.
-type SegmentDataRulesOutcome1Type string
-
-// Segment_Data_Rules_Outcome defines model for Segment.Data.Rules.Outcome.
-type Segment_Data_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// SegmentTypeName defines model for Segment.TypeName.
-type SegmentTypeName string
-
-// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-type Session struct {
-	// AbortedAt The time when the sandbox was aborted, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	AbortedAt *float32 `json:"abortedAt,omitempty"`
-
-	// ActiveCpuDurationMs The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is only available once the sandbox is stopped, and only if it stopped successfully.
-	//
-	// Example: 42
-	ActiveCpuDurationMs *float32 `json:"activeCpuDurationMs,omitempty"`
-
-	// Architecture CPU architecture of the sandbox.
-	Architecture *SessionArchitecture `json:"architecture,omitempty"`
-
-	// CreatedAt The time when the sandbox was created, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	CreatedAt float32 `json:"createdAt"`
-
-	// Cwd The working directory of the sandbox.
-	//
-	// Example: /vercel/sandbox
-	Cwd string `json:"cwd"`
-
-	// Duration The duration of the sandbox in milliseconds.
-	//
-	// Example: 3600000
-	Duration *float32 `json:"duration,omitempty"`
-
-	// Id The unique identifier of the sandbox.
-	//
-	// Example: sbx_123a6c5209bc3778245d011443644c8d27dc2c50
-	Id string `json:"id"`
-
-	// Memory Memory allocated to this sandbox in MB.
-	//
-	// Example: 2048
-	Memory float32 `json:"memory"`
-
-	// NetworkPolicy The network policy applied to this sandbox, if any.
-	NetworkPolicy *SandboxNetworkPolicy `json:"networkPolicy,omitempty"`
-
-	// NetworkTransfer The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
-	//
-	// Example: {"in":12543852,"out":15368}
-	NetworkTransfer *struct {
-		Egress  float32 `json:"egress"`
-		Ingress float32 `json:"ingress"`
-	} `json:"networkTransfer,omitempty"`
-
-	// ProjectId The unique identifier of the project associated with this session.
-	//
-	// Example: prj_123a6c5209bc3778245d011443644c8d27dc2c50
-	ProjectId string `json:"projectId"`
-
-	// Region The region where the sandbox is hosted.
-	//
-	// Example: iad1
-	Region string `json:"region"`
-
-	// RequestedAt The time when the sandbox was requested, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	RequestedAt float32 `json:"requestedAt"`
-
-	// RequestedStopAt The time when the sandbox was requested to stop, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	RequestedStopAt *float32 `json:"requestedStopAt,omitempty"`
-
-	// Runtime The runtime of the sandbox.
-	//
-	// Example: node22
-	Runtime string `json:"runtime"`
-
-	// SnapshottedAt The time when a snapshot was requested, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	SnapshottedAt *float32 `json:"snapshottedAt,omitempty"`
-
-	// SourceSandboxName The name of the source sandbox.
-	//
-	// Example: my-sandbox
-	SourceSandboxName string `json:"sourceSandboxName"`
-
-	// SourceSnapshotId The unique identifier of the snapshot associated with this sandbox, if any.
-	//
-	// Example: snap_123a6c5209bc3778245d011443644c8d27dc2c50
-	SourceSnapshotId *string `json:"sourceSnapshotId,omitempty"`
-
-	// StartedAt The time when the sandbox was started, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	StartedAt *float32 `json:"startedAt,omitempty"`
-
-	// Status The status of the sandbox.
-	//
-	// Example: running
-	Status SessionStatus `json:"status"`
-
-	// StoppedAt The time when the sandbox was stopped, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	StoppedAt *float32 `json:"stoppedAt,omitempty"`
-
-	// Timeout The maximum amount of time the sandbox will run for in milliseconds.
-	//
-	// Example: 3600000
-	Timeout float32 `json:"timeout"`
-
-	// UpdatedAt The last time the sandbox was updated, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// V0 Whether this sandbox is managed by v0 on the customer's behalf.
-	V0 *SessionV0 `json:"v0,omitempty"`
-
-	// Vcpus Number of vCPUs allocated to this sandbox.
-	//
-	// Example: 2
-	Vcpus float32 `json:"vcpus"`
+	// UpdatedAt ISO timestamp of when the link was last updated.
+	UpdatedAt string `json:"updatedAt"`
 }
