@@ -8,7 +8,7 @@
 
 Unofficial Go client for the [Vercel REST API](https://vercel.com/docs/rest-api), generated with [oapi-codegen](https://github.com/oapi-codegen/oapi-codegen) from the OpenAPI document Vercel publishes at `https://openapi.vercel.sh/`.
 
-The package is `vercel`, in the repository root. The `client_NNN.gen.go` files are generated. Don't edit it by hand, regenerate it.
+The package is `vercel`, in the repository root. The `client_NNN.gen.go` files are generated. Don't edit them by hand, regenerate them.
 
 ## Install
 
@@ -18,7 +18,7 @@ go get github.com/psyb0t/go-vercel
 
 ## Usage
 
-Every endpoint in the spec has a typed method on `ClientWithResponses`. The base URL is `https://api.vercel.com`.
+Every endpoint in the spec has a typed method on `ClientWithResponses`. The base URL is `https://api.vercel.com`. The full API, with the spec's descriptions as doc comments, is in the [Go reference](https://pkg.go.dev/github.com/psyb0t/go-vercel) and in `go doc github.com/psyb0t/go-vercel`.
 
 ```go
 package main
