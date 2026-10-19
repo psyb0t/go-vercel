@@ -5559,7 +5559,7 @@ func (c *ClientWithResponses) GetSessionCommandLogsWithResponse(ctx context.Cont
 
 // WriteSessionCommandStdinWithBodyWithResponse Write to command stdin
 //
-// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it. If a request with an `offset` gets a response without `bytesWritten`, the sandbox predates offsets and ignored it, so resending that request is not safe.
+// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -5574,7 +5574,7 @@ func (c *ClientWithResponses) WriteSessionCommandStdinWithBodyWithResponse(ctx c
 
 // WriteSessionCommandStdinWithResponse Write to command stdin
 //
-// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it. If a request with an `offset` gets a response without `bytesWritten`, the sandbox predates offsets and ignored it, so resending that request is not safe.
+// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -13378,8 +13378,17 @@ func ParseGetInvoiceResponse(rsp *http.Response) (*GetInvoiceResponse, error) {
 			// Memo Additional memo for the invoice.
 			Memo *string `json:"memo,omitempty"`
 
+			// OutstandingTotal Amount still owed on the invoice, per the payment processor. Can be positive even for states "refunded" or "refund_requested", since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.
+			OutstandingTotal *string `json:"outstandingTotal,omitempty"`
+
 			// PaidAt Moment the invoice was paid. ISO 8601 timestamp.
 			PaidAt *string `json:"paidAt,omitempty"`
+
+			// PaidTotal Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.
+			PaidTotal *string `json:"paidTotal,omitempty"`
+
+			// PendingRefundTotal Requested refund amount not yet applied by the payment processor: "refundTotal" minus "refundedTotal". A dollar-based decimal string. Only present when a refund was requested or applied.
+			PendingRefundTotal *string `json:"pendingRefundTotal,omitempty"`
 
 			// Period Subscription period for this billing cycle. ISO 8601 timestamps.
 			Period struct {
@@ -13387,16 +13396,19 @@ func ParseGetInvoiceResponse(rsp *http.Response) (*GetInvoiceResponse, error) {
 				Start string `json:"start"`
 			} `json:"period"`
 
-			// RefundReason The reason for refund. Only applicable for states "refunded" or "refund_request".
+			// RefundReason The reason for refund. Only present when a refund has been requested.
 			RefundReason *string `json:"refundReason,omitempty"`
 
-			// RefundTotal Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based decimal string.
+			// RefundTotal Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.
 			RefundTotal *string `json:"refundTotal,omitempty"`
 
 			// RefundedAt Most recent moment the invoice was refunded. ISO 8601 timestamp.
 			RefundedAt *string `json:"refundedAt,omitempty"`
 
-			// State Invoice state.
+			// RefundedTotal Total refund amount applied by the payment processor, on the same pre-tax basis as "refundTotal". Counts both money returned and debt cancelled on unpaid invoices. May be lower than "refundTotal", which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.
+			RefundedTotal *string `json:"refundedTotal,omitempty"`
+
+			// State Invoice state. Reports the payment state of the invoice; refund progress is reported separately via "refundedTotal" and "pendingRefundTotal". The states "refunded" and "refund_requested" only appear when the payment state cannot be determined.
 			State GetInvoice200JSONResponseBodyState `json:"state"`
 
 			// Test Whether the invoice is in the testmode (no real transaction created).

@@ -9,6 +9,49 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+func (t CancelDeployment200JSONResponseBody_Routes_0_Missing_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CancelDeployment200JSONResponseBody_Routes_0_Missing_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0 returns the union data inside the CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq as a CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0
+func (t CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq) AsCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0() (CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0, error) {
+	var body CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0 overwrites any union data inside the CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq as the provided CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0
+func (t *CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq) FromCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0(v CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0 performs a merge with any union data inside the CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq, using the provided CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0
+func (t *CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq) MergeCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0(v CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1 returns the union data inside the CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq as a CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1
+func (t CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq) AsCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1() (CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1, error) {
+	var body CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
 // FromCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1 overwrites any union data inside the CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq as the provided CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1
 func (t *CancelDeployment200JSONResponseBody_Routes_0_Missing_1_Value_1_Eq) FromCancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1(v CancelDeployment200JSONResponseBodyRoutes0Missing1Value1Eq1) error {
 	b, err := json.Marshal(v)
@@ -19968,47 +20011,4 @@ func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromU
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
-}
-
-// MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2 performs a merge with any union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2
-func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2(v UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 returns the union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as a UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) AsUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3() (UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3, error) {
-	var body UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 overwrites any union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as the provided UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3(v UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 performs a merge with any union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3(v UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
 }

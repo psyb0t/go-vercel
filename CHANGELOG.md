@@ -2,6 +2,13 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.0, 2026-10-19
+
+- `RunSessionCommandParams.CmdId` is removed. `RunSessionCommand`, `RunSessionCommandWithResponse` and their `WithBody` variants no longer send a `cmdId` query parameter, and code that still sets that field no longer compiles.
+- `UserEventPayload79.Data` changed from a plain struct to a union type, `UserEvent_Payload_79_Data`. It now holds either `UserEventPayload79Data0` (`PlanSlug` of `v0_business` or `v0_teams`, with an optional `Reason` of `non-payment`) or `UserEventPayload79Data1` (`PlanSlug` of `hobby`, no `Reason`). Removed `UserEventPayload79DataPlanSlug`, `UserEventPayload79DataPlanSlugV0Business`, `UserEventPayload79DataPlanSlugV0Teams`, `UserEventPayload79DataReason` and `UserEventPayload79DataReasonNonPayment`. `UserEventPayload79` is no longer comparable with `==`.
+- The invoice returned by `GetInvoice` and `GetInvoiceWithResponse` gained four optional fields: `OutstandingTotal`, `PaidTotal`, `PendingRefundTotal` and `RefundedTotal`. The doc comments on `RefundReason`, `RefundTotal`, `RefundedAt` and `State` on the same type were rewritten to describe how refunds, outstanding amounts and state interact.
+- The doc comments on `WriteSessionCommandStdin`, `WriteSessionCommandStdinWithBody` and their `WithResponse` variants dropped the note about resend safety when a response omits `bytesWritten`.
+
 ## v0.2.0, 2026-10-17
 
 - Added organization management: `CreateOrganization`, `GetOrganization`, `ListOrganizations`, `UpdateOrganization`, `AddOrganizationTeam`, `ListOrganizationTeams` and `RemoveOrganizationTeam`, each with a `WithBody` and a `WithResponse` variant on `Client` and `ClientWithResponses`. Added the backing types `Organization`, `OrganizationTeam` and `OrganizationTeamListItem`.

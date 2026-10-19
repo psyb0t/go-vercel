@@ -10,6 +10,21 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                       `json:"gt,omitempty"`
+	Gte  *float32                                                                       `json:"gte,omitempty"`
+	Inc  *[]string                                                                      `json:"inc,omitempty"`
+	Lt   *float32                                                                       `json:"lt,omitempty"`
+	Lte  *float32                                                                       `json:"lte,omitempty"`
+	Neq  *string                                                                        `json:"neq,omitempty"`
+	Ninc *[]string                                                                      `json:"ninc,omitempty"`
+	Pre  *string                                                                        `json:"pre,omitempty"`
+	Re   *string                                                                        `json:"re,omitempty"`
+	Suf  *string                                                                        `json:"suf,omitempty"`
+}
+
 // CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 = string
 
@@ -8280,9 +8295,6 @@ type RunSessionCommandJSONBody struct {
 
 // RunSessionCommandParams defines parameters for RunSessionCommand.
 type RunSessionCommandParams struct {
-	// CmdId The unique identifier of the command to stream logs for.
-	CmdId string `form:"cmdId" json:"cmdId"`
-
 	// TeamId The Team identifier to perform the request on behalf of.
 	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
 

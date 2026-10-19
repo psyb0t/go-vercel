@@ -2638,22 +2638,38 @@ type UserEventPayload78 struct {
 
 // UserEventPayload79 The payload of the event, if requested.
 type UserEventPayload79 struct {
-	Action UserEventPayload79Action `json:"action"`
-	Data   struct {
-		PlanSlug UserEventPayload79DataPlanSlug `json:"planSlug"`
-		Reason   *UserEventPayload79DataReason  `json:"reason,omitempty"`
-	} `json:"data"`
-	SubscriptionId *string `json:"subscriptionId,omitempty"`
+	Action         UserEventPayload79Action  `json:"action"`
+	Data           UserEvent_Payload_79_Data `json:"data"`
+	SubscriptionId *string                   `json:"subscriptionId,omitempty"`
 }
 
 // UserEventPayload79Action defines model for UserEvent.Payload.79.Action.
 type UserEventPayload79Action string
 
-// UserEventPayload79DataPlanSlug defines model for UserEvent.Payload.79.Data.PlanSlug.
-type UserEventPayload79DataPlanSlug string
+// UserEventPayload79Data0 defines model for UserEvent.Payload.79.Data.0.
+type UserEventPayload79Data0 struct {
+	PlanSlug UserEventPayload79Data0PlanSlug `json:"planSlug"`
+	Reason   *UserEventPayload79Data0Reason  `json:"reason,omitempty"`
+}
 
-// UserEventPayload79DataReason defines model for UserEvent.Payload.79.Data.Reason.
-type UserEventPayload79DataReason string
+// UserEventPayload79Data0PlanSlug defines model for UserEvent.Payload.79.Data.0.PlanSlug.
+type UserEventPayload79Data0PlanSlug string
+
+// UserEventPayload79Data0Reason defines model for UserEvent.Payload.79.Data.0.Reason.
+type UserEventPayload79Data0Reason string
+
+// UserEventPayload79Data1 defines model for UserEvent.Payload.79.Data.1.
+type UserEventPayload79Data1 struct {
+	PlanSlug UserEventPayload79Data1PlanSlug `json:"planSlug"`
+}
+
+// UserEventPayload79Data1PlanSlug defines model for UserEvent.Payload.79.Data.1.PlanSlug.
+type UserEventPayload79Data1PlanSlug string
+
+// UserEvent_Payload_79_Data defines model for UserEvent.Payload.79.Data.
+type UserEvent_Payload_79_Data struct {
+	union json.RawMessage
+}
 
 // UserEventPayload80 The payload of the event, if requested.
 type UserEventPayload80 struct {
@@ -19995,18 +20011,3 @@ type GetConfigurationProducts200JSONResponseBodyProductsProtocolsChecksStatus st
 
 // GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationEdgeConfigSyncingSupport defines parameters for GetConfigurationProducts.
 type GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationEdgeConfigSyncingSupport bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationStatus string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainFormat defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainFormat string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainStatus string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsMessagingStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsMessagingStatus string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsObservabilityStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsObservabilityStatus string

@@ -3320,8 +3320,17 @@ type GetInvoiceResponse struct {
 		// Memo Additional memo for the invoice.
 		Memo *string `json:"memo,omitempty"`
 
+		// OutstandingTotal Amount still owed on the invoice, per the payment processor. Can be positive even for states "refunded" or "refund_requested", since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.
+		OutstandingTotal *string `json:"outstandingTotal,omitempty"`
+
 		// PaidAt Moment the invoice was paid. ISO 8601 timestamp.
 		PaidAt *string `json:"paidAt,omitempty"`
+
+		// PaidTotal Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.
+		PaidTotal *string `json:"paidTotal,omitempty"`
+
+		// PendingRefundTotal Requested refund amount not yet applied by the payment processor: "refundTotal" minus "refundedTotal". A dollar-based decimal string. Only present when a refund was requested or applied.
+		PendingRefundTotal *string `json:"pendingRefundTotal,omitempty"`
 
 		// Period Subscription period for this billing cycle. ISO 8601 timestamps.
 		Period struct {
@@ -3329,16 +3338,19 @@ type GetInvoiceResponse struct {
 			Start string `json:"start"`
 		} `json:"period"`
 
-		// RefundReason The reason for refund. Only applicable for states "refunded" or "refund_request".
+		// RefundReason The reason for refund. Only present when a refund has been requested.
 		RefundReason *string `json:"refundReason,omitempty"`
 
-		// RefundTotal Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based decimal string.
+		// RefundTotal Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.
 		RefundTotal *string `json:"refundTotal,omitempty"`
 
 		// RefundedAt Most recent moment the invoice was refunded. ISO 8601 timestamp.
 		RefundedAt *string `json:"refundedAt,omitempty"`
 
-		// State Invoice state.
+		// RefundedTotal Total refund amount applied by the payment processor, on the same pre-tax basis as "refundTotal". Counts both money returned and debt cancelled on unpaid invoices. May be lower than "refundTotal", which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.
+		RefundedTotal *string `json:"refundedTotal,omitempty"`
+
+		// State Invoice state. Reports the payment state of the invoice; refund progress is reported separately via "refundedTotal" and "pendingRefundTotal". The states "refunded" and "refund_requested" only appear when the payment state cannot be determined.
 		State GetInvoice200JSONResponseBodyState `json:"state"`
 
 		// Test Whether the invoice is in the testmode (no real transaction created).
@@ -3429,8 +3441,17 @@ func (r GetInvoiceResponse) GetJSON200() *struct {
 	// Memo Additional memo for the invoice.
 	Memo *string `json:"memo,omitempty"`
 
+	// OutstandingTotal Amount still owed on the invoice, per the payment processor. Can be positive even for states "refunded" or "refund_requested", since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.
+	OutstandingTotal *string `json:"outstandingTotal,omitempty"`
+
 	// PaidAt Moment the invoice was paid. ISO 8601 timestamp.
 	PaidAt *string `json:"paidAt,omitempty"`
+
+	// PaidTotal Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.
+	PaidTotal *string `json:"paidTotal,omitempty"`
+
+	// PendingRefundTotal Requested refund amount not yet applied by the payment processor: "refundTotal" minus "refundedTotal". A dollar-based decimal string. Only present when a refund was requested or applied.
+	PendingRefundTotal *string `json:"pendingRefundTotal,omitempty"`
 
 	// Period Subscription period for this billing cycle. ISO 8601 timestamps.
 	Period struct {
@@ -3438,16 +3459,19 @@ func (r GetInvoiceResponse) GetJSON200() *struct {
 		Start string `json:"start"`
 	} `json:"period"`
 
-	// RefundReason The reason for refund. Only applicable for states "refunded" or "refund_request".
+	// RefundReason The reason for refund. Only present when a refund has been requested.
 	RefundReason *string `json:"refundReason,omitempty"`
 
-	// RefundTotal Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based decimal string.
+	// RefundTotal Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.
 	RefundTotal *string `json:"refundTotal,omitempty"`
 
 	// RefundedAt Most recent moment the invoice was refunded. ISO 8601 timestamp.
 	RefundedAt *string `json:"refundedAt,omitempty"`
 
-	// State Invoice state.
+	// RefundedTotal Total refund amount applied by the payment processor, on the same pre-tax basis as "refundTotal". Counts both money returned and debt cancelled on unpaid invoices. May be lower than "refundTotal", which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.
+	RefundedTotal *string `json:"refundedTotal,omitempty"`
+
+	// State Invoice state. Reports the payment state of the invoice; refund progress is reported separately via "refundedTotal" and "pendingRefundTotal". The states "refunded" and "refund_requested" only appear when the payment state cannot be determined.
 	State GetInvoice200JSONResponseBodyState `json:"state"`
 
 	// Test Whether the invoice is in the testmode (no real transaction created).

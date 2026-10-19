@@ -7,6 +7,21 @@ import (
 	"encoding/json"
 )
 
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsOp defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsOp string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsType defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsType string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0 = string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1 = float32
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 = []string
+
 // CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
 type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value struct {
 	union json.RawMessage
@@ -19991,18 +20006,3 @@ type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type string
 
 // CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value0 defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                       `json:"gt,omitempty"`
-	Gte  *float32                                                                       `json:"gte,omitempty"`
-	Inc  *[]string                                                                      `json:"inc,omitempty"`
-	Lt   *float32                                                                       `json:"lt,omitempty"`
-	Lte  *float32                                                                       `json:"lte,omitempty"`
-	Neq  *string                                                                        `json:"neq,omitempty"`
-	Ninc *[]string                                                                      `json:"ninc,omitempty"`
-	Pre  *string                                                                        `json:"pre,omitempty"`
-	Re   *string                                                                        `json:"re,omitempty"`
-	Suf  *string                                                                        `json:"suf,omitempty"`
-}

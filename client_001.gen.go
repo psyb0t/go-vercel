@@ -13722,33 +13722,48 @@ func (e UserEventPayload79Action) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload79DataPlanSlug.
+// Defines values for UserEventPayload79Data0PlanSlug.
 const (
-	UserEventPayload79DataPlanSlugV0Business UserEventPayload79DataPlanSlug = "v0_business"
-	UserEventPayload79DataPlanSlugV0Teams    UserEventPayload79DataPlanSlug = "v0_teams"
+	UserEventPayload79Data0PlanSlugV0Business UserEventPayload79Data0PlanSlug = "v0_business"
+	UserEventPayload79Data0PlanSlugV0Teams    UserEventPayload79Data0PlanSlug = "v0_teams"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79DataPlanSlug enum.
-func (e UserEventPayload79DataPlanSlug) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload79Data0PlanSlug enum.
+func (e UserEventPayload79Data0PlanSlug) Valid() bool {
 	switch e {
-	case UserEventPayload79DataPlanSlugV0Business:
+	case UserEventPayload79Data0PlanSlugV0Business:
 		return true
-	case UserEventPayload79DataPlanSlugV0Teams:
+	case UserEventPayload79Data0PlanSlugV0Teams:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79DataReason.
+// Defines values for UserEventPayload79Data0Reason.
 const (
-	UserEventPayload79DataReasonNonPayment UserEventPayload79DataReason = "non-payment"
+	UserEventPayload79Data0ReasonNonPayment UserEventPayload79Data0Reason = "non-payment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79DataReason enum.
-func (e UserEventPayload79DataReason) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload79Data0Reason enum.
+func (e UserEventPayload79Data0Reason) Valid() bool {
 	switch e {
-	case UserEventPayload79DataReasonNonPayment:
+	case UserEventPayload79Data0ReasonNonPayment:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload79Data1PlanSlug.
+const (
+	UserEventPayload79Data1PlanSlugHobby UserEventPayload79Data1PlanSlug = "hobby"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload79Data1PlanSlug enum.
+func (e UserEventPayload79Data1PlanSlug) Valid() bool {
+	switch e {
+	case UserEventPayload79Data1PlanSlugHobby:
 		return true
 	default:
 		return false
@@ -19983,24 +19998,6 @@ func (e UserEventPayload280ProjectOldConnectConfigurationsPassive) Valid() bool 
 	case UserEventPayload280ProjectOldConnectConfigurationsPassiveFalse:
 		return true
 	case UserEventPayload280ProjectOldConnectConfigurationsPassiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload282Action.
-const (
-	UserEventPayload282ActionDisabled UserEventPayload282Action = "disabled"
-	UserEventPayload282ActionEnabled  UserEventPayload282Action = "enabled"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload282Action enum.
-func (e UserEventPayload282Action) Valid() bool {
-	switch e {
-	case UserEventPayload282ActionDisabled:
-		return true
-	case UserEventPayload282ActionEnabled:
 		return true
 	default:
 		return false
