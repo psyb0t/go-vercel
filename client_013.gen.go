@@ -11,6 +11,279 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig to handle AdditionalProperties
+func (a ConnectConnectorUpdateData_0_ServerConfig) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.AuthorizationDetailsTypesSupported != nil {
+		object["authorization_details_types_supported"], err = json.Marshal(a.AuthorizationDetailsTypesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'authorization_details_types_supported': %w", err)
+		}
+	}
+
+	if a.AuthorizationEndpoint != nil {
+		object["authorization_endpoint"], err = json.Marshal(a.AuthorizationEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'authorization_endpoint': %w", err)
+		}
+	}
+
+	if a.AuthorizationGrantProfilesSupported != nil {
+		object["authorization_grant_profiles_supported"], err = json.Marshal(a.AuthorizationGrantProfilesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'authorization_grant_profiles_supported': %w", err)
+		}
+	}
+
+	if a.ClaimTypesSupported != nil {
+		object["claim_types_supported"], err = json.Marshal(a.ClaimTypesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'claim_types_supported': %w", err)
+		}
+	}
+
+	if a.ClaimsParameterSupported != nil {
+		object["claims_parameter_supported"], err = json.Marshal(a.ClaimsParameterSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'claims_parameter_supported': %w", err)
+		}
+	}
+
+	if a.ClaimsSupported != nil {
+		object["claims_supported"], err = json.Marshal(a.ClaimsSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'claims_supported': %w", err)
+		}
+	}
+
+	if a.ClientIdMetadataDocumentSupported != nil {
+		object["client_id_metadata_document_supported"], err = json.Marshal(a.ClientIdMetadataDocumentSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'client_id_metadata_document_supported': %w", err)
+		}
+	}
+
+	if a.CodeChallengeMethodsSupported != nil {
+		object["code_challenge_methods_supported"], err = json.Marshal(a.CodeChallengeMethodsSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'code_challenge_methods_supported': %w", err)
+		}
+	}
+
+	if a.DeviceAuthorizationEndpoint != nil {
+		object["device_authorization_endpoint"], err = json.Marshal(a.DeviceAuthorizationEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'device_authorization_endpoint': %w", err)
+		}
+	}
+
+	if a.EndSessionEndpoint != nil {
+		object["end_session_endpoint"], err = json.Marshal(a.EndSessionEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'end_session_endpoint': %w", err)
+		}
+	}
+
+	if a.GrantTypesSupported != nil {
+		object["grant_types_supported"], err = json.Marshal(a.GrantTypesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'grant_types_supported': %w", err)
+		}
+	}
+
+	if a.IdTokenEncryptionAlgValuesSupported != nil {
+		object["id_token_encryption_alg_values_supported"], err = json.Marshal(a.IdTokenEncryptionAlgValuesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'id_token_encryption_alg_values_supported': %w", err)
+		}
+	}
+
+	if a.IdTokenEncryptionEncValuesSupported != nil {
+		object["id_token_encryption_enc_values_supported"], err = json.Marshal(a.IdTokenEncryptionEncValuesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'id_token_encryption_enc_values_supported': %w", err)
+		}
+	}
+
+	if a.IdTokenSigningAlgValuesSupported != nil {
+		object["id_token_signing_alg_values_supported"], err = json.Marshal(a.IdTokenSigningAlgValuesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'id_token_signing_alg_values_supported': %w", err)
+		}
+	}
+
+	if a.IdentityChainingRequestedTokenTypesSupported != nil {
+		object["identity_chaining_requested_token_types_supported"], err = json.Marshal(a.IdentityChainingRequestedTokenTypesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'identity_chaining_requested_token_types_supported': %w", err)
+		}
+	}
+
+	if a.IntrospectionEndpoint != nil {
+		object["introspection_endpoint"], err = json.Marshal(a.IntrospectionEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'introspection_endpoint': %w", err)
+		}
+	}
+
+	if a.Issuer != nil {
+		object["issuer"], err = json.Marshal(a.Issuer)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'issuer': %w", err)
+		}
+	}
+
+	if a.Jwks != nil {
+		object["jwks"], err = json.Marshal(a.Jwks)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'jwks': %w", err)
+		}
+	}
+
+	if a.JwksUri != nil {
+		object["jwks_uri"], err = json.Marshal(a.JwksUri)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'jwks_uri': %w", err)
+		}
+	}
+
+	if a.LogoUri != nil {
+		object["logo_uri"], err = json.Marshal(a.LogoUri)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'logo_uri': %w", err)
+		}
+	}
+
+	if a.OpPolicyUri != nil {
+		object["op_policy_uri"], err = json.Marshal(a.OpPolicyUri)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'op_policy_uri': %w", err)
+		}
+	}
+
+	if a.OpTosUri != nil {
+		object["op_tos_uri"], err = json.Marshal(a.OpTosUri)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'op_tos_uri': %w", err)
+		}
+	}
+
+	if a.PromptValuesSupported != nil {
+		object["prompt_values_supported"], err = json.Marshal(a.PromptValuesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'prompt_values_supported': %w", err)
+		}
+	}
+
+	if a.RegistrationEndpoint != nil {
+		object["registration_endpoint"], err = json.Marshal(a.RegistrationEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'registration_endpoint': %w", err)
+		}
+	}
+
+	if a.RequestParameterSupported != nil {
+		object["request_parameter_supported"], err = json.Marshal(a.RequestParameterSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'request_parameter_supported': %w", err)
+		}
+	}
+
+	if a.RequestUriParameterSupported != nil {
+		object["request_uri_parameter_supported"], err = json.Marshal(a.RequestUriParameterSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'request_uri_parameter_supported': %w", err)
+		}
+	}
+
+	if a.RequireRequestUriRegistration != nil {
+		object["require_request_uri_registration"], err = json.Marshal(a.RequireRequestUriRegistration)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'require_request_uri_registration': %w", err)
+		}
+	}
+
+	if a.ResponseModesSupported != nil {
+		object["response_modes_supported"], err = json.Marshal(a.ResponseModesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'response_modes_supported': %w", err)
+		}
+	}
+
+	if a.ResponseTypesSupported != nil {
+		object["response_types_supported"], err = json.Marshal(a.ResponseTypesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'response_types_supported': %w", err)
+		}
+	}
+
+	if a.RevocationEndpoint != nil {
+		object["revocation_endpoint"], err = json.Marshal(a.RevocationEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'revocation_endpoint': %w", err)
+		}
+	}
+
+	if a.ScopesSupported != nil {
+		object["scopes_supported"], err = json.Marshal(a.ScopesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'scopes_supported': %w", err)
+		}
+	}
+
+	if a.ServiceDocumentation != nil {
+		object["service_documentation"], err = json.Marshal(a.ServiceDocumentation)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'service_documentation': %w", err)
+		}
+	}
+
+	if a.SubjectTypesSupported != nil {
+		object["subject_types_supported"], err = json.Marshal(a.SubjectTypesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'subject_types_supported': %w", err)
+		}
+	}
+
+	if a.TokenEndpoint != nil {
+		object["token_endpoint"], err = json.Marshal(a.TokenEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'token_endpoint': %w", err)
+		}
+	}
+
+	if a.TokenEndpointAuthMethodsSupported != nil {
+		object["token_endpoint_auth_methods_supported"], err = json.Marshal(a.TokenEndpointAuthMethodsSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'token_endpoint_auth_methods_supported': %w", err)
+		}
+	}
+
+	if a.TokenEndpointAuthSigningAlgValuesSupported != nil {
+		object["token_endpoint_auth_signing_alg_values_supported"], err = json.Marshal(a.TokenEndpointAuthSigningAlgValuesSupported)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'token_endpoint_auth_signing_alg_values_supported': %w", err)
+		}
+	}
+
+	if a.UserinfoEndpoint != nil {
+		object["userinfo_endpoint"], err = json.Marshal(a.UserinfoEndpoint)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'userinfo_endpoint': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
 // Getter for additional properties for ConnectError_Error. Returns the specified
 // element and whether it was found
 func (a ConnectError_Error) Get(fieldName string) (value interface{}, found bool) {
@@ -582,11 +855,9 @@ func (a Team) MarshalJSON() ([]byte, error) {
 		}
 	}
 
-	if a.DefaultDeploymentProtection != nil {
-		object["defaultDeploymentProtection"], err = json.Marshal(a.DefaultDeploymentProtection)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'defaultDeploymentProtection': %w", err)
-		}
+	object["defaultDeploymentProtection"], err = json.Marshal(a.DefaultDeploymentProtection)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'defaultDeploymentProtection': %w", err)
 	}
 
 	if a.DefaultExpirationSettings != nil {
@@ -19739,283 +20010,4 @@ func (t UserEvent_Payload) AsUserEventPayload359() (UserEventPayload359, error) 
 	var body UserEventPayload359
 	err := json.Unmarshal(t.union, &body)
 	return body, err
-}
-
-// FromUserEventPayload359 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload359
-func (t *UserEvent_Payload) FromUserEventPayload359(v UserEventPayload359) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload359 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload359
-func (t *UserEvent_Payload) MergeUserEventPayload359(v UserEventPayload359) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload360 returns the union data inside the UserEvent_Payload as a UserEventPayload360
-func (t UserEvent_Payload) AsUserEventPayload360() (UserEventPayload360, error) {
-	var body UserEventPayload360
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload360 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload360
-func (t *UserEvent_Payload) FromUserEventPayload360(v UserEventPayload360) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload360 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload360
-func (t *UserEvent_Payload) MergeUserEventPayload360(v UserEventPayload360) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload361 returns the union data inside the UserEvent_Payload as a UserEventPayload361
-func (t UserEvent_Payload) AsUserEventPayload361() (UserEventPayload361, error) {
-	var body UserEventPayload361
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload361 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload361
-func (t *UserEvent_Payload) FromUserEventPayload361(v UserEventPayload361) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload361 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload361
-func (t *UserEvent_Payload) MergeUserEventPayload361(v UserEventPayload361) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload362 returns the union data inside the UserEvent_Payload as a UserEventPayload362
-func (t UserEvent_Payload) AsUserEventPayload362() (UserEventPayload362, error) {
-	var body UserEventPayload362
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload362 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload362
-func (t *UserEvent_Payload) FromUserEventPayload362(v UserEventPayload362) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload362 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload362
-func (t *UserEvent_Payload) MergeUserEventPayload362(v UserEventPayload362) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload363 returns the union data inside the UserEvent_Payload as a UserEventPayload363
-func (t UserEvent_Payload) AsUserEventPayload363() (UserEventPayload363, error) {
-	var body UserEventPayload363
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload363 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload363
-func (t *UserEvent_Payload) FromUserEventPayload363(v UserEventPayload363) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload363 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload363
-func (t *UserEvent_Payload) MergeUserEventPayload363(v UserEventPayload363) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload364 returns the union data inside the UserEvent_Payload as a UserEventPayload364
-func (t UserEvent_Payload) AsUserEventPayload364() (UserEventPayload364, error) {
-	var body UserEventPayload364
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload364 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload364
-func (t *UserEvent_Payload) FromUserEventPayload364(v UserEventPayload364) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload364 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload364
-func (t *UserEvent_Payload) MergeUserEventPayload364(v UserEventPayload364) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload365 returns the union data inside the UserEvent_Payload as a UserEventPayload365
-func (t UserEvent_Payload) AsUserEventPayload365() (UserEventPayload365, error) {
-	var body UserEventPayload365
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload365 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload365
-func (t *UserEvent_Payload) FromUserEventPayload365(v UserEventPayload365) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload365 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload365
-func (t *UserEvent_Payload) MergeUserEventPayload365(v UserEventPayload365) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload366 returns the union data inside the UserEvent_Payload as a UserEventPayload366
-func (t UserEvent_Payload) AsUserEventPayload366() (UserEventPayload366, error) {
-	var body UserEventPayload366
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload366 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload366
-func (t *UserEvent_Payload) FromUserEventPayload366(v UserEventPayload366) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload366 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload366
-func (t *UserEvent_Payload) MergeUserEventPayload366(v UserEventPayload366) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload367 returns the union data inside the UserEvent_Payload as a UserEventPayload367
-func (t UserEvent_Payload) AsUserEventPayload367() (UserEventPayload367, error) {
-	var body UserEventPayload367
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload367 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload367
-func (t *UserEvent_Payload) FromUserEventPayload367(v UserEventPayload367) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload367 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload367
-func (t *UserEvent_Payload) MergeUserEventPayload367(v UserEventPayload367) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload368 returns the union data inside the UserEvent_Payload as a UserEventPayload368
-func (t UserEvent_Payload) AsUserEventPayload368() (UserEventPayload368, error) {
-	var body UserEventPayload368
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload368 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload368
-func (t *UserEvent_Payload) FromUserEventPayload368(v UserEventPayload368) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload368 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload368
-func (t *UserEvent_Payload) MergeUserEventPayload368(v UserEventPayload368) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload369 returns the union data inside the UserEvent_Payload as a UserEventPayload369
-func (t UserEvent_Payload) AsUserEventPayload369() (UserEventPayload369, error) {
-	var body UserEventPayload369
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload369 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload369
-func (t *UserEvent_Payload) FromUserEventPayload369(v UserEventPayload369) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload369 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload369
-func (t *UserEvent_Payload) MergeUserEventPayload369(v UserEventPayload369) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
 }

@@ -10,6 +10,355 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeployment200JSONResponseBody1Services1BindingsFormat defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BindingsFormat string
+
+// CreateDeployment200JSONResponseBody1Services1BindingsType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BindingsType string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigDebug defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigDebug bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 = string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsAffinityMode defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsAffinityMode string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsArchitecture defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsArchitecture string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 struct {
+	// Consumer Name of the consumer group for this trigger (REQUIRED)
+	Consumer string `json:"consumer"`
+
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v1beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0Type string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 struct {
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v2beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1Type string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 struct {
+	// Type Event type - must be "schedule/v1beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2Type string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 = float32
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigHelpers defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigHelpers bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 = string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddleware defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddleware bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 = string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareRuntime defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareRuntime string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsAutoExposeSystemEnvs defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsAutoExposeSystemEnvs bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsDirectoryListing defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsDirectoryListing bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsGitForkProtection defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsGitForkProtection bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigZeroConfig defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigZeroConfig bool
+
+// CreateDeployment200JSONResponseBody1Services1CleanUrls defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1CleanUrls bool
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsAffinityMode defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsAffinityMode string
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsArchitecture defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsArchitecture string
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 struct {
+	// Consumer Name of the consumer group for this trigger (REQUIRED)
+	Consumer string `json:"consumer"`
+
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v1beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0Type string
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 struct {
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v2beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1Type string
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 struct {
+	// Type Event type - must be "schedule/v1beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2Type string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 = float32
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 string
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation bool
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1HeadersHas0Type         `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas0Type string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                   `json:"gt,omitempty"`
+	Gte  *float32                                                                   `json:"gte,omitempty"`
+	Inc  *[]string                                                                  `json:"inc,omitempty"`
+	Lt   *float32                                                                   `json:"lt,omitempty"`
+	Lte  *float32                                                                   `json:"lte,omitempty"`
+	Neq  *string                                                                    `json:"neq,omitempty"`
+	Ninc *[]string                                                                  `json:"ninc,omitempty"`
+	Pre  *string                                                                    `json:"pre,omitempty"`
+	Re   *string                                                                    `json:"re,omitempty"`
+	Suf  *string                                                                    `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas1 struct {
+	Key   string                                                                `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Services1HeadersHas1Type          `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas1Type string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                   `json:"gt,omitempty"`
+	Gte  *float32                                                                   `json:"gte,omitempty"`
+	Inc  *[]string                                                                  `json:"inc,omitempty"`
+	Lt   *float32                                                                   `json:"lt,omitempty"`
+	Lte  *float32                                                                   `json:"lte,omitempty"`
+	Neq  *string                                                                    `json:"neq,omitempty"`
+	Ninc *[]string                                                                  `json:"ninc,omitempty"`
+	Pre  *string                                                                    `json:"pre,omitempty"`
+	Re   *string                                                                    `json:"re,omitempty"`
+	Suf  *string                                                                    `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing0 struct {
+	Type  CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type         `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type string
+
+// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value0 = string
+
 // CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value1 struct {
 	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq `json:"eq,omitempty"`
@@ -1170,12 +1519,15 @@ type GetDeployment200JSONResponseBody1 struct {
 		ExperimentalTriggers    *[]GetDeployment200JSONResponseBody_1_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 		FunctionFailoverRegions *[]string                                                                 `json:"functionFailoverRegions,omitempty"`
 		IncludeFiles            *string                                                                   `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                  `json:"maxConcurrency,omitempty"`
-		MaxDuration             *GetDeployment200JSONResponseBody_1_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                  `json:"memory,omitempty"`
-		Regions                 *[]string                                                                 `json:"regions,omitempty"`
-		Runtime                 *string                                                                   `json:"runtime,omitempty"`
-		SupportsCancellation    *GetDeployment200JSONResponseBody1FunctionsSupportsCancellation           `json:"supportsCancellation,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                         `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                        `json:"maxConcurrency,omitempty"`
+		MaxDuration          *GetDeployment200JSONResponseBody_1_Functions_MaxDuration       `json:"maxDuration,omitempty"`
+		Memory               *float32                                                        `json:"memory,omitempty"`
+		Regions              *[]string                                                       `json:"regions,omitempty"`
+		Runtime              *string                                                         `json:"runtime,omitempty"`
+		SupportsCancellation *GetDeployment200JSONResponseBody1FunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 	} `json:"functions,omitempty"`
 	GitRepo   *GetDeployment200JSONResponseBody_1_GitRepo   `json:"gitRepo,omitempty"`
 	GitSource *GetDeployment200JSONResponseBody_1_GitSource `json:"gitSource,omitempty"`
@@ -2768,12 +3120,15 @@ type GetDeployment200JSONResponseBody1Services0 struct {
 				ExperimentalTriggers    *[]GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 				FunctionFailoverRegions *[]string                                                                                           `json:"functionFailoverRegions,omitempty"`
 				IncludeFiles            *string                                                                                             `json:"includeFiles,omitempty"`
-				MaxConcurrency          *float32                                                                                            `json:"maxConcurrency,omitempty"`
-				MaxDuration             *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-				Memory                  *float32                                                                                            `json:"memory,omitempty"`
-				Regions                 *[]string                                                                                           `json:"regions,omitempty"`
-				Runtime                 *string                                                                                             `json:"runtime,omitempty"`
-				SupportsCancellation    *GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsSupportsCancellation               `json:"supportsCancellation,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                               `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                              `json:"maxConcurrency,omitempty"`
+				MaxDuration          *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration   `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                              `json:"memory,omitempty"`
+				Regions              *[]string                                                                             `json:"regions,omitempty"`
+				Runtime              *string                                                                               `json:"runtime,omitempty"`
+				SupportsCancellation *GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 			} `json:"functions,omitempty"`
 			Helpers           *GetDeployment200JSONResponseBody1Services0BuilderConfigHelpers                 `json:"helpers,omitempty"`
 			Import            *map[string]string                                                              `json:"import,omitempty"`
@@ -2803,6 +3158,9 @@ type GetDeployment200JSONResponseBody1Services0 struct {
 				OutputDirectory                 *string                                                                                                `json:"outputDirectory,omitempty"`
 				RootDirectory                   *string                                                                                                `json:"rootDirectory,omitempty"`
 				SourceFilesOutsideRootDirectory *GetDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 			} `json:"projectSettings,omitempty"`
 			Rust *string `json:"rust,omitempty"`
 
@@ -3105,12 +3463,15 @@ type GetDeployment200JSONResponseBody1Services1 struct {
 				ExperimentalTriggers    *[]GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 				FunctionFailoverRegions *[]string                                                                                           `json:"functionFailoverRegions,omitempty"`
 				IncludeFiles            *string                                                                                             `json:"includeFiles,omitempty"`
-				MaxConcurrency          *float32                                                                                            `json:"maxConcurrency,omitempty"`
-				MaxDuration             *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-				Memory                  *float32                                                                                            `json:"memory,omitempty"`
-				Regions                 *[]string                                                                                           `json:"regions,omitempty"`
-				Runtime                 *string                                                                                             `json:"runtime,omitempty"`
-				SupportsCancellation    *GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation               `json:"supportsCancellation,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                               `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                              `json:"maxConcurrency,omitempty"`
+				MaxDuration          *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration   `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                              `json:"memory,omitempty"`
+				Regions              *[]string                                                                             `json:"regions,omitempty"`
+				Runtime              *string                                                                               `json:"runtime,omitempty"`
+				SupportsCancellation *GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 			} `json:"functions,omitempty"`
 			Helpers           *GetDeployment200JSONResponseBody1Services1BuilderConfigHelpers                 `json:"helpers,omitempty"`
 			Import            *map[string]string                                                              `json:"import,omitempty"`
@@ -3140,6 +3501,9 @@ type GetDeployment200JSONResponseBody1Services1 struct {
 				OutputDirectory                 *string                                                                                                `json:"outputDirectory,omitempty"`
 				RootDirectory                   *string                                                                                                `json:"rootDirectory,omitempty"`
 				SourceFilesOutsideRootDirectory *GetDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 			} `json:"projectSettings,omitempty"`
 			Rust *string `json:"rust,omitempty"`
 
@@ -3187,12 +3551,15 @@ type GetDeployment200JSONResponseBody1Services1 struct {
 		ExperimentalTriggers    *[]GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 		FunctionFailoverRegions *[]string                                                                            `json:"functionFailoverRegions,omitempty"`
 		IncludeFiles            *string                                                                              `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                             `json:"maxConcurrency,omitempty"`
-		MaxDuration             *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                             `json:"memory,omitempty"`
-		Regions                 *[]string                                                                            `json:"regions,omitempty"`
-		Runtime                 *string                                                                              `json:"runtime,omitempty"`
-		SupportsCancellation    *GetDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation             `json:"supportsCancellation,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                                  `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                                 `json:"maxConcurrency,omitempty"`
+		MaxDuration          *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration     `json:"maxDuration,omitempty"`
+		Memory               *float32                                                                 `json:"memory,omitempty"`
+		Regions              *[]string                                                                `json:"regions,omitempty"`
+		Runtime              *string                                                                  `json:"runtime,omitempty"`
+		SupportsCancellation *GetDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 	} `json:"functions,omitempty"`
 	Headers *[]struct {
 		Has     *[]GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item `json:"has,omitempty"`
@@ -18176,6 +18543,9 @@ type AddOrganizationTeamJSONRequestBody AddOrganizationTeamJSONBody
 // CreateTraceSessionJSONRequestBody defines body for CreateTraceSession for application/json ContentType.
 type CreateTraceSessionJSONRequestBody CreateTraceSessionJSONBody
 
+// PutProjectDaemonInstancesJSONRequestBody defines body for PutProjectDaemonInstances for application/json ContentType.
+type PutProjectDaemonInstancesJSONRequestBody PutProjectDaemonInstancesJSONBody
+
 // MoveProjectDomainJSONRequestBody defines body for MoveProjectDomain for application/json ContentType.
 type MoveProjectDomainJSONRequestBody MoveProjectDomainJSONBody
 
@@ -19808,277 +20178,4 @@ func (a *ConnectConnectorUpdateData_0_ServerConfig) UnmarshalJSON(b []byte) erro
 		}
 	}
 	return nil
-}
-
-// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig to handle AdditionalProperties
-func (a ConnectConnectorUpdateData_0_ServerConfig) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	if a.AuthorizationDetailsTypesSupported != nil {
-		object["authorization_details_types_supported"], err = json.Marshal(a.AuthorizationDetailsTypesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'authorization_details_types_supported': %w", err)
-		}
-	}
-
-	if a.AuthorizationEndpoint != nil {
-		object["authorization_endpoint"], err = json.Marshal(a.AuthorizationEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'authorization_endpoint': %w", err)
-		}
-	}
-
-	if a.AuthorizationGrantProfilesSupported != nil {
-		object["authorization_grant_profiles_supported"], err = json.Marshal(a.AuthorizationGrantProfilesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'authorization_grant_profiles_supported': %w", err)
-		}
-	}
-
-	if a.ClaimTypesSupported != nil {
-		object["claim_types_supported"], err = json.Marshal(a.ClaimTypesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'claim_types_supported': %w", err)
-		}
-	}
-
-	if a.ClaimsParameterSupported != nil {
-		object["claims_parameter_supported"], err = json.Marshal(a.ClaimsParameterSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'claims_parameter_supported': %w", err)
-		}
-	}
-
-	if a.ClaimsSupported != nil {
-		object["claims_supported"], err = json.Marshal(a.ClaimsSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'claims_supported': %w", err)
-		}
-	}
-
-	if a.ClientIdMetadataDocumentSupported != nil {
-		object["client_id_metadata_document_supported"], err = json.Marshal(a.ClientIdMetadataDocumentSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'client_id_metadata_document_supported': %w", err)
-		}
-	}
-
-	if a.CodeChallengeMethodsSupported != nil {
-		object["code_challenge_methods_supported"], err = json.Marshal(a.CodeChallengeMethodsSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'code_challenge_methods_supported': %w", err)
-		}
-	}
-
-	if a.DeviceAuthorizationEndpoint != nil {
-		object["device_authorization_endpoint"], err = json.Marshal(a.DeviceAuthorizationEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'device_authorization_endpoint': %w", err)
-		}
-	}
-
-	if a.EndSessionEndpoint != nil {
-		object["end_session_endpoint"], err = json.Marshal(a.EndSessionEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'end_session_endpoint': %w", err)
-		}
-	}
-
-	if a.GrantTypesSupported != nil {
-		object["grant_types_supported"], err = json.Marshal(a.GrantTypesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'grant_types_supported': %w", err)
-		}
-	}
-
-	if a.IdTokenEncryptionAlgValuesSupported != nil {
-		object["id_token_encryption_alg_values_supported"], err = json.Marshal(a.IdTokenEncryptionAlgValuesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'id_token_encryption_alg_values_supported': %w", err)
-		}
-	}
-
-	if a.IdTokenEncryptionEncValuesSupported != nil {
-		object["id_token_encryption_enc_values_supported"], err = json.Marshal(a.IdTokenEncryptionEncValuesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'id_token_encryption_enc_values_supported': %w", err)
-		}
-	}
-
-	if a.IdTokenSigningAlgValuesSupported != nil {
-		object["id_token_signing_alg_values_supported"], err = json.Marshal(a.IdTokenSigningAlgValuesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'id_token_signing_alg_values_supported': %w", err)
-		}
-	}
-
-	if a.IdentityChainingRequestedTokenTypesSupported != nil {
-		object["identity_chaining_requested_token_types_supported"], err = json.Marshal(a.IdentityChainingRequestedTokenTypesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'identity_chaining_requested_token_types_supported': %w", err)
-		}
-	}
-
-	if a.IntrospectionEndpoint != nil {
-		object["introspection_endpoint"], err = json.Marshal(a.IntrospectionEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'introspection_endpoint': %w", err)
-		}
-	}
-
-	if a.Issuer != nil {
-		object["issuer"], err = json.Marshal(a.Issuer)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'issuer': %w", err)
-		}
-	}
-
-	if a.Jwks != nil {
-		object["jwks"], err = json.Marshal(a.Jwks)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'jwks': %w", err)
-		}
-	}
-
-	if a.JwksUri != nil {
-		object["jwks_uri"], err = json.Marshal(a.JwksUri)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'jwks_uri': %w", err)
-		}
-	}
-
-	if a.LogoUri != nil {
-		object["logo_uri"], err = json.Marshal(a.LogoUri)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'logo_uri': %w", err)
-		}
-	}
-
-	if a.OpPolicyUri != nil {
-		object["op_policy_uri"], err = json.Marshal(a.OpPolicyUri)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'op_policy_uri': %w", err)
-		}
-	}
-
-	if a.OpTosUri != nil {
-		object["op_tos_uri"], err = json.Marshal(a.OpTosUri)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'op_tos_uri': %w", err)
-		}
-	}
-
-	if a.PromptValuesSupported != nil {
-		object["prompt_values_supported"], err = json.Marshal(a.PromptValuesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'prompt_values_supported': %w", err)
-		}
-	}
-
-	if a.RegistrationEndpoint != nil {
-		object["registration_endpoint"], err = json.Marshal(a.RegistrationEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'registration_endpoint': %w", err)
-		}
-	}
-
-	if a.RequestParameterSupported != nil {
-		object["request_parameter_supported"], err = json.Marshal(a.RequestParameterSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'request_parameter_supported': %w", err)
-		}
-	}
-
-	if a.RequestUriParameterSupported != nil {
-		object["request_uri_parameter_supported"], err = json.Marshal(a.RequestUriParameterSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'request_uri_parameter_supported': %w", err)
-		}
-	}
-
-	if a.RequireRequestUriRegistration != nil {
-		object["require_request_uri_registration"], err = json.Marshal(a.RequireRequestUriRegistration)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'require_request_uri_registration': %w", err)
-		}
-	}
-
-	if a.ResponseModesSupported != nil {
-		object["response_modes_supported"], err = json.Marshal(a.ResponseModesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'response_modes_supported': %w", err)
-		}
-	}
-
-	if a.ResponseTypesSupported != nil {
-		object["response_types_supported"], err = json.Marshal(a.ResponseTypesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'response_types_supported': %w", err)
-		}
-	}
-
-	if a.RevocationEndpoint != nil {
-		object["revocation_endpoint"], err = json.Marshal(a.RevocationEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'revocation_endpoint': %w", err)
-		}
-	}
-
-	if a.ScopesSupported != nil {
-		object["scopes_supported"], err = json.Marshal(a.ScopesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'scopes_supported': %w", err)
-		}
-	}
-
-	if a.ServiceDocumentation != nil {
-		object["service_documentation"], err = json.Marshal(a.ServiceDocumentation)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'service_documentation': %w", err)
-		}
-	}
-
-	if a.SubjectTypesSupported != nil {
-		object["subject_types_supported"], err = json.Marshal(a.SubjectTypesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'subject_types_supported': %w", err)
-		}
-	}
-
-	if a.TokenEndpoint != nil {
-		object["token_endpoint"], err = json.Marshal(a.TokenEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'token_endpoint': %w", err)
-		}
-	}
-
-	if a.TokenEndpointAuthMethodsSupported != nil {
-		object["token_endpoint_auth_methods_supported"], err = json.Marshal(a.TokenEndpointAuthMethodsSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'token_endpoint_auth_methods_supported': %w", err)
-		}
-	}
-
-	if a.TokenEndpointAuthSigningAlgValuesSupported != nil {
-		object["token_endpoint_auth_signing_alg_values_supported"], err = json.Marshal(a.TokenEndpointAuthSigningAlgValuesSupported)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'token_endpoint_auth_signing_alg_values_supported': %w", err)
-		}
-	}
-
-	if a.UserinfoEndpoint != nil {
-		object["userinfo_endpoint"], err = json.Marshal(a.UserinfoEndpoint)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'userinfo_endpoint': %w", err)
-		}
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
 }

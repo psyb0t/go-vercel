@@ -8,6 +8,433 @@ import (
 	"time"
 )
 
+// GetBody returns the raw response body bytes
+func (r CreateNetworkResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateNetworkResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateNetworkResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateNetworkResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteNetworkResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteNetworkResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteNetworkResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteNetworkResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteNetworkResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ReadNetworkResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *Network
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ReadNetworkResponse) GetJSON200() *Network {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ReadNetworkResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ReadNetworkResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ReadNetworkResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ReadNetworkResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateNetworkResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *Network
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateNetworkResponse) GetJSON200() *Network {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateNetworkResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateNetworkResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateNetworkResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateNetworkResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetConnectorTokenResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// AuthorizationId Stable id correlating all tokens (including refreshes) back to the original authorization.
+		AuthorizationId *string `json:"authorizationId,omitempty"`
+
+		// Claims Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
+		Claims    *map[string]interface{} `json:"claims,omitempty"`
+		Connector struct {
+			Id   string `json:"id"`
+			Type string `json:"type"`
+			Uid  string `json:"uid"`
+		} `json:"connector"`
+		ExpiresAt       float32 `json:"expiresAt"`
+		ExternalSubject *string `json:"externalSubject,omitempty"`
+		InstallationId  *string `json:"installationId,omitempty"`
+
+		// Metadata Driver-specific metadata (e.g., botUserId for Slack).
+		Metadata *map[string]interface{} `json:"metadata,omitempty"`
+		Name     *string                 `json:"name,omitempty"`
+		TenantId *string                 `json:"tenantId,omitempty"`
+		Token    string                  `json:"token"`
+
+		// TokenGroupId Stable id that groups all tokens with the same parameters across refreshes.
+		TokenGroupId *string `json:"tokenGroupId,omitempty"`
+		TokenId      string  `json:"tokenId"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetConnectorTokenResponse) GetJSON200() *struct {
+	// AuthorizationId Stable id correlating all tokens (including refreshes) back to the original authorization.
+	AuthorizationId *string `json:"authorizationId,omitempty"`
+
+	// Claims Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
+	Claims    *map[string]interface{} `json:"claims,omitempty"`
+	Connector struct {
+		Id   string `json:"id"`
+		Type string `json:"type"`
+		Uid  string `json:"uid"`
+	} `json:"connector"`
+	ExpiresAt       float32 `json:"expiresAt"`
+	ExternalSubject *string `json:"externalSubject,omitempty"`
+	InstallationId  *string `json:"installationId,omitempty"`
+
+	// Metadata Driver-specific metadata (e.g., botUserId for Slack).
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
+	Name     *string                 `json:"name,omitempty"`
+	TenantId *string                 `json:"tenantId,omitempty"`
+	Token    string                  `json:"token"`
+
+	// TokenGroupId Stable id that groups all tokens with the same parameters across refreshes.
+	TokenGroupId *string `json:"tokenGroupId,omitempty"`
+	TokenId      string  `json:"tokenId"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetConnectorTokenResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetConnectorTokenResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetConnectorTokenResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetConnectorTokenResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAllChecksResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Checks []struct {
+			Blocking      GetAllChecks200JSONResponseBodyChecksBlocking    `json:"blocking"`
+			CompletedAt   *float32                                         `json:"completedAt,omitempty"`
+			Conclusion    *GetAllChecks200JSONResponseBodyChecksConclusion `json:"conclusion,omitempty"`
+			CreatedAt     float32                                          `json:"createdAt"`
+			DetailsUrl    *string                                          `json:"detailsUrl,omitempty"`
+			Id            string                                           `json:"id"`
+			IntegrationId string                                           `json:"integrationId"`
+			Name          string                                           `json:"name"`
+			Output        *struct {
+				Metrics *struct {
+					CLS struct {
+						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsCLSSource `json:"source"`
+						Value         *float32                                                    `json:"value"`
+					} `json:"CLS"`
+					FCP struct {
+						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsFCPSource `json:"source"`
+						Value         *float32                                                    `json:"value"`
+					} `json:"FCP"`
+					LCP struct {
+						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsLCPSource `json:"source"`
+						Value         *float32                                                    `json:"value"`
+					} `json:"LCP"`
+					TBT struct {
+						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsTBTSource `json:"source"`
+						Value         *float32                                                    `json:"value"`
+					} `json:"TBT"`
+					VirtualExperienceScore *struct {
+						PreviousValue *float32                                                                       `json:"previousValue,omitempty"`
+						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsVirtualExperienceScoreSource `json:"source"`
+						Value         *float32                                                                       `json:"value"`
+					} `json:"virtualExperienceScore,omitempty"`
+				} `json:"metrics,omitempty"`
+			} `json:"output,omitempty"`
+			Path          *string                                            `json:"path,omitempty"`
+			Rerequestable GetAllChecks200JSONResponseBodyChecksRerequestable `json:"rerequestable"`
+			StartedAt     *float32                                           `json:"startedAt,omitempty"`
+			Status        GetAllChecks200JSONResponseBodyChecksStatus        `json:"status"`
+			UpdatedAt     float32                                            `json:"updatedAt"`
+		} `json:"checks"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetAllChecksResponse) GetJSON200() *struct {
+	Checks []struct {
+		Blocking      GetAllChecks200JSONResponseBodyChecksBlocking    `json:"blocking"`
+		CompletedAt   *float32                                         `json:"completedAt,omitempty"`
+		Conclusion    *GetAllChecks200JSONResponseBodyChecksConclusion `json:"conclusion,omitempty"`
+		CreatedAt     float32                                          `json:"createdAt"`
+		DetailsUrl    *string                                          `json:"detailsUrl,omitempty"`
+		Id            string                                           `json:"id"`
+		IntegrationId string                                           `json:"integrationId"`
+		Name          string                                           `json:"name"`
+		Output        *struct {
+			Metrics *struct {
+				CLS struct {
+					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsCLSSource `json:"source"`
+					Value         *float32                                                    `json:"value"`
+				} `json:"CLS"`
+				FCP struct {
+					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsFCPSource `json:"source"`
+					Value         *float32                                                    `json:"value"`
+				} `json:"FCP"`
+				LCP struct {
+					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsLCPSource `json:"source"`
+					Value         *float32                                                    `json:"value"`
+				} `json:"LCP"`
+				TBT struct {
+					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
+					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsTBTSource `json:"source"`
+					Value         *float32                                                    `json:"value"`
+				} `json:"TBT"`
+				VirtualExperienceScore *struct {
+					PreviousValue *float32                                                                       `json:"previousValue,omitempty"`
+					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsVirtualExperienceScoreSource `json:"source"`
+					Value         *float32                                                                       `json:"value"`
+				} `json:"virtualExperienceScore,omitempty"`
+			} `json:"metrics,omitempty"`
+		} `json:"output,omitempty"`
+		Path          *string                                            `json:"path,omitempty"`
+		Rerequestable GetAllChecks200JSONResponseBodyChecksRerequestable `json:"rerequestable"`
+		StartedAt     *float32                                           `json:"startedAt,omitempty"`
+		Status        GetAllChecks200JSONResponseBodyChecksStatus        `json:"status"`
+		UpdatedAt     float32                                            `json:"updatedAt"`
+	} `json:"checks"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetAllChecksResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAllChecksResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAllChecksResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAllChecksResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateCheckResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Blocking    CreateCheck200JSONResponseBodyBlocking `json:"blocking"`
+		CompletedAt *float32                               `json:"completedAt,omitempty"`
+
+		// Conclusion Example: succeeded
+		Conclusion   *CreateCheck200JSONResponseBodyConclusion `json:"conclusion,omitempty"`
+		CreatedAt    float32                                   `json:"createdAt"`
+		DeploymentId string                                    `json:"deploymentId"`
+		DetailsUrl   *string                                   `json:"detailsUrl,omitempty"`
+		ExternalId   *string                                   `json:"externalId,omitempty"`
+
+		// Id Example: chk_1a2b3c4d5e6f7g8h9i0j
+		Id            string `json:"id"`
+		IntegrationId string `json:"integrationId"`
+
+		// Name Example: Performance Check
+		Name   string `json:"name"`
+		Output *struct {
+			Metrics *struct {
+				CLS struct {
+					PreviousValue *float32                                             `json:"previousValue,omitempty"`
+					Source        CreateCheck200JSONResponseBodyOutputMetricsCLSSource `json:"source"`
+					Value         *float32                                             `json:"value"`
+				} `json:"CLS"`
+				FCP struct {
+					PreviousValue *float32                                             `json:"previousValue,omitempty"`
+					Source        CreateCheck200JSONResponseBodyOutputMetricsFCPSource `json:"source"`
+					Value         *float32                                             `json:"value"`
+				} `json:"FCP"`
+				LCP struct {
+					PreviousValue *float32                                             `json:"previousValue,omitempty"`
+					Source        CreateCheck200JSONResponseBodyOutputMetricsLCPSource `json:"source"`
+					Value         *float32                                             `json:"value"`
+				} `json:"LCP"`
+				TBT struct {
+					PreviousValue *float32                                             `json:"previousValue,omitempty"`
+					Source        CreateCheck200JSONResponseBodyOutputMetricsTBTSource `json:"source"`
+					Value         *float32                                             `json:"value"`
+				} `json:"TBT"`
+				VirtualExperienceScore *struct {
+					PreviousValue *float32                                                                `json:"previousValue,omitempty"`
+					Source        CreateCheck200JSONResponseBodyOutputMetricsVirtualExperienceScoreSource `json:"source"`
+					Value         *float32                                                                `json:"value"`
+				} `json:"virtualExperienceScore,omitempty"`
+			} `json:"metrics,omitempty"`
+		} `json:"output,omitempty"`
+
+		// Path Example: /api/users
+		Path          *string                                      `json:"path,omitempty"`
+		Rerequestable *CreateCheck200JSONResponseBodyRerequestable `json:"rerequestable,omitempty"`
+		StartedAt     *float32                                     `json:"startedAt,omitempty"`
+
+		// Status Example: completed
+		Status    CreateCheck200JSONResponseBodyStatus `json:"status"`
+		UpdatedAt float32                              `json:"updatedAt"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CreateCheckResponse) GetJSON200() *struct {
 	Blocking    CreateCheck200JSONResponseBodyBlocking `json:"blocking"`
@@ -7294,6 +7721,9 @@ type GetMicrofrontendsInGroupResponse struct {
 				// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+				// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 				// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -7422,6 +7852,9 @@ type GetMicrofrontendsInGroupResponse struct {
 
 				// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+				// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 				// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -9061,6 +9494,9 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -9189,6 +9625,9 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -11784,6 +12223,9 @@ type DeleteProjectAvatarResponse struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -11912,6 +12354,9 @@ type DeleteProjectAvatarResponse struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -13548,6 +13993,9 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -13676,6 +14124,9 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 
 		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -15345,6 +15796,9 @@ type UploadProjectAvatarResponse struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -15473,6 +15927,9 @@ type UploadProjectAvatarResponse struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -17109,6 +17566,9 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -17237,6 +17697,9 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 
 		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -18201,6 +18664,261 @@ func (r UploadProjectAvatarResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UploadProjectAvatarResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectBoxesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Daemons []struct {
+			Config struct {
+				Command            *[]string                                                             `json:"command,omitempty"`
+				ConfiguredReplicas *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas `json:"configuredReplicas,omitempty"`
+				Image              struct {
+					Requested string `json:"requested"`
+					Resolved  string `json:"resolved"`
+				} `json:"image"`
+				LivenessProbe *struct {
+					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+					HttpGet          struct {
+						Host        *string `json:"host,omitempty"`
+						HttpHeaders *[]struct {
+							Name  string `json:"name"`
+							Value string `json:"value"`
+						} `json:"httpHeaders,omitempty"`
+						Path   string                                                                    `json:"path"`
+						Port   float32                                                                   `json:"port"`
+						Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
+					} `json:"httpGet"`
+					InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+					PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
+					SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
+					TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
+				} `json:"livenessProbe,omitempty"`
+				Replicas  GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas `json:"replicas"`
+				Resources struct {
+					Requests struct {
+						Memory string `json:"memory"`
+					} `json:"requests"`
+				} `json:"resources"`
+				TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
+			} `json:"config"`
+			CreatedAt string `json:"createdAt"`
+
+			// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
+			DeploymentId *string `json:"deploymentId,omitempty"`
+			Name         string  `json:"name"`
+			Replicas     struct {
+				Desired float32 `json:"desired"`
+				Items   []struct {
+					Alive         *GetProjectBoxes200JSONResponseBodyDaemonsReplicasItemsAlive `json:"alive,omitempty"`
+					Id            string                                                       `json:"id"`
+					Image         *string                                                      `json:"image,omitempty"`
+					LastCheckedAt *string                                                      `json:"lastCheckedAt,omitempty"`
+					MemoryMiB     *float32                                                     `json:"memoryMiB,omitempty"`
+					Region        string                                                       `json:"region"`
+					StartedAt     string                                                       `json:"startedAt"`
+					StoppedAt     *string                                                      `json:"stoppedAt,omitempty"`
+				} `json:"items"`
+				Ready float32 `json:"ready"`
+				Total float32 `json:"total"`
+			} `json:"replicas"`
+			Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
+			Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
+			UpdatedAt string                                           `json:"updatedAt"`
+		} `json:"daemons"`
+		Pagination struct {
+			Count float32 `json:"count"`
+			Next  *string `json:"next,omitempty"`
+		} `json:"pagination"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectBoxesResponse) GetJSON200() *struct {
+	Daemons []struct {
+		Config struct {
+			Command            *[]string                                                             `json:"command,omitempty"`
+			ConfiguredReplicas *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas `json:"configuredReplicas,omitempty"`
+			Image              struct {
+				Requested string `json:"requested"`
+				Resolved  string `json:"resolved"`
+			} `json:"image"`
+			LivenessProbe *struct {
+				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+				HttpGet          struct {
+					Host        *string `json:"host,omitempty"`
+					HttpHeaders *[]struct {
+						Name  string `json:"name"`
+						Value string `json:"value"`
+					} `json:"httpHeaders,omitempty"`
+					Path   string                                                                    `json:"path"`
+					Port   float32                                                                   `json:"port"`
+					Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
+				} `json:"httpGet"`
+				InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+				PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
+				SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
+				TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
+			} `json:"livenessProbe,omitempty"`
+			Replicas  GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas `json:"replicas"`
+			Resources struct {
+				Requests struct {
+					Memory string `json:"memory"`
+				} `json:"requests"`
+			} `json:"resources"`
+			TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
+		} `json:"config"`
+		CreatedAt string `json:"createdAt"`
+
+		// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
+		DeploymentId *string `json:"deploymentId,omitempty"`
+		Name         string  `json:"name"`
+		Replicas     struct {
+			Desired float32 `json:"desired"`
+			Items   []struct {
+				Alive         *GetProjectBoxes200JSONResponseBodyDaemonsReplicasItemsAlive `json:"alive,omitempty"`
+				Id            string                                                       `json:"id"`
+				Image         *string                                                      `json:"image,omitempty"`
+				LastCheckedAt *string                                                      `json:"lastCheckedAt,omitempty"`
+				MemoryMiB     *float32                                                     `json:"memoryMiB,omitempty"`
+				Region        string                                                       `json:"region"`
+				StartedAt     string                                                       `json:"startedAt"`
+				StoppedAt     *string                                                      `json:"stoppedAt,omitempty"`
+			} `json:"items"`
+			Ready float32 `json:"ready"`
+			Total float32 `json:"total"`
+		} `json:"replicas"`
+		Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
+		Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
+		UpdatedAt string                                           `json:"updatedAt"`
+	} `json:"daemons"`
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next,omitempty"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectBoxesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectBoxesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectBoxesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectBoxesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutProjectDaemonInstancesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutProjectDaemonInstancesResponse) GetJSON200() *struct {
+	Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r PutProjectDaemonInstancesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutProjectDaemonInstancesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutProjectDaemonInstancesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutProjectDaemonInstancesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RestartProjectDaemonInstanceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
+	}
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r RestartProjectDaemonInstanceResponse) GetJSON202() *struct {
+	Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
+} {
+	return r.JSON202
+}
+
+// GetBody returns the raw response body bytes
+func (r RestartProjectDaemonInstanceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RestartProjectDaemonInstanceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RestartProjectDaemonInstanceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RestartProjectDaemonInstanceResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -19425,661 +20143,4 @@ func (r ApproveRollingReleaseStageResponse) GetJSON200() *struct {
 	} `json:"rollingRelease"`
 } {
 	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ApproveRollingReleaseStageResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ApproveRollingReleaseStageResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ApproveRollingReleaseStageResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ApproveRollingReleaseStageResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetRollingReleaseBillingStatusResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetRollingReleaseBillingStatus200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetRollingReleaseBillingStatusResponse) GetJSON200() *GetRollingReleaseBillingStatus200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetRollingReleaseBillingStatusResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetRollingReleaseBillingStatusResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetRollingReleaseBillingStatusResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetRollingReleaseBillingStatusResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CompleteRollingReleaseResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-		RollingRelease *struct {
-			// ActiveStage The currently active stage, null if the rollout is aborted
-			//
-			// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-			ActiveStage *struct {
-				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-				Duration *float32 `json:"duration"`
-
-				// Index The zero-based index of the stage
-				//
-				// Example: 0
-				Index float32 `json:"index"`
-
-				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-				//
-				// Example: false
-				IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-				// LinearShift Whether to linearly shift traffic over the duration of this stage
-				//
-				// Example: false
-				LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-				// RequireApproval Whether or not this stage requires manual approval to proceed
-				RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-				//
-				// Example: 25
-				TargetPercentage float32 `json:"targetPercentage"`
-			} `json:"activeStage"`
-
-			// AdvancementType The advancement type of the rolling release
-			//
-			// Example: manual-approval
-			AdvancementType CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-			// CanaryDeployment The canary deployment being rolled out
-			//
-			// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-			CanaryDeployment *struct {
-				// CreatedAt A number containing the date when the deployment was created in milliseconds
-				//
-				// Example: 1540257589405
-				CreatedAt float32 `json:"createdAt"`
-
-				// Id A string holding the unique ID of the deployment
-				//
-				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-				Id string `json:"id"`
-
-				// Name The name of the project associated with the deployment at the time that the deployment was created
-				//
-				// Example: my-project
-				Name string `json:"name"`
-
-				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-				//
-				// Example: READY
-				ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-				ReadyStateAt *float32                                                                          `json:"readyStateAt,omitempty"`
-
-				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-				//
-				// Example: cli
-				Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-				Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-				// Url A string with the unique URL of the deployment
-				//
-				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-				Url string `json:"url"`
-			} `json:"canaryDeployment"`
-
-			// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-			CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-			// CurrentDeployment The current deployment receiving production traffic
-			//
-			// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-			CurrentDeployment *struct {
-				// CreatedAt A number containing the date when the deployment was created in milliseconds
-				//
-				// Example: 1540257589405
-				CreatedAt float32 `json:"createdAt"`
-
-				// Id A string holding the unique ID of the deployment
-				//
-				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-				Id string `json:"id"`
-
-				// Name The name of the project associated with the deployment at the time that the deployment was created
-				//
-				// Example: my-project
-				Name string `json:"name"`
-
-				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-				//
-				// Example: READY
-				ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-				ReadyStateAt *float32                                                                           `json:"readyStateAt,omitempty"`
-
-				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-				//
-				// Example: cli
-				Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-				Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-				// Url A string with the unique URL of the deployment
-				//
-				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-				Url string `json:"url"`
-			} `json:"currentDeployment"`
-
-			// NextStage The next stage to be activated, null if not in ACTIVE state
-			//
-			// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-			NextStage *struct {
-				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-				Duration *float32 `json:"duration"`
-
-				// Index The zero-based index of the stage
-				//
-				// Example: 0
-				Index float32 `json:"index"`
-
-				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-				//
-				// Example: false
-				IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-				// LinearShift Whether to linearly shift traffic over the duration of this stage
-				//
-				// Example: false
-				LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-				// RequireApproval Whether or not this stage requires manual approval to proceed
-				RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-				//
-				// Example: 25
-				TargetPercentage float32 `json:"targetPercentage"`
-			} `json:"nextStage"`
-
-			// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-			//
-			// Example: dpl_ghi789
-			QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-			// Stages All stages configured for this rolling release
-			//
-			// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-			Stages []struct {
-				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-				Duration *float32 `json:"duration"`
-
-				// Index The zero-based index of the stage
-				//
-				// Example: 0
-				Index float32 `json:"index"`
-
-				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-				//
-				// Example: false
-				IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-				// LinearShift Whether to linearly shift traffic over the duration of this stage
-				//
-				// Example: false
-				LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-				// RequireApproval Whether or not this stage requires manual approval to proceed
-				RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-				//
-				// Example: 25
-				TargetPercentage float32 `json:"targetPercentage"`
-			} `json:"stages"`
-
-			// StartedAt Unix timestamp in milliseconds when the rolling release started
-			//
-			// Example: 1716210500000
-			StartedAt float32 `json:"startedAt"`
-
-			// State The current state of the rolling release
-			//
-			// Example: ACTIVE
-			State CompleteRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
-
-			// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-			Substate *CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-			// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-			//
-			// Example: 1716210600000
-			UpdatedAt float32 `json:"updatedAt"`
-		} `json:"rollingRelease"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CompleteRollingReleaseResponse) GetJSON200() *struct {
-	// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-	RollingRelease *struct {
-		// ActiveStage The currently active stage, null if the rollout is aborted
-		//
-		// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-		ActiveStage *struct {
-			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-			Duration *float32 `json:"duration"`
-
-			// Index The zero-based index of the stage
-			//
-			// Example: 0
-			Index float32 `json:"index"`
-
-			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-			//
-			// Example: false
-			IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-			// LinearShift Whether to linearly shift traffic over the duration of this stage
-			//
-			// Example: false
-			LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-			// RequireApproval Whether or not this stage requires manual approval to proceed
-			RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-			//
-			// Example: 25
-			TargetPercentage float32 `json:"targetPercentage"`
-		} `json:"activeStage"`
-
-		// AdvancementType The advancement type of the rolling release
-		//
-		// Example: manual-approval
-		AdvancementType CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-		// CanaryDeployment The canary deployment being rolled out
-		//
-		// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-		CanaryDeployment *struct {
-			// CreatedAt A number containing the date when the deployment was created in milliseconds
-			//
-			// Example: 1540257589405
-			CreatedAt float32 `json:"createdAt"`
-
-			// Id A string holding the unique ID of the deployment
-			//
-			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-			Id string `json:"id"`
-
-			// Name The name of the project associated with the deployment at the time that the deployment was created
-			//
-			// Example: my-project
-			Name string `json:"name"`
-
-			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-			//
-			// Example: READY
-			ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-			ReadyStateAt *float32                                                                          `json:"readyStateAt,omitempty"`
-
-			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-			//
-			// Example: cli
-			Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-			Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-			// Url A string with the unique URL of the deployment
-			//
-			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-			Url string `json:"url"`
-		} `json:"canaryDeployment"`
-
-		// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-		CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-		// CurrentDeployment The current deployment receiving production traffic
-		//
-		// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-		CurrentDeployment *struct {
-			// CreatedAt A number containing the date when the deployment was created in milliseconds
-			//
-			// Example: 1540257589405
-			CreatedAt float32 `json:"createdAt"`
-
-			// Id A string holding the unique ID of the deployment
-			//
-			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-			Id string `json:"id"`
-
-			// Name The name of the project associated with the deployment at the time that the deployment was created
-			//
-			// Example: my-project
-			Name string `json:"name"`
-
-			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-			//
-			// Example: READY
-			ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-			ReadyStateAt *float32                                                                           `json:"readyStateAt,omitempty"`
-
-			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-			//
-			// Example: cli
-			Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-			Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-			// Url A string with the unique URL of the deployment
-			//
-			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-			Url string `json:"url"`
-		} `json:"currentDeployment"`
-
-		// NextStage The next stage to be activated, null if not in ACTIVE state
-		//
-		// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-		NextStage *struct {
-			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-			Duration *float32 `json:"duration"`
-
-			// Index The zero-based index of the stage
-			//
-			// Example: 0
-			Index float32 `json:"index"`
-
-			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-			//
-			// Example: false
-			IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-			// LinearShift Whether to linearly shift traffic over the duration of this stage
-			//
-			// Example: false
-			LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-			// RequireApproval Whether or not this stage requires manual approval to proceed
-			RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-			//
-			// Example: 25
-			TargetPercentage float32 `json:"targetPercentage"`
-		} `json:"nextStage"`
-
-		// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-		//
-		// Example: dpl_ghi789
-		QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-		// Stages All stages configured for this rolling release
-		//
-		// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-		Stages []struct {
-			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-			Duration *float32 `json:"duration"`
-
-			// Index The zero-based index of the stage
-			//
-			// Example: 0
-			Index float32 `json:"index"`
-
-			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-			//
-			// Example: false
-			IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-			// LinearShift Whether to linearly shift traffic over the duration of this stage
-			//
-			// Example: false
-			LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-			// RequireApproval Whether or not this stage requires manual approval to proceed
-			RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-			//
-			// Example: 25
-			TargetPercentage float32 `json:"targetPercentage"`
-		} `json:"stages"`
-
-		// StartedAt Unix timestamp in milliseconds when the rolling release started
-		//
-		// Example: 1716210500000
-		StartedAt float32 `json:"startedAt"`
-
-		// State The current state of the rolling release
-		//
-		// Example: ACTIVE
-		State CompleteRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
-
-		// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-		Substate *CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-		// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-		//
-		// Example: 1716210600000
-		UpdatedAt float32 `json:"updatedAt"`
-	} `json:"rollingRelease"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CompleteRollingReleaseResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CompleteRollingReleaseResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CompleteRollingReleaseResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CompleteRollingReleaseResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteRollingReleaseConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		RollingRelease interface{} `json:"rollingRelease"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r DeleteRollingReleaseConfigResponse) GetJSON200() *struct {
-	RollingRelease interface{} `json:"rollingRelease"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteRollingReleaseConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteRollingReleaseConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteRollingReleaseConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteRollingReleaseConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetRollingReleaseConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
-		RollingRelease *struct {
-			// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
-			//
-			// Example: false
-			CanaryResponseHeader *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-			// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-			Gate *struct {
-				// Action What to do when the gate trips: pause the rollout, or roll it back.
-				Action GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-				// Checks The checks to evaluate. An empty array means nothing is evaluated.
-				Checks []struct {
-					// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-					//
-					// Example: ["/api/health"]
-					ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-					// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-					//
-					// Example: [503]
-					ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-					// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-					//
-					// Example: 30
-					IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-					// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-					//
-					// Example: 0.05
-					SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-					// Type The metric this check evaluates.
-					Type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-				} `json:"checks"`
-
-				// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-				DryRun GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-				// Enabled Whether automated gating is enabled for this project's rollouts.
-				Enabled GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-				// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-				//
-				// Example: 3
-				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-				// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-				//
-				// Example: 5
-				WindowSize *float32 `json:"windowSize,omitempty"`
-			} `json:"gate,omitempty"`
-
-			// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
-			Stages *[]struct {
-				// Duration Duration in minutes for automatic advancement to the next stage
-				//
-				// Example: 600
-				Duration *float32 `json:"duration,omitempty"`
-
-				// LinearShift Whether to linearly shift traffic over the duration of this stage
-				//
-				// Example: false
-				LinearShift *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-				// RequireApproval Whether or not this stage requires manual approval to proceed
-				//
-				// Example: false
-				RequireApproval *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
-
-				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-				//
-				// Example: 25
-				TargetPercentage float32 `json:"targetPercentage"`
-			} `json:"stages,omitempty"`
-
-			// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
-			//
-			// Example: production
-			Target string `json:"target"`
-		} `json:"rollingRelease"`
-	}
 }

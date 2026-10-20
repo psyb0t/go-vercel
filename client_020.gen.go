@@ -4544,7 +4544,7 @@ func (c *Client) CreateOrganization(ctx context.Context, params *CreateOrganizat
 
 // GetOrganization Get an Organization
 //
-// Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
 //
 // Corresponds with GET /v1/organizations/{organizationId} (the `GetOrganization` operationId).
 func (c *Client) GetOrganization(ctx context.Context, organizationId string, params *GetOrganizationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -4750,6 +4750,78 @@ func (c *Client) DeleteProjectAvatar(ctx context.Context, idOrName string, param
 // Corresponds with POST /v1/projects/{idOrName}/avatar (the `UploadProjectAvatar` operationId).
 func (c *Client) UploadProjectAvatarWithBody(ctx context.Context, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUploadProjectAvatarRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectBoxes Get project daemons
+//
+// Lists project daemons.
+//
+// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
+func (c *Client) GetProjectBoxes(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectBoxesRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
+//
+// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *Client) PutProjectDaemonInstancesWithBody(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutProjectDaemonInstancesRequestWithBody(c.Server, idOrName, daemonName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutProjectDaemonInstances Override a project daemon's instance counts
+//
+// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *Client) PutProjectDaemonInstances(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutProjectDaemonInstancesRequest(c.Server, idOrName, daemonName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RestartProjectDaemonInstance Force restart a project daemon instance
+//
+// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+//
+// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
+func (c *Client) RestartProjectDaemonInstance(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestartProjectDaemonInstanceRequest(c.Server, idOrName, daemonName, instanceId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -19954,79 +20026,6 @@ func NewPatchEdgeConfigItemsRequestWithBody(server string, edgeConfigId string, 
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteEdgeConfigSchemaRequest constructs an http.Request for the DeleteEdgeConfigSchema method
-func NewDeleteEdgeConfigSchemaRequest(server string, edgeConfigId string, params *DeleteEdgeConfigSchemaParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/schema", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
 
 	return req, nil
 }

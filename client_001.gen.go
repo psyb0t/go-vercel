@@ -4681,6 +4681,7 @@ const (
 	ListEventTypeNameWebhookDeleted                                  ListEventTypeName = "webhook-deleted"
 	ListEventTypeNameWebhookUpdated                                  ListEventTypeName = "webhook-updated"
 	ListEventTypeNameWorkflowDeploymentKeyAccessed                   ListEventTypeName = "workflow-deployment-key-accessed"
+	ListEventTypeNameXaaUpdated                                      ListEventTypeName = "xaa-updated"
 )
 
 // Valid indicates whether the value is a known member of the ListEventTypeName enum.
@@ -6142,6 +6143,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameWorkflowDeploymentKeyAccessed:
 		return true
+	case ListEventTypeNameXaaUpdated:
+		return true
 	default:
 		return false
 	}
@@ -6877,6 +6880,7 @@ const (
 	ListEventTypeReplacedByWebhookDeleted                                  ListEventTypeReplacedBy = "webhook-deleted"
 	ListEventTypeReplacedByWebhookUpdated                                  ListEventTypeReplacedBy = "webhook-updated"
 	ListEventTypeReplacedByWorkflowDeploymentKeyAccessed                   ListEventTypeReplacedBy = "workflow-deployment-key-accessed"
+	ListEventTypeReplacedByXaaUpdated                                      ListEventTypeReplacedBy = "xaa-updated"
 )
 
 // Valid indicates whether the value is a known member of the ListEventTypeReplacedBy enum.
@@ -8337,6 +8341,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByWebhookUpdated:
 		return true
 	case ListEventTypeReplacedByWorkflowDeploymentKeyAccessed:
+		return true
+	case ListEventTypeReplacedByXaaUpdated:
 		return true
 	default:
 		return false
@@ -12312,6 +12318,7 @@ const (
 	UserEventPayload62PermissionsReadWriteTeamMembers                  UserEventPayload62Permissions = "read-write:team-members"
 	UserEventPayload62PermissionsReadWriteVcr                          UserEventPayload62Permissions = "read-write:vcr"
 	UserEventPayload62PermissionsUseAiGateway                          UserEventPayload62Permissions = "use:ai-gateway"
+	UserEventPayload62PermissionsUseGithub                             UserEventPayload62Permissions = "use:github"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload62Permissions enum.
@@ -12469,6 +12476,8 @@ func (e UserEventPayload62Permissions) Valid() bool {
 		return true
 	case UserEventPayload62PermissionsUseAiGateway:
 		return true
+	case UserEventPayload62PermissionsUseGithub:
+		return true
 	default:
 		return false
 	}
@@ -12576,6 +12585,7 @@ const (
 	UserEventPayload64NextPermissionsReadWriteTeamMembers                  UserEventPayload64NextPermissions = "read-write:team-members"
 	UserEventPayload64NextPermissionsReadWriteVcr                          UserEventPayload64NextPermissions = "read-write:vcr"
 	UserEventPayload64NextPermissionsUseAiGateway                          UserEventPayload64NextPermissions = "use:ai-gateway"
+	UserEventPayload64NextPermissionsUseGithub                             UserEventPayload64NextPermissions = "use:github"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload64NextPermissions enum.
@@ -12732,6 +12742,8 @@ func (e UserEventPayload64NextPermissions) Valid() bool {
 	case UserEventPayload64NextPermissionsReadWriteVcr:
 		return true
 	case UserEventPayload64NextPermissionsUseAiGateway:
+		return true
+	case UserEventPayload64NextPermissionsUseGithub:
 		return true
 	default:
 		return false
@@ -19991,15 +20003,3 @@ const (
 	UserEventPayload280ProjectOldConnectConfigurationsPassiveFalse UserEventPayload280ProjectOldConnectConfigurationsPassive = false
 	UserEventPayload280ProjectOldConnectConfigurationsPassiveTrue  UserEventPayload280ProjectOldConnectConfigurationsPassive = true
 )
-
-// Valid indicates whether the value is a known member of the UserEventPayload280ProjectOldConnectConfigurationsPassive enum.
-func (e UserEventPayload280ProjectOldConnectConfigurationsPassive) Valid() bool {
-	switch e {
-	case UserEventPayload280ProjectOldConnectConfigurationsPassiveFalse:
-		return true
-	case UserEventPayload280ProjectOldConnectConfigurationsPassiveTrue:
-		return true
-	default:
-		return false
-	}
-}

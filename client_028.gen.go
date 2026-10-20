@@ -13,6 +13,224 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseGetSessionSnapshotResponse parses an HTTP response from a GetSessionSnapshotWithResponse call
+func ParseGetSessionSnapshotResponse(rsp *http.Response) (*GetSessionSnapshotResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSessionSnapshotResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteSandboxResponse parses an HTTP response from a DeleteSandboxWithResponse call
+func ParseDeleteSandboxResponse(rsp *http.Response) (*DeleteSandboxResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteSandboxResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetNamedSandboxResponse parses an HTTP response from a GetNamedSandboxWithResponse call
+func ParseGetNamedSandboxResponse(rsp *http.Response) (*GetNamedSandboxResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetNamedSandboxResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Resumed GetNamedSandbox200JSONResponseBodyResumed `json:"resumed"`
+			Routes  []SandboxPublicRoute                      `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateSandboxResponse parses an HTTP response from a UpdateSandboxWithResponse call
+func ParseUpdateSandboxResponse(rsp *http.Response) (*UpdateSandboxResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateSandboxResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UpdateSandbox200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseCreateSandboxesByNameForkV2Response parses an HTTP response from a CreateSandboxesByNameForkV2WithResponse call
 func ParseCreateSandboxesByNameForkV2Response(rsp *http.Response) (*CreateSandboxesByNameForkV2Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -4457,6 +4675,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+				// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 				// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -4585,6 +4806,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 
 				// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+				// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 				// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -6258,6 +6482,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+				// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 				// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -6386,6 +6613,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 
 				// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+				// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 				// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`

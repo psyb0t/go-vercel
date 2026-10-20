@@ -7,6 +7,342 @@ import (
 	"encoding/json"
 )
 
+// GetFirewallConfig200JSONResponseBodyRulesets1Action defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1Action string
+
+// GetFirewallConfig200JSONResponseBodyRulesets1BypassSystem defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1BypassSystem bool
+
+// GetFirewallConfig200JSONResponseBodyRulesets1LogHeaders0 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1LogHeaders0 = []string
+
+// GetFirewallConfig200JSONResponseBodyRulesets1LogHeaders1 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1LogHeaders1 string
+
+// GetFirewallConfig200JSONResponseBody_Rulesets_1_LogHeaders defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBody_Rulesets_1_LogHeaders struct {
+	union json.RawMessage
+}
+
+// GetFirewallConfig200JSONResponseBodyRulesets1RateLimitAction defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1RateLimitAction string
+
+// GetFirewallConfig200JSONResponseBodyRulesets1RateLimitAlgo defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1RateLimitAlgo string
+
+// GetFirewallConfig200JSONResponseBodyRulesets1RedirectPermanent defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1RedirectPermanent bool
+
+// GetFirewallConfig200JSONResponseBody_Rulesets defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBody_Rulesets struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyBotIdEnabled defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyBotIdEnabled bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsNeg defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsNeg bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsOp defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsOp string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsType defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsType string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsValue0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsValue0 = string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsValue1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsValue1 = float32
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsValue2 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsValue2 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Conditions_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Conditions_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyFirewallEnabled defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyFirewallEnabled bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyIpsAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyIpsAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyLogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyLogHeaders0 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyLogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyLogHeaders1 string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_LogHeaders struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetActive defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetActive bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0 struct {
+	Action struct {
+		Mitigate *struct {
+			Action         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateAction           `json:"action"`
+			ActionDuration *string                                                                                                    `json:"actionDuration,omitempty"`
+			BypassSystem   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateBypassSystem    `json:"bypassSystem,omitempty"`
+			LogHeaders     *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
+			RateLimit      *struct {
+				Action *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRateLimitAction `json:"action,omitempty"`
+				Algo   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                                                                   `json:"keys"`
+				Limit  float32                                                                                                    `json:"limit"`
+				Window float32                                                                                                    `json:"window"`
+			} `json:"rateLimit,omitempty"`
+			Redirect *struct {
+				Location  string                                                                                                      `json:"location"`
+				Permanent CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRedirectPermanent `json:"permanent"`
+			} `json:"redirect,omitempty"`
+		} `json:"mitigate,omitempty"`
+	} `json:"action"`
+	Active         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0Active `json:"active"`
+	ConditionGroup []struct {
+		Conditions []struct {
+			Key   *string                                                                                                         `json:"key,omitempty"`
+			Neg   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsNeg        `json:"neg,omitempty"`
+			Op    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsOp          `json:"op"`
+			Type  CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsType        `json:"type"`
+			Value *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+		} `json:"conditions"`
+	} `json:"conditionGroup"`
+	Description      *string                                                                           `json:"description,omitempty"`
+	Id               string                                                                            `json:"id"`
+	Name             string                                                                            `json:"name"`
+	Valid            CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0Valid `json:"valid"`
+	ValidationErrors interface{}                                                                       `json:"validationErrors"`
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateBypassSystem defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateBypassSystem bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1 string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRateLimitAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRateLimitAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRateLimitAlgo defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRateLimitAlgo string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRedirectPermanent defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateRedirectPermanent bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0Active defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0Active bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsNeg defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsNeg bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsOp defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsOp string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsType defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsType string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0 = string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1 = float32
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0Valid defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0Valid bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1 struct {
+	Action struct {
+		Mitigate *struct {
+			Action         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateAction           `json:"action"`
+			ActionDuration *string                                                                                                    `json:"actionDuration,omitempty"`
+			BypassSystem   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateBypassSystem    `json:"bypassSystem,omitempty"`
+			LogHeaders     *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
+			RateLimit      *struct {
+				Action *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRateLimitAction `json:"action,omitempty"`
+				Algo   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                                                                   `json:"keys"`
+				Limit  float32                                                                                                    `json:"limit"`
+				Window float32                                                                                                    `json:"window"`
+			} `json:"rateLimit,omitempty"`
+			Redirect *struct {
+				Location  string                                                                                                      `json:"location"`
+				Permanent CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRedirectPermanent `json:"permanent"`
+			} `json:"redirect,omitempty"`
+		} `json:"mitigate,omitempty"`
+	} `json:"action"`
+	Active         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Active `json:"active"`
+	ConditionGroup []struct {
+		Conditions []struct {
+			Key   *string                                                                                                         `json:"key,omitempty"`
+			Neg   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsNeg        `json:"neg,omitempty"`
+			Op    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsOp          `json:"op"`
+			Type  CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsType        `json:"type"`
+			Value *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+		} `json:"conditions"`
+	} `json:"conditionGroup"`
+	Description      *string                                                                           `json:"description,omitempty"`
+	Id               string                                                                            `json:"id"`
+	Name             string                                                                            `json:"name"`
+	Valid            CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Valid `json:"valid"`
+	ValidationErrors []string                                                                          `json:"validationErrors"`
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateBypassSystem defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateBypassSystem bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0 = []string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1 defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1 string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders struct {
+	union json.RawMessage
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRateLimitAction defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRateLimitAction string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRateLimitAlgo defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRateLimitAlgo string
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRedirectPermanent defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateRedirectPermanent bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Active defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1Active bool
+
+// CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsNeg defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
+type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsNeg bool
+
 // CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsOp defines parameters for CreateSecurityFirewallConfigByConfigVersionActivate.
 type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsOp string
 
@@ -8280,6 +8616,9 @@ type GetProjects200JSONResponseBody2 struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -8408,6 +8747,9 @@ type GetProjects200JSONResponseBody2 struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -15205,12 +15547,15 @@ type CancelDeployment200JSONResponseBodyServices0 struct {
 				ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 				FunctionFailoverRegions *[]string                                                                                            `json:"functionFailoverRegions,omitempty"`
 				IncludeFiles            *string                                                                                              `json:"includeFiles,omitempty"`
-				MaxConcurrency          *float32                                                                                             `json:"maxConcurrency,omitempty"`
-				MaxDuration             *CancelDeployment200JSONResponseBody_Services_0_Builder_Config_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-				Memory                  *float32                                                                                             `json:"memory,omitempty"`
-				Regions                 *[]string                                                                                            `json:"regions,omitempty"`
-				Runtime                 *string                                                                                              `json:"runtime,omitempty"`
-				SupportsCancellation    *CancelDeployment200JSONResponseBodyServices0BuilderConfigFunctionsSupportsCancellation              `json:"supportsCancellation,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                                 `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                                `json:"maxConcurrency,omitempty"`
+				MaxDuration          *CancelDeployment200JSONResponseBody_Services_0_Builder_Config_Functions_MaxDuration    `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                                `json:"memory,omitempty"`
+				Regions              *[]string                                                                               `json:"regions,omitempty"`
+				Runtime              *string                                                                                 `json:"runtime,omitempty"`
+				SupportsCancellation *CancelDeployment200JSONResponseBodyServices0BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 			} `json:"functions,omitempty"`
 			Helpers           *CancelDeployment200JSONResponseBodyServices0BuilderConfigHelpers                `json:"helpers,omitempty"`
 			Import            *map[string]string                                                               `json:"import,omitempty"`
@@ -15240,6 +15585,9 @@ type CancelDeployment200JSONResponseBodyServices0 struct {
 				OutputDirectory                 *string                                                                                                  `json:"outputDirectory,omitempty"`
 				RootDirectory                   *string                                                                                                  `json:"rootDirectory,omitempty"`
 				SourceFilesOutsideRootDirectory *CancelDeployment200JSONResponseBodyServices0BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 			} `json:"projectSettings,omitempty"`
 			Rust *string `json:"rust,omitempty"`
 
@@ -15542,12 +15890,15 @@ type CancelDeployment200JSONResponseBodyServices1 struct {
 				ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 				FunctionFailoverRegions *[]string                                                                                            `json:"functionFailoverRegions,omitempty"`
 				IncludeFiles            *string                                                                                              `json:"includeFiles,omitempty"`
-				MaxConcurrency          *float32                                                                                             `json:"maxConcurrency,omitempty"`
-				MaxDuration             *CancelDeployment200JSONResponseBody_Services_1_Builder_Config_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-				Memory                  *float32                                                                                             `json:"memory,omitempty"`
-				Regions                 *[]string                                                                                            `json:"regions,omitempty"`
-				Runtime                 *string                                                                                              `json:"runtime,omitempty"`
-				SupportsCancellation    *CancelDeployment200JSONResponseBodyServices1BuilderConfigFunctionsSupportsCancellation              `json:"supportsCancellation,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                                 `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                                `json:"maxConcurrency,omitempty"`
+				MaxDuration          *CancelDeployment200JSONResponseBody_Services_1_Builder_Config_Functions_MaxDuration    `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                                `json:"memory,omitempty"`
+				Regions              *[]string                                                                               `json:"regions,omitempty"`
+				Runtime              *string                                                                                 `json:"runtime,omitempty"`
+				SupportsCancellation *CancelDeployment200JSONResponseBodyServices1BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 			} `json:"functions,omitempty"`
 			Helpers           *CancelDeployment200JSONResponseBodyServices1BuilderConfigHelpers                `json:"helpers,omitempty"`
 			Import            *map[string]string                                                               `json:"import,omitempty"`
@@ -15577,6 +15928,9 @@ type CancelDeployment200JSONResponseBodyServices1 struct {
 				OutputDirectory                 *string                                                                                                  `json:"outputDirectory,omitempty"`
 				RootDirectory                   *string                                                                                                  `json:"rootDirectory,omitempty"`
 				SourceFilesOutsideRootDirectory *CancelDeployment200JSONResponseBodyServices1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 			} `json:"projectSettings,omitempty"`
 			Rust *string `json:"rust,omitempty"`
 
@@ -15624,12 +15978,15 @@ type CancelDeployment200JSONResponseBodyServices1 struct {
 		ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Services_1_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 		FunctionFailoverRegions *[]string                                                                             `json:"functionFailoverRegions,omitempty"`
 		IncludeFiles            *string                                                                               `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                              `json:"maxConcurrency,omitempty"`
-		MaxDuration             *CancelDeployment200JSONResponseBody_Services_1_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                              `json:"memory,omitempty"`
-		Regions                 *[]string                                                                             `json:"regions,omitempty"`
-		Runtime                 *string                                                                               `json:"runtime,omitempty"`
-		SupportsCancellation    *CancelDeployment200JSONResponseBodyServices1FunctionsSupportsCancellation            `json:"supportsCancellation,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                                    `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                                   `json:"maxConcurrency,omitempty"`
+		MaxDuration          *CancelDeployment200JSONResponseBody_Services_1_Functions_MaxDuration      `json:"maxDuration,omitempty"`
+		Memory               *float32                                                                   `json:"memory,omitempty"`
+		Regions              *[]string                                                                  `json:"regions,omitempty"`
+		Runtime              *string                                                                    `json:"runtime,omitempty"`
+		SupportsCancellation *CancelDeployment200JSONResponseBodyServices1FunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 	} `json:"functions,omitempty"`
 	Headers *[]struct {
 		Has     *[]CancelDeployment200JSONResponseBody_Services_1_Headers_Has_Item `json:"has,omitempty"`
@@ -17588,12 +17945,15 @@ type CreateDeployment200JSONResponseBody1 struct {
 		ExperimentalTriggers    *[]CreateDeployment200JSONResponseBody_1_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 		FunctionFailoverRegions *[]string                                                                    `json:"functionFailoverRegions,omitempty"`
 		IncludeFiles            *string                                                                      `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                     `json:"maxConcurrency,omitempty"`
-		MaxDuration             *CreateDeployment200JSONResponseBody_1_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                     `json:"memory,omitempty"`
-		Regions                 *[]string                                                                    `json:"regions,omitempty"`
-		Runtime                 *string                                                                      `json:"runtime,omitempty"`
-		SupportsCancellation    *CreateDeployment200JSONResponseBody1FunctionsSupportsCancellation           `json:"supportsCancellation,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                            `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                           `json:"maxConcurrency,omitempty"`
+		MaxDuration          *CreateDeployment200JSONResponseBody_1_Functions_MaxDuration       `json:"maxDuration,omitempty"`
+		Memory               *float32                                                           `json:"memory,omitempty"`
+		Regions              *[]string                                                          `json:"regions,omitempty"`
+		Runtime              *string                                                            `json:"runtime,omitempty"`
+		SupportsCancellation *CreateDeployment200JSONResponseBody1FunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 	} `json:"functions,omitempty"`
 	GitRepo   *CreateDeployment200JSONResponseBody_1_GitRepo   `json:"gitRepo,omitempty"`
 	GitSource *CreateDeployment200JSONResponseBody_1_GitSource `json:"gitSource,omitempty"`
@@ -19186,12 +19546,15 @@ type CreateDeployment200JSONResponseBody1Services0 struct {
 				ExperimentalTriggers    *[]CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 				FunctionFailoverRegions *[]string                                                                                              `json:"functionFailoverRegions,omitempty"`
 				IncludeFiles            *string                                                                                                `json:"includeFiles,omitempty"`
-				MaxConcurrency          *float32                                                                                               `json:"maxConcurrency,omitempty"`
-				MaxDuration             *CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-				Memory                  *float32                                                                                               `json:"memory,omitempty"`
-				Regions                 *[]string                                                                                              `json:"regions,omitempty"`
-				Runtime                 *string                                                                                                `json:"runtime,omitempty"`
-				SupportsCancellation    *CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsSupportsCancellation               `json:"supportsCancellation,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                                  `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                                 `json:"maxConcurrency,omitempty"`
+				MaxDuration          *CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration   `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                                 `json:"memory,omitempty"`
+				Regions              *[]string                                                                                `json:"regions,omitempty"`
+				Runtime              *string                                                                                  `json:"runtime,omitempty"`
+				SupportsCancellation *CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 			} `json:"functions,omitempty"`
 			Helpers           *CreateDeployment200JSONResponseBody1Services0BuilderConfigHelpers                 `json:"helpers,omitempty"`
 			Import            *map[string]string                                                                 `json:"import,omitempty"`
@@ -19221,6 +19584,9 @@ type CreateDeployment200JSONResponseBody1Services0 struct {
 				OutputDirectory                 *string                                                                                                   `json:"outputDirectory,omitempty"`
 				RootDirectory                   *string                                                                                                   `json:"rootDirectory,omitempty"`
 				SourceFilesOutsideRootDirectory *CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 			} `json:"projectSettings,omitempty"`
 			Rust *string `json:"rust,omitempty"`
 
@@ -19523,12 +19889,15 @@ type CreateDeployment200JSONResponseBody1Services1 struct {
 				ExperimentalTriggers    *[]CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 				FunctionFailoverRegions *[]string                                                                                              `json:"functionFailoverRegions,omitempty"`
 				IncludeFiles            *string                                                                                                `json:"includeFiles,omitempty"`
-				MaxConcurrency          *float32                                                                                               `json:"maxConcurrency,omitempty"`
-				MaxDuration             *CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-				Memory                  *float32                                                                                               `json:"memory,omitempty"`
-				Regions                 *[]string                                                                                              `json:"regions,omitempty"`
-				Runtime                 *string                                                                                                `json:"runtime,omitempty"`
-				SupportsCancellation    *CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation               `json:"supportsCancellation,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                                  `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                                 `json:"maxConcurrency,omitempty"`
+				MaxDuration          *CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration   `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                                 `json:"memory,omitempty"`
+				Regions              *[]string                                                                                `json:"regions,omitempty"`
+				Runtime              *string                                                                                  `json:"runtime,omitempty"`
+				SupportsCancellation *CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 			} `json:"functions,omitempty"`
 			Helpers           *CreateDeployment200JSONResponseBody1Services1BuilderConfigHelpers                 `json:"helpers,omitempty"`
 			Import            *map[string]string                                                                 `json:"import,omitempty"`
@@ -19558,6 +19927,9 @@ type CreateDeployment200JSONResponseBody1Services1 struct {
 				OutputDirectory                 *string                                                                                                   `json:"outputDirectory,omitempty"`
 				RootDirectory                   *string                                                                                                   `json:"rootDirectory,omitempty"`
 				SourceFilesOutsideRootDirectory *CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 			} `json:"projectSettings,omitempty"`
 			Rust *string `json:"rust,omitempty"`
 
@@ -19605,12 +19977,15 @@ type CreateDeployment200JSONResponseBody1Services1 struct {
 		ExperimentalTriggers    *[]CreateDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 		FunctionFailoverRegions *[]string                                                                               `json:"functionFailoverRegions,omitempty"`
 		IncludeFiles            *string                                                                                 `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                                `json:"maxConcurrency,omitempty"`
-		MaxDuration             *CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                                `json:"memory,omitempty"`
-		Regions                 *[]string                                                                               `json:"regions,omitempty"`
-		Runtime                 *string                                                                                 `json:"runtime,omitempty"`
-		SupportsCancellation    *CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation             `json:"supportsCancellation,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                                     `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                                    `json:"maxConcurrency,omitempty"`
+		MaxDuration          *CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration     `json:"maxDuration,omitempty"`
+		Memory               *float32                                                                    `json:"memory,omitempty"`
+		Regions              *[]string                                                                   `json:"regions,omitempty"`
+		Runtime              *string                                                                     `json:"runtime,omitempty"`
+		SupportsCancellation *CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 	} `json:"functions,omitempty"`
 	Headers *[]struct {
 		Has     *[]CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item `json:"has,omitempty"`
@@ -19657,352 +20032,3 @@ type CreateDeployment200JSONResponseBody1Services1 struct {
 	Schema        CreateDeployment200JSONResponseBody1Services1Schema             `json:"schema"`
 	TrailingSlash *CreateDeployment200JSONResponseBody1Services1TrailingSlash     `json:"trailingSlash,omitempty"`
 }
-
-// CreateDeployment200JSONResponseBody1Services1BindingsFormat defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BindingsFormat string
-
-// CreateDeployment200JSONResponseBody1Services1BindingsType defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BindingsType string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigDebug defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigDebug bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 = string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 = []string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsAffinityMode defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsAffinityMode string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsArchitecture defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsArchitecture string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 struct {
-	// Consumer Name of the consumer group for this trigger (REQUIRED)
-	Consumer string `json:"consumer"`
-
-	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
-	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-
-	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
-
-	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
-
-	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
-	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
-
-	// Topic Name of the queue topic to consume from (REQUIRED)
-	Topic string `json:"topic"`
-
-	// Type Event type - must be "queue/v1beta" (REQUIRED)
-	Type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0Type `json:"type"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0Type string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 struct {
-	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
-	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-
-	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
-
-	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
-
-	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
-	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
-
-	// Topic Name of the queue topic to consume from (REQUIRED)
-	Topic string `json:"topic"`
-
-	// Type Event type - must be "queue/v2beta" (REQUIRED)
-	Type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1Type `json:"type"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1Type string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 struct {
-	// Type Event type - must be "schedule/v1beta" (REQUIRED)
-	Type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2Type `json:"type"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2Type string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 = float32
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigHelpers defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigHelpers bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 = string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 = []string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddleware defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddleware bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 = string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 = []string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareRuntime defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareRuntime string
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsAutoExposeSystemEnvs defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsAutoExposeSystemEnvs bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsDirectoryListing defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsDirectoryListing bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsGitForkProtection defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsGitForkProtection bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory bool
-
-// CreateDeployment200JSONResponseBody1Services1BuilderConfigZeroConfig defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1BuilderConfigZeroConfig bool
-
-// CreateDeployment200JSONResponseBody1Services1CleanUrls defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1CleanUrls bool
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsAffinityMode defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsAffinityMode string
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsArchitecture defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsArchitecture string
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 struct {
-	// Consumer Name of the consumer group for this trigger (REQUIRED)
-	Consumer string `json:"consumer"`
-
-	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
-	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-
-	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
-
-	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
-
-	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
-	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
-
-	// Topic Name of the queue topic to consume from (REQUIRED)
-	Topic string `json:"topic"`
-
-	// Type Event type - must be "queue/v1beta" (REQUIRED)
-	Type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0Type `json:"type"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0Type string
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 struct {
-	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
-	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-
-	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
-
-	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
-
-	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
-	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
-
-	// Topic Name of the queue topic to consume from (REQUIRED)
-	Topic string `json:"topic"`
-
-	// Type Event type - must be "queue/v2beta" (REQUIRED)
-	Type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1Type `json:"type"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1Type string
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 struct {
-	// Type Event type - must be "schedule/v1beta" (REQUIRED)
-	Type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2Type `json:"type"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2Type string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 = float32
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 string
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation bool
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1HeadersHas0Type         `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas0Type string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                   `json:"gt,omitempty"`
-	Gte  *float32                                                                   `json:"gte,omitempty"`
-	Inc  *[]string                                                                  `json:"inc,omitempty"`
-	Lt   *float32                                                                   `json:"lt,omitempty"`
-	Lte  *float32                                                                   `json:"lte,omitempty"`
-	Neq  *string                                                                    `json:"neq,omitempty"`
-	Ninc *[]string                                                                  `json:"ninc,omitempty"`
-	Pre  *string                                                                    `json:"pre,omitempty"`
-	Re   *string                                                                    `json:"re,omitempty"`
-	Suf  *string                                                                    `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas1 struct {
-	Key   string                                                                `json:"key"`
-	Type  CreateDeployment200JSONResponseBody1Services1HeadersHas1Type          `json:"type"`
-	Value *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value `json:"value,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas1Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas1Type string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1 struct {
-	Eq   *CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                   `json:"gt,omitempty"`
-	Gte  *float32                                                                   `json:"gte,omitempty"`
-	Inc  *[]string                                                                  `json:"inc,omitempty"`
-	Lt   *float32                                                                   `json:"lt,omitempty"`
-	Lte  *float32                                                                   `json:"lte,omitempty"`
-	Neq  *string                                                                    `json:"neq,omitempty"`
-	Ninc *[]string                                                                  `json:"ninc,omitempty"`
-	Pre  *string                                                                    `json:"pre,omitempty"`
-	Re   *string                                                                    `json:"re,omitempty"`
-	Suf  *string                                                                    `json:"suf,omitempty"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 = string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 = float32
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item struct {
-	union json.RawMessage
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing0 struct {
-	Type  CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type         `json:"type"`
-	Value CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value `json:"value"`
-}
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Type string
-
-// CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value0 defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Services1HeadersMissing0Value0 = string

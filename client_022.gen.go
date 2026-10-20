@@ -16,6 +16,354 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewCreateRecordRequest calls the generic CreateRecord builder with application/json body
+func NewCreateRecordRequest(server string, domain string, params *CreateRecordParams, body CreateRecordJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateRecordRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewCreateRecordRequestWithBody constructs an http.Request for the CreateRecord method, with any body, and a specified content type
+func NewCreateRecordRequestWithBody(server string, domain string, params *CreateRecordParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/domains/%s/records", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRemoveRecordRequest constructs an http.Request for the RemoveRecord method
+func NewRemoveRecordRequest(server string, domain string, recordId string, params *RemoveRecordParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "recordId", recordId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/domains/%s/records/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUploadFileRequestWithBody constructs an http.Request for the UploadFile method, with any body, and a specified content type
+func NewUploadFileRequestWithBody(server string, params *UploadFileParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/files")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.ContentLength != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Content-Length", *params.ContentLength, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "number", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Content-Length", headerParam0)
+		}
+
+		if params.XVercelDigest != nil {
+			var headerParam1 string
+
+			headerParam1, err = runtime.StyleParamWithOptions("simple", false, "x-vercel-digest", *params.XVercelDigest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("x-vercel-digest", headerParam1)
+		}
+
+		if params.XNowDigest != nil {
+			var headerParam2 string
+
+			headerParam2, err = runtime.StyleParamWithOptions("simple", false, "x-now-digest", *params.XNowDigest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("x-now-digest", headerParam2)
+		}
+
+		if params.XNowSize != nil {
+			var headerParam3 string
+
+			headerParam3, err = runtime.StyleParamWithOptions("simple", false, "x-now-size", *params.XNowSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "number", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("x-now-size", headerParam3)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewGetIntegrationLogDrainsRequest constructs an http.Request for the GetIntegrationLogDrains method
+func NewGetIntegrationLogDrainsRequest(server string, params *GetIntegrationLogDrainsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/integrations/log-drains")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCreateLogDrainRequest calls the generic CreateLogDrain builder with application/json body
 func NewCreateLogDrainRequest(server string, params *CreateLogDrainParams, body CreateLogDrainJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -12405,7 +12753,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetOrganizationWithResponse Get an Organization
 	//
-	// Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+	// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -12510,6 +12858,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/projects/{idOrName}/avatar (the `UploadProjectAvatar` operationId).
 	UploadProjectAvatarWithBodyWithResponse(ctx context.Context, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadProjectAvatarResponse, error)
+
+	// GetProjectBoxesWithResponse Get project daemons
+	//
+	// Lists project daemons.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
+	GetProjectBoxesWithResponse(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*GetProjectBoxesResponse, error)
+
+	// PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
+	//
+	// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+	PutProjectDaemonInstancesWithBodyWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error)
+
+	// PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
+	//
+	// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+	PutProjectDaemonInstancesWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error)
+
+	// RestartProjectDaemonInstanceWithResponse Force restart a project daemon instance
+	//
+	// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
+	RestartProjectDaemonInstanceWithResponse(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*RestartProjectDaemonInstanceResponse, error)
 
 	// MoveProjectDomainWithBodyWithResponse Move a project domain
 	//
@@ -19634,431 +20018,4 @@ type CreateNetworkResponse struct {
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r CreateNetworkResponse) GetJSON201() *Network {
 	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateNetworkResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateNetworkResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateNetworkResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateNetworkResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteNetworkResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteNetworkResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteNetworkResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteNetworkResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteNetworkResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ReadNetworkResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *Network
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ReadNetworkResponse) GetJSON200() *Network {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ReadNetworkResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ReadNetworkResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ReadNetworkResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ReadNetworkResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateNetworkResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *Network
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateNetworkResponse) GetJSON200() *Network {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateNetworkResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateNetworkResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateNetworkResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateNetworkResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConnectorTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// AuthorizationId Stable id correlating all tokens (including refreshes) back to the original authorization.
-		AuthorizationId *string `json:"authorizationId,omitempty"`
-
-		// Claims Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
-		Claims    *map[string]interface{} `json:"claims,omitempty"`
-		Connector struct {
-			Id   string `json:"id"`
-			Type string `json:"type"`
-			Uid  string `json:"uid"`
-		} `json:"connector"`
-		ExpiresAt       float32 `json:"expiresAt"`
-		ExternalSubject *string `json:"externalSubject,omitempty"`
-		InstallationId  *string `json:"installationId,omitempty"`
-
-		// Metadata Driver-specific metadata (e.g., botUserId for Slack).
-		Metadata *map[string]interface{} `json:"metadata,omitempty"`
-		Name     *string                 `json:"name,omitempty"`
-		TenantId *string                 `json:"tenantId,omitempty"`
-		Token    string                  `json:"token"`
-
-		// TokenGroupId Stable id that groups all tokens with the same parameters across refreshes.
-		TokenGroupId *string `json:"tokenGroupId,omitempty"`
-		TokenId      string  `json:"tokenId"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConnectorTokenResponse) GetJSON200() *struct {
-	// AuthorizationId Stable id correlating all tokens (including refreshes) back to the original authorization.
-	AuthorizationId *string `json:"authorizationId,omitempty"`
-
-	// Claims Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
-	Claims    *map[string]interface{} `json:"claims,omitempty"`
-	Connector struct {
-		Id   string `json:"id"`
-		Type string `json:"type"`
-		Uid  string `json:"uid"`
-	} `json:"connector"`
-	ExpiresAt       float32 `json:"expiresAt"`
-	ExternalSubject *string `json:"externalSubject,omitempty"`
-	InstallationId  *string `json:"installationId,omitempty"`
-
-	// Metadata Driver-specific metadata (e.g., botUserId for Slack).
-	Metadata *map[string]interface{} `json:"metadata,omitempty"`
-	Name     *string                 `json:"name,omitempty"`
-	TenantId *string                 `json:"tenantId,omitempty"`
-	Token    string                  `json:"token"`
-
-	// TokenGroupId Stable id that groups all tokens with the same parameters across refreshes.
-	TokenGroupId *string `json:"tokenGroupId,omitempty"`
-	TokenId      string  `json:"tokenId"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConnectorTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConnectorTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConnectorTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConnectorTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAllChecksResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Checks []struct {
-			Blocking      GetAllChecks200JSONResponseBodyChecksBlocking    `json:"blocking"`
-			CompletedAt   *float32                                         `json:"completedAt,omitempty"`
-			Conclusion    *GetAllChecks200JSONResponseBodyChecksConclusion `json:"conclusion,omitempty"`
-			CreatedAt     float32                                          `json:"createdAt"`
-			DetailsUrl    *string                                          `json:"detailsUrl,omitempty"`
-			Id            string                                           `json:"id"`
-			IntegrationId string                                           `json:"integrationId"`
-			Name          string                                           `json:"name"`
-			Output        *struct {
-				Metrics *struct {
-					CLS struct {
-						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsCLSSource `json:"source"`
-						Value         *float32                                                    `json:"value"`
-					} `json:"CLS"`
-					FCP struct {
-						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsFCPSource `json:"source"`
-						Value         *float32                                                    `json:"value"`
-					} `json:"FCP"`
-					LCP struct {
-						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsLCPSource `json:"source"`
-						Value         *float32                                                    `json:"value"`
-					} `json:"LCP"`
-					TBT struct {
-						PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsTBTSource `json:"source"`
-						Value         *float32                                                    `json:"value"`
-					} `json:"TBT"`
-					VirtualExperienceScore *struct {
-						PreviousValue *float32                                                                       `json:"previousValue,omitempty"`
-						Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsVirtualExperienceScoreSource `json:"source"`
-						Value         *float32                                                                       `json:"value"`
-					} `json:"virtualExperienceScore,omitempty"`
-				} `json:"metrics,omitempty"`
-			} `json:"output,omitempty"`
-			Path          *string                                            `json:"path,omitempty"`
-			Rerequestable GetAllChecks200JSONResponseBodyChecksRerequestable `json:"rerequestable"`
-			StartedAt     *float32                                           `json:"startedAt,omitempty"`
-			Status        GetAllChecks200JSONResponseBodyChecksStatus        `json:"status"`
-			UpdatedAt     float32                                            `json:"updatedAt"`
-		} `json:"checks"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAllChecksResponse) GetJSON200() *struct {
-	Checks []struct {
-		Blocking      GetAllChecks200JSONResponseBodyChecksBlocking    `json:"blocking"`
-		CompletedAt   *float32                                         `json:"completedAt,omitempty"`
-		Conclusion    *GetAllChecks200JSONResponseBodyChecksConclusion `json:"conclusion,omitempty"`
-		CreatedAt     float32                                          `json:"createdAt"`
-		DetailsUrl    *string                                          `json:"detailsUrl,omitempty"`
-		Id            string                                           `json:"id"`
-		IntegrationId string                                           `json:"integrationId"`
-		Name          string                                           `json:"name"`
-		Output        *struct {
-			Metrics *struct {
-				CLS struct {
-					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsCLSSource `json:"source"`
-					Value         *float32                                                    `json:"value"`
-				} `json:"CLS"`
-				FCP struct {
-					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsFCPSource `json:"source"`
-					Value         *float32                                                    `json:"value"`
-				} `json:"FCP"`
-				LCP struct {
-					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsLCPSource `json:"source"`
-					Value         *float32                                                    `json:"value"`
-				} `json:"LCP"`
-				TBT struct {
-					PreviousValue *float32                                                    `json:"previousValue,omitempty"`
-					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsTBTSource `json:"source"`
-					Value         *float32                                                    `json:"value"`
-				} `json:"TBT"`
-				VirtualExperienceScore *struct {
-					PreviousValue *float32                                                                       `json:"previousValue,omitempty"`
-					Source        GetAllChecks200JSONResponseBodyChecksOutputMetricsVirtualExperienceScoreSource `json:"source"`
-					Value         *float32                                                                       `json:"value"`
-				} `json:"virtualExperienceScore,omitempty"`
-			} `json:"metrics,omitempty"`
-		} `json:"output,omitempty"`
-		Path          *string                                            `json:"path,omitempty"`
-		Rerequestable GetAllChecks200JSONResponseBodyChecksRerequestable `json:"rerequestable"`
-		StartedAt     *float32                                           `json:"startedAt,omitempty"`
-		Status        GetAllChecks200JSONResponseBodyChecksStatus        `json:"status"`
-		UpdatedAt     float32                                            `json:"updatedAt"`
-	} `json:"checks"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAllChecksResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAllChecksResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAllChecksResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAllChecksResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateCheckResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Blocking    CreateCheck200JSONResponseBodyBlocking `json:"blocking"`
-		CompletedAt *float32                               `json:"completedAt,omitempty"`
-
-		// Conclusion Example: succeeded
-		Conclusion   *CreateCheck200JSONResponseBodyConclusion `json:"conclusion,omitempty"`
-		CreatedAt    float32                                   `json:"createdAt"`
-		DeploymentId string                                    `json:"deploymentId"`
-		DetailsUrl   *string                                   `json:"detailsUrl,omitempty"`
-		ExternalId   *string                                   `json:"externalId,omitempty"`
-
-		// Id Example: chk_1a2b3c4d5e6f7g8h9i0j
-		Id            string `json:"id"`
-		IntegrationId string `json:"integrationId"`
-
-		// Name Example: Performance Check
-		Name   string `json:"name"`
-		Output *struct {
-			Metrics *struct {
-				CLS struct {
-					PreviousValue *float32                                             `json:"previousValue,omitempty"`
-					Source        CreateCheck200JSONResponseBodyOutputMetricsCLSSource `json:"source"`
-					Value         *float32                                             `json:"value"`
-				} `json:"CLS"`
-				FCP struct {
-					PreviousValue *float32                                             `json:"previousValue,omitempty"`
-					Source        CreateCheck200JSONResponseBodyOutputMetricsFCPSource `json:"source"`
-					Value         *float32                                             `json:"value"`
-				} `json:"FCP"`
-				LCP struct {
-					PreviousValue *float32                                             `json:"previousValue,omitempty"`
-					Source        CreateCheck200JSONResponseBodyOutputMetricsLCPSource `json:"source"`
-					Value         *float32                                             `json:"value"`
-				} `json:"LCP"`
-				TBT struct {
-					PreviousValue *float32                                             `json:"previousValue,omitempty"`
-					Source        CreateCheck200JSONResponseBodyOutputMetricsTBTSource `json:"source"`
-					Value         *float32                                             `json:"value"`
-				} `json:"TBT"`
-				VirtualExperienceScore *struct {
-					PreviousValue *float32                                                                `json:"previousValue,omitempty"`
-					Source        CreateCheck200JSONResponseBodyOutputMetricsVirtualExperienceScoreSource `json:"source"`
-					Value         *float32                                                                `json:"value"`
-				} `json:"virtualExperienceScore,omitempty"`
-			} `json:"metrics,omitempty"`
-		} `json:"output,omitempty"`
-
-		// Path Example: /api/users
-		Path          *string                                      `json:"path,omitempty"`
-		Rerequestable *CreateCheck200JSONResponseBodyRerequestable `json:"rerequestable,omitempty"`
-		StartedAt     *float32                                     `json:"startedAt,omitempty"`
-
-		// Status Example: completed
-		Status    CreateCheck200JSONResponseBodyStatus `json:"status"`
-		UpdatedAt float32                              `json:"updatedAt"`
-	}
 }

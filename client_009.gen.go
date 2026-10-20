@@ -10,6 +10,210 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// NamedSandboxArchitecture CPU architecture of the sandbox. This value does not change.
+type NamedSandboxArchitecture string
+
+// NamedSandboxFailoverRegions The regions the sandbox fails over to. Empty when it does not fail over.
+//
+// Example: ["sfo1","cle1"]
+type NamedSandboxFailoverRegions string
+
+// NamedSandboxKeepLastSnapshotsDeleteEvicted Whether to immediately delete evicted snapshots.
+//
+// Example: true
+type NamedSandboxKeepLastSnapshotsDeleteEvicted bool
+
+// NamedSandboxMountsMode defines model for NamedSandbox.Mounts.Mode.
+type NamedSandboxMountsMode string
+
+// NamedSandboxNetworkPolicyMode defines model for NamedSandbox.NetworkPolicy.Mode.
+type NamedSandboxNetworkPolicyMode string
+
+// NamedSandboxPersistent Whether the sandbox persists its state across restarts via automatic snapshots.
+//
+// Example: true
+type NamedSandboxPersistent bool
+
+// NamedSandboxStatus The status of the current sandbox.
+//
+// Example: running
+type NamedSandboxStatus string
+
+// NamedSandboxV0 Whether this sandbox is managed by v0 on the customer's behalf.
+type NamedSandboxV0 bool
+
+// Nameserver A valid nameserver
+type Nameserver = string
+
+// Network defines model for Network.
+type Network struct {
+	// AwsAccountId The ID of the AWS Account in which the network exists.
+	AwsAccountId string `json:"awsAccountId"`
+
+	// AwsAvailabilityZoneIds The IDs of the AWS Availability Zones in which the network exists, if specified during creation.
+	AwsAvailabilityZoneIds *[]string `json:"awsAvailabilityZoneIds,omitempty"`
+
+	// AwsRegion The AWS Region in which the network exists.
+	AwsRegion string `json:"awsRegion"`
+
+	// Cidr The CIDR range of the Network.
+	Cidr string `json:"cidr"`
+
+	// CreatedAt The date at which the Network was created, represented as a UNIX timestamp since EPOCH.
+	CreatedAt         float32   `json:"createdAt"`
+	EgressIpAddresses *[]string `json:"egressIpAddresses,omitempty"`
+
+	// HostedZones Metadata about any AWS Route53 Hosted Zones associated with the Network.
+	HostedZones *struct {
+		// Count The number of AWS Route53 Hosted Zones associated with the Network.
+		Count float32 `json:"count"`
+	} `json:"hostedZones,omitempty"`
+
+	// Id The unique identifier of the Network.
+	Id string `json:"id"`
+
+	// Name The name of the network.
+	Name string `json:"name"`
+
+	// PeeringConnections Metadata about any AWS Route53 Hosted Zones associated with the Network.
+	PeeringConnections *struct {
+		// Count The number of AWS Route53 Hosted Zones associated with the Network.
+		Count float32 `json:"count"`
+	} `json:"peeringConnections,omitempty"`
+
+	// Projects Metadata about any projects associated with the Network.
+	Projects *struct {
+		Count float32  `json:"count"`
+		Ids   []string `json:"ids"`
+	} `json:"projects,omitempty"`
+
+	// Region The Vercel region in which the Network exists.
+	Region *string `json:"region,omitempty"`
+
+	// Status The status of the Network.
+	Status NetworkStatus `json:"status"`
+
+	// TeamId The unique identifier of the Team that owns the Network.
+	TeamId string `json:"teamId"`
+
+	// VpcId The ID of the VPC which hosts the network.
+	VpcId *string `json:"vpcId,omitempty"`
+}
+
+// NetworkStatus The status of the Network.
+type NetworkStatus string
+
+// NonEmptyTrimmedString a non empty string
+type NonEmptyTrimmedString = string
+
+// NotAuthorizedForScope defines model for NotAuthorizedForScope.
+type NotAuthorizedForScope struct {
+	Code    NotAuthorizedForScopeCode   `json:"code"`
+	Message string                      `json:"message"`
+	Status  NotAuthorizedForScopeStatus `json:"status"`
+}
+
+// NotAuthorizedForScopeCode defines model for NotAuthorizedForScope.Code.
+type NotAuthorizedForScopeCode string
+
+// NotAuthorizedForScopeStatus defines model for NotAuthorizedForScope.Status.
+type NotAuthorizedForScopeStatus float32
+
+// NotFound defines model for NotFound.
+type NotFound struct {
+	Code    NotFoundCode   `json:"code"`
+	Message string         `json:"message"`
+	Status  NotFoundStatus `json:"status"`
+}
+
+// NotFoundCode defines model for NotFound.Code.
+type NotFoundCode string
+
+// NotFoundStatus defines model for NotFound.Status.
+type NotFoundStatus float32
+
+// OrderId A valid order ID
+type OrderId = string
+
+// OrderTooExpensive The total price of the order is too high.
+type OrderTooExpensive struct {
+	Code    OrderTooExpensiveCode   `json:"code"`
+	Message string                  `json:"message"`
+	Status  OrderTooExpensiveStatus `json:"status"`
+}
+
+// OrderTooExpensiveCode defines model for OrderTooExpensive.Code.
+type OrderTooExpensiveCode string
+
+// OrderTooExpensiveStatus defines model for OrderTooExpensive.Status.
+type OrderTooExpensiveStatus float32
+
+// Organization defines model for Organization.
+type Organization struct {
+	Avatar    *string `json:"avatar"`
+	CreatedAt string  `json:"createdAt"`
+
+	// Name The organization's display name. Optional: organizations created before the name attribute existed have no stored value. New orgs always get one (provided or slug-derived) via the service layer.
+	Name           *string `json:"name,omitempty"`
+	OrganizationId string  `json:"organizationId"`
+	OwnerId        string  `json:"ownerId"`
+	Slug           string  `json:"slug"`
+	TeamCount      float32 `json:"teamCount"`
+	TeamId         string  `json:"teamId"`
+	UpdatedAt      string  `json:"updatedAt"`
+
+	// UserRole The authenticated user's role in the organization. Present on read endpoints when the user holds an organization role.
+	UserRole *string `json:"userRole,omitempty"`
+}
+
+// OrganizationTeam defines model for OrganizationTeam.
+type OrganizationTeam struct {
+	// BillingPlan The child team's billing profile within the organization. Optional: links created before this attribute existed have no stored value.
+	BillingPlan    *OrganizationTeamBillingPlan `json:"billingPlan,omitempty"`
+	CreatedAt      string                       `json:"createdAt"`
+	OrganizationId string                       `json:"organizationId"`
+	SsoMode        OrganizationTeamSsoMode      `json:"ssoMode"`
+	TeamId         string                       `json:"teamId"`
+	UpdatedAt      string                       `json:"updatedAt"`
+}
+
+// OrganizationTeamBillingPlan The child team's billing profile within the organization. Optional: links created before this attribute existed have no stored value.
+type OrganizationTeamBillingPlan string
+
+// OrganizationTeamSsoMode defines model for OrganizationTeam.SsoMode.
+type OrganizationTeamSsoMode string
+
+// OrganizationTeamListItem An org-team link enriched with the linked team's display fields, as returned by the list-teams endpoint. We project to an explicit flat interface instead of spreading the ElectroDB `OrganizationTeamItem` because its recursive generics break the OpenAPI generator (which would silently drop the route).
+type OrganizationTeamListItem struct {
+	// Avatar The ID of the file used as the Team's avatar, or `null` if none.
+	Avatar *string `json:"avatar"`
+
+	// BillingPlan Billing profile of the organization link: how this team settles within the organization. This is not the team's billing.plan or planIteration. Links with `enterprise` billing participate in organization-level billing and usage rollups. This field is optional for legacy links that have no stored profile.
+	BillingPlan *OrganizationTeamListItemBillingPlan `json:"billingPlan,omitempty"`
+
+	// CreatedAt ISO timestamp of when the team was linked to the organization.
+	CreatedAt string `json:"createdAt"`
+
+	// MemberCount Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships. Excludes email invitations that do not have a membership record.
+	MemberCount *float32 `json:"memberCount,omitempty"`
+
+	// Name The Team's display name, or `null` if none has been set.
+	Name *string `json:"name"`
+
+	// OrganizationId The ID of the organization the team belongs to.
+	OrganizationId string `json:"organizationId"`
+
+	// Slug The Team's slug, unique across Vercel.
+	Slug    string                          `json:"slug"`
+	SsoMode OrganizationTeamListItemSsoMode `json:"ssoMode"`
+
+	// TeamId The Team's unique identifier.
+	TeamId string `json:"teamId"`
+
+	// UpdatedAt ISO timestamp of when the link was last updated.
+	UpdatedAt string `json:"updatedAt"`
+}
+
 // OrganizationTeamListItemBillingPlan Billing profile of the organization link: how this team settles within the organization. This is not the team's billing.plan or planIteration. Links with `enterprise` billing participate in organization-level billing and usage rollups. This field is optional for legacy links that have no stored profile.
 type OrganizationTeamListItemBillingPlan string
 
@@ -645,15 +849,15 @@ type Team struct {
 	// DefaultContinuousUsageKind Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.
 	DefaultContinuousUsageKind *TeamDefaultContinuousUsageKind `json:"defaultContinuousUsageKind,omitempty"`
 
-	// DefaultDeploymentProtection Default deployment protection for this team null indicates protection is disabled
-	DefaultDeploymentProtection *struct {
+	// DefaultDeploymentProtection Deployment protection defaults for new projects in this team. When no Vercel Authentication default is saved, `ssoProtection` shows Standard Protection. An explicitly saved `null` remains disabled. Organization policy may override the team default during project creation.
+	DefaultDeploymentProtection struct {
 		PasswordProtection *struct {
 			DeploymentType string `json:"deploymentType"`
 		} `json:"passwordProtection,omitempty"`
 		SsoProtection *struct {
 			DeploymentType string `json:"deploymentType"`
 		} `json:"ssoProtection,omitempty"`
-	} `json:"defaultDeploymentProtection,omitempty"`
+	} `json:"defaultDeploymentProtection"`
 
 	// DefaultExpirationSettings Default deployment expiration settings for this team
 	DefaultExpirationSettings *struct {
@@ -9886,10 +10090,32 @@ type UserEventPayload487 struct {
 
 // UserEventPayload488 The payload of the event, if requested.
 type UserEventPayload488 struct {
+	Next struct {
+		Enabled    UserEventPayload488NextEnabled `json:"enabled"`
+		IssuerUrls []string                       `json:"issuerUrls"`
+	} `json:"next"`
+	Previous struct {
+		Enabled    UserEventPayload488PreviousEnabled `json:"enabled"`
+		IssuerUrls []string                           `json:"issuerUrls"`
+	} `json:"previous"`
+	Scope UserEventPayload488Scope `json:"scope"`
+}
+
+// UserEventPayload488NextEnabled defines model for UserEvent.Payload.488.Next.Enabled.
+type UserEventPayload488NextEnabled bool
+
+// UserEventPayload488PreviousEnabled defines model for UserEvent.Payload.488.Previous.Enabled.
+type UserEventPayload488PreviousEnabled bool
+
+// UserEventPayload488Scope defines model for UserEvent.Payload.488.Scope.
+type UserEventPayload488Scope string
+
+// UserEventPayload489 The payload of the event, if requested.
+type UserEventPayload489 struct {
 	// App optional since entries prior to 2025-10-13 do not contain app information
 	App *struct {
 		ClientAuthenticationUsed struct {
-			Method   UserEventPayload488AppClientAuthenticationUsedMethod `json:"method"`
+			Method   UserEventPayload489AppClientAuthenticationUsedMethod `json:"method"`
 			SecretId *string                                              `json:"secretId,omitempty"`
 		} `json:"clientAuthenticationUsed"`
 		ClientId string `json:"clientId"`
@@ -9903,7 +10129,7 @@ type UserEventPayload488 struct {
 
 	// AtTTL access_token TTL
 	AtTTL      float32                       `json:"atTTL"`
-	AuthMethod UserEventPayload488AuthMethod `json:"authMethod"`
+	AuthMethod UserEventPayload489AuthMethod `json:"authMethod"`
 
 	// Geolocation optional since entries prior to 2026-04-23 do not contain this field
 	Geolocation *struct {
@@ -9924,10 +10150,10 @@ type UserEventPayload488 struct {
 		} `json:"most_specific_subdivision,omitempty"`
 		RegionName *string `json:"regionName,omitempty"`
 	} `json:"geolocation,omitempty"`
-	GrantType UserEventPayload488GrantType `json:"grantType"`
+	GrantType UserEventPayload489GrantType `json:"grantType"`
 
 	// IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
-	IncludesRefreshToken *UserEventPayload488IncludesRefreshToken `json:"includesRefreshToken,omitempty"`
+	IncludesRefreshToken *UserEventPayload489IncludesRefreshToken `json:"includesRefreshToken,omitempty"`
 
 	// Ip optional since entries prior to 2026-04-23 do not contain this field
 	Ip *string `json:"ip,omitempty"`
@@ -9945,7 +10171,7 @@ type UserEventPayload488 struct {
 	PublicId *string `json:"publicId,omitempty"`
 
 	// RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
-	RefreshTokenPrefix *UserEventPayload488RefreshTokenPrefix `json:"refreshTokenPrefix,omitempty"`
+	RefreshTokenPrefix *UserEventPayload489RefreshTokenPrefix `json:"refreshTokenPrefix,omitempty"`
 
 	// RefreshTokenPublicId optional; only present when a refresh token was issued (offline_access).
 	RefreshTokenPublicId *string `json:"refreshTokenPublicId,omitempty"`
@@ -9961,7 +10187,7 @@ type UserEventPayload488 struct {
 	SessionId *string `json:"sessionId,omitempty"`
 
 	// TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
-	TokenPrefix *UserEventPayload488TokenPrefix `json:"tokenPrefix,omitempty"`
+	TokenPrefix *UserEventPayload489TokenPrefix `json:"tokenPrefix,omitempty"`
 
 	// TokenSuffix optional since entries prior to 2026-04-23 do not contain this field
 	TokenSuffix *string `json:"tokenSuffix,omitempty"`
@@ -9970,32 +10196,32 @@ type UserEventPayload488 struct {
 	UserAgent *string `json:"userAgent,omitempty"`
 }
 
-// UserEventPayload488AppClientAuthenticationUsedMethod defines model for UserEvent.Payload.488.App.ClientAuthenticationUsed.Method.
-type UserEventPayload488AppClientAuthenticationUsedMethod string
+// UserEventPayload489AppClientAuthenticationUsedMethod defines model for UserEvent.Payload.489.App.ClientAuthenticationUsed.Method.
+type UserEventPayload489AppClientAuthenticationUsedMethod string
 
-// UserEventPayload488AuthMethod defines model for UserEvent.Payload.488.AuthMethod.
-type UserEventPayload488AuthMethod string
+// UserEventPayload489AuthMethod defines model for UserEvent.Payload.489.AuthMethod.
+type UserEventPayload489AuthMethod string
 
-// UserEventPayload488GrantType defines model for UserEvent.Payload.488.GrantType.
-type UserEventPayload488GrantType string
+// UserEventPayload489GrantType defines model for UserEvent.Payload.489.GrantType.
+type UserEventPayload489GrantType string
 
-// UserEventPayload488IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
-type UserEventPayload488IncludesRefreshToken bool
+// UserEventPayload489IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
+type UserEventPayload489IncludesRefreshToken bool
 
-// UserEventPayload488RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
-type UserEventPayload488RefreshTokenPrefix string
+// UserEventPayload489RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
+type UserEventPayload489RefreshTokenPrefix string
 
-// UserEventPayload488TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
-type UserEventPayload488TokenPrefix string
+// UserEventPayload489TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
+type UserEventPayload489TokenPrefix string
 
-// UserEventPayload489 The payload of the event, if requested.
-type UserEventPayload489 struct {
+// UserEventPayload490 The payload of the event, if requested.
+type UserEventPayload490 struct {
 	Domain    string `json:"domain"`
 	ProjectId string `json:"projectId"`
 }
 
-// UserEventPayload490 The payload of the event, if requested.
-type UserEventPayload490 struct {
+// UserEventPayload491 The payload of the event, if requested.
+type UserEventPayload491 struct {
 	AppName *string `json:"appName,omitempty"`
 
 	// Policy A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
@@ -10005,7 +10231,7 @@ type UserEventPayload490 struct {
 			Name   string `json:"name"`
 			Values []struct {
 				Value     string                                         `json:"value"`
-				Wildcards UserEventPayload490PolicyClaimsValuesWildcards `json:"wildcards"`
+				Wildcards UserEventPayload491PolicyClaimsValuesWildcards `json:"wildcards"`
 			} `json:"values"`
 		} `json:"claims"`
 		ClientId string `json:"clientId"`
@@ -10032,11 +10258,11 @@ type UserEventPayload490 struct {
 	} `json:"policy"`
 }
 
-// UserEventPayload490PolicyClaimsValuesWildcards defines model for UserEvent.Payload.490.Policy.Claims.Values.Wildcards.
-type UserEventPayload490PolicyClaimsValuesWildcards bool
+// UserEventPayload491PolicyClaimsValuesWildcards defines model for UserEvent.Payload.491.Policy.Claims.Values.Wildcards.
+type UserEventPayload491PolicyClaimsValuesWildcards bool
 
-// UserEventPayload491 The payload of the event, if requested.
-type UserEventPayload491 struct {
+// UserEventPayload492 The payload of the event, if requested.
+type UserEventPayload492 struct {
 	// After A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
 	After struct {
 		// Claims Claim matchers an OIDC token must satisfy to use the policy.
@@ -10044,7 +10270,7 @@ type UserEventPayload491 struct {
 			Name   string `json:"name"`
 			Values []struct {
 				Value     string                                        `json:"value"`
-				Wildcards UserEventPayload491AfterClaimsValuesWildcards `json:"wildcards"`
+				Wildcards UserEventPayload492AfterClaimsValuesWildcards `json:"wildcards"`
 			} `json:"values"`
 		} `json:"claims"`
 		ClientId string `json:"clientId"`
@@ -10078,7 +10304,7 @@ type UserEventPayload491 struct {
 			Name   string `json:"name"`
 			Values []struct {
 				Value     string                                         `json:"value"`
-				Wildcards UserEventPayload491BeforeClaimsValuesWildcards `json:"wildcards"`
+				Wildcards UserEventPayload492BeforeClaimsValuesWildcards `json:"wildcards"`
 			} `json:"values"`
 		} `json:"claims"`
 		ClientId string `json:"clientId"`
@@ -10105,14 +10331,14 @@ type UserEventPayload491 struct {
 	} `json:"before"`
 }
 
-// UserEventPayload491AfterClaimsValuesWildcards defines model for UserEvent.Payload.491.After.Claims.Values.Wildcards.
-type UserEventPayload491AfterClaimsValuesWildcards bool
+// UserEventPayload492AfterClaimsValuesWildcards defines model for UserEvent.Payload.492.After.Claims.Values.Wildcards.
+type UserEventPayload492AfterClaimsValuesWildcards bool
 
-// UserEventPayload491BeforeClaimsValuesWildcards defines model for UserEvent.Payload.491.Before.Claims.Values.Wildcards.
-type UserEventPayload491BeforeClaimsValuesWildcards bool
+// UserEventPayload492BeforeClaimsValuesWildcards defines model for UserEvent.Payload.492.Before.Claims.Values.Wildcards.
+type UserEventPayload492BeforeClaimsValuesWildcards bool
 
-// UserEventPayload492 The payload of the event, if requested.
-type UserEventPayload492 struct {
+// UserEventPayload493 The payload of the event, if requested.
+type UserEventPayload493 struct {
 	CreatedByParentTeamId *string `json:"createdByParentTeamId,omitempty"`
 
 	// ExpiresAt Unix epoch milliseconds. Absent when the token never expires.
@@ -10137,11 +10363,11 @@ type UserEventPayload492 struct {
 	} `json:"geolocation,omitempty"`
 
 	// HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
-	HasAuthorizationDetails *UserEventPayload492HasAuthorizationDetails `json:"hasAuthorizationDetails,omitempty"`
+	HasAuthorizationDetails *UserEventPayload493HasAuthorizationDetails `json:"hasAuthorizationDetails,omitempty"`
 	Ip                      *string                                     `json:"ip,omitempty"`
 
 	// Origin How the token was issued. Always `'manual'` for explicit PAT creation.
-	Origin UserEventPayload492Origin `json:"origin"`
+	Origin UserEventPayload493Origin `json:"origin"`
 
 	// ProjectId Present when `scope` is `'project'`.
 	ProjectId *string `json:"projectId,omitempty"`
@@ -10150,13 +10376,13 @@ type UserEventPayload492 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 
 	// ProjectScope Present when `scope` is `'project'`.
-	ProjectScope *UserEventPayload492ProjectScope `json:"projectScope,omitempty"`
+	ProjectScope *UserEventPayload493ProjectScope `json:"projectScope,omitempty"`
 	ReqId        *string                          `json:"reqId,omitempty"`
 	ReqUrl       *string                          `json:"reqUrl,omitempty"`
 
 	// Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
-	Scope  UserEventPayload492Scope   `json:"scope"`
-	Source *UserEventPayload492Source `json:"source,omitempty"`
+	Scope  UserEventPayload493Scope   `json:"scope"`
+	Source *UserEventPayload493Source `json:"source,omitempty"`
 
 	// TeamId Present when `scope` is `'team'` or `'project'`.
 	TeamId *string `json:"teamId,omitempty"`
@@ -10171,37 +10397,37 @@ type UserEventPayload492 struct {
 	TokenName string `json:"tokenName"`
 
 	// TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
-	TokenPrefix *UserEventPayload492TokenPrefix `json:"tokenPrefix,omitempty"`
+	TokenPrefix *UserEventPayload493TokenPrefix `json:"tokenPrefix,omitempty"`
 
 	// TokenSuffix The token checksum suffix.
 	TokenSuffix *string `json:"tokenSuffix,omitempty"`
 	UserAgent   *string `json:"userAgent,omitempty"`
 }
 
-// UserEventPayload492HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
-type UserEventPayload492HasAuthorizationDetails bool
+// UserEventPayload493HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
+type UserEventPayload493HasAuthorizationDetails bool
 
-// UserEventPayload492Origin How the token was issued. Always `'manual'` for explicit PAT creation.
-type UserEventPayload492Origin string
+// UserEventPayload493Origin How the token was issued. Always `'manual'` for explicit PAT creation.
+type UserEventPayload493Origin string
 
-// UserEventPayload492ProjectScope Present when `scope` is `'project'`.
-type UserEventPayload492ProjectScope string
+// UserEventPayload493ProjectScope Present when `scope` is `'project'`.
+type UserEventPayload493ProjectScope string
 
-// UserEventPayload492Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
-type UserEventPayload492Scope string
+// UserEventPayload493Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
+type UserEventPayload493Scope string
 
-// UserEventPayload492Source defines model for UserEvent.Payload.492.Source.
-type UserEventPayload492Source string
+// UserEventPayload493Source defines model for UserEvent.Payload.493.Source.
+type UserEventPayload493Source string
 
-// UserEventPayload492TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
-type UserEventPayload492TokenPrefix string
+// UserEventPayload493TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
+type UserEventPayload493TokenPrefix string
 
-// UserEventPayload493 The payload of the event, if requested.
-type UserEventPayload493 struct {
+// UserEventPayload494 The payload of the event, if requested.
+type UserEventPayload494 struct {
 	// ActorTokenId The token's public ID.
 	ActorTokenId          string                      `json:"actorTokenId"`
 	CreatedByParentTeamId *string                     `json:"createdByParentTeamId,omitempty"`
-	Expired               *UserEventPayload493Expired `json:"expired,omitempty"`
+	Expired               *UserEventPayload494Expired `json:"expired,omitempty"`
 	Geolocation           *struct {
 		City *struct {
 			Names struct {
@@ -10221,15 +10447,15 @@ type UserEventPayload493 struct {
 		RegionName *string `json:"regionName,omitempty"`
 	} `json:"geolocation,omitempty"`
 	Ip           *string                          `json:"ip,omitempty"`
-	Leaked       *UserEventPayload493Leaked       `json:"leaked,omitempty"`
-	LogoutSource *UserEventPayload493LogoutSource `json:"logoutSource,omitempty"`
-	Origin       *UserEventPayload493Origin       `json:"origin,omitempty"`
-	Reason       *UserEventPayload493Reason       `json:"reason,omitempty"`
+	Leaked       *UserEventPayload494Leaked       `json:"leaked,omitempty"`
+	LogoutSource *UserEventPayload494LogoutSource `json:"logoutSource,omitempty"`
+	Origin       *UserEventPayload494Origin       `json:"origin,omitempty"`
+	Reason       *UserEventPayload494Reason       `json:"reason,omitempty"`
 	ReqId        *string                          `json:"reqId,omitempty"`
 	ReqUrl       *string                          `json:"reqUrl,omitempty"`
-	Revoked      *UserEventPayload493Revoked      `json:"revoked,omitempty"`
-	Scope        *UserEventPayload493Scope        `json:"scope,omitempty"`
-	Source       *UserEventPayload493Source       `json:"source,omitempty"`
+	Revoked      *UserEventPayload494Revoked      `json:"revoked,omitempty"`
+	Scope        *UserEventPayload494Scope        `json:"scope,omitempty"`
+	Source       *UserEventPayload494Source       `json:"source,omitempty"`
 	TeamId       *string                          `json:"teamId,omitempty"`
 	TokenId      string                           `json:"tokenId"`
 	TokenName    string                           `json:"tokenName"`
@@ -10237,32 +10463,32 @@ type UserEventPayload493 struct {
 	UserAgent    *string                          `json:"userAgent,omitempty"`
 }
 
-// UserEventPayload493Expired defines model for UserEvent.Payload.493.Expired.
-type UserEventPayload493Expired bool
+// UserEventPayload494Expired defines model for UserEvent.Payload.494.Expired.
+type UserEventPayload494Expired bool
 
-// UserEventPayload493Leaked defines model for UserEvent.Payload.493.Leaked.
-type UserEventPayload493Leaked bool
+// UserEventPayload494Leaked defines model for UserEvent.Payload.494.Leaked.
+type UserEventPayload494Leaked bool
 
-// UserEventPayload493LogoutSource defines model for UserEvent.Payload.493.LogoutSource.
-type UserEventPayload493LogoutSource string
+// UserEventPayload494LogoutSource defines model for UserEvent.Payload.494.LogoutSource.
+type UserEventPayload494LogoutSource string
 
-// UserEventPayload493Origin defines model for UserEvent.Payload.493.Origin.
-type UserEventPayload493Origin string
+// UserEventPayload494Origin defines model for UserEvent.Payload.494.Origin.
+type UserEventPayload494Origin string
 
-// UserEventPayload493Reason defines model for UserEvent.Payload.493.Reason.
-type UserEventPayload493Reason string
+// UserEventPayload494Reason defines model for UserEvent.Payload.494.Reason.
+type UserEventPayload494Reason string
 
-// UserEventPayload493Revoked defines model for UserEvent.Payload.493.Revoked.
-type UserEventPayload493Revoked bool
+// UserEventPayload494Revoked defines model for UserEvent.Payload.494.Revoked.
+type UserEventPayload494Revoked bool
 
-// UserEventPayload493Scope defines model for UserEvent.Payload.493.Scope.
-type UserEventPayload493Scope string
+// UserEventPayload494Scope defines model for UserEvent.Payload.494.Scope.
+type UserEventPayload494Scope string
 
-// UserEventPayload493Source defines model for UserEvent.Payload.493.Source.
-type UserEventPayload493Source string
+// UserEventPayload494Source defines model for UserEvent.Payload.494.Source.
+type UserEventPayload494Source string
 
-// UserEventPayload494 The payload of the event, if requested.
-type UserEventPayload494 struct {
+// UserEventPayload495 The payload of the event, if requested.
+type UserEventPayload495 struct {
 	// ActorTokenId The token's public ID.
 	ActorTokenId string  `json:"actorTokenId"`
 	DeletedCount float32 `json:"deletedCount"`
@@ -19783,231 +20009,3 @@ type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Propert
 type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_Item struct {
 	union json.RawMessage
 }
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10 struct {
-	Default          *string                                                                                          `json:"default,omitempty"`
-	Description      *string                                                                                          `json:"description,omitempty"`
-	Enum             *[]string                                                                                        `json:"enum,omitempty"`
-	MaxLength        *float32                                                                                         `json:"maxLength,omitempty"`
-	MinLength        *float32                                                                                         `json:"minLength,omitempty"`
-	Pattern          *string                                                                                          `json:"pattern,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel       *string                                                                                       `json:"ui:label,omitempty"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                       `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties10UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_10_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11 struct {
-	Description      *string                                                                                          `json:"description,omitempty"`
-	GitProviders     *[]GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11GitProviders     `json:"git:providers,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel       *string                                                                                       `json:"ui:label,omitempty"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                       `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11GitProviders defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11GitProviders string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties11UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_11_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_AdditionalProperties defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaType defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaType string
-
-// GetConfigurationProducts200JSONResponseBodyProductsPrimaryProtocol defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsPrimaryProtocol string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsAiStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsAiStatus string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationAppUrlRegistrationSupport defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationAppUrlRegistrationSupport bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationStatus string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsChecksStatus defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsChecksStatus string
-
-// GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationEdgeConfigSyncingSupport defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationEdgeConfigSyncingSupport bool

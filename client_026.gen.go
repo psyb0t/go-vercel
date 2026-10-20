@@ -12,6 +12,36 @@ import (
 	"time"
 )
 
+// GetEdgeConfigTokensWithResponse Get all tokens of a Global Config
+//
+// Returns all tokens of a Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
+func (c *ClientWithResponses) GetEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokensResponse, error) {
+	rsp, err := c.GetEdgeConfigTokens(ctx, edgeConfigId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEdgeConfigTokensResponse(rsp)
+}
+
+// UpdateInstallationWithBodyWithResponse Update Installation
+//
+// This endpoint updates an integration installation.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
+func (c *ClientWithResponses) UpdateInstallationWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error) {
+	rsp, err := c.UpdateInstallationWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInstallationResponse(rsp)
+}
+
 // UpdateInstallationWithResponse Update Installation
 //
 // This endpoint updates an integration installation.
@@ -1447,7 +1477,7 @@ func (c *ClientWithResponses) CreateOrganizationWithResponse(ctx context.Context
 
 // GetOrganizationWithResponse Get an Organization
 //
-// Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -1623,6 +1653,66 @@ func (c *ClientWithResponses) UploadProjectAvatarWithBodyWithResponse(ctx contex
 		return nil, err
 	}
 	return ParseUploadProjectAvatarResponse(rsp)
+}
+
+// GetProjectBoxesWithResponse Get project daemons
+//
+// Lists project daemons.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
+func (c *ClientWithResponses) GetProjectBoxesWithResponse(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*GetProjectBoxesResponse, error) {
+	rsp, err := c.GetProjectBoxes(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectBoxesResponse(rsp)
+}
+
+// PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
+//
+// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *ClientWithResponses) PutProjectDaemonInstancesWithBodyWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error) {
+	rsp, err := c.PutProjectDaemonInstancesWithBody(ctx, idOrName, daemonName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutProjectDaemonInstancesResponse(rsp)
+}
+
+// PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
+//
+// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *ClientWithResponses) PutProjectDaemonInstancesWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error) {
+	rsp, err := c.PutProjectDaemonInstances(ctx, idOrName, daemonName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutProjectDaemonInstancesResponse(rsp)
+}
+
+// RestartProjectDaemonInstanceWithResponse Force restart a project daemon instance
+//
+// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
+func (c *ClientWithResponses) RestartProjectDaemonInstanceWithResponse(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*RestartProjectDaemonInstanceResponse, error) {
+	rsp, err := c.RestartProjectDaemonInstance(ctx, idOrName, daemonName, instanceId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRestartProjectDaemonInstanceResponse(rsp)
 }
 
 // MoveProjectDomainWithBodyWithResponse Move a project domain
@@ -16418,6 +16508,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+					// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 					// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -16546,6 +16639,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 
 					// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+					// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 					// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -19091,6 +19187,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+				// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 				// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -19219,6 +19318,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 
 				// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+				// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 				// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`

@@ -7,6 +7,663 @@ import (
 	"net/http"
 )
 
+// GetBody returns the raw response body bytes
+func (r ApproveRollingReleaseStageResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ApproveRollingReleaseStageResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ApproveRollingReleaseStageResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ApproveRollingReleaseStageResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetRollingReleaseBillingStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetRollingReleaseBillingStatus200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetRollingReleaseBillingStatusResponse) GetJSON200() *GetRollingReleaseBillingStatus200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetRollingReleaseBillingStatusResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetRollingReleaseBillingStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetRollingReleaseBillingStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetRollingReleaseBillingStatusResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CompleteRollingReleaseResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
+		RollingRelease *struct {
+			// ActiveStage The currently active stage, null if the rollout is aborted
+			//
+			// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
+			ActiveStage *struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"activeStage"`
+
+			// AdvancementType The advancement type of the rolling release
+			//
+			// Example: manual-approval
+			AdvancementType CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
+
+			// CanaryDeployment The canary deployment being rolled out
+			//
+			// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
+			CanaryDeployment *struct {
+				// CreatedAt A number containing the date when the deployment was created in milliseconds
+				//
+				// Example: 1540257589405
+				CreatedAt float32 `json:"createdAt"`
+
+				// Id A string holding the unique ID of the deployment
+				//
+				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+				Id string `json:"id"`
+
+				// Name The name of the project associated with the deployment at the time that the deployment was created
+				//
+				// Example: my-project
+				Name string `json:"name"`
+
+				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+				//
+				// Example: READY
+				ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
+				ReadyStateAt *float32                                                                          `json:"readyStateAt,omitempty"`
+
+				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+				//
+				// Example: cli
+				Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
+
+				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+				Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
+
+				// Url A string with the unique URL of the deployment
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url string `json:"url"`
+			} `json:"canaryDeployment"`
+
+			// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+			CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
+
+			// CurrentDeployment The current deployment receiving production traffic
+			//
+			// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
+			CurrentDeployment *struct {
+				// CreatedAt A number containing the date when the deployment was created in milliseconds
+				//
+				// Example: 1540257589405
+				CreatedAt float32 `json:"createdAt"`
+
+				// Id A string holding the unique ID of the deployment
+				//
+				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+				Id string `json:"id"`
+
+				// Name The name of the project associated with the deployment at the time that the deployment was created
+				//
+				// Example: my-project
+				Name string `json:"name"`
+
+				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+				//
+				// Example: READY
+				ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
+				ReadyStateAt *float32                                                                           `json:"readyStateAt,omitempty"`
+
+				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+				//
+				// Example: cli
+				Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
+
+				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+				Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
+
+				// Url A string with the unique URL of the deployment
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url string `json:"url"`
+			} `json:"currentDeployment"`
+
+			// NextStage The next stage to be activated, null if not in ACTIVE state
+			//
+			// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
+			NextStage *struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"nextStage"`
+
+			// QueuedDeploymentId The ID of a deployment queued for the next rolling release
+			//
+			// Example: dpl_ghi789
+			QueuedDeploymentId *string `json:"queuedDeploymentId"`
+
+			// Stages All stages configured for this rolling release
+			//
+			// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
+			Stages []struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"stages"`
+
+			// StartedAt Unix timestamp in milliseconds when the rolling release started
+			//
+			// Example: 1716210500000
+			StartedAt float32 `json:"startedAt"`
+
+			// State The current state of the rolling release
+			//
+			// Example: ACTIVE
+			State CompleteRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
+
+			// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+			Substate *CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
+
+			// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
+			//
+			// Example: 1716210600000
+			UpdatedAt float32 `json:"updatedAt"`
+		} `json:"rollingRelease"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CompleteRollingReleaseResponse) GetJSON200() *struct {
+	// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
+	RollingRelease *struct {
+		// ActiveStage The currently active stage, null if the rollout is aborted
+		//
+		// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
+		ActiveStage *struct {
+			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+			Duration *float32 `json:"duration"`
+
+			// Index The zero-based index of the stage
+			//
+			// Example: 0
+			Index float32 `json:"index"`
+
+			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+			//
+			// Example: false
+			IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"activeStage"`
+
+		// AdvancementType The advancement type of the rolling release
+		//
+		// Example: manual-approval
+		AdvancementType CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
+
+		// CanaryDeployment The canary deployment being rolled out
+		//
+		// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
+		CanaryDeployment *struct {
+			// CreatedAt A number containing the date when the deployment was created in milliseconds
+			//
+			// Example: 1540257589405
+			CreatedAt float32 `json:"createdAt"`
+
+			// Id A string holding the unique ID of the deployment
+			//
+			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+			Id string `json:"id"`
+
+			// Name The name of the project associated with the deployment at the time that the deployment was created
+			//
+			// Example: my-project
+			Name string `json:"name"`
+
+			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+			//
+			// Example: READY
+			ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
+			ReadyStateAt *float32                                                                          `json:"readyStateAt,omitempty"`
+
+			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+			//
+			// Example: cli
+			Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
+
+			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+			Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
+
+			// Url A string with the unique URL of the deployment
+			//
+			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+			Url string `json:"url"`
+		} `json:"canaryDeployment"`
+
+		// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+		CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
+
+		// CurrentDeployment The current deployment receiving production traffic
+		//
+		// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
+		CurrentDeployment *struct {
+			// CreatedAt A number containing the date when the deployment was created in milliseconds
+			//
+			// Example: 1540257589405
+			CreatedAt float32 `json:"createdAt"`
+
+			// Id A string holding the unique ID of the deployment
+			//
+			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+			Id string `json:"id"`
+
+			// Name The name of the project associated with the deployment at the time that the deployment was created
+			//
+			// Example: my-project
+			Name string `json:"name"`
+
+			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+			//
+			// Example: READY
+			ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
+			ReadyStateAt *float32                                                                           `json:"readyStateAt,omitempty"`
+
+			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+			//
+			// Example: cli
+			Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
+
+			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+			Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
+
+			// Url A string with the unique URL of the deployment
+			//
+			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+			Url string `json:"url"`
+		} `json:"currentDeployment"`
+
+		// NextStage The next stage to be activated, null if not in ACTIVE state
+		//
+		// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
+		NextStage *struct {
+			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+			Duration *float32 `json:"duration"`
+
+			// Index The zero-based index of the stage
+			//
+			// Example: 0
+			Index float32 `json:"index"`
+
+			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+			//
+			// Example: false
+			IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"nextStage"`
+
+		// QueuedDeploymentId The ID of a deployment queued for the next rolling release
+		//
+		// Example: dpl_ghi789
+		QueuedDeploymentId *string `json:"queuedDeploymentId"`
+
+		// Stages All stages configured for this rolling release
+		//
+		// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
+		Stages []struct {
+			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+			Duration *float32 `json:"duration"`
+
+			// Index The zero-based index of the stage
+			//
+			// Example: 0
+			Index float32 `json:"index"`
+
+			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+			//
+			// Example: false
+			IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"stages"`
+
+		// StartedAt Unix timestamp in milliseconds when the rolling release started
+		//
+		// Example: 1716210500000
+		StartedAt float32 `json:"startedAt"`
+
+		// State The current state of the rolling release
+		//
+		// Example: ACTIVE
+		State CompleteRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
+
+		// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+		Substate *CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
+
+		// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
+		//
+		// Example: 1716210600000
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"rollingRelease"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CompleteRollingReleaseResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CompleteRollingReleaseResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CompleteRollingReleaseResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CompleteRollingReleaseResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteRollingReleaseConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		RollingRelease interface{} `json:"rollingRelease"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteRollingReleaseConfigResponse) GetJSON200() *struct {
+	RollingRelease interface{} `json:"rollingRelease"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteRollingReleaseConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteRollingReleaseConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteRollingReleaseConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteRollingReleaseConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetRollingReleaseConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
+		RollingRelease *struct {
+			// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
+			//
+			// Example: false
+			CanaryResponseHeader *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
+
+			// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
+			Gate *struct {
+				// Action What to do when the gate trips: pause the rollout, or roll it back.
+				Action GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateAction `json:"action"`
+
+				// Checks The checks to evaluate. An empty array means nothing is evaluated.
+				Checks []struct {
+					// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
+					//
+					// Example: ["/api/health"]
+					ExcludePaths *[]string `json:"excludePaths,omitempty"`
+
+					// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
+					//
+					// Example: [503]
+					ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
+
+					// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
+					//
+					// Example: 30
+					IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
+
+					// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
+					//
+					// Example: 0.05
+					SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
+
+					// Type The metric this check evaluates.
+					Type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
+				} `json:"checks"`
+
+				// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
+				DryRun GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
+
+				// Enabled Whether automated gating is enabled for this project's rollouts.
+				Enabled GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
+
+				// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
+				//
+				// Example: 3
+				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+
+				// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
+				//
+				// Example: 5
+				WindowSize *float32 `json:"windowSize,omitempty"`
+			} `json:"gate,omitempty"`
+
+			// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
+			Stages *[]struct {
+				// Duration Duration in minutes for automatic advancement to the next stage
+				//
+				// Example: 600
+				Duration *float32 `json:"duration,omitempty"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				//
+				// Example: false
+				RequireApproval *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"stages,omitempty"`
+
+			// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
+			//
+			// Example: production
+			Target string `json:"target"`
+		} `json:"rollingRelease"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetRollingReleaseConfigResponse) GetJSON200() *struct {
 	// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
@@ -2749,6 +3406,9 @@ type UpdateMicrofrontendsResponse struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -2877,6 +3537,9 @@ type UpdateMicrofrontendsResponse struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -4513,6 +5176,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -4641,6 +5307,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 
 		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -17443,6 +18112,9 @@ type CreateProjectResponse struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -17571,6 +18243,9 @@ type CreateProjectResponse struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -19207,6 +19882,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -19335,6 +20013,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 
 		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`

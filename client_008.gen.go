@@ -7,6 +7,304 @@ import (
 	"encoding/json"
 )
 
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesExpiredTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserFalse GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser = false
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserTrue  GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser = true
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserFalse:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsADMIN            GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects = "ADMIN"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsPROJECTDEVELOPER GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects = "PROJECT_DEVELOPER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsPROJECTGUEST     GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects = "PROJECT_GUEST"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsPROJECTVIEWER    GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects = "PROJECT_VIEWER"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsADMIN:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsPROJECTDEVELOPER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsPROJECTGUEST:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesProjectsPROJECTVIEWER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesRole.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleBILLING       GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "BILLING"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleCONTRIBUTOR   GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "CONTRIBUTOR"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleDEVELOPER     GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "DEVELOPER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleMEMBER        GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "MEMBER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleOWNER         GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "OWNER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleSECURITY      GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "SECURITY"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleVIEWER        GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "VIEWER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleVIEWERFORPLUS GetTeamMembers200JSONResponseBodyEmailInviteCodesRole = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesRole enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesRole) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleBILLING:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleCONTRIBUTOR:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleDEVELOPER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleMEMBER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleOWNER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleSECURITY:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleVIEWER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesRoleVIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayBudgetManager      GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "AiGatewayBudgetManager"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayCredits            GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "AiGatewayCredits"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewaySettings           GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "AiGatewaySettings"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayTranscriptsManager GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "AiGatewayTranscriptsManager"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayTranscriptsViewer  GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "AiGatewayTranscriptsViewer"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayUser               GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "AiGatewayUser"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsConnectorManager            GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "ConnectorManager"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsCreateProject               GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "CreateProject"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsEnvVariableManager          GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "EnvVariableManager"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsEnvironmentManager          GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "EnvironmentManager"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsFullProductionDeployment    GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "FullProductionDeployment"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsIntegrationManager          GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "IntegrationManager"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsOrgAdmin                    GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "OrgAdmin"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsOrgViewer                   GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "OrgViewer"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsUsageViewer                 GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "UsageViewer"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsV0Builder                   GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "V0Builder"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsV0Chatter                   GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "V0Chatter"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsV0Viewer                    GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "V0Viewer"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsWorkflowDecryptor           GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions = "WorkflowDecryptor"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayBudgetManager:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayCredits:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewaySettings:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayTranscriptsManager:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayTranscriptsViewer:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsAiGatewayUser:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsConnectorManager:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsCreateProject:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsEnvVariableManager:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsEnvironmentManager:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsFullProductionDeployment:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsIntegrationManager:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsOrgAdmin:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsOrgViewer:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsUsageViewer:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsV0Builder:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsV0Chatter:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsV0Viewer:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissionsWorkflowDecryptor:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesBILLING       GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "BILLING"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesCONTRIBUTOR   GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "CONTRIBUTOR"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesDEVELOPER     GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "DEVELOPER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesMEMBER        GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "MEMBER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesOWNER         GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "OWNER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesSECURITY      GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "SECURITY"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesVIEWER        GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "VIEWER"
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesVIEWERFORPLUS GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesBILLING:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesCONTRIBUTOR:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesDEVELOPER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesMEMBER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesOWNER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesSECURITY:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesVIEWER:
+		return true
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRolesVIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyMembersConfirmed.
+const (
+	GetTeamMembers200JSONResponseBodyMembersConfirmedFalse GetTeamMembers200JSONResponseBodyMembersConfirmed = false
+	GetTeamMembers200JSONResponseBodyMembersConfirmedTrue  GetTeamMembers200JSONResponseBodyMembersConfirmed = true
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyMembersConfirmed enum.
+func (e GetTeamMembers200JSONResponseBodyMembersConfirmed) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyMembersConfirmedFalse:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersConfirmedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged.
+const (
+	GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManagedFalse GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged = false
+	GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManagedTrue  GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged = true
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged enum.
+func (e GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManagedFalse:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManagedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin.
+const (
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginAccountUpdate               GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "account-update"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginBitbucket                   GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "bitbucket"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginDsync                       GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "dsync"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginFeedback                    GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "feedback"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginGithub                      GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "github"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginGitlab                      GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "gitlab"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginImport                      GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "import"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginLink                        GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "link"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginMail                        GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "mail"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbAutoApprove             GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-auto-approve"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbHobbyUpgrade            GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-hobby-upgrade"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbInvite                  GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-invite"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRedeploy                GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-redeploy"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRedeployAttributionCard GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-redeploy-attribution-card"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRequestAccess           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-request-access"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbViewerUpgrade           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-viewer-upgrade"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginOrganizationTeams           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "organization-teams"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginSaml                        GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "saml"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginTeams                       GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "teams"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin enum.
+func (e GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginAccountUpdate:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginBitbucket:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginDsync:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginFeedback:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginGithub:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginGitlab:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginImport:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginLink:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginMail:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbAutoApprove:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbHobbyUpgrade:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbInvite:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRedeploy:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRedeployAttributionCard:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRequestAccess:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbViewerUpgrade:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginOrganizationTeams:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginSaml:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginTeams:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetTeamMembers200JSONResponseBodyMembersProjectsRole.
 const (
 	GetTeamMembers200JSONResponseBodyMembersProjectsRoleADMIN            GetTeamMembers200JSONResponseBodyMembersProjectsRole = "ADMIN"
@@ -19830,208 +20128,4 @@ type NamedSandbox struct {
 	//
 	// Example: 2
 	Vcpus *float32 `json:"vcpus,omitempty"`
-}
-
-// NamedSandboxArchitecture CPU architecture of the sandbox. This value does not change.
-type NamedSandboxArchitecture string
-
-// NamedSandboxFailoverRegions The regions the sandbox fails over to. Empty when it does not fail over.
-//
-// Example: ["sfo1","cle1"]
-type NamedSandboxFailoverRegions string
-
-// NamedSandboxKeepLastSnapshotsDeleteEvicted Whether to immediately delete evicted snapshots.
-//
-// Example: true
-type NamedSandboxKeepLastSnapshotsDeleteEvicted bool
-
-// NamedSandboxMountsMode defines model for NamedSandbox.Mounts.Mode.
-type NamedSandboxMountsMode string
-
-// NamedSandboxNetworkPolicyMode defines model for NamedSandbox.NetworkPolicy.Mode.
-type NamedSandboxNetworkPolicyMode string
-
-// NamedSandboxPersistent Whether the sandbox persists its state across restarts via automatic snapshots.
-//
-// Example: true
-type NamedSandboxPersistent bool
-
-// NamedSandboxStatus The status of the current sandbox.
-//
-// Example: running
-type NamedSandboxStatus string
-
-// NamedSandboxV0 Whether this sandbox is managed by v0 on the customer's behalf.
-type NamedSandboxV0 bool
-
-// Nameserver A valid nameserver
-type Nameserver = string
-
-// Network defines model for Network.
-type Network struct {
-	// AwsAccountId The ID of the AWS Account in which the network exists.
-	AwsAccountId string `json:"awsAccountId"`
-
-	// AwsAvailabilityZoneIds The IDs of the AWS Availability Zones in which the network exists, if specified during creation.
-	AwsAvailabilityZoneIds *[]string `json:"awsAvailabilityZoneIds,omitempty"`
-
-	// AwsRegion The AWS Region in which the network exists.
-	AwsRegion string `json:"awsRegion"`
-
-	// Cidr The CIDR range of the Network.
-	Cidr string `json:"cidr"`
-
-	// CreatedAt The date at which the Network was created, represented as a UNIX timestamp since EPOCH.
-	CreatedAt         float32   `json:"createdAt"`
-	EgressIpAddresses *[]string `json:"egressIpAddresses,omitempty"`
-
-	// HostedZones Metadata about any AWS Route53 Hosted Zones associated with the Network.
-	HostedZones *struct {
-		// Count The number of AWS Route53 Hosted Zones associated with the Network.
-		Count float32 `json:"count"`
-	} `json:"hostedZones,omitempty"`
-
-	// Id The unique identifier of the Network.
-	Id string `json:"id"`
-
-	// Name The name of the network.
-	Name string `json:"name"`
-
-	// PeeringConnections Metadata about any AWS Route53 Hosted Zones associated with the Network.
-	PeeringConnections *struct {
-		// Count The number of AWS Route53 Hosted Zones associated with the Network.
-		Count float32 `json:"count"`
-	} `json:"peeringConnections,omitempty"`
-
-	// Projects Metadata about any projects associated with the Network.
-	Projects *struct {
-		Count float32  `json:"count"`
-		Ids   []string `json:"ids"`
-	} `json:"projects,omitempty"`
-
-	// Region The Vercel region in which the Network exists.
-	Region *string `json:"region,omitempty"`
-
-	// Status The status of the Network.
-	Status NetworkStatus `json:"status"`
-
-	// TeamId The unique identifier of the Team that owns the Network.
-	TeamId string `json:"teamId"`
-
-	// VpcId The ID of the VPC which hosts the network.
-	VpcId *string `json:"vpcId,omitempty"`
-}
-
-// NetworkStatus The status of the Network.
-type NetworkStatus string
-
-// NonEmptyTrimmedString a non empty string
-type NonEmptyTrimmedString = string
-
-// NotAuthorizedForScope defines model for NotAuthorizedForScope.
-type NotAuthorizedForScope struct {
-	Code    NotAuthorizedForScopeCode   `json:"code"`
-	Message string                      `json:"message"`
-	Status  NotAuthorizedForScopeStatus `json:"status"`
-}
-
-// NotAuthorizedForScopeCode defines model for NotAuthorizedForScope.Code.
-type NotAuthorizedForScopeCode string
-
-// NotAuthorizedForScopeStatus defines model for NotAuthorizedForScope.Status.
-type NotAuthorizedForScopeStatus float32
-
-// NotFound defines model for NotFound.
-type NotFound struct {
-	Code    NotFoundCode   `json:"code"`
-	Message string         `json:"message"`
-	Status  NotFoundStatus `json:"status"`
-}
-
-// NotFoundCode defines model for NotFound.Code.
-type NotFoundCode string
-
-// NotFoundStatus defines model for NotFound.Status.
-type NotFoundStatus float32
-
-// OrderId A valid order ID
-type OrderId = string
-
-// OrderTooExpensive The total price of the order is too high.
-type OrderTooExpensive struct {
-	Code    OrderTooExpensiveCode   `json:"code"`
-	Message string                  `json:"message"`
-	Status  OrderTooExpensiveStatus `json:"status"`
-}
-
-// OrderTooExpensiveCode defines model for OrderTooExpensive.Code.
-type OrderTooExpensiveCode string
-
-// OrderTooExpensiveStatus defines model for OrderTooExpensive.Status.
-type OrderTooExpensiveStatus float32
-
-// Organization defines model for Organization.
-type Organization struct {
-	Avatar    *string `json:"avatar"`
-	CreatedAt string  `json:"createdAt"`
-
-	// Name The organization's display name. Optional: organizations created before the name attribute existed have no stored value. New orgs always get one (provided or slug-derived) via the service layer.
-	Name           *string `json:"name,omitempty"`
-	OrganizationId string  `json:"organizationId"`
-	OwnerId        string  `json:"ownerId"`
-	Slug           string  `json:"slug"`
-	TeamCount      float32 `json:"teamCount"`
-	TeamId         string  `json:"teamId"`
-	UpdatedAt      string  `json:"updatedAt"`
-
-	// UserRole The authenticated user's role in the organization. Present on read endpoints when the user holds an organization role.
-	UserRole *string `json:"userRole,omitempty"`
-}
-
-// OrganizationTeam defines model for OrganizationTeam.
-type OrganizationTeam struct {
-	// BillingPlan The child team's billing profile within the organization. Optional: links created before this attribute existed have no stored value.
-	BillingPlan    *OrganizationTeamBillingPlan `json:"billingPlan,omitempty"`
-	CreatedAt      string                       `json:"createdAt"`
-	OrganizationId string                       `json:"organizationId"`
-	SsoMode        OrganizationTeamSsoMode      `json:"ssoMode"`
-	TeamId         string                       `json:"teamId"`
-	UpdatedAt      string                       `json:"updatedAt"`
-}
-
-// OrganizationTeamBillingPlan The child team's billing profile within the organization. Optional: links created before this attribute existed have no stored value.
-type OrganizationTeamBillingPlan string
-
-// OrganizationTeamSsoMode defines model for OrganizationTeam.SsoMode.
-type OrganizationTeamSsoMode string
-
-// OrganizationTeamListItem An org-team link enriched with the linked team's display fields, as returned by the list-teams endpoint. We project to an explicit flat interface instead of spreading the ElectroDB `OrganizationTeamItem` because its recursive generics break the OpenAPI generator (which would silently drop the route).
-type OrganizationTeamListItem struct {
-	// Avatar The ID of the file used as the Team's avatar, or `null` if none.
-	Avatar *string `json:"avatar"`
-
-	// BillingPlan Billing profile of the organization link: how this team settles within the organization. This is not the team's billing.plan or planIteration. Links with `enterprise` billing participate in organization-level billing and usage rollups. This field is optional for legacy links that have no stored profile.
-	BillingPlan *OrganizationTeamListItemBillingPlan `json:"billingPlan,omitempty"`
-
-	// CreatedAt ISO timestamp of when the team was linked to the organization.
-	CreatedAt string `json:"createdAt"`
-
-	// MemberCount Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships. Excludes email invitations that do not have a membership record.
-	MemberCount *float32 `json:"memberCount,omitempty"`
-
-	// Name The Team's display name, or `null` if none has been set.
-	Name *string `json:"name"`
-
-	// OrganizationId The ID of the organization the team belongs to.
-	OrganizationId string `json:"organizationId"`
-
-	// Slug The Team's slug, unique across Vercel.
-	Slug    string                          `json:"slug"`
-	SsoMode OrganizationTeamListItemSsoMode `json:"ssoMode"`
-
-	// TeamId The Team's unique identifier.
-	TeamId string `json:"teamId"`
-
-	// UpdatedAt ISO timestamp of when the link was last updated.
-	UpdatedAt string `json:"updatedAt"`
 }

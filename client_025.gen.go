@@ -248,12 +248,15 @@ type CancelDeploymentResponse struct {
 			ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 			FunctionFailoverRegions *[]string                                                                  `json:"functionFailoverRegions,omitempty"`
 			IncludeFiles            *string                                                                    `json:"includeFiles,omitempty"`
-			MaxConcurrency          *float32                                                                   `json:"maxConcurrency,omitempty"`
-			MaxDuration             *CancelDeployment200JSONResponseBody_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-			Memory                  *float32                                                                   `json:"memory,omitempty"`
-			Regions                 *[]string                                                                  `json:"regions,omitempty"`
-			Runtime                 *string                                                                    `json:"runtime,omitempty"`
-			SupportsCancellation    *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation          `json:"supportsCancellation,omitempty"`
+
+			// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+			InstallCommand       *string                                                           `json:"installCommand,omitempty"`
+			MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
+			MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
+			Memory               *float32                                                          `json:"memory,omitempty"`
+			Regions              *[]string                                                         `json:"regions,omitempty"`
+			Runtime              *string                                                           `json:"runtime,omitempty"`
+			SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 		} `json:"functions,omitempty"`
 		GitRepo   *CancelDeployment200JSONResponseBody_GitRepo   `json:"gitRepo,omitempty"`
 		GitSource *CancelDeployment200JSONResponseBody_GitSource `json:"gitSource,omitempty"`
@@ -756,12 +759,15 @@ func (r CancelDeploymentResponse) GetJSON200() *struct {
 		ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
 		FunctionFailoverRegions *[]string                                                                  `json:"functionFailoverRegions,omitempty"`
 		IncludeFiles            *string                                                                    `json:"includeFiles,omitempty"`
-		MaxConcurrency          *float32                                                                   `json:"maxConcurrency,omitempty"`
-		MaxDuration             *CancelDeployment200JSONResponseBody_Functions_MaxDuration                 `json:"maxDuration,omitempty"`
-		Memory                  *float32                                                                   `json:"memory,omitempty"`
-		Regions                 *[]string                                                                  `json:"regions,omitempty"`
-		Runtime                 *string                                                                    `json:"runtime,omitempty"`
-		SupportsCancellation    *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation          `json:"supportsCancellation,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                           `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
+		MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
+		Memory               *float32                                                          `json:"memory,omitempty"`
+		Regions              *[]string                                                         `json:"regions,omitempty"`
+		Runtime              *string                                                           `json:"runtime,omitempty"`
+		SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
 	} `json:"functions,omitempty"`
 	GitRepo   *CancelDeployment200JSONResponseBody_GitRepo   `json:"gitRepo,omitempty"`
 	GitSource *CancelDeployment200JSONResponseBody_GitSource `json:"gitSource,omitempty"`
@@ -10014,6 +10020,9 @@ type GetProjectResponse struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -10142,6 +10151,9 @@ type GetProjectResponse struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -11789,6 +11801,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -11917,6 +11932,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 
 		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -13586,6 +13604,9 @@ type UpdateProjectResponse struct {
 			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -13714,6 +13735,9 @@ type UpdateProjectResponse struct {
 
 			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -15350,6 +15374,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
 
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
 		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
 
@@ -15478,6 +15505,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 
 		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
 
 		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
@@ -19980,34 +20010,4 @@ func (c *ClientWithResponses) DeleteEdgeConfigTokensWithResponse(ctx context.Con
 		return nil, err
 	}
 	return ParseDeleteEdgeConfigTokensResponse(rsp)
-}
-
-// GetEdgeConfigTokensWithResponse Get all tokens of a Global Config
-//
-// Returns all tokens of a Global Config.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
-func (c *ClientWithResponses) GetEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokensResponse, error) {
-	rsp, err := c.GetEdgeConfigTokens(ctx, edgeConfigId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetEdgeConfigTokensResponse(rsp)
-}
-
-// UpdateInstallationWithBodyWithResponse Update Installation
-//
-// This endpoint updates an integration installation.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-func (c *ClientWithResponses) UpdateInstallationWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error) {
-	rsp, err := c.UpdateInstallationWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateInstallationResponse(rsp)
 }

@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.4.0, 2026-10-20
+
+- Added `GetProjectBoxes`, `PutProjectDaemonInstances` (with `WithBody`) and `RestartProjectDaemonInstance` on `Client` and `ClientWithResponses`, with their `New...Request` builders, `Parse...Response` functions, `GetProjectBoxesParams`, `PutProjectDaemonInstancesParams`, `RestartProjectDaemonInstanceParams` and response types.
+- Added `ListEventTypeNameXaaUpdated` and `ListEventTypeReplacedByXaaUpdated`, and a new `UserEvent_Payload` variant with `FromUserEventPayload495` and `MergeUserEventPayload495`.
+- `UserEventPayload488` lost `App`, `AppName`, `AtTTL`, `AuthMethod`, `Geolocation`, `GrantType`, `Ip`, `SessionId`, `TokenPrefix`, `UserAgent` and other fields. It gained `Next` and `Previous`, and `Scope` changed from `string` to `UserEventPayload488Scope`. The type is no longer comparable with `==`.
+- `UserEventPayload489`, `UserEventPayload490` and `UserEventPayload491` lost fields such as `Domain`, `ProjectId`, `AppName`, `Policy`, `After` and `Before`, along with their enum types.
+- `UserEventPayload492` lost all its fields and enum types, and is no longer comparable with `==`. `UserEventPayload493` lost `ActorTokenId`, `Expired`, `Leaked`, `LogoutSource`, `Reason`, `Revoked` and `TokenType`, and its `Origin` and `Scope` fields changed from pointers to plain values. `UserEventPayload494` lost `DeletedCount`.
+- The `Builder` field on the `Services0` and `Services1` types for `CancelDeployment200JSONResponseBody`, `CreateDeployment200JSONResponseBody1` and `GetDeployment200JSONResponseBody1` changed type, as did their `Functions` fields.
+- The `JSON200` field and `GetJSON200` method changed type on `CancelDeploymentResponse`, `CreateProjectResponse`, `DeleteProjectAvatarResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UploadProjectAvatarResponse`, `UpdateMicrofrontendsResponse` and `GetMicrofrontendsInGroupResponse`. `GetProjects200JSONResponseBody2.Projects` and `Team.DefaultDeploymentProtection` changed type too.
+- Generated from spec version 0.0.1.
+
 ## v0.3.0, 2026-10-19
 
 - `RunSessionCommandParams.CmdId` is removed. `RunSessionCommand`, `RunSessionCommandWithResponse` and their `WithBody` variants no longer send a `cmdId` query parameter, and code that still sets that field no longer compiles.
