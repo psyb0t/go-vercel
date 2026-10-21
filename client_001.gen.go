@@ -4278,13 +4278,13 @@ const (
 	ListEventTypeNameMarketplaceBillingCollectionUpdated             ListEventTypeName = "marketplace-billing-collection-updated"
 	ListEventTypeNameMarketplaceFlexCommitOptIn                      ListEventTypeName = "marketplace-flex-commit-opt-in"
 	ListEventTypeNameMarketplaceIntegrationAllowlistUpdated          ListEventTypeName = "marketplace-integration-allowlist-updated"
+	ListEventTypeNameMessageboardChannelCreated                      ListEventTypeName = "messageboard-channel-created"
+	ListEventTypeNameMessageboardChannelUpdated                      ListEventTypeName = "messageboard-channel-updated"
 	ListEventTypeNameMessageboardCreated                             ListEventTypeName = "messageboard-created"
+	ListEventTypeNameMessageboardPrivateChannelCreated               ListEventTypeName = "messageboard-private-channel-created"
+	ListEventTypeNameMessageboardPrivateChannelUpdated               ListEventTypeName = "messageboard-private-channel-updated"
 	ListEventTypeNameMessageboardPrivateCreated                      ListEventTypeName = "messageboard-private-created"
-	ListEventTypeNameMessageboardPrivateSpaceCreated                 ListEventTypeName = "messageboard-private-space-created"
-	ListEventTypeNameMessageboardPrivateSpaceUpdated                 ListEventTypeName = "messageboard-private-space-updated"
 	ListEventTypeNameMessageboardSchemaRegistered                    ListEventTypeName = "messageboard-schema-registered"
-	ListEventTypeNameMessageboardSpaceCreated                        ListEventTypeName = "messageboard-space-created"
-	ListEventTypeNameMessageboardSpaceUpdated                        ListEventTypeName = "messageboard-space-updated"
 	ListEventTypeNameMessageboardVisibilityUpdated                   ListEventTypeName = "messageboard-visibility-updated"
 	ListEventTypeNameMicrofrontendGroupAdded                         ListEventTypeName = "microfrontend-group-added"
 	ListEventTypeNameMicrofrontendGroupDeleted                       ListEventTypeName = "microfrontend-group-deleted"
@@ -5337,19 +5337,19 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameMarketplaceIntegrationAllowlistUpdated:
 		return true
+	case ListEventTypeNameMessageboardChannelCreated:
+		return true
+	case ListEventTypeNameMessageboardChannelUpdated:
+		return true
 	case ListEventTypeNameMessageboardCreated:
+		return true
+	case ListEventTypeNameMessageboardPrivateChannelCreated:
+		return true
+	case ListEventTypeNameMessageboardPrivateChannelUpdated:
 		return true
 	case ListEventTypeNameMessageboardPrivateCreated:
 		return true
-	case ListEventTypeNameMessageboardPrivateSpaceCreated:
-		return true
-	case ListEventTypeNameMessageboardPrivateSpaceUpdated:
-		return true
 	case ListEventTypeNameMessageboardSchemaRegistered:
-		return true
-	case ListEventTypeNameMessageboardSpaceCreated:
-		return true
-	case ListEventTypeNameMessageboardSpaceUpdated:
 		return true
 	case ListEventTypeNameMessageboardVisibilityUpdated:
 		return true
@@ -6477,13 +6477,13 @@ const (
 	ListEventTypeReplacedByMarketplaceBillingCollectionUpdated             ListEventTypeReplacedBy = "marketplace-billing-collection-updated"
 	ListEventTypeReplacedByMarketplaceFlexCommitOptIn                      ListEventTypeReplacedBy = "marketplace-flex-commit-opt-in"
 	ListEventTypeReplacedByMarketplaceIntegrationAllowlistUpdated          ListEventTypeReplacedBy = "marketplace-integration-allowlist-updated"
+	ListEventTypeReplacedByMessageboardChannelCreated                      ListEventTypeReplacedBy = "messageboard-channel-created"
+	ListEventTypeReplacedByMessageboardChannelUpdated                      ListEventTypeReplacedBy = "messageboard-channel-updated"
 	ListEventTypeReplacedByMessageboardCreated                             ListEventTypeReplacedBy = "messageboard-created"
+	ListEventTypeReplacedByMessageboardPrivateChannelCreated               ListEventTypeReplacedBy = "messageboard-private-channel-created"
+	ListEventTypeReplacedByMessageboardPrivateChannelUpdated               ListEventTypeReplacedBy = "messageboard-private-channel-updated"
 	ListEventTypeReplacedByMessageboardPrivateCreated                      ListEventTypeReplacedBy = "messageboard-private-created"
-	ListEventTypeReplacedByMessageboardPrivateSpaceCreated                 ListEventTypeReplacedBy = "messageboard-private-space-created"
-	ListEventTypeReplacedByMessageboardPrivateSpaceUpdated                 ListEventTypeReplacedBy = "messageboard-private-space-updated"
 	ListEventTypeReplacedByMessageboardSchemaRegistered                    ListEventTypeReplacedBy = "messageboard-schema-registered"
-	ListEventTypeReplacedByMessageboardSpaceCreated                        ListEventTypeReplacedBy = "messageboard-space-created"
-	ListEventTypeReplacedByMessageboardSpaceUpdated                        ListEventTypeReplacedBy = "messageboard-space-updated"
 	ListEventTypeReplacedByMessageboardVisibilityUpdated                   ListEventTypeReplacedBy = "messageboard-visibility-updated"
 	ListEventTypeReplacedByMicrofrontendGroupAdded                         ListEventTypeReplacedBy = "microfrontend-group-added"
 	ListEventTypeReplacedByMicrofrontendGroupDeleted                       ListEventTypeReplacedBy = "microfrontend-group-deleted"
@@ -7536,19 +7536,19 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedByMarketplaceIntegrationAllowlistUpdated:
 		return true
+	case ListEventTypeReplacedByMessageboardChannelCreated:
+		return true
+	case ListEventTypeReplacedByMessageboardChannelUpdated:
+		return true
 	case ListEventTypeReplacedByMessageboardCreated:
+		return true
+	case ListEventTypeReplacedByMessageboardPrivateChannelCreated:
+		return true
+	case ListEventTypeReplacedByMessageboardPrivateChannelUpdated:
 		return true
 	case ListEventTypeReplacedByMessageboardPrivateCreated:
 		return true
-	case ListEventTypeReplacedByMessageboardPrivateSpaceCreated:
-		return true
-	case ListEventTypeReplacedByMessageboardPrivateSpaceUpdated:
-		return true
 	case ListEventTypeReplacedByMessageboardSchemaRegistered:
-		return true
-	case ListEventTypeReplacedByMessageboardSpaceCreated:
-		return true
-	case ListEventTypeReplacedByMessageboardSpaceUpdated:
 		return true
 	case ListEventTypeReplacedByMessageboardVisibilityUpdated:
 		return true
@@ -12317,6 +12317,7 @@ const (
 	UserEventPayload62PermissionsReadWriteSchedule                     UserEventPayload62Permissions = "read-write:schedule"
 	UserEventPayload62PermissionsReadWriteTeamMembers                  UserEventPayload62Permissions = "read-write:team-members"
 	UserEventPayload62PermissionsReadWriteVcr                          UserEventPayload62Permissions = "read-write:vcr"
+	UserEventPayload62PermissionsReadWriteWebhooks                     UserEventPayload62Permissions = "read-write:webhooks"
 	UserEventPayload62PermissionsUseAiGateway                          UserEventPayload62Permissions = "use:ai-gateway"
 	UserEventPayload62PermissionsUseGithub                             UserEventPayload62Permissions = "use:github"
 )
@@ -12474,6 +12475,8 @@ func (e UserEventPayload62Permissions) Valid() bool {
 		return true
 	case UserEventPayload62PermissionsReadWriteVcr:
 		return true
+	case UserEventPayload62PermissionsReadWriteWebhooks:
+		return true
 	case UserEventPayload62PermissionsUseAiGateway:
 		return true
 	case UserEventPayload62PermissionsUseGithub:
@@ -12584,6 +12587,7 @@ const (
 	UserEventPayload64NextPermissionsReadWriteSchedule                     UserEventPayload64NextPermissions = "read-write:schedule"
 	UserEventPayload64NextPermissionsReadWriteTeamMembers                  UserEventPayload64NextPermissions = "read-write:team-members"
 	UserEventPayload64NextPermissionsReadWriteVcr                          UserEventPayload64NextPermissions = "read-write:vcr"
+	UserEventPayload64NextPermissionsReadWriteWebhooks                     UserEventPayload64NextPermissions = "read-write:webhooks"
 	UserEventPayload64NextPermissionsUseAiGateway                          UserEventPayload64NextPermissions = "use:ai-gateway"
 	UserEventPayload64NextPermissionsUseGithub                             UserEventPayload64NextPermissions = "use:github"
 )
@@ -12741,6 +12745,8 @@ func (e UserEventPayload64NextPermissions) Valid() bool {
 		return true
 	case UserEventPayload64NextPermissionsReadWriteVcr:
 		return true
+	case UserEventPayload64NextPermissionsReadWriteWebhooks:
+		return true
 	case UserEventPayload64NextPermissionsUseAiGateway:
 		return true
 	case UserEventPayload64NextPermissionsUseGithub:
@@ -12849,6 +12855,7 @@ const (
 	UserEventPayload65AfterPermissionsReadWriteSchedule                     UserEventPayload65AfterPermissions = "read-write:schedule"
 	UserEventPayload65AfterPermissionsReadWriteTeamMembers                  UserEventPayload65AfterPermissions = "read-write:team-members"
 	UserEventPayload65AfterPermissionsReadWriteVcr                          UserEventPayload65AfterPermissions = "read-write:vcr"
+	UserEventPayload65AfterPermissionsReadWriteWebhooks                     UserEventPayload65AfterPermissions = "read-write:webhooks"
 	UserEventPayload65AfterPermissionsUseAiGateway                          UserEventPayload65AfterPermissions = "use:ai-gateway"
 )
 
@@ -13001,6 +13008,8 @@ func (e UserEventPayload65AfterPermissions) Valid() bool {
 		return true
 	case UserEventPayload65AfterPermissionsReadWriteVcr:
 		return true
+	case UserEventPayload65AfterPermissionsReadWriteWebhooks:
+		return true
 	case UserEventPayload65AfterPermissionsUseAiGateway:
 		return true
 	default:
@@ -13128,6 +13137,7 @@ const (
 	UserEventPayload65BeforePermissionsReadWriteSchedule                     UserEventPayload65BeforePermissions = "read-write:schedule"
 	UserEventPayload65BeforePermissionsReadWriteTeamMembers                  UserEventPayload65BeforePermissions = "read-write:team-members"
 	UserEventPayload65BeforePermissionsReadWriteVcr                          UserEventPayload65BeforePermissions = "read-write:vcr"
+	UserEventPayload65BeforePermissionsReadWriteWebhooks                     UserEventPayload65BeforePermissions = "read-write:webhooks"
 	UserEventPayload65BeforePermissionsUseAiGateway                          UserEventPayload65BeforePermissions = "use:ai-gateway"
 )
 
@@ -13280,6 +13290,8 @@ func (e UserEventPayload65BeforePermissions) Valid() bool {
 		return true
 	case UserEventPayload65BeforePermissionsReadWriteVcr:
 		return true
+	case UserEventPayload65BeforePermissionsReadWriteWebhooks:
+		return true
 	case UserEventPayload65BeforePermissionsUseAiGateway:
 		return true
 	default:
@@ -13407,6 +13419,7 @@ const (
 	UserEventPayload66PermissionsReadWriteSchedule                     UserEventPayload66Permissions = "read-write:schedule"
 	UserEventPayload66PermissionsReadWriteTeamMembers                  UserEventPayload66Permissions = "read-write:team-members"
 	UserEventPayload66PermissionsReadWriteVcr                          UserEventPayload66Permissions = "read-write:vcr"
+	UserEventPayload66PermissionsReadWriteWebhooks                     UserEventPayload66Permissions = "read-write:webhooks"
 	UserEventPayload66PermissionsUseAiGateway                          UserEventPayload66Permissions = "use:ai-gateway"
 )
 
@@ -13558,6 +13571,8 @@ func (e UserEventPayload66Permissions) Valid() bool {
 	case UserEventPayload66PermissionsReadWriteTeamMembers:
 		return true
 	case UserEventPayload66PermissionsReadWriteVcr:
+		return true
+	case UserEventPayload66PermissionsReadWriteWebhooks:
 		return true
 	case UserEventPayload66PermissionsUseAiGateway:
 		return true
@@ -19997,9 +20012,3 @@ func (e UserEventPayload280ProjectOldConnectConfigurationsEnvId1) Valid() bool {
 		return false
 	}
 }
-
-// Defines values for UserEventPayload280ProjectOldConnectConfigurationsPassive.
-const (
-	UserEventPayload280ProjectOldConnectConfigurationsPassiveFalse UserEventPayload280ProjectOldConnectConfigurationsPassive = false
-	UserEventPayload280ProjectOldConnectConfigurationsPassiveTrue  UserEventPayload280ProjectOldConnectConfigurationsPassive = true
-)

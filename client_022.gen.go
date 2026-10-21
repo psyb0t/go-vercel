@@ -16,6 +16,428 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewCreateDeploymentCheckRunRequest calls the generic CreateDeploymentCheckRun builder with application/json body
+func NewCreateDeploymentCheckRunRequest(server string, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateDeploymentCheckRunRequestWithBody(server, deploymentId, params, "application/json", bodyReader)
+}
+
+// NewCreateDeploymentCheckRunRequestWithBody constructs an http.Request for the CreateDeploymentCheckRun method, with any body, and a specified content type
+func NewCreateDeploymentCheckRunRequestWithBody(server string, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/check-runs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDeploymentCheckRunRequest constructs an http.Request for the GetDeploymentCheckRun method
+func NewGetDeploymentCheckRunRequest(server string, deploymentId string, checkRunId string, params *GetDeploymentCheckRunParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "checkRunId", checkRunId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/check-runs/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateDeploymentCheckRunRequest calls the generic UpdateDeploymentCheckRun builder with application/json body
+func NewUpdateDeploymentCheckRunRequest(server string, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, body UpdateDeploymentCheckRunJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateDeploymentCheckRunRequestWithBody(server, deploymentId, checkRunId, params, "application/json", bodyReader)
+}
+
+// NewUpdateDeploymentCheckRunRequestWithBody constructs an http.Request for the UpdateDeploymentCheckRun method, with any body, and a specified content type
+func NewUpdateDeploymentCheckRunRequestWithBody(server string, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "checkRunId", checkRunId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/check-runs/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListDeploymentAliasesRequest constructs an http.Request for the ListDeploymentAliases method
+func NewListDeploymentAliasesRequest(server string, id string, params *ListDeploymentAliasesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/aliases", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewAssignAliasRequest calls the generic AssignAlias builder with application/json body
+func NewAssignAliasRequest(server string, id struct {
+	union json.RawMessage
+}, params *AssignAliasParams, body AssignAliasJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewAssignAliasRequestWithBody(server, id, params, "application/json", bodyReader)
+}
+
+// NewAssignAliasRequestWithBody constructs an http.Request for the AssignAlias method, with any body, and a specified content type
+func NewAssignAliasRequestWithBody(server string, id struct {
+	union json.RawMessage
+}, params *AssignAliasParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/aliases", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCreateRecordRequest calls the generic CreateRecord builder with application/json body
 func NewCreateRecordRequest(server string, domain string, params *CreateRecordParams, body CreateRecordJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -12861,7 +13283,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetProjectBoxesWithResponse Get project daemons
 	//
-	// Lists project daemons.
+	// List the daemons of a project.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -12870,7 +13292,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
 	//
-	// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -12879,7 +13301,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
 	//
-	// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -12888,7 +13310,7 @@ type ClientWithResponsesInterface interface {
 
 	// RestartProjectDaemonInstanceWithResponse Force restart a project daemon instance
 	//
-	// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+	// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -13200,6 +13622,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
 	ListFlagVersionsWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*ListFlagVersionsResponse, error)
+
+	// ListFlagLabelsWithResponse List attribute labels
+	//
+	// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
+	ListFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelsResponse, error)
+
+	// ListFlagLabelCountsWithResponse List attribute label counts
+	//
+	// List label counts for configured entity attributes, including empty ones.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
+	ListFlagLabelCountsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelCountsResponse, error)
+
+	// LookupFlagLabelsWithBodyWithResponse Look up attribute labels
+	//
+	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+	LookupFlagLabelsWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error)
+
+	// LookupFlagLabelsWithResponse Look up attribute labels
+	//
+	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+	LookupFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error)
 
 	// GetSdkKeysWithResponse Get all SDK keys
 	//
@@ -19558,464 +20016,4 @@ func (r GetConnectorResponse) GetJSON409() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r GetConnectorResponse) GetJSON410() *ConnectError {
 	return r.JSON410
-}
-
-// GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r GetConnectorResponse) GetJSON422() *ConnectError {
-	return r.JSON422
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConnectorResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConnectorResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConnectorResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConnectorResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type EjectManagedConnectorResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ConnectConnector
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r EjectManagedConnectorResponse) GetJSON200() *ConnectConnector {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r EjectManagedConnectorResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r EjectManagedConnectorResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r EjectManagedConnectorResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r EjectManagedConnectorResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteConnectorProjectConnectionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ConnectError
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ConnectError
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ConnectError
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ConnectError
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ConnectError
-	// JSON410 the response for an HTTP 410 `application/json` response
-	JSON410 *ConnectError
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r DeleteConnectorProjectConnectionResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r DeleteConnectorProjectConnectionResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r DeleteConnectorProjectConnectionResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r DeleteConnectorProjectConnectionResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r DeleteConnectorProjectConnectionResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r DeleteConnectorProjectConnectionResponse) GetJSON410() *ConnectError {
-	return r.JSON410
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteConnectorProjectConnectionResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteConnectorProjectConnectionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteConnectorProjectConnectionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteConnectorProjectConnectionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConnectorProjectConnectionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ConnectProjectConnection
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ConnectError
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ConnectError
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ConnectError
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ConnectError
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ConnectError
-	// JSON410 the response for an HTTP 410 `application/json` response
-	JSON410 *ConnectError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON200() *ConnectProjectConnection {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r GetConnectorProjectConnectionResponse) GetJSON410() *ConnectError {
-	return r.JSON410
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConnectorProjectConnectionResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConnectorProjectConnectionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConnectorProjectConnectionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConnectorProjectConnectionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpsertConnectorProjectConnectionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ConnectProjectConnection
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ConnectError
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ConnectError
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ConnectError
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ConnectError
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ConnectError
-	// JSON410 the response for an HTTP 410 `application/json` response
-	JSON410 *ConnectError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON200() *ConnectProjectConnection {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r UpsertConnectorProjectConnectionResponse) GetJSON410() *ConnectError {
-	return r.JSON410
-}
-
-// GetBody returns the raw response body bytes
-func (r UpsertConnectorProjectConnectionResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpsertConnectorProjectConnectionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpsertConnectorProjectConnectionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpsertConnectorProjectConnectionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ReplaceConnectorTriggerDestinationsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ConnectConnector
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ConnectError
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ConnectError
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ConnectError
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ConnectError
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ConnectError
-	// JSON410 the response for an HTTP 410 `application/json` response
-	JSON410 *ConnectError
-	// JSON422 the response for an HTTP 422 `application/json` response
-	JSON422 *ConnectError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON200() *ConnectConnector {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON410() *ConnectError {
-	return r.JSON410
-}
-
-// GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON422() *ConnectError {
-	return r.JSON422
-}
-
-// GetBody returns the raw response body bytes
-func (r ReplaceConnectorTriggerDestinationsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ReplaceConnectorTriggerDestinationsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ReplaceConnectorTriggerDestinationsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ReplaceConnectorTriggerDestinationsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListNetworksResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]Network
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListNetworksResponse) GetJSON200() *[]Network {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListNetworksResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListNetworksResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListNetworksResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListNetworksResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateNetworkResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *Network
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateNetworkResponse) GetJSON201() *Network {
-	return r.JSON201
 }

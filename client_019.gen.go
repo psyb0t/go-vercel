@@ -14,61 +14,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// FromCreateDeploymentCheckRun200JSONResponseBody1Source1 overwrites any union data inside the CreateDeploymentCheckRun200JSONResponseBody_1_Source as the provided CreateDeploymentCheckRun200JSONResponseBody1Source1
-func (t *CreateDeploymentCheckRun200JSONResponseBody_1_Source) FromCreateDeploymentCheckRun200JSONResponseBody1Source1(v CreateDeploymentCheckRun200JSONResponseBody1Source1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateDeploymentCheckRun200JSONResponseBody1Source1 performs a merge with any union data inside the CreateDeploymentCheckRun200JSONResponseBody_1_Source, using the provided CreateDeploymentCheckRun200JSONResponseBody1Source1
-func (t *CreateDeploymentCheckRun200JSONResponseBody_1_Source) MergeCreateDeploymentCheckRun200JSONResponseBody1Source1(v CreateDeploymentCheckRun200JSONResponseBody1Source1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateDeploymentCheckRun200JSONResponseBody_1_Source) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateDeploymentCheckRun200JSONResponseBody_1_Source) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateDeploymentCheckRun200JSONResponseBody0 returns the union data inside the CreateDeploymentCheckRun200JSONResponseBody as a CreateDeploymentCheckRun200JSONResponseBody0
-func (t CreateDeploymentCheckRun200JSONResponseBody) AsCreateDeploymentCheckRun200JSONResponseBody0() (CreateDeploymentCheckRun200JSONResponseBody0, error) {
-	var body CreateDeploymentCheckRun200JSONResponseBody0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateDeploymentCheckRun200JSONResponseBody0 overwrites any union data inside the CreateDeploymentCheckRun200JSONResponseBody as the provided CreateDeploymentCheckRun200JSONResponseBody0
-func (t *CreateDeploymentCheckRun200JSONResponseBody) FromCreateDeploymentCheckRun200JSONResponseBody0(v CreateDeploymentCheckRun200JSONResponseBody0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateDeploymentCheckRun200JSONResponseBody0 performs a merge with any union data inside the CreateDeploymentCheckRun200JSONResponseBody, using the provided CreateDeploymentCheckRun200JSONResponseBody0
-func (t *CreateDeploymentCheckRun200JSONResponseBody) MergeCreateDeploymentCheckRun200JSONResponseBody0(v CreateDeploymentCheckRun200JSONResponseBody0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
 // AsCreateDeploymentCheckRun200JSONResponseBody1 returns the union data inside the CreateDeploymentCheckRun200JSONResponseBody as a CreateDeploymentCheckRun200JSONResponseBody1
 func (t CreateDeploymentCheckRun200JSONResponseBody) AsCreateDeploymentCheckRun200JSONResponseBody1() (CreateDeploymentCheckRun200JSONResponseBody1, error) {
 	var body CreateDeploymentCheckRun200JSONResponseBody1
@@ -173,32 +118,6 @@ func (t *GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromGetD
 
 // MergeGetDeploymentCheckRun200JSONResponseBody0Source4Selection2 performs a merge with any union data inside the GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided GetDeploymentCheckRun200JSONResponseBody0Source4Selection2
 func (t *GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeGetDeploymentCheckRun200JSONResponseBody0Source4Selection2(v GetDeploymentCheckRun200JSONResponseBody0Source4Selection2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetDeploymentCheckRun200JSONResponseBody0Source4Selection3 returns the union data inside the GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as a GetDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) AsGetDeploymentCheckRun200JSONResponseBody0Source4Selection3() (GetDeploymentCheckRun200JSONResponseBody0Source4Selection3, error) {
-	var body GetDeploymentCheckRun200JSONResponseBody0Source4Selection3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetDeploymentCheckRun200JSONResponseBody0Source4Selection3 overwrites any union data inside the GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as the provided GetDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t *GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromGetDeploymentCheckRun200JSONResponseBody0Source4Selection3(v GetDeploymentCheckRun200JSONResponseBody0Source4Selection3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetDeploymentCheckRun200JSONResponseBody0Source4Selection3 performs a merge with any union data inside the GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided GetDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t *GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeGetDeploymentCheckRun200JSONResponseBody0Source4Selection3(v GetDeploymentCheckRun200JSONResponseBody0Source4Selection3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -551,32 +470,6 @@ func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromU
 
 // MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2 performs a merge with any union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2
 func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2(v UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 returns the union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as a UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) AsUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3() (UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3, error) {
-	var body UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 overwrites any union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as the provided UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3(v UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 performs a merge with any union data inside the UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3
-func (t *UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeUpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3(v UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -2178,32 +2071,6 @@ func (t *ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) FromListChe
 
 // MergeListCheckRuns200JSONResponseBodyRuns0Source4Selection2 performs a merge with any union data inside the ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection, using the provided ListCheckRuns200JSONResponseBodyRuns0Source4Selection2
 func (t *ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) MergeListCheckRuns200JSONResponseBodyRuns0Source4Selection2(v ListCheckRuns200JSONResponseBodyRuns0Source4Selection2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsListCheckRuns200JSONResponseBodyRuns0Source4Selection3 returns the union data inside the ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as a ListCheckRuns200JSONResponseBodyRuns0Source4Selection3
-func (t ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) AsListCheckRuns200JSONResponseBodyRuns0Source4Selection3() (ListCheckRuns200JSONResponseBodyRuns0Source4Selection3, error) {
-	var body ListCheckRuns200JSONResponseBodyRuns0Source4Selection3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromListCheckRuns200JSONResponseBodyRuns0Source4Selection3 overwrites any union data inside the ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as the provided ListCheckRuns200JSONResponseBodyRuns0Source4Selection3
-func (t *ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) FromListCheckRuns200JSONResponseBodyRuns0Source4Selection3(v ListCheckRuns200JSONResponseBodyRuns0Source4Selection3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeListCheckRuns200JSONResponseBodyRuns0Source4Selection3 performs a merge with any union data inside the ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection, using the provided ListCheckRuns200JSONResponseBodyRuns0Source4Selection3
-func (t *ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) MergeListCheckRuns200JSONResponseBodyRuns0Source4Selection3(v ListCheckRuns200JSONResponseBodyRuns0Source4Selection3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -18356,14 +18223,14 @@ type ClientInterface interface {
 
 	// GetProjectBoxes Get project daemons
 	//
-	// Lists project daemons.
+	// List the daemons of a project.
 	//
 	// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
 	GetProjectBoxes(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
 	//
-	// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -18372,7 +18239,7 @@ type ClientInterface interface {
 
 	// PutProjectDaemonInstances Override a project daemon's instance counts
 	//
-	// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -18381,7 +18248,7 @@ type ClientInterface interface {
 
 	// RestartProjectDaemonInstance Force restart a project daemon instance
 	//
-	// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+	// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
 	//
 	// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
 	RestartProjectDaemonInstance(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -18667,6 +18534,38 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
 	ListFlagVersions(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListFlagLabels List attribute labels
+	//
+	// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
+	//
+	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
+	ListFlagLabels(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListFlagLabelCounts List attribute label counts
+	//
+	// List label counts for configured entity attributes, including empty ones.
+	//
+	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
+	ListFlagLabelCounts(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// LookupFlagLabelsWithBody Look up attribute labels
+	//
+	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+	LookupFlagLabelsWithBody(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// LookupFlagLabels Look up attribute labels
+	//
+	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+	LookupFlagLabels(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetSdkKeys Get all SDK keys
 	//

@@ -10260,8 +10260,8 @@ type GetProjectResponse struct {
 			// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-			// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -12041,8 +12041,8 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-		// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-		MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -13844,8 +13844,8 @@ type UpdateProjectResponse struct {
 			// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-			// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -15614,8 +15614,8 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-		// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-		MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`

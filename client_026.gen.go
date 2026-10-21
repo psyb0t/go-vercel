@@ -1657,7 +1657,7 @@ func (c *ClientWithResponses) UploadProjectAvatarWithBodyWithResponse(ctx contex
 
 // GetProjectBoxesWithResponse Get project daemons
 //
-// Lists project daemons.
+// List the daemons of a project.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -1672,7 +1672,7 @@ func (c *ClientWithResponses) GetProjectBoxesWithResponse(ctx context.Context, i
 
 // PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
 //
-// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -1687,7 +1687,7 @@ func (c *ClientWithResponses) PutProjectDaemonInstancesWithBodyWithResponse(ctx 
 
 // PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
 //
-// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -1702,7 +1702,7 @@ func (c *ClientWithResponses) PutProjectDaemonInstancesWithResponse(ctx context.
 
 // RestartProjectDaemonInstanceWithResponse Force restart a project daemon instance
 //
-// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -2223,6 +2223,66 @@ func (c *ClientWithResponses) ListFlagVersionsWithResponse(ctx context.Context, 
 		return nil, err
 	}
 	return ParseListFlagVersionsResponse(rsp)
+}
+
+// ListFlagLabelsWithResponse List attribute labels
+//
+// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
+func (c *ClientWithResponses) ListFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelsResponse, error) {
+	rsp, err := c.ListFlagLabels(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagLabelsResponse(rsp)
+}
+
+// ListFlagLabelCountsWithResponse List attribute label counts
+//
+// List label counts for configured entity attributes, including empty ones.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
+func (c *ClientWithResponses) ListFlagLabelCountsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelCountsResponse, error) {
+	rsp, err := c.ListFlagLabelCounts(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagLabelCountsResponse(rsp)
+}
+
+// LookupFlagLabelsWithBodyWithResponse Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *ClientWithResponses) LookupFlagLabelsWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error) {
+	rsp, err := c.LookupFlagLabelsWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseLookupFlagLabelsResponse(rsp)
+}
+
+// LookupFlagLabelsWithResponse Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *ClientWithResponses) LookupFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error) {
+	rsp, err := c.LookupFlagLabels(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseLookupFlagLabelsResponse(rsp)
 }
 
 // GetSdkKeysWithResponse Get all SDK keys
@@ -16748,8 +16808,8 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-					// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-					MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+					// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 					// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -19427,8 +19487,8 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-				// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`

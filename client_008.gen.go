@@ -7,22 +7,6 @@ import (
 	"encoding/json"
 )
 
-// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired enum.
-func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired) Valid() bool {
-	switch e {
-	case GetTeamMembers200JSONResponseBodyEmailInviteCodesExpiredTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser.
-const (
-	GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserFalse GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser = false
-	GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserTrue  GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser = true
-)
-
 // Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser enum.
 func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser) Valid() bool {
 	switch e {

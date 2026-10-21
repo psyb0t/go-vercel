@@ -13,6 +13,147 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseStopSessionResponse parses an HTTP response from a StopSessionWithResponse call
+func ParseStopSessionResponse(rsp *http.Response) (*StopSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StopSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest StopSession200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListSessionSnapshotsResponse parses an HTTP response from a ListSessionSnapshotsWithResponse call
+func ParseListSessionSnapshotsResponse(rsp *http.Response) (*ListSessionSnapshotsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListSessionSnapshotsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListSessionSnapshots200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteSessionSnapshotResponse parses an HTTP response from a DeleteSessionSnapshotWithResponse call
+func ParseDeleteSessionSnapshotResponse(rsp *http.Response) (*DeleteSessionSnapshotResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteSessionSnapshotResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGetSessionSnapshotResponse parses an HTTP response from a GetSessionSnapshotWithResponse call
 func ParseGetSessionSnapshotResponse(rsp *http.Response) (*GetSessionSnapshotResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -4915,8 +5056,8 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-				// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -6722,8 +6863,8 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-				// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`

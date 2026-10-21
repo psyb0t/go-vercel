@@ -961,8 +961,8 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-				// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -1842,12 +1842,13 @@ func ParseGetProjectBoxesResponse(rsp *http.Response) (*GetProjectBoxesResponse,
 		var dest struct {
 			Daemons []struct {
 				Config struct {
-					Command            *[]string                                                             `json:"command,omitempty"`
-					ConfiguredReplicas *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas `json:"configuredReplicas,omitempty"`
-					Image              struct {
+					Command             *[]string                                                              `json:"command,omitempty"`
+					ConfiguredInstances *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances `json:"configuredInstances,omitempty"`
+					Image               struct {
 						Requested string `json:"requested"`
 						Resolved  string `json:"resolved"`
 					} `json:"image"`
+					Instances     GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances `json:"instances"`
 					LivenessProbe *struct {
 						FailureThreshold *float32 `json:"failureThreshold,omitempty"`
 						HttpGet          struct {
@@ -1865,7 +1866,6 @@ func ParseGetProjectBoxesResponse(rsp *http.Response) (*GetProjectBoxesResponse,
 						SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
 						TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
 					} `json:"livenessProbe,omitempty"`
-					Replicas  GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas `json:"replicas"`
 					Resources struct {
 						Requests struct {
 							Memory string `json:"memory"`
@@ -1877,22 +1877,22 @@ func ParseGetProjectBoxesResponse(rsp *http.Response) (*GetProjectBoxesResponse,
 
 				// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
 				DeploymentId *string `json:"deploymentId,omitempty"`
-				Name         string  `json:"name"`
-				Replicas     struct {
+				Instances    struct {
 					Desired float32 `json:"desired"`
 					Items   []struct {
-						Alive         *GetProjectBoxes200JSONResponseBodyDaemonsReplicasItemsAlive `json:"alive,omitempty"`
-						Id            string                                                       `json:"id"`
-						Image         *string                                                      `json:"image,omitempty"`
-						LastCheckedAt *string                                                      `json:"lastCheckedAt,omitempty"`
-						MemoryMiB     *float32                                                     `json:"memoryMiB,omitempty"`
-						Region        string                                                       `json:"region"`
-						StartedAt     string                                                       `json:"startedAt"`
-						StoppedAt     *string                                                      `json:"stoppedAt,omitempty"`
+						Alive         *GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive `json:"alive,omitempty"`
+						Id            string                                                        `json:"id"`
+						Image         *string                                                       `json:"image,omitempty"`
+						LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
+						MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
+						Region        string                                                        `json:"region"`
+						StartedAt     string                                                        `json:"startedAt"`
+						StoppedAt     *string                                                       `json:"stoppedAt,omitempty"`
 					} `json:"items"`
 					Ready float32 `json:"ready"`
 					Total float32 `json:"total"`
-				} `json:"replicas"`
+				} `json:"instances"`
+				Name      string                                           `json:"name"`
 				Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
 				Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
 				UpdatedAt string                                           `json:"updatedAt"`
@@ -4120,6 +4120,172 @@ func ParseListFlagVersionsResponse(rsp *http.Response) (*ListFlagVersionsRespons
 	return response, nil
 }
 
+// ParseListFlagLabelsResponse parses an HTTP response from a ListFlagLabelsWithResponse call
+func ParseListFlagLabelsResponse(rsp *http.Response) (*ListFlagLabelsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListFlagLabelsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				AttributeKey string `json:"attributeKey"`
+				EntityKind   string `json:"entityKind"`
+				Label        string `json:"label"`
+				Value        string `json:"value"`
+			} `json:"data"`
+			Pagination struct {
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListFlagLabelCountsResponse parses an HTTP response from a ListFlagLabelCountsWithResponse call
+func ParseListFlagLabelCountsResponse(rsp *http.Response) (*ListFlagLabelCountsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListFlagLabelCountsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				AttributeKey string  `json:"attributeKey"`
+				Count        float32 `json:"count"`
+				EntityKind   string  `json:"entityKind"`
+			} `json:"data"`
+			Pagination struct {
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseLookupFlagLabelsResponse parses an HTTP response from a LookupFlagLabelsWithResponse call
+func ParseLookupFlagLabelsResponse(rsp *http.Response) (*LookupFlagLabelsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &LookupFlagLabelsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				AttributeKey string `json:"attributeKey"`
+				EntityKind   string `json:"entityKind"`
+				Label        string `json:"label"`
+				Value        string `json:"value"`
+			} `json:"data"`
+			Missing []struct {
+				AttributeKey string `json:"attributeKey"`
+				EntityKind   string `json:"entityKind"`
+				Value        string `json:"value"`
+			} `json:"missing"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGetSdkKeysResponse parses an HTTP response from a GetSdkKeysWithResponse call
 func ParseGetSdkKeysResponse(rsp *http.Response) (*GetSdkKeysResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -5661,8 +5827,8 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-				// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -15631,8 +15797,8 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-				// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -19871,147 +20037,6 @@ func ParseCreateSandboxesSessionsBySessionIdSnapshotV2Response(rsp *http.Respons
 		break // No content-type
 
 	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseStopSessionResponse parses an HTTP response from a StopSessionWithResponse call
-func ParseStopSessionResponse(rsp *http.Response) (*StopSessionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &StopSessionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest StopSession200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 422:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListSessionSnapshotsResponse parses an HTTP response from a ListSessionSnapshotsWithResponse call
-func ParseListSessionSnapshotsResponse(rsp *http.Response) (*ListSessionSnapshotsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListSessionSnapshotsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ListSessionSnapshots200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteSessionSnapshotResponse parses an HTTP response from a DeleteSessionSnapshotWithResponse call
-func ParseDeleteSessionSnapshotResponse(rsp *http.Response) (*DeleteSessionSnapshotResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteSessionSnapshotResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-			Snapshot Snapshot `json:"snapshot"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
 		break // No content-type
 
 	}

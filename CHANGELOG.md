@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.5.0, 2026-10-21
+
+- Added flag label endpoints `ListFlagLabels`, `ListFlagLabelCounts` and `LookupFlagLabels` (with `WithBody`) on `Client` and `ClientWithResponses`, with their `New...Request` builders, `Parse...Response` functions, `ListFlagLabelsParams`, `ListFlagLabelCountsParams`, `LookupFlagLabelsParams`, `LookupFlagLabelsJSONBody` and response types.
+- Added webhook event type constants `ListEventTypeNameMessageboardChannelCreated`, `ListEventTypeNameMessageboardChannelUpdated`, `ListEventTypeNameMessageboardPrivateChannelCreated` and `ListEventTypeNameMessageboardPrivateChannelUpdated`, plus the matching `ListEventTypeReplacedBy...` constants.
+- Removed the messageboard space constants `ListEventTypeNameMessageboardSpaceCreated`, `ListEventTypeNameMessageboardSpaceUpdated`, `ListEventTypeNameMessageboardPrivateSpaceCreated` and `ListEventTypeNameMessageboardPrivateSpaceUpdated`, and their `ListEventTypeReplacedBy...` counterparts. Vercel renamed spaces to channels.
+- The `GetProjectBoxes` response renamed daemon replicas to instances. The `...DaemonsConfigConfiguredReplicas` and `...DaemonsConfigReplicas` types and the `...DaemonsReplicasItemsAlive` enum are removed, and `...DaemonsConfigConfiguredInstances`, `...DaemonsConfigInstances` and `...DaemonsInstancesItemsAlive` replace them. `GetProjectBoxesResponse.JSON200` and `GetJSON200` changed type.
+- Check run source selection: the `Selection3` types are removed from the `CreateDeploymentCheckRun`, `GetDeploymentCheckRun`, `ListCheckRuns`, `ListDeploymentCheckRuns` and `UpdateDeploymentCheckRun` response bodies, along with their `As`, `From` and `Merge` methods. `Selection2.Job` changed from `string` to a typed enum with `FailIfNoMatch` and `Job` constants, so `Selection2` is no longer comparable with `==`.
+- `BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6.Options` gained `PlanItemPrices` and `FromPlan.AdditionalSubscriptions` and `FromPlan.PlanItemPrices`, which changed its type.
+- The `JSON200` field and `GetJSON200` method changed type on `CreateProjectResponse`, `DeleteProjectAvatarResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UploadProjectAvatarResponse`, `UpdateMicrofrontendsResponse` and `GetMicrofrontendsInGroupResponse`. `GetProjects200JSONResponseBody2.Projects` changed type too.
+- The module now requires Go 1.26.10 in `go.mod`, up from 1.26.9, to pick up the fix for GO-2026-6809 in `crypto/x509`. The development image uses the same toolchain.
+- Generated from spec version 0.0.1.
+
 ## v0.4.0, 2026-10-20
 
 - Added `GetProjectBoxes`, `PutProjectDaemonInstances` (with `WithBody`) and `RestartProjectDaemonInstance` on `Client` and `ClientWithResponses`, with their `New...Request` builders, `Parse...Response` functions, `GetProjectBoxesParams`, `PutProjectDaemonInstancesParams`, `RestartProjectDaemonInstanceParams` and response types.

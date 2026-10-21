@@ -7,6 +7,126 @@ import (
 	"encoding/json"
 )
 
+// GetFirewallConfig200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// GetFirewallConfig200JSONResponseBodyRules1Valid defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRules1Valid bool
+
+// GetFirewallConfig200JSONResponseBody_Rules_Item defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBody_Rules_Item struct {
+	union json.RawMessage
+}
+
+// GetFirewallConfig200JSONResponseBodyRulesets0 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0 = []struct {
+	Action *struct {
+		Mitigate *struct {
+			Action         GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateAction           `json:"action"`
+			ActionDuration *string                                                                     `json:"actionDuration,omitempty"`
+			BypassSystem   *GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateBypassSystem    `json:"bypassSystem,omitempty"`
+			LogHeaders     *GetFirewallConfig200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
+			RateLimit      *struct {
+				Action *GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRateLimitAction `json:"action,omitempty"`
+				Algo   GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                                    `json:"keys"`
+				Limit  float32                                                                     `json:"limit"`
+				Window float32                                                                     `json:"window"`
+			} `json:"rateLimit,omitempty"`
+			Redirect *struct {
+				Location  string                                                                       `json:"location"`
+				Permanent GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent `json:"permanent"`
+			} `json:"redirect,omitempty"`
+		} `json:"mitigate,omitempty"`
+	} `json:"action,omitempty"`
+	Active         GetFirewallConfig200JSONResponseBodyRulesets0Active `json:"active"`
+	ConditionGroup []struct {
+		Conditions []struct {
+			Key   *string                                                                          `json:"key,omitempty"`
+			Neg   *GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsNeg        `json:"neg,omitempty"`
+			Op    GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsOp          `json:"op"`
+			Type  GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsType        `json:"type"`
+			Value *GetFirewallConfig200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+		} `json:"conditions"`
+	} `json:"conditionGroup"`
+	Description *string `json:"description,omitempty"`
+	Id          string  `json:"id"`
+	Name        string  `json:"name"`
+}
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateAction defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateAction string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateBypassSystem defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateBypassSystem bool
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 = []string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 string
+
+// GetFirewallConfig200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders struct {
+	union json.RawMessage
+}
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRateLimitAction defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRateLimitAction string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRateLimitAlgo string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ActionMitigateRedirectPermanent bool
+
+// GetFirewallConfig200JSONResponseBodyRulesets0Active defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0Active bool
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsNeg defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsNeg bool
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsOp defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsOp string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsType defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsType string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 = string
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 = float32
+
+// GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 = []string
+
+// GetFirewallConfig200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// GetFirewallConfig200JSONResponseBodyRulesets1 defines parameters for GetFirewallConfig.
+type GetFirewallConfig200JSONResponseBodyRulesets1 map[string]struct {
+	Action         GetFirewallConfig200JSONResponseBodyRulesets1Action         `json:"action"`
+	ActionDuration *string                                                     `json:"actionDuration,omitempty"`
+	BypassSystem   *GetFirewallConfig200JSONResponseBodyRulesets1BypassSystem  `json:"bypassSystem,omitempty"`
+	LogHeaders     *GetFirewallConfig200JSONResponseBody_Rulesets_1_LogHeaders `json:"logHeaders,omitempty"`
+	RateLimit      *struct {
+		Action *GetFirewallConfig200JSONResponseBodyRulesets1RateLimitAction `json:"action,omitempty"`
+		Algo   GetFirewallConfig200JSONResponseBodyRulesets1RateLimitAlgo    `json:"algo"`
+		Keys   []string                                                      `json:"keys"`
+		Limit  float32                                                       `json:"limit"`
+		Window float32                                                       `json:"window"`
+	} `json:"rateLimit,omitempty"`
+	Redirect *struct {
+		Location  string                                                         `json:"location"`
+		Permanent GetFirewallConfig200JSONResponseBodyRulesets1RedirectPermanent `json:"permanent"`
+	} `json:"redirect,omitempty"`
+}
+
 // GetFirewallConfig200JSONResponseBodyRulesets1Action defines parameters for GetFirewallConfig.
 type GetFirewallConfig200JSONResponseBodyRulesets1Action string
 
@@ -8856,8 +8976,8 @@ type GetProjects200JSONResponseBody2 struct {
 			// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Messageboard *[]ACLAction `json:"messageboard,omitempty"`
 
-			// MessageboardSpace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardSpace *[]ACLAction `json:"messageboardSpace,omitempty"`
+			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`

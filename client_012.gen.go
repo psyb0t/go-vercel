@@ -5783,30 +5783,21 @@ type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind string
 
 // ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 defines parameters for ListDeploymentCheckRuns.
 type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 struct {
-	Job  string                                                               `json:"job"`
-	Kind ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind `json:"kind"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3 struct {
-	FailIfNoMatch *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	FailIfNoMatch *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
 	Filters       []string                                                                       `json:"filters"`
-	Job           ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3Job            `json:"job"`
-	Kind          ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3Kind           `json:"kind"`
+	Job           ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job            `json:"job"`
+	Kind          ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind           `json:"kind"`
 	Task          string                                                                         `json:"task"`
 }
 
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3FailIfNoMatch defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3FailIfNoMatch bool
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch bool
 
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3Job defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3Job string
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job string
 
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection3Kind string
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
 
 // ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection defines parameters for ListDeploymentCheckRuns.
 type ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection struct {
@@ -6049,30 +6040,21 @@ type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind string
 
 // CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2 defines parameters for CreateDeploymentCheckRun.
 type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2 struct {
-	Job  string                                                            `json:"job"`
-	Kind CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind `json:"kind"`
-}
-
-// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for CreateDeploymentCheckRun.
-type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
-
-// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3 defines parameters for CreateDeploymentCheckRun.
-type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3 struct {
-	FailIfNoMatch *CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	FailIfNoMatch *CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
 	Filters       []string                                                                    `json:"filters"`
-	Job           CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3Job            `json:"job"`
-	Kind          CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind           `json:"kind"`
+	Job           CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job            `json:"job"`
+	Kind          CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind           `json:"kind"`
 	Task          string                                                                      `json:"task"`
 }
 
-// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch defines parameters for CreateDeploymentCheckRun.
-type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch bool
+// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch defines parameters for CreateDeploymentCheckRun.
+type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch bool
 
-// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3Job defines parameters for CreateDeploymentCheckRun.
-type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3Job string
+// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job defines parameters for CreateDeploymentCheckRun.
+type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job string
 
-// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind defines parameters for CreateDeploymentCheckRun.
-type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind string
+// CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for CreateDeploymentCheckRun.
+type CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
 
 // CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection defines parameters for CreateDeploymentCheckRun.
 type CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection struct {
@@ -6310,30 +6292,21 @@ type GetDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind string
 
 // GetDeploymentCheckRun200JSONResponseBody0Source4Selection2 defines parameters for GetDeploymentCheckRun.
 type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2 struct {
-	Job  string                                                         `json:"job"`
-	Kind GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind `json:"kind"`
-}
-
-// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for GetDeploymentCheckRun.
-type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
-
-// GetDeploymentCheckRun200JSONResponseBody0Source4Selection3 defines parameters for GetDeploymentCheckRun.
-type GetDeploymentCheckRun200JSONResponseBody0Source4Selection3 struct {
-	FailIfNoMatch *GetDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	FailIfNoMatch *GetDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
 	Filters       []string                                                                 `json:"filters"`
-	Job           GetDeploymentCheckRun200JSONResponseBody0Source4Selection3Job            `json:"job"`
-	Kind          GetDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind           `json:"kind"`
+	Job           GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Job            `json:"job"`
+	Kind          GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind           `json:"kind"`
 	Task          string                                                                   `json:"task"`
 }
 
-// GetDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch defines parameters for GetDeploymentCheckRun.
-type GetDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch bool
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch bool
 
-// GetDeploymentCheckRun200JSONResponseBody0Source4Selection3Job defines parameters for GetDeploymentCheckRun.
-type GetDeploymentCheckRun200JSONResponseBody0Source4Selection3Job string
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Job defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Job string
 
-// GetDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind defines parameters for GetDeploymentCheckRun.
-type GetDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind string
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
 
 // GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection defines parameters for GetDeploymentCheckRun.
 type GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection struct {
@@ -6588,30 +6561,21 @@ type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind string
 
 // UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2 defines parameters for UpdateDeploymentCheckRun.
 type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2 struct {
-	Job  string                                                            `json:"job"`
-	Kind UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind `json:"kind"`
-}
-
-// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for UpdateDeploymentCheckRun.
-type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
-
-// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 defines parameters for UpdateDeploymentCheckRun.
-type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3 struct {
-	FailIfNoMatch *UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	FailIfNoMatch *UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
 	Filters       []string                                                                    `json:"filters"`
-	Job           UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3Job            `json:"job"`
-	Kind          UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind           `json:"kind"`
+	Job           UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job            `json:"job"`
+	Kind          UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind           `json:"kind"`
 	Task          string                                                                      `json:"task"`
 }
 
-// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch defines parameters for UpdateDeploymentCheckRun.
-type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3FailIfNoMatch bool
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch bool
 
-// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3Job defines parameters for UpdateDeploymentCheckRun.
-type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3Job string
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job string
 
-// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind defines parameters for UpdateDeploymentCheckRun.
-type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection3Kind string
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
 
 // UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection defines parameters for UpdateDeploymentCheckRun.
 type UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection struct {
@@ -7833,30 +7797,21 @@ type ListCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind string
 
 // ListCheckRuns200JSONResponseBodyRuns0Source4Selection2 defines parameters for ListCheckRuns.
 type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2 struct {
-	Job  string                                                     `json:"job"`
-	Kind ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind `json:"kind"`
-}
-
-// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListCheckRuns.
-type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
-
-// ListCheckRuns200JSONResponseBodyRuns0Source4Selection3 defines parameters for ListCheckRuns.
-type ListCheckRuns200JSONResponseBodyRuns0Source4Selection3 struct {
-	FailIfNoMatch *ListCheckRuns200JSONResponseBodyRuns0Source4Selection3FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	FailIfNoMatch *ListCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
 	Filters       []string                                                             `json:"filters"`
-	Job           ListCheckRuns200JSONResponseBodyRuns0Source4Selection3Job            `json:"job"`
-	Kind          ListCheckRuns200JSONResponseBodyRuns0Source4Selection3Kind           `json:"kind"`
+	Job           ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Job            `json:"job"`
+	Kind          ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind           `json:"kind"`
 	Task          string                                                               `json:"task"`
 }
 
-// ListCheckRuns200JSONResponseBodyRuns0Source4Selection3FailIfNoMatch defines parameters for ListCheckRuns.
-type ListCheckRuns200JSONResponseBodyRuns0Source4Selection3FailIfNoMatch bool
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch bool
 
-// ListCheckRuns200JSONResponseBodyRuns0Source4Selection3Job defines parameters for ListCheckRuns.
-type ListCheckRuns200JSONResponseBodyRuns0Source4Selection3Job string
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Job defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Job string
 
-// ListCheckRuns200JSONResponseBodyRuns0Source4Selection3Kind defines parameters for ListCheckRuns.
-type ListCheckRuns200JSONResponseBodyRuns0Source4Selection3Kind string
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
 
 // ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection defines parameters for ListCheckRuns.
 type ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection struct {
@@ -18578,6 +18533,9 @@ type CreateFlagJSONRequestBody CreateFlagJSONBody
 
 // UpdateFlagJSONRequestBody defines body for UpdateFlag for application/json ContentType.
 type UpdateFlagJSONRequestBody UpdateFlagJSONBody
+
+// LookupFlagLabelsJSONRequestBody defines body for LookupFlagLabels for application/json ContentType.
+type LookupFlagLabelsJSONRequestBody LookupFlagLabelsJSONBody
 
 // CreateSdkKeyJSONRequestBody defines body for CreateSdkKey for application/json ContentType.
 type CreateSdkKeyJSONRequestBody CreateSdkKeyJSONBody

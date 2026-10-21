@@ -8500,22 +8500,22 @@ func (t *UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAl
 	return err
 }
 
-// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas as a GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0
-func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0() (GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0, error) {
-	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0
+// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances as a GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0
+func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0() (GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0, error) {
+	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0) error {
+// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas0) error {
+// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8526,22 +8526,22 @@ func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) M
 	return err
 }
 
-// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas as a GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1
-func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1() (GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1, error) {
-	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1
+// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances as a GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1
+func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1() (GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1, error) {
+	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1) error {
+// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredReplicas1) error {
+// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8552,32 +8552,32 @@ func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) M
 	return err
 }
 
-func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) MarshalJSON() ([]byte, error) {
+func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredReplicas) UnmarshalJSON(b []byte) error {
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas as a GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0
-func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0() (GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0, error) {
-	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0
+// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances as a GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0
+func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0() (GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0, error) {
+	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0) error {
+// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas0) error {
+// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0(v GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8588,22 +8588,22 @@ func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) MergeGetPro
 	return err
 }
 
-// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas as a GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1
-func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1() (GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1, error) {
-	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1
+// AsGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1 returns the union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances as a GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1
+func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) AsGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1() (GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1, error) {
+	var body GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1) error {
+// FromGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1 overwrites any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances as the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) FromGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigReplicas1) error {
+// MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1 performs a merge with any union data inside the GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances, using the provided GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) MergeGetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1(v GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8614,12 +8614,12 @@ func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) MergeGetPro
 	return err
 }
 
-func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) MarshalJSON() ([]byte, error) {
+func (t GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Replicas) UnmarshalJSON(b []byte) error {
+func (t *GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }

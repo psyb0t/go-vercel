@@ -156,7 +156,6 @@ type Organization struct {
 	// Name The organization's display name. Optional: organizations created before the name attribute existed have no stored value. New orgs always get one (provided or slug-derived) via the service layer.
 	Name           *string `json:"name,omitempty"`
 	OrganizationId string  `json:"organizationId"`
-	OwnerId        string  `json:"ownerId"`
 	Slug           string  `json:"slug"`
 	TeamCount      float32 `json:"teamCount"`
 	TeamId         string  `json:"teamId"`
@@ -1898,16 +1897,16 @@ type UserEventPayload7 struct {
 // UserEventPayload8 The payload of the event, if requested.
 type UserEventPayload8 struct {
 	BoardId     string `json:"boardId"`
+	ChannelId   string `json:"channelId"`
 	OperationId string `json:"operationId"`
-	SpaceId     string `json:"spaceId"`
 }
 
 // UserEventPayload9 The payload of the event, if requested.
 type UserEventPayload9 struct {
 	BoardId     string   `json:"boardId"`
+	ChannelId   string   `json:"channelId"`
 	Fields      []string `json:"fields"`
 	OperationId string   `json:"operationId"`
-	SpaceId     string   `json:"spaceId"`
 }
 
 // UserEventPayload10 The payload of the event, if requested.
@@ -8474,7 +8473,7 @@ type UserEventPayload379 struct {
 			// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
 			Scope *UserEventPayload379BudgetBudgetItemScope `json:"scope,omitempty"`
 
-			// ScopeId Project id when `scope` is `project`.
+			// ScopeId Project id when `scope` is `project`; product id when `scope` is `product`.
 			ScopeId *string `json:"scopeId,omitempty"`
 
 			// TeamId Partition key
@@ -8548,7 +8547,7 @@ type UserEventPayload380 struct {
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
 		Scope *UserEventPayload380BudgetScope `json:"scope,omitempty"`
 
-		// ScopeId Project id when `scope` is `project`.
+		// ScopeId Project id when `scope` is `project`; product id when `scope` is `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
 
 		// TeamId Partition key
@@ -8570,7 +8569,10 @@ type UserEventPayload380 struct {
 	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
-	WebhookUrl  *string `json:"webhookUrl,omitempty"`
+
+	// ScopeName Stored when activity clients can't resolve the name, as for products.
+	ScopeName  *string `json:"scopeName,omitempty"`
+	WebhookUrl *string `json:"webhookUrl,omitempty"`
 }
 
 // UserEventPayload380BudgetIsActive Is the budget currently active for a customer
@@ -8622,7 +8624,7 @@ type UserEventPayload381 struct {
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
 		Scope *UserEventPayload381BudgetScope `json:"scope,omitempty"`
 
-		// ScopeId Project id when `scope` is `project`.
+		// ScopeId Project id when `scope` is `project`; product id when `scope` is `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
 
 		// TeamId Partition key
@@ -8644,6 +8646,9 @@ type UserEventPayload381 struct {
 	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
+
+	// ScopeName Stored when activity clients can't resolve the name, as for products.
+	ScopeName *string `json:"scopeName,omitempty"`
 }
 
 // UserEventPayload381BudgetIsActive Is the budget currently active for a customer
@@ -8695,7 +8700,7 @@ type UserEventPayload382 struct {
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
 		Scope *UserEventPayload382BudgetScope `json:"scope,omitempty"`
 
-		// ScopeId Project id when `scope` is `project`.
+		// ScopeId Project id when `scope` is `project`; product id when `scope` is `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
 
 		// TeamId Partition key
@@ -8743,7 +8748,7 @@ type UserEventPayload382 struct {
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
 		Scope *UserEventPayload382PrevBudgetScope `json:"scope,omitempty"`
 
-		// ScopeId Project id when `scope` is `project`.
+		// ScopeId Project id when `scope` is `project`; product id when `scope` is `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
 
 		// TeamId Partition key
@@ -8768,7 +8773,10 @@ type UserEventPayload382 struct {
 
 	// ProjectName Injected at read time from `payload.projectId`.
 	ProjectName *string `json:"projectName,omitempty"`
-	WebhookUrl  *string `json:"webhookUrl,omitempty"`
+
+	// ScopeName Stored when activity clients can't resolve the name, as for products.
+	ScopeName  *string `json:"scopeName,omitempty"`
+	WebhookUrl *string `json:"webhookUrl,omitempty"`
 }
 
 // UserEventPayload382BudgetIsActive Is the budget currently active for a customer
@@ -12247,6 +12255,18 @@ type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
 	Options struct {
 		// FromPlan The current plan being replaced by this purchase
 		FromPlan *struct {
+			// AdditionalSubscriptions Additional source subscriptions replaced by this purchase
+			AdditionalSubscriptions *[]struct {
+				// CurrentCycleEndDate The end of the additional source subscription billing cycle
+				CurrentCycleEndDate string `json:"currentCycleEndDate"`
+
+				// OrbSubscriptionId The additional source Orb subscription ID
+				OrbSubscriptionId string `json:"orbSubscriptionId"`
+
+				// PlanId The ID of the plan assigned to the additional source subscription
+				PlanId string `json:"planId"`
+			} `json:"additionalSubscriptions,omitempty"`
+
 			// CurrentCycleEndDate The end of the current plan billing cycle
 			CurrentCycleEndDate string `json:"currentCycleEndDate"`
 
@@ -12255,6 +12275,20 @@ type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
 
 			// PlanId The ID of the plan currently assigned
 			PlanId string `json:"planId"`
+
+			// PlanItemPrices The current plan item price overrides
+			PlanItemPrices *[]struct {
+				// PlanItemId The ID of the plan item to set the price for
+				PlanItemId string `json:"planItemId"`
+
+				// Price The absolute price that replaces the plan item price, after any rate variant
+				Price struct {
+					Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel `json:"model"`
+
+					// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
+					UnitAmount string `json:"unitAmount"`
+				} `json:"price"`
+			} `json:"planItemPrices,omitempty"`
 
 			// PlanItemQuantities The current plan item quantities
 			PlanItemQuantities *[]struct {
@@ -12274,6 +12308,20 @@ type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
 
 		// PlanId The ID of the plan to subscribe to
 		PlanId string `json:"planId"`
+
+		// PlanItemPrices The plan item prices to set for the subscription, independent of quantities
+		PlanItemPrices *[]struct {
+			// PlanItemId The ID of the plan item to set the price for
+			PlanItemId string `json:"planItemId"`
+
+			// Price The absolute price that replaces the plan item price, after any rate variant
+			Price struct {
+				Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel `json:"model"`
+
+				// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
+				UnitAmount string `json:"unitAmount"`
+			} `json:"price"`
+		} `json:"planItemPrices,omitempty"`
 
 		// PlanItemQuantities The plan item quantities to set for the subscription
 		PlanItemQuantities *[]struct {
@@ -12296,6 +12344,12 @@ type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
 	} `json:"output"`
 	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type `json:"type"`
 }
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel string
 
 // BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type defines parameters for BuyCredits.
 type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type string
@@ -19956,56 +20010,3 @@ type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties
 
 // GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions0Hidden2 defines parameters for GetConfigurationProducts.
 type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions0Hidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_0_Hidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_0_Hidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions1 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2 struct {
-	Description *string                                                                                                `json:"description,omitempty"`
-	Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_2_Disabled `json:"disabled,omitempty"`
-	Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_2_Hidden   `json:"hidden,omitempty"`
-	Value       string                                                                                                 `json:"value"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Disabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Disabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Disabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Disabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Disabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Disabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_2_Disabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_2_Disabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Hidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Hidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Hidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Hidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Hidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties9UiOptions2Hidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_2_Hidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_2_Hidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_Item defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_9_UiOptions_Item struct {
-	union json.RawMessage
-}

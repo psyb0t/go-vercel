@@ -4762,7 +4762,7 @@ func (c *Client) UploadProjectAvatarWithBody(ctx context.Context, idOrName strin
 
 // GetProjectBoxes Get project daemons
 //
-// Lists project daemons.
+// List the daemons of a project.
 //
 // Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
 func (c *Client) GetProjectBoxes(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -4779,7 +4779,7 @@ func (c *Client) GetProjectBoxes(ctx context.Context, idOrName string, params *G
 
 // PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
 //
-// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 //
 // Takes any type of body and a specified content type.
 //
@@ -4798,7 +4798,7 @@ func (c *Client) PutProjectDaemonInstancesWithBody(ctx context.Context, idOrName
 
 // PutProjectDaemonInstances Override a project daemon's instance counts
 //
-// Override an existing daemon's instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -4817,7 +4817,7 @@ func (c *Client) PutProjectDaemonInstances(ctx context.Context, idOrName string,
 
 // RestartProjectDaemonInstance Force restart a project daemon instance
 //
-// Force restarts the user container of one running daemon instance. The instance's controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
 //
 // Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
 func (c *Client) RestartProjectDaemonInstance(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -5444,6 +5444,78 @@ func (c *Client) UpdateFlag(ctx context.Context, projectIdOrName string, flagIdO
 // Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
 func (c *Client) ListFlagVersions(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListFlagVersionsRequest(c.Server, projectIdOrName, flagIdOrSlug, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlagLabels List attribute labels
+//
+// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
+func (c *Client) ListFlagLabels(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagLabelsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlagLabelCounts List attribute label counts
+//
+// List label counts for configured entity attributes, including empty ones.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
+func (c *Client) ListFlagLabelCounts(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagLabelCountsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// LookupFlagLabelsWithBody Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *Client) LookupFlagLabelsWithBody(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewLookupFlagLabelsRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// LookupFlagLabels Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *Client) LookupFlagLabels(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewLookupFlagLabelsRequest(c.Server, projectIdOrName, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -19940,92 +20012,6 @@ func NewGetEdgeConfigItemsRequest(server string, edgeConfigId string, params *Ge
 	if err != nil {
 		return nil, err
 	}
-
-	return req, nil
-}
-
-// NewPatchEdgeConfigItemsRequest calls the generic PatchEdgeConfigItems builder with application/json body
-func NewPatchEdgeConfigItemsRequest(server string, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPatchEdgeConfigItemsRequestWithBody(server, edgeConfigId, params, "application/json", bodyReader)
-}
-
-// NewPatchEdgeConfigItemsRequestWithBody constructs an http.Request for the PatchEdgeConfigItems method, with any body, and a specified content type
-func NewPatchEdgeConfigItemsRequestWithBody(server string, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/items", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
