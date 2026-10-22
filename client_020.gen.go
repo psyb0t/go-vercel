@@ -4324,7 +4324,7 @@ func (c *Client) ListPrivateLinkEndpoints(ctx context.Context, params *ListPriva
 
 // CreatePrivateLinkEndpointWithBody Create a PrivateLink endpoint
 //
-// Creates a PrivateLink endpoint for a project.
+// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 //
 // Takes any type of body and a specified content type.
 //
@@ -4343,7 +4343,7 @@ func (c *Client) CreatePrivateLinkEndpointWithBody(ctx context.Context, params *
 
 // CreatePrivateLinkEndpoint Create a PrivateLink endpoint
 //
-// Creates a PrivateLink endpoint for a project.
+// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -4362,7 +4362,7 @@ func (c *Client) CreatePrivateLinkEndpoint(ctx context.Context, params *CreatePr
 
 // DeletePrivateLinkEndpoint Delete a PrivateLink endpoint
 //
-// Deletes a PrivateLink endpoint.
+// Deletes a PrivateLink endpoint. The endpoint is removed asynchronously. Repeating the request for an endpoint that is already being deleted retries its cleanup and also returns `204`. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 //
 // Corresponds with DELETE /v1/networking/privatelink/endpoints/{endpointId} (the `DeletePrivateLinkEndpoint` operationId).
 func (c *Client) DeletePrivateLinkEndpoint(ctx context.Context, endpointId string, params *DeletePrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -4396,7 +4396,7 @@ func (c *Client) ReadPrivateLinkEndpoint(ctx context.Context, endpointId string,
 
 // UpdatePrivateLinkEndpointWithBody Update a PrivateLink endpoint
 //
-// Updates a PrivateLink endpoint (name, privateDns).
+// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 //
 // Takes any type of body and a specified content type.
 //
@@ -4415,7 +4415,7 @@ func (c *Client) UpdatePrivateLinkEndpointWithBody(ctx context.Context, endpoint
 
 // UpdatePrivateLinkEndpoint Update a PrivateLink endpoint
 //
-// Updates a PrivateLink endpoint (name, privateDns).
+// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -4489,7 +4489,7 @@ func (c *Client) UpdateObservabilityConfigurationProject(ctx context.Context, pr
 
 // ListOrganizations List Organizations
 //
-// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. This endpoint is in private beta. Contact your Vercel account team for access.
+// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
 //
 // Corresponds with GET /v1/organizations (the `ListOrganizations` operationId).
 func (c *Client) ListOrganizations(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -17835,6 +17835,18 @@ func NewGetDrainsRequest(server string, params *GetDrainsParams) (*http.Request,
 
 		}
 
+		if params.IncludeDeliveryStats != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeDeliveryStats", *params.IncludeDeliveryStats, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.TeamId != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -18138,6 +18150,18 @@ func NewGetDrainRequest(server string, id string, params *GetDrainParams) (*http
 		// styled parameters, preserving literal commas as delimiters
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
+
+		if params.IncludeDeliveryStats != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeDeliveryStats", *params.IncludeDeliveryStats, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
 
 		if params.TeamId != nil {
 

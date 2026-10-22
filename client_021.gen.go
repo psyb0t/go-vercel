@@ -3767,6 +3767,18 @@ func NewGetAllLogDrainsRequest(server string, params *GetAllLogDrainsParams) (*h
 
 		}
 
+		if params.IncludeDeliveryStats != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeDeliveryStats", *params.IncludeDeliveryStats, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.TeamId != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {

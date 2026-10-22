@@ -624,9 +624,10 @@ type GetConnectorTokenResponse struct {
 		// Claims Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
 		Claims    *map[string]interface{} `json:"claims,omitempty"`
 		Connector struct {
-			Id   string `json:"id"`
-			Type string `json:"type"`
-			Uid  string `json:"uid"`
+			Id      string  `json:"id"`
+			Service *string `json:"service,omitempty"`
+			Type    string  `json:"type"`
+			Uid     string  `json:"uid"`
 		} `json:"connector"`
 		ExpiresAt       float32 `json:"expiresAt"`
 		ExternalSubject *string `json:"externalSubject,omitempty"`
@@ -652,9 +653,10 @@ func (r GetConnectorTokenResponse) GetJSON200() *struct {
 	// Claims Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
 	Claims    *map[string]interface{} `json:"claims,omitempty"`
 	Connector struct {
-		Id   string `json:"id"`
-		Type string `json:"type"`
-		Uid  string `json:"uid"`
+		Id      string  `json:"id"`
+		Service *string `json:"service,omitempty"`
+		Type    string  `json:"type"`
+		Uid     string  `json:"uid"`
 	} `json:"connector"`
 	ExpiresAt       float32 `json:"expiresAt"`
 	ExternalSubject *string `json:"externalSubject,omitempty"`
@@ -1707,11 +1709,101 @@ type GetDrainResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetDrain200JSONResponseBody
+	JSON200 *struct {
+		CreatedAt float32                              `json:"createdAt"`
+		Delivery  GetDrain200JSONResponseBody_Delivery `json:"delivery"`
+
+		// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+		DeliveryStats *struct {
+			// Attempts All delivery attempts in the window.
+			Attempts float32 `json:"attempts"`
+
+			// Failures Delivery attempts that did not succeed in the window.
+			Failures float32                                        `json:"failures"`
+			State    GetDrain200JSONResponseBodyDeliveryStatsState  `json:"state"`
+			Window   GetDrain200JSONResponseBodyDeliveryStatsWindow `json:"window"`
+		} `json:"deliveryStats,omitempty"`
+		DisabledAt     *float32                                   `json:"disabledAt,omitempty"`
+		DisabledBy     *string                                    `json:"disabledBy,omitempty"`
+		DisabledReason *GetDrain200JSONResponseBodyDisabledReason `json:"disabledReason,omitempty"`
+		FilterV2       *struct {
+			Filter  GetDrain200JSONResponseBody_FilterV2_Filter `json:"filter"`
+			Version GetDrain200JSONResponseBodyFilterV2Version  `json:"version"`
+		} `json:"filterV2,omitempty"`
+		FirstErrorTimestamp *float32  `json:"firstErrorTimestamp,omitempty"`
+		Id                  string    `json:"id"`
+		Name                string    `json:"name"`
+		OwnerId             string    `json:"ownerId"`
+		ProjectIds          *[]string `json:"projectIds,omitempty"`
+		Sampling            *[]struct {
+			Env         *GetDrain200JSONResponseBodySamplingEnv `json:"env,omitempty"`
+			Rate        float32                                 `json:"rate"`
+			RequestPath *string                                 `json:"requestPath,omitempty"`
+			Type        GetDrain200JSONResponseBodySamplingType `json:"type"`
+		} `json:"sampling,omitempty"`
+		Schemas struct {
+			AiGateway     *map[string]interface{} `json:"ai_gateway,omitempty"`
+			Analytics     *map[string]interface{} `json:"analytics,omitempty"`
+			AuditLog      *map[string]interface{} `json:"audit_log,omitempty"`
+			Connect       *map[string]interface{} `json:"connect,omitempty"`
+			Log           *map[string]interface{} `json:"log,omitempty"`
+			SpeedInsights *map[string]interface{} `json:"speed_insights,omitempty"`
+			Trace         *map[string]interface{} `json:"trace,omitempty"`
+		} `json:"schemas"`
+		Source    GetDrain200JSONResponseBody_Source `json:"source"`
+		Status    *GetDrain200JSONResponseBodyStatus `json:"status,omitempty"`
+		TeamId    *string                            `json:"teamId,omitempty"`
+		UpdatedAt float32                            `json:"updatedAt"`
+	}
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDrainResponse) GetJSON200() *GetDrain200JSONResponseBody {
+func (r GetDrainResponse) GetJSON200() *struct {
+	CreatedAt float32                              `json:"createdAt"`
+	Delivery  GetDrain200JSONResponseBody_Delivery `json:"delivery"`
+
+	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	DeliveryStats *struct {
+		// Attempts All delivery attempts in the window.
+		Attempts float32 `json:"attempts"`
+
+		// Failures Delivery attempts that did not succeed in the window.
+		Failures float32                                        `json:"failures"`
+		State    GetDrain200JSONResponseBodyDeliveryStatsState  `json:"state"`
+		Window   GetDrain200JSONResponseBodyDeliveryStatsWindow `json:"window"`
+	} `json:"deliveryStats,omitempty"`
+	DisabledAt     *float32                                   `json:"disabledAt,omitempty"`
+	DisabledBy     *string                                    `json:"disabledBy,omitempty"`
+	DisabledReason *GetDrain200JSONResponseBodyDisabledReason `json:"disabledReason,omitempty"`
+	FilterV2       *struct {
+		Filter  GetDrain200JSONResponseBody_FilterV2_Filter `json:"filter"`
+		Version GetDrain200JSONResponseBodyFilterV2Version  `json:"version"`
+	} `json:"filterV2,omitempty"`
+	FirstErrorTimestamp *float32  `json:"firstErrorTimestamp,omitempty"`
+	Id                  string    `json:"id"`
+	Name                string    `json:"name"`
+	OwnerId             string    `json:"ownerId"`
+	ProjectIds          *[]string `json:"projectIds,omitempty"`
+	Sampling            *[]struct {
+		Env         *GetDrain200JSONResponseBodySamplingEnv `json:"env,omitempty"`
+		Rate        float32                                 `json:"rate"`
+		RequestPath *string                                 `json:"requestPath,omitempty"`
+		Type        GetDrain200JSONResponseBodySamplingType `json:"type"`
+	} `json:"sampling,omitempty"`
+	Schemas struct {
+		AiGateway     *map[string]interface{} `json:"ai_gateway,omitempty"`
+		Analytics     *map[string]interface{} `json:"analytics,omitempty"`
+		AuditLog      *map[string]interface{} `json:"audit_log,omitempty"`
+		Connect       *map[string]interface{} `json:"connect,omitempty"`
+		Log           *map[string]interface{} `json:"log,omitempty"`
+		SpeedInsights *map[string]interface{} `json:"speed_insights,omitempty"`
+		Trace         *map[string]interface{} `json:"trace,omitempty"`
+	} `json:"schemas"`
+	Source    GetDrain200JSONResponseBody_Source `json:"source"`
+	Status    *GetDrain200JSONResponseBodyStatus `json:"status,omitempty"`
+	TeamId    *string                            `json:"teamId,omitempty"`
+	UpdatedAt float32                            `json:"updatedAt"`
+} {
 	return r.JSON200
 }
 
@@ -7731,7 +7823,7 @@ type GetMicrofrontendsInGroupResponse struct {
 				ElasticBuildMachine *struct {
 					Cores float32 `json:"cores"`
 
-					// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 					Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 					Memory float32                                                                                          `json:"memory"`
 				} `json:"elasticBuildMachine,omitempty"`
@@ -8903,7 +8995,7 @@ type GetMicrofrontendsInGroupResponse struct {
 				ElasticBuildMachine *struct {
 					Cores float32 `json:"cores"`
 
-					// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 					Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachineLabel `json:"label"`
 					Memory float32                                                                                   `json:"memory"`
 				} `json:"elasticBuildMachine,omitempty"`
@@ -9504,7 +9596,7 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			ElasticBuildMachine *struct {
 				Cores float32 `json:"cores"`
 
-				// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 				Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 				Memory float32                                                                                          `json:"memory"`
 			} `json:"elasticBuildMachine,omitempty"`
@@ -10676,7 +10768,7 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			ElasticBuildMachine *struct {
 				Cores float32 `json:"cores"`
 
-				// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 				Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachineLabel `json:"label"`
 				Memory float32                                                                                   `json:"memory"`
 			} `json:"elasticBuildMachine,omitempty"`
@@ -12233,7 +12325,7 @@ type DeleteProjectAvatarResponse struct {
 			ElasticBuildMachine *struct {
 				Cores float32 `json:"cores"`
 
-				// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 				Label  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 				Memory float32                                                                             `json:"memory"`
 			} `json:"elasticBuildMachine,omitempty"`
@@ -13405,7 +13497,7 @@ type DeleteProjectAvatarResponse struct {
 			ElasticBuildMachine *struct {
 				Cores float32 `json:"cores"`
 
-				// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 				Label  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
 				Memory float32                                                                      `json:"memory"`
 			} `json:"elasticBuildMachine,omitempty"`
@@ -14003,7 +14095,7 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		ElasticBuildMachine *struct {
 			Cores float32 `json:"cores"`
 
-			// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+			// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 			Label  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 			Memory float32                                                                             `json:"memory"`
 		} `json:"elasticBuildMachine,omitempty"`
@@ -15175,7 +15267,7 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		ElasticBuildMachine *struct {
 			Cores float32 `json:"cores"`
 
-			// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+			// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 			Label  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
 			Memory float32                                                                      `json:"memory"`
 		} `json:"elasticBuildMachine,omitempty"`
@@ -15806,7 +15898,7 @@ type UploadProjectAvatarResponse struct {
 			ElasticBuildMachine *struct {
 				Cores float32 `json:"cores"`
 
-				// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 				Label  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 				Memory float32                                                                             `json:"memory"`
 			} `json:"elasticBuildMachine,omitempty"`
@@ -16978,7 +17070,7 @@ type UploadProjectAvatarResponse struct {
 			ElasticBuildMachine *struct {
 				Cores float32 `json:"cores"`
 
-				// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 				Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
 				Memory float32                                                                      `json:"memory"`
 			} `json:"elasticBuildMachine,omitempty"`
@@ -17576,7 +17668,7 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		ElasticBuildMachine *struct {
 			Cores float32 `json:"cores"`
 
-			// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+			// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 			Label  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 			Memory float32                                                                             `json:"memory"`
 		} `json:"elasticBuildMachine,omitempty"`
@@ -18748,7 +18840,7 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		ElasticBuildMachine *struct {
 			Cores float32 `json:"cores"`
 
-			// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+			// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 			Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
 			Memory float32                                                                      `json:"memory"`
 		} `json:"elasticBuildMachine,omitempty"`
@@ -19942,214 +20034,4 @@ type GetRollingReleaseResponse struct {
 			UpdatedAt float32 `json:"updatedAt"`
 		} `json:"rollingRelease"`
 	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetRollingReleaseResponse) GetJSON200() *struct {
-	// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-	RollingRelease *struct {
-		// ActiveStage The currently active stage, null if the rollout is aborted
-		//
-		// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-		ActiveStage *struct {
-			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-			Duration *float32 `json:"duration"`
-
-			// Index The zero-based index of the stage
-			//
-			// Example: 0
-			Index float32 `json:"index"`
-
-			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-			//
-			// Example: false
-			IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-			// LinearShift Whether to linearly shift traffic over the duration of this stage
-			//
-			// Example: false
-			LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-			// RequireApproval Whether or not this stage requires manual approval to proceed
-			RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-			//
-			// Example: 25
-			TargetPercentage float32 `json:"targetPercentage"`
-		} `json:"activeStage"`
-
-		// AdvancementType The advancement type of the rolling release
-		//
-		// Example: manual-approval
-		AdvancementType GetRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-		// CanaryDeployment The canary deployment being rolled out
-		//
-		// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-		CanaryDeployment *struct {
-			// CreatedAt A number containing the date when the deployment was created in milliseconds
-			//
-			// Example: 1540257589405
-			CreatedAt float32 `json:"createdAt"`
-
-			// Id A string holding the unique ID of the deployment
-			//
-			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-			Id string `json:"id"`
-
-			// Name The name of the project associated with the deployment at the time that the deployment was created
-			//
-			// Example: my-project
-			Name string `json:"name"`
-
-			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-			//
-			// Example: READY
-			ReadyState   GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-			ReadyStateAt *float32                                                                     `json:"readyStateAt,omitempty"`
-
-			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-			//
-			// Example: cli
-			Source *GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-			Target *GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-			// Url A string with the unique URL of the deployment
-			//
-			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-			Url string `json:"url"`
-		} `json:"canaryDeployment"`
-
-		// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-		CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-		// CurrentDeployment The current deployment receiving production traffic
-		//
-		// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-		CurrentDeployment *struct {
-			// CreatedAt A number containing the date when the deployment was created in milliseconds
-			//
-			// Example: 1540257589405
-			CreatedAt float32 `json:"createdAt"`
-
-			// Id A string holding the unique ID of the deployment
-			//
-			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-			Id string `json:"id"`
-
-			// Name The name of the project associated with the deployment at the time that the deployment was created
-			//
-			// Example: my-project
-			Name string `json:"name"`
-
-			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-			//
-			// Example: READY
-			ReadyState   GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-			ReadyStateAt *float32                                                                      `json:"readyStateAt,omitempty"`
-
-			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-			//
-			// Example: cli
-			Source *GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-			Target *GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-			// Url A string with the unique URL of the deployment
-			//
-			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-			Url string `json:"url"`
-		} `json:"currentDeployment"`
-
-		// NextStage The next stage to be activated, null if not in ACTIVE state
-		//
-		// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-		NextStage *struct {
-			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-			Duration *float32 `json:"duration"`
-
-			// Index The zero-based index of the stage
-			//
-			// Example: 0
-			Index float32 `json:"index"`
-
-			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-			//
-			// Example: false
-			IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-			// LinearShift Whether to linearly shift traffic over the duration of this stage
-			//
-			// Example: false
-			LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-			// RequireApproval Whether or not this stage requires manual approval to proceed
-			RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-			//
-			// Example: 25
-			TargetPercentage float32 `json:"targetPercentage"`
-		} `json:"nextStage"`
-
-		// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-		//
-		// Example: dpl_ghi789
-		QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-		// Stages All stages configured for this rolling release
-		//
-		// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-		Stages []struct {
-			// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-			Duration *float32 `json:"duration"`
-
-			// Index The zero-based index of the stage
-			//
-			// Example: 0
-			Index float32 `json:"index"`
-
-			// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-			//
-			// Example: false
-			IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-			// LinearShift Whether to linearly shift traffic over the duration of this stage
-			//
-			// Example: false
-			LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-			// RequireApproval Whether or not this stage requires manual approval to proceed
-			RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-			//
-			// Example: 25
-			TargetPercentage float32 `json:"targetPercentage"`
-		} `json:"stages"`
-
-		// StartedAt Unix timestamp in milliseconds when the rolling release started
-		//
-		// Example: 1716210500000
-		StartedAt float32 `json:"startedAt"`
-
-		// State The current state of the rolling release
-		//
-		// Example: ACTIVE
-		State GetRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
-
-		// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-		Substate *GetRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-		// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-		//
-		// Example: 1716210600000
-		UpdatedAt float32 `json:"updatedAt"`
-	} `json:"rollingRelease"`
-} {
-	return r.JSON200
 }

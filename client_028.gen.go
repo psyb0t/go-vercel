@@ -13,6 +13,2108 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseListDeploymentAliasesResponse parses an HTTP response from a ListDeploymentAliasesWithResponse call
+func ParseListDeploymentAliasesResponse(rsp *http.Response) (*ListDeploymentAliasesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDeploymentAliasesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Aliases A list of the aliases assigned to the deployment
+			Aliases []struct {
+				// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
+				//
+				// Example: my-alias.vercel.app
+				Alias string `json:"alias"`
+
+				// Created The date when the alias was created
+				//
+				// Example: 2017-04-26T23:00:34.232Z
+				Created time.Time `json:"created"`
+
+				// ProtectionBypass The protection bypass for the alias
+				ProtectionBypass *map[string]ListDeploymentAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+
+				// Redirect Target destination domain for redirect when the alias is a redirect
+				Redirect *string `json:"redirect,omitempty"`
+
+				// Uid The unique identifier of the alias
+				//
+				// Example: 2WjyKQmM8ZnGcJsPWMrHRHrE
+				Uid string `json:"uid"`
+			} `json:"aliases"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAssignAliasResponse parses an HTTP response from a AssignAliasWithResponse call
+func ParseAssignAliasResponse(rsp *http.Response) (*AssignAliasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AssignAliasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Alias The assigned alias name
+			//
+			// Example: my-alias.vercel.app
+			Alias string `json:"alias"`
+
+			// Created The date when the alias was created
+			//
+			// Example: 2017-04-26T23:00:34.232Z
+			Created time.Time `json:"created"`
+
+			// OldDeploymentId The unique identifier of the previously aliased deployment, only received when the alias was used before
+			//
+			// Example: dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa
+			OldDeploymentId *string `json:"oldDeploymentId,omitempty"`
+
+			// Uid The unique identifier of the alias
+			//
+			// Example: 2WjyKQmM8ZnGcJsPWMrHRHrE
+			Uid string `json:"uid"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateRecordResponse parses an HTTP response from a CreateRecordWithResponse call
+func ParseCreateRecordResponse(rsp *http.Response) (*CreateRecordResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateRecordResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CreateRecord200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveRecordResponse parses an HTTP response from a RemoveRecordWithResponse call
+func ParseRemoveRecordResponse(rsp *http.Response) (*RemoveRecordResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveRecordResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUploadFileResponse parses an HTTP response from a UploadFileWithResponse call
+func ParseUploadFileResponse(rsp *http.Response) (*UploadFileResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UploadFileResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UploadFile200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 426:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetIntegrationLogDrainsResponse parses an HTTP response from a GetIntegrationLogDrainsWithResponse call
+func ParseGetIntegrationLogDrainsResponse(rsp *http.Response) (*GetIntegrationLogDrainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetIntegrationLogDrainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []struct {
+			// Branch The branch regexp of log drain
+			//
+			// Example: feature/*
+			Branch *string `json:"branch,omitempty"`
+
+			// ClientId The oauth2 client application id that created this log drain
+			//
+			// Example: oac_xRhY4LAB7yLhUADD69EvV7ct
+			ClientId *string `json:"clientId,omitempty"`
+
+			// ConfigurationId The client configuration this log drain was created with
+			//
+			// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+			ConfigurationId *string `json:"configurationId,omitempty"`
+
+			// CreatedAt A timestamp that tells you when the log drain was created
+			//
+			// Example: 1558531915505
+			CreatedAt float32 `json:"createdAt"`
+
+			// CreatedFrom Whether the log drain was created by an integration or by a user
+			//
+			// Example: integration
+			CreatedFrom *GetIntegrationLogDrains200JSONResponseBodyCreatedFrom `json:"createdFrom,omitempty"`
+
+			// DeliveryFormat The delivery log format
+			//
+			// Example: json
+			DeliveryFormat *GetIntegrationLogDrains200JSONResponseBodyDeliveryFormat `json:"deliveryFormat,omitempty"`
+
+			// Environments The environment of log drain
+			//
+			// Example: ["production"]
+			Environments *[]GetIntegrationLogDrains200JSONResponseBodyEnvironments `json:"environments,omitempty"`
+
+			// Headers The headers to send with the request
+			//
+			// Example: {"Authorization": "Bearer 123"}
+			Headers *map[string]string `json:"headers,omitempty"`
+
+			// Id The unique identifier of the log drain. Always prefixed with `ld_`
+			//
+			// Example: ld_nBuA7zCID8g4QZ8g
+			Id string `json:"id"`
+
+			// Name The name of the log drain
+			//
+			// Example: My first log drain
+			Name string `json:"name"`
+
+			// OwnerId The identifier of the team or user whose events will trigger the log drain
+			//
+			// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+			OwnerId string `json:"ownerId"`
+
+			// ProjectId Example: AbCgVkqoxXeXCDWehVir51LHGrrcWL4mkYm14W6UBPWQeb
+			ProjectId *string `json:"projectId,omitempty"`
+
+			// ProjectIds The identifier of the projects this log drain is associated with
+			//
+			// Example: AbCgVkqoxXeXCDWehVir51LHGrrcWL4mkYm14W6UBPWQeb
+			ProjectIds *[]string `json:"projectIds,omitempty"`
+
+			// SamplingRate The sampling rate of log drain
+			//
+			// Example: 0.5
+			SamplingRate *float32                                          `json:"samplingRate,omitempty"`
+			Source       GetIntegrationLogDrains200JSONResponseBody_Source `json:"source"`
+
+			// Sources The sources from which logs are currently being delivered to this log drain.
+			//
+			// Example: ["build","edge"]
+			Sources *[]GetIntegrationLogDrains200JSONResponseBodySources `json:"sources,omitempty"`
+
+			// Url The URL to call when logs are generated
+			//
+			// Example: https://example.com/log-drain
+			Url string `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateLogDrainResponse parses an HTTP response from a CreateLogDrainWithResponse call
+func ParseCreateLogDrainResponse(rsp *http.Response) (*CreateLogDrainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateLogDrainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Branch The branch regexp of log drain
+			//
+			// Example: feature/*
+			Branch *string `json:"branch,omitempty"`
+
+			// ClientId The oauth2 client application id that created this log drain
+			//
+			// Example: oac_xRhY4LAB7yLhUADD69EvV7ct
+			ClientId *string `json:"clientId,omitempty"`
+
+			// ConfigurationId The client configuration this log drain was created with
+			//
+			// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+			ConfigurationId *string `json:"configurationId,omitempty"`
+
+			// CreatedAt A timestamp that tells you when the log drain was created
+			//
+			// Example: 1558531915505
+			CreatedAt float32 `json:"createdAt"`
+
+			// CreatedFrom Whether the log drain was created by an integration or by a user
+			//
+			// Example: integration
+			CreatedFrom *CreateLogDrain200JSONResponseBodyCreatedFrom `json:"createdFrom,omitempty"`
+
+			// DeliveryFormat The delivery log format
+			//
+			// Example: json
+			DeliveryFormat *CreateLogDrain200JSONResponseBodyDeliveryFormat `json:"deliveryFormat,omitempty"`
+
+			// Environments The environment of log drain
+			//
+			// Example: ["production"]
+			Environments *[]CreateLogDrain200JSONResponseBodyEnvironments `json:"environments,omitempty"`
+
+			// Headers The headers to send with the request
+			//
+			// Example: {"Authorization": "Bearer 123"}
+			Headers *map[string]string `json:"headers,omitempty"`
+
+			// Id The unique identifier of the log drain. Always prefixed with `ld_`
+			//
+			// Example: ld_nBuA7zCID8g4QZ8g
+			Id string `json:"id"`
+
+			// Name The name of the log drain
+			//
+			// Example: My first log drain
+			Name string `json:"name"`
+
+			// OwnerId The identifier of the team or user whose events will trigger the log drain
+			//
+			// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+			OwnerId string `json:"ownerId"`
+
+			// ProjectId Example: AbCgVkqoxXeXCDWehVir51LHGrrcWL4mkYm14W6UBPWQeb
+			ProjectId *string `json:"projectId,omitempty"`
+
+			// ProjectIds The identifier of the projects this log drain is associated with
+			//
+			// Example: AbCgVkqoxXeXCDWehVir51LHGrrcWL4mkYm14W6UBPWQeb
+			ProjectIds *[]string `json:"projectIds,omitempty"`
+
+			// SamplingRate The sampling rate of log drain
+			//
+			// Example: 0.5
+			SamplingRate *float32                                 `json:"samplingRate,omitempty"`
+			Source       CreateLogDrain200JSONResponseBody_Source `json:"source"`
+
+			// Sources The sources from which logs are currently being delivered to this log drain.
+			//
+			// Example: ["build","edge"]
+			Sources *[]CreateLogDrain200JSONResponseBodySources `json:"sources,omitempty"`
+
+			// Url The URL to call when logs are generated
+			//
+			// Example: https://example.com/log-drain
+			Url string `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateObservabilityQueryResponse parses an HTTP response from a CreateObservabilityQueryWithResponse call
+func ParseCreateObservabilityQueryResponse(rsp *http.Response) (*CreateObservabilityQueryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateObservabilityQueryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetObservabilitySchemaResponse parses an HTTP response from a GetObservabilitySchemaWithResponse call
+func ParseGetObservabilitySchemaResponse(rsp *http.Response) (*GetObservabilitySchemaResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetObservabilitySchemaResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Metrics []struct {
+				Description string `json:"description"`
+				Id          string `json:"id"`
+			} `json:"metrics"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetObservabilitySchemaByMetricIdResponse parses an HTTP response from a GetObservabilitySchemaByMetricIdWithResponse call
+func ParseGetObservabilitySchemaByMetricIdResponse(rsp *http.Response) (*GetObservabilitySchemaByMetricIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetObservabilitySchemaByMetricIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []struct {
+			Aggregations       []string `json:"aggregations"`
+			DefaultAggregation string   `json:"defaultAggregation"`
+			Description        string   `json:"description"`
+			Dimensions         []struct {
+				Description *string `json:"description,omitempty"`
+				Label       string  `json:"label"`
+				Name        string  `json:"name"`
+			} `json:"dimensions"`
+			Id   string `json:"id"`
+			Unit string `json:"unit"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListProjectChecksResponse parses an HTTP response from a ListProjectChecksWithResponse call
+func ParseListProjectChecksResponse(rsp *http.Response) (*ListProjectChecksResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListProjectChecksResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AvailableNativeChecks []string `json:"availableNativeChecks"`
+			Checks                []struct {
+				Blocks                           ListProjectChecks200JSONResponseBodyChecksBlocks          `json:"blocks"`
+				CreatedAt                        float32                                                   `json:"createdAt"`
+				DeletedAt                        *float32                                                  `json:"deletedAt,omitempty"`
+				Id                               string                                                    `json:"id"`
+				IsRerequestable                  ListProjectChecks200JSONResponseBodyChecksIsRerequestable `json:"isRerequestable"`
+				Name                             string                                                    `json:"name"`
+				OwnerId                          string                                                    `json:"ownerId"`
+				ProjectId                        string                                                    `json:"projectId"`
+				Requires                         ListProjectChecks200JSONResponseBodyChecksRequires        `json:"requires"`
+				Source                           ListProjectChecks200JSONResponseBody_Checks_Source        `json:"source"`
+				SourceIntegrationConfigurationId *string                                                   `json:"sourceIntegrationConfigurationId,omitempty"`
+				SourceKind                       ListProjectChecks200JSONResponseBodyChecksSourceKind      `json:"sourceKind"`
+				Targets                          []string                                                  `json:"targets"`
+				Timeout                          float32                                                   `json:"timeout"`
+				UpdatedAt                        float32                                                   `json:"updatedAt"`
+			} `json:"checks"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateProjectCheckResponse parses an HTTP response from a CreateProjectCheckWithResponse call
+func ParseCreateProjectCheckResponse(rsp *http.Response) (*CreateProjectCheckResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateProjectCheckResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Blocks                           CreateProjectCheck200JSONResponseBodyBlocks          `json:"blocks"`
+			CreatedAt                        float32                                              `json:"createdAt"`
+			DeletedAt                        *float32                                             `json:"deletedAt,omitempty"`
+			Id                               string                                               `json:"id"`
+			IsRerequestable                  CreateProjectCheck200JSONResponseBodyIsRerequestable `json:"isRerequestable"`
+			Name                             string                                               `json:"name"`
+			OwnerId                          string                                               `json:"ownerId"`
+			ProjectId                        string                                               `json:"projectId"`
+			Requires                         CreateProjectCheck200JSONResponseBodyRequires        `json:"requires"`
+			Source                           CreateProjectCheck200JSONResponseBody_Source         `json:"source"`
+			SourceIntegrationConfigurationId *string                                              `json:"sourceIntegrationConfigurationId,omitempty"`
+			SourceKind                       CreateProjectCheck200JSONResponseBodySourceKind      `json:"sourceKind"`
+			Targets                          []string                                             `json:"targets"`
+			Timeout                          float32                                              `json:"timeout"`
+			UpdatedAt                        float32                                              `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteProjectCheckResponse parses an HTTP response from a DeleteProjectCheckWithResponse call
+func ParseDeleteProjectCheckResponse(rsp *http.Response) (*DeleteProjectCheckResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteProjectCheckResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Success DeleteProjectCheck200JSONResponseBodySuccess `json:"success"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectCheckResponse parses an HTTP response from a GetProjectCheckWithResponse call
+func ParseGetProjectCheckResponse(rsp *http.Response) (*GetProjectCheckResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectCheckResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Blocks                           GetProjectCheck200JSONResponseBodyBlocks          `json:"blocks"`
+			CreatedAt                        float32                                           `json:"createdAt"`
+			DeletedAt                        *float32                                          `json:"deletedAt,omitempty"`
+			Id                               string                                            `json:"id"`
+			IsRerequestable                  GetProjectCheck200JSONResponseBodyIsRerequestable `json:"isRerequestable"`
+			Name                             string                                            `json:"name"`
+			OwnerId                          string                                            `json:"ownerId"`
+			ProjectId                        string                                            `json:"projectId"`
+			Requires                         GetProjectCheck200JSONResponseBodyRequires        `json:"requires"`
+			Source                           GetProjectCheck200JSONResponseBody_Source         `json:"source"`
+			SourceIntegrationConfigurationId *string                                           `json:"sourceIntegrationConfigurationId,omitempty"`
+			SourceKind                       GetProjectCheck200JSONResponseBodySourceKind      `json:"sourceKind"`
+			Targets                          []string                                          `json:"targets"`
+			Timeout                          float32                                           `json:"timeout"`
+			UpdatedAt                        float32                                           `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateProjectCheckResponse parses an HTTP response from a UpdateProjectCheckWithResponse call
+func ParseUpdateProjectCheckResponse(rsp *http.Response) (*UpdateProjectCheckResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateProjectCheckResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Blocks                           UpdateProjectCheck200JSONResponseBodyBlocks          `json:"blocks"`
+			CreatedAt                        float32                                              `json:"createdAt"`
+			DeletedAt                        *float32                                             `json:"deletedAt,omitempty"`
+			Id                               string                                               `json:"id"`
+			IsRerequestable                  UpdateProjectCheck200JSONResponseBodyIsRerequestable `json:"isRerequestable"`
+			Name                             string                                               `json:"name"`
+			OwnerId                          string                                               `json:"ownerId"`
+			ProjectId                        string                                               `json:"projectId"`
+			Requires                         UpdateProjectCheck200JSONResponseBodyRequires        `json:"requires"`
+			Source                           UpdateProjectCheck200JSONResponseBody_Source         `json:"source"`
+			SourceIntegrationConfigurationId *string                                              `json:"sourceIntegrationConfigurationId,omitempty"`
+			SourceKind                       UpdateProjectCheck200JSONResponseBodySourceKind      `json:"sourceKind"`
+			Targets                          []string                                             `json:"targets"`
+			Timeout                          float32                                              `json:"timeout"`
+			UpdatedAt                        float32                                              `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListCheckRunsResponse parses an HTTP response from a ListCheckRunsWithResponse call
+func ParseListCheckRunsResponse(rsp *http.Response) (*ListCheckRunsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListCheckRunsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Runs []ListCheckRuns200JSONResponseBody_Runs_Item `json:"runs"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListFlagsV2Response parses an HTTP response from a ListFlagsV2WithResponse call
+func ParseListFlagsV2Response(rsp *http.Response) (*ListFlagsV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListFlagsV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data       []ListFlagsV2200JSONResponseBody_Data_Item `json:"data"`
+			Pagination struct {
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListNamedSandboxesResponse parses an HTTP response from a ListNamedSandboxesWithResponse call
+func ParseListNamedSandboxesResponse(rsp *http.Response) (*ListNamedSandboxesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListNamedSandboxesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Pagination struct {
+				Count float32 `json:"count"`
+				Next  *string `json:"next"`
+			} `json:"pagination"`
+			Sandboxes []NamedSandbox `json:"sandboxes"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesV2Response parses an HTTP response from a CreateSandboxesV2WithResponse call
+func ParseCreateSandboxesV2Response(rsp *http.Response) (*CreateSandboxesV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListDrivesResponse parses an HTTP response from a ListDrivesWithResponse call
+func ParseListDrivesResponse(rsp *http.Response) (*ListDrivesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDrivesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Drives     []Drive `json:"drives"`
+			Pagination struct {
+				Count float32 `json:"count"`
+				Next  *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDriveResponse parses an HTTP response from a GetDriveWithResponse call
+func ParseGetDriveResponse(rsp *http.Response) (*GetDriveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDriveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteDriveResponse parses an HTTP response from a DeleteDriveWithResponse call
+func ParseDeleteDriveResponse(rsp *http.Response) (*DeleteDriveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteDriveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetOrCreateDriveResponse parses an HTTP response from a GetOrCreateDriveWithResponse call
+func ParseGetOrCreateDriveResponse(rsp *http.Response) (*GetOrCreateDriveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOrCreateDriveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseForkDriveResponse parses an HTTP response from a ForkDriveWithResponse call
+func ParseForkDriveResponse(rsp *http.Response) (*ForkDriveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ForkDriveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListSessionsResponse parses an HTTP response from a ListSessionsWithResponse call
+func ParseListSessionsResponse(rsp *http.Response) (*ListSessionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListSessionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListSessions200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSessionResponse parses an HTTP response from a GetSessionWithResponse call
+func ParseGetSessionResponse(rsp *http.Response) (*GetSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListSessionCommandsResponse parses an HTTP response from a ListSessionCommandsWithResponse call
+func ParseListSessionCommandsResponse(rsp *http.Response) (*ListSessionCommandsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListSessionCommandsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Commands []SessionCommand `json:"commands"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRunSessionCommandResponse parses an HTTP response from a RunSessionCommandWithResponse call
+func ParseRunSessionCommandResponse(rsp *http.Response) (*RunSessionCommandResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RunSessionCommandResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Command This object represents a command run in a Vercel Sandbox session (v2 API).
+			Command SessionCommand `json:"command"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 200:
+		// Content-type (application/x-ndjson) unsupported
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSessionCommandResponse parses an HTTP response from a GetSessionCommandWithResponse call
+func ParseGetSessionCommandResponse(rsp *http.Response) (*GetSessionCommandResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSessionCommandResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Command This object represents a command run in a Vercel Sandbox session (v2 API).
+			Command SessionCommand `json:"command"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseKillSessionCommandResponse parses an HTTP response from a KillSessionCommandWithResponse call
+func ParseKillSessionCommandResponse(rsp *http.Response) (*KillSessionCommandResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &KillSessionCommandResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Command This object represents a command run in a Vercel Sandbox session (v2 API).
+			Command SessionCommand `json:"command"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSessionCommandLogsResponse parses an HTTP response from a GetSessionCommandLogsWithResponse call
+func ParseGetSessionCommandLogsResponse(rsp *http.Response) (*GetSessionCommandLogsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSessionCommandLogsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseWriteSessionCommandStdinResponse parses an HTTP response from a WriteSessionCommandStdinWithResponse call
+func ParseWriteSessionCommandStdinResponse(rsp *http.Response) (*WriteSessionCommandStdinResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &WriteSessionCommandStdinResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			BytesWritten *float32 `json:"bytesWritten,omitempty"`
+
+			// Command This object represents a command run in a Vercel Sandbox session (v2 API).
+			Command SessionCommand `json:"command"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 504:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseExtendSessionTimeoutResponse parses an HTTP response from a ExtendSessionTimeoutWithResponse call
+func ParseExtendSessionTimeoutResponse(rsp *http.Response) (*ExtendSessionTimeoutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ExtendSessionTimeoutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSessionDirectoryResponse parses an HTTP response from a CreateSessionDirectoryWithResponse call
+func ParseCreateSessionDirectoryResponse(rsp *http.Response) (*CreateSessionDirectoryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSessionDirectoryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReadSessionFileResponse parses an HTTP response from a ReadSessionFileWithResponse call
+func ParseReadSessionFileResponse(rsp *http.Response) (*ReadSessionFileResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReadSessionFileResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseWriteSessionFilesResponse parses an HTTP response from a WriteSessionFilesWithResponse call
+func ParseWriteSessionFilesResponse(rsp *http.Response) (*WriteSessionFilesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &WriteSessionFilesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateSessionNetworkPolicyResponse parses an HTTP response from a UpdateSessionNetworkPolicyWithResponse call
+func ParseUpdateSessionNetworkPolicyResponse(rsp *http.Response) (*UpdateSessionNetworkPolicyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateSessionNetworkPolicyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesSessionsBySessionIdSnapshotV2Response parses an HTTP response from a CreateSandboxesSessionsBySessionIdSnapshotV2WithResponse call
+func ParseCreateSandboxesSessionsBySessionIdSnapshotV2Response(rsp *http.Response) (*CreateSandboxesSessionsBySessionIdSnapshotV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesSessionsBySessionIdSnapshotV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseStopSessionResponse parses an HTTP response from a StopSessionWithResponse call
 func ParseStopSessionResponse(rsp *http.Response) (*StopSessionResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -568,6 +2670,12 @@ func ParsePatchTeamResponse(rsp *http.Response) (*PatchTeamResponse, error) {
 		break // No content-type
 
 	case rsp.StatusCode == 428:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
 		break // No content-type
 
 	}
@@ -4355,7 +6463,7 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				ElasticBuildMachine *struct {
 					Cores float32 `json:"cores"`
 
-					// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 					Label  GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 					Memory float32                                                                    `json:"memory"`
 				} `json:"elasticBuildMachine,omitempty"`
@@ -5538,7 +7646,7 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				ElasticBuildMachine *struct {
 					Cores float32 `json:"cores"`
 
-					// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 					Label  GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
 					Memory float32                                                             `json:"memory"`
 				} `json:"elasticBuildMachine,omitempty"`
@@ -6173,7 +8281,7 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				ElasticBuildMachine *struct {
 					Cores float32 `json:"cores"`
 
-					// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 					Label  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
 					Memory float32                                                                       `json:"memory"`
 				} `json:"elasticBuildMachine,omitempty"`
@@ -7345,7 +9453,7 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				ElasticBuildMachine *struct {
 					Cores float32 `json:"cores"`
 
-					// Label Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.
+					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
 					Label  UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
 					Memory float32                                                                `json:"memory"`
 				} `json:"elasticBuildMachine,omitempty"`

@@ -11,6 +11,535 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// Getter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item. Returns the specified
+// element and whether it was found
+func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item
+func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item to handle AdditionalProperties
+func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["alg"]; found {
+		err = json.Unmarshal(raw, &a.Alg)
+		if err != nil {
+			return fmt.Errorf("error reading 'alg': %w", err)
+		}
+		delete(object, "alg")
+	}
+
+	if raw, found := object["key_ops"]; found {
+		err = json.Unmarshal(raw, &a.KeyOps)
+		if err != nil {
+			return fmt.Errorf("error reading 'key_ops': %w", err)
+		}
+		delete(object, "key_ops")
+	}
+
+	if raw, found := object["kid"]; found {
+		err = json.Unmarshal(raw, &a.Kid)
+		if err != nil {
+			return fmt.Errorf("error reading 'kid': %w", err)
+		}
+		delete(object, "kid")
+	}
+
+	if raw, found := object["kty"]; found {
+		err = json.Unmarshal(raw, &a.Kty)
+		if err != nil {
+			return fmt.Errorf("error reading 'kty': %w", err)
+		}
+		delete(object, "kty")
+	}
+
+	if raw, found := object["use"]; found {
+		err = json.Unmarshal(raw, &a.Use)
+		if err != nil {
+			return fmt.Errorf("error reading 'use': %w", err)
+		}
+		delete(object, "use")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item to handle AdditionalProperties
+func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.Alg != nil {
+		object["alg"], err = json.Marshal(a.Alg)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'alg': %w", err)
+		}
+	}
+
+	if a.KeyOps != nil {
+		object["key_ops"], err = json.Marshal(a.KeyOps)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'key_ops': %w", err)
+		}
+	}
+
+	if a.Kid != nil {
+		object["kid"], err = json.Marshal(a.Kid)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'kid': %w", err)
+		}
+	}
+
+	object["kty"], err = json.Marshal(a.Kty)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'kty': %w", err)
+	}
+
+	if a.Use != nil {
+		object["use"], err = json.Marshal(a.Use)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'use': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks. Returns the specified
+// element and whether it was found
+func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks
+func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks to handle AdditionalProperties
+func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["keys"]; found {
+		err = json.Unmarshal(raw, &a.Keys)
+		if err != nil {
+			return fmt.Errorf("error reading 'keys': %w", err)
+		}
+		delete(object, "keys")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks to handle AdditionalProperties
+func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.Keys != nil {
+		object["keys"], err = json.Marshal(a.Keys)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'keys': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for ConnectConnectorUpdateData_0_ServerConfig. Returns the specified
+// element and whether it was found
+func (a ConnectConnectorUpdateData_0_ServerConfig) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for ConnectConnectorUpdateData_0_ServerConfig
+func (a *ConnectConnectorUpdateData_0_ServerConfig) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig to handle AdditionalProperties
+func (a *ConnectConnectorUpdateData_0_ServerConfig) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["authorization_details_types_supported"]; found {
+		err = json.Unmarshal(raw, &a.AuthorizationDetailsTypesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'authorization_details_types_supported': %w", err)
+		}
+		delete(object, "authorization_details_types_supported")
+	}
+
+	if raw, found := object["authorization_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.AuthorizationEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'authorization_endpoint': %w", err)
+		}
+		delete(object, "authorization_endpoint")
+	}
+
+	if raw, found := object["authorization_grant_profiles_supported"]; found {
+		err = json.Unmarshal(raw, &a.AuthorizationGrantProfilesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'authorization_grant_profiles_supported': %w", err)
+		}
+		delete(object, "authorization_grant_profiles_supported")
+	}
+
+	if raw, found := object["claim_types_supported"]; found {
+		err = json.Unmarshal(raw, &a.ClaimTypesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'claim_types_supported': %w", err)
+		}
+		delete(object, "claim_types_supported")
+	}
+
+	if raw, found := object["claims_parameter_supported"]; found {
+		err = json.Unmarshal(raw, &a.ClaimsParameterSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'claims_parameter_supported': %w", err)
+		}
+		delete(object, "claims_parameter_supported")
+	}
+
+	if raw, found := object["claims_supported"]; found {
+		err = json.Unmarshal(raw, &a.ClaimsSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'claims_supported': %w", err)
+		}
+		delete(object, "claims_supported")
+	}
+
+	if raw, found := object["client_id_metadata_document_supported"]; found {
+		err = json.Unmarshal(raw, &a.ClientIdMetadataDocumentSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'client_id_metadata_document_supported': %w", err)
+		}
+		delete(object, "client_id_metadata_document_supported")
+	}
+
+	if raw, found := object["code_challenge_methods_supported"]; found {
+		err = json.Unmarshal(raw, &a.CodeChallengeMethodsSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'code_challenge_methods_supported': %w", err)
+		}
+		delete(object, "code_challenge_methods_supported")
+	}
+
+	if raw, found := object["device_authorization_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.DeviceAuthorizationEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'device_authorization_endpoint': %w", err)
+		}
+		delete(object, "device_authorization_endpoint")
+	}
+
+	if raw, found := object["end_session_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.EndSessionEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'end_session_endpoint': %w", err)
+		}
+		delete(object, "end_session_endpoint")
+	}
+
+	if raw, found := object["grant_types_supported"]; found {
+		err = json.Unmarshal(raw, &a.GrantTypesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'grant_types_supported': %w", err)
+		}
+		delete(object, "grant_types_supported")
+	}
+
+	if raw, found := object["id_token_encryption_alg_values_supported"]; found {
+		err = json.Unmarshal(raw, &a.IdTokenEncryptionAlgValuesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'id_token_encryption_alg_values_supported': %w", err)
+		}
+		delete(object, "id_token_encryption_alg_values_supported")
+	}
+
+	if raw, found := object["id_token_encryption_enc_values_supported"]; found {
+		err = json.Unmarshal(raw, &a.IdTokenEncryptionEncValuesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'id_token_encryption_enc_values_supported': %w", err)
+		}
+		delete(object, "id_token_encryption_enc_values_supported")
+	}
+
+	if raw, found := object["id_token_signing_alg_values_supported"]; found {
+		err = json.Unmarshal(raw, &a.IdTokenSigningAlgValuesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'id_token_signing_alg_values_supported': %w", err)
+		}
+		delete(object, "id_token_signing_alg_values_supported")
+	}
+
+	if raw, found := object["identity_chaining_requested_token_types_supported"]; found {
+		err = json.Unmarshal(raw, &a.IdentityChainingRequestedTokenTypesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'identity_chaining_requested_token_types_supported': %w", err)
+		}
+		delete(object, "identity_chaining_requested_token_types_supported")
+	}
+
+	if raw, found := object["introspection_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.IntrospectionEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'introspection_endpoint': %w", err)
+		}
+		delete(object, "introspection_endpoint")
+	}
+
+	if raw, found := object["issuer"]; found {
+		err = json.Unmarshal(raw, &a.Issuer)
+		if err != nil {
+			return fmt.Errorf("error reading 'issuer': %w", err)
+		}
+		delete(object, "issuer")
+	}
+
+	if raw, found := object["jwks"]; found {
+		err = json.Unmarshal(raw, &a.Jwks)
+		if err != nil {
+			return fmt.Errorf("error reading 'jwks': %w", err)
+		}
+		delete(object, "jwks")
+	}
+
+	if raw, found := object["jwks_uri"]; found {
+		err = json.Unmarshal(raw, &a.JwksUri)
+		if err != nil {
+			return fmt.Errorf("error reading 'jwks_uri': %w", err)
+		}
+		delete(object, "jwks_uri")
+	}
+
+	if raw, found := object["logo_uri"]; found {
+		err = json.Unmarshal(raw, &a.LogoUri)
+		if err != nil {
+			return fmt.Errorf("error reading 'logo_uri': %w", err)
+		}
+		delete(object, "logo_uri")
+	}
+
+	if raw, found := object["op_policy_uri"]; found {
+		err = json.Unmarshal(raw, &a.OpPolicyUri)
+		if err != nil {
+			return fmt.Errorf("error reading 'op_policy_uri': %w", err)
+		}
+		delete(object, "op_policy_uri")
+	}
+
+	if raw, found := object["op_tos_uri"]; found {
+		err = json.Unmarshal(raw, &a.OpTosUri)
+		if err != nil {
+			return fmt.Errorf("error reading 'op_tos_uri': %w", err)
+		}
+		delete(object, "op_tos_uri")
+	}
+
+	if raw, found := object["prompt_values_supported"]; found {
+		err = json.Unmarshal(raw, &a.PromptValuesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'prompt_values_supported': %w", err)
+		}
+		delete(object, "prompt_values_supported")
+	}
+
+	if raw, found := object["registration_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.RegistrationEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'registration_endpoint': %w", err)
+		}
+		delete(object, "registration_endpoint")
+	}
+
+	if raw, found := object["request_parameter_supported"]; found {
+		err = json.Unmarshal(raw, &a.RequestParameterSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'request_parameter_supported': %w", err)
+		}
+		delete(object, "request_parameter_supported")
+	}
+
+	if raw, found := object["request_uri_parameter_supported"]; found {
+		err = json.Unmarshal(raw, &a.RequestUriParameterSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'request_uri_parameter_supported': %w", err)
+		}
+		delete(object, "request_uri_parameter_supported")
+	}
+
+	if raw, found := object["require_request_uri_registration"]; found {
+		err = json.Unmarshal(raw, &a.RequireRequestUriRegistration)
+		if err != nil {
+			return fmt.Errorf("error reading 'require_request_uri_registration': %w", err)
+		}
+		delete(object, "require_request_uri_registration")
+	}
+
+	if raw, found := object["response_modes_supported"]; found {
+		err = json.Unmarshal(raw, &a.ResponseModesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'response_modes_supported': %w", err)
+		}
+		delete(object, "response_modes_supported")
+	}
+
+	if raw, found := object["response_types_supported"]; found {
+		err = json.Unmarshal(raw, &a.ResponseTypesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'response_types_supported': %w", err)
+		}
+		delete(object, "response_types_supported")
+	}
+
+	if raw, found := object["revocation_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.RevocationEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'revocation_endpoint': %w", err)
+		}
+		delete(object, "revocation_endpoint")
+	}
+
+	if raw, found := object["scopes_supported"]; found {
+		err = json.Unmarshal(raw, &a.ScopesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'scopes_supported': %w", err)
+		}
+		delete(object, "scopes_supported")
+	}
+
+	if raw, found := object["service_documentation"]; found {
+		err = json.Unmarshal(raw, &a.ServiceDocumentation)
+		if err != nil {
+			return fmt.Errorf("error reading 'service_documentation': %w", err)
+		}
+		delete(object, "service_documentation")
+	}
+
+	if raw, found := object["subject_types_supported"]; found {
+		err = json.Unmarshal(raw, &a.SubjectTypesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'subject_types_supported': %w", err)
+		}
+		delete(object, "subject_types_supported")
+	}
+
+	if raw, found := object["token_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.TokenEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'token_endpoint': %w", err)
+		}
+		delete(object, "token_endpoint")
+	}
+
+	if raw, found := object["token_endpoint_auth_methods_supported"]; found {
+		err = json.Unmarshal(raw, &a.TokenEndpointAuthMethodsSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'token_endpoint_auth_methods_supported': %w", err)
+		}
+		delete(object, "token_endpoint_auth_methods_supported")
+	}
+
+	if raw, found := object["token_endpoint_auth_signing_alg_values_supported"]; found {
+		err = json.Unmarshal(raw, &a.TokenEndpointAuthSigningAlgValuesSupported)
+		if err != nil {
+			return fmt.Errorf("error reading 'token_endpoint_auth_signing_alg_values_supported': %w", err)
+		}
+		delete(object, "token_endpoint_auth_signing_alg_values_supported")
+	}
+
+	if raw, found := object["userinfo_endpoint"]; found {
+		err = json.Unmarshal(raw, &a.UserinfoEndpoint)
+		if err != nil {
+			return fmt.Errorf("error reading 'userinfo_endpoint': %w", err)
+		}
+		delete(object, "userinfo_endpoint")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
 // Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig to handle AdditionalProperties
 func (a ConnectConnectorUpdateData_0_ServerConfig) MarshalJSON() ([]byte, error) {
 	var err error
@@ -1142,25 +1671,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload109. Returns the specified
+// Getter for additional properties for UserEventPayload110. Returns the specified
 // element and whether it was found
-func (a UserEventPayload109) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload110) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload109
-func (a *UserEventPayload109) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload110
+func (a *UserEventPayload110) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload109 to handle AdditionalProperties
-func (a *UserEventPayload109) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload110 to handle AdditionalProperties
+func (a *UserEventPayload110) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -1189,8 +1718,8 @@ func (a *UserEventPayload109) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload109 to handle AdditionalProperties
-func (a UserEventPayload109) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload110 to handle AdditionalProperties
+func (a UserEventPayload110) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -1208,25 +1737,25 @@ func (a UserEventPayload109) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload248. Returns the specified
+// Getter for additional properties for UserEventPayload250. Returns the specified
 // element and whether it was found
-func (a UserEventPayload248) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload250) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload248
-func (a *UserEventPayload248) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload250
+func (a *UserEventPayload250) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload248 to handle AdditionalProperties
-func (a *UserEventPayload248) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload250 to handle AdditionalProperties
+func (a *UserEventPayload250) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -1279,8 +1808,8 @@ func (a *UserEventPayload248) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload248 to handle AdditionalProperties
-func (a UserEventPayload248) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload250 to handle AdditionalProperties
+func (a UserEventPayload250) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -8685,22 +9214,22 @@ func (t *TeamLimited_Membership_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) er
 	return err
 }
 
-// AsUserEventPayload79Data0 returns the union data inside the UserEvent_Payload_79_Data as a UserEventPayload79Data0
-func (t UserEvent_Payload_79_Data) AsUserEventPayload79Data0() (UserEventPayload79Data0, error) {
-	var body UserEventPayload79Data0
+// AsUserEventPayload80Data0 returns the union data inside the UserEvent_Payload_80_Data as a UserEventPayload80Data0
+func (t UserEvent_Payload_80_Data) AsUserEventPayload80Data0() (UserEventPayload80Data0, error) {
+	var body UserEventPayload80Data0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload79Data0 overwrites any union data inside the UserEvent_Payload_79_Data as the provided UserEventPayload79Data0
-func (t *UserEvent_Payload_79_Data) FromUserEventPayload79Data0(v UserEventPayload79Data0) error {
+// FromUserEventPayload80Data0 overwrites any union data inside the UserEvent_Payload_80_Data as the provided UserEventPayload80Data0
+func (t *UserEvent_Payload_80_Data) FromUserEventPayload80Data0(v UserEventPayload80Data0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload79Data0 performs a merge with any union data inside the UserEvent_Payload_79_Data, using the provided UserEventPayload79Data0
-func (t *UserEvent_Payload_79_Data) MergeUserEventPayload79Data0(v UserEventPayload79Data0) error {
+// MergeUserEventPayload80Data0 performs a merge with any union data inside the UserEvent_Payload_80_Data, using the provided UserEventPayload80Data0
+func (t *UserEvent_Payload_80_Data) MergeUserEventPayload80Data0(v UserEventPayload80Data0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8711,22 +9240,22 @@ func (t *UserEvent_Payload_79_Data) MergeUserEventPayload79Data0(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload79Data1 returns the union data inside the UserEvent_Payload_79_Data as a UserEventPayload79Data1
-func (t UserEvent_Payload_79_Data) AsUserEventPayload79Data1() (UserEventPayload79Data1, error) {
-	var body UserEventPayload79Data1
+// AsUserEventPayload80Data1 returns the union data inside the UserEvent_Payload_80_Data as a UserEventPayload80Data1
+func (t UserEvent_Payload_80_Data) AsUserEventPayload80Data1() (UserEventPayload80Data1, error) {
+	var body UserEventPayload80Data1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload79Data1 overwrites any union data inside the UserEvent_Payload_79_Data as the provided UserEventPayload79Data1
-func (t *UserEvent_Payload_79_Data) FromUserEventPayload79Data1(v UserEventPayload79Data1) error {
+// FromUserEventPayload80Data1 overwrites any union data inside the UserEvent_Payload_80_Data as the provided UserEventPayload80Data1
+func (t *UserEvent_Payload_80_Data) FromUserEventPayload80Data1(v UserEventPayload80Data1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload79Data1 performs a merge with any union data inside the UserEvent_Payload_79_Data, using the provided UserEventPayload79Data1
-func (t *UserEvent_Payload_79_Data) MergeUserEventPayload79Data1(v UserEventPayload79Data1) error {
+// MergeUserEventPayload80Data1 performs a merge with any union data inside the UserEvent_Payload_80_Data, using the provided UserEventPayload80Data1
+func (t *UserEvent_Payload_80_Data) MergeUserEventPayload80Data1(v UserEventPayload80Data1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8737,32 +9266,32 @@ func (t *UserEvent_Payload_79_Data) MergeUserEventPayload79Data1(v UserEventPayl
 	return err
 }
 
-func (t UserEvent_Payload_79_Data) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_80_Data) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_79_Data) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_80_Data) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload120Job0 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job0
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job0() (UserEventPayload120Job0, error) {
-	var body UserEventPayload120Job0
+// AsUserEventPayload121Job0 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job0
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job0() (UserEventPayload121Job0, error) {
+	var body UserEventPayload121Job0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job0 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job0
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job0(v UserEventPayload120Job0) error {
+// FromUserEventPayload121Job0 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job0
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job0(v UserEventPayload121Job0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job0 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job0
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job0(v UserEventPayload120Job0) error {
+// MergeUserEventPayload121Job0 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job0
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job0(v UserEventPayload121Job0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8773,22 +9302,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job0(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job1 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job1
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job1() (UserEventPayload120Job1, error) {
-	var body UserEventPayload120Job1
+// AsUserEventPayload121Job1 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job1
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job1() (UserEventPayload121Job1, error) {
+	var body UserEventPayload121Job1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job1 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job1
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job1(v UserEventPayload120Job1) error {
+// FromUserEventPayload121Job1 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job1
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job1(v UserEventPayload121Job1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job1 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job1
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job1(v UserEventPayload120Job1) error {
+// MergeUserEventPayload121Job1 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job1
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job1(v UserEventPayload121Job1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8799,22 +9328,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job1(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job2 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job2
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job2() (UserEventPayload120Job2, error) {
-	var body UserEventPayload120Job2
+// AsUserEventPayload121Job2 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job2
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job2() (UserEventPayload121Job2, error) {
+	var body UserEventPayload121Job2
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job2 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job2
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job2(v UserEventPayload120Job2) error {
+// FromUserEventPayload121Job2 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job2
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job2(v UserEventPayload121Job2) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job2 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job2
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job2(v UserEventPayload120Job2) error {
+// MergeUserEventPayload121Job2 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job2
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job2(v UserEventPayload121Job2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8825,22 +9354,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job2(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job3 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job3
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job3() (UserEventPayload120Job3, error) {
-	var body UserEventPayload120Job3
+// AsUserEventPayload121Job3 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job3
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job3() (UserEventPayload121Job3, error) {
+	var body UserEventPayload121Job3
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job3 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job3
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job3(v UserEventPayload120Job3) error {
+// FromUserEventPayload121Job3 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job3
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job3(v UserEventPayload121Job3) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job3 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job3
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job3(v UserEventPayload120Job3) error {
+// MergeUserEventPayload121Job3 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job3
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job3(v UserEventPayload121Job3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8851,22 +9380,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job3(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job4 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job4
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job4() (UserEventPayload120Job4, error) {
-	var body UserEventPayload120Job4
+// AsUserEventPayload121Job4 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job4
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job4() (UserEventPayload121Job4, error) {
+	var body UserEventPayload121Job4
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job4 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job4
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job4(v UserEventPayload120Job4) error {
+// FromUserEventPayload121Job4 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job4
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job4(v UserEventPayload121Job4) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job4 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job4
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job4(v UserEventPayload120Job4) error {
+// MergeUserEventPayload121Job4 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job4
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job4(v UserEventPayload121Job4) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8877,22 +9406,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job4(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job5 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job5
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job5() (UserEventPayload120Job5, error) {
-	var body UserEventPayload120Job5
+// AsUserEventPayload121Job5 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job5
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job5() (UserEventPayload121Job5, error) {
+	var body UserEventPayload121Job5
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job5 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job5
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job5(v UserEventPayload120Job5) error {
+// FromUserEventPayload121Job5 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job5
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job5(v UserEventPayload121Job5) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job5 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job5
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job5(v UserEventPayload120Job5) error {
+// MergeUserEventPayload121Job5 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job5
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job5(v UserEventPayload121Job5) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8903,22 +9432,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job5(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job6 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job6
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job6() (UserEventPayload120Job6, error) {
-	var body UserEventPayload120Job6
+// AsUserEventPayload121Job6 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job6
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job6() (UserEventPayload121Job6, error) {
+	var body UserEventPayload121Job6
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job6 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job6
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job6(v UserEventPayload120Job6) error {
+// FromUserEventPayload121Job6 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job6
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job6(v UserEventPayload121Job6) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job6 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job6
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job6(v UserEventPayload120Job6) error {
+// MergeUserEventPayload121Job6 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job6
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job6(v UserEventPayload121Job6) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8929,22 +9458,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job6(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job7 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job7
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job7() (UserEventPayload120Job7, error) {
-	var body UserEventPayload120Job7
+// AsUserEventPayload121Job7 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job7
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job7() (UserEventPayload121Job7, error) {
+	var body UserEventPayload121Job7
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job7 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job7
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job7(v UserEventPayload120Job7) error {
+// FromUserEventPayload121Job7 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job7
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job7(v UserEventPayload121Job7) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job7 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job7
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job7(v UserEventPayload120Job7) error {
+// MergeUserEventPayload121Job7 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job7
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job7(v UserEventPayload121Job7) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8955,22 +9484,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job7(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job8 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job8
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job8() (UserEventPayload120Job8, error) {
-	var body UserEventPayload120Job8
+// AsUserEventPayload121Job8 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job8
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job8() (UserEventPayload121Job8, error) {
+	var body UserEventPayload121Job8
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job8 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job8
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job8(v UserEventPayload120Job8) error {
+// FromUserEventPayload121Job8 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job8
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job8(v UserEventPayload121Job8) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job8 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job8
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job8(v UserEventPayload120Job8) error {
+// MergeUserEventPayload121Job8 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job8
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job8(v UserEventPayload121Job8) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -8981,22 +9510,22 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job8(v UserEventPayl
 	return err
 }
 
-// AsUserEventPayload120Job9 returns the union data inside the UserEvent_Payload_120_Job as a UserEventPayload120Job9
-func (t UserEvent_Payload_120_Job) AsUserEventPayload120Job9() (UserEventPayload120Job9, error) {
-	var body UserEventPayload120Job9
+// AsUserEventPayload121Job9 returns the union data inside the UserEvent_Payload_121_Job as a UserEventPayload121Job9
+func (t UserEvent_Payload_121_Job) AsUserEventPayload121Job9() (UserEventPayload121Job9, error) {
+	var body UserEventPayload121Job9
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload120Job9 overwrites any union data inside the UserEvent_Payload_120_Job as the provided UserEventPayload120Job9
-func (t *UserEvent_Payload_120_Job) FromUserEventPayload120Job9(v UserEventPayload120Job9) error {
+// FromUserEventPayload121Job9 overwrites any union data inside the UserEvent_Payload_121_Job as the provided UserEventPayload121Job9
+func (t *UserEvent_Payload_121_Job) FromUserEventPayload121Job9(v UserEventPayload121Job9) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload120Job9 performs a merge with any union data inside the UserEvent_Payload_120_Job, using the provided UserEventPayload120Job9
-func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job9(v UserEventPayload120Job9) error {
+// MergeUserEventPayload121Job9 performs a merge with any union data inside the UserEvent_Payload_121_Job, using the provided UserEventPayload121Job9
+func (t *UserEvent_Payload_121_Job) MergeUserEventPayload121Job9(v UserEventPayload121Job9) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9007,74 +9536,12 @@ func (t *UserEvent_Payload_120_Job) MergeUserEventPayload120Job9(v UserEventPayl
 	return err
 }
 
-func (t UserEvent_Payload_120_Job) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_121_Job) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_120_Job) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUserEventPayload167Target0 returns the union data inside the UserEvent_Payload_167_Target as a UserEventPayload167Target0
-func (t UserEvent_Payload_167_Target) AsUserEventPayload167Target0() (UserEventPayload167Target0, error) {
-	var body UserEventPayload167Target0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload167Target0 overwrites any union data inside the UserEvent_Payload_167_Target as the provided UserEventPayload167Target0
-func (t *UserEvent_Payload_167_Target) FromUserEventPayload167Target0(v UserEventPayload167Target0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload167Target0 performs a merge with any union data inside the UserEvent_Payload_167_Target, using the provided UserEventPayload167Target0
-func (t *UserEvent_Payload_167_Target) MergeUserEventPayload167Target0(v UserEventPayload167Target0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload167Target1 returns the union data inside the UserEvent_Payload_167_Target as a UserEventPayload167Target1
-func (t UserEvent_Payload_167_Target) AsUserEventPayload167Target1() (UserEventPayload167Target1, error) {
-	var body UserEventPayload167Target1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload167Target1 overwrites any union data inside the UserEvent_Payload_167_Target as the provided UserEventPayload167Target1
-func (t *UserEvent_Payload_167_Target) FromUserEventPayload167Target1(v UserEventPayload167Target1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload167Target1 performs a merge with any union data inside the UserEvent_Payload_167_Target, using the provided UserEventPayload167Target1
-func (t *UserEvent_Payload_167_Target) MergeUserEventPayload167Target1(v UserEventPayload167Target1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UserEvent_Payload_167_Target) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *UserEvent_Payload_167_Target) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_121_Job) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -9203,22 +9670,22 @@ func (t *UserEvent_Payload_169_Target) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsUserEventPayload171LastEditedByPrincipal0 returns the union data inside the UserEvent_Payload_171_LastEditedByPrincipal as a UserEventPayload171LastEditedByPrincipal0
-func (t UserEvent_Payload_171_LastEditedByPrincipal) AsUserEventPayload171LastEditedByPrincipal0() (UserEventPayload171LastEditedByPrincipal0, error) {
-	var body UserEventPayload171LastEditedByPrincipal0
+// AsUserEventPayload170Target0 returns the union data inside the UserEvent_Payload_170_Target as a UserEventPayload170Target0
+func (t UserEvent_Payload_170_Target) AsUserEventPayload170Target0() (UserEventPayload170Target0, error) {
+	var body UserEventPayload170Target0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload171LastEditedByPrincipal0 overwrites any union data inside the UserEvent_Payload_171_LastEditedByPrincipal as the provided UserEventPayload171LastEditedByPrincipal0
-func (t *UserEvent_Payload_171_LastEditedByPrincipal) FromUserEventPayload171LastEditedByPrincipal0(v UserEventPayload171LastEditedByPrincipal0) error {
+// FromUserEventPayload170Target0 overwrites any union data inside the UserEvent_Payload_170_Target as the provided UserEventPayload170Target0
+func (t *UserEvent_Payload_170_Target) FromUserEventPayload170Target0(v UserEventPayload170Target0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload171LastEditedByPrincipal0 performs a merge with any union data inside the UserEvent_Payload_171_LastEditedByPrincipal, using the provided UserEventPayload171LastEditedByPrincipal0
-func (t *UserEvent_Payload_171_LastEditedByPrincipal) MergeUserEventPayload171LastEditedByPrincipal0(v UserEventPayload171LastEditedByPrincipal0) error {
+// MergeUserEventPayload170Target0 performs a merge with any union data inside the UserEvent_Payload_170_Target, using the provided UserEventPayload170Target0
+func (t *UserEvent_Payload_170_Target) MergeUserEventPayload170Target0(v UserEventPayload170Target0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9229,22 +9696,22 @@ func (t *UserEvent_Payload_171_LastEditedByPrincipal) MergeUserEventPayload171La
 	return err
 }
 
-// AsUserEventPayload171LastEditedByPrincipal1 returns the union data inside the UserEvent_Payload_171_LastEditedByPrincipal as a UserEventPayload171LastEditedByPrincipal1
-func (t UserEvent_Payload_171_LastEditedByPrincipal) AsUserEventPayload171LastEditedByPrincipal1() (UserEventPayload171LastEditedByPrincipal1, error) {
-	var body UserEventPayload171LastEditedByPrincipal1
+// AsUserEventPayload170Target1 returns the union data inside the UserEvent_Payload_170_Target as a UserEventPayload170Target1
+func (t UserEvent_Payload_170_Target) AsUserEventPayload170Target1() (UserEventPayload170Target1, error) {
+	var body UserEventPayload170Target1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload171LastEditedByPrincipal1 overwrites any union data inside the UserEvent_Payload_171_LastEditedByPrincipal as the provided UserEventPayload171LastEditedByPrincipal1
-func (t *UserEvent_Payload_171_LastEditedByPrincipal) FromUserEventPayload171LastEditedByPrincipal1(v UserEventPayload171LastEditedByPrincipal1) error {
+// FromUserEventPayload170Target1 overwrites any union data inside the UserEvent_Payload_170_Target as the provided UserEventPayload170Target1
+func (t *UserEvent_Payload_170_Target) FromUserEventPayload170Target1(v UserEventPayload170Target1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload171LastEditedByPrincipal1 performs a merge with any union data inside the UserEvent_Payload_171_LastEditedByPrincipal, using the provided UserEventPayload171LastEditedByPrincipal1
-func (t *UserEvent_Payload_171_LastEditedByPrincipal) MergeUserEventPayload171LastEditedByPrincipal1(v UserEventPayload171LastEditedByPrincipal1) error {
+// MergeUserEventPayload170Target1 performs a merge with any union data inside the UserEvent_Payload_170_Target, using the provided UserEventPayload170Target1
+func (t *UserEvent_Payload_170_Target) MergeUserEventPayload170Target1(v UserEventPayload170Target1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9255,32 +9722,32 @@ func (t *UserEvent_Payload_171_LastEditedByPrincipal) MergeUserEventPayload171La
 	return err
 }
 
-func (t UserEvent_Payload_171_LastEditedByPrincipal) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_170_Target) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_171_LastEditedByPrincipal) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_170_Target) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload173NewEnvVarLastEditedByPrincipal0 returns the union data inside the UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal as a UserEventPayload173NewEnvVarLastEditedByPrincipal0
-func (t UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) AsUserEventPayload173NewEnvVarLastEditedByPrincipal0() (UserEventPayload173NewEnvVarLastEditedByPrincipal0, error) {
-	var body UserEventPayload173NewEnvVarLastEditedByPrincipal0
+// AsUserEventPayload172LastEditedByPrincipal0 returns the union data inside the UserEvent_Payload_172_LastEditedByPrincipal as a UserEventPayload172LastEditedByPrincipal0
+func (t UserEvent_Payload_172_LastEditedByPrincipal) AsUserEventPayload172LastEditedByPrincipal0() (UserEventPayload172LastEditedByPrincipal0, error) {
+	var body UserEventPayload172LastEditedByPrincipal0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload173NewEnvVarLastEditedByPrincipal0 overwrites any union data inside the UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal as the provided UserEventPayload173NewEnvVarLastEditedByPrincipal0
-func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) FromUserEventPayload173NewEnvVarLastEditedByPrincipal0(v UserEventPayload173NewEnvVarLastEditedByPrincipal0) error {
+// FromUserEventPayload172LastEditedByPrincipal0 overwrites any union data inside the UserEvent_Payload_172_LastEditedByPrincipal as the provided UserEventPayload172LastEditedByPrincipal0
+func (t *UserEvent_Payload_172_LastEditedByPrincipal) FromUserEventPayload172LastEditedByPrincipal0(v UserEventPayload172LastEditedByPrincipal0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload173NewEnvVarLastEditedByPrincipal0 performs a merge with any union data inside the UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal, using the provided UserEventPayload173NewEnvVarLastEditedByPrincipal0
-func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) MergeUserEventPayload173NewEnvVarLastEditedByPrincipal0(v UserEventPayload173NewEnvVarLastEditedByPrincipal0) error {
+// MergeUserEventPayload172LastEditedByPrincipal0 performs a merge with any union data inside the UserEvent_Payload_172_LastEditedByPrincipal, using the provided UserEventPayload172LastEditedByPrincipal0
+func (t *UserEvent_Payload_172_LastEditedByPrincipal) MergeUserEventPayload172LastEditedByPrincipal0(v UserEventPayload172LastEditedByPrincipal0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9291,22 +9758,22 @@ func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) MergeUserEventPa
 	return err
 }
 
-// AsUserEventPayload173NewEnvVarLastEditedByPrincipal1 returns the union data inside the UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal as a UserEventPayload173NewEnvVarLastEditedByPrincipal1
-func (t UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) AsUserEventPayload173NewEnvVarLastEditedByPrincipal1() (UserEventPayload173NewEnvVarLastEditedByPrincipal1, error) {
-	var body UserEventPayload173NewEnvVarLastEditedByPrincipal1
+// AsUserEventPayload172LastEditedByPrincipal1 returns the union data inside the UserEvent_Payload_172_LastEditedByPrincipal as a UserEventPayload172LastEditedByPrincipal1
+func (t UserEvent_Payload_172_LastEditedByPrincipal) AsUserEventPayload172LastEditedByPrincipal1() (UserEventPayload172LastEditedByPrincipal1, error) {
+	var body UserEventPayload172LastEditedByPrincipal1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload173NewEnvVarLastEditedByPrincipal1 overwrites any union data inside the UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal as the provided UserEventPayload173NewEnvVarLastEditedByPrincipal1
-func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) FromUserEventPayload173NewEnvVarLastEditedByPrincipal1(v UserEventPayload173NewEnvVarLastEditedByPrincipal1) error {
+// FromUserEventPayload172LastEditedByPrincipal1 overwrites any union data inside the UserEvent_Payload_172_LastEditedByPrincipal as the provided UserEventPayload172LastEditedByPrincipal1
+func (t *UserEvent_Payload_172_LastEditedByPrincipal) FromUserEventPayload172LastEditedByPrincipal1(v UserEventPayload172LastEditedByPrincipal1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload173NewEnvVarLastEditedByPrincipal1 performs a merge with any union data inside the UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal, using the provided UserEventPayload173NewEnvVarLastEditedByPrincipal1
-func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) MergeUserEventPayload173NewEnvVarLastEditedByPrincipal1(v UserEventPayload173NewEnvVarLastEditedByPrincipal1) error {
+// MergeUserEventPayload172LastEditedByPrincipal1 performs a merge with any union data inside the UserEvent_Payload_172_LastEditedByPrincipal, using the provided UserEventPayload172LastEditedByPrincipal1
+func (t *UserEvent_Payload_172_LastEditedByPrincipal) MergeUserEventPayload172LastEditedByPrincipal1(v UserEventPayload172LastEditedByPrincipal1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9317,32 +9784,32 @@ func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) MergeUserEventPa
 	return err
 }
 
-func (t UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_172_LastEditedByPrincipal) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_173_NewEnvVar_LastEditedByPrincipal) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_172_LastEditedByPrincipal) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload173OldEnvVarLastEditedByPrincipal0 returns the union data inside the UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal as a UserEventPayload173OldEnvVarLastEditedByPrincipal0
-func (t UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) AsUserEventPayload173OldEnvVarLastEditedByPrincipal0() (UserEventPayload173OldEnvVarLastEditedByPrincipal0, error) {
-	var body UserEventPayload173OldEnvVarLastEditedByPrincipal0
+// AsUserEventPayload174NewEnvVarLastEditedByPrincipal0 returns the union data inside the UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal as a UserEventPayload174NewEnvVarLastEditedByPrincipal0
+func (t UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) AsUserEventPayload174NewEnvVarLastEditedByPrincipal0() (UserEventPayload174NewEnvVarLastEditedByPrincipal0, error) {
+	var body UserEventPayload174NewEnvVarLastEditedByPrincipal0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload173OldEnvVarLastEditedByPrincipal0 overwrites any union data inside the UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal as the provided UserEventPayload173OldEnvVarLastEditedByPrincipal0
-func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) FromUserEventPayload173OldEnvVarLastEditedByPrincipal0(v UserEventPayload173OldEnvVarLastEditedByPrincipal0) error {
+// FromUserEventPayload174NewEnvVarLastEditedByPrincipal0 overwrites any union data inside the UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal as the provided UserEventPayload174NewEnvVarLastEditedByPrincipal0
+func (t *UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) FromUserEventPayload174NewEnvVarLastEditedByPrincipal0(v UserEventPayload174NewEnvVarLastEditedByPrincipal0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload173OldEnvVarLastEditedByPrincipal0 performs a merge with any union data inside the UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal, using the provided UserEventPayload173OldEnvVarLastEditedByPrincipal0
-func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) MergeUserEventPayload173OldEnvVarLastEditedByPrincipal0(v UserEventPayload173OldEnvVarLastEditedByPrincipal0) error {
+// MergeUserEventPayload174NewEnvVarLastEditedByPrincipal0 performs a merge with any union data inside the UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal, using the provided UserEventPayload174NewEnvVarLastEditedByPrincipal0
+func (t *UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) MergeUserEventPayload174NewEnvVarLastEditedByPrincipal0(v UserEventPayload174NewEnvVarLastEditedByPrincipal0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9353,22 +9820,22 @@ func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) MergeUserEventPa
 	return err
 }
 
-// AsUserEventPayload173OldEnvVarLastEditedByPrincipal1 returns the union data inside the UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal as a UserEventPayload173OldEnvVarLastEditedByPrincipal1
-func (t UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) AsUserEventPayload173OldEnvVarLastEditedByPrincipal1() (UserEventPayload173OldEnvVarLastEditedByPrincipal1, error) {
-	var body UserEventPayload173OldEnvVarLastEditedByPrincipal1
+// AsUserEventPayload174NewEnvVarLastEditedByPrincipal1 returns the union data inside the UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal as a UserEventPayload174NewEnvVarLastEditedByPrincipal1
+func (t UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) AsUserEventPayload174NewEnvVarLastEditedByPrincipal1() (UserEventPayload174NewEnvVarLastEditedByPrincipal1, error) {
+	var body UserEventPayload174NewEnvVarLastEditedByPrincipal1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload173OldEnvVarLastEditedByPrincipal1 overwrites any union data inside the UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal as the provided UserEventPayload173OldEnvVarLastEditedByPrincipal1
-func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) FromUserEventPayload173OldEnvVarLastEditedByPrincipal1(v UserEventPayload173OldEnvVarLastEditedByPrincipal1) error {
+// FromUserEventPayload174NewEnvVarLastEditedByPrincipal1 overwrites any union data inside the UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal as the provided UserEventPayload174NewEnvVarLastEditedByPrincipal1
+func (t *UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) FromUserEventPayload174NewEnvVarLastEditedByPrincipal1(v UserEventPayload174NewEnvVarLastEditedByPrincipal1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload173OldEnvVarLastEditedByPrincipal1 performs a merge with any union data inside the UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal, using the provided UserEventPayload173OldEnvVarLastEditedByPrincipal1
-func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) MergeUserEventPayload173OldEnvVarLastEditedByPrincipal1(v UserEventPayload173OldEnvVarLastEditedByPrincipal1) error {
+// MergeUserEventPayload174NewEnvVarLastEditedByPrincipal1 performs a merge with any union data inside the UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal, using the provided UserEventPayload174NewEnvVarLastEditedByPrincipal1
+func (t *UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) MergeUserEventPayload174NewEnvVarLastEditedByPrincipal1(v UserEventPayload174NewEnvVarLastEditedByPrincipal1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9379,32 +9846,32 @@ func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) MergeUserEventPa
 	return err
 }
 
-func (t UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_173_OldEnvVar_LastEditedByPrincipal) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_174_NewEnvVar_LastEditedByPrincipal) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload176ConfigVersion0 returns the union data inside the UserEvent_Payload_176_ConfigVersion as a UserEventPayload176ConfigVersion0
-func (t UserEvent_Payload_176_ConfigVersion) AsUserEventPayload176ConfigVersion0() (UserEventPayload176ConfigVersion0, error) {
-	var body UserEventPayload176ConfigVersion0
+// AsUserEventPayload174OldEnvVarLastEditedByPrincipal0 returns the union data inside the UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal as a UserEventPayload174OldEnvVarLastEditedByPrincipal0
+func (t UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) AsUserEventPayload174OldEnvVarLastEditedByPrincipal0() (UserEventPayload174OldEnvVarLastEditedByPrincipal0, error) {
+	var body UserEventPayload174OldEnvVarLastEditedByPrincipal0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload176ConfigVersion0 overwrites any union data inside the UserEvent_Payload_176_ConfigVersion as the provided UserEventPayload176ConfigVersion0
-func (t *UserEvent_Payload_176_ConfigVersion) FromUserEventPayload176ConfigVersion0(v UserEventPayload176ConfigVersion0) error {
+// FromUserEventPayload174OldEnvVarLastEditedByPrincipal0 overwrites any union data inside the UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal as the provided UserEventPayload174OldEnvVarLastEditedByPrincipal0
+func (t *UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) FromUserEventPayload174OldEnvVarLastEditedByPrincipal0(v UserEventPayload174OldEnvVarLastEditedByPrincipal0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload176ConfigVersion0 performs a merge with any union data inside the UserEvent_Payload_176_ConfigVersion, using the provided UserEventPayload176ConfigVersion0
-func (t *UserEvent_Payload_176_ConfigVersion) MergeUserEventPayload176ConfigVersion0(v UserEventPayload176ConfigVersion0) error {
+// MergeUserEventPayload174OldEnvVarLastEditedByPrincipal0 performs a merge with any union data inside the UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal, using the provided UserEventPayload174OldEnvVarLastEditedByPrincipal0
+func (t *UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) MergeUserEventPayload174OldEnvVarLastEditedByPrincipal0(v UserEventPayload174OldEnvVarLastEditedByPrincipal0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9415,22 +9882,22 @@ func (t *UserEvent_Payload_176_ConfigVersion) MergeUserEventPayload176ConfigVers
 	return err
 }
 
-// AsUserEventPayload176ConfigVersion1 returns the union data inside the UserEvent_Payload_176_ConfigVersion as a UserEventPayload176ConfigVersion1
-func (t UserEvent_Payload_176_ConfigVersion) AsUserEventPayload176ConfigVersion1() (UserEventPayload176ConfigVersion1, error) {
-	var body UserEventPayload176ConfigVersion1
+// AsUserEventPayload174OldEnvVarLastEditedByPrincipal1 returns the union data inside the UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal as a UserEventPayload174OldEnvVarLastEditedByPrincipal1
+func (t UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) AsUserEventPayload174OldEnvVarLastEditedByPrincipal1() (UserEventPayload174OldEnvVarLastEditedByPrincipal1, error) {
+	var body UserEventPayload174OldEnvVarLastEditedByPrincipal1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload176ConfigVersion1 overwrites any union data inside the UserEvent_Payload_176_ConfigVersion as the provided UserEventPayload176ConfigVersion1
-func (t *UserEvent_Payload_176_ConfigVersion) FromUserEventPayload176ConfigVersion1(v UserEventPayload176ConfigVersion1) error {
+// FromUserEventPayload174OldEnvVarLastEditedByPrincipal1 overwrites any union data inside the UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal as the provided UserEventPayload174OldEnvVarLastEditedByPrincipal1
+func (t *UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) FromUserEventPayload174OldEnvVarLastEditedByPrincipal1(v UserEventPayload174OldEnvVarLastEditedByPrincipal1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload176ConfigVersion1 performs a merge with any union data inside the UserEvent_Payload_176_ConfigVersion, using the provided UserEventPayload176ConfigVersion1
-func (t *UserEvent_Payload_176_ConfigVersion) MergeUserEventPayload176ConfigVersion1(v UserEventPayload176ConfigVersion1) error {
+// MergeUserEventPayload174OldEnvVarLastEditedByPrincipal1 performs a merge with any union data inside the UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal, using the provided UserEventPayload174OldEnvVarLastEditedByPrincipal1
+func (t *UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) MergeUserEventPayload174OldEnvVarLastEditedByPrincipal1(v UserEventPayload174OldEnvVarLastEditedByPrincipal1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9441,12 +9908,12 @@ func (t *UserEvent_Payload_176_ConfigVersion) MergeUserEventPayload176ConfigVers
 	return err
 }
 
-func (t UserEvent_Payload_176_ConfigVersion) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_176_ConfigVersion) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_174_OldEnvVar_LastEditedByPrincipal) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -9575,22 +10042,22 @@ func (t *UserEvent_Payload_178_ConfigVersion) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsUserEventPayload195ProjectIds0 returns the union data inside the UserEvent_Payload_195_ProjectIds as a UserEventPayload195ProjectIds0
-func (t UserEvent_Payload_195_ProjectIds) AsUserEventPayload195ProjectIds0() (UserEventPayload195ProjectIds0, error) {
-	var body UserEventPayload195ProjectIds0
+// AsUserEventPayload179ConfigVersion0 returns the union data inside the UserEvent_Payload_179_ConfigVersion as a UserEventPayload179ConfigVersion0
+func (t UserEvent_Payload_179_ConfigVersion) AsUserEventPayload179ConfigVersion0() (UserEventPayload179ConfigVersion0, error) {
+	var body UserEventPayload179ConfigVersion0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload195ProjectIds0 overwrites any union data inside the UserEvent_Payload_195_ProjectIds as the provided UserEventPayload195ProjectIds0
-func (t *UserEvent_Payload_195_ProjectIds) FromUserEventPayload195ProjectIds0(v UserEventPayload195ProjectIds0) error {
+// FromUserEventPayload179ConfigVersion0 overwrites any union data inside the UserEvent_Payload_179_ConfigVersion as the provided UserEventPayload179ConfigVersion0
+func (t *UserEvent_Payload_179_ConfigVersion) FromUserEventPayload179ConfigVersion0(v UserEventPayload179ConfigVersion0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload195ProjectIds0 performs a merge with any union data inside the UserEvent_Payload_195_ProjectIds, using the provided UserEventPayload195ProjectIds0
-func (t *UserEvent_Payload_195_ProjectIds) MergeUserEventPayload195ProjectIds0(v UserEventPayload195ProjectIds0) error {
+// MergeUserEventPayload179ConfigVersion0 performs a merge with any union data inside the UserEvent_Payload_179_ConfigVersion, using the provided UserEventPayload179ConfigVersion0
+func (t *UserEvent_Payload_179_ConfigVersion) MergeUserEventPayload179ConfigVersion0(v UserEventPayload179ConfigVersion0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9601,22 +10068,22 @@ func (t *UserEvent_Payload_195_ProjectIds) MergeUserEventPayload195ProjectIds0(v
 	return err
 }
 
-// AsUserEventPayload195ProjectIds1 returns the union data inside the UserEvent_Payload_195_ProjectIds as a UserEventPayload195ProjectIds1
-func (t UserEvent_Payload_195_ProjectIds) AsUserEventPayload195ProjectIds1() (UserEventPayload195ProjectIds1, error) {
-	var body UserEventPayload195ProjectIds1
+// AsUserEventPayload179ConfigVersion1 returns the union data inside the UserEvent_Payload_179_ConfigVersion as a UserEventPayload179ConfigVersion1
+func (t UserEvent_Payload_179_ConfigVersion) AsUserEventPayload179ConfigVersion1() (UserEventPayload179ConfigVersion1, error) {
+	var body UserEventPayload179ConfigVersion1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload195ProjectIds1 overwrites any union data inside the UserEvent_Payload_195_ProjectIds as the provided UserEventPayload195ProjectIds1
-func (t *UserEvent_Payload_195_ProjectIds) FromUserEventPayload195ProjectIds1(v UserEventPayload195ProjectIds1) error {
+// FromUserEventPayload179ConfigVersion1 overwrites any union data inside the UserEvent_Payload_179_ConfigVersion as the provided UserEventPayload179ConfigVersion1
+func (t *UserEvent_Payload_179_ConfigVersion) FromUserEventPayload179ConfigVersion1(v UserEventPayload179ConfigVersion1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload195ProjectIds1 performs a merge with any union data inside the UserEvent_Payload_195_ProjectIds, using the provided UserEventPayload195ProjectIds1
-func (t *UserEvent_Payload_195_ProjectIds) MergeUserEventPayload195ProjectIds1(v UserEventPayload195ProjectIds1) error {
+// MergeUserEventPayload179ConfigVersion1 performs a merge with any union data inside the UserEvent_Payload_179_ConfigVersion, using the provided UserEventPayload179ConfigVersion1
+func (t *UserEvent_Payload_179_ConfigVersion) MergeUserEventPayload179ConfigVersion1(v UserEventPayload179ConfigVersion1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9627,32 +10094,32 @@ func (t *UserEvent_Payload_195_ProjectIds) MergeUserEventPayload195ProjectIds1(v
 	return err
 }
 
-func (t UserEvent_Payload_195_ProjectIds) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_179_ConfigVersion) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_195_ProjectIds) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_179_ConfigVersion) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload211Factors10 returns the union data inside the UserEvent_Payload_211_Factors_1_Item as a UserEventPayload211Factors10
-func (t UserEvent_Payload_211_Factors_1_Item) AsUserEventPayload211Factors10() (UserEventPayload211Factors10, error) {
-	var body UserEventPayload211Factors10
+// AsUserEventPayload196ProjectIds0 returns the union data inside the UserEvent_Payload_196_ProjectIds as a UserEventPayload196ProjectIds0
+func (t UserEvent_Payload_196_ProjectIds) AsUserEventPayload196ProjectIds0() (UserEventPayload196ProjectIds0, error) {
+	var body UserEventPayload196ProjectIds0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload211Factors10 overwrites any union data inside the UserEvent_Payload_211_Factors_1_Item as the provided UserEventPayload211Factors10
-func (t *UserEvent_Payload_211_Factors_1_Item) FromUserEventPayload211Factors10(v UserEventPayload211Factors10) error {
+// FromUserEventPayload196ProjectIds0 overwrites any union data inside the UserEvent_Payload_196_ProjectIds as the provided UserEventPayload196ProjectIds0
+func (t *UserEvent_Payload_196_ProjectIds) FromUserEventPayload196ProjectIds0(v UserEventPayload196ProjectIds0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload211Factors10 performs a merge with any union data inside the UserEvent_Payload_211_Factors_1_Item, using the provided UserEventPayload211Factors10
-func (t *UserEvent_Payload_211_Factors_1_Item) MergeUserEventPayload211Factors10(v UserEventPayload211Factors10) error {
+// MergeUserEventPayload196ProjectIds0 performs a merge with any union data inside the UserEvent_Payload_196_ProjectIds, using the provided UserEventPayload196ProjectIds0
+func (t *UserEvent_Payload_196_ProjectIds) MergeUserEventPayload196ProjectIds0(v UserEventPayload196ProjectIds0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9663,22 +10130,22 @@ func (t *UserEvent_Payload_211_Factors_1_Item) MergeUserEventPayload211Factors10
 	return err
 }
 
-// AsUserEventPayload211Factors11 returns the union data inside the UserEvent_Payload_211_Factors_1_Item as a UserEventPayload211Factors11
-func (t UserEvent_Payload_211_Factors_1_Item) AsUserEventPayload211Factors11() (UserEventPayload211Factors11, error) {
-	var body UserEventPayload211Factors11
+// AsUserEventPayload196ProjectIds1 returns the union data inside the UserEvent_Payload_196_ProjectIds as a UserEventPayload196ProjectIds1
+func (t UserEvent_Payload_196_ProjectIds) AsUserEventPayload196ProjectIds1() (UserEventPayload196ProjectIds1, error) {
+	var body UserEventPayload196ProjectIds1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload211Factors11 overwrites any union data inside the UserEvent_Payload_211_Factors_1_Item as the provided UserEventPayload211Factors11
-func (t *UserEvent_Payload_211_Factors_1_Item) FromUserEventPayload211Factors11(v UserEventPayload211Factors11) error {
+// FromUserEventPayload196ProjectIds1 overwrites any union data inside the UserEvent_Payload_196_ProjectIds as the provided UserEventPayload196ProjectIds1
+func (t *UserEvent_Payload_196_ProjectIds) FromUserEventPayload196ProjectIds1(v UserEventPayload196ProjectIds1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload211Factors11 performs a merge with any union data inside the UserEvent_Payload_211_Factors_1_Item, using the provided UserEventPayload211Factors11
-func (t *UserEvent_Payload_211_Factors_1_Item) MergeUserEventPayload211Factors11(v UserEventPayload211Factors11) error {
+// MergeUserEventPayload196ProjectIds1 performs a merge with any union data inside the UserEvent_Payload_196_ProjectIds, using the provided UserEventPayload196ProjectIds1
+func (t *UserEvent_Payload_196_ProjectIds) MergeUserEventPayload196ProjectIds1(v UserEventPayload196ProjectIds1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9689,32 +10156,32 @@ func (t *UserEvent_Payload_211_Factors_1_Item) MergeUserEventPayload211Factors11
 	return err
 }
 
-func (t UserEvent_Payload_211_Factors_1_Item) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_196_ProjectIds) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_211_Factors_1_Item) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_196_ProjectIds) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload211Factors0 returns the union data inside the UserEvent_Payload_211_Factors as a UserEventPayload211Factors0
-func (t UserEvent_Payload_211_Factors) AsUserEventPayload211Factors0() (UserEventPayload211Factors0, error) {
-	var body UserEventPayload211Factors0
+// AsUserEventPayload212Factors10 returns the union data inside the UserEvent_Payload_212_Factors_1_Item as a UserEventPayload212Factors10
+func (t UserEvent_Payload_212_Factors_1_Item) AsUserEventPayload212Factors10() (UserEventPayload212Factors10, error) {
+	var body UserEventPayload212Factors10
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload211Factors0 overwrites any union data inside the UserEvent_Payload_211_Factors as the provided UserEventPayload211Factors0
-func (t *UserEvent_Payload_211_Factors) FromUserEventPayload211Factors0(v UserEventPayload211Factors0) error {
+// FromUserEventPayload212Factors10 overwrites any union data inside the UserEvent_Payload_212_Factors_1_Item as the provided UserEventPayload212Factors10
+func (t *UserEvent_Payload_212_Factors_1_Item) FromUserEventPayload212Factors10(v UserEventPayload212Factors10) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload211Factors0 performs a merge with any union data inside the UserEvent_Payload_211_Factors, using the provided UserEventPayload211Factors0
-func (t *UserEvent_Payload_211_Factors) MergeUserEventPayload211Factors0(v UserEventPayload211Factors0) error {
+// MergeUserEventPayload212Factors10 performs a merge with any union data inside the UserEvent_Payload_212_Factors_1_Item, using the provided UserEventPayload212Factors10
+func (t *UserEvent_Payload_212_Factors_1_Item) MergeUserEventPayload212Factors10(v UserEventPayload212Factors10) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9725,22 +10192,22 @@ func (t *UserEvent_Payload_211_Factors) MergeUserEventPayload211Factors0(v UserE
 	return err
 }
 
-// AsUserEventPayload211Factors1 returns the union data inside the UserEvent_Payload_211_Factors as a UserEventPayload211Factors1
-func (t UserEvent_Payload_211_Factors) AsUserEventPayload211Factors1() (UserEventPayload211Factors1, error) {
-	var body UserEventPayload211Factors1
+// AsUserEventPayload212Factors11 returns the union data inside the UserEvent_Payload_212_Factors_1_Item as a UserEventPayload212Factors11
+func (t UserEvent_Payload_212_Factors_1_Item) AsUserEventPayload212Factors11() (UserEventPayload212Factors11, error) {
+	var body UserEventPayload212Factors11
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload211Factors1 overwrites any union data inside the UserEvent_Payload_211_Factors as the provided UserEventPayload211Factors1
-func (t *UserEvent_Payload_211_Factors) FromUserEventPayload211Factors1(v UserEventPayload211Factors1) error {
+// FromUserEventPayload212Factors11 overwrites any union data inside the UserEvent_Payload_212_Factors_1_Item as the provided UserEventPayload212Factors11
+func (t *UserEvent_Payload_212_Factors_1_Item) FromUserEventPayload212Factors11(v UserEventPayload212Factors11) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload211Factors1 performs a merge with any union data inside the UserEvent_Payload_211_Factors, using the provided UserEventPayload211Factors1
-func (t *UserEvent_Payload_211_Factors) MergeUserEventPayload211Factors1(v UserEventPayload211Factors1) error {
+// MergeUserEventPayload212Factors11 performs a merge with any union data inside the UserEvent_Payload_212_Factors_1_Item, using the provided UserEventPayload212Factors11
+func (t *UserEvent_Payload_212_Factors_1_Item) MergeUserEventPayload212Factors11(v UserEventPayload212Factors11) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9751,32 +10218,32 @@ func (t *UserEvent_Payload_211_Factors) MergeUserEventPayload211Factors1(v UserE
 	return err
 }
 
-func (t UserEvent_Payload_211_Factors) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_212_Factors_1_Item) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_211_Factors) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_212_Factors_1_Item) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload219PrevProjectMicrofrontends0 returns the union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends as a UserEventPayload219PrevProjectMicrofrontends0
-func (t UserEvent_Payload_219_Prev_Project_Microfrontends) AsUserEventPayload219PrevProjectMicrofrontends0() (UserEventPayload219PrevProjectMicrofrontends0, error) {
-	var body UserEventPayload219PrevProjectMicrofrontends0
+// AsUserEventPayload212Factors0 returns the union data inside the UserEvent_Payload_212_Factors as a UserEventPayload212Factors0
+func (t UserEvent_Payload_212_Factors) AsUserEventPayload212Factors0() (UserEventPayload212Factors0, error) {
+	var body UserEventPayload212Factors0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload219PrevProjectMicrofrontends0 overwrites any union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends as the provided UserEventPayload219PrevProjectMicrofrontends0
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) FromUserEventPayload219PrevProjectMicrofrontends0(v UserEventPayload219PrevProjectMicrofrontends0) error {
+// FromUserEventPayload212Factors0 overwrites any union data inside the UserEvent_Payload_212_Factors as the provided UserEventPayload212Factors0
+func (t *UserEvent_Payload_212_Factors) FromUserEventPayload212Factors0(v UserEventPayload212Factors0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload219PrevProjectMicrofrontends0 performs a merge with any union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends, using the provided UserEventPayload219PrevProjectMicrofrontends0
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) MergeUserEventPayload219PrevProjectMicrofrontends0(v UserEventPayload219PrevProjectMicrofrontends0) error {
+// MergeUserEventPayload212Factors0 performs a merge with any union data inside the UserEvent_Payload_212_Factors, using the provided UserEventPayload212Factors0
+func (t *UserEvent_Payload_212_Factors) MergeUserEventPayload212Factors0(v UserEventPayload212Factors0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9787,22 +10254,22 @@ func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) MergeUserEventPayloa
 	return err
 }
 
-// AsUserEventPayload219PrevProjectMicrofrontends1 returns the union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends as a UserEventPayload219PrevProjectMicrofrontends1
-func (t UserEvent_Payload_219_Prev_Project_Microfrontends) AsUserEventPayload219PrevProjectMicrofrontends1() (UserEventPayload219PrevProjectMicrofrontends1, error) {
-	var body UserEventPayload219PrevProjectMicrofrontends1
+// AsUserEventPayload212Factors1 returns the union data inside the UserEvent_Payload_212_Factors as a UserEventPayload212Factors1
+func (t UserEvent_Payload_212_Factors) AsUserEventPayload212Factors1() (UserEventPayload212Factors1, error) {
+	var body UserEventPayload212Factors1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload219PrevProjectMicrofrontends1 overwrites any union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends as the provided UserEventPayload219PrevProjectMicrofrontends1
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) FromUserEventPayload219PrevProjectMicrofrontends1(v UserEventPayload219PrevProjectMicrofrontends1) error {
+// FromUserEventPayload212Factors1 overwrites any union data inside the UserEvent_Payload_212_Factors as the provided UserEventPayload212Factors1
+func (t *UserEvent_Payload_212_Factors) FromUserEventPayload212Factors1(v UserEventPayload212Factors1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload219PrevProjectMicrofrontends1 performs a merge with any union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends, using the provided UserEventPayload219PrevProjectMicrofrontends1
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) MergeUserEventPayload219PrevProjectMicrofrontends1(v UserEventPayload219PrevProjectMicrofrontends1) error {
+// MergeUserEventPayload212Factors1 performs a merge with any union data inside the UserEvent_Payload_212_Factors, using the provided UserEventPayload212Factors1
+func (t *UserEvent_Payload_212_Factors) MergeUserEventPayload212Factors1(v UserEventPayload212Factors1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9813,58 +10280,32 @@ func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) MergeUserEventPayloa
 	return err
 }
 
-// AsUserEventPayload219PrevProjectMicrofrontends2 returns the union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends as a UserEventPayload219PrevProjectMicrofrontends2
-func (t UserEvent_Payload_219_Prev_Project_Microfrontends) AsUserEventPayload219PrevProjectMicrofrontends2() (UserEventPayload219PrevProjectMicrofrontends2, error) {
-	var body UserEventPayload219PrevProjectMicrofrontends2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload219PrevProjectMicrofrontends2 overwrites any union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends as the provided UserEventPayload219PrevProjectMicrofrontends2
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) FromUserEventPayload219PrevProjectMicrofrontends2(v UserEventPayload219PrevProjectMicrofrontends2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload219PrevProjectMicrofrontends2 performs a merge with any union data inside the UserEvent_Payload_219_Prev_Project_Microfrontends, using the provided UserEventPayload219PrevProjectMicrofrontends2
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) MergeUserEventPayload219PrevProjectMicrofrontends2(v UserEventPayload219PrevProjectMicrofrontends2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UserEvent_Payload_219_Prev_Project_Microfrontends) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_212_Factors) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_219_Prev_Project_Microfrontends) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_212_Factors) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload219ProjectMicrofrontends0 returns the union data inside the UserEvent_Payload_219_Project_Microfrontends as a UserEventPayload219ProjectMicrofrontends0
-func (t UserEvent_Payload_219_Project_Microfrontends) AsUserEventPayload219ProjectMicrofrontends0() (UserEventPayload219ProjectMicrofrontends0, error) {
-	var body UserEventPayload219ProjectMicrofrontends0
+// AsUserEventPayload220PrevProjectMicrofrontends0 returns the union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends as a UserEventPayload220PrevProjectMicrofrontends0
+func (t UserEvent_Payload_220_Prev_Project_Microfrontends) AsUserEventPayload220PrevProjectMicrofrontends0() (UserEventPayload220PrevProjectMicrofrontends0, error) {
+	var body UserEventPayload220PrevProjectMicrofrontends0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload219ProjectMicrofrontends0 overwrites any union data inside the UserEvent_Payload_219_Project_Microfrontends as the provided UserEventPayload219ProjectMicrofrontends0
-func (t *UserEvent_Payload_219_Project_Microfrontends) FromUserEventPayload219ProjectMicrofrontends0(v UserEventPayload219ProjectMicrofrontends0) error {
+// FromUserEventPayload220PrevProjectMicrofrontends0 overwrites any union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends as the provided UserEventPayload220PrevProjectMicrofrontends0
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) FromUserEventPayload220PrevProjectMicrofrontends0(v UserEventPayload220PrevProjectMicrofrontends0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload219ProjectMicrofrontends0 performs a merge with any union data inside the UserEvent_Payload_219_Project_Microfrontends, using the provided UserEventPayload219ProjectMicrofrontends0
-func (t *UserEvent_Payload_219_Project_Microfrontends) MergeUserEventPayload219ProjectMicrofrontends0(v UserEventPayload219ProjectMicrofrontends0) error {
+// MergeUserEventPayload220PrevProjectMicrofrontends0 performs a merge with any union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends, using the provided UserEventPayload220PrevProjectMicrofrontends0
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) MergeUserEventPayload220PrevProjectMicrofrontends0(v UserEventPayload220PrevProjectMicrofrontends0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9875,22 +10316,22 @@ func (t *UserEvent_Payload_219_Project_Microfrontends) MergeUserEventPayload219P
 	return err
 }
 
-// AsUserEventPayload219ProjectMicrofrontends1 returns the union data inside the UserEvent_Payload_219_Project_Microfrontends as a UserEventPayload219ProjectMicrofrontends1
-func (t UserEvent_Payload_219_Project_Microfrontends) AsUserEventPayload219ProjectMicrofrontends1() (UserEventPayload219ProjectMicrofrontends1, error) {
-	var body UserEventPayload219ProjectMicrofrontends1
+// AsUserEventPayload220PrevProjectMicrofrontends1 returns the union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends as a UserEventPayload220PrevProjectMicrofrontends1
+func (t UserEvent_Payload_220_Prev_Project_Microfrontends) AsUserEventPayload220PrevProjectMicrofrontends1() (UserEventPayload220PrevProjectMicrofrontends1, error) {
+	var body UserEventPayload220PrevProjectMicrofrontends1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload219ProjectMicrofrontends1 overwrites any union data inside the UserEvent_Payload_219_Project_Microfrontends as the provided UserEventPayload219ProjectMicrofrontends1
-func (t *UserEvent_Payload_219_Project_Microfrontends) FromUserEventPayload219ProjectMicrofrontends1(v UserEventPayload219ProjectMicrofrontends1) error {
+// FromUserEventPayload220PrevProjectMicrofrontends1 overwrites any union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends as the provided UserEventPayload220PrevProjectMicrofrontends1
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) FromUserEventPayload220PrevProjectMicrofrontends1(v UserEventPayload220PrevProjectMicrofrontends1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload219ProjectMicrofrontends1 performs a merge with any union data inside the UserEvent_Payload_219_Project_Microfrontends, using the provided UserEventPayload219ProjectMicrofrontends1
-func (t *UserEvent_Payload_219_Project_Microfrontends) MergeUserEventPayload219ProjectMicrofrontends1(v UserEventPayload219ProjectMicrofrontends1) error {
+// MergeUserEventPayload220PrevProjectMicrofrontends1 performs a merge with any union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends, using the provided UserEventPayload220PrevProjectMicrofrontends1
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) MergeUserEventPayload220PrevProjectMicrofrontends1(v UserEventPayload220PrevProjectMicrofrontends1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9901,22 +10342,22 @@ func (t *UserEvent_Payload_219_Project_Microfrontends) MergeUserEventPayload219P
 	return err
 }
 
-// AsUserEventPayload219ProjectMicrofrontends2 returns the union data inside the UserEvent_Payload_219_Project_Microfrontends as a UserEventPayload219ProjectMicrofrontends2
-func (t UserEvent_Payload_219_Project_Microfrontends) AsUserEventPayload219ProjectMicrofrontends2() (UserEventPayload219ProjectMicrofrontends2, error) {
-	var body UserEventPayload219ProjectMicrofrontends2
+// AsUserEventPayload220PrevProjectMicrofrontends2 returns the union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends as a UserEventPayload220PrevProjectMicrofrontends2
+func (t UserEvent_Payload_220_Prev_Project_Microfrontends) AsUserEventPayload220PrevProjectMicrofrontends2() (UserEventPayload220PrevProjectMicrofrontends2, error) {
+	var body UserEventPayload220PrevProjectMicrofrontends2
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload219ProjectMicrofrontends2 overwrites any union data inside the UserEvent_Payload_219_Project_Microfrontends as the provided UserEventPayload219ProjectMicrofrontends2
-func (t *UserEvent_Payload_219_Project_Microfrontends) FromUserEventPayload219ProjectMicrofrontends2(v UserEventPayload219ProjectMicrofrontends2) error {
+// FromUserEventPayload220PrevProjectMicrofrontends2 overwrites any union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends as the provided UserEventPayload220PrevProjectMicrofrontends2
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) FromUserEventPayload220PrevProjectMicrofrontends2(v UserEventPayload220PrevProjectMicrofrontends2) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload219ProjectMicrofrontends2 performs a merge with any union data inside the UserEvent_Payload_219_Project_Microfrontends, using the provided UserEventPayload219ProjectMicrofrontends2
-func (t *UserEvent_Payload_219_Project_Microfrontends) MergeUserEventPayload219ProjectMicrofrontends2(v UserEventPayload219ProjectMicrofrontends2) error {
+// MergeUserEventPayload220PrevProjectMicrofrontends2 performs a merge with any union data inside the UserEvent_Payload_220_Prev_Project_Microfrontends, using the provided UserEventPayload220PrevProjectMicrofrontends2
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) MergeUserEventPayload220PrevProjectMicrofrontends2(v UserEventPayload220PrevProjectMicrofrontends2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9927,32 +10368,32 @@ func (t *UserEvent_Payload_219_Project_Microfrontends) MergeUserEventPayload219P
 	return err
 }
 
-func (t UserEvent_Payload_219_Project_Microfrontends) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_220_Prev_Project_Microfrontends) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_219_Project_Microfrontends) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_220_Prev_Project_Microfrontends) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload253RemovedUsersJoinedFromGitUserId0 returns the union data inside the UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload253RemovedUsersJoinedFromGitUserId0
-func (t UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload253RemovedUsersJoinedFromGitUserId0() (UserEventPayload253RemovedUsersJoinedFromGitUserId0, error) {
-	var body UserEventPayload253RemovedUsersJoinedFromGitUserId0
+// AsUserEventPayload220ProjectMicrofrontends0 returns the union data inside the UserEvent_Payload_220_Project_Microfrontends as a UserEventPayload220ProjectMicrofrontends0
+func (t UserEvent_Payload_220_Project_Microfrontends) AsUserEventPayload220ProjectMicrofrontends0() (UserEventPayload220ProjectMicrofrontends0, error) {
+	var body UserEventPayload220ProjectMicrofrontends0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload253RemovedUsersJoinedFromGitUserId0 overwrites any union data inside the UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload253RemovedUsersJoinedFromGitUserId0
-func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload253RemovedUsersJoinedFromGitUserId0(v UserEventPayload253RemovedUsersJoinedFromGitUserId0) error {
+// FromUserEventPayload220ProjectMicrofrontends0 overwrites any union data inside the UserEvent_Payload_220_Project_Microfrontends as the provided UserEventPayload220ProjectMicrofrontends0
+func (t *UserEvent_Payload_220_Project_Microfrontends) FromUserEventPayload220ProjectMicrofrontends0(v UserEventPayload220ProjectMicrofrontends0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload253RemovedUsersJoinedFromGitUserId0 performs a merge with any union data inside the UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload253RemovedUsersJoinedFromGitUserId0
-func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload253RemovedUsersJoinedFromGitUserId0(v UserEventPayload253RemovedUsersJoinedFromGitUserId0) error {
+// MergeUserEventPayload220ProjectMicrofrontends0 performs a merge with any union data inside the UserEvent_Payload_220_Project_Microfrontends, using the provided UserEventPayload220ProjectMicrofrontends0
+func (t *UserEvent_Payload_220_Project_Microfrontends) MergeUserEventPayload220ProjectMicrofrontends0(v UserEventPayload220ProjectMicrofrontends0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9963,22 +10404,22 @@ func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) MergeUserEvent
 	return err
 }
 
-// AsUserEventPayload253RemovedUsersJoinedFromGitUserId1 returns the union data inside the UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload253RemovedUsersJoinedFromGitUserId1
-func (t UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload253RemovedUsersJoinedFromGitUserId1() (UserEventPayload253RemovedUsersJoinedFromGitUserId1, error) {
-	var body UserEventPayload253RemovedUsersJoinedFromGitUserId1
+// AsUserEventPayload220ProjectMicrofrontends1 returns the union data inside the UserEvent_Payload_220_Project_Microfrontends as a UserEventPayload220ProjectMicrofrontends1
+func (t UserEvent_Payload_220_Project_Microfrontends) AsUserEventPayload220ProjectMicrofrontends1() (UserEventPayload220ProjectMicrofrontends1, error) {
+	var body UserEventPayload220ProjectMicrofrontends1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload253RemovedUsersJoinedFromGitUserId1 overwrites any union data inside the UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload253RemovedUsersJoinedFromGitUserId1
-func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload253RemovedUsersJoinedFromGitUserId1(v UserEventPayload253RemovedUsersJoinedFromGitUserId1) error {
+// FromUserEventPayload220ProjectMicrofrontends1 overwrites any union data inside the UserEvent_Payload_220_Project_Microfrontends as the provided UserEventPayload220ProjectMicrofrontends1
+func (t *UserEvent_Payload_220_Project_Microfrontends) FromUserEventPayload220ProjectMicrofrontends1(v UserEventPayload220ProjectMicrofrontends1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload253RemovedUsersJoinedFromGitUserId1 performs a merge with any union data inside the UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload253RemovedUsersJoinedFromGitUserId1
-func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload253RemovedUsersJoinedFromGitUserId1(v UserEventPayload253RemovedUsersJoinedFromGitUserId1) error {
+// MergeUserEventPayload220ProjectMicrofrontends1 performs a merge with any union data inside the UserEvent_Payload_220_Project_Microfrontends, using the provided UserEventPayload220ProjectMicrofrontends1
+func (t *UserEvent_Payload_220_Project_Microfrontends) MergeUserEventPayload220ProjectMicrofrontends1(v UserEventPayload220ProjectMicrofrontends1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -9989,32 +10430,58 @@ func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) MergeUserEvent
 	return err
 }
 
-func (t UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) MarshalJSON() ([]byte, error) {
+// AsUserEventPayload220ProjectMicrofrontends2 returns the union data inside the UserEvent_Payload_220_Project_Microfrontends as a UserEventPayload220ProjectMicrofrontends2
+func (t UserEvent_Payload_220_Project_Microfrontends) AsUserEventPayload220ProjectMicrofrontends2() (UserEventPayload220ProjectMicrofrontends2, error) {
+	var body UserEventPayload220ProjectMicrofrontends2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload220ProjectMicrofrontends2 overwrites any union data inside the UserEvent_Payload_220_Project_Microfrontends as the provided UserEventPayload220ProjectMicrofrontends2
+func (t *UserEvent_Payload_220_Project_Microfrontends) FromUserEventPayload220ProjectMicrofrontends2(v UserEventPayload220ProjectMicrofrontends2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload220ProjectMicrofrontends2 performs a merge with any union data inside the UserEvent_Payload_220_Project_Microfrontends, using the provided UserEventPayload220ProjectMicrofrontends2
+func (t *UserEvent_Payload_220_Project_Microfrontends) MergeUserEventPayload220ProjectMicrofrontends2(v UserEventPayload220ProjectMicrofrontends2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UserEvent_Payload_220_Project_Microfrontends) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_253_RemovedUsers_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_220_Project_Microfrontends) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload254RemovedUsersJoinedFromGitUserId0 returns the union data inside the UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload254RemovedUsersJoinedFromGitUserId0
-func (t UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload254RemovedUsersJoinedFromGitUserId0() (UserEventPayload254RemovedUsersJoinedFromGitUserId0, error) {
-	var body UserEventPayload254RemovedUsersJoinedFromGitUserId0
+// AsUserEventPayload255RemovedUsersJoinedFromGitUserId0 returns the union data inside the UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload255RemovedUsersJoinedFromGitUserId0
+func (t UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload255RemovedUsersJoinedFromGitUserId0() (UserEventPayload255RemovedUsersJoinedFromGitUserId0, error) {
+	var body UserEventPayload255RemovedUsersJoinedFromGitUserId0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload254RemovedUsersJoinedFromGitUserId0 overwrites any union data inside the UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload254RemovedUsersJoinedFromGitUserId0
-func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload254RemovedUsersJoinedFromGitUserId0(v UserEventPayload254RemovedUsersJoinedFromGitUserId0) error {
+// FromUserEventPayload255RemovedUsersJoinedFromGitUserId0 overwrites any union data inside the UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload255RemovedUsersJoinedFromGitUserId0
+func (t *UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload255RemovedUsersJoinedFromGitUserId0(v UserEventPayload255RemovedUsersJoinedFromGitUserId0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload254RemovedUsersJoinedFromGitUserId0 performs a merge with any union data inside the UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload254RemovedUsersJoinedFromGitUserId0
-func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload254RemovedUsersJoinedFromGitUserId0(v UserEventPayload254RemovedUsersJoinedFromGitUserId0) error {
+// MergeUserEventPayload255RemovedUsersJoinedFromGitUserId0 performs a merge with any union data inside the UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload255RemovedUsersJoinedFromGitUserId0
+func (t *UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload255RemovedUsersJoinedFromGitUserId0(v UserEventPayload255RemovedUsersJoinedFromGitUserId0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10025,22 +10492,22 @@ func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) MergeUserEvent
 	return err
 }
 
-// AsUserEventPayload254RemovedUsersJoinedFromGitUserId1 returns the union data inside the UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload254RemovedUsersJoinedFromGitUserId1
-func (t UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload254RemovedUsersJoinedFromGitUserId1() (UserEventPayload254RemovedUsersJoinedFromGitUserId1, error) {
-	var body UserEventPayload254RemovedUsersJoinedFromGitUserId1
+// AsUserEventPayload255RemovedUsersJoinedFromGitUserId1 returns the union data inside the UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload255RemovedUsersJoinedFromGitUserId1
+func (t UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload255RemovedUsersJoinedFromGitUserId1() (UserEventPayload255RemovedUsersJoinedFromGitUserId1, error) {
+	var body UserEventPayload255RemovedUsersJoinedFromGitUserId1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload254RemovedUsersJoinedFromGitUserId1 overwrites any union data inside the UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload254RemovedUsersJoinedFromGitUserId1
-func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload254RemovedUsersJoinedFromGitUserId1(v UserEventPayload254RemovedUsersJoinedFromGitUserId1) error {
+// FromUserEventPayload255RemovedUsersJoinedFromGitUserId1 overwrites any union data inside the UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload255RemovedUsersJoinedFromGitUserId1
+func (t *UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload255RemovedUsersJoinedFromGitUserId1(v UserEventPayload255RemovedUsersJoinedFromGitUserId1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload254RemovedUsersJoinedFromGitUserId1 performs a merge with any union data inside the UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload254RemovedUsersJoinedFromGitUserId1
-func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload254RemovedUsersJoinedFromGitUserId1(v UserEventPayload254RemovedUsersJoinedFromGitUserId1) error {
+// MergeUserEventPayload255RemovedUsersJoinedFromGitUserId1 performs a merge with any union data inside the UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload255RemovedUsersJoinedFromGitUserId1
+func (t *UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload255RemovedUsersJoinedFromGitUserId1(v UserEventPayload255RemovedUsersJoinedFromGitUserId1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10051,32 +10518,32 @@ func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) MergeUserEvent
 	return err
 }
 
-func (t UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_254_RemovedUsers_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_255_RemovedUsers_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload280ProjectNewConnectConfigurationsEnvId0 returns the union data inside the UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId as a UserEventPayload280ProjectNewConnectConfigurationsEnvId0
-func (t UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) AsUserEventPayload280ProjectNewConnectConfigurationsEnvId0() (UserEventPayload280ProjectNewConnectConfigurationsEnvId0, error) {
-	var body UserEventPayload280ProjectNewConnectConfigurationsEnvId0
+// AsUserEventPayload256RemovedUsersJoinedFromGitUserId0 returns the union data inside the UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload256RemovedUsersJoinedFromGitUserId0
+func (t UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload256RemovedUsersJoinedFromGitUserId0() (UserEventPayload256RemovedUsersJoinedFromGitUserId0, error) {
+	var body UserEventPayload256RemovedUsersJoinedFromGitUserId0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload280ProjectNewConnectConfigurationsEnvId0 overwrites any union data inside the UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId as the provided UserEventPayload280ProjectNewConnectConfigurationsEnvId0
-func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) FromUserEventPayload280ProjectNewConnectConfigurationsEnvId0(v UserEventPayload280ProjectNewConnectConfigurationsEnvId0) error {
+// FromUserEventPayload256RemovedUsersJoinedFromGitUserId0 overwrites any union data inside the UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload256RemovedUsersJoinedFromGitUserId0
+func (t *UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload256RemovedUsersJoinedFromGitUserId0(v UserEventPayload256RemovedUsersJoinedFromGitUserId0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload280ProjectNewConnectConfigurationsEnvId0 performs a merge with any union data inside the UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId, using the provided UserEventPayload280ProjectNewConnectConfigurationsEnvId0
-func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) MergeUserEventPayload280ProjectNewConnectConfigurationsEnvId0(v UserEventPayload280ProjectNewConnectConfigurationsEnvId0) error {
+// MergeUserEventPayload256RemovedUsersJoinedFromGitUserId0 performs a merge with any union data inside the UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload256RemovedUsersJoinedFromGitUserId0
+func (t *UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload256RemovedUsersJoinedFromGitUserId0(v UserEventPayload256RemovedUsersJoinedFromGitUserId0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10087,22 +10554,22 @@ func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) MergeUser
 	return err
 }
 
-// AsUserEventPayload280ProjectNewConnectConfigurationsEnvId1 returns the union data inside the UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId as a UserEventPayload280ProjectNewConnectConfigurationsEnvId1
-func (t UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) AsUserEventPayload280ProjectNewConnectConfigurationsEnvId1() (UserEventPayload280ProjectNewConnectConfigurationsEnvId1, error) {
-	var body UserEventPayload280ProjectNewConnectConfigurationsEnvId1
+// AsUserEventPayload256RemovedUsersJoinedFromGitUserId1 returns the union data inside the UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId as a UserEventPayload256RemovedUsersJoinedFromGitUserId1
+func (t UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) AsUserEventPayload256RemovedUsersJoinedFromGitUserId1() (UserEventPayload256RemovedUsersJoinedFromGitUserId1, error) {
+	var body UserEventPayload256RemovedUsersJoinedFromGitUserId1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload280ProjectNewConnectConfigurationsEnvId1 overwrites any union data inside the UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId as the provided UserEventPayload280ProjectNewConnectConfigurationsEnvId1
-func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) FromUserEventPayload280ProjectNewConnectConfigurationsEnvId1(v UserEventPayload280ProjectNewConnectConfigurationsEnvId1) error {
+// FromUserEventPayload256RemovedUsersJoinedFromGitUserId1 overwrites any union data inside the UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId as the provided UserEventPayload256RemovedUsersJoinedFromGitUserId1
+func (t *UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) FromUserEventPayload256RemovedUsersJoinedFromGitUserId1(v UserEventPayload256RemovedUsersJoinedFromGitUserId1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload280ProjectNewConnectConfigurationsEnvId1 performs a merge with any union data inside the UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId, using the provided UserEventPayload280ProjectNewConnectConfigurationsEnvId1
-func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) MergeUserEventPayload280ProjectNewConnectConfigurationsEnvId1(v UserEventPayload280ProjectNewConnectConfigurationsEnvId1) error {
+// MergeUserEventPayload256RemovedUsersJoinedFromGitUserId1 performs a merge with any union data inside the UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId, using the provided UserEventPayload256RemovedUsersJoinedFromGitUserId1
+func (t *UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) MergeUserEventPayload256RemovedUsersJoinedFromGitUserId1(v UserEventPayload256RemovedUsersJoinedFromGitUserId1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10113,32 +10580,32 @@ func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) MergeUser
 	return err
 }
 
-func (t UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_280_Project_NewConnectConfigurations_EnvId) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_256_RemovedUsers_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload280ProjectOldConnectConfigurationsEnvId0 returns the union data inside the UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId as a UserEventPayload280ProjectOldConnectConfigurationsEnvId0
-func (t UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) AsUserEventPayload280ProjectOldConnectConfigurationsEnvId0() (UserEventPayload280ProjectOldConnectConfigurationsEnvId0, error) {
-	var body UserEventPayload280ProjectOldConnectConfigurationsEnvId0
+// AsUserEventPayload282ProjectNewConnectConfigurationsEnvId0 returns the union data inside the UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId as a UserEventPayload282ProjectNewConnectConfigurationsEnvId0
+func (t UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) AsUserEventPayload282ProjectNewConnectConfigurationsEnvId0() (UserEventPayload282ProjectNewConnectConfigurationsEnvId0, error) {
+	var body UserEventPayload282ProjectNewConnectConfigurationsEnvId0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload280ProjectOldConnectConfigurationsEnvId0 overwrites any union data inside the UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId as the provided UserEventPayload280ProjectOldConnectConfigurationsEnvId0
-func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) FromUserEventPayload280ProjectOldConnectConfigurationsEnvId0(v UserEventPayload280ProjectOldConnectConfigurationsEnvId0) error {
+// FromUserEventPayload282ProjectNewConnectConfigurationsEnvId0 overwrites any union data inside the UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId as the provided UserEventPayload282ProjectNewConnectConfigurationsEnvId0
+func (t *UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) FromUserEventPayload282ProjectNewConnectConfigurationsEnvId0(v UserEventPayload282ProjectNewConnectConfigurationsEnvId0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload280ProjectOldConnectConfigurationsEnvId0 performs a merge with any union data inside the UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId, using the provided UserEventPayload280ProjectOldConnectConfigurationsEnvId0
-func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) MergeUserEventPayload280ProjectOldConnectConfigurationsEnvId0(v UserEventPayload280ProjectOldConnectConfigurationsEnvId0) error {
+// MergeUserEventPayload282ProjectNewConnectConfigurationsEnvId0 performs a merge with any union data inside the UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId, using the provided UserEventPayload282ProjectNewConnectConfigurationsEnvId0
+func (t *UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) MergeUserEventPayload282ProjectNewConnectConfigurationsEnvId0(v UserEventPayload282ProjectNewConnectConfigurationsEnvId0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10149,22 +10616,22 @@ func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) MergeUser
 	return err
 }
 
-// AsUserEventPayload280ProjectOldConnectConfigurationsEnvId1 returns the union data inside the UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId as a UserEventPayload280ProjectOldConnectConfigurationsEnvId1
-func (t UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) AsUserEventPayload280ProjectOldConnectConfigurationsEnvId1() (UserEventPayload280ProjectOldConnectConfigurationsEnvId1, error) {
-	var body UserEventPayload280ProjectOldConnectConfigurationsEnvId1
+// AsUserEventPayload282ProjectNewConnectConfigurationsEnvId1 returns the union data inside the UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId as a UserEventPayload282ProjectNewConnectConfigurationsEnvId1
+func (t UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) AsUserEventPayload282ProjectNewConnectConfigurationsEnvId1() (UserEventPayload282ProjectNewConnectConfigurationsEnvId1, error) {
+	var body UserEventPayload282ProjectNewConnectConfigurationsEnvId1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload280ProjectOldConnectConfigurationsEnvId1 overwrites any union data inside the UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId as the provided UserEventPayload280ProjectOldConnectConfigurationsEnvId1
-func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) FromUserEventPayload280ProjectOldConnectConfigurationsEnvId1(v UserEventPayload280ProjectOldConnectConfigurationsEnvId1) error {
+// FromUserEventPayload282ProjectNewConnectConfigurationsEnvId1 overwrites any union data inside the UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId as the provided UserEventPayload282ProjectNewConnectConfigurationsEnvId1
+func (t *UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) FromUserEventPayload282ProjectNewConnectConfigurationsEnvId1(v UserEventPayload282ProjectNewConnectConfigurationsEnvId1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload280ProjectOldConnectConfigurationsEnvId1 performs a merge with any union data inside the UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId, using the provided UserEventPayload280ProjectOldConnectConfigurationsEnvId1
-func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) MergeUserEventPayload280ProjectOldConnectConfigurationsEnvId1(v UserEventPayload280ProjectOldConnectConfigurationsEnvId1) error {
+// MergeUserEventPayload282ProjectNewConnectConfigurationsEnvId1 performs a merge with any union data inside the UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId, using the provided UserEventPayload282ProjectNewConnectConfigurationsEnvId1
+func (t *UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) MergeUserEventPayload282ProjectNewConnectConfigurationsEnvId1(v UserEventPayload282ProjectNewConnectConfigurationsEnvId1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10175,32 +10642,32 @@ func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) MergeUser
 	return err
 }
 
-func (t UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_280_Project_OldConnectConfigurations_EnvId) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_282_Project_NewConnectConfigurations_EnvId) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload327OldPasswordProtection0 returns the union data inside the UserEvent_Payload_327_OldPasswordProtection as a UserEventPayload327OldPasswordProtection0
-func (t UserEvent_Payload_327_OldPasswordProtection) AsUserEventPayload327OldPasswordProtection0() (UserEventPayload327OldPasswordProtection0, error) {
-	var body UserEventPayload327OldPasswordProtection0
+// AsUserEventPayload282ProjectOldConnectConfigurationsEnvId0 returns the union data inside the UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId as a UserEventPayload282ProjectOldConnectConfigurationsEnvId0
+func (t UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) AsUserEventPayload282ProjectOldConnectConfigurationsEnvId0() (UserEventPayload282ProjectOldConnectConfigurationsEnvId0, error) {
+	var body UserEventPayload282ProjectOldConnectConfigurationsEnvId0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload327OldPasswordProtection0 overwrites any union data inside the UserEvent_Payload_327_OldPasswordProtection as the provided UserEventPayload327OldPasswordProtection0
-func (t *UserEvent_Payload_327_OldPasswordProtection) FromUserEventPayload327OldPasswordProtection0(v UserEventPayload327OldPasswordProtection0) error {
+// FromUserEventPayload282ProjectOldConnectConfigurationsEnvId0 overwrites any union data inside the UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId as the provided UserEventPayload282ProjectOldConnectConfigurationsEnvId0
+func (t *UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) FromUserEventPayload282ProjectOldConnectConfigurationsEnvId0(v UserEventPayload282ProjectOldConnectConfigurationsEnvId0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload327OldPasswordProtection0 performs a merge with any union data inside the UserEvent_Payload_327_OldPasswordProtection, using the provided UserEventPayload327OldPasswordProtection0
-func (t *UserEvent_Payload_327_OldPasswordProtection) MergeUserEventPayload327OldPasswordProtection0(v UserEventPayload327OldPasswordProtection0) error {
+// MergeUserEventPayload282ProjectOldConnectConfigurationsEnvId0 performs a merge with any union data inside the UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId, using the provided UserEventPayload282ProjectOldConnectConfigurationsEnvId0
+func (t *UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) MergeUserEventPayload282ProjectOldConnectConfigurationsEnvId0(v UserEventPayload282ProjectOldConnectConfigurationsEnvId0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10211,22 +10678,22 @@ func (t *UserEvent_Payload_327_OldPasswordProtection) MergeUserEventPayload327Ol
 	return err
 }
 
-// AsUserEventPayload327OldPasswordProtection1 returns the union data inside the UserEvent_Payload_327_OldPasswordProtection as a UserEventPayload327OldPasswordProtection1
-func (t UserEvent_Payload_327_OldPasswordProtection) AsUserEventPayload327OldPasswordProtection1() (UserEventPayload327OldPasswordProtection1, error) {
-	var body UserEventPayload327OldPasswordProtection1
+// AsUserEventPayload282ProjectOldConnectConfigurationsEnvId1 returns the union data inside the UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId as a UserEventPayload282ProjectOldConnectConfigurationsEnvId1
+func (t UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) AsUserEventPayload282ProjectOldConnectConfigurationsEnvId1() (UserEventPayload282ProjectOldConnectConfigurationsEnvId1, error) {
+	var body UserEventPayload282ProjectOldConnectConfigurationsEnvId1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload327OldPasswordProtection1 overwrites any union data inside the UserEvent_Payload_327_OldPasswordProtection as the provided UserEventPayload327OldPasswordProtection1
-func (t *UserEvent_Payload_327_OldPasswordProtection) FromUserEventPayload327OldPasswordProtection1(v UserEventPayload327OldPasswordProtection1) error {
+// FromUserEventPayload282ProjectOldConnectConfigurationsEnvId1 overwrites any union data inside the UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId as the provided UserEventPayload282ProjectOldConnectConfigurationsEnvId1
+func (t *UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) FromUserEventPayload282ProjectOldConnectConfigurationsEnvId1(v UserEventPayload282ProjectOldConnectConfigurationsEnvId1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload327OldPasswordProtection1 performs a merge with any union data inside the UserEvent_Payload_327_OldPasswordProtection, using the provided UserEventPayload327OldPasswordProtection1
-func (t *UserEvent_Payload_327_OldPasswordProtection) MergeUserEventPayload327OldPasswordProtection1(v UserEventPayload327OldPasswordProtection1) error {
+// MergeUserEventPayload282ProjectOldConnectConfigurationsEnvId1 performs a merge with any union data inside the UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId, using the provided UserEventPayload282ProjectOldConnectConfigurationsEnvId1
+func (t *UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) MergeUserEventPayload282ProjectOldConnectConfigurationsEnvId1(v UserEventPayload282ProjectOldConnectConfigurationsEnvId1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10237,32 +10704,32 @@ func (t *UserEvent_Payload_327_OldPasswordProtection) MergeUserEventPayload327Ol
 	return err
 }
 
-func (t UserEvent_Payload_327_OldPasswordProtection) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_327_OldPasswordProtection) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_282_Project_OldConnectConfigurations_EnvId) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload327PasswordProtection0 returns the union data inside the UserEvent_Payload_327_PasswordProtection as a UserEventPayload327PasswordProtection0
-func (t UserEvent_Payload_327_PasswordProtection) AsUserEventPayload327PasswordProtection0() (UserEventPayload327PasswordProtection0, error) {
-	var body UserEventPayload327PasswordProtection0
+// AsUserEventPayload329OldPasswordProtection0 returns the union data inside the UserEvent_Payload_329_OldPasswordProtection as a UserEventPayload329OldPasswordProtection0
+func (t UserEvent_Payload_329_OldPasswordProtection) AsUserEventPayload329OldPasswordProtection0() (UserEventPayload329OldPasswordProtection0, error) {
+	var body UserEventPayload329OldPasswordProtection0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload327PasswordProtection0 overwrites any union data inside the UserEvent_Payload_327_PasswordProtection as the provided UserEventPayload327PasswordProtection0
-func (t *UserEvent_Payload_327_PasswordProtection) FromUserEventPayload327PasswordProtection0(v UserEventPayload327PasswordProtection0) error {
+// FromUserEventPayload329OldPasswordProtection0 overwrites any union data inside the UserEvent_Payload_329_OldPasswordProtection as the provided UserEventPayload329OldPasswordProtection0
+func (t *UserEvent_Payload_329_OldPasswordProtection) FromUserEventPayload329OldPasswordProtection0(v UserEventPayload329OldPasswordProtection0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload327PasswordProtection0 performs a merge with any union data inside the UserEvent_Payload_327_PasswordProtection, using the provided UserEventPayload327PasswordProtection0
-func (t *UserEvent_Payload_327_PasswordProtection) MergeUserEventPayload327PasswordProtection0(v UserEventPayload327PasswordProtection0) error {
+// MergeUserEventPayload329OldPasswordProtection0 performs a merge with any union data inside the UserEvent_Payload_329_OldPasswordProtection, using the provided UserEventPayload329OldPasswordProtection0
+func (t *UserEvent_Payload_329_OldPasswordProtection) MergeUserEventPayload329OldPasswordProtection0(v UserEventPayload329OldPasswordProtection0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10273,22 +10740,22 @@ func (t *UserEvent_Payload_327_PasswordProtection) MergeUserEventPayload327Passw
 	return err
 }
 
-// AsUserEventPayload327PasswordProtection1 returns the union data inside the UserEvent_Payload_327_PasswordProtection as a UserEventPayload327PasswordProtection1
-func (t UserEvent_Payload_327_PasswordProtection) AsUserEventPayload327PasswordProtection1() (UserEventPayload327PasswordProtection1, error) {
-	var body UserEventPayload327PasswordProtection1
+// AsUserEventPayload329OldPasswordProtection1 returns the union data inside the UserEvent_Payload_329_OldPasswordProtection as a UserEventPayload329OldPasswordProtection1
+func (t UserEvent_Payload_329_OldPasswordProtection) AsUserEventPayload329OldPasswordProtection1() (UserEventPayload329OldPasswordProtection1, error) {
+	var body UserEventPayload329OldPasswordProtection1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload327PasswordProtection1 overwrites any union data inside the UserEvent_Payload_327_PasswordProtection as the provided UserEventPayload327PasswordProtection1
-func (t *UserEvent_Payload_327_PasswordProtection) FromUserEventPayload327PasswordProtection1(v UserEventPayload327PasswordProtection1) error {
+// FromUserEventPayload329OldPasswordProtection1 overwrites any union data inside the UserEvent_Payload_329_OldPasswordProtection as the provided UserEventPayload329OldPasswordProtection1
+func (t *UserEvent_Payload_329_OldPasswordProtection) FromUserEventPayload329OldPasswordProtection1(v UserEventPayload329OldPasswordProtection1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload327PasswordProtection1 performs a merge with any union data inside the UserEvent_Payload_327_PasswordProtection, using the provided UserEventPayload327PasswordProtection1
-func (t *UserEvent_Payload_327_PasswordProtection) MergeUserEventPayload327PasswordProtection1(v UserEventPayload327PasswordProtection1) error {
+// MergeUserEventPayload329OldPasswordProtection1 performs a merge with any union data inside the UserEvent_Payload_329_OldPasswordProtection, using the provided UserEventPayload329OldPasswordProtection1
+func (t *UserEvent_Payload_329_OldPasswordProtection) MergeUserEventPayload329OldPasswordProtection1(v UserEventPayload329OldPasswordProtection1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10299,32 +10766,32 @@ func (t *UserEvent_Payload_327_PasswordProtection) MergeUserEventPayload327Passw
 	return err
 }
 
-func (t UserEvent_Payload_327_PasswordProtection) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_329_OldPasswordProtection) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_327_PasswordProtection) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_329_OldPasswordProtection) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload348OldSsoProtection0 returns the union data inside the UserEvent_Payload_348_OldSsoProtection as a UserEventPayload348OldSsoProtection0
-func (t UserEvent_Payload_348_OldSsoProtection) AsUserEventPayload348OldSsoProtection0() (UserEventPayload348OldSsoProtection0, error) {
-	var body UserEventPayload348OldSsoProtection0
+// AsUserEventPayload329PasswordProtection0 returns the union data inside the UserEvent_Payload_329_PasswordProtection as a UserEventPayload329PasswordProtection0
+func (t UserEvent_Payload_329_PasswordProtection) AsUserEventPayload329PasswordProtection0() (UserEventPayload329PasswordProtection0, error) {
+	var body UserEventPayload329PasswordProtection0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload348OldSsoProtection0 overwrites any union data inside the UserEvent_Payload_348_OldSsoProtection as the provided UserEventPayload348OldSsoProtection0
-func (t *UserEvent_Payload_348_OldSsoProtection) FromUserEventPayload348OldSsoProtection0(v UserEventPayload348OldSsoProtection0) error {
+// FromUserEventPayload329PasswordProtection0 overwrites any union data inside the UserEvent_Payload_329_PasswordProtection as the provided UserEventPayload329PasswordProtection0
+func (t *UserEvent_Payload_329_PasswordProtection) FromUserEventPayload329PasswordProtection0(v UserEventPayload329PasswordProtection0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload348OldSsoProtection0 performs a merge with any union data inside the UserEvent_Payload_348_OldSsoProtection, using the provided UserEventPayload348OldSsoProtection0
-func (t *UserEvent_Payload_348_OldSsoProtection) MergeUserEventPayload348OldSsoProtection0(v UserEventPayload348OldSsoProtection0) error {
+// MergeUserEventPayload329PasswordProtection0 performs a merge with any union data inside the UserEvent_Payload_329_PasswordProtection, using the provided UserEventPayload329PasswordProtection0
+func (t *UserEvent_Payload_329_PasswordProtection) MergeUserEventPayload329PasswordProtection0(v UserEventPayload329PasswordProtection0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10335,22 +10802,22 @@ func (t *UserEvent_Payload_348_OldSsoProtection) MergeUserEventPayload348OldSsoP
 	return err
 }
 
-// AsUserEventPayload348OldSsoProtection1 returns the union data inside the UserEvent_Payload_348_OldSsoProtection as a UserEventPayload348OldSsoProtection1
-func (t UserEvent_Payload_348_OldSsoProtection) AsUserEventPayload348OldSsoProtection1() (UserEventPayload348OldSsoProtection1, error) {
-	var body UserEventPayload348OldSsoProtection1
+// AsUserEventPayload329PasswordProtection1 returns the union data inside the UserEvent_Payload_329_PasswordProtection as a UserEventPayload329PasswordProtection1
+func (t UserEvent_Payload_329_PasswordProtection) AsUserEventPayload329PasswordProtection1() (UserEventPayload329PasswordProtection1, error) {
+	var body UserEventPayload329PasswordProtection1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload348OldSsoProtection1 overwrites any union data inside the UserEvent_Payload_348_OldSsoProtection as the provided UserEventPayload348OldSsoProtection1
-func (t *UserEvent_Payload_348_OldSsoProtection) FromUserEventPayload348OldSsoProtection1(v UserEventPayload348OldSsoProtection1) error {
+// FromUserEventPayload329PasswordProtection1 overwrites any union data inside the UserEvent_Payload_329_PasswordProtection as the provided UserEventPayload329PasswordProtection1
+func (t *UserEvent_Payload_329_PasswordProtection) FromUserEventPayload329PasswordProtection1(v UserEventPayload329PasswordProtection1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload348OldSsoProtection1 performs a merge with any union data inside the UserEvent_Payload_348_OldSsoProtection, using the provided UserEventPayload348OldSsoProtection1
-func (t *UserEvent_Payload_348_OldSsoProtection) MergeUserEventPayload348OldSsoProtection1(v UserEventPayload348OldSsoProtection1) error {
+// MergeUserEventPayload329PasswordProtection1 performs a merge with any union data inside the UserEvent_Payload_329_PasswordProtection, using the provided UserEventPayload329PasswordProtection1
+func (t *UserEvent_Payload_329_PasswordProtection) MergeUserEventPayload329PasswordProtection1(v UserEventPayload329PasswordProtection1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10361,32 +10828,32 @@ func (t *UserEvent_Payload_348_OldSsoProtection) MergeUserEventPayload348OldSsoP
 	return err
 }
 
-func (t UserEvent_Payload_348_OldSsoProtection) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_329_PasswordProtection) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_348_OldSsoProtection) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_329_PasswordProtection) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload348SsoProtection0 returns the union data inside the UserEvent_Payload_348_SsoProtection as a UserEventPayload348SsoProtection0
-func (t UserEvent_Payload_348_SsoProtection) AsUserEventPayload348SsoProtection0() (UserEventPayload348SsoProtection0, error) {
-	var body UserEventPayload348SsoProtection0
+// AsUserEventPayload350OldSsoProtection0 returns the union data inside the UserEvent_Payload_350_OldSsoProtection as a UserEventPayload350OldSsoProtection0
+func (t UserEvent_Payload_350_OldSsoProtection) AsUserEventPayload350OldSsoProtection0() (UserEventPayload350OldSsoProtection0, error) {
+	var body UserEventPayload350OldSsoProtection0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload348SsoProtection0 overwrites any union data inside the UserEvent_Payload_348_SsoProtection as the provided UserEventPayload348SsoProtection0
-func (t *UserEvent_Payload_348_SsoProtection) FromUserEventPayload348SsoProtection0(v UserEventPayload348SsoProtection0) error {
+// FromUserEventPayload350OldSsoProtection0 overwrites any union data inside the UserEvent_Payload_350_OldSsoProtection as the provided UserEventPayload350OldSsoProtection0
+func (t *UserEvent_Payload_350_OldSsoProtection) FromUserEventPayload350OldSsoProtection0(v UserEventPayload350OldSsoProtection0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload348SsoProtection0 performs a merge with any union data inside the UserEvent_Payload_348_SsoProtection, using the provided UserEventPayload348SsoProtection0
-func (t *UserEvent_Payload_348_SsoProtection) MergeUserEventPayload348SsoProtection0(v UserEventPayload348SsoProtection0) error {
+// MergeUserEventPayload350OldSsoProtection0 performs a merge with any union data inside the UserEvent_Payload_350_OldSsoProtection, using the provided UserEventPayload350OldSsoProtection0
+func (t *UserEvent_Payload_350_OldSsoProtection) MergeUserEventPayload350OldSsoProtection0(v UserEventPayload350OldSsoProtection0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10397,22 +10864,22 @@ func (t *UserEvent_Payload_348_SsoProtection) MergeUserEventPayload348SsoProtect
 	return err
 }
 
-// AsUserEventPayload348SsoProtection1 returns the union data inside the UserEvent_Payload_348_SsoProtection as a UserEventPayload348SsoProtection1
-func (t UserEvent_Payload_348_SsoProtection) AsUserEventPayload348SsoProtection1() (UserEventPayload348SsoProtection1, error) {
-	var body UserEventPayload348SsoProtection1
+// AsUserEventPayload350OldSsoProtection1 returns the union data inside the UserEvent_Payload_350_OldSsoProtection as a UserEventPayload350OldSsoProtection1
+func (t UserEvent_Payload_350_OldSsoProtection) AsUserEventPayload350OldSsoProtection1() (UserEventPayload350OldSsoProtection1, error) {
+	var body UserEventPayload350OldSsoProtection1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload348SsoProtection1 overwrites any union data inside the UserEvent_Payload_348_SsoProtection as the provided UserEventPayload348SsoProtection1
-func (t *UserEvent_Payload_348_SsoProtection) FromUserEventPayload348SsoProtection1(v UserEventPayload348SsoProtection1) error {
+// FromUserEventPayload350OldSsoProtection1 overwrites any union data inside the UserEvent_Payload_350_OldSsoProtection as the provided UserEventPayload350OldSsoProtection1
+func (t *UserEvent_Payload_350_OldSsoProtection) FromUserEventPayload350OldSsoProtection1(v UserEventPayload350OldSsoProtection1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload348SsoProtection1 performs a merge with any union data inside the UserEvent_Payload_348_SsoProtection, using the provided UserEventPayload348SsoProtection1
-func (t *UserEvent_Payload_348_SsoProtection) MergeUserEventPayload348SsoProtection1(v UserEventPayload348SsoProtection1) error {
+// MergeUserEventPayload350OldSsoProtection1 performs a merge with any union data inside the UserEvent_Payload_350_OldSsoProtection, using the provided UserEventPayload350OldSsoProtection1
+func (t *UserEvent_Payload_350_OldSsoProtection) MergeUserEventPayload350OldSsoProtection1(v UserEventPayload350OldSsoProtection1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10423,32 +10890,32 @@ func (t *UserEvent_Payload_348_SsoProtection) MergeUserEventPayload348SsoProtect
 	return err
 }
 
-func (t UserEvent_Payload_348_SsoProtection) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_350_OldSsoProtection) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_348_SsoProtection) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_350_OldSsoProtection) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload369Name0 returns the union data inside the UserEvent_Payload_369_Name as a UserEventPayload369Name0
-func (t UserEvent_Payload_369_Name) AsUserEventPayload369Name0() (UserEventPayload369Name0, error) {
-	var body UserEventPayload369Name0
+// AsUserEventPayload350SsoProtection0 returns the union data inside the UserEvent_Payload_350_SsoProtection as a UserEventPayload350SsoProtection0
+func (t UserEvent_Payload_350_SsoProtection) AsUserEventPayload350SsoProtection0() (UserEventPayload350SsoProtection0, error) {
+	var body UserEventPayload350SsoProtection0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload369Name0 overwrites any union data inside the UserEvent_Payload_369_Name as the provided UserEventPayload369Name0
-func (t *UserEvent_Payload_369_Name) FromUserEventPayload369Name0(v UserEventPayload369Name0) error {
+// FromUserEventPayload350SsoProtection0 overwrites any union data inside the UserEvent_Payload_350_SsoProtection as the provided UserEventPayload350SsoProtection0
+func (t *UserEvent_Payload_350_SsoProtection) FromUserEventPayload350SsoProtection0(v UserEventPayload350SsoProtection0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload369Name0 performs a merge with any union data inside the UserEvent_Payload_369_Name, using the provided UserEventPayload369Name0
-func (t *UserEvent_Payload_369_Name) MergeUserEventPayload369Name0(v UserEventPayload369Name0) error {
+// MergeUserEventPayload350SsoProtection0 performs a merge with any union data inside the UserEvent_Payload_350_SsoProtection, using the provided UserEventPayload350SsoProtection0
+func (t *UserEvent_Payload_350_SsoProtection) MergeUserEventPayload350SsoProtection0(v UserEventPayload350SsoProtection0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10459,22 +10926,22 @@ func (t *UserEvent_Payload_369_Name) MergeUserEventPayload369Name0(v UserEventPa
 	return err
 }
 
-// AsUserEventPayload369Name1 returns the union data inside the UserEvent_Payload_369_Name as a UserEventPayload369Name1
-func (t UserEvent_Payload_369_Name) AsUserEventPayload369Name1() (UserEventPayload369Name1, error) {
-	var body UserEventPayload369Name1
+// AsUserEventPayload350SsoProtection1 returns the union data inside the UserEvent_Payload_350_SsoProtection as a UserEventPayload350SsoProtection1
+func (t UserEvent_Payload_350_SsoProtection) AsUserEventPayload350SsoProtection1() (UserEventPayload350SsoProtection1, error) {
+	var body UserEventPayload350SsoProtection1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload369Name1 overwrites any union data inside the UserEvent_Payload_369_Name as the provided UserEventPayload369Name1
-func (t *UserEvent_Payload_369_Name) FromUserEventPayload369Name1(v UserEventPayload369Name1) error {
+// FromUserEventPayload350SsoProtection1 overwrites any union data inside the UserEvent_Payload_350_SsoProtection as the provided UserEventPayload350SsoProtection1
+func (t *UserEvent_Payload_350_SsoProtection) FromUserEventPayload350SsoProtection1(v UserEventPayload350SsoProtection1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload369Name1 performs a merge with any union data inside the UserEvent_Payload_369_Name, using the provided UserEventPayload369Name1
-func (t *UserEvent_Payload_369_Name) MergeUserEventPayload369Name1(v UserEventPayload369Name1) error {
+// MergeUserEventPayload350SsoProtection1 performs a merge with any union data inside the UserEvent_Payload_350_SsoProtection, using the provided UserEventPayload350SsoProtection1
+func (t *UserEvent_Payload_350_SsoProtection) MergeUserEventPayload350SsoProtection1(v UserEventPayload350SsoProtection1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10485,32 +10952,32 @@ func (t *UserEvent_Payload_369_Name) MergeUserEventPayload369Name1(v UserEventPa
 	return err
 }
 
-func (t UserEvent_Payload_369_Name) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_350_SsoProtection) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_369_Name) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_350_SsoProtection) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload432Next0 returns the union data inside the UserEvent_Payload_432_Next_AdditionalProperties as a UserEventPayload432Next0
-func (t UserEvent_Payload_432_Next_AdditionalProperties) AsUserEventPayload432Next0() (UserEventPayload432Next0, error) {
-	var body UserEventPayload432Next0
+// AsUserEventPayload371Name0 returns the union data inside the UserEvent_Payload_371_Name as a UserEventPayload371Name0
+func (t UserEvent_Payload_371_Name) AsUserEventPayload371Name0() (UserEventPayload371Name0, error) {
+	var body UserEventPayload371Name0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload432Next0 overwrites any union data inside the UserEvent_Payload_432_Next_AdditionalProperties as the provided UserEventPayload432Next0
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) FromUserEventPayload432Next0(v UserEventPayload432Next0) error {
+// FromUserEventPayload371Name0 overwrites any union data inside the UserEvent_Payload_371_Name as the provided UserEventPayload371Name0
+func (t *UserEvent_Payload_371_Name) FromUserEventPayload371Name0(v UserEventPayload371Name0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload432Next0 performs a merge with any union data inside the UserEvent_Payload_432_Next_AdditionalProperties, using the provided UserEventPayload432Next0
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) MergeUserEventPayload432Next0(v UserEventPayload432Next0) error {
+// MergeUserEventPayload371Name0 performs a merge with any union data inside the UserEvent_Payload_371_Name, using the provided UserEventPayload371Name0
+func (t *UserEvent_Payload_371_Name) MergeUserEventPayload371Name0(v UserEventPayload371Name0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10521,22 +10988,22 @@ func (t *UserEvent_Payload_432_Next_AdditionalProperties) MergeUserEventPayload4
 	return err
 }
 
-// AsUserEventPayload432Next1 returns the union data inside the UserEvent_Payload_432_Next_AdditionalProperties as a UserEventPayload432Next1
-func (t UserEvent_Payload_432_Next_AdditionalProperties) AsUserEventPayload432Next1() (UserEventPayload432Next1, error) {
-	var body UserEventPayload432Next1
+// AsUserEventPayload371Name1 returns the union data inside the UserEvent_Payload_371_Name as a UserEventPayload371Name1
+func (t UserEvent_Payload_371_Name) AsUserEventPayload371Name1() (UserEventPayload371Name1, error) {
+	var body UserEventPayload371Name1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload432Next1 overwrites any union data inside the UserEvent_Payload_432_Next_AdditionalProperties as the provided UserEventPayload432Next1
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) FromUserEventPayload432Next1(v UserEventPayload432Next1) error {
+// FromUserEventPayload371Name1 overwrites any union data inside the UserEvent_Payload_371_Name as the provided UserEventPayload371Name1
+func (t *UserEvent_Payload_371_Name) FromUserEventPayload371Name1(v UserEventPayload371Name1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload432Next1 performs a merge with any union data inside the UserEvent_Payload_432_Next_AdditionalProperties, using the provided UserEventPayload432Next1
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) MergeUserEventPayload432Next1(v UserEventPayload432Next1) error {
+// MergeUserEventPayload371Name1 performs a merge with any union data inside the UserEvent_Payload_371_Name, using the provided UserEventPayload371Name1
+func (t *UserEvent_Payload_371_Name) MergeUserEventPayload371Name1(v UserEventPayload371Name1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10547,58 +11014,32 @@ func (t *UserEvent_Payload_432_Next_AdditionalProperties) MergeUserEventPayload4
 	return err
 }
 
-// AsUserEventPayload432Next2 returns the union data inside the UserEvent_Payload_432_Next_AdditionalProperties as a UserEventPayload432Next2
-func (t UserEvent_Payload_432_Next_AdditionalProperties) AsUserEventPayload432Next2() (UserEventPayload432Next2, error) {
-	var body UserEventPayload432Next2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload432Next2 overwrites any union data inside the UserEvent_Payload_432_Next_AdditionalProperties as the provided UserEventPayload432Next2
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) FromUserEventPayload432Next2(v UserEventPayload432Next2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload432Next2 performs a merge with any union data inside the UserEvent_Payload_432_Next_AdditionalProperties, using the provided UserEventPayload432Next2
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) MergeUserEventPayload432Next2(v UserEventPayload432Next2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UserEvent_Payload_432_Next_AdditionalProperties) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_371_Name) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_432_Next_AdditionalProperties) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_371_Name) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload432Previous0 returns the union data inside the UserEvent_Payload_432_Previous_AdditionalProperties as a UserEventPayload432Previous0
-func (t UserEvent_Payload_432_Previous_AdditionalProperties) AsUserEventPayload432Previous0() (UserEventPayload432Previous0, error) {
-	var body UserEventPayload432Previous0
+// AsUserEventPayload434Next0 returns the union data inside the UserEvent_Payload_434_Next_AdditionalProperties as a UserEventPayload434Next0
+func (t UserEvent_Payload_434_Next_AdditionalProperties) AsUserEventPayload434Next0() (UserEventPayload434Next0, error) {
+	var body UserEventPayload434Next0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload432Previous0 overwrites any union data inside the UserEvent_Payload_432_Previous_AdditionalProperties as the provided UserEventPayload432Previous0
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) FromUserEventPayload432Previous0(v UserEventPayload432Previous0) error {
+// FromUserEventPayload434Next0 overwrites any union data inside the UserEvent_Payload_434_Next_AdditionalProperties as the provided UserEventPayload434Next0
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) FromUserEventPayload434Next0(v UserEventPayload434Next0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload432Previous0 performs a merge with any union data inside the UserEvent_Payload_432_Previous_AdditionalProperties, using the provided UserEventPayload432Previous0
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) MergeUserEventPayload432Previous0(v UserEventPayload432Previous0) error {
+// MergeUserEventPayload434Next0 performs a merge with any union data inside the UserEvent_Payload_434_Next_AdditionalProperties, using the provided UserEventPayload434Next0
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) MergeUserEventPayload434Next0(v UserEventPayload434Next0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10609,22 +11050,22 @@ func (t *UserEvent_Payload_432_Previous_AdditionalProperties) MergeUserEventPayl
 	return err
 }
 
-// AsUserEventPayload432Previous1 returns the union data inside the UserEvent_Payload_432_Previous_AdditionalProperties as a UserEventPayload432Previous1
-func (t UserEvent_Payload_432_Previous_AdditionalProperties) AsUserEventPayload432Previous1() (UserEventPayload432Previous1, error) {
-	var body UserEventPayload432Previous1
+// AsUserEventPayload434Next1 returns the union data inside the UserEvent_Payload_434_Next_AdditionalProperties as a UserEventPayload434Next1
+func (t UserEvent_Payload_434_Next_AdditionalProperties) AsUserEventPayload434Next1() (UserEventPayload434Next1, error) {
+	var body UserEventPayload434Next1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload432Previous1 overwrites any union data inside the UserEvent_Payload_432_Previous_AdditionalProperties as the provided UserEventPayload432Previous1
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) FromUserEventPayload432Previous1(v UserEventPayload432Previous1) error {
+// FromUserEventPayload434Next1 overwrites any union data inside the UserEvent_Payload_434_Next_AdditionalProperties as the provided UserEventPayload434Next1
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) FromUserEventPayload434Next1(v UserEventPayload434Next1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload432Previous1 performs a merge with any union data inside the UserEvent_Payload_432_Previous_AdditionalProperties, using the provided UserEventPayload432Previous1
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) MergeUserEventPayload432Previous1(v UserEventPayload432Previous1) error {
+// MergeUserEventPayload434Next1 performs a merge with any union data inside the UserEvent_Payload_434_Next_AdditionalProperties, using the provided UserEventPayload434Next1
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) MergeUserEventPayload434Next1(v UserEventPayload434Next1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10635,22 +11076,22 @@ func (t *UserEvent_Payload_432_Previous_AdditionalProperties) MergeUserEventPayl
 	return err
 }
 
-// AsUserEventPayload432Previous2 returns the union data inside the UserEvent_Payload_432_Previous_AdditionalProperties as a UserEventPayload432Previous2
-func (t UserEvent_Payload_432_Previous_AdditionalProperties) AsUserEventPayload432Previous2() (UserEventPayload432Previous2, error) {
-	var body UserEventPayload432Previous2
+// AsUserEventPayload434Next2 returns the union data inside the UserEvent_Payload_434_Next_AdditionalProperties as a UserEventPayload434Next2
+func (t UserEvent_Payload_434_Next_AdditionalProperties) AsUserEventPayload434Next2() (UserEventPayload434Next2, error) {
+	var body UserEventPayload434Next2
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload432Previous2 overwrites any union data inside the UserEvent_Payload_432_Previous_AdditionalProperties as the provided UserEventPayload432Previous2
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) FromUserEventPayload432Previous2(v UserEventPayload432Previous2) error {
+// FromUserEventPayload434Next2 overwrites any union data inside the UserEvent_Payload_434_Next_AdditionalProperties as the provided UserEventPayload434Next2
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) FromUserEventPayload434Next2(v UserEventPayload434Next2) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload432Previous2 performs a merge with any union data inside the UserEvent_Payload_432_Previous_AdditionalProperties, using the provided UserEventPayload432Previous2
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) MergeUserEventPayload432Previous2(v UserEventPayload432Previous2) error {
+// MergeUserEventPayload434Next2 performs a merge with any union data inside the UserEvent_Payload_434_Next_AdditionalProperties, using the provided UserEventPayload434Next2
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) MergeUserEventPayload434Next2(v UserEventPayload434Next2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -10661,12 +11102,100 @@ func (t *UserEvent_Payload_432_Previous_AdditionalProperties) MergeUserEventPayl
 	return err
 }
 
-func (t UserEvent_Payload_432_Previous_AdditionalProperties) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_434_Next_AdditionalProperties) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_432_Previous_AdditionalProperties) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_434_Next_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUserEventPayload434Previous0 returns the union data inside the UserEvent_Payload_434_Previous_AdditionalProperties as a UserEventPayload434Previous0
+func (t UserEvent_Payload_434_Previous_AdditionalProperties) AsUserEventPayload434Previous0() (UserEventPayload434Previous0, error) {
+	var body UserEventPayload434Previous0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload434Previous0 overwrites any union data inside the UserEvent_Payload_434_Previous_AdditionalProperties as the provided UserEventPayload434Previous0
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) FromUserEventPayload434Previous0(v UserEventPayload434Previous0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload434Previous0 performs a merge with any union data inside the UserEvent_Payload_434_Previous_AdditionalProperties, using the provided UserEventPayload434Previous0
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) MergeUserEventPayload434Previous0(v UserEventPayload434Previous0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload434Previous1 returns the union data inside the UserEvent_Payload_434_Previous_AdditionalProperties as a UserEventPayload434Previous1
+func (t UserEvent_Payload_434_Previous_AdditionalProperties) AsUserEventPayload434Previous1() (UserEventPayload434Previous1, error) {
+	var body UserEventPayload434Previous1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload434Previous1 overwrites any union data inside the UserEvent_Payload_434_Previous_AdditionalProperties as the provided UserEventPayload434Previous1
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) FromUserEventPayload434Previous1(v UserEventPayload434Previous1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload434Previous1 performs a merge with any union data inside the UserEvent_Payload_434_Previous_AdditionalProperties, using the provided UserEventPayload434Previous1
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) MergeUserEventPayload434Previous1(v UserEventPayload434Previous1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload434Previous2 returns the union data inside the UserEvent_Payload_434_Previous_AdditionalProperties as a UserEventPayload434Previous2
+func (t UserEvent_Payload_434_Previous_AdditionalProperties) AsUserEventPayload434Previous2() (UserEventPayload434Previous2, error) {
+	var body UserEventPayload434Previous2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload434Previous2 overwrites any union data inside the UserEvent_Payload_434_Previous_AdditionalProperties as the provided UserEventPayload434Previous2
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) FromUserEventPayload434Previous2(v UserEventPayload434Previous2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload434Previous2 performs a merge with any union data inside the UserEvent_Payload_434_Previous_AdditionalProperties, using the provided UserEventPayload434Previous2
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) MergeUserEventPayload434Previous2(v UserEventPayload434Previous2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UserEvent_Payload_434_Previous_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UserEvent_Payload_434_Previous_AdditionalProperties) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -13739,6 +14268,32 @@ func (t *UserEvent_Payload) MergeUserEventPayload117(v UserEventPayload117) erro
 	return err
 }
 
+// AsUserEventPayload118 returns the union data inside the UserEvent_Payload as a UserEventPayload118
+func (t UserEvent_Payload) AsUserEventPayload118() (UserEventPayload118, error) {
+	var body UserEventPayload118
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload118 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload118
+func (t *UserEvent_Payload) FromUserEventPayload118(v UserEventPayload118) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload118 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload118
+func (t *UserEvent_Payload) MergeUserEventPayload118(v UserEventPayload118) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsDeploymentCheckUpdatedPayload returns the union data inside the UserEvent_Payload as a DeploymentCheckUpdatedPayload
 func (t UserEvent_Payload) AsDeploymentCheckUpdatedPayload() (DeploymentCheckUpdatedPayload, error) {
 	var body DeploymentCheckUpdatedPayload
@@ -13755,32 +14310,6 @@ func (t *UserEvent_Payload) FromDeploymentCheckUpdatedPayload(v DeploymentCheckU
 
 // MergeDeploymentCheckUpdatedPayload performs a merge with any union data inside the UserEvent_Payload, using the provided DeploymentCheckUpdatedPayload
 func (t *UserEvent_Payload) MergeDeploymentCheckUpdatedPayload(v DeploymentCheckUpdatedPayload) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload119 returns the union data inside the UserEvent_Payload as a UserEventPayload119
-func (t UserEvent_Payload) AsUserEventPayload119() (UserEventPayload119, error) {
-	var body UserEventPayload119
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload119 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload119
-func (t *UserEvent_Payload) FromUserEventPayload119(v UserEventPayload119) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload119 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload119
-func (t *UserEvent_Payload) MergeUserEventPayload119(v UserEventPayload119) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -19483,531 +20012,4 @@ func (t *UserEvent_Payload) MergeUserEventPayload338(v UserEventPayload338) erro
 	merged, err := runtime.JSONMerge(t.union, b)
 	t.union = merged
 	return err
-}
-
-// AsUserEventPayload339 returns the union data inside the UserEvent_Payload as a UserEventPayload339
-func (t UserEvent_Payload) AsUserEventPayload339() (UserEventPayload339, error) {
-	var body UserEventPayload339
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload339 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload339
-func (t *UserEvent_Payload) FromUserEventPayload339(v UserEventPayload339) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload339 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload339
-func (t *UserEvent_Payload) MergeUserEventPayload339(v UserEventPayload339) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload340 returns the union data inside the UserEvent_Payload as a UserEventPayload340
-func (t UserEvent_Payload) AsUserEventPayload340() (UserEventPayload340, error) {
-	var body UserEventPayload340
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload340 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload340
-func (t *UserEvent_Payload) FromUserEventPayload340(v UserEventPayload340) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload340 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload340
-func (t *UserEvent_Payload) MergeUserEventPayload340(v UserEventPayload340) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload341 returns the union data inside the UserEvent_Payload as a UserEventPayload341
-func (t UserEvent_Payload) AsUserEventPayload341() (UserEventPayload341, error) {
-	var body UserEventPayload341
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload341 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload341
-func (t *UserEvent_Payload) FromUserEventPayload341(v UserEventPayload341) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload341 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload341
-func (t *UserEvent_Payload) MergeUserEventPayload341(v UserEventPayload341) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload342 returns the union data inside the UserEvent_Payload as a UserEventPayload342
-func (t UserEvent_Payload) AsUserEventPayload342() (UserEventPayload342, error) {
-	var body UserEventPayload342
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload342 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload342
-func (t *UserEvent_Payload) FromUserEventPayload342(v UserEventPayload342) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload342 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload342
-func (t *UserEvent_Payload) MergeUserEventPayload342(v UserEventPayload342) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload343 returns the union data inside the UserEvent_Payload as a UserEventPayload343
-func (t UserEvent_Payload) AsUserEventPayload343() (UserEventPayload343, error) {
-	var body UserEventPayload343
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload343 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload343
-func (t *UserEvent_Payload) FromUserEventPayload343(v UserEventPayload343) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload343 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload343
-func (t *UserEvent_Payload) MergeUserEventPayload343(v UserEventPayload343) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload344 returns the union data inside the UserEvent_Payload as a UserEventPayload344
-func (t UserEvent_Payload) AsUserEventPayload344() (UserEventPayload344, error) {
-	var body UserEventPayload344
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload344 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload344
-func (t *UserEvent_Payload) FromUserEventPayload344(v UserEventPayload344) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload344 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload344
-func (t *UserEvent_Payload) MergeUserEventPayload344(v UserEventPayload344) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload345 returns the union data inside the UserEvent_Payload as a UserEventPayload345
-func (t UserEvent_Payload) AsUserEventPayload345() (UserEventPayload345, error) {
-	var body UserEventPayload345
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload345 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload345
-func (t *UserEvent_Payload) FromUserEventPayload345(v UserEventPayload345) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload345 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload345
-func (t *UserEvent_Payload) MergeUserEventPayload345(v UserEventPayload345) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload346 returns the union data inside the UserEvent_Payload as a UserEventPayload346
-func (t UserEvent_Payload) AsUserEventPayload346() (UserEventPayload346, error) {
-	var body UserEventPayload346
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload346 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload346
-func (t *UserEvent_Payload) FromUserEventPayload346(v UserEventPayload346) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload346 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload346
-func (t *UserEvent_Payload) MergeUserEventPayload346(v UserEventPayload346) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload347 returns the union data inside the UserEvent_Payload as a UserEventPayload347
-func (t UserEvent_Payload) AsUserEventPayload347() (UserEventPayload347, error) {
-	var body UserEventPayload347
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload347 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload347
-func (t *UserEvent_Payload) FromUserEventPayload347(v UserEventPayload347) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload347 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload347
-func (t *UserEvent_Payload) MergeUserEventPayload347(v UserEventPayload347) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload348 returns the union data inside the UserEvent_Payload as a UserEventPayload348
-func (t UserEvent_Payload) AsUserEventPayload348() (UserEventPayload348, error) {
-	var body UserEventPayload348
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload348 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload348
-func (t *UserEvent_Payload) FromUserEventPayload348(v UserEventPayload348) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload348 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload348
-func (t *UserEvent_Payload) MergeUserEventPayload348(v UserEventPayload348) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload349 returns the union data inside the UserEvent_Payload as a UserEventPayload349
-func (t UserEvent_Payload) AsUserEventPayload349() (UserEventPayload349, error) {
-	var body UserEventPayload349
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload349 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload349
-func (t *UserEvent_Payload) FromUserEventPayload349(v UserEventPayload349) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload349 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload349
-func (t *UserEvent_Payload) MergeUserEventPayload349(v UserEventPayload349) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload350 returns the union data inside the UserEvent_Payload as a UserEventPayload350
-func (t UserEvent_Payload) AsUserEventPayload350() (UserEventPayload350, error) {
-	var body UserEventPayload350
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload350 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload350
-func (t *UserEvent_Payload) FromUserEventPayload350(v UserEventPayload350) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload350 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload350
-func (t *UserEvent_Payload) MergeUserEventPayload350(v UserEventPayload350) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload351 returns the union data inside the UserEvent_Payload as a UserEventPayload351
-func (t UserEvent_Payload) AsUserEventPayload351() (UserEventPayload351, error) {
-	var body UserEventPayload351
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload351 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload351
-func (t *UserEvent_Payload) FromUserEventPayload351(v UserEventPayload351) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload351 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload351
-func (t *UserEvent_Payload) MergeUserEventPayload351(v UserEventPayload351) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload352 returns the union data inside the UserEvent_Payload as a UserEventPayload352
-func (t UserEvent_Payload) AsUserEventPayload352() (UserEventPayload352, error) {
-	var body UserEventPayload352
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload352 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload352
-func (t *UserEvent_Payload) FromUserEventPayload352(v UserEventPayload352) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload352 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload352
-func (t *UserEvent_Payload) MergeUserEventPayload352(v UserEventPayload352) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload353 returns the union data inside the UserEvent_Payload as a UserEventPayload353
-func (t UserEvent_Payload) AsUserEventPayload353() (UserEventPayload353, error) {
-	var body UserEventPayload353
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload353 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload353
-func (t *UserEvent_Payload) FromUserEventPayload353(v UserEventPayload353) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload353 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload353
-func (t *UserEvent_Payload) MergeUserEventPayload353(v UserEventPayload353) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload354 returns the union data inside the UserEvent_Payload as a UserEventPayload354
-func (t UserEvent_Payload) AsUserEventPayload354() (UserEventPayload354, error) {
-	var body UserEventPayload354
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload354 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload354
-func (t *UserEvent_Payload) FromUserEventPayload354(v UserEventPayload354) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload354 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload354
-func (t *UserEvent_Payload) MergeUserEventPayload354(v UserEventPayload354) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload355 returns the union data inside the UserEvent_Payload as a UserEventPayload355
-func (t UserEvent_Payload) AsUserEventPayload355() (UserEventPayload355, error) {
-	var body UserEventPayload355
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload355 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload355
-func (t *UserEvent_Payload) FromUserEventPayload355(v UserEventPayload355) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload355 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload355
-func (t *UserEvent_Payload) MergeUserEventPayload355(v UserEventPayload355) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload356 returns the union data inside the UserEvent_Payload as a UserEventPayload356
-func (t UserEvent_Payload) AsUserEventPayload356() (UserEventPayload356, error) {
-	var body UserEventPayload356
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload356 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload356
-func (t *UserEvent_Payload) FromUserEventPayload356(v UserEventPayload356) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload356 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload356
-func (t *UserEvent_Payload) MergeUserEventPayload356(v UserEventPayload356) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload357 returns the union data inside the UserEvent_Payload as a UserEventPayload357
-func (t UserEvent_Payload) AsUserEventPayload357() (UserEventPayload357, error) {
-	var body UserEventPayload357
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload357 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload357
-func (t *UserEvent_Payload) FromUserEventPayload357(v UserEventPayload357) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload357 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload357
-func (t *UserEvent_Payload) MergeUserEventPayload357(v UserEventPayload357) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload358 returns the union data inside the UserEvent_Payload as a UserEventPayload358
-func (t UserEvent_Payload) AsUserEventPayload358() (UserEventPayload358, error) {
-	var body UserEventPayload358
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload358 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload358
-func (t *UserEvent_Payload) FromUserEventPayload358(v UserEventPayload358) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload358 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload358
-func (t *UserEvent_Payload) MergeUserEventPayload358(v UserEventPayload358) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload359 returns the union data inside the UserEvent_Payload as a UserEventPayload359
-func (t UserEvent_Payload) AsUserEventPayload359() (UserEventPayload359, error) {
-	var body UserEventPayload359
-	err := json.Unmarshal(t.union, &body)
-	return body, err
 }

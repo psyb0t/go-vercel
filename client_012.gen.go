@@ -10,6 +10,422 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigBundle defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigBundle bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsFormat defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsFormat string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonResourcesRequestsMemory defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonResourcesRequestsMemory string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigDebug defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigDebug bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0 = string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsAffinityMode defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsAffinityMode string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsArchitecture defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsArchitecture string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0 struct {
+	// Consumer Name of the consumer group for this trigger (REQUIRED)
+	Consumer string `json:"consumer"`
+
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v1beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0Type string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1 struct {
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v2beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1Type string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2 struct {
+	// Type Event type - must be "schedule/v1beta" (REQUIRED)
+	Type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2Type `json:"type"`
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2Type string
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0 = float32
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1 string
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsSupportsCancellation defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigFunctionsSupportsCancellation bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigHelpers defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigHelpers bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0 = string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddleware defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddleware bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0 = string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareRuntime defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareRuntime string
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsAutoExposeSystemEnvs defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsAutoExposeSystemEnvs bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsDirectoryListing defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsDirectoryListing bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsGitForkProtection defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsGitForkProtection bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory bool
+
+// CreateDeployment200JSONResponseBody1Services0BuilderConfigZeroConfig defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0BuilderConfigZeroConfig bool
+
+// CreateDeployment200JSONResponseBody1Services0EnvType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0EnvType string
+
+// CreateDeployment200JSONResponseBody1Services0RoutePrefixSource defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0RoutePrefixSource string
+
+// CreateDeployment200JSONResponseBody1Services0Schedule0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Schedule0 = string
+
+// CreateDeployment200JSONResponseBody1Services0Schedule1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Schedule1 = []string
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Schedule defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Schedule struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0Schema defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Schema string
+
+// CreateDeployment200JSONResponseBody1Services0Topics0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Topics0 = []string
+
+// CreateDeployment200JSONResponseBody1Services0Topics1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Topics1 = []struct {
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+	RetryAfterSeconds   *float32 `json:"retryAfterSeconds,omitempty"`
+	Topic               string   `json:"topic"`
+}
+
+// CreateDeployment200JSONResponseBody_1_Services_0_Topics defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Services_0_Topics struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Services0Trigger defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Trigger string
+
+// CreateDeployment200JSONResponseBody1Services0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services0Type string
+
+// CreateDeployment200JSONResponseBody1Services1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1 struct {
+	// Bindings Caller-side bindings to other services.
+	Bindings *[]struct {
+		// Env Environment variable name that will store the generated value
+		Env string `json:"env"`
+
+		// Format Generated value shape, must be `"url"`.
+		Format CreateDeployment200JSONResponseBody1Services1BindingsFormat `json:"format"`
+
+		// Service Target service name from `services`.
+		Service string `json:"service"`
+
+		// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
+		Type *CreateDeployment200JSONResponseBody1Services1BindingsType `json:"type,omitempty"`
+	} `json:"bindings,omitempty"`
+	BuildCommand *string `json:"buildCommand,omitempty"`
+
+	// Builder Builder selected by the resolver.
+	Builder struct {
+		Config *struct {
+			BuildCommand *string `json:"buildCommand,omitempty"`
+
+			// Buildpack Buildpack runtime slug (e.g. "ruby").
+			Buildpack  *string                                                           `json:"buildpack,omitempty"`
+			BunVersion *string                                                           `json:"bunVersion,omitempty"`
+			Bundle     *CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle `json:"bundle,omitempty"`
+
+			// Daemon Set when this build produces the named daemon.
+			Daemon *struct {
+				// Bindings Bindings to services in the same deployment.
+				Bindings *[]struct {
+					// Env Environment variable name that will store the generated value
+					Env string `json:"env"`
+
+					// Format Generated value shape, must be `"url"`.
+					Format CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsFormat `json:"format"`
+
+					// Service Target service name from `services`.
+					Service string `json:"service"`
+
+					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
+					Type *CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType `json:"type,omitempty"`
+				} `json:"bindings,omitempty"`
+				Command    *[]string `json:"command,omitempty"`
+				Entrypoint string    `json:"entrypoint"`
+
+				// Instances Instance counts by region.
+				Instances *map[string]float32 `json:"instances,omitempty"`
+				Name      string              `json:"name"`
+
+				// Replicas Instance counts by region.
+				Replicas  *map[string]float32 `json:"replicas,omitempty"`
+				Resources *struct {
+					Requests struct {
+						Memory CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory `json:"memory"`
+					} `json:"requests"`
+				} `json:"resources,omitempty"`
+				Root                          string   `json:"root"`
+				TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
+			} `json:"daemon,omitempty"`
+			Debug        *CreateDeployment200JSONResponseBody1Services1BuilderConfigDebug              `json:"debug,omitempty"`
+			DevCommand   *string                                                                       `json:"devCommand,omitempty"`
+			ExcludeFiles *CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles `json:"excludeFiles,omitempty"`
+			Framework    *string                                                                       `json:"framework,omitempty"`
+			Functions    *map[string]struct {
+				Affinity *struct {
+					Mode CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsAffinityMode `json:"mode"`
+				} `json:"affinity,omitempty"`
+				Architecture            *CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsArchitecture                       `json:"architecture,omitempty"`
+				ExcludeFiles            *string                                                                                                `json:"excludeFiles,omitempty"`
+				ExperimentalTriggers    *[]CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
+				FunctionFailoverRegions *[]string                                                                                              `json:"functionFailoverRegions,omitempty"`
+				IncludeFiles            *string                                                                                                `json:"includeFiles,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                                                  `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                                                 `json:"maxConcurrency,omitempty"`
+				MaxDuration          *CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration   `json:"maxDuration,omitempty"`
+				Memory               *float32                                                                                 `json:"memory,omitempty"`
+				Regions              *[]string                                                                                `json:"regions,omitempty"`
+				Runtime              *string                                                                                  `json:"runtime,omitempty"`
+				SupportsCancellation *CreateDeployment200JSONResponseBody1Services1BuilderConfigFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
+			} `json:"functions,omitempty"`
+			Helpers           *CreateDeployment200JSONResponseBody1Services1BuilderConfigHelpers                 `json:"helpers,omitempty"`
+			Import            *map[string]string                                                                 `json:"import,omitempty"`
+			IncludeFiles      *CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles      `json:"includeFiles,omitempty"`
+			InstallCommand    *string                                                                            `json:"installCommand,omitempty"`
+			Ldsflags          *string                                                                            `json:"ldsflags,omitempty"`
+			MaxLambdaSize     *string                                                                            `json:"maxLambdaSize,omitempty"`
+			Middleware        *CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddleware              `json:"middleware,omitempty"`
+			MiddlewareMatcher *CreateDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher `json:"middlewareMatcher,omitempty"`
+
+			// MiddlewareRuntime Enforced runtime for explicitly configured Routing Middleware.
+			MiddlewareRuntime *CreateDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareRuntime `json:"middlewareRuntime,omitempty"`
+			NodeVersion       *string                                                                      `json:"nodeVersion,omitempty"`
+			OutputDirectory   *string                                                                      `json:"outputDirectory,omitempty"`
+			ProjectSettings   *struct {
+				AutoExposeSystemEnvs            *CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsAutoExposeSystemEnvs            `json:"autoExposeSystemEnvs,omitempty"`
+				BuildCommand                    *string                                                                                                   `json:"buildCommand,omitempty"`
+				CommandForIgnoringBuildStep     *string                                                                                                   `json:"commandForIgnoringBuildStep,omitempty"`
+				CreatedAt                       *float32                                                                                                  `json:"createdAt,omitempty"`
+				DevCommand                      *string                                                                                                   `json:"devCommand,omitempty"`
+				DirectoryListing                *CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsDirectoryListing                `json:"directoryListing,omitempty"`
+				Framework                       *string                                                                                                   `json:"framework,omitempty"`
+				GitForkProtection               *CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsGitForkProtection               `json:"gitForkProtection,omitempty"`
+				InstallCommand                  *string                                                                                                   `json:"installCommand,omitempty"`
+				MonorepoManager                 *string                                                                                                   `json:"monorepoManager,omitempty"`
+				NodeVersion                     *string                                                                                                   `json:"nodeVersion,omitempty"`
+				OutputDirectory                 *string                                                                                                   `json:"outputDirectory,omitempty"`
+				RootDirectory                   *string                                                                                                   `json:"rootDirectory,omitempty"`
+				SourceFilesOutsideRootDirectory *CreateDeployment200JSONResponseBody1Services1BuilderConfigProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+				VercelFlags                     *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
+			} `json:"projectSettings,omitempty"`
+			Rust *string `json:"rust,omitempty"`
+
+			// ScheduleFunction Set when this build produces a function for schedule entrypoints.
+			ScheduleFunction *struct {
+				Entrypoints []struct {
+					// Entrypoint Runtime-specific entrypoint locator from `vercel.json`.
+					Entrypoint string `json:"entrypoint"`
+
+					// ScheduleNames Names of the schedules that dispatch to this entrypoint, in config order.
+					ScheduleNames []string `json:"scheduleNames"`
+
+					// SourceFile Project-relative source file that contains the entrypoint.
+					SourceFile string `json:"sourceFile"`
+				} `json:"entrypoints"`
+
+				// OutputPath Function output path every schedule in this build targets.
+				OutputPath string `json:"outputPath"`
+			} `json:"scheduleFunction,omitempty"`
+
+			// ServiceName Owning service name; scopes per-function config such as the v2beta consumer.
+			ServiceName *string                                                               `json:"serviceName,omitempty"`
+			ZeroConfig  *CreateDeployment200JSONResponseBody1Services1BuilderConfigZeroConfig `json:"zeroConfig,omitempty"`
+		} `json:"config,omitempty"`
+		Src *string `json:"src,omitempty"`
+		Use string  `json:"use"`
+	} `json:"builder"`
+	CleanUrls *CreateDeployment200JSONResponseBody1Services1CleanUrls `json:"cleanUrls,omitempty"`
+
+	// Command Command override for `runtime: "container"` services.
+	Command    *[]string `json:"command,omitempty"`
+	DevCommand *string   `json:"devCommand,omitempty"`
+
+	// Entrypoint Resolved entrypoint, relative to the service root.
+	Entrypoint *string `json:"entrypoint,omitempty"`
+	Framework  *string `json:"framework,omitempty"`
+
+	// Functions Function configuration scoped to this service.
+	Functions *map[string]struct {
+		Affinity *struct {
+			Mode CreateDeployment200JSONResponseBody1Services1FunctionsAffinityMode `json:"mode"`
+		} `json:"affinity,omitempty"`
+		Architecture            *CreateDeployment200JSONResponseBody1Services1FunctionsArchitecture                     `json:"architecture,omitempty"`
+		ExcludeFiles            *string                                                                                 `json:"excludeFiles,omitempty"`
+		ExperimentalTriggers    *[]CreateDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
+		FunctionFailoverRegions *[]string                                                                               `json:"functionFailoverRegions,omitempty"`
+		IncludeFiles            *string                                                                                 `json:"includeFiles,omitempty"`
+
+		// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+		InstallCommand       *string                                                                     `json:"installCommand,omitempty"`
+		MaxConcurrency       *float32                                                                    `json:"maxConcurrency,omitempty"`
+		MaxDuration          *CreateDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration     `json:"maxDuration,omitempty"`
+		Memory               *float32                                                                    `json:"memory,omitempty"`
+		Regions              *[]string                                                                   `json:"regions,omitempty"`
+		Runtime              *string                                                                     `json:"runtime,omitempty"`
+		SupportsCancellation *CreateDeployment200JSONResponseBody1Services1FunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
+	} `json:"functions,omitempty"`
+	Headers *[]struct {
+		Has     *[]CreateDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item `json:"has,omitempty"`
+		Headers []struct {
+			Key   string `json:"key"`
+			Value string `json:"value"`
+		} `json:"headers"`
+		Missing *[]CreateDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item `json:"missing,omitempty"`
+		Source  string                                                                   `json:"source"`
+	} `json:"headers,omitempty"`
+	IgnoreCommand   *string `json:"ignoreCommand,omitempty"`
+	InstallCommand  *string `json:"installCommand,omitempty"`
+	Name            string  `json:"name"`
+	OutputDirectory *string `json:"outputDirectory,omitempty"`
+	Redirects       *[]struct {
+		Destination string                                                                     `json:"destination"`
+		Env         *[]string                                                                  `json:"env,omitempty"`
+		Has         *[]CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item     `json:"has,omitempty"`
+		Missing     *[]CreateDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item `json:"missing,omitempty"`
+		Permanent   *CreateDeployment200JSONResponseBody1Services1RedirectsPermanent           `json:"permanent,omitempty"`
+		Source      string                                                                     `json:"source"`
+		StatusCode  *float32                                                                   `json:"statusCode,omitempty"`
+	} `json:"redirects,omitempty"`
+	Rewrites *[]struct {
+		Destination               CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination           `json:"destination"`
+		Env                       *[]string                                                                       `json:"env,omitempty"`
+		Has                       *[]CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item           `json:"has,omitempty"`
+		Missing                   *[]CreateDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item       `json:"missing,omitempty"`
+		RespectOriginCacheControl *CreateDeployment200JSONResponseBody1Services1RewritesRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+		Source                    string                                                                          `json:"source"`
+		StatusCode                *float32                                                                        `json:"statusCode,omitempty"`
+		Transforms                *[]struct {
+			Args string                                                              `json:"args"`
+			Env  *[]string                                                           `json:"env,omitempty"`
+			Op   CreateDeployment200JSONResponseBody1Services1RewritesTransformsOp   `json:"op"`
+			Type CreateDeployment200JSONResponseBody1Services1RewritesTransformsType `json:"type"`
+		} `json:"transforms,omitempty"`
+	} `json:"rewrites,omitempty"`
+
+	// Root Path to the service root, relative to the project root.
+	Root          string                                                          `json:"root"`
+	Routes        *[]CreateDeployment200JSONResponseBody_1_Services_1_Routes_Item `json:"routes,omitempty"`
+	Runtime       *string                                                         `json:"runtime,omitempty"`
+	Schema        CreateDeployment200JSONResponseBody1Services1Schema             `json:"schema"`
+	TrailingSlash *CreateDeployment200JSONResponseBody1Services1TrailingSlash     `json:"trailingSlash,omitempty"`
+}
+
 // CreateDeployment200JSONResponseBody1Services1BindingsFormat defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Services1BindingsFormat string
 
@@ -18,6 +434,12 @@ type CreateDeployment200JSONResponseBody1Services1BindingsType string
 
 // CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Services1BuilderConfigBundle bool
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsFormat defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsFormat string
+
+// CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType string
 
 // CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory string
@@ -1733,26 +2155,7 @@ type GetDeployment200JSONResponseBody1 struct {
 	// Example: ["sfo1"]
 	Regions        []string `json:"regions"`
 	ResourceConfig *struct {
-		// BuildMachine Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
-		BuildMachine *struct {
-			// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
-			Cores *float32 `json:"cores,omitempty"`
-
-			// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
-			DefaultPurchaseType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachineDefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
-
-			// MachineSelectionType Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
-			MachineSelectionType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachineMachineSelectionType `json:"machineSelectionType,omitempty"`
-
-			// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
-			Memory *float32 `json:"memory,omitempty"`
-
-			// PurchaseType Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
-			PurchaseType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
-
-			// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
-			SelectionSource *GetDeployment200JSONResponseBody1ResourceConfigBuildMachineSelectionSource `json:"selectionSource,omitempty"`
-		} `json:"buildMachine,omitempty"`
+		BuildMachine *GetDeployment200JSONResponseBody_1_ResourceConfig_BuildMachine `json:"buildMachine,omitempty"`
 	} `json:"resourceConfig,omitempty"`
 	Routes *[]GetDeployment200JSONResponseBody_1_Routes_Item `json:"routes"`
 
@@ -2669,17 +3072,76 @@ type GetDeployment200JSONResponseBody1ReadyState string
 // GetDeployment200JSONResponseBody1ReadySubstate defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1ReadySubstate string
 
-// GetDeployment200JSONResponseBody1ResourceConfigBuildMachineDefaultPurchaseType defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1ResourceConfigBuildMachineDefaultPurchaseType string
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0 struct {
+	// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
+	Cores *float32 `json:"cores,omitempty"`
 
-// GetDeployment200JSONResponseBody1ResourceConfigBuildMachineMachineSelectionType defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1ResourceConfigBuildMachineMachineSelectionType string
+	// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
+	DefaultPurchaseType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0DefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
 
-// GetDeployment200JSONResponseBody1ResourceConfigBuildMachinePurchaseType defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1ResourceConfigBuildMachinePurchaseType string
+	// MachineSelectionType The build ran on an elastic machine. Drives billing.
+	MachineSelectionType GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0MachineSelectionType `json:"machineSelectionType"`
 
-// GetDeployment200JSONResponseBody1ResourceConfigBuildMachineSelectionSource defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1ResourceConfigBuildMachineSelectionSource string
+	// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
+	Memory *float32 `json:"memory,omitempty"`
+
+	// PurchaseType Machine type purchased for this build. `basic` is the 2vCPU tier, recorded so the build pipeline can detect a basic build without consulting the project.
+	PurchaseType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0PurchaseType `json:"purchaseType,omitempty"`
+
+	// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
+	SelectionSource *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0SelectionSource `json:"selectionSource,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0DefaultPurchaseType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0DefaultPurchaseType string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0MachineSelectionType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0MachineSelectionType string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0PurchaseType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0PurchaseType string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0SelectionSource defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine0SelectionSource string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1 struct {
+	// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
+	Cores *float32 `json:"cores,omitempty"`
+
+	// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
+	DefaultPurchaseType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1DefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
+
+	// MachineSelectionType The build ran on a fixed machine. Drives billing.
+	MachineSelectionType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1MachineSelectionType `json:"machineSelectionType,omitempty"`
+
+	// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
+	Memory *float32 `json:"memory,omitempty"`
+
+	// PurchaseType Machine type purchased for this build.
+	PurchaseType *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1PurchaseType `json:"purchaseType,omitempty"`
+
+	// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
+	SelectionSource *GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1SelectionSource `json:"selectionSource,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1DefaultPurchaseType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1DefaultPurchaseType string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1MachineSelectionType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1MachineSelectionType string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1PurchaseType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1PurchaseType string
+
+// GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1SelectionSource defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1ResourceConfigBuildMachine1SelectionSource string
+
+// GetDeployment200JSONResponseBody_1_ResourceConfig_BuildMachine defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_ResourceConfig_BuildMachine struct {
+	union json.RawMessage
+}
 
 // GetDeployment200JSONResponseBody1Routes0 defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Routes0 struct {
@@ -3090,6 +3552,20 @@ type GetDeployment200JSONResponseBody1Services0 struct {
 
 			// Daemon Set when this build produces the named daemon.
 			Daemon *struct {
+				// Bindings Bindings to services in the same deployment.
+				Bindings *[]struct {
+					// Env Environment variable name that will store the generated value
+					Env string `json:"env"`
+
+					// Format Generated value shape, must be `"url"`.
+					Format GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsFormat `json:"format"`
+
+					// Service Target service name from `services`.
+					Service string `json:"service"`
+
+					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
+					Type *GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType `json:"type,omitempty"`
+				} `json:"bindings,omitempty"`
 				Command    *[]string `json:"command,omitempty"`
 				Entrypoint string    `json:"entrypoint"`
 
@@ -3213,6 +3689,12 @@ type GetDeployment200JSONResponseBody1Services0 struct {
 
 // GetDeployment200JSONResponseBody1Services0BuilderConfigBundle defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services0BuilderConfigBundle bool
+
+// GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsFormat defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsFormat string
+
+// GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType string
 
 // GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonResourcesRequestsMemory defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonResourcesRequestsMemory string
@@ -3433,6 +3915,20 @@ type GetDeployment200JSONResponseBody1Services1 struct {
 
 			// Daemon Set when this build produces the named daemon.
 			Daemon *struct {
+				// Bindings Bindings to services in the same deployment.
+				Bindings *[]struct {
+					// Env Environment variable name that will store the generated value
+					Env string `json:"env"`
+
+					// Format Generated value shape, must be `"url"`.
+					Format GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsFormat `json:"format"`
+
+					// Service Target service name from `services`.
+					Service string `json:"service"`
+
+					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
+					Type *GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType `json:"type,omitempty"`
+				} `json:"bindings,omitempty"`
 				Command    *[]string `json:"command,omitempty"`
 				Entrypoint string    `json:"entrypoint"`
 
@@ -3615,6 +4111,12 @@ type GetDeployment200JSONResponseBody1Services1BindingsType string
 
 // GetDeployment200JSONResponseBody1Services1BuilderConfigBundle defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services1BuilderConfigBundle bool
+
+// GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsFormat defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsFormat string
+
+// GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType string
 
 // GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonResourcesRequestsMemory string
@@ -19607,533 +20109,4 @@ func (a ConnectConnectorCreateData_0_ServerConfig) MarshalJSON() ([]byte, error)
 		}
 	}
 	return json.Marshal(object)
-}
-
-// Getter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item. Returns the specified
-// element and whether it was found
-func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item
-func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item to handle AdditionalProperties
-func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["alg"]; found {
-		err = json.Unmarshal(raw, &a.Alg)
-		if err != nil {
-			return fmt.Errorf("error reading 'alg': %w", err)
-		}
-		delete(object, "alg")
-	}
-
-	if raw, found := object["key_ops"]; found {
-		err = json.Unmarshal(raw, &a.KeyOps)
-		if err != nil {
-			return fmt.Errorf("error reading 'key_ops': %w", err)
-		}
-		delete(object, "key_ops")
-	}
-
-	if raw, found := object["kid"]; found {
-		err = json.Unmarshal(raw, &a.Kid)
-		if err != nil {
-			return fmt.Errorf("error reading 'kid': %w", err)
-		}
-		delete(object, "kid")
-	}
-
-	if raw, found := object["kty"]; found {
-		err = json.Unmarshal(raw, &a.Kty)
-		if err != nil {
-			return fmt.Errorf("error reading 'kty': %w", err)
-		}
-		delete(object, "kty")
-	}
-
-	if raw, found := object["use"]; found {
-		err = json.Unmarshal(raw, &a.Use)
-		if err != nil {
-			return fmt.Errorf("error reading 'use': %w", err)
-		}
-		delete(object, "use")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item to handle AdditionalProperties
-func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	if a.Alg != nil {
-		object["alg"], err = json.Marshal(a.Alg)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'alg': %w", err)
-		}
-	}
-
-	if a.KeyOps != nil {
-		object["key_ops"], err = json.Marshal(a.KeyOps)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'key_ops': %w", err)
-		}
-	}
-
-	if a.Kid != nil {
-		object["kid"], err = json.Marshal(a.Kid)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'kid': %w", err)
-		}
-	}
-
-	object["kty"], err = json.Marshal(a.Kty)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'kty': %w", err)
-	}
-
-	if a.Use != nil {
-		object["use"], err = json.Marshal(a.Use)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'use': %w", err)
-		}
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// Getter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks. Returns the specified
-// element and whether it was found
-func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for ConnectConnectorUpdateData_0_ServerConfig_Jwks
-func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks to handle AdditionalProperties
-func (a *ConnectConnectorUpdateData_0_ServerConfig_Jwks) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["keys"]; found {
-		err = json.Unmarshal(raw, &a.Keys)
-		if err != nil {
-			return fmt.Errorf("error reading 'keys': %w", err)
-		}
-		delete(object, "keys")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig_Jwks to handle AdditionalProperties
-func (a ConnectConnectorUpdateData_0_ServerConfig_Jwks) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	if a.Keys != nil {
-		object["keys"], err = json.Marshal(a.Keys)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'keys': %w", err)
-		}
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// Getter for additional properties for ConnectConnectorUpdateData_0_ServerConfig. Returns the specified
-// element and whether it was found
-func (a ConnectConnectorUpdateData_0_ServerConfig) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for ConnectConnectorUpdateData_0_ServerConfig
-func (a *ConnectConnectorUpdateData_0_ServerConfig) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for ConnectConnectorUpdateData_0_ServerConfig to handle AdditionalProperties
-func (a *ConnectConnectorUpdateData_0_ServerConfig) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["authorization_details_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.AuthorizationDetailsTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'authorization_details_types_supported': %w", err)
-		}
-		delete(object, "authorization_details_types_supported")
-	}
-
-	if raw, found := object["authorization_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.AuthorizationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'authorization_endpoint': %w", err)
-		}
-		delete(object, "authorization_endpoint")
-	}
-
-	if raw, found := object["authorization_grant_profiles_supported"]; found {
-		err = json.Unmarshal(raw, &a.AuthorizationGrantProfilesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'authorization_grant_profiles_supported': %w", err)
-		}
-		delete(object, "authorization_grant_profiles_supported")
-	}
-
-	if raw, found := object["claim_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClaimTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'claim_types_supported': %w", err)
-		}
-		delete(object, "claim_types_supported")
-	}
-
-	if raw, found := object["claims_parameter_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClaimsParameterSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'claims_parameter_supported': %w", err)
-		}
-		delete(object, "claims_parameter_supported")
-	}
-
-	if raw, found := object["claims_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClaimsSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'claims_supported': %w", err)
-		}
-		delete(object, "claims_supported")
-	}
-
-	if raw, found := object["client_id_metadata_document_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClientIdMetadataDocumentSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'client_id_metadata_document_supported': %w", err)
-		}
-		delete(object, "client_id_metadata_document_supported")
-	}
-
-	if raw, found := object["code_challenge_methods_supported"]; found {
-		err = json.Unmarshal(raw, &a.CodeChallengeMethodsSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'code_challenge_methods_supported': %w", err)
-		}
-		delete(object, "code_challenge_methods_supported")
-	}
-
-	if raw, found := object["device_authorization_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.DeviceAuthorizationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'device_authorization_endpoint': %w", err)
-		}
-		delete(object, "device_authorization_endpoint")
-	}
-
-	if raw, found := object["end_session_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.EndSessionEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'end_session_endpoint': %w", err)
-		}
-		delete(object, "end_session_endpoint")
-	}
-
-	if raw, found := object["grant_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.GrantTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'grant_types_supported': %w", err)
-		}
-		delete(object, "grant_types_supported")
-	}
-
-	if raw, found := object["id_token_encryption_alg_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdTokenEncryptionAlgValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'id_token_encryption_alg_values_supported': %w", err)
-		}
-		delete(object, "id_token_encryption_alg_values_supported")
-	}
-
-	if raw, found := object["id_token_encryption_enc_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdTokenEncryptionEncValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'id_token_encryption_enc_values_supported': %w", err)
-		}
-		delete(object, "id_token_encryption_enc_values_supported")
-	}
-
-	if raw, found := object["id_token_signing_alg_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdTokenSigningAlgValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'id_token_signing_alg_values_supported': %w", err)
-		}
-		delete(object, "id_token_signing_alg_values_supported")
-	}
-
-	if raw, found := object["identity_chaining_requested_token_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdentityChainingRequestedTokenTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'identity_chaining_requested_token_types_supported': %w", err)
-		}
-		delete(object, "identity_chaining_requested_token_types_supported")
-	}
-
-	if raw, found := object["introspection_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.IntrospectionEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'introspection_endpoint': %w", err)
-		}
-		delete(object, "introspection_endpoint")
-	}
-
-	if raw, found := object["issuer"]; found {
-		err = json.Unmarshal(raw, &a.Issuer)
-		if err != nil {
-			return fmt.Errorf("error reading 'issuer': %w", err)
-		}
-		delete(object, "issuer")
-	}
-
-	if raw, found := object["jwks"]; found {
-		err = json.Unmarshal(raw, &a.Jwks)
-		if err != nil {
-			return fmt.Errorf("error reading 'jwks': %w", err)
-		}
-		delete(object, "jwks")
-	}
-
-	if raw, found := object["jwks_uri"]; found {
-		err = json.Unmarshal(raw, &a.JwksUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'jwks_uri': %w", err)
-		}
-		delete(object, "jwks_uri")
-	}
-
-	if raw, found := object["logo_uri"]; found {
-		err = json.Unmarshal(raw, &a.LogoUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'logo_uri': %w", err)
-		}
-		delete(object, "logo_uri")
-	}
-
-	if raw, found := object["op_policy_uri"]; found {
-		err = json.Unmarshal(raw, &a.OpPolicyUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'op_policy_uri': %w", err)
-		}
-		delete(object, "op_policy_uri")
-	}
-
-	if raw, found := object["op_tos_uri"]; found {
-		err = json.Unmarshal(raw, &a.OpTosUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'op_tos_uri': %w", err)
-		}
-		delete(object, "op_tos_uri")
-	}
-
-	if raw, found := object["prompt_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.PromptValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'prompt_values_supported': %w", err)
-		}
-		delete(object, "prompt_values_supported")
-	}
-
-	if raw, found := object["registration_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.RegistrationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'registration_endpoint': %w", err)
-		}
-		delete(object, "registration_endpoint")
-	}
-
-	if raw, found := object["request_parameter_supported"]; found {
-		err = json.Unmarshal(raw, &a.RequestParameterSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'request_parameter_supported': %w", err)
-		}
-		delete(object, "request_parameter_supported")
-	}
-
-	if raw, found := object["request_uri_parameter_supported"]; found {
-		err = json.Unmarshal(raw, &a.RequestUriParameterSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'request_uri_parameter_supported': %w", err)
-		}
-		delete(object, "request_uri_parameter_supported")
-	}
-
-	if raw, found := object["require_request_uri_registration"]; found {
-		err = json.Unmarshal(raw, &a.RequireRequestUriRegistration)
-		if err != nil {
-			return fmt.Errorf("error reading 'require_request_uri_registration': %w", err)
-		}
-		delete(object, "require_request_uri_registration")
-	}
-
-	if raw, found := object["response_modes_supported"]; found {
-		err = json.Unmarshal(raw, &a.ResponseModesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'response_modes_supported': %w", err)
-		}
-		delete(object, "response_modes_supported")
-	}
-
-	if raw, found := object["response_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.ResponseTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'response_types_supported': %w", err)
-		}
-		delete(object, "response_types_supported")
-	}
-
-	if raw, found := object["revocation_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.RevocationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'revocation_endpoint': %w", err)
-		}
-		delete(object, "revocation_endpoint")
-	}
-
-	if raw, found := object["scopes_supported"]; found {
-		err = json.Unmarshal(raw, &a.ScopesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'scopes_supported': %w", err)
-		}
-		delete(object, "scopes_supported")
-	}
-
-	if raw, found := object["service_documentation"]; found {
-		err = json.Unmarshal(raw, &a.ServiceDocumentation)
-		if err != nil {
-			return fmt.Errorf("error reading 'service_documentation': %w", err)
-		}
-		delete(object, "service_documentation")
-	}
-
-	if raw, found := object["subject_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.SubjectTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'subject_types_supported': %w", err)
-		}
-		delete(object, "subject_types_supported")
-	}
-
-	if raw, found := object["token_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.TokenEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'token_endpoint': %w", err)
-		}
-		delete(object, "token_endpoint")
-	}
-
-	if raw, found := object["token_endpoint_auth_methods_supported"]; found {
-		err = json.Unmarshal(raw, &a.TokenEndpointAuthMethodsSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'token_endpoint_auth_methods_supported': %w", err)
-		}
-		delete(object, "token_endpoint_auth_methods_supported")
-	}
-
-	if raw, found := object["token_endpoint_auth_signing_alg_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.TokenEndpointAuthSigningAlgValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'token_endpoint_auth_signing_alg_values_supported': %w", err)
-		}
-		delete(object, "token_endpoint_auth_signing_alg_values_supported")
-	}
-
-	if raw, found := object["userinfo_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.UserinfoEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'userinfo_endpoint': %w", err)
-		}
-		delete(object, "userinfo_endpoint")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
 }

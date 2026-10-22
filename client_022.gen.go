@@ -13067,7 +13067,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreatePrivateLinkEndpointWithBodyWithResponse Create a PrivateLink endpoint
 	//
-	// Creates a PrivateLink endpoint for a project.
+	// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -13076,7 +13076,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreatePrivateLinkEndpointWithResponse Create a PrivateLink endpoint
 	//
-	// Creates a PrivateLink endpoint for a project.
+	// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -13085,7 +13085,7 @@ type ClientWithResponsesInterface interface {
 
 	// DeletePrivateLinkEndpointWithResponse Delete a PrivateLink endpoint
 	//
-	// Deletes a PrivateLink endpoint.
+	// Deletes a PrivateLink endpoint. The endpoint is removed asynchronously. Repeating the request for an endpoint that is already being deleted retries its cleanup and also returns `204`. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -13103,7 +13103,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdatePrivateLinkEndpointWithBodyWithResponse Update a PrivateLink endpoint
 	//
-	// Updates a PrivateLink endpoint (name, privateDns).
+	// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -13112,7 +13112,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdatePrivateLinkEndpointWithResponse Update a PrivateLink endpoint
 	//
-	// Updates a PrivateLink endpoint (name, privateDns).
+	// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -13148,7 +13148,7 @@ type ClientWithResponsesInterface interface {
 
 	// ListOrganizationsWithResponse List Organizations
 	//
-	// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. This endpoint is in private beta. Contact your Vercel account team for access.
+	// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//

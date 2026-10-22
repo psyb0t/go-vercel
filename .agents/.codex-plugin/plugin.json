@@ -1,6 +1,6 @@
 {
   "name": "go-vercel",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Unofficial Go client for the Vercel REST API, generated from Vercel's OpenAPI spec, with a typed method for every endpoint.",
   "author": { "name": "psyb0t", "url": "https://github.com/psyb0t" },
   "homepage": "https://github.com/psyb0t/go-vercel",

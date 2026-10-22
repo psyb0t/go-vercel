@@ -2,6 +2,19 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.6.0, 2026-10-22
+
+- Added `IncludeDeliveryStats` to `GetDrainParams`, `GetDrainsParams` and `GetAllLogDrainsParams`. Drain responses from `GetDrain`, `GetDrains`, `GetAllLogDrains`, `CreateDrain` and `UpdateDrain` gained a `DeliveryStats` field with `Healthy`, `Failing` and `Unknown` state constants and a `N24h` window constant.
+- `GetDrainResponse.JSON200` and `GetJSON200` changed from `*GetDrain200JSONResponseBody` to an inline struct, so the `GetDrain200JSONResponseBody0`, `GetDrain200JSONResponseBody1` types and their `Delivery`, `FilterV2`, `Sampling`, `Source` and `Status` enum types are removed. `GetDrain200JSONResponseBodyDisabledReason` and its constants replace the old per-variant ones.
+- The `Drains0` and `Drains1` types of `GetAllLogDrains200JSONResponseBody1` and `GetDrains200JSONResponseBody` changed type, as did the matching `As...`, `From...` and `Merge...` methods.
+- The `BuildMachine` type under `ResourceConfig` in the `CancelDeployment` and `CreateDeployment` responses is now split into `BuildMachine0` (elastic selection) and `BuildMachine1` (fixed selection). The old purchase type, machine selection type and selection source types and constants are removed and replaced per variant. `N14cpu28gb` is a new purchase type constant.
+- `CancelDeployment` `Services0` and `Services1` builder configs gained `DaemonBindings` format and type constants.
+- Added `AppHome` and `RichPreviews` to `ConnectConnectorCreateData7`, `ConnectConnectorUpdateData5`.
+- Added `ListEventTypeNameOrganizationSsoDeleted` and `ListEventTypeReplacedByOrganizationSsoDeleted`.
+- `UserEventPayload` types were renumbered and reshaped. `UserEventPayload119`, `AsUserEventPayload119`, `FromUserEventPayload119` and `MergeUserEventPayload119` are removed, and `UserEventPayload118`, `UserEventPayload496`, `UserEventPayload497` and their `As`, `From` and `Merge` methods on `UserEvent_Payload` are added. Many `UserEvent_Payload_N_...` helper types were renamed to new numbers, and many `UserEventPayload` fields and enum types were added, removed or changed type.
+- The `JSON200` field and `GetJSON200` method changed type on `GenerateFirewallRuleResponse`, `GetConnectorTokenResponse` and `CancelDeploymentResponse`.
+- Generated from spec version 0.0.1.
+
 ## v0.5.0, 2026-10-21
 
 - Added flag label endpoints `ListFlagLabels`, `ListFlagLabelCounts` and `LookupFlagLabels` (with `WithBody`) on `Client` and `ClientWithResponses`, with their `New...Request` builders, `Parse...Response` functions, `ListFlagLabelsParams`, `ListFlagLabelCountsParams`, `LookupFlagLabelsParams`, `LookupFlagLabelsJSONBody` and response types.

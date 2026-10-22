@@ -7,6 +7,223 @@ import (
 	"encoding/json"
 )
 
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV3JSONBodyFailoverRegions enum.
+func (e CreateSandboxesByNameForkV3JSONBodyFailoverRegions) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsArn1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsBom1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsCdg1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsCle1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsCpt1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsDub1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsFra1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsGru1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsHkg1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsHnd1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsIad1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsIcn1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsKix1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsLhr1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsPdx1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsSfo1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsSin1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsSyd1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyFailoverRegionsYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV3JSONBodyMountsMode.
+const (
+	CreateSandboxesByNameForkV3JSONBodyMountsModeReadWrite CreateSandboxesByNameForkV3JSONBodyMountsMode = "read-write"
+	CreateSandboxesByNameForkV3JSONBodyMountsModeSnapshot  CreateSandboxesByNameForkV3JSONBodyMountsMode = "snapshot"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV3JSONBodyMountsMode enum.
+func (e CreateSandboxesByNameForkV3JSONBodyMountsMode) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV3JSONBodyMountsModeReadWrite:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyMountsModeSnapshot:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode.
+const (
+	CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeAllowAll     CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode = "allow-all"
+	CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeCustom       CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode = "custom"
+	CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeDefaultAllow CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode = "default-allow"
+	CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeDefaultDeny  CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode = "default-deny"
+	CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeDenyAll      CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode = "deny-all"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode enum.
+func (e CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0Mode) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeAllowAll:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeCustom:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeDefaultAllow:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeDefaultDeny:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0ModeDenyAll:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV3JSONBodyRegion.
+const (
+	CreateSandboxesByNameForkV3JSONBodyRegionArn1 CreateSandboxesByNameForkV3JSONBodyRegion = "arn1"
+	CreateSandboxesByNameForkV3JSONBodyRegionBom1 CreateSandboxesByNameForkV3JSONBodyRegion = "bom1"
+	CreateSandboxesByNameForkV3JSONBodyRegionCdg1 CreateSandboxesByNameForkV3JSONBodyRegion = "cdg1"
+	CreateSandboxesByNameForkV3JSONBodyRegionCle1 CreateSandboxesByNameForkV3JSONBodyRegion = "cle1"
+	CreateSandboxesByNameForkV3JSONBodyRegionCpt1 CreateSandboxesByNameForkV3JSONBodyRegion = "cpt1"
+	CreateSandboxesByNameForkV3JSONBodyRegionDub1 CreateSandboxesByNameForkV3JSONBodyRegion = "dub1"
+	CreateSandboxesByNameForkV3JSONBodyRegionFra1 CreateSandboxesByNameForkV3JSONBodyRegion = "fra1"
+	CreateSandboxesByNameForkV3JSONBodyRegionGru1 CreateSandboxesByNameForkV3JSONBodyRegion = "gru1"
+	CreateSandboxesByNameForkV3JSONBodyRegionHkg1 CreateSandboxesByNameForkV3JSONBodyRegion = "hkg1"
+	CreateSandboxesByNameForkV3JSONBodyRegionHnd1 CreateSandboxesByNameForkV3JSONBodyRegion = "hnd1"
+	CreateSandboxesByNameForkV3JSONBodyRegionIad1 CreateSandboxesByNameForkV3JSONBodyRegion = "iad1"
+	CreateSandboxesByNameForkV3JSONBodyRegionIcn1 CreateSandboxesByNameForkV3JSONBodyRegion = "icn1"
+	CreateSandboxesByNameForkV3JSONBodyRegionKix1 CreateSandboxesByNameForkV3JSONBodyRegion = "kix1"
+	CreateSandboxesByNameForkV3JSONBodyRegionLhr1 CreateSandboxesByNameForkV3JSONBodyRegion = "lhr1"
+	CreateSandboxesByNameForkV3JSONBodyRegionPdx1 CreateSandboxesByNameForkV3JSONBodyRegion = "pdx1"
+	CreateSandboxesByNameForkV3JSONBodyRegionSfo1 CreateSandboxesByNameForkV3JSONBodyRegion = "sfo1"
+	CreateSandboxesByNameForkV3JSONBodyRegionSin1 CreateSandboxesByNameForkV3JSONBodyRegion = "sin1"
+	CreateSandboxesByNameForkV3JSONBodyRegionSyd1 CreateSandboxesByNameForkV3JSONBodyRegion = "syd1"
+	CreateSandboxesByNameForkV3JSONBodyRegionYul1 CreateSandboxesByNameForkV3JSONBodyRegion = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV3JSONBodyRegion enum.
+func (e CreateSandboxesByNameForkV3JSONBodyRegion) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV3JSONBodyRegionArn1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionBom1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionCdg1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionCle1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionCpt1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionDub1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionFra1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionGru1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionHkg1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionHnd1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionIad1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionIcn1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionKix1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionLhr1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionPdx1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionSfo1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionSin1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionSyd1:
+		return true
+	case CreateSandboxesByNameForkV3JSONBodyRegionYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembersParamsRole.
+const (
+	GetTeamMembersParamsRoleBILLING       GetTeamMembersParamsRole = "BILLING"
+	GetTeamMembersParamsRoleCONTRIBUTOR   GetTeamMembersParamsRole = "CONTRIBUTOR"
+	GetTeamMembersParamsRoleDEVELOPER     GetTeamMembersParamsRole = "DEVELOPER"
+	GetTeamMembersParamsRoleMEMBER        GetTeamMembersParamsRole = "MEMBER"
+	GetTeamMembersParamsRoleOWNER         GetTeamMembersParamsRole = "OWNER"
+	GetTeamMembersParamsRoleSECURITY      GetTeamMembersParamsRole = "SECURITY"
+	GetTeamMembersParamsRoleVIEWER        GetTeamMembersParamsRole = "VIEWER"
+	GetTeamMembersParamsRoleVIEWERFORPLUS GetTeamMembersParamsRole = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembersParamsRole enum.
+func (e GetTeamMembersParamsRole) Valid() bool {
+	switch e {
+	case GetTeamMembersParamsRoleBILLING:
+		return true
+	case GetTeamMembersParamsRoleCONTRIBUTOR:
+		return true
+	case GetTeamMembersParamsRoleDEVELOPER:
+		return true
+	case GetTeamMembersParamsRoleMEMBER:
+		return true
+	case GetTeamMembersParamsRoleOWNER:
+		return true
+	case GetTeamMembersParamsRoleSECURITY:
+		return true
+	case GetTeamMembersParamsRoleVIEWER:
+		return true
+	case GetTeamMembersParamsRoleVIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesExpiredTrue GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired = true
+)
+
+// Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired enum.
+func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired) Valid() bool {
+	switch e {
+	case GetTeamMembers200JSONResponseBodyEmailInviteCodesExpiredTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser.
+const (
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserFalse GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser = false
+	GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUserTrue  GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser = true
+)
+
 // Valid indicates whether the value is a known member of the GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser enum.
 func (e GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser) Valid() bool {
 	switch e {
@@ -17590,6 +17807,18 @@ type ConnectConnectorCreateData6 struct {
 
 // ConnectConnectorCreateData7 defines model for ConnectConnectorCreateData.7.
 type ConnectConnectorCreateData7 struct {
+	// AppHome App Home settings for the managed Slack app. Updates preserve omitted settings.
+	AppHome *struct {
+		// HomeTabEnabled Enable the Home tab for views.publish. Defaults to false for new apps.
+		HomeTabEnabled *bool `json:"homeTabEnabled,omitempty"`
+
+		// MessagesTabEnabled Enable the Messages tab. Defaults to true for new apps.
+		MessagesTabEnabled *bool `json:"messagesTabEnabled,omitempty"`
+
+		// MessagesTabReadOnlyEnabled Make the Messages tab read-only. Defaults to false for new apps.
+		MessagesTabReadOnlyEnabled *bool `json:"messagesTabReadOnlyEnabled,omitempty"`
+	} `json:"appHome,omitempty"`
+
 	// AppId Slack app ID.
 	AppId string `json:"appId"`
 
@@ -17607,6 +17836,15 @@ type ConnectConnectorCreateData7 struct {
 
 	// Extras Additional provider metadata stored with the connector.
 	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// RichPreviews Work Object preview settings for the managed Slack app. Updates preserve omitted settings.
+	RichPreviews *struct {
+		// EntityTypes Entity types to preview. An empty array clears the configured types.
+		EntityTypes *[]string `json:"entityTypes,omitempty"`
+
+		// IsActive Enable Work Object previews. Defaults to false for new apps.
+		IsActive *bool `json:"isActive,omitempty"`
+	} `json:"richPreviews,omitempty"`
 
 	// Shortcuts Global and message shortcuts configured for the Slack app.
 	Shortcuts *[]struct {
@@ -18513,6 +18751,18 @@ type ConnectConnectorUpdateData4 struct {
 
 // ConnectConnectorUpdateData5 defines model for ConnectConnectorUpdateData.5.
 type ConnectConnectorUpdateData5 struct {
+	// AppHome App Home settings for the managed Slack app. Updates preserve omitted settings.
+	AppHome *struct {
+		// HomeTabEnabled Enable the Home tab for views.publish. Defaults to false for new apps.
+		HomeTabEnabled *bool `json:"homeTabEnabled,omitempty"`
+
+		// MessagesTabEnabled Enable the Messages tab. Defaults to true for new apps.
+		MessagesTabEnabled *bool `json:"messagesTabEnabled,omitempty"`
+
+		// MessagesTabReadOnlyEnabled Make the Messages tab read-only. Defaults to false for new apps.
+		MessagesTabReadOnlyEnabled *bool `json:"messagesTabReadOnlyEnabled,omitempty"`
+	} `json:"appHome,omitempty"`
+
 	// AppId Slack app ID.
 	AppId *string `json:"appId,omitempty"`
 
@@ -18530,6 +18780,15 @@ type ConnectConnectorUpdateData5 struct {
 
 	// Extras Additional provider metadata stored with the connector.
 	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// RichPreviews Work Object preview settings for the managed Slack app. Updates preserve omitted settings.
+	RichPreviews *struct {
+		// EntityTypes Entity types to preview. An empty array clears the configured types.
+		EntityTypes *[]string `json:"entityTypes,omitempty"`
+
+		// IsActive Enable Work Object previews. Defaults to false for new apps.
+		IsActive *bool `json:"isActive,omitempty"`
+	} `json:"richPreviews,omitempty"`
 
 	// Shortcuts Global and message shortcuts configured for the Slack app.
 	Shortcuts *[]struct {
@@ -19748,368 +20007,3 @@ type GlobalConfigItemValue struct {
 
 // GlobalConfigItemValue0 defines model for GlobalConfigItemValue.0.
 type GlobalConfigItemValue0 = string
-
-// GlobalConfigItemValue1 defines model for GlobalConfigItemValue.1.
-type GlobalConfigItemValue1 = float32
-
-// GlobalConfigItemValue2 defines model for GlobalConfigItemValue.2.
-type GlobalConfigItemValue2 map[string]*GlobalConfigItemValue
-
-// GlobalConfigItemValue3 defines model for GlobalConfigItemValue.3.
-type GlobalConfigItemValue3 = []*GlobalConfigItemValue
-
-// GlobalConfigItemValue4 defines model for GlobalConfigItemValue.4.
-type GlobalConfigItemValue4 bool
-
-// GlobalConfigToken The Global Config.
-type GlobalConfigToken struct {
-	CreatedAt    float32 `json:"createdAt"`
-	EdgeConfigId string  `json:"edgeConfigId"`
-
-	// Id This is not the token itself, but rather an id to identify the token by
-	Id    string `json:"id"`
-	Label string `json:"label"`
-
-	// PartialToken A partially-masked representation of the token, safe to display in UIs. The format is the first 3 characters of the token followed by a fixed 8-character `*` mask (e.g. `550e8400-e29b-41d4-a716-446655440000` → `550********`). The mask length is intentionally fixed (not proportional to the original token length) to avoid leaking the token length. Prefer this field for display/reference in UIs and logs. The full, plaintext token is only disclosed once at creation time via `POST /v1/edge-config/:edgeConfigId/token`; use `id` to reference a token in subsequent calls (e.g. when deleting).
-	PartialToken string `json:"partialToken"`
-
-	// Token Deprecated: the full, plaintext token. - Returned once by `POST /v1/edge-config/:edgeConfigId/token` (create). - Still returned by `GET /v1/edge-config/:edgeConfigId/token/:token` (detail) for backwards compatibility, but scheduled for removal. - **Not** returned by `GET /v1/edge-config/:edgeConfigId/tokens` (list); use `partialToken` for display and `id` to reference tokens. Do not rely on this field being present on read operations. Prefer `partialToken` for display and `id` for references.
-	Token *string `json:"token,omitempty"`
-}
-
-// HttpApiDecodeError The request did not match the expected schema
-type HttpApiDecodeError struct {
-	Issues  []Issue `json:"issues"`
-	Message string  `json:"message"`
-}
-
-// InternalServerError defines model for InternalServerError.
-type InternalServerError struct {
-	Code    InternalServerErrorCode   `json:"code"`
-	Message string                    `json:"message"`
-	Status  InternalServerErrorStatus `json:"status"`
-}
-
-// InternalServerErrorCode defines model for InternalServerError.Code.
-type InternalServerErrorCode string
-
-// InternalServerErrorStatus defines model for InternalServerError.Status.
-type InternalServerErrorStatus float32
-
-// InvalidAdditionalContactInfo Additional contact information provided for the TLD is invalid.
-type InvalidAdditionalContactInfo struct {
-	Code    InvalidAdditionalContactInfoCode   `json:"code"`
-	Message string                             `json:"message"`
-	Status  InvalidAdditionalContactInfoStatus `json:"status"`
-}
-
-// InvalidAdditionalContactInfoCode defines model for InvalidAdditionalContactInfo.Code.
-type InvalidAdditionalContactInfoCode string
-
-// InvalidAdditionalContactInfoStatus defines model for InvalidAdditionalContactInfo.Status.
-type InvalidAdditionalContactInfoStatus float32
-
-// InvitedTeamMember The member was successfully added to the team.
-type InvitedTeamMember struct {
-	// Email The email of the invited user.
-	//
-	// Example: john@user.co
-	Email string `json:"email"`
-
-	// Role The role used for the invitation
-	//
-	// Example: MEMBER
-	Role InvitedTeamMemberRole `json:"role"`
-
-	// TeamPermissions The team permissions of the user
-	//
-	// Example: ["CreateProject"]
-	TeamPermissions *[]InvitedTeamMemberTeamPermissions `json:"teamPermissions,omitempty"`
-
-	// TeamRoles The team roles of the user
-	//
-	// Example: ["MEMBER"]
-	TeamRoles *[]InvitedTeamMemberTeamRoles `json:"teamRoles,omitempty"`
-
-	// Uid The ID of the invited user
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	Uid string `json:"uid"`
-
-	// Username The username of the invited user
-	//
-	// Example: john-doe
-	Username string `json:"username"`
-}
-
-// InvitedTeamMemberRole The role used for the invitation
-//
-// Example: MEMBER
-type InvitedTeamMemberRole string
-
-// InvitedTeamMemberTeamPermissions The team permissions of the user
-//
-// Example: ["CreateProject"]
-type InvitedTeamMemberTeamPermissions string
-
-// InvitedTeamMemberTeamRoles The team roles of the user
-//
-// Example: ["MEMBER"]
-type InvitedTeamMemberTeamRoles string
-
-// Issue Represents an error encountered while parsing a value to match the schema
-type Issue struct {
-	// Message A descriptive message explaining the issue
-	Message string `json:"message"`
-
-	// Path The path to the property where the issue occurred
-	Path []PropertyKey `json:"path"`
-}
-
-// LanguageCodeRequired A language code is required for punycode domains.
-type LanguageCodeRequired struct {
-	Code    LanguageCodeRequiredCode   `json:"code"`
-	Message string                     `json:"message"`
-	Status  LanguageCodeRequiredStatus `json:"status"`
-}
-
-// LanguageCodeRequiredCode defines model for LanguageCodeRequired.Code.
-type LanguageCodeRequiredCode string
-
-// LanguageCodeRequiredStatus defines model for LanguageCodeRequired.Status.
-type LanguageCodeRequiredStatus float32
-
-// ListEventType A user-facing event type.
-type ListEventType struct {
-	// Categories Categories that group this event type with related event types.
-	//
-	// Example: ["deployment"]
-	Categories []ListEventTypeCategories `json:"categories"`
-
-	// Deprecated Present only when this event type is deprecated.
-	Deprecated *ListEventTypeDeprecated `json:"deprecated,omitempty"`
-
-	// Description Description of the event, visible to users in the Activity dashboard and docs.
-	Description string `json:"description"`
-
-	// Name The name of the event type.
-	//
-	// Example: deployment-created
-	Name ListEventTypeName `json:"name"`
-
-	// ReplacedBy Event type names that supersede this deprecated event type.
-	ReplacedBy *[]ListEventTypeReplacedBy `json:"replacedBy,omitempty"`
-}
-
-// ListEventTypeCategories Categories that group this event type with related event types.
-//
-// Example: ["deployment"]
-type ListEventTypeCategories string
-
-// ListEventTypeDeprecated Present only when this event type is deprecated.
-type ListEventTypeDeprecated bool
-
-// ListEventTypeName The name of the event type.
-//
-// Example: deployment-created
-type ListEventTypeName string
-
-// ListEventTypeReplacedBy Event type names that supersede this deprecated event type.
-type ListEventTypeReplacedBy string
-
-// ListEventTypesResponse Response returned by the List Event Types endpoint.
-type ListEventTypesResponse struct {
-	Categories []struct {
-		Label string                               `json:"label"`
-		Name  ListEventTypesResponseCategoriesName `json:"name"`
-	} `json:"categories"`
-	Types []ListEventType `json:"types"`
-}
-
-// ListEventTypesResponseCategoriesName defines model for ListEventTypesResponse.Categories.Name.
-type ListEventTypesResponseCategoriesName string
-
-// MarketplaceFlag defines model for MarketplaceFlag.
-type MarketplaceFlag struct {
-	Category                   *MarketplaceFlagCategory `json:"category,omitempty"`
-	CreatedAt                  *float32                 `json:"createdAt,omitempty"`
-	Description                *string                  `json:"description,omitempty"`
-	ExternalId                 string                   `json:"externalId"`
-	Id                         string                   `json:"id"`
-	IntegrationConfigurationId string                   `json:"integrationConfigurationId"`
-	Name                       *string                  `json:"name,omitempty"`
-	Origin                     string                   `json:"origin"`
-	OwnerId                    string                   `json:"ownerId"`
-	ProjectId                  string                   `json:"projectId"`
-	ResourceId                 string                   `json:"resourceId"`
-	Slug                       string                   `json:"slug"`
-	State                      MarketplaceFlagState     `json:"state"`
-	TypeName                   MarketplaceFlagTypeName  `json:"typeName"`
-	UpdatedAt                  *float32                 `json:"updatedAt,omitempty"`
-}
-
-// MarketplaceFlagCategory defines model for MarketplaceFlag.Category.
-type MarketplaceFlagCategory string
-
-// MarketplaceFlagState defines model for MarketplaceFlag.State.
-type MarketplaceFlagState string
-
-// MarketplaceFlagTypeName defines model for MarketplaceFlag.TypeName.
-type MarketplaceFlagTypeName string
-
-// NamedSandbox This object contains information related to a Vercel NamedSandbox.
-type NamedSandbox struct {
-	// Architecture CPU architecture of the sandbox. This value does not change.
-	Architecture *NamedSandboxArchitecture `json:"architecture,omitempty"`
-
-	// CreatedAt The time when the named sandbox was created, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	CreatedAt float32 `json:"createdAt"`
-
-	// CurrentSessionId Current session ID the sandbox is pointing to.
-	CurrentSessionId string `json:"currentSessionId"`
-
-	// CurrentSnapshotId Current snapshot ID that the named sandbox is pointing to.
-	CurrentSnapshotId *string `json:"currentSnapshotId,omitempty"`
-
-	// Cwd The working directory of the sandbox.
-	//
-	// Example: /vercel/sandbox
-	Cwd *string `json:"cwd,omitempty"`
-
-	// ExpiresAt The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.
-	//
-	// Example: 1750344801629
-	ExpiresAt *float32 `json:"expiresAt,omitempty"`
-
-	// FailoverRegions The regions the sandbox fails over to. Empty when it does not fail over.
-	//
-	// Example: ["sfo1","cle1"]
-	FailoverRegions *[]NamedSandboxFailoverRegions `json:"failoverRegions,omitempty"`
-
-	// Image Owner-qualified, digest-pinned reference of the container image the sandbox was created from ("{team}/{project}/{repository}@{manifestDigest}").
-	//
-	// Example: my-team/my-project/my-repo@sha256:2c4e8f9a1b3d5e7f091a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f708
-	Image *string `json:"image,omitempty"`
-
-	// KeepLastSnapshots Keep-last snapshot configuration.
-	KeepLastSnapshots *struct {
-		// Count Number of most recent snapshots to keep.
-		//
-		// Example: 5
-		Count float32 `json:"count"`
-
-		// DeleteEvicted Whether to immediately delete evicted snapshots.
-		//
-		// Example: true
-		DeleteEvicted NamedSandboxKeepLastSnapshotsDeleteEvicted `json:"deleteEvicted"`
-
-		// Expiration Expiration time in milliseconds for kept snapshots.
-		//
-		// Example: 604800000
-		Expiration *float32 `json:"expiration,omitempty"`
-	} `json:"keepLastSnapshots,omitempty"`
-
-	// Memory Memory allocated in MB.
-	//
-	// Example: 1024
-	Memory *float32 `json:"memory,omitempty"`
-
-	// Mounts Key-value pairs of mount path and drive.
-	Mounts *map[string]struct {
-		Drive    string                  `json:"drive"`
-		Mode     *NamedSandboxMountsMode `json:"mode,omitempty"`
-		Snapshot *string                 `json:"snapshot,omitempty"`
-	} `json:"mounts,omitempty"`
-
-	// Name The unique identifier of the sandbox.
-	//
-	// Example: my-sandbox
-	Name string `json:"name"`
-
-	// NetworkId The Connect network id for the target Secure Compute private network.
-	NetworkId *string `json:"networkId,omitempty"`
-
-	// NetworkPolicy Network policy configuration.
-	NetworkPolicy *struct {
-		AllowedCIDRs   *[]string                     `json:"allowedCIDRs,omitempty"`
-		AllowedDomains *[]string                     `json:"allowedDomains,omitempty"`
-		DeniedCIDRs    *[]string                     `json:"deniedCIDRs,omitempty"`
-		Mode           NamedSandboxNetworkPolicyMode `json:"mode"`
-		S3Key          *string                       `json:"s3Key,omitempty"`
-	} `json:"networkPolicy,omitempty"`
-
-	// Persistent Whether the sandbox persists its state across restarts via automatic snapshots.
-	//
-	// Example: true
-	Persistent NamedSandboxPersistent `json:"persistent"`
-
-	// Region The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.
-	//
-	// Example: iad1
-	Region *string `json:"region,omitempty"`
-
-	// Runtime Runtime identifier.
-	//
-	// Example: node22
-	Runtime *string `json:"runtime,omitempty"`
-
-	// SnapshotExpiration Default snapshot expiration time in milliseconds. 0 means no expiration.
-	//
-	// Example: 604800000
-	SnapshotExpiration *float32 `json:"snapshotExpiration,omitempty"`
-
-	// Status The status of the current sandbox.
-	//
-	// Example: running
-	Status NamedSandboxStatus `json:"status"`
-
-	// StatusUpdatedAt The time when the sandbox status was last updated, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	StatusUpdatedAt float32 `json:"statusUpdatedAt"`
-
-	// Tags Key-value tags attached to the named sandbox.
-	//
-	// Example: {"team":"hive","user":"bob"}
-	Tags *map[string]string `json:"tags,omitempty"`
-
-	// Timeout Timeout in milliseconds.
-	//
-	// Example: 300000
-	Timeout *float32 `json:"timeout,omitempty"`
-
-	// TotalActiveCpuDurationMs Cumulative active CPU duration in milliseconds across all sandbox runs.
-	//
-	// Example: 5000
-	TotalActiveCpuDurationMs *float32 `json:"totalActiveCpuDurationMs,omitempty"`
-
-	// TotalDurationMs Cumulative wall-clock duration in milliseconds across all sandbox runs.
-	//
-	// Example: 60000
-	TotalDurationMs *float32 `json:"totalDurationMs,omitempty"`
-
-	// TotalEgressBytes Cumulative egress bytes across all sandbox runs.
-	//
-	// Example: 4096
-	TotalEgressBytes *float32 `json:"totalEgressBytes,omitempty"`
-
-	// TotalIngressBytes Cumulative ingress bytes across all sandbox runs.
-	//
-	// Example: 2048
-	TotalIngressBytes *float32 `json:"totalIngressBytes,omitempty"`
-
-	// UpdatedAt The time when the named sandbox was last updated, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// V0 Whether this sandbox is managed by v0 on the customer's behalf.
-	V0 *NamedSandboxV0 `json:"v0,omitempty"`
-
-	// Vcpus Number of virtual CPUs allocated.
-	//
-	// Example: 2
-	Vcpus *float32 `json:"vcpus,omitempty"`
-}
