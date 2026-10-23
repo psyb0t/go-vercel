@@ -14,6 +14,453 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsGetDeployment200JSONResponseBody2 returns the union data inside the GetDeployment200JSONResponseBody as a GetDeployment200JSONResponseBody2
+func (t GetDeployment200JSONResponseBody) AsGetDeployment200JSONResponseBody2() (GetDeployment200JSONResponseBody2, error) {
+	var body GetDeployment200JSONResponseBody2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2 overwrites any union data inside the GetDeployment200JSONResponseBody as the provided GetDeployment200JSONResponseBody2
+func (t *GetDeployment200JSONResponseBody) FromGetDeployment200JSONResponseBody2(v GetDeployment200JSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2 performs a merge with any union data inside the GetDeployment200JSONResponseBody, using the provided GetDeployment200JSONResponseBody2
+func (t *GetDeployment200JSONResponseBody) MergeGetDeployment200JSONResponseBody2(v GetDeployment200JSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source0() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source0(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source0(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source1() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source1(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source1(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source2() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source2(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source2(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source3() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source3(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source3(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns0Source4() (ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns0Source4(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0Source4(v ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns1Source0() (ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns1Source0(v ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns1Source0(v ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source as a ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) AsListDeploymentCheckRuns200JSONResponseBodyRuns1Source1() (ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) FromListDeploymentCheckRuns200JSONResponseBodyRuns1Source1(v ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) MergeListDeploymentCheckRuns200JSONResponseBodyRuns1Source1(v ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns0 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_Item as a ListDeploymentCheckRuns200JSONResponseBodyRuns0
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) AsListDeploymentCheckRuns200JSONResponseBodyRuns0() (ListDeploymentCheckRuns200JSONResponseBodyRuns0, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns0 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_Item as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) FromListDeploymentCheckRuns200JSONResponseBodyRuns0(v ListDeploymentCheckRuns200JSONResponseBodyRuns0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns0 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_Item, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns0
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) MergeListDeploymentCheckRuns200JSONResponseBodyRuns0(v ListDeploymentCheckRuns200JSONResponseBodyRuns0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListDeploymentCheckRuns200JSONResponseBodyRuns1 returns the union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_Item as a ListDeploymentCheckRuns200JSONResponseBodyRuns1
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) AsListDeploymentCheckRuns200JSONResponseBodyRuns1() (ListDeploymentCheckRuns200JSONResponseBodyRuns1, error) {
+	var body ListDeploymentCheckRuns200JSONResponseBodyRuns1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListDeploymentCheckRuns200JSONResponseBodyRuns1 overwrites any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_Item as the provided ListDeploymentCheckRuns200JSONResponseBodyRuns1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) FromListDeploymentCheckRuns200JSONResponseBodyRuns1(v ListDeploymentCheckRuns200JSONResponseBodyRuns1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListDeploymentCheckRuns200JSONResponseBodyRuns1 performs a merge with any union data inside the ListDeploymentCheckRuns200JSONResponseBody_Runs_Item, using the provided ListDeploymentCheckRuns200JSONResponseBodyRuns1
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) MergeListDeploymentCheckRuns200JSONResponseBodyRuns1(v ListDeploymentCheckRuns200JSONResponseBodyRuns1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListDeploymentCheckRuns200JSONResponseBody_Runs_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateDeploymentCheckRun200JSONResponseBody0Source4Selection0 returns the union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as a CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0
+func (t CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) AsCreateDeploymentCheckRun200JSONResponseBody0Source4Selection0() (CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0, error) {
+	var body CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateDeploymentCheckRun200JSONResponseBody0Source4Selection0 overwrites any union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as the provided CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0
+func (t *CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromCreateDeploymentCheckRun200JSONResponseBody0Source4Selection0(v CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateDeploymentCheckRun200JSONResponseBody0Source4Selection0 performs a merge with any union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0
+func (t *CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeCreateDeploymentCheckRun200JSONResponseBody0Source4Selection0(v CreateDeploymentCheckRun200JSONResponseBody0Source4Selection0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateDeploymentCheckRun200JSONResponseBody0Source4Selection1 returns the union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as a CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1
+func (t CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) AsCreateDeploymentCheckRun200JSONResponseBody0Source4Selection1() (CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1, error) {
+	var body CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateDeploymentCheckRun200JSONResponseBody0Source4Selection1 overwrites any union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as the provided CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1
+func (t *CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromCreateDeploymentCheckRun200JSONResponseBody0Source4Selection1(v CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateDeploymentCheckRun200JSONResponseBody0Source4Selection1 performs a merge with any union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection, using the provided CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1
+func (t *CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) MergeCreateDeploymentCheckRun200JSONResponseBody0Source4Selection1(v CreateDeploymentCheckRun200JSONResponseBody0Source4Selection1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateDeploymentCheckRun200JSONResponseBody0Source4Selection2 returns the union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as a CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2
+func (t CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) AsCreateDeploymentCheckRun200JSONResponseBody0Source4Selection2() (CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2, error) {
+	var body CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
 // FromCreateDeploymentCheckRun200JSONResponseBody0Source4Selection2 overwrites any union data inside the CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection as the provided CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2
 func (t *CreateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection) FromCreateDeploymentCheckRun200JSONResponseBody0Source4Selection2(v CreateDeploymentCheckRun200JSONResponseBody0Source4Selection2) error {
 	b, err := json.Marshal(v)
@@ -16529,6 +16976,24 @@ type ClientInterface interface {
 	// Takes a body of the `application/json` content type.
 	CreateApiKeys(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// UpdateApiKeyQuotaWithBody Update an AI Gateway API key budget
+	//
+	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+	UpdateApiKeyQuotaWithBody(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateApiKeyQuota Update an AI Gateway API key budget
+	//
+	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+	UpdateApiKeyQuota(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetDomainsRecordsByRecordId performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
 	GetDomainsRecordsByRecordId(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -18487,7 +18952,7 @@ type ClientInterface interface {
 
 	// PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
 	//
-	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -18496,7 +18961,7 @@ type ClientInterface interface {
 
 	// PutProjectDaemonInstances Override a project daemon's instance counts
 	//
-	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 	//
 	// Takes a body of the `application/json` content type.
 	//

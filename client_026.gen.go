@@ -12,6 +12,75 @@ import (
 	"time"
 )
 
+// CreateStorageStoresBlobWithResponse Create a Blob store
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
+func (c *ClientWithResponses) CreateStorageStoresBlobWithResponse(ctx context.Context, body CreateStorageStoresBlobJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateStorageStoresBlobResponse, error) {
+	rsp, err := c.CreateStorageStoresBlob(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateStorageStoresBlobResponse(rsp)
+}
+
+// DeleteStorageStoresBlobByIdWithResponse Delete a Blob store
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /storage/stores/blob/{id} (the `DeleteStorageStoresBlobById` operationId).
+func (c *ClientWithResponses) DeleteStorageStoresBlobByIdWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStorageStoresBlobByIdResponse, error) {
+	rsp, err := c.DeleteStorageStoresBlobById(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteStorageStoresBlobByIdResponse(rsp)
+}
+
+// GetStorageStoresByIdWithResponse Get a store
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /storage/stores/{id} (the `GetStorageStoresById` operationId).
+func (c *ClientWithResponses) GetStorageStoresByIdWithResponse(ctx context.Context, id string, params *GetStorageStoresByIdParams, reqEditors ...RequestEditorFn) (*GetStorageStoresByIdResponse, error) {
+	rsp, err := c.GetStorageStoresById(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetStorageStoresByIdResponse(rsp)
+}
+
+// ListAccessGroupsWithResponse List access groups for a team, project or member
+//
+// List access groups.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/access-groups (the `ListAccessGroups` operationId).
+func (c *ClientWithResponses) ListAccessGroupsWithResponse(ctx context.Context, params *ListAccessGroupsParams, reqEditors ...RequestEditorFn) (*ListAccessGroupsResponse, error) {
+	rsp, err := c.ListAccessGroups(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAccessGroupsResponse(rsp)
+}
+
+// CreateAccessGroupWithBodyWithResponse Creates an access group
+//
+// Allows to create an access group.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
+func (c *ClientWithResponses) CreateAccessGroupWithBodyWithResponse(ctx context.Context, params *CreateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessGroupResponse, error) {
+	rsp, err := c.CreateAccessGroupWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccessGroupResponse(rsp)
+}
+
 // CreateAccessGroupWithResponse Creates an access group
 //
 // Allows to create an access group.
@@ -3401,7 +3470,7 @@ func (c *ClientWithResponses) GetProjectBoxesWithResponse(ctx context.Context, i
 
 // PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
 //
-// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -3416,7 +3485,7 @@ func (c *ClientWithResponses) PutProjectDaemonInstancesWithBodyWithResponse(ctx 
 
 // PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
 //
-// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -10028,7 +10097,7 @@ func ParseCreateApiKeysResponse(rsp *http.Response) (*CreateApiKeysResponse, err
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// ApiKey Information about the newly created API key.
+			// ApiKey Represents an API key.
 			ApiKey APIKey `json:"apiKey"`
 
 			// ApiKeyString The API key's actual value. This value is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
@@ -10072,6 +10141,97 @@ func ParseCreateApiKeysResponse(rsp *http.Response) (*CreateApiKeysResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateApiKeyQuotaResponse parses an HTTP response from a UpdateApiKeyQuotaWithResponse call
+func ParseUpdateApiKeyQuotaResponse(rsp *http.Response) (*UpdateApiKeyQuotaResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateApiKeyQuotaResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// ApiKey Represents an API key.
+			ApiKey APIKey `json:"apiKey"`
+
+			// Quota AI Gateway quota associated with an API key.
+			Quota APIKeyQuota `json:"quota"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
 		break // No content-type
 
 	case rsp.StatusCode == 410:
@@ -10408,6 +10568,7 @@ func ParseCreateStorageStoresBlobResponse(rsp *http.Response) (*CreateStorageSto
 					MakeEnvVarsSensitive *CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 					Name                 string                                                                               `json:"name"`
 					ProjectId            string                                                                               `json:"projectId"`
+					SecretsOutdated      *CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 				} `json:"projectsMetadata"`
 				Region                 CreateStorageStoresBlob200JSONResponseBodyStoreRegion             `json:"region"`
 				Size                   float32                                                           `json:"size"`
@@ -10537,6 +10698,7 @@ func ParseGetStorageStoresByIdResponse(rsp *http.Response) (*GetStorageStoresByI
 					MakeEnvVarsSensitive *GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 					Name                 string                                                                            `json:"name"`
 					ProjectId            string                                                                            `json:"projectId"`
+					SecretsOutdated      *GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 				} `json:"projectsMetadata"`
 				Status                 *GetStorageStoresById200JSONResponseBodyStoreStatus            `json:"status"`
 				TotalConnectedProjects *float32                                                       `json:"totalConnectedProjects,omitempty"`
@@ -15814,9 +15976,6 @@ func ParseUpdateResourceResponse(rsp *http.Response) (*UpdateResourceResponse, e
 	case rsp.StatusCode == 410:
 		break // No content-type
 
-	case rsp.StatusCode == 422:
-		break // No content-type
-
 	}
 
 	return response, nil
@@ -15861,9 +16020,6 @@ func ParseImportResourceResponse(rsp *http.Response) (*ImportResourceResponse, e
 		break // No content-type
 
 	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 422:
 		break // No content-type
 
 	}
@@ -18592,6 +18748,15 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
+					// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+					// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+					// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
 					// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
 
@@ -19828,178 +19993,6 @@ func ParseGetObservabilityConfigurationProjectsResponse(rsp *http.Response) (*Ge
 				Name       *string `json:"name,omitempty"`
 			} `json:"disabledProjects"`
 		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateObservabilityConfigurationProjectResponse parses an HTTP response from a UpdateObservabilityConfigurationProjectWithResponse call
-func ParseUpdateObservabilityConfigurationProjectResponse(rsp *http.Response) (*UpdateObservabilityConfigurationProjectResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateObservabilityConfigurationProjectResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			DisabledAt *float32 `json:"disabledAt,omitempty"`
-			Id         string   `json:"id"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListOrganizationsResponse parses an HTTP response from a ListOrganizationsWithResponse call
-func ParseListOrganizationsResponse(rsp *http.Response) (*ListOrganizationsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListOrganizationsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Organizations []Organization `json:"organizations"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateOrganizationResponse parses an HTTP response from a CreateOrganizationWithResponse call
-func ParseCreateOrganizationResponse(rsp *http.Response) (*CreateOrganizationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateOrganizationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest Organization
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetOrganizationResponse parses an HTTP response from a GetOrganizationWithResponse call
-func ParseGetOrganizationResponse(rsp *http.Response) (*GetOrganizationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetOrganizationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Organization
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

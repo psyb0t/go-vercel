@@ -10,6 +10,181 @@ import (
 	"strings"
 )
 
+// ParseUpdateObservabilityConfigurationProjectResponse parses an HTTP response from a UpdateObservabilityConfigurationProjectWithResponse call
+func ParseUpdateObservabilityConfigurationProjectResponse(rsp *http.Response) (*UpdateObservabilityConfigurationProjectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateObservabilityConfigurationProjectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			DisabledAt *float32 `json:"disabledAt,omitempty"`
+			Id         string   `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListOrganizationsResponse parses an HTTP response from a ListOrganizationsWithResponse call
+func ParseListOrganizationsResponse(rsp *http.Response) (*ListOrganizationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListOrganizationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Organizations []Organization `json:"organizations"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateOrganizationResponse parses an HTTP response from a CreateOrganizationWithResponse call
+func ParseCreateOrganizationResponse(rsp *http.Response) (*CreateOrganizationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateOrganizationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Organization
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetOrganizationResponse parses an HTTP response from a GetOrganizationWithResponse call
+func ParseGetOrganizationResponse(rsp *http.Response) (*GetOrganizationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOrganizationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Organization
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseUpdateOrganizationResponse parses an HTTP response from a UpdateOrganizationWithResponse call
 func ParseUpdateOrganizationResponse(rsp *http.Response) (*UpdateOrganizationResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -1267,6 +1442,15 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 
 				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+				// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+				// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+				// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -3074,6 +3258,15 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 
 				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+				// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+				// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+				// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -7943,6 +8136,15 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 
 				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+				// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+				// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+				// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -12920,6 +13122,7 @@ func ParseCreateIntegrationStoreDirectResponse(rsp *http.Response) (*CreateInteg
 					MakeEnvVarsSensitive *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 					Name                 string                                                                                    `json:"name"`
 					ProjectId            string                                                                                    `json:"projectId"`
+					SecretsOutdated      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 				} `json:"projectsMetadata"`
 				ProtocolSettings *struct {
 					Authentication *struct {
@@ -12954,7 +13157,8 @@ func ParseCreateIntegrationStoreDirectResponse(rsp *http.Response) (*CreateInteg
 					Name                 string                                                                           `json:"name"`
 					NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
 				} `json:"secrets"`
-				Status *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
+				SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
+				Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
 
 				// Targets The deployment targets that this resource is available for.
 				Targets                *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreTargets         `json:"targets,omitempty"`
@@ -13024,6 +13228,9 @@ func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
 		response.JSON200 = &dest
 
 	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
 		break // No content-type
 
 	case rsp.StatusCode == 403:
@@ -13316,6 +13523,9 @@ func ParseJoinTeamResponse(rsp *http.Response) (*JoinTeamResponse, error) {
 		response.JSON200 = &dest
 
 	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
 		break // No content-type
 
 	case rsp.StatusCode == 402:
@@ -13679,6 +13889,9 @@ func ParseGetTeamAccessRequestResponse(rsp *http.Response) (*GetTeamAccessReques
 	case rsp.StatusCode == 400:
 		break // No content-type
 
+	case rsp.StatusCode == 401:
+		break // No content-type
+
 	case rsp.StatusCode == 403:
 		break // No content-type
 
@@ -13726,6 +13939,9 @@ func ParseRequestDeleteResponse(rsp *http.Response) (*RequestDeleteResponse, err
 		response.JSON202 = &dest
 
 	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
 		break // No content-type
 
 	case rsp.StatusCode == 402:
@@ -17914,6 +18130,15 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
+				// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+				// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+				// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
 				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
 
@@ -19395,6 +19620,9 @@ func ParseGetDeploymentResponse(rsp *http.Response) (*GetDeploymentResponse, err
 	case rsp.StatusCode == 400:
 		break // No content-type
 
+	case rsp.StatusCode == 401:
+		break // No content-type
+
 	case rsp.StatusCode == 403:
 		break // No content-type
 
@@ -19789,248 +20017,6 @@ func ParseListConnectorProjectConnectionsResponse(rsp *http.Response) (*ListConn
 			return nil, err
 		}
 		response.JSON410 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListProjectConnectorConnectionsResponse parses an HTTP response from a ListProjectConnectorConnectionsWithResponse call
-func ParseListProjectConnectorConnectionsResponse(rsp *http.Response) (*ListProjectConnectorConnectionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListProjectConnectorConnectionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ConnectProjectConnectorConnectionList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON410 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListDeploymentCheckRunsResponse parses an HTTP response from a ListDeploymentCheckRunsWithResponse call
-func ParseListDeploymentCheckRunsResponse(rsp *http.Response) (*ListDeploymentCheckRunsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListDeploymentCheckRunsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Runs []ListDeploymentCheckRuns200JSONResponseBody_Runs_Item `json:"runs"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateDeploymentCheckRunResponse parses an HTTP response from a CreateDeploymentCheckRunWithResponse call
-func ParseCreateDeploymentCheckRunResponse(rsp *http.Response) (*CreateDeploymentCheckRunResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateDeploymentCheckRunResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CreateDeploymentCheckRun200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetDeploymentCheckRunResponse parses an HTTP response from a GetDeploymentCheckRunWithResponse call
-func ParseGetDeploymentCheckRunResponse(rsp *http.Response) (*GetDeploymentCheckRunResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDeploymentCheckRunResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetDeploymentCheckRun200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateDeploymentCheckRunResponse parses an HTTP response from a UpdateDeploymentCheckRunWithResponse call
-func ParseUpdateDeploymentCheckRunResponse(rsp *http.Response) (*UpdateDeploymentCheckRunResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateDeploymentCheckRunResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest UpdateDeploymentCheckRun200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 413:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
 
 	}
 

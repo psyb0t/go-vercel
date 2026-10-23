@@ -7,6 +7,143 @@ import (
 	"encoding/json"
 )
 
+// Defines values for CreateSandboxesV3JSONBodyMountsMode.
+const (
+	CreateSandboxesV3JSONBodyMountsModeReadWrite CreateSandboxesV3JSONBodyMountsMode = "read-write"
+	CreateSandboxesV3JSONBodyMountsModeSnapshot  CreateSandboxesV3JSONBodyMountsMode = "snapshot"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV3JSONBodyMountsMode enum.
+func (e CreateSandboxesV3JSONBodyMountsMode) Valid() bool {
+	switch e {
+	case CreateSandboxesV3JSONBodyMountsModeReadWrite:
+		return true
+	case CreateSandboxesV3JSONBodyMountsModeSnapshot:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV3JSONBodyNetworkPolicy0Mode.
+const (
+	CreateSandboxesV3JSONBodyNetworkPolicy0ModeAllowAll     CreateSandboxesV3JSONBodyNetworkPolicy0Mode = "allow-all"
+	CreateSandboxesV3JSONBodyNetworkPolicy0ModeCustom       CreateSandboxesV3JSONBodyNetworkPolicy0Mode = "custom"
+	CreateSandboxesV3JSONBodyNetworkPolicy0ModeDefaultAllow CreateSandboxesV3JSONBodyNetworkPolicy0Mode = "default-allow"
+	CreateSandboxesV3JSONBodyNetworkPolicy0ModeDefaultDeny  CreateSandboxesV3JSONBodyNetworkPolicy0Mode = "default-deny"
+	CreateSandboxesV3JSONBodyNetworkPolicy0ModeDenyAll      CreateSandboxesV3JSONBodyNetworkPolicy0Mode = "deny-all"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV3JSONBodyNetworkPolicy0Mode enum.
+func (e CreateSandboxesV3JSONBodyNetworkPolicy0Mode) Valid() bool {
+	switch e {
+	case CreateSandboxesV3JSONBodyNetworkPolicy0ModeAllowAll:
+		return true
+	case CreateSandboxesV3JSONBodyNetworkPolicy0ModeCustom:
+		return true
+	case CreateSandboxesV3JSONBodyNetworkPolicy0ModeDefaultAllow:
+		return true
+	case CreateSandboxesV3JSONBodyNetworkPolicy0ModeDefaultDeny:
+		return true
+	case CreateSandboxesV3JSONBodyNetworkPolicy0ModeDenyAll:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV3JSONBodyRegion.
+const (
+	CreateSandboxesV3JSONBodyRegionArn1 CreateSandboxesV3JSONBodyRegion = "arn1"
+	CreateSandboxesV3JSONBodyRegionBom1 CreateSandboxesV3JSONBodyRegion = "bom1"
+	CreateSandboxesV3JSONBodyRegionCdg1 CreateSandboxesV3JSONBodyRegion = "cdg1"
+	CreateSandboxesV3JSONBodyRegionCle1 CreateSandboxesV3JSONBodyRegion = "cle1"
+	CreateSandboxesV3JSONBodyRegionCpt1 CreateSandboxesV3JSONBodyRegion = "cpt1"
+	CreateSandboxesV3JSONBodyRegionDub1 CreateSandboxesV3JSONBodyRegion = "dub1"
+	CreateSandboxesV3JSONBodyRegionFra1 CreateSandboxesV3JSONBodyRegion = "fra1"
+	CreateSandboxesV3JSONBodyRegionGru1 CreateSandboxesV3JSONBodyRegion = "gru1"
+	CreateSandboxesV3JSONBodyRegionHkg1 CreateSandboxesV3JSONBodyRegion = "hkg1"
+	CreateSandboxesV3JSONBodyRegionHnd1 CreateSandboxesV3JSONBodyRegion = "hnd1"
+	CreateSandboxesV3JSONBodyRegionIad1 CreateSandboxesV3JSONBodyRegion = "iad1"
+	CreateSandboxesV3JSONBodyRegionIcn1 CreateSandboxesV3JSONBodyRegion = "icn1"
+	CreateSandboxesV3JSONBodyRegionKix1 CreateSandboxesV3JSONBodyRegion = "kix1"
+	CreateSandboxesV3JSONBodyRegionLhr1 CreateSandboxesV3JSONBodyRegion = "lhr1"
+	CreateSandboxesV3JSONBodyRegionPdx1 CreateSandboxesV3JSONBodyRegion = "pdx1"
+	CreateSandboxesV3JSONBodyRegionSfo1 CreateSandboxesV3JSONBodyRegion = "sfo1"
+	CreateSandboxesV3JSONBodyRegionSin1 CreateSandboxesV3JSONBodyRegion = "sin1"
+	CreateSandboxesV3JSONBodyRegionSyd1 CreateSandboxesV3JSONBodyRegion = "syd1"
+	CreateSandboxesV3JSONBodyRegionYul1 CreateSandboxesV3JSONBodyRegion = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV3JSONBodyRegion enum.
+func (e CreateSandboxesV3JSONBodyRegion) Valid() bool {
+	switch e {
+	case CreateSandboxesV3JSONBodyRegionArn1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionBom1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionCdg1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionCle1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionCpt1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionDub1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionFra1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionGru1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionHkg1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionHnd1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionIad1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionIcn1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionKix1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionLhr1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionPdx1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionSfo1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionSin1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionSyd1:
+		return true
+	case CreateSandboxesV3JSONBodyRegionYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV3JSONBodyFailoverRegions.
+const (
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsArn1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "arn1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsBom1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "bom1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsCdg1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "cdg1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsCle1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "cle1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsCpt1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "cpt1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsDub1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "dub1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsFra1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "fra1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsGru1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "gru1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsHkg1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "hkg1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsHnd1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "hnd1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsIad1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "iad1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsIcn1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "icn1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsKix1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "kix1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsLhr1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "lhr1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsPdx1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "pdx1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsSfo1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "sfo1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsSin1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "sin1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsSyd1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "syd1"
+	CreateSandboxesByNameForkV3JSONBodyFailoverRegionsYul1 CreateSandboxesByNameForkV3JSONBodyFailoverRegions = "yul1"
+)
+
 // Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV3JSONBodyFailoverRegions enum.
 func (e CreateSandboxesByNameForkV3JSONBodyFailoverRegions) Valid() bool {
 	switch e {
@@ -16013,7 +16150,7 @@ func (e CreateWebInsightsToggle200JSONResponseBodyValue) Valid() bool {
 // ACLAction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 type ACLAction string
 
-// APIKey Information about the newly created API key.
+// APIKey Represents an API key.
 type APIKey struct {
 	// ActiveAt Timestamp (in milliseconds) of when the API key was most recently used.
 	//
@@ -19877,133 +20014,3 @@ type FlagEnvironmentsRulesOutcome2 struct {
 	StartTimestamp float32                           `json:"startTimestamp"`
 	Type           FlagEnvironmentsRulesOutcome2Type `json:"type"`
 }
-
-// FlagEnvironmentsRulesOutcome2BaseType defines model for Flag.Environments.Rules.Outcome.2.Base.Type.
-type FlagEnvironmentsRulesOutcome2BaseType string
-
-// FlagEnvironmentsRulesOutcome2Type defines model for Flag.Environments.Rules.Outcome.2.Type.
-type FlagEnvironmentsRulesOutcome2Type string
-
-// FlagEnvironmentsRulesOutcome3 defines model for Flag.Environments.Rules.Outcome.3.
-type FlagEnvironmentsRulesOutcome3 struct {
-	Type FlagEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// FlagEnvironmentsRulesOutcome3Type defines model for Flag.Environments.Rules.Outcome.3.Type.
-type FlagEnvironmentsRulesOutcome3Type string
-
-// Flag_Environments_Rules_Outcome defines model for Flag.Environments.Rules.Outcome.
-type Flag_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// FlagKind defines model for Flag.Kind.
-type FlagKind string
-
-// FlagPermanent defines model for Flag.Permanent.
-type FlagPermanent bool
-
-// FlagSeenInProduction defines model for Flag.SeenInProduction.
-type FlagSeenInProduction bool
-
-// FlagState defines model for Flag.State.
-type FlagState string
-
-// FlagTypeName defines model for Flag.TypeName.
-type FlagTypeName string
-
-// FlagVariantsValue0 defines model for Flag.Variants.Value.0.
-type FlagVariantsValue0 = string
-
-// FlagVariantsValue1 defines model for Flag.Variants.Value.1.
-type FlagVariantsValue1 = float32
-
-// FlagVariantsValue2 defines model for Flag.Variants.Value.2.
-type FlagVariantsValue2 map[string]interface{}
-
-// FlagVariantsValue3 defines model for Flag.Variants.Value.3.
-type FlagVariantsValue3 = []interface{}
-
-// FlagVariantsValue4 defines model for Flag.Variants.Value.4.
-type FlagVariantsValue4 bool
-
-// Flag_Variants_Value defines model for Flag.Variants.Value.
-type Flag_Variants_Value struct {
-	union json.RawMessage
-}
-
-// FlagJSONValue defines model for FlagJSONValue.
-type FlagJSONValue struct {
-	union json.RawMessage
-}
-
-// FlagJSONValue0 defines model for FlagJSONValue.0.
-type FlagJSONValue0 = string
-
-// FlagJSONValue1 defines model for FlagJSONValue.1.
-type FlagJSONValue1 = float32
-
-// FlagJSONValue2 TODO: The following types will eventually be exported by a more relevant package.
-type FlagJSONValue2 = []*FlagJSONValue
-
-// FlagJSONValue3 defines model for FlagJSONValue.3.
-type FlagJSONValue3 map[string]*FlagJSONValue
-
-// FlagJSONValue4 defines model for FlagJSONValue.4.
-type FlagJSONValue4 bool
-
-// FlagsSdkKeyWithSecrets Representation of a Flags SDK key returned by CREATE. Includes cleartext secrets (`keyValue`, `tokenValue`, `connectionString`) which are only ever disclosed once, on creation.
-type FlagsSdkKeyWithSecrets struct {
-	CreatedAt   float32  `json:"createdAt"`
-	CreatedBy   string   `json:"createdBy"`
-	DeletedAt   *float32 `json:"deletedAt,omitempty"`
-	Environment string   `json:"environment"`
-	HashKey     string   `json:"hashKey"`
-
-	// KeyValue Cleartext value of the SDK key.
-	KeyValue string  `json:"keyValue"`
-	Label    *string `json:"label,omitempty"`
-
-	// PartialKeyValue Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`).
-	PartialKeyValue string `json:"partialKeyValue"`
-	ProjectId       string `json:"projectId"`
-
-	// TokenValue Cleartext value of the Global Config token, when the project has a Global Config connection.
-	TokenValue *string                    `json:"tokenValue,omitempty"`
-	Type       FlagsSdkKeyWithSecretsType `json:"type"`
-	UpdatedAt  float32                    `json:"updatedAt"`
-}
-
-// FlagsSdkKeyWithSecretsType defines model for FlagsSdkKeyWithSecrets.Type.
-type FlagsSdkKeyWithSecretsType string
-
-// Forbidden defines model for Forbidden.
-type Forbidden struct {
-	Code    ForbiddenCode   `json:"code"`
-	Message string          `json:"message"`
-	Status  ForbiddenStatus `json:"status"`
-}
-
-// ForbiddenCode defines model for Forbidden.Code.
-type ForbiddenCode string
-
-// ForbiddenStatus defines model for Forbidden.Status.
-type ForbiddenStatus float32
-
-// GlobalConfigItem The Global Config.
-type GlobalConfigItem struct {
-	CreatedAt    float32                `json:"createdAt"`
-	Description  *string                `json:"description,omitempty"`
-	EdgeConfigId string                 `json:"edgeConfigId"`
-	Key          string                 `json:"key"`
-	UpdatedAt    float32                `json:"updatedAt"`
-	Value        *GlobalConfigItemValue `json:"value"`
-}
-
-// GlobalConfigItemValue defines model for GlobalConfigItemValue.
-type GlobalConfigItemValue struct {
-	union json.RawMessage
-}
-
-// GlobalConfigItemValue0 defines model for GlobalConfigItemValue.0.
-type GlobalConfigItemValue0 = string

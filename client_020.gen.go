@@ -430,6 +430,44 @@ func (c *Client) CreateApiKeys(ctx context.Context, body CreateApiKeysJSONReques
 	return c.Client.Do(req)
 }
 
+// UpdateApiKeyQuotaWithBody Update an AI Gateway API key budget
+//
+// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+func (c *Client) UpdateApiKeyQuotaWithBody(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateApiKeyQuotaRequestWithBody(c.Server, apiKeyID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateApiKeyQuota Update an AI Gateway API key budget
+//
+// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+func (c *Client) UpdateApiKeyQuota(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateApiKeyQuotaRequest(c.Server, apiKeyID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetDomainsRecordsByRecordId performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
 func (c *Client) GetDomainsRecordsByRecordId(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetDomainsRecordsByRecordIdRequest(c.Server, recordId)
@@ -4779,7 +4817,7 @@ func (c *Client) GetProjectBoxes(ctx context.Context, idOrName string, params *G
 
 // PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
 //
-// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 //
 // Takes any type of body and a specified content type.
 //
@@ -4798,7 +4836,7 @@ func (c *Client) PutProjectDaemonInstancesWithBody(ctx context.Context, idOrName
 
 // PutProjectDaemonInstances Override a project daemon's instance counts
 //
-// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -13459,6 +13497,53 @@ func NewCreateApiKeysRequestWithBody(server string, contentType string, body io.
 	return req, nil
 }
 
+// NewUpdateApiKeyQuotaRequest calls the generic UpdateApiKeyQuota builder with application/json body
+func NewUpdateApiKeyQuotaRequest(server string, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateApiKeyQuotaRequestWithBody(server, apiKeyID, "application/json", bodyReader)
+}
+
+// NewUpdateApiKeyQuotaRequestWithBody constructs an http.Request for the UpdateApiKeyQuota method, with any body, and a specified content type
+func NewUpdateApiKeyQuotaRequestWithBody(server string, apiKeyID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "apiKeyID", apiKeyID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api-keys/%s/quota", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetDomainsRecordsByRecordIdRequest constructs an http.Request for the GetDomainsRecordsByRecordId method
 func NewGetDomainsRecordsByRecordIdRequest(server string, recordId string) (*http.Request, error) {
 	var err error
@@ -19911,79 +19996,6 @@ func NewGetEdgeConfigItemRequest(server string, edgeConfigId string, edgeConfigI
 	}
 
 	operationPath := fmt.Sprintf("/v1/global-config/%s/item/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetEdgeConfigItemsRequest constructs an http.Request for the GetEdgeConfigItems method
-func NewGetEdgeConfigItemsRequest(server string, edgeConfigId string, params *GetEdgeConfigItemsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/items", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}

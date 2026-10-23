@@ -16,6 +16,79 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewListDeploymentCheckRunsRequest constructs an http.Request for the ListDeploymentCheckRuns method
+func NewListDeploymentCheckRunsRequest(server string, deploymentId string, params *ListDeploymentCheckRunsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/check-runs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCreateDeploymentCheckRunRequest calls the generic CreateDeploymentCheckRun builder with application/json body
 func NewCreateDeploymentCheckRunRequest(server string, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -11154,6 +11227,24 @@ type ClientWithResponsesInterface interface {
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	CreateApiKeysWithResponse(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error)
 
+	// UpdateApiKeyQuotaWithBodyWithResponse Update an AI Gateway API key budget
+	//
+	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+	UpdateApiKeyQuotaWithBodyWithResponse(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error)
+
+	// UpdateApiKeyQuotaWithResponse Update an AI Gateway API key budget
+	//
+	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+	UpdateApiKeyQuotaWithResponse(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error)
+
 	// GetDomainsRecordsByRecordIdWithResponse performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
 	//
 	// Returns a wrapper object for the known response body format(s).
@@ -13292,7 +13383,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
 	//
-	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -13301,7 +13392,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
 	//
-	// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -17521,7 +17612,7 @@ type CreateApiKeysResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// ApiKey Information about the newly created API key.
+		// ApiKey Represents an API key.
 		ApiKey APIKey `json:"apiKey"`
 
 		// ApiKeyString The API key's actual value. This value is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
@@ -17563,7 +17654,7 @@ type CreateApiKeysResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CreateApiKeysResponse) GetJSON200() *struct {
-	// ApiKey Information about the newly created API key.
+	// ApiKey Represents an API key.
 	ApiKey APIKey `json:"apiKey"`
 
 	// ApiKeyString The API key's actual value. This value is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
@@ -17639,6 +17730,131 @@ func (r CreateApiKeysResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateApiKeysResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateApiKeyQuotaResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// ApiKey Represents an API key.
+		ApiKey APIKey `json:"apiKey"`
+
+		// Quota AI Gateway quota associated with an API key.
+		Quota APIKeyQuota `json:"quota"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *struct {
+		Error struct {
+			Code    string  `json:"code"`
+			Limit   float32 `json:"limit"`
+			Message string  `json:"message"`
+			Name    string  `json:"name"`
+		} `json:"error"`
+	}
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON200() *struct {
+	// ApiKey Represents an API key.
+	ApiKey APIKey `json:"apiKey"`
+
+	// Quota AI Gateway quota associated with an API key.
+	Quota APIKeyQuota `json:"quota"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON401() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON403() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON429() *struct {
+	Error struct {
+		Code    string  `json:"code"`
+		Limit   float32 `json:"limit"`
+		Message string  `json:"message"`
+		Name    string  `json:"name"`
+	} `json:"error"`
+} {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON500() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateApiKeyQuotaResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateApiKeyQuotaResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateApiKeyQuotaResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateApiKeyQuotaResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -17949,6 +18165,7 @@ type CreateStorageStoresBlobResponse struct {
 				MakeEnvVarsSensitive *CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 				Name                 string                                                                               `json:"name"`
 				ProjectId            string                                                                               `json:"projectId"`
+				SecretsOutdated      *CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 			} `json:"projectsMetadata"`
 			Region                 CreateStorageStoresBlob200JSONResponseBodyStoreRegion             `json:"region"`
 			Size                   float32                                                           `json:"size"`
@@ -17995,6 +18212,7 @@ func (r CreateStorageStoresBlobResponse) GetJSON200() *struct {
 			MakeEnvVarsSensitive *CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 			Name                 string                                                                               `json:"name"`
 			ProjectId            string                                                                               `json:"projectId"`
+			SecretsOutdated      *CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 		} `json:"projectsMetadata"`
 		Region                 CreateStorageStoresBlob200JSONResponseBodyStoreRegion             `json:"region"`
 		Size                   float32                                                           `json:"size"`
@@ -18110,6 +18328,7 @@ type GetStorageStoresByIdResponse struct {
 				MakeEnvVarsSensitive *GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 				Name                 string                                                                            `json:"name"`
 				ProjectId            string                                                                            `json:"projectId"`
+				SecretsOutdated      *GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 			} `json:"projectsMetadata"`
 			Status                 *GetStorageStoresById200JSONResponseBodyStoreStatus            `json:"status"`
 			TotalConnectedProjects *float32                                                       `json:"totalConnectedProjects,omitempty"`
@@ -18145,6 +18364,7 @@ func (r GetStorageStoresByIdResponse) GetJSON200() *struct {
 			MakeEnvVarsSensitive *GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 			Name                 string                                                                            `json:"name"`
 			ProjectId            string                                                                            `json:"projectId"`
+			SecretsOutdated      *GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 		} `json:"projectsMetadata"`
 		Status                 *GetStorageStoresById200JSONResponseBodyStoreStatus            `json:"status"`
 		TotalConnectedProjects *float32                                                       `json:"totalConnectedProjects,omitempty"`
@@ -19796,224 +20016,4 @@ type CreateConnectorResponse struct {
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r CreateConnectorResponse) GetJSON201() *ConnectConnectorCreateResult {
 	return r.JSON201
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r CreateConnectorResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r CreateConnectorResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r CreateConnectorResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r CreateConnectorResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r CreateConnectorResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r CreateConnectorResponse) GetJSON410() *ConnectError {
-	return r.JSON410
-}
-
-// GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r CreateConnectorResponse) GetJSON422() *ConnectError {
-	return r.JSON422
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r CreateConnectorResponse) GetJSON500() *ConnectError {
-	return r.JSON500
-}
-
-// GetJSON502 returns the response for an HTTP 502 `application/json` response
-func (r CreateConnectorResponse) GetJSON502() *ConnectError {
-	return r.JSON502
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateConnectorResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateConnectorResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateConnectorResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateConnectorResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteConnectorResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ConnectError
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ConnectError
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ConnectError
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ConnectError
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ConnectError
-	// JSON410 the response for an HTTP 410 `application/json` response
-	JSON410 *ConnectError
-	// JSON422 the response for an HTTP 422 `application/json` response
-	JSON422 *ConnectError
-	// JSON502 the response for an HTTP 502 `application/json` response
-	JSON502 *ConnectError
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r DeleteConnectorResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r DeleteConnectorResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r DeleteConnectorResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r DeleteConnectorResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r DeleteConnectorResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r DeleteConnectorResponse) GetJSON410() *ConnectError {
-	return r.JSON410
-}
-
-// GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r DeleteConnectorResponse) GetJSON422() *ConnectError {
-	return r.JSON422
-}
-
-// GetJSON502 returns the response for an HTTP 502 `application/json` response
-func (r DeleteConnectorResponse) GetJSON502() *ConnectError {
-	return r.JSON502
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteConnectorResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteConnectorResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteConnectorResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteConnectorResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConnectorResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ConnectConnector
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ConnectError
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ConnectError
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ConnectError
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ConnectError
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ConnectError
-	// JSON410 the response for an HTTP 410 `application/json` response
-	JSON410 *ConnectError
-	// JSON422 the response for an HTTP 422 `application/json` response
-	JSON422 *ConnectError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConnectorResponse) GetJSON200() *ConnectConnector {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r GetConnectorResponse) GetJSON400() *ConnectError {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetConnectorResponse) GetJSON401() *ConnectError {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r GetConnectorResponse) GetJSON403() *ConnectError {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetConnectorResponse) GetJSON404() *ConnectError {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r GetConnectorResponse) GetJSON409() *ConnectError {
-	return r.JSON409
-}
-
-// GetJSON410 returns the response for an HTTP 410 `application/json` response
-func (r GetConnectorResponse) GetJSON410() *ConnectError {
-	return r.JSON410
 }

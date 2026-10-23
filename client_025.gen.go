@@ -951,6 +951,15 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
+		// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+		// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+		// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
 		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
 
@@ -11996,6 +12005,15 @@ type GetProjectResponse struct {
 			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
+			// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+			// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+			// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
 
@@ -13776,6 +13794,15 @@ func (r GetProjectResponse) GetJSON200() *struct {
 
 		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+		// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+		// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+		// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -15580,6 +15607,15 @@ type UpdateProjectResponse struct {
 			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
+			// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+			// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+			// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
 
@@ -17349,6 +17385,15 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 
 		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+		// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+		// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+		// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -19830,6 +19875,36 @@ func (c *ClientWithResponses) CreateApiKeysWithResponse(ctx context.Context, bod
 	return ParseCreateApiKeysResponse(rsp)
 }
 
+// UpdateApiKeyQuotaWithBodyWithResponse Update an AI Gateway API key budget
+//
+// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+func (c *ClientWithResponses) UpdateApiKeyQuotaWithBodyWithResponse(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error) {
+	rsp, err := c.UpdateApiKeyQuotaWithBody(ctx, apiKeyID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateApiKeyQuotaResponse(rsp)
+}
+
+// UpdateApiKeyQuotaWithResponse Update an AI Gateway API key budget
+//
+// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+func (c *ClientWithResponses) UpdateApiKeyQuotaWithResponse(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error) {
+	rsp, err := c.UpdateApiKeyQuota(ctx, apiKeyID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateApiKeyQuotaResponse(rsp)
+}
+
 // GetDomainsRecordsByRecordIdWithResponse performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
 //
 // Returns a wrapper object for the known response body format(s).
@@ -19945,73 +20020,4 @@ func (c *ClientWithResponses) CreateStorageStoresBlobWithBodyWithResponse(ctx co
 		return nil, err
 	}
 	return ParseCreateStorageStoresBlobResponse(rsp)
-}
-
-// CreateStorageStoresBlobWithResponse Create a Blob store
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-func (c *ClientWithResponses) CreateStorageStoresBlobWithResponse(ctx context.Context, body CreateStorageStoresBlobJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateStorageStoresBlobResponse, error) {
-	rsp, err := c.CreateStorageStoresBlob(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateStorageStoresBlobResponse(rsp)
-}
-
-// DeleteStorageStoresBlobByIdWithResponse Delete a Blob store
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /storage/stores/blob/{id} (the `DeleteStorageStoresBlobById` operationId).
-func (c *ClientWithResponses) DeleteStorageStoresBlobByIdWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStorageStoresBlobByIdResponse, error) {
-	rsp, err := c.DeleteStorageStoresBlobById(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteStorageStoresBlobByIdResponse(rsp)
-}
-
-// GetStorageStoresByIdWithResponse Get a store
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /storage/stores/{id} (the `GetStorageStoresById` operationId).
-func (c *ClientWithResponses) GetStorageStoresByIdWithResponse(ctx context.Context, id string, params *GetStorageStoresByIdParams, reqEditors ...RequestEditorFn) (*GetStorageStoresByIdResponse, error) {
-	rsp, err := c.GetStorageStoresById(ctx, id, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetStorageStoresByIdResponse(rsp)
-}
-
-// ListAccessGroupsWithResponse List access groups for a team, project or member
-//
-// List access groups.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/access-groups (the `ListAccessGroups` operationId).
-func (c *ClientWithResponses) ListAccessGroupsWithResponse(ctx context.Context, params *ListAccessGroupsParams, reqEditors ...RequestEditorFn) (*ListAccessGroupsResponse, error) {
-	rsp, err := c.ListAccessGroups(ctx, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListAccessGroupsResponse(rsp)
-}
-
-// CreateAccessGroupWithBodyWithResponse Creates an access group
-//
-// Allows to create an access group.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-func (c *ClientWithResponses) CreateAccessGroupWithBodyWithResponse(ctx context.Context, params *CreateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessGroupResponse, error) {
-	rsp, err := c.CreateAccessGroupWithBody(ctx, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateAccessGroupResponse(rsp)
 }

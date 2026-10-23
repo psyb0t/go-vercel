@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.7.0, 2026-10-23
+
+- Added `UpdateApiKeyQuota` and `UpdateApiKeyQuotaWithBody` on `Client` and `ClientInterface`, and `UpdateApiKeyQuotaWithResponse` and `UpdateApiKeyQuotaWithBodyWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Added `NewUpdateApiKeyQuotaRequest`, `NewUpdateApiKeyQuotaRequestWithBody`, `ParseUpdateApiKeyQuotaResponse`, `UpdateApiKeyQuotaJSONBody` and `UpdateApiKeyQuotaJSONBodyAlertThresholds`.
+- Added `UserId` and `GroupId` to `CountEvents200JSONResponseBodyData0`, `CountPageviews200JSONResponseBodyData0` and the `Data_1_Item` types of `AggregateEvents` and `AggregatePageviews`. `AggregateEvents200JSONResponseBodyData0` and `AggregatePageviews200JSONResponseBodyData0` changed type, as did their `As`, `From` and `Merge` methods.
+- Added webhook event type constants `ListEventTypeNameStartupTermsAccepted`, `ListEventTypeNameMessageboardProjectGranted`, `ListEventTypeNameMessageboardProjectRevoked`, `ListEventTypeNameMessageboardPrivateProjectGranted` and `ListEventTypeNameMessageboardPrivateProjectRevoked`, plus the matching `ListEventTypeReplacedBy...` constants.
+- `UserEventPayload` types were renumbered and reshaped again. `UserEventPayload121` and its `AsUserEventPayload121`, `FromUserEventPayload121` and `MergeUserEventPayload121` methods are removed. `UserEventPayload119`, `UserEventPayload498`, `UserEventPayload499`, `UserEventPayload500` and their `As`, `From` and `Merge` methods on `UserEvent_Payload` are added. Many `UserEventPayloadNNN` types lost fields, for example `UserEventPayload108`, `UserEventPayload104` and `UserEventPayload106`, and many `UserEvent_Payload_N_...` helper types were renamed. `UserEventPayload103.Host` changed from `string` to `*string`.
+- `PutProjectDaemonInstancesJSONBody` and `PutProjectDaemonInstancesJSONRequestBody` changed from `map[string]int` to `map[string]*int`.
+- The `JSON200` field and `GetJSON200` method changed type on `CreateProjectResponse`, `DeleteProjectAvatarResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UploadProjectAvatarResponse`, `UpdateMicrofrontendsResponse`, `GetMicrofrontendsInGroupResponse`, `CreateIntegrationStoreDirectResponse`, `CreateStorageStoresBlobResponse` and `GetStorageStoresByIdResponse`. `GetProjects200JSONResponseBody2.Projects` changed type too.
+- Added `SecretsOutdated` types and a `True` constant under the project metadata of the `CreateIntegrationStoreDirect`, `CreateStorageStoresBlob` and `GetStorageStoresById` responses.
+- Generated from spec version 0.0.1.
+
 ## v0.6.0, 2026-10-22
 
 - Added `IncludeDeliveryStats` to `GetDrainParams`, `GetDrainsParams` and `GetAllLogDrainsParams`. Drain responses from `GetDrain`, `GetDrains`, `GetAllLogDrains`, `CreateDrain` and `UpdateDrain` gained a `DeliveryStats` field with `Healthy`, `Failing` and `Unknown` state constants and a `N24h` window constant.

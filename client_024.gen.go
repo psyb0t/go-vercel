@@ -7,6 +7,308 @@ import (
 	"net/http"
 )
 
+type RemoveProjectMemberResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Id string `json:"id"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RemoveProjectMemberResponse) GetJSON200() *struct {
+	Id string `json:"id"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r RemoveProjectMemberResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RemoveProjectMemberResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RemoveProjectMemberResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RemoveProjectMemberResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateProjectProtectionBypassResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ProtectionBypass *map[string]UpdateProjectProtectionBypass200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateProjectProtectionBypassResponse) GetJSON200() *struct {
+	ProtectionBypass *map[string]UpdateProjectProtectionBypass200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateProjectProtectionBypassResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateProjectProtectionBypassResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateProjectProtectionBypassResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateProjectProtectionBypassResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetRollingReleaseResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
+		RollingRelease *struct {
+			// ActiveStage The currently active stage, null if the rollout is aborted
+			//
+			// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
+			ActiveStage *struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"activeStage"`
+
+			// AdvancementType The advancement type of the rolling release
+			//
+			// Example: manual-approval
+			AdvancementType GetRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
+
+			// CanaryDeployment The canary deployment being rolled out
+			//
+			// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
+			CanaryDeployment *struct {
+				// CreatedAt A number containing the date when the deployment was created in milliseconds
+				//
+				// Example: 1540257589405
+				CreatedAt float32 `json:"createdAt"`
+
+				// Id A string holding the unique ID of the deployment
+				//
+				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+				Id string `json:"id"`
+
+				// Name The name of the project associated with the deployment at the time that the deployment was created
+				//
+				// Example: my-project
+				Name string `json:"name"`
+
+				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+				//
+				// Example: READY
+				ReadyState   GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
+				ReadyStateAt *float32                                                                     `json:"readyStateAt,omitempty"`
+
+				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+				//
+				// Example: cli
+				Source *GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
+
+				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+				Target *GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
+
+				// Url A string with the unique URL of the deployment
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url string `json:"url"`
+			} `json:"canaryDeployment"`
+
+			// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+			CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
+
+			// CurrentDeployment The current deployment receiving production traffic
+			//
+			// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
+			CurrentDeployment *struct {
+				// CreatedAt A number containing the date when the deployment was created in milliseconds
+				//
+				// Example: 1540257589405
+				CreatedAt float32 `json:"createdAt"`
+
+				// Id A string holding the unique ID of the deployment
+				//
+				// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+				Id string `json:"id"`
+
+				// Name The name of the project associated with the deployment at the time that the deployment was created
+				//
+				// Example: my-project
+				Name string `json:"name"`
+
+				// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+				//
+				// Example: READY
+				ReadyState   GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
+				ReadyStateAt *float32                                                                      `json:"readyStateAt,omitempty"`
+
+				// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+				//
+				// Example: cli
+				Source *GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
+
+				// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+				Target *GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
+
+				// Url A string with the unique URL of the deployment
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url string `json:"url"`
+			} `json:"currentDeployment"`
+
+			// NextStage The next stage to be activated, null if not in ACTIVE state
+			//
+			// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
+			NextStage *struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"nextStage"`
+
+			// QueuedDeploymentId The ID of a deployment queued for the next rolling release
+			//
+			// Example: dpl_ghi789
+			QueuedDeploymentId *string `json:"queuedDeploymentId"`
+
+			// Stages All stages configured for this rolling release
+			//
+			// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
+			Stages []struct {
+				// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
+				Duration *float32 `json:"duration"`
+
+				// Index The zero-based index of the stage
+				//
+				// Example: 0
+				Index float32 `json:"index"`
+
+				// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
+				//
+				// Example: false
+				IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
+
+				// LinearShift Whether to linearly shift traffic over the duration of this stage
+				//
+				// Example: false
+				LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+				// RequireApproval Whether or not this stage requires manual approval to proceed
+				RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
+
+				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+				//
+				// Example: 25
+				TargetPercentage float32 `json:"targetPercentage"`
+			} `json:"stages"`
+
+			// StartedAt Unix timestamp in milliseconds when the rolling release started
+			//
+			// Example: 1716210500000
+			StartedAt float32 `json:"startedAt"`
+
+			// State The current state of the rolling release
+			//
+			// Example: ACTIVE
+			State GetRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
+
+			// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+			Substate *GetRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
+
+			// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
+			//
+			// Example: 1716210600000
+			UpdatedAt float32 `json:"updatedAt"`
+		} `json:"rollingRelease"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetRollingReleaseResponse) GetJSON200() *struct {
 	// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
@@ -4495,6 +4797,15 @@ type UpdateMicrofrontendsResponse struct {
 			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
 
+			// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+			// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+			// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
 
@@ -6264,6 +6575,15 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 
 		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+		// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+		// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+		// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
@@ -12757,6 +13077,7 @@ type CreateIntegrationStoreDirectResponse struct {
 				MakeEnvVarsSensitive *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 				Name                 string                                                                                    `json:"name"`
 				ProjectId            string                                                                                    `json:"projectId"`
+				SecretsOutdated      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 			} `json:"projectsMetadata"`
 			ProtocolSettings *struct {
 				Authentication *struct {
@@ -12791,7 +13112,8 @@ type CreateIntegrationStoreDirectResponse struct {
 				Name                 string                                                                           `json:"name"`
 				NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
 			} `json:"secrets"`
-			Status *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
+			SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
+			Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
 
 			// Targets The deployment targets that this resource is available for.
 			Targets                *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreTargets         `json:"targets,omitempty"`
@@ -12980,6 +13302,7 @@ func (r CreateIntegrationStoreDirectResponse) GetJSON200() *struct {
 			MakeEnvVarsSensitive *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
 			Name                 string                                                                                    `json:"name"`
 			ProjectId            string                                                                                    `json:"projectId"`
+			SecretsOutdated      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
 		} `json:"projectsMetadata"`
 		ProtocolSettings *struct {
 			Authentication *struct {
@@ -13014,7 +13337,8 @@ func (r CreateIntegrationStoreDirectResponse) GetJSON200() *struct {
 			Name                 string                                                                           `json:"name"`
 			NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
 		} `json:"secrets"`
-		Status *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
+		SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
+		Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
 
 		// Targets The deployment targets that this resource is available for.
 		Targets                *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreTargets         `json:"targets,omitempty"`
@@ -19200,6 +19524,15 @@ type CreateProjectResponse struct {
 
 			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+			// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+			// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+			// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
 
 			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
