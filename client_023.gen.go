@@ -99,6 +99,8 @@ type DeleteConnectorResponse struct {
 	JSON410 *ConnectError
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 	// JSON502 the response for an HTTP 502 `application/json` response
 	JSON502 *ConnectError
 }
@@ -136,6 +138,11 @@ func (r DeleteConnectorResponse) GetJSON410() *ConnectError {
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
 func (r DeleteConnectorResponse) GetJSON422() *ConnectError {
 	return r.JSON422
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteConnectorResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetJSON502 returns the response for an HTTP 502 `application/json` response
@@ -191,6 +198,8 @@ type GetConnectorResponse struct {
 	JSON410 *ConnectError
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -231,6 +240,11 @@ func (r GetConnectorResponse) GetJSON410() *ConnectError {
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
 func (r GetConnectorResponse) GetJSON422() *ConnectError {
 	return r.JSON422
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetConnectorResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -318,6 +332,8 @@ type DeleteConnectorProjectConnectionResponse struct {
 	JSON409 *ConnectError
 	// JSON410 the response for an HTTP 410 `application/json` response
 	JSON410 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON400 returns the response for an HTTP 400 `application/json` response
@@ -348,6 +364,11 @@ func (r DeleteConnectorProjectConnectionResponse) GetJSON409() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r DeleteConnectorProjectConnectionResponse) GetJSON410() *ConnectError {
 	return r.JSON410
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteConnectorProjectConnectionResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -396,6 +417,8 @@ type GetConnectorProjectConnectionResponse struct {
 	JSON409 *ConnectError
 	// JSON410 the response for an HTTP 410 `application/json` response
 	JSON410 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -431,6 +454,11 @@ func (r GetConnectorProjectConnectionResponse) GetJSON409() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r GetConnectorProjectConnectionResponse) GetJSON410() *ConnectError {
 	return r.JSON410
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetConnectorProjectConnectionResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -479,6 +507,8 @@ type UpsertConnectorProjectConnectionResponse struct {
 	JSON409 *ConnectError
 	// JSON410 the response for an HTTP 410 `application/json` response
 	JSON410 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -514,6 +544,11 @@ func (r UpsertConnectorProjectConnectionResponse) GetJSON409() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r UpsertConnectorProjectConnectionResponse) GetJSON410() *ConnectError {
 	return r.JSON410
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r UpsertConnectorProjectConnectionResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -564,6 +599,8 @@ type ReplaceConnectorTriggerDestinationsResponse struct {
 	JSON410 *ConnectError
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -604,6 +641,11 @@ func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON410() *ConnectError 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
 func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON422() *ConnectError {
 	return r.JSON422
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r ReplaceConnectorTriggerDestinationsResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -19970,40 +20012,4 @@ type AddProjectMemberResponse struct {
 	JSON200 *struct {
 		Id string `json:"id"`
 	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r AddProjectMemberResponse) GetJSON200() *struct {
-	Id string `json:"id"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r AddProjectMemberResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r AddProjectMemberResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r AddProjectMemberResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r AddProjectMemberResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
 }

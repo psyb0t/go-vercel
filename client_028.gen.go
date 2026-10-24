@@ -69,6 +69,13 @@ func ParseListProjectConnectorConnectionsResponse(rsp *http.Response) (*ListProj
 		}
 		response.JSON410 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
 	}
 
 	return response, nil
@@ -1345,6 +1352,9 @@ func ParseListNamedSandboxesResponse(rsp *http.Response) (*ListNamedSandboxesRes
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -1465,6 +1475,9 @@ func ParseListDrivesResponse(rsp *http.Response) (*ListDrivesResponse, error) {
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -1510,6 +1523,9 @@ func ParseGetDriveResponse(rsp *http.Response) (*GetDriveResponse, error) {
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
 		break // No content-type
 
 	case rsp.StatusCode == 429:
@@ -1560,6 +1576,9 @@ func ParseDeleteDriveResponse(rsp *http.Response) (*DeleteDriveResponse, error) 
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
 		break // No content-type
 
 	case rsp.StatusCode == 429:
@@ -1625,6 +1644,9 @@ func ParseGetOrCreateDriveResponse(rsp *http.Response) (*GetOrCreateDriveRespons
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -1678,6 +1700,9 @@ func ParseForkDriveResponse(rsp *http.Response) (*ForkDriveResponse, error) {
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -1723,6 +1748,9 @@ func ParseListSessionsResponse(rsp *http.Response) (*ListSessionsResponse, error
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
 		break // No content-type
 
 	case rsp.StatusCode == 429:
@@ -1777,6 +1805,9 @@ func ParseGetSessionResponse(rsp *http.Response) (*GetSessionResponse, error) {
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -1824,6 +1855,9 @@ func ParseListSessionCommandsResponse(rsp *http.Response) (*ListSessionCommandsR
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
 		break // No content-type
 
 	case rsp.StatusCode == 429:
@@ -2425,6 +2459,9 @@ func ParseListSessionSnapshotsResponse(rsp *http.Response) (*ListSessionSnapshot
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -2470,6 +2507,9 @@ func ParseDeleteSessionSnapshotResponse(rsp *http.Response) (*DeleteSessionSnaps
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
 		break // No content-type
 
 	case rsp.StatusCode == 429:
@@ -2519,6 +2559,9 @@ func ParseGetSessionSnapshotResponse(rsp *http.Response) (*GetSessionSnapshotRes
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 422:
+		break // No content-type
+
 	case rsp.StatusCode == 429:
 		break // No content-type
 
@@ -2564,6 +2607,9 @@ func ParseDeleteSandboxResponse(rsp *http.Response) (*DeleteSandboxResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
 		break // No content-type
 
 	case rsp.StatusCode == 429:
@@ -10081,6 +10127,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 428:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
 		break // No content-type
 
 	}

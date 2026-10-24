@@ -3082,6 +3082,8 @@ type ListConnectorsResponse struct {
 	JSON410 *ConnectError
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -3122,6 +3124,11 @@ func (r ListConnectorsResponse) GetJSON410() *ConnectError {
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
 func (r ListConnectorsResponse) GetJSON422() *ConnectError {
 	return r.JSON422
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r ListConnectorsResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -3274,6 +3281,8 @@ type ListConnectorProjectConnectionsResponse struct {
 	JSON409 *ConnectError
 	// JSON410 the response for an HTTP 410 `application/json` response
 	JSON410 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -3309,6 +3318,11 @@ func (r ListConnectorProjectConnectionsResponse) GetJSON409() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r ListConnectorProjectConnectionsResponse) GetJSON410() *ConnectError {
 	return r.JSON410
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r ListConnectorProjectConnectionsResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -3355,6 +3369,8 @@ type ListProjectConnectorConnectionsResponse struct {
 	JSON404 *ConnectError
 	// JSON410 the response for an HTTP 410 `application/json` response
 	JSON410 *ConnectError
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -3385,6 +3401,11 @@ func (r ListProjectConnectorConnectionsResponse) GetJSON404() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r ListProjectConnectorConnectionsResponse) GetJSON410() *ConnectError {
 	return r.JSON410
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r ListProjectConnectorConnectionsResponse) GetJSON500() *ConnectError {
+	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -19997,27 +20018,4 @@ func (c *ClientWithResponses) CreateSpeedInsightsToggleWithBodyWithResponse(ctx 
 		return nil, err
 	}
 	return ParseCreateSpeedInsightsToggleResponse(rsp)
-}
-
-// CreateSpeedInsightsToggleWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request.
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-func (c *ClientWithResponses) CreateSpeedInsightsToggleWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, body CreateSpeedInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error) {
-	rsp, err := c.CreateSpeedInsightsToggle(ctx, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateSpeedInsightsToggleResponse(rsp)
-}
-
-// CreateStorageStoresBlobWithBodyWithResponse Create a Blob store
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-func (c *ClientWithResponses) CreateStorageStoresBlobWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStorageStoresBlobResponse, error) {
-	rsp, err := c.CreateStorageStoresBlobWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateStorageStoresBlobResponse(rsp)
 }

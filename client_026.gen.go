@@ -12,6 +12,29 @@ import (
 	"time"
 )
 
+// CreateSpeedInsightsToggleWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request.
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateSpeedInsightsToggleWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, body CreateSpeedInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error) {
+	rsp, err := c.CreateSpeedInsightsToggle(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateSpeedInsightsToggleResponse(rsp)
+}
+
+// CreateStorageStoresBlobWithBodyWithResponse Create a Blob store
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
+func (c *ClientWithResponses) CreateStorageStoresBlobWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStorageStoresBlobResponse, error) {
+	rsp, err := c.CreateStorageStoresBlobWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateStorageStoresBlobResponse(rsp)
+}
+
 // CreateStorageStoresBlobWithResponse Create a Blob store
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
@@ -11939,6 +11962,9 @@ func ParseCreateConnectorAuthorizationRequestResponse(rsp *http.Response) (*Crea
 	case rsp.StatusCode == 422:
 		break // No content-type
 
+	case rsp.StatusCode == 500:
+		break // No content-type
+
 	}
 
 	return response, nil
@@ -12105,6 +12131,13 @@ func ParseDeleteConnectorResponse(rsp *http.Response) (*DeleteConnectorResponse,
 		}
 		response.JSON422 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
 	case rsp.StatusCode == 501:
 		break // No content-type
 
@@ -12196,6 +12229,13 @@ func ParseGetConnectorResponse(rsp *http.Response) (*GetConnectorResponse, error
 		}
 		response.JSON422 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
 	case rsp.StatusCode == 501:
 		break // No content-type
 
@@ -12247,6 +12287,9 @@ func ParseEjectManagedConnectorResponse(rsp *http.Response) (*EjectManagedConnec
 		break // No content-type
 
 	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
 		break // No content-type
 
 	case rsp.StatusCode == 501:
@@ -12319,6 +12362,13 @@ func ParseDeleteConnectorProjectConnectionResponse(rsp *http.Response) (*DeleteC
 		}
 		response.JSON410 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
 	}
 
 	return response, nil
@@ -12387,6 +12437,13 @@ func ParseGetConnectorProjectConnectionResponse(rsp *http.Response) (*GetConnect
 		}
 		response.JSON410 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
 	}
 
 	return response, nil
@@ -12454,6 +12511,13 @@ func ParseUpsertConnectorProjectConnectionResponse(rsp *http.Response) (*UpsertC
 			return nil, err
 		}
 		response.JSON410 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
 
 	}
 
@@ -12529,6 +12593,13 @@ func ParseReplaceConnectorTriggerDestinationsResponse(rsp *http.Response) (*Repl
 			return nil, err
 		}
 		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
 
 	case rsp.StatusCode == 501:
 		break // No content-type
@@ -12795,6 +12866,9 @@ func ParseGetConnectorTokenResponse(rsp *http.Response) (*GetConnectorTokenRespo
 		break // No content-type
 
 	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
 		break // No content-type
 
 	}
@@ -19964,53 +20038,6 @@ func ParseUpdatePrivateLinkEndpointResponse(rsp *http.Response) (*UpdatePrivateL
 		break // No content-type
 
 	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetObservabilityConfigurationProjectsResponse parses an HTTP response from a GetObservabilityConfigurationProjectsWithResponse call
-func ParseGetObservabilityConfigurationProjectsResponse(rsp *http.Response) (*GetObservabilityConfigurationProjectsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetObservabilityConfigurationProjectsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			DisabledProjects []struct {
-				DisabledAt float32 `json:"disabledAt"`
-				Id         string  `json:"id"`
-				Name       *string `json:"name,omitempty"`
-			} `json:"disabledProjects"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
 		break // No content-type
 
 	}

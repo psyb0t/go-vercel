@@ -10,6 +10,53 @@ import (
 	"strings"
 )
 
+// ParseGetObservabilityConfigurationProjectsResponse parses an HTTP response from a GetObservabilityConfigurationProjectsWithResponse call
+func ParseGetObservabilityConfigurationProjectsResponse(rsp *http.Response) (*GetObservabilityConfigurationProjectsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetObservabilityConfigurationProjectsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			DisabledProjects []struct {
+				DisabledAt float32 `json:"disabledAt"`
+				Id         string  `json:"id"`
+				Name       *string `json:"name,omitempty"`
+			} `json:"disabledProjects"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseUpdateObservabilityConfigurationProjectResponse parses an HTTP response from a UpdateObservabilityConfigurationProjectWithResponse call
 func ParseUpdateObservabilityConfigurationProjectResponse(rsp *http.Response) (*UpdateObservabilityConfigurationProjectResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -19849,6 +19896,13 @@ func ParseListConnectorsResponse(rsp *http.Response) (*ListConnectorsResponse, e
 		}
 		response.JSON422 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
 	case rsp.StatusCode == 501:
 		break // No content-type
 
@@ -20017,6 +20071,13 @@ func ParseListConnectorProjectConnectionsResponse(rsp *http.Response) (*ListConn
 			return nil, err
 		}
 		response.JSON410 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
 
 	}
 

@@ -7,6 +7,198 @@ import (
 	"encoding/json"
 )
 
+// Valid indicates whether the value is a known member of the PatchDomainJSONBody0EchMode enum.
+func (e PatchDomainJSONBody0EchMode) Valid() bool {
+	switch e {
+	case PatchDomainJSONBody0EchModeAuto:
+		return true
+	case PatchDomainJSONBody0EchModeDisabled:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchDomain200JSONResponseBody0Moved.
+const (
+	PatchDomain200JSONResponseBody0MovedFalse PatchDomain200JSONResponseBody0Moved = false
+	PatchDomain200JSONResponseBody0MovedTrue  PatchDomain200JSONResponseBody0Moved = true
+)
+
+// Valid indicates whether the value is a known member of the PatchDomain200JSONResponseBody0Moved enum.
+func (e PatchDomain200JSONResponseBody0Moved) Valid() bool {
+	switch e {
+	case PatchDomain200JSONResponseBody0MovedFalse:
+		return true
+	case PatchDomain200JSONResponseBody0MovedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchDomain200JSONResponseBody1Moved.
+const (
+	PatchDomain200JSONResponseBody1MovedFalse PatchDomain200JSONResponseBody1Moved = false
+	PatchDomain200JSONResponseBody1MovedTrue  PatchDomain200JSONResponseBody1Moved = true
+)
+
+// Valid indicates whether the value is a known member of the PatchDomain200JSONResponseBody1Moved enum.
+func (e PatchDomain200JSONResponseBody1Moved) Valid() bool {
+	switch e {
+	case PatchDomain200JSONResponseBody1MovedFalse:
+		return true
+	case PatchDomain200JSONResponseBody1MovedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchDomain200JSONResponseBody2EchMode.
+const (
+	PatchDomain200JSONResponseBody2EchModeAuto     PatchDomain200JSONResponseBody2EchMode = "auto"
+	PatchDomain200JSONResponseBody2EchModeDisabled PatchDomain200JSONResponseBody2EchMode = "disabled"
+	PatchDomain200JSONResponseBody2EchModeEnabled  PatchDomain200JSONResponseBody2EchMode = "enabled"
+)
+
+// Valid indicates whether the value is a known member of the PatchDomain200JSONResponseBody2EchMode enum.
+func (e PatchDomain200JSONResponseBody2EchMode) Valid() bool {
+	switch e {
+	case PatchDomain200JSONResponseBody2EchModeAuto:
+		return true
+	case PatchDomain200JSONResponseBody2EchModeDisabled:
+		return true
+	case PatchDomain200JSONResponseBody2EchModeEnabled:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchDomain200JSONResponseBody2Renew.
+const (
+	PatchDomain200JSONResponseBody2RenewFalse PatchDomain200JSONResponseBody2Renew = false
+	PatchDomain200JSONResponseBody2RenewTrue  PatchDomain200JSONResponseBody2Renew = true
+)
+
+// Valid indicates whether the value is a known member of the PatchDomain200JSONResponseBody2Renew enum.
+func (e PatchDomain200JSONResponseBody2Renew) Valid() bool {
+	switch e {
+	case PatchDomain200JSONResponseBody2RenewFalse:
+		return true
+	case PatchDomain200JSONResponseBody2RenewTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchDomain200JSONResponseBody2Zone.
+const (
+	PatchDomain200JSONResponseBody2ZoneFalse PatchDomain200JSONResponseBody2Zone = false
+	PatchDomain200JSONResponseBody2ZoneTrue  PatchDomain200JSONResponseBody2Zone = true
+)
+
+// Valid indicates whether the value is a known member of the PatchDomain200JSONResponseBody2Zone enum.
+func (e PatchDomain200JSONResponseBody2Zone) Valid() bool {
+	switch e {
+	case PatchDomain200JSONResponseBody2ZoneFalse:
+		return true
+	case PatchDomain200JSONResponseBody2ZoneTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV3JSONBodyArchitecture.
+const (
+	CreateSandboxesV3JSONBodyArchitectureAmd64 CreateSandboxesV3JSONBodyArchitecture = "amd64"
+	CreateSandboxesV3JSONBodyArchitectureArm64 CreateSandboxesV3JSONBodyArchitecture = "arm64"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV3JSONBodyArchitecture enum.
+func (e CreateSandboxesV3JSONBodyArchitecture) Valid() bool {
+	switch e {
+	case CreateSandboxesV3JSONBodyArchitectureAmd64:
+		return true
+	case CreateSandboxesV3JSONBodyArchitectureArm64:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV3JSONBodyFailoverRegions.
+const (
+	CreateSandboxesV3JSONBodyFailoverRegionsArn1 CreateSandboxesV3JSONBodyFailoverRegions = "arn1"
+	CreateSandboxesV3JSONBodyFailoverRegionsBom1 CreateSandboxesV3JSONBodyFailoverRegions = "bom1"
+	CreateSandboxesV3JSONBodyFailoverRegionsCdg1 CreateSandboxesV3JSONBodyFailoverRegions = "cdg1"
+	CreateSandboxesV3JSONBodyFailoverRegionsCle1 CreateSandboxesV3JSONBodyFailoverRegions = "cle1"
+	CreateSandboxesV3JSONBodyFailoverRegionsCpt1 CreateSandboxesV3JSONBodyFailoverRegions = "cpt1"
+	CreateSandboxesV3JSONBodyFailoverRegionsDub1 CreateSandboxesV3JSONBodyFailoverRegions = "dub1"
+	CreateSandboxesV3JSONBodyFailoverRegionsFra1 CreateSandboxesV3JSONBodyFailoverRegions = "fra1"
+	CreateSandboxesV3JSONBodyFailoverRegionsGru1 CreateSandboxesV3JSONBodyFailoverRegions = "gru1"
+	CreateSandboxesV3JSONBodyFailoverRegionsHkg1 CreateSandboxesV3JSONBodyFailoverRegions = "hkg1"
+	CreateSandboxesV3JSONBodyFailoverRegionsHnd1 CreateSandboxesV3JSONBodyFailoverRegions = "hnd1"
+	CreateSandboxesV3JSONBodyFailoverRegionsIad1 CreateSandboxesV3JSONBodyFailoverRegions = "iad1"
+	CreateSandboxesV3JSONBodyFailoverRegionsIcn1 CreateSandboxesV3JSONBodyFailoverRegions = "icn1"
+	CreateSandboxesV3JSONBodyFailoverRegionsKix1 CreateSandboxesV3JSONBodyFailoverRegions = "kix1"
+	CreateSandboxesV3JSONBodyFailoverRegionsLhr1 CreateSandboxesV3JSONBodyFailoverRegions = "lhr1"
+	CreateSandboxesV3JSONBodyFailoverRegionsPdx1 CreateSandboxesV3JSONBodyFailoverRegions = "pdx1"
+	CreateSandboxesV3JSONBodyFailoverRegionsSfo1 CreateSandboxesV3JSONBodyFailoverRegions = "sfo1"
+	CreateSandboxesV3JSONBodyFailoverRegionsSin1 CreateSandboxesV3JSONBodyFailoverRegions = "sin1"
+	CreateSandboxesV3JSONBodyFailoverRegionsSyd1 CreateSandboxesV3JSONBodyFailoverRegions = "syd1"
+	CreateSandboxesV3JSONBodyFailoverRegionsYul1 CreateSandboxesV3JSONBodyFailoverRegions = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV3JSONBodyFailoverRegions enum.
+func (e CreateSandboxesV3JSONBodyFailoverRegions) Valid() bool {
+	switch e {
+	case CreateSandboxesV3JSONBodyFailoverRegionsArn1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsBom1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsCdg1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsCle1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsCpt1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsDub1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsFra1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsGru1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsHkg1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsHnd1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsIad1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsIcn1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsKix1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsLhr1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsPdx1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsSfo1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsSin1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsSyd1:
+		return true
+	case CreateSandboxesV3JSONBodyFailoverRegionsYul1:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateSandboxesV3JSONBodyMountsMode.
 const (
 	CreateSandboxesV3JSONBodyMountsModeReadWrite CreateSandboxesV3JSONBodyMountsMode = "read-write"
@@ -1637,6 +1829,7 @@ func (e GetDeployments200JSONResponseBodyDeploymentsConnectBuildsEnabled) Valid(
 const (
 	GetDeployments200JSONResponseBodyDeploymentsCreatorTypeApp         GetDeployments200JSONResponseBodyDeploymentsCreatorType = "app"
 	GetDeployments200JSONResponseBodyDeploymentsCreatorTypeIntegration GetDeployments200JSONResponseBodyDeploymentsCreatorType = "integration"
+	GetDeployments200JSONResponseBodyDeploymentsCreatorTypeProject     GetDeployments200JSONResponseBodyDeploymentsCreatorType = "project"
 	GetDeployments200JSONResponseBodyDeploymentsCreatorTypeSystem      GetDeployments200JSONResponseBodyDeploymentsCreatorType = "system"
 	GetDeployments200JSONResponseBodyDeploymentsCreatorTypeUser        GetDeployments200JSONResponseBodyDeploymentsCreatorType = "user"
 )
@@ -1647,6 +1840,8 @@ func (e GetDeployments200JSONResponseBodyDeploymentsCreatorType) Valid() bool {
 	case GetDeployments200JSONResponseBodyDeploymentsCreatorTypeApp:
 		return true
 	case GetDeployments200JSONResponseBodyDeploymentsCreatorTypeIntegration:
+		return true
+	case GetDeployments200JSONResponseBodyDeploymentsCreatorTypeProject:
 		return true
 	case GetDeployments200JSONResponseBodyDeploymentsCreatorTypeSystem:
 		return true
@@ -3333,13 +3528,13 @@ func (e GetProject200JSONResponseBodyCreator0Via1Type) Valid() bool {
 
 // Defines values for GetProject200JSONResponseBodyCreator1Type.
 const (
-	GetProject200JSONResponseBodyCreator1TypeApp GetProject200JSONResponseBodyCreator1Type = "app"
+	GetProject200JSONResponseBodyCreator1TypeProject GetProject200JSONResponseBodyCreator1Type = "project"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyCreator1Type enum.
 func (e GetProject200JSONResponseBodyCreator1Type) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyCreator1TypeApp:
+	case GetProject200JSONResponseBodyCreator1TypeProject:
 		return true
 	default:
 		return false
@@ -3348,13 +3543,13 @@ func (e GetProject200JSONResponseBodyCreator1Type) Valid() bool {
 
 // Defines values for GetProject200JSONResponseBodyCreator2Type.
 const (
-	GetProject200JSONResponseBodyCreator2TypeIntegration GetProject200JSONResponseBodyCreator2Type = "integration"
+	GetProject200JSONResponseBodyCreator2TypeApp GetProject200JSONResponseBodyCreator2Type = "app"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyCreator2Type enum.
 func (e GetProject200JSONResponseBodyCreator2Type) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyCreator2TypeIntegration:
+	case GetProject200JSONResponseBodyCreator2TypeApp:
 		return true
 	default:
 		return false
@@ -3363,13 +3558,28 @@ func (e GetProject200JSONResponseBodyCreator2Type) Valid() bool {
 
 // Defines values for GetProject200JSONResponseBodyCreator3Type.
 const (
-	GetProject200JSONResponseBodyCreator3TypeSystem GetProject200JSONResponseBodyCreator3Type = "system"
+	GetProject200JSONResponseBodyCreator3TypeIntegration GetProject200JSONResponseBodyCreator3Type = "integration"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyCreator3Type enum.
 func (e GetProject200JSONResponseBodyCreator3Type) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyCreator3TypeSystem:
+	case GetProject200JSONResponseBodyCreator3TypeIntegration:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyCreator4Type.
+const (
+	GetProject200JSONResponseBodyCreator4TypeSystem GetProject200JSONResponseBodyCreator4Type = "system"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyCreator4Type enum.
+func (e GetProject200JSONResponseBodyCreator4Type) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyCreator4TypeSystem:
 		return true
 	default:
 		return false
@@ -9279,13 +9489,13 @@ func (e UpdateProject200JSONResponseBodyCreator0Via1Type) Valid() bool {
 
 // Defines values for UpdateProject200JSONResponseBodyCreator1Type.
 const (
-	UpdateProject200JSONResponseBodyCreator1TypeApp UpdateProject200JSONResponseBodyCreator1Type = "app"
+	UpdateProject200JSONResponseBodyCreator1TypeProject UpdateProject200JSONResponseBodyCreator1Type = "project"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyCreator1Type enum.
 func (e UpdateProject200JSONResponseBodyCreator1Type) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyCreator1TypeApp:
+	case UpdateProject200JSONResponseBodyCreator1TypeProject:
 		return true
 	default:
 		return false
@@ -9294,13 +9504,13 @@ func (e UpdateProject200JSONResponseBodyCreator1Type) Valid() bool {
 
 // Defines values for UpdateProject200JSONResponseBodyCreator2Type.
 const (
-	UpdateProject200JSONResponseBodyCreator2TypeIntegration UpdateProject200JSONResponseBodyCreator2Type = "integration"
+	UpdateProject200JSONResponseBodyCreator2TypeApp UpdateProject200JSONResponseBodyCreator2Type = "app"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyCreator2Type enum.
 func (e UpdateProject200JSONResponseBodyCreator2Type) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyCreator2TypeIntegration:
+	case UpdateProject200JSONResponseBodyCreator2TypeApp:
 		return true
 	default:
 		return false
@@ -9309,13 +9519,28 @@ func (e UpdateProject200JSONResponseBodyCreator2Type) Valid() bool {
 
 // Defines values for UpdateProject200JSONResponseBodyCreator3Type.
 const (
-	UpdateProject200JSONResponseBodyCreator3TypeSystem UpdateProject200JSONResponseBodyCreator3Type = "system"
+	UpdateProject200JSONResponseBodyCreator3TypeIntegration UpdateProject200JSONResponseBodyCreator3Type = "integration"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyCreator3Type enum.
 func (e UpdateProject200JSONResponseBodyCreator3Type) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyCreator3TypeSystem:
+	case UpdateProject200JSONResponseBodyCreator3TypeIntegration:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyCreator4Type.
+const (
+	UpdateProject200JSONResponseBodyCreator4TypeSystem UpdateProject200JSONResponseBodyCreator4Type = "system"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyCreator4Type enum.
+func (e UpdateProject200JSONResponseBodyCreator4Type) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyCreator4TypeSystem:
 		return true
 	default:
 		return false
@@ -19812,205 +20037,4 @@ type Flag struct {
 		Label       *string              `json:"label,omitempty"`
 		Value       *Flag_Variants_Value `json:"value"`
 	} `json:"variants"`
-}
-
-// FlagEnvironmentsActive defines model for Flag.Environments.Active.
-type FlagEnvironmentsActive bool
-
-// FlagEnvironmentsFallthrough0 defines model for Flag.Environments.Fallthrough.0.
-type FlagEnvironmentsFallthrough0 struct {
-	Type      FlagEnvironmentsFallthrough0Type `json:"type"`
-	VariantId string                           `json:"variantId"`
-}
-
-// FlagEnvironmentsFallthrough0Type defines model for Flag.Environments.Fallthrough.0.Type.
-type FlagEnvironmentsFallthrough0Type string
-
-// FlagEnvironmentsFallthrough1 defines model for Flag.Environments.Fallthrough.1.
-type FlagEnvironmentsFallthrough1 struct {
-	Base struct {
-		Attribute string                               `json:"attribute"`
-		Kind      string                               `json:"kind"`
-		Type      FlagEnvironmentsFallthrough1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                           `json:"defaultVariantId"`
-	Type             FlagEnvironmentsFallthrough1Type `json:"type"`
-	Weights          map[string]float32               `json:"weights"`
-}
-
-// FlagEnvironmentsFallthrough1BaseType defines model for Flag.Environments.Fallthrough.1.Base.Type.
-type FlagEnvironmentsFallthrough1BaseType string
-
-// FlagEnvironmentsFallthrough1Type defines model for Flag.Environments.Fallthrough.1.Type.
-type FlagEnvironmentsFallthrough1Type string
-
-// FlagEnvironmentsFallthrough2 defines model for Flag.Environments.Fallthrough.2.
-type FlagEnvironmentsFallthrough2 struct {
-	Base struct {
-		Attribute string                               `json:"attribute"`
-		Kind      string                               `json:"kind"`
-		Type      FlagEnvironmentsFallthrough2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                          `json:"startTimestamp"`
-	Type           FlagEnvironmentsFallthrough2Type `json:"type"`
-}
-
-// FlagEnvironmentsFallthrough2BaseType defines model for Flag.Environments.Fallthrough.2.Base.Type.
-type FlagEnvironmentsFallthrough2BaseType string
-
-// FlagEnvironmentsFallthrough2Type defines model for Flag.Environments.Fallthrough.2.Type.
-type FlagEnvironmentsFallthrough2Type string
-
-// FlagEnvironmentsFallthrough3 defines model for Flag.Environments.Fallthrough.3.
-type FlagEnvironmentsFallthrough3 struct {
-	Type FlagEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// FlagEnvironmentsFallthrough3Type defines model for Flag.Environments.Fallthrough.3.Type.
-type FlagEnvironmentsFallthrough3Type string
-
-// Flag_Environments_Fallthrough defines model for Flag.Environments.Fallthrough.
-type Flag_Environments_Fallthrough struct {
-	union json.RawMessage
-}
-
-// FlagEnvironmentsPausedOutcomeType defines model for Flag.Environments.PausedOutcome.Type.
-type FlagEnvironmentsPausedOutcomeType string
-
-// FlagEnvironmentsReuseActive defines model for Flag.Environments.Reuse.Active.
-type FlagEnvironmentsReuseActive bool
-
-// FlagEnvironmentsRulesConditionsCmp defines model for Flag.Environments.Rules.Conditions.Cmp.
-type FlagEnvironmentsRulesConditionsCmp string
-
-// FlagEnvironmentsRulesConditionsCmpOptionsIgnoreCase defines model for Flag.Environments.Rules.Conditions.CmpOptions.IgnoreCase.
-type FlagEnvironmentsRulesConditionsCmpOptionsIgnoreCase bool
-
-// FlagEnvironmentsRulesConditionsLhs0 defines model for Flag.Environments.Rules.Conditions.Lhs.0.
-type FlagEnvironmentsRulesConditionsLhs0 struct {
-	Type FlagEnvironmentsRulesConditionsLhs0Type `json:"type"`
-}
-
-// FlagEnvironmentsRulesConditionsLhs0Type defines model for Flag.Environments.Rules.Conditions.Lhs.0.Type.
-type FlagEnvironmentsRulesConditionsLhs0Type string
-
-// FlagEnvironmentsRulesConditionsLhs1 defines model for Flag.Environments.Rules.Conditions.Lhs.1.
-type FlagEnvironmentsRulesConditionsLhs1 struct {
-	Attribute string                                  `json:"attribute"`
-	Kind      string                                  `json:"kind"`
-	Type      FlagEnvironmentsRulesConditionsLhs1Type `json:"type"`
-}
-
-// FlagEnvironmentsRulesConditionsLhs1Type defines model for Flag.Environments.Rules.Conditions.Lhs.1.Type.
-type FlagEnvironmentsRulesConditionsLhs1Type string
-
-// Flag_Environments_Rules_Conditions_Lhs defines model for Flag.Environments.Rules.Conditions.Lhs.
-type Flag_Environments_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// FlagEnvironmentsRulesConditionsRhs0 defines model for Flag.Environments.Rules.Conditions.Rhs.0.
-type FlagEnvironmentsRulesConditionsRhs0 = string
-
-// FlagEnvironmentsRulesConditionsRhs1 defines model for Flag.Environments.Rules.Conditions.Rhs.1.
-type FlagEnvironmentsRulesConditionsRhs1 = float32
-
-// FlagEnvironmentsRulesConditionsRhs2 defines model for Flag.Environments.Rules.Conditions.Rhs.2.
-type FlagEnvironmentsRulesConditionsRhs2 struct {
-	Items []Flag_Environments_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  FlagEnvironmentsRulesConditionsRhs2Type               `json:"type"`
-}
-
-// FlagEnvironmentsRulesConditionsRhs2Items0 defines model for Flag.Environments.Rules.Conditions.Rhs.2.Items.0.
-type FlagEnvironmentsRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// FlagEnvironmentsRulesConditionsRhs2Items1 defines model for Flag.Environments.Rules.Conditions.Rhs.2.Items.1.
-type FlagEnvironmentsRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// Flag_Environments_Rules_Conditions_Rhs_2_Items_Item defines model for Flag.Environments.Rules.Conditions.Rhs.2.Items.Item.
-type Flag_Environments_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// FlagEnvironmentsRulesConditionsRhs2Type defines model for Flag.Environments.Rules.Conditions.Rhs.2.Type.
-type FlagEnvironmentsRulesConditionsRhs2Type string
-
-// FlagEnvironmentsRulesConditionsRhs3 defines model for Flag.Environments.Rules.Conditions.Rhs.3.
-type FlagEnvironmentsRulesConditionsRhs3 struct {
-	Flags   string                                  `json:"flags"`
-	Pattern string                                  `json:"pattern"`
-	Type    FlagEnvironmentsRulesConditionsRhs3Type `json:"type"`
-}
-
-// FlagEnvironmentsRulesConditionsRhs3Type defines model for Flag.Environments.Rules.Conditions.Rhs.3.Type.
-type FlagEnvironmentsRulesConditionsRhs3Type string
-
-// FlagEnvironmentsRulesConditionsRhs4 defines model for Flag.Environments.Rules.Conditions.Rhs.4.
-type FlagEnvironmentsRulesConditionsRhs4 bool
-
-// Flag_Environments_Rules_Conditions_Rhs defines model for Flag.Environments.Rules.Conditions.Rhs.
-type Flag_Environments_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// FlagEnvironmentsRulesOutcome0 defines model for Flag.Environments.Rules.Outcome.0.
-type FlagEnvironmentsRulesOutcome0 struct {
-	Type      FlagEnvironmentsRulesOutcome0Type `json:"type"`
-	VariantId string                            `json:"variantId"`
-}
-
-// FlagEnvironmentsRulesOutcome0Type defines model for Flag.Environments.Rules.Outcome.0.Type.
-type FlagEnvironmentsRulesOutcome0Type string
-
-// FlagEnvironmentsRulesOutcome1 defines model for Flag.Environments.Rules.Outcome.1.
-type FlagEnvironmentsRulesOutcome1 struct {
-	Base struct {
-		Attribute string                                `json:"attribute"`
-		Kind      string                                `json:"kind"`
-		Type      FlagEnvironmentsRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                            `json:"defaultVariantId"`
-	Type             FlagEnvironmentsRulesOutcome1Type `json:"type"`
-	Weights          map[string]float32                `json:"weights"`
-}
-
-// FlagEnvironmentsRulesOutcome1BaseType defines model for Flag.Environments.Rules.Outcome.1.Base.Type.
-type FlagEnvironmentsRulesOutcome1BaseType string
-
-// FlagEnvironmentsRulesOutcome1Type defines model for Flag.Environments.Rules.Outcome.1.Type.
-type FlagEnvironmentsRulesOutcome1Type string
-
-// FlagEnvironmentsRulesOutcome2 defines model for Flag.Environments.Rules.Outcome.2.
-type FlagEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string                                `json:"attribute"`
-		Kind      string                                `json:"kind"`
-		Type      FlagEnvironmentsRulesOutcome2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                           `json:"startTimestamp"`
-	Type           FlagEnvironmentsRulesOutcome2Type `json:"type"`
 }

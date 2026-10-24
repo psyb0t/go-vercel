@@ -10,6 +10,313 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0 struct {
+	// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
+	Cores *float32 `json:"cores,omitempty"`
+
+	// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
+	DefaultPurchaseType *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0DefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
+
+	// MachineSelectionType The build ran on an elastic machine. Drives billing.
+	MachineSelectionType CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0MachineSelectionType `json:"machineSelectionType"`
+
+	// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
+	Memory *float32 `json:"memory,omitempty"`
+
+	// PurchaseType Machine type purchased for this build. `basic` is the 2vCPU tier, recorded so the build pipeline can detect a basic build without consulting the project.
+	PurchaseType *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0PurchaseType `json:"purchaseType,omitempty"`
+
+	// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
+	SelectionSource *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0SelectionSource `json:"selectionSource,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0DefaultPurchaseType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0DefaultPurchaseType string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0MachineSelectionType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0MachineSelectionType string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0PurchaseType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0PurchaseType string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0SelectionSource defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0SelectionSource string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1 struct {
+	// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
+	Cores *float32 `json:"cores,omitempty"`
+
+	// DefaultPurchaseType The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
+	DefaultPurchaseType *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1DefaultPurchaseType `json:"defaultPurchaseType,omitempty"`
+
+	// MachineSelectionType The build ran on a fixed machine. Drives billing.
+	MachineSelectionType *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1MachineSelectionType `json:"machineSelectionType,omitempty"`
+
+	// Memory Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
+	Memory *float32 `json:"memory,omitempty"`
+
+	// PurchaseType Machine type purchased for this build.
+	PurchaseType *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1PurchaseType `json:"purchaseType,omitempty"`
+
+	// SelectionSource The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
+	SelectionSource *CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1SelectionSource `json:"selectionSource,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1DefaultPurchaseType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1DefaultPurchaseType string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1MachineSelectionType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1MachineSelectionType string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1PurchaseType defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1PurchaseType string
+
+// CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1SelectionSource defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine1SelectionSource string
+
+// CreateDeployment200JSONResponseBody_1_ResourceConfig_BuildMachine defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_ResourceConfig_BuildMachine struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Routes0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0 struct {
+	CaseSensitive *CreateDeployment200JSONResponseBody1Routes0CaseSensitive   `json:"caseSensitive,omitempty"`
+	Check         *CreateDeployment200JSONResponseBody1Routes0Check           `json:"check,omitempty"`
+	Continue      *CreateDeployment200JSONResponseBody1Routes0Continue        `json:"continue,omitempty"`
+	Dest          *string                                                     `json:"dest,omitempty"`
+	Destination   *CreateDeployment200JSONResponseBody_1_Routes_0_Destination `json:"destination,omitempty"`
+	Env           *[]string                                                   `json:"env,omitempty"`
+	Has           *[]CreateDeployment200JSONResponseBody_1_Routes_0_Has_Item  `json:"has,omitempty"`
+	Headers       *map[string]string                                          `json:"headers,omitempty"`
+	Important     *CreateDeployment200JSONResponseBody1Routes0Important       `json:"important,omitempty"`
+	Locale        *struct {
+		Cookie   *string            `json:"cookie,omitempty"`
+		Redirect *map[string]string `json:"redirect,omitempty"`
+	} `json:"locale,omitempty"`
+	Methods *[]string `json:"methods,omitempty"`
+
+	// Middleware A middleware index in the `middleware` key under the build result
+	Middleware *float32 `json:"middleware,omitempty"`
+
+	// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+	MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+	// MiddlewareRawSrc The original middleware matchers.
+	MiddlewareRawSrc *[]string                                                      `json:"middlewareRawSrc,omitempty"`
+	Missing          *[]CreateDeployment200JSONResponseBody_1_Routes_0_Missing_Item `json:"missing,omitempty"`
+	Mitigate         *struct {
+		Action CreateDeployment200JSONResponseBody1Routes0MitigateAction `json:"action"`
+	} `json:"mitigate,omitempty"`
+	Override                  *CreateDeployment200JSONResponseBody1Routes0Override                  `json:"override,omitempty"`
+	RespectOriginCacheControl *CreateDeployment200JSONResponseBody1Routes0RespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+	// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+	Source     *string                                                           `json:"source,omitempty"`
+	Src        string                                                            `json:"src"`
+	Status     *float32                                                          `json:"status,omitempty"`
+	StatusCode *float32                                                          `json:"statusCode,omitempty"`
+	Transforms *[]CreateDeployment200JSONResponseBody_1_Routes_0_Transforms_Item `json:"transforms,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0CaseSensitive defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0CaseSensitive bool
+
+// CreateDeployment200JSONResponseBody1Routes0Check defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Check bool
+
+// CreateDeployment200JSONResponseBody1Routes0Continue defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Continue bool
+
+// CreateDeployment200JSONResponseBody1Routes0Destination0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Destination0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Destination1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Destination1 struct {
+	// Path Routing-only path used to select a route inside the target service.
+	Path    *string `json:"path,omitempty"`
+	Service string  `json:"service"`
+
+	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+	Type *CreateDeployment200JSONResponseBody1Routes0Destination1Type `json:"type,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Destination1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Destination1Type string
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Destination defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Destination struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Has0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has0 struct {
+	Type  CreateDeployment200JSONResponseBody1Routes0Has0Type        `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Routes_0_Has_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Has0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has0Type string
+
+// CreateDeployment200JSONResponseBody1Routes0Has0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Has0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Routes_0_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                         `json:"gt,omitempty"`
+	Gte  *float32                                                         `json:"gte,omitempty"`
+	Inc  *[]string                                                        `json:"inc,omitempty"`
+	Lt   *float32                                                         `json:"lt,omitempty"`
+	Lte  *float32                                                         `json:"lte,omitempty"`
+	Neq  *string                                                          `json:"neq,omitempty"`
+	Ninc *[]string                                                        `json:"ninc,omitempty"`
+	Pre  *string                                                          `json:"pre,omitempty"`
+	Re   *string                                                          `json:"re,omitempty"`
+	Suf  *string                                                          `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Has0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Has0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Has_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Has_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Has1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has1 struct {
+	Key   string                                                      `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Routes0Has1Type         `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Routes_0_Has_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Has1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has1Type string
+
+// CreateDeployment200JSONResponseBody1Routes0Has1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Has1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Routes_0_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                         `json:"gt,omitempty"`
+	Gte  *float32                                                         `json:"gte,omitempty"`
+	Inc  *[]string                                                        `json:"inc,omitempty"`
+	Lt   *float32                                                         `json:"lt,omitempty"`
+	Lte  *float32                                                         `json:"lte,omitempty"`
+	Neq  *string                                                          `json:"neq,omitempty"`
+	Ninc *[]string                                                        `json:"ninc,omitempty"`
+	Pre  *string                                                          `json:"pre,omitempty"`
+	Re   *string                                                          `json:"re,omitempty"`
+	Suf  *string                                                          `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Has1Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has1Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Has1Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Has1Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Has_1_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Has_1_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Has_Item defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Has_Item struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Important defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Important bool
+
+// CreateDeployment200JSONResponseBody1Routes0Missing0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing0 struct {
+	Type  CreateDeployment200JSONResponseBody1Routes0Missing0Type        `json:"type"`
+	Value CreateDeployment200JSONResponseBody_1_Routes_0_Missing_0_Value `json:"value"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Missing0Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing0Type string
+
+// CreateDeployment200JSONResponseBody1Routes0Missing0Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing0Value0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Missing0Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing0Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Routes_0_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                             `json:"gt,omitempty"`
+	Gte  *float32                                                             `json:"gte,omitempty"`
+	Inc  *[]string                                                            `json:"inc,omitempty"`
+	Lt   *float32                                                             `json:"lt,omitempty"`
+	Lte  *float32                                                             `json:"lte,omitempty"`
+	Neq  *string                                                              `json:"neq,omitempty"`
+	Ninc *[]string                                                            `json:"ninc,omitempty"`
+	Pre  *string                                                              `json:"pre,omitempty"`
+	Re   *string                                                              `json:"re,omitempty"`
+	Suf  *string                                                              `json:"suf,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Missing0Value1Eq0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing0Value1Eq0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Missing0Value1Eq1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing0Value1Eq1 = float32
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Missing_0_Value_1_Eq defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody_1_Routes_0_Missing_0_Value defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody_1_Routes_0_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Missing1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing1 struct {
+	Key   string                                                          `json:"key"`
+	Type  CreateDeployment200JSONResponseBody1Routes0Missing1Type         `json:"type"`
+	Value *CreateDeployment200JSONResponseBody_1_Routes_0_Missing_1_Value `json:"value,omitempty"`
+}
+
+// CreateDeployment200JSONResponseBody1Routes0Missing1Type defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing1Type string
+
+// CreateDeployment200JSONResponseBody1Routes0Missing1Value0 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing1Value0 = string
+
+// CreateDeployment200JSONResponseBody1Routes0Missing1Value1 defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Routes0Missing1Value1 struct {
+	Eq   *CreateDeployment200JSONResponseBody_1_Routes_0_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                             `json:"gt,omitempty"`
+	Gte  *float32                                                             `json:"gte,omitempty"`
+	Inc  *[]string                                                            `json:"inc,omitempty"`
+	Lt   *float32                                                             `json:"lt,omitempty"`
+	Lte  *float32                                                             `json:"lte,omitempty"`
+	Neq  *string                                                              `json:"neq,omitempty"`
+	Ninc *[]string                                                            `json:"ninc,omitempty"`
+	Pre  *string                                                              `json:"pre,omitempty"`
+	Re   *string                                                              `json:"re,omitempty"`
+	Suf  *string                                                              `json:"suf,omitempty"`
+}
+
 // CreateDeployment200JSONResponseBody1Routes0Missing1Value1Eq0 defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1Routes0Missing1Value1Eq0 = string
 
@@ -14345,13 +14652,9 @@ type GetProject200JSONResponseBody_Creator_0_Via struct {
 
 // GetProject200JSONResponseBodyCreator1 defines parameters for GetProject.
 type GetProject200JSONResponseBodyCreator1 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
+	Project struct {
 		Id string `json:"id"`
-	} `json:"app"`
+	} `json:"project"`
 	Type GetProject200JSONResponseBodyCreator1Type `json:"type"`
 }
 
@@ -14360,10 +14663,13 @@ type GetProject200JSONResponseBodyCreator1Type string
 
 // GetProject200JSONResponseBodyCreator2 defines parameters for GetProject.
 type GetProject200JSONResponseBodyCreator2 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
+	App struct {
+		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+		ClientId *string `json:"clientId,omitempty"`
+
+		// Id The internal ID of the Vercel App backing this principal.
+		Id string `json:"id"`
+	} `json:"app"`
 	Type GetProject200JSONResponseBodyCreator2Type `json:"type"`
 }
 
@@ -14372,11 +14678,23 @@ type GetProject200JSONResponseBodyCreator2Type string
 
 // GetProject200JSONResponseBodyCreator3 defines parameters for GetProject.
 type GetProject200JSONResponseBodyCreator3 struct {
+	Integration struct {
+		ConfigurationId string `json:"configurationId"`
+		IntegrationId   string `json:"integrationId"`
+	} `json:"integration"`
 	Type GetProject200JSONResponseBodyCreator3Type `json:"type"`
 }
 
 // GetProject200JSONResponseBodyCreator3Type defines parameters for GetProject.
 type GetProject200JSONResponseBodyCreator3Type string
+
+// GetProject200JSONResponseBodyCreator4 defines parameters for GetProject.
+type GetProject200JSONResponseBodyCreator4 struct {
+	Type GetProject200JSONResponseBodyCreator4Type `json:"type"`
+}
+
+// GetProject200JSONResponseBodyCreator4Type defines parameters for GetProject.
+type GetProject200JSONResponseBodyCreator4Type string
 
 // GetProject200JSONResponseBody_Creator defines parameters for GetProject.
 type GetProject200JSONResponseBody_Creator struct {
@@ -14793,7 +15111,7 @@ type GetProject200JSONResponseBodyExpiration1 struct {
 	// LockedAt Unix ms timestamp when the project was locked.
 	LockedAt float32 `json:"lockedAt"`
 
-	// LockedBy userId of the actor that triggered the lock (system or admin).
+	// LockedBy ID of the user, app, or integration that locked the project, or `system`.
 	LockedBy string `json:"lockedBy"`
 }
 
@@ -16411,13 +16729,9 @@ type UpdateProject200JSONResponseBody_Creator_0_Via struct {
 
 // UpdateProject200JSONResponseBodyCreator1 defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyCreator1 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
+	Project struct {
 		Id string `json:"id"`
-	} `json:"app"`
+	} `json:"project"`
 	Type UpdateProject200JSONResponseBodyCreator1Type `json:"type"`
 }
 
@@ -16426,10 +16740,13 @@ type UpdateProject200JSONResponseBodyCreator1Type string
 
 // UpdateProject200JSONResponseBodyCreator2 defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyCreator2 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
+	App struct {
+		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+		ClientId *string `json:"clientId,omitempty"`
+
+		// Id The internal ID of the Vercel App backing this principal.
+		Id string `json:"id"`
+	} `json:"app"`
 	Type UpdateProject200JSONResponseBodyCreator2Type `json:"type"`
 }
 
@@ -16438,11 +16755,23 @@ type UpdateProject200JSONResponseBodyCreator2Type string
 
 // UpdateProject200JSONResponseBodyCreator3 defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyCreator3 struct {
+	Integration struct {
+		ConfigurationId string `json:"configurationId"`
+		IntegrationId   string `json:"integrationId"`
+	} `json:"integration"`
 	Type UpdateProject200JSONResponseBodyCreator3Type `json:"type"`
 }
 
 // UpdateProject200JSONResponseBodyCreator3Type defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyCreator3Type string
+
+// UpdateProject200JSONResponseBodyCreator4 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator4 struct {
+	Type UpdateProject200JSONResponseBodyCreator4Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator4Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator4Type string
 
 // UpdateProject200JSONResponseBody_Creator defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBody_Creator struct {
@@ -16859,7 +17188,7 @@ type UpdateProject200JSONResponseBodyExpiration1 struct {
 	// LockedAt Unix ms timestamp when the project was locked.
 	LockedAt float32 `json:"lockedAt"`
 
-	// LockedBy userId of the actor that triggered the lock (system or admin).
+	// LockedBy ID of the user, app, or integration that locked the project, or `system`.
 	LockedBy string `json:"lockedBy"`
 }
 
@@ -19683,456 +20012,6 @@ func (a *ConnectConnectorCreateData_0_ServerConfig_Jwks_Keys_Item) UnmarshalJSON
 			return fmt.Errorf("error reading 'use': %w", err)
 		}
 		delete(object, "use")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for ConnectConnectorCreateData_0_ServerConfig_Jwks_Keys_Item to handle AdditionalProperties
-func (a ConnectConnectorCreateData_0_ServerConfig_Jwks_Keys_Item) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	if a.Alg != nil {
-		object["alg"], err = json.Marshal(a.Alg)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'alg': %w", err)
-		}
-	}
-
-	if a.KeyOps != nil {
-		object["key_ops"], err = json.Marshal(a.KeyOps)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'key_ops': %w", err)
-		}
-	}
-
-	if a.Kid != nil {
-		object["kid"], err = json.Marshal(a.Kid)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'kid': %w", err)
-		}
-	}
-
-	object["kty"], err = json.Marshal(a.Kty)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'kty': %w", err)
-	}
-
-	if a.Use != nil {
-		object["use"], err = json.Marshal(a.Use)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'use': %w", err)
-		}
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// Getter for additional properties for ConnectConnectorCreateData_0_ServerConfig_Jwks. Returns the specified
-// element and whether it was found
-func (a ConnectConnectorCreateData_0_ServerConfig_Jwks) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for ConnectConnectorCreateData_0_ServerConfig_Jwks
-func (a *ConnectConnectorCreateData_0_ServerConfig_Jwks) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for ConnectConnectorCreateData_0_ServerConfig_Jwks to handle AdditionalProperties
-func (a *ConnectConnectorCreateData_0_ServerConfig_Jwks) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["keys"]; found {
-		err = json.Unmarshal(raw, &a.Keys)
-		if err != nil {
-			return fmt.Errorf("error reading 'keys': %w", err)
-		}
-		delete(object, "keys")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for ConnectConnectorCreateData_0_ServerConfig_Jwks to handle AdditionalProperties
-func (a ConnectConnectorCreateData_0_ServerConfig_Jwks) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	if a.Keys != nil {
-		object["keys"], err = json.Marshal(a.Keys)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'keys': %w", err)
-		}
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// Getter for additional properties for ConnectConnectorCreateData_0_ServerConfig. Returns the specified
-// element and whether it was found
-func (a ConnectConnectorCreateData_0_ServerConfig) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for ConnectConnectorCreateData_0_ServerConfig
-func (a *ConnectConnectorCreateData_0_ServerConfig) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for ConnectConnectorCreateData_0_ServerConfig to handle AdditionalProperties
-func (a *ConnectConnectorCreateData_0_ServerConfig) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["authorization_details_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.AuthorizationDetailsTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'authorization_details_types_supported': %w", err)
-		}
-		delete(object, "authorization_details_types_supported")
-	}
-
-	if raw, found := object["authorization_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.AuthorizationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'authorization_endpoint': %w", err)
-		}
-		delete(object, "authorization_endpoint")
-	}
-
-	if raw, found := object["authorization_grant_profiles_supported"]; found {
-		err = json.Unmarshal(raw, &a.AuthorizationGrantProfilesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'authorization_grant_profiles_supported': %w", err)
-		}
-		delete(object, "authorization_grant_profiles_supported")
-	}
-
-	if raw, found := object["claim_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClaimTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'claim_types_supported': %w", err)
-		}
-		delete(object, "claim_types_supported")
-	}
-
-	if raw, found := object["claims_parameter_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClaimsParameterSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'claims_parameter_supported': %w", err)
-		}
-		delete(object, "claims_parameter_supported")
-	}
-
-	if raw, found := object["claims_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClaimsSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'claims_supported': %w", err)
-		}
-		delete(object, "claims_supported")
-	}
-
-	if raw, found := object["client_id_metadata_document_supported"]; found {
-		err = json.Unmarshal(raw, &a.ClientIdMetadataDocumentSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'client_id_metadata_document_supported': %w", err)
-		}
-		delete(object, "client_id_metadata_document_supported")
-	}
-
-	if raw, found := object["code_challenge_methods_supported"]; found {
-		err = json.Unmarshal(raw, &a.CodeChallengeMethodsSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'code_challenge_methods_supported': %w", err)
-		}
-		delete(object, "code_challenge_methods_supported")
-	}
-
-	if raw, found := object["device_authorization_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.DeviceAuthorizationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'device_authorization_endpoint': %w", err)
-		}
-		delete(object, "device_authorization_endpoint")
-	}
-
-	if raw, found := object["end_session_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.EndSessionEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'end_session_endpoint': %w", err)
-		}
-		delete(object, "end_session_endpoint")
-	}
-
-	if raw, found := object["grant_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.GrantTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'grant_types_supported': %w", err)
-		}
-		delete(object, "grant_types_supported")
-	}
-
-	if raw, found := object["id_token_encryption_alg_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdTokenEncryptionAlgValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'id_token_encryption_alg_values_supported': %w", err)
-		}
-		delete(object, "id_token_encryption_alg_values_supported")
-	}
-
-	if raw, found := object["id_token_encryption_enc_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdTokenEncryptionEncValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'id_token_encryption_enc_values_supported': %w", err)
-		}
-		delete(object, "id_token_encryption_enc_values_supported")
-	}
-
-	if raw, found := object["id_token_signing_alg_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdTokenSigningAlgValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'id_token_signing_alg_values_supported': %w", err)
-		}
-		delete(object, "id_token_signing_alg_values_supported")
-	}
-
-	if raw, found := object["identity_chaining_requested_token_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.IdentityChainingRequestedTokenTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'identity_chaining_requested_token_types_supported': %w", err)
-		}
-		delete(object, "identity_chaining_requested_token_types_supported")
-	}
-
-	if raw, found := object["introspection_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.IntrospectionEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'introspection_endpoint': %w", err)
-		}
-		delete(object, "introspection_endpoint")
-	}
-
-	if raw, found := object["issuer"]; found {
-		err = json.Unmarshal(raw, &a.Issuer)
-		if err != nil {
-			return fmt.Errorf("error reading 'issuer': %w", err)
-		}
-		delete(object, "issuer")
-	}
-
-	if raw, found := object["jwks"]; found {
-		err = json.Unmarshal(raw, &a.Jwks)
-		if err != nil {
-			return fmt.Errorf("error reading 'jwks': %w", err)
-		}
-		delete(object, "jwks")
-	}
-
-	if raw, found := object["jwks_uri"]; found {
-		err = json.Unmarshal(raw, &a.JwksUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'jwks_uri': %w", err)
-		}
-		delete(object, "jwks_uri")
-	}
-
-	if raw, found := object["logo_uri"]; found {
-		err = json.Unmarshal(raw, &a.LogoUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'logo_uri': %w", err)
-		}
-		delete(object, "logo_uri")
-	}
-
-	if raw, found := object["op_policy_uri"]; found {
-		err = json.Unmarshal(raw, &a.OpPolicyUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'op_policy_uri': %w", err)
-		}
-		delete(object, "op_policy_uri")
-	}
-
-	if raw, found := object["op_tos_uri"]; found {
-		err = json.Unmarshal(raw, &a.OpTosUri)
-		if err != nil {
-			return fmt.Errorf("error reading 'op_tos_uri': %w", err)
-		}
-		delete(object, "op_tos_uri")
-	}
-
-	if raw, found := object["prompt_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.PromptValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'prompt_values_supported': %w", err)
-		}
-		delete(object, "prompt_values_supported")
-	}
-
-	if raw, found := object["registration_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.RegistrationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'registration_endpoint': %w", err)
-		}
-		delete(object, "registration_endpoint")
-	}
-
-	if raw, found := object["request_parameter_supported"]; found {
-		err = json.Unmarshal(raw, &a.RequestParameterSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'request_parameter_supported': %w", err)
-		}
-		delete(object, "request_parameter_supported")
-	}
-
-	if raw, found := object["request_uri_parameter_supported"]; found {
-		err = json.Unmarshal(raw, &a.RequestUriParameterSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'request_uri_parameter_supported': %w", err)
-		}
-		delete(object, "request_uri_parameter_supported")
-	}
-
-	if raw, found := object["require_request_uri_registration"]; found {
-		err = json.Unmarshal(raw, &a.RequireRequestUriRegistration)
-		if err != nil {
-			return fmt.Errorf("error reading 'require_request_uri_registration': %w", err)
-		}
-		delete(object, "require_request_uri_registration")
-	}
-
-	if raw, found := object["response_modes_supported"]; found {
-		err = json.Unmarshal(raw, &a.ResponseModesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'response_modes_supported': %w", err)
-		}
-		delete(object, "response_modes_supported")
-	}
-
-	if raw, found := object["response_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.ResponseTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'response_types_supported': %w", err)
-		}
-		delete(object, "response_types_supported")
-	}
-
-	if raw, found := object["revocation_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.RevocationEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'revocation_endpoint': %w", err)
-		}
-		delete(object, "revocation_endpoint")
-	}
-
-	if raw, found := object["scopes_supported"]; found {
-		err = json.Unmarshal(raw, &a.ScopesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'scopes_supported': %w", err)
-		}
-		delete(object, "scopes_supported")
-	}
-
-	if raw, found := object["service_documentation"]; found {
-		err = json.Unmarshal(raw, &a.ServiceDocumentation)
-		if err != nil {
-			return fmt.Errorf("error reading 'service_documentation': %w", err)
-		}
-		delete(object, "service_documentation")
-	}
-
-	if raw, found := object["subject_types_supported"]; found {
-		err = json.Unmarshal(raw, &a.SubjectTypesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'subject_types_supported': %w", err)
-		}
-		delete(object, "subject_types_supported")
-	}
-
-	if raw, found := object["token_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.TokenEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'token_endpoint': %w", err)
-		}
-		delete(object, "token_endpoint")
-	}
-
-	if raw, found := object["token_endpoint_auth_methods_supported"]; found {
-		err = json.Unmarshal(raw, &a.TokenEndpointAuthMethodsSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'token_endpoint_auth_methods_supported': %w", err)
-		}
-		delete(object, "token_endpoint_auth_methods_supported")
-	}
-
-	if raw, found := object["token_endpoint_auth_signing_alg_values_supported"]; found {
-		err = json.Unmarshal(raw, &a.TokenEndpointAuthSigningAlgValuesSupported)
-		if err != nil {
-			return fmt.Errorf("error reading 'token_endpoint_auth_signing_alg_values_supported': %w", err)
-		}
-		delete(object, "token_endpoint_auth_signing_alg_values_supported")
-	}
-
-	if raw, found := object["userinfo_endpoint"]; found {
-		err = json.Unmarshal(raw, &a.UserinfoEndpoint)
-		if err != nil {
-			return fmt.Errorf("error reading 'userinfo_endpoint': %w", err)
-		}
-		delete(object, "userinfo_endpoint")
 	}
 
 	if len(object) != 0 {

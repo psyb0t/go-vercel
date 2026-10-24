@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.8.0, 2026-10-24
+
+- Removed the `App` and `Integration` fields and the `...Creator1TypeApp`, `...Creator2TypeIntegration` and `...Creator3TypeSystem` types from the project creator unions in `CreateProject`, `GetProject`, `GetProjects`, `UpdateProject`, `DeleteProjectAvatar`, `UploadProjectAvatar`, `UpdateMicrofrontends` and `GetMicrofrontendsInGroup` responses. Added `From...Creator4` and `Merge...Creator4` methods on the matching `..._Creator` types.
+- Reshaped the `UserEventPayload` types again. Removed `UserEventPayload112.Set`, `UserEventPayload112.UnmarshalJSON`, `UserEventPayload252.Set`, `UserEventPayload252.UnmarshalJSON`, `UserEvent_Payload.FromUserEventPayload122` and `UserEvent_Payload.MergeUserEventPayload122`, plus many other `UserEventPayloadNNN` types and their `As`, `From` and `Merge` methods.
+- Changed field types on many `UserEventPayload` types, for example `UserEventPayload127.DeploymentId` from `*string` to `string`, `UserEventPayload129.Mode` and `PreviousMode` to pointers, `UserEventPayload149.DestinationId` and `DestinationName` from `string` to `*string`, and `UserEventPayload175.Target` to `*[]UserEventPayload175Target`.
+- Added `JSON500` and `GetJSON500` to the connector responses `DeleteConnectorResponse`, `DeleteConnectorProjectConnectionResponse`, `GetConnectorResponse`, `GetConnectorProjectConnectionResponse`, `ListConnectorsResponse`, `ListConnectorProjectConnectionsResponse`, `ListProjectConnectorConnectionsResponse`, `ReplaceConnectorTriggerDestinationsResponse` and `UpsertConnectorProjectConnectionResponse`.
+- Added webhook event type constants `ListEventTypeNameMessageboardProjectChannelCreated`, `ListEventTypeNameMessageboardProjectPrivateChannelCreated`, `ListEventTypeNameProjectGitCredentialAttestationCreated`, `ListEventTypeNameProjectGitCredentialAttestationDeleted`, `ListEventTypeNameProjectGitCredentialGrantAttested` and `ListEventTypeNameProjectGitCredentialGrantAttestationRevoked`, plus the matching `ListEventTypeReplacedBy...` constants.
+- Generated from spec version 0.0.1.
+
 ## v0.7.0, 2026-10-23
 
 - Added `UpdateApiKeyQuota` and `UpdateApiKeyQuotaWithBody` on `Client` and `ClientInterface`, and `UpdateApiKeyQuotaWithResponse` and `UpdateApiKeyQuotaWithBodyWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Added `NewUpdateApiKeyQuotaRequest`, `NewUpdateApiKeyQuotaRequestWithBody`, `ParseUpdateApiKeyQuotaResponse`, `UpdateApiKeyQuotaJSONBody` and `UpdateApiKeyQuotaJSONBodyAlertThresholds`.
