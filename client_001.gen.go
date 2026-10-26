@@ -2874,18 +2874,18 @@ func (e DomainTooShortStatus) Valid() bool {
 	}
 }
 
-// Defines values for DriveV0.
+// Defines values for DriveWorkloadType.
 const (
-	DriveV0False DriveV0 = false
-	DriveV0True  DriveV0 = true
+	DriveWorkloadTypeSandbox DriveWorkloadType = "sandbox"
+	DriveWorkloadTypeV0      DriveWorkloadType = "v0"
 )
 
-// Valid indicates whether the value is a known member of the DriveV0 enum.
-func (e DriveV0) Valid() bool {
+// Valid indicates whether the value is a known member of the DriveWorkloadType enum.
+func (e DriveWorkloadType) Valid() bool {
 	switch e {
-	case DriveV0False:
+	case DriveWorkloadTypeSandbox:
 		return true
-	case DriveV0True:
+	case DriveWorkloadTypeV0:
 		return true
 	default:
 		return false
@@ -8745,18 +8745,18 @@ func (e NamedSandboxStatus) Valid() bool {
 	}
 }
 
-// Defines values for NamedSandboxV0.
+// Defines values for NamedSandboxWorkloadType.
 const (
-	NamedSandboxV0False NamedSandboxV0 = false
-	NamedSandboxV0True  NamedSandboxV0 = true
+	NamedSandboxWorkloadTypeSandbox NamedSandboxWorkloadType = "sandbox"
+	NamedSandboxWorkloadTypeV0      NamedSandboxWorkloadType = "v0"
 )
 
-// Valid indicates whether the value is a known member of the NamedSandboxV0 enum.
-func (e NamedSandboxV0) Valid() bool {
+// Valid indicates whether the value is a known member of the NamedSandboxWorkloadType enum.
+func (e NamedSandboxWorkloadType) Valid() bool {
 	switch e {
-	case NamedSandboxV0False:
+	case NamedSandboxWorkloadTypeSandbox:
 		return true
-	case NamedSandboxV0True:
+	case NamedSandboxWorkloadTypeV0:
 		return true
 	default:
 		return false
@@ -9324,18 +9324,18 @@ func (e SessionStatus) Valid() bool {
 	}
 }
 
-// Defines values for SessionV0.
+// Defines values for SessionWorkloadType.
 const (
-	SessionV0False SessionV0 = false
-	SessionV0True  SessionV0 = true
+	SessionWorkloadTypeSandbox SessionWorkloadType = "sandbox"
+	SessionWorkloadTypeV0      SessionWorkloadType = "v0"
 )
 
-// Valid indicates whether the value is a known member of the SessionV0 enum.
-func (e SessionV0) Valid() bool {
+// Valid indicates whether the value is a known member of the SessionWorkloadType enum.
+func (e SessionWorkloadType) Valid() bool {
 	switch e {
-	case SessionV0False:
+	case SessionWorkloadTypeSandbox:
 		return true
-	case SessionV0True:
+	case SessionWorkloadTypeV0:
 		return true
 	default:
 		return false
@@ -9399,18 +9399,18 @@ func (e SnapshotStatus) Valid() bool {
 	}
 }
 
-// Defines values for SnapshotV0.
+// Defines values for SnapshotWorkloadType.
 const (
-	SnapshotV0False SnapshotV0 = false
-	SnapshotV0True  SnapshotV0 = true
+	SnapshotWorkloadTypeSandbox SnapshotWorkloadType = "sandbox"
+	SnapshotWorkloadTypeV0      SnapshotWorkloadType = "v0"
 )
 
-// Valid indicates whether the value is a known member of the SnapshotV0 enum.
-func (e SnapshotV0) Valid() bool {
+// Valid indicates whether the value is a known member of the SnapshotWorkloadType enum.
+func (e SnapshotWorkloadType) Valid() bool {
 	switch e {
-	case SnapshotV0False:
+	case SnapshotWorkloadTypeSandbox:
 		return true
-	case SnapshotV0True:
+	case SnapshotWorkloadTypeV0:
 		return true
 	default:
 		return false

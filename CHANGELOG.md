@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.9.0, 2026-10-26
+
+- Replaced the `V0` bool field and the `DriveV0`, `NamedSandboxV0`, `SessionV0` and `SnapshotV0` types (with their `...False` and `...True` constants) with a `WorkloadType` field and the string types `DriveWorkloadType`, `NamedSandboxWorkloadType`, `SessionWorkloadType` and `SnapshotWorkloadType`. Each has `...WorkloadTypeSandbox` and `...WorkloadTypeV0` constants.
+- Removed `JSON500` and `GetJSON500` from `ListProjectConnectorConnectionsResponse`.
+- Changed the anonymous struct types of `JSON200` and `GetJSON200` on `CancelDeploymentResponse`, `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `DeleteProjectAvatarResponse`, `UploadProjectAvatarResponse`, `UpdateMicrofrontendsResponse`, `GetMicrofrontendsInGroupResponse`, `GetDeploymentsResponse` and `GenerateRouteResponse`. Code that assigns these to explicitly typed values must be updated.
+- Changed `ProjectSettings` on `CreateDeployment200JSONResponseBody1` and `GetDeployment200JSONResponseBody1`, `Projects` on `GetProjects200JSONResponseBody2`, and `CurrentRoute` on `GenerateRouteJSONBody` and `GenerateRouteJSONRequestBody`.
+- Added the `GenerateRoute200JSONResponseBodyRouteCaseSensitive` bool type with `...False` and `...True` constants.
+- Generated from spec version 0.0.1.
+
 ## v0.8.0, 2026-10-24
 
 - Removed the `App` and `Integration` fields and the `...Creator1TypeApp`, `...Creator2TypeIntegration` and `...Creator3TypeSystem` types from the project creator unions in `CreateProject`, `GetProject`, `GetProjects`, `UpdateProject`, `DeleteProjectAvatar`, `UploadProjectAvatar`, `UpdateMicrofrontends` and `GetMicrofrontendsInGroup` responses. Added `From...Creator4` and `Merge...Creator4` methods on the matching `..._Creator` types.

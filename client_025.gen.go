@@ -1779,8 +1779,12 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 		Throttled *CreateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 	} `json:"usageStatus,omitempty"`
-	V0           *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-	V0Created    *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	V0          *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
 	WebAnalytics *struct {
 		CanceledAt *float32                                             `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                             `json:"disabledAt,omitempty"`
@@ -2213,6 +2217,11 @@ type CancelDeploymentResponse struct {
 				Id             string                                                                  `json:"id"`
 				PaidAt         *float32                                                                `json:"paidAt,omitempty"`
 			} `json:"speedInsights,omitempty"`
+
+			// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+			VercelFlags *struct {
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
@@ -2705,6 +2714,11 @@ func (r CancelDeploymentResponse) GetJSON200() *struct {
 			Id             string                                                                  `json:"id"`
 			PaidAt         *float32                                                                `json:"paidAt,omitempty"`
 		} `json:"speedInsights,omitempty"`
+
+		// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+		VercelFlags *struct {
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
@@ -3369,8 +3383,6 @@ type ListProjectConnectorConnectionsResponse struct {
 	JSON404 *ConnectError
 	// JSON410 the response for an HTTP 410 `application/json` response
 	JSON410 *ConnectError
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ConnectError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
@@ -3401,11 +3413,6 @@ func (r ListProjectConnectorConnectionsResponse) GetJSON404() *ConnectError {
 // GetJSON410 returns the response for an HTTP 410 `application/json` response
 func (r ListProjectConnectorConnectionsResponse) GetJSON410() *ConnectError {
 	return r.JSON410
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r ListProjectConnectorConnectionsResponse) GetJSON500() *ConnectError {
-	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
@@ -9558,6 +9565,11 @@ type GetDeploymentsResponse struct {
 					Id             string                                                                           `json:"id"`
 					PaidAt         *float32                                                                         `json:"paidAt,omitempty"`
 				} `json:"speedInsights,omitempty"`
+
+				// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+				VercelFlags *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 				WebAnalytics *struct {
 					CanceledAt *float32                                                                        `json:"canceledAt,omitempty"`
 					DisabledAt *float32                                                                        `json:"disabledAt,omitempty"`
@@ -9887,6 +9899,11 @@ func (r GetDeploymentsResponse) GetJSON200() *struct {
 				Id             string                                                                           `json:"id"`
 				PaidAt         *float32                                                                         `json:"paidAt,omitempty"`
 			} `json:"speedInsights,omitempty"`
+
+			// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+			VercelFlags *struct {
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                                                        `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                                                        `json:"disabledAt,omitempty"`
@@ -12854,8 +12871,12 @@ type GetProjectResponse struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *GetProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *GetProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created    *GetProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		V0          *GetProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+		V0Created   *GetProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                          `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                          `json:"disabledAt,omitempty"`
@@ -14644,8 +14665,12 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 		Throttled *GetProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 	} `json:"usageStatus,omitempty"`
-	V0           *GetProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-	V0Created    *GetProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	V0          *GetProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *GetProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
 	WebAnalytics *struct {
 		CanceledAt *float32                                          `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                          `json:"disabledAt,omitempty"`
@@ -16456,8 +16481,12 @@ type UpdateProjectResponse struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *UpdateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *UpdateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created    *UpdateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		V0          *UpdateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+		V0Created   *UpdateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                             `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                             `json:"disabledAt,omitempty"`
@@ -18235,8 +18264,12 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 		Throttled *UpdateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 	} `json:"usageStatus,omitempty"`
-	V0           *UpdateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-	V0Created    *UpdateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	V0          *UpdateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *UpdateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
 	WebAnalytics *struct {
 		CanceledAt *float32                                             `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                             `json:"disabledAt,omitempty"`
@@ -19991,31 +20024,4 @@ func (c *ClientWithResponses) CreateProjectTransferRequestWithBodyWithResponse(c
 		return nil, err
 	}
 	return ParseCreateProjectTransferRequestResponse(rsp)
-}
-
-// CreateProjectTransferRequestWithResponse Create project transfer request
-//
-// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-func (c *ClientWithResponses) CreateProjectTransferRequestWithResponse(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, body CreateProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectTransferRequestResponse, error) {
-	rsp, err := c.CreateProjectTransferRequest(ctx, idOrName, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateProjectTransferRequestResponse(rsp)
-}
-
-// CreateSpeedInsightsToggleWithBodyWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request,
-// with any type of body and a specified content type.
-//
-// Returns a wrapper object for the known response body format(s).
-func (c *ClientWithResponses) CreateSpeedInsightsToggleWithBodyWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error) {
-	rsp, err := c.CreateSpeedInsightsToggleWithBody(ctx, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateSpeedInsightsToggleResponse(rsp)
 }

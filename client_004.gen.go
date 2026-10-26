@@ -14660,6 +14660,24 @@ func (e GenerateRoute200JSONResponseBodyRouteActionsType) Valid() bool {
 	}
 }
 
+// Defines values for GenerateRoute200JSONResponseBodyRouteCaseSensitive.
+const (
+	GenerateRoute200JSONResponseBodyRouteCaseSensitiveFalse GenerateRoute200JSONResponseBodyRouteCaseSensitive = false
+	GenerateRoute200JSONResponseBodyRouteCaseSensitiveTrue  GenerateRoute200JSONResponseBodyRouteCaseSensitive = true
+)
+
+// Valid indicates whether the value is a known member of the GenerateRoute200JSONResponseBodyRouteCaseSensitive enum.
+func (e GenerateRoute200JSONResponseBodyRouteCaseSensitive) Valid() bool {
+	switch e {
+	case GenerateRoute200JSONResponseBodyRouteCaseSensitiveFalse:
+		return true
+	case GenerateRoute200JSONResponseBodyRouteCaseSensitiveTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateRoute200JSONResponseBodyRouteConditionsField.
 const (
 	GenerateRoute200JSONResponseBodyRouteConditionsFieldCookie GenerateRoute200JSONResponseBodyRouteConditionsField = "cookie"
@@ -19988,24 +20006,6 @@ func (e GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActive) Valid() 
 	case GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActiveFalse:
 		return true
 	case GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActionDeny GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActionLog  GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActionLog:
 		return true
 	default:
 		return false

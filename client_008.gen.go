@@ -7,6 +7,12 @@ import (
 	"encoding/json"
 )
 
+// Defines values for PatchDomainJSONBody0EchMode.
+const (
+	PatchDomainJSONBody0EchModeAuto     PatchDomainJSONBody0EchMode = "auto"
+	PatchDomainJSONBody0EchModeDisabled PatchDomainJSONBody0EchMode = "disabled"
+)
+
 // Valid indicates whether the value is a known member of the PatchDomainJSONBody0EchMode enum.
 func (e PatchDomainJSONBody0EchMode) Valid() bool {
 	switch e {
@@ -19890,12 +19896,12 @@ type Drive struct {
 	// Example: 1750344501629
 	UpdatedAt float32 `json:"updatedAt"`
 
-	// V0 Whether this drive is managed by v0 on the customer's behalf.
-	V0 *DriveV0 `json:"v0,omitempty"`
+	// WorkloadType The workload type of this drive.
+	WorkloadType *DriveWorkloadType `json:"workloadType,omitempty"`
 }
 
-// DriveV0 Whether this drive is managed by v0 on the customer's behalf.
-type DriveV0 bool
+// DriveWorkloadType The workload type of this drive.
+type DriveWorkloadType string
 
 // DuplicateDomains Duplicate domains were provided.
 type DuplicateDomains struct {

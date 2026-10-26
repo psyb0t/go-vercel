@@ -19218,14 +19218,14 @@ type ClientInterface interface {
 
 	// ListKmsIssuers List issuers
 	//
-	// Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.
+	// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
 	//
 	// Corresponds with GET /v1/kms/issuers (the `ListKmsIssuers` operationId).
 	ListKmsIssuers(ctx context.Context, params *ListKmsIssuersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateKmsIssuerWithBody Create an issuer
 	//
-	// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+	// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -19234,7 +19234,7 @@ type ClientInterface interface {
 
 	// CreateKmsIssuer Create an issuer
 	//
-	// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+	// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -19250,7 +19250,7 @@ type ClientInterface interface {
 
 	// GetKmsIssuer Get an issuer
 	//
-	// Retrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
+	// Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
 	//
 	// Corresponds with GET /v1/kms/issuers/{issuerId} (the `GetKmsIssuer` operationId).
 	GetKmsIssuer(ctx context.Context, issuerId string, params *GetKmsIssuerParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -20813,7 +20813,7 @@ type ClientInterface interface {
 
 	// DeleteTeamWithBody Delete a Team
 	//
-	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.
+	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -20822,7 +20822,7 @@ type ClientInterface interface {
 
 	// DeleteTeam Delete a Team
 	//
-	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.
+	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
 	//
 	// Takes a body of the `application/json` content type.
 	//

@@ -10488,8 +10488,12 @@ type GetProjects200JSONResponseBody2 struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *GetProjects200JSONResponseBody2ProjectsUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *GetProjects200JSONResponseBody2ProjectsV0        `json:"v0,omitempty"`
-		V0Created    *GetProjects200JSONResponseBody2ProjectsV0Created `json:"v0Created,omitempty"`
+		V0          *GetProjects200JSONResponseBody2ProjectsV0        `json:"v0,omitempty"`
+		V0Created   *GetProjects200JSONResponseBody2ProjectsV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                    `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                    `json:"disabledAt,omitempty"`
@@ -19061,6 +19065,11 @@ type CreateDeployment200JSONResponseBody1 struct {
 			Id             string                                                                   `json:"id"`
 			PaidAt         *float32                                                                 `json:"paidAt,omitempty"`
 		} `json:"speedInsights,omitempty"`
+
+		// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+		VercelFlags *struct {
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                                `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                                `json:"disabledAt,omitempty"`
@@ -19997,12 +20006,3 @@ type CreateDeployment200JSONResponseBody1ProjectSettingsSpeedInsightsHasData boo
 
 // CreateDeployment200JSONResponseBody1ProjectSettingsWebAnalyticsHasData defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1ProjectSettingsWebAnalyticsHasData bool
-
-// CreateDeployment200JSONResponseBody1Public defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1Public bool
-
-// CreateDeployment200JSONResponseBody1ReadyState defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1ReadyState string
-
-// CreateDeployment200JSONResponseBody1ReadySubstate defines parameters for CreateDeployment.
-type CreateDeployment200JSONResponseBody1ReadySubstate string

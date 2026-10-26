@@ -10,6 +10,56 @@ import (
 	"strings"
 )
 
+// ParseUpdatePrivateLinkEndpointResponse parses an HTTP response from a UpdatePrivateLinkEndpointWithResponse call
+func ParseUpdatePrivateLinkEndpointResponse(rsp *http.Response) (*UpdatePrivateLinkEndpointResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdatePrivateLinkEndpointResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PrivateLinkEndpoint
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGetObservabilityConfigurationProjectsResponse parses an HTTP response from a GetObservabilityConfigurationProjectsWithResponse call
 func ParseGetObservabilityConfigurationProjectsResponse(rsp *http.Response) (*GetObservabilityConfigurationProjectsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -2318,8 +2368,12 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *DeleteProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *DeleteProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created    *DeleteProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			V0          *DeleteProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *DeleteProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
@@ -4134,8 +4188,12 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created    *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			V0          *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
@@ -9012,8 +9070,12 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *UpdateMicrofrontends200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *UpdateMicrofrontends200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created    *UpdateMicrofrontends200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			V0          *UpdateMicrofrontends200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *UpdateMicrofrontends200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                                    `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                                    `json:"disabledAt,omitempty"`
@@ -9503,7 +9565,8 @@ func ParseGenerateRouteResponse(rsp *http.Response) (*GenerateRouteResponse, err
 					SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
 					Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
 				} `json:"actions"`
-				Conditions *[]struct {
+				CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
+				Conditions    *[]struct {
 					Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
 					Key      *string                                                 `json:"key,omitempty"`
 					Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
@@ -19005,8 +19068,12 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *CreateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created    *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			V0          *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                             `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                             `json:"disabledAt,omitempty"`
@@ -19458,6 +19525,11 @@ func ParseCancelDeploymentResponse(rsp *http.Response) (*CancelDeploymentRespons
 					Id             string                                                                  `json:"id"`
 					PaidAt         *float32                                                                `json:"paidAt,omitempty"`
 				} `json:"speedInsights,omitempty"`
+
+				// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+				VercelFlags *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 				WebAnalytics *struct {
 					CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
 					DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
@@ -20003,81 +20075,6 @@ func ParseUpdateConnectorResponse(rsp *http.Response) (*UpdateConnectorResponse,
 
 	case rsp.StatusCode == 504:
 		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListConnectorProjectConnectionsResponse parses an HTTP response from a ListConnectorProjectConnectionsWithResponse call
-func ParseListConnectorProjectConnectionsResponse(rsp *http.Response) (*ListConnectorProjectConnectionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListConnectorProjectConnectionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ConnectConnectorProjectConnectionList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON410 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
 
 	}
 

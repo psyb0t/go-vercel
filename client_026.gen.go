@@ -12,6 +12,33 @@ import (
 	"time"
 )
 
+// CreateProjectTransferRequestWithResponse Create project transfer request
+//
+// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
+func (c *ClientWithResponses) CreateProjectTransferRequestWithResponse(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, body CreateProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectTransferRequestResponse, error) {
+	rsp, err := c.CreateProjectTransferRequest(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectTransferRequestResponse(rsp)
+}
+
+// CreateSpeedInsightsToggleWithBodyWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request,
+// with any type of body and a specified content type.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateSpeedInsightsToggleWithBodyWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error) {
+	rsp, err := c.CreateSpeedInsightsToggleWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateSpeedInsightsToggleResponse(rsp)
+}
+
 // CreateSpeedInsightsToggleWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request.
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 func (c *ClientWithResponses) CreateSpeedInsightsToggleWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, body CreateSpeedInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error) {
@@ -2623,7 +2650,7 @@ func (c *ClientWithResponses) ExchangeSsoTokenWithResponse(ctx context.Context, 
 
 // ListKmsIssuersWithResponse List issuers
 //
-// Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.
+// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -2638,7 +2665,7 @@ func (c *ClientWithResponses) ListKmsIssuersWithResponse(ctx context.Context, pa
 
 // CreateKmsIssuerWithBodyWithResponse Create an issuer
 //
-// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -2653,7 +2680,7 @@ func (c *ClientWithResponses) CreateKmsIssuerWithBodyWithResponse(ctx context.Co
 
 // CreateKmsIssuerWithResponse Create an issuer
 //
-// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -2683,7 +2710,7 @@ func (c *ClientWithResponses) DeleteKmsIssuerWithResponse(ctx context.Context, i
 
 // GetKmsIssuerWithResponse Get an issuer
 //
-// Retrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
+// Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -5540,7 +5567,7 @@ func (c *ClientWithResponses) CreateTeamWithResponse(ctx context.Context, body C
 
 // DeleteTeamWithBodyWithResponse Delete a Team
 //
-// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.
+// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -5555,7 +5582,7 @@ func (c *ClientWithResponses) DeleteTeamWithBodyWithResponse(ctx context.Context
 
 // DeleteTeamWithResponse Delete a Team
 //
-// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.
+// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -19651,8 +19678,12 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 					Throttled *GetMicrofrontendsInGroup200JSONResponseBodyProjectsUsageStatusThrottled `json:"throttled,omitempty"`
 				} `json:"usageStatus,omitempty"`
-				V0           *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0        `json:"v0,omitempty"`
-				V0Created    *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0Created `json:"v0Created,omitempty"`
+				V0          *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0        `json:"v0,omitempty"`
+				V0Created   *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0Created `json:"v0Created,omitempty"`
+				VercelFlags *struct {
+					// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
 				WebAnalytics *struct {
 					CanceledAt *float32                                                                `json:"canceledAt,omitempty"`
 					DisabledAt *float32                                                                `json:"disabledAt,omitempty"`
@@ -19988,56 +20019,6 @@ func ParseReadPrivateLinkEndpointResponse(rsp *http.Response) (*ReadPrivateLinkE
 		break // No content-type
 
 	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdatePrivateLinkEndpointResponse parses an HTTP response from a UpdatePrivateLinkEndpointWithResponse call
-func ParseUpdatePrivateLinkEndpointResponse(rsp *http.Response) (*UpdatePrivateLinkEndpointResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdatePrivateLinkEndpointResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest PrivateLinkEndpoint
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
 		break // No content-type
 
 	}

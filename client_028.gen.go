@@ -13,6 +13,81 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseListConnectorProjectConnectionsResponse parses an HTTP response from a ListConnectorProjectConnectionsWithResponse call
+func ParseListConnectorProjectConnectionsResponse(rsp *http.Response) (*ListConnectorProjectConnectionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListConnectorProjectConnectionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ConnectConnectorProjectConnectionList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON410 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListProjectConnectorConnectionsResponse parses an HTTP response from a ListProjectConnectorConnectionsWithResponse call
 func ParseListProjectConnectorConnectionsResponse(rsp *http.Response) (*ListProjectConnectorConnectionsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -68,13 +143,6 @@ func ParseListProjectConnectorConnectionsResponse(rsp *http.Response) (*ListProj
 			return nil, err
 		}
 		response.JSON410 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
 
 	}
 
@@ -5547,6 +5615,11 @@ func ParseGetDeploymentsResponse(rsp *http.Response) (*GetDeploymentsResponse, e
 						Id             string                                                                           `json:"id"`
 						PaidAt         *float32                                                                         `json:"paidAt,omitempty"`
 					} `json:"speedInsights,omitempty"`
+
+					// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+					VercelFlags *struct {
+						EnabledAt *float32 `json:"enabledAt,omitempty"`
+					} `json:"vercelFlags,omitempty"`
 					WebAnalytics *struct {
 						CanceledAt *float32                                                                        `json:"canceledAt,omitempty"`
 						DisabledAt *float32                                                                        `json:"disabledAt,omitempty"`
@@ -8274,8 +8347,12 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *GetProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *GetProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created    *GetProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			V0          *GetProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *GetProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                          `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                          `json:"disabledAt,omitempty"`
@@ -10090,8 +10167,12 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *UpdateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *UpdateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created    *UpdateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			V0          *UpdateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *UpdateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                             `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                             `json:"disabledAt,omitempty"`

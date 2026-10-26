@@ -14937,7 +14937,8 @@ type GenerateRouteJSONBody struct {
 			SubType *string `json:"subType,omitempty"`
 			Type    *string `json:"type,omitempty"`
 		} `json:"actions"`
-		Conditions *[]struct {
+		CaseSensitive *bool `json:"caseSensitive,omitempty"`
+		Conditions    *[]struct {
 			Field    *string `json:"field,omitempty"`
 			Key      *string `json:"key,omitempty"`
 			Missing  *bool   `json:"missing,omitempty"`
@@ -14971,6 +14972,9 @@ type GenerateRoute200JSONResponseBodyRouteActionsSubType string
 
 // GenerateRoute200JSONResponseBodyRouteActionsType defines parameters for GenerateRoute.
 type GenerateRoute200JSONResponseBodyRouteActionsType string
+
+// GenerateRoute200JSONResponseBodyRouteCaseSensitive defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteCaseSensitive bool
 
 // GenerateRoute200JSONResponseBodyRouteConditionsField defines parameters for GenerateRoute.
 type GenerateRoute200JSONResponseBodyRouteConditionsField string

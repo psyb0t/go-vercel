@@ -10,6 +10,15 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeployment200JSONResponseBody1Public defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1Public bool
+
+// CreateDeployment200JSONResponseBody1ReadyState defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ReadyState string
+
+// CreateDeployment200JSONResponseBody1ReadySubstate defines parameters for CreateDeployment.
+type CreateDeployment200JSONResponseBody1ReadySubstate string
+
 // CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0 defines parameters for CreateDeployment.
 type CreateDeployment200JSONResponseBody1ResourceConfigBuildMachine0 struct {
 	// Cores Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
@@ -2741,6 +2750,11 @@ type GetDeployment200JSONResponseBody1 struct {
 			Id             string                                                                `json:"id"`
 			PaidAt         *float32                                                              `json:"paidAt,omitempty"`
 		} `json:"speedInsights,omitempty"`
+
+		// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+		VercelFlags *struct {
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                             `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                             `json:"disabledAt,omitempty"`

@@ -697,13 +697,13 @@ type NamedSandbox struct {
 	// Example: 1750344501629
 	UpdatedAt float32 `json:"updatedAt"`
 
-	// V0 Whether this sandbox is managed by v0 on the customer's behalf.
-	V0 *NamedSandboxV0 `json:"v0,omitempty"`
-
 	// Vcpus Number of virtual CPUs allocated.
 	//
 	// Example: 2
 	Vcpus *float32 `json:"vcpus,omitempty"`
+
+	// WorkloadType The workload type of this sandbox.
+	WorkloadType *NamedSandboxWorkloadType `json:"workloadType,omitempty"`
 }
 
 // NamedSandboxArchitecture CPU architecture of the sandbox. This value does not change.
@@ -735,8 +735,8 @@ type NamedSandboxPersistent bool
 // Example: running
 type NamedSandboxStatus string
 
-// NamedSandboxV0 Whether this sandbox is managed by v0 on the customer's behalf.
-type NamedSandboxV0 bool
+// NamedSandboxWorkloadType The workload type of this sandbox.
+type NamedSandboxWorkloadType string
 
 // Nameserver A valid nameserver
 type Nameserver = string
@@ -1362,13 +1362,13 @@ type Session struct {
 	// Example: 1750344501629
 	UpdatedAt float32 `json:"updatedAt"`
 
-	// V0 Whether this sandbox is managed by v0 on the customer's behalf.
-	V0 *SessionV0 `json:"v0,omitempty"`
-
 	// Vcpus Number of vCPUs allocated to this sandbox.
 	//
 	// Example: 2
 	Vcpus float32 `json:"vcpus"`
+
+	// WorkloadType The workload type of this sandbox.
+	WorkloadType *SessionWorkloadType `json:"workloadType,omitempty"`
 }
 
 // SessionArchitecture CPU architecture of the sandbox.
@@ -1379,8 +1379,8 @@ type SessionArchitecture string
 // Example: running
 type SessionStatus string
 
-// SessionV0 Whether this sandbox is managed by v0 on the customer's behalf.
-type SessionV0 bool
+// SessionWorkloadType The workload type of this sandbox.
+type SessionWorkloadType string
 
 // SessionCommand This object represents a command run in a Vercel Sandbox session (v2 API).
 type SessionCommand struct {
@@ -1490,8 +1490,8 @@ type Snapshot struct {
 	// Example: 1750344501629
 	UpdatedAt float32 `json:"updatedAt"`
 
-	// V0 Whether this snapshot is managed by v0 on the customer's behalf.
-	V0 *SnapshotV0 `json:"v0,omitempty"`
+	// WorkloadType The workload type of this snapshot.
+	WorkloadType *SnapshotWorkloadType `json:"workloadType,omitempty"`
 }
 
 // SnapshotArchitecture CPU architecture required to restore the snapshot.
@@ -1507,8 +1507,8 @@ type SnapshotCreationMethod string
 // Example: created
 type SnapshotStatus string
 
-// SnapshotV0 Whether this snapshot is managed by v0 on the customer's behalf.
-type SnapshotV0 bool
+// SnapshotWorkloadType The workload type of this snapshot.
+type SnapshotWorkloadType string
 
 // Team Data representing a Team.
 type Team struct {

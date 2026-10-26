@@ -7,6 +7,31 @@ import (
 	"net/http"
 )
 
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectMembersResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectMembersResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type AddProjectMemberResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Id string `json:"id"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r AddProjectMemberResponse) GetJSON200() *struct {
 	Id string `json:"id"`
@@ -5661,8 +5686,12 @@ type UpdateMicrofrontendsResponse struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *UpdateMicrofrontends200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *UpdateMicrofrontends200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created    *UpdateMicrofrontends200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		V0          *UpdateMicrofrontends200JSONResponseBodyV0        `json:"v0,omitempty"`
+		V0Created   *UpdateMicrofrontends200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                    `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                    `json:"disabledAt,omitempty"`
@@ -7440,8 +7469,12 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 		Throttled *UpdateMicrofrontends200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 	} `json:"usageStatus,omitempty"`
-	V0           *UpdateMicrofrontends200JSONResponseBodyV0        `json:"v0,omitempty"`
-	V0Created    *UpdateMicrofrontends200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	V0          *UpdateMicrofrontends200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *UpdateMicrofrontends200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
 	WebAnalytics *struct {
 		CanceledAt *float32                                                    `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                                    `json:"disabledAt,omitempty"`
@@ -8107,7 +8140,8 @@ type GenerateRouteResponse struct {
 				SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
 				Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
 			} `json:"actions"`
-			Conditions *[]struct {
+			CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
+			Conditions    *[]struct {
 				Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
 				Key      *string                                                 `json:"key,omitempty"`
 				Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
@@ -8139,7 +8173,8 @@ func (r GenerateRouteResponse) GetJSON200() *struct {
 			SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
 			Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
 		} `json:"actions"`
-		Conditions *[]struct {
+		CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
+		Conditions    *[]struct {
 			Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
 			Key      *string                                                 `json:"key,omitempty"`
 			Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
@@ -20389,8 +20424,12 @@ type CreateProjectResponse struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *CreateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created    *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		V0          *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+		V0Created   *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                             `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                             `json:"disabledAt,omitempty"`

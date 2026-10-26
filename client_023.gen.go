@@ -9607,8 +9607,12 @@ type GetMicrofrontendsInGroupResponse struct {
 				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 				Throttled *GetMicrofrontendsInGroup200JSONResponseBodyProjectsUsageStatusThrottled `json:"throttled,omitempty"`
 			} `json:"usageStatus,omitempty"`
-			V0           *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0        `json:"v0,omitempty"`
-			V0Created    *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0Created `json:"v0Created,omitempty"`
+			V0          *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0        `json:"v0,omitempty"`
+			V0Created   *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
 			WebAnalytics *struct {
 				CanceledAt *float32                                                                `json:"canceledAt,omitempty"`
 				DisabledAt *float32                                                                `json:"disabledAt,omitempty"`
@@ -11389,8 +11393,12 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *GetMicrofrontendsInGroup200JSONResponseBodyProjectsUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0        `json:"v0,omitempty"`
-		V0Created    *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0Created `json:"v0Created,omitempty"`
+		V0          *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0        `json:"v0,omitempty"`
+		V0Created   *GetMicrofrontendsInGroup200JSONResponseBodyProjectsV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                                `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                                `json:"disabledAt,omitempty"`
@@ -14126,8 +14134,12 @@ type DeleteProjectAvatarResponse struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *DeleteProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *DeleteProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created    *DeleteProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		V0          *DeleteProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+		V0Created   *DeleteProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
@@ -15905,8 +15917,12 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 		Throttled *DeleteProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 	} `json:"usageStatus,omitempty"`
-	V0           *DeleteProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-	V0Created    *DeleteProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	V0          *DeleteProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *DeleteProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
 	WebAnalytics *struct {
 		CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
@@ -17717,8 +17733,12 @@ type UploadProjectAvatarResponse struct {
 			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 			Throttled *UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 		} `json:"usageStatus,omitempty"`
-		V0           *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created    *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		V0          *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+		V0Created   *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+		VercelFlags *struct {
+			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+			EnabledAt *float32 `json:"enabledAt,omitempty"`
+		} `json:"vercelFlags,omitempty"`
 		WebAnalytics *struct {
 			CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
 			DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
@@ -19496,8 +19516,12 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
 		Throttled *UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
 	} `json:"usageStatus,omitempty"`
-	V0           *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-	V0Created    *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	V0          *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
 	WebAnalytics *struct {
 		CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
@@ -19987,29 +20011,4 @@ func (r GetProjectMembersResponse) Status() string {
 		return r.HTTPResponse.Status
 	}
 	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetProjectMembersResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetProjectMembersResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type AddProjectMemberResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Id string `json:"id"`
-	}
 }
