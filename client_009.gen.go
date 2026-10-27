@@ -10,6 +10,2044 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ConnectConnectorCreateData1SubjectType Which subject the connector issues tokens for. Defaults to \"app\" (connector-level keys). \"user\" connectors store no connector-level values; each user supplies their own key during authorization.
+type ConnectConnectorCreateData1SubjectType string
+
+// ConnectConnectorCreateData2 defines model for ConnectConnectorCreateData.2.
+type ConnectConnectorCreateData2 struct {
+	// AppId GitHub App numeric ID.
+	AppId int `json:"appId"`
+
+	// AppName GitHub App display name.
+	AppName string `json:"appName"`
+
+	// AppSlug GitHub App slug.
+	AppSlug string `json:"appSlug"`
+
+	// ClientId OAuth client ID assigned by GitHub.
+	ClientId string `json:"clientId"`
+
+	// ClientSecret GitHub App OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// Owner GitHub App owner.
+	Owner *struct {
+		// Id GitHub App owner numeric ID.
+		Id int `json:"id"`
+
+		// Name GitHub App owner display name.
+		Name *string `json:"name,omitempty"`
+
+		// Slug GitHub App owner login.
+		Slug string `json:"slug"`
+
+		// Type GitHub App owner type.
+		Type ConnectConnectorCreateData2OwnerType `json:"type"`
+	} `json:"owner,omitempty"`
+
+	// PrivateKeyPem GitHub App private key in PEM format.
+	PrivateKeyPem *string `json:"privateKeyPem,omitempty"`
+
+	// WebhookSecret GitHub App webhook secret.
+	WebhookSecret *string `json:"webhookSecret,omitempty"`
+}
+
+// ConnectConnectorCreateData2OwnerType GitHub App owner type.
+type ConnectConnectorCreateData2OwnerType string
+
+// ConnectConnectorCreateData3 defines model for ConnectConnectorCreateData.3.
+type ConnectConnectorCreateData3 struct {
+	// AppId Linear application ID.
+	AppId *string `json:"appId,omitempty"`
+
+	// AppName Linear application name.
+	AppName *string `json:"appName,omitempty"`
+
+	// AppScopes OAuth scopes requested for Linear application tokens.
+	AppScopes *[]string `json:"appScopes,omitempty"`
+
+	// Application Linear OAuth application metadata.
+	Application *struct {
+		// ClientId Linear OAuth client ID.
+		ClientId string `json:"clientId"`
+
+		// CreatedAt Linear OAuth application creation timestamp.
+		CreatedAt *string `json:"createdAt,omitempty"`
+
+		// Description Linear OAuth application description.
+		Description *string `json:"description,omitempty"`
+
+		// Developer Linear OAuth application developer name.
+		Developer *string `json:"developer,omitempty"`
+
+		// DeveloperUrl Linear OAuth application developer URL.
+		DeveloperUrl *string `json:"developerUrl,omitempty"`
+
+		// Distribution Linear OAuth application distribution mode.
+		Distribution *string `json:"distribution,omitempty"`
+
+		// Id Linear OAuth application ID.
+		Id string `json:"id"`
+
+		// ImageUrl Linear OAuth application image URL.
+		ImageUrl *string `json:"imageUrl,omitempty"`
+
+		// Name Linear OAuth application name.
+		Name string `json:"name"`
+
+		// RedirectUris Registered redirect URIs for the Linear OAuth application.
+		RedirectUris *[]string `json:"redirectUris,omitempty"`
+
+		// UpdatedAt Linear OAuth application update timestamp.
+		UpdatedAt *string `json:"updatedAt,omitempty"`
+
+		// WebhookEnabled Whether the Linear webhook is enabled.
+		WebhookEnabled *bool `json:"webhookEnabled,omitempty"`
+
+		// WebhookResourceTypes Linear resource types delivered to the webhook.
+		WebhookResourceTypes *[]string `json:"webhookResourceTypes,omitempty"`
+
+		// WebhookUrl Linear webhook URL.
+		WebhookUrl *string `json:"webhookUrl,omitempty"`
+	} `json:"application,omitempty"`
+
+	// ClientId OAuth client ID assigned by Linear.
+	ClientId string `json:"clientId"`
+
+	// ClientSecret Linear OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// OwnerOrganization Linear organization that owns the OAuth application.
+	OwnerOrganization *struct {
+		// Id Linear organization ID.
+		Id string `json:"id"`
+
+		// LogoUrl Linear organization logo URL.
+		LogoUrl *string `json:"logoUrl,omitempty"`
+
+		// Name Linear organization name.
+		Name string `json:"name"`
+
+		// Slug Linear organization slug.
+		Slug string `json:"slug"`
+	} `json:"ownerOrganization,omitempty"`
+
+	// UserScopes OAuth scopes requested for Linear user tokens.
+	UserScopes *[]string `json:"userScopes,omitempty"`
+
+	// WebhookSecret Linear webhook verification secret.
+	WebhookSecret *string `json:"webhookSecret,omitempty"`
+}
+
+// ConnectConnectorCreateData4 defines model for ConnectConnectorCreateData.4.
+type ConnectConnectorCreateData4 struct {
+	// ApiToken Linq partner API token for the shared line.
+	ApiToken     *string   `json:"apiToken,omitempty"`
+	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
+}
+
+// ConnectConnectorCreateData5 defines model for ConnectConnectorCreateData.5.
+type ConnectConnectorCreateData5 struct {
+	// ConsumerKey Salesforce connected app consumer key.
+	ConsumerKey string `json:"consumerKey"`
+
+	// ConsumerSecret Salesforce connected app consumer secret.
+	ConsumerSecret *string `json:"consumerSecret,omitempty"`
+
+	// LoginHost Salesforce login host, such as login.salesforce.com.
+	LoginHost string `json:"loginHost"`
+}
+
+// ConnectConnectorCreateData6 defines model for ConnectConnectorCreateData.6.
+type ConnectConnectorCreateData6 struct {
+	// ApiKeyId Sendblue API key id (`sb-api-key-id`).
+	ApiKeyId string `json:"apiKeyId"`
+
+	// ApiSecretKey Sendblue API secret key (`sb-api-secret-key`).
+	ApiSecretKey *string `json:"apiSecretKey,omitempty"`
+
+	// PhoneNumbers E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
+	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
+}
+
+// ConnectConnectorCreateData7 defines model for ConnectConnectorCreateData.7.
+type ConnectConnectorCreateData7 struct {
+	// AppHome App Home settings for the managed Slack app. Updates preserve omitted settings.
+	AppHome *struct {
+		// HomeTabEnabled Enable the Home tab for views.publish. Defaults to false for new apps.
+		HomeTabEnabled *bool `json:"homeTabEnabled,omitempty"`
+
+		// MessagesTabEnabled Enable the Messages tab. Defaults to true for new apps.
+		MessagesTabEnabled *bool `json:"messagesTabEnabled,omitempty"`
+
+		// MessagesTabReadOnlyEnabled Make the Messages tab read-only. Defaults to false for new apps.
+		MessagesTabReadOnlyEnabled *bool `json:"messagesTabReadOnlyEnabled,omitempty"`
+	} `json:"appHome,omitempty"`
+
+	// AppId Slack app ID.
+	AppId string `json:"appId"`
+
+	// AppName Slack app display name.
+	AppName string `json:"appName"`
+
+	// BotScopes OAuth scopes requested for Slack bot tokens.
+	BotScopes *[]string `json:"botScopes,omitempty"`
+
+	// ClientId OAuth client ID assigned by Slack.
+	ClientId string `json:"clientId"`
+
+	// ClientSecret Slack app OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// RichPreviews Work Object preview settings for the managed Slack app. Updates preserve omitted settings.
+	RichPreviews *struct {
+		// EntityTypes Entity types to preview. An empty array clears the configured types.
+		EntityTypes *[]string `json:"entityTypes,omitempty"`
+
+		// IsActive Enable Work Object previews. Defaults to false for new apps.
+		IsActive *bool `json:"isActive,omitempty"`
+	} `json:"richPreviews,omitempty"`
+
+	// Shortcuts Global and message shortcuts configured for the Slack app.
+	Shortcuts *[]struct {
+		// CallbackId Identifier included in the shortcut callback.
+		CallbackId string `json:"callbackId"`
+
+		// Description Description shown for the shortcut in Slack.
+		Description string `json:"description"`
+
+		// Name Shortcut display name.
+		Name string `json:"name"`
+
+		// Type Where Slack exposes the shortcut.
+		Type ConnectConnectorCreateData7ShortcutsType `json:"type"`
+	} `json:"shortcuts,omitempty"`
+
+	// SigningSecret Slack request signing secret.
+	SigningSecret *string `json:"signingSecret,omitempty"`
+
+	// SlackTeam Slack workspace metadata.
+	SlackTeam *struct {
+		// Domain Slack workspace domain.
+		Domain *string `json:"domain,omitempty"`
+
+		// Id Slack workspace ID.
+		Id string `json:"id"`
+
+		// Name Slack workspace name.
+		Name *string `json:"name,omitempty"`
+	} `json:"slackTeam,omitempty"`
+
+	// SlashCommands Slash commands configured for the managed Slack app.
+	SlashCommands *[]struct {
+		// Command Slash command including its leading slash.
+		Command string `json:"command"`
+
+		// Description Description shown for the slash command in Slack.
+		Description string `json:"description"`
+
+		// ShouldEscape Whether Slack should escape command arguments.
+		ShouldEscape *bool `json:"shouldEscape,omitempty"`
+
+		// UsageHint Optional usage hint shown for the slash command.
+		UsageHint *string `json:"usageHint,omitempty"`
+	} `json:"slashCommands,omitempty"`
+
+	// UserScopes OAuth scopes requested for Slack user tokens.
+	UserScopes *[]string `json:"userScopes,omitempty"`
+
+	// VerificationToken Legacy Slack webhook verification token.
+	VerificationToken *string `json:"verificationToken,omitempty"`
+}
+
+// ConnectConnectorCreateData7ShortcutsType Where Slack exposes the shortcut.
+type ConnectConnectorCreateData7ShortcutsType string
+
+// ConnectConnectorCreateData8 defines model for ConnectConnectorCreateData.8.
+type ConnectConnectorCreateData8 struct {
+	// AccountIdentifier Snowflake account identifier.
+	AccountIdentifier string `json:"accountIdentifier"`
+
+	// ClientName Snowflake OAuth client name.
+	ClientName *string `json:"clientName,omitempty"`
+
+	// DefaultSessionRole Default Snowflake role for created sessions.
+	DefaultSessionRole *string `json:"defaultSessionRole,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+}
+
+// ConnectConnectorCreateData9 defines model for ConnectConnectorCreateData.9.
+type ConnectConnectorCreateData9 struct {
+	// AccountIdentifier Snowflake account identifier.
+	AccountIdentifier *string `json:"accountIdentifier,omitempty"`
+
+	// ClientName Snowflake client name.
+	ClientName *string `json:"clientName,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+}
+
+// ConnectConnectorCreateData10 defines model for ConnectConnectorCreateData.10.
+type ConnectConnectorCreateData10 struct {
+	// ProjectId Photon project ID.
+	ProjectId string `json:"projectId"`
+
+	// ProjectSecret Photon project secret.
+	ProjectSecret *string `json:"projectSecret,omitempty"`
+
+	// WebhookSecret Photon webhook verification secret.
+	WebhookSecret *string `json:"webhookSecret,omitempty"`
+}
+
+// ConnectConnectorCreateData11 defines model for ConnectConnectorCreateData.11.
+type ConnectConnectorCreateData11 map[string]interface{}
+
+// ConnectConnectorCreateResult Connector created by the request.
+type ConnectConnectorCreateResult struct {
+	// AccentColor Hex accent color (e.g., `#000000`) for branding.
+	AccentColor *string `json:"accentColor,omitempty"`
+
+	// AppTokens App-token capabilities and known grants for the connector.
+	AppTokens *struct {
+		// CrossInstallation Whether one app token can be used across installations.
+		CrossInstallation  ConnectConnectorCreateResultAppTokensCrossInstallation  `json:"crossInstallation"`
+		IsStaticCredential ConnectConnectorCreateResultAppTokensIsStaticCredential `json:"isStaticCredential"`
+
+		// PermissionsUrl Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
+		PermissionsUrl *string `json:"permissionsUrl,omitempty"`
+
+		// RequiresReinstallation True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
+		RequiresReinstallation *ConnectConnectorCreateResultAppTokensRequiresReinstallation `json:"requiresReinstallation,omitempty"`
+
+		// Scopes Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector's enabled `clientCredentials.scopes` configuration.
+		Scopes *[]string `json:"scopes,omitempty"`
+
+		// SupportedAuthorizationDetails Supported OAuth authorization-detail type names.
+		SupportedAuthorizationDetails *[]string `json:"supportedAuthorizationDetails,omitempty"`
+
+		// SupportsRefinement Whether callers can narrow app-token grants per request.
+		SupportsRefinement ConnectConnectorCreateResultAppTokensSupportsRefinement `json:"supportsRefinement"`
+
+		// SupportsResources Whether callers can request resource-specific app tokens.
+		SupportsResources *ConnectConnectorCreateResultAppTokensSupportsResources `json:"supportsResources,omitempty"`
+	} `json:"appTokens,omitempty"`
+
+	// BackgroundColor Hex background color (e.g., `#000000`) for branding.
+	BackgroundColor *string `json:"backgroundColor,omitempty"`
+
+	// ClientUrl Provider-side URL for viewing or managing the resource represented by the connector. The destination can be an app, account, phone line, or service instance, depending on the connector type.
+	ClientUrl *string `json:"clientUrl,omitempty"`
+
+	// ConnectionMethod The connection method this connector was created from, when the create request named one.
+	ConnectionMethod *string `json:"connectionMethod,omitempty"`
+
+	// CreatedAt Creation time in epoch milliseconds.
+	CreatedAt float32 `json:"createdAt"`
+
+	// CreatedBy Principal that created the connector.
+	CreatedBy *ConnectConnectorCreateResult_CreatedBy `json:"createdBy,omitempty"`
+
+	// CreationMode How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
+	CreationMode *ConnectConnectorCreateResultCreationMode `json:"creationMode,omitempty"`
+
+	// DefaultInstallationId Installation used when a token request does not specify an installation.
+	DefaultInstallationId *string `json:"defaultInstallationId,omitempty"`
+
+	// Devsite Developer website for the connected service.
+	Devsite *string `json:"devsite,omitempty"`
+
+	// DisplayName Human-readable connector name.
+	DisplayName string `json:"displayName"`
+
+	// Docsite Developer documentation for the connected service.
+	Docsite *string `json:"docsite,omitempty"`
+
+	// Events Known events this connector subscribes to (e.g. Slack bot events, GitHub webhook events). Names are type-specific and validated by the managed-create flow when forwarded to the third-party service.
+	Events *[]string `json:"events,omitempty"`
+
+	// Icon Connector branding icon. SHA-1 hash that resolves to the uploaded icon through the Vercel avatar service. Consumers render this with `https://vercel.com/api/www/avatar/{icon}`.
+	Icon *string `json:"icon,omitempty"`
+
+	// Id Stable `scl_` connector ID. Use this value directly in `{connector}`.
+	Id string `json:"id"`
+
+	// KnownStale Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
+	KnownStale *ConnectConnectorCreateResultKnownStale `json:"knownStale,omitempty"`
+
+	// Managed Managed connector metadata exposed without leaking the manager connector or installation identifiers.
+	Managed *struct {
+		// Sync Whether Vercel synchronizes provider-side configuration.
+		Sync *ConnectConnectorCreateResultManagedSync `json:"sync,omitempty"`
+	} `json:"managed,omitempty"`
+
+	// Name Connector name within the owning team.
+	Name string `json:"name"`
+
+	// RedirectUri Redirect URI registered with the third-party service for this connector, if any. Used by `startAuthorization`/`startInstallation` to replay the exact URI back to the provider's token endpoint. Absent on connectors created before this field was introduced; those callers fall back to the `https://connect.vercel.com/callback` default.
+	RedirectUri *string `json:"redirectUri,omitempty"`
+
+	// ReinstallAt Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.
+	ReinstallAt *float32 `json:"reinstallAt,omitempty"`
+
+	// Service Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses.
+	Service string `json:"service"`
+
+	// ServiceIcon Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry.
+	ServiceIcon *string `json:"serviceIcon,omitempty"`
+
+	// SupportedSubjectTypes Token subject types supported by the connector.
+	SupportedSubjectTypes []string `json:"supportedSubjectTypes"`
+
+	// SupportsIcon Whether the connector icon can propagate to the provider.
+	SupportsIcon interface{} `json:"supportsIcon"`
+
+	// SupportsInstallation Whether the connector supports an installation flow.
+	SupportsInstallation ConnectConnectorCreateResultSupportsInstallation `json:"supportsInstallation"`
+
+	// SupportsManagedEjection Whether this managed connector can disconnect from its manager.
+	SupportsManagedEjection *ConnectConnectorCreateResultSupportsManagedEjection `json:"supportsManagedEjection,omitempty"`
+
+	// SupportsRevocation Whether Connect can revoke tokens for this connector.
+	SupportsRevocation ConnectConnectorCreateResultSupportsRevocation `json:"supportsRevocation"`
+
+	// SupportsTriggers Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
+	SupportsTriggers ConnectConnectorCreateResultSupportsTriggers `json:"supportsTriggers"`
+
+	// Target Which of the service's products/surfaces this connector points at.
+	Target *string `json:"target,omitempty"`
+
+	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
+	TriggerDestinations *[]ConnectTriggerDestination `json:"triggerDestinations,omitempty"`
+
+	// Triggers Incoming trigger configuration. Only present when enabled.
+	Triggers *ConnectTriggerConfiguration `json:"triggers,omitempty"`
+
+	// Type Connector implementation type.
+	Type ConnectConnectorCreateResultType `json:"type"`
+
+	// TypeIcon Icon identifier supplied by the connector type.
+	TypeIcon *string `json:"typeIcon,omitempty"`
+
+	// TypeName Human-readable name of the connector type.
+	TypeName string `json:"typeName"`
+
+	// Uid Team-scoped UID. URL-encode this value before using it in `{connector}`.
+	Uid string `json:"uid"`
+
+	// UpdatedAt Last update time in epoch milliseconds.
+	UpdatedAt float32 `json:"updatedAt"`
+
+	// UpdatedBy Principal that most recently updated the connector.
+	UpdatedBy *ConnectConnectorCreateResult_UpdatedBy `json:"updatedBy,omitempty"`
+
+	// UserTokens User-token capabilities and known grants for the connector.
+	UserTokens *struct {
+		// CrossInstallation Whether one user token can be used across installations.
+		CrossInstallation  ConnectConnectorCreateResultUserTokensCrossInstallation  `json:"crossInstallation"`
+		IsStaticCredential ConnectConnectorCreateResultUserTokensIsStaticCredential `json:"isStaticCredential"`
+
+		// ManualCredentialInput User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
+		ManualCredentialInput *ConnectConnectorCreateResultUserTokensManualCredentialInput `json:"manualCredentialInput,omitempty"`
+
+		// Scopes Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector's enabled `userAuthorization.scopes` configuration.
+		Scopes *[]string `json:"scopes,omitempty"`
+
+		// SupportedAuthorizationDetails Supported OAuth authorization-detail type names.
+		SupportedAuthorizationDetails *[]string `json:"supportedAuthorizationDetails,omitempty"`
+
+		// SupportsRefinement Whether callers can narrow user-token grants per request.
+		SupportsRefinement ConnectConnectorCreateResultUserTokensSupportsRefinement `json:"supportsRefinement"`
+
+		// SupportsResources Whether callers can request resource-specific user tokens.
+		SupportsResources *ConnectConnectorCreateResultUserTokensSupportsResources `json:"supportsResources,omitempty"`
+	} `json:"userTokens,omitempty"`
+
+	// Website Public website for the connected service.
+	Website *string `json:"website,omitempty"`
+}
+
+// ConnectConnectorCreateResultAppTokensCrossInstallation Whether one app token can be used across installations.
+type ConnectConnectorCreateResultAppTokensCrossInstallation bool
+
+// ConnectConnectorCreateResultAppTokensIsStaticCredential defines model for ConnectConnectorCreateResult.AppTokens.IsStaticCredential.
+type ConnectConnectorCreateResultAppTokensIsStaticCredential bool
+
+// ConnectConnectorCreateResultAppTokensRequiresReinstallation True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
+type ConnectConnectorCreateResultAppTokensRequiresReinstallation bool
+
+// ConnectConnectorCreateResultAppTokensSupportsRefinement Whether callers can narrow app-token grants per request.
+type ConnectConnectorCreateResultAppTokensSupportsRefinement bool
+
+// ConnectConnectorCreateResultAppTokensSupportsResources Whether callers can request resource-specific app tokens.
+type ConnectConnectorCreateResultAppTokensSupportsResources bool
+
+// ConnectConnectorCreateResultCreatedBy0 Principal that originally created the connector — either a Vercel user (interactive dashboard / CLI flow) or a Vercel deployment (OIDC-authenticated project, used by runtime auto-provisioning). See {@link ConnexPrincipal}. Optional: pre-existing rows from before this shape was introduced may carry no attribution at all.
+type ConnectConnectorCreateResultCreatedBy0 struct {
+	// Id Vercel user ID.
+	Id string `json:"id"`
+
+	// Type Principal kind.
+	Type ConnectConnectorCreateResultCreatedBy0Type `json:"type"`
+}
+
+// ConnectConnectorCreateResultCreatedBy0Type Principal kind.
+type ConnectConnectorCreateResultCreatedBy0Type string
+
+// ConnectConnectorCreateResultCreatedBy1 Principal that originally created the connector — either a Vercel user (interactive dashboard / CLI flow) or a Vercel deployment (OIDC-authenticated project, used by runtime auto-provisioning). See {@link ConnexPrincipal}. Optional: pre-existing rows from before this shape was introduced may carry no attribution at all.
+type ConnectConnectorCreateResultCreatedBy1 struct {
+	// Environment Deployment environment of the project principal.
+	Environment ConnectConnectorCreateResult_CreatedBy_1_Environment `json:"environment"`
+
+	// Id Vercel project ID.
+	Id string `json:"id"`
+
+	// Type Principal kind.
+	Type ConnectConnectorCreateResultCreatedBy1Type `json:"type"`
+}
+
+// ConnectConnectorCreateResultCreatedBy1Environment0 defines model for ConnectConnectorCreateResult.CreatedBy.1.Environment.0.
+type ConnectConnectorCreateResultCreatedBy1Environment0 = string
+
+// ConnectConnectorCreateResultCreatedBy1Environment1 defines model for ConnectConnectorCreateResult.CreatedBy.1.Environment.1.
+type ConnectConnectorCreateResultCreatedBy1Environment1 string
+
+// ConnectConnectorCreateResult_CreatedBy_1_Environment Deployment environment of the project principal.
+type ConnectConnectorCreateResult_CreatedBy_1_Environment struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorCreateResultCreatedBy1Type Principal kind.
+type ConnectConnectorCreateResultCreatedBy1Type string
+
+// ConnectConnectorCreateResult_CreatedBy Principal that created the connector.
+type ConnectConnectorCreateResult_CreatedBy struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorCreateResultCreationMode How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
+type ConnectConnectorCreateResultCreationMode string
+
+// ConnectConnectorCreateResultKnownStale Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
+type ConnectConnectorCreateResultKnownStale bool
+
+// ConnectConnectorCreateResultManagedSync Whether Vercel synchronizes provider-side configuration.
+type ConnectConnectorCreateResultManagedSync bool
+
+// ConnectConnectorCreateResultSupportsInstallation Whether the connector supports an installation flow.
+type ConnectConnectorCreateResultSupportsInstallation bool
+
+// ConnectConnectorCreateResultSupportsManagedEjection Whether this managed connector can disconnect from its manager.
+type ConnectConnectorCreateResultSupportsManagedEjection bool
+
+// ConnectConnectorCreateResultSupportsRevocation Whether Connect can revoke tokens for this connector.
+type ConnectConnectorCreateResultSupportsRevocation bool
+
+// ConnectConnectorCreateResultSupportsTriggers Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
+type ConnectConnectorCreateResultSupportsTriggers bool
+
+// ConnectConnectorCreateResultType Connector implementation type.
+type ConnectConnectorCreateResultType string
+
+// ConnectConnectorCreateResultUpdatedBy0 Principal that most recently mutated the connector. Same shape as {@link createdBy} but tracks the most recent updater, not the original creator. At create time the two fields point at the same principal; they diverge on the first subsequent update.
+type ConnectConnectorCreateResultUpdatedBy0 struct {
+	// Id Vercel user ID.
+	Id string `json:"id"`
+
+	// Type Principal kind.
+	Type ConnectConnectorCreateResultUpdatedBy0Type `json:"type"`
+}
+
+// ConnectConnectorCreateResultUpdatedBy0Type Principal kind.
+type ConnectConnectorCreateResultUpdatedBy0Type string
+
+// ConnectConnectorCreateResultUpdatedBy1 Principal that most recently mutated the connector. Same shape as {@link createdBy} but tracks the most recent updater, not the original creator. At create time the two fields point at the same principal; they diverge on the first subsequent update.
+type ConnectConnectorCreateResultUpdatedBy1 struct {
+	// Environment Deployment environment of the project principal.
+	Environment ConnectConnectorCreateResult_UpdatedBy_1_Environment `json:"environment"`
+
+	// Id Vercel project ID.
+	Id string `json:"id"`
+
+	// Type Principal kind.
+	Type ConnectConnectorCreateResultUpdatedBy1Type `json:"type"`
+}
+
+// ConnectConnectorCreateResultUpdatedBy1Environment0 defines model for ConnectConnectorCreateResult.UpdatedBy.1.Environment.0.
+type ConnectConnectorCreateResultUpdatedBy1Environment0 = string
+
+// ConnectConnectorCreateResultUpdatedBy1Environment1 defines model for ConnectConnectorCreateResult.UpdatedBy.1.Environment.1.
+type ConnectConnectorCreateResultUpdatedBy1Environment1 string
+
+// ConnectConnectorCreateResult_UpdatedBy_1_Environment Deployment environment of the project principal.
+type ConnectConnectorCreateResult_UpdatedBy_1_Environment struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorCreateResultUpdatedBy1Type Principal kind.
+type ConnectConnectorCreateResultUpdatedBy1Type string
+
+// ConnectConnectorCreateResult_UpdatedBy Principal that most recently updated the connector.
+type ConnectConnectorCreateResult_UpdatedBy struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorCreateResultUserTokensCrossInstallation Whether one user token can be used across installations.
+type ConnectConnectorCreateResultUserTokensCrossInstallation bool
+
+// ConnectConnectorCreateResultUserTokensIsStaticCredential defines model for ConnectConnectorCreateResult.UserTokens.IsStaticCredential.
+type ConnectConnectorCreateResultUserTokensIsStaticCredential bool
+
+// ConnectConnectorCreateResultUserTokensManualCredentialInput User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
+type ConnectConnectorCreateResultUserTokensManualCredentialInput bool
+
+// ConnectConnectorCreateResultUserTokensSupportsRefinement Whether callers can narrow user-token grants per request.
+type ConnectConnectorCreateResultUserTokensSupportsRefinement bool
+
+// ConnectConnectorCreateResultUserTokensSupportsResources Whether callers can request resource-specific user tokens.
+type ConnectConnectorCreateResultUserTokensSupportsResources bool
+
+// ConnectConnectorList Page of connectors.
+type ConnectConnectorList struct {
+	// Connectors Connectors in this page.
+	Connectors []ConnectConnector `json:"connectors"`
+
+	// Pagination Cursor for the next page.
+	Pagination ConnectPagination `json:"pagination"`
+}
+
+// ConnectConnectorProjectConnectionList Page of projects connected to a connector.
+type ConnectConnectorProjectConnectionList struct {
+	// Pagination Cursor for the next page.
+	Pagination ConnectPagination `json:"pagination"`
+
+	// Projects Project connections in this page.
+	Projects []ConnectProjectConnection `json:"projects"`
+}
+
+// ConnectConnectorUpdateData Provider configuration fields for the connector type.
+type ConnectConnectorUpdateData struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorUpdateData0 defines model for ConnectConnectorUpdateData.0.
+type ConnectConnectorUpdateData0 struct {
+	// AuthorizationUrlParams Extra query parameters added to authorization URLs.
+	AuthorizationUrlParams *map[string]string `json:"authorizationUrlParams,omitempty"`
+
+	// ClientAssertion `private_key_jwt` client assertion settings.
+	ClientAssertion *struct {
+		// Claims Additional claims included in the client assertion.
+		Claims *map[string]interface{} `json:"claims,omitempty"`
+
+		// Ttl Client assertion lifetime in seconds.
+		Ttl *float32 `json:"ttl,omitempty"`
+
+		// Type OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.
+		Type *string `json:"type,omitempty"`
+	} `json:"clientAssertion,omitempty"`
+
+	// ClientCredentials Client credentials grant settings.
+	ClientCredentials *struct {
+		// Enabled Whether this OAuth grant is enabled.
+		Enabled bool `json:"enabled"`
+
+		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
+		Scopes *[]string `json:"scopes,omitempty"`
+	} `json:"clientCredentials,omitempty"`
+
+	// ClientId OAuth client ID.
+	ClientId *string `json:"clientId,omitempty"`
+
+	// ClientName OAuth client name.
+	ClientName *string `json:"clientName,omitempty"`
+
+	// ClientSecret OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// CodeChallengeMethod PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.
+	CodeChallengeMethod *string `json:"codeChallengeMethod,omitempty"`
+
+	// DefaultAudience Default audience used when a token request omits one. An empty string clears the default.
+	DefaultAudience *string `json:"defaultAudience,omitempty"`
+
+	// DefaultResource Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.
+	DefaultResource *string `json:"defaultResource,omitempty"`
+
+	// DefaultTokenExpiresIn Default token lifetime in seconds to use when the token response omits expires_in.
+	DefaultTokenExpiresIn *float32 `json:"defaultTokenExpiresIn,omitempty"`
+
+	// ForwardedClaims Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
+	ForwardedClaims *struct {
+		// IdToken ID token claim names that Connect can expose.
+		IdToken *[]string `json:"idToken,omitempty"`
+	} `json:"forwardedClaims,omitempty"`
+
+	// JwtBearer JWT bearer grant settings.
+	JwtBearer *struct {
+		// AdditionalClaims Additional claims included in generated JWT assertions.
+		AdditionalClaims *map[string]interface{} `json:"additionalClaims,omitempty"`
+
+		// Aud Default JWT audience claim.
+		Aud *string `json:"aud,omitempty"`
+
+		// Enabled Whether JWT bearer grants are enabled.
+		Enabled *bool `json:"enabled,omitempty"`
+
+		// Iss Default JWT issuer claim.
+		Iss *string `json:"iss,omitempty"`
+
+		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
+		Scopes *[]string `json:"scopes,omitempty"`
+
+		// Sub Default JWT subject claim.
+		Sub *string `json:"sub,omitempty"`
+
+		// Ttl JWT lifetime in seconds.
+		Ttl *float32 `json:"ttl,omitempty"`
+
+		// UseClientCredentials Whether JWT bearer requests also use client credentials.
+		UseClientCredentials *bool `json:"useClientCredentials,omitempty"`
+	} `json:"jwtBearer,omitempty"`
+
+	// PkceRequired Whether user authorization must use PKCE.
+	PkceRequired *bool `json:"pkceRequired,omitempty"`
+
+	// RefreshTokens Refresh token settings.
+	RefreshTokens *struct {
+		// Enabled Whether this OAuth grant is enabled.
+		Enabled bool `json:"enabled"`
+	} `json:"refreshTokens,omitempty"`
+
+	// ResponseType OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.
+	ResponseType *string `json:"responseType,omitempty"`
+
+	// ServerConfig Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
+	ServerConfig *ConnectConnectorUpdateData_0_ServerConfig `json:"serverConfig,omitempty"`
+
+	// ServerUrl Authorization server base URL used for discovery.
+	ServerUrl *string `json:"serverUrl,omitempty"`
+
+	// TokenEndpointAuthMethod OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.
+	TokenEndpointAuthMethod *string `json:"tokenEndpointAuthMethod,omitempty"`
+
+	// UserAuthorization User authorization grant settings.
+	UserAuthorization *struct {
+		// Enabled Whether this OAuth grant is enabled.
+		Enabled bool `json:"enabled"`
+
+		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
+		Scopes *[]string `json:"scopes,omitempty"`
+	} `json:"userAuthorization,omitempty"`
+}
+
+// ConnectConnectorUpdateData0ServerConfigJwksKeysUse Intended key use: signing or encryption.
+type ConnectConnectorUpdateData0ServerConfigJwksKeysUse string
+
+// ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item defines model for ConnectConnectorUpdateData.0.ServerConfig.Jwks.Keys.Item.
+type ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item struct {
+	// Alg Algorithm intended for this key.
+	Alg *string `json:"alg,omitempty"`
+
+	// KeyOps Operations permitted for this key.
+	KeyOps *[]string `json:"key_ops,omitempty"`
+
+	// Kid JSON Web Key identifier.
+	Kid *string `json:"kid,omitempty"`
+
+	// Kty JSON Web Key type.
+	Kty string `json:"kty"`
+
+	// Use Intended key use: signing or encryption.
+	Use                  *ConnectConnectorUpdateData0ServerConfigJwksKeysUse `json:"use,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:"-"`
+}
+
+// ConnectConnectorUpdateData_0_ServerConfig_Jwks Inline authorization server JSON Web Key Set.
+type ConnectConnectorUpdateData_0_ServerConfig_Jwks struct {
+	// Keys JSON Web Keys published by the authorization server.
+	Keys                 []ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item `json:"keys"`
+	AdditionalProperties map[string]interface{}                                     `json:"-"`
+}
+
+// ConnectConnectorUpdateData_0_ServerConfig Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
+type ConnectConnectorUpdateData_0_ServerConfig struct {
+	// AuthorizationDetailsTypesSupported OAuth authorization-detail types supported by the server.
+	AuthorizationDetailsTypesSupported *[]string `json:"authorization_details_types_supported,omitempty"`
+
+	// AuthorizationEndpoint OAuth authorization endpoint URL.
+	AuthorizationEndpoint *string `json:"authorization_endpoint,omitempty"`
+
+	// AuthorizationGrantProfilesSupported Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support.
+	AuthorizationGrantProfilesSupported *[]string `json:"authorization_grant_profiles_supported,omitempty"`
+
+	// ClaimTypesSupported OpenID Connect claim value types supported by the server.
+	ClaimTypesSupported *[]string `json:"claim_types_supported,omitempty"`
+
+	// ClaimsParameterSupported Whether authorization requests can use the claims parameter.
+	ClaimsParameterSupported *bool `json:"claims_parameter_supported,omitempty"`
+
+	// ClaimsSupported Claims that the authorization server can return.
+	ClaimsSupported *[]string `json:"claims_supported,omitempty"`
+
+	// ClientIdMetadataDocumentSupported Whether the server supports OAuth client ID metadata documents.
+	ClientIdMetadataDocumentSupported *bool `json:"client_id_metadata_document_supported,omitempty"`
+
+	// CodeChallengeMethodsSupported PKCE code challenge methods supported by the server.
+	CodeChallengeMethodsSupported *[]string `json:"code_challenge_methods_supported,omitempty"`
+
+	// DeviceAuthorizationEndpoint OAuth device authorization endpoint URL.
+	DeviceAuthorizationEndpoint *string `json:"device_authorization_endpoint,omitempty"`
+
+	// EndSessionEndpoint OpenID Connect session termination endpoint URL.
+	EndSessionEndpoint *string `json:"end_session_endpoint,omitempty"`
+
+	// GrantTypesSupported OAuth grant types supported by the server.
+	GrantTypesSupported *[]string `json:"grant_types_supported,omitempty"`
+
+	// IdTokenEncryptionAlgValuesSupported Key management algorithms supported for encrypted ID tokens.
+	IdTokenEncryptionAlgValuesSupported *[]string `json:"id_token_encryption_alg_values_supported,omitempty"`
+
+	// IdTokenEncryptionEncValuesSupported Content encryption algorithms supported for encrypted ID tokens.
+	IdTokenEncryptionEncValuesSupported *[]string `json:"id_token_encryption_enc_values_supported,omitempty"`
+
+	// IdTokenSigningAlgValuesSupported Signing algorithms supported for ID tokens.
+	IdTokenSigningAlgValuesSupported *[]string `json:"id_token_signing_alg_values_supported,omitempty"`
+
+	// IdentityChainingRequestedTokenTypesSupported Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support.
+	IdentityChainingRequestedTokenTypesSupported *[]string `json:"identity_chaining_requested_token_types_supported,omitempty"`
+
+	// IntrospectionEndpoint OAuth token introspection endpoint URL.
+	IntrospectionEndpoint *string `json:"introspection_endpoint,omitempty"`
+
+	// Issuer Authorization server issuer URL.
+	Issuer *string `json:"issuer,omitempty"`
+
+	// Jwks Inline authorization server JSON Web Key Set.
+	Jwks *ConnectConnectorUpdateData_0_ServerConfig_Jwks `json:"jwks,omitempty"`
+
+	// JwksUri URL of the authorization server JSON Web Key Set.
+	JwksUri *string `json:"jwks_uri,omitempty"`
+
+	// LogoUri Authorization server logo URL.
+	LogoUri *string `json:"logo_uri,omitempty"`
+
+	// OpPolicyUri Authorization server privacy policy URL.
+	OpPolicyUri *string `json:"op_policy_uri,omitempty"`
+
+	// OpTosUri Authorization server terms of service URL.
+	OpTosUri *string `json:"op_tos_uri,omitempty"`
+
+	// PromptValuesSupported Authorization prompt values supported by the server.
+	PromptValuesSupported *[]string `json:"prompt_values_supported,omitempty"`
+
+	// RegistrationEndpoint OAuth dynamic client registration endpoint URL.
+	RegistrationEndpoint *string `json:"registration_endpoint,omitempty"`
+
+	// RequestParameterSupported Whether authorization requests can use signed request objects.
+	RequestParameterSupported *bool `json:"request_parameter_supported,omitempty"`
+
+	// RequestUriParameterSupported Whether authorization requests can use request_uri.
+	RequestUriParameterSupported *bool `json:"request_uri_parameter_supported,omitempty"`
+
+	// RequireRequestUriRegistration Whether request_uri values must be registered in advance.
+	RequireRequestUriRegistration *bool `json:"require_request_uri_registration,omitempty"`
+
+	// ResponseModesSupported OAuth response modes supported by the server.
+	ResponseModesSupported *[]string `json:"response_modes_supported,omitempty"`
+
+	// ResponseTypesSupported OAuth response types supported by the server.
+	ResponseTypesSupported *[]string `json:"response_types_supported,omitempty"`
+
+	// RevocationEndpoint OAuth token revocation endpoint URL.
+	RevocationEndpoint *string `json:"revocation_endpoint,omitempty"`
+
+	// ScopesSupported OAuth scopes supported by the server.
+	ScopesSupported *[]string `json:"scopes_supported,omitempty"`
+
+	// ServiceDocumentation Authorization server documentation URL.
+	ServiceDocumentation *string `json:"service_documentation,omitempty"`
+
+	// SubjectTypesSupported OpenID Connect subject identifier types supported by the server.
+	SubjectTypesSupported *[]string `json:"subject_types_supported,omitempty"`
+
+	// TokenEndpoint OAuth token endpoint URL.
+	TokenEndpoint *string `json:"token_endpoint,omitempty"`
+
+	// TokenEndpointAuthMethodsSupported Token endpoint client authentication methods supported by the server.
+	TokenEndpointAuthMethodsSupported *[]string `json:"token_endpoint_auth_methods_supported,omitempty"`
+
+	// TokenEndpointAuthSigningAlgValuesSupported Signing algorithms supported for token endpoint authentication.
+	TokenEndpointAuthSigningAlgValuesSupported *[]string `json:"token_endpoint_auth_signing_alg_values_supported,omitempty"`
+
+	// UserinfoEndpoint OpenID Connect UserInfo endpoint URL.
+	UserinfoEndpoint     *string                `json:"userinfo_endpoint,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// ConnectConnectorUpdateData1 defines model for ConnectConnectorUpdateData.1.
+type ConnectConnectorUpdateData1 struct {
+	// Instructions Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
+	Instructions *ConnectConnectorUpdateData_1_Instructions `json:"instructions,omitempty"`
+
+	// ToAdd API key values to add.
+	ToAdd *[]struct {
+		// ExpiresAt The timestamp when the API key value expires in milliseconds.
+		ExpiresAt *int `json:"expiresAt,omitempty"`
+
+		// Scope Optional scope associated with the API key value.
+		Scope *string `json:"scope,omitempty"`
+
+		// Value API key value.
+		Value *string `json:"value,omitempty"`
+	} `json:"toAdd,omitempty"`
+
+	// ToDelete Stored API key value IDs to delete.
+	ToDelete *[]string `json:"toDelete,omitempty"`
+
+	// ToUpdate Existing API key values to update.
+	ToUpdate *[]struct {
+		// ExpiresAt The timestamp when the API key value expires in milliseconds.
+		ExpiresAt *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt `json:"expiresAt,omitempty"`
+
+		// Id Stored API key value ID.
+		Id string `json:"id"`
+
+		// Scope Replacement scope. Use null to remove the scope.
+		Scope *ConnectConnectorUpdateData_1_ToUpdate_Scope `json:"scope,omitempty"`
+
+		// Value Replacement API key value. Use null to keep the stored value.
+		Value *ConnectConnectorUpdateData_1_ToUpdate_Value `json:"value,omitempty"`
+	} `json:"toUpdate,omitempty"`
+}
+
+// ConnectConnectorUpdateData1Instructions0 defines model for ConnectConnectorUpdateData.1.Instructions.0.
+type ConnectConnectorUpdateData1Instructions0 = string
+
+// ConnectConnectorUpdateData1Instructions1 defines model for ConnectConnectorUpdateData.1.Instructions.1.
+type ConnectConnectorUpdateData1Instructions1 = string
+
+// ConnectConnectorUpdateData_1_Instructions Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
+type ConnectConnectorUpdateData_1_Instructions struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorUpdateData1ToUpdateExpiresAt0 defines model for ConnectConnectorUpdateData.1.ToUpdate.ExpiresAt.0.
+type ConnectConnectorUpdateData1ToUpdateExpiresAt0 = int
+
+// ConnectConnectorUpdateData1ToUpdateExpiresAt1 defines model for ConnectConnectorUpdateData.1.ToUpdate.ExpiresAt.1.
+type ConnectConnectorUpdateData1ToUpdateExpiresAt1 = string
+
+// ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt The timestamp when the API key value expires in milliseconds.
+type ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorUpdateData1ToUpdateScope0 defines model for ConnectConnectorUpdateData.1.ToUpdate.Scope.0.
+type ConnectConnectorUpdateData1ToUpdateScope0 = string
+
+// ConnectConnectorUpdateData1ToUpdateScope1 defines model for ConnectConnectorUpdateData.1.ToUpdate.Scope.1.
+type ConnectConnectorUpdateData1ToUpdateScope1 = string
+
+// ConnectConnectorUpdateData_1_ToUpdate_Scope Replacement scope. Use null to remove the scope.
+type ConnectConnectorUpdateData_1_ToUpdate_Scope struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorUpdateData1ToUpdateValue0 defines model for ConnectConnectorUpdateData.1.ToUpdate.Value.0.
+type ConnectConnectorUpdateData1ToUpdateValue0 = string
+
+// ConnectConnectorUpdateData1ToUpdateValue1 defines model for ConnectConnectorUpdateData.1.ToUpdate.Value.1.
+type ConnectConnectorUpdateData1ToUpdateValue1 = string
+
+// ConnectConnectorUpdateData_1_ToUpdate_Value Replacement API key value. Use null to keep the stored value.
+type ConnectConnectorUpdateData_1_ToUpdate_Value struct {
+	union json.RawMessage
+}
+
+// ConnectConnectorUpdateData2 defines model for ConnectConnectorUpdateData.2.
+type ConnectConnectorUpdateData2 struct {
+	// AppId GitHub App numeric ID.
+	AppId *int `json:"appId,omitempty"`
+
+	// AppName GitHub App display name.
+	AppName *string `json:"appName,omitempty"`
+
+	// AppSlug GitHub App slug.
+	AppSlug *string `json:"appSlug,omitempty"`
+
+	// ClientId GitHub App OAuth client ID.
+	ClientId *string `json:"clientId,omitempty"`
+
+	// ClientSecret GitHub App OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// Owner GitHub App owner.
+	Owner *struct {
+		// Id GitHub App owner numeric ID.
+		Id int `json:"id"`
+
+		// Name GitHub App owner display name.
+		Name *string `json:"name,omitempty"`
+
+		// Slug GitHub App owner login.
+		Slug string `json:"slug"`
+
+		// Type GitHub App owner type.
+		Type ConnectConnectorUpdateData2OwnerType `json:"type"`
+	} `json:"owner,omitempty"`
+
+	// PrivateKeyPem GitHub App private key in PEM format.
+	PrivateKeyPem *string `json:"privateKeyPem,omitempty"`
+
+	// WebhookSecret GitHub App webhook secret.
+	WebhookSecret *string `json:"webhookSecret,omitempty"`
+}
+
+// ConnectConnectorUpdateData2OwnerType GitHub App owner type.
+type ConnectConnectorUpdateData2OwnerType string
+
+// ConnectConnectorUpdateData3 defines model for ConnectConnectorUpdateData.3.
+type ConnectConnectorUpdateData3 struct {
+	// AppId Linear application ID.
+	AppId *string `json:"appId,omitempty"`
+
+	// AppName Linear application name.
+	AppName *string `json:"appName,omitempty"`
+
+	// AppScopes OAuth scopes requested for Linear application tokens.
+	AppScopes *[]string `json:"appScopes,omitempty"`
+
+	// Application Linear OAuth application metadata.
+	Application *struct {
+		// ClientId Linear OAuth client ID.
+		ClientId string `json:"clientId"`
+
+		// CreatedAt Linear OAuth application creation timestamp.
+		CreatedAt *string `json:"createdAt,omitempty"`
+
+		// Description Linear OAuth application description.
+		Description *string `json:"description,omitempty"`
+
+		// Developer Linear OAuth application developer name.
+		Developer *string `json:"developer,omitempty"`
+
+		// DeveloperUrl Linear OAuth application developer URL.
+		DeveloperUrl *string `json:"developerUrl,omitempty"`
+
+		// Distribution Linear OAuth application distribution mode.
+		Distribution *string `json:"distribution,omitempty"`
+
+		// Id Linear OAuth application ID.
+		Id string `json:"id"`
+
+		// ImageUrl Linear OAuth application image URL.
+		ImageUrl *string `json:"imageUrl,omitempty"`
+
+		// Name Linear OAuth application name.
+		Name string `json:"name"`
+
+		// RedirectUris Registered redirect URIs for the Linear OAuth application.
+		RedirectUris *[]string `json:"redirectUris,omitempty"`
+
+		// UpdatedAt Linear OAuth application update timestamp.
+		UpdatedAt *string `json:"updatedAt,omitempty"`
+
+		// WebhookEnabled Whether the Linear webhook is enabled.
+		WebhookEnabled *bool `json:"webhookEnabled,omitempty"`
+
+		// WebhookResourceTypes Linear resource types delivered to the webhook.
+		WebhookResourceTypes *[]string `json:"webhookResourceTypes,omitempty"`
+
+		// WebhookUrl Linear webhook URL.
+		WebhookUrl *string `json:"webhookUrl,omitempty"`
+	} `json:"application,omitempty"`
+
+	// ClientId Linear OAuth client ID.
+	ClientId *string `json:"clientId,omitempty"`
+
+	// ClientSecret Linear OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// OwnerOrganization Linear organization that owns the OAuth application.
+	OwnerOrganization *struct {
+		// Id Linear organization ID.
+		Id string `json:"id"`
+
+		// LogoUrl Linear organization logo URL.
+		LogoUrl *string `json:"logoUrl,omitempty"`
+
+		// Name Linear organization name.
+		Name string `json:"name"`
+
+		// Slug Linear organization slug.
+		Slug string `json:"slug"`
+	} `json:"ownerOrganization,omitempty"`
+
+	// UserScopes OAuth scopes requested for Linear user tokens.
+	UserScopes *[]string `json:"userScopes,omitempty"`
+
+	// WebhookSecret Linear webhook verification secret.
+	WebhookSecret *string `json:"webhookSecret,omitempty"`
+}
+
+// ConnectConnectorUpdateData4 defines model for ConnectConnectorUpdateData.4.
+type ConnectConnectorUpdateData4 struct {
+	// ConsumerKey Salesforce connected app consumer key.
+	ConsumerKey *string `json:"consumerKey,omitempty"`
+
+	// ConsumerSecret Salesforce connected app consumer secret.
+	ConsumerSecret *string `json:"consumerSecret,omitempty"`
+
+	// LoginHost Salesforce login host, such as login.salesforce.com.
+	LoginHost *string `json:"loginHost,omitempty"`
+}
+
+// ConnectConnectorUpdateData5 defines model for ConnectConnectorUpdateData.5.
+type ConnectConnectorUpdateData5 struct {
+	// AppHome App Home settings for the managed Slack app. Updates preserve omitted settings.
+	AppHome *struct {
+		// HomeTabEnabled Enable the Home tab for views.publish. Defaults to false for new apps.
+		HomeTabEnabled *bool `json:"homeTabEnabled,omitempty"`
+
+		// MessagesTabEnabled Enable the Messages tab. Defaults to true for new apps.
+		MessagesTabEnabled *bool `json:"messagesTabEnabled,omitempty"`
+
+		// MessagesTabReadOnlyEnabled Make the Messages tab read-only. Defaults to false for new apps.
+		MessagesTabReadOnlyEnabled *bool `json:"messagesTabReadOnlyEnabled,omitempty"`
+	} `json:"appHome,omitempty"`
+
+	// AppId Slack app ID.
+	AppId *string `json:"appId,omitempty"`
+
+	// AppName Slack app display name.
+	AppName *string `json:"appName,omitempty"`
+
+	// BotScopes OAuth scopes requested for Slack bot tokens.
+	BotScopes *[]string `json:"botScopes,omitempty"`
+
+	// ClientId Slack app OAuth client ID.
+	ClientId *string `json:"clientId,omitempty"`
+
+	// ClientSecret Slack app OAuth client secret.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+
+	// Extras Additional provider metadata stored with the connector.
+	Extras *map[string]interface{} `json:"extras,omitempty"`
+
+	// RichPreviews Work Object preview settings for the managed Slack app. Updates preserve omitted settings.
+	RichPreviews *struct {
+		// EntityTypes Entity types to preview. An empty array clears the configured types.
+		EntityTypes *[]string `json:"entityTypes,omitempty"`
+
+		// IsActive Enable Work Object previews. Defaults to false for new apps.
+		IsActive *bool `json:"isActive,omitempty"`
+	} `json:"richPreviews,omitempty"`
+
+	// Shortcuts Global and message shortcuts configured for the Slack app.
+	Shortcuts *[]struct {
+		// CallbackId Identifier included in the shortcut callback.
+		CallbackId string `json:"callbackId"`
+
+		// Description Description shown for the shortcut in Slack.
+		Description string `json:"description"`
+
+		// Name Shortcut display name.
+		Name string `json:"name"`
+
+		// Type Where Slack exposes the shortcut.
+		Type ConnectConnectorUpdateData5ShortcutsType `json:"type"`
+	} `json:"shortcuts,omitempty"`
+
+	// SigningSecret Slack request signing secret.
+	SigningSecret *string `json:"signingSecret,omitempty"`
+
+	// SlackTeam Slack workspace metadata.
+	SlackTeam *struct {
+		// Domain Slack workspace domain.
+		Domain *string `json:"domain,omitempty"`
+
+		// Id Slack workspace ID.
+		Id string `json:"id"`
+
+		// Name Slack workspace name.
+		Name *string `json:"name,omitempty"`
+	} `json:"slackTeam,omitempty"`
+
+	// SlashCommands Slash commands configured for the managed Slack app.
+	SlashCommands *[]struct {
+		// Command Slash command including its leading slash.
+		Command string `json:"command"`
+
+		// Description Description shown for the slash command in Slack.
+		Description string `json:"description"`
+
+		// ShouldEscape Whether Slack should escape command arguments.
+		ShouldEscape *bool `json:"shouldEscape,omitempty"`
+
+		// UsageHint Optional usage hint shown for the slash command.
+		UsageHint *string `json:"usageHint,omitempty"`
+	} `json:"slashCommands,omitempty"`
+
+	// UserScopes OAuth scopes requested for Slack user tokens.
+	UserScopes *[]string `json:"userScopes,omitempty"`
+
+	// VerificationToken Legacy Slack webhook verification token.
+	VerificationToken *string `json:"verificationToken,omitempty"`
+}
+
+// ConnectConnectorUpdateData5ShortcutsType Where Slack exposes the shortcut.
+type ConnectConnectorUpdateData5ShortcutsType string
+
+// ConnectConnectorUpdateData6 defines model for ConnectConnectorUpdateData.6.
+type ConnectConnectorUpdateData6 struct {
+	// AccountIdentifier Snowflake account identifier.
+	AccountIdentifier *string `json:"accountIdentifier,omitempty"`
+
+	// DefaultSessionRole Default Snowflake role for created sessions.
+	DefaultSessionRole *string `json:"defaultSessionRole,omitempty"`
+}
+
+// ConnectConnectorUpdateData7 defines model for ConnectConnectorUpdateData.7.
+type ConnectConnectorUpdateData7 struct {
+	// AccountIdentifier Snowflake account identifier.
+	AccountIdentifier *string `json:"accountIdentifier,omitempty"`
+}
+
+// ConnectConnectorUpdateData8 defines model for ConnectConnectorUpdateData.8.
+type ConnectConnectorUpdateData8 struct {
+	// ApiToken Linq partner API token for the shared line.
+	ApiToken     *string   `json:"apiToken,omitempty"`
+	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
+}
+
+// ConnectConnectorUpdateData9 defines model for ConnectConnectorUpdateData.9.
+type ConnectConnectorUpdateData9 struct {
+	// ApiKeyId Sendblue API key id (`sb-api-key-id`).
+	ApiKeyId *string `json:"apiKeyId,omitempty"`
+
+	// ApiSecretKey Sendblue API secret key (`sb-api-secret-key`).
+	ApiSecretKey *string `json:"apiSecretKey,omitempty"`
+
+	// PhoneNumbers E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
+	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
+}
+
+// ConnectConnectorUpdateData10 defines model for ConnectConnectorUpdateData.10.
+type ConnectConnectorUpdateData10 struct {
+	// ProjectSecret Photon project secret.
+	ProjectSecret *string `json:"projectSecret,omitempty"`
+
+	// RepairWebhook Whether Connect should recreate the Photon webhook.
+	RepairWebhook *bool `json:"repairWebhook,omitempty"`
+
+	// WebhookSecret Photon webhook verification secret.
+	WebhookSecret *string `json:"webhookSecret,omitempty"`
+}
+
+// ConnectConnectorUpdateData11 defines model for ConnectConnectorUpdateData.11.
+type ConnectConnectorUpdateData11 map[string]interface{}
+
+// ConnectConnectorUpdateResult Updated connector and any required provider follow-up actions.
+type ConnectConnectorUpdateResult struct {
+	// Connector A connector that defines how Vercel accesses an external service.
+	Connector ConnectConnector `json:"connector"`
+
+	// ReconsentNeeded Existing authorizations no longer cover the connector's configured scopes, so they must be re-authorized.
+	ReconsentNeeded *ConnectReconsent `json:"reconsentNeeded,omitempty"`
+
+	// ReinstallNeeded When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
+	ReinstallNeeded *ConnectConnectorUpdateResultReinstallNeeded `json:"reinstallNeeded,omitempty"`
+
+	// ServiceSync Provider-side configuration synchronization result.
+	ServiceSync *ConnectServiceSync `json:"serviceSync,omitempty"`
+}
+
+// ConnectConnectorUpdateResultReinstallNeeded When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
+type ConnectConnectorUpdateResultReinstallNeeded bool
+
+// ConnectCreateConnectorRequest Create a connector with full provider configuration or with a known service connection method.
+type ConnectCreateConnectorRequest struct {
+	// AccentColor Branding accent color (6-digit hex, for example
+	AccentColor *string `json:"accentColor,omitempty"`
+
+	// BackgroundColor Branding background color (6-digit hex, for example
+	BackgroundColor *string `json:"backgroundColor,omitempty"`
+
+	// ConnectionMethod Connection method slug of the service. Use it with service to select preset configuration.
+	ConnectionMethod *string `json:"connectionMethod,omitempty"`
+
+	// Data Provider configuration. With type, provide the complete configuration for that type. With service and connectionMethod, provide only credentials and preferences; Connect supplies the type, endpoints, templates, and defaults. Other connector types accept an arbitrary object.
+	Data ConnectConnectorCreateData `json:"data"`
+
+	// Environments Environments for the project connection. Requires projectId. Use one or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
+	Environments *[]ConnectCreateConnectorRequest_Environments_Item `json:"environments,omitempty"`
+
+	// Events Default trigger events for this connector.
+	Events *[]string `json:"events,omitempty"`
+
+	// Icon SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes.
+	//
+	// First compute the digest and upload the raw image with [POST /v2/files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files). Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest.
+	//
+	// ```js
+	// import { createHash } from 'node:crypto';
+	// import { readFile } from 'node:fs/promises';
+	//
+	// const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
+	// const connectorId = 'scl_...';
+	// const bytes = await readFile('icon.png');
+	// const digest = createHash('sha1').update(bytes).digest('hex');
+	//
+	// await fetch('https://api.vercel.com/v2/files', {
+	//   method: 'POST',
+	//   headers: {
+	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
+	//     'Content-Type': 'application/octet-stream',
+	//     'Content-Length': String(bytes.length),
+	//     'x-vercel-digest': digest,
+	//   },
+	//   body: bytes,
+	// });
+	//
+	// await fetch(`https://api.vercel.com/v2/connect/connectors/${connectorId}`, {
+	//   method: 'PATCH',
+	//   headers: {
+	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
+	//     'Content-Type': 'application/json',
+	//   },
+	//   body: JSON.stringify({ icon: digest }),
+	// });
+	// ```
+	Icon *string `json:"icon,omitempty"`
+
+	// Name Connector name. The value is trimmed and cannot contain control characters. If omitted or empty, the project name is used. A name or projectId is required. API key connectors require name.
+	Name *string `json:"name,omitempty"`
+
+	// Params Values for the selected connection method's template fields. Requires connectionMethod.
+	Params *map[string]string `json:"params,omitempty"`
+
+	// ProjectId Project to connect during creation. If environments is omitted, the connection uses development, preview, and production.
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// Service Service slug or URL for which the connector is used. Required when connectionMethod is set. Service alone does not enable preset configuration.
+	Service *string `json:"service,omitempty"`
+
+	// Target Which of the service's targets this connector is for. Requires \"connectionMethod\" and must be one that method serves. Optional.
+	Target *string `json:"target,omitempty"`
+
+	// TriggerDestination Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
+	TriggerDestination *ConnectCreateConnectorRequest_TriggerDestination `json:"triggerDestination,omitempty"`
+
+	// TriggerRegistrationInput Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
+	TriggerRegistrationInput *map[string]interface{} `json:"triggerRegistrationInput,omitempty"`
+
+	// TriggerType Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow.
+	TriggerType *string `json:"triggerType,omitempty"`
+
+	// TriggerVerificationInput Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
+	TriggerVerificationInput *map[string]interface{} `json:"triggerVerificationInput,omitempty"`
+
+	// Triggers Whether the triggers are enabled for this connector.
+	Triggers *bool `json:"triggers,omitempty"`
+
+	// Type Connector implementation type for full configuration. Known types: api-key, discord, github, linear, linq, microsoft-entra, oauth, photon, salesforce, sendblue, slack, snowflake, snowflake-wif. Optional when service and connectionMethod select the type.
+	Type *string `json:"type,omitempty"`
+
+	// Uid Optional team-scoped unique identifier for the connector. If omitted or empty, Connect generates a value.
+	Uid   *string `json:"uid,omitempty"`
+	union json.RawMessage
+}
+
+// ConnectCreateConnectorRequestEnvironments0 defines model for ConnectCreateConnectorRequest.Environments.0.
+type ConnectCreateConnectorRequestEnvironments0 string
+
+// ConnectCreateConnectorRequestEnvironments1 defines model for ConnectCreateConnectorRequest.Environments.1.
+type ConnectCreateConnectorRequestEnvironments1 = string
+
+// ConnectCreateConnectorRequest_Environments_Item A built-in environment name or the stable env_* ID of a custom environment.
+type ConnectCreateConnectorRequest_Environments_Item struct {
+	union json.RawMessage
+}
+
+// ConnectCreateConnectorRequestTriggerDestination0 defines model for ConnectCreateConnectorRequest.TriggerDestination.0.
+type ConnectCreateConnectorRequestTriggerDestination0 struct {
+	// Path Route path on the linked project that receives forwarded trigger requests.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Project that receives triggers. During connector creation, omit it to use the top-level projectId.
+	ProjectId *string `json:"projectId,omitempty"`
+}
+
+// ConnectCreateConnectorRequestTriggerDestination1 defines model for ConnectCreateConnectorRequest.TriggerDestination.1.
+type ConnectCreateConnectorRequestTriggerDestination1 struct {
+	// Branch Git branch used to select a preview deployment.
+	Branch string `json:"branch"`
+
+	// Path Route path on the linked project that receives forwarded trigger requests.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Project that receives triggers. During connector creation, omit it to use the top-level projectId.
+	ProjectId *string `json:"projectId,omitempty"`
+}
+
+// ConnectCreateConnectorRequestTriggerDestination2 defines model for ConnectCreateConnectorRequest.TriggerDestination.2.
+type ConnectCreateConnectorRequestTriggerDestination2 struct {
+	// CustomEnvironmentId Stable custom environment ID that belongs to the destination project.
+	CustomEnvironmentId string `json:"customEnvironmentId"`
+
+	// Path Route path on the linked project that receives forwarded trigger requests.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Project that receives triggers. During connector creation, omit it to use the top-level projectId.
+	ProjectId *string `json:"projectId,omitempty"`
+}
+
+// ConnectCreateConnectorRequest_TriggerDestination Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
+type ConnectCreateConnectorRequest_TriggerDestination struct {
+	union json.RawMessage
+}
+
+// ConnectCreateConnectorRequest0 defines model for ConnectCreateConnectorRequest.0.
+type ConnectCreateConnectorRequest0 = interface{}
+
+// ConnectCreateConnectorRequest1 defines model for ConnectCreateConnectorRequest.1.
+type ConnectCreateConnectorRequest1 = interface{}
+
+// ConnectError Error response returned by a Connect API operation.
+type ConnectError struct {
+	// Error Error details.
+	Error ConnectError_Error `json:"error"`
+}
+
+// ConnectError_Error Error details.
+type ConnectError_Error struct {
+	// Code Stable machine-readable error code.
+	Code string `json:"code"`
+
+	// Message Human-readable error message.
+	Message              string                 `json:"message"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// ConnectPagination Cursor for the next page.
+type ConnectPagination struct {
+	// Next Opaque value to pass as `cursor` on the next request.
+	Next *string `json:"next"`
+}
+
+// ConnectProjectConnection A connection between a connector and a Vercel project, including the environments where the connector is enabled.
+type ConnectProjectConnection struct {
+	// ConnectorId Stable `scl_` connector ID, even when the request used a UID.
+	ConnectorId string `json:"connectorId"`
+
+	// CreatedAt Time when the project connection was created, in epoch milliseconds.
+	CreatedAt float32 `json:"createdAt"`
+
+	// EnabledEnvironments Environments where the connector is enabled for the project.
+	EnabledEnvironments []ConnectProjectConnection_EnabledEnvironments_Item `json:"enabledEnvironments"`
+
+	// Project Vercel project connected to the connector.
+	Project struct {
+		// CustomEnvironments Custom environments available on the project. This list can include environments where the connector is not enabled.
+		CustomEnvironments *[]struct {
+			// Id Stable custom environment ID.
+			Id string `json:"id"`
+
+			// Slug Current human-readable custom environment slug.
+			Slug string `json:"slug"`
+		} `json:"customEnvironments,omitempty"`
+
+		// Id Same Vercel project ID as the connection's top-level `projectId`.
+		Id string `json:"id"`
+
+		// Name Current Vercel project name.
+		Name string `json:"name"`
+	} `json:"project"`
+
+	// UpdatedAt Time when the project connection was last updated, in epoch milliseconds.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// ConnectProjectConnectionEnabledEnvironments0 defines model for ConnectProjectConnection.EnabledEnvironments.0.
+type ConnectProjectConnectionEnabledEnvironments0 = string
+
+// ConnectProjectConnectionEnabledEnvironments1 defines model for ConnectProjectConnection.EnabledEnvironments.1.
+type ConnectProjectConnectionEnabledEnvironments1 string
+
+// ConnectProjectConnection_EnabledEnvironments_Item defines model for ConnectProjectConnection.enabledEnvironments.Item.
+type ConnectProjectConnection_EnabledEnvironments_Item struct {
+	union json.RawMessage
+}
+
+// ConnectProjectConnectorConnectionList Page of connectors connected to a project.
+type ConnectProjectConnectorConnectionList struct {
+	// Connectors Connector connections in this page.
+	Connectors []ConnectProjectConnection `json:"connectors"`
+
+	// Pagination Cursor for the next page.
+	Pagination ConnectPagination `json:"pagination"`
+}
+
+// ConnectReconsent Existing authorizations no longer cover the connector's configured scopes, so they must be re-authorized.
+type ConnectReconsent struct {
+	// Scope The affected authorization scope. user means each affected user must authorize again.
+	Scope ConnectReconsentScope `json:"scope"`
+}
+
+// ConnectReconsentScope The affected authorization scope. user means each affected user must authorize again.
+type ConnectReconsentScope string
+
+// ConnectReplaceTriggerDestinationsRequest Complete replacement set of trigger destinations.
+type ConnectReplaceTriggerDestinationsRequest struct {
+	// Destinations Complete replacement set of trigger destinations. An empty array removes all destinations. Connector get and list responses expose the saved set as triggerDestinations.
+	Destinations []ConnectTriggerDestinationInput `json:"destinations"`
+}
+
+// ConnectServiceSync Provider-side configuration synchronization result.
+type ConnectServiceSync struct {
+	// Errors Provider synchronization errors. Present when serviceSync.status is required.
+	Errors *[]ConnectServiceSyncError `json:"errors,omitempty"`
+
+	// Status done means the external service was updated. required means the Vercel update was saved, but provider-side configuration still needs attention.
+	Status ConnectServiceSyncStatus `json:"status"`
+}
+
+// ConnectServiceSyncStatus done means the external service was updated. required means the Vercel update was saved, but provider-side configuration still needs attention.
+type ConnectServiceSyncStatus string
+
+// ConnectServiceSyncError Provider synchronization errors, when synchronization is required.
+type ConnectServiceSyncError struct {
+	// Fields Connector fields that caused the synchronization error.
+	Fields *[]string `json:"fields,omitempty"`
+
+	// Message Human-readable provider synchronization error.
+	Message string `json:"message"`
+
+	// Vendor Provider-specific error details that are safe to expose.
+	Vendor *map[string]interface{} `json:"vendor,omitempty"`
+}
+
+// ConnectTriggerConfiguration Incoming trigger configuration. Only present when enabled.
+type ConnectTriggerConfiguration struct {
+	// Enabled Whether incoming triggers are enabled for the connector.
+	Enabled ConnectTriggerConfigurationEnabled `json:"enabled"`
+}
+
+// ConnectTriggerConfigurationEnabled Whether incoming triggers are enabled for the connector.
+type ConnectTriggerConfigurationEnabled bool
+
+// ConnectTriggerDestination Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
+type ConnectTriggerDestination struct {
+	// Branch Git branch used to select a preview deployment.
+	Branch *string `json:"branch,omitempty"`
+
+	// CustomEnvironmentId Stable custom-environment ID to route this destination to. Mutually exclusive with `branch`; omitted destinations keep the legacy production behavior.
+	CustomEnvironmentId *string `json:"customEnvironmentId,omitempty"`
+
+	// Path Route path that receives the forwarded trigger request.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Vercel project that receives matching trigger requests.
+	ProjectId string `json:"projectId"`
+}
+
+// ConnectTriggerDestinationInput A destination in the complete replacement set. Each destination targets the default deployment, a branch, or a custom environment.
+type ConnectTriggerDestinationInput struct {
+	union json.RawMessage
+}
+
+// ConnectTriggerDestinationInput0 defines model for ConnectTriggerDestinationInput.0.
+type ConnectTriggerDestinationInput0 struct {
+	// Path Route path on the linked project that receives forwarded trigger requests.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Project that receives matching trigger requests.
+	ProjectId string `json:"projectId"`
+}
+
+// ConnectTriggerDestinationInput1 defines model for ConnectTriggerDestinationInput.1.
+type ConnectTriggerDestinationInput1 struct {
+	// Branch Git branch used to select a preview deployment.
+	Branch string `json:"branch"`
+
+	// Path Route path on the linked project that receives forwarded trigger requests.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Project that receives matching trigger requests.
+	ProjectId string `json:"projectId"`
+}
+
+// ConnectTriggerDestinationInput2 defines model for ConnectTriggerDestinationInput.2.
+type ConnectTriggerDestinationInput2 struct {
+	// CustomEnvironmentId Stable custom environment ID that belongs to the destination project.
+	CustomEnvironmentId string `json:"customEnvironmentId"`
+
+	// Path Route path on the linked project that receives forwarded trigger requests.
+	Path *string `json:"path,omitempty"`
+
+	// ProjectId Project that receives matching trigger requests.
+	ProjectId string `json:"projectId"`
+}
+
+// ConnectUpdateConnectorRequest Connector fields to update.
+type ConnectUpdateConnectorRequest struct {
+	AccentColor     *string `json:"accentColor,omitempty"`
+	BackgroundColor *string `json:"backgroundColor,omitempty"`
+
+	// Data Provider configuration fields for the connector type.
+	Data *ConnectConnectorUpdateData `json:"data,omitempty"`
+
+	// Events Default trigger events for this connector.
+	Events *[]string `json:"events,omitempty"`
+
+	// Icon SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes.
+	//
+	// First compute the digest and upload the raw image with [POST /v2/files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files). Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest.
+	//
+	// ```js
+	// import { createHash } from 'node:crypto';
+	// import { readFile } from 'node:fs/promises';
+	//
+	// const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
+	// const connectorId = 'scl_...';
+	// const bytes = await readFile('icon.png');
+	// const digest = createHash('sha1').update(bytes).digest('hex');
+	//
+	// await fetch('https://api.vercel.com/v2/files', {
+	//   method: 'POST',
+	//   headers: {
+	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
+	//     'Content-Type': 'application/octet-stream',
+	//     'Content-Length': String(bytes.length),
+	//     'x-vercel-digest': digest,
+	//   },
+	//   body: bytes,
+	// });
+	//
+	// await fetch(`https://api.vercel.com/v2/connect/connectors/${connectorId}`, {
+	//   method: 'PATCH',
+	//   headers: {
+	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
+	//     'Content-Type': 'application/json',
+	//   },
+	//   body: JSON.stringify({ icon: digest }),
+	// });
+	// ```
+	Icon *string `json:"icon,omitempty"`
+
+	// Name Display name for the connector. It is trimmed and cannot be empty or contain control characters.
+	Name *string `json:"name,omitempty"`
+
+	// TriggerRegistrationInput Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
+	TriggerRegistrationInput *map[string]interface{} `json:"triggerRegistrationInput,omitempty"`
+
+	// TriggerVerificationInput Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
+	TriggerVerificationInput *map[string]interface{} `json:"triggerVerificationInput,omitempty"`
+
+	// Triggers Whether the triggers are enabled for this connector.
+	Triggers *bool `json:"triggers,omitempty"`
+
+	// Uid Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
+	Uid *string `json:"uid,omitempty"`
+}
+
+// ConnectUpsertProjectConnectionRequest Environments enabled for a connector project connection.
+type ConnectUpsertProjectConnectionRequest struct {
+	// Environments One or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
+	Environments []ConnectUpsertProjectConnectionRequest_Environments_Item `json:"environments"`
+}
+
+// ConnectUpsertProjectConnectionRequestEnvironments0 defines model for ConnectUpsertProjectConnectionRequest.Environments.0.
+type ConnectUpsertProjectConnectionRequestEnvironments0 string
+
+// ConnectUpsertProjectConnectionRequestEnvironments1 defines model for ConnectUpsertProjectConnectionRequest.Environments.1.
+type ConnectUpsertProjectConnectionRequestEnvironments1 = string
+
+// ConnectUpsertProjectConnectionRequest_Environments_Item A built-in environment name or the stable env_* ID of a custom environment.
+type ConnectUpsertProjectConnectionRequest_Environments_Item struct {
+	union json.RawMessage
+}
+
+// ContactPendingVerification The registrant contact has not yet been verified. The contact must be verified by `verifyBy`, and a verification email is sent to `email`.
+type ContactPendingVerification struct {
+	Email    string                             `json:"email"`
+	Verified ContactPendingVerificationVerified `json:"verified"`
+
+	// VerifyBy a string to be decoded into a Date
+	VerifyBy DateFromString `json:"verifyBy"`
+}
+
+// ContactPendingVerificationVerified defines model for ContactPendingVerification.Verified.
+type ContactPendingVerificationVerified bool
+
+// ContactVerified The registrant contact has been verified.
+type ContactVerified struct {
+	Verified ContactVerifiedVerified `json:"verified"`
+}
+
+// ContactVerifiedVerified defines model for ContactVerified.Verified.
+type ContactVerifiedVerified bool
+
+// CountryCode A valid ISO 3166-1 alpha-2 country code
+type CountryCode = string
+
+// DNSSECEnabled The operation cannot be completed because DNSSEC is enabled for the domain.
+type DNSSECEnabled struct {
+	Code    DNSSECEnabledCode   `json:"code"`
+	Message string              `json:"message"`
+	Status  DNSSECEnabledStatus `json:"status"`
+}
+
+// DNSSECEnabledCode defines model for DNSSECEnabled.Code.
+type DNSSECEnabledCode string
+
+// DNSSECEnabledStatus defines model for DNSSECEnabled.Status.
+type DNSSECEnabledStatus float32
+
+// DateFromString a string to be decoded into a Date
+type DateFromString = string
+
+// DeploymentCheckUpdatedPayload The payload of the event, if requested.
+type DeploymentCheckUpdatedPayload struct {
+	CheckId   string `json:"checkId"`
+	CheckName string `json:"checkName"`
+	Next      *struct {
+		Targets []string `json:"targets"`
+	} `json:"next,omitempty"`
+	Previous *struct {
+		Targets []string `json:"targets"`
+	} `json:"previous,omitempty"`
+	ProjectId   string `json:"projectId"`
+	ProjectName string `json:"projectName"`
+}
+
+// DomainAlreadyOwned The domain is already owned by another team or user.
+type DomainAlreadyOwned struct {
+	Code    DomainAlreadyOwnedCode   `json:"code"`
+	Message string                   `json:"message"`
+	Status  DomainAlreadyOwnedStatus `json:"status"`
+}
+
+// DomainAlreadyOwnedCode defines model for DomainAlreadyOwned.Code.
+type DomainAlreadyOwnedCode string
+
+// DomainAlreadyOwnedStatus defines model for DomainAlreadyOwned.Status.
+type DomainAlreadyOwnedStatus float32
+
+// DomainAlreadyRenewing The domain is already renewing.
+type DomainAlreadyRenewing struct {
+	Code    DomainAlreadyRenewingCode   `json:"code"`
+	Message string                      `json:"message"`
+	Status  DomainAlreadyRenewingStatus `json:"status"`
+}
+
+// DomainAlreadyRenewingCode defines model for DomainAlreadyRenewing.Code.
+type DomainAlreadyRenewingCode string
+
+// DomainAlreadyRenewingStatus defines model for DomainAlreadyRenewing.Status.
+type DomainAlreadyRenewingStatus float32
+
+// DomainCannotBeTransferedOutUntil The domain cannot be transfered out until the specified date.
+type DomainCannotBeTransferedOutUntil struct {
+	Code    DomainCannotBeTransferedOutUntilCode   `json:"code"`
+	Message string                                 `json:"message"`
+	Status  DomainCannotBeTransferedOutUntilStatus `json:"status"`
+}
+
+// DomainCannotBeTransferedOutUntilCode defines model for DomainCannotBeTransferedOutUntil.Code.
+type DomainCannotBeTransferedOutUntilCode string
+
+// DomainCannotBeTransferedOutUntilStatus defines model for DomainCannotBeTransferedOutUntil.Status.
+type DomainCannotBeTransferedOutUntilStatus float32
+
+// DomainName A valid domain name
+type DomainName = string
+
+// DomainNotAvailable The domain is not available.
+type DomainNotAvailable struct {
+	Code    DomainNotAvailableCode   `json:"code"`
+	Message string                   `json:"message"`
+	Status  DomainNotAvailableStatus `json:"status"`
+}
+
+// DomainNotAvailableCode defines model for DomainNotAvailable.Code.
+type DomainNotAvailableCode string
+
+// DomainNotAvailableStatus defines model for DomainNotAvailable.Status.
+type DomainNotAvailableStatus float32
+
+// DomainNotFound The domain was not found in our system.
+type DomainNotFound struct {
+	Code    DomainNotFoundCode   `json:"code"`
+	Message string               `json:"message"`
+	Status  DomainNotFoundStatus `json:"status"`
+}
+
+// DomainNotFoundCode defines model for DomainNotFound.Code.
+type DomainNotFoundCode string
+
+// DomainNotFoundStatus defines model for DomainNotFound.Status.
+type DomainNotFoundStatus float32
+
+// DomainNotRegistered The domain is not registered with Vercel.
+type DomainNotRegistered struct {
+	Code    DomainNotRegisteredCode   `json:"code"`
+	Message string                    `json:"message"`
+	Status  DomainNotRegisteredStatus `json:"status"`
+}
+
+// DomainNotRegisteredCode defines model for DomainNotRegistered.Code.
+type DomainNotRegisteredCode string
+
+// DomainNotRegisteredStatus defines model for DomainNotRegistered.Status.
+type DomainNotRegisteredStatus float32
+
+// DomainNotRenewable The domain is not renewable.
+type DomainNotRenewable struct {
+	Code    DomainNotRenewableCode   `json:"code"`
+	Message string                   `json:"message"`
+	Status  DomainNotRenewableStatus `json:"status"`
+}
+
+// DomainNotRenewableCode defines model for DomainNotRenewable.Code.
+type DomainNotRenewableCode string
+
+// DomainNotRenewableStatus defines model for DomainNotRenewable.Status.
+type DomainNotRenewableStatus float32
+
+// DomainTooShort The domain name (excluding the TLD) is too short.
+type DomainTooShort struct {
+	Code    DomainTooShortCode   `json:"code"`
+	Message string               `json:"message"`
+	Status  DomainTooShortStatus `json:"status"`
+}
+
+// DomainTooShortCode defines model for DomainTooShort.Code.
+type DomainTooShortCode string
+
+// DomainTooShortStatus defines model for DomainTooShort.Status.
+type DomainTooShortStatus float32
+
+// Drive This object contains information related to a Vercel Sandbox Drive.
+type Drive struct {
+	// CreatedAt The time when the drive was created, in milliseconds since the epoch.
+	//
+	// Example: 1750344501629
+	CreatedAt float32 `json:"createdAt"`
+
+	// CurrentSandboxName Current sandbox name the drive is attached to, if any.
+	//
+	// Example: my-sandbox
+	CurrentSandboxName *string `json:"currentSandboxName,omitempty"`
+
+	// CurrentSessionId Current session ID the drive is attached to, if any.
+	//
+	// Example: sbx_123
+	CurrentSessionId *string `json:"currentSessionId,omitempty"`
+
+	// Id The unique drive ID.
+	//
+	// Example: drive_abc123
+	Id string `json:"id"`
+
+	// MaxSizeBytes The maximum drive size in bytes.
+	//
+	// Example: 1099511627776
+	MaxSizeBytes float32 `json:"maxSizeBytes"`
+
+	// Name The unique drive name within the project.
+	//
+	// Example: workspace
+	Name string `json:"name"`
+
+	// ParentDriveId The ID of the source drive when this drive is a fork.
+	ParentDriveId *string `json:"parentDriveId,omitempty"`
+
+	// ProjectId The project that owns the drive.
+	//
+	// Example: prj_abc123
+	ProjectId string `json:"projectId"`
+
+	// Region The region where the drive is stored.
+	//
+	// Example: iad1
+	Region string `json:"region"`
+
+	// RootDriveId The ID of the original drive at the root of this fork.
+	RootDriveId *string `json:"rootDriveId,omitempty"`
+
+	// UpdatedAt The last time the drive was updated, in milliseconds since the epoch.
+	//
+	// Example: 1750344501629
+	UpdatedAt float32 `json:"updatedAt"`
+
+	// WorkloadType The workload type of this drive.
+	WorkloadType *DriveWorkloadType `json:"workloadType,omitempty"`
+}
+
+// DriveWorkloadType The workload type of this drive.
+type DriveWorkloadType string
+
+// DuplicateDomains Duplicate domains were provided.
+type DuplicateDomains struct {
+	Code    DuplicateDomainsCode   `json:"code"`
+	Message string                 `json:"message"`
+	Status  DuplicateDomainsStatus `json:"status"`
+}
+
+// DuplicateDomainsCode defines model for DuplicateDomains.Code.
+type DuplicateDomainsCode string
+
+// DuplicateDomainsStatus defines model for DuplicateDomains.Status.
+type DuplicateDomainsStatus float32
+
+// E164PhoneNumber A valid E.164 phone number
+type E164PhoneNumber = string
+
+// EmailAddress A valid RFC 5322 email address
+type EmailAddress = string
+
+// EmojiTldNotSupported The TLD does not support emoji domain names.
+type EmojiTldNotSupported struct {
+	Code    EmojiTldNotSupportedCode   `json:"code"`
+	Message string                     `json:"message"`
+	Status  EmojiTldNotSupportedStatus `json:"status"`
+}
+
+// EmojiTldNotSupportedCode defines model for EmojiTldNotSupported.Code.
+type EmojiTldNotSupportedCode string
+
+// EmojiTldNotSupportedStatus defines model for EmojiTldNotSupported.Status.
+type EmojiTldNotSupportedStatus float32
+
+// ExpectedPriceMismatch The expected price passed does not match the actual price.
+type ExpectedPriceMismatch struct {
+	Code    ExpectedPriceMismatchCode   `json:"code"`
+	Message string                      `json:"message"`
+	Status  ExpectedPriceMismatchStatus `json:"status"`
+}
+
+// ExpectedPriceMismatchCode defines model for ExpectedPriceMismatch.Code.
+type ExpectedPriceMismatchCode string
+
+// ExpectedPriceMismatchStatus defines model for ExpectedPriceMismatch.Status.
+type ExpectedPriceMismatchStatus float32
+
+// FileTree A deployment file tree entry
+type FileTree struct {
+	// Children The list of children files of the directory (only valid for the `directory` type)
+	Children *[]FileTree `json:"children,omitempty"`
+
+	// ContentType The content-type of the file (only valid for the `file` type)
+	//
+	// Example: application/json
+	ContentType *string `json:"contentType,omitempty"`
+
+	// Mode The file "mode" indicating file type and permissions.
+	Mode float32 `json:"mode"`
+
+	// Name The name of the file tree entry
+	//
+	// Example: my-file.json
+	Name string `json:"name"`
+
+	// Type String indicating the type of file tree entry.
+	//
+	// Example: file
+	Type FileTreeType `json:"type"`
+
+	// Uid The unique identifier of the file (only valid for the `file` type)
+	//
+	// Example: 2d4aad419917f15b1146e9e03ddc9bb31747e4d0
+	Uid *string `json:"uid,omitempty"`
+}
+
+// FileTreeType String indicating the type of file tree entry.
+//
+// Example: file
+type FileTreeType string
+
+// Flag defines model for Flag.
+type Flag struct {
+	CreatedAt    float32 `json:"createdAt"`
+	CreatedBy    string  `json:"createdBy"`
+	Description  *string `json:"description,omitempty"`
+	Environments map[string]struct {
+		Active        FlagEnvironmentsActive        `json:"active"`
+		Fallthrough   Flag_Environments_Fallthrough `json:"fallthrough"`
+		PausedOutcome struct {
+			Type      FlagEnvironmentsPausedOutcomeType `json:"type"`
+			VariantId string                            `json:"variantId"`
+		} `json:"pausedOutcome"`
+		Reuse *struct {
+			Active      FlagEnvironmentsReuseActive `json:"active"`
+			Environment string                      `json:"environment"`
+		} `json:"reuse,omitempty"`
+		Revision *float32 `json:"revision,omitempty"`
+		Rules    []struct {
+			Conditions []struct {
+				Cmp        FlagEnvironmentsRulesConditionsCmp `json:"cmp"`
+				CmpOptions *struct {
+					IgnoreCase *FlagEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
+				} `json:"cmpOptions,omitempty"`
+				Lhs Flag_Environments_Rules_Conditions_Lhs  `json:"lhs"`
+				Rhs *Flag_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
+			} `json:"conditions"`
+			Id      string                          `json:"id"`
+			Outcome Flag_Environments_Rules_Outcome `json:"outcome"`
+		} `json:"rules"`
+		Targets *map[string]map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"targets,omitempty"`
+	} `json:"environments"`
+	Id            string    `json:"id"`
+	Kind          FlagKind  `json:"kind"`
+	MaintainerIds *[]string `json:"maintainerIds,omitempty"`
+	Metadata      *struct {
+		Creator *struct {
+			Id   string `json:"id"`
+			Name string `json:"name"`
+		} `json:"creator,omitempty"`
+	} `json:"metadata,omitempty"`
+	OwnerId          string                `json:"ownerId"`
+	Permanent        *FlagPermanent        `json:"permanent,omitempty"`
+	ProjectId        string                `json:"projectId"`
+	Revision         float32               `json:"revision"`
+	Seed             float32               `json:"seed"`
+	SeenInProduction *FlagSeenInProduction `json:"seenInProduction,omitempty"`
+	Slug             string                `json:"slug"`
+	State            FlagState             `json:"state"`
+	Tags             *[]string             `json:"tags,omitempty"`
+	TypeName         FlagTypeName          `json:"typeName"`
+	UpdatedAt        float32               `json:"updatedAt"`
+	UpdatedBy        *string               `json:"updatedBy,omitempty"`
+	Variants         []struct {
+		Description *string              `json:"description,omitempty"`
+		Id          string               `json:"id"`
+		Label       *string              `json:"label,omitempty"`
+		Value       *Flag_Variants_Value `json:"value"`
+	} `json:"variants"`
+}
+
 // FlagEnvironmentsActive defines model for Flag.Environments.Active.
 type FlagEnvironmentsActive bool
 
@@ -2437,6 +4475,14 @@ type UserEvent struct {
 	// Example: 1632859321020
 	CreatedAt float32 `json:"createdAt"`
 
+	// Details Labeled event details for progressive disclosure in the activity feed.
+	Details *[]struct {
+		// Display Recognition context that should remain visible in a compact feed row.
+		Display *UserEventDetailsDisplay `json:"display,omitempty"`
+		Label   string                   `json:"label"`
+		Value   string                   `json:"value"`
+	} `json:"details,omitempty"`
+
 	// Entities A list of "entities" within the event `text`. Useful for enhancing the displayed text with additional styling and links.
 	Entities []struct {
 		// End The index of where the entity ends within the `text` (non-inclusive).
@@ -2468,6 +4514,9 @@ type UserEvent struct {
 
 	// SessionId The ID of the session that the principal's token belongs to, when it belongs to one.
 	SessionId *string `json:"sessionId,omitempty"`
+
+	// Summary Compact activity-feed text, when the event has additional details.
+	Summary *string `json:"summary,omitempty"`
 
 	// Text The human-readable text of the Event.
 	//
@@ -2507,6 +4556,9 @@ type UserEvent struct {
 //
 // Example: ["deployment"]
 type UserEventCategories string
+
+// UserEventDetailsDisplay Recognition context that should remain visible in a compact feed row.
+type UserEventDetailsDisplay string
 
 // UserEventEntitiesType The type of entity.
 //
@@ -17959,2053 +20011,4 @@ type PatchEdgeConfigItemsJSONBodyItems02 struct {
 // PatchEdgeConfigItemsJSONBodyItems03 defines parameters for PatchEdgeConfigItems.
 type PatchEdgeConfigItemsJSONBodyItems03 struct {
 	Operation PatchEdgeConfigItemsJSONBodyItems03Operation `json:"operation"`
-}
-
-// PatchEdgeConfigItemsJSONBodyItems03Operation defines parameters for PatchEdgeConfigItems.
-type PatchEdgeConfigItemsJSONBodyItems03Operation string
-
-// PatchEdgeConfigItemsJSONBody_Items_Item defines parameters for PatchEdgeConfigItems.
-type PatchEdgeConfigItemsJSONBody_Items_Item struct {
-	union json.RawMessage
-}
-
-// DeleteEdgeConfigSchemaParams defines parameters for DeleteEdgeConfigSchema.
-type DeleteEdgeConfigSchemaParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetEdgeConfigSchemaParams defines parameters for GetEdgeConfigSchema.
-type GetEdgeConfigSchemaParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// PatchEdgeConfigSchemaJSONBody defines parameters for PatchEdgeConfigSchema.
-type PatchEdgeConfigSchemaJSONBody struct {
-	Definition interface{} `json:"definition"`
-}
-
-// PatchEdgeConfigSchemaParams defines parameters for PatchEdgeConfigSchema.
-type PatchEdgeConfigSchemaParams struct {
-	DryRun *string `form:"dryRun,omitempty" json:"dryRun,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateEdgeConfigTokenJSONBody defines parameters for CreateEdgeConfigToken.
-type CreateEdgeConfigTokenJSONBody struct {
-	Label string `json:"label"`
-}
-
-// CreateEdgeConfigTokenParams defines parameters for CreateEdgeConfigToken.
-type CreateEdgeConfigTokenParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetEdgeConfigTokenParams defines parameters for GetEdgeConfigToken.
-type GetEdgeConfigTokenParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// DeleteEdgeConfigTokensJSONBody defines parameters for DeleteEdgeConfigTokens.
-type DeleteEdgeConfigTokensJSONBody struct {
-	Ids    *[]string `json:"ids,omitempty"`
-	Tokens *[]string `json:"tokens,omitempty"`
-	union  json.RawMessage
-}
-
-// DeleteEdgeConfigTokensParams defines parameters for DeleteEdgeConfigTokens.
-type DeleteEdgeConfigTokensParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// DeleteEdgeConfigTokensJSONBody0 defines parameters for DeleteEdgeConfigTokens.
-type DeleteEdgeConfigTokensJSONBody0 = interface{}
-
-// DeleteEdgeConfigTokensJSONBody1 defines parameters for DeleteEdgeConfigTokens.
-type DeleteEdgeConfigTokensJSONBody1 = interface{}
-
-// GetEdgeConfigTokensParams defines parameters for GetEdgeConfigTokens.
-type GetEdgeConfigTokensParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateInstallationJSONBody defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBody struct {
-	BillingPlan *UpdateInstallationJSONBody_BillingPlan `json:"billingPlan,omitempty"`
-	ExternalId  *string                                 `json:"externalId,omitempty"`
-
-	// Notification A notification to display to your customer. Send `null` to clear the current notification.
-	Notification *UpdateInstallationJSONBody_Notification `json:"notification,omitempty"`
-	Status       *UpdateInstallationJSONBodyStatus        `json:"status,omitempty"`
-}
-
-// UpdateInstallationJSONBodyBillingPlanType defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBodyBillingPlanType string
-
-// UpdateInstallationJSONBody_BillingPlan defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBody_BillingPlan struct {
-	Cost        *string `json:"cost,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Details     *[]struct {
-		Label string  `json:"label"`
-		Value *string `json:"value,omitempty"`
-	} `json:"details,omitempty"`
-	EffectiveDate      *string `json:"effectiveDate,omitempty"`
-	HighlightedDetails *[]struct {
-		Label string  `json:"label"`
-		Value *string `json:"value,omitempty"`
-	} `json:"highlightedDetails,omitempty"`
-	Id                    string                                    `json:"id"`
-	Name                  string                                    `json:"name"`
-	PaymentMethodRequired *bool                                     `json:"paymentMethodRequired,omitempty"`
-	Type                  UpdateInstallationJSONBodyBillingPlanType `json:"type"`
-	AdditionalProperties  map[string]interface{}                    `json:"-"`
-}
-
-// UpdateInstallationJSONBodyNotification0 defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBodyNotification0 struct {
-	Href    *string                                      `json:"href,omitempty"`
-	Level   UpdateInstallationJSONBodyNotification0Level `json:"level"`
-	Message *string                                      `json:"message,omitempty"`
-	Title   string                                       `json:"title"`
-}
-
-// UpdateInstallationJSONBodyNotification0Level defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBodyNotification0Level string
-
-// UpdateInstallationJSONBodyNotification1 defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBodyNotification1 = string
-
-// UpdateInstallationJSONBody_Notification defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBody_Notification struct {
-	union json.RawMessage
-}
-
-// UpdateInstallationJSONBodyStatus defines parameters for UpdateInstallation.
-type UpdateInstallationJSONBodyStatus string
-
-// SubmitBillingDataJSONBody defines parameters for SubmitBillingData.
-type SubmitBillingDataJSONBody struct {
-	// Billing Billing data (interim invoicing data).
-	Billing SubmitBillingDataJSONBody_Billing `json:"billing"`
-
-	// Eod End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your "end of day" to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 24h earlier from our server's current time.
-	Eod time.Time `json:"eod"`
-
-	// Period Period for the billing cycle. The period end date cannot be older than 24 hours earlier than our current server's time.
-	Period struct {
-		End   time.Time `json:"end"`
-		Start time.Time `json:"start"`
-	} `json:"period"`
-
-	// Timestamp Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept.
-	Timestamp time.Time `json:"timestamp"`
-	Usage     []struct {
-		// DayValue Metric value for the day. Could be a final or an interim value for the day.
-		DayValue float32 `json:"dayValue"`
-
-		// Name Metric name.
-		Name string `json:"name"`
-
-		// PeriodValue Metric value for the billing period. Could be a final or an interim value for the period.
-		PeriodValue float32 `json:"periodValue"`
-
-		// PlanValue The limit value of the metric for a billing period, if a limit is defined by the plan.
-		PlanValue *float32 `json:"planValue,omitempty"`
-
-		// ResourceId Partner's resource ID.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Type
-		//               Type of the metric.
-		//               - total: measured total value, such as Database size
-		//               - interval: usage during the period, such as i/o or number of queries.
-		//               - rate: rate of usage, such as queries per second.
-		//
-		Type SubmitBillingDataJSONBodyUsageType `json:"type"`
-
-		// Units Metric units. Example: "GB"
-		Units string `json:"units"`
-	} `json:"usage"`
-}
-
-// SubmitBillingDataJSONBodyBilling0 defines parameters for SubmitBillingData.
-type SubmitBillingDataJSONBodyBilling0 = []struct {
-	// BillingPlanId Partner's billing plan ID.
-	BillingPlanId string `json:"billingPlanId"`
-
-	// Details Line item details.
-	Details *string `json:"details,omitempty"`
-
-	// End Start and end are only needed if different from the period's start/end.
-	End *time.Time `json:"end,omitempty"`
-
-	// Name Line item name.
-	Name string `json:"name"`
-
-	// Price Price per unit.
-	Price string `json:"price"`
-
-	// Quantity Quantity of units.
-	Quantity float32 `json:"quantity"`
-
-	// ResourceId Partner's resource ID.
-	ResourceId *string `json:"resourceId,omitempty"`
-
-	// Start Start and end are only needed if different from the period's start/end.
-	Start *time.Time `json:"start,omitempty"`
-
-	// Total Total amount.
-	Total string `json:"total"`
-
-	// Units Units of the quantity.
-	Units string `json:"units"`
-}
-
-// SubmitBillingDataJSONBodyBilling1 defines parameters for SubmitBillingData.
-type SubmitBillingDataJSONBodyBilling1 struct {
-	Discounts *[]struct {
-		// Amount Discount amount.
-		Amount string `json:"amount"`
-
-		// BillingPlanId Partner's billing plan ID.
-		BillingPlanId string `json:"billingPlanId"`
-
-		// Details Discount details.
-		Details *string `json:"details,omitempty"`
-
-		// End Start and end are only needed if different from the period's start/end.
-		End *time.Time `json:"end,omitempty"`
-
-		// Name Discount name.
-		Name string `json:"name"`
-
-		// ResourceId Partner's resource ID.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Start Start and end are only needed if different from the period's start/end.
-		Start *time.Time `json:"start,omitempty"`
-	} `json:"discounts,omitempty"`
-	Items []struct {
-		// BillingPlanId Partner's billing plan ID.
-		BillingPlanId string `json:"billingPlanId"`
-
-		// Details Line item details.
-		Details *string `json:"details,omitempty"`
-
-		// End Start and end are only needed if different from the period's start/end.
-		End *time.Time `json:"end,omitempty"`
-
-		// Name Line item name.
-		Name string `json:"name"`
-
-		// Price Price per unit.
-		Price string `json:"price"`
-
-		// Quantity Quantity of units.
-		Quantity float32 `json:"quantity"`
-
-		// ResourceId Partner's resource ID.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Start Start and end are only needed if different from the period's start/end.
-		Start *time.Time `json:"start,omitempty"`
-
-		// Total Total amount.
-		Total string `json:"total"`
-
-		// Units Units of the quantity.
-		Units string `json:"units"`
-	} `json:"items"`
-}
-
-// SubmitBillingDataJSONBody_Billing defines parameters for SubmitBillingData.
-type SubmitBillingDataJSONBody_Billing struct {
-	union json.RawMessage
-}
-
-// SubmitBillingDataJSONBodyUsageType defines parameters for SubmitBillingData.
-type SubmitBillingDataJSONBodyUsageType string
-
-// SubmitPrepaymentBalancesJSONBody defines parameters for SubmitPrepaymentBalances.
-type SubmitPrepaymentBalancesJSONBody struct {
-	Balances []struct {
-		// Credit A human-readable description of the credits the user currently has, e.g. "2,000 Tokens"
-		Credit *string `json:"credit,omitempty"`
-
-		// CurrencyValueInCents The dollar value of the credit balance, in USD and provided in cents, which is used to trigger automatic purchase thresholds.
-		CurrencyValueInCents float32 `json:"currencyValueInCents"`
-
-		// NameLabel The name of the credits, for display purposes, e.g. "Tokens"
-		NameLabel *string `json:"nameLabel,omitempty"`
-
-		// ResourceId Partner's resource ID, exclude if credits are tied to the installation and not an individual resource.
-		ResourceId *string `json:"resourceId,omitempty"`
-	} `json:"balances"`
-
-	// Timestamp Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept.
-	Timestamp time.Time `json:"timestamp"`
-}
-
-// SubmitInvoiceJSONBody defines parameters for SubmitInvoice.
-type SubmitInvoiceJSONBody struct {
-	Discounts *[]struct {
-		// Amount Currency amount as a decimal string.
-		Amount string `json:"amount"`
-
-		// BillingPlanId Partner's billing plan ID.
-		BillingPlanId string  `json:"billingPlanId"`
-		Details       *string `json:"details,omitempty"`
-
-		// End Start and end are only needed if different from the period's start/end.
-		End  *time.Time `json:"end,omitempty"`
-		Name string     `json:"name"`
-
-		// ResourceId Partner's resource ID.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Start Start and end are only needed if different from the period's start/end.
-		Start *time.Time `json:"start,omitempty"`
-	} `json:"discounts,omitempty"`
-
-	// ExternalId Partner-provided invoice identifier. If provided, it must be unique for this installation.
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// Final Set this to `true` if this is the final invoice for the installation. Can only be set when the installation is pending deletion.
-	Final *bool `json:"final,omitempty"`
-
-	// InvoiceDate Invoice date. Must be within the period's start and end.
-	InvoiceDate time.Time `json:"invoiceDate"`
-	Items       []struct {
-		// BillingPlanId Partner's billing plan ID.
-		BillingPlanId string  `json:"billingPlanId"`
-		Details       *string `json:"details,omitempty"`
-
-		// End Start and end are only needed if different from the period's start/end.
-		End  *time.Time `json:"end,omitempty"`
-		Name string     `json:"name"`
-
-		// Price Currency amount as a decimal string.
-		Price    string  `json:"price"`
-		Quantity float32 `json:"quantity"`
-
-		// ResourceId Partner's resource ID.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Start Start and end are only needed if different from the period's start/end.
-		Start *time.Time `json:"start,omitempty"`
-
-		// Total Currency amount as a decimal string.
-		Total string `json:"total"`
-		Units string `json:"units"`
-	} `json:"items"`
-
-	// Memo Additional memo for the invoice.
-	Memo *string `json:"memo,omitempty"`
-
-	// Period Subscription period for this billing cycle.
-	Period struct {
-		End   time.Time `json:"end"`
-		Start time.Time `json:"start"`
-	} `json:"period"`
-
-	// Test Test mode
-	Test *struct {
-		Result   *SubmitInvoiceJSONBodyTestResult `json:"result,omitempty"`
-		Validate *bool                            `json:"validate,omitempty"`
-	} `json:"test,omitempty"`
-}
-
-// SubmitInvoiceJSONBodyTestResult defines parameters for SubmitInvoice.
-type SubmitInvoiceJSONBodyTestResult string
-
-// SubmitInvoice200JSONResponseBodyTest defines parameters for SubmitInvoice.
-type SubmitInvoice200JSONResponseBodyTest bool
-
-// GetInvoice200JSONResponseBodyState defines parameters for GetInvoice.
-type GetInvoice200JSONResponseBodyState string
-
-// GetInvoice200JSONResponseBodyTest defines parameters for GetInvoice.
-type GetInvoice200JSONResponseBodyTest bool
-
-// UpdateInvoiceJSONBody defines parameters for UpdateInvoice.
-type UpdateInvoiceJSONBody struct {
-	union json.RawMessage
-}
-
-// UpdateInvoiceJSONBody0 defines parameters for UpdateInvoice.
-type UpdateInvoiceJSONBody0 struct {
-	Action UpdateInvoiceJSONBody0Action `json:"action"`
-
-	// Reason Refund reason.
-	Reason string `json:"reason"`
-
-	// Total The total amount to be refunded. Must be less than or equal to the total amount of the invoice.
-	Total string `json:"total"`
-}
-
-// UpdateInvoiceJSONBody0Action defines parameters for UpdateInvoice.
-type UpdateInvoiceJSONBody0Action string
-
-// RevokeInstallationCredentialJSONBody defines parameters for RevokeInstallationCredential.
-type RevokeInstallationCredentialJSONBody struct {
-	ClientId     *string `json:"client_id,omitempty"`
-	ClientSecret string  `json:"client_secret"`
-	Token        string  `json:"token"`
-}
-
-// RevokeInstallationCredential200JSONResponseBodyAlreadyRevoked defines parameters for RevokeInstallationCredential.
-type RevokeInstallationCredential200JSONResponseBodyAlreadyRevoked bool
-
-// RevokeInstallationCredential200JSONResponseBodyRevoked defines parameters for RevokeInstallationCredential.
-type RevokeInstallationCredential200JSONResponseBodyRevoked bool
-
-// RotateInstallationCredentialJSONBody defines parameters for RotateInstallationCredential.
-type RotateInstallationCredentialJSONBody struct {
-	ClientId     *string `json:"client_id,omitempty"`
-	ClientSecret string  `json:"client_secret"`
-}
-
-// RotateInstallationCredential200JSONResponseBodyTokenType defines parameters for RotateInstallationCredential.
-type RotateInstallationCredential200JSONResponseBodyTokenType string
-
-// CreateEventJSONBody defines parameters for CreateEvent.
-type CreateEventJSONBody struct {
-	Event CreateEventJSONBody_Event `json:"event"`
-}
-
-// CreateEventJSONBodyEvent0 defines parameters for CreateEvent.
-type CreateEventJSONBodyEvent0 struct {
-	// BillingPlanId The installation-level billing plan ID
-	BillingPlanId *string                       `json:"billingPlanId,omitempty"`
-	Type          CreateEventJSONBodyEvent0Type `json:"type"`
-}
-
-// CreateEventJSONBodyEvent0Type defines parameters for CreateEvent.
-type CreateEventJSONBodyEvent0Type string
-
-// CreateEventJSONBodyEvent1 defines parameters for CreateEvent.
-type CreateEventJSONBodyEvent1 struct {
-	// ProductId Partner-provided product slug or id
-	ProductId *string `json:"productId,omitempty"`
-
-	// ResourceId Partner provided resource ID
-	ResourceId string                        `json:"resourceId"`
-	Type       CreateEventJSONBodyEvent1Type `json:"type"`
-}
-
-// CreateEventJSONBodyEvent1Type defines parameters for CreateEvent.
-type CreateEventJSONBodyEvent1Type string
-
-// CreateEventJSONBody_Event defines parameters for CreateEvent.
-type CreateEventJSONBody_Event struct {
-	union json.RawMessage
-}
-
-// GetMember200JSONResponseBodyRole defines parameters for GetMember.
-type GetMember200JSONResponseBodyRole string
-
-// UpdateResourceSecretsJSONBody defines parameters for UpdateResourceSecrets.
-type UpdateResourceSecretsJSONBody struct {
-	// Partial If true, will only update the provided secrets
-	Partial *bool `json:"partial,omitempty"`
-	Secrets []struct {
-		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-		EnvironmentOverrides *struct {
-			// Development Value used for development environment.
-			Development *string `json:"development,omitempty"`
-
-			// Preview Value used for preview environment.
-			Preview *string `json:"preview,omitempty"`
-
-			// Production Value used for production environment.
-			Production *string `json:"production,omitempty"`
-		} `json:"environmentOverrides,omitempty"`
-		Name   string  `json:"name"`
-		Prefix *string `json:"prefix,omitempty"`
-		Value  string  `json:"value"`
-	} `json:"secrets"`
-}
-
-// GetIntegrationResources200JSONResponseBodyResourcesMetadata0 defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesMetadata0 = string
-
-// GetIntegrationResources200JSONResponseBodyResourcesMetadata1 defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesMetadata1 = float32
-
-// GetIntegrationResources200JSONResponseBodyResourcesMetadata2 defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesMetadata2 = []string
-
-// GetIntegrationResources200JSONResponseBodyResourcesMetadata3 defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesMetadata3 = []float32
-
-// GetIntegrationResources200JSONResponseBodyResourcesMetadata4 defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesMetadata4 bool
-
-// GetIntegrationResources200JSONResponseBody_Resources_Metadata_AdditionalProperties defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBody_Resources_Metadata_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// GetIntegrationResources200JSONResponseBodyResourcesNotificationLevel defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesNotificationLevel string
-
-// GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsAuthenticationAppUrlsTarget defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsAuthenticationAppUrlsTarget string
-
-// GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationEdgeConfigSyncingEnabled defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationEdgeConfigSyncingEnabled bool
-
-// GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationGlobalConfigSyncingEnabled defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationGlobalConfigSyncingEnabled bool
-
-// GetIntegrationResources200JSONResponseBodyResourcesStatus defines parameters for GetIntegrationResources.
-type GetIntegrationResources200JSONResponseBodyResourcesStatus string
-
-// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims0 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims0 = string
-
-// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims1 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims1 = float32
-
-// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims2 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims2 = []string
-
-// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims3 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims3 bool
-
-// GetIntegrationResource200JSONResponseBody_CustomClaims_ClaimRules_Claims_AdditionalProperties defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBody_CustomClaims_ClaimRules_Claims_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// GetIntegrationResource200JSONResponseBodyMetadata0 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyMetadata0 = string
-
-// GetIntegrationResource200JSONResponseBodyMetadata1 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyMetadata1 = float32
-
-// GetIntegrationResource200JSONResponseBodyMetadata2 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyMetadata2 = []string
-
-// GetIntegrationResource200JSONResponseBodyMetadata3 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyMetadata3 = []float32
-
-// GetIntegrationResource200JSONResponseBodyMetadata4 defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyMetadata4 bool
-
-// GetIntegrationResource200JSONResponseBody_Metadata_AdditionalProperties defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBody_Metadata_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// GetIntegrationResource200JSONResponseBodyNotificationLevel defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyNotificationLevel string
-
-// GetIntegrationResource200JSONResponseBodyProtocolSettingsAuthenticationAppUrlsTarget defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyProtocolSettingsAuthenticationAppUrlsTarget string
-
-// GetIntegrationResource200JSONResponseBodyStatus defines parameters for GetIntegrationResource.
-type GetIntegrationResource200JSONResponseBodyStatus string
-
-// UpdateResourceJSONBody defines parameters for UpdateResource.
-type UpdateResourceJSONBody struct {
-	BillingPlan *UpdateResourceJSONBody_BillingPlan `json:"billingPlan,omitempty"`
-
-	// CustomClaims Custom claims embedded in the resource tokens Vercel mints for this resource.
-	CustomClaims *struct {
-		// ClaimRules Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
-		ClaimRules *[]struct {
-			// Claims Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
-			Claims map[string]UpdateResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties `json:"claims"`
-			When   *struct {
-				// Environment Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
-				Environment *[]string `json:"environment,omitempty"`
-
-				// Role Applies only when the token is minted for one of these roles.
-				Role *[]string `json:"role,omitempty"`
-			} `json:"when,omitempty"`
-		} `json:"claimRules,omitempty"`
-
-		// DefaultRole Role used when the deployment does not request one. Required when `roles` is set.
-		DefaultRole *string `json:"defaultRole,omitempty"`
-
-		// Roles Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.
-		Roles *[]string `json:"roles,omitempty"`
-	} `json:"customClaims,omitempty"`
-	Extras       *map[string]interface{}              `json:"extras,omitempty"`
-	Metadata     *map[string]interface{}              `json:"metadata,omitempty"`
-	Name         *string                              `json:"name,omitempty"`
-	Notification *UpdateResourceJSONBody_Notification `json:"notification,omitempty"`
-	Ownership    *UpdateResourceJSONBodyOwnership     `json:"ownership,omitempty"`
-	Secrets      *UpdateResourceJSONBody_Secrets      `json:"secrets,omitempty"`
-	Status       *UpdateResourceJSONBodyStatus        `json:"status,omitempty"`
-}
-
-// UpdateResourceJSONBodyBillingPlanType defines parameters for UpdateResource.
-type UpdateResourceJSONBodyBillingPlanType string
-
-// UpdateResourceJSONBody_BillingPlan defines parameters for UpdateResource.
-type UpdateResourceJSONBody_BillingPlan struct {
-	Cost        *string `json:"cost,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Details     *[]struct {
-		Label string  `json:"label"`
-		Value *string `json:"value,omitempty"`
-	} `json:"details,omitempty"`
-	EffectiveDate      *string `json:"effectiveDate,omitempty"`
-	HighlightedDetails *[]struct {
-		Label string  `json:"label"`
-		Value *string `json:"value,omitempty"`
-	} `json:"highlightedDetails,omitempty"`
-	Id                    string                                `json:"id"`
-	Name                  string                                `json:"name"`
-	PaymentMethodRequired *bool                                 `json:"paymentMethodRequired,omitempty"`
-	Type                  UpdateResourceJSONBodyBillingPlanType `json:"type"`
-	AdditionalProperties  map[string]interface{}                `json:"-"`
-}
-
-// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims0 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims0 struct {
-	union json.RawMessage
-}
-
-// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims00 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims00 = string
-
-// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims01 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims01 = float32
-
-// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims02 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims02 = bool
-
-// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims1 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims1 = []string
-
-// UpdateResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties defines parameters for UpdateResource.
-type UpdateResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// UpdateResourceJSONBodyNotification0 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyNotification0 struct {
-	Href    *string                                  `json:"href,omitempty"`
-	Level   UpdateResourceJSONBodyNotification0Level `json:"level"`
-	Message *string                                  `json:"message,omitempty"`
-	Title   string                                   `json:"title"`
-}
-
-// UpdateResourceJSONBodyNotification0Level defines parameters for UpdateResource.
-type UpdateResourceJSONBodyNotification0Level string
-
-// UpdateResourceJSONBodyNotification1 defines parameters for UpdateResource.
-type UpdateResourceJSONBodyNotification1 = string
-
-// UpdateResourceJSONBody_Notification defines parameters for UpdateResource.
-type UpdateResourceJSONBody_Notification struct {
-	union json.RawMessage
-}
-
-// UpdateResourceJSONBodyOwnership defines parameters for UpdateResource.
-type UpdateResourceJSONBodyOwnership string
-
-// UpdateResourceJSONBodySecrets0 defines parameters for UpdateResource.
-type UpdateResourceJSONBodySecrets0 = []struct {
-	// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-	EnvironmentOverrides *struct {
-		// Development Value used for development environment.
-		Development *string `json:"development,omitempty"`
-
-		// Preview Value used for preview environment.
-		Preview *string `json:"preview,omitempty"`
-
-		// Production Value used for production environment.
-		Production *string `json:"production,omitempty"`
-	} `json:"environmentOverrides,omitempty"`
-	Name   string  `json:"name"`
-	Prefix *string `json:"prefix,omitempty"`
-	Value  string  `json:"value"`
-}
-
-// UpdateResourceJSONBodySecrets1 defines parameters for UpdateResource.
-type UpdateResourceJSONBodySecrets1 struct {
-	// Partial If true, will only overwrite the provided secrets instead of replacing all secrets.
-	Partial *bool `json:"partial,omitempty"`
-	Secrets []struct {
-		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-		EnvironmentOverrides *struct {
-			// Development Value used for development environment.
-			Development *string `json:"development,omitempty"`
-
-			// Preview Value used for preview environment.
-			Preview *string `json:"preview,omitempty"`
-
-			// Production Value used for production environment.
-			Production *string `json:"production,omitempty"`
-		} `json:"environmentOverrides,omitempty"`
-		Name   string  `json:"name"`
-		Prefix *string `json:"prefix,omitempty"`
-		Value  string  `json:"value"`
-	} `json:"secrets"`
-}
-
-// UpdateResourceJSONBody_Secrets defines parameters for UpdateResource.
-type UpdateResourceJSONBody_Secrets struct {
-	union json.RawMessage
-}
-
-// UpdateResourceJSONBodyStatus defines parameters for UpdateResource.
-type UpdateResourceJSONBodyStatus string
-
-// ImportResourceJSONBody defines parameters for ImportResource.
-type ImportResourceJSONBody struct {
-	BillingPlan *ImportResourceJSONBody_BillingPlan `json:"billingPlan,omitempty"`
-
-	// CustomClaims Custom claims embedded in the resource tokens Vercel mints for this resource.
-	CustomClaims *struct {
-		// ClaimRules Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
-		ClaimRules *[]struct {
-			// Claims Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
-			Claims map[string]ImportResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties `json:"claims"`
-			When   *struct {
-				// Environment Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
-				Environment *[]string `json:"environment,omitempty"`
-
-				// Role Applies only when the token is minted for one of these roles.
-				Role *[]string `json:"role,omitempty"`
-			} `json:"when,omitempty"`
-		} `json:"claimRules,omitempty"`
-
-		// DefaultRole Role used when the deployment does not request one. Required when `roles` is set.
-		DefaultRole *string `json:"defaultRole,omitempty"`
-
-		// Roles Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.
-		Roles *[]string `json:"roles,omitempty"`
-	} `json:"customClaims,omitempty"`
-	Extras       *map[string]interface{} `json:"extras,omitempty"`
-	Metadata     *map[string]interface{} `json:"metadata,omitempty"`
-	Name         string                  `json:"name"`
-	Notification *struct {
-		Href    *string                                 `json:"href,omitempty"`
-		Level   ImportResourceJSONBodyNotificationLevel `json:"level"`
-		Message *string                                 `json:"message,omitempty"`
-		Title   string                                  `json:"title"`
-	} `json:"notification,omitempty"`
-	Ownership *ImportResourceJSONBodyOwnership `json:"ownership,omitempty"`
-	ProductId string                           `json:"productId"`
-	Secrets   *[]struct {
-		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-		EnvironmentOverrides *struct {
-			// Development Value used for development environment.
-			Development *string `json:"development,omitempty"`
-
-			// Preview Value used for preview environment.
-			Preview *string `json:"preview,omitempty"`
-
-			// Production Value used for production environment.
-			Production *string `json:"production,omitempty"`
-		} `json:"environmentOverrides,omitempty"`
-		Name   string  `json:"name"`
-		Prefix *string `json:"prefix,omitempty"`
-		Value  string  `json:"value"`
-	} `json:"secrets,omitempty"`
-	Status ImportResourceJSONBodyStatus `json:"status"`
-}
-
-// ImportResourceJSONBodyBillingPlanType defines parameters for ImportResource.
-type ImportResourceJSONBodyBillingPlanType string
-
-// ImportResourceJSONBody_BillingPlan defines parameters for ImportResource.
-type ImportResourceJSONBody_BillingPlan struct {
-	Cost        *string `json:"cost,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Details     *[]struct {
-		Label string  `json:"label"`
-		Value *string `json:"value,omitempty"`
-	} `json:"details,omitempty"`
-	EffectiveDate      *string `json:"effectiveDate,omitempty"`
-	HighlightedDetails *[]struct {
-		Label string  `json:"label"`
-		Value *string `json:"value,omitempty"`
-	} `json:"highlightedDetails,omitempty"`
-	Id                    string                                `json:"id"`
-	Name                  string                                `json:"name"`
-	PaymentMethodRequired *bool                                 `json:"paymentMethodRequired,omitempty"`
-	Type                  ImportResourceJSONBodyBillingPlanType `json:"type"`
-	AdditionalProperties  map[string]interface{}                `json:"-"`
-}
-
-// ImportResourceJSONBodyCustomClaimsClaimRulesClaims0 defines parameters for ImportResource.
-type ImportResourceJSONBodyCustomClaimsClaimRulesClaims0 struct {
-	union json.RawMessage
-}
-
-// ImportResourceJSONBodyCustomClaimsClaimRulesClaims00 defines parameters for ImportResource.
-type ImportResourceJSONBodyCustomClaimsClaimRulesClaims00 = string
-
-// ImportResourceJSONBodyCustomClaimsClaimRulesClaims01 defines parameters for ImportResource.
-type ImportResourceJSONBodyCustomClaimsClaimRulesClaims01 = float32
-
-// ImportResourceJSONBodyCustomClaimsClaimRulesClaims02 defines parameters for ImportResource.
-type ImportResourceJSONBodyCustomClaimsClaimRulesClaims02 = bool
-
-// ImportResourceJSONBodyCustomClaimsClaimRulesClaims1 defines parameters for ImportResource.
-type ImportResourceJSONBodyCustomClaimsClaimRulesClaims1 = []string
-
-// ImportResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties defines parameters for ImportResource.
-type ImportResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// ImportResourceJSONBodyNotificationLevel defines parameters for ImportResource.
-type ImportResourceJSONBodyNotificationLevel string
-
-// ImportResourceJSONBodyOwnership defines parameters for ImportResource.
-type ImportResourceJSONBodyOwnership string
-
-// ImportResourceJSONBodyStatus defines parameters for ImportResource.
-type ImportResourceJSONBodyStatus string
-
-// GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose defines parameters for GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
-type GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose string
-
-// HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose defines parameters for HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
-type HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose string
-
-// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONBody defines parameters for ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
-type ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONBody struct {
-	Data map[string]interface{} `json:"data"`
-}
-
-// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose defines parameters for ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
-type ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose string
-
-// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBody defines parameters for CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems.
-type CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBody struct {
-	Items []struct {
-		Category    *CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBodyItemsCategory `json:"category,omitempty"`
-		CreatedAt   *float32                                                                                                       `json:"createdAt,omitempty"`
-		Description *string                                                                                                        `json:"description,omitempty"`
-		Id          string                                                                                                         `json:"id"`
-		IsArchived  *bool                                                                                                          `json:"isArchived,omitempty"`
-		Name        *string                                                                                                        `json:"name,omitempty"`
-		Origin      string                                                                                                         `json:"origin"`
-		Slug        string                                                                                                         `json:"slug"`
-		UpdatedAt   *float32                                                                                                       `json:"updatedAt,omitempty"`
-	} `json:"items"`
-}
-
-// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBodyItemsCategory defines parameters for CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems.
-type CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBodyItemsCategory string
-
-// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBody defines parameters for UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId.
-type UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBody struct {
-	Category    *UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBodyCategory `json:"category,omitempty"`
-	CreatedAt   *float32                                                                                                          `json:"createdAt,omitempty"`
-	Description *string                                                                                                           `json:"description,omitempty"`
-	IsArchived  *bool                                                                                                             `json:"isArchived,omitempty"`
-	Name        *string                                                                                                           `json:"name,omitempty"`
-	Origin      string                                                                                                            `json:"origin"`
-	Slug        string                                                                                                            `json:"slug"`
-	UpdatedAt   *float32                                                                                                          `json:"updatedAt,omitempty"`
-}
-
-// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBodyCategory defines parameters for UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId.
-type UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBodyCategory string
-
-// UpdateResourceSecretsByIdJSONBody defines parameters for UpdateResourceSecretsById.
-type UpdateResourceSecretsByIdJSONBody struct {
-	// Partial If true, will only overwrite the provided secrets instead of replacing all secrets.
-	Partial *bool `json:"partial,omitempty"`
-	Secrets []struct {
-		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-		EnvironmentOverrides *struct {
-			// Development Value used for development environment.
-			Development *string `json:"development,omitempty"`
-
-			// Preview Value used for preview environment.
-			Preview *string `json:"preview,omitempty"`
-
-			// Production Value used for production environment.
-			Production *string `json:"production,omitempty"`
-		} `json:"environmentOverrides,omitempty"`
-		Name   string  `json:"name"`
-		Prefix *string `json:"prefix,omitempty"`
-		Value  string  `json:"value"`
-	} `json:"secrets"`
-}
-
-// DeleteConfigurationParams defines parameters for DeleteConfiguration.
-type DeleteConfigurationParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetConfigurationParams defines parameters for GetConfiguration.
-type GetConfigurationParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetConfiguration200JSONResponseBody0 defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0 struct {
-	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
-	AcceptedPoliciesInheritedFromInstallationId *string                                                        `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
-	CanConfigureOpenTelemetry                   *GetConfiguration200JSONResponseBody0CanConfigureOpenTelemetry `json:"canConfigureOpenTelemetry,omitempty"`
-
-	// CompletedAt A timestamp that tells you when the configuration was installed successfully
-	//
-	// Example: 1558531915505
-	CompletedAt *float32 `json:"completedAt,omitempty"`
-
-	// CreatedAt A timestamp that tells you when the configuration was created
-	//
-	// Example: 1558531915505
-	CreatedAt float32 `json:"createdAt"`
-
-	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
-	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
-
-	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
-	//
-	// Example: 1558531915505
-	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
-
-	// DeletedAt A timestamp that tells you when the configuration was deleted.
-	//
-	// Example: 1558531915505
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
-	//
-	// Example: 1558531915505
-	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
-	DisabledReason *GetConfiguration200JSONResponseBody0DisabledReason `json:"disabledReason,omitempty"`
-
-	// ExternalId An external identifier defined by the integration vendor.
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// Id The unique identifier of the configuration
-	//
-	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
-	Id string `json:"id"`
-
-	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
-	InstallationType *GetConfiguration200JSONResponseBody0InstallationType `json:"installationType,omitempty"`
-
-	// IntegrationId The unique identifier of the app the configuration was created for
-	//
-	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
-	IntegrationId string `json:"integrationId"`
-	Notification  struct {
-		Href    *string                                               `json:"href,omitempty"`
-		Level   GetConfiguration200JSONResponseBody0NotificationLevel `json:"level"`
-		Message *string                                               `json:"message,omitempty"`
-		Title   string                                                `json:"title"`
-	} `json:"notification"`
-
-	// OwnerId The user or team ID that owns the configuration
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	OwnerId string `json:"ownerId"`
-
-	// ProjectSelection A string representing the permission for projects. Possible values are `all` or `selected`.
-	//
-	// Example: all
-	ProjectSelection GetConfiguration200JSONResponseBody0ProjectSelection `json:"projectSelection"`
-
-	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
-	//
-	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
-	Projects *[]string `json:"projects,omitempty"`
-
-	// Scopes The resources that are allowed to be accessed by the configuration.
-	//
-	// Example: ["read:project","read-write:log-drain"]
-	Scopes []string `json:"scopes"`
-
-	// Slug The slug of the integration the configuration is created for.
-	//
-	// Example: slack
-	Slug string `json:"slug"`
-
-	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
-	//
-	// Example: marketplace
-	Source *GetConfiguration200JSONResponseBody0Source `json:"source,omitempty"`
-
-	// Status The configuration status. Optional. If not defined, assume 'ready'.
-	Status *GetConfiguration200JSONResponseBody0Status `json:"status,omitempty"`
-
-	// TeamId When the configuration was created for a team, this will show the ID of the team.
-	//
-	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
-	TeamId          *string                                               `json:"teamId,omitempty"`
-	TransferRequest GetConfiguration200JSONResponseBody_0_TransferRequest `json:"transferRequest"`
-	Type            GetConfiguration200JSONResponseBody0Type              `json:"type"`
-
-	// UpdatedAt A timestamp that tells you when the configuration was updated.
-	//
-	// Example: 1558531915505
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// UserId The ID of the user that created the configuration.
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	UserId string `json:"userId"`
-}
-
-// GetConfiguration200JSONResponseBody0CanConfigureOpenTelemetry defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0CanConfigureOpenTelemetry bool
-
-// GetConfiguration200JSONResponseBody0DisabledReason defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0DisabledReason string
-
-// GetConfiguration200JSONResponseBody0InstallationType defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0InstallationType string
-
-// GetConfiguration200JSONResponseBody0NotificationLevel defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0NotificationLevel string
-
-// GetConfiguration200JSONResponseBody0ProjectSelection defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0ProjectSelection string
-
-// GetConfiguration200JSONResponseBody0Source defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0Source string
-
-// GetConfiguration200JSONResponseBody0Status defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0Status string
-
-// GetConfiguration200JSONResponseBody0TransferRequest0 defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest0 struct {
-	ApprovedAt      *float32 `json:"approvedAt,omitempty"`
-	ApprovedBy      *string  `json:"approvedBy,omitempty"`
-	AuthorizationId *string  `json:"authorizationId,omitempty"`
-	BillingPlan     *struct {
-		Description            string                                                                                `json:"description"`
-		Id                     string                                                                                `json:"id"`
-		Name                   string                                                                                `json:"name"`
-		PaymentMethodRequired  *GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanPaymentMethodRequired `json:"paymentMethodRequired,omitempty"`
-		PreauthorizationAmount *float32                                                                              `json:"preauthorizationAmount,omitempty"`
-		Scope                  *GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanScope                 `json:"scope,omitempty"`
-		Type                   GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanType                   `json:"type"`
-	} `json:"billingPlan,omitempty"`
-	CreatedAt   float32                                                  `json:"createdAt"`
-	DiscardedAt *float32                                                 `json:"discardedAt,omitempty"`
-	DiscardedBy *string                                                  `json:"discardedBy,omitempty"`
-	ExpiresAt   float32                                                  `json:"expiresAt"`
-	Kind        GetConfiguration200JSONResponseBody0TransferRequest0Kind `json:"kind"`
-	Metadata    *map[string]interface{}                                  `json:"metadata,omitempty"`
-	RequestId   string                                                   `json:"requestId"`
-	Requester   struct {
-		Email *string `json:"email,omitempty"`
-		Name  string  `json:"name"`
-	} `json:"requester"`
-	TransferId string `json:"transferId"`
-}
-
-// GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanPaymentMethodRequired defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanPaymentMethodRequired bool
-
-// GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanScope defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanScope string
-
-// GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanType defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanType string
-
-// GetConfiguration200JSONResponseBody0TransferRequest0Kind defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest0Kind string
-
-// GetConfiguration200JSONResponseBody0TransferRequest1 defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest1 struct {
-	ApprovedAt      *float32                                                 `json:"approvedAt,omitempty"`
-	ApprovedBy      *string                                                  `json:"approvedBy,omitempty"`
-	AuthorizationId *string                                                  `json:"authorizationId,omitempty"`
-	CreatedAt       float32                                                  `json:"createdAt"`
-	DiscardedAt     *float32                                                 `json:"discardedAt,omitempty"`
-	DiscardedBy     *string                                                  `json:"discardedBy,omitempty"`
-	ExpiresAt       float32                                                  `json:"expiresAt"`
-	Kind            GetConfiguration200JSONResponseBody0TransferRequest1Kind `json:"kind"`
-	RequestId       string                                                   `json:"requestId"`
-	Requester       struct {
-		Email *string `json:"email,omitempty"`
-		Name  string  `json:"name"`
-	} `json:"requester"`
-	TransferId string `json:"transferId"`
-}
-
-// GetConfiguration200JSONResponseBody0TransferRequest1Kind defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0TransferRequest1Kind string
-
-// GetConfiguration200JSONResponseBody_0_TransferRequest defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody_0_TransferRequest struct {
-	union json.RawMessage
-}
-
-// GetConfiguration200JSONResponseBody0Type defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody0Type string
-
-// GetConfiguration200JSONResponseBody1 defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody1 struct {
-	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
-	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
-
-	// CompletedAt A timestamp that tells you when the configuration was installed successfully
-	//
-	// Example: 1558531915505
-	CompletedAt *float32 `json:"completedAt,omitempty"`
-
-	// CreatedAt A timestamp that tells you when the configuration was created
-	//
-	// Example: 1558531915505
-	CreatedAt float32 `json:"createdAt"`
-
-	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
-	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
-
-	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
-	//
-	// Example: 1558531915505
-	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
-
-	// DeletedAt A timestamp that tells you when the configuration was deleted.
-	//
-	// Example: 1558531915505
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
-	//
-	// Example: 1558531915505
-	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
-	DisabledReason *GetConfiguration200JSONResponseBody1DisabledReason `json:"disabledReason,omitempty"`
-
-	// ExternalId An external identifier defined by the integration vendor.
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// Id The unique identifier of the configuration
-	//
-	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
-	Id string `json:"id"`
-
-	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
-	InstallationType *GetConfiguration200JSONResponseBody1InstallationType `json:"installationType,omitempty"`
-
-	// IntegrationId The unique identifier of the app the configuration was created for
-	//
-	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
-	IntegrationId string `json:"integrationId"`
-
-	// OwnerId The user or team ID that owns the configuration
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	OwnerId string `json:"ownerId"`
-
-	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
-	//
-	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
-	Projects *[]string `json:"projects,omitempty"`
-
-	// Scopes The resources that are allowed to be accessed by the configuration.
-	//
-	// Example: ["read:project","read-write:log-drain"]
-	Scopes []string `json:"scopes"`
-
-	// Slug The slug of the integration the configuration is created for.
-	//
-	// Example: slack
-	Slug string `json:"slug"`
-
-	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
-	//
-	// Example: marketplace
-	Source *GetConfiguration200JSONResponseBody1Source `json:"source,omitempty"`
-
-	// Status The configuration status. Optional. If not defined, assume 'ready'.
-	Status *GetConfiguration200JSONResponseBody1Status `json:"status,omitempty"`
-
-	// TeamId When the configuration was created for a team, this will show the ID of the team.
-	//
-	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
-	TeamId *string                                  `json:"teamId,omitempty"`
-	Type   GetConfiguration200JSONResponseBody1Type `json:"type"`
-
-	// UpdatedAt A timestamp that tells you when the configuration was updated.
-	//
-	// Example: 1558531915505
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// UserId The ID of the user that created the configuration.
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	UserId string `json:"userId"`
-}
-
-// GetConfiguration200JSONResponseBody1DisabledReason defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody1DisabledReason string
-
-// GetConfiguration200JSONResponseBody1InstallationType defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody1InstallationType string
-
-// GetConfiguration200JSONResponseBody1Source defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody1Source string
-
-// GetConfiguration200JSONResponseBody1Status defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody1Status string
-
-// GetConfiguration200JSONResponseBody1Type defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody1Type string
-
-// GetConfiguration200JSONResponseBody2 defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2 struct {
-	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
-	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
-
-	// CompletedAt A timestamp that tells you when the configuration was installed successfully
-	//
-	// Example: 1558531915505
-	CompletedAt *float32 `json:"completedAt,omitempty"`
-
-	// CreatedAt A timestamp that tells you when the configuration was created
-	//
-	// Example: 1558531915505
-	CreatedAt *float32 `json:"createdAt,omitempty"`
-
-	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
-	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
-
-	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
-	//
-	// Example: 1558531915505
-	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
-
-	// DeletedAt A timestamp that tells you when the configuration was deleted.
-	//
-	// Example: 1558531915505
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
-	//
-	// Example: 1558531915505
-	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
-	DisabledReason *GetConfiguration200JSONResponseBody2DisabledReason `json:"disabledReason,omitempty"`
-
-	// ExternalId An external identifier defined by the integration vendor.
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// Id The unique identifier of the configuration
-	//
-	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
-	Id *string `json:"id,omitempty"`
-
-	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
-	InstallationType *GetConfiguration200JSONResponseBody2InstallationType `json:"installationType,omitempty"`
-
-	// IntegrationId The unique identifier of the app the configuration was created for
-	//
-	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
-	IntegrationId *string `json:"integrationId,omitempty"`
-
-	// OwnerId The user or team ID that owns the configuration
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	OwnerId *string `json:"ownerId,omitempty"`
-
-	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
-	//
-	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
-	Projects *[]string `json:"projects,omitempty"`
-
-	// Scopes The resources that are allowed to be accessed by the configuration.
-	//
-	// Example: ["read:project","read-write:log-drain"]
-	Scopes *[]string `json:"scopes,omitempty"`
-
-	// Slug The slug of the integration the configuration is created for.
-	//
-	// Example: slack
-	Slug *string `json:"slug,omitempty"`
-
-	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
-	//
-	// Example: marketplace
-	Source *GetConfiguration200JSONResponseBody2Source `json:"source,omitempty"`
-
-	// Status The configuration status. Optional. If not defined, assume 'ready'.
-	Status *GetConfiguration200JSONResponseBody2Status `json:"status,omitempty"`
-
-	// TeamId When the configuration was created for a team, this will show the ID of the team.
-	//
-	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
-	TeamId *string                                   `json:"teamId,omitempty"`
-	Type   *GetConfiguration200JSONResponseBody2Type `json:"type,omitempty"`
-
-	// UpdatedAt A timestamp that tells you when the configuration was updated.
-	//
-	// Example: 1558531915505
-	UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-	// UserId The ID of the user that created the configuration.
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	UserId *string `json:"userId,omitempty"`
-}
-
-// GetConfiguration200JSONResponseBody2DisabledReason defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2DisabledReason string
-
-// GetConfiguration200JSONResponseBody2InstallationType defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2InstallationType string
-
-// GetConfiguration200JSONResponseBody2Source defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2Source string
-
-// GetConfiguration200JSONResponseBody2Status defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2Status string
-
-// GetConfiguration200JSONResponseBody2Type defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2Type string
-
-// GetConfiguration200JSONResponseBody defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProductsParams defines parameters for GetConfigurationProducts.
-type GetConfigurationProductsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0 struct {
-	Default          *string                                                                                         `json:"default,omitempty"`
-	Description      *string                                                                                         `json:"description,omitempty"`
-	Enum             *[]string                                                                                       `json:"enum,omitempty"`
-	MaxLength        *float32                                                                                        `json:"maxLength,omitempty"`
-	MinLength        *float32                                                                                        `json:"minLength,omitempty"`
-	Pattern          *string                                                                                         `json:"pattern,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel       *string                                                                                      `json:"ui:label,omitempty"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1 struct {
-	Default          *float32                                                                                        `json:"default,omitempty"`
-	Description      *string                                                                                         `json:"description,omitempty"`
-	ExclusiveMaximum *float32                                                                                        `json:"exclusiveMaximum,omitempty"`
-	ExclusiveMinimum *float32                                                                                        `json:"exclusiveMinimum,omitempty"`
-	Maximum          *float32                                                                                        `json:"maximum,omitempty"`
-	Minimum          *float32                                                                                        `json:"minimum,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel       *string                                                                                      `json:"ui:label,omitempty"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2 struct {
-	Default          *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Default            `json:"default,omitempty"`
-	Description      *string                                                                                         `json:"description,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden   *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel    *string                                                                                      `json:"ui:label,omitempty"`
-	UiPaidOnly *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiReadOnly *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Default defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Default bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3 struct {
-	Default     *[]float32 `json:"default,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Items       struct {
-		Default          *float32                                                                              `json:"default,omitempty"`
-		Description      *string                                                                               `json:"description,omitempty"`
-		ExclusiveMaximum *float32                                                                              `json:"exclusiveMaximum,omitempty"`
-		ExclusiveMinimum *float32                                                                              `json:"exclusiveMinimum,omitempty"`
-		Maximum          *float32                                                                              `json:"maximum,omitempty"`
-		Minimum          *float32                                                                              `json:"minimum,omitempty"`
-		Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3ItemsType `json:"type"`
-	} `json:"items"`
-	MaxItems         *float32                                                                                        `json:"maxItems,omitempty"`
-	MinItems         *float32                                                                                        `json:"minItems,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden   *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiHidden   `json:"ui:hidden,omitempty"`
-	UiLabel    *string                                                                                      `json:"ui:label,omitempty"`
-	UiPaidOnly *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiReadOnly *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiReadOnly `json:"ui:read-only,omitempty"`
-	UiSteps    []float32                                                                                    `json:"ui:steps"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3ItemsType defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3ItemsType string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4 struct {
-	Default          *string                                                                                         `json:"default,omitempty"`
-	Description      *string                                                                                         `json:"description,omitempty"`
-	Enum             *[]string                                                                                       `json:"enum,omitempty"`
-	MaxLength        *float32                                                                                        `json:"maxLength,omitempty"`
-	MinLength        *float32                                                                                        `json:"minLength,omitempty"`
-	Pattern          *string                                                                                         `json:"pattern,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden  *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiHidden `json:"ui:hidden,omitempty"`
-	UiLabel   *string                                                                                    `json:"ui:label,omitempty"`
-	UiOptions []struct {
-		Description *string                                                                                              `json:"description,omitempty"`
-		Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Disabled `json:"disabled,omitempty"`
-		Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Hidden   `json:"hidden,omitempty"`
-		Label       string                                                                                               `json:"label"`
-		Value       string                                                                                               `json:"value"`
-	} `json:"ui:options"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Disabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Disabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Hidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Hidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5 struct {
-	Default          *string                                                                                         `json:"default,omitempty"`
-	Description      *string                                                                                         `json:"description,omitempty"`
-	Enum             *[]string                                                                                       `json:"enum,omitempty"`
-	MaxLength        *float32                                                                                        `json:"maxLength,omitempty"`
-	MinLength        *float32                                                                                        `json:"minLength,omitempty"`
-	Pattern          *string                                                                                         `json:"pattern,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden  *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiHidden `json:"ui:hidden,omitempty"`
-	UiLabel   *string                                                                                    `json:"ui:label,omitempty"`
-	UiOptions []struct {
-		Description *string                                                                                              `json:"description,omitempty"`
-		Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Disabled `json:"disabled,omitempty"`
-		Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Hidden   `json:"hidden,omitempty"`
-		Label       string                                                                                               `json:"label"`
-		Value       string                                                                                               `json:"value"`
-	} `json:"ui:options"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDescription struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDisabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDisabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiHidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiHidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Disabled defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Disabled struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Hidden defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Hidden struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiPaidOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiPaidOnly bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly0 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly1 bool
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly2 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly2 string
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiReadOnly defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiReadOnly struct {
-	union json.RawMessage
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6 struct {
-	Default     *[]string `json:"default,omitempty"`
-	Description *string   `json:"description,omitempty"`
-	Example     *[]string `json:"example,omitempty"`
-	Items       struct {
-		Default     *string                                                                               `json:"default,omitempty"`
-		Description *string                                                                               `json:"description,omitempty"`
-		Enum        *[]string                                                                             `json:"enum,omitempty"`
-		MaxLength   *float32                                                                              `json:"maxLength,omitempty"`
-		MinLength   *float32                                                                              `json:"minLength,omitempty"`
-		Pattern     *string                                                                               `json:"pattern,omitempty"`
-		Type        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6ItemsType `json:"type"`
-	} `json:"items"`
-	MaxItems         *float32                                                                                        `json:"maxItems,omitempty"`
-	MinItems         *float32                                                                                        `json:"minItems,omitempty"`
-	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6Type                `json:"type"`
-	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiControl           `json:"ui:control"`
-	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDescription `json:"ui:description,omitempty"`
-	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDisabled    `json:"ui:disabled,omitempty"`
-	UiFormattedValue *struct {
-		Expr string `json:"expr"`
-	} `json:"ui:formatted-value,omitempty"`
-	UiHidden  *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiHidden `json:"ui:hidden,omitempty"`
-	UiLabel   *string                                                                                    `json:"ui:label,omitempty"`
-	UiOptions []struct {
-		Description *string                                                                                              `json:"description,omitempty"`
-		Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiOptions_Disabled `json:"disabled,omitempty"`
-		Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiOptions_Hidden   `json:"hidden,omitempty"`
-		Label       string                                                                                               `json:"label"`
-		Value       string                                                                                               `json:"value"`
-	} `json:"ui:options"`
-	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiPaidOnly      `json:"ui:paid-only,omitempty"`
-	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
-	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiReadOnly `json:"ui:read-only,omitempty"`
-}
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6ItemsType defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6ItemsType string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6Type defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6Type string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiControl defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiControl string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription0 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription0 = string
-
-// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription1 defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription1 struct {
-	Expr string `json:"expr"`
-}
-
-// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDescription defines parameters for GetConfigurationProducts.
-type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDescription struct {
-	union json.RawMessage
 }

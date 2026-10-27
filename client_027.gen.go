@@ -10,6 +10,314 @@ import (
 	"strings"
 )
 
+// ParseGetMicrofrontendsConfigForProjectResponse parses an HTTP response from a GetMicrofrontendsConfigForProjectWithResponse call
+func ParseGetMicrofrontendsConfigForProjectResponse(rsp *http.Response) (*GetMicrofrontendsConfigForProjectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetMicrofrontendsConfigForProjectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Config projectIds are added when the config is uploaded to s3 deployment assets.
+			Config *struct {
+				// Schema See https://openapi.vercel.sh/microfrontends.json.
+				Schema       *string                                                                                                  `json:"$schema,omitempty"`
+				Applications map[string]GetMicrofrontendsConfigForProject200JSONResponseBody_Config_Applications_AdditionalProperties `json:"applications"`
+
+				// Options Optional configuration options for the microfrontend.
+				Options *struct {
+					// DisableOverrides If you want to disable the overrides for the site. For example, if you are managing rewrites between applications externally, you may wish to disable the overrides on the toolbar as they will have no effect. See https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar#routing-overrides.
+					DisableOverrides *GetMicrofrontendsConfigForProject200JSONResponseBodyConfigOptionsDisableOverrides `json:"disableOverrides,omitempty"`
+
+					// LocalProxyPort The port number used by the local proxy server. The default value is 3024. See https://vercel.com/docs/microfrontends/local-development.
+					LocalProxyPort *float32 `json:"localProxyPort,omitempty"`
+				} `json:"options,omitempty"`
+
+				// Version The version of the microfrontends config schema.
+				Version *GetMicrofrontendsConfigForProject200JSONResponseBodyConfigVersion `json:"version,omitempty"`
+			} `json:"config"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetMicrofrontendsConfigResponse parses an HTTP response from a GetMicrofrontendsConfigWithResponse call
+func ParseGetMicrofrontendsConfigResponse(rsp *http.Response) (*GetMicrofrontendsConfigResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetMicrofrontendsConfigResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Config projectIds are added when the config is uploaded to s3 deployment assets.
+			Config *struct {
+				// Schema See https://openapi.vercel.sh/microfrontends.json.
+				Schema       *string                                                                                        `json:"$schema,omitempty"`
+				Applications map[string]GetMicrofrontendsConfig200JSONResponseBody_Config_Applications_AdditionalProperties `json:"applications"`
+
+				// Options Optional configuration options for the microfrontend.
+				Options *struct {
+					// DisableOverrides If you want to disable the overrides for the site. For example, if you are managing rewrites between applications externally, you may wish to disable the overrides on the toolbar as they will have no effect. See https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar#routing-overrides.
+					DisableOverrides *GetMicrofrontendsConfig200JSONResponseBodyConfigOptionsDisableOverrides `json:"disableOverrides,omitempty"`
+
+					// LocalProxyPort The port number used by the local proxy server. The default value is 3024. See https://vercel.com/docs/microfrontends/local-development.
+					LocalProxyPort *float32 `json:"localProxyPort,omitempty"`
+				} `json:"options,omitempty"`
+
+				// Version The version of the microfrontends config schema.
+				Version *GetMicrofrontendsConfig200JSONResponseBodyConfigVersion `json:"version,omitempty"`
+			} `json:"config"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListPrivateLinkEndpointsResponse parses an HTTP response from a ListPrivateLinkEndpointsWithResponse call
+func ParseListPrivateLinkEndpointsResponse(rsp *http.Response) (*ListPrivateLinkEndpointsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListPrivateLinkEndpointsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []PrivateLinkEndpoint
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreatePrivateLinkEndpointResponse parses an HTTP response from a CreatePrivateLinkEndpointWithResponse call
+func ParseCreatePrivateLinkEndpointResponse(rsp *http.Response) (*CreatePrivateLinkEndpointResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreatePrivateLinkEndpointResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest PrivateLinkEndpoint
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeletePrivateLinkEndpointResponse parses an HTTP response from a DeletePrivateLinkEndpointWithResponse call
+func ParseDeletePrivateLinkEndpointResponse(rsp *http.Response) (*DeletePrivateLinkEndpointResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeletePrivateLinkEndpointResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReadPrivateLinkEndpointResponse parses an HTTP response from a ReadPrivateLinkEndpointWithResponse call
+func ParseReadPrivateLinkEndpointResponse(rsp *http.Response) (*ReadPrivateLinkEndpointResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReadPrivateLinkEndpointResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PrivateLinkEndpoint
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseUpdatePrivateLinkEndpointResponse parses an HTTP response from a UpdatePrivateLinkEndpointWithResponse call
 func ParseUpdatePrivateLinkEndpointResponse(rsp *http.Response) (*UpdatePrivateLinkEndpointResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -842,15 +1150,7 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				BuildQueue            *struct {
 					Configuration *DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                             `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *DeleteProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -1407,6 +1707,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 
 				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -2023,15 +2326,7 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				BuildQueue            *struct {
 					Configuration *DeleteProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                      `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *DeleteProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *DeleteProjectAvatar200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *DeleteProjectAvatar200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -2662,15 +2957,7 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 				BuildQueue            *struct {
 					Configuration *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                             `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *UploadProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -3227,6 +3514,9 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 
 				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -3843,15 +4133,7 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 				BuildQueue            *struct {
 					Configuration *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                      `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *UploadProjectAvatar200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *UploadProjectAvatar200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -7544,15 +7826,7 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 				BuildQueue            *struct {
 					Configuration *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                              `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -8109,6 +8383,9 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 
 				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -8725,15 +9002,7 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 				BuildQueue            *struct {
 					Configuration *UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                       `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *UpdateMicrofrontends200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *UpdateMicrofrontends200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -17542,15 +17811,7 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				BuildQueue            *struct {
 					Configuration *CreateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  CreateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                       `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *CreateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *CreateProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *CreateProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *CreateProject200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -18107,6 +18368,9 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 
 				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -18723,15 +18987,7 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				BuildQueue            *struct {
 					Configuration *CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *CreateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *CreateProject200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -19752,328 +20008,6 @@ func ParseGetDeploymentResponse(rsp *http.Response) (*GetDeploymentResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 429:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteDeploymentResponse parses an HTTP response from a DeleteDeploymentWithResponse call
-func ParseDeleteDeploymentResponse(rsp *http.Response) (*DeleteDeploymentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteDeploymentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// State A constant with the final state of the deployment.
-			State DeleteDeployment200JSONResponseBodyState `json:"state"`
-
-			// Uid The removed deployment ID.
-			//
-			// Example: dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd
-			Uid string `json:"uid"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRootResponse parses an HTTP response from a GetRootWithResponse call
-func ParseGetRootResponse(rsp *http.Response) (*GetRootResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRootResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest map[string]interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteAliasResponse parses an HTTP response from a DeleteAliasWithResponse call
-func ParseDeleteAliasResponse(rsp *http.Response) (*DeleteAliasResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteAliasResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Status DeleteAlias200JSONResponseBodyStatus `json:"status"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListConnectorsResponse parses an HTTP response from a ListConnectorsWithResponse call
-func ParseListConnectorsResponse(rsp *http.Response) (*ListConnectorsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListConnectorsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ConnectConnectorList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON410 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON422 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case rsp.StatusCode == 501:
-		break // No content-type
-
-	case rsp.StatusCode == 504:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateConnectorResponse parses an HTTP response from a UpdateConnectorWithResponse call
-func ParseUpdateConnectorResponse(rsp *http.Response) (*UpdateConnectorResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateConnectorResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ConnectConnectorUpdateResult
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON410 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON422 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case rsp.StatusCode == 501:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest ConnectError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	case rsp.StatusCode == 504:
 		break // No content-type
 
 	}

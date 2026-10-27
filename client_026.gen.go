@@ -12,6 +12,1751 @@ import (
 	"time"
 )
 
+// GetBody returns the raw response body bytes
+func (r UpdateProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectsByIdOrNameCustomEnvironmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// AccountLimit The maximum number of custom environments allowed either by the team's plan type or a custom override.
+		AccountLimit struct {
+			Total float32 `json:"total"`
+		} `json:"accountLimit"`
+		Environments []struct {
+			// BranchMatcher Configuration for matching git branches to this environment
+			BranchMatcher *struct {
+				// Pattern The pattern to match against branch names
+				Pattern string `json:"pattern"`
+
+				// Type The type of matching to perform
+				Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsBranchMatcherType `json:"type"`
+			} `json:"branchMatcher,omitempty"`
+
+			// CreatedAt Timestamp when the environment was created
+			CreatedAt float32 `json:"createdAt"`
+
+			// CurrentDeploymentAliases List of aliases for the current deployment
+			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+			// Description Optional description of the environment's purpose
+			Description *string `json:"description,omitempty"`
+
+			// Domains List of domains associated with this environment
+			Domains *[]struct {
+				ApexName            string                                                                                           `json:"apexName"`
+				CreatedAt           *float32                                                                                         `json:"createdAt,omitempty"`
+				CustomEnvironmentId *string                                                                                          `json:"customEnvironmentId,omitempty"`
+				GitBranch           *string                                                                                          `json:"gitBranch,omitempty"`
+				Name                string                                                                                           `json:"name"`
+				ProjectId           string                                                                                           `json:"projectId"`
+				Redirect            *string                                                                                          `json:"redirect,omitempty"`
+				RedirectStatusCode  *GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+				UpdatedAt           *float32                                                                                         `json:"updatedAt,omitempty"`
+
+				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+				Verification *[]struct {
+					Domain string `json:"domain"`
+					Reason string `json:"reason"`
+					Type   string `json:"type"`
+					Value  string `json:"value"`
+				} `json:"verification,omitempty"`
+
+				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+				Verified GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsVerified `json:"verified"`
+			} `json:"domains,omitempty"`
+
+			// Id Unique identifier for the custom environment (format: env_*)
+			Id string `json:"id"`
+
+			// Slug URL-friendly name of the environment
+			Slug string `json:"slug"`
+
+			// Type The type of environment (production, preview, or development)
+			Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsType `json:"type"`
+
+			// UpdatedAt Timestamp when the environment was last updated
+			UpdatedAt float32 `json:"updatedAt"`
+		} `json:"environments"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectsByIdOrNameCustomEnvironmentsResponse) GetJSON200() *struct {
+	// AccountLimit The maximum number of custom environments allowed either by the team's plan type or a custom override.
+	AccountLimit struct {
+		Total float32 `json:"total"`
+	} `json:"accountLimit"`
+	Environments []struct {
+		// BranchMatcher Configuration for matching git branches to this environment
+		BranchMatcher *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+
+		// CreatedAt Timestamp when the environment was created
+		CreatedAt float32 `json:"createdAt"`
+
+		// CurrentDeploymentAliases List of aliases for the current deployment
+		CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+		// Description Optional description of the environment's purpose
+		Description *string `json:"description,omitempty"`
+
+		// Domains List of domains associated with this environment
+		Domains *[]struct {
+			ApexName            string                                                                                           `json:"apexName"`
+			CreatedAt           *float32                                                                                         `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                                                          `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                                                          `json:"gitBranch,omitempty"`
+			Name                string                                                                                           `json:"name"`
+			ProjectId           string                                                                                           `json:"projectId"`
+			Redirect            *string                                                                                          `json:"redirect,omitempty"`
+			RedirectStatusCode  *GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                                                         `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsVerified `json:"verified"`
+		} `json:"domains,omitempty"`
+
+		// Id Unique identifier for the custom environment (format: env_*)
+		Id string `json:"id"`
+
+		// Slug URL-friendly name of the environment
+		Slug string `json:"slug"`
+
+		// Type The type of environment (production, preview, or development)
+		Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsType `json:"type"`
+
+		// UpdatedAt Timestamp when the environment was last updated
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"environments"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectsByIdOrNameCustomEnvironmentsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectsByIdOrNameCustomEnvironmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectsByIdOrNameCustomEnvironmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectsByIdOrNameCustomEnvironmentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateCustomEnvironmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// BranchMatcher Configuration for matching git branches to this environment
+		BranchMatcher *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type CreateCustomEnvironment201JSONResponseBodyBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+
+		// CreatedAt Timestamp when the environment was created
+		CreatedAt float32 `json:"createdAt"`
+
+		// CurrentDeploymentAliases List of aliases for the current deployment
+		CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+		// Description Optional description of the environment's purpose
+		Description *string `json:"description,omitempty"`
+
+		// Domains List of domains associated with this environment
+		Domains *[]struct {
+			ApexName            string                                                               `json:"apexName"`
+			CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+			Name                string                                                               `json:"name"`
+			ProjectId           string                                                               `json:"projectId"`
+			Redirect            *string                                                              `json:"redirect,omitempty"`
+			RedirectStatusCode  *CreateCustomEnvironment201JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified CreateCustomEnvironment201JSONResponseBodyDomainsVerified `json:"verified"`
+		} `json:"domains,omitempty"`
+
+		// Id Unique identifier for the custom environment (format: env_*)
+		Id string `json:"id"`
+
+		// Slug URL-friendly name of the environment
+		Slug string `json:"slug"`
+
+		// Type The type of environment (production, preview, or development)
+		Type CreateCustomEnvironment201JSONResponseBodyType `json:"type"`
+
+		// UpdatedAt Timestamp when the environment was last updated
+		UpdatedAt float32 `json:"updatedAt"`
+	}
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r CreateCustomEnvironmentResponse) GetJSON201() *struct {
+	// BranchMatcher Configuration for matching git branches to this environment
+	BranchMatcher *struct {
+		// Pattern The pattern to match against branch names
+		Pattern string `json:"pattern"`
+
+		// Type The type of matching to perform
+		Type CreateCustomEnvironment201JSONResponseBodyBranchMatcherType `json:"type"`
+	} `json:"branchMatcher,omitempty"`
+
+	// CreatedAt Timestamp when the environment was created
+	CreatedAt float32 `json:"createdAt"`
+
+	// CurrentDeploymentAliases List of aliases for the current deployment
+	CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+	// Description Optional description of the environment's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Domains List of domains associated with this environment
+	Domains *[]struct {
+		ApexName            string                                                               `json:"apexName"`
+		CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+		Name                string                                                               `json:"name"`
+		ProjectId           string                                                               `json:"projectId"`
+		Redirect            *string                                                              `json:"redirect,omitempty"`
+		RedirectStatusCode  *CreateCustomEnvironment201JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified CreateCustomEnvironment201JSONResponseBodyDomainsVerified `json:"verified"`
+	} `json:"domains,omitempty"`
+
+	// Id Unique identifier for the custom environment (format: env_*)
+	Id string `json:"id"`
+
+	// Slug URL-friendly name of the environment
+	Slug string `json:"slug"`
+
+	// Type The type of environment (production, preview, or development)
+	Type CreateCustomEnvironment201JSONResponseBodyType `json:"type"`
+
+	// UpdatedAt Timestamp when the environment was last updated
+	UpdatedAt float32 `json:"updatedAt"`
+} {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateCustomEnvironmentResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateCustomEnvironmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateCustomEnvironmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateCustomEnvironmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RemoveCustomEnvironmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// BranchMatcher Configuration for matching git branches to this environment
+		BranchMatcher *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type RemoveCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+
+		// CreatedAt Timestamp when the environment was created
+		CreatedAt float32 `json:"createdAt"`
+
+		// CurrentDeploymentAliases List of aliases for the current deployment
+		CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+		// Description Optional description of the environment's purpose
+		Description *string `json:"description,omitempty"`
+
+		// Domains List of domains associated with this environment
+		Domains *[]struct {
+			ApexName            string                                                               `json:"apexName"`
+			CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+			Name                string                                                               `json:"name"`
+			ProjectId           string                                                               `json:"projectId"`
+			Redirect            *string                                                              `json:"redirect,omitempty"`
+			RedirectStatusCode  *RemoveCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified RemoveCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+		} `json:"domains,omitempty"`
+
+		// Id Unique identifier for the custom environment (format: env_*)
+		Id string `json:"id"`
+
+		// Slug URL-friendly name of the environment
+		Slug string `json:"slug"`
+
+		// Type The type of environment (production, preview, or development)
+		Type RemoveCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+		// UpdatedAt Timestamp when the environment was last updated
+		UpdatedAt float32 `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RemoveCustomEnvironmentResponse) GetJSON200() *struct {
+	// BranchMatcher Configuration for matching git branches to this environment
+	BranchMatcher *struct {
+		// Pattern The pattern to match against branch names
+		Pattern string `json:"pattern"`
+
+		// Type The type of matching to perform
+		Type RemoveCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+	} `json:"branchMatcher,omitempty"`
+
+	// CreatedAt Timestamp when the environment was created
+	CreatedAt float32 `json:"createdAt"`
+
+	// CurrentDeploymentAliases List of aliases for the current deployment
+	CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+	// Description Optional description of the environment's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Domains List of domains associated with this environment
+	Domains *[]struct {
+		ApexName            string                                                               `json:"apexName"`
+		CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+		Name                string                                                               `json:"name"`
+		ProjectId           string                                                               `json:"projectId"`
+		Redirect            *string                                                              `json:"redirect,omitempty"`
+		RedirectStatusCode  *RemoveCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified RemoveCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+	} `json:"domains,omitempty"`
+
+	// Id Unique identifier for the custom environment (format: env_*)
+	Id string `json:"id"`
+
+	// Slug URL-friendly name of the environment
+	Slug string `json:"slug"`
+
+	// Type The type of environment (production, preview, or development)
+	Type RemoveCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+	// UpdatedAt Timestamp when the environment was last updated
+	UpdatedAt float32 `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r RemoveCustomEnvironmentResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RemoveCustomEnvironmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RemoveCustomEnvironmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RemoveCustomEnvironmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetCustomEnvironmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// BranchMatcher Configuration for matching git branches to this environment
+		BranchMatcher *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type GetCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+
+		// CreatedAt Timestamp when the environment was created
+		CreatedAt float32 `json:"createdAt"`
+
+		// CurrentDeploymentAliases List of aliases for the current deployment
+		CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+		// Description Optional description of the environment's purpose
+		Description *string `json:"description,omitempty"`
+
+		// Domains List of domains associated with this environment
+		Domains *[]struct {
+			ApexName            string                                                            `json:"apexName"`
+			CreatedAt           *float32                                                          `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                           `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                           `json:"gitBranch,omitempty"`
+			Name                string                                                            `json:"name"`
+			ProjectId           string                                                            `json:"projectId"`
+			Redirect            *string                                                           `json:"redirect,omitempty"`
+			RedirectStatusCode  *GetCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                          `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified GetCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+		} `json:"domains,omitempty"`
+
+		// Id Unique identifier for the custom environment (format: env_*)
+		Id string `json:"id"`
+
+		// Slug URL-friendly name of the environment
+		Slug string `json:"slug"`
+
+		// Type The type of environment (production, preview, or development)
+		Type GetCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+		// UpdatedAt Timestamp when the environment was last updated
+		UpdatedAt float32 `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetCustomEnvironmentResponse) GetJSON200() *struct {
+	// BranchMatcher Configuration for matching git branches to this environment
+	BranchMatcher *struct {
+		// Pattern The pattern to match against branch names
+		Pattern string `json:"pattern"`
+
+		// Type The type of matching to perform
+		Type GetCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+	} `json:"branchMatcher,omitempty"`
+
+	// CreatedAt Timestamp when the environment was created
+	CreatedAt float32 `json:"createdAt"`
+
+	// CurrentDeploymentAliases List of aliases for the current deployment
+	CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+	// Description Optional description of the environment's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Domains List of domains associated with this environment
+	Domains *[]struct {
+		ApexName            string                                                            `json:"apexName"`
+		CreatedAt           *float32                                                          `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                           `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                           `json:"gitBranch,omitempty"`
+		Name                string                                                            `json:"name"`
+		ProjectId           string                                                            `json:"projectId"`
+		Redirect            *string                                                           `json:"redirect,omitempty"`
+		RedirectStatusCode  *GetCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                          `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified GetCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+	} `json:"domains,omitempty"`
+
+	// Id Unique identifier for the custom environment (format: env_*)
+	Id string `json:"id"`
+
+	// Slug URL-friendly name of the environment
+	Slug string `json:"slug"`
+
+	// Type The type of environment (production, preview, or development)
+	Type GetCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+	// UpdatedAt Timestamp when the environment was last updated
+	UpdatedAt float32 `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetCustomEnvironmentResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetCustomEnvironmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetCustomEnvironmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetCustomEnvironmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateCustomEnvironmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// BranchMatcher Configuration for matching git branches to this environment
+		BranchMatcher *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type UpdateCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+
+		// CreatedAt Timestamp when the environment was created
+		CreatedAt float32 `json:"createdAt"`
+
+		// CurrentDeploymentAliases List of aliases for the current deployment
+		CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+		// Description Optional description of the environment's purpose
+		Description *string `json:"description,omitempty"`
+
+		// Domains List of domains associated with this environment
+		Domains *[]struct {
+			ApexName            string                                                               `json:"apexName"`
+			CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+			Name                string                                                               `json:"name"`
+			ProjectId           string                                                               `json:"projectId"`
+			Redirect            *string                                                              `json:"redirect,omitempty"`
+			RedirectStatusCode  *UpdateCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified UpdateCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+		} `json:"domains,omitempty"`
+
+		// Id Unique identifier for the custom environment (format: env_*)
+		Id string `json:"id"`
+
+		// Slug URL-friendly name of the environment
+		Slug string `json:"slug"`
+
+		// Type The type of environment (production, preview, or development)
+		Type UpdateCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+		// UpdatedAt Timestamp when the environment was last updated
+		UpdatedAt float32 `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateCustomEnvironmentResponse) GetJSON200() *struct {
+	// BranchMatcher Configuration for matching git branches to this environment
+	BranchMatcher *struct {
+		// Pattern The pattern to match against branch names
+		Pattern string `json:"pattern"`
+
+		// Type The type of matching to perform
+		Type UpdateCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+	} `json:"branchMatcher,omitempty"`
+
+	// CreatedAt Timestamp when the environment was created
+	CreatedAt float32 `json:"createdAt"`
+
+	// CurrentDeploymentAliases List of aliases for the current deployment
+	CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+	// Description Optional description of the environment's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Domains List of domains associated with this environment
+	Domains *[]struct {
+		ApexName            string                                                               `json:"apexName"`
+		CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+		Name                string                                                               `json:"name"`
+		ProjectId           string                                                               `json:"projectId"`
+		Redirect            *string                                                              `json:"redirect,omitempty"`
+		RedirectStatusCode  *UpdateCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified UpdateCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+	} `json:"domains,omitempty"`
+
+	// Id Unique identifier for the custom environment (format: env_*)
+	Id string `json:"id"`
+
+	// Slug URL-friendly name of the environment
+	Slug string `json:"slug"`
+
+	// Type The type of environment (production, preview, or development)
+	Type UpdateCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+	// UpdatedAt Timestamp when the environment was last updated
+	UpdatedAt float32 `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateCustomEnvironmentResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateCustomEnvironmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateCustomEnvironmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateCustomEnvironmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectDomainsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetProjectDomains200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectDomainsResponse) GetJSON200() *GetProjectDomains200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectDomainsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectDomainsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectDomainsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectDomainsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RemoveProjectDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *map[string]interface{}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RemoveProjectDomainResponse) GetJSON200() *map[string]interface{} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r RemoveProjectDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RemoveProjectDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RemoveProjectDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RemoveProjectDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ApexName            string                                                 `json:"apexName"`
+		CreatedAt           *float32                                               `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                `json:"gitBranch,omitempty"`
+		Name                string                                                 `json:"name"`
+		ProjectId           string                                                 `json:"projectId"`
+		Redirect            *string                                                `json:"redirect,omitempty"`
+		RedirectStatusCode  *GetProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified GetProjectDomain200JSONResponseBodyVerified `json:"verified"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectDomainResponse) GetJSON200() *struct {
+	ApexName            string                                                 `json:"apexName"`
+	CreatedAt           *float32                                               `json:"createdAt,omitempty"`
+	CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
+	GitBranch           *string                                                `json:"gitBranch,omitempty"`
+	Name                string                                                 `json:"name"`
+	ProjectId           string                                                 `json:"projectId"`
+	Redirect            *string                                                `json:"redirect,omitempty"`
+	RedirectStatusCode  *GetProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+	UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
+
+	// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+	Verification *[]struct {
+		Domain string `json:"domain"`
+		Reason string `json:"reason"`
+		Type   string `json:"type"`
+		Value  string `json:"value"`
+	} `json:"verification,omitempty"`
+
+	// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+	Verified GetProjectDomain200JSONResponseBodyVerified `json:"verified"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateProjectDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ApexName            string                                                    `json:"apexName"`
+		CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                   `json:"gitBranch,omitempty"`
+		Name                string                                                    `json:"name"`
+		ProjectId           string                                                    `json:"projectId"`
+		Redirect            *string                                                   `json:"redirect,omitempty"`
+		RedirectStatusCode  *UpdateProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified UpdateProjectDomain200JSONResponseBodyVerified `json:"verified"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateProjectDomainResponse) GetJSON200() *struct {
+	ApexName            string                                                    `json:"apexName"`
+	CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
+	CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
+	GitBranch           *string                                                   `json:"gitBranch,omitempty"`
+	Name                string                                                    `json:"name"`
+	ProjectId           string                                                    `json:"projectId"`
+	Redirect            *string                                                   `json:"redirect,omitempty"`
+	RedirectStatusCode  *UpdateProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+	UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
+
+	// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+	Verification *[]struct {
+		Domain string `json:"domain"`
+		Reason string `json:"reason"`
+		Type   string `json:"type"`
+		Value  string `json:"value"`
+	} `json:"verification,omitempty"`
+
+	// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+	Verified UpdateProjectDomain200JSONResponseBodyVerified `json:"verified"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateProjectDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateProjectDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateProjectDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateProjectDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type VerifyProjectDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ApexName            string                                                    `json:"apexName"`
+		CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                   `json:"gitBranch,omitempty"`
+		Name                string                                                    `json:"name"`
+		ProjectId           string                                                    `json:"projectId"`
+		Redirect            *string                                                   `json:"redirect,omitempty"`
+		RedirectStatusCode  *VerifyProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified VerifyProjectDomain200JSONResponseBodyVerified `json:"verified"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r VerifyProjectDomainResponse) GetJSON200() *struct {
+	ApexName            string                                                    `json:"apexName"`
+	CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
+	CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
+	GitBranch           *string                                                   `json:"gitBranch,omitempty"`
+	Name                string                                                    `json:"name"`
+	ProjectId           string                                                    `json:"projectId"`
+	Redirect            *string                                                   `json:"redirect,omitempty"`
+	RedirectStatusCode  *VerifyProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+	UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
+
+	// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+	Verified VerifyProjectDomain200JSONResponseBodyVerified `json:"verified"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r VerifyProjectDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r VerifyProjectDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VerifyProjectDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r VerifyProjectDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RemoveProjectEnvResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *RemoveProjectEnv200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RemoveProjectEnvResponse) GetJSON200() *RemoveProjectEnv200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r RemoveProjectEnvResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RemoveProjectEnvResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RemoveProjectEnvResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RemoveProjectEnvResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type EditProjectEnvResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Comment              *string                                        `json:"comment,omitempty"`
+		ConfigurationId      *string                                        `json:"configurationId,omitempty"`
+		ContentHint          *EditProjectEnv200JSONResponseBody_ContentHint `json:"contentHint,omitempty"`
+		CreatedAt            *float32                                       `json:"createdAt,omitempty"`
+		CreatedBy            *string                                        `json:"createdBy,omitempty"`
+		CustomEnvironmentIds *[]string                                      `json:"customEnvironmentIds,omitempty"`
+		Decrypted            *EditProjectEnv200JSONResponseBodyDecrypted    `json:"decrypted,omitempty"`
+		EdgeConfigId         *string                                        `json:"edgeConfigId,omitempty"`
+		EdgeConfigTokenId    *string                                        `json:"edgeConfigTokenId,omitempty"`
+		GitBranch            *string                                        `json:"gitBranch,omitempty"`
+		Id                   *string                                        `json:"id,omitempty"`
+
+		// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
+		InternalContentHint *struct {
+			// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+			EncryptedValue string                                                   `json:"encryptedValue"`
+			Type           EditProjectEnv200JSONResponseBodyInternalContentHintType `json:"type"`
+		} `json:"internalContentHint,omitempty"`
+		Key string `json:"key"`
+
+		// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
+		LegacyValue *string `json:"legacyValue,omitempty"`
+
+		// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+		SunsetSecretId *string                                   `json:"sunsetSecretId,omitempty"`
+		Target         *EditProjectEnv200JSONResponseBody_Target `json:"target,omitempty"`
+		Type           EditProjectEnv200JSONResponseBodyType     `json:"type"`
+		UpdatedAt      *float32                                  `json:"updatedAt,omitempty"`
+		UpdatedBy      *string                                   `json:"updatedBy,omitempty"`
+		Value          string                                    `json:"value"`
+
+		// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+		Visibility *EditProjectEnv200JSONResponseBodyVisibility `json:"visibility,omitempty"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r EditProjectEnvResponse) GetJSON200() *struct {
+	Comment              *string                                        `json:"comment,omitempty"`
+	ConfigurationId      *string                                        `json:"configurationId,omitempty"`
+	ContentHint          *EditProjectEnv200JSONResponseBody_ContentHint `json:"contentHint,omitempty"`
+	CreatedAt            *float32                                       `json:"createdAt,omitempty"`
+	CreatedBy            *string                                        `json:"createdBy,omitempty"`
+	CustomEnvironmentIds *[]string                                      `json:"customEnvironmentIds,omitempty"`
+	Decrypted            *EditProjectEnv200JSONResponseBodyDecrypted    `json:"decrypted,omitempty"`
+	EdgeConfigId         *string                                        `json:"edgeConfigId,omitempty"`
+	EdgeConfigTokenId    *string                                        `json:"edgeConfigTokenId,omitempty"`
+	GitBranch            *string                                        `json:"gitBranch,omitempty"`
+	Id                   *string                                        `json:"id,omitempty"`
+
+	// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
+	InternalContentHint *struct {
+		// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+		EncryptedValue string                                                   `json:"encryptedValue"`
+		Type           EditProjectEnv200JSONResponseBodyInternalContentHintType `json:"type"`
+	} `json:"internalContentHint,omitempty"`
+	Key string `json:"key"`
+
+	// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
+	LegacyValue *string `json:"legacyValue,omitempty"`
+
+	// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+	SunsetSecretId *string                                   `json:"sunsetSecretId,omitempty"`
+	Target         *EditProjectEnv200JSONResponseBody_Target `json:"target,omitempty"`
+	Type           EditProjectEnv200JSONResponseBodyType     `json:"type"`
+	UpdatedAt      *float32                                  `json:"updatedAt,omitempty"`
+	UpdatedBy      *string                                   `json:"updatedBy,omitempty"`
+	Value          string                                    `json:"value"`
+
+	// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+	Visibility *EditProjectEnv200JSONResponseBodyVisibility `json:"visibility,omitempty"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r EditProjectEnvResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r EditProjectEnvResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r EditProjectEnvResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r EditProjectEnvResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateWebInsightsToggleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Value CreateWebInsightsToggle200JSONResponseBodyValue `json:"value"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CreateWebInsightsToggleResponse) GetJSON200() *struct {
+	Value CreateWebInsightsToggle200JSONResponseBodyValue `json:"value"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateWebInsightsToggleResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateWebInsightsToggleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateWebInsightsToggleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateWebInsightsToggleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// ArchiveAiGatewayBudgetWithResponse Archive AI Gateway budget
+//
+// Archive a team-, project-, or user-scope AI Gateway budget.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /ai-gateway/budgets (the `ArchiveAiGatewayBudget` operationId).
+func (c *ClientWithResponses) ArchiveAiGatewayBudgetWithResponse(ctx context.Context, params *ArchiveAiGatewayBudgetParams, reqEditors ...RequestEditorFn) (*ArchiveAiGatewayBudgetResponse, error) {
+	rsp, err := c.ArchiveAiGatewayBudget(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseArchiveAiGatewayBudgetResponse(rsp)
+}
+
+// UpsertAiGatewayBudgetWithBodyWithResponse Upsert AI Gateway budget
+//
+// Create or update a team-, project-, or user-scope AI Gateway budget.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
+func (c *ClientWithResponses) UpsertAiGatewayBudgetWithBodyWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetResponse, error) {
+	rsp, err := c.UpsertAiGatewayBudgetWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpsertAiGatewayBudgetResponse(rsp)
+}
+
+// UpsertAiGatewayBudgetWithResponse Upsert AI Gateway budget
+//
+// Create or update a team-, project-, or user-scope AI Gateway budget.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
+func (c *ClientWithResponses) UpsertAiGatewayBudgetWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetParams, body UpsertAiGatewayBudgetJSONRequestBody, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetResponse, error) {
+	rsp, err := c.UpsertAiGatewayBudget(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpsertAiGatewayBudgetResponse(rsp)
+}
+
+// ArchiveAiGatewayBudgetDefaultWithResponse Archive AI Gateway budget default
+//
+// Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /ai-gateway/budgets/defaults (the `ArchiveAiGatewayBudgetDefault` operationId).
+func (c *ClientWithResponses) ArchiveAiGatewayBudgetDefaultWithResponse(ctx context.Context, params *ArchiveAiGatewayBudgetDefaultParams, reqEditors ...RequestEditorFn) (*ArchiveAiGatewayBudgetDefaultResponse, error) {
+	rsp, err := c.ArchiveAiGatewayBudgetDefault(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseArchiveAiGatewayBudgetDefaultResponse(rsp)
+}
+
+// UpsertAiGatewayBudgetDefaultWithBodyWithResponse Upsert AI Gateway budget default
+//
+// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
+func (c *ClientWithResponses) UpsertAiGatewayBudgetDefaultWithBodyWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetDefaultResponse, error) {
+	rsp, err := c.UpsertAiGatewayBudgetDefaultWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpsertAiGatewayBudgetDefaultResponse(rsp)
+}
+
+// UpsertAiGatewayBudgetDefaultWithResponse Upsert AI Gateway budget default
+//
+// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
+func (c *ClientWithResponses) UpsertAiGatewayBudgetDefaultWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, body UpsertAiGatewayBudgetDefaultJSONRequestBody, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetDefaultResponse, error) {
+	rsp, err := c.UpsertAiGatewayBudgetDefault(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpsertAiGatewayBudgetDefaultResponse(rsp)
+}
+
+// ListAiGatewayBudgetDefaultsWithResponse List AI Gateway budget defaults
+//
+// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /ai-gateway/budgets/defaults/list (the `ListAiGatewayBudgetDefaults` operationId).
+func (c *ClientWithResponses) ListAiGatewayBudgetDefaultsWithResponse(ctx context.Context, params *ListAiGatewayBudgetDefaultsParams, reqEditors ...RequestEditorFn) (*ListAiGatewayBudgetDefaultsResponse, error) {
+	rsp, err := c.ListAiGatewayBudgetDefaults(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAiGatewayBudgetDefaultsResponse(rsp)
+}
+
+// ListAiGatewayBudgetsWithResponse List AI Gateway budgets
+//
+// List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
+func (c *ClientWithResponses) ListAiGatewayBudgetsWithResponse(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*ListAiGatewayBudgetsResponse, error) {
+	rsp, err := c.ListAiGatewayBudgets(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAiGatewayBudgetsResponse(rsp)
+}
+
+// DeleteAiGatewayRuleWithResponse Delete rule
+//
+// Delete a routing rule (soft delete).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /ai-gateway/rules (the `DeleteAiGatewayRule` operationId).
+func (c *ClientWithResponses) DeleteAiGatewayRuleWithResponse(ctx context.Context, params *DeleteAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayRuleResponse, error) {
+	rsp, err := c.DeleteAiGatewayRule(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAiGatewayRuleResponse(rsp)
+}
+
+// ListAiGatewayRulesWithResponse List rules
+//
+// List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /ai-gateway/rules (the `ListAiGatewayRules` operationId).
+func (c *ClientWithResponses) ListAiGatewayRulesWithResponse(ctx context.Context, params *ListAiGatewayRulesParams, reqEditors ...RequestEditorFn) (*ListAiGatewayRulesResponse, error) {
+	rsp, err := c.ListAiGatewayRules(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAiGatewayRulesResponse(rsp)
+}
+
+// UpdateAiGatewayRuleWithResponse Update rule
+//
+// Update a routing rule (enabled, action, or description)
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
+func (c *ClientWithResponses) UpdateAiGatewayRuleWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error) {
+	rsp, err := c.UpdateAiGatewayRule(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAiGatewayRuleResponse(rsp)
+}
+
+// CreateAiGatewayRuleWithResponse Create rule
+//
+// Create a routing rule.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
+func (c *ClientWithResponses) CreateAiGatewayRuleWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error) {
+	rsp, err := c.CreateAiGatewayRule(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAiGatewayRuleResponse(rsp)
+}
+
+// DeleteAiGatewayVirtualModelConfigWithResponse Delete virtual model config
+//
+// Delete a virtual model config (soft delete).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /ai-gateway/virtual-model-configs (the `DeleteAiGatewayVirtualModelConfig` operationId).
+func (c *ClientWithResponses) DeleteAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *DeleteAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.DeleteAiGatewayVirtualModelConfig(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAiGatewayVirtualModelConfigResponse(rsp)
+}
+
+// GetAiGatewayVirtualModelConfigWithResponse Get virtual model config
+//
+// Get a virtual model config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
+func (c *ClientWithResponses) GetAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.GetAiGatewayVirtualModelConfig(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAiGatewayVirtualModelConfigResponse(rsp)
+}
+
+// UpdateAiGatewayVirtualModelConfigWithResponse Update virtual model config
+//
+// Update a virtual model config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
+func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.UpdateAiGatewayVirtualModelConfig(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAiGatewayVirtualModelConfigResponse(rsp)
+}
+
+// CreateAiGatewayVirtualModelConfigWithResponse Create virtual model config
+//
+// Create a virtual model config (VMC).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
+func (c *ClientWithResponses) CreateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.CreateAiGatewayVirtualModelConfig(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAiGatewayVirtualModelConfigResponse(rsp)
+}
+
+// ListAiGatewayVirtualModelConfigsWithResponse List virtual model configs
+//
+// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /ai-gateway/virtual-model-configs/list (the `ListAiGatewayVirtualModelConfigs` operationId).
+func (c *ClientWithResponses) ListAiGatewayVirtualModelConfigsWithResponse(ctx context.Context, params *ListAiGatewayVirtualModelConfigsParams, reqEditors ...RequestEditorFn) (*ListAiGatewayVirtualModelConfigsResponse, error) {
+	rsp, err := c.ListAiGatewayVirtualModelConfigs(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAiGatewayVirtualModelConfigsResponse(rsp)
+}
+
+// DeleteAiGatewayVirtualModelConfigBySlugWithResponse Delete virtual model config
+//
+// Delete a virtual model config by path slug (soft delete).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /ai-gateway/virtual-model-configs/{vmcSlug} (the `DeleteAiGatewayVirtualModelConfigBySlug` operationId).
+func (c *ClientWithResponses) DeleteAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *DeleteAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayVirtualModelConfigBySlugResponse, error) {
+	rsp, err := c.DeleteAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAiGatewayVirtualModelConfigBySlugResponse(rsp)
+}
+
+// GetAiGatewayVirtualModelConfigBySlugWithResponse Get virtual model config
+//
+// Get a virtual model config by path slug.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /ai-gateway/virtual-model-configs/{vmcSlug} (the `GetAiGatewayVirtualModelConfigBySlug` operationId).
+func (c *ClientWithResponses) GetAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *GetAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigBySlugResponse, error) {
+	rsp, err := c.GetAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAiGatewayVirtualModelConfigBySlugResponse(rsp)
+}
+
+// UpdateAiGatewayVirtualModelConfigBySlugWithResponse Update virtual model config
+//
+// Update a virtual model config by path slug.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
+func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error) {
+	rsp, err := c.UpdateAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAiGatewayVirtualModelConfigBySlugResponse(rsp)
+}
+
+// PatchUrlProtectionBypassWithBodyWithResponse Update the protection bypass for a URL
+//
+// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
+func (c *ClientWithResponses) PatchUrlProtectionBypassWithBodyWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error) {
+	rsp, err := c.PatchUrlProtectionBypassWithBody(ctx, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchUrlProtectionBypassResponse(rsp)
+}
+
+// PatchUrlProtectionBypassWithResponse Update the protection bypass for a URL
+//
+// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
+func (c *ClientWithResponses) PatchUrlProtectionBypassWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, body PatchUrlProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error) {
+	rsp, err := c.PatchUrlProtectionBypass(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchUrlProtectionBypassResponse(rsp)
+}
+
+// CreateApiKeysWithBodyWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request,
+// with any type of body and a specified content type.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateApiKeysWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error) {
+	rsp, err := c.CreateApiKeysWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateApiKeysResponse(rsp)
+}
+
+// CreateApiKeysWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request.
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateApiKeysWithResponse(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error) {
+	rsp, err := c.CreateApiKeys(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateApiKeysResponse(rsp)
+}
+
+// UpdateApiKeyQuotaWithBodyWithResponse Update an AI Gateway API key budget
+//
+// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+func (c *ClientWithResponses) UpdateApiKeyQuotaWithBodyWithResponse(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error) {
+	rsp, err := c.UpdateApiKeyQuotaWithBody(ctx, apiKeyID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateApiKeyQuotaResponse(rsp)
+}
+
+// UpdateApiKeyQuotaWithResponse Update an AI Gateway API key budget
+//
+// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
+func (c *ClientWithResponses) UpdateApiKeyQuotaWithResponse(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error) {
+	rsp, err := c.UpdateApiKeyQuota(ctx, apiKeyID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateApiKeyQuotaResponse(rsp)
+}
+
+// GetDomainsRecordsByRecordIdWithResponse performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) GetDomainsRecordsByRecordIdWithResponse(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*GetDomainsRecordsByRecordIdResponse, error) {
+	rsp, err := c.GetDomainsRecordsByRecordId(ctx, recordId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDomainsRecordsByRecordIdResponse(rsp)
+}
+
+// ReplaceDomainsByDomainRecordsWithResponse performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) ReplaceDomainsByDomainRecordsWithResponse(ctx context.Context, domain string, reqEditors ...RequestEditorFn) (*ReplaceDomainsByDomainRecordsResponse, error) {
+	rsp, err := c.ReplaceDomainsByDomainRecords(ctx, domain, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseReplaceDomainsByDomainRecordsResponse(rsp)
+}
+
+// AcceptProjectTransferRequestWithBodyWithResponse Accept project transfer request
+//
+// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
+func (c *ClientWithResponses) AcceptProjectTransferRequestWithBodyWithResponse(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AcceptProjectTransferRequestResponse, error) {
+	rsp, err := c.AcceptProjectTransferRequestWithBody(ctx, code, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAcceptProjectTransferRequestResponse(rsp)
+}
+
+// AcceptProjectTransferRequestWithResponse Accept project transfer request
+//
+// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
+func (c *ClientWithResponses) AcceptProjectTransferRequestWithResponse(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, body AcceptProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*AcceptProjectTransferRequestResponse, error) {
+	rsp, err := c.AcceptProjectTransferRequest(ctx, code, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAcceptProjectTransferRequestResponse(rsp)
+}
+
+// CreateProjectTransferRequestWithBodyWithResponse Create project transfer request
+//
+// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
+func (c *ClientWithResponses) CreateProjectTransferRequestWithBodyWithResponse(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectTransferRequestResponse, error) {
+	rsp, err := c.CreateProjectTransferRequestWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectTransferRequestResponse(rsp)
+}
+
 // CreateProjectTransferRequestWithResponse Create project transfer request
 //
 // Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
@@ -18151,15 +19896,7 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					BuildQueue            *struct {
 						Configuration *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 					} `json:"buildQueue,omitempty"`
-
-					// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-					ElasticBuildMachine *struct {
-						Cores float32 `json:"cores"`
-
-						// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-						Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-						Memory float32                                                                                          `json:"memory"`
-					} `json:"elasticBuildMachine,omitempty"`
+					ElasticBuildMachine        *GetMicrofrontendsInGroup200JSONResponseBody_Projects_DefaultResourceConfig_ElasticBuildMachine     `json:"elasticBuildMachine,omitempty"`
 					ElasticConcurrencyEnabled  *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 					EnableFunctionsBeta        *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 					Fluid                      *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -18716,6 +20453,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 
 					// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+					// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 					// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -19332,15 +21072,7 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					BuildQueue            *struct {
 						Configuration *GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 					} `json:"buildQueue,omitempty"`
-
-					// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-					ElasticBuildMachine *struct {
-						Cores float32 `json:"cores"`
-
-						// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-						Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachineLabel `json:"label"`
-						Memory float32                                                                                   `json:"memory"`
-					} `json:"elasticBuildMachine,omitempty"`
+					ElasticBuildMachine        *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine     `json:"elasticBuildMachine,omitempty"`
 					ElasticConcurrencyEnabled  *GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 					EnableFunctionsBeta        *GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 					Fluid                      *GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -19693,314 +21425,6 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 				} `json:"webAnalytics,omitempty"`
 			} `json:"projects"`
 		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetMicrofrontendsConfigForProjectResponse parses an HTTP response from a GetMicrofrontendsConfigForProjectWithResponse call
-func ParseGetMicrofrontendsConfigForProjectResponse(rsp *http.Response) (*GetMicrofrontendsConfigForProjectResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetMicrofrontendsConfigForProjectResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Config projectIds are added when the config is uploaded to s3 deployment assets.
-			Config *struct {
-				// Schema See https://openapi.vercel.sh/microfrontends.json.
-				Schema       *string                                                                                                  `json:"$schema,omitempty"`
-				Applications map[string]GetMicrofrontendsConfigForProject200JSONResponseBody_Config_Applications_AdditionalProperties `json:"applications"`
-
-				// Options Optional configuration options for the microfrontend.
-				Options *struct {
-					// DisableOverrides If you want to disable the overrides for the site. For example, if you are managing rewrites between applications externally, you may wish to disable the overrides on the toolbar as they will have no effect. See https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar#routing-overrides.
-					DisableOverrides *GetMicrofrontendsConfigForProject200JSONResponseBodyConfigOptionsDisableOverrides `json:"disableOverrides,omitempty"`
-
-					// LocalProxyPort The port number used by the local proxy server. The default value is 3024. See https://vercel.com/docs/microfrontends/local-development.
-					LocalProxyPort *float32 `json:"localProxyPort,omitempty"`
-				} `json:"options,omitempty"`
-
-				// Version The version of the microfrontends config schema.
-				Version *GetMicrofrontendsConfigForProject200JSONResponseBodyConfigVersion `json:"version,omitempty"`
-			} `json:"config"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetMicrofrontendsConfigResponse parses an HTTP response from a GetMicrofrontendsConfigWithResponse call
-func ParseGetMicrofrontendsConfigResponse(rsp *http.Response) (*GetMicrofrontendsConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetMicrofrontendsConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Config projectIds are added when the config is uploaded to s3 deployment assets.
-			Config *struct {
-				// Schema See https://openapi.vercel.sh/microfrontends.json.
-				Schema       *string                                                                                        `json:"$schema,omitempty"`
-				Applications map[string]GetMicrofrontendsConfig200JSONResponseBody_Config_Applications_AdditionalProperties `json:"applications"`
-
-				// Options Optional configuration options for the microfrontend.
-				Options *struct {
-					// DisableOverrides If you want to disable the overrides for the site. For example, if you are managing rewrites between applications externally, you may wish to disable the overrides on the toolbar as they will have no effect. See https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar#routing-overrides.
-					DisableOverrides *GetMicrofrontendsConfig200JSONResponseBodyConfigOptionsDisableOverrides `json:"disableOverrides,omitempty"`
-
-					// LocalProxyPort The port number used by the local proxy server. The default value is 3024. See https://vercel.com/docs/microfrontends/local-development.
-					LocalProxyPort *float32 `json:"localProxyPort,omitempty"`
-				} `json:"options,omitempty"`
-
-				// Version The version of the microfrontends config schema.
-				Version *GetMicrofrontendsConfig200JSONResponseBodyConfigVersion `json:"version,omitempty"`
-			} `json:"config"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListPrivateLinkEndpointsResponse parses an HTTP response from a ListPrivateLinkEndpointsWithResponse call
-func ParseListPrivateLinkEndpointsResponse(rsp *http.Response) (*ListPrivateLinkEndpointsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListPrivateLinkEndpointsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []PrivateLinkEndpoint
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreatePrivateLinkEndpointResponse parses an HTTP response from a CreatePrivateLinkEndpointWithResponse call
-func ParseCreatePrivateLinkEndpointResponse(rsp *http.Response) (*CreatePrivateLinkEndpointResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreatePrivateLinkEndpointResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest PrivateLinkEndpoint
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeletePrivateLinkEndpointResponse parses an HTTP response from a DeletePrivateLinkEndpointWithResponse call
-func ParseDeletePrivateLinkEndpointResponse(rsp *http.Response) (*DeletePrivateLinkEndpointResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeletePrivateLinkEndpointResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON204 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseReadPrivateLinkEndpointResponse parses an HTTP response from a ReadPrivateLinkEndpointWithResponse call
-func ParseReadPrivateLinkEndpointResponse(rsp *http.Response) (*ReadPrivateLinkEndpointResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ReadPrivateLinkEndpointResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest PrivateLinkEndpoint
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

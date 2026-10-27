@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.10.0, 2026-10-27
+
+- Removed the `...ResourceConfigElasticBuildMachineLabel` string type and its `...Standard`, `...Enhanced` and `...Turbo` constants from the project response bodies. This covers `CreateProject200JSONResponseBody`, `GetProject200JSONResponseBody`, `DeleteProjectAvatar200JSONResponseBody`, `GetMicrofrontendsInGroup200JSONResponseBody` and `GetProjects200JSONResponseBody0`, 1 and 2, for both `ResourceConfig` and `DefaultResourceConfig`.
+- Added three machine variants in their place, for example `CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0`, `...Machine1` and `...Machine2`. Each has its own `Cores`, `Memory` and `Label` types with fixed values: 4 cores, 8192 memory and `Standard`; 8 cores, 16384 memory and `Enhanced`; 30 cores, 61440 memory and `Turbo`.
+- Changed the anonymous struct types of `JSON200` and `GetJSON200` on `CreateProjectResponse`, `GetProjectResponse`, `DeleteProjectAvatarResponse` and `GetMicrofrontendsInGroupResponse`. Code that assigns these to explicitly typed values must be updated.
+- Changed `GetProjects200JSONResponseBody0` and the `Projects` fields of `GetProjects200JSONResponseBody1` and `GetProjects200JSONResponseBody2`. The related `AsGetProjects200JSONResponseBody0`, `FromGetProjects200JSONResponseBody0` and `MergeGetProjects200JSONResponseBody0` methods use the new element type.
+- Added the `Details` and `Summary` fields to `UserEvent`, and the `UserEventDetailsDisplay` type with the `UserEventDetailsDisplayInline` constant.
+- The rest of the diff reorders generated code across the `client_*.gen.go` files.
+
 ## v0.9.1, 2026-10-27
 
 - The development image is based on Debian (`golang:1.26.10-trixie`) instead of Alpine. Alpine keeps only the latest build of each package, so the exact pins broke the image build whenever a package was updated. System packages now come from the snapshot.debian.org date the base image was built from, which keeps them fixed for a given base image digest. jq 1.8.2, shellcheck 0.11.0 and shfmt 3.13.1 keep their versions, and Semgrep runs in its own virtual environment.

@@ -7,6 +7,1555 @@ import (
 	"encoding/json"
 )
 
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV2JSONBodyRegion enum.
+func (e CreateSandboxesByNameForkV2JSONBodyRegion) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV2JSONBodyRegionArn1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionBom1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionCdg1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionCle1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionCpt1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionDub1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionFra1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionGru1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionHkg1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionHnd1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionIad1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionIcn1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionKix1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionLhr1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionPdx1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionSfo1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionSin1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionSyd1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyRegionYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType.
+const (
+	PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypeAll                              PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType = "all"
+	PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypeAllExceptCustomDomains           PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType = "all_except_custom_domains"
+	PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypePreview                          PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType = "preview"
+	PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType enum.
+func (e PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypeAll:
+		return true
+	case PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypePreview:
+		return true
+	case PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType.
+const (
+	PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypeAll                              PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType = "all"
+	PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypeAllExceptCustomDomains           PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType = "all_except_custom_domains"
+	PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypePreview                          PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType = "preview"
+	PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType enum.
+func (e PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypeAll:
+		return true
+	case PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypePreview:
+		return true
+	case PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultExpirationSettingsExpiration.
+const (
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1d       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "1d"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1m       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "1m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1w       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "1w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1y       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "1y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN2m       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "2m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN2w       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "2w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN2y       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "2y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN3m       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "3m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN3y       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "3y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationN6m       PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "6m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationUnlimited PatchTeamJSONBodyDefaultExpirationSettingsExpiration = "unlimited"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultExpirationSettingsExpiration enum.
+func (e PatchTeamJSONBodyDefaultExpirationSettingsExpiration) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1d:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN1y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN2m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN2w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN2y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN3m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN3y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationN6m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationUnlimited:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled.
+const (
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1d       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "1d"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "1m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1w       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "1w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1y       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "1y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN2m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "2m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN2w       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "2w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN3m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "3m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN6m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "6m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledUnlimited PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled = "unlimited"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled enum.
+func (e PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1d:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN1y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN2m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN2w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN3m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledN6m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceledUnlimited:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored.
+const (
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1d       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "1d"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "1m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1w       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "1w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1y       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "1y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN2m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "2m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN2w       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "2w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN3m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "3m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN6m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "6m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredUnlimited PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored = "unlimited"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored enum.
+func (e PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1d:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN1y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN2m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN2w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN3m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredN6m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationErroredUnlimited:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction.
+const (
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1d       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "1d"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "1m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1w       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "1w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1y       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "1y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN2m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "2m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN2w       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "2w"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN2y       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "2y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN3m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "3m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN3y       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "3y"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN6m       PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "6m"
+	PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionUnlimited PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction = "unlimited"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction enum.
+func (e PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1d:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN1y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN2m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN2w:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN2y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN3m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN3y:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionN6m:
+		return true
+	case PatchTeamJSONBodyDefaultExpirationSettingsExpirationProductionUnlimited:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDefaultPassportDeploymentType.
+const (
+	PatchTeamJSONBodyDefaultPassportDeploymentTypeAll                              PatchTeamJSONBodyDefaultPassportDeploymentType = "all"
+	PatchTeamJSONBodyDefaultPassportDeploymentTypeAllExceptCustomDomains           PatchTeamJSONBodyDefaultPassportDeploymentType = "all_except_custom_domains"
+	PatchTeamJSONBodyDefaultPassportDeploymentTypePreview                          PatchTeamJSONBodyDefaultPassportDeploymentType = "preview"
+	PatchTeamJSONBodyDefaultPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews PatchTeamJSONBodyDefaultPassportDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDefaultPassportDeploymentType enum.
+func (e PatchTeamJSONBodyDefaultPassportDeploymentType) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDefaultPassportDeploymentTypeAll:
+		return true
+	case PatchTeamJSONBodyDefaultPassportDeploymentTypeAllExceptCustomDomains:
+		return true
+	case PatchTeamJSONBodyDefaultPassportDeploymentTypePreview:
+		return true
+	case PatchTeamJSONBodyDefaultPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0TargetPreview    PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target = "preview"
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0TargetProduction PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target = "production"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0TargetPreview:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0TargetProduction:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0TypeSystem PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type = "system"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0TypeSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1TypeCustom PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type = "custom"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1TypeCustom:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesCli         PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources = "cli"
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesDeployHook  PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources = "deploy-hook"
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesGit         PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources = "git"
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesIntegration PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources = "integration"
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesRestApi     PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources = "rest-api"
+	PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesV0          PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources = "v0"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Sources) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesCli:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesDeployHook:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesGit:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesIntegration:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesRestApi:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0SourcesV0:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Target.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0TargetPreview    PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Target = "preview"
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0TargetProduction PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Target = "production"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Target enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Target) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0TargetPreview:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0TargetProduction:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Type.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0TypeSystem PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Type = "system"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Type enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0Type) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0TypeSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1Type.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1TypeCustom PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1Type = "custom"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1Type enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1Type) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1TypeCustom:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0Provider.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0ProviderBitbucket PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0Provider = "bitbucket"
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0ProviderGithub    PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0Provider = "github"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0Provider enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0Provider) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0ProviderBitbucket:
+		return true
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0ProviderGithub:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1Provider.
+const (
+	PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1ProviderGitlab PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1Provider = "gitlab"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1Provider enum.
+func (e PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1Provider) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1ProviderGitlab:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyDpAccessRequestsMode.
+const (
+	PatchTeamJSONBodyDpAccessRequestsModeAll         PatchTeamJSONBodyDpAccessRequestsMode = "all"
+	PatchTeamJSONBodyDpAccessRequestsModeEmailDomain PatchTeamJSONBodyDpAccessRequestsMode = "email-domain"
+	PatchTeamJSONBodyDpAccessRequestsModeNone        PatchTeamJSONBodyDpAccessRequestsMode = "none"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyDpAccessRequestsMode enum.
+func (e PatchTeamJSONBodyDpAccessRequestsMode) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyDpAccessRequestsModeAll:
+		return true
+	case PatchTeamJSONBodyDpAccessRequestsModeEmailDomain:
+		return true
+	case PatchTeamJSONBodyDpAccessRequestsModeNone:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyNsnbConfig0Preference.
+const (
+	PatchTeamJSONBodyNsnbConfig0PreferenceAutoApproval   PatchTeamJSONBodyNsnbConfig0Preference = "auto-approval"
+	PatchTeamJSONBodyNsnbConfig0PreferenceBlock          PatchTeamJSONBodyNsnbConfig0Preference = "block"
+	PatchTeamJSONBodyNsnbConfig0PreferenceManualApproval PatchTeamJSONBodyNsnbConfig0Preference = "manual-approval"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyNsnbConfig0Preference enum.
+func (e PatchTeamJSONBodyNsnbConfig0Preference) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyNsnbConfig0PreferenceAutoApproval:
+		return true
+	case PatchTeamJSONBodyNsnbConfig0PreferenceBlock:
+		return true
+	case PatchTeamJSONBodyNsnbConfig0PreferenceManualApproval:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodyResourceConfigBuildMachineDefault.
+const (
+	PatchTeamJSONBodyResourceConfigBuildMachineDefaultBasic    PatchTeamJSONBodyResourceConfigBuildMachineDefault = "basic"
+	PatchTeamJSONBodyResourceConfigBuildMachineDefaultElastic  PatchTeamJSONBodyResourceConfigBuildMachineDefault = "elastic"
+	PatchTeamJSONBodyResourceConfigBuildMachineDefaultEnhanced PatchTeamJSONBodyResourceConfigBuildMachineDefault = "enhanced"
+	PatchTeamJSONBodyResourceConfigBuildMachineDefaultStandard PatchTeamJSONBodyResourceConfigBuildMachineDefault = "standard"
+	PatchTeamJSONBodyResourceConfigBuildMachineDefaultTurbo    PatchTeamJSONBodyResourceConfigBuildMachineDefault = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodyResourceConfigBuildMachineDefault enum.
+func (e PatchTeamJSONBodyResourceConfigBuildMachineDefault) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodyResourceConfigBuildMachineDefaultBasic:
+		return true
+	case PatchTeamJSONBodyResourceConfigBuildMachineDefaultElastic:
+		return true
+	case PatchTeamJSONBodyResourceConfigBuildMachineDefaultEnhanced:
+		return true
+	case PatchTeamJSONBodyResourceConfigBuildMachineDefaultStandard:
+		return true
+	case PatchTeamJSONBodyResourceConfigBuildMachineDefaultTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchTeamJSONBodySamlRoles0.
+const (
+	PatchTeamJSONBodySamlRoles0BILLING       PatchTeamJSONBodySamlRoles0 = "BILLING"
+	PatchTeamJSONBodySamlRoles0CONTRIBUTOR   PatchTeamJSONBodySamlRoles0 = "CONTRIBUTOR"
+	PatchTeamJSONBodySamlRoles0DEVELOPER     PatchTeamJSONBodySamlRoles0 = "DEVELOPER"
+	PatchTeamJSONBodySamlRoles0MEMBER        PatchTeamJSONBodySamlRoles0 = "MEMBER"
+	PatchTeamJSONBodySamlRoles0OWNER         PatchTeamJSONBodySamlRoles0 = "OWNER"
+	PatchTeamJSONBodySamlRoles0SECURITY      PatchTeamJSONBodySamlRoles0 = "SECURITY"
+	PatchTeamJSONBodySamlRoles0VIEWER        PatchTeamJSONBodySamlRoles0 = "VIEWER"
+	PatchTeamJSONBodySamlRoles0VIEWERFORPLUS PatchTeamJSONBodySamlRoles0 = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the PatchTeamJSONBodySamlRoles0 enum.
+func (e PatchTeamJSONBodySamlRoles0) Valid() bool {
+	switch e {
+	case PatchTeamJSONBodySamlRoles0BILLING:
+		return true
+	case PatchTeamJSONBodySamlRoles0CONTRIBUTOR:
+		return true
+	case PatchTeamJSONBodySamlRoles0DEVELOPER:
+		return true
+	case PatchTeamJSONBodySamlRoles0MEMBER:
+		return true
+	case PatchTeamJSONBodySamlRoles0OWNER:
+		return true
+	case PatchTeamJSONBodySamlRoles0SECURITY:
+		return true
+	case PatchTeamJSONBodySamlRoles0VIEWER:
+		return true
+	case PatchTeamJSONBodySamlRoles0VIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListTeamFlagsV2ParamsState.
+const (
+	ListTeamFlagsV2ParamsStateActive   ListTeamFlagsV2ParamsState = "active"
+	ListTeamFlagsV2ParamsStateArchived ListTeamFlagsV2ParamsState = "archived"
+)
+
+// Valid indicates whether the value is a known member of the ListTeamFlagsV2ParamsState enum.
+func (e ListTeamFlagsV2ParamsState) Valid() bool {
+	switch e {
+	case ListTeamFlagsV2ParamsStateActive:
+		return true
+	case ListTeamFlagsV2ParamsStateArchived:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListTeamFlagsV2ParamsKind.
+const (
+	ListTeamFlagsV2ParamsKindBoolean ListTeamFlagsV2ParamsKind = "boolean"
+	ListTeamFlagsV2ParamsKindJson    ListTeamFlagsV2ParamsKind = "json"
+	ListTeamFlagsV2ParamsKindNumber  ListTeamFlagsV2ParamsKind = "number"
+	ListTeamFlagsV2ParamsKindString  ListTeamFlagsV2ParamsKind = "string"
+)
+
+// Valid indicates whether the value is a known member of the ListTeamFlagsV2ParamsKind enum.
+func (e ListTeamFlagsV2ParamsKind) Valid() bool {
+	switch e {
+	case ListTeamFlagsV2ParamsKindBoolean:
+		return true
+	case ListTeamFlagsV2ParamsKindJson:
+		return true
+	case ListTeamFlagsV2ParamsKindNumber:
+		return true
+	case ListTeamFlagsV2ParamsKindString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InviteUserToTeamJSONBodyProjectsRole.
+const (
+	InviteUserToTeamJSONBodyProjectsRoleADMIN            InviteUserToTeamJSONBodyProjectsRole = "ADMIN"
+	InviteUserToTeamJSONBodyProjectsRolePROJECTDEVELOPER InviteUserToTeamJSONBodyProjectsRole = "PROJECT_DEVELOPER"
+	InviteUserToTeamJSONBodyProjectsRolePROJECTGUEST     InviteUserToTeamJSONBodyProjectsRole = "PROJECT_GUEST"
+	InviteUserToTeamJSONBodyProjectsRolePROJECTVIEWER    InviteUserToTeamJSONBodyProjectsRole = "PROJECT_VIEWER"
+)
+
+// Valid indicates whether the value is a known member of the InviteUserToTeamJSONBodyProjectsRole enum.
+func (e InviteUserToTeamJSONBodyProjectsRole) Valid() bool {
+	switch e {
+	case InviteUserToTeamJSONBodyProjectsRoleADMIN:
+		return true
+	case InviteUserToTeamJSONBodyProjectsRolePROJECTDEVELOPER:
+		return true
+	case InviteUserToTeamJSONBodyProjectsRolePROJECTGUEST:
+		return true
+	case InviteUserToTeamJSONBodyProjectsRolePROJECTVIEWER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InviteUserToTeamJSONBodyRole.
+const (
+	InviteUserToTeamJSONBodyRoleBILLING       InviteUserToTeamJSONBodyRole = "BILLING"
+	InviteUserToTeamJSONBodyRoleCONTRIBUTOR   InviteUserToTeamJSONBodyRole = "CONTRIBUTOR"
+	InviteUserToTeamJSONBodyRoleDEVELOPER     InviteUserToTeamJSONBodyRole = "DEVELOPER"
+	InviteUserToTeamJSONBodyRoleMEMBER        InviteUserToTeamJSONBodyRole = "MEMBER"
+	InviteUserToTeamJSONBodyRoleOWNER         InviteUserToTeamJSONBodyRole = "OWNER"
+	InviteUserToTeamJSONBodyRoleSECURITY      InviteUserToTeamJSONBodyRole = "SECURITY"
+	InviteUserToTeamJSONBodyRoleVIEWER        InviteUserToTeamJSONBodyRole = "VIEWER"
+	InviteUserToTeamJSONBodyRoleVIEWERFORPLUS InviteUserToTeamJSONBodyRole = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the InviteUserToTeamJSONBodyRole enum.
+func (e InviteUserToTeamJSONBodyRole) Valid() bool {
+	switch e {
+	case InviteUserToTeamJSONBodyRoleBILLING:
+		return true
+	case InviteUserToTeamJSONBodyRoleCONTRIBUTOR:
+		return true
+	case InviteUserToTeamJSONBodyRoleDEVELOPER:
+		return true
+	case InviteUserToTeamJSONBodyRoleMEMBER:
+		return true
+	case InviteUserToTeamJSONBodyRoleOWNER:
+		return true
+	case InviteUserToTeamJSONBodyRoleSECURITY:
+		return true
+	case InviteUserToTeamJSONBodyRoleVIEWER:
+		return true
+	case InviteUserToTeamJSONBodyRoleVIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListVercelCiInvocationsParamsProvider.
+const (
+	ListVercelCiInvocationsParamsProviderBitbucket ListVercelCiInvocationsParamsProvider = "bitbucket"
+	ListVercelCiInvocationsParamsProviderGithub    ListVercelCiInvocationsParamsProvider = "github"
+	ListVercelCiInvocationsParamsProviderGitlab    ListVercelCiInvocationsParamsProvider = "gitlab"
+	ListVercelCiInvocationsParamsProviderVercel    ListVercelCiInvocationsParamsProvider = "vercel"
+)
+
+// Valid indicates whether the value is a known member of the ListVercelCiInvocationsParamsProvider enum.
+func (e ListVercelCiInvocationsParamsProvider) Valid() bool {
+	switch e {
+	case ListVercelCiInvocationsParamsProviderBitbucket:
+		return true
+	case ListVercelCiInvocationsParamsProviderGithub:
+		return true
+	case ListVercelCiInvocationsParamsProviderGitlab:
+		return true
+	case ListVercelCiInvocationsParamsProviderVercel:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListVercelCiInvocationsParamsStatus.
+const (
+	ListVercelCiInvocationsParamsStatusAwaitingJobs              ListVercelCiInvocationsParamsStatus = "awaiting_jobs"
+	ListVercelCiInvocationsParamsStatusBootstrapping             ListVercelCiInvocationsParamsStatus = "bootstrapping"
+	ListVercelCiInvocationsParamsStatusBootstrappingFailed       ListVercelCiInvocationsParamsStatus = "bootstrapping_failed"
+	ListVercelCiInvocationsParamsStatusCompleted                 ListVercelCiInvocationsParamsStatus = "completed"
+	ListVercelCiInvocationsParamsStatusJobsOnHiveCloneDispatched ListVercelCiInvocationsParamsStatus = "jobs_on_hive_clone_dispatched"
+	ListVercelCiInvocationsParamsStatusJobsOnHiveCompleted       ListVercelCiInvocationsParamsStatus = "jobs_on_hive_completed"
+	ListVercelCiInvocationsParamsStatusJobsOnHiveDispatched      ListVercelCiInvocationsParamsStatus = "jobs_on_hive_dispatched"
+	ListVercelCiInvocationsParamsStatusJobsOnHiveFailed          ListVercelCiInvocationsParamsStatus = "jobs_on_hive_failed"
+	ListVercelCiInvocationsParamsStatusNew                       ListVercelCiInvocationsParamsStatus = "new"
+	ListVercelCiInvocationsParamsStatusSandboxNamed              ListVercelCiInvocationsParamsStatus = "sandbox_named"
+	ListVercelCiInvocationsParamsStatusSkipped                   ListVercelCiInvocationsParamsStatus = "skipped"
+	ListVercelCiInvocationsParamsStatusSnapshotted               ListVercelCiInvocationsParamsStatus = "snapshotted"
+)
+
+// Valid indicates whether the value is a known member of the ListVercelCiInvocationsParamsStatus enum.
+func (e ListVercelCiInvocationsParamsStatus) Valid() bool {
+	switch e {
+	case ListVercelCiInvocationsParamsStatusAwaitingJobs:
+		return true
+	case ListVercelCiInvocationsParamsStatusBootstrapping:
+		return true
+	case ListVercelCiInvocationsParamsStatusBootstrappingFailed:
+		return true
+	case ListVercelCiInvocationsParamsStatusCompleted:
+		return true
+	case ListVercelCiInvocationsParamsStatusJobsOnHiveCloneDispatched:
+		return true
+	case ListVercelCiInvocationsParamsStatusJobsOnHiveCompleted:
+		return true
+	case ListVercelCiInvocationsParamsStatusJobsOnHiveDispatched:
+		return true
+	case ListVercelCiInvocationsParamsStatusJobsOnHiveFailed:
+		return true
+	case ListVercelCiInvocationsParamsStatusNew:
+		return true
+	case ListVercelCiInvocationsParamsStatusSandboxNamed:
+		return true
+	case ListVercelCiInvocationsParamsStatusSkipped:
+		return true
+	case ListVercelCiInvocationsParamsStatusSnapshotted:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListVercelCiInvocationsParamsConclusion.
+const (
+	ListVercelCiInvocationsParamsConclusionFailed    ListVercelCiInvocationsParamsConclusion = "failed"
+	ListVercelCiInvocationsParamsConclusionSkipped   ListVercelCiInvocationsParamsConclusion = "skipped"
+	ListVercelCiInvocationsParamsConclusionSucceeded ListVercelCiInvocationsParamsConclusion = "succeeded"
+)
+
+// Valid indicates whether the value is a known member of the ListVercelCiInvocationsParamsConclusion enum.
+func (e ListVercelCiInvocationsParamsConclusion) Valid() bool {
+	switch e {
+	case ListVercelCiInvocationsParamsConclusionFailed:
+		return true
+	case ListVercelCiInvocationsParamsConclusionSkipped:
+		return true
+	case ListVercelCiInvocationsParamsConclusionSucceeded:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListVercelCiInvocationsParamsSource.
+const (
+	ListVercelCiInvocationsParamsSourceVercelCi           ListVercelCiInvocationsParamsSource = "vercel-ci"
+	ListVercelCiInvocationsParamsSourceVercelNativeChecks ListVercelCiInvocationsParamsSource = "vercel-native-checks"
+)
+
+// Valid indicates whether the value is a known member of the ListVercelCiInvocationsParamsSource enum.
+func (e ListVercelCiInvocationsParamsSource) Valid() bool {
+	switch e {
+	case ListVercelCiInvocationsParamsSourceVercelCi:
+		return true
+	case ListVercelCiInvocationsParamsSourceVercelNativeChecks:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEventsParamsDirection.
+const (
+	GetDeploymentEventsParamsDirectionBackward GetDeploymentEventsParamsDirection = "backward"
+	GetDeploymentEventsParamsDirectionForward  GetDeploymentEventsParamsDirection = "forward"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEventsParamsDirection enum.
+func (e GetDeploymentEventsParamsDirection) Valid() bool {
+	switch e {
+	case GetDeploymentEventsParamsDirectionBackward:
+		return true
+	case GetDeploymentEventsParamsDirectionForward:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEventsParamsFollow.
+const (
+	GetDeploymentEventsParamsFollowN0 GetDeploymentEventsParamsFollow = 0
+	GetDeploymentEventsParamsFollowN1 GetDeploymentEventsParamsFollow = 1
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEventsParamsFollow enum.
+func (e GetDeploymentEventsParamsFollow) Valid() bool {
+	switch e {
+	case GetDeploymentEventsParamsFollowN0:
+		return true
+	case GetDeploymentEventsParamsFollowN1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEventsParamsDelimiter.
+const (
+	GetDeploymentEventsParamsDelimiterN0 GetDeploymentEventsParamsDelimiter = 0
+	GetDeploymentEventsParamsDelimiterN1 GetDeploymentEventsParamsDelimiter = 1
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEventsParamsDelimiter enum.
+func (e GetDeploymentEventsParamsDelimiter) Valid() bool {
+	switch e {
+	case GetDeploymentEventsParamsDelimiterN0:
+		return true
+	case GetDeploymentEventsParamsDelimiterN1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEventsParamsBuilds.
+const (
+	GetDeploymentEventsParamsBuildsN0 GetDeploymentEventsParamsBuilds = 0
+	GetDeploymentEventsParamsBuildsN1 GetDeploymentEventsParamsBuilds = 1
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEventsParamsBuilds enum.
+func (e GetDeploymentEventsParamsBuilds) Valid() bool {
+	switch e {
+	case GetDeploymentEventsParamsBuildsN0:
+		return true
+	case GetDeploymentEventsParamsBuildsN1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache.
+const (
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheBYPASS      GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache = "BYPASS"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheHIT         GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache = "HIT"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheMISS        GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache = "MISS"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCachePRERENDER   GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache = "PRERENDER"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheREVALIDATED GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache = "REVALIDATED"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheSTALE       GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache = "STALE"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache enum.
+func (e GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCache) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheBYPASS:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheHIT:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheMISS:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCachePRERENDER:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheREVALIDATED:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyVercelCacheSTALE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction.
+const (
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionBypass    GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction = "bypass"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionChallenge GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction = "challenge"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionDeny      GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction = "deny"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionLog       GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction = "log"
+	GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionRateLimit GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction = "rate_limit"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction enum.
+func (e GetDeploymentEvents200JSONResponseBody0PayloadProxyWafAction) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionBypass:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionChallenge:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionDeny:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionLog:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0PayloadProxyWafActionRateLimit:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody0Type.
+const (
+	GetDeploymentEvents200JSONResponseBody0TypeCommand                GetDeploymentEvents200JSONResponseBody0Type = "command"
+	GetDeploymentEvents200JSONResponseBody0TypeDelimiter              GetDeploymentEvents200JSONResponseBody0Type = "delimiter"
+	GetDeploymentEvents200JSONResponseBody0TypeDeploymentState        GetDeploymentEvents200JSONResponseBody0Type = "deployment-state"
+	GetDeploymentEvents200JSONResponseBody0TypeEdgeFunctionInvocation GetDeploymentEvents200JSONResponseBody0Type = "edge-function-invocation"
+	GetDeploymentEvents200JSONResponseBody0TypeExit                   GetDeploymentEvents200JSONResponseBody0Type = "exit"
+	GetDeploymentEvents200JSONResponseBody0TypeFatal                  GetDeploymentEvents200JSONResponseBody0Type = "fatal"
+	GetDeploymentEvents200JSONResponseBody0TypeMetric                 GetDeploymentEvents200JSONResponseBody0Type = "metric"
+	GetDeploymentEvents200JSONResponseBody0TypeMiddleware             GetDeploymentEvents200JSONResponseBody0Type = "middleware"
+	GetDeploymentEvents200JSONResponseBody0TypeMiddlewareInvocation   GetDeploymentEvents200JSONResponseBody0Type = "middleware-invocation"
+	GetDeploymentEvents200JSONResponseBody0TypeReport                 GetDeploymentEvents200JSONResponseBody0Type = "report"
+	GetDeploymentEvents200JSONResponseBody0TypeStderr                 GetDeploymentEvents200JSONResponseBody0Type = "stderr"
+	GetDeploymentEvents200JSONResponseBody0TypeStdout                 GetDeploymentEvents200JSONResponseBody0Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody0Type enum.
+func (e GetDeploymentEvents200JSONResponseBody0Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody0TypeCommand:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeDelimiter:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeExit:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeFatal:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeMetric:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeMiddleware:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeReport:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeStderr:
+		return true
+	case GetDeploymentEvents200JSONResponseBody0TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody1Level.
+const (
+	GetDeploymentEvents200JSONResponseBody1LevelError   GetDeploymentEvents200JSONResponseBody1Level = "error"
+	GetDeploymentEvents200JSONResponseBody1LevelWarning GetDeploymentEvents200JSONResponseBody1Level = "warning"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody1Level enum.
+func (e GetDeploymentEvents200JSONResponseBody1Level) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody1LevelError:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1LevelWarning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody1Type.
+const (
+	GetDeploymentEvents200JSONResponseBody1TypeCommand                GetDeploymentEvents200JSONResponseBody1Type = "command"
+	GetDeploymentEvents200JSONResponseBody1TypeDelimiter              GetDeploymentEvents200JSONResponseBody1Type = "delimiter"
+	GetDeploymentEvents200JSONResponseBody1TypeDeploymentState        GetDeploymentEvents200JSONResponseBody1Type = "deployment-state"
+	GetDeploymentEvents200JSONResponseBody1TypeEdgeFunctionInvocation GetDeploymentEvents200JSONResponseBody1Type = "edge-function-invocation"
+	GetDeploymentEvents200JSONResponseBody1TypeExit                   GetDeploymentEvents200JSONResponseBody1Type = "exit"
+	GetDeploymentEvents200JSONResponseBody1TypeFatal                  GetDeploymentEvents200JSONResponseBody1Type = "fatal"
+	GetDeploymentEvents200JSONResponseBody1TypeMetric                 GetDeploymentEvents200JSONResponseBody1Type = "metric"
+	GetDeploymentEvents200JSONResponseBody1TypeMiddleware             GetDeploymentEvents200JSONResponseBody1Type = "middleware"
+	GetDeploymentEvents200JSONResponseBody1TypeMiddlewareInvocation   GetDeploymentEvents200JSONResponseBody1Type = "middleware-invocation"
+	GetDeploymentEvents200JSONResponseBody1TypeReport                 GetDeploymentEvents200JSONResponseBody1Type = "report"
+	GetDeploymentEvents200JSONResponseBody1TypeStderr                 GetDeploymentEvents200JSONResponseBody1Type = "stderr"
+	GetDeploymentEvents200JSONResponseBody1TypeStdout                 GetDeploymentEvents200JSONResponseBody1Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody1Type enum.
+func (e GetDeploymentEvents200JSONResponseBody1Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody1TypeCommand:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeDelimiter:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeExit:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeFatal:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeMetric:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeMiddleware:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeReport:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeStderr:
+		return true
+	case GetDeploymentEvents200JSONResponseBody1TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache.
+const (
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheBYPASS      GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache = "BYPASS"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheHIT         GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache = "HIT"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheMISS        GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache = "MISS"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCachePRERENDER   GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache = "PRERENDER"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheREVALIDATED GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache = "REVALIDATED"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheSTALE       GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache = "STALE"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache enum.
+func (e GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCache) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheBYPASS:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheHIT:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheMISS:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCachePRERENDER:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheREVALIDATED:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyVercelCacheSTALE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction.
+const (
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionBypass    GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction = "bypass"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionChallenge GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction = "challenge"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionDeny      GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction = "deny"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionLog       GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction = "log"
+	GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionRateLimit GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction = "rate_limit"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction enum.
+func (e GetDeploymentEvents200JSONResponseBody20PayloadProxyWafAction) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionBypass:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionChallenge:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionDeny:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionLog:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20PayloadProxyWafActionRateLimit:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody20Type.
+const (
+	GetDeploymentEvents200JSONResponseBody20TypeCommand                GetDeploymentEvents200JSONResponseBody20Type = "command"
+	GetDeploymentEvents200JSONResponseBody20TypeDelimiter              GetDeploymentEvents200JSONResponseBody20Type = "delimiter"
+	GetDeploymentEvents200JSONResponseBody20TypeDeploymentState        GetDeploymentEvents200JSONResponseBody20Type = "deployment-state"
+	GetDeploymentEvents200JSONResponseBody20TypeEdgeFunctionInvocation GetDeploymentEvents200JSONResponseBody20Type = "edge-function-invocation"
+	GetDeploymentEvents200JSONResponseBody20TypeExit                   GetDeploymentEvents200JSONResponseBody20Type = "exit"
+	GetDeploymentEvents200JSONResponseBody20TypeFatal                  GetDeploymentEvents200JSONResponseBody20Type = "fatal"
+	GetDeploymentEvents200JSONResponseBody20TypeMetric                 GetDeploymentEvents200JSONResponseBody20Type = "metric"
+	GetDeploymentEvents200JSONResponseBody20TypeMiddleware             GetDeploymentEvents200JSONResponseBody20Type = "middleware"
+	GetDeploymentEvents200JSONResponseBody20TypeMiddlewareInvocation   GetDeploymentEvents200JSONResponseBody20Type = "middleware-invocation"
+	GetDeploymentEvents200JSONResponseBody20TypeReport                 GetDeploymentEvents200JSONResponseBody20Type = "report"
+	GetDeploymentEvents200JSONResponseBody20TypeStderr                 GetDeploymentEvents200JSONResponseBody20Type = "stderr"
+	GetDeploymentEvents200JSONResponseBody20TypeStdout                 GetDeploymentEvents200JSONResponseBody20Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody20Type enum.
+func (e GetDeploymentEvents200JSONResponseBody20Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody20TypeCommand:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeDelimiter:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeExit:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeFatal:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeMetric:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeMiddleware:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeReport:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeStderr:
+		return true
+	case GetDeploymentEvents200JSONResponseBody20TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody21Level.
+const (
+	GetDeploymentEvents200JSONResponseBody21LevelError   GetDeploymentEvents200JSONResponseBody21Level = "error"
+	GetDeploymentEvents200JSONResponseBody21LevelWarning GetDeploymentEvents200JSONResponseBody21Level = "warning"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody21Level enum.
+func (e GetDeploymentEvents200JSONResponseBody21Level) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody21LevelError:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21LevelWarning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody21Type.
+const (
+	GetDeploymentEvents200JSONResponseBody21TypeCommand                GetDeploymentEvents200JSONResponseBody21Type = "command"
+	GetDeploymentEvents200JSONResponseBody21TypeDelimiter              GetDeploymentEvents200JSONResponseBody21Type = "delimiter"
+	GetDeploymentEvents200JSONResponseBody21TypeDeploymentState        GetDeploymentEvents200JSONResponseBody21Type = "deployment-state"
+	GetDeploymentEvents200JSONResponseBody21TypeEdgeFunctionInvocation GetDeploymentEvents200JSONResponseBody21Type = "edge-function-invocation"
+	GetDeploymentEvents200JSONResponseBody21TypeExit                   GetDeploymentEvents200JSONResponseBody21Type = "exit"
+	GetDeploymentEvents200JSONResponseBody21TypeFatal                  GetDeploymentEvents200JSONResponseBody21Type = "fatal"
+	GetDeploymentEvents200JSONResponseBody21TypeMetric                 GetDeploymentEvents200JSONResponseBody21Type = "metric"
+	GetDeploymentEvents200JSONResponseBody21TypeMiddleware             GetDeploymentEvents200JSONResponseBody21Type = "middleware"
+	GetDeploymentEvents200JSONResponseBody21TypeMiddlewareInvocation   GetDeploymentEvents200JSONResponseBody21Type = "middleware-invocation"
+	GetDeploymentEvents200JSONResponseBody21TypeReport                 GetDeploymentEvents200JSONResponseBody21Type = "report"
+	GetDeploymentEvents200JSONResponseBody21TypeStderr                 GetDeploymentEvents200JSONResponseBody21Type = "stderr"
+	GetDeploymentEvents200JSONResponseBody21TypeStdout                 GetDeploymentEvents200JSONResponseBody21Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody21Type enum.
+func (e GetDeploymentEvents200JSONResponseBody21Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody21TypeCommand:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeDelimiter:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeExit:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeFatal:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeMetric:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeMiddleware:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeReport:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeStderr:
+		return true
+	case GetDeploymentEvents200JSONResponseBody21TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200JSONResponseBody22Type.
+const (
+	GetDeploymentEvents200JSONResponseBody22TypeAliasAssigned GetDeploymentEvents200JSONResponseBody22Type = "alias-assigned"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200JSONResponseBody22Type enum.
+func (e GetDeploymentEvents200JSONResponseBody22Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200JSONResponseBody22TypeAliasAssigned:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheBYPASS      GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache = "BYPASS"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheHIT         GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache = "HIT"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheMISS        GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache = "MISS"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCachePRERENDER   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache = "PRERENDER"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheREVALIDATED GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache = "REVALIDATED"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheSTALE       GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache = "STALE"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCache) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheBYPASS:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheHIT:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheMISS:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCachePRERENDER:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheREVALIDATED:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyVercelCacheSTALE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionBypass    GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction = "bypass"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionChallenge GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction = "challenge"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionDeny      GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction = "deny"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionLog       GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction = "log"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionRateLimit GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction = "rate_limit"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafAction) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionBypass:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionChallenge:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionDeny:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionLog:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0PayloadProxyWafActionRateLimit:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeCommand                GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "command"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeDelimiter              GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "delimiter"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeDeploymentState        GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "deployment-state"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeEdgeFunctionInvocation GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "edge-function-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeExit                   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "exit"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeFatal                  GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "fatal"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeMetric                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "metric"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeMiddleware             GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "middleware"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeMiddlewareInvocation   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "middleware-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeReport                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "report"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeStderr                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "stderr"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeStdout                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeCommand:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeDelimiter:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeExit:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeFatal:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeMetric:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeMiddleware:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeReport:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeStderr:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Level.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1LevelError   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Level = "error"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1LevelWarning GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Level = "warning"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Level enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Level) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1LevelError:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1LevelWarning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeCommand                GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "command"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeDelimiter              GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "delimiter"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeDeploymentState        GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "deployment-state"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeEdgeFunctionInvocation GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "edge-function-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeExit                   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "exit"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeFatal                  GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "fatal"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeMetric                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "metric"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeMiddleware             GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "middleware"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeMiddlewareInvocation   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "middleware-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeReport                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "report"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeStderr                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "stderr"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeStdout                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeCommand:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeDelimiter:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeExit:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeFatal:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeMetric:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeMiddleware:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeReport:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeStderr:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheBYPASS      GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache = "BYPASS"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheHIT         GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache = "HIT"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheMISS        GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache = "MISS"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCachePRERENDER   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache = "PRERENDER"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheREVALIDATED GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache = "REVALIDATED"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheSTALE       GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache = "STALE"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCache) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheBYPASS:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheHIT:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheMISS:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCachePRERENDER:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheREVALIDATED:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyVercelCacheSTALE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionBypass    GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction = "bypass"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionChallenge GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction = "challenge"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionDeny      GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction = "deny"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionLog       GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction = "log"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionRateLimit GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction = "rate_limit"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafAction) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionBypass:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionChallenge:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionDeny:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionLog:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20PayloadProxyWafActionRateLimit:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeCommand                GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "command"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeDelimiter              GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "delimiter"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeDeploymentState        GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "deployment-state"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeEdgeFunctionInvocation GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "edge-function-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeExit                   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "exit"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeFatal                  GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "fatal"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeMetric                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "metric"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeMiddleware             GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "middleware"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeMiddlewareInvocation   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "middleware-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeReport                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "report"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeStderr                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "stderr"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeStdout                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeCommand:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeDelimiter:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeExit:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeFatal:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeMetric:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeMiddleware:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeReport:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeStderr:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Level.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21LevelError   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Level = "error"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21LevelWarning GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Level = "warning"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Level enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Level) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21LevelError:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21LevelWarning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeCommand                GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "command"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeDelimiter              GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "delimiter"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeDeploymentState        GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "deployment-state"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeEdgeFunctionInvocation GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "edge-function-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeExit                   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "exit"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeFatal                  GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "fatal"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeMetric                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "metric"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeMiddleware             GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "middleware"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeMiddlewareInvocation   GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "middleware-invocation"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeReport                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "report"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeStderr                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "stderr"
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeStdout                 GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type = "stdout"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeCommand:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeDelimiter:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeDeploymentState:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeEdgeFunctionInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeExit:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeFatal:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeMetric:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeMiddleware:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeMiddlewareInvocation:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeReport:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeStderr:
+		return true
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21TypeStdout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22Type.
+const (
+	GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22TypeAliasAssigned GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22Type = "alias-assigned"
+)
+
+// Valid indicates whether the value is a known member of the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22Type enum.
+func (e GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22Type) Valid() bool {
+	switch e {
+	case GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22TypeAliasAssigned:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PatchDomainJSONBody0EchMode.
 const (
 	PatchDomainJSONBody0EchModeAuto     PatchDomainJSONBody0EchMode = "auto"
@@ -3883,21 +5432,135 @@ func (e GetProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguratio
 	}
 }
 
-// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel.
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores.
 const (
-	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelEnhanced GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel = "enhanced"
-	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelStandard GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel = "standard"
-	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelTurbo    GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel = "turbo"
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0CoresN4 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores = 4
 )
 
-// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel enum.
-func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel) Valid() bool {
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelEnhanced:
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0CoresN4:
 		return true
-	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelStandard:
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0LabelStandard GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label = "standard"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0LabelStandard:
 		return true
-	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelTurbo:
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0MemoryN8192 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory = 8192
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0MemoryN8192:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1CoresN8 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores = 8
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1CoresN8:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1LabelEnhanced GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label = "enhanced"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1LabelEnhanced:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1MemoryN16384 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory = 16384
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1MemoryN16384:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440:
 		return true
 	default:
 		return false
@@ -6400,21 +8063,135 @@ func (e GetProject200JSONResponseBodyResourceConfigBuildQueueConfiguration) Vali
 	}
 }
 
-// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel.
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores.
 const (
-	GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelEnhanced GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel = "enhanced"
-	GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelStandard GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel = "standard"
-	GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelTurbo    GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel = "turbo"
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0CoresN4 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores = 4
 )
 
-// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel enum.
-func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel) Valid() bool {
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelEnhanced:
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0CoresN4:
 		return true
-	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelStandard:
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0LabelStandard GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label = "standard"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0LabelStandard:
 		return true
-	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelTurbo:
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0MemoryN8192 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory = 8192
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0MemoryN8192:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1CoresN8 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores = 8
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1CoresN8:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1LabelEnhanced GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label = "enhanced"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1LabelEnhanced:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1MemoryN16384 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory = 16384
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1MemoryN16384:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440:
 		return true
 	default:
 		return false
@@ -9844,21 +11621,135 @@ func (e UpdateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfigura
 	}
 }
 
-// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel.
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores.
 const (
-	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelEnhanced UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel = "enhanced"
-	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelStandard UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel = "standard"
-	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelTurbo    UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel = "turbo"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0CoresN4 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores = 4
 )
 
-// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel enum.
-func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel) Valid() bool {
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelEnhanced:
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0CoresN4:
 		return true
-	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelStandard:
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0LabelStandard UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label = "standard"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0LabelStandard:
 		return true
-	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabelTurbo:
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0MemoryN8192 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory = 8192
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0MemoryN8192:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1CoresN8 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores = 8
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1CoresN8:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1LabelEnhanced UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label = "enhanced"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1LabelEnhanced:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1MemoryN16384 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory = 16384
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1MemoryN16384:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440:
 		return true
 	default:
 		return false
@@ -12361,21 +14252,135 @@ func (e UpdateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration) V
 	}
 }
 
-// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel.
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores.
 const (
-	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelEnhanced UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel = "enhanced"
-	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelStandard UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel = "standard"
-	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelTurbo    UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel = "turbo"
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0CoresN4 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores = 4
 )
 
-// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel enum.
-func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel) Valid() bool {
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelEnhanced:
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0CoresN4:
 		return true
-	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelStandard:
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0LabelStandard UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label = "standard"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0LabelStandard:
 		return true
-	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabelTurbo:
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0MemoryN8192 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory = 8192
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0MemoryN8192:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1CoresN8 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores = 8
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1CoresN8:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1LabelEnhanced UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label = "enhanced"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1LabelEnhanced:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1MemoryN16384 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory = 16384
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1MemoryN16384:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440:
 		return true
 	default:
 		return false
@@ -18005,2042 +20010,4 @@ type ConnectConnectorCreateData1 struct {
 		// Value API key value.
 		Value *string `json:"value,omitempty"`
 	} `json:"values,omitempty"`
-}
-
-// ConnectConnectorCreateData1SubjectType Which subject the connector issues tokens for. Defaults to \"app\" (connector-level keys). \"user\" connectors store no connector-level values; each user supplies their own key during authorization.
-type ConnectConnectorCreateData1SubjectType string
-
-// ConnectConnectorCreateData2 defines model for ConnectConnectorCreateData.2.
-type ConnectConnectorCreateData2 struct {
-	// AppId GitHub App numeric ID.
-	AppId int `json:"appId"`
-
-	// AppName GitHub App display name.
-	AppName string `json:"appName"`
-
-	// AppSlug GitHub App slug.
-	AppSlug string `json:"appSlug"`
-
-	// ClientId OAuth client ID assigned by GitHub.
-	ClientId string `json:"clientId"`
-
-	// ClientSecret GitHub App OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-
-	// Owner GitHub App owner.
-	Owner *struct {
-		// Id GitHub App owner numeric ID.
-		Id int `json:"id"`
-
-		// Name GitHub App owner display name.
-		Name *string `json:"name,omitempty"`
-
-		// Slug GitHub App owner login.
-		Slug string `json:"slug"`
-
-		// Type GitHub App owner type.
-		Type ConnectConnectorCreateData2OwnerType `json:"type"`
-	} `json:"owner,omitempty"`
-
-	// PrivateKeyPem GitHub App private key in PEM format.
-	PrivateKeyPem *string `json:"privateKeyPem,omitempty"`
-
-	// WebhookSecret GitHub App webhook secret.
-	WebhookSecret *string `json:"webhookSecret,omitempty"`
-}
-
-// ConnectConnectorCreateData2OwnerType GitHub App owner type.
-type ConnectConnectorCreateData2OwnerType string
-
-// ConnectConnectorCreateData3 defines model for ConnectConnectorCreateData.3.
-type ConnectConnectorCreateData3 struct {
-	// AppId Linear application ID.
-	AppId *string `json:"appId,omitempty"`
-
-	// AppName Linear application name.
-	AppName *string `json:"appName,omitempty"`
-
-	// AppScopes OAuth scopes requested for Linear application tokens.
-	AppScopes *[]string `json:"appScopes,omitempty"`
-
-	// Application Linear OAuth application metadata.
-	Application *struct {
-		// ClientId Linear OAuth client ID.
-		ClientId string `json:"clientId"`
-
-		// CreatedAt Linear OAuth application creation timestamp.
-		CreatedAt *string `json:"createdAt,omitempty"`
-
-		// Description Linear OAuth application description.
-		Description *string `json:"description,omitempty"`
-
-		// Developer Linear OAuth application developer name.
-		Developer *string `json:"developer,omitempty"`
-
-		// DeveloperUrl Linear OAuth application developer URL.
-		DeveloperUrl *string `json:"developerUrl,omitempty"`
-
-		// Distribution Linear OAuth application distribution mode.
-		Distribution *string `json:"distribution,omitempty"`
-
-		// Id Linear OAuth application ID.
-		Id string `json:"id"`
-
-		// ImageUrl Linear OAuth application image URL.
-		ImageUrl *string `json:"imageUrl,omitempty"`
-
-		// Name Linear OAuth application name.
-		Name string `json:"name"`
-
-		// RedirectUris Registered redirect URIs for the Linear OAuth application.
-		RedirectUris *[]string `json:"redirectUris,omitempty"`
-
-		// UpdatedAt Linear OAuth application update timestamp.
-		UpdatedAt *string `json:"updatedAt,omitempty"`
-
-		// WebhookEnabled Whether the Linear webhook is enabled.
-		WebhookEnabled *bool `json:"webhookEnabled,omitempty"`
-
-		// WebhookResourceTypes Linear resource types delivered to the webhook.
-		WebhookResourceTypes *[]string `json:"webhookResourceTypes,omitempty"`
-
-		// WebhookUrl Linear webhook URL.
-		WebhookUrl *string `json:"webhookUrl,omitempty"`
-	} `json:"application,omitempty"`
-
-	// ClientId OAuth client ID assigned by Linear.
-	ClientId string `json:"clientId"`
-
-	// ClientSecret Linear OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-
-	// OwnerOrganization Linear organization that owns the OAuth application.
-	OwnerOrganization *struct {
-		// Id Linear organization ID.
-		Id string `json:"id"`
-
-		// LogoUrl Linear organization logo URL.
-		LogoUrl *string `json:"logoUrl,omitempty"`
-
-		// Name Linear organization name.
-		Name string `json:"name"`
-
-		// Slug Linear organization slug.
-		Slug string `json:"slug"`
-	} `json:"ownerOrganization,omitempty"`
-
-	// UserScopes OAuth scopes requested for Linear user tokens.
-	UserScopes *[]string `json:"userScopes,omitempty"`
-
-	// WebhookSecret Linear webhook verification secret.
-	WebhookSecret *string `json:"webhookSecret,omitempty"`
-}
-
-// ConnectConnectorCreateData4 defines model for ConnectConnectorCreateData.4.
-type ConnectConnectorCreateData4 struct {
-	// ApiToken Linq partner API token for the shared line.
-	ApiToken     *string   `json:"apiToken,omitempty"`
-	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
-}
-
-// ConnectConnectorCreateData5 defines model for ConnectConnectorCreateData.5.
-type ConnectConnectorCreateData5 struct {
-	// ConsumerKey Salesforce connected app consumer key.
-	ConsumerKey string `json:"consumerKey"`
-
-	// ConsumerSecret Salesforce connected app consumer secret.
-	ConsumerSecret *string `json:"consumerSecret,omitempty"`
-
-	// LoginHost Salesforce login host, such as login.salesforce.com.
-	LoginHost string `json:"loginHost"`
-}
-
-// ConnectConnectorCreateData6 defines model for ConnectConnectorCreateData.6.
-type ConnectConnectorCreateData6 struct {
-	// ApiKeyId Sendblue API key id (`sb-api-key-id`).
-	ApiKeyId string `json:"apiKeyId"`
-
-	// ApiSecretKey Sendblue API secret key (`sb-api-secret-key`).
-	ApiSecretKey *string `json:"apiSecretKey,omitempty"`
-
-	// PhoneNumbers E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
-	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
-}
-
-// ConnectConnectorCreateData7 defines model for ConnectConnectorCreateData.7.
-type ConnectConnectorCreateData7 struct {
-	// AppHome App Home settings for the managed Slack app. Updates preserve omitted settings.
-	AppHome *struct {
-		// HomeTabEnabled Enable the Home tab for views.publish. Defaults to false for new apps.
-		HomeTabEnabled *bool `json:"homeTabEnabled,omitempty"`
-
-		// MessagesTabEnabled Enable the Messages tab. Defaults to true for new apps.
-		MessagesTabEnabled *bool `json:"messagesTabEnabled,omitempty"`
-
-		// MessagesTabReadOnlyEnabled Make the Messages tab read-only. Defaults to false for new apps.
-		MessagesTabReadOnlyEnabled *bool `json:"messagesTabReadOnlyEnabled,omitempty"`
-	} `json:"appHome,omitempty"`
-
-	// AppId Slack app ID.
-	AppId string `json:"appId"`
-
-	// AppName Slack app display name.
-	AppName string `json:"appName"`
-
-	// BotScopes OAuth scopes requested for Slack bot tokens.
-	BotScopes *[]string `json:"botScopes,omitempty"`
-
-	// ClientId OAuth client ID assigned by Slack.
-	ClientId string `json:"clientId"`
-
-	// ClientSecret Slack app OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-
-	// RichPreviews Work Object preview settings for the managed Slack app. Updates preserve omitted settings.
-	RichPreviews *struct {
-		// EntityTypes Entity types to preview. An empty array clears the configured types.
-		EntityTypes *[]string `json:"entityTypes,omitempty"`
-
-		// IsActive Enable Work Object previews. Defaults to false for new apps.
-		IsActive *bool `json:"isActive,omitempty"`
-	} `json:"richPreviews,omitempty"`
-
-	// Shortcuts Global and message shortcuts configured for the Slack app.
-	Shortcuts *[]struct {
-		// CallbackId Identifier included in the shortcut callback.
-		CallbackId string `json:"callbackId"`
-
-		// Description Description shown for the shortcut in Slack.
-		Description string `json:"description"`
-
-		// Name Shortcut display name.
-		Name string `json:"name"`
-
-		// Type Where Slack exposes the shortcut.
-		Type ConnectConnectorCreateData7ShortcutsType `json:"type"`
-	} `json:"shortcuts,omitempty"`
-
-	// SigningSecret Slack request signing secret.
-	SigningSecret *string `json:"signingSecret,omitempty"`
-
-	// SlackTeam Slack workspace metadata.
-	SlackTeam *struct {
-		// Domain Slack workspace domain.
-		Domain *string `json:"domain,omitempty"`
-
-		// Id Slack workspace ID.
-		Id string `json:"id"`
-
-		// Name Slack workspace name.
-		Name *string `json:"name,omitempty"`
-	} `json:"slackTeam,omitempty"`
-
-	// SlashCommands Slash commands configured for the managed Slack app.
-	SlashCommands *[]struct {
-		// Command Slash command including its leading slash.
-		Command string `json:"command"`
-
-		// Description Description shown for the slash command in Slack.
-		Description string `json:"description"`
-
-		// ShouldEscape Whether Slack should escape command arguments.
-		ShouldEscape *bool `json:"shouldEscape,omitempty"`
-
-		// UsageHint Optional usage hint shown for the slash command.
-		UsageHint *string `json:"usageHint,omitempty"`
-	} `json:"slashCommands,omitempty"`
-
-	// UserScopes OAuth scopes requested for Slack user tokens.
-	UserScopes *[]string `json:"userScopes,omitempty"`
-
-	// VerificationToken Legacy Slack webhook verification token.
-	VerificationToken *string `json:"verificationToken,omitempty"`
-}
-
-// ConnectConnectorCreateData7ShortcutsType Where Slack exposes the shortcut.
-type ConnectConnectorCreateData7ShortcutsType string
-
-// ConnectConnectorCreateData8 defines model for ConnectConnectorCreateData.8.
-type ConnectConnectorCreateData8 struct {
-	// AccountIdentifier Snowflake account identifier.
-	AccountIdentifier string `json:"accountIdentifier"`
-
-	// ClientName Snowflake OAuth client name.
-	ClientName *string `json:"clientName,omitempty"`
-
-	// DefaultSessionRole Default Snowflake role for created sessions.
-	DefaultSessionRole *string `json:"defaultSessionRole,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-}
-
-// ConnectConnectorCreateData9 defines model for ConnectConnectorCreateData.9.
-type ConnectConnectorCreateData9 struct {
-	// AccountIdentifier Snowflake account identifier.
-	AccountIdentifier *string `json:"accountIdentifier,omitempty"`
-
-	// ClientName Snowflake client name.
-	ClientName *string `json:"clientName,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-}
-
-// ConnectConnectorCreateData10 defines model for ConnectConnectorCreateData.10.
-type ConnectConnectorCreateData10 struct {
-	// ProjectId Photon project ID.
-	ProjectId string `json:"projectId"`
-
-	// ProjectSecret Photon project secret.
-	ProjectSecret *string `json:"projectSecret,omitempty"`
-
-	// WebhookSecret Photon webhook verification secret.
-	WebhookSecret *string `json:"webhookSecret,omitempty"`
-}
-
-// ConnectConnectorCreateData11 defines model for ConnectConnectorCreateData.11.
-type ConnectConnectorCreateData11 map[string]interface{}
-
-// ConnectConnectorCreateResult Connector created by the request.
-type ConnectConnectorCreateResult struct {
-	// AccentColor Hex accent color (e.g., `#000000`) for branding.
-	AccentColor *string `json:"accentColor,omitempty"`
-
-	// AppTokens App-token capabilities and known grants for the connector.
-	AppTokens *struct {
-		// CrossInstallation Whether one app token can be used across installations.
-		CrossInstallation  ConnectConnectorCreateResultAppTokensCrossInstallation  `json:"crossInstallation"`
-		IsStaticCredential ConnectConnectorCreateResultAppTokensIsStaticCredential `json:"isStaticCredential"`
-
-		// PermissionsUrl Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
-		PermissionsUrl *string `json:"permissionsUrl,omitempty"`
-
-		// RequiresReinstallation True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
-		RequiresReinstallation *ConnectConnectorCreateResultAppTokensRequiresReinstallation `json:"requiresReinstallation,omitempty"`
-
-		// Scopes Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector's enabled `clientCredentials.scopes` configuration.
-		Scopes *[]string `json:"scopes,omitempty"`
-
-		// SupportedAuthorizationDetails Supported OAuth authorization-detail type names.
-		SupportedAuthorizationDetails *[]string `json:"supportedAuthorizationDetails,omitempty"`
-
-		// SupportsRefinement Whether callers can narrow app-token grants per request.
-		SupportsRefinement ConnectConnectorCreateResultAppTokensSupportsRefinement `json:"supportsRefinement"`
-
-		// SupportsResources Whether callers can request resource-specific app tokens.
-		SupportsResources *ConnectConnectorCreateResultAppTokensSupportsResources `json:"supportsResources,omitempty"`
-	} `json:"appTokens,omitempty"`
-
-	// BackgroundColor Hex background color (e.g., `#000000`) for branding.
-	BackgroundColor *string `json:"backgroundColor,omitempty"`
-
-	// ClientUrl Provider-side URL for viewing or managing the resource represented by the connector. The destination can be an app, account, phone line, or service instance, depending on the connector type.
-	ClientUrl *string `json:"clientUrl,omitempty"`
-
-	// ConnectionMethod The connection method this connector was created from, when the create request named one.
-	ConnectionMethod *string `json:"connectionMethod,omitempty"`
-
-	// CreatedAt Creation time in epoch milliseconds.
-	CreatedAt float32 `json:"createdAt"`
-
-	// CreatedBy Principal that created the connector.
-	CreatedBy *ConnectConnectorCreateResult_CreatedBy `json:"createdBy,omitempty"`
-
-	// CreationMode How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
-	CreationMode *ConnectConnectorCreateResultCreationMode `json:"creationMode,omitempty"`
-
-	// DefaultInstallationId Installation used when a token request does not specify an installation.
-	DefaultInstallationId *string `json:"defaultInstallationId,omitempty"`
-
-	// Devsite Developer website for the connected service.
-	Devsite *string `json:"devsite,omitempty"`
-
-	// DisplayName Human-readable connector name.
-	DisplayName string `json:"displayName"`
-
-	// Docsite Developer documentation for the connected service.
-	Docsite *string `json:"docsite,omitempty"`
-
-	// Events Known events this connector subscribes to (e.g. Slack bot events, GitHub webhook events). Names are type-specific and validated by the managed-create flow when forwarded to the third-party service.
-	Events *[]string `json:"events,omitempty"`
-
-	// Icon Connector branding icon. SHA-1 hash that resolves to the uploaded icon through the Vercel avatar service. Consumers render this with `https://vercel.com/api/www/avatar/{icon}`.
-	Icon *string `json:"icon,omitempty"`
-
-	// Id Stable `scl_` connector ID. Use this value directly in `{connector}`.
-	Id string `json:"id"`
-
-	// KnownStale Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
-	KnownStale *ConnectConnectorCreateResultKnownStale `json:"knownStale,omitempty"`
-
-	// Managed Managed connector metadata exposed without leaking the manager connector or installation identifiers.
-	Managed *struct {
-		// Sync Whether Vercel synchronizes provider-side configuration.
-		Sync *ConnectConnectorCreateResultManagedSync `json:"sync,omitempty"`
-	} `json:"managed,omitempty"`
-
-	// Name Connector name within the owning team.
-	Name string `json:"name"`
-
-	// RedirectUri Redirect URI registered with the third-party service for this connector, if any. Used by `startAuthorization`/`startInstallation` to replay the exact URI back to the provider's token endpoint. Absent on connectors created before this field was introduced; those callers fall back to the `https://connect.vercel.com/callback` default.
-	RedirectUri *string `json:"redirectUri,omitempty"`
-
-	// ReinstallAt Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.
-	ReinstallAt *float32 `json:"reinstallAt,omitempty"`
-
-	// Service Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses.
-	Service string `json:"service"`
-
-	// ServiceIcon Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry.
-	ServiceIcon *string `json:"serviceIcon,omitempty"`
-
-	// SupportedSubjectTypes Token subject types supported by the connector.
-	SupportedSubjectTypes []string `json:"supportedSubjectTypes"`
-
-	// SupportsIcon Whether the connector icon can propagate to the provider.
-	SupportsIcon interface{} `json:"supportsIcon"`
-
-	// SupportsInstallation Whether the connector supports an installation flow.
-	SupportsInstallation ConnectConnectorCreateResultSupportsInstallation `json:"supportsInstallation"`
-
-	// SupportsManagedEjection Whether this managed connector can disconnect from its manager.
-	SupportsManagedEjection *ConnectConnectorCreateResultSupportsManagedEjection `json:"supportsManagedEjection,omitempty"`
-
-	// SupportsRevocation Whether Connect can revoke tokens for this connector.
-	SupportsRevocation ConnectConnectorCreateResultSupportsRevocation `json:"supportsRevocation"`
-
-	// SupportsTriggers Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
-	SupportsTriggers ConnectConnectorCreateResultSupportsTriggers `json:"supportsTriggers"`
-
-	// Target Which of the service's products/surfaces this connector points at.
-	Target *string `json:"target,omitempty"`
-
-	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
-	TriggerDestinations *[]ConnectTriggerDestination `json:"triggerDestinations,omitempty"`
-
-	// Triggers Incoming trigger configuration. Only present when enabled.
-	Triggers *ConnectTriggerConfiguration `json:"triggers,omitempty"`
-
-	// Type Connector implementation type.
-	Type ConnectConnectorCreateResultType `json:"type"`
-
-	// TypeIcon Icon identifier supplied by the connector type.
-	TypeIcon *string `json:"typeIcon,omitempty"`
-
-	// TypeName Human-readable name of the connector type.
-	TypeName string `json:"typeName"`
-
-	// Uid Team-scoped UID. URL-encode this value before using it in `{connector}`.
-	Uid string `json:"uid"`
-
-	// UpdatedAt Last update time in epoch milliseconds.
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// UpdatedBy Principal that most recently updated the connector.
-	UpdatedBy *ConnectConnectorCreateResult_UpdatedBy `json:"updatedBy,omitempty"`
-
-	// UserTokens User-token capabilities and known grants for the connector.
-	UserTokens *struct {
-		// CrossInstallation Whether one user token can be used across installations.
-		CrossInstallation  ConnectConnectorCreateResultUserTokensCrossInstallation  `json:"crossInstallation"`
-		IsStaticCredential ConnectConnectorCreateResultUserTokensIsStaticCredential `json:"isStaticCredential"`
-
-		// ManualCredentialInput User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
-		ManualCredentialInput *ConnectConnectorCreateResultUserTokensManualCredentialInput `json:"manualCredentialInput,omitempty"`
-
-		// Scopes Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector's enabled `userAuthorization.scopes` configuration.
-		Scopes *[]string `json:"scopes,omitempty"`
-
-		// SupportedAuthorizationDetails Supported OAuth authorization-detail type names.
-		SupportedAuthorizationDetails *[]string `json:"supportedAuthorizationDetails,omitempty"`
-
-		// SupportsRefinement Whether callers can narrow user-token grants per request.
-		SupportsRefinement ConnectConnectorCreateResultUserTokensSupportsRefinement `json:"supportsRefinement"`
-
-		// SupportsResources Whether callers can request resource-specific user tokens.
-		SupportsResources *ConnectConnectorCreateResultUserTokensSupportsResources `json:"supportsResources,omitempty"`
-	} `json:"userTokens,omitempty"`
-
-	// Website Public website for the connected service.
-	Website *string `json:"website,omitempty"`
-}
-
-// ConnectConnectorCreateResultAppTokensCrossInstallation Whether one app token can be used across installations.
-type ConnectConnectorCreateResultAppTokensCrossInstallation bool
-
-// ConnectConnectorCreateResultAppTokensIsStaticCredential defines model for ConnectConnectorCreateResult.AppTokens.IsStaticCredential.
-type ConnectConnectorCreateResultAppTokensIsStaticCredential bool
-
-// ConnectConnectorCreateResultAppTokensRequiresReinstallation True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
-type ConnectConnectorCreateResultAppTokensRequiresReinstallation bool
-
-// ConnectConnectorCreateResultAppTokensSupportsRefinement Whether callers can narrow app-token grants per request.
-type ConnectConnectorCreateResultAppTokensSupportsRefinement bool
-
-// ConnectConnectorCreateResultAppTokensSupportsResources Whether callers can request resource-specific app tokens.
-type ConnectConnectorCreateResultAppTokensSupportsResources bool
-
-// ConnectConnectorCreateResultCreatedBy0 Principal that originally created the connector — either a Vercel user (interactive dashboard / CLI flow) or a Vercel deployment (OIDC-authenticated project, used by runtime auto-provisioning). See {@link ConnexPrincipal}. Optional: pre-existing rows from before this shape was introduced may carry no attribution at all.
-type ConnectConnectorCreateResultCreatedBy0 struct {
-	// Id Vercel user ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorCreateResultCreatedBy0Type `json:"type"`
-}
-
-// ConnectConnectorCreateResultCreatedBy0Type Principal kind.
-type ConnectConnectorCreateResultCreatedBy0Type string
-
-// ConnectConnectorCreateResultCreatedBy1 Principal that originally created the connector — either a Vercel user (interactive dashboard / CLI flow) or a Vercel deployment (OIDC-authenticated project, used by runtime auto-provisioning). See {@link ConnexPrincipal}. Optional: pre-existing rows from before this shape was introduced may carry no attribution at all.
-type ConnectConnectorCreateResultCreatedBy1 struct {
-	// Environment Deployment environment of the project principal.
-	Environment ConnectConnectorCreateResult_CreatedBy_1_Environment `json:"environment"`
-
-	// Id Vercel project ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorCreateResultCreatedBy1Type `json:"type"`
-}
-
-// ConnectConnectorCreateResultCreatedBy1Environment0 defines model for ConnectConnectorCreateResult.CreatedBy.1.Environment.0.
-type ConnectConnectorCreateResultCreatedBy1Environment0 = string
-
-// ConnectConnectorCreateResultCreatedBy1Environment1 defines model for ConnectConnectorCreateResult.CreatedBy.1.Environment.1.
-type ConnectConnectorCreateResultCreatedBy1Environment1 string
-
-// ConnectConnectorCreateResult_CreatedBy_1_Environment Deployment environment of the project principal.
-type ConnectConnectorCreateResult_CreatedBy_1_Environment struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreateResultCreatedBy1Type Principal kind.
-type ConnectConnectorCreateResultCreatedBy1Type string
-
-// ConnectConnectorCreateResult_CreatedBy Principal that created the connector.
-type ConnectConnectorCreateResult_CreatedBy struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreateResultCreationMode How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
-type ConnectConnectorCreateResultCreationMode string
-
-// ConnectConnectorCreateResultKnownStale Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
-type ConnectConnectorCreateResultKnownStale bool
-
-// ConnectConnectorCreateResultManagedSync Whether Vercel synchronizes provider-side configuration.
-type ConnectConnectorCreateResultManagedSync bool
-
-// ConnectConnectorCreateResultSupportsInstallation Whether the connector supports an installation flow.
-type ConnectConnectorCreateResultSupportsInstallation bool
-
-// ConnectConnectorCreateResultSupportsManagedEjection Whether this managed connector can disconnect from its manager.
-type ConnectConnectorCreateResultSupportsManagedEjection bool
-
-// ConnectConnectorCreateResultSupportsRevocation Whether Connect can revoke tokens for this connector.
-type ConnectConnectorCreateResultSupportsRevocation bool
-
-// ConnectConnectorCreateResultSupportsTriggers Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
-type ConnectConnectorCreateResultSupportsTriggers bool
-
-// ConnectConnectorCreateResultType Connector implementation type.
-type ConnectConnectorCreateResultType string
-
-// ConnectConnectorCreateResultUpdatedBy0 Principal that most recently mutated the connector. Same shape as {@link createdBy} but tracks the most recent updater, not the original creator. At create time the two fields point at the same principal; they diverge on the first subsequent update.
-type ConnectConnectorCreateResultUpdatedBy0 struct {
-	// Id Vercel user ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorCreateResultUpdatedBy0Type `json:"type"`
-}
-
-// ConnectConnectorCreateResultUpdatedBy0Type Principal kind.
-type ConnectConnectorCreateResultUpdatedBy0Type string
-
-// ConnectConnectorCreateResultUpdatedBy1 Principal that most recently mutated the connector. Same shape as {@link createdBy} but tracks the most recent updater, not the original creator. At create time the two fields point at the same principal; they diverge on the first subsequent update.
-type ConnectConnectorCreateResultUpdatedBy1 struct {
-	// Environment Deployment environment of the project principal.
-	Environment ConnectConnectorCreateResult_UpdatedBy_1_Environment `json:"environment"`
-
-	// Id Vercel project ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorCreateResultUpdatedBy1Type `json:"type"`
-}
-
-// ConnectConnectorCreateResultUpdatedBy1Environment0 defines model for ConnectConnectorCreateResult.UpdatedBy.1.Environment.0.
-type ConnectConnectorCreateResultUpdatedBy1Environment0 = string
-
-// ConnectConnectorCreateResultUpdatedBy1Environment1 defines model for ConnectConnectorCreateResult.UpdatedBy.1.Environment.1.
-type ConnectConnectorCreateResultUpdatedBy1Environment1 string
-
-// ConnectConnectorCreateResult_UpdatedBy_1_Environment Deployment environment of the project principal.
-type ConnectConnectorCreateResult_UpdatedBy_1_Environment struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreateResultUpdatedBy1Type Principal kind.
-type ConnectConnectorCreateResultUpdatedBy1Type string
-
-// ConnectConnectorCreateResult_UpdatedBy Principal that most recently updated the connector.
-type ConnectConnectorCreateResult_UpdatedBy struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreateResultUserTokensCrossInstallation Whether one user token can be used across installations.
-type ConnectConnectorCreateResultUserTokensCrossInstallation bool
-
-// ConnectConnectorCreateResultUserTokensIsStaticCredential defines model for ConnectConnectorCreateResult.UserTokens.IsStaticCredential.
-type ConnectConnectorCreateResultUserTokensIsStaticCredential bool
-
-// ConnectConnectorCreateResultUserTokensManualCredentialInput User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
-type ConnectConnectorCreateResultUserTokensManualCredentialInput bool
-
-// ConnectConnectorCreateResultUserTokensSupportsRefinement Whether callers can narrow user-token grants per request.
-type ConnectConnectorCreateResultUserTokensSupportsRefinement bool
-
-// ConnectConnectorCreateResultUserTokensSupportsResources Whether callers can request resource-specific user tokens.
-type ConnectConnectorCreateResultUserTokensSupportsResources bool
-
-// ConnectConnectorList Page of connectors.
-type ConnectConnectorList struct {
-	// Connectors Connectors in this page.
-	Connectors []ConnectConnector `json:"connectors"`
-
-	// Pagination Cursor for the next page.
-	Pagination ConnectPagination `json:"pagination"`
-}
-
-// ConnectConnectorProjectConnectionList Page of projects connected to a connector.
-type ConnectConnectorProjectConnectionList struct {
-	// Pagination Cursor for the next page.
-	Pagination ConnectPagination `json:"pagination"`
-
-	// Projects Project connections in this page.
-	Projects []ConnectProjectConnection `json:"projects"`
-}
-
-// ConnectConnectorUpdateData Provider configuration fields for the connector type.
-type ConnectConnectorUpdateData struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUpdateData0 defines model for ConnectConnectorUpdateData.0.
-type ConnectConnectorUpdateData0 struct {
-	// AuthorizationUrlParams Extra query parameters added to authorization URLs.
-	AuthorizationUrlParams *map[string]string `json:"authorizationUrlParams,omitempty"`
-
-	// ClientAssertion `private_key_jwt` client assertion settings.
-	ClientAssertion *struct {
-		// Claims Additional claims included in the client assertion.
-		Claims *map[string]interface{} `json:"claims,omitempty"`
-
-		// Ttl Client assertion lifetime in seconds.
-		Ttl *float32 `json:"ttl,omitempty"`
-
-		// Type OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.
-		Type *string `json:"type,omitempty"`
-	} `json:"clientAssertion,omitempty"`
-
-	// ClientCredentials Client credentials grant settings.
-	ClientCredentials *struct {
-		// Enabled Whether this OAuth grant is enabled.
-		Enabled bool `json:"enabled"`
-
-		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
-		Scopes *[]string `json:"scopes,omitempty"`
-	} `json:"clientCredentials,omitempty"`
-
-	// ClientId OAuth client ID.
-	ClientId *string `json:"clientId,omitempty"`
-
-	// ClientName OAuth client name.
-	ClientName *string `json:"clientName,omitempty"`
-
-	// ClientSecret OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// CodeChallengeMethod PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.
-	CodeChallengeMethod *string `json:"codeChallengeMethod,omitempty"`
-
-	// DefaultAudience Default audience used when a token request omits one. An empty string clears the default.
-	DefaultAudience *string `json:"defaultAudience,omitempty"`
-
-	// DefaultResource Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.
-	DefaultResource *string `json:"defaultResource,omitempty"`
-
-	// DefaultTokenExpiresIn Default token lifetime in seconds to use when the token response omits expires_in.
-	DefaultTokenExpiresIn *float32 `json:"defaultTokenExpiresIn,omitempty"`
-
-	// ForwardedClaims Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
-	ForwardedClaims *struct {
-		// IdToken ID token claim names that Connect can expose.
-		IdToken *[]string `json:"idToken,omitempty"`
-	} `json:"forwardedClaims,omitempty"`
-
-	// JwtBearer JWT bearer grant settings.
-	JwtBearer *struct {
-		// AdditionalClaims Additional claims included in generated JWT assertions.
-		AdditionalClaims *map[string]interface{} `json:"additionalClaims,omitempty"`
-
-		// Aud Default JWT audience claim.
-		Aud *string `json:"aud,omitempty"`
-
-		// Enabled Whether JWT bearer grants are enabled.
-		Enabled *bool `json:"enabled,omitempty"`
-
-		// Iss Default JWT issuer claim.
-		Iss *string `json:"iss,omitempty"`
-
-		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
-		Scopes *[]string `json:"scopes,omitempty"`
-
-		// Sub Default JWT subject claim.
-		Sub *string `json:"sub,omitempty"`
-
-		// Ttl JWT lifetime in seconds.
-		Ttl *float32 `json:"ttl,omitempty"`
-
-		// UseClientCredentials Whether JWT bearer requests also use client credentials.
-		UseClientCredentials *bool `json:"useClientCredentials,omitempty"`
-	} `json:"jwtBearer,omitempty"`
-
-	// PkceRequired Whether user authorization must use PKCE.
-	PkceRequired *bool `json:"pkceRequired,omitempty"`
-
-	// RefreshTokens Refresh token settings.
-	RefreshTokens *struct {
-		// Enabled Whether this OAuth grant is enabled.
-		Enabled bool `json:"enabled"`
-	} `json:"refreshTokens,omitempty"`
-
-	// ResponseType OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.
-	ResponseType *string `json:"responseType,omitempty"`
-
-	// ServerConfig Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
-	ServerConfig *ConnectConnectorUpdateData_0_ServerConfig `json:"serverConfig,omitempty"`
-
-	// ServerUrl Authorization server base URL used for discovery.
-	ServerUrl *string `json:"serverUrl,omitempty"`
-
-	// TokenEndpointAuthMethod OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.
-	TokenEndpointAuthMethod *string `json:"tokenEndpointAuthMethod,omitempty"`
-
-	// UserAuthorization User authorization grant settings.
-	UserAuthorization *struct {
-		// Enabled Whether this OAuth grant is enabled.
-		Enabled bool `json:"enabled"`
-
-		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
-		Scopes *[]string `json:"scopes,omitempty"`
-	} `json:"userAuthorization,omitempty"`
-}
-
-// ConnectConnectorUpdateData0ServerConfigJwksKeysUse Intended key use: signing or encryption.
-type ConnectConnectorUpdateData0ServerConfigJwksKeysUse string
-
-// ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item defines model for ConnectConnectorUpdateData.0.ServerConfig.Jwks.Keys.Item.
-type ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item struct {
-	// Alg Algorithm intended for this key.
-	Alg *string `json:"alg,omitempty"`
-
-	// KeyOps Operations permitted for this key.
-	KeyOps *[]string `json:"key_ops,omitempty"`
-
-	// Kid JSON Web Key identifier.
-	Kid *string `json:"kid,omitempty"`
-
-	// Kty JSON Web Key type.
-	Kty string `json:"kty"`
-
-	// Use Intended key use: signing or encryption.
-	Use                  *ConnectConnectorUpdateData0ServerConfigJwksKeysUse `json:"use,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:"-"`
-}
-
-// ConnectConnectorUpdateData_0_ServerConfig_Jwks Inline authorization server JSON Web Key Set.
-type ConnectConnectorUpdateData_0_ServerConfig_Jwks struct {
-	// Keys JSON Web Keys published by the authorization server.
-	Keys                 []ConnectConnectorUpdateData_0_ServerConfig_Jwks_Keys_Item `json:"keys"`
-	AdditionalProperties map[string]interface{}                                     `json:"-"`
-}
-
-// ConnectConnectorUpdateData_0_ServerConfig Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
-type ConnectConnectorUpdateData_0_ServerConfig struct {
-	// AuthorizationDetailsTypesSupported OAuth authorization-detail types supported by the server.
-	AuthorizationDetailsTypesSupported *[]string `json:"authorization_details_types_supported,omitempty"`
-
-	// AuthorizationEndpoint OAuth authorization endpoint URL.
-	AuthorizationEndpoint *string `json:"authorization_endpoint,omitempty"`
-
-	// AuthorizationGrantProfilesSupported Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support.
-	AuthorizationGrantProfilesSupported *[]string `json:"authorization_grant_profiles_supported,omitempty"`
-
-	// ClaimTypesSupported OpenID Connect claim value types supported by the server.
-	ClaimTypesSupported *[]string `json:"claim_types_supported,omitempty"`
-
-	// ClaimsParameterSupported Whether authorization requests can use the claims parameter.
-	ClaimsParameterSupported *bool `json:"claims_parameter_supported,omitempty"`
-
-	// ClaimsSupported Claims that the authorization server can return.
-	ClaimsSupported *[]string `json:"claims_supported,omitempty"`
-
-	// ClientIdMetadataDocumentSupported Whether the server supports OAuth client ID metadata documents.
-	ClientIdMetadataDocumentSupported *bool `json:"client_id_metadata_document_supported,omitempty"`
-
-	// CodeChallengeMethodsSupported PKCE code challenge methods supported by the server.
-	CodeChallengeMethodsSupported *[]string `json:"code_challenge_methods_supported,omitempty"`
-
-	// DeviceAuthorizationEndpoint OAuth device authorization endpoint URL.
-	DeviceAuthorizationEndpoint *string `json:"device_authorization_endpoint,omitempty"`
-
-	// EndSessionEndpoint OpenID Connect session termination endpoint URL.
-	EndSessionEndpoint *string `json:"end_session_endpoint,omitempty"`
-
-	// GrantTypesSupported OAuth grant types supported by the server.
-	GrantTypesSupported *[]string `json:"grant_types_supported,omitempty"`
-
-	// IdTokenEncryptionAlgValuesSupported Key management algorithms supported for encrypted ID tokens.
-	IdTokenEncryptionAlgValuesSupported *[]string `json:"id_token_encryption_alg_values_supported,omitempty"`
-
-	// IdTokenEncryptionEncValuesSupported Content encryption algorithms supported for encrypted ID tokens.
-	IdTokenEncryptionEncValuesSupported *[]string `json:"id_token_encryption_enc_values_supported,omitempty"`
-
-	// IdTokenSigningAlgValuesSupported Signing algorithms supported for ID tokens.
-	IdTokenSigningAlgValuesSupported *[]string `json:"id_token_signing_alg_values_supported,omitempty"`
-
-	// IdentityChainingRequestedTokenTypesSupported Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support.
-	IdentityChainingRequestedTokenTypesSupported *[]string `json:"identity_chaining_requested_token_types_supported,omitempty"`
-
-	// IntrospectionEndpoint OAuth token introspection endpoint URL.
-	IntrospectionEndpoint *string `json:"introspection_endpoint,omitempty"`
-
-	// Issuer Authorization server issuer URL.
-	Issuer *string `json:"issuer,omitempty"`
-
-	// Jwks Inline authorization server JSON Web Key Set.
-	Jwks *ConnectConnectorUpdateData_0_ServerConfig_Jwks `json:"jwks,omitempty"`
-
-	// JwksUri URL of the authorization server JSON Web Key Set.
-	JwksUri *string `json:"jwks_uri,omitempty"`
-
-	// LogoUri Authorization server logo URL.
-	LogoUri *string `json:"logo_uri,omitempty"`
-
-	// OpPolicyUri Authorization server privacy policy URL.
-	OpPolicyUri *string `json:"op_policy_uri,omitempty"`
-
-	// OpTosUri Authorization server terms of service URL.
-	OpTosUri *string `json:"op_tos_uri,omitempty"`
-
-	// PromptValuesSupported Authorization prompt values supported by the server.
-	PromptValuesSupported *[]string `json:"prompt_values_supported,omitempty"`
-
-	// RegistrationEndpoint OAuth dynamic client registration endpoint URL.
-	RegistrationEndpoint *string `json:"registration_endpoint,omitempty"`
-
-	// RequestParameterSupported Whether authorization requests can use signed request objects.
-	RequestParameterSupported *bool `json:"request_parameter_supported,omitempty"`
-
-	// RequestUriParameterSupported Whether authorization requests can use request_uri.
-	RequestUriParameterSupported *bool `json:"request_uri_parameter_supported,omitempty"`
-
-	// RequireRequestUriRegistration Whether request_uri values must be registered in advance.
-	RequireRequestUriRegistration *bool `json:"require_request_uri_registration,omitempty"`
-
-	// ResponseModesSupported OAuth response modes supported by the server.
-	ResponseModesSupported *[]string `json:"response_modes_supported,omitempty"`
-
-	// ResponseTypesSupported OAuth response types supported by the server.
-	ResponseTypesSupported *[]string `json:"response_types_supported,omitempty"`
-
-	// RevocationEndpoint OAuth token revocation endpoint URL.
-	RevocationEndpoint *string `json:"revocation_endpoint,omitempty"`
-
-	// ScopesSupported OAuth scopes supported by the server.
-	ScopesSupported *[]string `json:"scopes_supported,omitempty"`
-
-	// ServiceDocumentation Authorization server documentation URL.
-	ServiceDocumentation *string `json:"service_documentation,omitempty"`
-
-	// SubjectTypesSupported OpenID Connect subject identifier types supported by the server.
-	SubjectTypesSupported *[]string `json:"subject_types_supported,omitempty"`
-
-	// TokenEndpoint OAuth token endpoint URL.
-	TokenEndpoint *string `json:"token_endpoint,omitempty"`
-
-	// TokenEndpointAuthMethodsSupported Token endpoint client authentication methods supported by the server.
-	TokenEndpointAuthMethodsSupported *[]string `json:"token_endpoint_auth_methods_supported,omitempty"`
-
-	// TokenEndpointAuthSigningAlgValuesSupported Signing algorithms supported for token endpoint authentication.
-	TokenEndpointAuthSigningAlgValuesSupported *[]string `json:"token_endpoint_auth_signing_alg_values_supported,omitempty"`
-
-	// UserinfoEndpoint OpenID Connect UserInfo endpoint URL.
-	UserinfoEndpoint     *string                `json:"userinfo_endpoint,omitempty"`
-	AdditionalProperties map[string]interface{} `json:"-"`
-}
-
-// ConnectConnectorUpdateData1 defines model for ConnectConnectorUpdateData.1.
-type ConnectConnectorUpdateData1 struct {
-	// Instructions Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
-	Instructions *ConnectConnectorUpdateData_1_Instructions `json:"instructions,omitempty"`
-
-	// ToAdd API key values to add.
-	ToAdd *[]struct {
-		// ExpiresAt The timestamp when the API key value expires in milliseconds.
-		ExpiresAt *int `json:"expiresAt,omitempty"`
-
-		// Scope Optional scope associated with the API key value.
-		Scope *string `json:"scope,omitempty"`
-
-		// Value API key value.
-		Value *string `json:"value,omitempty"`
-	} `json:"toAdd,omitempty"`
-
-	// ToDelete Stored API key value IDs to delete.
-	ToDelete *[]string `json:"toDelete,omitempty"`
-
-	// ToUpdate Existing API key values to update.
-	ToUpdate *[]struct {
-		// ExpiresAt The timestamp when the API key value expires in milliseconds.
-		ExpiresAt *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt `json:"expiresAt,omitempty"`
-
-		// Id Stored API key value ID.
-		Id string `json:"id"`
-
-		// Scope Replacement scope. Use null to remove the scope.
-		Scope *ConnectConnectorUpdateData_1_ToUpdate_Scope `json:"scope,omitempty"`
-
-		// Value Replacement API key value. Use null to keep the stored value.
-		Value *ConnectConnectorUpdateData_1_ToUpdate_Value `json:"value,omitempty"`
-	} `json:"toUpdate,omitempty"`
-}
-
-// ConnectConnectorUpdateData1Instructions0 defines model for ConnectConnectorUpdateData.1.Instructions.0.
-type ConnectConnectorUpdateData1Instructions0 = string
-
-// ConnectConnectorUpdateData1Instructions1 defines model for ConnectConnectorUpdateData.1.Instructions.1.
-type ConnectConnectorUpdateData1Instructions1 = string
-
-// ConnectConnectorUpdateData_1_Instructions Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
-type ConnectConnectorUpdateData_1_Instructions struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUpdateData1ToUpdateExpiresAt0 defines model for ConnectConnectorUpdateData.1.ToUpdate.ExpiresAt.0.
-type ConnectConnectorUpdateData1ToUpdateExpiresAt0 = int
-
-// ConnectConnectorUpdateData1ToUpdateExpiresAt1 defines model for ConnectConnectorUpdateData.1.ToUpdate.ExpiresAt.1.
-type ConnectConnectorUpdateData1ToUpdateExpiresAt1 = string
-
-// ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt The timestamp when the API key value expires in milliseconds.
-type ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUpdateData1ToUpdateScope0 defines model for ConnectConnectorUpdateData.1.ToUpdate.Scope.0.
-type ConnectConnectorUpdateData1ToUpdateScope0 = string
-
-// ConnectConnectorUpdateData1ToUpdateScope1 defines model for ConnectConnectorUpdateData.1.ToUpdate.Scope.1.
-type ConnectConnectorUpdateData1ToUpdateScope1 = string
-
-// ConnectConnectorUpdateData_1_ToUpdate_Scope Replacement scope. Use null to remove the scope.
-type ConnectConnectorUpdateData_1_ToUpdate_Scope struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUpdateData1ToUpdateValue0 defines model for ConnectConnectorUpdateData.1.ToUpdate.Value.0.
-type ConnectConnectorUpdateData1ToUpdateValue0 = string
-
-// ConnectConnectorUpdateData1ToUpdateValue1 defines model for ConnectConnectorUpdateData.1.ToUpdate.Value.1.
-type ConnectConnectorUpdateData1ToUpdateValue1 = string
-
-// ConnectConnectorUpdateData_1_ToUpdate_Value Replacement API key value. Use null to keep the stored value.
-type ConnectConnectorUpdateData_1_ToUpdate_Value struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUpdateData2 defines model for ConnectConnectorUpdateData.2.
-type ConnectConnectorUpdateData2 struct {
-	// AppId GitHub App numeric ID.
-	AppId *int `json:"appId,omitempty"`
-
-	// AppName GitHub App display name.
-	AppName *string `json:"appName,omitempty"`
-
-	// AppSlug GitHub App slug.
-	AppSlug *string `json:"appSlug,omitempty"`
-
-	// ClientId GitHub App OAuth client ID.
-	ClientId *string `json:"clientId,omitempty"`
-
-	// ClientSecret GitHub App OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-
-	// Owner GitHub App owner.
-	Owner *struct {
-		// Id GitHub App owner numeric ID.
-		Id int `json:"id"`
-
-		// Name GitHub App owner display name.
-		Name *string `json:"name,omitempty"`
-
-		// Slug GitHub App owner login.
-		Slug string `json:"slug"`
-
-		// Type GitHub App owner type.
-		Type ConnectConnectorUpdateData2OwnerType `json:"type"`
-	} `json:"owner,omitempty"`
-
-	// PrivateKeyPem GitHub App private key in PEM format.
-	PrivateKeyPem *string `json:"privateKeyPem,omitempty"`
-
-	// WebhookSecret GitHub App webhook secret.
-	WebhookSecret *string `json:"webhookSecret,omitempty"`
-}
-
-// ConnectConnectorUpdateData2OwnerType GitHub App owner type.
-type ConnectConnectorUpdateData2OwnerType string
-
-// ConnectConnectorUpdateData3 defines model for ConnectConnectorUpdateData.3.
-type ConnectConnectorUpdateData3 struct {
-	// AppId Linear application ID.
-	AppId *string `json:"appId,omitempty"`
-
-	// AppName Linear application name.
-	AppName *string `json:"appName,omitempty"`
-
-	// AppScopes OAuth scopes requested for Linear application tokens.
-	AppScopes *[]string `json:"appScopes,omitempty"`
-
-	// Application Linear OAuth application metadata.
-	Application *struct {
-		// ClientId Linear OAuth client ID.
-		ClientId string `json:"clientId"`
-
-		// CreatedAt Linear OAuth application creation timestamp.
-		CreatedAt *string `json:"createdAt,omitempty"`
-
-		// Description Linear OAuth application description.
-		Description *string `json:"description,omitempty"`
-
-		// Developer Linear OAuth application developer name.
-		Developer *string `json:"developer,omitempty"`
-
-		// DeveloperUrl Linear OAuth application developer URL.
-		DeveloperUrl *string `json:"developerUrl,omitempty"`
-
-		// Distribution Linear OAuth application distribution mode.
-		Distribution *string `json:"distribution,omitempty"`
-
-		// Id Linear OAuth application ID.
-		Id string `json:"id"`
-
-		// ImageUrl Linear OAuth application image URL.
-		ImageUrl *string `json:"imageUrl,omitempty"`
-
-		// Name Linear OAuth application name.
-		Name string `json:"name"`
-
-		// RedirectUris Registered redirect URIs for the Linear OAuth application.
-		RedirectUris *[]string `json:"redirectUris,omitempty"`
-
-		// UpdatedAt Linear OAuth application update timestamp.
-		UpdatedAt *string `json:"updatedAt,omitempty"`
-
-		// WebhookEnabled Whether the Linear webhook is enabled.
-		WebhookEnabled *bool `json:"webhookEnabled,omitempty"`
-
-		// WebhookResourceTypes Linear resource types delivered to the webhook.
-		WebhookResourceTypes *[]string `json:"webhookResourceTypes,omitempty"`
-
-		// WebhookUrl Linear webhook URL.
-		WebhookUrl *string `json:"webhookUrl,omitempty"`
-	} `json:"application,omitempty"`
-
-	// ClientId Linear OAuth client ID.
-	ClientId *string `json:"clientId,omitempty"`
-
-	// ClientSecret Linear OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-
-	// OwnerOrganization Linear organization that owns the OAuth application.
-	OwnerOrganization *struct {
-		// Id Linear organization ID.
-		Id string `json:"id"`
-
-		// LogoUrl Linear organization logo URL.
-		LogoUrl *string `json:"logoUrl,omitempty"`
-
-		// Name Linear organization name.
-		Name string `json:"name"`
-
-		// Slug Linear organization slug.
-		Slug string `json:"slug"`
-	} `json:"ownerOrganization,omitempty"`
-
-	// UserScopes OAuth scopes requested for Linear user tokens.
-	UserScopes *[]string `json:"userScopes,omitempty"`
-
-	// WebhookSecret Linear webhook verification secret.
-	WebhookSecret *string `json:"webhookSecret,omitempty"`
-}
-
-// ConnectConnectorUpdateData4 defines model for ConnectConnectorUpdateData.4.
-type ConnectConnectorUpdateData4 struct {
-	// ConsumerKey Salesforce connected app consumer key.
-	ConsumerKey *string `json:"consumerKey,omitempty"`
-
-	// ConsumerSecret Salesforce connected app consumer secret.
-	ConsumerSecret *string `json:"consumerSecret,omitempty"`
-
-	// LoginHost Salesforce login host, such as login.salesforce.com.
-	LoginHost *string `json:"loginHost,omitempty"`
-}
-
-// ConnectConnectorUpdateData5 defines model for ConnectConnectorUpdateData.5.
-type ConnectConnectorUpdateData5 struct {
-	// AppHome App Home settings for the managed Slack app. Updates preserve omitted settings.
-	AppHome *struct {
-		// HomeTabEnabled Enable the Home tab for views.publish. Defaults to false for new apps.
-		HomeTabEnabled *bool `json:"homeTabEnabled,omitempty"`
-
-		// MessagesTabEnabled Enable the Messages tab. Defaults to true for new apps.
-		MessagesTabEnabled *bool `json:"messagesTabEnabled,omitempty"`
-
-		// MessagesTabReadOnlyEnabled Make the Messages tab read-only. Defaults to false for new apps.
-		MessagesTabReadOnlyEnabled *bool `json:"messagesTabReadOnlyEnabled,omitempty"`
-	} `json:"appHome,omitempty"`
-
-	// AppId Slack app ID.
-	AppId *string `json:"appId,omitempty"`
-
-	// AppName Slack app display name.
-	AppName *string `json:"appName,omitempty"`
-
-	// BotScopes OAuth scopes requested for Slack bot tokens.
-	BotScopes *[]string `json:"botScopes,omitempty"`
-
-	// ClientId Slack app OAuth client ID.
-	ClientId *string `json:"clientId,omitempty"`
-
-	// ClientSecret Slack app OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// Extras Additional provider metadata stored with the connector.
-	Extras *map[string]interface{} `json:"extras,omitempty"`
-
-	// RichPreviews Work Object preview settings for the managed Slack app. Updates preserve omitted settings.
-	RichPreviews *struct {
-		// EntityTypes Entity types to preview. An empty array clears the configured types.
-		EntityTypes *[]string `json:"entityTypes,omitempty"`
-
-		// IsActive Enable Work Object previews. Defaults to false for new apps.
-		IsActive *bool `json:"isActive,omitempty"`
-	} `json:"richPreviews,omitempty"`
-
-	// Shortcuts Global and message shortcuts configured for the Slack app.
-	Shortcuts *[]struct {
-		// CallbackId Identifier included in the shortcut callback.
-		CallbackId string `json:"callbackId"`
-
-		// Description Description shown for the shortcut in Slack.
-		Description string `json:"description"`
-
-		// Name Shortcut display name.
-		Name string `json:"name"`
-
-		// Type Where Slack exposes the shortcut.
-		Type ConnectConnectorUpdateData5ShortcutsType `json:"type"`
-	} `json:"shortcuts,omitempty"`
-
-	// SigningSecret Slack request signing secret.
-	SigningSecret *string `json:"signingSecret,omitempty"`
-
-	// SlackTeam Slack workspace metadata.
-	SlackTeam *struct {
-		// Domain Slack workspace domain.
-		Domain *string `json:"domain,omitempty"`
-
-		// Id Slack workspace ID.
-		Id string `json:"id"`
-
-		// Name Slack workspace name.
-		Name *string `json:"name,omitempty"`
-	} `json:"slackTeam,omitempty"`
-
-	// SlashCommands Slash commands configured for the managed Slack app.
-	SlashCommands *[]struct {
-		// Command Slash command including its leading slash.
-		Command string `json:"command"`
-
-		// Description Description shown for the slash command in Slack.
-		Description string `json:"description"`
-
-		// ShouldEscape Whether Slack should escape command arguments.
-		ShouldEscape *bool `json:"shouldEscape,omitempty"`
-
-		// UsageHint Optional usage hint shown for the slash command.
-		UsageHint *string `json:"usageHint,omitempty"`
-	} `json:"slashCommands,omitempty"`
-
-	// UserScopes OAuth scopes requested for Slack user tokens.
-	UserScopes *[]string `json:"userScopes,omitempty"`
-
-	// VerificationToken Legacy Slack webhook verification token.
-	VerificationToken *string `json:"verificationToken,omitempty"`
-}
-
-// ConnectConnectorUpdateData5ShortcutsType Where Slack exposes the shortcut.
-type ConnectConnectorUpdateData5ShortcutsType string
-
-// ConnectConnectorUpdateData6 defines model for ConnectConnectorUpdateData.6.
-type ConnectConnectorUpdateData6 struct {
-	// AccountIdentifier Snowflake account identifier.
-	AccountIdentifier *string `json:"accountIdentifier,omitempty"`
-
-	// DefaultSessionRole Default Snowflake role for created sessions.
-	DefaultSessionRole *string `json:"defaultSessionRole,omitempty"`
-}
-
-// ConnectConnectorUpdateData7 defines model for ConnectConnectorUpdateData.7.
-type ConnectConnectorUpdateData7 struct {
-	// AccountIdentifier Snowflake account identifier.
-	AccountIdentifier *string `json:"accountIdentifier,omitempty"`
-}
-
-// ConnectConnectorUpdateData8 defines model for ConnectConnectorUpdateData.8.
-type ConnectConnectorUpdateData8 struct {
-	// ApiToken Linq partner API token for the shared line.
-	ApiToken     *string   `json:"apiToken,omitempty"`
-	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
-}
-
-// ConnectConnectorUpdateData9 defines model for ConnectConnectorUpdateData.9.
-type ConnectConnectorUpdateData9 struct {
-	// ApiKeyId Sendblue API key id (`sb-api-key-id`).
-	ApiKeyId *string `json:"apiKeyId,omitempty"`
-
-	// ApiSecretKey Sendblue API secret key (`sb-api-secret-key`).
-	ApiSecretKey *string `json:"apiSecretKey,omitempty"`
-
-	// PhoneNumbers E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
-	PhoneNumbers *[]string `json:"phoneNumbers,omitempty"`
-}
-
-// ConnectConnectorUpdateData10 defines model for ConnectConnectorUpdateData.10.
-type ConnectConnectorUpdateData10 struct {
-	// ProjectSecret Photon project secret.
-	ProjectSecret *string `json:"projectSecret,omitempty"`
-
-	// RepairWebhook Whether Connect should recreate the Photon webhook.
-	RepairWebhook *bool `json:"repairWebhook,omitempty"`
-
-	// WebhookSecret Photon webhook verification secret.
-	WebhookSecret *string `json:"webhookSecret,omitempty"`
-}
-
-// ConnectConnectorUpdateData11 defines model for ConnectConnectorUpdateData.11.
-type ConnectConnectorUpdateData11 map[string]interface{}
-
-// ConnectConnectorUpdateResult Updated connector and any required provider follow-up actions.
-type ConnectConnectorUpdateResult struct {
-	// Connector A connector that defines how Vercel accesses an external service.
-	Connector ConnectConnector `json:"connector"`
-
-	// ReconsentNeeded Existing authorizations no longer cover the connector's configured scopes, so they must be re-authorized.
-	ReconsentNeeded *ConnectReconsent `json:"reconsentNeeded,omitempty"`
-
-	// ReinstallNeeded When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
-	ReinstallNeeded *ConnectConnectorUpdateResultReinstallNeeded `json:"reinstallNeeded,omitempty"`
-
-	// ServiceSync Provider-side configuration synchronization result.
-	ServiceSync *ConnectServiceSync `json:"serviceSync,omitempty"`
-}
-
-// ConnectConnectorUpdateResultReinstallNeeded When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
-type ConnectConnectorUpdateResultReinstallNeeded bool
-
-// ConnectCreateConnectorRequest Create a connector with full provider configuration or with a known service connection method.
-type ConnectCreateConnectorRequest struct {
-	// AccentColor Branding accent color (6-digit hex, for example
-	AccentColor *string `json:"accentColor,omitempty"`
-
-	// BackgroundColor Branding background color (6-digit hex, for example
-	BackgroundColor *string `json:"backgroundColor,omitempty"`
-
-	// ConnectionMethod Connection method slug of the service. Use it with service to select preset configuration.
-	ConnectionMethod *string `json:"connectionMethod,omitempty"`
-
-	// Data Provider configuration. With type, provide the complete configuration for that type. With service and connectionMethod, provide only credentials and preferences; Connect supplies the type, endpoints, templates, and defaults. Other connector types accept an arbitrary object.
-	Data ConnectConnectorCreateData `json:"data"`
-
-	// Environments Environments for the project connection. Requires projectId. Use one or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
-	Environments *[]ConnectCreateConnectorRequest_Environments_Item `json:"environments,omitempty"`
-
-	// Events Default trigger events for this connector.
-	Events *[]string `json:"events,omitempty"`
-
-	// Icon SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes.
-	//
-	// First compute the digest and upload the raw image with [POST /v2/files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files). Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest.
-	//
-	// ```js
-	// import { createHash } from 'node:crypto';
-	// import { readFile } from 'node:fs/promises';
-	//
-	// const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
-	// const connectorId = 'scl_...';
-	// const bytes = await readFile('icon.png');
-	// const digest = createHash('sha1').update(bytes).digest('hex');
-	//
-	// await fetch('https://api.vercel.com/v2/files', {
-	//   method: 'POST',
-	//   headers: {
-	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
-	//     'Content-Type': 'application/octet-stream',
-	//     'Content-Length': String(bytes.length),
-	//     'x-vercel-digest': digest,
-	//   },
-	//   body: bytes,
-	// });
-	//
-	// await fetch(`https://api.vercel.com/v2/connect/connectors/${connectorId}`, {
-	//   method: 'PATCH',
-	//   headers: {
-	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
-	//     'Content-Type': 'application/json',
-	//   },
-	//   body: JSON.stringify({ icon: digest }),
-	// });
-	// ```
-	Icon *string `json:"icon,omitempty"`
-
-	// Name Connector name. The value is trimmed and cannot contain control characters. If omitted or empty, the project name is used. A name or projectId is required. API key connectors require name.
-	Name *string `json:"name,omitempty"`
-
-	// Params Values for the selected connection method's template fields. Requires connectionMethod.
-	Params *map[string]string `json:"params,omitempty"`
-
-	// ProjectId Project to connect during creation. If environments is omitted, the connection uses development, preview, and production.
-	ProjectId *string `json:"projectId,omitempty"`
-
-	// Service Service slug or URL for which the connector is used. Required when connectionMethod is set. Service alone does not enable preset configuration.
-	Service *string `json:"service,omitempty"`
-
-	// Target Which of the service's targets this connector is for. Requires \"connectionMethod\" and must be one that method serves. Optional.
-	Target *string `json:"target,omitempty"`
-
-	// TriggerDestination Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
-	TriggerDestination *ConnectCreateConnectorRequest_TriggerDestination `json:"triggerDestination,omitempty"`
-
-	// TriggerRegistrationInput Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
-	TriggerRegistrationInput *map[string]interface{} `json:"triggerRegistrationInput,omitempty"`
-
-	// TriggerType Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow.
-	TriggerType *string `json:"triggerType,omitempty"`
-
-	// TriggerVerificationInput Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
-	TriggerVerificationInput *map[string]interface{} `json:"triggerVerificationInput,omitempty"`
-
-	// Triggers Whether the triggers are enabled for this connector.
-	Triggers *bool `json:"triggers,omitempty"`
-
-	// Type Connector implementation type for full configuration. Known types: api-key, discord, github, linear, linq, microsoft-entra, oauth, photon, salesforce, sendblue, slack, snowflake, snowflake-wif. Optional when service and connectionMethod select the type.
-	Type *string `json:"type,omitempty"`
-
-	// Uid Optional team-scoped unique identifier for the connector. If omitted or empty, Connect generates a value.
-	Uid   *string `json:"uid,omitempty"`
-	union json.RawMessage
-}
-
-// ConnectCreateConnectorRequestEnvironments0 defines model for ConnectCreateConnectorRequest.Environments.0.
-type ConnectCreateConnectorRequestEnvironments0 string
-
-// ConnectCreateConnectorRequestEnvironments1 defines model for ConnectCreateConnectorRequest.Environments.1.
-type ConnectCreateConnectorRequestEnvironments1 = string
-
-// ConnectCreateConnectorRequest_Environments_Item A built-in environment name or the stable env_* ID of a custom environment.
-type ConnectCreateConnectorRequest_Environments_Item struct {
-	union json.RawMessage
-}
-
-// ConnectCreateConnectorRequestTriggerDestination0 defines model for ConnectCreateConnectorRequest.TriggerDestination.0.
-type ConnectCreateConnectorRequestTriggerDestination0 struct {
-	// Path Route path on the linked project that receives forwarded trigger requests.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Project that receives triggers. During connector creation, omit it to use the top-level projectId.
-	ProjectId *string `json:"projectId,omitempty"`
-}
-
-// ConnectCreateConnectorRequestTriggerDestination1 defines model for ConnectCreateConnectorRequest.TriggerDestination.1.
-type ConnectCreateConnectorRequestTriggerDestination1 struct {
-	// Branch Git branch used to select a preview deployment.
-	Branch string `json:"branch"`
-
-	// Path Route path on the linked project that receives forwarded trigger requests.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Project that receives triggers. During connector creation, omit it to use the top-level projectId.
-	ProjectId *string `json:"projectId,omitempty"`
-}
-
-// ConnectCreateConnectorRequestTriggerDestination2 defines model for ConnectCreateConnectorRequest.TriggerDestination.2.
-type ConnectCreateConnectorRequestTriggerDestination2 struct {
-	// CustomEnvironmentId Stable custom environment ID that belongs to the destination project.
-	CustomEnvironmentId string `json:"customEnvironmentId"`
-
-	// Path Route path on the linked project that receives forwarded trigger requests.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Project that receives triggers. During connector creation, omit it to use the top-level projectId.
-	ProjectId *string `json:"projectId,omitempty"`
-}
-
-// ConnectCreateConnectorRequest_TriggerDestination Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
-type ConnectCreateConnectorRequest_TriggerDestination struct {
-	union json.RawMessage
-}
-
-// ConnectCreateConnectorRequest0 defines model for ConnectCreateConnectorRequest.0.
-type ConnectCreateConnectorRequest0 = interface{}
-
-// ConnectCreateConnectorRequest1 defines model for ConnectCreateConnectorRequest.1.
-type ConnectCreateConnectorRequest1 = interface{}
-
-// ConnectError Error response returned by a Connect API operation.
-type ConnectError struct {
-	// Error Error details.
-	Error ConnectError_Error `json:"error"`
-}
-
-// ConnectError_Error Error details.
-type ConnectError_Error struct {
-	// Code Stable machine-readable error code.
-	Code string `json:"code"`
-
-	// Message Human-readable error message.
-	Message              string                 `json:"message"`
-	AdditionalProperties map[string]interface{} `json:"-"`
-}
-
-// ConnectPagination Cursor for the next page.
-type ConnectPagination struct {
-	// Next Opaque value to pass as `cursor` on the next request.
-	Next *string `json:"next"`
-}
-
-// ConnectProjectConnection A connection between a connector and a Vercel project, including the environments where the connector is enabled.
-type ConnectProjectConnection struct {
-	// ConnectorId Stable `scl_` connector ID, even when the request used a UID.
-	ConnectorId string `json:"connectorId"`
-
-	// CreatedAt Time when the project connection was created, in epoch milliseconds.
-	CreatedAt float32 `json:"createdAt"`
-
-	// EnabledEnvironments Environments where the connector is enabled for the project.
-	EnabledEnvironments []ConnectProjectConnection_EnabledEnvironments_Item `json:"enabledEnvironments"`
-
-	// Project Vercel project connected to the connector.
-	Project struct {
-		// CustomEnvironments Custom environments available on the project. This list can include environments where the connector is not enabled.
-		CustomEnvironments *[]struct {
-			// Id Stable custom environment ID.
-			Id string `json:"id"`
-
-			// Slug Current human-readable custom environment slug.
-			Slug string `json:"slug"`
-		} `json:"customEnvironments,omitempty"`
-
-		// Id Same Vercel project ID as the connection's top-level `projectId`.
-		Id string `json:"id"`
-
-		// Name Current Vercel project name.
-		Name string `json:"name"`
-	} `json:"project"`
-
-	// UpdatedAt Time when the project connection was last updated, in epoch milliseconds.
-	UpdatedAt float32 `json:"updatedAt"`
-}
-
-// ConnectProjectConnectionEnabledEnvironments0 defines model for ConnectProjectConnection.EnabledEnvironments.0.
-type ConnectProjectConnectionEnabledEnvironments0 = string
-
-// ConnectProjectConnectionEnabledEnvironments1 defines model for ConnectProjectConnection.EnabledEnvironments.1.
-type ConnectProjectConnectionEnabledEnvironments1 string
-
-// ConnectProjectConnection_EnabledEnvironments_Item defines model for ConnectProjectConnection.enabledEnvironments.Item.
-type ConnectProjectConnection_EnabledEnvironments_Item struct {
-	union json.RawMessage
-}
-
-// ConnectProjectConnectorConnectionList Page of connectors connected to a project.
-type ConnectProjectConnectorConnectionList struct {
-	// Connectors Connector connections in this page.
-	Connectors []ConnectProjectConnection `json:"connectors"`
-
-	// Pagination Cursor for the next page.
-	Pagination ConnectPagination `json:"pagination"`
-}
-
-// ConnectReconsent Existing authorizations no longer cover the connector's configured scopes, so they must be re-authorized.
-type ConnectReconsent struct {
-	// Scope The affected authorization scope. user means each affected user must authorize again.
-	Scope ConnectReconsentScope `json:"scope"`
-}
-
-// ConnectReconsentScope The affected authorization scope. user means each affected user must authorize again.
-type ConnectReconsentScope string
-
-// ConnectReplaceTriggerDestinationsRequest Complete replacement set of trigger destinations.
-type ConnectReplaceTriggerDestinationsRequest struct {
-	// Destinations Complete replacement set of trigger destinations. An empty array removes all destinations. Connector get and list responses expose the saved set as triggerDestinations.
-	Destinations []ConnectTriggerDestinationInput `json:"destinations"`
-}
-
-// ConnectServiceSync Provider-side configuration synchronization result.
-type ConnectServiceSync struct {
-	// Errors Provider synchronization errors. Present when serviceSync.status is required.
-	Errors *[]ConnectServiceSyncError `json:"errors,omitempty"`
-
-	// Status done means the external service was updated. required means the Vercel update was saved, but provider-side configuration still needs attention.
-	Status ConnectServiceSyncStatus `json:"status"`
-}
-
-// ConnectServiceSyncStatus done means the external service was updated. required means the Vercel update was saved, but provider-side configuration still needs attention.
-type ConnectServiceSyncStatus string
-
-// ConnectServiceSyncError Provider synchronization errors, when synchronization is required.
-type ConnectServiceSyncError struct {
-	// Fields Connector fields that caused the synchronization error.
-	Fields *[]string `json:"fields,omitempty"`
-
-	// Message Human-readable provider synchronization error.
-	Message string `json:"message"`
-
-	// Vendor Provider-specific error details that are safe to expose.
-	Vendor *map[string]interface{} `json:"vendor,omitempty"`
-}
-
-// ConnectTriggerConfiguration Incoming trigger configuration. Only present when enabled.
-type ConnectTriggerConfiguration struct {
-	// Enabled Whether incoming triggers are enabled for the connector.
-	Enabled ConnectTriggerConfigurationEnabled `json:"enabled"`
-}
-
-// ConnectTriggerConfigurationEnabled Whether incoming triggers are enabled for the connector.
-type ConnectTriggerConfigurationEnabled bool
-
-// ConnectTriggerDestination Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
-type ConnectTriggerDestination struct {
-	// Branch Git branch used to select a preview deployment.
-	Branch *string `json:"branch,omitempty"`
-
-	// CustomEnvironmentId Stable custom-environment ID to route this destination to. Mutually exclusive with `branch`; omitted destinations keep the legacy production behavior.
-	CustomEnvironmentId *string `json:"customEnvironmentId,omitempty"`
-
-	// Path Route path that receives the forwarded trigger request.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Vercel project that receives matching trigger requests.
-	ProjectId string `json:"projectId"`
-}
-
-// ConnectTriggerDestinationInput A destination in the complete replacement set. Each destination targets the default deployment, a branch, or a custom environment.
-type ConnectTriggerDestinationInput struct {
-	union json.RawMessage
-}
-
-// ConnectTriggerDestinationInput0 defines model for ConnectTriggerDestinationInput.0.
-type ConnectTriggerDestinationInput0 struct {
-	// Path Route path on the linked project that receives forwarded trigger requests.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Project that receives matching trigger requests.
-	ProjectId string `json:"projectId"`
-}
-
-// ConnectTriggerDestinationInput1 defines model for ConnectTriggerDestinationInput.1.
-type ConnectTriggerDestinationInput1 struct {
-	// Branch Git branch used to select a preview deployment.
-	Branch string `json:"branch"`
-
-	// Path Route path on the linked project that receives forwarded trigger requests.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Project that receives matching trigger requests.
-	ProjectId string `json:"projectId"`
-}
-
-// ConnectTriggerDestinationInput2 defines model for ConnectTriggerDestinationInput.2.
-type ConnectTriggerDestinationInput2 struct {
-	// CustomEnvironmentId Stable custom environment ID that belongs to the destination project.
-	CustomEnvironmentId string `json:"customEnvironmentId"`
-
-	// Path Route path on the linked project that receives forwarded trigger requests.
-	Path *string `json:"path,omitempty"`
-
-	// ProjectId Project that receives matching trigger requests.
-	ProjectId string `json:"projectId"`
-}
-
-// ConnectUpdateConnectorRequest Connector fields to update.
-type ConnectUpdateConnectorRequest struct {
-	AccentColor     *string `json:"accentColor,omitempty"`
-	BackgroundColor *string `json:"backgroundColor,omitempty"`
-
-	// Data Provider configuration fields for the connector type.
-	Data *ConnectConnectorUpdateData `json:"data,omitempty"`
-
-	// Events Default trigger events for this connector.
-	Events *[]string `json:"events,omitempty"`
-
-	// Icon SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes.
-	//
-	// First compute the digest and upload the raw image with [POST /v2/files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files). Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest.
-	//
-	// ```js
-	// import { createHash } from 'node:crypto';
-	// import { readFile } from 'node:fs/promises';
-	//
-	// const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
-	// const connectorId = 'scl_...';
-	// const bytes = await readFile('icon.png');
-	// const digest = createHash('sha1').update(bytes).digest('hex');
-	//
-	// await fetch('https://api.vercel.com/v2/files', {
-	//   method: 'POST',
-	//   headers: {
-	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
-	//     'Content-Type': 'application/octet-stream',
-	//     'Content-Length': String(bytes.length),
-	//     'x-vercel-digest': digest,
-	//   },
-	//   body: bytes,
-	// });
-	//
-	// await fetch(`https://api.vercel.com/v2/connect/connectors/${connectorId}`, {
-	//   method: 'PATCH',
-	//   headers: {
-	//     Authorization: `Bearer ${VERCEL_TOKEN}`,
-	//     'Content-Type': 'application/json',
-	//   },
-	//   body: JSON.stringify({ icon: digest }),
-	// });
-	// ```
-	Icon *string `json:"icon,omitempty"`
-
-	// Name Display name for the connector. It is trimmed and cannot be empty or contain control characters.
-	Name *string `json:"name,omitempty"`
-
-	// TriggerRegistrationInput Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
-	TriggerRegistrationInput *map[string]interface{} `json:"triggerRegistrationInput,omitempty"`
-
-	// TriggerVerificationInput Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
-	TriggerVerificationInput *map[string]interface{} `json:"triggerVerificationInput,omitempty"`
-
-	// Triggers Whether the triggers are enabled for this connector.
-	Triggers *bool `json:"triggers,omitempty"`
-
-	// Uid Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
-	Uid *string `json:"uid,omitempty"`
-}
-
-// ConnectUpsertProjectConnectionRequest Environments enabled for a connector project connection.
-type ConnectUpsertProjectConnectionRequest struct {
-	// Environments One or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
-	Environments []ConnectUpsertProjectConnectionRequest_Environments_Item `json:"environments"`
-}
-
-// ConnectUpsertProjectConnectionRequestEnvironments0 defines model for ConnectUpsertProjectConnectionRequest.Environments.0.
-type ConnectUpsertProjectConnectionRequestEnvironments0 string
-
-// ConnectUpsertProjectConnectionRequestEnvironments1 defines model for ConnectUpsertProjectConnectionRequest.Environments.1.
-type ConnectUpsertProjectConnectionRequestEnvironments1 = string
-
-// ConnectUpsertProjectConnectionRequest_Environments_Item A built-in environment name or the stable env_* ID of a custom environment.
-type ConnectUpsertProjectConnectionRequest_Environments_Item struct {
-	union json.RawMessage
-}
-
-// ContactPendingVerification The registrant contact has not yet been verified. The contact must be verified by `verifyBy`, and a verification email is sent to `email`.
-type ContactPendingVerification struct {
-	Email    string                             `json:"email"`
-	Verified ContactPendingVerificationVerified `json:"verified"`
-
-	// VerifyBy a string to be decoded into a Date
-	VerifyBy DateFromString `json:"verifyBy"`
-}
-
-// ContactPendingVerificationVerified defines model for ContactPendingVerification.Verified.
-type ContactPendingVerificationVerified bool
-
-// ContactVerified The registrant contact has been verified.
-type ContactVerified struct {
-	Verified ContactVerifiedVerified `json:"verified"`
-}
-
-// ContactVerifiedVerified defines model for ContactVerified.Verified.
-type ContactVerifiedVerified bool
-
-// CountryCode A valid ISO 3166-1 alpha-2 country code
-type CountryCode = string
-
-// DNSSECEnabled The operation cannot be completed because DNSSEC is enabled for the domain.
-type DNSSECEnabled struct {
-	Code    DNSSECEnabledCode   `json:"code"`
-	Message string              `json:"message"`
-	Status  DNSSECEnabledStatus `json:"status"`
-}
-
-// DNSSECEnabledCode defines model for DNSSECEnabled.Code.
-type DNSSECEnabledCode string
-
-// DNSSECEnabledStatus defines model for DNSSECEnabled.Status.
-type DNSSECEnabledStatus float32
-
-// DateFromString a string to be decoded into a Date
-type DateFromString = string
-
-// DeploymentCheckUpdatedPayload The payload of the event, if requested.
-type DeploymentCheckUpdatedPayload struct {
-	CheckId   string `json:"checkId"`
-	CheckName string `json:"checkName"`
-	Next      *struct {
-		Targets []string `json:"targets"`
-	} `json:"next,omitempty"`
-	Previous *struct {
-		Targets []string `json:"targets"`
-	} `json:"previous,omitempty"`
-	ProjectId   string `json:"projectId"`
-	ProjectName string `json:"projectName"`
-}
-
-// DomainAlreadyOwned The domain is already owned by another team or user.
-type DomainAlreadyOwned struct {
-	Code    DomainAlreadyOwnedCode   `json:"code"`
-	Message string                   `json:"message"`
-	Status  DomainAlreadyOwnedStatus `json:"status"`
-}
-
-// DomainAlreadyOwnedCode defines model for DomainAlreadyOwned.Code.
-type DomainAlreadyOwnedCode string
-
-// DomainAlreadyOwnedStatus defines model for DomainAlreadyOwned.Status.
-type DomainAlreadyOwnedStatus float32
-
-// DomainAlreadyRenewing The domain is already renewing.
-type DomainAlreadyRenewing struct {
-	Code    DomainAlreadyRenewingCode   `json:"code"`
-	Message string                      `json:"message"`
-	Status  DomainAlreadyRenewingStatus `json:"status"`
-}
-
-// DomainAlreadyRenewingCode defines model for DomainAlreadyRenewing.Code.
-type DomainAlreadyRenewingCode string
-
-// DomainAlreadyRenewingStatus defines model for DomainAlreadyRenewing.Status.
-type DomainAlreadyRenewingStatus float32
-
-// DomainCannotBeTransferedOutUntil The domain cannot be transfered out until the specified date.
-type DomainCannotBeTransferedOutUntil struct {
-	Code    DomainCannotBeTransferedOutUntilCode   `json:"code"`
-	Message string                                 `json:"message"`
-	Status  DomainCannotBeTransferedOutUntilStatus `json:"status"`
-}
-
-// DomainCannotBeTransferedOutUntilCode defines model for DomainCannotBeTransferedOutUntil.Code.
-type DomainCannotBeTransferedOutUntilCode string
-
-// DomainCannotBeTransferedOutUntilStatus defines model for DomainCannotBeTransferedOutUntil.Status.
-type DomainCannotBeTransferedOutUntilStatus float32
-
-// DomainName A valid domain name
-type DomainName = string
-
-// DomainNotAvailable The domain is not available.
-type DomainNotAvailable struct {
-	Code    DomainNotAvailableCode   `json:"code"`
-	Message string                   `json:"message"`
-	Status  DomainNotAvailableStatus `json:"status"`
-}
-
-// DomainNotAvailableCode defines model for DomainNotAvailable.Code.
-type DomainNotAvailableCode string
-
-// DomainNotAvailableStatus defines model for DomainNotAvailable.Status.
-type DomainNotAvailableStatus float32
-
-// DomainNotFound The domain was not found in our system.
-type DomainNotFound struct {
-	Code    DomainNotFoundCode   `json:"code"`
-	Message string               `json:"message"`
-	Status  DomainNotFoundStatus `json:"status"`
-}
-
-// DomainNotFoundCode defines model for DomainNotFound.Code.
-type DomainNotFoundCode string
-
-// DomainNotFoundStatus defines model for DomainNotFound.Status.
-type DomainNotFoundStatus float32
-
-// DomainNotRegistered The domain is not registered with Vercel.
-type DomainNotRegistered struct {
-	Code    DomainNotRegisteredCode   `json:"code"`
-	Message string                    `json:"message"`
-	Status  DomainNotRegisteredStatus `json:"status"`
-}
-
-// DomainNotRegisteredCode defines model for DomainNotRegistered.Code.
-type DomainNotRegisteredCode string
-
-// DomainNotRegisteredStatus defines model for DomainNotRegistered.Status.
-type DomainNotRegisteredStatus float32
-
-// DomainNotRenewable The domain is not renewable.
-type DomainNotRenewable struct {
-	Code    DomainNotRenewableCode   `json:"code"`
-	Message string                   `json:"message"`
-	Status  DomainNotRenewableStatus `json:"status"`
-}
-
-// DomainNotRenewableCode defines model for DomainNotRenewable.Code.
-type DomainNotRenewableCode string
-
-// DomainNotRenewableStatus defines model for DomainNotRenewable.Status.
-type DomainNotRenewableStatus float32
-
-// DomainTooShort The domain name (excluding the TLD) is too short.
-type DomainTooShort struct {
-	Code    DomainTooShortCode   `json:"code"`
-	Message string               `json:"message"`
-	Status  DomainTooShortStatus `json:"status"`
-}
-
-// DomainTooShortCode defines model for DomainTooShort.Code.
-type DomainTooShortCode string
-
-// DomainTooShortStatus defines model for DomainTooShort.Status.
-type DomainTooShortStatus float32
-
-// Drive This object contains information related to a Vercel Sandbox Drive.
-type Drive struct {
-	// CreatedAt The time when the drive was created, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	CreatedAt float32 `json:"createdAt"`
-
-	// CurrentSandboxName Current sandbox name the drive is attached to, if any.
-	//
-	// Example: my-sandbox
-	CurrentSandboxName *string `json:"currentSandboxName,omitempty"`
-
-	// CurrentSessionId Current session ID the drive is attached to, if any.
-	//
-	// Example: sbx_123
-	CurrentSessionId *string `json:"currentSessionId,omitempty"`
-
-	// Id The unique drive ID.
-	//
-	// Example: drive_abc123
-	Id string `json:"id"`
-
-	// MaxSizeBytes The maximum drive size in bytes.
-	//
-	// Example: 1099511627776
-	MaxSizeBytes float32 `json:"maxSizeBytes"`
-
-	// Name The unique drive name within the project.
-	//
-	// Example: workspace
-	Name string `json:"name"`
-
-	// ParentDriveId The ID of the source drive when this drive is a fork.
-	ParentDriveId *string `json:"parentDriveId,omitempty"`
-
-	// ProjectId The project that owns the drive.
-	//
-	// Example: prj_abc123
-	ProjectId string `json:"projectId"`
-
-	// Region The region where the drive is stored.
-	//
-	// Example: iad1
-	Region string `json:"region"`
-
-	// RootDriveId The ID of the original drive at the root of this fork.
-	RootDriveId *string `json:"rootDriveId,omitempty"`
-
-	// UpdatedAt The last time the drive was updated, in milliseconds since the epoch.
-	//
-	// Example: 1750344501629
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// WorkloadType The workload type of this drive.
-	WorkloadType *DriveWorkloadType `json:"workloadType,omitempty"`
-}
-
-// DriveWorkloadType The workload type of this drive.
-type DriveWorkloadType string
-
-// DuplicateDomains Duplicate domains were provided.
-type DuplicateDomains struct {
-	Code    DuplicateDomainsCode   `json:"code"`
-	Message string                 `json:"message"`
-	Status  DuplicateDomainsStatus `json:"status"`
-}
-
-// DuplicateDomainsCode defines model for DuplicateDomains.Code.
-type DuplicateDomainsCode string
-
-// DuplicateDomainsStatus defines model for DuplicateDomains.Status.
-type DuplicateDomainsStatus float32
-
-// E164PhoneNumber A valid E.164 phone number
-type E164PhoneNumber = string
-
-// EmailAddress A valid RFC 5322 email address
-type EmailAddress = string
-
-// EmojiTldNotSupported The TLD does not support emoji domain names.
-type EmojiTldNotSupported struct {
-	Code    EmojiTldNotSupportedCode   `json:"code"`
-	Message string                     `json:"message"`
-	Status  EmojiTldNotSupportedStatus `json:"status"`
-}
-
-// EmojiTldNotSupportedCode defines model for EmojiTldNotSupported.Code.
-type EmojiTldNotSupportedCode string
-
-// EmojiTldNotSupportedStatus defines model for EmojiTldNotSupported.Status.
-type EmojiTldNotSupportedStatus float32
-
-// ExpectedPriceMismatch The expected price passed does not match the actual price.
-type ExpectedPriceMismatch struct {
-	Code    ExpectedPriceMismatchCode   `json:"code"`
-	Message string                      `json:"message"`
-	Status  ExpectedPriceMismatchStatus `json:"status"`
-}
-
-// ExpectedPriceMismatchCode defines model for ExpectedPriceMismatch.Code.
-type ExpectedPriceMismatchCode string
-
-// ExpectedPriceMismatchStatus defines model for ExpectedPriceMismatch.Status.
-type ExpectedPriceMismatchStatus float32
-
-// FileTree A deployment file tree entry
-type FileTree struct {
-	// Children The list of children files of the directory (only valid for the `directory` type)
-	Children *[]FileTree `json:"children,omitempty"`
-
-	// ContentType The content-type of the file (only valid for the `file` type)
-	//
-	// Example: application/json
-	ContentType *string `json:"contentType,omitempty"`
-
-	// Mode The file "mode" indicating file type and permissions.
-	Mode float32 `json:"mode"`
-
-	// Name The name of the file tree entry
-	//
-	// Example: my-file.json
-	Name string `json:"name"`
-
-	// Type String indicating the type of file tree entry.
-	//
-	// Example: file
-	Type FileTreeType `json:"type"`
-
-	// Uid The unique identifier of the file (only valid for the `file` type)
-	//
-	// Example: 2d4aad419917f15b1146e9e03ddc9bb31747e4d0
-	Uid *string `json:"uid,omitempty"`
-}
-
-// FileTreeType String indicating the type of file tree entry.
-//
-// Example: file
-type FileTreeType string
-
-// Flag defines model for Flag.
-type Flag struct {
-	CreatedAt    float32 `json:"createdAt"`
-	CreatedBy    string  `json:"createdBy"`
-	Description  *string `json:"description,omitempty"`
-	Environments map[string]struct {
-		Active        FlagEnvironmentsActive        `json:"active"`
-		Fallthrough   Flag_Environments_Fallthrough `json:"fallthrough"`
-		PausedOutcome struct {
-			Type      FlagEnvironmentsPausedOutcomeType `json:"type"`
-			VariantId string                            `json:"variantId"`
-		} `json:"pausedOutcome"`
-		Reuse *struct {
-			Active      FlagEnvironmentsReuseActive `json:"active"`
-			Environment string                      `json:"environment"`
-		} `json:"reuse,omitempty"`
-		Revision *float32 `json:"revision,omitempty"`
-		Rules    []struct {
-			Conditions []struct {
-				Cmp        FlagEnvironmentsRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *FlagEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs Flag_Environments_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *Flag_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                          `json:"id"`
-			Outcome Flag_Environments_Rules_Outcome `json:"outcome"`
-		} `json:"rules"`
-		Targets *map[string]map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"targets,omitempty"`
-	} `json:"environments"`
-	Id            string    `json:"id"`
-	Kind          FlagKind  `json:"kind"`
-	MaintainerIds *[]string `json:"maintainerIds,omitempty"`
-	Metadata      *struct {
-		Creator *struct {
-			Id   string `json:"id"`
-			Name string `json:"name"`
-		} `json:"creator,omitempty"`
-	} `json:"metadata,omitempty"`
-	OwnerId          string                `json:"ownerId"`
-	Permanent        *FlagPermanent        `json:"permanent,omitempty"`
-	ProjectId        string                `json:"projectId"`
-	Revision         float32               `json:"revision"`
-	Seed             float32               `json:"seed"`
-	SeenInProduction *FlagSeenInProduction `json:"seenInProduction,omitempty"`
-	Slug             string                `json:"slug"`
-	State            FlagState             `json:"state"`
-	Tags             *[]string             `json:"tags,omitempty"`
-	TypeName         FlagTypeName          `json:"typeName"`
-	UpdatedAt        float32               `json:"updatedAt"`
-	UpdatedBy        *string               `json:"updatedBy,omitempty"`
-	Variants         []struct {
-		Description *string              `json:"description,omitempty"`
-		Id          string               `json:"id"`
-		Label       *string              `json:"label,omitempty"`
-		Value       *Flag_Variants_Value `json:"value"`
-	} `json:"variants"`
 }

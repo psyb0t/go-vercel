@@ -10,6 +10,3657 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// MergeSegment performs a merge with any union data inside the UpdateFlagSegment200JSONResponseBody, using the provided Segment
+func (t *UpdateFlagSegment200JSONResponseBody) MergeSegment(v Segment) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateFlagSegment200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateFlagSegment200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned as a UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0
+func (t UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) AsUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0() (UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned as the provided UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0
+func (t *UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) FromUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0(v UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned, using the provided UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0
+func (t *UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) MergeUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0(v UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned as a UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1
+func (t UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) AsUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1() (UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned as the provided UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1
+func (t *UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) FromUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1(v UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned, using the provided UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1
+func (t *UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) MergeUpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1(v UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId as a UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0
+func (t UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) AsUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0() (UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId as the provided UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0
+func (t *UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) FromUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0(v UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId, using the provided UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0
+func (t *UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) MergeUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0(v UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId as a UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1
+func (t UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) AsUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1() (UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId as the provided UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1
+func (t *UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) FromUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1(v UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId, using the provided UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1
+func (t *UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) MergeUpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1(v UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator0Via0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator_0_Via as a UpdateMicrofrontends200JSONResponseBodyCreator0Via0
+func (t UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) AsUpdateMicrofrontends200JSONResponseBodyCreator0Via0() (UpdateMicrofrontends200JSONResponseBodyCreator0Via0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator0Via0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator0Via0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator_0_Via as the provided UpdateMicrofrontends200JSONResponseBodyCreator0Via0
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) FromUpdateMicrofrontends200JSONResponseBodyCreator0Via0(v UpdateMicrofrontends200JSONResponseBodyCreator0Via0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator0Via0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator_0_Via, using the provided UpdateMicrofrontends200JSONResponseBodyCreator0Via0
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) MergeUpdateMicrofrontends200JSONResponseBodyCreator0Via0(v UpdateMicrofrontends200JSONResponseBodyCreator0Via0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator0Via1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator_0_Via as a UpdateMicrofrontends200JSONResponseBodyCreator0Via1
+func (t UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) AsUpdateMicrofrontends200JSONResponseBodyCreator0Via1() (UpdateMicrofrontends200JSONResponseBodyCreator0Via1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator0Via1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator0Via1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator_0_Via as the provided UpdateMicrofrontends200JSONResponseBodyCreator0Via1
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) FromUpdateMicrofrontends200JSONResponseBodyCreator0Via1(v UpdateMicrofrontends200JSONResponseBodyCreator0Via1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator0Via1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator_0_Via, using the provided UpdateMicrofrontends200JSONResponseBodyCreator0Via1
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) MergeUpdateMicrofrontends200JSONResponseBodyCreator0Via1(v UpdateMicrofrontends200JSONResponseBodyCreator0Via1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator_0_Via) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as a UpdateMicrofrontends200JSONResponseBodyCreator0
+func (t UpdateMicrofrontends200JSONResponseBody_Creator) AsUpdateMicrofrontends200JSONResponseBodyCreator0() (UpdateMicrofrontends200JSONResponseBodyCreator0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as the provided UpdateMicrofrontends200JSONResponseBodyCreator0
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) FromUpdateMicrofrontends200JSONResponseBodyCreator0(v UpdateMicrofrontends200JSONResponseBodyCreator0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator, using the provided UpdateMicrofrontends200JSONResponseBodyCreator0
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) MergeUpdateMicrofrontends200JSONResponseBodyCreator0(v UpdateMicrofrontends200JSONResponseBodyCreator0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as a UpdateMicrofrontends200JSONResponseBodyCreator1
+func (t UpdateMicrofrontends200JSONResponseBody_Creator) AsUpdateMicrofrontends200JSONResponseBodyCreator1() (UpdateMicrofrontends200JSONResponseBodyCreator1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as the provided UpdateMicrofrontends200JSONResponseBodyCreator1
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) FromUpdateMicrofrontends200JSONResponseBodyCreator1(v UpdateMicrofrontends200JSONResponseBodyCreator1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator, using the provided UpdateMicrofrontends200JSONResponseBodyCreator1
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) MergeUpdateMicrofrontends200JSONResponseBodyCreator1(v UpdateMicrofrontends200JSONResponseBodyCreator1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as a UpdateMicrofrontends200JSONResponseBodyCreator2
+func (t UpdateMicrofrontends200JSONResponseBody_Creator) AsUpdateMicrofrontends200JSONResponseBodyCreator2() (UpdateMicrofrontends200JSONResponseBodyCreator2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as the provided UpdateMicrofrontends200JSONResponseBodyCreator2
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) FromUpdateMicrofrontends200JSONResponseBodyCreator2(v UpdateMicrofrontends200JSONResponseBodyCreator2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator, using the provided UpdateMicrofrontends200JSONResponseBodyCreator2
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) MergeUpdateMicrofrontends200JSONResponseBodyCreator2(v UpdateMicrofrontends200JSONResponseBodyCreator2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator3 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as a UpdateMicrofrontends200JSONResponseBodyCreator3
+func (t UpdateMicrofrontends200JSONResponseBody_Creator) AsUpdateMicrofrontends200JSONResponseBodyCreator3() (UpdateMicrofrontends200JSONResponseBodyCreator3, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator3 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as the provided UpdateMicrofrontends200JSONResponseBodyCreator3
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) FromUpdateMicrofrontends200JSONResponseBodyCreator3(v UpdateMicrofrontends200JSONResponseBodyCreator3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator3 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator, using the provided UpdateMicrofrontends200JSONResponseBodyCreator3
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) MergeUpdateMicrofrontends200JSONResponseBodyCreator3(v UpdateMicrofrontends200JSONResponseBodyCreator3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyCreator4 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as a UpdateMicrofrontends200JSONResponseBodyCreator4
+func (t UpdateMicrofrontends200JSONResponseBody_Creator) AsUpdateMicrofrontends200JSONResponseBodyCreator4() (UpdateMicrofrontends200JSONResponseBodyCreator4, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyCreator4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyCreator4 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator as the provided UpdateMicrofrontends200JSONResponseBodyCreator4
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) FromUpdateMicrofrontends200JSONResponseBodyCreator4(v UpdateMicrofrontends200JSONResponseBodyCreator4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyCreator4 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Creator, using the provided UpdateMicrofrontends200JSONResponseBodyCreator4
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) MergeUpdateMicrofrontends200JSONResponseBodyCreator4(v UpdateMicrofrontends200JSONResponseBodyCreator4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Creator) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Creator) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0() (UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0(v UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0(v UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1() (UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1(v UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1(v UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2() (UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2(v UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeUpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2(v UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item as a UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0() (UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item as the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item, using the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item as a UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1() (UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item as the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item, using the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as a UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0() (UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item, using the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as a UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1() (UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item, using the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as a UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0() (UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item, using the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as a UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) AsUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1() (UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) FromUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item, using the provided UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) MergeUpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1(v UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as a UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) AsUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3() (UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value as the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) FromUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value, using the provided UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) MergeUpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3(v UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint0
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint0() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint0
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint0(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint0
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint0(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint1
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint1() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint1
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint1(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint1
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint1(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint2
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint2() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint2
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint2(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint2
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint2(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint3 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint3
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint3() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint3, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint3 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint3
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint3(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint3 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint3
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint3(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint4 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint4
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint4() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint4, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint4 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint4
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint4(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint4 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint4
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint4(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint5 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint5
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint5() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint5, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint5 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint5
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint5(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint5 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint5
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint5(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint6 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint6
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint6() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint6, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint6 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint6
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint6(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint6 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint6
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint6(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint7 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint7
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint7() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint7, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint7 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint7
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint7(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint7 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint7
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint7(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint7) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint8 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint8
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint8() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint8, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint8
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint8 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint8
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint8(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint8) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint8 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint8
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint8(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint8) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint9 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint9
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint9() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint9, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint9
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint9 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint9
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint9(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint9) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint9 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint9
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint9(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint9) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint10 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint10
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint10() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint10, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint10
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint10 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint10
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint10(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint10) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint10 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint10
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint10(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint10) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint11 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint11
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint11() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint11, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint11
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint11 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint11
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint11(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint11) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint11 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint11
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint11(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint11) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint12 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint12
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint12() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint12, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint12
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint12 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint12
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint12(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint12) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint12 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint12
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint12(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint12) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint13 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint13
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint13() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint13, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint13
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint13 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint13
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint13(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint13) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint13 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint13
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint13(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint13) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint14 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint14
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint14() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint14, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint14
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint14 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint14
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint14(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint14) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint14 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint14
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint14(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint14) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint15 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint15
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint15() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint15, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint15
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint15 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint15
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint15(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint15) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint15 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint15
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint15(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint15) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint16 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as a UpdateMicrofrontends200JSONResponseBodyEnvContentHint16
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) AsUpdateMicrofrontends200JSONResponseBodyEnvContentHint16() (UpdateMicrofrontends200JSONResponseBodyEnvContentHint16, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvContentHint16
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint16 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint as the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint16
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) FromUpdateMicrofrontends200JSONResponseBodyEnvContentHint16(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint16) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint16 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_ContentHint, using the provided UpdateMicrofrontends200JSONResponseBodyEnvContentHint16
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MergeUpdateMicrofrontends200JSONResponseBodyEnvContentHint16(v UpdateMicrofrontends200JSONResponseBodyEnvContentHint16) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_ContentHint) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvTarget0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_Target as a UpdateMicrofrontends200JSONResponseBodyEnvTarget0
+func (t UpdateMicrofrontends200JSONResponseBody_Env_Target) AsUpdateMicrofrontends200JSONResponseBodyEnvTarget0() (UpdateMicrofrontends200JSONResponseBodyEnvTarget0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvTarget0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_Target as the provided UpdateMicrofrontends200JSONResponseBodyEnvTarget0
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_Target) FromUpdateMicrofrontends200JSONResponseBodyEnvTarget0(v UpdateMicrofrontends200JSONResponseBodyEnvTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvTarget0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_Target, using the provided UpdateMicrofrontends200JSONResponseBodyEnvTarget0
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_Target) MergeUpdateMicrofrontends200JSONResponseBodyEnvTarget0(v UpdateMicrofrontends200JSONResponseBodyEnvTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyEnvTarget1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Env_Target as a UpdateMicrofrontends200JSONResponseBodyEnvTarget1
+func (t UpdateMicrofrontends200JSONResponseBody_Env_Target) AsUpdateMicrofrontends200JSONResponseBodyEnvTarget1() (UpdateMicrofrontends200JSONResponseBodyEnvTarget1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyEnvTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyEnvTarget1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_Target as the provided UpdateMicrofrontends200JSONResponseBodyEnvTarget1
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_Target) FromUpdateMicrofrontends200JSONResponseBodyEnvTarget1(v UpdateMicrofrontends200JSONResponseBodyEnvTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyEnvTarget1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Env_Target, using the provided UpdateMicrofrontends200JSONResponseBodyEnvTarget1
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_Target) MergeUpdateMicrofrontends200JSONResponseBodyEnvTarget1(v UpdateMicrofrontends200JSONResponseBodyEnvTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Env_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Env_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyExpiration0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Expiration as a UpdateMicrofrontends200JSONResponseBodyExpiration0
+func (t UpdateMicrofrontends200JSONResponseBody_Expiration) AsUpdateMicrofrontends200JSONResponseBodyExpiration0() (UpdateMicrofrontends200JSONResponseBodyExpiration0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyExpiration0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Expiration as the provided UpdateMicrofrontends200JSONResponseBodyExpiration0
+func (t *UpdateMicrofrontends200JSONResponseBody_Expiration) FromUpdateMicrofrontends200JSONResponseBodyExpiration0(v UpdateMicrofrontends200JSONResponseBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyExpiration0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Expiration, using the provided UpdateMicrofrontends200JSONResponseBodyExpiration0
+func (t *UpdateMicrofrontends200JSONResponseBody_Expiration) MergeUpdateMicrofrontends200JSONResponseBodyExpiration0(v UpdateMicrofrontends200JSONResponseBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyExpiration1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Expiration as a UpdateMicrofrontends200JSONResponseBodyExpiration1
+func (t UpdateMicrofrontends200JSONResponseBody_Expiration) AsUpdateMicrofrontends200JSONResponseBodyExpiration1() (UpdateMicrofrontends200JSONResponseBodyExpiration1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyExpiration1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Expiration as the provided UpdateMicrofrontends200JSONResponseBodyExpiration1
+func (t *UpdateMicrofrontends200JSONResponseBody_Expiration) FromUpdateMicrofrontends200JSONResponseBodyExpiration1(v UpdateMicrofrontends200JSONResponseBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyExpiration1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Expiration, using the provided UpdateMicrofrontends200JSONResponseBodyExpiration1
+func (t *UpdateMicrofrontends200JSONResponseBody_Expiration) MergeUpdateMicrofrontends200JSONResponseBodyExpiration1(v UpdateMicrofrontends200JSONResponseBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item as a UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0
+func (t UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0() (UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item as the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item, using the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item as a UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1
+func (t UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1() (UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item as the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item, using the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes1Has1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_1_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item as a UpdateMicrofrontends200JSONResponseBodyInternalRoutes0
+func (t UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes0() (UpdateMicrofrontends200JSONResponseBodyInternalRoutes0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyInternalRoutes0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item as the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes0
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes0(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item, using the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes0
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes0(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item as a UpdateMicrofrontends200JSONResponseBodyInternalRoutes1
+func (t UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) AsUpdateMicrofrontends200JSONResponseBodyInternalRoutes1() (UpdateMicrofrontends200JSONResponseBodyInternalRoutes1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyInternalRoutes1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item as the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes1
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) FromUpdateMicrofrontends200JSONResponseBodyInternalRoutes1(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item, using the provided UpdateMicrofrontends200JSONResponseBodyInternalRoutes1
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) MergeUpdateMicrofrontends200JSONResponseBodyInternalRoutes1(v UpdateMicrofrontends200JSONResponseBodyInternalRoutes1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_InternalRoutes_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned as a UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) AsUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0() (UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned as the provided UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t *UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) FromUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0(v UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned, using the provided UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t *UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) MergeUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0(v UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned as a UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) AsUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1() (UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned as the provided UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t *UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) FromUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1(v UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned, using the provided UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t *UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) MergeUpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1(v UpdateMicrofrontends200JSONResponseBodyLatestDeploymentsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_LatestDeployments_AliasAssigned) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink0
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink0() (UpdateMicrofrontends200JSONResponseBodyLink0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink0
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink0(v UpdateMicrofrontends200JSONResponseBodyLink0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink0
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink0(v UpdateMicrofrontends200JSONResponseBodyLink0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink1
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink1() (UpdateMicrofrontends200JSONResponseBodyLink1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink1
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink1(v UpdateMicrofrontends200JSONResponseBodyLink1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink1
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink1(v UpdateMicrofrontends200JSONResponseBodyLink1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink2
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink2() (UpdateMicrofrontends200JSONResponseBodyLink2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink2
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink2(v UpdateMicrofrontends200JSONResponseBodyLink2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink2
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink2(v UpdateMicrofrontends200JSONResponseBodyLink2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink3 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink3
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink3() (UpdateMicrofrontends200JSONResponseBodyLink3, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink3 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink3
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink3(v UpdateMicrofrontends200JSONResponseBodyLink3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink3 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink3
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink3(v UpdateMicrofrontends200JSONResponseBodyLink3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink4 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink4
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink4() (UpdateMicrofrontends200JSONResponseBodyLink4, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink4 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink4
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink4(v UpdateMicrofrontends200JSONResponseBodyLink4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink4 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink4
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink4(v UpdateMicrofrontends200JSONResponseBodyLink4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink5 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink5
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink5() (UpdateMicrofrontends200JSONResponseBodyLink5, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink5 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink5
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink5(v UpdateMicrofrontends200JSONResponseBodyLink5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink5 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink5
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink5(v UpdateMicrofrontends200JSONResponseBodyLink5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink6 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink6
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink6() (UpdateMicrofrontends200JSONResponseBodyLink6, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink6 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink6
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink6(v UpdateMicrofrontends200JSONResponseBodyLink6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink6 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink6
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink6(v UpdateMicrofrontends200JSONResponseBodyLink6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyLink7 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Link as a UpdateMicrofrontends200JSONResponseBodyLink7
+func (t UpdateMicrofrontends200JSONResponseBody_Link) AsUpdateMicrofrontends200JSONResponseBodyLink7() (UpdateMicrofrontends200JSONResponseBodyLink7, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyLink7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyLink7 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Link as the provided UpdateMicrofrontends200JSONResponseBodyLink7
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) FromUpdateMicrofrontends200JSONResponseBodyLink7(v UpdateMicrofrontends200JSONResponseBodyLink7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyLink7 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Link, using the provided UpdateMicrofrontends200JSONResponseBodyLink7
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) MergeUpdateMicrofrontends200JSONResponseBodyLink7(v UpdateMicrofrontends200JSONResponseBodyLink7) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Link) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Link) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyMicrofrontends0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends as a UpdateMicrofrontends200JSONResponseBodyMicrofrontends0
+func (t UpdateMicrofrontends200JSONResponseBody_Microfrontends) AsUpdateMicrofrontends200JSONResponseBodyMicrofrontends0() (UpdateMicrofrontends200JSONResponseBodyMicrofrontends0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyMicrofrontends0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyMicrofrontends0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends as the provided UpdateMicrofrontends200JSONResponseBodyMicrofrontends0
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) FromUpdateMicrofrontends200JSONResponseBodyMicrofrontends0(v UpdateMicrofrontends200JSONResponseBodyMicrofrontends0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyMicrofrontends0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends, using the provided UpdateMicrofrontends200JSONResponseBodyMicrofrontends0
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) MergeUpdateMicrofrontends200JSONResponseBodyMicrofrontends0(v UpdateMicrofrontends200JSONResponseBodyMicrofrontends0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyMicrofrontends1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends as a UpdateMicrofrontends200JSONResponseBodyMicrofrontends1
+func (t UpdateMicrofrontends200JSONResponseBody_Microfrontends) AsUpdateMicrofrontends200JSONResponseBodyMicrofrontends1() (UpdateMicrofrontends200JSONResponseBodyMicrofrontends1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyMicrofrontends1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyMicrofrontends1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends as the provided UpdateMicrofrontends200JSONResponseBodyMicrofrontends1
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) FromUpdateMicrofrontends200JSONResponseBodyMicrofrontends1(v UpdateMicrofrontends200JSONResponseBodyMicrofrontends1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyMicrofrontends1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends, using the provided UpdateMicrofrontends200JSONResponseBodyMicrofrontends1
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) MergeUpdateMicrofrontends200JSONResponseBodyMicrofrontends1(v UpdateMicrofrontends200JSONResponseBodyMicrofrontends1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyMicrofrontends2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends as a UpdateMicrofrontends200JSONResponseBodyMicrofrontends2
+func (t UpdateMicrofrontends200JSONResponseBody_Microfrontends) AsUpdateMicrofrontends200JSONResponseBodyMicrofrontends2() (UpdateMicrofrontends200JSONResponseBodyMicrofrontends2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyMicrofrontends2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyMicrofrontends2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends as the provided UpdateMicrofrontends200JSONResponseBodyMicrofrontends2
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) FromUpdateMicrofrontends200JSONResponseBodyMicrofrontends2(v UpdateMicrofrontends200JSONResponseBodyMicrofrontends2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyMicrofrontends2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Microfrontends, using the provided UpdateMicrofrontends200JSONResponseBodyMicrofrontends2
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) MergeUpdateMicrofrontends200JSONResponseBodyMicrofrontends2(v UpdateMicrofrontends200JSONResponseBodyMicrofrontends2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Microfrontends) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Microfrontends) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyProtectionBypass0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties as a UpdateMicrofrontends200JSONResponseBodyProtectionBypass0
+func (t UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) AsUpdateMicrofrontends200JSONResponseBodyProtectionBypass0() (UpdateMicrofrontends200JSONResponseBodyProtectionBypass0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyProtectionBypass0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyProtectionBypass0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties as the provided UpdateMicrofrontends200JSONResponseBodyProtectionBypass0
+func (t *UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) FromUpdateMicrofrontends200JSONResponseBodyProtectionBypass0(v UpdateMicrofrontends200JSONResponseBodyProtectionBypass0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyProtectionBypass0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties, using the provided UpdateMicrofrontends200JSONResponseBodyProtectionBypass0
+func (t *UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) MergeUpdateMicrofrontends200JSONResponseBodyProtectionBypass0(v UpdateMicrofrontends200JSONResponseBodyProtectionBypass0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyProtectionBypass1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties as a UpdateMicrofrontends200JSONResponseBodyProtectionBypass1
+func (t UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) AsUpdateMicrofrontends200JSONResponseBodyProtectionBypass1() (UpdateMicrofrontends200JSONResponseBodyProtectionBypass1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyProtectionBypass1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyProtectionBypass1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties as the provided UpdateMicrofrontends200JSONResponseBodyProtectionBypass1
+func (t *UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) FromUpdateMicrofrontends200JSONResponseBodyProtectionBypass1(v UpdateMicrofrontends200JSONResponseBodyProtectionBypass1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyProtectionBypass1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties, using the provided UpdateMicrofrontends200JSONResponseBodyProtectionBypass1
+func (t *UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) MergeUpdateMicrofrontends200JSONResponseBodyProtectionBypass1(v UpdateMicrofrontends200JSONResponseBodyProtectionBypass1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_ProtectionBypass_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0() (UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0(v UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0(v UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1() (UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1(v UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1(v UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2() (UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2(v UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2(v UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders as a UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0
+func (t UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) AsUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0() (UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders as the provided UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) FromUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0(v UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders, using the provided UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) MergeUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0(v UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders as a UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1
+func (t UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) AsUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1() (UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders as the provided UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) FromUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1(v UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders, using the provided UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) MergeUpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1(v UpdateMicrofrontends200JSONResponseBodySecurityLogHeaders1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_LogHeaders) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders as a UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0
+func (t UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) AsUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0() (UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders as the provided UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) FromUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0(v UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders, using the provided UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) MergeUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0(v UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders as a UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1
+func (t UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) AsUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1() (UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders as the provided UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) FromUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1(v UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders, using the provided UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) MergeUpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1(v UpdateMicrofrontends200JSONResponseBodySecurityRulesetsLogHeaders1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned as a UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0
+func (t UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) AsUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0() (UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned as the provided UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0
+func (t *UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) FromUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0(v UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned, using the provided UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0
+func (t *UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) MergeUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0(v UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned as a UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1
+func (t UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) AsUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1() (UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned as the provided UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1
+func (t *UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) FromUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1(v UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned, using the provided UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1
+func (t *UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) MergeUpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1(v UpdateMicrofrontends200JSONResponseBodyTargetsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_Targets_AliasAssigned) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedIps0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedIps as a UpdateMicrofrontends200JSONResponseBodyTrustedIps0
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedIps) AsUpdateMicrofrontends200JSONResponseBodyTrustedIps0() (UpdateMicrofrontends200JSONResponseBodyTrustedIps0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedIps0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedIps0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedIps as the provided UpdateMicrofrontends200JSONResponseBodyTrustedIps0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedIps) FromUpdateMicrofrontends200JSONResponseBodyTrustedIps0(v UpdateMicrofrontends200JSONResponseBodyTrustedIps0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedIps0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedIps, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedIps0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedIps) MergeUpdateMicrofrontends200JSONResponseBodyTrustedIps0(v UpdateMicrofrontends200JSONResponseBodyTrustedIps0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedIps1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedIps as a UpdateMicrofrontends200JSONResponseBodyTrustedIps1
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedIps) AsUpdateMicrofrontends200JSONResponseBodyTrustedIps1() (UpdateMicrofrontends200JSONResponseBodyTrustedIps1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedIps1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedIps1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedIps as the provided UpdateMicrofrontends200JSONResponseBodyTrustedIps1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedIps) FromUpdateMicrofrontends200JSONResponseBodyTrustedIps1(v UpdateMicrofrontends200JSONResponseBodyTrustedIps1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedIps1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedIps, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedIps1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedIps) MergeUpdateMicrofrontends200JSONResponseBodyTrustedIps1(v UpdateMicrofrontends200JSONResponseBodyTrustedIps1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedIps) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedIps) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To as a UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0() (UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To as the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To as a UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1() (UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To as the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesOidcProvidersTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_OidcProviders_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as a UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0() (UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as a UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1() (UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as a UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0() (UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 returns the union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as a UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) AsUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1() (UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1, error) {
+	var body UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 overwrites any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) FromUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 performs a merge with any union data inside the UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To, using the provided UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MergeUpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1(v UpdateMicrofrontends200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateMicrofrontends200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListPromoteAliases200JSONResponseBody0 returns the union data inside the ListPromoteAliases200JSONResponseBody as a ListPromoteAliases200JSONResponseBody0
+func (t ListPromoteAliases200JSONResponseBody) AsListPromoteAliases200JSONResponseBody0() (ListPromoteAliases200JSONResponseBody0, error) {
+	var body ListPromoteAliases200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListPromoteAliases200JSONResponseBody0 overwrites any union data inside the ListPromoteAliases200JSONResponseBody as the provided ListPromoteAliases200JSONResponseBody0
+func (t *ListPromoteAliases200JSONResponseBody) FromListPromoteAliases200JSONResponseBody0(v ListPromoteAliases200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListPromoteAliases200JSONResponseBody0 performs a merge with any union data inside the ListPromoteAliases200JSONResponseBody, using the provided ListPromoteAliases200JSONResponseBody0
+func (t *ListPromoteAliases200JSONResponseBody) MergeListPromoteAliases200JSONResponseBody0(v ListPromoteAliases200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListPromoteAliases200JSONResponseBody1 returns the union data inside the ListPromoteAliases200JSONResponseBody as a ListPromoteAliases200JSONResponseBody1
+func (t ListPromoteAliases200JSONResponseBody) AsListPromoteAliases200JSONResponseBody1() (ListPromoteAliases200JSONResponseBody1, error) {
+	var body ListPromoteAliases200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListPromoteAliases200JSONResponseBody1 overwrites any union data inside the ListPromoteAliases200JSONResponseBody as the provided ListPromoteAliases200JSONResponseBody1
+func (t *ListPromoteAliases200JSONResponseBody) FromListPromoteAliases200JSONResponseBody1(v ListPromoteAliases200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListPromoteAliases200JSONResponseBody1 performs a merge with any union data inside the ListPromoteAliases200JSONResponseBody, using the provided ListPromoteAliases200JSONResponseBody1
+func (t *ListPromoteAliases200JSONResponseBody) MergeListPromoteAliases200JSONResponseBody1(v ListPromoteAliases200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListPromoteAliases200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListPromoteAliases200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteDestination0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Destination as a GetRoutes200JSONResponseBody1RoutesRouteDestination0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Destination) AsGetRoutes200JSONResponseBody1RoutesRouteDestination0() (GetRoutes200JSONResponseBody1RoutesRouteDestination0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteDestination0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteDestination0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Destination as the provided GetRoutes200JSONResponseBody1RoutesRouteDestination0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Destination) FromGetRoutes200JSONResponseBody1RoutesRouteDestination0(v GetRoutes200JSONResponseBody1RoutesRouteDestination0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteDestination0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Destination, using the provided GetRoutes200JSONResponseBody1RoutesRouteDestination0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Destination) MergeGetRoutes200JSONResponseBody1RoutesRouteDestination0(v GetRoutes200JSONResponseBody1RoutesRouteDestination0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteDestination1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Destination as a GetRoutes200JSONResponseBody1RoutesRouteDestination1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Destination) AsGetRoutes200JSONResponseBody1RoutesRouteDestination1() (GetRoutes200JSONResponseBody1RoutesRouteDestination1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteDestination1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteDestination1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Destination as the provided GetRoutes200JSONResponseBody1RoutesRouteDestination1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Destination) FromGetRoutes200JSONResponseBody1RoutesRouteDestination1(v GetRoutes200JSONResponseBody1RoutesRouteDestination1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteDestination1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Destination, using the provided GetRoutes200JSONResponseBody1RoutesRouteDestination1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Destination) MergeGetRoutes200JSONResponseBody1RoutesRouteDestination1(v GetRoutes200JSONResponseBody1RoutesRouteDestination1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Destination) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Destination) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0() (GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1() (GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value as a GetRoutes200JSONResponseBody1RoutesRouteHas0Value0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value0() (GetRoutes200JSONResponseBody1RoutesRouteHas0Value0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value0(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value0(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value as a GetRoutes200JSONResponseBody1RoutesRouteHas0Value1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) AsGetRoutes200JSONResponseBody1RoutesRouteHas0Value1() (GetRoutes200JSONResponseBody1RoutesRouteHas0Value1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) FromGetRoutes200JSONResponseBody1RoutesRouteHas0Value1(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas0Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteHas0Value1(v GetRoutes200JSONResponseBody1RoutesRouteHas0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0() (GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1() (GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value as a GetRoutes200JSONResponseBody1RoutesRouteHas1Value0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value0() (GetRoutes200JSONResponseBody1RoutesRouteHas1Value0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value0(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value0(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value as a GetRoutes200JSONResponseBody1RoutesRouteHas1Value1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) AsGetRoutes200JSONResponseBody1RoutesRouteHas1Value1() (GetRoutes200JSONResponseBody1RoutesRouteHas1Value1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) FromGetRoutes200JSONResponseBody1RoutesRouteHas1Value1(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas1Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteHas1Value1(v GetRoutes200JSONResponseBody1RoutesRouteHas1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item as a GetRoutes200JSONResponseBody1RoutesRouteHas0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) AsGetRoutes200JSONResponseBody1RoutesRouteHas0() (GetRoutes200JSONResponseBody1RoutesRouteHas0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item as the provided GetRoutes200JSONResponseBody1RoutesRouteHas0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) FromGetRoutes200JSONResponseBody1RoutesRouteHas0(v GetRoutes200JSONResponseBody1RoutesRouteHas0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) MergeGetRoutes200JSONResponseBody1RoutesRouteHas0(v GetRoutes200JSONResponseBody1RoutesRouteHas0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteHas1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item as a GetRoutes200JSONResponseBody1RoutesRouteHas1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) AsGetRoutes200JSONResponseBody1RoutesRouteHas1() (GetRoutes200JSONResponseBody1RoutesRouteHas1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteHas1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteHas1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item as the provided GetRoutes200JSONResponseBody1RoutesRouteHas1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) FromGetRoutes200JSONResponseBody1RoutesRouteHas1(v GetRoutes200JSONResponseBody1RoutesRouteHas1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteHas1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item, using the provided GetRoutes200JSONResponseBody1RoutesRouteHas1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) MergeGetRoutes200JSONResponseBody1RoutesRouteHas1(v GetRoutes200JSONResponseBody1RoutesRouteHas1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0() (GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1() (GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value as a GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value0() (GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value0(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value0(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value as a GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) AsGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1() (GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) FromGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0Value1(v GetRoutes200JSONResponseBody1RoutesRouteMissing0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0() (GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1() (GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value as a GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value0() (GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value0(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value0(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value as a GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) AsGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1() (GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) FromGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1Value1(v GetRoutes200JSONResponseBody1RoutesRouteMissing1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item as a GetRoutes200JSONResponseBody1RoutesRouteMissing0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) AsGetRoutes200JSONResponseBody1RoutesRouteMissing0() (GetRoutes200JSONResponseBody1RoutesRouteMissing0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) FromGetRoutes200JSONResponseBody1RoutesRouteMissing0(v GetRoutes200JSONResponseBody1RoutesRouteMissing0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing0(v GetRoutes200JSONResponseBody1RoutesRouteMissing0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteMissing1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item as a GetRoutes200JSONResponseBody1RoutesRouteMissing1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) AsGetRoutes200JSONResponseBody1RoutesRouteMissing1() (GetRoutes200JSONResponseBody1RoutesRouteMissing1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteMissing1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteMissing1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item as the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) FromGetRoutes200JSONResponseBody1RoutesRouteMissing1(v GetRoutes200JSONResponseBody1RoutesRouteMissing1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item, using the provided GetRoutes200JSONResponseBody1RoutesRouteMissing1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) MergeGetRoutes200JSONResponseBody1RoutesRouteMissing1(v GetRoutes200JSONResponseBody1RoutesRouteMissing1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Missing_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0Args1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Args) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0TargetKey1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_0_Target_Key) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item as a GetRoutes200JSONResponseBody1RoutesRouteTransforms0
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms0() (GetRoutes200JSONResponseBody1RoutesRouteTransforms0, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms0
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms0(v GetRoutes200JSONResponseBody1RoutesRouteTransforms0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody1RoutesRouteTransforms1 returns the union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item as a GetRoutes200JSONResponseBody1RoutesRouteTransforms1
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) AsGetRoutes200JSONResponseBody1RoutesRouteTransforms1() (GetRoutes200JSONResponseBody1RoutesRouteTransforms1, error) {
+	var body GetRoutes200JSONResponseBody1RoutesRouteTransforms1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody1RoutesRouteTransforms1 overwrites any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item as the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) FromGetRoutes200JSONResponseBody1RoutesRouteTransforms1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item, using the provided GetRoutes200JSONResponseBody1RoutesRouteTransforms1
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) MergeGetRoutes200JSONResponseBody1RoutesRouteTransforms1(v GetRoutes200JSONResponseBody1RoutesRouteTransforms1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_1_Routes_Route_Transforms_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody2RoutesRouteDestination0 returns the union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Destination as a GetRoutes200JSONResponseBody2RoutesRouteDestination0
+func (t GetRoutes200JSONResponseBody_2_Routes_Route_Destination) AsGetRoutes200JSONResponseBody2RoutesRouteDestination0() (GetRoutes200JSONResponseBody2RoutesRouteDestination0, error) {
+	var body GetRoutes200JSONResponseBody2RoutesRouteDestination0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody2RoutesRouteDestination0 overwrites any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Destination as the provided GetRoutes200JSONResponseBody2RoutesRouteDestination0
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Destination) FromGetRoutes200JSONResponseBody2RoutesRouteDestination0(v GetRoutes200JSONResponseBody2RoutesRouteDestination0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody2RoutesRouteDestination0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Destination, using the provided GetRoutes200JSONResponseBody2RoutesRouteDestination0
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Destination) MergeGetRoutes200JSONResponseBody2RoutesRouteDestination0(v GetRoutes200JSONResponseBody2RoutesRouteDestination0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody2RoutesRouteDestination1 returns the union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Destination as a GetRoutes200JSONResponseBody2RoutesRouteDestination1
+func (t GetRoutes200JSONResponseBody_2_Routes_Route_Destination) AsGetRoutes200JSONResponseBody2RoutesRouteDestination1() (GetRoutes200JSONResponseBody2RoutesRouteDestination1, error) {
+	var body GetRoutes200JSONResponseBody2RoutesRouteDestination1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody2RoutesRouteDestination1 overwrites any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Destination as the provided GetRoutes200JSONResponseBody2RoutesRouteDestination1
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Destination) FromGetRoutes200JSONResponseBody2RoutesRouteDestination1(v GetRoutes200JSONResponseBody2RoutesRouteDestination1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody2RoutesRouteDestination1 performs a merge with any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Destination, using the provided GetRoutes200JSONResponseBody2RoutesRouteDestination1
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Destination) MergeGetRoutes200JSONResponseBody2RoutesRouteDestination1(v GetRoutes200JSONResponseBody2RoutesRouteDestination1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetRoutes200JSONResponseBody_2_Routes_Route_Destination) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Destination) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0 returns the union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq as a GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0
+func (t GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq) AsGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0() (GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0, error) {
+	var body GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0 overwrites any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq as the provided GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq) FromGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0(v GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0 performs a merge with any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq, using the provided GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0
+func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq) MergeGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0(v GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1 returns the union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq as a GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1
+func (t GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq) AsGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1() (GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1, error) {
+	var body GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
 // FromGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1 overwrites any union data inside the GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq as the provided GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1
 func (t *GetRoutes200JSONResponseBody_2_Routes_Route_Has_0_Value_1_Eq) FromGetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1(v GetRoutes200JSONResponseBody2RoutesRouteHas0Value1Eq1) error {
 	b, err := json.Marshal(v)
@@ -16358,3659 +20009,4 @@ func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_R
 	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ActionMitigateLogHeaders1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_Action_Mitigate_LogHeaders) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0ConditionGroupConditionsValue2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_0_ConditionGroup_Conditions_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ActionMitigateLogHeaders1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_Action_Mitigate_LogHeaders) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1ConditionGroupConditionsValue2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_1_ConditionGroup_Conditions_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRules1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ActionMitigateLogHeaders1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_Action_Mitigate_LogHeaders) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0ConditionGroupConditionsValue2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_0_ConditionGroup_Conditions_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1LogHeaders1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets_1_LogHeaders) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 returns the union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets as a CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) AsCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1() (CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1, error) {
-	var body CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 overwrites any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets as the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) FromCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1 performs a merge with any union data inside the CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets, using the provided CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) MergeCreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1(v CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyRulesets1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirectJSONBodyMetadata0 returns the union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as a CreateIntegrationStoreDirectJSONBodyMetadata0
-func (t CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirectJSONBodyMetadata0() (CreateIntegrationStoreDirectJSONBodyMetadata0, error) {
-	var body CreateIntegrationStoreDirectJSONBodyMetadata0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirectJSONBodyMetadata0 overwrites any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirectJSONBodyMetadata0
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirectJSONBodyMetadata0(v CreateIntegrationStoreDirectJSONBodyMetadata0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirectJSONBodyMetadata0 performs a merge with any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirectJSONBodyMetadata0
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirectJSONBodyMetadata0(v CreateIntegrationStoreDirectJSONBodyMetadata0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirectJSONBodyMetadata1 returns the union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as a CreateIntegrationStoreDirectJSONBodyMetadata1
-func (t CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirectJSONBodyMetadata1() (CreateIntegrationStoreDirectJSONBodyMetadata1, error) {
-	var body CreateIntegrationStoreDirectJSONBodyMetadata1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirectJSONBodyMetadata1 overwrites any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirectJSONBodyMetadata1
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirectJSONBodyMetadata1(v CreateIntegrationStoreDirectJSONBodyMetadata1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirectJSONBodyMetadata1 performs a merge with any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirectJSONBodyMetadata1
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirectJSONBodyMetadata1(v CreateIntegrationStoreDirectJSONBodyMetadata1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirectJSONBodyMetadata2 returns the union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as a CreateIntegrationStoreDirectJSONBodyMetadata2
-func (t CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirectJSONBodyMetadata2() (CreateIntegrationStoreDirectJSONBodyMetadata2, error) {
-	var body CreateIntegrationStoreDirectJSONBodyMetadata2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirectJSONBodyMetadata2 overwrites any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirectJSONBodyMetadata2
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirectJSONBodyMetadata2(v CreateIntegrationStoreDirectJSONBodyMetadata2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirectJSONBodyMetadata2 performs a merge with any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirectJSONBodyMetadata2
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirectJSONBodyMetadata2(v CreateIntegrationStoreDirectJSONBodyMetadata2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirectJSONBodyMetadata3 returns the union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as a CreateIntegrationStoreDirectJSONBodyMetadata3
-func (t CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirectJSONBodyMetadata3() (CreateIntegrationStoreDirectJSONBodyMetadata3, error) {
-	var body CreateIntegrationStoreDirectJSONBodyMetadata3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirectJSONBodyMetadata3 overwrites any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirectJSONBodyMetadata3
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirectJSONBodyMetadata3(v CreateIntegrationStoreDirectJSONBodyMetadata3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirectJSONBodyMetadata3 performs a merge with any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirectJSONBodyMetadata3
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirectJSONBodyMetadata3(v CreateIntegrationStoreDirectJSONBodyMetadata3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirectJSONBodyMetadata4 returns the union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as a CreateIntegrationStoreDirectJSONBodyMetadata4
-func (t CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirectJSONBodyMetadata4() (CreateIntegrationStoreDirectJSONBodyMetadata4, error) {
-	var body CreateIntegrationStoreDirectJSONBodyMetadata4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirectJSONBodyMetadata4 overwrites any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirectJSONBodyMetadata4
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirectJSONBodyMetadata4(v CreateIntegrationStoreDirectJSONBodyMetadata4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirectJSONBodyMetadata4 performs a merge with any union data inside the CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirectJSONBodyMetadata4
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirectJSONBodyMetadata4(v CreateIntegrationStoreDirectJSONBodyMetadata4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirectJSONBody_Metadata_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation as a CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation as a CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretRotation1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as a CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as a CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as a CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as a CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3() (CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as a CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4() (CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4(v CreateIntegrationStoreDirect200JSONResponseBodyStoreMetadata4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretRotation1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSecretRotation1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties0UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_0_UiReadOnly) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties1UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_1_UiReadOnly) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties2UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_2_UiReadOnly) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties3UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_3_UiReadOnly) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Disabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiOptionsHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiOptions_Hidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties4UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_4_UiReadOnly) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Disabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiOptionsHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiOptions_Hidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties5UiReadOnly2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_5_UiReadOnly) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDescription1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDescription) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiDisabled2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiDisabled) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2 performs a merge with any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden, using the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) MergeCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiHidden2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiHidden) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0 returns the union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiOptions_Disabled as a CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0
-func (t CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiOptions_Disabled) AsCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0() (CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0, error) {
-	var body CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0 overwrites any union data inside the CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiOptions_Disabled as the provided CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0
-func (t *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_6_UiOptions_Disabled) FromCreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0(v CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaProperties6UiOptionsDisabled0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
 }

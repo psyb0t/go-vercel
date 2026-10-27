@@ -10,6 +10,2055 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// PatchEdgeConfigItemsJSONBodyItems03Operation defines parameters for PatchEdgeConfigItems.
+type PatchEdgeConfigItemsJSONBodyItems03Operation string
+
+// PatchEdgeConfigItemsJSONBody_Items_Item defines parameters for PatchEdgeConfigItems.
+type PatchEdgeConfigItemsJSONBody_Items_Item struct {
+	union json.RawMessage
+}
+
+// DeleteEdgeConfigSchemaParams defines parameters for DeleteEdgeConfigSchema.
+type DeleteEdgeConfigSchemaParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetEdgeConfigSchemaParams defines parameters for GetEdgeConfigSchema.
+type GetEdgeConfigSchemaParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// PatchEdgeConfigSchemaJSONBody defines parameters for PatchEdgeConfigSchema.
+type PatchEdgeConfigSchemaJSONBody struct {
+	Definition interface{} `json:"definition"`
+}
+
+// PatchEdgeConfigSchemaParams defines parameters for PatchEdgeConfigSchema.
+type PatchEdgeConfigSchemaParams struct {
+	DryRun *string `form:"dryRun,omitempty" json:"dryRun,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateEdgeConfigTokenJSONBody defines parameters for CreateEdgeConfigToken.
+type CreateEdgeConfigTokenJSONBody struct {
+	Label string `json:"label"`
+}
+
+// CreateEdgeConfigTokenParams defines parameters for CreateEdgeConfigToken.
+type CreateEdgeConfigTokenParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetEdgeConfigTokenParams defines parameters for GetEdgeConfigToken.
+type GetEdgeConfigTokenParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteEdgeConfigTokensJSONBody defines parameters for DeleteEdgeConfigTokens.
+type DeleteEdgeConfigTokensJSONBody struct {
+	Ids    *[]string `json:"ids,omitempty"`
+	Tokens *[]string `json:"tokens,omitempty"`
+	union  json.RawMessage
+}
+
+// DeleteEdgeConfigTokensParams defines parameters for DeleteEdgeConfigTokens.
+type DeleteEdgeConfigTokensParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteEdgeConfigTokensJSONBody0 defines parameters for DeleteEdgeConfigTokens.
+type DeleteEdgeConfigTokensJSONBody0 = interface{}
+
+// DeleteEdgeConfigTokensJSONBody1 defines parameters for DeleteEdgeConfigTokens.
+type DeleteEdgeConfigTokensJSONBody1 = interface{}
+
+// GetEdgeConfigTokensParams defines parameters for GetEdgeConfigTokens.
+type GetEdgeConfigTokensParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateInstallationJSONBody defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBody struct {
+	BillingPlan *UpdateInstallationJSONBody_BillingPlan `json:"billingPlan,omitempty"`
+	ExternalId  *string                                 `json:"externalId,omitempty"`
+
+	// Notification A notification to display to your customer. Send `null` to clear the current notification.
+	Notification *UpdateInstallationJSONBody_Notification `json:"notification,omitempty"`
+	Status       *UpdateInstallationJSONBodyStatus        `json:"status,omitempty"`
+}
+
+// UpdateInstallationJSONBodyBillingPlanType defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBodyBillingPlanType string
+
+// UpdateInstallationJSONBody_BillingPlan defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBody_BillingPlan struct {
+	Cost        *string `json:"cost,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Details     *[]struct {
+		Label string  `json:"label"`
+		Value *string `json:"value,omitempty"`
+	} `json:"details,omitempty"`
+	EffectiveDate      *string `json:"effectiveDate,omitempty"`
+	HighlightedDetails *[]struct {
+		Label string  `json:"label"`
+		Value *string `json:"value,omitempty"`
+	} `json:"highlightedDetails,omitempty"`
+	Id                    string                                    `json:"id"`
+	Name                  string                                    `json:"name"`
+	PaymentMethodRequired *bool                                     `json:"paymentMethodRequired,omitempty"`
+	Type                  UpdateInstallationJSONBodyBillingPlanType `json:"type"`
+	AdditionalProperties  map[string]interface{}                    `json:"-"`
+}
+
+// UpdateInstallationJSONBodyNotification0 defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBodyNotification0 struct {
+	Href    *string                                      `json:"href,omitempty"`
+	Level   UpdateInstallationJSONBodyNotification0Level `json:"level"`
+	Message *string                                      `json:"message,omitempty"`
+	Title   string                                       `json:"title"`
+}
+
+// UpdateInstallationJSONBodyNotification0Level defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBodyNotification0Level string
+
+// UpdateInstallationJSONBodyNotification1 defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBodyNotification1 = string
+
+// UpdateInstallationJSONBody_Notification defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBody_Notification struct {
+	union json.RawMessage
+}
+
+// UpdateInstallationJSONBodyStatus defines parameters for UpdateInstallation.
+type UpdateInstallationJSONBodyStatus string
+
+// SubmitBillingDataJSONBody defines parameters for SubmitBillingData.
+type SubmitBillingDataJSONBody struct {
+	// Billing Billing data (interim invoicing data).
+	Billing SubmitBillingDataJSONBody_Billing `json:"billing"`
+
+	// Eod End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your "end of day" to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 24h earlier from our server's current time.
+	Eod time.Time `json:"eod"`
+
+	// Period Period for the billing cycle. The period end date cannot be older than 24 hours earlier than our current server's time.
+	Period struct {
+		End   time.Time `json:"end"`
+		Start time.Time `json:"start"`
+	} `json:"period"`
+
+	// Timestamp Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept.
+	Timestamp time.Time `json:"timestamp"`
+	Usage     []struct {
+		// DayValue Metric value for the day. Could be a final or an interim value for the day.
+		DayValue float32 `json:"dayValue"`
+
+		// Name Metric name.
+		Name string `json:"name"`
+
+		// PeriodValue Metric value for the billing period. Could be a final or an interim value for the period.
+		PeriodValue float32 `json:"periodValue"`
+
+		// PlanValue The limit value of the metric for a billing period, if a limit is defined by the plan.
+		PlanValue *float32 `json:"planValue,omitempty"`
+
+		// ResourceId Partner's resource ID.
+		ResourceId *string `json:"resourceId,omitempty"`
+
+		// Type
+		//               Type of the metric.
+		//               - total: measured total value, such as Database size
+		//               - interval: usage during the period, such as i/o or number of queries.
+		//               - rate: rate of usage, such as queries per second.
+		//
+		Type SubmitBillingDataJSONBodyUsageType `json:"type"`
+
+		// Units Metric units. Example: "GB"
+		Units string `json:"units"`
+	} `json:"usage"`
+}
+
+// SubmitBillingDataJSONBodyBilling0 defines parameters for SubmitBillingData.
+type SubmitBillingDataJSONBodyBilling0 = []struct {
+	// BillingPlanId Partner's billing plan ID.
+	BillingPlanId string `json:"billingPlanId"`
+
+	// Details Line item details.
+	Details *string `json:"details,omitempty"`
+
+	// End Start and end are only needed if different from the period's start/end.
+	End *time.Time `json:"end,omitempty"`
+
+	// Name Line item name.
+	Name string `json:"name"`
+
+	// Price Price per unit.
+	Price string `json:"price"`
+
+	// Quantity Quantity of units.
+	Quantity float32 `json:"quantity"`
+
+	// ResourceId Partner's resource ID.
+	ResourceId *string `json:"resourceId,omitempty"`
+
+	// Start Start and end are only needed if different from the period's start/end.
+	Start *time.Time `json:"start,omitempty"`
+
+	// Total Total amount.
+	Total string `json:"total"`
+
+	// Units Units of the quantity.
+	Units string `json:"units"`
+}
+
+// SubmitBillingDataJSONBodyBilling1 defines parameters for SubmitBillingData.
+type SubmitBillingDataJSONBodyBilling1 struct {
+	Discounts *[]struct {
+		// Amount Discount amount.
+		Amount string `json:"amount"`
+
+		// BillingPlanId Partner's billing plan ID.
+		BillingPlanId string `json:"billingPlanId"`
+
+		// Details Discount details.
+		Details *string `json:"details,omitempty"`
+
+		// End Start and end are only needed if different from the period's start/end.
+		End *time.Time `json:"end,omitempty"`
+
+		// Name Discount name.
+		Name string `json:"name"`
+
+		// ResourceId Partner's resource ID.
+		ResourceId *string `json:"resourceId,omitempty"`
+
+		// Start Start and end are only needed if different from the period's start/end.
+		Start *time.Time `json:"start,omitempty"`
+	} `json:"discounts,omitempty"`
+	Items []struct {
+		// BillingPlanId Partner's billing plan ID.
+		BillingPlanId string `json:"billingPlanId"`
+
+		// Details Line item details.
+		Details *string `json:"details,omitempty"`
+
+		// End Start and end are only needed if different from the period's start/end.
+		End *time.Time `json:"end,omitempty"`
+
+		// Name Line item name.
+		Name string `json:"name"`
+
+		// Price Price per unit.
+		Price string `json:"price"`
+
+		// Quantity Quantity of units.
+		Quantity float32 `json:"quantity"`
+
+		// ResourceId Partner's resource ID.
+		ResourceId *string `json:"resourceId,omitempty"`
+
+		// Start Start and end are only needed if different from the period's start/end.
+		Start *time.Time `json:"start,omitempty"`
+
+		// Total Total amount.
+		Total string `json:"total"`
+
+		// Units Units of the quantity.
+		Units string `json:"units"`
+	} `json:"items"`
+}
+
+// SubmitBillingDataJSONBody_Billing defines parameters for SubmitBillingData.
+type SubmitBillingDataJSONBody_Billing struct {
+	union json.RawMessage
+}
+
+// SubmitBillingDataJSONBodyUsageType defines parameters for SubmitBillingData.
+type SubmitBillingDataJSONBodyUsageType string
+
+// SubmitPrepaymentBalancesJSONBody defines parameters for SubmitPrepaymentBalances.
+type SubmitPrepaymentBalancesJSONBody struct {
+	Balances []struct {
+		// Credit A human-readable description of the credits the user currently has, e.g. "2,000 Tokens"
+		Credit *string `json:"credit,omitempty"`
+
+		// CurrencyValueInCents The dollar value of the credit balance, in USD and provided in cents, which is used to trigger automatic purchase thresholds.
+		CurrencyValueInCents float32 `json:"currencyValueInCents"`
+
+		// NameLabel The name of the credits, for display purposes, e.g. "Tokens"
+		NameLabel *string `json:"nameLabel,omitempty"`
+
+		// ResourceId Partner's resource ID, exclude if credits are tied to the installation and not an individual resource.
+		ResourceId *string `json:"resourceId,omitempty"`
+	} `json:"balances"`
+
+	// Timestamp Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept.
+	Timestamp time.Time `json:"timestamp"`
+}
+
+// SubmitInvoiceJSONBody defines parameters for SubmitInvoice.
+type SubmitInvoiceJSONBody struct {
+	Discounts *[]struct {
+		// Amount Currency amount as a decimal string.
+		Amount string `json:"amount"`
+
+		// BillingPlanId Partner's billing plan ID.
+		BillingPlanId string  `json:"billingPlanId"`
+		Details       *string `json:"details,omitempty"`
+
+		// End Start and end are only needed if different from the period's start/end.
+		End  *time.Time `json:"end,omitempty"`
+		Name string     `json:"name"`
+
+		// ResourceId Partner's resource ID.
+		ResourceId *string `json:"resourceId,omitempty"`
+
+		// Start Start and end are only needed if different from the period's start/end.
+		Start *time.Time `json:"start,omitempty"`
+	} `json:"discounts,omitempty"`
+
+	// ExternalId Partner-provided invoice identifier. If provided, it must be unique for this installation.
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// Final Set this to `true` if this is the final invoice for the installation. Can only be set when the installation is pending deletion.
+	Final *bool `json:"final,omitempty"`
+
+	// InvoiceDate Invoice date. Must be within the period's start and end.
+	InvoiceDate time.Time `json:"invoiceDate"`
+	Items       []struct {
+		// BillingPlanId Partner's billing plan ID.
+		BillingPlanId string  `json:"billingPlanId"`
+		Details       *string `json:"details,omitempty"`
+
+		// End Start and end are only needed if different from the period's start/end.
+		End  *time.Time `json:"end,omitempty"`
+		Name string     `json:"name"`
+
+		// Price Currency amount as a decimal string.
+		Price    string  `json:"price"`
+		Quantity float32 `json:"quantity"`
+
+		// ResourceId Partner's resource ID.
+		ResourceId *string `json:"resourceId,omitempty"`
+
+		// Start Start and end are only needed if different from the period's start/end.
+		Start *time.Time `json:"start,omitempty"`
+
+		// Total Currency amount as a decimal string.
+		Total string `json:"total"`
+		Units string `json:"units"`
+	} `json:"items"`
+
+	// Memo Additional memo for the invoice.
+	Memo *string `json:"memo,omitempty"`
+
+	// Period Subscription period for this billing cycle.
+	Period struct {
+		End   time.Time `json:"end"`
+		Start time.Time `json:"start"`
+	} `json:"period"`
+
+	// Test Test mode
+	Test *struct {
+		Result   *SubmitInvoiceJSONBodyTestResult `json:"result,omitempty"`
+		Validate *bool                            `json:"validate,omitempty"`
+	} `json:"test,omitempty"`
+}
+
+// SubmitInvoiceJSONBodyTestResult defines parameters for SubmitInvoice.
+type SubmitInvoiceJSONBodyTestResult string
+
+// SubmitInvoice200JSONResponseBodyTest defines parameters for SubmitInvoice.
+type SubmitInvoice200JSONResponseBodyTest bool
+
+// GetInvoice200JSONResponseBodyState defines parameters for GetInvoice.
+type GetInvoice200JSONResponseBodyState string
+
+// GetInvoice200JSONResponseBodyTest defines parameters for GetInvoice.
+type GetInvoice200JSONResponseBodyTest bool
+
+// UpdateInvoiceJSONBody defines parameters for UpdateInvoice.
+type UpdateInvoiceJSONBody struct {
+	union json.RawMessage
+}
+
+// UpdateInvoiceJSONBody0 defines parameters for UpdateInvoice.
+type UpdateInvoiceJSONBody0 struct {
+	Action UpdateInvoiceJSONBody0Action `json:"action"`
+
+	// Reason Refund reason.
+	Reason string `json:"reason"`
+
+	// Total The total amount to be refunded. Must be less than or equal to the total amount of the invoice.
+	Total string `json:"total"`
+}
+
+// UpdateInvoiceJSONBody0Action defines parameters for UpdateInvoice.
+type UpdateInvoiceJSONBody0Action string
+
+// RevokeInstallationCredentialJSONBody defines parameters for RevokeInstallationCredential.
+type RevokeInstallationCredentialJSONBody struct {
+	ClientId     *string `json:"client_id,omitempty"`
+	ClientSecret string  `json:"client_secret"`
+	Token        string  `json:"token"`
+}
+
+// RevokeInstallationCredential200JSONResponseBodyAlreadyRevoked defines parameters for RevokeInstallationCredential.
+type RevokeInstallationCredential200JSONResponseBodyAlreadyRevoked bool
+
+// RevokeInstallationCredential200JSONResponseBodyRevoked defines parameters for RevokeInstallationCredential.
+type RevokeInstallationCredential200JSONResponseBodyRevoked bool
+
+// RotateInstallationCredentialJSONBody defines parameters for RotateInstallationCredential.
+type RotateInstallationCredentialJSONBody struct {
+	ClientId     *string `json:"client_id,omitempty"`
+	ClientSecret string  `json:"client_secret"`
+}
+
+// RotateInstallationCredential200JSONResponseBodyTokenType defines parameters for RotateInstallationCredential.
+type RotateInstallationCredential200JSONResponseBodyTokenType string
+
+// CreateEventJSONBody defines parameters for CreateEvent.
+type CreateEventJSONBody struct {
+	Event CreateEventJSONBody_Event `json:"event"`
+}
+
+// CreateEventJSONBodyEvent0 defines parameters for CreateEvent.
+type CreateEventJSONBodyEvent0 struct {
+	// BillingPlanId The installation-level billing plan ID
+	BillingPlanId *string                       `json:"billingPlanId,omitempty"`
+	Type          CreateEventJSONBodyEvent0Type `json:"type"`
+}
+
+// CreateEventJSONBodyEvent0Type defines parameters for CreateEvent.
+type CreateEventJSONBodyEvent0Type string
+
+// CreateEventJSONBodyEvent1 defines parameters for CreateEvent.
+type CreateEventJSONBodyEvent1 struct {
+	// ProductId Partner-provided product slug or id
+	ProductId *string `json:"productId,omitempty"`
+
+	// ResourceId Partner provided resource ID
+	ResourceId string                        `json:"resourceId"`
+	Type       CreateEventJSONBodyEvent1Type `json:"type"`
+}
+
+// CreateEventJSONBodyEvent1Type defines parameters for CreateEvent.
+type CreateEventJSONBodyEvent1Type string
+
+// CreateEventJSONBody_Event defines parameters for CreateEvent.
+type CreateEventJSONBody_Event struct {
+	union json.RawMessage
+}
+
+// GetMember200JSONResponseBodyRole defines parameters for GetMember.
+type GetMember200JSONResponseBodyRole string
+
+// UpdateResourceSecretsJSONBody defines parameters for UpdateResourceSecrets.
+type UpdateResourceSecretsJSONBody struct {
+	// Partial If true, will only update the provided secrets
+	Partial *bool `json:"partial,omitempty"`
+	Secrets []struct {
+		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
+		EnvironmentOverrides *struct {
+			// Development Value used for development environment.
+			Development *string `json:"development,omitempty"`
+
+			// Preview Value used for preview environment.
+			Preview *string `json:"preview,omitempty"`
+
+			// Production Value used for production environment.
+			Production *string `json:"production,omitempty"`
+		} `json:"environmentOverrides,omitempty"`
+		Name   string  `json:"name"`
+		Prefix *string `json:"prefix,omitempty"`
+		Value  string  `json:"value"`
+	} `json:"secrets"`
+}
+
+// GetIntegrationResources200JSONResponseBodyResourcesMetadata0 defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesMetadata0 = string
+
+// GetIntegrationResources200JSONResponseBodyResourcesMetadata1 defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesMetadata1 = float32
+
+// GetIntegrationResources200JSONResponseBodyResourcesMetadata2 defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesMetadata2 = []string
+
+// GetIntegrationResources200JSONResponseBodyResourcesMetadata3 defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesMetadata3 = []float32
+
+// GetIntegrationResources200JSONResponseBodyResourcesMetadata4 defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesMetadata4 bool
+
+// GetIntegrationResources200JSONResponseBody_Resources_Metadata_AdditionalProperties defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBody_Resources_Metadata_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// GetIntegrationResources200JSONResponseBodyResourcesNotificationLevel defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesNotificationLevel string
+
+// GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsAuthenticationAppUrlsTarget defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsAuthenticationAppUrlsTarget string
+
+// GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationEdgeConfigSyncingEnabled defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationEdgeConfigSyncingEnabled bool
+
+// GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationGlobalConfigSyncingEnabled defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationGlobalConfigSyncingEnabled bool
+
+// GetIntegrationResources200JSONResponseBodyResourcesStatus defines parameters for GetIntegrationResources.
+type GetIntegrationResources200JSONResponseBodyResourcesStatus string
+
+// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims0 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims0 = string
+
+// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims1 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims1 = float32
+
+// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims2 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims2 = []string
+
+// GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims3 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyCustomClaimsClaimRulesClaims3 bool
+
+// GetIntegrationResource200JSONResponseBody_CustomClaims_ClaimRules_Claims_AdditionalProperties defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBody_CustomClaims_ClaimRules_Claims_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// GetIntegrationResource200JSONResponseBodyMetadata0 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyMetadata0 = string
+
+// GetIntegrationResource200JSONResponseBodyMetadata1 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyMetadata1 = float32
+
+// GetIntegrationResource200JSONResponseBodyMetadata2 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyMetadata2 = []string
+
+// GetIntegrationResource200JSONResponseBodyMetadata3 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyMetadata3 = []float32
+
+// GetIntegrationResource200JSONResponseBodyMetadata4 defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyMetadata4 bool
+
+// GetIntegrationResource200JSONResponseBody_Metadata_AdditionalProperties defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBody_Metadata_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// GetIntegrationResource200JSONResponseBodyNotificationLevel defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyNotificationLevel string
+
+// GetIntegrationResource200JSONResponseBodyProtocolSettingsAuthenticationAppUrlsTarget defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyProtocolSettingsAuthenticationAppUrlsTarget string
+
+// GetIntegrationResource200JSONResponseBodyStatus defines parameters for GetIntegrationResource.
+type GetIntegrationResource200JSONResponseBodyStatus string
+
+// UpdateResourceJSONBody defines parameters for UpdateResource.
+type UpdateResourceJSONBody struct {
+	BillingPlan *UpdateResourceJSONBody_BillingPlan `json:"billingPlan,omitempty"`
+
+	// CustomClaims Custom claims embedded in the resource tokens Vercel mints for this resource.
+	CustomClaims *struct {
+		// ClaimRules Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
+		ClaimRules *[]struct {
+			// Claims Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+			Claims map[string]UpdateResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties `json:"claims"`
+			When   *struct {
+				// Environment Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
+				Environment *[]string `json:"environment,omitempty"`
+
+				// Role Applies only when the token is minted for one of these roles.
+				Role *[]string `json:"role,omitempty"`
+			} `json:"when,omitempty"`
+		} `json:"claimRules,omitempty"`
+
+		// DefaultRole Role used when the deployment does not request one. Required when `roles` is set.
+		DefaultRole *string `json:"defaultRole,omitempty"`
+
+		// Roles Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.
+		Roles *[]string `json:"roles,omitempty"`
+	} `json:"customClaims,omitempty"`
+	Extras       *map[string]interface{}              `json:"extras,omitempty"`
+	Metadata     *map[string]interface{}              `json:"metadata,omitempty"`
+	Name         *string                              `json:"name,omitempty"`
+	Notification *UpdateResourceJSONBody_Notification `json:"notification,omitempty"`
+	Ownership    *UpdateResourceJSONBodyOwnership     `json:"ownership,omitempty"`
+	Secrets      *UpdateResourceJSONBody_Secrets      `json:"secrets,omitempty"`
+	Status       *UpdateResourceJSONBodyStatus        `json:"status,omitempty"`
+}
+
+// UpdateResourceJSONBodyBillingPlanType defines parameters for UpdateResource.
+type UpdateResourceJSONBodyBillingPlanType string
+
+// UpdateResourceJSONBody_BillingPlan defines parameters for UpdateResource.
+type UpdateResourceJSONBody_BillingPlan struct {
+	Cost        *string `json:"cost,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Details     *[]struct {
+		Label string  `json:"label"`
+		Value *string `json:"value,omitempty"`
+	} `json:"details,omitempty"`
+	EffectiveDate      *string `json:"effectiveDate,omitempty"`
+	HighlightedDetails *[]struct {
+		Label string  `json:"label"`
+		Value *string `json:"value,omitempty"`
+	} `json:"highlightedDetails,omitempty"`
+	Id                    string                                `json:"id"`
+	Name                  string                                `json:"name"`
+	PaymentMethodRequired *bool                                 `json:"paymentMethodRequired,omitempty"`
+	Type                  UpdateResourceJSONBodyBillingPlanType `json:"type"`
+	AdditionalProperties  map[string]interface{}                `json:"-"`
+}
+
+// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims0 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims0 struct {
+	union json.RawMessage
+}
+
+// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims00 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims00 = string
+
+// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims01 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims01 = float32
+
+// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims02 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims02 = bool
+
+// UpdateResourceJSONBodyCustomClaimsClaimRulesClaims1 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyCustomClaimsClaimRulesClaims1 = []string
+
+// UpdateResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties defines parameters for UpdateResource.
+type UpdateResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// UpdateResourceJSONBodyNotification0 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyNotification0 struct {
+	Href    *string                                  `json:"href,omitempty"`
+	Level   UpdateResourceJSONBodyNotification0Level `json:"level"`
+	Message *string                                  `json:"message,omitempty"`
+	Title   string                                   `json:"title"`
+}
+
+// UpdateResourceJSONBodyNotification0Level defines parameters for UpdateResource.
+type UpdateResourceJSONBodyNotification0Level string
+
+// UpdateResourceJSONBodyNotification1 defines parameters for UpdateResource.
+type UpdateResourceJSONBodyNotification1 = string
+
+// UpdateResourceJSONBody_Notification defines parameters for UpdateResource.
+type UpdateResourceJSONBody_Notification struct {
+	union json.RawMessage
+}
+
+// UpdateResourceJSONBodyOwnership defines parameters for UpdateResource.
+type UpdateResourceJSONBodyOwnership string
+
+// UpdateResourceJSONBodySecrets0 defines parameters for UpdateResource.
+type UpdateResourceJSONBodySecrets0 = []struct {
+	// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
+	EnvironmentOverrides *struct {
+		// Development Value used for development environment.
+		Development *string `json:"development,omitempty"`
+
+		// Preview Value used for preview environment.
+		Preview *string `json:"preview,omitempty"`
+
+		// Production Value used for production environment.
+		Production *string `json:"production,omitempty"`
+	} `json:"environmentOverrides,omitempty"`
+	Name   string  `json:"name"`
+	Prefix *string `json:"prefix,omitempty"`
+	Value  string  `json:"value"`
+}
+
+// UpdateResourceJSONBodySecrets1 defines parameters for UpdateResource.
+type UpdateResourceJSONBodySecrets1 struct {
+	// Partial If true, will only overwrite the provided secrets instead of replacing all secrets.
+	Partial *bool `json:"partial,omitempty"`
+	Secrets []struct {
+		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
+		EnvironmentOverrides *struct {
+			// Development Value used for development environment.
+			Development *string `json:"development,omitempty"`
+
+			// Preview Value used for preview environment.
+			Preview *string `json:"preview,omitempty"`
+
+			// Production Value used for production environment.
+			Production *string `json:"production,omitempty"`
+		} `json:"environmentOverrides,omitempty"`
+		Name   string  `json:"name"`
+		Prefix *string `json:"prefix,omitempty"`
+		Value  string  `json:"value"`
+	} `json:"secrets"`
+}
+
+// UpdateResourceJSONBody_Secrets defines parameters for UpdateResource.
+type UpdateResourceJSONBody_Secrets struct {
+	union json.RawMessage
+}
+
+// UpdateResourceJSONBodyStatus defines parameters for UpdateResource.
+type UpdateResourceJSONBodyStatus string
+
+// ImportResourceJSONBody defines parameters for ImportResource.
+type ImportResourceJSONBody struct {
+	BillingPlan *ImportResourceJSONBody_BillingPlan `json:"billingPlan,omitempty"`
+
+	// CustomClaims Custom claims embedded in the resource tokens Vercel mints for this resource.
+	CustomClaims *struct {
+		// ClaimRules Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
+		ClaimRules *[]struct {
+			// Claims Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+			Claims map[string]ImportResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties `json:"claims"`
+			When   *struct {
+				// Environment Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
+				Environment *[]string `json:"environment,omitempty"`
+
+				// Role Applies only when the token is minted for one of these roles.
+				Role *[]string `json:"role,omitempty"`
+			} `json:"when,omitempty"`
+		} `json:"claimRules,omitempty"`
+
+		// DefaultRole Role used when the deployment does not request one. Required when `roles` is set.
+		DefaultRole *string `json:"defaultRole,omitempty"`
+
+		// Roles Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.
+		Roles *[]string `json:"roles,omitempty"`
+	} `json:"customClaims,omitempty"`
+	Extras       *map[string]interface{} `json:"extras,omitempty"`
+	Metadata     *map[string]interface{} `json:"metadata,omitempty"`
+	Name         string                  `json:"name"`
+	Notification *struct {
+		Href    *string                                 `json:"href,omitempty"`
+		Level   ImportResourceJSONBodyNotificationLevel `json:"level"`
+		Message *string                                 `json:"message,omitempty"`
+		Title   string                                  `json:"title"`
+	} `json:"notification,omitempty"`
+	Ownership *ImportResourceJSONBodyOwnership `json:"ownership,omitempty"`
+	ProductId string                           `json:"productId"`
+	Secrets   *[]struct {
+		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
+		EnvironmentOverrides *struct {
+			// Development Value used for development environment.
+			Development *string `json:"development,omitempty"`
+
+			// Preview Value used for preview environment.
+			Preview *string `json:"preview,omitempty"`
+
+			// Production Value used for production environment.
+			Production *string `json:"production,omitempty"`
+		} `json:"environmentOverrides,omitempty"`
+		Name   string  `json:"name"`
+		Prefix *string `json:"prefix,omitempty"`
+		Value  string  `json:"value"`
+	} `json:"secrets,omitempty"`
+	Status ImportResourceJSONBodyStatus `json:"status"`
+}
+
+// ImportResourceJSONBodyBillingPlanType defines parameters for ImportResource.
+type ImportResourceJSONBodyBillingPlanType string
+
+// ImportResourceJSONBody_BillingPlan defines parameters for ImportResource.
+type ImportResourceJSONBody_BillingPlan struct {
+	Cost        *string `json:"cost,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Details     *[]struct {
+		Label string  `json:"label"`
+		Value *string `json:"value,omitempty"`
+	} `json:"details,omitempty"`
+	EffectiveDate      *string `json:"effectiveDate,omitempty"`
+	HighlightedDetails *[]struct {
+		Label string  `json:"label"`
+		Value *string `json:"value,omitempty"`
+	} `json:"highlightedDetails,omitempty"`
+	Id                    string                                `json:"id"`
+	Name                  string                                `json:"name"`
+	PaymentMethodRequired *bool                                 `json:"paymentMethodRequired,omitempty"`
+	Type                  ImportResourceJSONBodyBillingPlanType `json:"type"`
+	AdditionalProperties  map[string]interface{}                `json:"-"`
+}
+
+// ImportResourceJSONBodyCustomClaimsClaimRulesClaims0 defines parameters for ImportResource.
+type ImportResourceJSONBodyCustomClaimsClaimRulesClaims0 struct {
+	union json.RawMessage
+}
+
+// ImportResourceJSONBodyCustomClaimsClaimRulesClaims00 defines parameters for ImportResource.
+type ImportResourceJSONBodyCustomClaimsClaimRulesClaims00 = string
+
+// ImportResourceJSONBodyCustomClaimsClaimRulesClaims01 defines parameters for ImportResource.
+type ImportResourceJSONBodyCustomClaimsClaimRulesClaims01 = float32
+
+// ImportResourceJSONBodyCustomClaimsClaimRulesClaims02 defines parameters for ImportResource.
+type ImportResourceJSONBodyCustomClaimsClaimRulesClaims02 = bool
+
+// ImportResourceJSONBodyCustomClaimsClaimRulesClaims1 defines parameters for ImportResource.
+type ImportResourceJSONBodyCustomClaimsClaimRulesClaims1 = []string
+
+// ImportResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties defines parameters for ImportResource.
+type ImportResourceJSONBody_CustomClaims_ClaimRules_Claims_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// ImportResourceJSONBodyNotificationLevel defines parameters for ImportResource.
+type ImportResourceJSONBodyNotificationLevel string
+
+// ImportResourceJSONBodyOwnership defines parameters for ImportResource.
+type ImportResourceJSONBodyOwnership string
+
+// ImportResourceJSONBodyStatus defines parameters for ImportResource.
+type ImportResourceJSONBodyStatus string
+
+// GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose defines parameters for GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
+type GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose string
+
+// HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose defines parameters for HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
+type HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose string
+
+// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONBody defines parameters for ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
+type ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONBody struct {
+	Data map[string]interface{} `json:"data"`
+}
+
+// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose defines parameters for ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig.
+type ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose string
+
+// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBody defines parameters for CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems.
+type CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBody struct {
+	Items []struct {
+		Category    *CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBodyItemsCategory `json:"category,omitempty"`
+		CreatedAt   *float32                                                                                                       `json:"createdAt,omitempty"`
+		Description *string                                                                                                        `json:"description,omitempty"`
+		Id          string                                                                                                         `json:"id"`
+		IsArchived  *bool                                                                                                          `json:"isArchived,omitempty"`
+		Name        *string                                                                                                        `json:"name,omitempty"`
+		Origin      string                                                                                                         `json:"origin"`
+		Slug        string                                                                                                         `json:"slug"`
+		UpdatedAt   *float32                                                                                                       `json:"updatedAt,omitempty"`
+	} `json:"items"`
+}
+
+// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBodyItemsCategory defines parameters for CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems.
+type CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONBodyItemsCategory string
+
+// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBody defines parameters for UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId.
+type UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBody struct {
+	Category    *UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBodyCategory `json:"category,omitempty"`
+	CreatedAt   *float32                                                                                                          `json:"createdAt,omitempty"`
+	Description *string                                                                                                           `json:"description,omitempty"`
+	IsArchived  *bool                                                                                                             `json:"isArchived,omitempty"`
+	Name        *string                                                                                                           `json:"name,omitempty"`
+	Origin      string                                                                                                            `json:"origin"`
+	Slug        string                                                                                                            `json:"slug"`
+	UpdatedAt   *float32                                                                                                          `json:"updatedAt,omitempty"`
+}
+
+// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBodyCategory defines parameters for UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId.
+type UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONBodyCategory string
+
+// UpdateResourceSecretsByIdJSONBody defines parameters for UpdateResourceSecretsById.
+type UpdateResourceSecretsByIdJSONBody struct {
+	// Partial If true, will only overwrite the provided secrets instead of replacing all secrets.
+	Partial *bool `json:"partial,omitempty"`
+	Secrets []struct {
+		// EnvironmentOverrides A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
+		EnvironmentOverrides *struct {
+			// Development Value used for development environment.
+			Development *string `json:"development,omitempty"`
+
+			// Preview Value used for preview environment.
+			Preview *string `json:"preview,omitempty"`
+
+			// Production Value used for production environment.
+			Production *string `json:"production,omitempty"`
+		} `json:"environmentOverrides,omitempty"`
+		Name   string  `json:"name"`
+		Prefix *string `json:"prefix,omitempty"`
+		Value  string  `json:"value"`
+	} `json:"secrets"`
+}
+
+// DeleteConfigurationParams defines parameters for DeleteConfiguration.
+type DeleteConfigurationParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetConfigurationParams defines parameters for GetConfiguration.
+type GetConfigurationParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetConfiguration200JSONResponseBody0 defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0 struct {
+	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+	AcceptedPoliciesInheritedFromInstallationId *string                                                        `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
+	CanConfigureOpenTelemetry                   *GetConfiguration200JSONResponseBody0CanConfigureOpenTelemetry `json:"canConfigureOpenTelemetry,omitempty"`
+
+	// CompletedAt A timestamp that tells you when the configuration was installed successfully
+	//
+	// Example: 1558531915505
+	CompletedAt *float32 `json:"completedAt,omitempty"`
+
+	// CreatedAt A timestamp that tells you when the configuration was created
+	//
+	// Example: 1558531915505
+	CreatedAt float32 `json:"createdAt"`
+
+	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
+
+	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+	//
+	// Example: 1558531915505
+	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
+
+	// DeletedAt A timestamp that tells you when the configuration was deleted.
+	//
+	// Example: 1558531915505
+	DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+	//
+	// Example: 1558531915505
+	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
+	DisabledReason *GetConfiguration200JSONResponseBody0DisabledReason `json:"disabledReason,omitempty"`
+
+	// ExternalId An external identifier defined by the integration vendor.
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// Id The unique identifier of the configuration
+	//
+	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+	Id string `json:"id"`
+
+	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+	InstallationType *GetConfiguration200JSONResponseBody0InstallationType `json:"installationType,omitempty"`
+
+	// IntegrationId The unique identifier of the app the configuration was created for
+	//
+	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
+	IntegrationId string `json:"integrationId"`
+	Notification  struct {
+		Href    *string                                               `json:"href,omitempty"`
+		Level   GetConfiguration200JSONResponseBody0NotificationLevel `json:"level"`
+		Message *string                                               `json:"message,omitempty"`
+		Title   string                                                `json:"title"`
+	} `json:"notification"`
+
+	// OwnerId The user or team ID that owns the configuration
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	OwnerId string `json:"ownerId"`
+
+	// ProjectSelection A string representing the permission for projects. Possible values are `all` or `selected`.
+	//
+	// Example: all
+	ProjectSelection GetConfiguration200JSONResponseBody0ProjectSelection `json:"projectSelection"`
+
+	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+	//
+	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
+	Projects *[]string `json:"projects,omitempty"`
+
+	// Scopes The resources that are allowed to be accessed by the configuration.
+	//
+	// Example: ["read:project","read-write:log-drain"]
+	Scopes []string `json:"scopes"`
+
+	// Slug The slug of the integration the configuration is created for.
+	//
+	// Example: slack
+	Slug string `json:"slug"`
+
+	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+	//
+	// Example: marketplace
+	Source *GetConfiguration200JSONResponseBody0Source `json:"source,omitempty"`
+
+	// Status The configuration status. Optional. If not defined, assume 'ready'.
+	Status *GetConfiguration200JSONResponseBody0Status `json:"status,omitempty"`
+
+	// TeamId When the configuration was created for a team, this will show the ID of the team.
+	//
+	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
+	TeamId          *string                                               `json:"teamId,omitempty"`
+	TransferRequest GetConfiguration200JSONResponseBody_0_TransferRequest `json:"transferRequest"`
+	Type            GetConfiguration200JSONResponseBody0Type              `json:"type"`
+
+	// UpdatedAt A timestamp that tells you when the configuration was updated.
+	//
+	// Example: 1558531915505
+	UpdatedAt float32 `json:"updatedAt"`
+
+	// UserId The ID of the user that created the configuration.
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	UserId string `json:"userId"`
+}
+
+// GetConfiguration200JSONResponseBody0CanConfigureOpenTelemetry defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0CanConfigureOpenTelemetry bool
+
+// GetConfiguration200JSONResponseBody0DisabledReason defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0DisabledReason string
+
+// GetConfiguration200JSONResponseBody0InstallationType defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0InstallationType string
+
+// GetConfiguration200JSONResponseBody0NotificationLevel defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0NotificationLevel string
+
+// GetConfiguration200JSONResponseBody0ProjectSelection defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0ProjectSelection string
+
+// GetConfiguration200JSONResponseBody0Source defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0Source string
+
+// GetConfiguration200JSONResponseBody0Status defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0Status string
+
+// GetConfiguration200JSONResponseBody0TransferRequest0 defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest0 struct {
+	ApprovedAt      *float32 `json:"approvedAt,omitempty"`
+	ApprovedBy      *string  `json:"approvedBy,omitempty"`
+	AuthorizationId *string  `json:"authorizationId,omitempty"`
+	BillingPlan     *struct {
+		Description            string                                                                                `json:"description"`
+		Id                     string                                                                                `json:"id"`
+		Name                   string                                                                                `json:"name"`
+		PaymentMethodRequired  *GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanPaymentMethodRequired `json:"paymentMethodRequired,omitempty"`
+		PreauthorizationAmount *float32                                                                              `json:"preauthorizationAmount,omitempty"`
+		Scope                  *GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanScope                 `json:"scope,omitempty"`
+		Type                   GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanType                   `json:"type"`
+	} `json:"billingPlan,omitempty"`
+	CreatedAt   float32                                                  `json:"createdAt"`
+	DiscardedAt *float32                                                 `json:"discardedAt,omitempty"`
+	DiscardedBy *string                                                  `json:"discardedBy,omitempty"`
+	ExpiresAt   float32                                                  `json:"expiresAt"`
+	Kind        GetConfiguration200JSONResponseBody0TransferRequest0Kind `json:"kind"`
+	Metadata    *map[string]interface{}                                  `json:"metadata,omitempty"`
+	RequestId   string                                                   `json:"requestId"`
+	Requester   struct {
+		Email *string `json:"email,omitempty"`
+		Name  string  `json:"name"`
+	} `json:"requester"`
+	TransferId string `json:"transferId"`
+}
+
+// GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanPaymentMethodRequired defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanPaymentMethodRequired bool
+
+// GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanScope defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanScope string
+
+// GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanType defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest0BillingPlanType string
+
+// GetConfiguration200JSONResponseBody0TransferRequest0Kind defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest0Kind string
+
+// GetConfiguration200JSONResponseBody0TransferRequest1 defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest1 struct {
+	ApprovedAt      *float32                                                 `json:"approvedAt,omitempty"`
+	ApprovedBy      *string                                                  `json:"approvedBy,omitempty"`
+	AuthorizationId *string                                                  `json:"authorizationId,omitempty"`
+	CreatedAt       float32                                                  `json:"createdAt"`
+	DiscardedAt     *float32                                                 `json:"discardedAt,omitempty"`
+	DiscardedBy     *string                                                  `json:"discardedBy,omitempty"`
+	ExpiresAt       float32                                                  `json:"expiresAt"`
+	Kind            GetConfiguration200JSONResponseBody0TransferRequest1Kind `json:"kind"`
+	RequestId       string                                                   `json:"requestId"`
+	Requester       struct {
+		Email *string `json:"email,omitempty"`
+		Name  string  `json:"name"`
+	} `json:"requester"`
+	TransferId string `json:"transferId"`
+}
+
+// GetConfiguration200JSONResponseBody0TransferRequest1Kind defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0TransferRequest1Kind string
+
+// GetConfiguration200JSONResponseBody_0_TransferRequest defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody_0_TransferRequest struct {
+	union json.RawMessage
+}
+
+// GetConfiguration200JSONResponseBody0Type defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody0Type string
+
+// GetConfiguration200JSONResponseBody1 defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody1 struct {
+	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
+
+	// CompletedAt A timestamp that tells you when the configuration was installed successfully
+	//
+	// Example: 1558531915505
+	CompletedAt *float32 `json:"completedAt,omitempty"`
+
+	// CreatedAt A timestamp that tells you when the configuration was created
+	//
+	// Example: 1558531915505
+	CreatedAt float32 `json:"createdAt"`
+
+	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
+
+	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+	//
+	// Example: 1558531915505
+	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
+
+	// DeletedAt A timestamp that tells you when the configuration was deleted.
+	//
+	// Example: 1558531915505
+	DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+	//
+	// Example: 1558531915505
+	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
+	DisabledReason *GetConfiguration200JSONResponseBody1DisabledReason `json:"disabledReason,omitempty"`
+
+	// ExternalId An external identifier defined by the integration vendor.
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// Id The unique identifier of the configuration
+	//
+	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+	Id string `json:"id"`
+
+	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+	InstallationType *GetConfiguration200JSONResponseBody1InstallationType `json:"installationType,omitempty"`
+
+	// IntegrationId The unique identifier of the app the configuration was created for
+	//
+	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
+	IntegrationId string `json:"integrationId"`
+
+	// OwnerId The user or team ID that owns the configuration
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	OwnerId string `json:"ownerId"`
+
+	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+	//
+	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
+	Projects *[]string `json:"projects,omitempty"`
+
+	// Scopes The resources that are allowed to be accessed by the configuration.
+	//
+	// Example: ["read:project","read-write:log-drain"]
+	Scopes []string `json:"scopes"`
+
+	// Slug The slug of the integration the configuration is created for.
+	//
+	// Example: slack
+	Slug string `json:"slug"`
+
+	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+	//
+	// Example: marketplace
+	Source *GetConfiguration200JSONResponseBody1Source `json:"source,omitempty"`
+
+	// Status The configuration status. Optional. If not defined, assume 'ready'.
+	Status *GetConfiguration200JSONResponseBody1Status `json:"status,omitempty"`
+
+	// TeamId When the configuration was created for a team, this will show the ID of the team.
+	//
+	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
+	TeamId *string                                  `json:"teamId,omitempty"`
+	Type   GetConfiguration200JSONResponseBody1Type `json:"type"`
+
+	// UpdatedAt A timestamp that tells you when the configuration was updated.
+	//
+	// Example: 1558531915505
+	UpdatedAt float32 `json:"updatedAt"`
+
+	// UserId The ID of the user that created the configuration.
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	UserId string `json:"userId"`
+}
+
+// GetConfiguration200JSONResponseBody1DisabledReason defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody1DisabledReason string
+
+// GetConfiguration200JSONResponseBody1InstallationType defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody1InstallationType string
+
+// GetConfiguration200JSONResponseBody1Source defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody1Source string
+
+// GetConfiguration200JSONResponseBody1Status defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody1Status string
+
+// GetConfiguration200JSONResponseBody1Type defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody1Type string
+
+// GetConfiguration200JSONResponseBody2 defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody2 struct {
+	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
+
+	// CompletedAt A timestamp that tells you when the configuration was installed successfully
+	//
+	// Example: 1558531915505
+	CompletedAt *float32 `json:"completedAt,omitempty"`
+
+	// CreatedAt A timestamp that tells you when the configuration was created
+	//
+	// Example: 1558531915505
+	CreatedAt *float32 `json:"createdAt,omitempty"`
+
+	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
+
+	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+	//
+	// Example: 1558531915505
+	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
+
+	// DeletedAt A timestamp that tells you when the configuration was deleted.
+	//
+	// Example: 1558531915505
+	DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+	//
+	// Example: 1558531915505
+	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
+	DisabledReason *GetConfiguration200JSONResponseBody2DisabledReason `json:"disabledReason,omitempty"`
+
+	// ExternalId An external identifier defined by the integration vendor.
+	ExternalId *string `json:"externalId,omitempty"`
+
+	// Id The unique identifier of the configuration
+	//
+	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+	Id *string `json:"id,omitempty"`
+
+	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+	InstallationType *GetConfiguration200JSONResponseBody2InstallationType `json:"installationType,omitempty"`
+
+	// IntegrationId The unique identifier of the app the configuration was created for
+	//
+	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
+	IntegrationId *string `json:"integrationId,omitempty"`
+
+	// OwnerId The user or team ID that owns the configuration
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	OwnerId *string `json:"ownerId,omitempty"`
+
+	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+	//
+	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
+	Projects *[]string `json:"projects,omitempty"`
+
+	// Scopes The resources that are allowed to be accessed by the configuration.
+	//
+	// Example: ["read:project","read-write:log-drain"]
+	Scopes *[]string `json:"scopes,omitempty"`
+
+	// Slug The slug of the integration the configuration is created for.
+	//
+	// Example: slack
+	Slug *string `json:"slug,omitempty"`
+
+	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+	//
+	// Example: marketplace
+	Source *GetConfiguration200JSONResponseBody2Source `json:"source,omitempty"`
+
+	// Status The configuration status. Optional. If not defined, assume 'ready'.
+	Status *GetConfiguration200JSONResponseBody2Status `json:"status,omitempty"`
+
+	// TeamId When the configuration was created for a team, this will show the ID of the team.
+	//
+	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
+	TeamId *string                                   `json:"teamId,omitempty"`
+	Type   *GetConfiguration200JSONResponseBody2Type `json:"type,omitempty"`
+
+	// UpdatedAt A timestamp that tells you when the configuration was updated.
+	//
+	// Example: 1558531915505
+	UpdatedAt *float32 `json:"updatedAt,omitempty"`
+
+	// UserId The ID of the user that created the configuration.
+	//
+	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
+	UserId *string `json:"userId,omitempty"`
+}
+
+// GetConfiguration200JSONResponseBody2DisabledReason defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody2DisabledReason string
+
+// GetConfiguration200JSONResponseBody2InstallationType defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody2InstallationType string
+
+// GetConfiguration200JSONResponseBody2Source defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody2Source string
+
+// GetConfiguration200JSONResponseBody2Status defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody2Status string
+
+// GetConfiguration200JSONResponseBody2Type defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody2Type string
+
+// GetConfiguration200JSONResponseBody defines parameters for GetConfiguration.
+type GetConfiguration200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProductsParams defines parameters for GetConfigurationProducts.
+type GetConfigurationProductsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0 struct {
+	Default          *string                                                                                         `json:"default,omitempty"`
+	Description      *string                                                                                         `json:"description,omitempty"`
+	Enum             *[]string                                                                                       `json:"enum,omitempty"`
+	MaxLength        *float32                                                                                        `json:"maxLength,omitempty"`
+	MinLength        *float32                                                                                        `json:"minLength,omitempty"`
+	Pattern          *string                                                                                         `json:"pattern,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiHidden   `json:"ui:hidden,omitempty"`
+	UiLabel       *string                                                                                      `json:"ui:label,omitempty"`
+	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
+	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDescription struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDisabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiDisabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiHidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiHidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiPaidOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiPaidOnly bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties0UiReadOnly2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiReadOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_0_UiReadOnly struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1 struct {
+	Default          *float32                                                                                        `json:"default,omitempty"`
+	Description      *string                                                                                         `json:"description,omitempty"`
+	ExclusiveMaximum *float32                                                                                        `json:"exclusiveMaximum,omitempty"`
+	ExclusiveMinimum *float32                                                                                        `json:"exclusiveMinimum,omitempty"`
+	Maximum          *float32                                                                                        `json:"maximum,omitempty"`
+	Minimum          *float32                                                                                        `json:"minimum,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiHidden   `json:"ui:hidden,omitempty"`
+	UiLabel       *string                                                                                      `json:"ui:label,omitempty"`
+	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
+	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDescription struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDisabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiDisabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiHidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiHidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiPaidOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiPaidOnly bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiReadOnly2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiReadOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_1_UiReadOnly struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2 struct {
+	Default          *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Default            `json:"default,omitempty"`
+	Description      *string                                                                                         `json:"description,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden   *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiHidden   `json:"ui:hidden,omitempty"`
+	UiLabel    *string                                                                                      `json:"ui:label,omitempty"`
+	UiPaidOnly *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiReadOnly *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Default defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Default bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDescription struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDisabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiDisabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiHidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiHidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiPaidOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiPaidOnly bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties2UiReadOnly2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiReadOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_2_UiReadOnly struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3 struct {
+	Default     *[]float32 `json:"default,omitempty"`
+	Description *string    `json:"description,omitempty"`
+	Items       struct {
+		Default          *float32                                                                              `json:"default,omitempty"`
+		Description      *string                                                                               `json:"description,omitempty"`
+		ExclusiveMaximum *float32                                                                              `json:"exclusiveMaximum,omitempty"`
+		ExclusiveMinimum *float32                                                                              `json:"exclusiveMinimum,omitempty"`
+		Maximum          *float32                                                                              `json:"maximum,omitempty"`
+		Minimum          *float32                                                                              `json:"minimum,omitempty"`
+		Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3ItemsType `json:"type"`
+	} `json:"items"`
+	MaxItems         *float32                                                                                        `json:"maxItems,omitempty"`
+	MinItems         *float32                                                                                        `json:"minItems,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden   *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiHidden   `json:"ui:hidden,omitempty"`
+	UiLabel    *string                                                                                      `json:"ui:label,omitempty"`
+	UiPaidOnly *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiReadOnly *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiReadOnly `json:"ui:read-only,omitempty"`
+	UiSteps    []float32                                                                                    `json:"ui:steps"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3ItemsType defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3ItemsType string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDescription struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDisabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiDisabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiHidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiHidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiPaidOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiPaidOnly bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties3UiReadOnly2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiReadOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_3_UiReadOnly struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4 struct {
+	Default          *string                                                                                         `json:"default,omitempty"`
+	Description      *string                                                                                         `json:"description,omitempty"`
+	Enum             *[]string                                                                                       `json:"enum,omitempty"`
+	MaxLength        *float32                                                                                        `json:"maxLength,omitempty"`
+	MinLength        *float32                                                                                        `json:"minLength,omitempty"`
+	Pattern          *string                                                                                         `json:"pattern,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden  *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiHidden `json:"ui:hidden,omitempty"`
+	UiLabel   *string                                                                                    `json:"ui:label,omitempty"`
+	UiOptions []struct {
+		Description *string                                                                                              `json:"description,omitempty"`
+		Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Disabled `json:"disabled,omitempty"`
+		Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Hidden   `json:"hidden,omitempty"`
+		Label       string                                                                                               `json:"label"`
+		Value       string                                                                                               `json:"value"`
+	} `json:"ui:options"`
+	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
+	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDescription struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDisabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiDisabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiHidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiHidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Disabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Disabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiOptionsHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Hidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiOptions_Hidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiPaidOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiPaidOnly bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties4UiReadOnly2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiReadOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_4_UiReadOnly struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5 struct {
+	Default          *string                                                                                         `json:"default,omitempty"`
+	Description      *string                                                                                         `json:"description,omitempty"`
+	Enum             *[]string                                                                                       `json:"enum,omitempty"`
+	MaxLength        *float32                                                                                        `json:"maxLength,omitempty"`
+	MinLength        *float32                                                                                        `json:"minLength,omitempty"`
+	Pattern          *string                                                                                         `json:"pattern,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden  *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiHidden `json:"ui:hidden,omitempty"`
+	UiLabel   *string                                                                                    `json:"ui:label,omitempty"`
+	UiOptions []struct {
+		Description *string                                                                                              `json:"description,omitempty"`
+		Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Disabled `json:"disabled,omitempty"`
+		Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Hidden   `json:"hidden,omitempty"`
+		Label       string                                                                                               `json:"label"`
+		Value       string                                                                                               `json:"value"`
+	} `json:"ui:options"`
+	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
+	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDescription struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDisabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiDisabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiHidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiHidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsDisabled2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Disabled defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Disabled struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiOptionsHidden2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Hidden defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiOptions_Hidden struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiPaidOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiPaidOnly bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly0 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly1 bool
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly2 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties5UiReadOnly2 string
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiReadOnly defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_5_UiReadOnly struct {
+	union json.RawMessage
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6 struct {
+	Default     *[]string `json:"default,omitempty"`
+	Description *string   `json:"description,omitempty"`
+	Example     *[]string `json:"example,omitempty"`
+	Items       struct {
+		Default     *string                                                                               `json:"default,omitempty"`
+		Description *string                                                                               `json:"description,omitempty"`
+		Enum        *[]string                                                                             `json:"enum,omitempty"`
+		MaxLength   *float32                                                                              `json:"maxLength,omitempty"`
+		MinLength   *float32                                                                              `json:"minLength,omitempty"`
+		Pattern     *string                                                                               `json:"pattern,omitempty"`
+		Type        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6ItemsType `json:"type"`
+	} `json:"items"`
+	MaxItems         *float32                                                                                        `json:"maxItems,omitempty"`
+	MinItems         *float32                                                                                        `json:"minItems,omitempty"`
+	Type             GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6Type                `json:"type"`
+	UiControl        GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiControl           `json:"ui:control"`
+	UiDescription    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDescription `json:"ui:description,omitempty"`
+	UiDisabled       *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDisabled    `json:"ui:disabled,omitempty"`
+	UiFormattedValue *struct {
+		Expr string `json:"expr"`
+	} `json:"ui:formatted-value,omitempty"`
+	UiHidden  *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiHidden `json:"ui:hidden,omitempty"`
+	UiLabel   *string                                                                                    `json:"ui:label,omitempty"`
+	UiOptions []struct {
+		Description *string                                                                                              `json:"description,omitempty"`
+		Disabled    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiOptions_Disabled `json:"disabled,omitempty"`
+		Hidden      *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiOptions_Hidden   `json:"hidden,omitempty"`
+		Label       string                                                                                               `json:"label"`
+		Value       string                                                                                               `json:"value"`
+	} `json:"ui:options"`
+	UiPaidOnly    *GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiPaidOnly      `json:"ui:paid-only,omitempty"`
+	UiPlaceholder *string                                                                                      `json:"ui:placeholder,omitempty"`
+	UiReadOnly    *GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiReadOnly `json:"ui:read-only,omitempty"`
+}
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6ItemsType defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6ItemsType string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6Type defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6Type string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiControl defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiControl string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription0 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription0 = string
+
+// GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription1 defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDescription1 struct {
+	Expr string `json:"expr"`
+}
+
+// GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDescription defines parameters for GetConfigurationProducts.
+type GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_6_UiDescription struct {
+	union json.RawMessage
+}
+
 // GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDisabled0 defines parameters for GetConfigurationProducts.
 type GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties6UiDisabled0 struct {
 	Expr string `json:"expr"`
@@ -2978,8 +5027,58 @@ type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigBui
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigBuildQueueConfiguration defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigBuildQueueConfiguration string
 
-// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachineLabel defines parameters for GetMicrofrontendsInGroup.
-type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachineLabel string
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0 defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0 struct {
+	Cores  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Cores defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Cores float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Label defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Label string
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Memory defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine0Memory float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1 defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1 struct {
+	Cores  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Cores defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Cores float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Label defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Label string
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Memory defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine1Memory float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2 defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2 struct {
+	Cores  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Cores defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Cores float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Label defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Label string
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Memory defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticBuildMachine2Memory float32
+
+// GetMicrofrontendsInGroup200JSONResponseBody_Projects_DefaultResourceConfig_ElasticBuildMachine defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBody_Projects_DefaultResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticConcurrencyEnabled defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigElasticConcurrencyEnabled bool
@@ -3913,8 +6012,58 @@ type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigBuildMachi
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigBuildQueueConfiguration defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigBuildQueueConfiguration string
 
-// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachineLabel defines parameters for GetMicrofrontendsInGroup.
-type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachineLabel string
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0 defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0 struct {
+	Cores  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Cores defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Cores float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Label defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Label string
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Memory defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0Memory float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1 defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1 struct {
+	Cores  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Cores defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Cores float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Label defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Label string
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Memory defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine1Memory float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2 defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2 struct {
+	Cores  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Cores defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Cores float32
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Label defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Label string
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Memory defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine2Memory float32
+
+// GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticConcurrencyEnabled defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticConcurrencyEnabled bool
@@ -4931,8 +7080,58 @@ type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineType
 // DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration string
 
-// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel defines parameters for DeleteProjectAvatar.
-type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel string
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 struct {
+	Cores  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores float32
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label string
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory float32
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 struct {
+	Cores  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores float32
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label string
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory float32
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 struct {
+	Cores  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores float32
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label string
+
+// DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory float32
+
+// DeleteProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled bool
@@ -5866,8 +8065,58 @@ type DeleteProjectAvatar200JSONResponseBodyResourceConfigBuildMachineType string
 // DeleteProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration string
 
-// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel defines parameters for DeleteProjectAvatar.
-type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel string
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0 defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0 struct {
+	Cores  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Cores defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Cores float32
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Label defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Label string
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Memory defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Memory float32
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
+	Cores  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
+	Cores  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
+
+// DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
+
+// DeleteProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
@@ -6456,8 +8705,58 @@ type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineType
 // UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration string
 
-// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel string
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 struct {
+	Cores  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores float32
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label string
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory float32
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 struct {
+	Cores  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores float32
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label string
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory float32
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 struct {
+	Cores  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores float32
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label string
+
+// UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory float32
+
+// UploadProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled bool
@@ -7391,8 +9690,58 @@ type UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineType string
 // UploadProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration string
 
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachineLabel string
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0 struct {
+	Cores  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Cores defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Cores float32
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Label defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Label string
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Memory defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine0Memory float32
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
+	Cores  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
+	Cores  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
+
+// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
+
+// UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
@@ -11780,8 +14129,58 @@ type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineTyp
 // UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration defines parameters for UpdateMicrofrontends.
 type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration string
 
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel string
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 struct {
+	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores float32
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label string
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory float32
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 struct {
+	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores float32
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label string
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory float32
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 struct {
+	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores float32
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label string
+
+// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory float32
+
+// UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled defines parameters for UpdateMicrofrontends.
 type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled bool
@@ -12715,8 +15114,58 @@ type UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildMachineType strin
 // UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildQueueConfiguration defines parameters for UpdateMicrofrontends.
 type UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildQueueConfiguration string
 
-// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachineLabel defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachineLabel string
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0 defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0 struct {
+	Cores  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Cores defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Cores float32
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Label defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Label string
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Memory defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine0Memory float32
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
+	Cores  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
+	Cores  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
+
+// UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
+
+// UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
 
 // UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for UpdateMicrofrontends.
 type UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
@@ -17569,2452 +20018,4 @@ type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0 struct {
 	Name             string                                                        `json:"name"`
 	Valid            GetSecurityFirewallConfig200JSONResponseBodyActiveRules0Valid `json:"valid"`
 	ValidationErrors interface{}                                                   `json:"validationErrors"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_0_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_0_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules0Valid defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules0Valid bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1 struct {
-	Action struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                 `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_1_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                               `json:"keys"`
-				Limit  float32                                                                                `json:"limit"`
-				Window float32                                                                                `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                  `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyActiveRules1Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                      `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_1_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                                       `json:"description,omitempty"`
-	Id               string                                                        `json:"id"`
-	Name             string                                                        `json:"name"`
-	Valid            GetSecurityFirewallConfig200JSONResponseBodyActiveRules1Valid `json:"valid"`
-	ValidationErrors []string                                                      `json:"validationErrors"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_1_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_1_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_1_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_1_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRules1Valid defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRules1Valid bool
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_Item defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_Item struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0 = []struct {
-	Action *struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                    `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                                  `json:"keys"`
-				Limit  float32                                                                                   `json:"limit"`
-				Window float32                                                                                   `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                     `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action,omitempty"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                         `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description *string `json:"description,omitempty"`
-	Id          string  `json:"id"`
-	Name        string  `json:"name"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_0_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets0ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1 map[string]struct {
-	Action         GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1Action          `json:"action"`
-	ActionDuration *string                                                                    `json:"actionDuration,omitempty"`
-	BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1BypassSystem   `json:"bypassSystem,omitempty"`
-	LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_1_LogHeaders `json:"logHeaders,omitempty"`
-	RateLimit      *struct {
-		Action *GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RateLimitAction `json:"action,omitempty"`
-		Algo   GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RateLimitAlgo    `json:"algo"`
-		Keys   []string                                                                    `json:"keys"`
-		Limit  float32                                                                     `json:"limit"`
-		Window float32                                                                     `json:"window"`
-	} `json:"rateLimit,omitempty"`
-	Redirect *struct {
-		Location  string                                                                       `json:"location"`
-		Permanent GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RedirectPermanent `json:"permanent"`
-	} `json:"redirect,omitempty"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1Action defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1Action string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1BypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1BypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1LogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1LogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1LogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1LogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_1_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets_1_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyActiveRulesets1RedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftBotIdEnabled defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftBotIdEnabled bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Conditions_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Conditions_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftFirewallEnabled defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftFirewallEnabled bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftIpsAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftIpsAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0 struct {
-	Action struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                              `json:"keys"`
-				Limit  float32                                                                               `json:"limit"`
-				Window float32                                                                               `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                 `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyDraftRules0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                     `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                                      `json:"description,omitempty"`
-	Id               string                                                       `json:"id"`
-	Name             string                                                       `json:"name"`
-	Valid            GetSecurityFirewallConfig200JSONResponseBodyDraftRules0Valid `json:"valid"`
-	ValidationErrors interface{}                                                  `json:"validationErrors"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_0_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_0_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules0Valid defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules0Valid bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1 struct {
-	Action struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_1_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                              `json:"keys"`
-				Limit  float32                                                                               `json:"limit"`
-				Window float32                                                                               `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                 `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyDraftRules1Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                     `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_1_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                                      `json:"description,omitempty"`
-	Id               string                                                       `json:"id"`
-	Name             string                                                       `json:"name"`
-	Valid            GetSecurityFirewallConfig200JSONResponseBodyDraftRules1Valid `json:"valid"`
-	ValidationErrors []string                                                     `json:"validationErrors"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_1_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_1_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_1_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_1_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRules1Valid defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRules1Valid bool
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_Item defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_Item struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0 = []struct {
-	Action *struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                   `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                                 `json:"keys"`
-				Limit  float32                                                                                  `json:"limit"`
-				Window float32                                                                                  `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                    `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action,omitempty"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                        `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description *string `json:"description,omitempty"`
-	Id          string  `json:"id"`
-	Name        string  `json:"name"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_0_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets0ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1 map[string]struct {
-	Action         GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1Action          `json:"action"`
-	ActionDuration *string                                                                   `json:"actionDuration,omitempty"`
-	BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1BypassSystem   `json:"bypassSystem,omitempty"`
-	LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_1_LogHeaders `json:"logHeaders,omitempty"`
-	RateLimit      *struct {
-		Action *GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RateLimitAction `json:"action,omitempty"`
-		Algo   GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RateLimitAlgo    `json:"algo"`
-		Keys   []string                                                                   `json:"keys"`
-		Limit  float32                                                                    `json:"limit"`
-		Window float32                                                                    `json:"window"`
-	} `json:"rateLimit,omitempty"`
-	Redirect *struct {
-		Location  string                                                                      `json:"location"`
-		Permanent GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RedirectPermanent `json:"permanent"`
-	} `json:"redirect,omitempty"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1Action defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1Action string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1BypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1BypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1LogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1LogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1LogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1LogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_1_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets_1_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyDraftRulesets1RedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsBotIdEnabled defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsBotIdEnabled bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Conditions_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Conditions_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsFirewallEnabled defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsFirewallEnabled bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsIpsAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsIpsAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetActive defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetActive bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0 struct {
-	Action struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                   `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                                 `json:"keys"`
-				Limit  float32                                                                                  `json:"limit"`
-				Window float32                                                                                  `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                    `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                        `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                                         `json:"description,omitempty"`
-	Id               string                                                          `json:"id"`
-	Name             string                                                          `json:"name"`
-	Valid            GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0Valid `json:"valid"`
-	ValidationErrors interface{}                                                     `json:"validationErrors"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_0_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_0_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0Valid defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules0Valid bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1 struct {
-	Action struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                   `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_1_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                                 `json:"keys"`
-				Limit  float32                                                                                  `json:"limit"`
-				Window float32                                                                                  `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                    `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                        `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_1_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                                         `json:"description,omitempty"`
-	Id               string                                                          `json:"id"`
-	Name             string                                                          `json:"name"`
-	Valid            GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1Valid `json:"valid"`
-	ValidationErrors []string                                                        `json:"validationErrors"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_1_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_1_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_1_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_1_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1Valid defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRules1Valid bool
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_Item defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_Item struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0 = []struct {
-	Action *struct {
-		Mitigate *struct {
-			Action         GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                                      `json:"actionDuration,omitempty"`
-			BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                                    `json:"keys"`
-				Limit  float32                                                                                     `json:"limit"`
-				Window float32                                                                                     `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                                       `json:"location"`
-				Permanent GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action,omitempty"`
-	Active         GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                                           `json:"key,omitempty"`
-			Neg   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsOp           `json:"op"`
-			Type  GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsType         `json:"type"`
-			Value *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description *string `json:"description,omitempty"`
-	Id          string  `json:"id"`
-	Name        string  `json:"name"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateBypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateBypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateLogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateLogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateLogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateLogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_0_Action_Mitigate_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_0_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ActionMitigateRedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0Active defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0Active bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsNeg defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsNeg bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsOp defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsOp string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsType defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsType string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsValue0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsValue0 = string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsValue1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsValue1 = float32
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsValue2 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets0ConditionGroupConditionsValue2 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1 map[string]struct {
-	Action         GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1Action          `json:"action"`
-	ActionDuration *string                                                                      `json:"actionDuration,omitempty"`
-	BypassSystem   *GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1BypassSystem   `json:"bypassSystem,omitempty"`
-	LogHeaders     *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_1_LogHeaders `json:"logHeaders,omitempty"`
-	RateLimit      *struct {
-		Action *GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RateLimitAction `json:"action,omitempty"`
-		Algo   GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RateLimitAlgo    `json:"algo"`
-		Keys   []string                                                                      `json:"keys"`
-		Limit  float32                                                                       `json:"limit"`
-		Window float32                                                                       `json:"window"`
-	} `json:"rateLimit,omitempty"`
-	Redirect *struct {
-		Location  string                                                                         `json:"location"`
-		Permanent GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RedirectPermanent `json:"permanent"`
-	} `json:"redirect,omitempty"`
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1Action defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1Action string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1BypassSystem defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1BypassSystem bool
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1LogHeaders0 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1LogHeaders0 = []string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1LogHeaders1 defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1LogHeaders1 string
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_1_LogHeaders defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets_1_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RateLimitAction defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RateLimitAction string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RateLimitAlgo defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RateLimitAlgo string
-
-// GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RedirectPermanent defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBodyVersionsRulesets1RedirectPermanent bool
-
-// GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets defines parameters for GetSecurityFirewallConfig.
-type GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigParams defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigParams struct {
-	ProjectId string `form:"projectId" json:"projectId"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0 struct {
-	Action UpdateFirewallConfigJSONBody0Action `json:"action"`
-	Id     interface{}                         `json:"id,omitempty"`
-	Value  struct {
-		Action *struct {
-			Mitigate *struct {
-				Action UpdateFirewallConfigJSONBody0ValueActionMitigateAction `json:"action"`
-			} `json:"mitigate,omitempty"`
-		} `json:"action,omitempty"`
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key   *string                                                               `json:"key,omitempty"`
-				Neg   *bool                                                                 `json:"neg,omitempty"`
-				Op    UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsOp          `json:"op"`
-				Type  UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsType        `json:"type"`
-				Value *UpdateFirewallConfigJSONBody_0_Value_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                                `json:"description,omitempty"`
-		Name             string                                                 `json:"name"`
-		Valid            *bool                                                  `json:"valid,omitempty"`
-		ValidationErrors *UpdateFirewallConfigJSONBody_0_Value_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody0Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0Action string
-
-// UpdateFirewallConfigJSONBody0ValueActionMitigateAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueActionMitigateAction string
-
-// UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsOp defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsOp string
-
-// UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsType defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsType string
-
-// UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsValue0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsValue0 = string
-
-// UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsValue1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsValue1 = []string
-
-// UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsValue2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueConditionGroupConditionsValue2 = float32
-
-// UpdateFirewallConfigJSONBody_0_Value_ConditionGroup_Conditions_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_0_Value_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody0ValueValidationErrors0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueValidationErrors0 = []string
-
-// UpdateFirewallConfigJSONBody0ValueValidationErrors1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody0ValueValidationErrors1 = string
-
-// UpdateFirewallConfigJSONBody_0_Value_ValidationErrors defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_0_Value_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1 struct {
-	Action UpdateFirewallConfigJSONBody1Action `json:"action"`
-	Id     interface{}                         `json:"id"`
-	Value  struct {
-		Action *struct {
-			Mitigate *struct {
-				Action UpdateFirewallConfigJSONBody1ValueActionMitigateAction `json:"action"`
-			} `json:"mitigate,omitempty"`
-		} `json:"action,omitempty"`
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key   *string                                                               `json:"key,omitempty"`
-				Neg   *bool                                                                 `json:"neg,omitempty"`
-				Op    UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsOp          `json:"op"`
-				Type  UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsType        `json:"type"`
-				Value *UpdateFirewallConfigJSONBody_1_Value_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                                `json:"description,omitempty"`
-		Name             string                                                 `json:"name"`
-		Valid            *bool                                                  `json:"valid,omitempty"`
-		ValidationErrors *UpdateFirewallConfigJSONBody_1_Value_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody1Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1Action string
-
-// UpdateFirewallConfigJSONBody1ValueActionMitigateAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueActionMitigateAction string
-
-// UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsOp defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsOp string
-
-// UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsType defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsType string
-
-// UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsValue0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsValue0 = string
-
-// UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsValue1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsValue1 = []string
-
-// UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsValue2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueConditionGroupConditionsValue2 = float32
-
-// UpdateFirewallConfigJSONBody_1_Value_ConditionGroup_Conditions_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_1_Value_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody1ValueValidationErrors0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueValidationErrors0 = []string
-
-// UpdateFirewallConfigJSONBody1ValueValidationErrors1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody1ValueValidationErrors1 = string
-
-// UpdateFirewallConfigJSONBody_1_Value_ValidationErrors defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_1_Value_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody2 struct {
-	Action UpdateFirewallConfigJSONBody2Action `json:"action"`
-	Id     string                              `json:"id"`
-	Value  *string                             `json:"value,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody2Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody2Action string
-
-// UpdateFirewallConfigJSONBody3 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody3 struct {
-	Action UpdateFirewallConfigJSONBody3Action `json:"action"`
-	Id     string                              `json:"id"`
-	Value  interface{}                         `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody3Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody3Action string
-
-// UpdateFirewallConfigJSONBody4 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4 struct {
-	Action UpdateFirewallConfigJSONBody4Action `json:"action"`
-	Id     *string                             `json:"id,omitempty"`
-	Value  struct {
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key   *string                                                               `json:"key,omitempty"`
-				Neg   *bool                                                                 `json:"neg,omitempty"`
-				Op    UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsOp          `json:"op"`
-				Type  UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsType        `json:"type"`
-				Value *UpdateFirewallConfigJSONBody_4_Value_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                                `json:"description,omitempty"`
-		Name             string                                                 `json:"name"`
-		Valid            *bool                                                  `json:"valid,omitempty"`
-		ValidationErrors *UpdateFirewallConfigJSONBody_4_Value_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody4Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4Action string
-
-// UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsOp defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsOp string
-
-// UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsType defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsType string
-
-// UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsValue0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsValue0 = string
-
-// UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsValue1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsValue1 = []string
-
-// UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsValue2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueConditionGroupConditionsValue2 = float32
-
-// UpdateFirewallConfigJSONBody_4_Value_ConditionGroup_Conditions_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_4_Value_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody4ValueValidationErrors0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueValidationErrors0 = []string
-
-// UpdateFirewallConfigJSONBody4ValueValidationErrors1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody4ValueValidationErrors1 = string
-
-// UpdateFirewallConfigJSONBody_4_Value_ValidationErrors defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_4_Value_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody5 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5 struct {
-	Action UpdateFirewallConfigJSONBody5Action `json:"action"`
-	Id     string                              `json:"id"`
-	Value  struct {
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key   *string                                                               `json:"key,omitempty"`
-				Neg   *bool                                                                 `json:"neg,omitempty"`
-				Op    UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsOp          `json:"op"`
-				Type  UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsType        `json:"type"`
-				Value *UpdateFirewallConfigJSONBody_5_Value_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                                `json:"description,omitempty"`
-		Name             string                                                 `json:"name"`
-		Valid            *bool                                                  `json:"valid,omitempty"`
-		ValidationErrors *UpdateFirewallConfigJSONBody_5_Value_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody5Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5Action string
-
-// UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsOp defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsOp string
-
-// UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsType defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsType string
-
-// UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsValue0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsValue0 = string
-
-// UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsValue1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsValue1 = []string
-
-// UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsValue2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueConditionGroupConditionsValue2 = float32
-
-// UpdateFirewallConfigJSONBody_5_Value_ConditionGroup_Conditions_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_5_Value_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody5ValueValidationErrors0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueValidationErrors0 = []string
-
-// UpdateFirewallConfigJSONBody5ValueValidationErrors1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody5ValueValidationErrors1 = string
-
-// UpdateFirewallConfigJSONBody_5_Value_ValidationErrors defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_5_Value_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody6 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody6 struct {
-	Action UpdateFirewallConfigJSONBody6Action `json:"action"`
-	Id     interface{}                         `json:"id"`
-	Value  interface{}                         `json:"value,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody6Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody6Action string
-
-// UpdateFirewallConfigJSONBody7 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody7 struct {
-	Action UpdateFirewallConfigJSONBody7Action `json:"action"`
-	Id     interface{}                         `json:"id"`
-	Value  struct {
-		Action UpdateFirewallConfigJSONBody7ValueAction `json:"action"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody7Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody7Action string
-
-// UpdateFirewallConfigJSONBody7ValueAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody7ValueAction string
-
-// UpdateFirewallConfigJSONBody8 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody8 struct {
-	Action UpdateFirewallConfigJSONBody8Action `json:"action"`
-	Id     string                              `json:"id"`
-	Value  *string                             `json:"value,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody8Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody8Action string
-
-// UpdateFirewallConfigJSONBody9 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody9 struct {
-	Action UpdateFirewallConfigJSONBody9Action `json:"action"`
-	Id     *string                             `json:"id,omitempty"`
-	Value  interface{}                         `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody9Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody9Action string
-
-// UpdateFirewallConfigJSONBody10 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10 struct {
-	Action UpdateFirewallConfigJSONBody10Action `json:"action"`
-	Id     *string                              `json:"id,omitempty"`
-	Value  struct {
-		Action struct {
-			Mitigate *struct {
-				Action         UpdateFirewallConfigJSONBody10ValueActionMitigateAction           `json:"action"`
-				ActionDuration *string                                                           `json:"actionDuration,omitempty"`
-				BypassSystem   *bool                                                             `json:"bypassSystem,omitempty"`
-				LogHeaders     *UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-				RateLimit      *UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_RateLimit  `json:"rateLimit,omitempty"`
-				Redirect       *UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_Redirect   `json:"redirect,omitempty"`
-			} `json:"mitigate,omitempty"`
-		} `json:"action"`
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key   *string                                                                `json:"key,omitempty"`
-				Neg   *bool                                                                  `json:"neg,omitempty"`
-				Op    UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsOp          `json:"op"`
-				Type  UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsType        `json:"type"`
-				Value *UpdateFirewallConfigJSONBody_10_Value_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                                 `json:"description,omitempty"`
-		Name             string                                                  `json:"name"`
-		Valid            *bool                                                   `json:"valid,omitempty"`
-		ValidationErrors *UpdateFirewallConfigJSONBody_10_Value_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody10Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10Action string
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateAction string
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateLogHeaders0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateLogHeaders0 = string
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateLogHeaders1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateLogHeaders1 = []string
-
-// UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_LogHeaders defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0 struct {
-	Action *UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_RateLimit_0_Action `json:"action,omitempty"`
-	Algo   UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Algo           `json:"algo"`
-	Keys   []string                                                                  `json:"keys"`
-	Limit  float32                                                                   `json:"limit"`
-	Window float32                                                                   `json:"window"`
-}
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Action0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Action0 string
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Action1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Action1 = string
-
-// UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_RateLimit_0_Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_RateLimit_0_Action struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Algo defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit0Algo string
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRateLimit1 = string
-
-// UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_RateLimit defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_RateLimit struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRedirect0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRedirect0 struct {
-	Location  string `json:"location"`
-	Permanent bool   `json:"permanent"`
-}
-
-// UpdateFirewallConfigJSONBody10ValueActionMitigateRedirect1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueActionMitigateRedirect1 = string
-
-// UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_Redirect defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_10_Value_Action_Mitigate_Redirect struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsOp defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsOp string
-
-// UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsType defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsType string
-
-// UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsValue0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsValue0 = string
-
-// UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsValue1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsValue1 = []string
-
-// UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsValue2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueConditionGroupConditionsValue2 = float32
-
-// UpdateFirewallConfigJSONBody_10_Value_ConditionGroup_Conditions_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_10_Value_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody10ValueValidationErrors0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueValidationErrors0 = []string
-
-// UpdateFirewallConfigJSONBody10ValueValidationErrors1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody10ValueValidationErrors1 = string
-
-// UpdateFirewallConfigJSONBody_10_Value_ValidationErrors defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_10_Value_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody11 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11 struct {
-	Action string `json:"action"`
-	Id     string `json:"id"`
-	Value  struct {
-		Action struct {
-			Mitigate *struct {
-				Action         UpdateFirewallConfigJSONBody11ValueActionMitigateAction           `json:"action"`
-				ActionDuration *string                                                           `json:"actionDuration,omitempty"`
-				BypassSystem   *bool                                                             `json:"bypassSystem,omitempty"`
-				LogHeaders     *UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-				RateLimit      *UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_RateLimit  `json:"rateLimit,omitempty"`
-				Redirect       *UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_Redirect   `json:"redirect,omitempty"`
-			} `json:"mitigate,omitempty"`
-		} `json:"action"`
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key   *string                                                                `json:"key,omitempty"`
-				Neg   *bool                                                                  `json:"neg,omitempty"`
-				Op    UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsOp          `json:"op"`
-				Type  UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsType        `json:"type"`
-				Value *UpdateFirewallConfigJSONBody_11_Value_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                                 `json:"description,omitempty"`
-		Name             string                                                  `json:"name"`
-		Valid            *bool                                                   `json:"valid,omitempty"`
-		ValidationErrors *UpdateFirewallConfigJSONBody_11_Value_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateAction string
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateLogHeaders0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateLogHeaders0 = string
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateLogHeaders1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateLogHeaders1 = []string
-
-// UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_LogHeaders defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0 struct {
-	Action *UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_RateLimit_0_Action `json:"action,omitempty"`
-	Algo   UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Algo           `json:"algo"`
-	Keys   []string                                                                  `json:"keys"`
-	Limit  float32                                                                   `json:"limit"`
-	Window float32                                                                   `json:"window"`
-}
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Action0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Action0 string
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Action1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Action1 = string
-
-// UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_RateLimit_0_Action defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_RateLimit_0_Action struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Algo defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit0Algo string
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRateLimit1 = string
-
-// UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_RateLimit defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_RateLimit struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRedirect0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRedirect0 struct {
-	Location  string `json:"location"`
-	Permanent bool   `json:"permanent"`
-}
-
-// UpdateFirewallConfigJSONBody11ValueActionMitigateRedirect1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueActionMitigateRedirect1 = string
-
-// UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_Redirect defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_11_Value_Action_Mitigate_Redirect struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsOp defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsOp string
-
-// UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsType defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsType string
-
-// UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsValue0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsValue0 = string
-
-// UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsValue1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsValue1 = []string
-
-// UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsValue2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueConditionGroupConditionsValue2 = float32
-
-// UpdateFirewallConfigJSONBody_11_Value_ConditionGroup_Conditions_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_11_Value_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody11ValueValidationErrors0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueValidationErrors0 = []string
-
-// UpdateFirewallConfigJSONBody11ValueValidationErrors1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody11ValueValidationErrors1 = string
-
-// UpdateFirewallConfigJSONBody_11_Value_ValidationErrors defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_11_Value_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// UpdateFirewallConfigJSONBody12 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody12 struct {
-	Action string  `json:"action"`
-	Id     string  `json:"id"`
-	Value  *string `json:"value,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody13 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody13 struct {
-	Action string  `json:"action"`
-	Id     string  `json:"id"`
-	Value  float32 `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody14 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody14 struct {
-	Action string                           `json:"action"`
-	Id     UpdateFirewallConfigJSONBody14Id `json:"id"`
-	Value  struct {
-		Action UpdateFirewallConfigJSONBody14ValueAction `json:"action"`
-		Active bool                                      `json:"active"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody14Id defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody14Id string
-
-// UpdateFirewallConfigJSONBody14ValueAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody14ValueAction string
-
-// UpdateFirewallConfigJSONBody15 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody15 struct {
-	Action string  `json:"action"`
-	Id     *string `json:"id,omitempty"`
-	Value  *string `json:"value,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody16 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody16 struct {
-	Action string  `json:"action"`
-	Id     *string `json:"id,omitempty"`
-	Value  struct {
-		Action   UpdateFirewallConfigJSONBody16ValueAction `json:"action"`
-		Hostname string                                    `json:"hostname"`
-		Ip       string                                    `json:"ip"`
-		Notes    *string                                   `json:"notes,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody16ValueAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody16ValueAction string
-
-// UpdateFirewallConfigJSONBody17 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody17 struct {
-	Action string `json:"action"`
-	Id     string `json:"id"`
-	Value  struct {
-		Action   UpdateFirewallConfigJSONBody17ValueAction `json:"action"`
-		Hostname string                                    `json:"hostname"`
-		Ip       string                                    `json:"ip"`
-		Notes    *string                                   `json:"notes,omitempty"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody17ValueAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody17ValueAction string
-
-// UpdateFirewallConfigJSONBody18 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody18 struct {
-	Action string  `json:"action"`
-	Id     string  `json:"id"`
-	Value  *string `json:"value,omitempty"`
-}
-
-// UpdateFirewallConfigJSONBody19 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody19 struct {
-	Action string                           `json:"action"`
-	Id     UpdateFirewallConfigJSONBody19Id `json:"id"`
-	Value  struct {
-		Action *UpdateFirewallConfigJSONBody19ValueAction `json:"action,omitempty"`
-		Active bool                                       `json:"active"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody19Id defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody19Id string
-
-// UpdateFirewallConfigJSONBody19ValueAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody19ValueAction string
-
-// UpdateFirewallConfigJSONBody20 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody20 struct {
-	Action string                           `json:"action"`
-	Id     UpdateFirewallConfigJSONBody20Id `json:"id"`
-	Value  map[string]struct {
-		Action *UpdateFirewallConfigJSONBody20ValueAction `json:"action,omitempty"`
-		Active bool                                       `json:"active"`
-	} `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody20Id defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody20Id string
-
-// UpdateFirewallConfigJSONBody20ValueAction defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody20ValueAction string
-
-// UpdateFirewallConfigJSONBody21 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody21 struct {
-	Action string  `json:"action"`
-	Id     *string `json:"id,omitempty"`
-	Value  bool    `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody22 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody22 struct {
-	Action string                                `json:"action"`
-	Id     *string                               `json:"id,omitempty"`
-	Value  UpdateFirewallConfigJSONBody_22_Value `json:"value"`
-}
-
-// UpdateFirewallConfigJSONBody22Value0 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody22Value0 = string
-
-// UpdateFirewallConfigJSONBody22Value1 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody22Value1 = []string
-
-// UpdateFirewallConfigJSONBody22Value2 defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody22Value2 = string
-
-// UpdateFirewallConfigJSONBody_22_Value defines parameters for UpdateFirewallConfig.
-type UpdateFirewallConfigJSONBody_22_Value struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBody defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody struct {
-	BotIdEnabled *bool `json:"botIdEnabled,omitempty"`
-
-	// Crs Custom Ruleset
-	Crs *struct {
-		// Gen Generic Attack - Provide broad protection from various undefined or novel attack vectors.
-		Gen *struct {
-			Action PutFirewallConfigJSONBodyCrsGenAction `json:"action"`
-			Active bool                                  `json:"active"`
-		} `json:"gen,omitempty"`
-
-		// Java Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
-		Java *struct {
-			Action PutFirewallConfigJSONBodyCrsJavaAction `json:"action"`
-			Active bool                                   `json:"active"`
-		} `json:"java,omitempty"`
-
-		// Lfi Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
-		Lfi *struct {
-			Action PutFirewallConfigJSONBodyCrsLfiAction `json:"action"`
-			Active bool                                  `json:"active"`
-		} `json:"lfi,omitempty"`
-
-		// Ma Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
-		Ma *struct {
-			Action PutFirewallConfigJSONBodyCrsMaAction `json:"action"`
-			Active bool                                 `json:"active"`
-		} `json:"ma,omitempty"`
-
-		// Php PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
-		Php *struct {
-			Action PutFirewallConfigJSONBodyCrsPhpAction `json:"action"`
-			Active bool                                  `json:"active"`
-		} `json:"php,omitempty"`
-
-		// Rce Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
-		Rce *struct {
-			Action PutFirewallConfigJSONBodyCrsRceAction `json:"action"`
-			Active bool                                  `json:"active"`
-		} `json:"rce,omitempty"`
-
-		// Rfi Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
-		Rfi *struct {
-			Action PutFirewallConfigJSONBodyCrsRfiAction `json:"action"`
-			Active bool                                  `json:"active"`
-		} `json:"rfi,omitempty"`
-
-		// Sd Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
-		Sd *struct {
-			Action PutFirewallConfigJSONBodyCrsSdAction `json:"action"`
-			Active bool                                 `json:"active"`
-		} `json:"sd,omitempty"`
-
-		// Sf Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
-		Sf *struct {
-			Action PutFirewallConfigJSONBodyCrsSfAction `json:"action"`
-			Active bool                                 `json:"active"`
-		} `json:"sf,omitempty"`
-
-		// Sqli SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
-		Sqli *struct {
-			Action PutFirewallConfigJSONBodyCrsSqliAction `json:"action"`
-			Active bool                                   `json:"active"`
-		} `json:"sqli,omitempty"`
-
-		// Xss XSS Attack - Prevent injection of malicious scripts into trusted webpages.
-		Xss *struct {
-			Action PutFirewallConfigJSONBodyCrsXssAction `json:"action"`
-			Active bool                                  `json:"active"`
-		} `json:"xss,omitempty"`
-	} `json:"crs,omitempty"`
-	FirewallEnabled bool `json:"firewallEnabled"`
-	Ips             *[]struct {
-		Action   PutFirewallConfigJSONBodyIpsAction `json:"action"`
-		Hostname string                             `json:"hostname"`
-		Id       *string                            `json:"id,omitempty"`
-		Ip       string                             `json:"ip"`
-		Notes    *string                            `json:"notes,omitempty"`
-	} `json:"ips,omitempty"`
-	LogHeaders   *PutFirewallConfigJSONBody_LogHeaders `json:"logHeaders,omitempty"`
-	ManagedRules *map[string]interface{}               `json:"managedRules,omitempty"`
-	Rules        *[]struct {
-		Action struct {
-			Mitigate *struct {
-				Action         PutFirewallConfigJSONBodyRulesActionMitigateAction          `json:"action"`
-				ActionDuration *string                                                     `json:"actionDuration,omitempty"`
-				BypassSystem   *bool                                                       `json:"bypassSystem,omitempty"`
-				LogHeaders     *PutFirewallConfigJSONBody_Rules_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-				RateLimit      *PutFirewallConfigJSONBody_Rules_Action_Mitigate_RateLimit  `json:"rateLimit,omitempty"`
-				Redirect       *PutFirewallConfigJSONBody_Rules_Action_Mitigate_Redirect   `json:"redirect,omitempty"`
-			} `json:"mitigate,omitempty"`
-		} `json:"action"`
-		Active         bool `json:"active"`
-		ConditionGroup []struct {
-			Conditions []struct {
-				Key *string                                                  `json:"key,omitempty"`
-				Neg *bool                                                    `json:"neg,omitempty"`
-				Op  PutFirewallConfigJSONBodyRulesConditionGroupConditionsOp `json:"op"`
-
-				// Type [Parameter](https://vercel.com/docs/security/vercel-waf/rule-configuration#parameters) from the incoming traffic.
-				Type  PutFirewallConfigJSONBodyRulesConditionGroupConditionsType       `json:"type"`
-				Value *PutFirewallConfigJSONBody_Rules_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-			} `json:"conditions"`
-		} `json:"conditionGroup"`
-		Description      *string                                           `json:"description,omitempty"`
-		Id               *string                                           `json:"id,omitempty"`
-		Name             string                                            `json:"name"`
-		Valid            *bool                                             `json:"valid,omitempty"`
-		ValidationErrors *PutFirewallConfigJSONBody_Rules_ValidationErrors `json:"validationErrors,omitempty"`
-	} `json:"rules,omitempty"`
-	Rulesets *PutFirewallConfigJSONBody_Rulesets `json:"rulesets,omitempty"`
-}
-
-// PutFirewallConfigParams defines parameters for PutFirewallConfig.
-type PutFirewallConfigParams struct {
-	ProjectId string `form:"projectId" json:"projectId"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// PutFirewallConfigJSONBodyCrsGenAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsGenAction string
-
-// PutFirewallConfigJSONBodyCrsJavaAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsJavaAction string
-
-// PutFirewallConfigJSONBodyCrsLfiAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsLfiAction string
-
-// PutFirewallConfigJSONBodyCrsMaAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsMaAction string
-
-// PutFirewallConfigJSONBodyCrsPhpAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsPhpAction string
-
-// PutFirewallConfigJSONBodyCrsRceAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsRceAction string
-
-// PutFirewallConfigJSONBodyCrsRfiAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsRfiAction string
-
-// PutFirewallConfigJSONBodyCrsSdAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsSdAction string
-
-// PutFirewallConfigJSONBodyCrsSfAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsSfAction string
-
-// PutFirewallConfigJSONBodyCrsSqliAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsSqliAction string
-
-// PutFirewallConfigJSONBodyCrsXssAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyCrsXssAction string
-
-// PutFirewallConfigJSONBodyIpsAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyIpsAction string
-
-// PutFirewallConfigJSONBodyLogHeaders0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyLogHeaders0 = string
-
-// PutFirewallConfigJSONBodyLogHeaders1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyLogHeaders1 = []string
-
-// PutFirewallConfigJSONBody_LogHeaders defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_LogHeaders struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesActionMitigateAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateAction string
-
-// PutFirewallConfigJSONBodyRulesActionMitigateLogHeaders0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateLogHeaders0 = string
-
-// PutFirewallConfigJSONBodyRulesActionMitigateLogHeaders1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateLogHeaders1 = []string
-
-// PutFirewallConfigJSONBody_Rules_Action_Mitigate_LogHeaders defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rules_Action_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0 struct {
-	Action *PutFirewallConfigJSONBody_Rules_Action_Mitigate_RateLimit_0_Action `json:"action,omitempty"`
-	Algo   PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Algo          `json:"algo"`
-	Keys   []string                                                            `json:"keys"`
-	Limit  float32                                                             `json:"limit"`
-	Window float32                                                             `json:"window"`
-}
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Action0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Action0 string
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Action1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Action1 = interface{}
-
-// PutFirewallConfigJSONBody_Rules_Action_Mitigate_RateLimit_0_Action defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rules_Action_Mitigate_RateLimit_0_Action struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Algo defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRateLimit0Algo string
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRateLimit1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRateLimit1 = interface{}
-
-// PutFirewallConfigJSONBody_Rules_Action_Mitigate_RateLimit defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rules_Action_Mitigate_RateLimit struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRedirect0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRedirect0 struct {
-	Location  string `json:"location"`
-	Permanent bool   `json:"permanent"`
-}
-
-// PutFirewallConfigJSONBodyRulesActionMitigateRedirect1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesActionMitigateRedirect1 = interface{}
-
-// PutFirewallConfigJSONBody_Rules_Action_Mitigate_Redirect defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rules_Action_Mitigate_Redirect struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesConditionGroupConditionsOp defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesConditionGroupConditionsOp string
-
-// PutFirewallConfigJSONBodyRulesConditionGroupConditionsType defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesConditionGroupConditionsType string
-
-// PutFirewallConfigJSONBodyRulesConditionGroupConditionsValue0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesConditionGroupConditionsValue0 = string
-
-// PutFirewallConfigJSONBodyRulesConditionGroupConditionsValue1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesConditionGroupConditionsValue1 = []string
-
-// PutFirewallConfigJSONBodyRulesConditionGroupConditionsValue2 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesConditionGroupConditionsValue2 = float32
-
-// PutFirewallConfigJSONBody_Rules_ConditionGroup_Conditions_Value defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rules_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesValidationErrors0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesValidationErrors0 = []string
-
-// PutFirewallConfigJSONBodyRulesValidationErrors1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesValidationErrors1 = string
-
-// PutFirewallConfigJSONBody_Rules_ValidationErrors defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rules_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesets0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0 = []struct {
-	Action *struct {
-		Mitigate *struct {
-			Action PutFirewallConfigJSONBodyRulesets0ActionMitigateAction `json:"action"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action,omitempty"`
-	Active         bool `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                               `json:"key,omitempty"`
-			Neg   *bool                                                                 `json:"neg,omitempty"`
-			Op    PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsOp          `json:"op"`
-			Type  PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsType        `json:"type"`
-			Value *PutFirewallConfigJSONBody_Rulesets_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                                `json:"description,omitempty"`
-	Id               *string                                                `json:"id,omitempty"`
-	Name             string                                                 `json:"name"`
-	Valid            *bool                                                  `json:"valid,omitempty"`
-	ValidationErrors *PutFirewallConfigJSONBody_Rulesets_0_ValidationErrors `json:"validationErrors,omitempty"`
-}
-
-// PutFirewallConfigJSONBodyRulesets0ActionMitigateAction defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ActionMitigateAction string
-
-// PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsOp defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsOp string
-
-// PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsType defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsType string
-
-// PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsValue0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsValue0 = string
-
-// PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsValue1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsValue1 = []string
-
-// PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsValue2 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ConditionGroupConditionsValue2 = float32
-
-// PutFirewallConfigJSONBody_Rulesets_0_ConditionGroup_Conditions_Value defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rulesets_0_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesets0ValidationErrors0 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ValidationErrors0 = []string
-
-// PutFirewallConfigJSONBodyRulesets0ValidationErrors1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets0ValidationErrors1 = string
-
-// PutFirewallConfigJSONBody_Rulesets_0_ValidationErrors defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rulesets_0_ValidationErrors struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfigJSONBodyRulesets1 defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets1 map[string]struct {
-	Action PutFirewallConfigJSONBodyRulesets1Action `json:"action"`
-}
-
-// PutFirewallConfigJSONBodyRulesets1Action defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBodyRulesets1Action string
-
-// PutFirewallConfigJSONBody_Rulesets defines parameters for PutFirewallConfig.
-type PutFirewallConfigJSONBody_Rulesets struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfig200JSONResponseBodyActiveBotIdEnabled defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveBotIdEnabled bool
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsNeg defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsNeg bool
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsOp defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsOp string
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsType defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsType string
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsValue0 defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsValue0 = string
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsValue1 defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsValue1 = float32
-
-// PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsValue2 defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsValue2 = []string
-
-// PutFirewallConfig200JSONResponseBody_Active_Conditions_ConditionGroup_Conditions_Value defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBody_Active_Conditions_ConditionGroup_Conditions_Value struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsGenAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsGenAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsGenActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsGenActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsJavaAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsJavaAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsJavaActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsJavaActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsLfiAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsLfiAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsLfiActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsLfiActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsMaAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsMaAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsMaActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsMaActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsPhpAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsPhpAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsPhpActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsPhpActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsRceAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsRceAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsRceActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsRceActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsRfiAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsRfiAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsRfiActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsRfiActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsSdAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsSdAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsSdActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsSdActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsSfAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsSfAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsSfActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsSfActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsSqliAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsSqliAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsSqliActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsSqliActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsXssAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsXssAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveCrsXssActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveCrsXssActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveFirewallEnabled defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveFirewallEnabled bool
-
-// PutFirewallConfig200JSONResponseBodyActiveIpsAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveIpsAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveLogHeaders0 defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveLogHeaders0 = []string
-
-// PutFirewallConfig200JSONResponseBodyActiveLogHeaders1 defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveLogHeaders1 string
-
-// PutFirewallConfig200JSONResponseBody_Active_LogHeaders defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBody_Active_LogHeaders struct {
-	union json.RawMessage
-}
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetAction defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetAction string
-
-// PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetActive defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetActive bool
-
-// PutFirewallConfig200JSONResponseBodyActiveRules0 defines parameters for PutFirewallConfig.
-type PutFirewallConfig200JSONResponseBodyActiveRules0 struct {
-	Action struct {
-		Mitigate *struct {
-			Action         PutFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateAction            `json:"action"`
-			ActionDuration *string                                                                         `json:"actionDuration,omitempty"`
-			BypassSystem   *PutFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateBypassSystem     `json:"bypassSystem,omitempty"`
-			LogHeaders     *PutFirewallConfig200JSONResponseBody_Active_Rules_0_Action_Mitigate_LogHeaders `json:"logHeaders,omitempty"`
-			RateLimit      *struct {
-				Action *PutFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRateLimitAction `json:"action,omitempty"`
-				Algo   PutFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRateLimitAlgo    `json:"algo"`
-				Keys   []string                                                                       `json:"keys"`
-				Limit  float32                                                                        `json:"limit"`
-				Window float32                                                                        `json:"window"`
-			} `json:"rateLimit,omitempty"`
-			Redirect *struct {
-				Location  string                                                                          `json:"location"`
-				Permanent PutFirewallConfig200JSONResponseBodyActiveRules0ActionMitigateRedirectPermanent `json:"permanent"`
-			} `json:"redirect,omitempty"`
-		} `json:"mitigate,omitempty"`
-	} `json:"action"`
-	Active         PutFirewallConfig200JSONResponseBodyActiveRules0Active `json:"active"`
-	ConditionGroup []struct {
-		Conditions []struct {
-			Key   *string                                                                              `json:"key,omitempty"`
-			Neg   *PutFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsNeg         `json:"neg,omitempty"`
-			Op    PutFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsOp           `json:"op"`
-			Type  PutFirewallConfig200JSONResponseBodyActiveRules0ConditionGroupConditionsType         `json:"type"`
-			Value *PutFirewallConfig200JSONResponseBody_Active_Rules_0_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-		} `json:"conditions"`
-	} `json:"conditionGroup"`
-	Description      *string                                               `json:"description,omitempty"`
-	Id               string                                                `json:"id"`
-	Name             string                                                `json:"name"`
-	Valid            PutFirewallConfig200JSONResponseBodyActiveRules0Valid `json:"valid"`
-	ValidationErrors interface{}                                           `json:"validationErrors"`
 }

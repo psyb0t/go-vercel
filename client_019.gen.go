@@ -4,15 +4,4181 @@
 package vercel
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
-	"strings"
 
 	"github.com/oapi-codegen/runtime"
 )
+
+func (t GetDeployment200JSONResponseBody_1_Routes_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Routes_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1SeatBlockGitUserId0 returns the union data inside the GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId as a GetDeployment200JSONResponseBody1SeatBlockGitUserId0
+func (t GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) AsGetDeployment200JSONResponseBody1SeatBlockGitUserId0() (GetDeployment200JSONResponseBody1SeatBlockGitUserId0, error) {
+	var body GetDeployment200JSONResponseBody1SeatBlockGitUserId0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1SeatBlockGitUserId0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId as the provided GetDeployment200JSONResponseBody1SeatBlockGitUserId0
+func (t *GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) FromGetDeployment200JSONResponseBody1SeatBlockGitUserId0(v GetDeployment200JSONResponseBody1SeatBlockGitUserId0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1SeatBlockGitUserId0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId, using the provided GetDeployment200JSONResponseBody1SeatBlockGitUserId0
+func (t *GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) MergeGetDeployment200JSONResponseBody1SeatBlockGitUserId0(v GetDeployment200JSONResponseBody1SeatBlockGitUserId0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1SeatBlockGitUserId1 returns the union data inside the GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId as a GetDeployment200JSONResponseBody1SeatBlockGitUserId1
+func (t GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) AsGetDeployment200JSONResponseBody1SeatBlockGitUserId1() (GetDeployment200JSONResponseBody1SeatBlockGitUserId1, error) {
+	var body GetDeployment200JSONResponseBody1SeatBlockGitUserId1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1SeatBlockGitUserId1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId as the provided GetDeployment200JSONResponseBody1SeatBlockGitUserId1
+func (t *GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) FromGetDeployment200JSONResponseBody1SeatBlockGitUserId1(v GetDeployment200JSONResponseBody1SeatBlockGitUserId1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1SeatBlockGitUserId1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId, using the provided GetDeployment200JSONResponseBody1SeatBlockGitUserId1
+func (t *GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) MergeGetDeployment200JSONResponseBody1SeatBlockGitUserId1(v GetDeployment200JSONResponseBody1SeatBlockGitUserId1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_SeatBlock_GitUserId) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles as a GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) AsGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0() (GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) FromGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0(v GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0(v GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles as a GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) AsGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1() (GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) FromGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1(v GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1(v GetDeployment200JSONResponseBody1Services0BuilderConfigExcludeFiles1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_ExcludeFiles) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0() (GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1() (GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2() (GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsExperimentalTriggers2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_ExperimentalTriggers_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration as a GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0() (GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration as a GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) AsGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1() (GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) FromGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1(v GetDeployment200JSONResponseBody1Services0BuilderConfigFunctionsMaxDuration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_Functions_MaxDuration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles as a GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) AsGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0() (GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) FromGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0(v GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0(v GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles as a GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) AsGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1() (GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) FromGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1(v GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1(v GetDeployment200JSONResponseBody1Services0BuilderConfigIncludeFiles1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_IncludeFiles) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher as a GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) AsGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0() (GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) FromGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0(v GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0(v GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher as a GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) AsGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1() (GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1, error) {
+	var body GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher as the provided GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) FromGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1(v GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher, using the provided GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) MergeGetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1(v GetDeployment200JSONResponseBody1Services0BuilderConfigMiddlewareMatcher1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Builder_Config_MiddlewareMatcher) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0Schedule0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Schedule as a GetDeployment200JSONResponseBody1Services0Schedule0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Schedule) AsGetDeployment200JSONResponseBody1Services0Schedule0() (GetDeployment200JSONResponseBody1Services0Schedule0, error) {
+	var body GetDeployment200JSONResponseBody1Services0Schedule0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0Schedule0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Schedule as the provided GetDeployment200JSONResponseBody1Services0Schedule0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Schedule) FromGetDeployment200JSONResponseBody1Services0Schedule0(v GetDeployment200JSONResponseBody1Services0Schedule0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0Schedule0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Schedule, using the provided GetDeployment200JSONResponseBody1Services0Schedule0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Schedule) MergeGetDeployment200JSONResponseBody1Services0Schedule0(v GetDeployment200JSONResponseBody1Services0Schedule0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0Schedule1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Schedule as a GetDeployment200JSONResponseBody1Services0Schedule1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Schedule) AsGetDeployment200JSONResponseBody1Services0Schedule1() (GetDeployment200JSONResponseBody1Services0Schedule1, error) {
+	var body GetDeployment200JSONResponseBody1Services0Schedule1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0Schedule1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Schedule as the provided GetDeployment200JSONResponseBody1Services0Schedule1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Schedule) FromGetDeployment200JSONResponseBody1Services0Schedule1(v GetDeployment200JSONResponseBody1Services0Schedule1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0Schedule1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Schedule, using the provided GetDeployment200JSONResponseBody1Services0Schedule1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Schedule) MergeGetDeployment200JSONResponseBody1Services0Schedule1(v GetDeployment200JSONResponseBody1Services0Schedule1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Schedule) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Schedule) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0Topics0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Topics as a GetDeployment200JSONResponseBody1Services0Topics0
+func (t GetDeployment200JSONResponseBody_1_Services_0_Topics) AsGetDeployment200JSONResponseBody1Services0Topics0() (GetDeployment200JSONResponseBody1Services0Topics0, error) {
+	var body GetDeployment200JSONResponseBody1Services0Topics0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0Topics0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Topics as the provided GetDeployment200JSONResponseBody1Services0Topics0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Topics) FromGetDeployment200JSONResponseBody1Services0Topics0(v GetDeployment200JSONResponseBody1Services0Topics0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0Topics0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Topics, using the provided GetDeployment200JSONResponseBody1Services0Topics0
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Topics) MergeGetDeployment200JSONResponseBody1Services0Topics0(v GetDeployment200JSONResponseBody1Services0Topics0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0Topics1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_0_Topics as a GetDeployment200JSONResponseBody1Services0Topics1
+func (t GetDeployment200JSONResponseBody_1_Services_0_Topics) AsGetDeployment200JSONResponseBody1Services0Topics1() (GetDeployment200JSONResponseBody1Services0Topics1, error) {
+	var body GetDeployment200JSONResponseBody1Services0Topics1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0Topics1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Topics as the provided GetDeployment200JSONResponseBody1Services0Topics1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Topics) FromGetDeployment200JSONResponseBody1Services0Topics1(v GetDeployment200JSONResponseBody1Services0Topics1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0Topics1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_0_Topics, using the provided GetDeployment200JSONResponseBody1Services0Topics1
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Topics) MergeGetDeployment200JSONResponseBody1Services0Topics1(v GetDeployment200JSONResponseBody1Services0Topics1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_0_Topics) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_0_Topics) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles as a GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) AsGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0() (GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) FromGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0(v GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0(v GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles as a GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) AsGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1() (GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) FromGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1(v GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1(v GetDeployment200JSONResponseBody1Services1BuilderConfigExcludeFiles1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_ExcludeFiles) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0() (GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1() (GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2() (GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsExperimentalTriggers2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_ExperimentalTriggers_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration as a GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0() (GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration as a GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) AsGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1() (GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) FromGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1(v GetDeployment200JSONResponseBody1Services1BuilderConfigFunctionsMaxDuration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_Functions_MaxDuration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles as a GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) AsGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0() (GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) FromGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0(v GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0(v GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles as a GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) AsGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1() (GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) FromGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1(v GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1(v GetDeployment200JSONResponseBody1Services1BuilderConfigIncludeFiles1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_IncludeFiles) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher as a GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) AsGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0() (GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) FromGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0(v GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0(v GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher as a GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) AsGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1() (GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1, error) {
+	var body GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher as the provided GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) FromGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1(v GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher, using the provided GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) MergeGetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1(v GetDeployment200JSONResponseBody1Services1BuilderConfigMiddlewareMatcher1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Builder_Config_MiddlewareMatcher) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0() (GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0, error) {
+	var body GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0(v GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0(v GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1() (GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1, error) {
+	var body GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1(v GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1(v GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item as a GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) AsGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2() (GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2, error) {
+	var body GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item as the provided GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) FromGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2(v GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item, using the provided GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) MergeGetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2(v GetDeployment200JSONResponseBody1Services1FunctionsExperimentalTriggers2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_ExperimentalTriggers_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration as a GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) AsGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0() (GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0, error) {
+	var body GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration as the provided GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) FromGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0(v GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration, using the provided GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) MergeGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0(v GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration as a GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) AsGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1() (GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1, error) {
+	var body GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration as the provided GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) FromGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1(v GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration, using the provided GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) MergeGetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1(v GetDeployment200JSONResponseBody1Services1FunctionsMaxDuration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Functions_MaxDuration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0() (GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1() (GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value as a GetDeployment200JSONResponseBody1Services1HeadersHas0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value0() (GetDeployment200JSONResponseBody1Services1HeadersHas0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value0(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value0(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value as a GetDeployment200JSONResponseBody1Services1HeadersHas0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1HeadersHas0Value1() (GetDeployment200JSONResponseBody1Services1HeadersHas0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1HeadersHas0Value1(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersHas0Value1(v GetDeployment200JSONResponseBody1Services1HeadersHas0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0() (GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1() (GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value as a GetDeployment200JSONResponseBody1Services1HeadersHas1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value0() (GetDeployment200JSONResponseBody1Services1HeadersHas1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value0(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value0(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value as a GetDeployment200JSONResponseBody1Services1HeadersHas1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1HeadersHas1Value1() (GetDeployment200JSONResponseBody1Services1HeadersHas1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1HeadersHas1Value1(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersHas1Value1(v GetDeployment200JSONResponseBody1Services1HeadersHas1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item as a GetDeployment200JSONResponseBody1Services1HeadersHas0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) AsGetDeployment200JSONResponseBody1Services1HeadersHas0() (GetDeployment200JSONResponseBody1Services1HeadersHas0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item as the provided GetDeployment200JSONResponseBody1Services1HeadersHas0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) FromGetDeployment200JSONResponseBody1Services1HeadersHas0(v GetDeployment200JSONResponseBody1Services1HeadersHas0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) MergeGetDeployment200JSONResponseBody1Services1HeadersHas0(v GetDeployment200JSONResponseBody1Services1HeadersHas0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersHas1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item as a GetDeployment200JSONResponseBody1Services1HeadersHas1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) AsGetDeployment200JSONResponseBody1Services1HeadersHas1() (GetDeployment200JSONResponseBody1Services1HeadersHas1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersHas1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersHas1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item as the provided GetDeployment200JSONResponseBody1Services1HeadersHas1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) FromGetDeployment200JSONResponseBody1Services1HeadersHas1(v GetDeployment200JSONResponseBody1Services1HeadersHas1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersHas1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1HeadersHas1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) MergeGetDeployment200JSONResponseBody1Services1HeadersHas1(v GetDeployment200JSONResponseBody1Services1HeadersHas1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0() (GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1() (GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value0() (GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value0(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value0(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1() (GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0Value1(v GetDeployment200JSONResponseBody1Services1HeadersMissing0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0() (GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1() (GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value0() (GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value0(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value0(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1() (GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1Value1(v GetDeployment200JSONResponseBody1Services1HeadersMissing1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item as a GetDeployment200JSONResponseBody1Services1HeadersMissing0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) AsGetDeployment200JSONResponseBody1Services1HeadersMissing0() (GetDeployment200JSONResponseBody1Services1HeadersMissing0, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) FromGetDeployment200JSONResponseBody1Services1HeadersMissing0(v GetDeployment200JSONResponseBody1Services1HeadersMissing0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing0(v GetDeployment200JSONResponseBody1Services1HeadersMissing0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1HeadersMissing1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item as a GetDeployment200JSONResponseBody1Services1HeadersMissing1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) AsGetDeployment200JSONResponseBody1Services1HeadersMissing1() (GetDeployment200JSONResponseBody1Services1HeadersMissing1, error) {
+	var body GetDeployment200JSONResponseBody1Services1HeadersMissing1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1HeadersMissing1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) FromGetDeployment200JSONResponseBody1Services1HeadersMissing1(v GetDeployment200JSONResponseBody1Services1HeadersMissing1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1HeadersMissing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1HeadersMissing1(v GetDeployment200JSONResponseBody1Services1HeadersMissing1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Headers_Missing_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0() (GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1() (GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value as a GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value0() (GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value0(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value0(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value as a GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1() (GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0Value1(v GetDeployment200JSONResponseBody1Services1RedirectsHas0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0() (GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1() (GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value as a GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value0() (GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value0(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value0(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value as a GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1() (GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1Value1(v GetDeployment200JSONResponseBody1Services1RedirectsHas1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item as a GetDeployment200JSONResponseBody1Services1RedirectsHas0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) AsGetDeployment200JSONResponseBody1Services1RedirectsHas0() (GetDeployment200JSONResponseBody1Services1RedirectsHas0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) FromGetDeployment200JSONResponseBody1Services1RedirectsHas0(v GetDeployment200JSONResponseBody1Services1RedirectsHas0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas0(v GetDeployment200JSONResponseBody1Services1RedirectsHas0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsHas1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item as a GetDeployment200JSONResponseBody1Services1RedirectsHas1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) AsGetDeployment200JSONResponseBody1Services1RedirectsHas1() (GetDeployment200JSONResponseBody1Services1RedirectsHas1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsHas1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsHas1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item as the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) FromGetDeployment200JSONResponseBody1Services1RedirectsHas1(v GetDeployment200JSONResponseBody1Services1RedirectsHas1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1RedirectsHas1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) MergeGetDeployment200JSONResponseBody1Services1RedirectsHas1(v GetDeployment200JSONResponseBody1Services1RedirectsHas1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0() (GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1() (GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0() (GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1() (GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0() (GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1() (GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0() (GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1() (GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item as a GetDeployment200JSONResponseBody1Services1RedirectsMissing0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing0() (GetDeployment200JSONResponseBody1Services1RedirectsMissing0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing0(v GetDeployment200JSONResponseBody1Services1RedirectsMissing0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item as a GetDeployment200JSONResponseBody1Services1RedirectsMissing1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) AsGetDeployment200JSONResponseBody1Services1RedirectsMissing1() (GetDeployment200JSONResponseBody1Services1RedirectsMissing1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RedirectsMissing1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) FromGetDeployment200JSONResponseBody1Services1RedirectsMissing1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1RedirectsMissing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1RedirectsMissing1(v GetDeployment200JSONResponseBody1Services1RedirectsMissing1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Redirects_Missing_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesDestination0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination as a GetDeployment200JSONResponseBody1Services1RewritesDestination0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) AsGetDeployment200JSONResponseBody1Services1RewritesDestination0() (GetDeployment200JSONResponseBody1Services1RewritesDestination0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesDestination0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesDestination0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination as the provided GetDeployment200JSONResponseBody1Services1RewritesDestination0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) FromGetDeployment200JSONResponseBody1Services1RewritesDestination0(v GetDeployment200JSONResponseBody1Services1RewritesDestination0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesDestination0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination, using the provided GetDeployment200JSONResponseBody1Services1RewritesDestination0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) MergeGetDeployment200JSONResponseBody1Services1RewritesDestination0(v GetDeployment200JSONResponseBody1Services1RewritesDestination0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesDestination1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination as a GetDeployment200JSONResponseBody1Services1RewritesDestination1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) AsGetDeployment200JSONResponseBody1Services1RewritesDestination1() (GetDeployment200JSONResponseBody1Services1RewritesDestination1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesDestination1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesDestination1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination as the provided GetDeployment200JSONResponseBody1Services1RewritesDestination1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) FromGetDeployment200JSONResponseBody1Services1RewritesDestination1(v GetDeployment200JSONResponseBody1Services1RewritesDestination1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesDestination1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination, using the provided GetDeployment200JSONResponseBody1Services1RewritesDestination1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) MergeGetDeployment200JSONResponseBody1Services1RewritesDestination1(v GetDeployment200JSONResponseBody1Services1RewritesDestination1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Destination) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0() (GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1() (GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value as a GetDeployment200JSONResponseBody1Services1RewritesHas0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value0() (GetDeployment200JSONResponseBody1Services1RewritesHas0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value0(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value0(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value as a GetDeployment200JSONResponseBody1Services1RewritesHas0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1RewritesHas0Value1() (GetDeployment200JSONResponseBody1Services1RewritesHas0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1RewritesHas0Value1(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesHas0Value1(v GetDeployment200JSONResponseBody1Services1RewritesHas0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0() (GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1() (GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value as a GetDeployment200JSONResponseBody1Services1RewritesHas1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value0() (GetDeployment200JSONResponseBody1Services1RewritesHas1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value0(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value0(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value as a GetDeployment200JSONResponseBody1Services1RewritesHas1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1RewritesHas1Value1() (GetDeployment200JSONResponseBody1Services1RewritesHas1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1RewritesHas1Value1(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesHas1Value1(v GetDeployment200JSONResponseBody1Services1RewritesHas1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item as a GetDeployment200JSONResponseBody1Services1RewritesHas0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) AsGetDeployment200JSONResponseBody1Services1RewritesHas0() (GetDeployment200JSONResponseBody1Services1RewritesHas0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item as the provided GetDeployment200JSONResponseBody1Services1RewritesHas0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) FromGetDeployment200JSONResponseBody1Services1RewritesHas0(v GetDeployment200JSONResponseBody1Services1RewritesHas0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) MergeGetDeployment200JSONResponseBody1Services1RewritesHas0(v GetDeployment200JSONResponseBody1Services1RewritesHas0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesHas1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item as a GetDeployment200JSONResponseBody1Services1RewritesHas1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) AsGetDeployment200JSONResponseBody1Services1RewritesHas1() (GetDeployment200JSONResponseBody1Services1RewritesHas1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesHas1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesHas1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item as the provided GetDeployment200JSONResponseBody1Services1RewritesHas1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) FromGetDeployment200JSONResponseBody1Services1RewritesHas1(v GetDeployment200JSONResponseBody1Services1RewritesHas1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesHas1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1RewritesHas1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) MergeGetDeployment200JSONResponseBody1Services1RewritesHas1(v GetDeployment200JSONResponseBody1Services1RewritesHas1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0() (GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1() (GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value0() (GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value0(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value0(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1() (GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0Value1(v GetDeployment200JSONResponseBody1Services1RewritesMissing0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0() (GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1() (GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value0() (GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value0(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value0(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1() (GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1Value1(v GetDeployment200JSONResponseBody1Services1RewritesMissing1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item as a GetDeployment200JSONResponseBody1Services1RewritesMissing0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) AsGetDeployment200JSONResponseBody1Services1RewritesMissing0() (GetDeployment200JSONResponseBody1Services1RewritesMissing0, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) FromGetDeployment200JSONResponseBody1Services1RewritesMissing0(v GetDeployment200JSONResponseBody1Services1RewritesMissing0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing0(v GetDeployment200JSONResponseBody1Services1RewritesMissing0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1RewritesMissing1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item as a GetDeployment200JSONResponseBody1Services1RewritesMissing1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) AsGetDeployment200JSONResponseBody1Services1RewritesMissing1() (GetDeployment200JSONResponseBody1Services1RewritesMissing1, error) {
+	var body GetDeployment200JSONResponseBody1Services1RewritesMissing1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1RewritesMissing1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) FromGetDeployment200JSONResponseBody1Services1RewritesMissing1(v GetDeployment200JSONResponseBody1Services1RewritesMissing1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1RewritesMissing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1RewritesMissing1(v GetDeployment200JSONResponseBody1Services1RewritesMissing1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Rewrites_Missing_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Destination0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination as a GetDeployment200JSONResponseBody1Services1Routes0Destination0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) AsGetDeployment200JSONResponseBody1Services1Routes0Destination0() (GetDeployment200JSONResponseBody1Services1Routes0Destination0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Destination0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Destination0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination as the provided GetDeployment200JSONResponseBody1Services1Routes0Destination0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) FromGetDeployment200JSONResponseBody1Services1Routes0Destination0(v GetDeployment200JSONResponseBody1Services1Routes0Destination0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Destination0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination, using the provided GetDeployment200JSONResponseBody1Services1Routes0Destination0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) MergeGetDeployment200JSONResponseBody1Services1Routes0Destination0(v GetDeployment200JSONResponseBody1Services1Routes0Destination0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Destination1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination as a GetDeployment200JSONResponseBody1Services1Routes0Destination1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) AsGetDeployment200JSONResponseBody1Services1Routes0Destination1() (GetDeployment200JSONResponseBody1Services1Routes0Destination1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Destination1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Destination1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination as the provided GetDeployment200JSONResponseBody1Services1Routes0Destination1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) FromGetDeployment200JSONResponseBody1Services1Routes0Destination1(v GetDeployment200JSONResponseBody1Services1Routes0Destination1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Destination1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination, using the provided GetDeployment200JSONResponseBody1Services1Routes0Destination1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) MergeGetDeployment200JSONResponseBody1Services1Routes0Destination1(v GetDeployment200JSONResponseBody1Services1Routes0Destination1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0() (GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1() (GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value as a GetDeployment200JSONResponseBody1Services1Routes0Has0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value0() (GetDeployment200JSONResponseBody1Services1Routes0Has0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value0(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value0(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value as a GetDeployment200JSONResponseBody1Services1Routes0Has0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Has0Value1() (GetDeployment200JSONResponseBody1Services1Routes0Has0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Has0Value1(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Has0Value1(v GetDeployment200JSONResponseBody1Services1Routes0Has0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0() (GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1() (GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value as a GetDeployment200JSONResponseBody1Services1Routes0Has1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value0() (GetDeployment200JSONResponseBody1Services1Routes0Has1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value0(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value0(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value as a GetDeployment200JSONResponseBody1Services1Routes0Has1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Has1Value1() (GetDeployment200JSONResponseBody1Services1Routes0Has1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Has1Value1(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Has1Value1(v GetDeployment200JSONResponseBody1Services1Routes0Has1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item as a GetDeployment200JSONResponseBody1Services1Routes0Has0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) AsGetDeployment200JSONResponseBody1Services1Routes0Has0() (GetDeployment200JSONResponseBody1Services1Routes0Has0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0Has0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) FromGetDeployment200JSONResponseBody1Services1Routes0Has0(v GetDeployment200JSONResponseBody1Services1Routes0Has0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0Has0(v GetDeployment200JSONResponseBody1Services1Routes0Has0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Has1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item as a GetDeployment200JSONResponseBody1Services1Routes0Has1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) AsGetDeployment200JSONResponseBody1Services1Routes0Has1() (GetDeployment200JSONResponseBody1Services1Routes0Has1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Has1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Has1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0Has1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) FromGetDeployment200JSONResponseBody1Services1Routes0Has1(v GetDeployment200JSONResponseBody1Services1Routes0Has1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Has1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0Has1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0Has1(v GetDeployment200JSONResponseBody1Services1Routes0Has1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0() (GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1() (GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value0() (GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value0(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value0(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value as a GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1() (GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0Value1(v GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0() (GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1() (GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value0() (GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value0(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value0(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value as a GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) AsGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1() (GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) FromGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1Value1(v GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item as a GetDeployment200JSONResponseBody1Services1Routes0Missing0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) AsGetDeployment200JSONResponseBody1Services1Routes0Missing0() (GetDeployment200JSONResponseBody1Services1Routes0Missing0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) FromGetDeployment200JSONResponseBody1Services1Routes0Missing0(v GetDeployment200JSONResponseBody1Services1Routes0Missing0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing0(v GetDeployment200JSONResponseBody1Services1Routes0Missing0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Missing1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item as a GetDeployment200JSONResponseBody1Services1Routes0Missing1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) AsGetDeployment200JSONResponseBody1Services1Routes0Missing1() (GetDeployment200JSONResponseBody1Services1Routes0Missing1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Missing1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Missing1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) FromGetDeployment200JSONResponseBody1Services1Routes0Missing1(v GetDeployment200JSONResponseBody1Services1Routes0Missing1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0Missing1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0Missing1(v GetDeployment200JSONResponseBody1Services1Routes0Missing1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item as a GetDeployment200JSONResponseBody1Services1Routes0Transforms0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms0() (GetDeployment200JSONResponseBody1Services1Routes0Transforms0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms0(v GetDeployment200JSONResponseBody1Services1Routes0Transforms0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0Transforms1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item as a GetDeployment200JSONResponseBody1Services1Routes0Transforms1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) AsGetDeployment200JSONResponseBody1Services1Routes0Transforms1() (GetDeployment200JSONResponseBody1Services1Routes0Transforms1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0Transforms1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0Transforms1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) FromGetDeployment200JSONResponseBody1Services1Routes0Transforms1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0Transforms1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0Transforms1(v GetDeployment200JSONResponseBody1Services1Routes0Transforms1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_Item as a GetDeployment200JSONResponseBody1Services1Routes0
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) AsGetDeployment200JSONResponseBody1Services1Routes0() (GetDeployment200JSONResponseBody1Services1Routes0, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_Item as the provided GetDeployment200JSONResponseBody1Services1Routes0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) FromGetDeployment200JSONResponseBody1Services1Routes0(v GetDeployment200JSONResponseBody1Services1Routes0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes0
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) MergeGetDeployment200JSONResponseBody1Services1Routes0(v GetDeployment200JSONResponseBody1Services1Routes0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1Routes1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_Item as a GetDeployment200JSONResponseBody1Services1Routes1
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) AsGetDeployment200JSONResponseBody1Services1Routes1() (GetDeployment200JSONResponseBody1Services1Routes1, error) {
+	var body GetDeployment200JSONResponseBody1Services1Routes1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1Routes1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_Item as the provided GetDeployment200JSONResponseBody1Services1Routes1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) FromGetDeployment200JSONResponseBody1Services1Routes1(v GetDeployment200JSONResponseBody1Services1Routes1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1Routes1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_1_Routes_Item, using the provided GetDeployment200JSONResponseBody1Services1Routes1
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) MergeGetDeployment200JSONResponseBody1Services1Routes1(v GetDeployment200JSONResponseBody1Services1Routes1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_1_Routes_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services0 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_Item as a GetDeployment200JSONResponseBody1Services0
+func (t GetDeployment200JSONResponseBody_1_Services_Item) AsGetDeployment200JSONResponseBody1Services0() (GetDeployment200JSONResponseBody1Services0, error) {
+	var body GetDeployment200JSONResponseBody1Services0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services0 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_Item as the provided GetDeployment200JSONResponseBody1Services0
+func (t *GetDeployment200JSONResponseBody_1_Services_Item) FromGetDeployment200JSONResponseBody1Services0(v GetDeployment200JSONResponseBody1Services0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_Item, using the provided GetDeployment200JSONResponseBody1Services0
+func (t *GetDeployment200JSONResponseBody_1_Services_Item) MergeGetDeployment200JSONResponseBody1Services0(v GetDeployment200JSONResponseBody1Services0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody1Services1 returns the union data inside the GetDeployment200JSONResponseBody_1_Services_Item as a GetDeployment200JSONResponseBody1Services1
+func (t GetDeployment200JSONResponseBody_1_Services_Item) AsGetDeployment200JSONResponseBody1Services1() (GetDeployment200JSONResponseBody1Services1, error) {
+	var body GetDeployment200JSONResponseBody1Services1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody1Services1 overwrites any union data inside the GetDeployment200JSONResponseBody_1_Services_Item as the provided GetDeployment200JSONResponseBody1Services1
+func (t *GetDeployment200JSONResponseBody_1_Services_Item) FromGetDeployment200JSONResponseBody1Services1(v GetDeployment200JSONResponseBody1Services1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody1Services1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_1_Services_Item, using the provided GetDeployment200JSONResponseBody1Services1
+func (t *GetDeployment200JSONResponseBody_1_Services_Item) MergeGetDeployment200JSONResponseBody1Services1(v GetDeployment200JSONResponseBody1Services1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_1_Services_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_1_Services_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2CustomEnvironment0 returns the union data inside the GetDeployment200JSONResponseBody_2_CustomEnvironment as a GetDeployment200JSONResponseBody2CustomEnvironment0
+func (t GetDeployment200JSONResponseBody_2_CustomEnvironment) AsGetDeployment200JSONResponseBody2CustomEnvironment0() (GetDeployment200JSONResponseBody2CustomEnvironment0, error) {
+	var body GetDeployment200JSONResponseBody2CustomEnvironment0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2CustomEnvironment0 overwrites any union data inside the GetDeployment200JSONResponseBody_2_CustomEnvironment as the provided GetDeployment200JSONResponseBody2CustomEnvironment0
+func (t *GetDeployment200JSONResponseBody_2_CustomEnvironment) FromGetDeployment200JSONResponseBody2CustomEnvironment0(v GetDeployment200JSONResponseBody2CustomEnvironment0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2CustomEnvironment0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_CustomEnvironment, using the provided GetDeployment200JSONResponseBody2CustomEnvironment0
+func (t *GetDeployment200JSONResponseBody_2_CustomEnvironment) MergeGetDeployment200JSONResponseBody2CustomEnvironment0(v GetDeployment200JSONResponseBody2CustomEnvironment0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2CustomEnvironment1 returns the union data inside the GetDeployment200JSONResponseBody_2_CustomEnvironment as a GetDeployment200JSONResponseBody2CustomEnvironment1
+func (t GetDeployment200JSONResponseBody_2_CustomEnvironment) AsGetDeployment200JSONResponseBody2CustomEnvironment1() (GetDeployment200JSONResponseBody2CustomEnvironment1, error) {
+	var body GetDeployment200JSONResponseBody2CustomEnvironment1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2CustomEnvironment1 overwrites any union data inside the GetDeployment200JSONResponseBody_2_CustomEnvironment as the provided GetDeployment200JSONResponseBody2CustomEnvironment1
+func (t *GetDeployment200JSONResponseBody_2_CustomEnvironment) FromGetDeployment200JSONResponseBody2CustomEnvironment1(v GetDeployment200JSONResponseBody2CustomEnvironment1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2CustomEnvironment1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_CustomEnvironment, using the provided GetDeployment200JSONResponseBody2CustomEnvironment1
+func (t *GetDeployment200JSONResponseBody_2_CustomEnvironment) MergeGetDeployment200JSONResponseBody2CustomEnvironment1(v GetDeployment200JSONResponseBody2CustomEnvironment1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_2_CustomEnvironment) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_2_CustomEnvironment) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource0RepoId0 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource_0_RepoId as a GetDeployment200JSONResponseBody2GitSource0RepoId0
+func (t GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) AsGetDeployment200JSONResponseBody2GitSource0RepoId0() (GetDeployment200JSONResponseBody2GitSource0RepoId0, error) {
+	var body GetDeployment200JSONResponseBody2GitSource0RepoId0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource0RepoId0 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource_0_RepoId as the provided GetDeployment200JSONResponseBody2GitSource0RepoId0
+func (t *GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) FromGetDeployment200JSONResponseBody2GitSource0RepoId0(v GetDeployment200JSONResponseBody2GitSource0RepoId0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource0RepoId0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource_0_RepoId, using the provided GetDeployment200JSONResponseBody2GitSource0RepoId0
+func (t *GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) MergeGetDeployment200JSONResponseBody2GitSource0RepoId0(v GetDeployment200JSONResponseBody2GitSource0RepoId0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource0RepoId1 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource_0_RepoId as a GetDeployment200JSONResponseBody2GitSource0RepoId1
+func (t GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) AsGetDeployment200JSONResponseBody2GitSource0RepoId1() (GetDeployment200JSONResponseBody2GitSource0RepoId1, error) {
+	var body GetDeployment200JSONResponseBody2GitSource0RepoId1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource0RepoId1 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource_0_RepoId as the provided GetDeployment200JSONResponseBody2GitSource0RepoId1
+func (t *GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) FromGetDeployment200JSONResponseBody2GitSource0RepoId1(v GetDeployment200JSONResponseBody2GitSource0RepoId1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource0RepoId1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource_0_RepoId, using the provided GetDeployment200JSONResponseBody2GitSource0RepoId1
+func (t *GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) MergeGetDeployment200JSONResponseBody2GitSource0RepoId1(v GetDeployment200JSONResponseBody2GitSource0RepoId1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeployment200JSONResponseBody_2_GitSource_0_RepoId) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource2RepoId0 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource_2_RepoId as a GetDeployment200JSONResponseBody2GitSource2RepoId0
+func (t GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) AsGetDeployment200JSONResponseBody2GitSource2RepoId0() (GetDeployment200JSONResponseBody2GitSource2RepoId0, error) {
+	var body GetDeployment200JSONResponseBody2GitSource2RepoId0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource2RepoId0 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource_2_RepoId as the provided GetDeployment200JSONResponseBody2GitSource2RepoId0
+func (t *GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) FromGetDeployment200JSONResponseBody2GitSource2RepoId0(v GetDeployment200JSONResponseBody2GitSource2RepoId0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource2RepoId0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource_2_RepoId, using the provided GetDeployment200JSONResponseBody2GitSource2RepoId0
+func (t *GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) MergeGetDeployment200JSONResponseBody2GitSource2RepoId0(v GetDeployment200JSONResponseBody2GitSource2RepoId0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource2RepoId1 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource_2_RepoId as a GetDeployment200JSONResponseBody2GitSource2RepoId1
+func (t GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) AsGetDeployment200JSONResponseBody2GitSource2RepoId1() (GetDeployment200JSONResponseBody2GitSource2RepoId1, error) {
+	var body GetDeployment200JSONResponseBody2GitSource2RepoId1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource2RepoId1 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource_2_RepoId as the provided GetDeployment200JSONResponseBody2GitSource2RepoId1
+func (t *GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) FromGetDeployment200JSONResponseBody2GitSource2RepoId1(v GetDeployment200JSONResponseBody2GitSource2RepoId1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource2RepoId1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource_2_RepoId, using the provided GetDeployment200JSONResponseBody2GitSource2RepoId1
+func (t *GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) MergeGetDeployment200JSONResponseBody2GitSource2RepoId1(v GetDeployment200JSONResponseBody2GitSource2RepoId1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
 
 func (t GetDeployment200JSONResponseBody_2_GitSource_2_RepoId) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
@@ -9663,6 +13829,94 @@ func (t *GetProject200JSONResponseBody_Creator) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 returns the union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0() (GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0, error) {
+	var body GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 overwrites any union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0(v GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 performs a merge with any union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0(v GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 returns the union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1() (GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1, error) {
+	var body GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 overwrites any union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1(v GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 performs a merge with any union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1(v GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 returns the union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2() (GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2, error) {
+	var body GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 overwrites any union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2(v GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 performs a merge with any union data inside the GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeGetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2(v GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsGetProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 returns the union data inside the GetProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item as a GetProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
 func (t GetProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) AsGetProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0() (GetProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0, error) {
 	var body GetProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
@@ -11265,6 +15519,94 @@ func (t GetProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) Mar
 }
 
 func (t *GetProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetProject200JSONResponseBodyResourceConfigElasticBuildMachine0 returns the union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsGetProject200JSONResponseBodyResourceConfigElasticBuildMachine0() (GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0, error) {
+	var body GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyResourceConfigElasticBuildMachine0 overwrites any union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromGetProject200JSONResponseBodyResourceConfigElasticBuildMachine0(v GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyResourceConfigElasticBuildMachine0 performs a merge with any union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeGetProject200JSONResponseBodyResourceConfigElasticBuildMachine0(v GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyResourceConfigElasticBuildMachine1 returns the union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsGetProject200JSONResponseBodyResourceConfigElasticBuildMachine1() (GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1, error) {
+	var body GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyResourceConfigElasticBuildMachine1 overwrites any union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromGetProject200JSONResponseBodyResourceConfigElasticBuildMachine1(v GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyResourceConfigElasticBuildMachine1 performs a merge with any union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeGetProject200JSONResponseBodyResourceConfigElasticBuildMachine1(v GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyResourceConfigElasticBuildMachine2 returns the union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsGetProject200JSONResponseBodyResourceConfigElasticBuildMachine2() (GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2, error) {
+	var body GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyResourceConfigElasticBuildMachine2 overwrites any union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromGetProject200JSONResponseBodyResourceConfigElasticBuildMachine2(v GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyResourceConfigElasticBuildMachine2 performs a merge with any union data inside the GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeGetProject200JSONResponseBodyResourceConfigElasticBuildMachine2(v GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -13224,6 +17566,94 @@ func (t *UpdateProject200JSONResponseBody_Creator) UnmarshalJSON(b []byte) error
 	return err
 }
 
+// AsUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 returns the union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0() (UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0, error) {
+	var body UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 overwrites any union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0(v UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0(v UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 returns the union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1() (UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1, error) {
+	var body UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 overwrites any union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1(v UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1(v UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 returns the union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2() (UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2, error) {
+	var body UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 overwrites any union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2(v UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2(v UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsUpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 returns the union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item as a UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
 func (t UpdateProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item) AsUpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0() (UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0, error) {
 	var body UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0
@@ -14830,6 +19260,94 @@ func (t *UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties)
 	return err
 }
 
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsUpdateProject200JSONResponseBodySecurityLogHeaders0 returns the union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders as a UpdateProject200JSONResponseBodySecurityLogHeaders0
 func (t UpdateProject200JSONResponseBody_Security_LogHeaders) AsUpdateProject200JSONResponseBodySecurityLogHeaders0() (UpdateProject200JSONResponseBodySecurityLogHeaders0, error) {
 	var body UpdateProject200JSONResponseBodySecurityLogHeaders0
@@ -15494,7288 +20012,4 @@ func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint6 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint6
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint6(v RemoveProjectEnv200JSONResponseBody0ContentHint6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint7 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint7
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint7() (RemoveProjectEnv200JSONResponseBody0ContentHint7, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint7 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint7
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint7(v RemoveProjectEnv200JSONResponseBody0ContentHint7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint7 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint7
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint7(v RemoveProjectEnv200JSONResponseBody0ContentHint7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint8 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint8
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint8() (RemoveProjectEnv200JSONResponseBody0ContentHint8, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint8
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint8 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint8
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint8(v RemoveProjectEnv200JSONResponseBody0ContentHint8) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint8 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint8
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint8(v RemoveProjectEnv200JSONResponseBody0ContentHint8) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint9 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint9
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint9() (RemoveProjectEnv200JSONResponseBody0ContentHint9, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint9
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint9 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint9
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint9(v RemoveProjectEnv200JSONResponseBody0ContentHint9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint9 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint9
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint9(v RemoveProjectEnv200JSONResponseBody0ContentHint9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint10 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint10
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint10() (RemoveProjectEnv200JSONResponseBody0ContentHint10, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint10 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint10
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint10(v RemoveProjectEnv200JSONResponseBody0ContentHint10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint10 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint10
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint10(v RemoveProjectEnv200JSONResponseBody0ContentHint10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint11 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint11
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint11() (RemoveProjectEnv200JSONResponseBody0ContentHint11, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint11 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint11
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint11(v RemoveProjectEnv200JSONResponseBody0ContentHint11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint11 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint11
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint11(v RemoveProjectEnv200JSONResponseBody0ContentHint11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint12 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint12
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint12() (RemoveProjectEnv200JSONResponseBody0ContentHint12, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint12 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint12
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint12(v RemoveProjectEnv200JSONResponseBody0ContentHint12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint12 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint12
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint12(v RemoveProjectEnv200JSONResponseBody0ContentHint12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint13 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint13
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint13() (RemoveProjectEnv200JSONResponseBody0ContentHint13, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint13
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint13 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint13
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint13(v RemoveProjectEnv200JSONResponseBody0ContentHint13) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint13 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint13
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint13(v RemoveProjectEnv200JSONResponseBody0ContentHint13) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint14 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint14
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint14() (RemoveProjectEnv200JSONResponseBody0ContentHint14, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint14
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint14 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint14
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint14(v RemoveProjectEnv200JSONResponseBody0ContentHint14) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint14 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint14
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint14(v RemoveProjectEnv200JSONResponseBody0ContentHint14) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint15 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint15
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint15() (RemoveProjectEnv200JSONResponseBody0ContentHint15, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint15
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint15 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint15
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint15(v RemoveProjectEnv200JSONResponseBody0ContentHint15) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint15 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint15
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint15(v RemoveProjectEnv200JSONResponseBody0ContentHint15) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0ContentHint16 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint16
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint16() (RemoveProjectEnv200JSONResponseBody0ContentHint16, error) {
-	var body RemoveProjectEnv200JSONResponseBody0ContentHint16
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0ContentHint16 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint16
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint16(v RemoveProjectEnv200JSONResponseBody0ContentHint16) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0ContentHint16 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint16
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint16(v RemoveProjectEnv200JSONResponseBody0ContentHint16) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0Target0 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_Target as a RemoveProjectEnv200JSONResponseBody0Target0
-func (t RemoveProjectEnv200JSONResponseBody_0_Target) AsRemoveProjectEnv200JSONResponseBody0Target0() (RemoveProjectEnv200JSONResponseBody0Target0, error) {
-	var body RemoveProjectEnv200JSONResponseBody0Target0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0Target0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_Target as the provided RemoveProjectEnv200JSONResponseBody0Target0
-func (t *RemoveProjectEnv200JSONResponseBody_0_Target) FromRemoveProjectEnv200JSONResponseBody0Target0(v RemoveProjectEnv200JSONResponseBody0Target0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0Target0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_Target, using the provided RemoveProjectEnv200JSONResponseBody0Target0
-func (t *RemoveProjectEnv200JSONResponseBody_0_Target) MergeRemoveProjectEnv200JSONResponseBody0Target0(v RemoveProjectEnv200JSONResponseBody0Target0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0Target1 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_Target as a RemoveProjectEnv200JSONResponseBody0Target1
-func (t RemoveProjectEnv200JSONResponseBody_0_Target) AsRemoveProjectEnv200JSONResponseBody0Target1() (RemoveProjectEnv200JSONResponseBody0Target1, error) {
-	var body RemoveProjectEnv200JSONResponseBody0Target1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0Target1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_Target as the provided RemoveProjectEnv200JSONResponseBody0Target1
-func (t *RemoveProjectEnv200JSONResponseBody_0_Target) FromRemoveProjectEnv200JSONResponseBody0Target1(v RemoveProjectEnv200JSONResponseBody0Target1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0Target1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_Target, using the provided RemoveProjectEnv200JSONResponseBody0Target1
-func (t *RemoveProjectEnv200JSONResponseBody_0_Target) MergeRemoveProjectEnv200JSONResponseBody0Target1(v RemoveProjectEnv200JSONResponseBody0Target1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody_0_Target) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody_0_Target) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint0 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint0
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint0() (RemoveProjectEnv200JSONResponseBody1ContentHint0, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint0
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint0(v RemoveProjectEnv200JSONResponseBody1ContentHint0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint0
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint0(v RemoveProjectEnv200JSONResponseBody1ContentHint0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint1 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint1
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint1() (RemoveProjectEnv200JSONResponseBody1ContentHint1, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint1
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint1(v RemoveProjectEnv200JSONResponseBody1ContentHint1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint1
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint1(v RemoveProjectEnv200JSONResponseBody1ContentHint1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint2 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint2
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint2() (RemoveProjectEnv200JSONResponseBody1ContentHint2, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint2 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint2
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint2(v RemoveProjectEnv200JSONResponseBody1ContentHint2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint2 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint2
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint2(v RemoveProjectEnv200JSONResponseBody1ContentHint2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint3 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint3
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint3() (RemoveProjectEnv200JSONResponseBody1ContentHint3, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint3 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint3
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint3(v RemoveProjectEnv200JSONResponseBody1ContentHint3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint3 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint3
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint3(v RemoveProjectEnv200JSONResponseBody1ContentHint3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint4 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint4
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint4() (RemoveProjectEnv200JSONResponseBody1ContentHint4, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint4 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint4
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint4(v RemoveProjectEnv200JSONResponseBody1ContentHint4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint4 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint4
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint4(v RemoveProjectEnv200JSONResponseBody1ContentHint4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint5 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint5
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint5() (RemoveProjectEnv200JSONResponseBody1ContentHint5, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint5
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint5 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint5
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint5(v RemoveProjectEnv200JSONResponseBody1ContentHint5) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint5 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint5
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint5(v RemoveProjectEnv200JSONResponseBody1ContentHint5) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint6 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint6
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint6() (RemoveProjectEnv200JSONResponseBody1ContentHint6, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint6
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint6 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint6
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint6(v RemoveProjectEnv200JSONResponseBody1ContentHint6) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint6 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint6
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint6(v RemoveProjectEnv200JSONResponseBody1ContentHint6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint7 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint7
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint7() (RemoveProjectEnv200JSONResponseBody1ContentHint7, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint7 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint7
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint7(v RemoveProjectEnv200JSONResponseBody1ContentHint7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint7 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint7
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint7(v RemoveProjectEnv200JSONResponseBody1ContentHint7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint8 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint8
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint8() (RemoveProjectEnv200JSONResponseBody1ContentHint8, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint8
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint8 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint8
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint8(v RemoveProjectEnv200JSONResponseBody1ContentHint8) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint8 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint8
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint8(v RemoveProjectEnv200JSONResponseBody1ContentHint8) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint9 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint9
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint9() (RemoveProjectEnv200JSONResponseBody1ContentHint9, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint9
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint9 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint9
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint9(v RemoveProjectEnv200JSONResponseBody1ContentHint9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint9 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint9
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint9(v RemoveProjectEnv200JSONResponseBody1ContentHint9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint10 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint10
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint10() (RemoveProjectEnv200JSONResponseBody1ContentHint10, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint10 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint10
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint10(v RemoveProjectEnv200JSONResponseBody1ContentHint10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint10 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint10
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint10(v RemoveProjectEnv200JSONResponseBody1ContentHint10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint11 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint11
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint11() (RemoveProjectEnv200JSONResponseBody1ContentHint11, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint11 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint11
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint11(v RemoveProjectEnv200JSONResponseBody1ContentHint11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint11 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint11
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint11(v RemoveProjectEnv200JSONResponseBody1ContentHint11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint12 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint12
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint12() (RemoveProjectEnv200JSONResponseBody1ContentHint12, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint12 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint12
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint12(v RemoveProjectEnv200JSONResponseBody1ContentHint12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint12 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint12
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint12(v RemoveProjectEnv200JSONResponseBody1ContentHint12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint13 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint13
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint13() (RemoveProjectEnv200JSONResponseBody1ContentHint13, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint13
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint13 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint13
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint13(v RemoveProjectEnv200JSONResponseBody1ContentHint13) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint13 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint13
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint13(v RemoveProjectEnv200JSONResponseBody1ContentHint13) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint14 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint14
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint14() (RemoveProjectEnv200JSONResponseBody1ContentHint14, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint14
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint14 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint14
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint14(v RemoveProjectEnv200JSONResponseBody1ContentHint14) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint14 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint14
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint14(v RemoveProjectEnv200JSONResponseBody1ContentHint14) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint15 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint15
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint15() (RemoveProjectEnv200JSONResponseBody1ContentHint15, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint15
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint15 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint15
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint15(v RemoveProjectEnv200JSONResponseBody1ContentHint15) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint15 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint15
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint15(v RemoveProjectEnv200JSONResponseBody1ContentHint15) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1ContentHint16 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as a RemoveProjectEnv200JSONResponseBody1ContentHint16
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) AsRemoveProjectEnv200JSONResponseBody1ContentHint16() (RemoveProjectEnv200JSONResponseBody1ContentHint16, error) {
-	var body RemoveProjectEnv200JSONResponseBody1ContentHint16
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1ContentHint16 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint as the provided RemoveProjectEnv200JSONResponseBody1ContentHint16
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) FromRemoveProjectEnv200JSONResponseBody1ContentHint16(v RemoveProjectEnv200JSONResponseBody1ContentHint16) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1ContentHint16 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody1ContentHint16
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) MergeRemoveProjectEnv200JSONResponseBody1ContentHint16(v RemoveProjectEnv200JSONResponseBody1ContentHint16) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody_1_ContentHint) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody_1_ContentHint) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1Target0 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_Target as a RemoveProjectEnv200JSONResponseBody1Target0
-func (t RemoveProjectEnv200JSONResponseBody_1_Target) AsRemoveProjectEnv200JSONResponseBody1Target0() (RemoveProjectEnv200JSONResponseBody1Target0, error) {
-	var body RemoveProjectEnv200JSONResponseBody1Target0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1Target0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_Target as the provided RemoveProjectEnv200JSONResponseBody1Target0
-func (t *RemoveProjectEnv200JSONResponseBody_1_Target) FromRemoveProjectEnv200JSONResponseBody1Target0(v RemoveProjectEnv200JSONResponseBody1Target0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1Target0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_Target, using the provided RemoveProjectEnv200JSONResponseBody1Target0
-func (t *RemoveProjectEnv200JSONResponseBody_1_Target) MergeRemoveProjectEnv200JSONResponseBody1Target0(v RemoveProjectEnv200JSONResponseBody1Target0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1Target1 returns the union data inside the RemoveProjectEnv200JSONResponseBody_1_Target as a RemoveProjectEnv200JSONResponseBody1Target1
-func (t RemoveProjectEnv200JSONResponseBody_1_Target) AsRemoveProjectEnv200JSONResponseBody1Target1() (RemoveProjectEnv200JSONResponseBody1Target1, error) {
-	var body RemoveProjectEnv200JSONResponseBody1Target1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1Target1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_1_Target as the provided RemoveProjectEnv200JSONResponseBody1Target1
-func (t *RemoveProjectEnv200JSONResponseBody_1_Target) FromRemoveProjectEnv200JSONResponseBody1Target1(v RemoveProjectEnv200JSONResponseBody1Target1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1Target1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_1_Target, using the provided RemoveProjectEnv200JSONResponseBody1Target1
-func (t *RemoveProjectEnv200JSONResponseBody_1_Target) MergeRemoveProjectEnv200JSONResponseBody1Target1(v RemoveProjectEnv200JSONResponseBody1Target1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody_1_Target) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody_1_Target) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint0 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint0
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint0() (RemoveProjectEnv200JSONResponseBody2ContentHint0, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint0
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint0(v RemoveProjectEnv200JSONResponseBody2ContentHint0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint0
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint0(v RemoveProjectEnv200JSONResponseBody2ContentHint0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint1 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint1
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint1() (RemoveProjectEnv200JSONResponseBody2ContentHint1, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint1
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint1(v RemoveProjectEnv200JSONResponseBody2ContentHint1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint1
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint1(v RemoveProjectEnv200JSONResponseBody2ContentHint1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint2 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint2
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint2() (RemoveProjectEnv200JSONResponseBody2ContentHint2, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint2 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint2
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint2(v RemoveProjectEnv200JSONResponseBody2ContentHint2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint2 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint2
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint2(v RemoveProjectEnv200JSONResponseBody2ContentHint2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint3 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint3
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint3() (RemoveProjectEnv200JSONResponseBody2ContentHint3, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint3 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint3
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint3(v RemoveProjectEnv200JSONResponseBody2ContentHint3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint3 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint3
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint3(v RemoveProjectEnv200JSONResponseBody2ContentHint3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint4 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint4
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint4() (RemoveProjectEnv200JSONResponseBody2ContentHint4, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint4 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint4
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint4(v RemoveProjectEnv200JSONResponseBody2ContentHint4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint4 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint4
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint4(v RemoveProjectEnv200JSONResponseBody2ContentHint4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint5 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint5
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint5() (RemoveProjectEnv200JSONResponseBody2ContentHint5, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint5
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint5 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint5
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint5(v RemoveProjectEnv200JSONResponseBody2ContentHint5) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint5 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint5
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint5(v RemoveProjectEnv200JSONResponseBody2ContentHint5) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint6 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint6
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint6() (RemoveProjectEnv200JSONResponseBody2ContentHint6, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint6
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint6 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint6
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint6(v RemoveProjectEnv200JSONResponseBody2ContentHint6) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint6 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint6
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint6(v RemoveProjectEnv200JSONResponseBody2ContentHint6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint7 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint7
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint7() (RemoveProjectEnv200JSONResponseBody2ContentHint7, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint7 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint7
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint7(v RemoveProjectEnv200JSONResponseBody2ContentHint7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint7 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint7
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint7(v RemoveProjectEnv200JSONResponseBody2ContentHint7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint8 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint8
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint8() (RemoveProjectEnv200JSONResponseBody2ContentHint8, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint8
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint8 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint8
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint8(v RemoveProjectEnv200JSONResponseBody2ContentHint8) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint8 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint8
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint8(v RemoveProjectEnv200JSONResponseBody2ContentHint8) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint9 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint9
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint9() (RemoveProjectEnv200JSONResponseBody2ContentHint9, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint9
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint9 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint9
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint9(v RemoveProjectEnv200JSONResponseBody2ContentHint9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint9 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint9
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint9(v RemoveProjectEnv200JSONResponseBody2ContentHint9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint10 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint10
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint10() (RemoveProjectEnv200JSONResponseBody2ContentHint10, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint10 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint10
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint10(v RemoveProjectEnv200JSONResponseBody2ContentHint10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint10 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint10
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint10(v RemoveProjectEnv200JSONResponseBody2ContentHint10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint11 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint11
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint11() (RemoveProjectEnv200JSONResponseBody2ContentHint11, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint11 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint11
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint11(v RemoveProjectEnv200JSONResponseBody2ContentHint11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint11 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint11
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint11(v RemoveProjectEnv200JSONResponseBody2ContentHint11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint12 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint12
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint12() (RemoveProjectEnv200JSONResponseBody2ContentHint12, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint12 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint12
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint12(v RemoveProjectEnv200JSONResponseBody2ContentHint12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint12 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint12
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint12(v RemoveProjectEnv200JSONResponseBody2ContentHint12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint13 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint13
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint13() (RemoveProjectEnv200JSONResponseBody2ContentHint13, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint13
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint13 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint13
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint13(v RemoveProjectEnv200JSONResponseBody2ContentHint13) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint13 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint13
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint13(v RemoveProjectEnv200JSONResponseBody2ContentHint13) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint14 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint14
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint14() (RemoveProjectEnv200JSONResponseBody2ContentHint14, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint14
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint14 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint14
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint14(v RemoveProjectEnv200JSONResponseBody2ContentHint14) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint14 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint14
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint14(v RemoveProjectEnv200JSONResponseBody2ContentHint14) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint15 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint15
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint15() (RemoveProjectEnv200JSONResponseBody2ContentHint15, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint15
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint15 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint15
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint15(v RemoveProjectEnv200JSONResponseBody2ContentHint15) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint15 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint15
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint15(v RemoveProjectEnv200JSONResponseBody2ContentHint15) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2ContentHint16 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as a RemoveProjectEnv200JSONResponseBody2ContentHint16
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) AsRemoveProjectEnv200JSONResponseBody2ContentHint16() (RemoveProjectEnv200JSONResponseBody2ContentHint16, error) {
-	var body RemoveProjectEnv200JSONResponseBody2ContentHint16
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2ContentHint16 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint as the provided RemoveProjectEnv200JSONResponseBody2ContentHint16
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) FromRemoveProjectEnv200JSONResponseBody2ContentHint16(v RemoveProjectEnv200JSONResponseBody2ContentHint16) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2ContentHint16 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody2ContentHint16
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) MergeRemoveProjectEnv200JSONResponseBody2ContentHint16(v RemoveProjectEnv200JSONResponseBody2ContentHint16) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody_2_ContentHint) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody_2_ContentHint) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2Target0 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_Target as a RemoveProjectEnv200JSONResponseBody2Target0
-func (t RemoveProjectEnv200JSONResponseBody_2_Target) AsRemoveProjectEnv200JSONResponseBody2Target0() (RemoveProjectEnv200JSONResponseBody2Target0, error) {
-	var body RemoveProjectEnv200JSONResponseBody2Target0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2Target0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_Target as the provided RemoveProjectEnv200JSONResponseBody2Target0
-func (t *RemoveProjectEnv200JSONResponseBody_2_Target) FromRemoveProjectEnv200JSONResponseBody2Target0(v RemoveProjectEnv200JSONResponseBody2Target0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2Target0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_Target, using the provided RemoveProjectEnv200JSONResponseBody2Target0
-func (t *RemoveProjectEnv200JSONResponseBody_2_Target) MergeRemoveProjectEnv200JSONResponseBody2Target0(v RemoveProjectEnv200JSONResponseBody2Target0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2Target1 returns the union data inside the RemoveProjectEnv200JSONResponseBody_2_Target as a RemoveProjectEnv200JSONResponseBody2Target1
-func (t RemoveProjectEnv200JSONResponseBody_2_Target) AsRemoveProjectEnv200JSONResponseBody2Target1() (RemoveProjectEnv200JSONResponseBody2Target1, error) {
-	var body RemoveProjectEnv200JSONResponseBody2Target1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2Target1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_2_Target as the provided RemoveProjectEnv200JSONResponseBody2Target1
-func (t *RemoveProjectEnv200JSONResponseBody_2_Target) FromRemoveProjectEnv200JSONResponseBody2Target1(v RemoveProjectEnv200JSONResponseBody2Target1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2Target1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_2_Target, using the provided RemoveProjectEnv200JSONResponseBody2Target1
-func (t *RemoveProjectEnv200JSONResponseBody_2_Target) MergeRemoveProjectEnv200JSONResponseBody2Target1(v RemoveProjectEnv200JSONResponseBody2Target1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody_2_Target) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody_2_Target) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody0 returns the union data inside the RemoveProjectEnv200JSONResponseBody as a RemoveProjectEnv200JSONResponseBody0
-func (t RemoveProjectEnv200JSONResponseBody) AsRemoveProjectEnv200JSONResponseBody0() (RemoveProjectEnv200JSONResponseBody0, error) {
-	var body RemoveProjectEnv200JSONResponseBody0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody as the provided RemoveProjectEnv200JSONResponseBody0
-func (t *RemoveProjectEnv200JSONResponseBody) FromRemoveProjectEnv200JSONResponseBody0(v RemoveProjectEnv200JSONResponseBody0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody, using the provided RemoveProjectEnv200JSONResponseBody0
-func (t *RemoveProjectEnv200JSONResponseBody) MergeRemoveProjectEnv200JSONResponseBody0(v RemoveProjectEnv200JSONResponseBody0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody1 returns the union data inside the RemoveProjectEnv200JSONResponseBody as a RemoveProjectEnv200JSONResponseBody1
-func (t RemoveProjectEnv200JSONResponseBody) AsRemoveProjectEnv200JSONResponseBody1() (RemoveProjectEnv200JSONResponseBody1, error) {
-	var body RemoveProjectEnv200JSONResponseBody1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody as the provided RemoveProjectEnv200JSONResponseBody1
-func (t *RemoveProjectEnv200JSONResponseBody) FromRemoveProjectEnv200JSONResponseBody1(v RemoveProjectEnv200JSONResponseBody1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody, using the provided RemoveProjectEnv200JSONResponseBody1
-func (t *RemoveProjectEnv200JSONResponseBody) MergeRemoveProjectEnv200JSONResponseBody1(v RemoveProjectEnv200JSONResponseBody1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsRemoveProjectEnv200JSONResponseBody2 returns the union data inside the RemoveProjectEnv200JSONResponseBody as a RemoveProjectEnv200JSONResponseBody2
-func (t RemoveProjectEnv200JSONResponseBody) AsRemoveProjectEnv200JSONResponseBody2() (RemoveProjectEnv200JSONResponseBody2, error) {
-	var body RemoveProjectEnv200JSONResponseBody2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromRemoveProjectEnv200JSONResponseBody2 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody as the provided RemoveProjectEnv200JSONResponseBody2
-func (t *RemoveProjectEnv200JSONResponseBody) FromRemoveProjectEnv200JSONResponseBody2(v RemoveProjectEnv200JSONResponseBody2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeRemoveProjectEnv200JSONResponseBody2 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody, using the provided RemoveProjectEnv200JSONResponseBody2
-func (t *RemoveProjectEnv200JSONResponseBody) MergeRemoveProjectEnv200JSONResponseBody2(v RemoveProjectEnv200JSONResponseBody2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RemoveProjectEnv200JSONResponseBody) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RemoveProjectEnv200JSONResponseBody) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint0 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint0
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint0() (EditProjectEnv200JSONResponseBodyContentHint0, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint0 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint0
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint0(v EditProjectEnv200JSONResponseBodyContentHint0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint0 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint0
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint0(v EditProjectEnv200JSONResponseBodyContentHint0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint1 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint1
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint1() (EditProjectEnv200JSONResponseBodyContentHint1, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint1 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint1
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint1(v EditProjectEnv200JSONResponseBodyContentHint1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint1 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint1
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint1(v EditProjectEnv200JSONResponseBodyContentHint1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint2 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint2
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint2() (EditProjectEnv200JSONResponseBodyContentHint2, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint2 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint2
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint2(v EditProjectEnv200JSONResponseBodyContentHint2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint2 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint2
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint2(v EditProjectEnv200JSONResponseBodyContentHint2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint3 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint3
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint3() (EditProjectEnv200JSONResponseBodyContentHint3, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint3 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint3
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint3(v EditProjectEnv200JSONResponseBodyContentHint3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint3 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint3
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint3(v EditProjectEnv200JSONResponseBodyContentHint3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint4 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint4
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint4() (EditProjectEnv200JSONResponseBodyContentHint4, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint4 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint4
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint4(v EditProjectEnv200JSONResponseBodyContentHint4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint4 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint4
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint4(v EditProjectEnv200JSONResponseBodyContentHint4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint5 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint5
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint5() (EditProjectEnv200JSONResponseBodyContentHint5, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint5
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint5 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint5
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint5(v EditProjectEnv200JSONResponseBodyContentHint5) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint5 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint5
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint5(v EditProjectEnv200JSONResponseBodyContentHint5) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint6 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint6
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint6() (EditProjectEnv200JSONResponseBodyContentHint6, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint6
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint6 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint6
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint6(v EditProjectEnv200JSONResponseBodyContentHint6) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint6 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint6
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint6(v EditProjectEnv200JSONResponseBodyContentHint6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint7 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint7
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint7() (EditProjectEnv200JSONResponseBodyContentHint7, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint7 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint7
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint7(v EditProjectEnv200JSONResponseBodyContentHint7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint7 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint7
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint7(v EditProjectEnv200JSONResponseBodyContentHint7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint8 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint8
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint8() (EditProjectEnv200JSONResponseBodyContentHint8, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint8
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint8 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint8
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint8(v EditProjectEnv200JSONResponseBodyContentHint8) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint8 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint8
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint8(v EditProjectEnv200JSONResponseBodyContentHint8) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint9 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint9
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint9() (EditProjectEnv200JSONResponseBodyContentHint9, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint9
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint9 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint9
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint9(v EditProjectEnv200JSONResponseBodyContentHint9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint9 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint9
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint9(v EditProjectEnv200JSONResponseBodyContentHint9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint10 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint10
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint10() (EditProjectEnv200JSONResponseBodyContentHint10, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint10 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint10
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint10(v EditProjectEnv200JSONResponseBodyContentHint10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint10 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint10
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint10(v EditProjectEnv200JSONResponseBodyContentHint10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint11 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint11
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint11() (EditProjectEnv200JSONResponseBodyContentHint11, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint11 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint11
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint11(v EditProjectEnv200JSONResponseBodyContentHint11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint11 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint11
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint11(v EditProjectEnv200JSONResponseBodyContentHint11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint12 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint12
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint12() (EditProjectEnv200JSONResponseBodyContentHint12, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint12 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint12
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint12(v EditProjectEnv200JSONResponseBodyContentHint12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint12 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint12
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint12(v EditProjectEnv200JSONResponseBodyContentHint12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint13 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint13
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint13() (EditProjectEnv200JSONResponseBodyContentHint13, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint13
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint13 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint13
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint13(v EditProjectEnv200JSONResponseBodyContentHint13) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint13 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint13
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint13(v EditProjectEnv200JSONResponseBodyContentHint13) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint14 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint14
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint14() (EditProjectEnv200JSONResponseBodyContentHint14, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint14
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint14 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint14
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint14(v EditProjectEnv200JSONResponseBodyContentHint14) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint14 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint14
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint14(v EditProjectEnv200JSONResponseBodyContentHint14) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint15 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint15
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint15() (EditProjectEnv200JSONResponseBodyContentHint15, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint15
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint15 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint15
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint15(v EditProjectEnv200JSONResponseBodyContentHint15) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint15 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint15
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint15(v EditProjectEnv200JSONResponseBodyContentHint15) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint16 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint16
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint16() (EditProjectEnv200JSONResponseBodyContentHint16, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint16
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint16 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint16
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint16(v EditProjectEnv200JSONResponseBodyContentHint16) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint16 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint16
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint16(v EditProjectEnv200JSONResponseBodyContentHint16) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t EditProjectEnv200JSONResponseBody_ContentHint) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyTarget0 returns the union data inside the EditProjectEnv200JSONResponseBody_Target as a EditProjectEnv200JSONResponseBodyTarget0
-func (t EditProjectEnv200JSONResponseBody_Target) AsEditProjectEnv200JSONResponseBodyTarget0() (EditProjectEnv200JSONResponseBodyTarget0, error) {
-	var body EditProjectEnv200JSONResponseBodyTarget0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyTarget0 overwrites any union data inside the EditProjectEnv200JSONResponseBody_Target as the provided EditProjectEnv200JSONResponseBodyTarget0
-func (t *EditProjectEnv200JSONResponseBody_Target) FromEditProjectEnv200JSONResponseBodyTarget0(v EditProjectEnv200JSONResponseBodyTarget0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyTarget0 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_Target, using the provided EditProjectEnv200JSONResponseBodyTarget0
-func (t *EditProjectEnv200JSONResponseBody_Target) MergeEditProjectEnv200JSONResponseBodyTarget0(v EditProjectEnv200JSONResponseBodyTarget0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyTarget1 returns the union data inside the EditProjectEnv200JSONResponseBody_Target as a EditProjectEnv200JSONResponseBodyTarget1
-func (t EditProjectEnv200JSONResponseBody_Target) AsEditProjectEnv200JSONResponseBodyTarget1() (EditProjectEnv200JSONResponseBodyTarget1, error) {
-	var body EditProjectEnv200JSONResponseBodyTarget1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyTarget1 overwrites any union data inside the EditProjectEnv200JSONResponseBody_Target as the provided EditProjectEnv200JSONResponseBodyTarget1
-func (t *EditProjectEnv200JSONResponseBody_Target) FromEditProjectEnv200JSONResponseBodyTarget1(v EditProjectEnv200JSONResponseBodyTarget1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyTarget1 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_Target, using the provided EditProjectEnv200JSONResponseBodyTarget1
-func (t *EditProjectEnv200JSONResponseBody_Target) MergeEditProjectEnv200JSONResponseBodyTarget1(v EditProjectEnv200JSONResponseBodyTarget1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t EditProjectEnv200JSONResponseBody_Target) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *EditProjectEnv200JSONResponseBody_Target) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// RequestEditorFn is the function signature for the RequestEditor callback function
-type RequestEditorFn func(ctx context.Context, req *http.Request) error
-
-// Doer performs HTTP requests.
-//
-// The standard http.Client implements this interface.
-type HttpRequestDoer interface {
-	Do(req *http.Request) (*http.Response, error)
-}
-
-// Client which conforms to the OpenAPI3 specification for this service.
-type Client struct {
-	// The endpoint of the server conforming to this interface, with scheme,
-	// https://api.deepmap.com for example. This can contain a path relative
-	// to the server, such as https://api.deepmap.com/dev-test, and all the
-	// paths in the swagger spec will be appended to the server.
-	Server string
-
-	// Doer for performing requests, typically a *http.Client with any
-	// customized settings, such as certificate chains.
-	Client HttpRequestDoer
-
-	// A list of callbacks for modifying requests which are generated before sending over
-	// the network.
-	RequestEditors []RequestEditorFn
-}
-
-// ClientOption allows setting custom parameters during construction
-type ClientOption func(*Client) error
-
-// Creates a new Client, with reasonable defaults
-func NewClient(server string, opts ...ClientOption) (*Client, error) {
-	// create a client with sane default values
-	client := Client{
-		Server: server,
-	}
-	// mutate client and add all optional params
-	for _, o := range opts {
-		if err := o(&client); err != nil {
-			return nil, err
-		}
-	}
-	// ensure the server URL always has a trailing slash
-	if !strings.HasSuffix(client.Server, "/") {
-		client.Server += "/"
-	}
-	// create httpClient, if not already present
-	if client.Client == nil {
-		client.Client = &http.Client{}
-	}
-	return &client, nil
-}
-
-// WithHTTPClient allows overriding the default Doer, which is
-// automatically created using http.Client. This is useful for tests.
-func WithHTTPClient(doer HttpRequestDoer) ClientOption {
-	return func(c *Client) error {
-		c.Client = doer
-		return nil
-	}
-}
-
-// WithRequestEditorFn allows setting up a callback function, which will be
-// called right before sending the request. This can be used to mutate the request.
-func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
-	return func(c *Client) error {
-		c.RequestEditors = append(c.RequestEditors, fn)
-		return nil
-	}
-}
-
-// The interface specification for the client above.
-type ClientInterface interface {
-
-	// ArchiveAiGatewayBudget Archive AI Gateway budget
-	//
-	// Archive a team-, project-, or user-scope AI Gateway budget.
-	//
-	// Corresponds with DELETE /ai-gateway/budgets (the `ArchiveAiGatewayBudget` operationId).
-	ArchiveAiGatewayBudget(ctx context.Context, params *ArchiveAiGatewayBudgetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpsertAiGatewayBudgetWithBody Upsert AI Gateway budget
-	//
-	// Create or update a team-, project-, or user-scope AI Gateway budget.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
-	UpsertAiGatewayBudgetWithBody(ctx context.Context, params *UpsertAiGatewayBudgetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpsertAiGatewayBudget Upsert AI Gateway budget
-	//
-	// Create or update a team-, project-, or user-scope AI Gateway budget.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
-	UpsertAiGatewayBudget(ctx context.Context, params *UpsertAiGatewayBudgetParams, body UpsertAiGatewayBudgetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ArchiveAiGatewayBudgetDefault Archive AI Gateway budget default
-	//
-	// Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
-	//
-	// Corresponds with DELETE /ai-gateway/budgets/defaults (the `ArchiveAiGatewayBudgetDefault` operationId).
-	ArchiveAiGatewayBudgetDefault(ctx context.Context, params *ArchiveAiGatewayBudgetDefaultParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpsertAiGatewayBudgetDefaultWithBody Upsert AI Gateway budget default
-	//
-	// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
-	UpsertAiGatewayBudgetDefaultWithBody(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpsertAiGatewayBudgetDefault Upsert AI Gateway budget default
-	//
-	// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
-	UpsertAiGatewayBudgetDefault(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, body UpsertAiGatewayBudgetDefaultJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAiGatewayBudgetDefaults List AI Gateway budget defaults
-	//
-	// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
-	//
-	// Corresponds with GET /ai-gateway/budgets/defaults/list (the `ListAiGatewayBudgetDefaults` operationId).
-	ListAiGatewayBudgetDefaults(ctx context.Context, params *ListAiGatewayBudgetDefaultsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAiGatewayBudgets List AI Gateway budgets
-	//
-	// List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
-	//
-	// Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
-	ListAiGatewayBudgets(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAiGatewayRule Delete rule
-	//
-	// Delete a routing rule (soft delete).
-	//
-	// Corresponds with DELETE /ai-gateway/rules (the `DeleteAiGatewayRule` operationId).
-	DeleteAiGatewayRule(ctx context.Context, params *DeleteAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAiGatewayRules List rules
-	//
-	// List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
-	//
-	// Corresponds with GET /ai-gateway/rules (the `ListAiGatewayRules` operationId).
-	ListAiGatewayRules(ctx context.Context, params *ListAiGatewayRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAiGatewayRule Update rule
-	//
-	// Update a routing rule (enabled, action, or description)
-	//
-	// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
-	UpdateAiGatewayRule(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAiGatewayRule Create rule
-	//
-	// Create a routing rule.
-	//
-	// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
-	CreateAiGatewayRule(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAiGatewayVirtualModelConfig Delete virtual model config
-	//
-	// Delete a virtual model config (soft delete).
-	//
-	// Corresponds with DELETE /ai-gateway/virtual-model-configs (the `DeleteAiGatewayVirtualModelConfig` operationId).
-	DeleteAiGatewayVirtualModelConfig(ctx context.Context, params *DeleteAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAiGatewayVirtualModelConfig Get virtual model config
-	//
-	// Get a virtual model config.
-	//
-	// Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
-	GetAiGatewayVirtualModelConfig(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAiGatewayVirtualModelConfig Update virtual model config
-	//
-	// Update a virtual model config.
-	//
-	// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
-	UpdateAiGatewayVirtualModelConfig(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAiGatewayVirtualModelConfig Create virtual model config
-	//
-	// Create a virtual model config (VMC).
-	//
-	// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
-	CreateAiGatewayVirtualModelConfig(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAiGatewayVirtualModelConfigs List virtual model configs
-	//
-	// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
-	//
-	// Corresponds with GET /ai-gateway/virtual-model-configs/list (the `ListAiGatewayVirtualModelConfigs` operationId).
-	ListAiGatewayVirtualModelConfigs(ctx context.Context, params *ListAiGatewayVirtualModelConfigsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAiGatewayVirtualModelConfigBySlug Delete virtual model config
-	//
-	// Delete a virtual model config by path slug (soft delete).
-	//
-	// Corresponds with DELETE /ai-gateway/virtual-model-configs/{vmcSlug} (the `DeleteAiGatewayVirtualModelConfigBySlug` operationId).
-	DeleteAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *DeleteAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAiGatewayVirtualModelConfigBySlug Get virtual model config
-	//
-	// Get a virtual model config by path slug.
-	//
-	// Corresponds with GET /ai-gateway/virtual-model-configs/{vmcSlug} (the `GetAiGatewayVirtualModelConfigBySlug` operationId).
-	GetAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *GetAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAiGatewayVirtualModelConfigBySlug Update virtual model config
-	//
-	// Update a virtual model config by path slug.
-	//
-	// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-	UpdateAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchUrlProtectionBypassWithBody Update the protection bypass for a URL
-	//
-	// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-	PatchUrlProtectionBypassWithBody(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchUrlProtectionBypass Update the protection bypass for a URL
-	//
-	// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-	PatchUrlProtectionBypass(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, body PatchUrlProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateApiKeysWithBody performs a POST /api-keys (the `CreateApiKeys` operationId) request,
-	// with any type of body and a specified content type.
-	CreateApiKeysWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateApiKeys performs a POST /api-keys (the `CreateApiKeys` operationId) request.
-	// Takes a body of the `application/json` content type.
-	CreateApiKeys(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateApiKeyQuotaWithBody Update an AI Gateway API key budget
-	//
-	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
-	UpdateApiKeyQuotaWithBody(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateApiKeyQuota Update an AI Gateway API key budget
-	//
-	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
-	UpdateApiKeyQuota(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainsRecordsByRecordId performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
-	GetDomainsRecordsByRecordId(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceDomainsByDomainRecords performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
-	ReplaceDomainsByDomainRecords(ctx context.Context, domain string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AcceptProjectTransferRequestWithBody Accept project transfer request
-	//
-	// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
-	AcceptProjectTransferRequestWithBody(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AcceptProjectTransferRequest Accept project transfer request
-	//
-	// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
-	AcceptProjectTransferRequest(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, body AcceptProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectTransferRequestWithBody Create project transfer request
-	//
-	// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-	CreateProjectTransferRequestWithBody(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectTransferRequest Create project transfer request
-	//
-	// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-	CreateProjectTransferRequest(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, body CreateProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSpeedInsightsToggleWithBody performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request,
-	// with any type of body and a specified content type.
-	CreateSpeedInsightsToggleWithBody(ctx context.Context, params *CreateSpeedInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSpeedInsightsToggle performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request.
-	// Takes a body of the `application/json` content type.
-	CreateSpeedInsightsToggle(ctx context.Context, params *CreateSpeedInsightsToggleParams, body CreateSpeedInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateStorageStoresBlobWithBody Create a Blob store
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-	CreateStorageStoresBlobWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateStorageStoresBlob Create a Blob store
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-	CreateStorageStoresBlob(ctx context.Context, body CreateStorageStoresBlobJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteStorageStoresBlobById Delete a Blob store
-	//
-	// Corresponds with DELETE /storage/stores/blob/{id} (the `DeleteStorageStoresBlobById` operationId).
-	DeleteStorageStoresBlobById(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetStorageStoresById Get a store
-	//
-	// Corresponds with GET /storage/stores/{id} (the `GetStorageStoresById` operationId).
-	GetStorageStoresById(ctx context.Context, id string, params *GetStorageStoresByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAccessGroups List access groups for a team, project or member
-	//
-	// List access groups.
-	//
-	// Corresponds with GET /v1/access-groups (the `ListAccessGroups` operationId).
-	ListAccessGroups(ctx context.Context, params *ListAccessGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAccessGroupWithBody Creates an access group
-	//
-	// Allows to create an access group.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-	CreateAccessGroupWithBody(ctx context.Context, params *CreateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAccessGroup Creates an access group
-	//
-	// Allows to create an access group.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-	CreateAccessGroup(ctx context.Context, params *CreateAccessGroupParams, body CreateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAccessGroupProjectWithBody Create an access group project
-	//
-	// Allows creation of an access group project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/access-groups/{accessGroupIdOrName}/projects (the `CreateAccessGroupProject` operationId).
-	CreateAccessGroupProjectWithBody(ctx context.Context, accessGroupIdOrName string, params *CreateAccessGroupProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAccessGroupProject Create an access group project
-	//
-	// Allows creation of an access group project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/access-groups/{accessGroupIdOrName}/projects (the `CreateAccessGroupProject` operationId).
-	CreateAccessGroupProject(ctx context.Context, accessGroupIdOrName string, params *CreateAccessGroupProjectParams, body CreateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAccessGroupProject Delete an access group project
-	//
-	// Allows deletion of an access group project.
-	//
-	// Corresponds with DELETE /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `DeleteAccessGroupProject` operationId).
-	DeleteAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *DeleteAccessGroupProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReadAccessGroupProject Reads an access group project
-	//
-	// Allows reading an access group project.
-	//
-	// Corresponds with GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `ReadAccessGroupProject` operationId).
-	ReadAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *ReadAccessGroupProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAccessGroupProjectWithBody Update an access group project
-	//
-	// Allows update of an access group project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
-	UpdateAccessGroupProjectWithBody(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAccessGroupProject Update an access group project
-	//
-	// Allows update of an access group project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
-	UpdateAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, body UpdateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAccessGroup Deletes an access group
-	//
-	// Allows to delete an access group.
-	//
-	// Corresponds with DELETE /v1/access-groups/{idOrName} (the `DeleteAccessGroup` operationId).
-	DeleteAccessGroup(ctx context.Context, idOrName string, params *DeleteAccessGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReadAccessGroup Reads an access group
-	//
-	// Allows to read an access group.
-	//
-	// Corresponds with GET /v1/access-groups/{idOrName} (the `ReadAccessGroup` operationId).
-	ReadAccessGroup(ctx context.Context, idOrName string, params *ReadAccessGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAccessGroupWithBody Update an access group
-	//
-	// Allows to update an access group metadata.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
-	UpdateAccessGroupWithBody(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAccessGroup Update an access group
-	//
-	// Allows to update an access group metadata.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
-	UpdateAccessGroup(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, body UpdateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAccessGroupMembers List members of an access group
-	//
-	// Corresponds with GET /v1/access-groups/{idOrName}/members (the `ListAccessGroupMembers` operationId).
-	ListAccessGroupMembers(ctx context.Context, idOrName string, params *ListAccessGroupMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAccessGroupProjects List projects of an access group
-	//
-	// Corresponds with GET /v1/access-groups/{idOrName}/projects (the `ListAccessGroupProjects` operationId).
-	ListAccessGroupProjects(ctx context.Context, idOrName string, params *ListAccessGroupProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAiGatewayRouters List AI Gateway routers
-	//
-	// List the authenticated team's active and archived custom routers.
-	//
-	// Corresponds with GET /v1/ai-gateway/routers (the `ListAiGatewayRouters` operationId).
-	ListAiGatewayRouters(ctx context.Context, params *ListAiGatewayRoutersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BuyCreditsWithBody Purchase credits
-	//
-	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
-	BuyCreditsWithBody(ctx context.Context, params *BuyCreditsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BuyCredits Purchase credits
-	//
-	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
-	BuyCredits(ctx context.Context, params *BuyCreditsParams, body BuyCreditsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListBillingCharges List FOCUS billing charges
-	//
-	// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
-	//
-	// Corresponds with GET /v1/billing/charges (the `ListBillingCharges` operationId).
-	ListBillingCharges(ctx context.Context, params *ListBillingChargesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListContractCommitments List FOCUS contract commitments
-	//
-	// Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for a specified Vercel team. The response is streamed as newline-delimited JSON (JSONL). This endpoint is only applicable to Enterprise Vercel customers. An empty response is returned for non-Enterprise (Pro/Flex) customers.
-	//
-	// Corresponds with GET /v1/billing/contract-commitments (the `ListContractCommitments` operationId).
-	ListContractCommitments(ctx context.Context, params *ListContractCommitmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRedirectsWithBody Delete project-level redirects.
-	//
-	// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
-	DeleteRedirectsWithBody(ctx context.Context, params *DeleteRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRedirects Delete project-level redirects.
-	//
-	// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
-	DeleteRedirects(ctx context.Context, params *DeleteRedirectsParams, body DeleteRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRedirects Gets project-level redirects.
-	//
-	// Get the version history for a project's bulk redirects.
-	//
-	// Corresponds with GET /v1/bulk-redirects (the `GetRedirects` operationId).
-	GetRedirects(ctx context.Context, params *GetRedirectsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EditRedirectWithBody Edit a project-level redirect.
-	//
-	// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
-	EditRedirectWithBody(ctx context.Context, params *EditRedirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EditRedirect Edit a project-level redirect.
-	//
-	// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
-	EditRedirect(ctx context.Context, params *EditRedirectParams, body EditRedirectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StageRedirectsWithBody Stages new redirects for a project.
-	//
-	// Stages new redirects for a project and returns the new version.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
-	StageRedirectsWithBody(ctx context.Context, params *StageRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StageRedirects Stages new redirects for a project.
-	//
-	// Stages new redirects for a project and returns the new version.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
-	StageRedirects(ctx context.Context, params *StageRedirectsParams, body StageRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RestoreRedirectsWithBody Restore staged project-level redirects to their production version.
-	//
-	// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
-	RestoreRedirectsWithBody(ctx context.Context, params *RestoreRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RestoreRedirects Restore staged project-level redirects to their production version.
-	//
-	// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
-	RestoreRedirects(ctx context.Context, params *RestoreRedirectsParams, body RestoreRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVersions Get the version history for a project's redirects.
-	//
-	// Get the version history for a project's bulk redirects.
-	//
-	// Corresponds with GET /v1/bulk-redirects/versions (the `GetVersions` operationId).
-	GetVersions(ctx context.Context, params *GetVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateVersionWithBody Promote a staging version to production or restore a previous production version.
-	//
-	// Update a version by promoting staging to production or restoring a previous production version.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
-	UpdateVersionWithBody(ctx context.Context, params *UpdateVersionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateVersion Promote a staging version to production or restore a previous production version.
-	//
-	// Update a version by promoting staging to production or restoring a previous production version.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
-	UpdateVersion(ctx context.Context, params *UpdateVersionParams, body UpdateVersionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConnectorAuthorizationRequestWithBody Create a Connect authorization request
-	//
-	// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-	CreateConnectorAuthorizationRequestWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConnectorAuthorizationRequest Create a Connect authorization request
-	//
-	// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-	CreateConnectorAuthorizationRequest(ctx context.Context, connector string, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConnectorWithBody Create a connector
-	//
-	// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
-	CreateConnectorWithBody(ctx context.Context, params *CreateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConnector Create a connector
-	//
-	// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
-	CreateConnector(ctx context.Context, params *CreateConnectorParams, body CreateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteConnector Delete a connector
-	//
-	// Delete a connector, its project connections, and its installation records.
-	//
-	// Corresponds with DELETE /v1/connect/connectors/{connector} (the `DeleteConnector` operationId).
-	DeleteConnector(ctx context.Context, connector string, params *DeleteConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConnector Get a connector
-	//
-	// Get the connector by ID. Accepts a dashboard/team requester or a deployment's project OIDC token; project requesters may only read connectors linked to their project and environment.
-	//
-	// Corresponds with GET /v1/connect/connectors/{connector} (the `GetConnector` operationId).
-	GetConnector(ctx context.Context, connector string, params *GetConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EjectManagedConnector Eject a managed connector
-	//
-	// Disconnect a managed connector from its provider-side manager.
-	//
-	// Corresponds with POST /v1/connect/connectors/{connector}/managed/eject (the `EjectManagedConnector` operationId).
-	EjectManagedConnector(ctx context.Context, connector string, params *EjectManagedConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteConnectorProjectConnection Disconnect a connector from a project
-	//
-	// Disconnect a connector from a project.
-	//
-	// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId} (the `DeleteConnectorProjectConnection` operationId).
-	DeleteConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *DeleteConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConnectorProjectConnection Get a connector project connection
-	//
-	// Get the configuration that connects a connector to a project.
-	//
-	// Corresponds with GET /v1/connect/connectors/{connector}/projects/{projectId} (the `GetConnectorProjectConnection` operationId).
-	GetConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *GetConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpsertConnectorProjectConnectionWithBody Create or update a connector project connection
-	//
-	// Connect a connector to a project, or replace the environments on an existing project connection.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
-	UpsertConnectorProjectConnectionWithBody(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpsertConnectorProjectConnection Create or update a connector project connection
-	//
-	// Connect a connector to a project, or replace the environments on an existing project connection.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
-	UpsertConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, body UpsertConnectorProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceConnectorTriggerDestinationsWithBody Update connector trigger destinations
-	//
-	// Replace the full set of destinations that receive trigger requests for a connector.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
-	ReplaceConnectorTriggerDestinationsWithBody(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceConnectorTriggerDestinations Update connector trigger destinations
-	//
-	// Replace the full set of destinations that receive trigger requests for a connector.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
-	ReplaceConnectorTriggerDestinations(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, body ReplaceConnectorTriggerDestinationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListNetworks List Secure Compute networks
-	//
-	// Allows to list Secure Compute networks.
-	//
-	// Corresponds with GET /v1/connect/networks (the `ListNetworks` operationId).
-	ListNetworks(ctx context.Context, params *ListNetworksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateNetworkWithBody Create a Secure Compute network
-	//
-	// Allows to create a Secure Compute network.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
-	CreateNetworkWithBody(ctx context.Context, params *CreateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateNetwork Create a Secure Compute network
-	//
-	// Allows to create a Secure Compute network.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
-	CreateNetwork(ctx context.Context, params *CreateNetworkParams, body CreateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteNetwork Delete a Secure Compute network
-	//
-	// Allows to delete a Secure Compute network.
-	//
-	// Corresponds with DELETE /v1/connect/networks/{networkId} (the `DeleteNetwork` operationId).
-	DeleteNetwork(ctx context.Context, networkId string, params *DeleteNetworkParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReadNetwork Read a Secure Compute network
-	//
-	// Allows to read a Secure Compute network.
-	//
-	// Corresponds with GET /v1/connect/networks/{networkId} (the `ReadNetwork` operationId).
-	ReadNetwork(ctx context.Context, networkId string, params *ReadNetworkParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateNetworkWithBody Update a Secure Compute network
-	//
-	// Allows to update a Secure Compute network.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
-	UpdateNetworkWithBody(ctx context.Context, networkId string, params *UpdateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateNetwork Update a Secure Compute network
-	//
-	// Allows to update a Secure Compute network.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
-	UpdateNetwork(ctx context.Context, networkId string, params *UpdateNetworkParams, body UpdateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConnectorTokenWithBody Get a Connect token
-	//
-	// Get an access token for a connector identified by the path parameter and scoped to the requester.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-	GetConnectorTokenWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConnectorToken Get a Connect token
-	//
-	// Get an access token for a connector identified by the path parameter and scoped to the requester.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-	GetConnectorToken(ctx context.Context, connector string, body GetConnectorTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAllChecks Retrieve a list of all checks
-	//
-	// List all of the checks created for a deployment.
-	//
-	// Corresponds with GET /v1/deployments/{deploymentId}/checks (the `GetAllChecks` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	GetAllChecks(ctx context.Context, deploymentId string, params *GetAllChecksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateCheckWithBody Creates a new Check
-	//
-	// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	CreateCheckWithBody(ctx context.Context, deploymentId string, params *CreateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateCheck Creates a new Check
-	//
-	// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	CreateCheck(ctx context.Context, deploymentId string, params *CreateCheckParams, body CreateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetCheck Get a single check
-	//
-	// Return a detailed response for a single check.
-	//
-	// Corresponds with GET /v1/deployments/{deploymentId}/checks/{checkId} (the `GetCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	GetCheck(ctx context.Context, deploymentId string, checkId string, params *GetCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateCheckWithBody Update a check
-	//
-	// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateCheckWithBody(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateCheck Update a check
-	//
-	// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateCheck(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, body UpdateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RerequestCheck Rerequest a check
-	//
-	// Rerequest a selected check that has failed.
-	//
-	// Corresponds with POST /v1/deployments/{deploymentId}/checks/{checkId}/rerequest (the `RerequestCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	RerequestCheck(ctx context.Context, deploymentId string, checkId string, params *RerequestCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDeploymentFeatureFlags Retrieve the feature flags of a deployment
-	//
-	// Retrieve the feature flags of a deployment.
-	//
-	// Corresponds with GET /v1/deployments/{deploymentId}/feature-flags (the `GetDeploymentFeatureFlags` operationId).
-	GetDeploymentFeatureFlags(ctx context.Context, deploymentId string, params *GetDeploymentFeatureFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateIntegrationDeploymentActionWithBody Update deployment integration action
-	//
-	// Updates the deployment integration action for the specified integration installation.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
-	UpdateIntegrationDeploymentActionWithBody(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateIntegrationDeploymentAction Update deployment integration action
-	//
-	// Updates the deployment integration action for the specified integration installation.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
-	UpdateIntegrationDeploymentAction(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, body UpdateIntegrationDeploymentActionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateRecordWithBody Update an existing DNS record
-	//
-	// Updates an existing DNS record for a domain name.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
-	UpdateRecordWithBody(ctx context.Context, recordId string, params *UpdateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateRecord Update an existing DNS record
-	//
-	// Updates an existing DNS record for a domain name.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
-	UpdateRecord(ctx context.Context, recordId string, params *UpdateRecordParams, body UpdateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainProjectDomains List Project Domains by Apex Domain
-	//
-	// List all project domains associated with an apex domain owned by the authenticated account.
-	//
-	// Corresponds with GET /v1/domains/{domain}/project-domains (the `GetDomainProjectDomains` operationId).
-	GetDomainProjectDomains(ctx context.Context, domain string, params *GetDomainProjectDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDrains Retrieve a list of all Drains
-	//
-	// Allows to retrieve the list of Drains of the authenticated team.
-	//
-	// Corresponds with GET /v1/drains (the `GetDrains` operationId).
-	GetDrains(ctx context.Context, params *GetDrainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateDrainWithBody Create a new Drain
-	//
-	// Create a new Drain with the provided configuration.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
-	CreateDrainWithBody(ctx context.Context, params *CreateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateDrain Create a new Drain
-	//
-	// Create a new Drain with the provided configuration.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
-	CreateDrain(ctx context.Context, params *CreateDrainParams, body CreateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// TestDrainWithBody Validate Drain delivery configuration
-	//
-	// Validate the delivery configuration of a Drain using sample events.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
-	TestDrainWithBody(ctx context.Context, params *TestDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// TestDrain Validate Drain delivery configuration
-	//
-	// Validate the delivery configuration of a Drain using sample events.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
-	TestDrain(ctx context.Context, params *TestDrainParams, body TestDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteDrain Delete a drain
-	//
-	// Delete a specific Drain by passing the drain id in the URL.
-	//
-	// Corresponds with DELETE /v1/drains/{id} (the `DeleteDrain` operationId).
-	DeleteDrain(ctx context.Context, id string, params *DeleteDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDrain Find a Drain by id
-	//
-	// Get the information for a specific Drain by passing the drain id in the URL.
-	//
-	// Corresponds with GET /v1/drains/{id} (the `GetDrain` operationId).
-	GetDrain(ctx context.Context, id string, params *GetDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDrainWithBody Update an existing Drain
-	//
-	// Update the configuration of an existing drain.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
-	UpdateDrainWithBody(ctx context.Context, id string, params *UpdateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDrain Update an existing Drain
-	//
-	// Update the configuration of an existing drain.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
-	UpdateDrain(ctx context.Context, id string, params *UpdateDrainParams, body UpdateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DangerouslyDeleteBySrcImagesWithBody Dangerously delete by source image
-	//
-	// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
-	DangerouslyDeleteBySrcImagesWithBody(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DangerouslyDeleteBySrcImages Dangerously delete by source image
-	//
-	// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
-	DangerouslyDeleteBySrcImages(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, body DangerouslyDeleteBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DangerouslyDeleteByTagsWithBody Dangerously delete by tag
-	//
-	// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
-	DangerouslyDeleteByTagsWithBody(ctx context.Context, params *DangerouslyDeleteByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DangerouslyDeleteByTags Dangerously delete by tag
-	//
-	// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
-	DangerouslyDeleteByTags(ctx context.Context, params *DangerouslyDeleteByTagsParams, body DangerouslyDeleteByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InvalidateBySrcImagesWithBody Invalidate by source image
-	//
-	// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
-	InvalidateBySrcImagesWithBody(ctx context.Context, params *InvalidateBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InvalidateBySrcImages Invalidate by source image
-	//
-	// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
-	InvalidateBySrcImages(ctx context.Context, params *InvalidateBySrcImagesParams, body InvalidateBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InvalidateByTagsWithBody Invalidate by tag
-	//
-	// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
-	InvalidateByTagsWithBody(ctx context.Context, params *InvalidateByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InvalidateByTags Invalidate by tag
-	//
-	// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
-	InvalidateByTags(ctx context.Context, params *InvalidateByTagsParams, body InvalidateByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteSharedEnvVariableWithBody Delete one or more Env Var
-	//
-	// Deletes one or many Shared Environment Variables for a given team.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
-	DeleteSharedEnvVariableWithBody(ctx context.Context, params *DeleteSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteSharedEnvVariable Delete one or more Env Var
-	//
-	// Deletes one or many Shared Environment Variables for a given team.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
-	DeleteSharedEnvVariable(ctx context.Context, params *DeleteSharedEnvVariableParams, body DeleteSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListSharedEnvVariable Lists all Shared Environment Variables for a team
-	//
-	// Lists all Shared Environment Variables for a team, taking into account optional filters.
-	//
-	// Corresponds with GET /v1/env (the `ListSharedEnvVariable` operationId).
-	ListSharedEnvVariable(ctx context.Context, params *ListSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateSharedEnvVariableWithBody Updates one or more shared environment variables
-	//
-	// Updates a given Shared Environment Variable for a Team.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
-	UpdateSharedEnvVariableWithBody(ctx context.Context, params *UpdateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateSharedEnvVariable Updates one or more shared environment variables
-	//
-	// Updates a given Shared Environment Variable for a Team.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
-	UpdateSharedEnvVariable(ctx context.Context, params *UpdateSharedEnvVariableParams, body UpdateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSharedEnvVariableWithBody Create one or more shared environment variables
-	//
-	// Creates shared environment variable(s) for a team.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
-	CreateSharedEnvVariableWithBody(ctx context.Context, params *CreateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSharedEnvVariable Create one or more shared environment variables
-	//
-	// Creates shared environment variable(s) for a team.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
-	CreateSharedEnvVariable(ctx context.Context, params *CreateSharedEnvVariableParams, body CreateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSharedEnvVar Retrieve the decrypted value of a Shared Environment Variable by id.
-	//
-	// Corresponds with GET /v1/env/{id} (the `GetSharedEnvVar` operationId).
-	GetSharedEnvVar(ctx context.Context, id string, params *GetSharedEnvVarParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UnlinkSharedEnvVariable Disconnects a shared environment variable for a given project
-	//
-	// Corresponds with PATCH /v1/env/{id}/unlink/{projectId} (the `UnlinkSharedEnvVariable` operationId).
-	UnlinkSharedEnvVariable(ctx context.Context, id string, projectId string, params *UnlinkSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListEventTypes List Event Types
-	//
-	// Returns the list of user-facing event types with descriptions.
-	//
-	// Corresponds with GET /v1/events/types (the `ListEventTypes` operationId).
-	ListEventTypes(ctx context.Context, params *ListEventTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigs Get Global Configs
-	//
-	// Returns all Global Configs.
-	//
-	// Corresponds with GET /v1/global-config (the `GetEdgeConfigs` operationId).
-	GetEdgeConfigs(ctx context.Context, params *GetEdgeConfigsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateEdgeConfigWithBody Create a Global Config
-	//
-	// Creates a Global Config.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
-	CreateEdgeConfigWithBody(ctx context.Context, params *CreateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateEdgeConfig Create a Global Config
-	//
-	// Creates a Global Config.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
-	CreateEdgeConfig(ctx context.Context, params *CreateEdgeConfigParams, body CreateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteEdgeConfig Delete a Global Config
-	//
-	// Delete a Global Config by id.
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId} (the `DeleteEdgeConfig` operationId).
-	DeleteEdgeConfig(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfig Get a Global Config
-	//
-	// Returns a Global Config.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId} (the `GetEdgeConfig` operationId).
-	GetEdgeConfig(ctx context.Context, edgeConfigId string, params *GetEdgeConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateEdgeConfigWithBody Update a Global Config
-	//
-	// Updates a Global Config.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
-	UpdateEdgeConfigWithBody(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateEdgeConfig Update a Global Config
-	//
-	// Updates a Global Config.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
-	UpdateEdgeConfig(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, body UpdateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigBackups Get Global Config backups
-	//
-	// Returns backups of a Global Config.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/backups (the `GetEdgeConfigBackups` operationId).
-	GetEdgeConfigBackups(ctx context.Context, edgeConfigId string, params *GetEdgeConfigBackupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigBackup Get Global Config backup
-	//
-	// Retrieves a specific version of a Global Config from backup storage. The `user` field is only included when the caller can list team members.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} (the `GetEdgeConfigBackup` operationId).
-	GetEdgeConfigBackup(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *GetEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RestoreEdgeConfigBackup Restore Global Config backup
-	//
-	// Restores a Global Config backup.
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore (the `RestoreEdgeConfigBackup` operationId).
-	RestoreEdgeConfigBackup(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *RestoreEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigItem Get a Global Config item
-	//
-	// Returns a specific Global Config Item.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} (the `GetEdgeConfigItem` operationId).
-	GetEdgeConfigItem(ctx context.Context, edgeConfigId string, edgeConfigItemKey string, params *GetEdgeConfigItemParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigItems Get Global Config items
-	//
-	// Returns all items of a Global Config.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/items (the `GetEdgeConfigItems` operationId).
-	GetEdgeConfigItems(ctx context.Context, edgeConfigId string, params *GetEdgeConfigItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchEdgeConfigItemsWithBody Update Global Config items in batch
-	//
-	// Update multiple Global Config Items in batch.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-	PatchEdgeConfigItemsWithBody(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchEdgeConfigItems Update Global Config items in batch
-	//
-	// Update multiple Global Config Items in batch.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-	PatchEdgeConfigItems(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteEdgeConfigSchema Delete a Global Config's schema
-	//
-	// Deletes the schema of existing Global Config.
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId}/schema (the `DeleteEdgeConfigSchema` operationId).
-	DeleteEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigSchema Get Global Config schema
-	//
-	// Returns the schema of a Global Config.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/schema (the `GetEdgeConfigSchema` operationId).
-	GetEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *GetEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchEdgeConfigSchemaWithBody Update Global Config schema
-	//
-	// Update a Global Config's schema.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-	PatchEdgeConfigSchemaWithBody(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchEdgeConfigSchema Update Global Config schema
-	//
-	// Update a Global Config's schema.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-	PatchEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateEdgeConfigTokenWithBody Create a Global Config token
-	//
-	// Adds a token to an existing Global Config.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-	CreateEdgeConfigTokenWithBody(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateEdgeConfigToken Create a Global Config token
-	//
-	// Adds a token to an existing Global Config.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-	CreateEdgeConfigToken(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigToken Get Global Config token meta data
-	//
-	// Return meta data about a Global Config token.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
-	GetEdgeConfigToken(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteEdgeConfigTokensWithBody Delete one or more Global Config tokens
-	//
-	// Deletes one or more tokens of an existing Global Config.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-	DeleteEdgeConfigTokensWithBody(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteEdgeConfigTokens Delete one or more Global Config tokens
-	//
-	// Deletes one or more tokens of an existing Global Config.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-	DeleteEdgeConfigTokens(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetEdgeConfigTokens Get all tokens of a Global Config
-	//
-	// Returns all tokens of a Global Config.
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
-	GetEdgeConfigTokens(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateInstallationWithBody Update Installation
-	//
-	// This endpoint updates an integration installation.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-	UpdateInstallationWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateInstallation Update Installation
-	//
-	// This endpoint updates an integration installation.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-	UpdateInstallation(ctx context.Context, integrationConfigurationId string, body UpdateInstallationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAccountInfo Get Account Information
-	//
-	// Fetches the best account or user’s contact info.
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/account (the `GetAccountInfo` operationId).
-	GetAccountInfo(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SubmitBillingDataWithBody Submit Billing Data
-	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-	SubmitBillingDataWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SubmitBillingData Submit Billing Data
-	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-	SubmitBillingData(ctx context.Context, integrationConfigurationId string, body SubmitBillingDataJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SubmitPrepaymentBalancesWithBody Submit Prepayment Balances
-	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-	SubmitPrepaymentBalancesWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SubmitPrepaymentBalances Submit Prepayment Balances
-	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-	SubmitPrepaymentBalances(ctx context.Context, integrationConfigurationId string, body SubmitPrepaymentBalancesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// FinalizeInstallation Finalize Installation
-	//
-	// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
-	FinalizeInstallation(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SubmitInvoiceWithBody Submit Invoice
-	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-	SubmitInvoiceWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SubmitInvoice Submit Invoice
-	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-	SubmitInvoice(ctx context.Context, integrationConfigurationId string, body SubmitInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetInvoice Get Invoice
-	//
-	// Get Invoice details and status for a given invoice ID.<br/> <br/> See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} (the `GetInvoice` operationId).
-	GetInvoice(ctx context.Context, integrationConfigurationId string, invoiceId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateInvoiceWithBody Invoice Actions
-	//
-	// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-	UpdateInvoiceWithBody(ctx context.Context, integrationConfigurationId string, invoiceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateInvoice Invoice Actions
-	//
-	// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-	UpdateInvoice(ctx context.Context, integrationConfigurationId string, invoiceId string, body UpdateInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RevokeInstallationCredentialWithBody Revoke Installation Credential
-	//
-	// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-	RevokeInstallationCredentialWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RevokeInstallationCredential Revoke Installation Credential
-	//
-	// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-	RevokeInstallationCredential(ctx context.Context, integrationConfigurationId string, body RevokeInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RotateInstallationCredentialWithBody Rotate Installation Credential
-	//
-	// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-	RotateInstallationCredentialWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RotateInstallationCredential Rotate Installation Credential
-	//
-	// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-	RotateInstallationCredential(ctx context.Context, integrationConfigurationId string, body RotateInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateEventWithBody Create Event
-	//
-	// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-	CreateEventWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateEvent Create Event
-	//
-	// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-	CreateEvent(ctx context.Context, integrationConfigurationId string, body CreateEventJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetMember Get Member Information
-	//
-	// Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/member/{memberId} (the `GetMember` operationId).
-	GetMember(ctx context.Context, integrationConfigurationId string, memberId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateResourceSecretsWithBody Deprecated: true. Update Resource Secrets (Deprecated)
-	//
-	// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateResourceSecretsWithBody(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateResourceSecrets Deprecated: true. Update Resource Secrets (Deprecated)
-	//
-	// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateResourceSecrets(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, body UpdateResourceSecretsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetIntegrationResources Get Integration Resources
-	//
-	// Get all resources for a given installation ID.
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources (the `GetIntegrationResources` operationId).
-	GetIntegrationResources(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteIntegrationResource Delete Integration Resource
-	//
-	// Delete a resource owned by the selected installation ID.
-	//
-	// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `DeleteIntegrationResource` operationId).
-	DeleteIntegrationResource(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetIntegrationResource Get Integration Resource
-	//
-	// Get a resource by its partner ID.
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `GetIntegrationResource` operationId).
-	GetIntegrationResource(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateResourceWithBody Update Resource
-	//
-	// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
-	UpdateResourceWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateResource Update Resource
-	//
-	// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
-	UpdateResource(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ImportResourceWithBody Import Resource
-	//
-	// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
-	ImportResourceWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ImportResource Import Resource
-	//
-	// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
-	ImportResource(ctx context.Context, integrationConfigurationId string, resourceId string, body ImportResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig Get the data of a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig Get the data of a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-	//
-	// Corresponds with HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBody Push data into a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig Push data into a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx context.Context, integrationConfigurationId string, resourceId string, body ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBody Create one or multiple experimentation items
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
-	CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems Create one or multiple experimentation items
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
-	CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(ctx context.Context, integrationConfigurationId string, resourceId string, body CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId Delete an existing experimentation item
-	//
-	// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-	DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBody Patch an existing experimentation item
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-	UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId Patch an existing experimentation item
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-	UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, body UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateResourceSecretsByIdWithBody Update Resource Secrets
-	//
-	// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
-	UpdateResourceSecretsByIdWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateResourceSecretsById Update Resource Secrets
-	//
-	// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
-	UpdateResourceSecretsById(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceSecretsByIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteConfiguration Delete an integration configuration
-	//
-	// Allows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables.
-	//
-	// Corresponds with DELETE /v1/integrations/configuration/{id} (the `DeleteConfiguration` operationId).
-	DeleteConfiguration(ctx context.Context, id string, params *DeleteConfigurationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConfiguration Retrieve an integration configuration
-	//
-	// Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
-	//
-	// Corresponds with GET /v1/integrations/configuration/{id} (the `GetConfiguration` operationId).
-	GetConfiguration(ctx context.Context, id string, params *GetConfigurationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConfigurationProducts List products for integration configuration
-	//
-	// Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
-	//
-	// Corresponds with GET /v1/integrations/configuration/{id}/products (the `GetConfigurationProducts` operationId).
-	GetConfigurationProducts(ctx context.Context, id string, params *GetConfigurationProductsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConfigurations Get configurations for the authenticated user or team
-	//
-	// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
-	//
-	// Corresponds with GET /v1/integrations/configurations (the `GetConfigurations` operationId).
-	GetConfigurations(ctx context.Context, params *GetConfigurationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GitNamespaces List git namespaces by provider
-	//
-	// Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
-	//
-	// Corresponds with GET /v1/integrations/git-namespaces (the `GitNamespaces` operationId).
-	GitNamespaces(ctx context.Context, params *GitNamespacesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ConnectIntegrationResourceToProjectWithBody Connect integration resource to project
-	//
-	// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
-	ConnectIntegrationResourceToProjectWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ConnectIntegrationResourceToProject Connect integration resource to project
-	//
-	// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
-	ConnectIntegrationResourceToProject(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, body ConnectIntegrationResourceToProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBillingPlans List integration billing plans
-	//
-	// Get a list of billing plans for an integration and product.
-	//
-	// Corresponds with GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans (the `GetBillingPlans` operationId).
-	GetBillingPlans(ctx context.Context, integrationIdOrSlug string, productIdOrSlug string, params *GetBillingPlansParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteIntegrationLogDrain Deletes the Integration log drain with the provided `id` (deprecated)
-	//
-	// Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
-	//
-	// Corresponds with DELETE /v1/integrations/log-drains/{id} (the `DeleteIntegrationLogDrain` operationId).
-	DeleteIntegrationLogDrain(ctx context.Context, id string, params *DeleteIntegrationLogDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SearchRepo List git repositories linked to namespace by provider
-	//
-	// Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
-	//
-	// Corresponds with GET /v1/integrations/search-repo (the `SearchRepo` operationId).
-	SearchRepo(ctx context.Context, params *SearchRepoParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ExchangeSsoTokenWithBody SSO Token Exchange
-	//
-	// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
-	ExchangeSsoTokenWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ExchangeSsoToken SSO Token Exchange
-	//
-	// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
-	ExchangeSsoToken(ctx context.Context, body ExchangeSsoTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListKmsIssuers List issuers
-	//
-	// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
-	//
-	// Corresponds with GET /v1/kms/issuers (the `ListKmsIssuers` operationId).
-	ListKmsIssuers(ctx context.Context, params *ListKmsIssuersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateKmsIssuerWithBody Create an issuer
-	//
-	// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
-	CreateKmsIssuerWithBody(ctx context.Context, params *CreateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateKmsIssuer Create an issuer
-	//
-	// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
-	CreateKmsIssuer(ctx context.Context, params *CreateKmsIssuerParams, body CreateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteKmsIssuer Delete an issuer
-	//
-	// Delete a KMS issuer and its signing keys.
-	//
-	// Corresponds with DELETE /v1/kms/issuers/{issuerId} (the `DeleteKmsIssuer` operationId).
-	DeleteKmsIssuer(ctx context.Context, issuerId string, params *DeleteKmsIssuerParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetKmsIssuer Get an issuer
-	//
-	// Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
-	//
-	// Corresponds with GET /v1/kms/issuers/{issuerId} (the `GetKmsIssuer` operationId).
-	GetKmsIssuer(ctx context.Context, issuerId string, params *GetKmsIssuerParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateKmsIssuerWithBody Update an issuer
-	//
-	// Update a KMS issuer's name or claims schema.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
-	UpdateKmsIssuerWithBody(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateKmsIssuer Update an issuer
-	//
-	// Update a KMS issuer's name or claims schema.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
-	UpdateKmsIssuer(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, body UpdateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateKmsSigningKeyWithBody Create a signing key
-	//
-	// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
-	CreateKmsSigningKeyWithBody(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateKmsSigningKey Create a signing key
-	//
-	// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
-	CreateKmsSigningKey(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, body CreateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ActivateKmsSigningKeyWithBody Activate a signing key
-	//
-	// Activate a pending signing key so the issuer starts signing with it.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
-	ActivateKmsSigningKeyWithBody(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ActivateKmsSigningKey Activate a signing key
-	//
-	// Activate a pending signing key so the issuer starts signing with it.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
-	ActivateKmsSigningKey(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, body ActivateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RevokeKmsSigningKey Revoke a signing key
-	//
-	// Immediately revoke a signing key that is already scheduled for revocation.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke (the `RevokeKmsSigningKey` operationId).
-	RevokeKmsSigningKey(ctx context.Context, issuerId string, keyId string, params *RevokeKmsSigningKeyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateKmsIssuerPolicyWithBody Create an issuer policy
-	//
-	// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
-	CreateKmsIssuerPolicyWithBody(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateKmsIssuerPolicy Create an issuer policy
-	//
-	// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
-	CreateKmsIssuerPolicy(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, body CreateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteKmsIssuerPolicy Delete an issuer policy
-	//
-	// Remove a policy from a KMS issuer.
-	//
-	// Corresponds with DELETE /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `DeleteKmsIssuerPolicy` operationId).
-	DeleteKmsIssuerPolicy(ctx context.Context, issuerId string, kind DeleteKmsIssuerPolicyParamsKind, policyKey string, params *DeleteKmsIssuerPolicyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateKmsIssuerPolicyWithBody Update an issuer policy
-	//
-	// Update an existing KMS issuer policy's environments or token claims.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
-	UpdateKmsIssuerPolicyWithBody(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateKmsIssuerPolicy Update an issuer policy
-	//
-	// Update an existing KMS issuer policy's environments or token claims.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
-	UpdateKmsIssuerPolicy(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, body UpdateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SignKmsMessageWithBody Sign a message
-	//
-	// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
-	SignKmsMessageWithBody(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SignKmsMessage Sign a message
-	//
-	// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
-	SignKmsMessage(ctx context.Context, issuerId string, body SignKmsMessageJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SignKmsTokenWithBody Sign a token
-	//
-	// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
-	SignKmsTokenWithBody(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SignKmsToken Sign a token
-	//
-	// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
-	SignKmsToken(ctx context.Context, issuerId string, body SignKmsTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAllLogDrains Retrieves a list of all the Log Drains (deprecated)
-	//
-	// Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
-	//
-	// Corresponds with GET /v1/log-drains (the `GetAllLogDrains` operationId).
-	GetAllLogDrains(ctx context.Context, params *GetAllLogDrainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConfigurableLogDrainWithBody Creates a Configurable Log Drain (deprecated)
-	//
-	// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
-	CreateConfigurableLogDrainWithBody(ctx context.Context, params *CreateConfigurableLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConfigurableLogDrain Creates a Configurable Log Drain (deprecated)
-	//
-	// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
-	CreateConfigurableLogDrain(ctx context.Context, params *CreateConfigurableLogDrainParams, body CreateConfigurableLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteConfigurableLogDrain Deletes a Configurable Log Drain (deprecated)
-	//
-	// Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
-	//
-	// Corresponds with DELETE /v1/log-drains/{id} (the `DeleteConfigurableLogDrain` operationId).
-	DeleteConfigurableLogDrain(ctx context.Context, id string, params *DeleteConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConfigurableLogDrain Retrieves a Configurable Log Drain (deprecated)
-	//
-	// Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
-	//
-	// Corresponds with GET /v1/log-drains/{id} (the `GetConfigurableLogDrain` operationId).
-	GetConfigurableLogDrain(ctx context.Context, id string, params *GetConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateMicrofrontendsGroupWithApplicationsWithBody Create a microfrontends group with applications
-	//
-	// Creates a microfrontends group and attaches multiple projects in a single request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
-	CreateMicrofrontendsGroupWithApplicationsWithBody(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateMicrofrontendsGroupWithApplications Create a microfrontends group with applications
-	//
-	// Creates a microfrontends group and attaches multiple projects in a single request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
-	CreateMicrofrontendsGroupWithApplications(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, body CreateMicrofrontendsGroupWithApplicationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetMicrofrontendsGroups List microfrontends groups
-	//
-	// Get the microfrontends group IDs for a team.
-	//
-	// Corresponds with GET /v1/microfrontends/groups (the `GetMicrofrontendsGroups` operationId).
-	GetMicrofrontendsGroups(ctx context.Context, params *GetMicrofrontendsGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetMicrofrontendsInGroup List projects in a microfrontends group
-	//
-	// Get the microfrontends for a given group ID.
-	//
-	// Corresponds with GET /v1/microfrontends/groups/{groupId}/projects (the `GetMicrofrontendsInGroup` operationId).
-	GetMicrofrontendsInGroup(ctx context.Context, groupId string, params *GetMicrofrontendsInGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetMicrofrontendsConfigForProject Get microfrontends config for a project
-	//
-	// Get the microfrontends config for a project by ID or name.
-	//
-	// Corresponds with GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config (the `GetMicrofrontendsConfigForProject` operationId).
-	GetMicrofrontendsConfigForProject(ctx context.Context, projectIdOrName string, params *GetMicrofrontendsConfigForProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetMicrofrontendsConfig Get microfrontends config for a deployment
-	//
-	// Get the microfrontends config for a deployment.
-	//
-	// Corresponds with GET /v1/microfrontends/{deploymentId}/config (the `GetMicrofrontendsConfig` operationId).
-	GetMicrofrontendsConfig(ctx context.Context, deploymentId string, params *GetMicrofrontendsConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListPrivateLinkEndpoints List PrivateLink endpoints
-	//
-	// Lists all PrivateLink endpoints for a project.
-	//
-	// Corresponds with GET /v1/networking/privatelink/endpoints (the `ListPrivateLinkEndpoints` operationId).
-	ListPrivateLinkEndpoints(ctx context.Context, params *ListPrivateLinkEndpointsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreatePrivateLinkEndpointWithBody Create a PrivateLink endpoint
-	//
-	// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
-	CreatePrivateLinkEndpointWithBody(ctx context.Context, params *CreatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreatePrivateLinkEndpoint Create a PrivateLink endpoint
-	//
-	// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
-	CreatePrivateLinkEndpoint(ctx context.Context, params *CreatePrivateLinkEndpointParams, body CreatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeletePrivateLinkEndpoint Delete a PrivateLink endpoint
-	//
-	// Deletes a PrivateLink endpoint. The endpoint is removed asynchronously. Repeating the request for an endpoint that is already being deleted retries its cleanup and also returns `204`. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Corresponds with DELETE /v1/networking/privatelink/endpoints/{endpointId} (the `DeletePrivateLinkEndpoint` operationId).
-	DeletePrivateLinkEndpoint(ctx context.Context, endpointId string, params *DeletePrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReadPrivateLinkEndpoint Read a PrivateLink endpoint
-	//
-	// Reads a single PrivateLink endpoint.
-	//
-	// Corresponds with GET /v1/networking/privatelink/endpoints/{endpointId} (the `ReadPrivateLinkEndpoint` operationId).
-	ReadPrivateLinkEndpoint(ctx context.Context, endpointId string, params *ReadPrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdatePrivateLinkEndpointWithBody Update a PrivateLink endpoint
-	//
-	// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
-	UpdatePrivateLinkEndpointWithBody(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdatePrivateLinkEndpoint Update a PrivateLink endpoint
-	//
-	// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
-	UpdatePrivateLinkEndpoint(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, body UpdatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetObservabilityConfigurationProjects Lists disabled Observability Plus projects
-	//
-	// Lists the projects that are currently configured as disabled for Observability Plus on a team.
-	//
-	// Corresponds with GET /v1/observability/manage/configuration/projects (the `GetObservabilityConfigurationProjects` operationId).
-	GetObservabilityConfigurationProjects(ctx context.Context, params *GetObservabilityConfigurationProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateObservabilityConfigurationProjectWithBody Updates a disabled Observability Plus project setting
-	//
-	// Updates whether Observability Plus is disabled for a single project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
-	UpdateObservabilityConfigurationProjectWithBody(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateObservabilityConfigurationProject Updates a disabled Observability Plus project setting
-	//
-	// Updates whether Observability Plus is disabled for a single project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
-	UpdateObservabilityConfigurationProject(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, body UpdateObservabilityConfigurationProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListOrganizations List Organizations
-	//
-	// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Corresponds with GET /v1/organizations (the `ListOrganizations` operationId).
-	ListOrganizations(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateOrganizationWithBody Create an Organization
-	//
-	// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
-	CreateOrganizationWithBody(ctx context.Context, params *CreateOrganizationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateOrganization Create an Organization
-	//
-	// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
-	CreateOrganization(ctx context.Context, params *CreateOrganizationParams, body CreateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetOrganization Get an Organization
-	//
-	// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Corresponds with GET /v1/organizations/{organizationId} (the `GetOrganization` operationId).
-	GetOrganization(ctx context.Context, organizationId string, params *GetOrganizationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateOrganizationWithBody Update an Organization
-	//
-	// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
-	UpdateOrganizationWithBody(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateOrganization Update an Organization
-	//
-	// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
-	UpdateOrganization(ctx context.Context, organizationId string, body UpdateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListOrganizationTeams List Organization Teams
-	//
-	// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Corresponds with GET /v1/organizations/{organizationId}/teams (the `ListOrganizationTeams` operationId).
-	ListOrganizationTeams(ctx context.Context, organizationId string, params *ListOrganizationTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddOrganizationTeamWithBody Create or Add Team to Organization
-	//
-	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
-	AddOrganizationTeamWithBody(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddOrganizationTeam Create or Add Team to Organization
-	//
-	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
-	AddOrganizationTeam(ctx context.Context, organizationId string, body AddOrganizationTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveOrganizationTeam Delete Team from Organization
-	//
-	// Delete a team from an organization. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Corresponds with DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} (the `RemoveOrganizationTeam` operationId).
-	RemoveOrganizationTeam(ctx context.Context, organizationId string, targetTeamId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectTrace Get a project trace by request ID
-	//
-	// Returns the OTEL trace for a given Vercel CLI request.
-	//
-	// Corresponds with GET /v1/projects/traces (the `GetProjectTrace` operationId).
-	GetProjectTrace(ctx context.Context, params *GetProjectTraceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateTraceSessionWithBody Create a trace session token for a deployment
-	//
-	// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
-	CreateTraceSessionWithBody(ctx context.Context, params *CreateTraceSessionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateTraceSession Create a trace session token for a deployment
-	//
-	// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
-	CreateTraceSession(ctx context.Context, params *CreateTraceSessionParams, body CreateTraceSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteProjectAvatar Delete a project avatar
-	//
-	// Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so the next production deploy can run auto-detection again. Does not delete the stored image.
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/avatar (the `DeleteProjectAvatar` operationId).
-	DeleteProjectAvatar(ctx context.Context, idOrName string, params *DeleteProjectAvatarParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UploadProjectAvatarWithBody Upload a project avatar
-	//
-	// Upload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared `@api/project-avatar-upload` helper so it can be reused by background workers.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/avatar (the `UploadProjectAvatar` operationId).
-	UploadProjectAvatarWithBody(ctx context.Context, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectBoxes Get project daemons
-	//
-	// List the daemons of a project.
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
-	GetProjectBoxes(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
-	//
-	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
-	PutProjectDaemonInstancesWithBody(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PutProjectDaemonInstances Override a project daemon's instance counts
-	//
-	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
-	PutProjectDaemonInstances(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RestartProjectDaemonInstance Force restart a project daemon instance
-	//
-	// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
-	RestartProjectDaemonInstance(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// MoveProjectDomainWithBody Move a project domain
-	//
-	// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
-	MoveProjectDomainWithBody(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// MoveProjectDomain Move a project domain
-	//
-	// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
-	MoveProjectDomain(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, body MoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BatchRemoveProjectEnvWithBody Batch remove environment variables
-	//
-	// Delete multiple environment variables for a given project in a single batch operation.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
-	BatchRemoveProjectEnvWithBody(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BatchRemoveProjectEnv Batch remove environment variables
-	//
-	// Delete multiple environment variables for a given project in a single batch operation.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
-	BatchRemoveProjectEnv(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, body BatchRemoveProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectEnv Retrieve the decrypted value of an environment variable of a project by id
-	//
-	// Retrieve the environment variable for a given project.
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/env/{id} (the `GetProjectEnv` operationId).
-	GetProjectEnv(ctx context.Context, idOrName string, id string, params *GetProjectEnvParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectMembers List project members
-	//
-	// Lists all members of a project.
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/members (the `GetProjectMembers` operationId).
-	GetProjectMembers(ctx context.Context, idOrName string, params *GetProjectMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddProjectMemberWithBody Adds a new member to a project.
-	//
-	// Adds a new member to the project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
-	AddProjectMemberWithBody(ctx context.Context, idOrName string, params *AddProjectMemberParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddProjectMember Adds a new member to a project.
-	//
-	// Adds a new member to the project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
-	AddProjectMember(ctx context.Context, idOrName string, params *AddProjectMemberParams, body AddProjectMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveProjectMember Remove a Project Member
-	//
-	// Remove a member from a specific project.
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/members/{uid} (the `RemoveProjectMember` operationId).
-	RemoveProjectMember(ctx context.Context, idOrName string, uid string, params *RemoveProjectMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectProtectionBypassWithBody Update Protection Bypass for Automation
-	//
-	// Update the deployment protection automation bypass for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
-	UpdateProjectProtectionBypassWithBody(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectProtectionBypass Update Protection Bypass for Automation
-	//
-	// Update the deployment protection automation bypass for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
-	UpdateProjectProtectionBypass(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, body UpdateProjectProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRollingRelease Get the active rolling release information for a project
-	//
-	// Return the Rolling Release for a project, regardless of whether the rollout is active, aborted, or completed. If the feature is enabled but no deployment has occurred yet, null will be returned.
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/rolling-release (the `GetRollingRelease` operationId).
-	GetRollingRelease(ctx context.Context, idOrName string, params *GetRollingReleaseParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ApproveRollingReleaseStageWithBody Update the active rolling release to the next stage for a project
-	//
-	// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
-	ApproveRollingReleaseStageWithBody(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ApproveRollingReleaseStage Update the active rolling release to the next stage for a project
-	//
-	// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
-	ApproveRollingReleaseStage(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, body ApproveRollingReleaseStageJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRollingReleaseBillingStatus Get rolling release billing status
-	//
-	// Get the Rolling Releases billing status for a project. The team level billing status is used to determine if the project can be configured for rolling releases.
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/rolling-release/billing (the `GetRollingReleaseBillingStatus` operationId).
-	GetRollingReleaseBillingStatus(ctx context.Context, idOrName string, params *GetRollingReleaseBillingStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CompleteRollingReleaseWithBody Complete the rolling release for the project
-	//
-	// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
-	CompleteRollingReleaseWithBody(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CompleteRollingRelease Complete the rolling release for the project
-	//
-	// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
-	CompleteRollingRelease(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, body CompleteRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRollingReleaseConfig Delete rolling release configuration
-	//
-	// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that's already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/rolling-release/config (the `DeleteRollingReleaseConfig` operationId).
-	DeleteRollingReleaseConfig(ctx context.Context, idOrName string, params *DeleteRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRollingReleaseConfig Get rolling release configuration
-	//
-	// Get the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/rolling-release/config (the `GetRollingReleaseConfig` operationId).
-	GetRollingReleaseConfig(ctx context.Context, idOrName string, params *GetRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateRollingReleaseConfig Update the rolling release settings for the project
-	//
-	// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: "abort" to roll back (default), or "complete" to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that's already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn't configured already.
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/rolling-release/config (the `UpdateRollingReleaseConfig` operationId).
-	UpdateRollingReleaseConfig(ctx context.Context, idOrName string, params *UpdateRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StartRollingReleaseWithBody Start a rolling release for the project
-	//
-	// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
-	StartRollingReleaseWithBody(ctx context.Context, idOrName string, params *StartRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StartRollingRelease Start a rolling release for the project
-	//
-	// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
-	StartRollingRelease(ctx context.Context, idOrName string, params *StartRollingReleaseParams, body StartRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateStaticIpsWithBody Configures Static IPs for a project
-	//
-	// Allows configuring Static IPs for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
-	UpdateStaticIpsWithBody(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateStaticIps Configures Static IPs for a project
-	//
-	// Allows configuring Static IPs for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
-	UpdateStaticIps(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, body UpdateStaticIpsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectTokenWithBody Generate a project OIDC token
-	//
-	// Generates an OIDC token for the project and returns it.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
-	GetProjectTokenWithBody(ctx context.Context, idOrName string, params *GetProjectTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectToken Generate a project OIDC token
-	//
-	// Generates an OIDC token for the project and returns it.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
-	GetProjectToken(ctx context.Context, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListFlags List flags
-	//
-	// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags (the `ListFlags` operationId).
-	ListFlags(ctx context.Context, projectIdOrName string, params *ListFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateFlagWithBody Create a flag
-	//
-	// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
-	CreateFlagWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateFlag Create a flag
-	//
-	// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
-	CreateFlag(ctx context.Context, projectIdOrName string, params *CreateFlagParams, body CreateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteFlag Delete a flag
-	//
-	// Permanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.
-	//
-	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `DeleteFlag` operationId).
-	DeleteFlag(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *DeleteFlagParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetFlag Get a flag
-	//
-	// Retrieve a specific feature flag by its ID or slug.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `GetFlag` operationId).
-	GetFlag(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *GetFlagParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFlagWithBody Update a flag
-	//
-	// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
-	UpdateFlagWithBody(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFlag Update a flag
-	//
-	// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
-	UpdateFlag(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, body UpdateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListFlagVersions List flag versions
-	//
-	// Lists flag versions for a given flag.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
-	ListFlagVersions(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListFlagLabels List attribute labels
-	//
-	// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
-	ListFlagLabels(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListFlagLabelCounts List attribute label counts
-	//
-	// List label counts for configured entity attributes, including empty ones.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
-	ListFlagLabelCounts(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// LookupFlagLabelsWithBody Look up attribute labels
-	//
-	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
-	LookupFlagLabelsWithBody(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// LookupFlagLabels Look up attribute labels
-	//
-	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
-	LookupFlagLabels(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSdkKeys Get all SDK keys
-	//
-	// Gets all SDK keys for a project.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `GetSdkKeys` operationId).
-	GetSdkKeys(ctx context.Context, projectIdOrName string, params *GetSdkKeysParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSdkKeyWithBody Create an SDK key
-	//
-	// Creates an SDK key.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
-	CreateSdkKeyWithBody(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSdkKey Create an SDK key
-	//
-	// Creates an SDK key.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
-	CreateSdkKey(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, body CreateSdkKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteSdkKey Delete an SDK key
-	//
-	// Deletes an SDK key.
-	//
-	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} (the `DeleteSdkKey` operationId).
-	DeleteSdkKey(ctx context.Context, projectIdOrName string, hashKey string, params *DeleteSdkKeyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListFlagSegments List segments
-	//
-	// List all feature flag segments for a project.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments (the `ListFlagSegments` operationId).
-	ListFlagSegments(ctx context.Context, projectIdOrName string, params *ListFlagSegmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateFlagSegmentWithBody Create a segment
-	//
-	// Create a new feature flag segment.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
-	CreateFlagSegmentWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateFlagSegment Create a segment
-	//
-	// Create a new feature flag segment.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
-	CreateFlagSegment(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, body CreateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteFlagSegment Delete a segment
-	//
-	// Delete a feature flag segment.
-	//
-	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `DeleteFlagSegment` operationId).
-	DeleteFlagSegment(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *DeleteFlagSegmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetFlagSegment Get a segment
-	//
-	// Retrieve a feature flag segment by ID or slug.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `GetFlagSegment` operationId).
-	GetFlagSegment(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *GetFlagSegmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFlagSegmentWithBody Update a segment
-	//
-	// Update an existing feature flag segment.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
-	UpdateFlagSegmentWithBody(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFlagSegment Update a segment
-	//
-	// Update an existing feature flag segment.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
-	UpdateFlagSegment(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, body UpdateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetFlagSettings Get project flag settings
-	//
-	// Retrieve feature flag settings for a project.
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/settings (the `GetFlagSettings` operationId).
-	GetFlagSettings(ctx context.Context, projectIdOrName string, params *GetFlagSettingsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFlagSettingsWithBody Update project flag settings
-	//
-	// Update feature flag settings for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
-	UpdateFlagSettingsWithBody(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFlagSettings Update project flag settings
-	//
-	// Update feature flag settings for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
-	UpdateFlagSettings(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, body UpdateFlagSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRuntimeLogs Get logs for a deployment
-	//
-	// Returns a stream of logs for a given deployment.
-	//
-	// Corresponds with GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs (the `GetRuntimeLogs` operationId).
-	GetRuntimeLogs(ctx context.Context, projectId string, deploymentId string, params *GetRuntimeLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateMicrofrontendsWithBody Update the microfrontends settings
-	//
-	// Update the microfrontends settings for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
-	UpdateMicrofrontendsWithBody(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateMicrofrontends Update the microfrontends settings
-	//
-	// Update the microfrontends settings for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
-	UpdateMicrofrontends(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, body UpdateMicrofrontendsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PauseProject Pause a project
-	//
-	// Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/pause (the `PauseProject` operationId).
-	PauseProject(ctx context.Context, projectId string, params *PauseProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListPromoteAliases Gets a list of aliases with status for the current promote
-	//
-	// Get a list of aliases related to the last promote request with their mapping status.
-	//
-	// Corresponds with GET /v1/projects/{projectId}/promote/aliases (the `ListPromoteAliases` operationId).
-	ListPromoteAliases(ctx context.Context, projectId string, params *ListPromoteAliasesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RequestRollback Point production traffic to a previous production deployment by ID
-	//
-	// Allows users to rollback to a deployment.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/rollback/{deploymentId} (the `RequestRollback` operationId).
-	RequestRollback(ctx context.Context, projectId string, deploymentId string, params *RequestRollbackParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBody Updates the description for a rollback
-	//
-	// Updates the reason for a rollback, without changing the rollback status itself.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
-	UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBody(ctx context.Context, projectId string, deploymentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription Updates the description for a rollback
-	//
-	// Updates the reason for a rollback, without changing the rollback status itself.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
-	UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription(ctx context.Context, projectId string, deploymentId string, body UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRoutesWithBody Delete routing rules
-	//
-	// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
-	DeleteRoutesWithBody(ctx context.Context, projectId string, params *DeleteRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRoutes Delete routing rules
-	//
-	// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
-	DeleteRoutes(ctx context.Context, projectId string, params *DeleteRoutesParams, body DeleteRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRoutes Get project routing rules
-	//
-	// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
-	//
-	// Corresponds with GET /v1/projects/{projectId}/routes (the `GetRoutes` operationId).
-	GetRoutes(ctx context.Context, projectId string, params *GetRoutesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddRouteWithBody Add a routing rule
-	//
-	// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
-	AddRouteWithBody(ctx context.Context, projectId string, params *AddRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddRoute Add a routing rule
-	//
-	// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
-	AddRoute(ctx context.Context, projectId string, params *AddRouteParams, body AddRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StageRoutesWithBody Stage routing rules
-	//
-	// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
-	StageRoutesWithBody(ctx context.Context, projectId string, params *StageRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StageRoutes Stage routing rules
-	//
-	// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
-	StageRoutes(ctx context.Context, projectId string, params *StageRoutesParams, body StageRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GenerateRouteWithBody Generate a routing rule from natural language
-	//
-	// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
-	GenerateRouteWithBody(ctx context.Context, projectId string, params *GenerateRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GenerateRoute Generate a routing rule from natural language
-	//
-	// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
-	GenerateRoute(ctx context.Context, projectId string, params *GenerateRouteParams, body GenerateRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRouteVersions Get routing rule version history
-	//
-	// Get the version history for a project's routing rules. Returns the staging version (if one exists) followed by production versions, most recent first. The staging version has `isStaging: true` and the current production version has `isLive: true`.
-	//
-	// Corresponds with GET /v1/projects/{projectId}/routes/versions (the `GetRouteVersions` operationId).
-	GetRouteVersions(ctx context.Context, projectId string, params *GetRouteVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateRouteVersionsWithBody Promote, restore, or discard a routing rule version
-	//
-	// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
-	UpdateRouteVersionsWithBody(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateRouteVersions Promote, restore, or discard a routing rule version
-	//
-	// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
-	UpdateRouteVersions(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, body UpdateRouteVersionsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EditRouteWithBody Edit a routing rule
-	//
-	// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
-	EditRouteWithBody(ctx context.Context, projectId string, routeId string, params *EditRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EditRoute Edit a routing rule
-	//
-	// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
-	EditRoute(ctx context.Context, projectId string, routeId string, params *EditRouteParams, body EditRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UnpauseProject Unpause a project
-	//
-	// Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
-	//
-	// Corresponds with POST /v1/projects/{projectId}/unpause (the `UnpauseProject` operationId).
-	UnpauseProject(ctx context.Context, projectId string, params *UnpauseProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AggregateEvents Aggregates custom events
-	//
-	// Counts custom events on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
-	//
-	// Corresponds with GET /v1/query/web-analytics/events/aggregate (the `AggregateEvents` operationId).
-	AggregateEvents(ctx context.Context, params *AggregateEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CountEvents Counts custom events
-	//
-	// Counts the number of custom events on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
-	//
-	// Corresponds with GET /v1/query/web-analytics/events/count (the `CountEvents` operationId).
-	CountEvents(ctx context.Context, params *CountEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AggregatePageviews Aggregates page views
-	//
-	// Counts pageviews on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
-	//
-	// Corresponds with GET /v1/query/web-analytics/visits/aggregate (the `AggregatePageviews` operationId).
-	AggregatePageviews(ctx context.Context, params *AggregatePageviewsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CountPageviews Counts page views
-	//
-	// Counts the number of page views on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
-	//
-	// Corresponds with GET /v1/query/web-analytics/visits/count (the `CountPageviews` operationId).
-	CountPageviews(ctx context.Context, params *CountPageviewsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBulkAvailabilityWithBody Get availability for multiple domains
-	//
-	// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
-	GetBulkAvailabilityWithBody(ctx context.Context, params *GetBulkAvailabilityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBulkAvailability Get availability for multiple domains
-	//
-	// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
-	GetBulkAvailability(ctx context.Context, params *GetBulkAvailabilityParams, body GetBulkAvailabilityJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BuyDomainsWithBody Buy multiple domains
-	//
-	// Buy multiple domains at once.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
-	BuyDomainsWithBody(ctx context.Context, params *BuyDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BuyDomains Buy multiple domains
-	//
-	// Buy multiple domains at once.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
-	BuyDomains(ctx context.Context, params *BuyDomainsParams, body BuyDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBulkPriceWithBody Get price data for multiple domains
-	//
-	// Get price data for multiple domains in a single request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
-	GetBulkPriceWithBody(ctx context.Context, params *GetBulkPriceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBulkPrice Get price data for multiple domains
-	//
-	// Get price data for multiple domains in a single request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
-	GetBulkPrice(ctx context.Context, params *GetBulkPriceParams, body GetBulkPriceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SearchDomainsWithBody Get Domain Availability and Pricing
-	//
-	// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
-	SearchDomainsWithBody(ctx context.Context, params *SearchDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SearchDomains Get Domain Availability and Pricing
-	//
-	// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
-	SearchDomains(ctx context.Context, params *SearchDomainsParams, body SearchDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainAuthCode Get the auth code for a domain
-	//
-	// Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/auth-code (the `GetDomainAuthCode` operationId).
-	GetDomainAuthCode(ctx context.Context, domain DomainName, params *GetDomainAuthCodeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDomainAutoRenewWithBody Update auto-renew for a domain
-	//
-	// Update the auto-renew setting for a domain.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
-	UpdateDomainAutoRenewWithBody(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDomainAutoRenew Update auto-renew for a domain
-	//
-	// Update the auto-renew setting for a domain.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
-	UpdateDomainAutoRenew(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, body UpdateDomainAutoRenewJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainAvailability Get availability for a domain
-	//
-	// Get availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/availability (the `GetDomainAvailability` operationId).
-	GetDomainAvailability(ctx context.Context, domain DomainName, params *GetDomainAvailabilityParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BuySingleDomainWithBody Buy a domain
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
-	BuySingleDomainWithBody(ctx context.Context, domain DomainName, params *BuySingleDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BuySingleDomain Buy a domain
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
-	BuySingleDomain(ctx context.Context, domain DomainName, params *BuySingleDomainParams, body BuySingleDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetContactInfoSchema Get contact info schema
-	//
-	// Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/contact-info/schema (the `GetContactInfoSchema` operationId).
-	GetContactInfoSchema(ctx context.Context, domain DomainName, params *GetContactInfoSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainContactVerification Get contact verification status for a domain
-	//
-	// Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/contact-verification (the `GetDomainContactVerification` operationId).
-	GetDomainContactVerification(ctx context.Context, domain DomainName, params *GetDomainContactVerificationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDomainNameserversWithBody Update nameservers for a domain
-	//
-	// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
-	UpdateDomainNameserversWithBody(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDomainNameservers Update nameservers for a domain
-	//
-	// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
-	UpdateDomainNameservers(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, body UpdateDomainNameserversJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainPrice Get price data for a domain
-	//
-	// Get price data for a specific domain.
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/price (the `GetDomainPrice` operationId).
-	GetDomainPrice(ctx context.Context, domain DomainName, params *GetDomainPriceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RenewDomainWithBody Renew a domain
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
-	RenewDomainWithBody(ctx context.Context, domain DomainName, params *RenewDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RenewDomain Renew a domain
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
-	RenewDomain(ctx context.Context, domain DomainName, params *RenewDomainParams, body RenewDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainTransferIn Get a domain's transfer status
-	//
-	// Get the transfer status for a domain.
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/transfer (the `GetDomainTransferIn` operationId).
-	GetDomainTransferIn(ctx context.Context, domain DomainName, params *GetDomainTransferInParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// TransferInDomainWithBody Transfer-in a domain
-	//
-	// Transfer a domain in from another registrar.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
-	TransferInDomainWithBody(ctx context.Context, domain DomainName, params *TransferInDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// TransferInDomain Transfer-in a domain
-	//
-	// Transfer a domain in from another registrar.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
-	TransferInDomain(ctx context.Context, domain DomainName, params *TransferInDomainParams, body TransferInDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetOrder Get a domain order
-	//
-	// Get information about a domain order by its ID.
-	//
-	// Corresponds with GET /v1/registrar/orders/{orderId} (the `GetOrder` operationId).
-	GetOrder(ctx context.Context, orderId OrderId, params *GetOrderParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSupportedTlds Get supported TLDs
-	//
-	// Get a list of TLDs supported by Vercel.
-	//
-	// Corresponds with GET /v1/registrar/tlds/supported (the `GetSupportedTlds` operationId).
-	GetSupportedTlds(ctx context.Context, params *GetSupportedTldsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetTld Get TLD
-	//
-	// Get the metadata for a specific TLD.
-	//
-	// Corresponds with GET /v1/registrar/tlds/{tld} (the `GetTld` operationId).
-	GetTld(ctx context.Context, tld TldName, params *GetTldParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetTldPrice Get TLD price data
-	//
-	// Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.
-	//
-	// Corresponds with GET /v1/registrar/tlds/{tld}/price (the `GetTldPrice` operationId).
-	GetTldPrice(ctx context.Context, tld TldName, params *GetTldPriceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAttackChallengeModeWithBody Update Attack Challenge mode
-	//
-	// Update the setting for determining if the project has Attack Challenge mode enabled.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
-	UpdateAttackChallengeModeWithBody(ctx context.Context, params *UpdateAttackChallengeModeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAttackChallengeMode Update Attack Challenge mode
-	//
-	// Update the setting for determining if the project has Attack Challenge mode enabled.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
-	UpdateAttackChallengeMode(ctx context.Context, params *UpdateAttackChallengeModeParams, body UpdateAttackChallengeModeJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetActiveAttackStatus Read active attack data
-	//
-	// Retrieve active attack data within the last N days (default: 1 day)
-	//
-	// Corresponds with GET /v1/security/firewall/attack-status (the `GetActiveAttackStatus` operationId).
-	GetActiveAttackStatus(ctx context.Context, params *GetActiveAttackStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveBypassIpWithBody Remove System Bypass Rule
-	//
-	// Remove system bypass rules.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
-	RemoveBypassIpWithBody(ctx context.Context, params *RemoveBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveBypassIp Remove System Bypass Rule
-	//
-	// Remove system bypass rules.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
-	RemoveBypassIp(ctx context.Context, params *RemoveBypassIpParams, body RemoveBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBypassIp Read System Bypass
-	//
-	// Retrieve the system bypass rules configured for the specified project.
-	//
-	// Corresponds with GET /v1/security/firewall/bypass (the `GetBypassIp` operationId).
-	GetBypassIp(ctx context.Context, params *GetBypassIpParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddBypassIpWithBody Create System Bypass Rule
-	//
-	// Create new system bypass rules.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
-	AddBypassIpWithBody(ctx context.Context, params *AddBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddBypassIp Create System Bypass Rule
-	//
-	// Create new system bypass rules.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
-	AddBypassIp(ctx context.Context, params *AddBypassIpParams, body AddBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteConditionalBypass Delete conditional firewall bypass
-	//
-	// Delete a conditional firewall bypass rule from a project domain.
-	//
-	// Corresponds with DELETE /v1/security/firewall/bypass/rules (the `DeleteConditionalBypass` operationId).
-	DeleteConditionalBypass(ctx context.Context, params *DeleteConditionalBypassParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetConditionalBypass Get conditional firewall bypasses
-	//
-	// Retrieve conditional firewall bypass rules for a project.
-	//
-	// Corresponds with GET /v1/security/firewall/bypass/rules (the `GetConditionalBypass` operationId).
-	GetConditionalBypass(ctx context.Context, params *GetConditionalBypassParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConditionalBypassWithBody Create conditional firewall bypass
-	//
-	// Create a conditional firewall bypass rule for a project domain.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
-	CreateConditionalBypassWithBody(ctx context.Context, params *CreateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateConditionalBypass Create conditional firewall bypass
-	//
-	// Create a conditional firewall bypass rule for a project domain.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
-	CreateConditionalBypass(ctx context.Context, params *CreateConditionalBypassParams, body CreateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSecurityFirewallConfig Returns activated WAF config
-	//
-	// Lists WAF configs for a project.
-	//
-	// Corresponds with GET /v1/security/firewall/config (the `GetSecurityFirewallConfig` operationId).
-	GetSecurityFirewallConfig(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFirewallConfigWithBody Update Firewall Configuration
-	//
-	// Process updates to modify the existing firewall config for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
-	UpdateFirewallConfigWithBody(ctx context.Context, params *UpdateFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateFirewallConfig Update Firewall Configuration
-	//
-	// Process updates to modify the existing firewall config for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
-	UpdateFirewallConfig(ctx context.Context, params *UpdateFirewallConfigParams, body UpdateFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PutFirewallConfigWithBody Put Firewall Configuration
-	//
-	// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
-	PutFirewallConfigWithBody(ctx context.Context, params *PutFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PutFirewallConfig Put Firewall Configuration
-	//
-	// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
-	PutFirewallConfig(ctx context.Context, params *PutFirewallConfigParams, body PutFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GenerateFirewallRule Generate a firewall rule from natural language
-	//
-	// Generate a firewall rule from a natural language description.
-	//
-	// Corresponds with POST /v1/security/firewall/config/generate-rule (the `GenerateFirewallRule` operationId).
-	GenerateFirewallRule(ctx context.Context, params *GenerateFirewallRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteSecurityFirewallConfigByConfigVersion Returns activated WAF config
-	//
-	// Promotes a draft WAF config to an active config.
-	//
-	// Corresponds with DELETE /v1/security/firewall/config/{configVersion} (the `DeleteSecurityFirewallConfigByConfigVersion` operationId).
-	DeleteSecurityFirewallConfigByConfigVersion(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetFirewallConfig Read Firewall Configuration
-	//
-	// Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
-	//
-	// Corresponds with GET /v1/security/firewall/config/{configVersion} (the `GetFirewallConfig` operationId).
-	GetFirewallConfig(ctx context.Context, configVersion string, params *GetFirewallConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSecurityFirewallConfigByConfigVersionActivate Returns activated WAF config
-	//
-	// Promotes a draft WAF config to an active config.
-	//
-	// Corresponds with POST /v1/security/firewall/config/{configVersion}/activate (the `CreateSecurityFirewallConfigByConfigVersionActivate` operationId).
-	CreateSecurityFirewallConfigByConfigVersionActivate(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSecurityFirewallEvents Read Firewall Actions by Project
-	//
-	// Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
-	//
-	// Corresponds with GET /v1/security/firewall/events (the `GetSecurityFirewallEvents` operationId).
-	GetSecurityFirewallEvents(ctx context.Context, params *GetSecurityFirewallEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSecurityFirewallEventsSummary Read Firewall Actions Summary by Project
-	//
-	// Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.
-	//
-	// Corresponds with GET /v1/security/firewall/events/summary (the `GetSecurityFirewallEventsSummary` operationId).
-	GetSecurityFirewallEventsSummary(ctx context.Context, params *GetSecurityFirewallEventsSummaryParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateIntegrationStoreDirectWithBody Create integration store (free and paid plans)
-	//
-	// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
-	CreateIntegrationStoreDirectWithBody(ctx context.Context, params *CreateIntegrationStoreDirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateIntegrationStoreDirect Create integration store (free and paid plans)
-	//
-	// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
-	CreateIntegrationStoreDirect(ctx context.Context, params *CreateIntegrationStoreDirectParams, body CreateIntegrationStoreDirectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateTeamWithBody Create a Team
-	//
-	// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
-	CreateTeamWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateTeam Create a Team
-	//
-	// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
-	CreateTeam(ctx context.Context, body CreateTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteTeamWithBody Delete a Team
-	//
-	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
-	DeleteTeamWithBody(ctx context.Context, teamId string, params *DeleteTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteTeam Delete a Team
-	//
-	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
-	DeleteTeam(ctx context.Context, teamId string, params *DeleteTeamParams, body DeleteTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostTeamDsyncRolesWithBody Update Team Directory Sync Role Mappings
-	//
-	// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
-	PostTeamDsyncRolesWithBody(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostTeamDsyncRoles Update Team Directory Sync Role Mappings
-	//
-	// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
-	PostTeamDsyncRoles(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, body PostTeamDsyncRolesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListTeamFlags List all flags for a team
-	//
-	// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
-	//
-	// Corresponds with GET /v1/teams/{teamId}/feature-flags/flags (the `ListTeamFlags` operationId).
-	ListTeamFlags(ctx context.Context, teamId string, params *ListTeamFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListTeamFlagSettings List team project flag settings
-	//
-	// Retrieve feature flag settings for projects in a team.
-	//
-	// Corresponds with GET /v1/teams/{teamId}/feature-flags/settings (the `ListTeamFlagSettings` operationId).
-	ListTeamFlagSettings(ctx context.Context, teamId string, params *ListTeamFlagSettingsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteTeamInviteCode Delete a Team invite code
-	//
-	// Delete an active Team invite code.
-	//
-	// Corresponds with DELETE /v1/teams/{teamId}/invites/{inviteId} (the `DeleteTeamInviteCode` operationId).
-	DeleteTeamInviteCode(ctx context.Context, teamId string, inviteId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// JoinTeamWithBody Join a team
-	//
-	// Join a team with a provided invite code or team ID.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
-	JoinTeamWithBody(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// JoinTeam Join a team
-	//
-	// Join a team with a provided invite code or team ID.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
-	JoinTeam(ctx context.Context, teamId string, body JoinTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveTeamMember Remove a Team Member
-	//
-	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
-	//
-	// Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
-	RemoveTeamMember(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateTeamMemberWithBody Update a Team Member
-	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
-	UpdateTeamMemberWithBody(ctx context.Context, teamId string, uid string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateTeamMember Update a Team Member
-	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
-	UpdateTeamMember(ctx context.Context, teamId string, uid string, body UpdateTeamMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteMicrofrontendsGroup Delete a microfrontends group
-	//
-	// Deletes a microfrontends group from the team associated with the group ID.
-	//
-	// Corresponds with DELETE /v1/teams/{teamId}/microfrontends/{groupId} (the `DeleteMicrofrontendsGroup` operationId).
-	DeleteMicrofrontendsGroup(ctx context.Context, teamId string, groupId string, params *DeleteMicrofrontendsGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateMicrofrontendsGroupWithBody Update a microfrontends group
-	//
-	// Updates a microfrontends group's settings.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
-	UpdateMicrofrontendsGroupWithBody(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateMicrofrontendsGroup Update a microfrontends group
-	//
-	// Updates a microfrontends group's settings.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
-	UpdateMicrofrontendsGroup(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, body UpdateMicrofrontendsGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RequestAccessToTeamWithBody Request access to a team
-	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
-	RequestAccessToTeamWithBody(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RequestAccessToTeam Request access to a team
-	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
-	RequestAccessToTeam(ctx context.Context, teamId string, body RequestAccessToTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetTeamAccessRequest Get access request status
-	//
-	// Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
-	//
-	// Corresponds with GET /v1/teams/{teamId}/request/{userId} (the `GetTeamAccessRequest` operationId).
-	GetTeamAccessRequest(ctx context.Context, teamId string, userId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RequestDeleteWithBody Delete User Account
-	//
-	// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
-	RequestDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RequestDelete Delete User Account
-	//
-	// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
-	RequestDelete(ctx context.Context, body RequestDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListRepositories List repositories
-	//
-	// List container registry repositories for a project.
-	//
-	// Corresponds with GET /v1/vcr/repository (the `ListRepositories` operationId).
-	ListRepositories(ctx context.Context, params *ListRepositoriesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateRepositoryWithBody Create a repository
-	//
-	// Create a container registry repository for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
-	CreateRepositoryWithBody(ctx context.Context, params *CreateRepositoryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateRepository Create a repository
-	//
-	// Create a container registry repository for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
-	CreateRepository(ctx context.Context, params *CreateRepositoryParams, body CreateRepositoryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRepository Delete a repository
-	//
-	// Schedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName} (the `DeleteRepository` operationId).
-	DeleteRepository(ctx context.Context, idOrName string, params *DeleteRepositoryParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRepository Get a repository
-	//
-	// Fetch a container registry repository for a project by ID or name.
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName} (the `GetRepository` operationId).
-	GetRepository(ctx context.Context, idOrName string, params *GetRepositoryParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListRepositoryImages List repository images
-	//
-	// List images for a container registry repository, including their tags.
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/images (the `ListRepositoryImages` operationId).
-	ListRepositoryImages(ctx context.Context, idOrName string, params *ListRepositoryImagesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRepositoryImage Get a repository image
-	//
-	// Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} (the `GetRepositoryImage` operationId).
-	GetRepositoryImage(ctx context.Context, idOrName string, imageIdOrDigest string, params *GetRepositoryImageParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteRepositoryImage Delete a repository image
-	//
-	// Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/images/{imageId} (the `DeleteRepositoryImage` operationId).
-	DeleteRepositoryImage(ctx context.Context, idOrName string, imageId string, params *DeleteRepositoryImageParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveRepositoryPermissionWithBody Remove a repository permission
-	//
-	// Revoke a team's access to a VCR repository.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
-	RemoveRepositoryPermissionWithBody(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveRepositoryPermission Remove a repository permission
-	//
-	// Revoke a team's access to a VCR repository.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
-	RemoveRepositoryPermission(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, body RemoveRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListRepositoryPermissions List repository permissions
-	//
-	// List the teams a VCR repository is shared with.
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/permissions (the `ListRepositoryPermissions` operationId).
-	ListRepositoryPermissions(ctx context.Context, idOrName string, params *ListRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddRepositoryPermissionWithBody Add a repository permission
-	//
-	// Grant a team access to a VCR repository. Sharing applies to the whole repository.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
-	AddRepositoryPermissionWithBody(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddRepositoryPermission Add a repository permission
-	//
-	// Grant a team access to a VCR repository. Sharing applies to the whole repository.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
-	AddRepositoryPermission(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, body AddRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ClearRepositoryPermissions Clear all repository permissions
-	//
-	// Revoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions/all (the `ClearRepositoryPermissions` operationId).
-	ClearRepositoryPermissions(ctx context.Context, idOrName string, params *ClearRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListRepositoryTags List repository tags
-	//
-	// List a repository's tags.
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/tags (the `ListRepositoryTags` operationId).
-	ListRepositoryTags(ctx context.Context, idOrName string, params *ListRepositoryTagsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRepositoryTag Get a repository tag
-	//
-	// Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/tags/{tag} (the `GetRepositoryTag` operationId).
-	GetRepositoryTag(ctx context.Context, idOrName string, tag string, params *GetRepositoryTagParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiInvocationAttempts List all attempts for an invocation
-	//
-	// List Invocation Attempts.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts (the `ListVercelCiInvocationAttempts` operationId).
-	ListVercelCiInvocationAttempts(ctx context.Context, invocationId string, params *ListVercelCiInvocationAttemptsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiInvocation Get a specific invocation attempt
-	//
-	// Get Invocation.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt} (the `GetVercelCiInvocation` operationId).
-	GetVercelCiInvocation(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiJobDefinitions List job definitions for an invocation attempt
-	//
-	// List Job Definitions.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions (the `ListVercelCiJobDefinitions` operationId).
-	ListVercelCiJobDefinitions(ctx context.Context, invocationId string, attempt string, params *ListVercelCiJobDefinitionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiJobDefinition Get a specific job definition
-	//
-	// Get Job Definition.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId} (the `GetVercelCiJobDefinition` operationId).
-	GetVercelCiJobDefinition(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *GetVercelCiJobDefinitionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiJobRuns List all runs for a job definition
-	//
-	// List Job Runs.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs (the `ListVercelCiJobRuns` operationId).
-	ListVercelCiJobRuns(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *ListVercelCiJobRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiJobRun Get a specific job run attempt
-	//
-	// Get Job Run.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt} (the `GetVercelCiJobRun` operationId).
-	GetVercelCiJobRun(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiJobRunLogs Get log lines for a specific job run attempt
-	//
-	// Get Job Run Logs.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs (the `GetVercelCiJobRunLogs` operationId).
-	GetVercelCiJobRunLogs(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiTaskDefinitions List all task definitions for a job run
-	//
-	// List Task Definitions.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions (the `ListVercelCiTaskDefinitions` operationId).
-	ListVercelCiTaskDefinitions(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskDefinitionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiTaskRunLogs Get log lines for a specific task run attempt
-	//
-	// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs (the `GetVercelCiTaskRunLogs` operationId).
-	GetVercelCiTaskRunLogs(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, taskDefinitionId string, taskRunAttempt string, params *GetVercelCiTaskRunLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiTaskRuns List task runs for a job run
-	//
-	// List Task Runs.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs (the `ListVercelCiTaskRuns` operationId).
-	ListVercelCiTaskRuns(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiInvocationLogs Get log lines for an invocation attempt
-	//
-	// Get Invocation Logs.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs (the `GetVercelCiInvocationLogs` operationId).
-	GetVercelCiInvocationLogs(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RetryVercelCiInvocation Retry a terminal Vercel CI invocation attempt
-	//
-	// Retry Invocation.
-	//
-	// Corresponds with POST /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/retry (the `RetryVercelCiInvocation` operationId).
-	RetryVercelCiInvocation(ctx context.Context, invocationId string, attempt string, params *RetryVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiTaskLogs Get log lines for the tasks of an invocation attempt
-	//
-	// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs (the `GetVercelCiTaskLogs` operationId).
-	GetVercelCiTaskLogs(ctx context.Context, invocationId string, attempt string, params *GetVercelCiTaskLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiInvocationTree Get an invocation with its jobs and tasks
-	//
-	// Returns an invocation attempt together with every job definition, its latest job run, and the task definitions and active task runs of that job run. Defaults to the latest attempt when `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes (`completed`) or the stream reaches its maximum duration (`timeout`), after which clients should reconnect.
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/tree (the `GetVercelCiInvocationTree` operationId).
-	GetVercelCiInvocationTree(ctx context.Context, invocationId string, params *GetVercelCiInvocationTreeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// SearchVercelCiLogs Search the task logs of several invocation attempts
-	//
-	// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
-	//
-	// Corresponds with GET /v1/vercel-ci/log-search (the `SearchVercelCiLogs` operationId).
-	SearchVercelCiLogs(ctx context.Context, params *SearchVercelCiLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiRepositorySettings Get Vercel CI settings for a connected repository
-	//
-	// Get Repository Settings.
-	//
-	// Corresponds with GET /v1/vercel-ci/repository-settings (the `GetVercelCiRepositorySettings` operationId).
-	GetVercelCiRepositorySettings(ctx context.Context, params *GetVercelCiRepositorySettingsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateVercelCiRepositorySettingsWithBody Enable or disable Vercel CI for a connected repository
-	//
-	// Update Repository Settings.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
-	UpdateVercelCiRepositorySettingsWithBody(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateVercelCiRepositorySettings Enable or disable Vercel CI for a connected repository
-	//
-	// Update Repository Settings.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
-	UpdateVercelCiRepositorySettings(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, body UpdateVercelCiRepositorySettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateVercelCiTaskAnalysisWithBody Start an asynchronous Vercel CI task analysis
-	//
-	// Create task analysis.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
-	CreateVercelCiTaskAnalysisWithBody(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateVercelCiTaskAnalysis Start an asynchronous Vercel CI task analysis
-	//
-	// Create task analysis.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
-	CreateVercelCiTaskAnalysis(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, body CreateVercelCiTaskAnalysisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetVercelCiTaskAnalysis Get the current status of a Vercel CI task analysis
-	//
-	// Get task analysis.
-	//
-	// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId} (the `GetVercelCiTaskAnalysis` operationId).
-	GetVercelCiTaskAnalysis(ctx context.Context, analysisId string, params *GetVercelCiTaskAnalysisParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateVercelCiTaskConfigurationPullRequestWithBody Create a GitHub pull request that adds Vercel CI tags for the completed analysis
-	//
-	// Create task configuration pull request.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
-	CreateVercelCiTaskConfigurationPullRequestWithBody(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateVercelCiTaskConfigurationPullRequest Create a GitHub pull request that adds Vercel CI tags for the completed analysis
-	//
-	// Create task configuration pull request.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
-	CreateVercelCiTaskConfigurationPullRequest(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, body CreateVercelCiTaskConfigurationPullRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiTaskAnalysisTasks List discovered tasks for a completed Vercel CI task analysis
-	//
-	// List task analysis tasks.
-	//
-	// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId}/tasks (the `ListVercelCiTaskAnalysisTasks` operationId).
-	ListVercelCiTaskAnalysisTasks(ctx context.Context, analysisId string, params *ListVercelCiTaskAnalysisTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetWebhooks Get a list of webhooks
-	//
-	// Corresponds with GET /v1/webhooks (the `GetWebhooks` operationId).
-	GetWebhooks(ctx context.Context, params *GetWebhooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateWebhookWithBody Creates a webhook
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
-	CreateWebhookWithBody(ctx context.Context, params *CreateWebhookParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateWebhook Creates a webhook
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
-	CreateWebhook(ctx context.Context, params *CreateWebhookParams, body CreateWebhookJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteWebhook Deletes a webhook
-	//
-	// Corresponds with DELETE /v1/webhooks/{id} (the `DeleteWebhook` operationId).
-	DeleteWebhook(ctx context.Context, id string, params *DeleteWebhookParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetWebhook Get a webhook
-	//
-	// Corresponds with GET /v1/webhooks/{id} (the `GetWebhook` operationId).
-	GetWebhook(ctx context.Context, id string, params *GetWebhookParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjects Retrieve a list of projects
-	//
-	// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
-	//
-	// Corresponds with GET /v10/projects (the `GetProjects` operationId).
-	GetProjects(ctx context.Context, params *GetProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddProjectDomainWithBody Add a domain to a project
-	//
-	// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
-	AddProjectDomainWithBody(ctx context.Context, idOrName string, params *AddProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AddProjectDomain Add a domain to a project
-	//
-	// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
-	AddProjectDomain(ctx context.Context, idOrName string, params *AddProjectDomainParams, body AddProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// FilterProjectEnvs Retrieve the environment variables of a project by id or name
-	//
-	// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
-	//
-	// Corresponds with GET /v10/projects/{idOrName}/env (the `FilterProjectEnvs` operationId).
-	FilterProjectEnvs(ctx context.Context, idOrName string, params *FilterProjectEnvsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectEnvWithBody Create one or more environment variables
-	//
-	// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
-	CreateProjectEnvWithBody(ctx context.Context, idOrName string, params *CreateProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectEnv Create one or more environment variables
-	//
-	// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
-	CreateProjectEnv(ctx context.Context, idOrName string, params *CreateProjectEnvParams, body CreateProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RequestPromote Point production traffic to a given deployment
-	//
-	// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
-	//
-	// Corresponds with POST /v10/projects/{projectId}/promote/{deploymentId} (the `RequestPromote` operationId).
-	RequestPromote(ctx context.Context, projectId string, deploymentId string, params *RequestPromoteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectWithBody Create a new project
-	//
-	// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v11/projects (the `CreateProject` operationId).
-	CreateProjectWithBody(ctx context.Context, params *CreateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProject Create a new project
-	//
-	// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v11/projects (the `CreateProject` operationId).
-	CreateProject(ctx context.Context, params *CreateProjectParams, body CreateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CancelDeployment Cancel a deployment
-	//
-	// Cancels a deployment that is currently in progress, stopping the build before it completes. Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with known errors — without waiting for them to finish. Returns 400 if the deployment is no longer cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object with `readyState: 'CANCELED'` on success.
-	//
-	// Corresponds with PATCH /v12/deployments/{id}/cancel (the `CancelDeployment` operationId).
-	CancelDeployment(ctx context.Context, id string, params *CancelDeploymentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateDeploymentWithBody Create a new deployment
-	//
-	// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
-	CreateDeploymentWithBody(ctx context.Context, params *CreateDeploymentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateDeployment Create a new deployment
-	//
-	// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
-	CreateDeployment(ctx context.Context, params *CreateDeploymentParams, body CreateDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDeployment Get a deployment by ID or URL
-	//
-	// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
-	//
-	// Corresponds with GET /v13/deployments/{idOrUrl} (the `GetDeployment` operationId).
-	GetDeployment(ctx context.Context, idOrUrl string, params *GetDeploymentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteDeployment Delete a Deployment
-	//
-	// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
-	//
-	// Corresponds with DELETE /v13/deployments/{id} (the `DeleteDeployment` operationId).
-	DeleteDeployment(ctx context.Context, id string, params *DeleteDeploymentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRoot Check registry API version support
-	//
-	// GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.
-	//
-	// Corresponds with GET /v2/ (the `GetRoot` operationId).
-	GetRoot(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAlias Delete an Alias
-	//
-	// Delete an Alias with the specified ID.
-	//
-	// Corresponds with DELETE /v2/aliases/{aliasId} (the `DeleteAlias` operationId).
-	DeleteAlias(ctx context.Context, aliasId struct {
-		union json.RawMessage
-	}, params *DeleteAliasParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListConnectors List connectors
-	//
-	// List connectors that belong to a team.
-	//
-	// Corresponds with GET /v2/connect/connectors (the `ListConnectors` operationId).
-	ListConnectors(ctx context.Context, params *ListConnectorsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateConnectorWithBody Update a connector
-	//
-	// Update a connector and return the connector with any service-side update signals that the caller must handle.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-	UpdateConnectorWithBody(ctx context.Context, connector string, params *UpdateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateConnector Update a connector
-	//
-	// Update a connector and return the connector with any service-side update signals that the caller must handle.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-	UpdateConnector(ctx context.Context, connector string, params *UpdateConnectorParams, body UpdateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListConnectorProjectConnections List projects for a connector
-	//
-	// List the projects connected to a connector and the environments where each connection is available.
-	//
-	// Corresponds with GET /v2/connect/connectors/{connector}/projects (the `ListConnectorProjectConnections` operationId).
-	ListConnectorProjectConnections(ctx context.Context, connector string, params *ListConnectorProjectConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListProjectConnectorConnections List connectors for a project
-	//
-	// List the connectors connected to a project and the environments where each connection is available.
-	//
-	// Corresponds with GET /v2/connect/projects/{projectId}/connectors (the `ListProjectConnectorConnections` operationId).
-	ListProjectConnectorConnections(ctx context.Context, projectId string, params *ListProjectConnectorConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListDeploymentCheckRuns List check runs for a deployment
-	//
-	// List all check runs for a deployment.
-	//
-	// Corresponds with GET /v2/deployments/{deploymentId}/check-runs (the `ListDeploymentCheckRuns` operationId).
-	ListDeploymentCheckRuns(ctx context.Context, deploymentId string, params *ListDeploymentCheckRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateDeploymentCheckRunWithBody Create a check run
-	//
-	// Creates a new check run for a deployment.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-	CreateDeploymentCheckRunWithBody(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateDeploymentCheckRun Create a check run
-	//
-	// Creates a new check run for a deployment.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-	CreateDeploymentCheckRun(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDeploymentCheckRun Get a check run
-	//
-	// Return a detailed response for a single check run.
-	//
-	// Corresponds with GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `GetDeploymentCheckRun` operationId).
-	GetDeploymentCheckRun(ctx context.Context, deploymentId string, checkRunId string, params *GetDeploymentCheckRunParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDeploymentCheckRunWithBody Update a check run
-	//
-	// Update an existing check run for a deployment.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-	UpdateDeploymentCheckRunWithBody(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateDeploymentCheckRun Update a check run
-	//
-	// Update an existing check run for a deployment.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-	UpdateDeploymentCheckRun(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, body UpdateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListDeploymentAliases List Deployment Aliases
-	//
-	// Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
-	//
-	// Corresponds with GET /v2/deployments/{id}/aliases (the `ListDeploymentAliases` operationId).
-	ListDeploymentAliases(ctx context.Context, id string, params *ListDeploymentAliasesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AssignAliasWithBody Assign an Alias
-	//
-	// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
-	AssignAliasWithBody(ctx context.Context, id struct {
-		union json.RawMessage
-	}, params *AssignAliasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AssignAlias Assign an Alias
-	//
-	// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
-	AssignAlias(ctx context.Context, id struct {
-		union json.RawMessage
-	}, params *AssignAliasParams, body AssignAliasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateRecordWithBody Create a DNS record
-	//
-	// Creates a DNS record for a domain.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
-	CreateRecordWithBody(ctx context.Context, domain string, params *CreateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateRecord Create a DNS record
-	//
-	// Creates a DNS record for a domain.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
-	CreateRecord(ctx context.Context, domain string, params *CreateRecordParams, body CreateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveRecord Delete a DNS record
-	//
-	// Removes an existing DNS record from a domain name.
-	//
-	// Corresponds with DELETE /v2/domains/{domain}/records/{recordId} (the `RemoveRecord` operationId).
-	RemoveRecord(ctx context.Context, domain string, recordId string, params *RemoveRecordParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UploadFileWithBody Upload Deployment Files
-	//
-	// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/files (the `UploadFile` operationId).
-	UploadFileWithBody(ctx context.Context, params *UploadFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetIntegrationLogDrains Retrieves a list of Integration log drains (deprecated)
-	//
-	// Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
-	//
-	// Corresponds with GET /v2/integrations/log-drains (the `GetIntegrationLogDrains` operationId).
-	GetIntegrationLogDrains(ctx context.Context, params *GetIntegrationLogDrainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateLogDrainWithBody Creates a new Integration Log Drain (deprecated)
-	//
-	// Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/integrations/log-drains (the `CreateLogDrain` operationId).
-	CreateLogDrainWithBody(ctx context.Context, params *CreateLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateLogDrain Creates a new Integration Log Drain (deprecated)
-	//
-	// Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/integrations/log-drains (the `CreateLogDrain` operationId).
-	CreateLogDrain(ctx context.Context, params *CreateLogDrainParams, body CreateLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateObservabilityQueryWithBody performs a POST /v2/observability/query (the `CreateObservabilityQuery` operationId) request,
-	// with any type of body and a specified content type.
-	CreateObservabilityQueryWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateObservabilityQuery performs a POST /v2/observability/query (the `CreateObservabilityQuery` operationId) request.
-	// Takes a body of the `application/json` content type.
-	CreateObservabilityQuery(ctx context.Context, body CreateObservabilityQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetObservabilitySchema performs a GET /v2/observability/schema (the `GetObservabilitySchema` operationId) request.
-	GetObservabilitySchema(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetObservabilitySchemaByMetricId performs a GET /v2/observability/schema/{metricId} (the `GetObservabilitySchemaByMetricId` operationId) request.
-	GetObservabilitySchemaByMetricId(ctx context.Context, metricId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListProjectChecks List all checks for a project
-	//
-	// List all checks for a project, optionally filtered by target.
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/checks (the `ListProjectChecks` operationId).
-	ListProjectChecks(ctx context.Context, projectIdOrName string, params *ListProjectChecksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectCheckWithBody Create a check
-	//
-	// Creates a new check for a project.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/projects/{projectIdOrName}/checks (the `CreateProjectCheck` operationId).
-	CreateProjectCheckWithBody(ctx context.Context, projectIdOrName string, params *CreateProjectCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateProjectCheck Create a check
-	//
-	// Creates a new check for a project.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/projects/{projectIdOrName}/checks (the `CreateProjectCheck` operationId).
-	CreateProjectCheck(ctx context.Context, projectIdOrName string, params *CreateProjectCheckParams, body CreateProjectCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteProjectCheck Delete a check
-	//
-	// Delete an existing check and all of its runs.
-	//
-	// Corresponds with DELETE /v2/projects/{projectIdOrName}/checks/{checkId} (the `DeleteProjectCheck` operationId).
-	DeleteProjectCheck(ctx context.Context, projectIdOrName string, checkId string, params *DeleteProjectCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectCheck Get a check
-	//
-	// Return a detailed response for a single check.
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/checks/{checkId} (the `GetProjectCheck` operationId).
-	GetProjectCheck(ctx context.Context, projectIdOrName string, checkId string, params *GetProjectCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectCheckWithBody Update a check
-	//
-	// Update an existing check.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v2/projects/{projectIdOrName}/checks/{checkId} (the `UpdateProjectCheck` operationId).
-	UpdateProjectCheckWithBody(ctx context.Context, projectIdOrName string, checkId string, params *UpdateProjectCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectCheck Update a check
-	//
-	// Update an existing check.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v2/projects/{projectIdOrName}/checks/{checkId} (the `UpdateProjectCheck` operationId).
-	UpdateProjectCheck(ctx context.Context, projectIdOrName string, checkId string, params *UpdateProjectCheckParams, body UpdateProjectCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListCheckRuns List runs for a check
-	//
-	// List all runs associated with a given check.
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs (the `ListCheckRuns` operationId).
-	ListCheckRuns(ctx context.Context, projectIdOrName string, checkId string, params *ListCheckRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListFlagsV2 List flags
-	//
-	// Retrieve feature flags for a project. Returns an opaque cursor for pagination.
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/feature-flags/flags (the `ListFlagsV2` operationId).
-	ListFlagsV2(ctx context.Context, projectIdOrName string, params *ListFlagsV2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListNamedSandboxes List sandboxes
-	//
-	// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status. Overdue sessions for running and stopping sandboxes are recovered before returning the page, so an entry may no longer match its queried status after recovery.
-	//
-	// Corresponds with GET /v2/sandboxes (the `ListNamedSandboxes` operationId).
-	ListNamedSandboxes(ctx context.Context, params *ListNamedSandboxesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesV2WithBody Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes (the `CreateSandboxesV2` operationId).
-	CreateSandboxesV2WithBody(ctx context.Context, params *CreateSandboxesV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesV2 Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes (the `CreateSandboxesV2` operationId).
-	CreateSandboxesV2(ctx context.Context, params *CreateSandboxesV2Params, body CreateSandboxesV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListDrives List drives
-	//
-	// Retrieves a paginated list of drives belonging to a specific project.
-	//
-	// Corresponds with GET /v2/sandboxes/drives (the `ListDrives` operationId).
-	ListDrives(ctx context.Context, params *ListDrivesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDrive Get a drive
-	//
-	// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
-	//
-	// Corresponds with GET /v2/sandboxes/drives/{nameOrId} (the `GetDrive` operationId).
-	GetDrive(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteDrive Delete a drive
-	//
-	// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
-	//
-	// Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
-	DeleteDrive(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetOrCreateDriveWithBody Get or create a drive
-	//
-	// Gets an existing drive by project and name, or creates it when it does not exist.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
-	GetOrCreateDriveWithBody(ctx context.Context, name string, params *GetOrCreateDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetOrCreateDrive Get or create a drive
-	//
-	// Gets an existing drive by project and name, or creates it when it does not exist.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
-	GetOrCreateDrive(ctx context.Context, name string, params *GetOrCreateDriveParams, body GetOrCreateDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ForkDriveWithBody Fork a drive
-	//
-	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
-	ForkDriveWithBody(ctx context.Context, name string, params *ForkDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ForkDrive Fork a drive
-	//
-	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
-	ForkDrive(ctx context.Context, name string, params *ForkDriveParams, body ForkDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListSessions List sessions
-	//
-	// Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by creation time and paginated using an opaque cursor.
-	//
-	// Corresponds with GET /v2/sandboxes/sessions (the `ListSessions` operationId).
-	ListSessions(ctx context.Context, params *ListSessionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSession Get a session
-	//
-	// Retrieves detailed information about a specific session, including its current status, resource configuration, and exposed routes.
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId} (the `GetSession` operationId).
-	GetSession(ctx context.Context, sessionId string, params *GetSessionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListSessionCommands List commands
-	//
-	// Retrieves a list of all commands that have been executed in a session, including their current status, exit codes, and execution times, ordered from the most recent to the oldest.
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd (the `ListSessionCommands` operationId).
-	ListSessionCommands(ctx context.Context, sessionId string, params *ListSessionCommandsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RunSessionCommandWithBody Execute a command
-	//
-	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd (the `RunSessionCommand` operationId).
-	RunSessionCommandWithBody(ctx context.Context, sessionId string, params *RunSessionCommandParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RunSessionCommand Execute a command
-	//
-	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd (the `RunSessionCommand` operationId).
-	RunSessionCommand(ctx context.Context, sessionId string, params *RunSessionCommandParams, body RunSessionCommandJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSessionCommand Get a command
-	//
-	// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId} (the `GetSessionCommand` operationId).
-	GetSessionCommand(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// KillSessionCommandWithBody Kill a command
-	//
-	// Sends a signal to terminate a running command in a session. The signal can be used to gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be running for this operation to succeed.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill (the `KillSessionCommand` operationId).
-	KillSessionCommandWithBody(ctx context.Context, sessionId string, cmdId string, params *KillSessionCommandParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// KillSessionCommand Kill a command
-	//
-	// Sends a signal to terminate a running command in a session. The signal can be used to gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be running for this operation to succeed.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill (the `KillSessionCommand` operationId).
-	KillSessionCommand(ctx context.Context, sessionId string, cmdId string, params *KillSessionCommandParams, body KillSessionCommandJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSessionCommandLogs Stream command logs
-	//
-	// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs (the `GetSessionCommandLogs` operationId).
-	GetSessionCommandLogs(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// WriteSessionCommandStdinWithBody Write to command stdin
-	//
-	// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/stdin (the `WriteSessionCommandStdin` operationId).
-	WriteSessionCommandStdinWithBody(ctx context.Context, sessionId string, cmdId string, params *WriteSessionCommandStdinParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// WriteSessionCommandStdin Write to command stdin
-	//
-	// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/stdin (the `WriteSessionCommandStdin` operationId).
-	WriteSessionCommandStdin(ctx context.Context, sessionId string, cmdId string, params *WriteSessionCommandStdinParams, body WriteSessionCommandStdinJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ExtendSessionTimeoutWithBody Extend session timeout
-	//
-	// Extends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/extend-timeout (the `ExtendSessionTimeout` operationId).
-	ExtendSessionTimeoutWithBody(ctx context.Context, sessionId string, params *ExtendSessionTimeoutParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ExtendSessionTimeout Extend session timeout
-	//
-	// Extends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/extend-timeout (the `ExtendSessionTimeout` operationId).
-	ExtendSessionTimeout(ctx context.Context, sessionId string, params *ExtendSessionTimeoutParams, body ExtendSessionTimeoutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSessionDirectoryWithBody Create a directory
-	//
-	// Creates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/mkdir (the `CreateSessionDirectory` operationId).
-	CreateSessionDirectoryWithBody(ctx context.Context, sessionId string, params *CreateSessionDirectoryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSessionDirectory Create a directory
-	//
-	// Creates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/mkdir (the `CreateSessionDirectory` operationId).
-	CreateSessionDirectory(ctx context.Context, sessionId string, params *CreateSessionDirectoryParams, body CreateSessionDirectoryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReadSessionFileWithBody Read a file
-	//
-	// Downloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/read (the `ReadSessionFile` operationId).
-	ReadSessionFileWithBody(ctx context.Context, sessionId string, params *ReadSessionFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReadSessionFile Read a file
-	//
-	// Downloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/read (the `ReadSessionFile` operationId).
-	ReadSessionFile(ctx context.Context, sessionId string, params *ReadSessionFileParams, body ReadSessionFileJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// WriteSessionFiles Write files
-	//
-	// Uploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session's working directory, or to a custom directory specified via the `x-cwd` header.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/write (the `WriteSessionFiles` operationId).
-	WriteSessionFiles(ctx context.Context, sessionId string, params *WriteSessionFilesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateSessionNetworkPolicyWithBody Update network policy
-	//
-	// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/network-policy (the `UpdateSessionNetworkPolicy` operationId).
-	UpdateSessionNetworkPolicyWithBody(ctx context.Context, sessionId string, params *UpdateSessionNetworkPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateSessionNetworkPolicy Update network policy
-	//
-	// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/network-policy (the `UpdateSessionNetworkPolicy` operationId).
-	UpdateSessionNetworkPolicy(ctx context.Context, sessionId string, params *UpdateSessionNetworkPolicyParams, body UpdateSessionNetworkPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV2WithBody Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV2` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV2WithBody(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV2 Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV2` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV2(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV2Params, body CreateSandboxesSessionsBySessionIdSnapshotV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// StopSession Stop a session
-	//
-	// Stops a running session and releases its allocated resources. All running processes within the session will be terminated. This action cannot be undone. A stopped session cannot be restarted.
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/stop (the `StopSession` operationId).
-	StopSession(ctx context.Context, sessionId string, params *StopSessionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListSessionSnapshots List snapshots
-	//
-	// Retrieves a paginated list of snapshots for a specific project.
-	//
-	// Corresponds with GET /v2/sandboxes/snapshots (the `ListSessionSnapshots` operationId).
-	ListSessionSnapshots(ctx context.Context, params *ListSessionSnapshotsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteSessionSnapshot Delete a snapshot
-	//
-	// Permanently deletes a snapshot and frees its associated storage. This action cannot be undone. After deletion, the snapshot can no longer be used to create new sessions.
-	//
-	// Corresponds with DELETE /v2/sandboxes/snapshots/{snapshotId} (the `DeleteSessionSnapshot` operationId).
-	DeleteSessionSnapshot(ctx context.Context, snapshotId string, params *DeleteSessionSnapshotParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetSessionSnapshot Get a snapshot
-	//
-	// Retrieves detailed information about a specific snapshot, including its creation time, size, expiration date, and the source session it was created from.
-	//
-	// Corresponds with GET /v2/sandboxes/snapshots/{snapshotId} (the `GetSessionSnapshot` operationId).
-	GetSessionSnapshot(ctx context.Context, snapshotId string, params *GetSessionSnapshotParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteSandbox Delete a sandbox
-	//
-	// Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata. When the config item is already missing, the returned sandbox uses stored metadata and defaults; config fields may be stale.
-	//
-	// Corresponds with DELETE /v2/sandboxes/{name} (the `DeleteSandbox` operationId).
-	DeleteSandbox(ctx context.Context, name string, params *DeleteSandboxParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetNamedSandbox Get a named sandbox
-	//
-	// Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox is stopped and resume is true, a new sandbox will be created from the most recent snapshot. Returns 404 if the named sandbox or its configuration no longer exists.
-	//
-	// Corresponds with GET /v2/sandboxes/{name} (the `GetNamedSandbox` operationId).
-	GetNamedSandbox(ctx context.Context, name string, params *GetNamedSandboxParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateSandboxWithBody Update a sandbox
-	//
-	// Updates the configuration of a sandbox. Only the provided fields will be modified; omitted fields remain unchanged.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v2/sandboxes/{name} (the `UpdateSandbox` operationId).
-	UpdateSandboxWithBody(ctx context.Context, name string, params *UpdateSandboxParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateSandbox Update a sandbox
-	//
-	// Updates the configuration of a sandbox. Only the provided fields will be modified; omitted fields remain unchanged.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v2/sandboxes/{name} (the `UpdateSandbox` operationId).
-	UpdateSandbox(ctx context.Context, name string, params *UpdateSandboxParams, body UpdateSandboxJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesByNameForkV2WithBody Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV2` operationId).
-	CreateSandboxesByNameForkV2WithBody(ctx context.Context, name string, params *CreateSandboxesByNameForkV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesByNameForkV2 Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV2` operationId).
-	CreateSandboxesByNameForkV2(ctx context.Context, name string, params *CreateSandboxesByNameForkV2Params, body CreateSandboxesByNameForkV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetTeams List all teams
-	//
-	// Get a paginated list of all the Teams the authenticated User is a member of.
-	//
-	// Corresponds with GET /v2/teams (the `GetTeams` operationId).
-	GetTeams(ctx context.Context, params *GetTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetTeam Get a Team
-	//
-	// Get information for the Team specified by the `teamId` parameter.
-	//
-	// Corresponds with GET /v2/teams/{teamId} (the `GetTeam` operationId).
-	GetTeam(ctx context.Context, teamId string, params *GetTeamParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchTeamWithBody Update a Team
-	//
-	// Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v2/teams/{teamId} (the `PatchTeam` operationId).
-	PatchTeamWithBody(ctx context.Context, teamId string, params *PatchTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchTeam Update a Team
-	//
-	// Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v2/teams/{teamId} (the `PatchTeam` operationId).
-	PatchTeam(ctx context.Context, teamId string, params *PatchTeamParams, body PatchTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListTeamFlagsV2 List all flags for a team
-	//
-	// Retrieve all feature flags for a team across all projects. Returns an opaque cursor for pagination.
-	//
-	// Corresponds with GET /v2/teams/{teamId}/feature-flags/flags (the `ListTeamFlagsV2` operationId).
-	ListTeamFlagsV2(ctx context.Context, teamId string, params *ListTeamFlagsV2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InviteUserToTeamWithBody Invite a user
-	//
-	// Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user to be invited must be specified by email.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v2/teams/{teamId}/members (the `InviteUserToTeam` operationId).
-	InviteUserToTeamWithBody(ctx context.Context, teamId string, params *InviteUserToTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InviteUserToTeam Invite a user
-	//
-	// Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user to be invited must be specified by email.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v2/teams/{teamId}/members (the `InviteUserToTeam` operationId).
-	InviteUserToTeam(ctx context.Context, teamId string, params *InviteUserToTeamParams, body InviteUserToTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAuthUser Get the User
-	//
-	// Retrieves information related to the currently authenticated User.
-	//
-	// Corresponds with GET /v2/user (the `GetAuthUser` operationId).
-	GetAuthUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiBranches List Vercel CI branch suggestions for a team
-	//
-	// List branches.
-	//
-	// Corresponds with GET /v2/vercel-ci/branches (the `ListVercelCiBranches` operationId).
-	ListVercelCiBranches(ctx context.Context, params *ListVercelCiBranchesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListVercelCiInvocations List invocations for a team, optionally filtered by repository and invocation metadata
-	//
-	// List Invocations.
-	//
-	// Corresponds with GET /v2/vercel-ci/invocations (the `ListVercelCiInvocations` operationId).
-	ListVercelCiInvocations(ctx context.Context, params *ListVercelCiInvocationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads Start a blob upload
-	//
-	// POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=<digest>&from=<repo>] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.
-	//
-	// Corresponds with POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ (the `CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads` operationId).
-	CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, params *CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Cancel a blob upload
-	//
-	// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.
-	//
-	// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Get blob upload status
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Upload a blob chunk
-	//
-	// PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.
-	//
-	// Corresponds with PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Complete a blob upload
-	//
-	// PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=<digest> Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.
-	//
-	// Corresponds with PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, params *ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest Delete a blob
-	//
-	// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. Matches the behaviour of most public registries.
-	//
-	// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-	DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest Download a blob
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest Check if a blob exists
-	//
-	// HEAD /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Check whether a blob exists. Used by the Docker client before pushing a layer to avoid re-uploading content that already exists.
-	//
-	// Corresponds with HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-	HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Delete an image manifest
-	//
-	// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.
-	//
-	// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Pull an image manifest
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Check if a manifest exists
-	//
-	// HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest exists. Used by Docker client during push to determine if a manifest (or config blob referenced by digest) is already present.
-	//
-	// Corresponds with HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Push an image manifest
-	//
-	// PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.
-	//
-	// Corresponds with PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameTagsList List image tags
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response's `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list (the `GetByTeamSlugByProjectSlugByRepositoryNameTagsList` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameTagsList(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, params *GetByTeamSlugByProjectSlugByRepositoryNameTagsListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDeploymentEvents Get deployment events
-	//
-	// Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
-	//
-	// Corresponds with GET /v3/deployments/{idOrUrl}/events (the `GetDeploymentEvents` operationId).
-	GetDeploymentEvents(ctx context.Context, idOrUrl string, params *GetDeploymentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchDomainWithBody Update or move apex domain
-	//
-	// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v3/domains/{domain} (the `PatchDomain` operationId).
-	PatchDomainWithBody(ctx context.Context, domain string, params *PatchDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchDomain Update or move apex domain
-	//
-	// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v3/domains/{domain} (the `PatchDomain` operationId).
-	PatchDomain(ctx context.Context, domain string, params *PatchDomainParams, body PatchDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListUserEvents List User Events
-	//
-	// Retrieves a list of "events" generated by the User on Vercel. Events are generated when the User performs a particular action, such as logging in, creating a deployment, and joining a Team (just to name a few). When the `teamId` parameter is supplied, then the events that are returned will be in relation to the Team that was specified.
-	//
-	// Corresponds with GET /v3/events (the `ListUserEvents` operationId).
-	ListUserEvents(ctx context.Context, params *ListUserEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesV3WithBody Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v3/sandboxes (the `CreateSandboxesV3` operationId).
-	CreateSandboxesV3WithBody(ctx context.Context, params *CreateSandboxesV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesV3 Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v3/sandboxes (the `CreateSandboxesV3` operationId).
-	CreateSandboxesV3(ctx context.Context, params *CreateSandboxesV3Params, body CreateSandboxesV3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV3WithBody Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v3/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV3` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV3WithBody(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV3 Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v3/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV3` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV3(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, body CreateSandboxesSessionsBySessionIdSnapshotV3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesByNameForkV3WithBody Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v3/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV3` operationId).
-	CreateSandboxesByNameForkV3WithBody(ctx context.Context, name string, params *CreateSandboxesByNameForkV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesByNameForkV3 Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v3/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV3` operationId).
-	CreateSandboxesByNameForkV3(ctx context.Context, name string, params *CreateSandboxesByNameForkV3Params, body CreateSandboxesByNameForkV3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetTeamMembers List team members
-	//
-	// Get a paginated list of team members for the provided team.
-	//
-	// Corresponds with GET /v3/teams/{teamId}/members (the `GetTeamMembers` operationId).
-	GetTeamMembers(ctx context.Context, teamId string, params *GetTeamMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAuthTokenWithBody Create an Auth Token
-	//
-	// Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v3/user/tokens (the `CreateAuthToken` operationId).
-	CreateAuthTokenWithBody(ctx context.Context, params *CreateAuthTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAuthToken Create an Auth Token
-	//
-	// Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v3/user/tokens (the `CreateAuthToken` operationId).
-	CreateAuthToken(ctx context.Context, params *CreateAuthTokenParams, body CreateAuthTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAuthToken Delete an authentication token
-	//
-	// Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.
-	//
-	// Corresponds with DELETE /v3/user/tokens/{tokenId} (the `DeleteAuthToken` operationId).
-	DeleteAuthToken(ctx context.Context, tokenId string, params *DeleteAuthTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAliases List aliases
-	//
-	// Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
-	//
-	// Corresponds with GET /v4/aliases (the `ListAliases` operationId).
-	ListAliases(ctx context.Context, params *ListAliasesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAlias Get an Alias
-	//
-	// Retrieves an Alias for the given host name or alias ID.
-	//
-	// Corresponds with GET /v4/aliases/{idOrAlias} (the `GetAlias` operationId).
-	GetAlias(ctx context.Context, idOrAlias string, params *GetAliasParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesV4WithBody Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v4/sandboxes (the `CreateSandboxesV4` operationId).
-	CreateSandboxesV4WithBody(ctx context.Context, params *CreateSandboxesV4Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateSandboxesV4 Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v4/sandboxes (the `CreateSandboxesV4` operationId).
-	CreateSandboxesV4(ctx context.Context, params *CreateSandboxesV4Params, body CreateSandboxesV4JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomains List all the domains
-	//
-	// Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
-	//
-	// Corresponds with GET /v5/domains (the `GetDomains` operationId).
-	GetDomains(ctx context.Context, params *GetDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomain Get Information for a Single Domain
-	//
-	// Get information for a single domain in an account or team.
-	//
-	// Corresponds with GET /v5/domains/{domain} (the `GetDomain` operationId).
-	GetDomain(ctx context.Context, domain string, params *GetDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetRecords List existing DNS records
-	//
-	// Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
-	//
-	// Corresponds with GET /v5/domains/{domain}/records (the `GetRecords` operationId).
-	GetRecords(ctx context.Context, domain string, params *GetRecordsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAuthToken Get Auth Token Metadata
-	//
-	// Retrieve metadata about an authentication token belonging to the currently authenticated User.
-	//
-	// Corresponds with GET /v5/user/tokens/{tokenId} (the `GetAuthToken` operationId).
-	GetAuthToken(ctx context.Context, tokenId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListDeploymentFiles List Deployment Files
-	//
-	// Allows to retrieve the file structure of the source code of a deployment by supplying the deployment unique identifier. If the deployment was created with the Vercel CLI or the API directly with the `files` key, it will have a file tree that can be retrievable.
-	//
-	// Corresponds with GET /v6/deployments/{id}/files (the `ListDeploymentFiles` operationId).
-	ListDeploymentFiles(ctx context.Context, id string, params *ListDeploymentFilesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteDomain Remove a domain by name
-	//
-	// Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
-	//
-	// Corresponds with DELETE /v6/domains/{domain} (the `DeleteDomain` operationId).
-	DeleteDomain(ctx context.Context, domain string, params *DeleteDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainConfig Get a Domain's configuration
-	//
-	// Get a Domain's configuration.
-	//
-	// Corresponds with GET /v6/domains/{domain}/config (the `GetDomainConfig` operationId).
-	GetDomainConfig(ctx context.Context, domain string, params *GetDomainConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAuthTokens List Auth Tokens
-	//
-	// Retrieve a list of the current User's authentication tokens.
-	//
-	// Corresponds with GET /v6/user/tokens (the `ListAuthTokens` operationId).
-	ListAuthTokens(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDeployments List deployments
-	//
-	// List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
-	//
-	// Corresponds with GET /v7/deployments (the `GetDeployments` operationId).
-	GetDeployments(ctx context.Context, params *GetDeploymentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateOrTransferDomainWithBody Add an existing domain to the Vercel platform
-	//
-	// This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v7/domains (the `CreateOrTransferDomain` operationId).
-	CreateOrTransferDomainWithBody(ctx context.Context, params *CreateOrTransferDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateOrTransferDomain Add an existing domain to the Vercel platform
-	//
-	// This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v7/domains (the `CreateOrTransferDomain` operationId).
-	CreateOrTransferDomain(ctx context.Context, params *CreateOrTransferDomainParams, body CreateOrTransferDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAllArtifacts Delete all cache artifacts
-	//
-	// Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
-	//
-	// Corresponds with DELETE /v8/artifacts (the `DeleteAllArtifacts` operationId).
-	DeleteAllArtifacts(ctx context.Context, params *DeleteAllArtifactsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ArtifactQueryWithBody Query information about an artifact
-	//
-	// Query information about an array of artifacts.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v8/artifacts (the `ArtifactQuery` operationId).
-	ArtifactQueryWithBody(ctx context.Context, params *ArtifactQueryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ArtifactQuery Query information about an artifact
-	//
-	// Query information about an array of artifacts.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v8/artifacts (the `ArtifactQuery` operationId).
-	ArtifactQuery(ctx context.Context, params *ArtifactQueryParams, body ArtifactQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RecordEventsWithBody Record an artifacts cache usage event
-	//
-	// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v8/artifacts/events (the `RecordEvents` operationId).
-	RecordEventsWithBody(ctx context.Context, params *RecordEventsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RecordEvents Record an artifacts cache usage event
-	//
-	// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v8/artifacts/events (the `RecordEvents` operationId).
-	RecordEvents(ctx context.Context, params *RecordEventsParams, body RecordEventsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// Status Get status of Remote Caching for this principal
-	//
-	// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
-	//
-	// Corresponds with GET /v8/artifacts/status (the `Status` operationId).
-	Status(ctx context.Context, params *StatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DownloadArtifact Download a cache artifact
-	//
-	// Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
-	//
-	// Corresponds with GET /v8/artifacts/{hash} (the `DownloadArtifact` operationId).
-	DownloadArtifact(ctx context.Context, hash string, params *DownloadArtifactParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ArtifactExists Check if a cache artifact exists
-	//
-	// Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
-	//
-	// Corresponds with HEAD /v8/artifacts/{hash} (the `ArtifactExists` operationId).
-	ArtifactExists(ctx context.Context, hash string, params *ArtifactExistsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UploadArtifactWithBody Upload a cache artifact
-	//
-	// Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v8/artifacts/{hash} (the `UploadArtifact` operationId).
-	UploadArtifactWithBody(ctx context.Context, hash string, params *UploadArtifactParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetCerts Get certs
-	//
-	// Corresponds with GET /v8/certs (the `GetCerts` operationId).
-	GetCerts(ctx context.Context, params *GetCertsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// IssueCertWithBody Issue a new cert
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v8/certs (the `IssueCert` operationId).
-	IssueCertWithBody(ctx context.Context, params *IssueCertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// IssueCert Issue a new cert
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v8/certs (the `IssueCert` operationId).
-	IssueCert(ctx context.Context, params *IssueCertParams, body IssueCertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UploadCertWithBody Upload a cert
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v8/certs (the `UploadCert` operationId).
-	UploadCertWithBody(ctx context.Context, params *UploadCertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UploadCert Upload a cert
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PUT /v8/certs (the `UploadCert` operationId).
-	UploadCert(ctx context.Context, params *UploadCertParams, body UploadCertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveCert Remove cert
-	//
-	// Corresponds with DELETE /v8/certs/{id} (the `RemoveCert` operationId).
-	RemoveCert(ctx context.Context, id string, params *RemoveCertParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetCertById Get cert by id
-	//
-	// Corresponds with GET /v8/certs/{id} (the `GetCertById` operationId).
-	GetCertById(ctx context.Context, id string, params *GetCertByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDeploymentFileContents Get Deployment File Contents
-	//
-	// Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
-	//
-	// Corresponds with GET /v8/deployments/{id}/files/{fileId} (the `GetDeploymentFileContents` operationId).
-	GetDeploymentFileContents(ctx context.Context, id string, fileId string, params *GetDeploymentFileContentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ClaimDomainOwnership Claim Domain Ownership
-	//
-	// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
-	//
-	// Corresponds with POST /v9/domains/{domain}/claim (the `ClaimDomainOwnership` operationId).
-	ClaimDomainOwnership(ctx context.Context, domain string, params *ClaimDomainOwnershipParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetDomainVerificationRecord Get Domain Verification Record
-	//
-	// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.
-	//
-	// Corresponds with GET /v9/domains/{domain}/verification (the `GetDomainVerificationRecord` operationId).
-	GetDomainVerificationRecord(ctx context.Context, domain string, params *GetDomainVerificationRecordParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteProject Delete a Project
-	//
-	// Delete a specific project by passing either the project `id` or `name` in the URL.
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName} (the `DeleteProject` operationId).
-	DeleteProject(ctx context.Context, idOrName string, params *DeleteProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProject Find a project by id or name
-	//
-	// Get the information for a specific project by passing either the project `id` or `name` in the URL.
-	//
-	// Corresponds with GET /v9/projects/{idOrName} (the `GetProject` operationId).
-	GetProject(ctx context.Context, idOrName string, params *GetProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectWithBody Update an existing project
-	//
-	// Update the fields of a project using either its `name` or `id`.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName} (the `UpdateProject` operationId).
-	UpdateProjectWithBody(ctx context.Context, idOrName string, params *UpdateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProject Update an existing project
-	//
-	// Update the fields of a project using either its `name` or `id`.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName} (the `UpdateProject` operationId).
-	UpdateProject(ctx context.Context, idOrName string, params *UpdateProjectParams, body UpdateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectsByIdOrNameCustomEnvironments Retrieve custom environments
-	//
-	// Retrieve custom environments for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/custom-environments (the `GetProjectsByIdOrNameCustomEnvironments` operationId).
-	GetProjectsByIdOrNameCustomEnvironments(ctx context.Context, idOrName string, params *GetProjectsByIdOrNameCustomEnvironmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateCustomEnvironmentWithBody Create a custom environment for the current project.
-	//
-	// Creates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v9/projects/{idOrName}/custom-environments (the `CreateCustomEnvironment` operationId).
-	CreateCustomEnvironmentWithBody(ctx context.Context, idOrName string, params *CreateCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateCustomEnvironment Create a custom environment for the current project.
-	//
-	// Creates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v9/projects/{idOrName}/custom-environments (the `CreateCustomEnvironment` operationId).
-	CreateCustomEnvironment(ctx context.Context, idOrName string, params *CreateCustomEnvironmentParams, body CreateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveCustomEnvironmentWithBody Remove a custom environment
-	//
-	// Remove a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `RemoveCustomEnvironment` operationId).
-	RemoveCustomEnvironmentWithBody(ctx context.Context, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveCustomEnvironment Remove a custom environment
-	//
-	// Remove a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `RemoveCustomEnvironment` operationId).
-	RemoveCustomEnvironment(ctx context.Context, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, body RemoveCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetCustomEnvironment Retrieve a custom environment
-	//
-	// Retrieve a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `GetCustomEnvironment` operationId).
-	GetCustomEnvironment(ctx context.Context, idOrName string, environmentSlugOrId string, params *GetCustomEnvironmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateCustomEnvironmentWithBody Update a custom environment
-	//
-	// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-	UpdateCustomEnvironmentWithBody(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateCustomEnvironment Update a custom environment
-	//
-	// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-	UpdateCustomEnvironment(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, body UpdateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectDomains Retrieve project domains by project by id or name
-	//
-	// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/domains (the `GetProjectDomains` operationId).
-	GetProjectDomains(ctx context.Context, idOrName struct {
-		union json.RawMessage
-	}, params *GetProjectDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveProjectDomainWithBody Remove a domain from a project
-	//
-	// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-	RemoveProjectDomainWithBody(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveProjectDomain Remove a domain from a project
-	//
-	// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-	RemoveProjectDomain(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, body RemoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetProjectDomain Get a project domain
-	//
-	// Get project domain by project id/name and domain name.
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/domains/{domain} (the `GetProjectDomain` operationId).
-	GetProjectDomain(ctx context.Context, idOrName string, domain string, params *GetProjectDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectDomainWithBody Update a project domain
-	//
-	// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-	UpdateProjectDomainWithBody(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateProjectDomain Update a project domain
-	//
-	// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-	UpdateProjectDomain(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, body UpdateProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// VerifyProjectDomain Verify project domain
-	//
-	// Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
-	//
-	// Corresponds with POST /v9/projects/{idOrName}/domains/{domain}/verify (the `VerifyProjectDomain` operationId).
-	VerifyProjectDomain(ctx context.Context, idOrName string, domain string, params *VerifyProjectDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RemoveProjectEnv Remove an environment variable
-	//
-	// Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/env/{id} (the `RemoveProjectEnv` operationId).
-	RemoveProjectEnv(ctx context.Context, idOrName string, id string, params *RemoveProjectEnvParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EditProjectEnvWithBody Edit an environment variable
-	//
-	// Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/env/{id} (the `EditProjectEnv` operationId).
-	EditProjectEnvWithBody(ctx context.Context, idOrName string, id string, params *EditProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// EditProjectEnv Edit an environment variable
-	//
-	// Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/env/{id} (the `EditProjectEnv` operationId).
-	EditProjectEnv(ctx context.Context, idOrName string, id string, params *EditProjectEnvParams, body EditProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateWebInsightsToggleWithBody performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request,
-	// with any type of body and a specified content type.
-	CreateWebInsightsToggleWithBody(ctx context.Context, params *CreateWebInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateWebInsightsToggle performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request.
-	// Takes a body of the `application/json` content type.
-	CreateWebInsightsToggle(ctx context.Context, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 }

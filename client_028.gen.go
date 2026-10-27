@@ -13,6 +13,328 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseDeleteDeploymentResponse parses an HTTP response from a DeleteDeploymentWithResponse call
+func ParseDeleteDeploymentResponse(rsp *http.Response) (*DeleteDeploymentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteDeploymentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// State A constant with the final state of the deployment.
+			State DeleteDeployment200JSONResponseBodyState `json:"state"`
+
+			// Uid The removed deployment ID.
+			//
+			// Example: dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd
+			Uid string `json:"uid"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRootResponse parses an HTTP response from a GetRootWithResponse call
+func ParseGetRootResponse(rsp *http.Response) (*GetRootResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRootResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAliasResponse parses an HTTP response from a DeleteAliasWithResponse call
+func ParseDeleteAliasResponse(rsp *http.Response) (*DeleteAliasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAliasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Status DeleteAlias200JSONResponseBodyStatus `json:"status"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListConnectorsResponse parses an HTTP response from a ListConnectorsWithResponse call
+func ParseListConnectorsResponse(rsp *http.Response) (*ListConnectorsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListConnectorsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ConnectConnectorList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON410 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 501:
+		break // No content-type
+
+	case rsp.StatusCode == 504:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateConnectorResponse parses an HTTP response from a UpdateConnectorWithResponse call
+func ParseUpdateConnectorResponse(rsp *http.Response) (*UpdateConnectorResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateConnectorResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ConnectConnectorUpdateResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 410:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON410 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 501:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest ConnectError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case rsp.StatusCode == 504:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseListConnectorProjectConnectionsResponse parses an HTTP response from a ListConnectorProjectConnectionsWithResponse call
 func ParseListConnectorProjectConnectionsResponse(rsp *http.Response) (*ListConnectorProjectConnectionsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -1716,6 +2038,9 @@ func ParseGetOrCreateDriveResponse(rsp *http.Response) (*GetOrCreateDriveRespons
 		break // No content-type
 
 	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
 		break // No content-type
 
 	}
@@ -6810,15 +7135,7 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				BuildQueue            *struct {
 					Configuration *GetProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                    `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *GetProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *GetProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *GetProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *GetProject200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -7386,6 +7703,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 
 				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -8002,15 +8322,7 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				BuildQueue            *struct {
 					Configuration *GetProject200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  GetProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                             `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *GetProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *GetProject200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *GetProject200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -8641,15 +8953,7 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				BuildQueue            *struct {
 					Configuration *UpdateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                       `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *UpdateProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *UpdateProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *UpdateProject200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -9206,6 +9510,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 
 				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -9822,15 +10129,7 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				BuildQueue            *struct {
 					Configuration *UpdateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 				} `json:"buildQueue,omitempty"`
-
-				// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-				ElasticBuildMachine *struct {
-					Cores float32 `json:"cores"`
-
-					// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-					Label  UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-					Memory float32                                                                `json:"memory"`
-				} `json:"elasticBuildMachine,omitempty"`
+				ElasticBuildMachine        *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 				ElasticConcurrencyEnabled  *UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 				EnableFunctionsBeta        *UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 				Fluid                      *UpdateProject200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`

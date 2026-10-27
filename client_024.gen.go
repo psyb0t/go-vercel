@@ -7,6 +7,2257 @@ import (
 	"net/http"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UploadProjectAvatarResponse) GetJSON200() *struct {
+	AccountId string `json:"accountId"`
+	Alias     []struct {
+		ConfiguredBy        *UploadProjectAvatar200JSONResponseBodyAliasConfiguredBy `json:"configuredBy,omitempty"`
+		ConfiguredChangedAt *float32                                                 `json:"configuredChangedAt,omitempty"`
+		CreatedAt           *float32                                                 `json:"createdAt,omitempty"`
+		Deployment          *struct {
+			Alias         *[]string                                                              `json:"alias,omitempty"`
+			AliasAssigned *UploadProjectAvatar200JSONResponseBody_Alias_Deployment_AliasAssigned `json:"aliasAssigned,omitempty"`
+			AliasError    *struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"aliasError,omitempty"`
+			AliasFinal       *string   `json:"aliasFinal,omitempty"`
+			AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
+			BranchMatcher    *struct {
+				// Pattern The pattern to match against branch names
+				Pattern string `json:"pattern"`
+
+				// Type The type of matching to perform
+				Type UploadProjectAvatar200JSONResponseBodyAliasDeploymentBranchMatcherType `json:"type"`
+			} `json:"branchMatcher,omitempty"`
+			BuildingAt *float32 `json:"buildingAt,omitempty"`
+			Builds     *[]struct {
+				Dest *string `json:"dest,omitempty"`
+				Src  *string `json:"src,omitempty"`
+				Use  string  `json:"use"`
+			} `json:"builds,omitempty"`
+			ChecksConclusion       *UploadProjectAvatar200JSONResponseBodyAliasDeploymentChecksConclusion     `json:"checksConclusion,omitempty"`
+			ChecksState            *UploadProjectAvatar200JSONResponseBodyAliasDeploymentChecksState          `json:"checksState,omitempty"`
+			ConnectBuildsEnabled   *UploadProjectAvatar200JSONResponseBodyAliasDeploymentConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+			ConnectConfigurationId *string                                                                    `json:"connectConfigurationId,omitempty"`
+			CreatedAt              float32                                                                    `json:"createdAt"`
+			CreatedIn              string                                                                     `json:"createdIn"`
+			Creator                *struct {
+				Email       string  `json:"email"`
+				GithubLogin *string `json:"githubLogin,omitempty"`
+				GitlabLogin *string `json:"gitlabLogin,omitempty"`
+				Uid         string  `json:"uid"`
+				Username    string  `json:"username"`
+			} `json:"creator"`
+			DeletedAt          *float32                                                     `json:"deletedAt,omitempty"`
+			DeploymentHostname string                                                       `json:"deploymentHostname"`
+			Forced             *UploadProjectAvatar200JSONResponseBodyAliasDeploymentForced `json:"forced,omitempty"`
+			Id                 string                                                       `json:"id"`
+			Meta               *map[string]string                                           `json:"meta,omitempty"`
+			MonorepoManager    *string                                                      `json:"monorepoManager,omitempty"`
+			Name               string                                                       `json:"name"`
+			OidcTokenClaims    *struct {
+				Aud                 string    `json:"aud"`
+				CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+				DeploymentId        *string   `json:"deployment_id,omitempty"`
+				Environment         string    `json:"environment"`
+				Iss                 string    `json:"iss"`
+				MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+				Owner               string    `json:"owner"`
+				OwnerId             string    `json:"owner_id"`
+				Plan                *string   `json:"plan,omitempty"`
+				Project             string    `json:"project"`
+				ProjectId           string    `json:"project_id"`
+				Scope               string    `json:"scope"`
+				Sub                 string    `json:"sub"`
+			} `json:"oidcTokenClaims,omitempty"`
+			Plan UploadProjectAvatar200JSONResponseBodyAliasDeploymentPlan `json:"plan"`
+
+			// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+			//
+			// Example: false
+			PreviewCommentsEnabled *UploadProjectAvatar200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+			Private                UploadProjectAvatar200JSONResponseBodyAliasDeploymentPrivate                 `json:"private"`
+			ReadyAt                *float32                                                                     `json:"readyAt,omitempty"`
+			ReadyState             UploadProjectAvatar200JSONResponseBodyAliasDeploymentReadyState              `json:"readyState"`
+			ReadySubstate          *UploadProjectAvatar200JSONResponseBodyAliasDeploymentReadySubstate          `json:"readySubstate,omitempty"`
+			RequestedAt            *float32                                                                     `json:"requestedAt,omitempty"`
+			Target                 *string                                                                      `json:"target,omitempty"`
+			TeamId                 *string                                                                      `json:"teamId,omitempty"`
+			Type                   UploadProjectAvatar200JSONResponseBodyAliasDeploymentType                    `json:"type"`
+			Url                    string                                                                       `json:"url"`
+
+			// UserId Present for user creators; omitted for app/integration/system creators.
+			UserId    *string                                                         `json:"userId,omitempty"`
+			WithCache *UploadProjectAvatar200JSONResponseBodyAliasDeploymentWithCache `json:"withCache,omitempty"`
+		} `json:"deployment"`
+		Domain             string                                                         `json:"domain"`
+		Environment        UploadProjectAvatar200JSONResponseBodyAliasEnvironment         `json:"environment"`
+		GitBranch          *string                                                        `json:"gitBranch,omitempty"`
+		Redirect           *string                                                        `json:"redirect,omitempty"`
+		RedirectStatusCode *UploadProjectAvatar200JSONResponseBodyAliasRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		Target             UploadProjectAvatar200JSONResponseBodyAliasTarget              `json:"target"`
+	} `json:"alias"`
+	Analytics *struct {
+		CanceledAt          *float32 `json:"canceledAt,omitempty"`
+		DisabledAt          float32  `json:"disabledAt"`
+		EnabledAt           float32  `json:"enabledAt"`
+		Id                  string   `json:"id"`
+		PaidAt              *float32 `json:"paidAt,omitempty"`
+		SampleRatePercent   *float32 `json:"sampleRatePercent,omitempty"`
+		SpendLimitInDollars *float32 `json:"spendLimitInDollars,omitempty"`
+	} `json:"analytics,omitempty"`
+	AppliedCve55182Migration         *UploadProjectAvatar200JSONResponseBodyAppliedCve55182Migration `json:"appliedCve55182Migration,omitempty"`
+	AutoAssignCustomDomains          *UploadProjectAvatar200JSONResponseBodyAutoAssignCustomDomains  `json:"autoAssignCustomDomains,omitempty"`
+	AutoAssignCustomDomainsUpdatedBy *string                                                         `json:"autoAssignCustomDomainsUpdatedBy,omitempty"`
+	AutoExposeSystemEnvs             *UploadProjectAvatar200JSONResponseBodyAutoExposeSystemEnvs     `json:"autoExposeSystemEnvs,omitempty"`
+	Avatar                           *string                                                         `json:"avatar,omitempty"`
+	AvatarDarkMode                   *string                                                         `json:"avatarDarkMode,omitempty"`
+	Blobs                            *struct {
+		// IsDefaultApp Marks the team-level, Vercel-managed default blob project (`vercel-blob-default-project`) that orphan blob stores are scoped to when connected without an explicit project. Set only by internal storage flows and immutable after creation — guards rely on it to protect the connected stores from being lost when the project is deleted or transferred.
+		IsDefaultApp *UploadProjectAvatar200JSONResponseBodyBlobsIsDefaultApp `json:"isDefaultApp,omitempty"`
+	} `json:"blobs,omitempty"`
+	BuildCommand                *string                                                     `json:"buildCommand,omitempty"`
+	CommandForIgnoringBuildStep *string                                                     `json:"commandForIgnoringBuildStep,omitempty"`
+	ConcurrencyBucketName       *string                                                     `json:"concurrencyBucketName,omitempty"`
+	ConnectBuildsEnabled        *UploadProjectAvatar200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+	ConnectConfigurationId      *string                                                     `json:"connectConfigurationId,omitempty"`
+	ConnectConfigurations       *[]struct {
+		Aws *struct {
+			SecurityGroupId *string  `json:"securityGroupId,omitempty"`
+			SubnetIds       []string `json:"subnetIds"`
+		} `json:"aws,omitempty"`
+		BuildsEnabled          UploadProjectAvatar200JSONResponseBodyConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
+		ConnectConfigurationId string                                                                   `json:"connectConfigurationId"`
+		CreatedAt              float32                                                                  `json:"createdAt"`
+		Dc                     *string                                                                  `json:"dc,omitempty"`
+		EnvId                  UploadProjectAvatar200JSONResponseBody_ConnectConfigurations_EnvId       `json:"envId"`
+		Passive                UploadProjectAvatar200JSONResponseBodyConnectConfigurationsPassive       `json:"passive"`
+		UpdatedAt              float32                                                                  `json:"updatedAt"`
+	} `json:"connectConfigurations,omitempty"`
+	CreatedAt *float32                                        `json:"createdAt,omitempty"`
+	Creator   *UploadProjectAvatar200JSONResponseBody_Creator `json:"creator,omitempty"`
+	Crons     *struct {
+		Definitions []struct {
+			// Description A human-readable description of what this cron job does.
+			Description *string `json:"description,omitempty"`
+
+			// Host The hostname that should be used.
+			//
+			// Example: vercel.com
+			Host string `json:"host"`
+
+			// HostInferred Whether the host was inferred from the production deployment URL rather than explicitly provided.
+			HostInferred *UploadProjectAvatar200JSONResponseBodyCronsDefinitionsHostInferred `json:"hostInferred,omitempty"`
+
+			// Path The path that should be called for the cronjob.
+			//
+			// Example: /api/crons/sync-something?hello=world
+			Path string `json:"path"`
+
+			// Schedule The cron expression.
+			//
+			// Example: 0 0 * * *
+			Schedule string `json:"schedule"`
+
+			// Source The origin of this definition. 'api' means created via the API. Undefined means it originated from a deployment (vercel.json).
+			Source *UploadProjectAvatar200JSONResponseBodyCronsDefinitionsSource `json:"source,omitempty"`
+		} `json:"definitions"`
+
+		// DeploymentId The ID of the Deployment from which the definitions originated.
+		DeploymentId *string `json:"deploymentId"`
+
+		// DisabledAt The time the feature was disabled for this project.
+		DisabledAt *float32 `json:"disabledAt"`
+
+		// EnabledAt The time the feature was enabled for this project. Note: It enables automatically with the first Deployment that outputs cronjobs.
+		EnabledAt float32 `json:"enabledAt"`
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"crons,omitempty"`
+	CustomEnvironments *[]struct {
+		// BranchMatcher Configuration for matching git branches to this environment
+		BranchMatcher *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+
+		// CreatedAt Timestamp when the environment was created
+		CreatedAt float32 `json:"createdAt"`
+
+		// CurrentDeploymentAliases List of aliases for the current deployment
+		CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+		// Description Optional description of the environment's purpose
+		Description *string `json:"description,omitempty"`
+
+		// Domains List of domains associated with this environment
+		Domains *[]struct {
+			ApexName            string                                                                             `json:"apexName"`
+			CreatedAt           *float32                                                                           `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                                            `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                                            `json:"gitBranch,omitempty"`
+			Name                string                                                                             `json:"name"`
+			ProjectId           string                                                                             `json:"projectId"`
+			Redirect            *string                                                                            `json:"redirect,omitempty"`
+			RedirectStatusCode  *UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                                           `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsDomainsVerified `json:"verified"`
+		} `json:"domains,omitempty"`
+
+		// Id Unique identifier for the custom environment (format: env_*)
+		Id string `json:"id"`
+
+		// Slug URL-friendly name of the environment
+		Slug string `json:"slug"`
+
+		// Type The type of environment (production, preview, or development)
+		Type UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsType `json:"type"`
+
+		// UpdatedAt Timestamp when the environment was last updated
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"customEnvironments,omitempty"`
+	CustomerSupportCodeVisibility *UploadProjectAvatar200JSONResponseBodyCustomerSupportCodeVisibility `json:"customerSupportCodeVisibility,omitempty"`
+	DataCache                     *struct {
+		StorageSizeBytes *float32                                                    `json:"storageSizeBytes,omitempty"`
+		Unlimited        *UploadProjectAvatar200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
+		UserDisabled     UploadProjectAvatar200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
+	} `json:"dataCache,omitempty"`
+	DefaultResourceConfig struct {
+		BuildMachineElasticLastUpdated *float32                                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
+		BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
+		BuildMachineElasticTransition  *struct {
+			AlgorithmVersion string                                                                                            `json:"algorithmVersion"`
+			At               float32                                                                                           `json:"at"`
+			Direction        UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
+		} `json:"buildMachineElasticTransition,omitempty"`
+		BuildMachineSelection *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
+		BuildMachineType      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
+		BuildQueue            *struct {
+			Configuration *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+		} `json:"buildQueue,omitempty"`
+		ElasticBuildMachine        *UploadProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
+		ElasticConcurrencyEnabled  *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
+		EnableFunctionsBeta        *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
+		Fluid                      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
+		FunctionDefaultMemoryType  *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
+		FunctionDefaultRegions     []string                                                                               `json:"functionDefaultRegions"`
+		FunctionDefaultTimeout     *float32                                                                               `json:"functionDefaultTimeout,omitempty"`
+		FunctionZeroConfigFailover *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
+		IsNSNBDisabled             *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
+	} `json:"defaultResourceConfig"`
+
+	// DeploymentExpiration Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.
+	DeploymentExpiration struct {
+		// DeploymentsToKeep Minimum number of production deployments to keep for this project, even if they are over the production expiration limit.
+		DeploymentsToKeep *float32 `json:"deploymentsToKeep,omitempty"`
+
+		// ExpirationDays Number of days to keep non-production deployments (mostly preview deployments) before soft deletion.
+		ExpirationDays *float32 `json:"expirationDays,omitempty"`
+
+		// ExpirationDaysCanceled Number of days to keep canceled deployments before soft deletion.
+		ExpirationDaysCanceled *float32 `json:"expirationDaysCanceled,omitempty"`
+
+		// ExpirationDaysErrored Number of days to keep errored deployments before soft deletion.
+		ExpirationDaysErrored *float32 `json:"expirationDaysErrored,omitempty"`
+
+		// ExpirationDaysProduction Number of days to keep production deployments before soft deletion.
+		ExpirationDaysProduction *float32 `json:"expirationDaysProduction,omitempty"`
+	} `json:"deploymentExpiration"`
+
+	// DeploymentPolicy Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident.
+	DeploymentPolicy *struct {
+		DeploymentSources *[]struct {
+			Enabled      UploadProjectAvatar200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled                `json:"enabled"`
+			Environments []UploadProjectAvatar200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item `json:"environments"`
+			Sources      []UploadProjectAvatar200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources              `json:"sources"`
+		} `json:"deploymentSources,omitempty"`
+		GitSources *[]struct {
+			Enabled      UploadProjectAvatar200JSONResponseBodyDeploymentPolicyGitSourcesEnabled                `json:"enabled"`
+			Environments []UploadProjectAvatar200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item `json:"environments"`
+			Sources      []UploadProjectAvatar200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item      `json:"sources"`
+		} `json:"gitSources,omitempty"`
+	} `json:"deploymentPolicy,omitempty"`
+	DevCommand       *string                                                `json:"devCommand,omitempty"`
+	DirectoryListing UploadProjectAvatar200JSONResponseBodyDirectoryListing `json:"directoryListing"`
+	DismissedToasts  *[]struct {
+		Action      UploadProjectAvatar200JSONResponseBodyDismissedToastsAction   `json:"action"`
+		DismissedAt float32                                                       `json:"dismissedAt"`
+		Key         string                                                        `json:"key"`
+		Value       *UploadProjectAvatar200JSONResponseBody_DismissedToasts_Value `json:"value"`
+	} `json:"dismissedToasts,omitempty"`
+	EnableAffectedProjectsDeployments *UploadProjectAvatar200JSONResponseBodyEnableAffectedProjectsDeployments `json:"enableAffectedProjectsDeployments,omitempty"`
+	EnableExternalRewriteCaching      *UploadProjectAvatar200JSONResponseBodyEnableExternalRewriteCaching      `json:"enableExternalRewriteCaching,omitempty"`
+	EnablePreviewFeedback             *UploadProjectAvatar200JSONResponseBodyEnablePreviewFeedback             `json:"enablePreviewFeedback,omitempty"`
+	EnableProductionFeedback          *UploadProjectAvatar200JSONResponseBodyEnableProductionFeedback          `json:"enableProductionFeedback,omitempty"`
+	Env                               *[]struct {
+		Comment              *string                                                 `json:"comment,omitempty"`
+		ConfigurationId      *string                                                 `json:"configurationId,omitempty"`
+		ContentHint          *UploadProjectAvatar200JSONResponseBody_Env_ContentHint `json:"contentHint,omitempty"`
+		CreatedAt            *float32                                                `json:"createdAt,omitempty"`
+		CreatedBy            *string                                                 `json:"createdBy,omitempty"`
+		CustomEnvironmentIds *[]string                                               `json:"customEnvironmentIds,omitempty"`
+		Decrypted            *UploadProjectAvatar200JSONResponseBodyEnvDecrypted     `json:"decrypted,omitempty"`
+		EdgeConfigId         *string                                                 `json:"edgeConfigId,omitempty"`
+		EdgeConfigTokenId    *string                                                 `json:"edgeConfigTokenId,omitempty"`
+		GitBranch            *string                                                 `json:"gitBranch,omitempty"`
+		Id                   *string                                                 `json:"id,omitempty"`
+
+		// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
+		InternalContentHint *struct {
+			// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+			EncryptedValue string                                                           `json:"encryptedValue"`
+			Type           UploadProjectAvatar200JSONResponseBodyEnvInternalContentHintType `json:"type"`
+		} `json:"internalContentHint,omitempty"`
+		Key string `json:"key"`
+
+		// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
+		LegacyValue *string `json:"legacyValue,omitempty"`
+
+		// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+		SunsetSecretId *string                                            `json:"sunsetSecretId,omitempty"`
+		Target         *UploadProjectAvatar200JSONResponseBody_Env_Target `json:"target,omitempty"`
+		Type           UploadProjectAvatar200JSONResponseBodyEnvType      `json:"type"`
+		UpdatedAt      *float32                                           `json:"updatedAt,omitempty"`
+		UpdatedBy      *string                                            `json:"updatedBy,omitempty"`
+		Value          string                                             `json:"value"`
+
+		// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+		Visibility *UploadProjectAvatar200JSONResponseBodyEnvVisibility `json:"visibility,omitempty"`
+		VsmValue   *string                                              `json:"vsmValue,omitempty"`
+	} `json:"env,omitempty"`
+	Expiration *UploadProjectAvatar200JSONResponseBody_Expiration `json:"expiration,omitempty"`
+	Features   *struct {
+		WebAnalytics *UploadProjectAvatar200JSONResponseBodyFeaturesWebAnalytics `json:"webAnalytics,omitempty"`
+	} `json:"features,omitempty"`
+	Framework   *UploadProjectAvatar200JSONResponseBodyFramework `json:"framework,omitempty"`
+	GitComments *struct {
+		// OnCommit Whether the Vercel bot should comment on commits
+		OnCommit UploadProjectAvatar200JSONResponseBodyGitCommentsOnCommit `json:"onCommit"`
+
+		// OnPullRequest Whether the Vercel bot should comment on PRs
+		OnPullRequest UploadProjectAvatar200JSONResponseBodyGitCommentsOnPullRequest `json:"onPullRequest"`
+	} `json:"gitComments,omitempty"`
+	GitForkProtection  *UploadProjectAvatar200JSONResponseBodyGitForkProtection `json:"gitForkProtection,omitempty"`
+	GitLFS             *UploadProjectAvatar200JSONResponseBodyGitLFS            `json:"gitLFS,omitempty"`
+	GitProviderOptions *struct {
+		// ConsolidatedGitCommitStatus Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment.
+		ConsolidatedGitCommitStatus *struct {
+			// Enabled Whether consolidated commit status is enabled.
+			Enabled UploadProjectAvatar200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled `json:"enabled"`
+
+			// PropagateFailures Whether to propagate individual deployment failures to the consolidated status.
+			PropagateFailures UploadProjectAvatar200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures `json:"propagateFailures"`
+		} `json:"consolidatedGitCommitStatus,omitempty"`
+
+		// CreateDeployments Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead
+		CreateDeployments UploadProjectAvatar200JSONResponseBodyGitProviderOptionsCreateDeployments `json:"createDeployments"`
+
+		// DisableRepositoryDispatchEvents Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.
+		DisableRepositoryDispatchEvents *UploadProjectAvatar200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents,omitempty"`
+
+		// GitCommitStatus Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.
+		GitCommitStatus *UploadProjectAvatar200JSONResponseBodyGitProviderOptionsGitCommitStatus `json:"gitCommitStatus,omitempty"`
+
+		// RequireVerifiedCommits Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.
+		RequireVerifiedCommits *UploadProjectAvatar200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits `json:"requireVerifiedCommits,omitempty"`
+	} `json:"gitProviderOptions,omitempty"`
+	HasActiveBranches *UploadProjectAvatar200JSONResponseBodyHasActiveBranches      `json:"hasActiveBranches,omitempty"`
+	HasDeployments    *UploadProjectAvatar200JSONResponseBodyHasDeployments         `json:"hasDeployments,omitempty"`
+	Id                string                                                        `json:"id"`
+	InstallCommand    *string                                                       `json:"installCommand,omitempty"`
+	InternalRoutes    *[]UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item `json:"internalRoutes,omitempty"`
+	IpBuckets         *[]struct {
+		Bucket       string                                                  `json:"bucket"`
+		Default      *UploadProjectAvatar200JSONResponseBodyIpBucketsDefault `json:"default,omitempty"`
+		SupportUntil *float32                                                `json:"supportUntil,omitempty"`
+	} `json:"ipBuckets,omitempty"`
+	Jobs *struct {
+		FlagDefinitionsPresent *struct {
+			Targets []string `json:"targets"`
+		} `json:"flag-definitions-present,omitempty"`
+		Lint *struct {
+			Targets []string `json:"targets"`
+		} `json:"lint,omitempty"`
+		MfeConfigPresent *struct {
+			Targets []string `json:"targets"`
+		} `json:"mfe-config-present,omitempty"`
+		Typecheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"typecheck,omitempty"`
+	} `json:"jobs,omitempty"`
+	LastAliasRequest *struct {
+		FromDeploymentId *string `json:"fromDeploymentId"`
+
+		// FromRollingReleaseId If rolling back from a rolling release, fromDeploymentId captures the "base" of that rolling release, and fromRollingReleaseId captures the "target" of that rolling release.
+		FromRollingReleaseId *string                                                         `json:"fromRollingReleaseId,omitempty"`
+		JobStatus            UploadProjectAvatar200JSONResponseBodyLastAliasRequestJobStatus `json:"jobStatus"`
+		RequestedAt          float32                                                         `json:"requestedAt"`
+		ToDeploymentId       string                                                          `json:"toDeploymentId"`
+		Type                 UploadProjectAvatar200JSONResponseBodyLastAliasRequestType      `json:"type"`
+	} `json:"lastAliasRequest,omitempty"`
+	LastRollbackTarget *map[string]interface{} `json:"lastRollbackTarget,omitempty"`
+	LatestDeployments  *[]struct {
+		Alias         *[]string                                                               `json:"alias,omitempty"`
+		AliasAssigned *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned `json:"aliasAssigned,omitempty"`
+		AliasError    *struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"aliasError,omitempty"`
+		AliasFinal       *string   `json:"aliasFinal,omitempty"`
+		AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
+		BranchMatcher    *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type UploadProjectAvatar200JSONResponseBodyLatestDeploymentsBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+		BuildingAt *float32 `json:"buildingAt,omitempty"`
+		Builds     *[]struct {
+			Dest *string `json:"dest,omitempty"`
+			Src  *string `json:"src,omitempty"`
+			Use  string  `json:"use"`
+		} `json:"builds,omitempty"`
+		ChecksConclusion       *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsChecksConclusion     `json:"checksConclusion,omitempty"`
+		ChecksState            *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsChecksState          `json:"checksState,omitempty"`
+		ConnectBuildsEnabled   *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+		ConnectConfigurationId *string                                                                      `json:"connectConfigurationId,omitempty"`
+		CreatedAt              float32                                                                      `json:"createdAt"`
+		CreatedIn              string                                                                       `json:"createdIn"`
+		Creator                *struct {
+			Email       string  `json:"email"`
+			GithubLogin *string `json:"githubLogin,omitempty"`
+			GitlabLogin *string `json:"gitlabLogin,omitempty"`
+			Uid         string  `json:"uid"`
+			Username    string  `json:"username"`
+		} `json:"creator"`
+		DeletedAt          *float32                                                       `json:"deletedAt,omitempty"`
+		DeploymentHostname string                                                         `json:"deploymentHostname"`
+		Forced             *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsForced `json:"forced,omitempty"`
+		Id                 string                                                         `json:"id"`
+		Meta               *map[string]string                                             `json:"meta,omitempty"`
+		MonorepoManager    *string                                                        `json:"monorepoManager,omitempty"`
+		Name               string                                                         `json:"name"`
+		OidcTokenClaims    *struct {
+			Aud                 string    `json:"aud"`
+			CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+			DeploymentId        *string   `json:"deployment_id,omitempty"`
+			Environment         string    `json:"environment"`
+			Iss                 string    `json:"iss"`
+			MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+			Owner               string    `json:"owner"`
+			OwnerId             string    `json:"owner_id"`
+			Plan                *string   `json:"plan,omitempty"`
+			Project             string    `json:"project"`
+			ProjectId           string    `json:"project_id"`
+			Scope               string    `json:"scope"`
+			Sub                 string    `json:"sub"`
+		} `json:"oidcTokenClaims,omitempty"`
+		Plan UploadProjectAvatar200JSONResponseBodyLatestDeploymentsPlan `json:"plan"`
+
+		// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+		//
+		// Example: false
+		PreviewCommentsEnabled *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+		Private                UploadProjectAvatar200JSONResponseBodyLatestDeploymentsPrivate                 `json:"private"`
+		ReadyAt                *float32                                                                       `json:"readyAt,omitempty"`
+		ReadyState             UploadProjectAvatar200JSONResponseBodyLatestDeploymentsReadyState              `json:"readyState"`
+		ReadySubstate          *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsReadySubstate          `json:"readySubstate,omitempty"`
+		RequestedAt            *float32                                                                       `json:"requestedAt,omitempty"`
+		Target                 *string                                                                        `json:"target,omitempty"`
+		TeamId                 *string                                                                        `json:"teamId,omitempty"`
+		Type                   UploadProjectAvatar200JSONResponseBodyLatestDeploymentsType                    `json:"type"`
+		Url                    string                                                                         `json:"url"`
+
+		// UserId Present for user creators; omitted for app/integration/system creators.
+		UserId    *string                                                           `json:"userId,omitempty"`
+		WithCache *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsWithCache `json:"withCache,omitempty"`
+	} `json:"latestDeployments,omitempty"`
+	Link            *UploadProjectAvatar200JSONResponseBody_Link           `json:"link,omitempty"`
+	Live            *UploadProjectAvatar200JSONResponseBodyLive            `json:"live,omitempty"`
+	Microfrontends  *UploadProjectAvatar200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
+	Name            string                                                 `json:"name"`
+	NodeVersion     UploadProjectAvatar200JSONResponseBodyNodeVersion      `json:"nodeVersion"`
+	OidcTokenConfig *struct {
+		// Enabled Whether or not to generate OpenID Connect JSON Web Tokens.
+		Enabled *UploadProjectAvatar200JSONResponseBodyOidcTokenConfigEnabled `json:"enabled,omitempty"`
+
+		// IssuerMode - team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`
+		IssuerMode *UploadProjectAvatar200JSONResponseBodyOidcTokenConfigIssuerMode `json:"issuerMode,omitempty"`
+	} `json:"oidcTokenConfig,omitempty"`
+	OptionsAllowlist *struct {
+		Paths []struct {
+			Value string `json:"value"`
+		} `json:"paths"`
+	} `json:"optionsAllowlist,omitempty"`
+	OutputDirectory               *string `json:"outputDirectory,omitempty"`
+	PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
+	Passport                      *struct {
+		ConnectorId    string                                                       `json:"connectorId"`
+		DeploymentType UploadProjectAvatar200JSONResponseBodyPassportDeploymentType `json:"deploymentType"`
+	} `json:"passport,omitempty"`
+
+	// PasswordProtection Password protection settings returned without the secret password hash.
+	PasswordProtection *struct {
+		DeploymentType UploadProjectAvatar200JSONResponseBodyPasswordProtectionDeploymentType `json:"deploymentType"`
+	} `json:"passwordProtection,omitempty"`
+	Paused *UploadProjectAvatar200JSONResponseBodyPaused `json:"paused,omitempty"`
+
+	// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+	Permissions *struct {
+		// Monitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Monitoring *[]ACLAction `json:"Monitoring,omitempty"`
+
+		// NotificationMonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationMonitoringAlert *[]ACLAction `json:"NotificationMonitoringAlert,omitempty"`
+
+		// AccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AccessGroup *[]ACLAction `json:"accessGroup,omitempty"`
+
+		// Agent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Agent *[]ACLAction `json:"agent,omitempty"`
+
+		// AiGatewayApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayApiKey *[]ACLAction `json:"aiGatewayApiKey,omitempty"`
+
+		// AiGatewayApiKeyBypassAll Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayApiKeyBypassAll *[]ACLAction `json:"aiGatewayApiKeyBypassAll,omitempty"`
+
+		// AiGatewayApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayApiKeyOwnedBySelf *[]ACLAction `json:"aiGatewayApiKeyOwnedBySelf,omitempty"`
+
+		// AiGatewayApiKeySpendAttribution Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayApiKeySpendAttribution *[]ACLAction `json:"aiGatewayApiKeySpendAttribution,omitempty"`
+
+		// AiGatewayApiKeyZdrExemption Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayApiKeyZdrExemption *[]ACLAction `json:"aiGatewayApiKeyZdrExemption,omitempty"`
+
+		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+		// AiGatewayCredits Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayCredits *[]ACLAction `json:"aiGatewayCredits,omitempty"`
+
+		// AiGatewayGuardrails Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayGuardrails *[]ACLAction `json:"aiGatewayGuardrails,omitempty"`
+
+		// AiGatewayPrivateModels Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayPrivateModels *[]ACLAction `json:"aiGatewayPrivateModels,omitempty"`
+
+		// AiGatewayRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayRules *[]ACLAction `json:"aiGatewayRules,omitempty"`
+
+		// AiGatewaySettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewaySettings *[]ACLAction `json:"aiGatewaySettings,omitempty"`
+
+		// AiGatewayTranscripts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayTranscripts *[]ACLAction `json:"aiGatewayTranscripts,omitempty"`
+
+		// AiGatewayTranscriptsSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayTranscriptsSettings *[]ACLAction `json:"aiGatewayTranscriptsSettings,omitempty"`
+
+		// AiGatewayUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayUsage *[]ACLAction `json:"aiGatewayUsage,omitempty"`
+
+		// AiGatewayVirtualModelConfigs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayVirtualModelConfigs *[]ACLAction `json:"aiGatewayVirtualModelConfigs,omitempty"`
+
+		// AlertRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AlertRules *[]ACLAction `json:"alertRules,omitempty"`
+
+		// Alerts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Alerts *[]ACLAction `json:"alerts,omitempty"`
+
+		// AliasGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AliasGlobal *[]ACLAction `json:"aliasGlobal,omitempty"`
+
+		// AliasProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AliasProject *[]ACLAction `json:"aliasProject,omitempty"`
+
+		// AliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AliasProtectionBypass *[]ACLAction `json:"aliasProtectionBypass,omitempty"`
+
+		// Analytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Analytics *[]ACLAction `json:"analytics,omitempty"`
+
+		// AnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AnalyticsSampling *[]ACLAction `json:"analyticsSampling,omitempty"`
+
+		// AnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AnalyticsUsage *[]ACLAction `json:"analyticsUsage,omitempty"`
+
+		// ApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ApiKey *[]ACLAction `json:"apiKey,omitempty"`
+
+		// ApiKeyAiGateway Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ApiKeyAiGateway *[]ACLAction `json:"apiKeyAiGateway,omitempty"`
+
+		// ApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ApiKeyOwnedBySelf *[]ACLAction `json:"apiKeyOwnedBySelf,omitempty"`
+
+		// AuditLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AuditLog *[]ACLAction `json:"auditLog,omitempty"`
+
+		// Automation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Automation *[]ACLAction `json:"automation,omitempty"`
+
+		// BillingAddress Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingAddress *[]ACLAction `json:"billingAddress,omitempty"`
+
+		// BillingInformation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingInformation *[]ACLAction `json:"billingInformation,omitempty"`
+
+		// BillingInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingInvoice *[]ACLAction `json:"billingInvoice,omitempty"`
+
+		// BillingInvoiceEmailRecipient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingInvoiceEmailRecipient *[]ACLAction `json:"billingInvoiceEmailRecipient,omitempty"`
+
+		// BillingInvoiceLanguage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingInvoiceLanguage *[]ACLAction `json:"billingInvoiceLanguage,omitempty"`
+
+		// BillingPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingPlan *[]ACLAction `json:"billingPlan,omitempty"`
+
+		// BillingPurchaseOrder Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingPurchaseOrder *[]ACLAction `json:"billingPurchaseOrder,omitempty"`
+
+		// BillingRefund Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingRefund *[]ACLAction `json:"billingRefund,omitempty"`
+
+		// BillingTaxId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BillingTaxId *[]ACLAction `json:"billingTaxId,omitempty"`
+
+		// Blob Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Blob *[]ACLAction `json:"blob,omitempty"`
+
+		// BlobStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BlobStoreTokenSet *[]ACLAction `json:"blobStoreTokenSet,omitempty"`
+
+		// Budget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Budget *[]ACLAction `json:"budget,omitempty"`
+
+		// BuildMachine Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BuildMachine *[]ACLAction `json:"buildMachine,omitempty"`
+
+		// BuildMachineDefault Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BuildMachineDefault *[]ACLAction `json:"buildMachineDefault,omitempty"`
+
+		// BulkRedirects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		BulkRedirects *[]ACLAction `json:"bulkRedirects,omitempty"`
+
+		// CacheArtifact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CacheArtifact *[]ACLAction `json:"cacheArtifact,omitempty"`
+
+		// CacheArtifactUsageEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CacheArtifactUsageEvent *[]ACLAction `json:"cacheArtifactUsageEvent,omitempty"`
+
+		// CiInvocations Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CiInvocations *[]ACLAction `json:"ciInvocations,omitempty"`
+
+		// CiLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CiLogs *[]ACLAction `json:"ciLogs,omitempty"`
+
+		// CodeChecks Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CodeChecks *[]ACLAction `json:"codeChecks,omitempty"`
+
+		// CodeOwners Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CodeOwners *[]ACLAction `json:"codeOwners,omitempty"`
+
+		// ConcurrentBuilds Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConcurrentBuilds *[]ACLAction `json:"concurrentBuilds,omitempty"`
+
+		// Connect Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Connect *[]ACLAction `json:"connect,omitempty"`
+
+		// ConnectConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnectConfiguration *[]ACLAction `json:"connectConfiguration,omitempty"`
+
+		// ConnectConfigurationLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnectConfigurationLink *[]ACLAction `json:"connectConfigurationLink,omitempty"`
+
+		// ConnectLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnectLogs *[]ACLAction `json:"connectLogs,omitempty"`
+
+		// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
+
+		// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
+		// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
+
+		// ConnexContact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexContact *[]ACLAction `json:"connexContact,omitempty"`
+
+		// ConnexInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexInstallation *[]ACLAction `json:"connexInstallation,omitempty"`
+
+		// ConnexToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ConnexToken *[]ACLAction `json:"connexToken,omitempty"`
+
+		// CursorOriginInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		CursorOriginInstallation *[]ACLAction `json:"cursorOriginInstallation,omitempty"`
+
+		// DataCacheBillingSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DataCacheBillingSettings *[]ACLAction `json:"dataCacheBillingSettings,omitempty"`
+
+		// DataCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DataCacheNamespace *[]ACLAction `json:"dataCacheNamespace,omitempty"`
+
+		// DefaultDeploymentProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DefaultDeploymentProtection *[]ACLAction `json:"defaultDeploymentProtection,omitempty"`
+
+		// Deployment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Deployment *[]ACLAction `json:"deployment,omitempty"`
+
+		// DeploymentBuildLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentBuildLogs *[]ACLAction `json:"deploymentBuildLogs,omitempty"`
+
+		// DeploymentCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentCheck *[]ACLAction `json:"deploymentCheck,omitempty"`
+
+		// DeploymentCheckPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentCheckPreview *[]ACLAction `json:"deploymentCheckPreview,omitempty"`
+
+		// DeploymentCheckReRunFromProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentCheckReRunFromProductionBranch *[]ACLAction `json:"deploymentCheckReRunFromProductionBranch,omitempty"`
+
+		// DeploymentPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentPolicy *[]ACLAction `json:"deploymentPolicy,omitempty"`
+
+		// DeploymentPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentPreview *[]ACLAction `json:"deploymentPreview,omitempty"`
+
+		// DeploymentPrivate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentPrivate *[]ACLAction `json:"deploymentPrivate,omitempty"`
+
+		// DeploymentProductionGit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentProductionGit *[]ACLAction `json:"deploymentProductionGit,omitempty"`
+
+		// DeploymentPromote Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentPromote *[]ACLAction `json:"deploymentPromote,omitempty"`
+
+		// DeploymentProtectionException Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentProtectionException *[]ACLAction `json:"deploymentProtectionException,omitempty"`
+
+		// DeploymentRollback Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentRollback *[]ACLAction `json:"deploymentRollback,omitempty"`
+
+		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
+
+		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Domain *[]ACLAction `json:"domain,omitempty"`
+
+		// DomainAcceptDelegation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainAcceptDelegation *[]ACLAction `json:"domainAcceptDelegation,omitempty"`
+
+		// DomainAuthCodes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainAuthCodes *[]ACLAction `json:"domainAuthCodes,omitempty"`
+
+		// DomainCertificate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainCertificate *[]ACLAction `json:"domainCertificate,omitempty"`
+
+		// DomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainCheckConfig *[]ACLAction `json:"domainCheckConfig,omitempty"`
+
+		// DomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainMove *[]ACLAction `json:"domainMove,omitempty"`
+
+		// DomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainPurchase *[]ACLAction `json:"domainPurchase,omitempty"`
+
+		// DomainRecord Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainRecord *[]ACLAction `json:"domainRecord,omitempty"`
+
+		// DomainTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DomainTransferIn *[]ACLAction `json:"domainTransferIn,omitempty"`
+
+		// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Drain *[]ACLAction `json:"drain,omitempty"`
+
+		// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
+
+		// EdgeConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EdgeConfig *[]ACLAction `json:"edgeConfig,omitempty"`
+
+		// EdgeConfigItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EdgeConfigItem *[]ACLAction `json:"edgeConfigItem,omitempty"`
+
+		// EdgeConfigSchema Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EdgeConfigSchema *[]ACLAction `json:"edgeConfigSchema,omitempty"`
+
+		// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+		// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
+
+		// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
+
+		// Environments Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Environments *[]ACLAction `json:"environments,omitempty"`
+
+		// Event Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Event *[]ACLAction `json:"event,omitempty"`
+
+		// FileUpload Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		FileUpload *[]ACLAction `json:"fileUpload,omitempty"`
+
+		// FlagsExplorerSubscription Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		FlagsExplorerSubscription *[]ACLAction `json:"flagsExplorerSubscription,omitempty"`
+
+		// GitCredentialGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GitCredentialGrant *[]ACLAction `json:"gitCredentialGrant,omitempty"`
+
+		// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+		// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
+
+		// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
+
+		// Integration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Integration *[]ACLAction `json:"integration,omitempty"`
+
+		// IntegrationAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationAccount *[]ACLAction `json:"integrationAccount,omitempty"`
+
+		// IntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationConfiguration *[]ACLAction `json:"integrationConfiguration,omitempty"`
+
+		// IntegrationConfigurationProjects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationConfigurationProjects *[]ACLAction `json:"integrationConfigurationProjects,omitempty"`
+
+		// IntegrationConfigurationRole Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationConfigurationRole *[]ACLAction `json:"integrationConfigurationRole,omitempty"`
+
+		// IntegrationConfigurationTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationConfigurationTransfer *[]ACLAction `json:"integrationConfigurationTransfer,omitempty"`
+
+		// IntegrationDeploymentAction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationDeploymentAction *[]ACLAction `json:"integrationDeploymentAction,omitempty"`
+
+		// IntegrationEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationEvent *[]ACLAction `json:"integrationEvent,omitempty"`
+
+		// IntegrationLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationLog *[]ACLAction `json:"integrationLog,omitempty"`
+
+		// IntegrationPullRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationPullRequest *[]ACLAction `json:"integrationPullRequest,omitempty"`
+
+		// IntegrationResource Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationResource *[]ACLAction `json:"integrationResource,omitempty"`
+
+		// IntegrationResourceData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationResourceData *[]ACLAction `json:"integrationResourceData,omitempty"`
+
+		// IntegrationResourceReplCommand Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationResourceReplCommand *[]ACLAction `json:"integrationResourceReplCommand,omitempty"`
+
+		// IntegrationResourceSecrets Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationResourceSecrets *[]ACLAction `json:"integrationResourceSecrets,omitempty"`
+
+		// IntegrationSSOSession Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationSSOSession *[]ACLAction `json:"integrationSSOSession,omitempty"`
+
+		// IntegrationStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationStoreTokenSet *[]ACLAction `json:"integrationStoreTokenSet,omitempty"`
+
+		// IntegrationStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationStrict *[]ACLAction `json:"integrationStrict,omitempty"`
+
+		// IntegrationVercelConfigurationOverride Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IntegrationVercelConfigurationOverride *[]ACLAction `json:"integrationVercelConfigurationOverride,omitempty"`
+
+		// IpBlocking Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		IpBlocking *[]ACLAction `json:"ipBlocking,omitempty"`
+
+		// Job Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Job *[]ACLAction `json:"job,omitempty"`
+
+		// JobGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		JobGlobal *[]ACLAction `json:"jobGlobal,omitempty"`
+
+		// KmsIssuer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		KmsIssuer *[]ACLAction `json:"kmsIssuer,omitempty"`
+
+		// KmsProjectGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		KmsProjectGrant *[]ACLAction `json:"kmsProjectGrant,omitempty"`
+
+		// LogDrain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		LogDrain *[]ACLAction `json:"logDrain,omitempty"`
+
+		// Logs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Logs *[]ACLAction `json:"logs,omitempty"`
+
+		// LogsPreset Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		LogsPreset *[]ACLAction `json:"logsPreset,omitempty"`
+
+		// MarketplaceBillingData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceBillingData *[]ACLAction `json:"marketplaceBillingData,omitempty"`
+
+		// MarketplaceExperimentationEdgeConfigData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceExperimentationEdgeConfigData *[]ACLAction `json:"marketplaceExperimentationEdgeConfigData,omitempty"`
+
+		// MarketplaceExperimentationItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceExperimentationItem *[]ACLAction `json:"marketplaceExperimentationItem,omitempty"`
+
+		// MarketplaceFlexCommit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceFlexCommit *[]ACLAction `json:"marketplaceFlexCommit,omitempty"`
+
+		// MarketplaceInstallationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceInstallationMember *[]ACLAction `json:"marketplaceInstallationMember,omitempty"`
+
+		// MarketplaceInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceInvoice *[]ACLAction `json:"marketplaceInvoice,omitempty"`
+
+		// MarketplaceSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MarketplaceSettings *[]ACLAction `json:"marketplaceSettings,omitempty"`
+
+		// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Messageboard *[]ACLAction `json:"messageboard,omitempty"`
+
+		// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+		// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+		// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+		// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
+		// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
+
+		// MonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MonitoringAlert *[]ACLAction `json:"monitoringAlert,omitempty"`
+
+		// MonitoringChart Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MonitoringChart *[]ACLAction `json:"monitoringChart,omitempty"`
+
+		// MonitoringQuery Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MonitoringQuery *[]ACLAction `json:"monitoringQuery,omitempty"`
+
+		// MonitoringSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		MonitoringSettings *[]ACLAction `json:"monitoringSettings,omitempty"`
+
+		// NotificationCustomerBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationCustomerBudget *[]ACLAction `json:"notificationCustomerBudget,omitempty"`
+
+		// NotificationDeploymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDeploymentFailed *[]ACLAction `json:"notificationDeploymentFailed,omitempty"`
+
+		// NotificationDomainConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainConfiguration *[]ACLAction `json:"notificationDomainConfiguration,omitempty"`
+
+		// NotificationDomainExpire Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainExpire *[]ACLAction `json:"notificationDomainExpire,omitempty"`
+
+		// NotificationDomainMoved Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainMoved *[]ACLAction `json:"notificationDomainMoved,omitempty"`
+
+		// NotificationDomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainPurchase *[]ACLAction `json:"notificationDomainPurchase,omitempty"`
+
+		// NotificationDomainRenewal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainRenewal *[]ACLAction `json:"notificationDomainRenewal,omitempty"`
+
+		// NotificationDomainTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainTransfer *[]ACLAction `json:"notificationDomainTransfer,omitempty"`
+
+		// NotificationDomainUnverified Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationDomainUnverified *[]ACLAction `json:"notificationDomainUnverified,omitempty"`
+
+		// NotificationPaymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationPaymentFailed *[]ACLAction `json:"notificationPaymentFailed,omitempty"`
+
+		// NotificationPreferences Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationPreferences *[]ACLAction `json:"notificationPreferences,omitempty"`
+
+		// NotificationStatementOfReasons Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationStatementOfReasons *[]ACLAction `json:"notificationStatementOfReasons,omitempty"`
+
+		// NotificationUsageAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		NotificationUsageAlert *[]ACLAction `json:"notificationUsageAlert,omitempty"`
+
+		// Oauth2Application Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Oauth2Application *[]ACLAction `json:"oauth2Application,omitempty"`
+
+		// Oauth2Connection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Oauth2Connection *[]ACLAction `json:"oauth2Connection,omitempty"`
+
+		// ObservabilityConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ObservabilityConfiguration *[]ACLAction `json:"observabilityConfiguration,omitempty"`
+
+		// ObservabilityData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ObservabilityData *[]ACLAction `json:"observabilityData,omitempty"`
+
+		// ObservabilityFunnel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ObservabilityFunnel *[]ACLAction `json:"observabilityFunnel,omitempty"`
+
+		// ObservabilityNotebook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ObservabilityNotebook *[]ACLAction `json:"observabilityNotebook,omitempty"`
+
+		// OidcFederationPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OidcFederationPolicy *[]ACLAction `json:"oidcFederationPolicy,omitempty"`
+
+		// OnDemandBuild Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OnDemandBuild *[]ACLAction `json:"onDemandBuild,omitempty"`
+
+		// OnDemandConcurrency Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OnDemandConcurrency *[]ACLAction `json:"onDemandConcurrency,omitempty"`
+
+		// OpenTelemetryEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OpenTelemetryEndpoint *[]ACLAction `json:"openTelemetryEndpoint,omitempty"`
+
+		// OptionsAllowlist Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OptionsAllowlist *[]ACLAction `json:"optionsAllowlist,omitempty"`
+
+		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Organization *[]ACLAction `json:"organization,omitempty"`
+
+		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
+
+		// OwnEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OwnEvent *[]ACLAction `json:"ownEvent,omitempty"`
+
+		// PageIntegrity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PageIntegrity *[]ACLAction `json:"pageIntegrity,omitempty"`
+
+		// PasswordProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PasswordProtection *[]ACLAction `json:"passwordProtection,omitempty"`
+
+		// PasswordProtectionInvoiceItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PasswordProtectionInvoiceItem *[]ACLAction `json:"passwordProtectionInvoiceItem,omitempty"`
+
+		// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
+
+		// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Permissions *[]ACLAction `json:"permissions,omitempty"`
+
+		// Postgres Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Postgres *[]ACLAction `json:"postgres,omitempty"`
+
+		// PostgresStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PostgresStoreTokenSet *[]ACLAction `json:"postgresStoreTokenSet,omitempty"`
+
+		// PreviewDeploymentSuffix Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PreviewDeploymentSuffix *[]ACLAction `json:"previewDeploymentSuffix,omitempty"`
+
+		// PrivateCloudAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PrivateCloudAccount *[]ACLAction `json:"privateCloudAccount,omitempty"`
+
+		// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
+
+		// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
+
+		// ProductionAliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProductionAliasProtectionBypass *[]ACLAction `json:"productionAliasProtectionBypass,omitempty"`
+
+		// ProductionShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProductionShareableLink *[]ACLAction `json:"productionShareableLink,omitempty"`
+
+		// Project Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Project *[]ACLAction `json:"project,omitempty"`
+
+		// ProjectAccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectAccessGroup *[]ACLAction `json:"projectAccessGroup,omitempty"`
+
+		// ProjectAnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectAnalyticsSampling *[]ACLAction `json:"projectAnalyticsSampling,omitempty"`
+
+		// ProjectAnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectAnalyticsUsage *[]ACLAction `json:"projectAnalyticsUsage,omitempty"`
+
+		// ProjectCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectCheck *[]ACLAction `json:"projectCheck,omitempty"`
+
+		// ProjectCheckRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectCheckRun *[]ACLAction `json:"projectCheckRun,omitempty"`
+
+		// ProjectDeploymentExpiration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDeploymentExpiration *[]ACLAction `json:"projectDeploymentExpiration,omitempty"`
+
+		// ProjectDeploymentHook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDeploymentHook *[]ACLAction `json:"projectDeploymentHook,omitempty"`
+
+		// ProjectDeploymentProtectionStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDeploymentProtectionStrict *[]ACLAction `json:"projectDeploymentProtectionStrict,omitempty"`
+
+		// ProjectDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDomain *[]ACLAction `json:"projectDomain,omitempty"`
+
+		// ProjectDomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDomainCheckConfig *[]ACLAction `json:"projectDomainCheckConfig,omitempty"`
+
+		// ProjectDomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDomainMove *[]ACLAction `json:"projectDomainMove,omitempty"`
+
+		// ProjectDomainVerify Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectDomainVerify *[]ACLAction `json:"projectDomainVerify,omitempty"`
+
+		// ProjectEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectEnvVars *[]ACLAction `json:"projectEnvVars,omitempty"`
+
+		// ProjectEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectEnvVarsProduction *[]ACLAction `json:"projectEnvVarsProduction,omitempty"`
+
+		// ProjectEnvVarsUnownedByIntegration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectEnvVarsUnownedByIntegration *[]ACLAction `json:"projectEnvVarsUnownedByIntegration,omitempty"`
+
+		// ProjectEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectEvent *[]ACLAction `json:"projectEvent,omitempty"`
+
+		// ProjectFlags Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectFlags *[]ACLAction `json:"projectFlags,omitempty"`
+
+		// ProjectFlagsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectFlagsProduction *[]ACLAction `json:"projectFlagsProduction,omitempty"`
+
+		// ProjectFlagsSdkKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectFlagsSdkKey *[]ACLAction `json:"projectFlagsSdkKey,omitempty"`
+
+		// ProjectFromV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectFromV0 *[]ACLAction `json:"projectFromV0,omitempty"`
+
+		// ProjectId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectId *[]ACLAction `json:"projectId,omitempty"`
+
+		// ProjectIntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectIntegrationConfiguration *[]ACLAction `json:"projectIntegrationConfiguration,omitempty"`
+
+		// ProjectLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectLink *[]ACLAction `json:"projectLink,omitempty"`
+
+		// ProjectMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectMember *[]ACLAction `json:"projectMember,omitempty"`
+
+		// ProjectMonitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectMonitoring *[]ACLAction `json:"projectMonitoring,omitempty"`
+
+		// ProjectOIDCToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectOIDCToken *[]ACLAction `json:"projectOIDCToken,omitempty"`
+
+		// ProjectPermissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectPermissions *[]ACLAction `json:"projectPermissions,omitempty"`
+
+		// ProjectProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectProductionBranch *[]ACLAction `json:"projectProductionBranch,omitempty"`
+
+		// ProjectProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectProtectionBypass *[]ACLAction `json:"projectProtectionBypass,omitempty"`
+
+		// ProjectRollingRelease Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectRollingRelease *[]ACLAction `json:"projectRollingRelease,omitempty"`
+
+		// ProjectRoutes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectRoutes *[]ACLAction `json:"projectRoutes,omitempty"`
+
+		// ProjectSetting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectSetting *[]ACLAction `json:"projectSetting,omitempty"`
+
+		// ProjectSupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectSupportCase *[]ACLAction `json:"projectSupportCase,omitempty"`
+
+		// ProjectSupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectSupportCaseComment *[]ACLAction `json:"projectSupportCaseComment,omitempty"`
+
+		// ProjectTier Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectTier *[]ACLAction `json:"projectTier,omitempty"`
+
+		// ProjectTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectTransfer *[]ACLAction `json:"projectTransfer,omitempty"`
+
+		// ProjectTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectTransferIn *[]ACLAction `json:"projectTransferIn,omitempty"`
+
+		// ProjectTransferOut Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectTransferOut *[]ACLAction `json:"projectTransferOut,omitempty"`
+
+		// ProjectTransferRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectTransferRequest *[]ACLAction `json:"projectTransferRequest,omitempty"`
+
+		// ProjectUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ProjectUsage *[]ACLAction `json:"projectUsage,omitempty"`
+
+		// RateLimit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		RateLimit *[]ACLAction `json:"rateLimit,omitempty"`
+
+		// Redis Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Redis *[]ACLAction `json:"redis,omitempty"`
+
+		// RedisStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		RedisStoreTokenSet *[]ACLAction `json:"redisStoreTokenSet,omitempty"`
+
+		// RemoteCaching Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		RemoteCaching *[]ACLAction `json:"remoteCaching,omitempty"`
+
+		// Repository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Repository *[]ACLAction `json:"repository,omitempty"`
+
+		// SamlConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SamlConfig *[]ACLAction `json:"samlConfig,omitempty"`
+
+		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
+
+		// Secret Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Secret *[]ACLAction `json:"secret,omitempty"`
+
+		// SecurityConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SecurityConfig *[]ACLAction `json:"securityConfig,omitempty"`
+
+		// SecurityPlusConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SecurityPlusConfiguration *[]ACLAction `json:"securityPlusConfiguration,omitempty"`
+
+		// SensitiveEnvironmentVariablePolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SensitiveEnvironmentVariablePolicy *[]ACLAction `json:"sensitiveEnvironmentVariablePolicy,omitempty"`
+
+		// Setting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Setting *[]ACLAction `json:"setting,omitempty"`
+
+		// ShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ShareableLink *[]ACLAction `json:"shareableLink,omitempty"`
+
+		// ShareableLinkStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ShareableLinkStrict *[]ACLAction `json:"shareableLinkStrict,omitempty"`
+
+		// SharedEnvVarConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SharedEnvVarConnection *[]ACLAction `json:"sharedEnvVarConnection,omitempty"`
+
+		// SharedEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SharedEnvVars *[]ACLAction `json:"sharedEnvVars,omitempty"`
+
+		// SharedEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SharedEnvVarsProduction *[]ACLAction `json:"sharedEnvVarsProduction,omitempty"`
+
+		// SkewProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SkewProtection *[]ACLAction `json:"skewProtection,omitempty"`
+
+		// Space Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Space *[]ACLAction `json:"space,omitempty"`
+
+		// SpaceRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SpaceRun *[]ACLAction `json:"spaceRun,omitempty"`
+
+		// StoreIsLocked Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		StoreIsLocked *[]ACLAction `json:"storeIsLocked,omitempty"`
+
+		// StoreTokenSetSensitive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		StoreTokenSetSensitive *[]ACLAction `json:"storeTokenSetSensitive,omitempty"`
+
+		// StoreTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		StoreTransfer *[]ACLAction `json:"storeTransfer,omitempty"`
+
+		// SupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SupportCase *[]ACLAction `json:"supportCase,omitempty"`
+
+		// SupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SupportCaseComment *[]ACLAction `json:"supportCaseComment,omitempty"`
+
+		// Team Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Team *[]ACLAction `json:"team,omitempty"`
+
+		// TeamAccessRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamAccessRequest *[]ACLAction `json:"teamAccessRequest,omitempty"`
+
+		// TeamFellowMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamFellowMembership *[]ACLAction `json:"teamFellowMembership,omitempty"`
+
+		// TeamGitExclusivity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamGitExclusivity *[]ACLAction `json:"teamGitExclusivity,omitempty"`
+
+		// TeamInvite Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamInvite *[]ACLAction `json:"teamInvite,omitempty"`
+
+		// TeamInviteCode Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamInviteCode *[]ACLAction `json:"teamInviteCode,omitempty"`
+
+		// TeamInviteLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamInviteLink *[]ACLAction `json:"teamInviteLink,omitempty"`
+
+		// TeamJoin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamJoin *[]ACLAction `json:"teamJoin,omitempty"`
+
+		// TeamMemberMfaStatus Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamMemberMfaStatus *[]ACLAction `json:"teamMemberMfaStatus,omitempty"`
+
+		// TeamMicrofrontends Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamMicrofrontends *[]ACLAction `json:"teamMicrofrontends,omitempty"`
+
+		// TeamOwnMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamOwnMembership *[]ACLAction `json:"teamOwnMembership,omitempty"`
+
+		// TeamOwnMembershipDisconnectSAML Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamOwnMembershipDisconnectSAML *[]ACLAction `json:"teamOwnMembershipDisconnectSAML,omitempty"`
+
+		// TeamSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamSudo *[]ACLAction `json:"teamSudo,omitempty"`
+
+		// TeamTokenInvalidation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TeamTokenInvalidation *[]ACLAction `json:"teamTokenInvalidation,omitempty"`
+
+		// Token Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Token *[]ACLAction `json:"token,omitempty"`
+
+		// ToolbarComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		ToolbarComment *[]ACLAction `json:"toolbarComment,omitempty"`
+
+		// TrustedIps Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TrustedIps *[]ACLAction `json:"trustedIps,omitempty"`
+
+		// TrustedSources Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		TrustedSources *[]ACLAction `json:"trustedSources,omitempty"`
+
+		// Usage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Usage *[]ACLAction `json:"usage,omitempty"`
+
+		// UsageCycle Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		UsageCycle *[]ACLAction `json:"usageCycle,omitempty"`
+
+		// User Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		User *[]ACLAction `json:"user,omitempty"`
+
+		// UserConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		UserConnection *[]ACLAction `json:"userConnection,omitempty"`
+
+		// UserMfaConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		UserMfaConfiguration *[]ACLAction `json:"userMfaConfiguration,omitempty"`
+
+		// UserPreference Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		UserPreference *[]ACLAction `json:"userPreference,omitempty"`
+
+		// UserSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		UserSudo *[]ACLAction `json:"userSudo,omitempty"`
+
+		// V0Chat Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		V0Chat *[]ACLAction `json:"v0Chat,omitempty"`
+
+		// VcrRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		VcrRepository *[]ACLAction `json:"vcrRepository,omitempty"`
+
+		// VercelAppInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		VercelAppInstallation *[]ACLAction `json:"vercelAppInstallation,omitempty"`
+
+		// VercelAppInstallationRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		VercelAppInstallationRequest *[]ACLAction `json:"vercelAppInstallationRequest,omitempty"`
+
+		// VercelAuth Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		VercelAuth *[]ACLAction `json:"vercelAuth,omitempty"`
+
+		// VercelRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		VercelRun *[]ACLAction `json:"vercelRun,omitempty"`
+
+		// VpcPeeringConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		VpcPeeringConnection *[]ACLAction `json:"vpcPeeringConnection,omitempty"`
+
+		// WebAnalytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		WebAnalytics *[]ACLAction `json:"webAnalytics,omitempty"`
+
+		// WebAnalyticsPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		WebAnalyticsPlan *[]ACLAction `json:"webAnalyticsPlan,omitempty"`
+
+		// WebAuthn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		WebAuthn *[]ACLAction `json:"webAuthn,omitempty"`
+
+		// Webhook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Webhook *[]ACLAction `json:"webhook,omitempty"`
+
+		// WebhookEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		WebhookEvent *[]ACLAction `json:"webhook-event,omitempty"`
+
+		// WorkflowRunData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		WorkflowRunData *[]ACLAction `json:"workflowRunData,omitempty"`
+	} `json:"permissions,omitempty"`
+	ProductionDeploymentsFastLane *UploadProjectAvatar200JSONResponseBodyProductionDeploymentsFastLane                     `json:"productionDeploymentsFastLane,omitempty"`
+	ProtectedSourcemaps           *UploadProjectAvatar200JSONResponseBodyProtectedSourcemaps                               `json:"protectedSourcemaps,omitempty"`
+	ProtectionBypass              *map[string]UploadProjectAvatar200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+	ProtectionConfig              *struct {
+		SandboxUrls *struct {
+			InheritDeploymentProtection *UploadProjectAvatar200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
+		} `json:"sandboxUrls,omitempty"`
+	} `json:"protectionConfig,omitempty"`
+	ResourceConfig struct {
+		BuildMachineElasticLastUpdated *float32                                                                       `json:"buildMachineElasticLastUpdated,omitempty"`
+		BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
+		BuildMachineElasticTransition  *struct {
+			AlgorithmVersion string                                                                                     `json:"algorithmVersion"`
+			At               float32                                                                                    `json:"at"`
+			Direction        UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
+		} `json:"buildMachineElasticTransition,omitempty"`
+		BuildMachineSelection *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
+		BuildMachineType      *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
+		BuildQueue            *struct {
+			Configuration *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+		} `json:"buildQueue,omitempty"`
+		ElasticBuildMachine        *UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
+		ElasticConcurrencyEnabled  *UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
+		EnableFunctionsBeta        *UploadProjectAvatar200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
+		Fluid                      *UploadProjectAvatar200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
+		FunctionDefaultMemoryType  *UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
+		FunctionDefaultRegions     []string                                                                        `json:"functionDefaultRegions"`
+		FunctionDefaultTimeout     *float32                                                                        `json:"functionDefaultTimeout,omitempty"`
+		FunctionZeroConfigFailover *UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
+		IsNSNBDisabled             *UploadProjectAvatar200JSONResponseBodyResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
+	} `json:"resourceConfig"`
+
+	// RollbackDescription Description of why a project was rolled back, and by whom. Note that lastAliasRequest contains the from/to details of the rollback.
+	RollbackDescription *struct {
+		// CreatedAt Timestamp of when the rollback was requested.
+		CreatedAt float32 `json:"createdAt"`
+
+		// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
+		Description string `json:"description"`
+
+		// UserId The user who rolled back the project.
+		UserId string `json:"userId"`
+
+		// Username The username of the user who rolled back the project.
+		Username string `json:"username"`
+	} `json:"rollbackDescription,omitempty"`
+
+	// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
+	RollingRelease *struct {
+		// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
+		//
+		// Example: false
+		CanaryResponseHeader *UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
+
+		// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
+		Gate *struct {
+			// Action What to do when the gate trips: pause the rollout, or roll it back.
+			Action UploadProjectAvatar200JSONResponseBodyRollingReleaseGateAction `json:"action"`
+
+			// Checks The checks to evaluate. An empty array means nothing is evaluated.
+			Checks []struct {
+				// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
+				//
+				// Example: ["/api/health"]
+				ExcludePaths *[]string `json:"excludePaths,omitempty"`
+
+				// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
+				//
+				// Example: [503]
+				ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
+
+				// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
+				//
+				// Example: 30
+				IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
+
+				// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
+				//
+				// Example: 0.05
+				SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
+
+				// Type The metric this check evaluates.
+				Type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
+			} `json:"checks"`
+
+			// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
+			DryRun UploadProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
+
+			// Enabled Whether automated gating is enabled for this project's rollouts.
+			Enabled UploadProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
+
+			// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
+			//
+			// Example: 3
+			FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+
+			// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
+			//
+			// Example: 5
+			WindowSize *float32 `json:"windowSize,omitempty"`
+		} `json:"gate,omitempty"`
+
+		// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
+		Stages *[]struct {
+			// Duration Duration in minutes for automatic advancement to the next stage
+			//
+			// Example: 600
+			Duration *float32 `json:"duration,omitempty"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			//
+			// Example: false
+			RequireApproval *UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"stages,omitempty"`
+
+		// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
+		//
+		// Example: production
+		Target string `json:"target"`
+	} `json:"rollingRelease,omitempty"`
+	RootDirectory *string `json:"rootDirectory,omitempty"`
+	Sandbox       *struct {
+		FailoverRegions *[]UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions `json:"failoverRegions,omitempty"`
+		Region          *UploadProjectAvatar200JSONResponseBodySandboxRegion            `json:"region,omitempty"`
+	} `json:"sandbox,omitempty"`
+	Security *struct {
+		AttackModeActiveUntil  *float32                                                              `json:"attackModeActiveUntil,omitempty"`
+		AttackModeEnabled      *UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled      `json:"attackModeEnabled,omitempty"`
+		AttackModeUpdatedAt    *float32                                                              `json:"attackModeUpdatedAt,omitempty"`
+		BotIdEnabled           *UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled           `json:"botIdEnabled,omitempty"`
+		FirewallBypassIps      *[]string                                                             `json:"firewallBypassIps,omitempty"`
+		FirewallConfigVersion  *float32                                                              `json:"firewallConfigVersion,omitempty"`
+		FirewallEnabled        *UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled        `json:"firewallEnabled,omitempty"`
+		FirewallSeawallEnabled *UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled `json:"firewallSeawallEnabled,omitempty"`
+		FirewallUpdatedAt      *float32                                                              `json:"firewallUpdatedAt,omitempty"`
+		Ja3Enabled             *UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled             `json:"ja3Enabled,omitempty"`
+		Ja4Enabled             *UploadProjectAvatar200JSONResponseBodySecurityJa4Enabled             `json:"ja4Enabled,omitempty"`
+		LogHeaders             *UploadProjectAvatar200JSONResponseBody_Security_LogHeaders           `json:"log_headers,omitempty"`
+		ManagedRules           *struct {
+			AiBots struct {
+				Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesAiBotsAction `json:"action,omitempty"`
+				Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesAiBotsActive  `json:"active"`
+			} `json:"ai_bots"`
+			BotFilter struct {
+				Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesBotFilterAction `json:"action,omitempty"`
+				Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesBotFilterActive  `json:"active"`
+			} `json:"bot_filter"`
+			Owasp struct {
+				Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesOwaspAction `json:"action,omitempty"`
+				Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesOwaspActive  `json:"active"`
+			} `json:"owasp"`
+			TrafficSources struct {
+				Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+				Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesTrafficSourcesActive  `json:"active"`
+			} `json:"traffic_sources"`
+			VercelRuleset struct {
+				Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesVercelRulesetAction `json:"action,omitempty"`
+				Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesVercelRulesetActive  `json:"active"`
+			} `json:"vercel_ruleset"`
+		} `json:"managedRules,omitempty"`
+
+		// PageIntegrityEnabled Whether Page Integrity is enabled for this project. Used by the metadata service to gate DynamoDB lookups against the page-integrity-inventory table.
+		PageIntegrityEnabled *UploadProjectAvatar200JSONResponseBodySecurityPageIntegrityEnabled `json:"pageIntegrityEnabled,omitempty"`
+		Rulesets             *map[string]struct {
+			Action         UploadProjectAvatar200JSONResponseBodySecurityRulesetsAction         `json:"action"`
+			ActionDuration *string                                                              `json:"actionDuration,omitempty"`
+			BypassSystem   *UploadProjectAvatar200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
+			LogHeaders     *UploadProjectAvatar200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
+			RateLimit      *struct {
+				Algo   UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
+				Keys   []string                                                            `json:"keys"`
+				Limit  float32                                                             `json:"limit"`
+				Window float32                                                             `json:"window"`
+			} `json:"rateLimit,omitempty"`
+			Redirect *struct {
+				Location  string                                                                  `json:"location"`
+				Permanent UploadProjectAvatar200JSONResponseBodySecurityRulesetsRedirectPermanent `json:"permanent"`
+			} `json:"redirect,omitempty"`
+		} `json:"rulesets,omitempty"`
+	} `json:"security,omitempty"`
+	ServerlessFunctionZeroConfigFailover *UploadProjectAvatar200JSONResponseBodyServerlessFunctionZeroConfigFailover `json:"serverlessFunctionZeroConfigFailover,omitempty"`
+	Services                             *[]struct {
+		// Framework Framework slug, when the service has one (omitted otherwise).
+		Framework *UploadProjectAvatar200JSONResponseBodyServicesFramework `json:"framework,omitempty"`
+
+		// Runtime Generic runtime, e.g. 'node' | 'python' | 'go' | 'ruby' | 'rust' (Service.runtime). Omitted for static builds.
+		Runtime *string `json:"runtime,omitempty"`
+
+		// ServiceName Service name from the deployment (Service.name).
+		ServiceName string `json:"serviceName"`
+
+		// ServiceType Service kind (Service.type). Omitted for schemas that do not define one.
+		ServiceType *UploadProjectAvatar200JSONResponseBodyServicesServiceType `json:"serviceType,omitempty"`
+	} `json:"services,omitempty"`
+	SkewProtectionAllowedDomains    *[]string                                                              `json:"skewProtectionAllowedDomains,omitempty"`
+	SkewProtectionBoundaryAt        *float32                                                               `json:"skewProtectionBoundaryAt,omitempty"`
+	SkewProtectionMaxAge            *float32                                                               `json:"skewProtectionMaxAge,omitempty"`
+	SkipGitConnectDuringLink        *UploadProjectAvatar200JSONResponseBodySkipGitConnectDuringLink        `json:"skipGitConnectDuringLink,omitempty"`
+	SourceFilesOutsideRootDirectory *UploadProjectAvatar200JSONResponseBodySourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+	SpeedInsights                   *struct {
+		CanceledAt *float32 `json:"canceledAt,omitempty"`
+
+		// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+		DataReceivedAt *float32                                                    `json:"dataReceivedAt,omitempty"`
+		DisabledAt     *float32                                                    `json:"disabledAt,omitempty"`
+		EnabledAt      *float32                                                    `json:"enabledAt,omitempty"`
+		HasData        *UploadProjectAvatar200JSONResponseBodySpeedInsightsHasData `json:"hasData,omitempty"`
+		Id             string                                                      `json:"id"`
+		PaidAt         *float32                                                    `json:"paidAt,omitempty"`
+	} `json:"speedInsights,omitempty"`
+	SsoProtection *struct {
+		April2026SecurityIncidentMigrationAppliedFrom *UploadProjectAvatar200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
+		Cve55182MigrationAppliedFrom                  *UploadProjectAvatar200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
+		DeploymentType                                UploadProjectAvatar200JSONResponseBodySsoProtectionDeploymentType                                 `json:"deploymentType"`
+	} `json:"ssoProtection,omitempty"`
+	StaticIps *struct {
+		Builds  UploadProjectAvatar200JSONResponseBodyStaticIpsBuilds  `json:"builds"`
+		Enabled UploadProjectAvatar200JSONResponseBodyStaticIpsEnabled `json:"enabled"`
+		Regions []string                                               `json:"regions"`
+	} `json:"staticIps,omitempty"`
+	Targets *map[string]*struct {
+		Alias         *[]string                                                     `json:"alias,omitempty"`
+		AliasAssigned *UploadProjectAvatar200JSONResponseBody_Targets_AliasAssigned `json:"aliasAssigned,omitempty"`
+		AliasError    *struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"aliasError,omitempty"`
+		AliasFinal       *string   `json:"aliasFinal,omitempty"`
+		AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
+		BranchMatcher    *struct {
+			// Pattern The pattern to match against branch names
+			Pattern string `json:"pattern"`
+
+			// Type The type of matching to perform
+			Type UploadProjectAvatar200JSONResponseBodyTargetsBranchMatcherType `json:"type"`
+		} `json:"branchMatcher,omitempty"`
+		BuildingAt *float32 `json:"buildingAt,omitempty"`
+		Builds     *[]struct {
+			Dest *string `json:"dest,omitempty"`
+			Src  *string `json:"src,omitempty"`
+			Use  string  `json:"use"`
+		} `json:"builds,omitempty"`
+		ChecksConclusion       *UploadProjectAvatar200JSONResponseBodyTargetsChecksConclusion     `json:"checksConclusion,omitempty"`
+		ChecksState            *UploadProjectAvatar200JSONResponseBodyTargetsChecksState          `json:"checksState,omitempty"`
+		ConnectBuildsEnabled   *UploadProjectAvatar200JSONResponseBodyTargetsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+		ConnectConfigurationId *string                                                            `json:"connectConfigurationId,omitempty"`
+		CreatedAt              float32                                                            `json:"createdAt"`
+		CreatedIn              string                                                             `json:"createdIn"`
+		Creator                *struct {
+			Email       string  `json:"email"`
+			GithubLogin *string `json:"githubLogin,omitempty"`
+			GitlabLogin *string `json:"gitlabLogin,omitempty"`
+			Uid         string  `json:"uid"`
+			Username    string  `json:"username"`
+		} `json:"creator"`
+		DeletedAt          *float32                                             `json:"deletedAt,omitempty"`
+		DeploymentHostname string                                               `json:"deploymentHostname"`
+		Forced             *UploadProjectAvatar200JSONResponseBodyTargetsForced `json:"forced,omitempty"`
+		Id                 string                                               `json:"id"`
+		Meta               *map[string]string                                   `json:"meta,omitempty"`
+		MonorepoManager    *string                                              `json:"monorepoManager,omitempty"`
+		Name               string                                               `json:"name"`
+		OidcTokenClaims    *struct {
+			Aud                 string    `json:"aud"`
+			CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+			DeploymentId        *string   `json:"deployment_id,omitempty"`
+			Environment         string    `json:"environment"`
+			Iss                 string    `json:"iss"`
+			MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+			Owner               string    `json:"owner"`
+			OwnerId             string    `json:"owner_id"`
+			Plan                *string   `json:"plan,omitempty"`
+			Project             string    `json:"project"`
+			ProjectId           string    `json:"project_id"`
+			Scope               string    `json:"scope"`
+			Sub                 string    `json:"sub"`
+		} `json:"oidcTokenClaims,omitempty"`
+		Plan UploadProjectAvatar200JSONResponseBodyTargetsPlan `json:"plan"`
+
+		// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+		//
+		// Example: false
+		PreviewCommentsEnabled *UploadProjectAvatar200JSONResponseBodyTargetsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+		Private                UploadProjectAvatar200JSONResponseBodyTargetsPrivate                 `json:"private"`
+		ReadyAt                *float32                                                             `json:"readyAt,omitempty"`
+		ReadyState             UploadProjectAvatar200JSONResponseBodyTargetsReadyState              `json:"readyState"`
+		ReadySubstate          *UploadProjectAvatar200JSONResponseBodyTargetsReadySubstate          `json:"readySubstate,omitempty"`
+		RequestedAt            *float32                                                             `json:"requestedAt,omitempty"`
+		Target                 *string                                                              `json:"target,omitempty"`
+		TeamId                 *string                                                              `json:"teamId,omitempty"`
+		Type                   UploadProjectAvatar200JSONResponseBodyTargetsType                    `json:"type"`
+		Url                    string                                                               `json:"url"`
+
+		// UserId Present for user creators; omitted for app/integration/system creators.
+		UserId    *string                                                 `json:"userId,omitempty"`
+		WithCache *UploadProjectAvatar200JSONResponseBodyTargetsWithCache `json:"withCache,omitempty"`
+	} `json:"targets,omitempty"`
+	Tier    *UploadProjectAvatar200JSONResponseBodyTier `json:"tier,omitempty"`
+	Tracing *struct {
+		Domains       *string   `json:"domains,omitempty"`
+		IgnorePaths   *[]string `json:"ignorePaths,omitempty"`
+		SamplingRules *[]struct {
+			// Destination Which tracing destination this rule applies to. `internal` is the hidden Vercel production-tracing drain (internal delivery); `external` is any customer-configured drain. Derived from the owning drain's delivery type when project tracing is computed; absent on configs persisted before this field existed.
+			Destination *UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesDestination `json:"destination,omitempty"`
+			Env         *UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesEnv         `json:"env,omitempty"`
+			Rate        float32                                                                `json:"rate"`
+			RequestPath *string                                                                `json:"requestPath,omitempty"`
+		} `json:"samplingRules,omitempty"`
+	} `json:"tracing,omitempty"`
+	TransferCompletedAt      *float32                                           `json:"transferCompletedAt,omitempty"`
+	TransferStartedAt        *float32                                           `json:"transferStartedAt,omitempty"`
+	TransferToAccountId      *string                                            `json:"transferToAccountId,omitempty"`
+	TransferredFromAccountId *string                                            `json:"transferredFromAccountId,omitempty"`
+	TrustedIps               *UploadProjectAvatar200JSONResponseBody_TrustedIps `json:"trustedIps,omitempty"`
+	TrustedSources           *struct {
+		// EnableVercelCiSameRepository Allow same-team Vercel CI access to preview and production deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
+		EnableVercelCiSameRepository *UploadProjectAvatar200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository `json:"enableVercelCiSameRepository,omitempty"`
+		OidcProviders                *map[string][]struct {
+			Claims map[string][]string                                                    `json:"claims"`
+			Label  *string                                                                `json:"label,omitempty"`
+			To     UploadProjectAvatar200JSONResponseBody_TrustedSources_OidcProviders_To `json:"to"`
+		} `json:"oidcProviders,omitempty"`
+		Projects *map[string]struct {
+			// CustomAllow Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project.
+			CustomAllow *[]struct {
+				From UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_From `json:"from"`
+				To   UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_To   `json:"to"`
+			} `json:"customAllow,omitempty"`
+			Label *string `json:"label,omitempty"`
+		} `json:"projects,omitempty"`
+	} `json:"trustedSources,omitempty"`
+	UpdatedAt   *float32 `json:"updatedAt,omitempty"`
+	UsageStatus *struct {
+		// BypassThrottleUntil Timestamp until which throttling is bypassed (project pays list rates for overage).
+		BypassThrottleUntil *float32 `json:"bypassThrottleUntil,omitempty"`
+
+		// ExceededAllowanceUntil Timestamp until which the project has exceeded its CDN allowance.
+		ExceededAllowanceUntil *float32 `json:"exceededAllowanceUntil,omitempty"`
+
+		// Kind Billing mode. Always 'flat' for flat-rate projects.
+		Kind UploadProjectAvatar200JSONResponseBodyUsageStatusKind `json:"kind"`
+
+		// TeamThrottled Synced from `team.billing.usageStatus.throttled`. When `true`, the team has throttled all of its projects regardless of `throttled`. The effective throttle the CDN enforces is `throttled || teamThrottled`.
+		TeamThrottled *UploadProjectAvatar200JSONResponseBodyUsageStatusTeamThrottled `json:"teamThrottled,omitempty"`
+
+		// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
+		Throttled *UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
+	} `json:"usageStatus,omitempty"`
+	V0          *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
+	V0Created   *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+	VercelFlags *struct {
+		// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+		EnabledAt *float32 `json:"enabledAt,omitempty"`
+	} `json:"vercelFlags,omitempty"`
+	WebAnalytics *struct {
+		CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
+		DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
+		EnabledAt  *float32                                                   `json:"enabledAt,omitempty"`
+		HasData    *UploadProjectAvatar200JSONResponseBodyWebAnalyticsHasData `json:"hasData,omitempty"`
+		Id         string                                                     `json:"id"`
+	} `json:"webAnalytics,omitempty"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UploadProjectAvatarResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UploadProjectAvatarResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UploadProjectAvatarResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UploadProjectAvatarResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectBoxesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Daemons []struct {
+			Config struct {
+				Command             *[]string                                                              `json:"command,omitempty"`
+				ConfiguredInstances *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances `json:"configuredInstances,omitempty"`
+				Image               struct {
+					Requested string `json:"requested"`
+					Resolved  string `json:"resolved"`
+				} `json:"image"`
+				Instances     GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances `json:"instances"`
+				LivenessProbe *struct {
+					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+					HttpGet          struct {
+						Host        *string `json:"host,omitempty"`
+						HttpHeaders *[]struct {
+							Name  string `json:"name"`
+							Value string `json:"value"`
+						} `json:"httpHeaders,omitempty"`
+						Path   string                                                                    `json:"path"`
+						Port   float32                                                                   `json:"port"`
+						Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
+					} `json:"httpGet"`
+					InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+					PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
+					SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
+					TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
+				} `json:"livenessProbe,omitempty"`
+				Resources struct {
+					Requests struct {
+						Memory string `json:"memory"`
+					} `json:"requests"`
+				} `json:"resources"`
+				TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
+			} `json:"config"`
+			CreatedAt string `json:"createdAt"`
+
+			// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
+			DeploymentId *string `json:"deploymentId,omitempty"`
+			Instances    struct {
+				Desired float32 `json:"desired"`
+				Items   []struct {
+					Alive         *GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive `json:"alive,omitempty"`
+					Id            string                                                        `json:"id"`
+					Image         *string                                                       `json:"image,omitempty"`
+					LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
+					MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
+					Region        string                                                        `json:"region"`
+					StartedAt     string                                                        `json:"startedAt"`
+					StoppedAt     *string                                                       `json:"stoppedAt,omitempty"`
+				} `json:"items"`
+				Ready float32 `json:"ready"`
+				Total float32 `json:"total"`
+			} `json:"instances"`
+			Name      string                                           `json:"name"`
+			Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
+			Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
+			UpdatedAt string                                           `json:"updatedAt"`
+		} `json:"daemons"`
+		Pagination struct {
+			Count float32 `json:"count"`
+			Next  *string `json:"next,omitempty"`
+		} `json:"pagination"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectBoxesResponse) GetJSON200() *struct {
+	Daemons []struct {
+		Config struct {
+			Command             *[]string                                                              `json:"command,omitempty"`
+			ConfiguredInstances *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances `json:"configuredInstances,omitempty"`
+			Image               struct {
+				Requested string `json:"requested"`
+				Resolved  string `json:"resolved"`
+			} `json:"image"`
+			Instances     GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances `json:"instances"`
+			LivenessProbe *struct {
+				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+				HttpGet          struct {
+					Host        *string `json:"host,omitempty"`
+					HttpHeaders *[]struct {
+						Name  string `json:"name"`
+						Value string `json:"value"`
+					} `json:"httpHeaders,omitempty"`
+					Path   string                                                                    `json:"path"`
+					Port   float32                                                                   `json:"port"`
+					Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
+				} `json:"httpGet"`
+				InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+				PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
+				SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
+				TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
+			} `json:"livenessProbe,omitempty"`
+			Resources struct {
+				Requests struct {
+					Memory string `json:"memory"`
+				} `json:"requests"`
+			} `json:"resources"`
+			TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
+		} `json:"config"`
+		CreatedAt string `json:"createdAt"`
+
+		// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
+		DeploymentId *string `json:"deploymentId,omitempty"`
+		Instances    struct {
+			Desired float32 `json:"desired"`
+			Items   []struct {
+				Alive         *GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive `json:"alive,omitempty"`
+				Id            string                                                        `json:"id"`
+				Image         *string                                                       `json:"image,omitempty"`
+				LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
+				MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
+				Region        string                                                        `json:"region"`
+				StartedAt     string                                                        `json:"startedAt"`
+				StoppedAt     *string                                                       `json:"stoppedAt,omitempty"`
+			} `json:"items"`
+			Ready float32 `json:"ready"`
+			Total float32 `json:"total"`
+		} `json:"instances"`
+		Name      string                                           `json:"name"`
+		Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
+		Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
+		UpdatedAt string                                           `json:"updatedAt"`
+	} `json:"daemons"`
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next,omitempty"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectBoxesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectBoxesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectBoxesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectBoxesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutProjectDaemonInstancesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutProjectDaemonInstancesResponse) GetJSON200() *struct {
+	Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r PutProjectDaemonInstancesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutProjectDaemonInstancesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutProjectDaemonInstancesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutProjectDaemonInstancesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RestartProjectDaemonInstanceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
+	}
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r RestartProjectDaemonInstanceResponse) GetJSON202() *struct {
+	Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
+} {
+	return r.JSON202
+}
+
+// GetBody returns the raw response body bytes
+func (r RestartProjectDaemonInstanceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RestartProjectDaemonInstanceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RestartProjectDaemonInstanceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RestartProjectDaemonInstanceResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type MoveProjectDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ApexName            string                                                  `json:"apexName"`
+		CreatedAt           *float32                                                `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                 `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                 `json:"gitBranch,omitempty"`
+		Name                string                                                  `json:"name"`
+		ProjectId           string                                                  `json:"projectId"`
+		Redirect            *string                                                 `json:"redirect,omitempty"`
+		RedirectStatusCode  *MoveProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified MoveProjectDomain200JSONResponseBodyVerified `json:"verified"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r MoveProjectDomainResponse) GetJSON200() *struct {
+	ApexName            string                                                  `json:"apexName"`
+	CreatedAt           *float32                                                `json:"createdAt,omitempty"`
+	CustomEnvironmentId *string                                                 `json:"customEnvironmentId,omitempty"`
+	GitBranch           *string                                                 `json:"gitBranch,omitempty"`
+	Name                string                                                  `json:"name"`
+	ProjectId           string                                                  `json:"projectId"`
+	Redirect            *string                                                 `json:"redirect,omitempty"`
+	RedirectStatusCode  *MoveProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+	UpdatedAt           *float32                                                `json:"updatedAt,omitempty"`
+
+	// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+	Verification *[]struct {
+		Domain string `json:"domain"`
+		Reason string `json:"reason"`
+		Type   string `json:"type"`
+		Value  string `json:"value"`
+	} `json:"verification,omitempty"`
+
+	// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+	Verified MoveProjectDomain200JSONResponseBodyVerified `json:"verified"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r MoveProjectDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r MoveProjectDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r MoveProjectDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r MoveProjectDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BatchRemoveProjectEnvResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Deleted float32  `json:"deleted"`
+		Ids     []string `json:"ids"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r BatchRemoveProjectEnvResponse) GetJSON200() *struct {
+	Deleted float32  `json:"deleted"`
+	Ids     []string `json:"ids"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r BatchRemoveProjectEnvResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r BatchRemoveProjectEnvResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BatchRemoveProjectEnvResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BatchRemoveProjectEnvResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectEnvResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetProjectEnv200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectEnvResponse) GetJSON200() *GetProjectEnv200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectEnvResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectEnvResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectEnvResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectEnvResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectMembersResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetProjectMembers200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectMembersResponse) GetJSON200() *GetProjectMembers200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectMembersResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectMembersResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
 // StatusCode returns HTTPResponse.StatusCode
 func (r GetProjectMembersResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
@@ -4160,15 +6411,7 @@ type UpdateMicrofrontendsResponse struct {
 			BuildQueue            *struct {
 				Configuration *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 			} `json:"buildQueue,omitempty"`
-
-			// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-			ElasticBuildMachine *struct {
-				Cores float32 `json:"cores"`
-
-				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-				Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-				Memory float32                                                                              `json:"memory"`
-			} `json:"elasticBuildMachine,omitempty"`
+			ElasticBuildMachine        *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 			ElasticConcurrencyEnabled  *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 			EnableFunctionsBeta        *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 			Fluid                      *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -4725,6 +6968,9 @@ type UpdateMicrofrontendsResponse struct {
 
 			// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+			// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 			// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -5341,15 +7587,7 @@ type UpdateMicrofrontendsResponse struct {
 			BuildQueue            *struct {
 				Configuration *UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 			} `json:"buildQueue,omitempty"`
-
-			// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-			ElasticBuildMachine *struct {
-				Cores float32 `json:"cores"`
-
-				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-				Label  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-				Memory float32                                                                       `json:"memory"`
-			} `json:"elasticBuildMachine,omitempty"`
+			ElasticBuildMachine        *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 			ElasticConcurrencyEnabled  *UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 			EnableFunctionsBeta        *UpdateMicrofrontends200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 			Fluid                      *UpdateMicrofrontends200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -5943,15 +8181,7 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		BuildQueue            *struct {
 			Configuration *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 		} `json:"buildQueue,omitempty"`
-
-		// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-		ElasticBuildMachine *struct {
-			Cores float32 `json:"cores"`
-
-			// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-			Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-			Memory float32                                                                              `json:"memory"`
-		} `json:"elasticBuildMachine,omitempty"`
+		ElasticBuildMachine        *UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 		ElasticConcurrencyEnabled  *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 		EnableFunctionsBeta        *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 		Fluid                      *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -6508,6 +8738,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 
 		// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+		// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
 
 		// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
@@ -7124,15 +9357,7 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		BuildQueue            *struct {
 			Configuration *UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
 		} `json:"buildQueue,omitempty"`
-
-		// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-		ElasticBuildMachine *struct {
-			Cores float32 `json:"cores"`
-
-			// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-			Label  UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-			Memory float32                                                                       `json:"memory"`
-		} `json:"elasticBuildMachine,omitempty"`
+		ElasticBuildMachine        *UpdateMicrofrontends200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
 		ElasticConcurrencyEnabled  *UpdateMicrofrontends200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
 		EnableFunctionsBeta        *UpdateMicrofrontends200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
 		Fluid                      *UpdateMicrofrontends200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
@@ -17788,2654 +20013,4 @@ func (r GetVercelCiTaskAnalysisResponse) GetJSON500() *struct {
 	} `json:"error"`
 } {
 	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetVercelCiTaskAnalysisResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetVercelCiTaskAnalysisResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetVercelCiTaskAnalysisResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetVercelCiTaskAnalysisResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateVercelCiTaskConfigurationPullRequestResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		ChangedTaskNames []string `json:"changedTaskNames"`
-		Url              string   `json:"url"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *struct {
-		Error struct {
-			Code    string  `json:"code"`
-			Limit   float32 `json:"limit"`
-			Message string  `json:"message"`
-			Name    string  `json:"name"`
-		} `json:"error"`
-	}
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) GetJSON201() *struct {
-	ChangedTaskNames []string `json:"changedTaskNames"`
-	Url              string   `json:"url"`
-} {
-	return r.JSON201
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) GetJSON401() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) GetJSON403() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON403
-}
-
-// GetJSON429 returns the response for an HTTP 429 `application/json` response
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) GetJSON429() *struct {
-	Error struct {
-		Code    string  `json:"code"`
-		Limit   float32 `json:"limit"`
-		Message string  `json:"message"`
-		Name    string  `json:"name"`
-	} `json:"error"`
-} {
-	return r.JSON429
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) GetJSON500() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateVercelCiTaskConfigurationPullRequestResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListVercelCiTaskAnalysisTasksResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Pagination struct {
-			NextCursor *string `json:"nextCursor,omitempty"`
-		} `json:"pagination"`
-		Tasks []struct {
-			ConfigPath            string   `json:"configPath"`
-			Name                  string   `json:"name"`
-			RecommendationReasons []string `json:"recommendationReasons"`
-		} `json:"tasks"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *struct {
-		Error struct {
-			Code    string  `json:"code"`
-			Limit   float32 `json:"limit"`
-			Message string  `json:"message"`
-			Name    string  `json:"name"`
-		} `json:"error"`
-	}
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListVercelCiTaskAnalysisTasksResponse) GetJSON200() *struct {
-	Pagination struct {
-		NextCursor *string `json:"nextCursor,omitempty"`
-	} `json:"pagination"`
-	Tasks []struct {
-		ConfigPath            string   `json:"configPath"`
-		Name                  string   `json:"name"`
-		RecommendationReasons []string `json:"recommendationReasons"`
-	} `json:"tasks"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r ListVercelCiTaskAnalysisTasksResponse) GetJSON401() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r ListVercelCiTaskAnalysisTasksResponse) GetJSON403() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON403
-}
-
-// GetJSON429 returns the response for an HTTP 429 `application/json` response
-func (r ListVercelCiTaskAnalysisTasksResponse) GetJSON429() *struct {
-	Error struct {
-		Code    string  `json:"code"`
-		Limit   float32 `json:"limit"`
-		Message string  `json:"message"`
-		Name    string  `json:"name"`
-	} `json:"error"`
-} {
-	return r.JSON429
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r ListVercelCiTaskAnalysisTasksResponse) GetJSON500() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r ListVercelCiTaskAnalysisTasksResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListVercelCiTaskAnalysisTasksResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListVercelCiTaskAnalysisTasksResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListVercelCiTaskAnalysisTasksResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetWebhooksResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetWebhooks200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetWebhooksResponse) GetJSON200() *GetWebhooks200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetWebhooksResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetWebhooksResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetWebhooksResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetWebhooksResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateWebhookResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
-
-		// CreatedAt A number containing the date when the webhook was created in in milliseconds
-		//
-		// Example: 1567024758130
-		CreatedAt float32 `json:"createdAt"`
-
-		// Events The webhooks events
-		//
-		// Example: deployment.created
-		Events []CreateWebhook200JSONResponseBodyEvents `json:"events"`
-
-		// Id The webhook id
-		//
-		// Example: account_hook_GflD6EYyo7F4ViYS
-		Id string `json:"id"`
-
-		// OwnerId The unique ID of the team the webhook belongs to
-		//
-		// Example: ZspSRT4ljIEEmMHgoDwKWDei
-		OwnerId string `json:"ownerId"`
-
-		// ProjectIds The ID of the projects the webhook is associated with
-		//
-		// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
-		ProjectIds *[]string `json:"projectIds,omitempty"`
-
-		// Secret The webhook secret used to sign the payload
-		Secret string `json:"secret"`
-
-		// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
-		//
-		// Example: 1567024758130
-		UpdatedAt float32 `json:"updatedAt"`
-
-		// Url A string with the URL of the webhook
-		//
-		// Example: https://my-webhook.com
-		Url string `json:"url"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateWebhookResponse) GetJSON200() *struct {
-	AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
-
-	// CreatedAt A number containing the date when the webhook was created in in milliseconds
-	//
-	// Example: 1567024758130
-	CreatedAt float32 `json:"createdAt"`
-
-	// Events The webhooks events
-	//
-	// Example: deployment.created
-	Events []CreateWebhook200JSONResponseBodyEvents `json:"events"`
-
-	// Id The webhook id
-	//
-	// Example: account_hook_GflD6EYyo7F4ViYS
-	Id string `json:"id"`
-
-	// OwnerId The unique ID of the team the webhook belongs to
-	//
-	// Example: ZspSRT4ljIEEmMHgoDwKWDei
-	OwnerId string `json:"ownerId"`
-
-	// ProjectIds The ID of the projects the webhook is associated with
-	//
-	// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
-	ProjectIds *[]string `json:"projectIds,omitempty"`
-
-	// Secret The webhook secret used to sign the payload
-	Secret string `json:"secret"`
-
-	// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
-	//
-	// Example: 1567024758130
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// Url A string with the URL of the webhook
-	//
-	// Example: https://my-webhook.com
-	Url string `json:"url"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateWebhookResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateWebhookResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateWebhookResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateWebhookResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteWebhookResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteWebhookResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteWebhookResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteWebhookResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteWebhookResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetWebhookResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
-
-		// CreatedAt A number containing the date when the webhook was created in in milliseconds
-		//
-		// Example: 1567024758130
-		CreatedAt float32 `json:"createdAt"`
-
-		// Events The webhooks events
-		//
-		// Example: deployment.created
-		Events []GetWebhook200JSONResponseBodyEvents `json:"events"`
-
-		// Id The webhook id
-		//
-		// Example: account_hook_GflD6EYyo7F4ViYS
-		Id string `json:"id"`
-
-		// OwnerId The unique ID of the team the webhook belongs to
-		//
-		// Example: ZspSRT4ljIEEmMHgoDwKWDei
-		OwnerId string `json:"ownerId"`
-
-		// ProjectIds The ID of the projects the webhook is associated with
-		//
-		// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
-		ProjectIds *[]string `json:"projectIds,omitempty"`
-
-		// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
-		//
-		// Example: 1567024758130
-		UpdatedAt float32 `json:"updatedAt"`
-
-		// Url A string with the URL of the webhook
-		//
-		// Example: https://my-webhook.com
-		Url string `json:"url"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetWebhookResponse) GetJSON200() *struct {
-	AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
-
-	// CreatedAt A number containing the date when the webhook was created in in milliseconds
-	//
-	// Example: 1567024758130
-	CreatedAt float32 `json:"createdAt"`
-
-	// Events The webhooks events
-	//
-	// Example: deployment.created
-	Events []GetWebhook200JSONResponseBodyEvents `json:"events"`
-
-	// Id The webhook id
-	//
-	// Example: account_hook_GflD6EYyo7F4ViYS
-	Id string `json:"id"`
-
-	// OwnerId The unique ID of the team the webhook belongs to
-	//
-	// Example: ZspSRT4ljIEEmMHgoDwKWDei
-	OwnerId string `json:"ownerId"`
-
-	// ProjectIds The ID of the projects the webhook is associated with
-	//
-	// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
-	ProjectIds *[]string `json:"projectIds,omitempty"`
-
-	// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
-	//
-	// Example: 1567024758130
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// Url A string with the URL of the webhook
-	//
-	// Example: https://my-webhook.com
-	Url string `json:"url"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetWebhookResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetWebhookResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetWebhookResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetWebhookResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetProjectsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetProjects200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetProjectsResponse) GetJSON200() *GetProjects200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetProjectsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetProjectsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetProjectsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetProjectsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type AddProjectDomainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		ApexName            string                                                 `json:"apexName"`
-		CreatedAt           *float32                                               `json:"createdAt,omitempty"`
-		CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
-		GitBranch           *string                                                `json:"gitBranch,omitempty"`
-		Name                string                                                 `json:"name"`
-		ProjectId           string                                                 `json:"projectId"`
-		Redirect            *string                                                `json:"redirect,omitempty"`
-		RedirectStatusCode  *AddProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-		UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
-
-		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-		Verification *[]struct {
-			Domain string `json:"domain"`
-			Reason string `json:"reason"`
-			Type   string `json:"type"`
-			Value  string `json:"value"`
-		} `json:"verification,omitempty"`
-
-		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-		Verified AddProjectDomain200JSONResponseBodyVerified `json:"verified"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r AddProjectDomainResponse) GetJSON200() *struct {
-	ApexName            string                                                 `json:"apexName"`
-	CreatedAt           *float32                                               `json:"createdAt,omitempty"`
-	CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
-	GitBranch           *string                                                `json:"gitBranch,omitempty"`
-	Name                string                                                 `json:"name"`
-	ProjectId           string                                                 `json:"projectId"`
-	Redirect            *string                                                `json:"redirect,omitempty"`
-	RedirectStatusCode  *AddProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-	UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
-
-	// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-	Verification *[]struct {
-		Domain string `json:"domain"`
-		Reason string `json:"reason"`
-		Type   string `json:"type"`
-		Value  string `json:"value"`
-	} `json:"verification,omitempty"`
-
-	// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-	Verified AddProjectDomain200JSONResponseBodyVerified `json:"verified"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r AddProjectDomainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r AddProjectDomainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r AddProjectDomainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r AddProjectDomainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type FilterProjectEnvsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *FilterProjectEnvs200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r FilterProjectEnvsResponse) GetJSON200() *FilterProjectEnvs200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r FilterProjectEnvsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r FilterProjectEnvsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r FilterProjectEnvsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r FilterProjectEnvsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateProjectEnvResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		Created *CreateProjectEnv201JSONResponseBody_Created `json:"created,omitempty"`
-		Failed  []struct {
-			Error struct {
-				Action    *string                                                  `json:"action,omitempty"`
-				Code      string                                                   `json:"code"`
-				EnvVarId  *string                                                  `json:"envVarId,omitempty"`
-				EnvVarKey *string                                                  `json:"envVarKey,omitempty"`
-				GitBranch *string                                                  `json:"gitBranch,omitempty"`
-				Key       *string                                                  `json:"key,omitempty"`
-				Link      *string                                                  `json:"link,omitempty"`
-				Message   string                                                   `json:"message"`
-				Project   *string                                                  `json:"project,omitempty"`
-				Target    *CreateProjectEnv201JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
-				Value     *CreateProjectEnv201JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
-			} `json:"error"`
-		} `json:"failed"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateProjectEnvResponse) GetJSON201() *struct {
-	Created *CreateProjectEnv201JSONResponseBody_Created `json:"created,omitempty"`
-	Failed  []struct {
-		Error struct {
-			Action    *string                                                  `json:"action,omitempty"`
-			Code      string                                                   `json:"code"`
-			EnvVarId  *string                                                  `json:"envVarId,omitempty"`
-			EnvVarKey *string                                                  `json:"envVarKey,omitempty"`
-			GitBranch *string                                                  `json:"gitBranch,omitempty"`
-			Key       *string                                                  `json:"key,omitempty"`
-			Link      *string                                                  `json:"link,omitempty"`
-			Message   string                                                   `json:"message"`
-			Project   *string                                                  `json:"project,omitempty"`
-			Target    *CreateProjectEnv201JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
-			Value     *CreateProjectEnv201JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
-		} `json:"error"`
-	} `json:"failed"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateProjectEnvResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateProjectEnvResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateProjectEnvResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateProjectEnvResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type RequestPromoteResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r RequestPromoteResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r RequestPromoteResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r RequestPromoteResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r RequestPromoteResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateProjectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AccountId string `json:"accountId"`
-		Alias     []struct {
-			ConfiguredBy        *CreateProject200JSONResponseBodyAliasConfiguredBy `json:"configuredBy,omitempty"`
-			ConfiguredChangedAt *float32                                           `json:"configuredChangedAt,omitempty"`
-			CreatedAt           *float32                                           `json:"createdAt,omitempty"`
-			Deployment          *struct {
-				Alias         *[]string                                                        `json:"alias,omitempty"`
-				AliasAssigned *CreateProject200JSONResponseBody_Alias_Deployment_AliasAssigned `json:"aliasAssigned,omitempty"`
-				AliasError    *struct {
-					Code    string `json:"code"`
-					Message string `json:"message"`
-				} `json:"aliasError,omitempty"`
-				AliasFinal       *string   `json:"aliasFinal,omitempty"`
-				AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
-				BranchMatcher    *struct {
-					// Pattern The pattern to match against branch names
-					Pattern string `json:"pattern"`
-
-					// Type The type of matching to perform
-					Type CreateProject200JSONResponseBodyAliasDeploymentBranchMatcherType `json:"type"`
-				} `json:"branchMatcher,omitempty"`
-				BuildingAt *float32 `json:"buildingAt,omitempty"`
-				Builds     *[]struct {
-					Dest *string `json:"dest,omitempty"`
-					Src  *string `json:"src,omitempty"`
-					Use  string  `json:"use"`
-				} `json:"builds,omitempty"`
-				ChecksConclusion       *CreateProject200JSONResponseBodyAliasDeploymentChecksConclusion     `json:"checksConclusion,omitempty"`
-				ChecksState            *CreateProject200JSONResponseBodyAliasDeploymentChecksState          `json:"checksState,omitempty"`
-				ConnectBuildsEnabled   *CreateProject200JSONResponseBodyAliasDeploymentConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-				ConnectConfigurationId *string                                                              `json:"connectConfigurationId,omitempty"`
-				CreatedAt              float32                                                              `json:"createdAt"`
-				CreatedIn              string                                                               `json:"createdIn"`
-				Creator                *struct {
-					Email       string  `json:"email"`
-					GithubLogin *string `json:"githubLogin,omitempty"`
-					GitlabLogin *string `json:"gitlabLogin,omitempty"`
-					Uid         string  `json:"uid"`
-					Username    string  `json:"username"`
-				} `json:"creator"`
-				DeletedAt          *float32                                               `json:"deletedAt,omitempty"`
-				DeploymentHostname string                                                 `json:"deploymentHostname"`
-				Forced             *CreateProject200JSONResponseBodyAliasDeploymentForced `json:"forced,omitempty"`
-				Id                 string                                                 `json:"id"`
-				Meta               *map[string]string                                     `json:"meta,omitempty"`
-				MonorepoManager    *string                                                `json:"monorepoManager,omitempty"`
-				Name               string                                                 `json:"name"`
-				OidcTokenClaims    *struct {
-					Aud                 string    `json:"aud"`
-					CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-					DeploymentId        *string   `json:"deployment_id,omitempty"`
-					Environment         string    `json:"environment"`
-					Iss                 string    `json:"iss"`
-					MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-					Owner               string    `json:"owner"`
-					OwnerId             string    `json:"owner_id"`
-					Plan                *string   `json:"plan,omitempty"`
-					Project             string    `json:"project"`
-					ProjectId           string    `json:"project_id"`
-					Scope               string    `json:"scope"`
-					Sub                 string    `json:"sub"`
-				} `json:"oidcTokenClaims,omitempty"`
-				Plan CreateProject200JSONResponseBodyAliasDeploymentPlan `json:"plan"`
-
-				// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-				//
-				// Example: false
-				PreviewCommentsEnabled *CreateProject200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-				Private                CreateProject200JSONResponseBodyAliasDeploymentPrivate                 `json:"private"`
-				ReadyAt                *float32                                                               `json:"readyAt,omitempty"`
-				ReadyState             CreateProject200JSONResponseBodyAliasDeploymentReadyState              `json:"readyState"`
-				ReadySubstate          *CreateProject200JSONResponseBodyAliasDeploymentReadySubstate          `json:"readySubstate,omitempty"`
-				RequestedAt            *float32                                                               `json:"requestedAt,omitempty"`
-				Target                 *string                                                                `json:"target,omitempty"`
-				TeamId                 *string                                                                `json:"teamId,omitempty"`
-				Type                   CreateProject200JSONResponseBodyAliasDeploymentType                    `json:"type"`
-				Url                    string                                                                 `json:"url"`
-
-				// UserId Present for user creators; omitted for app/integration/system creators.
-				UserId    *string                                                   `json:"userId,omitempty"`
-				WithCache *CreateProject200JSONResponseBodyAliasDeploymentWithCache `json:"withCache,omitempty"`
-			} `json:"deployment"`
-			Domain             string                                                   `json:"domain"`
-			Environment        CreateProject200JSONResponseBodyAliasEnvironment         `json:"environment"`
-			GitBranch          *string                                                  `json:"gitBranch,omitempty"`
-			Redirect           *string                                                  `json:"redirect,omitempty"`
-			RedirectStatusCode *CreateProject200JSONResponseBodyAliasRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			Target             CreateProject200JSONResponseBodyAliasTarget              `json:"target"`
-		} `json:"alias"`
-		Analytics *struct {
-			CanceledAt          *float32 `json:"canceledAt,omitempty"`
-			DisabledAt          float32  `json:"disabledAt"`
-			EnabledAt           float32  `json:"enabledAt"`
-			Id                  string   `json:"id"`
-			PaidAt              *float32 `json:"paidAt,omitempty"`
-			SampleRatePercent   *float32 `json:"sampleRatePercent,omitempty"`
-			SpendLimitInDollars *float32 `json:"spendLimitInDollars,omitempty"`
-		} `json:"analytics,omitempty"`
-		AppliedCve55182Migration         *CreateProject200JSONResponseBodyAppliedCve55182Migration `json:"appliedCve55182Migration,omitempty"`
-		AutoAssignCustomDomains          *CreateProject200JSONResponseBodyAutoAssignCustomDomains  `json:"autoAssignCustomDomains,omitempty"`
-		AutoAssignCustomDomainsUpdatedBy *string                                                   `json:"autoAssignCustomDomainsUpdatedBy,omitempty"`
-		AutoExposeSystemEnvs             *CreateProject200JSONResponseBodyAutoExposeSystemEnvs     `json:"autoExposeSystemEnvs,omitempty"`
-		Avatar                           *string                                                   `json:"avatar,omitempty"`
-		AvatarDarkMode                   *string                                                   `json:"avatarDarkMode,omitempty"`
-		Blobs                            *struct {
-			// IsDefaultApp Marks the team-level, Vercel-managed default blob project (`vercel-blob-default-project`) that orphan blob stores are scoped to when connected without an explicit project. Set only by internal storage flows and immutable after creation — guards rely on it to protect the connected stores from being lost when the project is deleted or transferred.
-			IsDefaultApp *CreateProject200JSONResponseBodyBlobsIsDefaultApp `json:"isDefaultApp,omitempty"`
-		} `json:"blobs,omitempty"`
-		BuildCommand                *string                                               `json:"buildCommand,omitempty"`
-		CommandForIgnoringBuildStep *string                                               `json:"commandForIgnoringBuildStep,omitempty"`
-		ConcurrencyBucketName       *string                                               `json:"concurrencyBucketName,omitempty"`
-		ConnectBuildsEnabled        *CreateProject200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-		ConnectConfigurationId      *string                                               `json:"connectConfigurationId,omitempty"`
-		ConnectConfigurations       *[]struct {
-			Aws *struct {
-				SecurityGroupId *string  `json:"securityGroupId,omitempty"`
-				SubnetIds       []string `json:"subnetIds"`
-			} `json:"aws,omitempty"`
-			BuildsEnabled          CreateProject200JSONResponseBodyConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
-			ConnectConfigurationId string                                                             `json:"connectConfigurationId"`
-			CreatedAt              float32                                                            `json:"createdAt"`
-			Dc                     *string                                                            `json:"dc,omitempty"`
-			EnvId                  CreateProject200JSONResponseBody_ConnectConfigurations_EnvId       `json:"envId"`
-			Passive                CreateProject200JSONResponseBodyConnectConfigurationsPassive       `json:"passive"`
-			UpdatedAt              float32                                                            `json:"updatedAt"`
-		} `json:"connectConfigurations,omitempty"`
-		CreatedAt *float32                                  `json:"createdAt,omitempty"`
-		Creator   *CreateProject200JSONResponseBody_Creator `json:"creator,omitempty"`
-		Crons     *struct {
-			Definitions []struct {
-				// Description A human-readable description of what this cron job does.
-				Description *string `json:"description,omitempty"`
-
-				// Host The hostname that should be used.
-				//
-				// Example: vercel.com
-				Host string `json:"host"`
-
-				// HostInferred Whether the host was inferred from the production deployment URL rather than explicitly provided.
-				HostInferred *CreateProject200JSONResponseBodyCronsDefinitionsHostInferred `json:"hostInferred,omitempty"`
-
-				// Path The path that should be called for the cronjob.
-				//
-				// Example: /api/crons/sync-something?hello=world
-				Path string `json:"path"`
-
-				// Schedule The cron expression.
-				//
-				// Example: 0 0 * * *
-				Schedule string `json:"schedule"`
-
-				// Source The origin of this definition. 'api' means created via the API. Undefined means it originated from a deployment (vercel.json).
-				Source *CreateProject200JSONResponseBodyCronsDefinitionsSource `json:"source,omitempty"`
-			} `json:"definitions"`
-
-			// DeploymentId The ID of the Deployment from which the definitions originated.
-			DeploymentId *string `json:"deploymentId"`
-
-			// DisabledAt The time the feature was disabled for this project.
-			DisabledAt *float32 `json:"disabledAt"`
-
-			// EnabledAt The time the feature was enabled for this project. Note: It enables automatically with the first Deployment that outputs cronjobs.
-			EnabledAt float32 `json:"enabledAt"`
-			UpdatedAt float32 `json:"updatedAt"`
-		} `json:"crons,omitempty"`
-		CustomEnvironments *[]struct {
-			// BranchMatcher Configuration for matching git branches to this environment
-			BranchMatcher *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type CreateProject200JSONResponseBodyCustomEnvironmentsBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-
-			// CreatedAt Timestamp when the environment was created
-			CreatedAt float32 `json:"createdAt"`
-
-			// CurrentDeploymentAliases List of aliases for the current deployment
-			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-			// Description Optional description of the environment's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Domains List of domains associated with this environment
-			Domains *[]struct {
-				ApexName            string                                                                       `json:"apexName"`
-				CreatedAt           *float32                                                                     `json:"createdAt,omitempty"`
-				CustomEnvironmentId *string                                                                      `json:"customEnvironmentId,omitempty"`
-				GitBranch           *string                                                                      `json:"gitBranch,omitempty"`
-				Name                string                                                                       `json:"name"`
-				ProjectId           string                                                                       `json:"projectId"`
-				Redirect            *string                                                                      `json:"redirect,omitempty"`
-				RedirectStatusCode  *CreateProject200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-				UpdatedAt           *float32                                                                     `json:"updatedAt,omitempty"`
-
-				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-				Verification *[]struct {
-					Domain string `json:"domain"`
-					Reason string `json:"reason"`
-					Type   string `json:"type"`
-					Value  string `json:"value"`
-				} `json:"verification,omitempty"`
-
-				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-				Verified CreateProject200JSONResponseBodyCustomEnvironmentsDomainsVerified `json:"verified"`
-			} `json:"domains,omitempty"`
-
-			// Id Unique identifier for the custom environment (format: env_*)
-			Id string `json:"id"`
-
-			// Slug URL-friendly name of the environment
-			Slug string `json:"slug"`
-
-			// Type The type of environment (production, preview, or development)
-			Type CreateProject200JSONResponseBodyCustomEnvironmentsType `json:"type"`
-
-			// UpdatedAt Timestamp when the environment was last updated
-			UpdatedAt float32 `json:"updatedAt"`
-		} `json:"customEnvironments,omitempty"`
-		CustomerSupportCodeVisibility *CreateProject200JSONResponseBodyCustomerSupportCodeVisibility `json:"customerSupportCodeVisibility,omitempty"`
-		DataCache                     *struct {
-			StorageSizeBytes *float32                                              `json:"storageSizeBytes,omitempty"`
-			Unlimited        *CreateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
-			UserDisabled     CreateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
-		} `json:"dataCache,omitempty"`
-		DefaultResourceConfig struct {
-			BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
-			BuildMachineElasticReason      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
-			BuildMachineElasticTransition  *struct {
-				AlgorithmVersion string                                                                                      `json:"algorithmVersion"`
-				At               float32                                                                                     `json:"at"`
-				Direction        CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
-			} `json:"buildMachineElasticTransition,omitempty"`
-			BuildMachineSelection *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
-			BuildMachineType      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
-			BuildQueue            *struct {
-				Configuration *CreateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-			} `json:"buildQueue,omitempty"`
-
-			// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-			ElasticBuildMachine *struct {
-				Cores float32 `json:"cores"`
-
-				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-				Label  CreateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachineLabel `json:"label"`
-				Memory float32                                                                       `json:"memory"`
-			} `json:"elasticBuildMachine,omitempty"`
-			ElasticConcurrencyEnabled  *CreateProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
-			EnableFunctionsBeta        *CreateProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
-			Fluid                      *CreateProject200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
-			FunctionDefaultMemoryType  *CreateProject200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
-			FunctionDefaultRegions     []string                                                                         `json:"functionDefaultRegions"`
-			FunctionDefaultTimeout     *float32                                                                         `json:"functionDefaultTimeout,omitempty"`
-			FunctionZeroConfigFailover *CreateProject200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
-			IsNSNBDisabled             *CreateProject200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
-		} `json:"defaultResourceConfig"`
-
-		// DeploymentExpiration Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.
-		DeploymentExpiration struct {
-			// DeploymentsToKeep Minimum number of production deployments to keep for this project, even if they are over the production expiration limit.
-			DeploymentsToKeep *float32 `json:"deploymentsToKeep,omitempty"`
-
-			// ExpirationDays Number of days to keep non-production deployments (mostly preview deployments) before soft deletion.
-			ExpirationDays *float32 `json:"expirationDays,omitempty"`
-
-			// ExpirationDaysCanceled Number of days to keep canceled deployments before soft deletion.
-			ExpirationDaysCanceled *float32 `json:"expirationDaysCanceled,omitempty"`
-
-			// ExpirationDaysErrored Number of days to keep errored deployments before soft deletion.
-			ExpirationDaysErrored *float32 `json:"expirationDaysErrored,omitempty"`
-
-			// ExpirationDaysProduction Number of days to keep production deployments before soft deletion.
-			ExpirationDaysProduction *float32 `json:"expirationDaysProduction,omitempty"`
-		} `json:"deploymentExpiration"`
-
-		// DeploymentPolicy Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident.
-		DeploymentPolicy *struct {
-			DeploymentSources *[]struct {
-				Enabled      CreateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled                `json:"enabled"`
-				Environments []CreateProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item `json:"environments"`
-				Sources      []CreateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources              `json:"sources"`
-			} `json:"deploymentSources,omitempty"`
-			GitSources *[]struct {
-				Enabled      CreateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnabled                `json:"enabled"`
-				Environments []CreateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item `json:"environments"`
-				Sources      []CreateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item      `json:"sources"`
-			} `json:"gitSources,omitempty"`
-		} `json:"deploymentPolicy,omitempty"`
-		DevCommand       *string                                          `json:"devCommand,omitempty"`
-		DirectoryListing CreateProject200JSONResponseBodyDirectoryListing `json:"directoryListing"`
-		DismissedToasts  *[]struct {
-			Action      CreateProject200JSONResponseBodyDismissedToastsAction   `json:"action"`
-			DismissedAt float32                                                 `json:"dismissedAt"`
-			Key         string                                                  `json:"key"`
-			Value       *CreateProject200JSONResponseBody_DismissedToasts_Value `json:"value"`
-		} `json:"dismissedToasts,omitempty"`
-		EnableAffectedProjectsDeployments *CreateProject200JSONResponseBodyEnableAffectedProjectsDeployments `json:"enableAffectedProjectsDeployments,omitempty"`
-		EnableExternalRewriteCaching      *CreateProject200JSONResponseBodyEnableExternalRewriteCaching      `json:"enableExternalRewriteCaching,omitempty"`
-		EnablePreviewFeedback             *CreateProject200JSONResponseBodyEnablePreviewFeedback             `json:"enablePreviewFeedback,omitempty"`
-		EnableProductionFeedback          *CreateProject200JSONResponseBodyEnableProductionFeedback          `json:"enableProductionFeedback,omitempty"`
-		Env                               *[]struct {
-			Comment              *string                                           `json:"comment,omitempty"`
-			ConfigurationId      *string                                           `json:"configurationId,omitempty"`
-			ContentHint          *CreateProject200JSONResponseBody_Env_ContentHint `json:"contentHint,omitempty"`
-			CreatedAt            *float32                                          `json:"createdAt,omitempty"`
-			CreatedBy            *string                                           `json:"createdBy,omitempty"`
-			CustomEnvironmentIds *[]string                                         `json:"customEnvironmentIds,omitempty"`
-			Decrypted            *CreateProject200JSONResponseBodyEnvDecrypted     `json:"decrypted,omitempty"`
-			EdgeConfigId         *string                                           `json:"edgeConfigId,omitempty"`
-			EdgeConfigTokenId    *string                                           `json:"edgeConfigTokenId,omitempty"`
-			GitBranch            *string                                           `json:"gitBranch,omitempty"`
-			Id                   *string                                           `json:"id,omitempty"`
-
-			// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
-			InternalContentHint *struct {
-				// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
-				EncryptedValue string                                                     `json:"encryptedValue"`
-				Type           CreateProject200JSONResponseBodyEnvInternalContentHintType `json:"type"`
-			} `json:"internalContentHint,omitempty"`
-			Key string `json:"key"`
-
-			// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
-			LegacyValue *string `json:"legacyValue,omitempty"`
-
-			// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
-			SunsetSecretId *string                                      `json:"sunsetSecretId,omitempty"`
-			Target         *CreateProject200JSONResponseBody_Env_Target `json:"target,omitempty"`
-			Type           CreateProject200JSONResponseBodyEnvType      `json:"type"`
-			UpdatedAt      *float32                                     `json:"updatedAt,omitempty"`
-			UpdatedBy      *string                                      `json:"updatedBy,omitempty"`
-			Value          string                                       `json:"value"`
-
-			// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
-			Visibility *CreateProject200JSONResponseBodyEnvVisibility `json:"visibility,omitempty"`
-			VsmValue   *string                                        `json:"vsmValue,omitempty"`
-		} `json:"env,omitempty"`
-		Expiration *CreateProject200JSONResponseBody_Expiration `json:"expiration,omitempty"`
-		Features   *struct {
-			WebAnalytics *CreateProject200JSONResponseBodyFeaturesWebAnalytics `json:"webAnalytics,omitempty"`
-		} `json:"features,omitempty"`
-		Framework   *CreateProject200JSONResponseBodyFramework `json:"framework,omitempty"`
-		GitComments *struct {
-			// OnCommit Whether the Vercel bot should comment on commits
-			OnCommit CreateProject200JSONResponseBodyGitCommentsOnCommit `json:"onCommit"`
-
-			// OnPullRequest Whether the Vercel bot should comment on PRs
-			OnPullRequest CreateProject200JSONResponseBodyGitCommentsOnPullRequest `json:"onPullRequest"`
-		} `json:"gitComments,omitempty"`
-		GitForkProtection  *CreateProject200JSONResponseBodyGitForkProtection `json:"gitForkProtection,omitempty"`
-		GitLFS             *CreateProject200JSONResponseBodyGitLFS            `json:"gitLFS,omitempty"`
-		GitProviderOptions *struct {
-			// ConsolidatedGitCommitStatus Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment.
-			ConsolidatedGitCommitStatus *struct {
-				// Enabled Whether consolidated commit status is enabled.
-				Enabled CreateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled `json:"enabled"`
-
-				// PropagateFailures Whether to propagate individual deployment failures to the consolidated status.
-				PropagateFailures CreateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures `json:"propagateFailures"`
-			} `json:"consolidatedGitCommitStatus,omitempty"`
-
-			// CreateDeployments Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead
-			CreateDeployments CreateProject200JSONResponseBodyGitProviderOptionsCreateDeployments `json:"createDeployments"`
-
-			// DisableRepositoryDispatchEvents Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.
-			DisableRepositoryDispatchEvents *CreateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents,omitempty"`
-
-			// GitCommitStatus Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.
-			GitCommitStatus *CreateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus `json:"gitCommitStatus,omitempty"`
-
-			// RequireVerifiedCommits Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.
-			RequireVerifiedCommits *CreateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits `json:"requireVerifiedCommits,omitempty"`
-		} `json:"gitProviderOptions,omitempty"`
-		HasActiveBranches *CreateProject200JSONResponseBodyHasActiveBranches      `json:"hasActiveBranches,omitempty"`
-		HasDeployments    *CreateProject200JSONResponseBodyHasDeployments         `json:"hasDeployments,omitempty"`
-		Id                string                                                  `json:"id"`
-		InstallCommand    *string                                                 `json:"installCommand,omitempty"`
-		InternalRoutes    *[]CreateProject200JSONResponseBody_InternalRoutes_Item `json:"internalRoutes,omitempty"`
-		IpBuckets         *[]struct {
-			Bucket       string                                            `json:"bucket"`
-			Default      *CreateProject200JSONResponseBodyIpBucketsDefault `json:"default,omitempty"`
-			SupportUntil *float32                                          `json:"supportUntil,omitempty"`
-		} `json:"ipBuckets,omitempty"`
-		Jobs *struct {
-			FlagDefinitionsPresent *struct {
-				Targets []string `json:"targets"`
-			} `json:"flag-definitions-present,omitempty"`
-			Lint *struct {
-				Targets []string `json:"targets"`
-			} `json:"lint,omitempty"`
-			MfeConfigPresent *struct {
-				Targets []string `json:"targets"`
-			} `json:"mfe-config-present,omitempty"`
-			Typecheck *struct {
-				Targets []string `json:"targets"`
-			} `json:"typecheck,omitempty"`
-		} `json:"jobs,omitempty"`
-		LastAliasRequest *struct {
-			FromDeploymentId *string `json:"fromDeploymentId"`
-
-			// FromRollingReleaseId If rolling back from a rolling release, fromDeploymentId captures the "base" of that rolling release, and fromRollingReleaseId captures the "target" of that rolling release.
-			FromRollingReleaseId *string                                                   `json:"fromRollingReleaseId,omitempty"`
-			JobStatus            CreateProject200JSONResponseBodyLastAliasRequestJobStatus `json:"jobStatus"`
-			RequestedAt          float32                                                   `json:"requestedAt"`
-			ToDeploymentId       string                                                    `json:"toDeploymentId"`
-			Type                 CreateProject200JSONResponseBodyLastAliasRequestType      `json:"type"`
-		} `json:"lastAliasRequest,omitempty"`
-		LastRollbackTarget *map[string]interface{} `json:"lastRollbackTarget,omitempty"`
-		LatestDeployments  *[]struct {
-			Alias         *[]string                                                         `json:"alias,omitempty"`
-			AliasAssigned *CreateProject200JSONResponseBody_LatestDeployments_AliasAssigned `json:"aliasAssigned,omitempty"`
-			AliasError    *struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"aliasError,omitempty"`
-			AliasFinal       *string   `json:"aliasFinal,omitempty"`
-			AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
-			BranchMatcher    *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type CreateProject200JSONResponseBodyLatestDeploymentsBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-			BuildingAt *float32 `json:"buildingAt,omitempty"`
-			Builds     *[]struct {
-				Dest *string `json:"dest,omitempty"`
-				Src  *string `json:"src,omitempty"`
-				Use  string  `json:"use"`
-			} `json:"builds,omitempty"`
-			ChecksConclusion       *CreateProject200JSONResponseBodyLatestDeploymentsChecksConclusion     `json:"checksConclusion,omitempty"`
-			ChecksState            *CreateProject200JSONResponseBodyLatestDeploymentsChecksState          `json:"checksState,omitempty"`
-			ConnectBuildsEnabled   *CreateProject200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-			ConnectConfigurationId *string                                                                `json:"connectConfigurationId,omitempty"`
-			CreatedAt              float32                                                                `json:"createdAt"`
-			CreatedIn              string                                                                 `json:"createdIn"`
-			Creator                *struct {
-				Email       string  `json:"email"`
-				GithubLogin *string `json:"githubLogin,omitempty"`
-				GitlabLogin *string `json:"gitlabLogin,omitempty"`
-				Uid         string  `json:"uid"`
-				Username    string  `json:"username"`
-			} `json:"creator"`
-			DeletedAt          *float32                                                 `json:"deletedAt,omitempty"`
-			DeploymentHostname string                                                   `json:"deploymentHostname"`
-			Forced             *CreateProject200JSONResponseBodyLatestDeploymentsForced `json:"forced,omitempty"`
-			Id                 string                                                   `json:"id"`
-			Meta               *map[string]string                                       `json:"meta,omitempty"`
-			MonorepoManager    *string                                                  `json:"monorepoManager,omitempty"`
-			Name               string                                                   `json:"name"`
-			OidcTokenClaims    *struct {
-				Aud                 string    `json:"aud"`
-				CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-				DeploymentId        *string   `json:"deployment_id,omitempty"`
-				Environment         string    `json:"environment"`
-				Iss                 string    `json:"iss"`
-				MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-				Owner               string    `json:"owner"`
-				OwnerId             string    `json:"owner_id"`
-				Plan                *string   `json:"plan,omitempty"`
-				Project             string    `json:"project"`
-				ProjectId           string    `json:"project_id"`
-				Scope               string    `json:"scope"`
-				Sub                 string    `json:"sub"`
-			} `json:"oidcTokenClaims,omitempty"`
-			Plan CreateProject200JSONResponseBodyLatestDeploymentsPlan `json:"plan"`
-
-			// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-			//
-			// Example: false
-			PreviewCommentsEnabled *CreateProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-			Private                CreateProject200JSONResponseBodyLatestDeploymentsPrivate                 `json:"private"`
-			ReadyAt                *float32                                                                 `json:"readyAt,omitempty"`
-			ReadyState             CreateProject200JSONResponseBodyLatestDeploymentsReadyState              `json:"readyState"`
-			ReadySubstate          *CreateProject200JSONResponseBodyLatestDeploymentsReadySubstate          `json:"readySubstate,omitempty"`
-			RequestedAt            *float32                                                                 `json:"requestedAt,omitempty"`
-			Target                 *string                                                                  `json:"target,omitempty"`
-			TeamId                 *string                                                                  `json:"teamId,omitempty"`
-			Type                   CreateProject200JSONResponseBodyLatestDeploymentsType                    `json:"type"`
-			Url                    string                                                                   `json:"url"`
-
-			// UserId Present for user creators; omitted for app/integration/system creators.
-			UserId    *string                                                     `json:"userId,omitempty"`
-			WithCache *CreateProject200JSONResponseBodyLatestDeploymentsWithCache `json:"withCache,omitempty"`
-		} `json:"latestDeployments,omitempty"`
-		Link            *CreateProject200JSONResponseBody_Link           `json:"link,omitempty"`
-		Live            *CreateProject200JSONResponseBodyLive            `json:"live,omitempty"`
-		Microfrontends  *CreateProject200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
-		Name            string                                           `json:"name"`
-		NodeVersion     CreateProject200JSONResponseBodyNodeVersion      `json:"nodeVersion"`
-		OidcTokenConfig *struct {
-			// Enabled Whether or not to generate OpenID Connect JSON Web Tokens.
-			Enabled *CreateProject200JSONResponseBodyOidcTokenConfigEnabled `json:"enabled,omitempty"`
-
-			// IssuerMode - team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`
-			IssuerMode *CreateProject200JSONResponseBodyOidcTokenConfigIssuerMode `json:"issuerMode,omitempty"`
-		} `json:"oidcTokenConfig,omitempty"`
-		OptionsAllowlist *struct {
-			Paths []struct {
-				Value string `json:"value"`
-			} `json:"paths"`
-		} `json:"optionsAllowlist,omitempty"`
-		OutputDirectory               *string `json:"outputDirectory,omitempty"`
-		PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
-		Passport                      *struct {
-			ConnectorId    string                                                 `json:"connectorId"`
-			DeploymentType CreateProject200JSONResponseBodyPassportDeploymentType `json:"deploymentType"`
-		} `json:"passport,omitempty"`
-
-		// PasswordProtection Password protection settings returned without the secret password hash.
-		PasswordProtection *struct {
-			DeploymentType CreateProject200JSONResponseBodyPasswordProtectionDeploymentType `json:"deploymentType"`
-		} `json:"passwordProtection,omitempty"`
-		Paused *CreateProject200JSONResponseBodyPaused `json:"paused,omitempty"`
-
-		// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-		Permissions *struct {
-			// Monitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Monitoring *[]ACLAction `json:"Monitoring,omitempty"`
-
-			// NotificationMonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationMonitoringAlert *[]ACLAction `json:"NotificationMonitoringAlert,omitempty"`
-
-			// AccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AccessGroup *[]ACLAction `json:"accessGroup,omitempty"`
-
-			// Agent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Agent *[]ACLAction `json:"agent,omitempty"`
-
-			// AiGatewayApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayApiKey *[]ACLAction `json:"aiGatewayApiKey,omitempty"`
-
-			// AiGatewayApiKeyBypassAll Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayApiKeyBypassAll *[]ACLAction `json:"aiGatewayApiKeyBypassAll,omitempty"`
-
-			// AiGatewayApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayApiKeyOwnedBySelf *[]ACLAction `json:"aiGatewayApiKeyOwnedBySelf,omitempty"`
-
-			// AiGatewayApiKeySpendAttribution Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayApiKeySpendAttribution *[]ACLAction `json:"aiGatewayApiKeySpendAttribution,omitempty"`
-
-			// AiGatewayApiKeyZdrExemption Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayApiKeyZdrExemption *[]ACLAction `json:"aiGatewayApiKeyZdrExemption,omitempty"`
-
-			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
-
-			// AiGatewayCredits Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayCredits *[]ACLAction `json:"aiGatewayCredits,omitempty"`
-
-			// AiGatewayGuardrails Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayGuardrails *[]ACLAction `json:"aiGatewayGuardrails,omitempty"`
-
-			// AiGatewayPrivateModels Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayPrivateModels *[]ACLAction `json:"aiGatewayPrivateModels,omitempty"`
-
-			// AiGatewayRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayRules *[]ACLAction `json:"aiGatewayRules,omitempty"`
-
-			// AiGatewaySettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewaySettings *[]ACLAction `json:"aiGatewaySettings,omitempty"`
-
-			// AiGatewayTranscripts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayTranscripts *[]ACLAction `json:"aiGatewayTranscripts,omitempty"`
-
-			// AiGatewayTranscriptsSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayTranscriptsSettings *[]ACLAction `json:"aiGatewayTranscriptsSettings,omitempty"`
-
-			// AiGatewayUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayUsage *[]ACLAction `json:"aiGatewayUsage,omitempty"`
-
-			// AiGatewayVirtualModelConfigs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AiGatewayVirtualModelConfigs *[]ACLAction `json:"aiGatewayVirtualModelConfigs,omitempty"`
-
-			// AlertRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AlertRules *[]ACLAction `json:"alertRules,omitempty"`
-
-			// Alerts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Alerts *[]ACLAction `json:"alerts,omitempty"`
-
-			// AliasGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AliasGlobal *[]ACLAction `json:"aliasGlobal,omitempty"`
-
-			// AliasProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AliasProject *[]ACLAction `json:"aliasProject,omitempty"`
-
-			// AliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AliasProtectionBypass *[]ACLAction `json:"aliasProtectionBypass,omitempty"`
-
-			// Analytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Analytics *[]ACLAction `json:"analytics,omitempty"`
-
-			// AnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AnalyticsSampling *[]ACLAction `json:"analyticsSampling,omitempty"`
-
-			// AnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AnalyticsUsage *[]ACLAction `json:"analyticsUsage,omitempty"`
-
-			// ApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ApiKey *[]ACLAction `json:"apiKey,omitempty"`
-
-			// ApiKeyAiGateway Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ApiKeyAiGateway *[]ACLAction `json:"apiKeyAiGateway,omitempty"`
-
-			// ApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ApiKeyOwnedBySelf *[]ACLAction `json:"apiKeyOwnedBySelf,omitempty"`
-
-			// AuditLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			AuditLog *[]ACLAction `json:"auditLog,omitempty"`
-
-			// Automation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Automation *[]ACLAction `json:"automation,omitempty"`
-
-			// BillingAddress Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingAddress *[]ACLAction `json:"billingAddress,omitempty"`
-
-			// BillingInformation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingInformation *[]ACLAction `json:"billingInformation,omitempty"`
-
-			// BillingInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingInvoice *[]ACLAction `json:"billingInvoice,omitempty"`
-
-			// BillingInvoiceEmailRecipient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingInvoiceEmailRecipient *[]ACLAction `json:"billingInvoiceEmailRecipient,omitempty"`
-
-			// BillingInvoiceLanguage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingInvoiceLanguage *[]ACLAction `json:"billingInvoiceLanguage,omitempty"`
-
-			// BillingPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingPlan *[]ACLAction `json:"billingPlan,omitempty"`
-
-			// BillingPurchaseOrder Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingPurchaseOrder *[]ACLAction `json:"billingPurchaseOrder,omitempty"`
-
-			// BillingRefund Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingRefund *[]ACLAction `json:"billingRefund,omitempty"`
-
-			// BillingTaxId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BillingTaxId *[]ACLAction `json:"billingTaxId,omitempty"`
-
-			// Blob Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Blob *[]ACLAction `json:"blob,omitempty"`
-
-			// BlobStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BlobStoreTokenSet *[]ACLAction `json:"blobStoreTokenSet,omitempty"`
-
-			// Budget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Budget *[]ACLAction `json:"budget,omitempty"`
-
-			// BuildMachine Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BuildMachine *[]ACLAction `json:"buildMachine,omitempty"`
-
-			// BuildMachineDefault Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BuildMachineDefault *[]ACLAction `json:"buildMachineDefault,omitempty"`
-
-			// BulkRedirects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			BulkRedirects *[]ACLAction `json:"bulkRedirects,omitempty"`
-
-			// CacheArtifact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CacheArtifact *[]ACLAction `json:"cacheArtifact,omitempty"`
-
-			// CacheArtifactUsageEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CacheArtifactUsageEvent *[]ACLAction `json:"cacheArtifactUsageEvent,omitempty"`
-
-			// CiInvocations Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CiInvocations *[]ACLAction `json:"ciInvocations,omitempty"`
-
-			// CiLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CiLogs *[]ACLAction `json:"ciLogs,omitempty"`
-
-			// CodeChecks Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CodeChecks *[]ACLAction `json:"codeChecks,omitempty"`
-
-			// CodeOwners Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CodeOwners *[]ACLAction `json:"codeOwners,omitempty"`
-
-			// ConcurrentBuilds Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConcurrentBuilds *[]ACLAction `json:"concurrentBuilds,omitempty"`
-
-			// Connect Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Connect *[]ACLAction `json:"connect,omitempty"`
-
-			// ConnectConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnectConfiguration *[]ACLAction `json:"connectConfiguration,omitempty"`
-
-			// ConnectConfigurationLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnectConfigurationLink *[]ACLAction `json:"connectConfigurationLink,omitempty"`
-
-			// ConnectLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnectLogs *[]ACLAction `json:"connectLogs,omitempty"`
-
-			// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
-
-			// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
-
-			// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
-
-			// ConnexContact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnexContact *[]ACLAction `json:"connexContact,omitempty"`
-
-			// ConnexInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnexInstallation *[]ACLAction `json:"connexInstallation,omitempty"`
-
-			// ConnexToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ConnexToken *[]ACLAction `json:"connexToken,omitempty"`
-
-			// CursorOriginInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			CursorOriginInstallation *[]ACLAction `json:"cursorOriginInstallation,omitempty"`
-
-			// DataCacheBillingSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DataCacheBillingSettings *[]ACLAction `json:"dataCacheBillingSettings,omitempty"`
-
-			// DataCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DataCacheNamespace *[]ACLAction `json:"dataCacheNamespace,omitempty"`
-
-			// DefaultDeploymentProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DefaultDeploymentProtection *[]ACLAction `json:"defaultDeploymentProtection,omitempty"`
-
-			// Deployment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Deployment *[]ACLAction `json:"deployment,omitempty"`
-
-			// DeploymentBuildLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentBuildLogs *[]ACLAction `json:"deploymentBuildLogs,omitempty"`
-
-			// DeploymentCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentCheck *[]ACLAction `json:"deploymentCheck,omitempty"`
-
-			// DeploymentCheckPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentCheckPreview *[]ACLAction `json:"deploymentCheckPreview,omitempty"`
-
-			// DeploymentCheckReRunFromProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentCheckReRunFromProductionBranch *[]ACLAction `json:"deploymentCheckReRunFromProductionBranch,omitempty"`
-
-			// DeploymentPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentPolicy *[]ACLAction `json:"deploymentPolicy,omitempty"`
-
-			// DeploymentPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentPreview *[]ACLAction `json:"deploymentPreview,omitempty"`
-
-			// DeploymentPrivate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentPrivate *[]ACLAction `json:"deploymentPrivate,omitempty"`
-
-			// DeploymentProductionGit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentProductionGit *[]ACLAction `json:"deploymentProductionGit,omitempty"`
-
-			// DeploymentPromote Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentPromote *[]ACLAction `json:"deploymentPromote,omitempty"`
-
-			// DeploymentProtectionException Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentProtectionException *[]ACLAction `json:"deploymentProtectionException,omitempty"`
-
-			// DeploymentRollback Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentRollback *[]ACLAction `json:"deploymentRollback,omitempty"`
-
-			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
-
-			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Domain *[]ACLAction `json:"domain,omitempty"`
-
-			// DomainAcceptDelegation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainAcceptDelegation *[]ACLAction `json:"domainAcceptDelegation,omitempty"`
-
-			// DomainAuthCodes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainAuthCodes *[]ACLAction `json:"domainAuthCodes,omitempty"`
-
-			// DomainCertificate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainCertificate *[]ACLAction `json:"domainCertificate,omitempty"`
-
-			// DomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainCheckConfig *[]ACLAction `json:"domainCheckConfig,omitempty"`
-
-			// DomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainMove *[]ACLAction `json:"domainMove,omitempty"`
-
-			// DomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainPurchase *[]ACLAction `json:"domainPurchase,omitempty"`
-
-			// DomainRecord Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainRecord *[]ACLAction `json:"domainRecord,omitempty"`
-
-			// DomainTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			DomainTransferIn *[]ACLAction `json:"domainTransferIn,omitempty"`
-
-			// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Drain *[]ACLAction `json:"drain,omitempty"`
-
-			// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
-
-			// EdgeConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			EdgeConfig *[]ACLAction `json:"edgeConfig,omitempty"`
-
-			// EdgeConfigItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			EdgeConfigItem *[]ACLAction `json:"edgeConfigItem,omitempty"`
-
-			// EdgeConfigSchema Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			EdgeConfigSchema *[]ACLAction `json:"edgeConfigSchema,omitempty"`
-
-			// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
-
-			// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
-
-			// Environments Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Environments *[]ACLAction `json:"environments,omitempty"`
-
-			// Event Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Event *[]ACLAction `json:"event,omitempty"`
-
-			// FileUpload Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			FileUpload *[]ACLAction `json:"fileUpload,omitempty"`
-
-			// FlagsExplorerSubscription Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			FlagsExplorerSubscription *[]ACLAction `json:"flagsExplorerSubscription,omitempty"`
-
-			// GitCredentialGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			GitCredentialGrant *[]ACLAction `json:"gitCredentialGrant,omitempty"`
-
-			// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
-
-			// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
-
-			// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
-
-			// Integration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Integration *[]ACLAction `json:"integration,omitempty"`
-
-			// IntegrationAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationAccount *[]ACLAction `json:"integrationAccount,omitempty"`
-
-			// IntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationConfiguration *[]ACLAction `json:"integrationConfiguration,omitempty"`
-
-			// IntegrationConfigurationProjects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationConfigurationProjects *[]ACLAction `json:"integrationConfigurationProjects,omitempty"`
-
-			// IntegrationConfigurationRole Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationConfigurationRole *[]ACLAction `json:"integrationConfigurationRole,omitempty"`
-
-			// IntegrationConfigurationTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationConfigurationTransfer *[]ACLAction `json:"integrationConfigurationTransfer,omitempty"`
-
-			// IntegrationDeploymentAction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationDeploymentAction *[]ACLAction `json:"integrationDeploymentAction,omitempty"`
-
-			// IntegrationEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationEvent *[]ACLAction `json:"integrationEvent,omitempty"`
-
-			// IntegrationLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationLog *[]ACLAction `json:"integrationLog,omitempty"`
-
-			// IntegrationPullRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationPullRequest *[]ACLAction `json:"integrationPullRequest,omitempty"`
-
-			// IntegrationResource Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationResource *[]ACLAction `json:"integrationResource,omitempty"`
-
-			// IntegrationResourceData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationResourceData *[]ACLAction `json:"integrationResourceData,omitempty"`
-
-			// IntegrationResourceReplCommand Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationResourceReplCommand *[]ACLAction `json:"integrationResourceReplCommand,omitempty"`
-
-			// IntegrationResourceSecrets Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationResourceSecrets *[]ACLAction `json:"integrationResourceSecrets,omitempty"`
-
-			// IntegrationSSOSession Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationSSOSession *[]ACLAction `json:"integrationSSOSession,omitempty"`
-
-			// IntegrationStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationStoreTokenSet *[]ACLAction `json:"integrationStoreTokenSet,omitempty"`
-
-			// IntegrationStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationStrict *[]ACLAction `json:"integrationStrict,omitempty"`
-
-			// IntegrationVercelConfigurationOverride Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IntegrationVercelConfigurationOverride *[]ACLAction `json:"integrationVercelConfigurationOverride,omitempty"`
-
-			// IpBlocking Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			IpBlocking *[]ACLAction `json:"ipBlocking,omitempty"`
-
-			// Job Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Job *[]ACLAction `json:"job,omitempty"`
-
-			// JobGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			JobGlobal *[]ACLAction `json:"jobGlobal,omitempty"`
-
-			// KmsIssuer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			KmsIssuer *[]ACLAction `json:"kmsIssuer,omitempty"`
-
-			// KmsProjectGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			KmsProjectGrant *[]ACLAction `json:"kmsProjectGrant,omitempty"`
-
-			// LogDrain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			LogDrain *[]ACLAction `json:"logDrain,omitempty"`
-
-			// Logs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Logs *[]ACLAction `json:"logs,omitempty"`
-
-			// LogsPreset Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			LogsPreset *[]ACLAction `json:"logsPreset,omitempty"`
-
-			// MarketplaceBillingData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceBillingData *[]ACLAction `json:"marketplaceBillingData,omitempty"`
-
-			// MarketplaceExperimentationEdgeConfigData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceExperimentationEdgeConfigData *[]ACLAction `json:"marketplaceExperimentationEdgeConfigData,omitempty"`
-
-			// MarketplaceExperimentationItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceExperimentationItem *[]ACLAction `json:"marketplaceExperimentationItem,omitempty"`
-
-			// MarketplaceFlexCommit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceFlexCommit *[]ACLAction `json:"marketplaceFlexCommit,omitempty"`
-
-			// MarketplaceInstallationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceInstallationMember *[]ACLAction `json:"marketplaceInstallationMember,omitempty"`
-
-			// MarketplaceInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceInvoice *[]ACLAction `json:"marketplaceInvoice,omitempty"`
-
-			// MarketplaceSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MarketplaceSettings *[]ACLAction `json:"marketplaceSettings,omitempty"`
-
-			// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Messageboard *[]ACLAction `json:"messageboard,omitempty"`
-
-			// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
-
-			// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
-
-			// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
-
-			// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
-
-			// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
-
-			// MonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MonitoringAlert *[]ACLAction `json:"monitoringAlert,omitempty"`
-
-			// MonitoringChart Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MonitoringChart *[]ACLAction `json:"monitoringChart,omitempty"`
-
-			// MonitoringQuery Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MonitoringQuery *[]ACLAction `json:"monitoringQuery,omitempty"`
-
-			// MonitoringSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			MonitoringSettings *[]ACLAction `json:"monitoringSettings,omitempty"`
-
-			// NotificationCustomerBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationCustomerBudget *[]ACLAction `json:"notificationCustomerBudget,omitempty"`
-
-			// NotificationDeploymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDeploymentFailed *[]ACLAction `json:"notificationDeploymentFailed,omitempty"`
-
-			// NotificationDomainConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainConfiguration *[]ACLAction `json:"notificationDomainConfiguration,omitempty"`
-
-			// NotificationDomainExpire Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainExpire *[]ACLAction `json:"notificationDomainExpire,omitempty"`
-
-			// NotificationDomainMoved Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainMoved *[]ACLAction `json:"notificationDomainMoved,omitempty"`
-
-			// NotificationDomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainPurchase *[]ACLAction `json:"notificationDomainPurchase,omitempty"`
-
-			// NotificationDomainRenewal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainRenewal *[]ACLAction `json:"notificationDomainRenewal,omitempty"`
-
-			// NotificationDomainTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainTransfer *[]ACLAction `json:"notificationDomainTransfer,omitempty"`
-
-			// NotificationDomainUnverified Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationDomainUnverified *[]ACLAction `json:"notificationDomainUnverified,omitempty"`
-
-			// NotificationPaymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationPaymentFailed *[]ACLAction `json:"notificationPaymentFailed,omitempty"`
-
-			// NotificationPreferences Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationPreferences *[]ACLAction `json:"notificationPreferences,omitempty"`
-
-			// NotificationStatementOfReasons Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationStatementOfReasons *[]ACLAction `json:"notificationStatementOfReasons,omitempty"`
-
-			// NotificationUsageAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			NotificationUsageAlert *[]ACLAction `json:"notificationUsageAlert,omitempty"`
-
-			// Oauth2Application Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Oauth2Application *[]ACLAction `json:"oauth2Application,omitempty"`
-
-			// Oauth2Connection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Oauth2Connection *[]ACLAction `json:"oauth2Connection,omitempty"`
-
-			// ObservabilityConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ObservabilityConfiguration *[]ACLAction `json:"observabilityConfiguration,omitempty"`
-
-			// ObservabilityData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ObservabilityData *[]ACLAction `json:"observabilityData,omitempty"`
-
-			// ObservabilityFunnel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ObservabilityFunnel *[]ACLAction `json:"observabilityFunnel,omitempty"`
-
-			// ObservabilityNotebook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ObservabilityNotebook *[]ACLAction `json:"observabilityNotebook,omitempty"`
-
-			// OidcFederationPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OidcFederationPolicy *[]ACLAction `json:"oidcFederationPolicy,omitempty"`
-
-			// OnDemandBuild Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OnDemandBuild *[]ACLAction `json:"onDemandBuild,omitempty"`
-
-			// OnDemandConcurrency Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OnDemandConcurrency *[]ACLAction `json:"onDemandConcurrency,omitempty"`
-
-			// OpenTelemetryEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OpenTelemetryEndpoint *[]ACLAction `json:"openTelemetryEndpoint,omitempty"`
-
-			// OptionsAllowlist Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OptionsAllowlist *[]ACLAction `json:"optionsAllowlist,omitempty"`
-
-			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Organization *[]ACLAction `json:"organization,omitempty"`
-
-			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
-
-			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
-
-			// OwnEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			OwnEvent *[]ACLAction `json:"ownEvent,omitempty"`
-
-			// PageIntegrity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PageIntegrity *[]ACLAction `json:"pageIntegrity,omitempty"`
-
-			// PasswordProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PasswordProtection *[]ACLAction `json:"passwordProtection,omitempty"`
-
-			// PasswordProtectionInvoiceItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PasswordProtectionInvoiceItem *[]ACLAction `json:"passwordProtectionInvoiceItem,omitempty"`
-
-			// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
-
-			// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Permissions *[]ACLAction `json:"permissions,omitempty"`
-
-			// Postgres Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Postgres *[]ACLAction `json:"postgres,omitempty"`
-
-			// PostgresStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PostgresStoreTokenSet *[]ACLAction `json:"postgresStoreTokenSet,omitempty"`
-
-			// PreviewDeploymentSuffix Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PreviewDeploymentSuffix *[]ACLAction `json:"previewDeploymentSuffix,omitempty"`
-
-			// PrivateCloudAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PrivateCloudAccount *[]ACLAction `json:"privateCloudAccount,omitempty"`
-
-			// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
-
-			// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
-
-			// ProductionAliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProductionAliasProtectionBypass *[]ACLAction `json:"productionAliasProtectionBypass,omitempty"`
-
-			// ProductionShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProductionShareableLink *[]ACLAction `json:"productionShareableLink,omitempty"`
-
-			// Project Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Project *[]ACLAction `json:"project,omitempty"`
-
-			// ProjectAccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectAccessGroup *[]ACLAction `json:"projectAccessGroup,omitempty"`
-
-			// ProjectAnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectAnalyticsSampling *[]ACLAction `json:"projectAnalyticsSampling,omitempty"`
-
-			// ProjectAnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectAnalyticsUsage *[]ACLAction `json:"projectAnalyticsUsage,omitempty"`
-
-			// ProjectCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectCheck *[]ACLAction `json:"projectCheck,omitempty"`
-
-			// ProjectCheckRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectCheckRun *[]ACLAction `json:"projectCheckRun,omitempty"`
-
-			// ProjectDeploymentExpiration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDeploymentExpiration *[]ACLAction `json:"projectDeploymentExpiration,omitempty"`
-
-			// ProjectDeploymentHook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDeploymentHook *[]ACLAction `json:"projectDeploymentHook,omitempty"`
-
-			// ProjectDeploymentProtectionStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDeploymentProtectionStrict *[]ACLAction `json:"projectDeploymentProtectionStrict,omitempty"`
-
-			// ProjectDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDomain *[]ACLAction `json:"projectDomain,omitempty"`
-
-			// ProjectDomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDomainCheckConfig *[]ACLAction `json:"projectDomainCheckConfig,omitempty"`
-
-			// ProjectDomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDomainMove *[]ACLAction `json:"projectDomainMove,omitempty"`
-
-			// ProjectDomainVerify Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectDomainVerify *[]ACLAction `json:"projectDomainVerify,omitempty"`
-
-			// ProjectEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectEnvVars *[]ACLAction `json:"projectEnvVars,omitempty"`
-
-			// ProjectEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectEnvVarsProduction *[]ACLAction `json:"projectEnvVarsProduction,omitempty"`
-
-			// ProjectEnvVarsUnownedByIntegration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectEnvVarsUnownedByIntegration *[]ACLAction `json:"projectEnvVarsUnownedByIntegration,omitempty"`
-
-			// ProjectEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectEvent *[]ACLAction `json:"projectEvent,omitempty"`
-
-			// ProjectFlags Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectFlags *[]ACLAction `json:"projectFlags,omitempty"`
-
-			// ProjectFlagsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectFlagsProduction *[]ACLAction `json:"projectFlagsProduction,omitempty"`
-
-			// ProjectFlagsSdkKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectFlagsSdkKey *[]ACLAction `json:"projectFlagsSdkKey,omitempty"`
-
-			// ProjectFromV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectFromV0 *[]ACLAction `json:"projectFromV0,omitempty"`
-
-			// ProjectId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectId *[]ACLAction `json:"projectId,omitempty"`
-
-			// ProjectIntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectIntegrationConfiguration *[]ACLAction `json:"projectIntegrationConfiguration,omitempty"`
-
-			// ProjectLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectLink *[]ACLAction `json:"projectLink,omitempty"`
-
-			// ProjectMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectMember *[]ACLAction `json:"projectMember,omitempty"`
-
-			// ProjectMonitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectMonitoring *[]ACLAction `json:"projectMonitoring,omitempty"`
-
-			// ProjectOIDCToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectOIDCToken *[]ACLAction `json:"projectOIDCToken,omitempty"`
-
-			// ProjectPermissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectPermissions *[]ACLAction `json:"projectPermissions,omitempty"`
-
-			// ProjectProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectProductionBranch *[]ACLAction `json:"projectProductionBranch,omitempty"`
-
-			// ProjectProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectProtectionBypass *[]ACLAction `json:"projectProtectionBypass,omitempty"`
-
-			// ProjectRollingRelease Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectRollingRelease *[]ACLAction `json:"projectRollingRelease,omitempty"`
-
-			// ProjectRoutes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectRoutes *[]ACLAction `json:"projectRoutes,omitempty"`
-
-			// ProjectSetting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectSetting *[]ACLAction `json:"projectSetting,omitempty"`
-
-			// ProjectSupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectSupportCase *[]ACLAction `json:"projectSupportCase,omitempty"`
-
-			// ProjectSupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectSupportCaseComment *[]ACLAction `json:"projectSupportCaseComment,omitempty"`
-
-			// ProjectTier Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectTier *[]ACLAction `json:"projectTier,omitempty"`
-
-			// ProjectTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectTransfer *[]ACLAction `json:"projectTransfer,omitempty"`
-
-			// ProjectTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectTransferIn *[]ACLAction `json:"projectTransferIn,omitempty"`
-
-			// ProjectTransferOut Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectTransferOut *[]ACLAction `json:"projectTransferOut,omitempty"`
-
-			// ProjectTransferRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectTransferRequest *[]ACLAction `json:"projectTransferRequest,omitempty"`
-
-			// ProjectUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ProjectUsage *[]ACLAction `json:"projectUsage,omitempty"`
-
-			// RateLimit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			RateLimit *[]ACLAction `json:"rateLimit,omitempty"`
-
-			// Redis Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Redis *[]ACLAction `json:"redis,omitempty"`
-
-			// RedisStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			RedisStoreTokenSet *[]ACLAction `json:"redisStoreTokenSet,omitempty"`
-
-			// RemoteCaching Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			RemoteCaching *[]ACLAction `json:"remoteCaching,omitempty"`
-
-			// Repository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Repository *[]ACLAction `json:"repository,omitempty"`
-
-			// SamlConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SamlConfig *[]ACLAction `json:"samlConfig,omitempty"`
-
-			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Schedule *[]ACLAction `json:"schedule,omitempty"`
-
-			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
-
-			// Secret Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Secret *[]ACLAction `json:"secret,omitempty"`
-
-			// SecurityConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SecurityConfig *[]ACLAction `json:"securityConfig,omitempty"`
-
-			// SecurityPlusConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SecurityPlusConfiguration *[]ACLAction `json:"securityPlusConfiguration,omitempty"`
-
-			// SensitiveEnvironmentVariablePolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SensitiveEnvironmentVariablePolicy *[]ACLAction `json:"sensitiveEnvironmentVariablePolicy,omitempty"`
-
-			// Setting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Setting *[]ACLAction `json:"setting,omitempty"`
-
-			// ShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ShareableLink *[]ACLAction `json:"shareableLink,omitempty"`
-
-			// ShareableLinkStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ShareableLinkStrict *[]ACLAction `json:"shareableLinkStrict,omitempty"`
-
-			// SharedEnvVarConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SharedEnvVarConnection *[]ACLAction `json:"sharedEnvVarConnection,omitempty"`
-
-			// SharedEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SharedEnvVars *[]ACLAction `json:"sharedEnvVars,omitempty"`
-
-			// SharedEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SharedEnvVarsProduction *[]ACLAction `json:"sharedEnvVarsProduction,omitempty"`
-
-			// SkewProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SkewProtection *[]ACLAction `json:"skewProtection,omitempty"`
-
-			// Space Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Space *[]ACLAction `json:"space,omitempty"`
-
-			// SpaceRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SpaceRun *[]ACLAction `json:"spaceRun,omitempty"`
-
-			// StoreIsLocked Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			StoreIsLocked *[]ACLAction `json:"storeIsLocked,omitempty"`
-
-			// StoreTokenSetSensitive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			StoreTokenSetSensitive *[]ACLAction `json:"storeTokenSetSensitive,omitempty"`
-
-			// StoreTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			StoreTransfer *[]ACLAction `json:"storeTransfer,omitempty"`
-
-			// SupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SupportCase *[]ACLAction `json:"supportCase,omitempty"`
-
-			// SupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			SupportCaseComment *[]ACLAction `json:"supportCaseComment,omitempty"`
-
-			// Team Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Team *[]ACLAction `json:"team,omitempty"`
-
-			// TeamAccessRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamAccessRequest *[]ACLAction `json:"teamAccessRequest,omitempty"`
-
-			// TeamFellowMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamFellowMembership *[]ACLAction `json:"teamFellowMembership,omitempty"`
-
-			// TeamGitExclusivity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamGitExclusivity *[]ACLAction `json:"teamGitExclusivity,omitempty"`
-
-			// TeamInvite Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamInvite *[]ACLAction `json:"teamInvite,omitempty"`
-
-			// TeamInviteCode Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamInviteCode *[]ACLAction `json:"teamInviteCode,omitempty"`
-
-			// TeamInviteLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamInviteLink *[]ACLAction `json:"teamInviteLink,omitempty"`
-
-			// TeamJoin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamJoin *[]ACLAction `json:"teamJoin,omitempty"`
-
-			// TeamMemberMfaStatus Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamMemberMfaStatus *[]ACLAction `json:"teamMemberMfaStatus,omitempty"`
-
-			// TeamMicrofrontends Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamMicrofrontends *[]ACLAction `json:"teamMicrofrontends,omitempty"`
-
-			// TeamOwnMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamOwnMembership *[]ACLAction `json:"teamOwnMembership,omitempty"`
-
-			// TeamOwnMembershipDisconnectSAML Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamOwnMembershipDisconnectSAML *[]ACLAction `json:"teamOwnMembershipDisconnectSAML,omitempty"`
-
-			// TeamSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamSudo *[]ACLAction `json:"teamSudo,omitempty"`
-
-			// TeamTokenInvalidation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TeamTokenInvalidation *[]ACLAction `json:"teamTokenInvalidation,omitempty"`
-
-			// Token Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Token *[]ACLAction `json:"token,omitempty"`
-
-			// ToolbarComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			ToolbarComment *[]ACLAction `json:"toolbarComment,omitempty"`
-
-			// TrustedIps Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TrustedIps *[]ACLAction `json:"trustedIps,omitempty"`
-
-			// TrustedSources Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			TrustedSources *[]ACLAction `json:"trustedSources,omitempty"`
-
-			// Usage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Usage *[]ACLAction `json:"usage,omitempty"`
-
-			// UsageCycle Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			UsageCycle *[]ACLAction `json:"usageCycle,omitempty"`
-
-			// User Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			User *[]ACLAction `json:"user,omitempty"`
-
-			// UserConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			UserConnection *[]ACLAction `json:"userConnection,omitempty"`
-
-			// UserMfaConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			UserMfaConfiguration *[]ACLAction `json:"userMfaConfiguration,omitempty"`
-
-			// UserPreference Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			UserPreference *[]ACLAction `json:"userPreference,omitempty"`
-
-			// UserSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			UserSudo *[]ACLAction `json:"userSudo,omitempty"`
-
-			// V0Chat Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			V0Chat *[]ACLAction `json:"v0Chat,omitempty"`
-
-			// VcrRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			VcrRepository *[]ACLAction `json:"vcrRepository,omitempty"`
-
-			// VercelAppInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			VercelAppInstallation *[]ACLAction `json:"vercelAppInstallation,omitempty"`
-
-			// VercelAppInstallationRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			VercelAppInstallationRequest *[]ACLAction `json:"vercelAppInstallationRequest,omitempty"`
-
-			// VercelAuth Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			VercelAuth *[]ACLAction `json:"vercelAuth,omitempty"`
-
-			// VercelRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			VercelRun *[]ACLAction `json:"vercelRun,omitempty"`
-
-			// VpcPeeringConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			VpcPeeringConnection *[]ACLAction `json:"vpcPeeringConnection,omitempty"`
-
-			// WebAnalytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			WebAnalytics *[]ACLAction `json:"webAnalytics,omitempty"`
-
-			// WebAnalyticsPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			WebAnalyticsPlan *[]ACLAction `json:"webAnalyticsPlan,omitempty"`
-
-			// WebAuthn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			WebAuthn *[]ACLAction `json:"webAuthn,omitempty"`
-
-			// Webhook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Webhook *[]ACLAction `json:"webhook,omitempty"`
-
-			// WebhookEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			WebhookEvent *[]ACLAction `json:"webhook-event,omitempty"`
-
-			// WorkflowRunData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			WorkflowRunData *[]ACLAction `json:"workflowRunData,omitempty"`
-		} `json:"permissions,omitempty"`
-		ProductionDeploymentsFastLane *CreateProject200JSONResponseBodyProductionDeploymentsFastLane                     `json:"productionDeploymentsFastLane,omitempty"`
-		ProtectedSourcemaps           *CreateProject200JSONResponseBodyProtectedSourcemaps                               `json:"protectedSourcemaps,omitempty"`
-		ProtectionBypass              *map[string]CreateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-		ProtectionConfig              *struct {
-			SandboxUrls *struct {
-				InheritDeploymentProtection *CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
-			} `json:"sandboxUrls,omitempty"`
-		} `json:"protectionConfig,omitempty"`
-		ResourceConfig struct {
-			BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
-			BuildMachineElasticReason      *CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
-			BuildMachineElasticTransition  *struct {
-				AlgorithmVersion string                                                                               `json:"algorithmVersion"`
-				At               float32                                                                              `json:"at"`
-				Direction        CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
-			} `json:"buildMachineElasticTransition,omitempty"`
-			BuildMachineSelection *CreateProject200JSONResponseBodyResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
-			BuildMachineType      *CreateProject200JSONResponseBodyResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
-			BuildQueue            *struct {
-				Configuration *CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-			} `json:"buildQueue,omitempty"`
-
-			// ElasticBuildMachine Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
-			ElasticBuildMachine *struct {
-				Cores float32 `json:"cores"`
-
-				// Label Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.
-				Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachineLabel `json:"label"`
-				Memory float32                                                                `json:"memory"`
-			} `json:"elasticBuildMachine,omitempty"`
-			ElasticConcurrencyEnabled  *CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
-			EnableFunctionsBeta        *CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
-			Fluid                      *CreateProject200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
-			FunctionDefaultMemoryType  *CreateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
-			FunctionDefaultRegions     []string                                                                  `json:"functionDefaultRegions"`
-			FunctionDefaultTimeout     *float32                                                                  `json:"functionDefaultTimeout,omitempty"`
-			FunctionZeroConfigFailover *CreateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
-			IsNSNBDisabled             *CreateProject200JSONResponseBodyResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
-		} `json:"resourceConfig"`
-
-		// RollbackDescription Description of why a project was rolled back, and by whom. Note that lastAliasRequest contains the from/to details of the rollback.
-		RollbackDescription *struct {
-			// CreatedAt Timestamp of when the rollback was requested.
-			CreatedAt float32 `json:"createdAt"`
-
-			// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
-			Description string `json:"description"`
-
-			// UserId The user who rolled back the project.
-			UserId string `json:"userId"`
-
-			// Username The username of the user who rolled back the project.
-			Username string `json:"username"`
-		} `json:"rollbackDescription,omitempty"`
-
-		// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
-		RollingRelease *struct {
-			// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
-			//
-			// Example: false
-			CanaryResponseHeader *CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-			// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-			Gate *struct {
-				// Action What to do when the gate trips: pause the rollout, or roll it back.
-				Action CreateProject200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-				// Checks The checks to evaluate. An empty array means nothing is evaluated.
-				Checks []struct {
-					// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-					//
-					// Example: ["/api/health"]
-					ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-					// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-					//
-					// Example: [503]
-					ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-					// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-					//
-					// Example: 30
-					IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-					// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-					//
-					// Example: 0.05
-					SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-					// Type The metric this check evaluates.
-					Type CreateProject200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-				} `json:"checks"`
-
-				// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-				DryRun CreateProject200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-				// Enabled Whether automated gating is enabled for this project's rollouts.
-				Enabled CreateProject200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-				// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-				//
-				// Example: 3
-				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-				// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-				//
-				// Example: 5
-				WindowSize *float32 `json:"windowSize,omitempty"`
-			} `json:"gate,omitempty"`
-
-			// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
-			Stages *[]struct {
-				// Duration Duration in minutes for automatic advancement to the next stage
-				//
-				// Example: 600
-				Duration *float32 `json:"duration,omitempty"`
-
-				// LinearShift Whether to linearly shift traffic over the duration of this stage
-				//
-				// Example: false
-				LinearShift *CreateProject200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-				// RequireApproval Whether or not this stage requires manual approval to proceed
-				//
-				// Example: false
-				RequireApproval *CreateProject200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
-
-				// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-				//
-				// Example: 25
-				TargetPercentage float32 `json:"targetPercentage"`
-			} `json:"stages,omitempty"`
-
-			// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
-			//
-			// Example: production
-			Target string `json:"target"`
-		} `json:"rollingRelease,omitempty"`
-		RootDirectory *string `json:"rootDirectory,omitempty"`
-		Sandbox       *struct {
-			FailoverRegions *[]CreateProject200JSONResponseBodySandboxFailoverRegions `json:"failoverRegions,omitempty"`
-			Region          *CreateProject200JSONResponseBodySandboxRegion            `json:"region,omitempty"`
-		} `json:"sandbox,omitempty"`
-		Security *struct {
-			AttackModeActiveUntil  *float32                                                        `json:"attackModeActiveUntil,omitempty"`
-			AttackModeEnabled      *CreateProject200JSONResponseBodySecurityAttackModeEnabled      `json:"attackModeEnabled,omitempty"`
-			AttackModeUpdatedAt    *float32                                                        `json:"attackModeUpdatedAt,omitempty"`
-			BotIdEnabled           *CreateProject200JSONResponseBodySecurityBotIdEnabled           `json:"botIdEnabled,omitempty"`
-			FirewallBypassIps      *[]string                                                       `json:"firewallBypassIps,omitempty"`
-			FirewallConfigVersion  *float32                                                        `json:"firewallConfigVersion,omitempty"`
-			FirewallEnabled        *CreateProject200JSONResponseBodySecurityFirewallEnabled        `json:"firewallEnabled,omitempty"`
-			FirewallSeawallEnabled *CreateProject200JSONResponseBodySecurityFirewallSeawallEnabled `json:"firewallSeawallEnabled,omitempty"`
-			FirewallUpdatedAt      *float32                                                        `json:"firewallUpdatedAt,omitempty"`
-			Ja3Enabled             *CreateProject200JSONResponseBodySecurityJa3Enabled             `json:"ja3Enabled,omitempty"`
-			Ja4Enabled             *CreateProject200JSONResponseBodySecurityJa4Enabled             `json:"ja4Enabled,omitempty"`
-			LogHeaders             *CreateProject200JSONResponseBody_Security_LogHeaders           `json:"log_headers,omitempty"`
-			ManagedRules           *struct {
-				AiBots struct {
-					Action *CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction `json:"action,omitempty"`
-					Active CreateProject200JSONResponseBodySecurityManagedRulesAiBotsActive  `json:"active"`
-				} `json:"ai_bots"`
-				BotFilter struct {
-					Action *CreateProject200JSONResponseBodySecurityManagedRulesBotFilterAction `json:"action,omitempty"`
-					Active CreateProject200JSONResponseBodySecurityManagedRulesBotFilterActive  `json:"active"`
-				} `json:"bot_filter"`
-				Owasp struct {
-					Action *CreateProject200JSONResponseBodySecurityManagedRulesOwaspAction `json:"action,omitempty"`
-					Active CreateProject200JSONResponseBodySecurityManagedRulesOwaspActive  `json:"active"`
-				} `json:"owasp"`
-				TrafficSources struct {
-					Action *CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-					Active CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesActive  `json:"active"`
-				} `json:"traffic_sources"`
-				VercelRuleset struct {
-					Action *CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetAction `json:"action,omitempty"`
-					Active CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetActive  `json:"active"`
-				} `json:"vercel_ruleset"`
-			} `json:"managedRules,omitempty"`
-
-			// PageIntegrityEnabled Whether Page Integrity is enabled for this project. Used by the metadata service to gate DynamoDB lookups against the page-integrity-inventory table.
-			PageIntegrityEnabled *CreateProject200JSONResponseBodySecurityPageIntegrityEnabled `json:"pageIntegrityEnabled,omitempty"`
-			Rulesets             *map[string]struct {
-				Action         CreateProject200JSONResponseBodySecurityRulesetsAction         `json:"action"`
-				ActionDuration *string                                                        `json:"actionDuration,omitempty"`
-				BypassSystem   *CreateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
-				LogHeaders     *CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
-				RateLimit      *struct {
-					Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-					Keys   []string                                                      `json:"keys"`
-					Limit  float32                                                       `json:"limit"`
-					Window float32                                                       `json:"window"`
-				} `json:"rateLimit,omitempty"`
-				Redirect *struct {
-					Location  string                                                            `json:"location"`
-					Permanent CreateProject200JSONResponseBodySecurityRulesetsRedirectPermanent `json:"permanent"`
-				} `json:"redirect,omitempty"`
-			} `json:"rulesets,omitempty"`
-		} `json:"security,omitempty"`
-		ServerlessFunctionZeroConfigFailover *CreateProject200JSONResponseBodyServerlessFunctionZeroConfigFailover `json:"serverlessFunctionZeroConfigFailover,omitempty"`
-		Services                             *[]struct {
-			// Framework Framework slug, when the service has one (omitted otherwise).
-			Framework *CreateProject200JSONResponseBodyServicesFramework `json:"framework,omitempty"`
-
-			// Runtime Generic runtime, e.g. 'node' | 'python' | 'go' | 'ruby' | 'rust' (Service.runtime). Omitted for static builds.
-			Runtime *string `json:"runtime,omitempty"`
-
-			// ServiceName Service name from the deployment (Service.name).
-			ServiceName string `json:"serviceName"`
-
-			// ServiceType Service kind (Service.type). Omitted for schemas that do not define one.
-			ServiceType *CreateProject200JSONResponseBodyServicesServiceType `json:"serviceType,omitempty"`
-		} `json:"services,omitempty"`
-		SkewProtectionAllowedDomains    *[]string                                                        `json:"skewProtectionAllowedDomains,omitempty"`
-		SkewProtectionBoundaryAt        *float32                                                         `json:"skewProtectionBoundaryAt,omitempty"`
-		SkewProtectionMaxAge            *float32                                                         `json:"skewProtectionMaxAge,omitempty"`
-		SkipGitConnectDuringLink        *CreateProject200JSONResponseBodySkipGitConnectDuringLink        `json:"skipGitConnectDuringLink,omitempty"`
-		SourceFilesOutsideRootDirectory *CreateProject200JSONResponseBodySourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
-		SpeedInsights                   *struct {
-			CanceledAt *float32 `json:"canceledAt,omitempty"`
-
-			// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
-			DataReceivedAt *float32                                              `json:"dataReceivedAt,omitempty"`
-			DisabledAt     *float32                                              `json:"disabledAt,omitempty"`
-			EnabledAt      *float32                                              `json:"enabledAt,omitempty"`
-			HasData        *CreateProject200JSONResponseBodySpeedInsightsHasData `json:"hasData,omitempty"`
-			Id             string                                                `json:"id"`
-			PaidAt         *float32                                              `json:"paidAt,omitempty"`
-		} `json:"speedInsights,omitempty"`
-		SsoProtection *struct {
-			April2026SecurityIncidentMigrationAppliedFrom *CreateProject200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
-			Cve55182MigrationAppliedFrom                  *CreateProject200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
-			DeploymentType                                CreateProject200JSONResponseBodySsoProtectionDeploymentType                                 `json:"deploymentType"`
-		} `json:"ssoProtection,omitempty"`
-		StaticIps *struct {
-			Builds  CreateProject200JSONResponseBodyStaticIpsBuilds  `json:"builds"`
-			Enabled CreateProject200JSONResponseBodyStaticIpsEnabled `json:"enabled"`
-			Regions []string                                         `json:"regions"`
-		} `json:"staticIps,omitempty"`
-		Targets *map[string]*struct {
-			Alias         *[]string                                               `json:"alias,omitempty"`
-			AliasAssigned *CreateProject200JSONResponseBody_Targets_AliasAssigned `json:"aliasAssigned,omitempty"`
-			AliasError    *struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"aliasError,omitempty"`
-			AliasFinal       *string   `json:"aliasFinal,omitempty"`
-			AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
-			BranchMatcher    *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type CreateProject200JSONResponseBodyTargetsBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-			BuildingAt *float32 `json:"buildingAt,omitempty"`
-			Builds     *[]struct {
-				Dest *string `json:"dest,omitempty"`
-				Src  *string `json:"src,omitempty"`
-				Use  string  `json:"use"`
-			} `json:"builds,omitempty"`
-			ChecksConclusion       *CreateProject200JSONResponseBodyTargetsChecksConclusion     `json:"checksConclusion,omitempty"`
-			ChecksState            *CreateProject200JSONResponseBodyTargetsChecksState          `json:"checksState,omitempty"`
-			ConnectBuildsEnabled   *CreateProject200JSONResponseBodyTargetsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-			ConnectConfigurationId *string                                                      `json:"connectConfigurationId,omitempty"`
-			CreatedAt              float32                                                      `json:"createdAt"`
-			CreatedIn              string                                                       `json:"createdIn"`
-			Creator                *struct {
-				Email       string  `json:"email"`
-				GithubLogin *string `json:"githubLogin,omitempty"`
-				GitlabLogin *string `json:"gitlabLogin,omitempty"`
-				Uid         string  `json:"uid"`
-				Username    string  `json:"username"`
-			} `json:"creator"`
-			DeletedAt          *float32                                       `json:"deletedAt,omitempty"`
-			DeploymentHostname string                                         `json:"deploymentHostname"`
-			Forced             *CreateProject200JSONResponseBodyTargetsForced `json:"forced,omitempty"`
-			Id                 string                                         `json:"id"`
-			Meta               *map[string]string                             `json:"meta,omitempty"`
-			MonorepoManager    *string                                        `json:"monorepoManager,omitempty"`
-			Name               string                                         `json:"name"`
-			OidcTokenClaims    *struct {
-				Aud                 string    `json:"aud"`
-				CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-				DeploymentId        *string   `json:"deployment_id,omitempty"`
-				Environment         string    `json:"environment"`
-				Iss                 string    `json:"iss"`
-				MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-				Owner               string    `json:"owner"`
-				OwnerId             string    `json:"owner_id"`
-				Plan                *string   `json:"plan,omitempty"`
-				Project             string    `json:"project"`
-				ProjectId           string    `json:"project_id"`
-				Scope               string    `json:"scope"`
-				Sub                 string    `json:"sub"`
-			} `json:"oidcTokenClaims,omitempty"`
-			Plan CreateProject200JSONResponseBodyTargetsPlan `json:"plan"`
-
-			// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-			//
-			// Example: false
-			PreviewCommentsEnabled *CreateProject200JSONResponseBodyTargetsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-			Private                CreateProject200JSONResponseBodyTargetsPrivate                 `json:"private"`
-			ReadyAt                *float32                                                       `json:"readyAt,omitempty"`
-			ReadyState             CreateProject200JSONResponseBodyTargetsReadyState              `json:"readyState"`
-			ReadySubstate          *CreateProject200JSONResponseBodyTargetsReadySubstate          `json:"readySubstate,omitempty"`
-			RequestedAt            *float32                                                       `json:"requestedAt,omitempty"`
-			Target                 *string                                                        `json:"target,omitempty"`
-			TeamId                 *string                                                        `json:"teamId,omitempty"`
-			Type                   CreateProject200JSONResponseBodyTargetsType                    `json:"type"`
-			Url                    string                                                         `json:"url"`
-
-			// UserId Present for user creators; omitted for app/integration/system creators.
-			UserId    *string                                           `json:"userId,omitempty"`
-			WithCache *CreateProject200JSONResponseBodyTargetsWithCache `json:"withCache,omitempty"`
-		} `json:"targets,omitempty"`
-		Tier    *CreateProject200JSONResponseBodyTier `json:"tier,omitempty"`
-		Tracing *struct {
-			Domains       *string   `json:"domains,omitempty"`
-			IgnorePaths   *[]string `json:"ignorePaths,omitempty"`
-			SamplingRules *[]struct {
-				// Destination Which tracing destination this rule applies to. `internal` is the hidden Vercel production-tracing drain (internal delivery); `external` is any customer-configured drain. Derived from the owning drain's delivery type when project tracing is computed; absent on configs persisted before this field existed.
-				Destination *CreateProject200JSONResponseBodyTracingSamplingRulesDestination `json:"destination,omitempty"`
-				Env         *CreateProject200JSONResponseBodyTracingSamplingRulesEnv         `json:"env,omitempty"`
-				Rate        float32                                                          `json:"rate"`
-				RequestPath *string                                                          `json:"requestPath,omitempty"`
-			} `json:"samplingRules,omitempty"`
-		} `json:"tracing,omitempty"`
-		TransferCompletedAt      *float32                                     `json:"transferCompletedAt,omitempty"`
-		TransferStartedAt        *float32                                     `json:"transferStartedAt,omitempty"`
-		TransferToAccountId      *string                                      `json:"transferToAccountId,omitempty"`
-		TransferredFromAccountId *string                                      `json:"transferredFromAccountId,omitempty"`
-		TrustedIps               *CreateProject200JSONResponseBody_TrustedIps `json:"trustedIps,omitempty"`
-		TrustedSources           *struct {
-			// EnableVercelCiSameRepository Allow same-team Vercel CI access to preview and production deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
-			EnableVercelCiSameRepository *CreateProject200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository `json:"enableVercelCiSameRepository,omitempty"`
-			OidcProviders                *map[string][]struct {
-				Claims map[string][]string                                              `json:"claims"`
-				Label  *string                                                          `json:"label,omitempty"`
-				To     CreateProject200JSONResponseBody_TrustedSources_OidcProviders_To `json:"to"`
-			} `json:"oidcProviders,omitempty"`
-			Projects *map[string]struct {
-				// CustomAllow Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project.
-				CustomAllow *[]struct {
-					From CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From `json:"from"`
-					To   CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To   `json:"to"`
-				} `json:"customAllow,omitempty"`
-				Label *string `json:"label,omitempty"`
-			} `json:"projects,omitempty"`
-		} `json:"trustedSources,omitempty"`
-		UpdatedAt   *float32 `json:"updatedAt,omitempty"`
-		UsageStatus *struct {
-			// BypassThrottleUntil Timestamp until which throttling is bypassed (project pays list rates for overage).
-			BypassThrottleUntil *float32 `json:"bypassThrottleUntil,omitempty"`
-
-			// ExceededAllowanceUntil Timestamp until which the project has exceeded its CDN allowance.
-			ExceededAllowanceUntil *float32 `json:"exceededAllowanceUntil,omitempty"`
-
-			// Kind Billing mode. Always 'flat' for flat-rate projects.
-			Kind CreateProject200JSONResponseBodyUsageStatusKind `json:"kind"`
-
-			// TeamThrottled Synced from `team.billing.usageStatus.throttled`. When `true`, the team has throttled all of its projects regardless of `throttled`. The effective throttle the CDN enforces is `throttled || teamThrottled`.
-			TeamThrottled *CreateProject200JSONResponseBodyUsageStatusTeamThrottled `json:"teamThrottled,omitempty"`
-
-			// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
-			Throttled *CreateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
-		} `json:"usageStatus,omitempty"`
-		V0          *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
-		V0Created   *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
-		VercelFlags *struct {
-			// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
-			EnabledAt *float32 `json:"enabledAt,omitempty"`
-		} `json:"vercelFlags,omitempty"`
-		WebAnalytics *struct {
-			CanceledAt *float32                                             `json:"canceledAt,omitempty"`
-			DisabledAt *float32                                             `json:"disabledAt,omitempty"`
-			EnabledAt  *float32                                             `json:"enabledAt,omitempty"`
-			HasData    *CreateProject200JSONResponseBodyWebAnalyticsHasData `json:"hasData,omitempty"`
-			Id         string                                               `json:"id"`
-		} `json:"webAnalytics,omitempty"`
-	}
 }

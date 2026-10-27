@@ -11283,6 +11283,21 @@ func (e UserEventCategories) Valid() bool {
 	}
 }
 
+// Defines values for UserEventDetailsDisplay.
+const (
+	UserEventDetailsDisplayInline UserEventDetailsDisplay = "inline"
+)
+
+// Valid indicates whether the value is a known member of the UserEventDetailsDisplay enum.
+func (e UserEventDetailsDisplay) Valid() bool {
+	switch e {
+	case UserEventDetailsDisplayInline:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UserEventEntitiesType.
 const (
 	UserEventEntitiesTypeApp                 UserEventEntitiesType = "app"
@@ -19989,24 +20004,6 @@ func (e UserEventPayload284Updated) Valid() bool {
 	case UserEventPayload284UpdatedFalse:
 		return true
 	case UserEventPayload284UpdatedTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabled.
-const (
-	UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabledFalse UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabled = false
-	UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabledTrue  UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabled = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabled enum.
-func (e UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabled) Valid() bool {
-	switch e {
-	case UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabledFalse:
-		return true
-	case UserEventPayload285ProjectNewConnectConfigurationsBuildsEnabledTrue:
 		return true
 	default:
 		return false
