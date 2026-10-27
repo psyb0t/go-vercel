@@ -10,7 +10,7 @@ Generation pipeline, declared in `gen.go` and run by `make generate`:
 
 ## Stack
 
-- Go 1.26.9, one package `vercel` at the module root.
+- Go 1.26.10, one package `vercel` at the module root.
 - oapi-codegen v2, run through `go tool`, with `github.com/oapi-codegen/runtime` at runtime.
 - goimports through `go tool`, to drop unused imports from the split files.
 
