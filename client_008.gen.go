@@ -7,6 +7,1091 @@ import (
 	"encoding/json"
 )
 
+// Defines values for ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind.
+const (
+	ListCheckRuns200JSONResponseBodyRuns0Source4Selection2KindTurborepo ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind = "turborepo"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind enum.
+func (e ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns0Source4Selection2KindTurborepo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns0Source4SubKind.
+const (
+	ListCheckRuns200JSONResponseBodyRuns0Source4SubKindVercelCiCheck ListCheckRuns200JSONResponseBodyRuns0Source4SubKind = "vercel-ci-check"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns0Source4SubKind enum.
+func (e ListCheckRuns200JSONResponseBodyRuns0Source4SubKind) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns0Source4SubKindVercelCiCheck:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns0Status.
+const (
+	ListCheckRuns200JSONResponseBodyRuns0StatusCompleted ListCheckRuns200JSONResponseBodyRuns0Status = "completed"
+	ListCheckRuns200JSONResponseBodyRuns0StatusQueued    ListCheckRuns200JSONResponseBodyRuns0Status = "queued"
+	ListCheckRuns200JSONResponseBodyRuns0StatusRunning   ListCheckRuns200JSONResponseBodyRuns0Status = "running"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns0Status enum.
+func (e ListCheckRuns200JSONResponseBodyRuns0Status) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns0StatusCompleted:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns0StatusQueued:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns0StatusRunning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Blocks.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1BlocksBuildStart          ListCheckRuns200JSONResponseBodyRuns1Blocks = "build-start"
+	ListCheckRuns200JSONResponseBodyRuns1BlocksDeploymentAlias     ListCheckRuns200JSONResponseBodyRuns1Blocks = "deployment-alias"
+	ListCheckRuns200JSONResponseBodyRuns1BlocksDeploymentPromotion ListCheckRuns200JSONResponseBodyRuns1Blocks = "deployment-promotion"
+	ListCheckRuns200JSONResponseBodyRuns1BlocksDeploymentStart     ListCheckRuns200JSONResponseBodyRuns1Blocks = "deployment-start"
+	ListCheckRuns200JSONResponseBodyRuns1BlocksNone                ListCheckRuns200JSONResponseBodyRuns1Blocks = "none"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Blocks enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Blocks) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1BlocksBuildStart:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1BlocksDeploymentAlias:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1BlocksDeploymentPromotion:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1BlocksDeploymentStart:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1BlocksNone:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Conclusion.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1ConclusionCanceled  ListCheckRuns200JSONResponseBodyRuns1Conclusion = "canceled"
+	ListCheckRuns200JSONResponseBodyRuns1ConclusionFailed    ListCheckRuns200JSONResponseBodyRuns1Conclusion = "failed"
+	ListCheckRuns200JSONResponseBodyRuns1ConclusionNeutral   ListCheckRuns200JSONResponseBodyRuns1Conclusion = "neutral"
+	ListCheckRuns200JSONResponseBodyRuns1ConclusionSkipped   ListCheckRuns200JSONResponseBodyRuns1Conclusion = "skipped"
+	ListCheckRuns200JSONResponseBodyRuns1ConclusionSucceeded ListCheckRuns200JSONResponseBodyRuns1Conclusion = "succeeded"
+	ListCheckRuns200JSONResponseBodyRuns1ConclusionTimeout   ListCheckRuns200JSONResponseBodyRuns1Conclusion = "timeout"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Conclusion enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Conclusion) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1ConclusionCanceled:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1ConclusionFailed:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1ConclusionNeutral:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1ConclusionSkipped:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1ConclusionSucceeded:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1ConclusionTimeout:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Requires.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1RequiresBuildReady    ListCheckRuns200JSONResponseBodyRuns1Requires = "build-ready"
+	ListCheckRuns200JSONResponseBodyRuns1RequiresDeploymentUrl ListCheckRuns200JSONResponseBodyRuns1Requires = "deployment-url"
+	ListCheckRuns200JSONResponseBodyRuns1RequiresNone          ListCheckRuns200JSONResponseBodyRuns1Requires = "none"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Requires enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Requires) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1RequiresBuildReady:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1RequiresDeploymentUrl:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1RequiresNone:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Source0Origin.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1Source0OriginConfig ListCheckRuns200JSONResponseBodyRuns1Source0Origin = "config"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Source0Origin enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Source0Origin) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1Source0OriginConfig:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Source0SubKind.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1Source0SubKindVercelCi ListCheckRuns200JSONResponseBodyRuns1Source0SubKind = "vercel-ci"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Source0SubKind enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Source0SubKind) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1Source0SubKindVercelCi:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Source1Origin.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1Source1OriginPlatform ListCheckRuns200JSONResponseBodyRuns1Source1Origin = "platform"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Source1Origin enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Source1Origin) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1Source1OriginPlatform:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Source1SubKind.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1Source1SubKindVercelCiSentinel ListCheckRuns200JSONResponseBodyRuns1Source1SubKind = "vercel-ci-sentinel"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Source1SubKind enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Source1SubKind) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1Source1SubKindVercelCiSentinel:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListCheckRuns200JSONResponseBodyRuns1Status.
+const (
+	ListCheckRuns200JSONResponseBodyRuns1StatusCompleted ListCheckRuns200JSONResponseBodyRuns1Status = "completed"
+	ListCheckRuns200JSONResponseBodyRuns1StatusQueued    ListCheckRuns200JSONResponseBodyRuns1Status = "queued"
+	ListCheckRuns200JSONResponseBodyRuns1StatusRunning   ListCheckRuns200JSONResponseBodyRuns1Status = "running"
+)
+
+// Valid indicates whether the value is a known member of the ListCheckRuns200JSONResponseBodyRuns1Status enum.
+func (e ListCheckRuns200JSONResponseBodyRuns1Status) Valid() bool {
+	switch e {
+	case ListCheckRuns200JSONResponseBodyRuns1StatusCompleted:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1StatusQueued:
+		return true
+	case ListCheckRuns200JSONResponseBodyRuns1StatusRunning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListFlagsV2ParamsState.
+const (
+	ListFlagsV2ParamsStateActive   ListFlagsV2ParamsState = "active"
+	ListFlagsV2ParamsStateArchived ListFlagsV2ParamsState = "archived"
+)
+
+// Valid indicates whether the value is a known member of the ListFlagsV2ParamsState enum.
+func (e ListFlagsV2ParamsState) Valid() bool {
+	switch e {
+	case ListFlagsV2ParamsStateActive:
+		return true
+	case ListFlagsV2ParamsStateArchived:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListNamedSandboxesParamsSortBy.
+const (
+	ListNamedSandboxesParamsSortByCreatedAt         ListNamedSandboxesParamsSortBy = "createdAt"
+	ListNamedSandboxesParamsSortByCurrentSnapshotId ListNamedSandboxesParamsSortBy = "currentSnapshotId"
+	ListNamedSandboxesParamsSortByName              ListNamedSandboxesParamsSortBy = "name"
+	ListNamedSandboxesParamsSortByStatusUpdatedAt   ListNamedSandboxesParamsSortBy = "statusUpdatedAt"
+)
+
+// Valid indicates whether the value is a known member of the ListNamedSandboxesParamsSortBy enum.
+func (e ListNamedSandboxesParamsSortBy) Valid() bool {
+	switch e {
+	case ListNamedSandboxesParamsSortByCreatedAt:
+		return true
+	case ListNamedSandboxesParamsSortByCurrentSnapshotId:
+		return true
+	case ListNamedSandboxesParamsSortByName:
+		return true
+	case ListNamedSandboxesParamsSortByStatusUpdatedAt:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListNamedSandboxesParamsSortOrder.
+const (
+	ListNamedSandboxesParamsSortOrderAsc  ListNamedSandboxesParamsSortOrder = "asc"
+	ListNamedSandboxesParamsSortOrderDesc ListNamedSandboxesParamsSortOrder = "desc"
+)
+
+// Valid indicates whether the value is a known member of the ListNamedSandboxesParamsSortOrder enum.
+func (e ListNamedSandboxesParamsSortOrder) Valid() bool {
+	switch e {
+	case ListNamedSandboxesParamsSortOrderAsc:
+		return true
+	case ListNamedSandboxesParamsSortOrderDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListNamedSandboxesParamsStatus.
+const (
+	ListNamedSandboxesParamsStatusRunning  ListNamedSandboxesParamsStatus = "running"
+	ListNamedSandboxesParamsStatusStopped  ListNamedSandboxesParamsStatus = "stopped"
+	ListNamedSandboxesParamsStatusStopping ListNamedSandboxesParamsStatus = "stopping"
+)
+
+// Valid indicates whether the value is a known member of the ListNamedSandboxesParamsStatus enum.
+func (e ListNamedSandboxesParamsStatus) Valid() bool {
+	switch e {
+	case ListNamedSandboxesParamsStatusRunning:
+		return true
+	case ListNamedSandboxesParamsStatusStopped:
+		return true
+	case ListNamedSandboxesParamsStatusStopping:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV2JSONBodyArchitecture.
+const (
+	CreateSandboxesV2JSONBodyArchitectureAmd64 CreateSandboxesV2JSONBodyArchitecture = "amd64"
+	CreateSandboxesV2JSONBodyArchitectureArm64 CreateSandboxesV2JSONBodyArchitecture = "arm64"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV2JSONBodyArchitecture enum.
+func (e CreateSandboxesV2JSONBodyArchitecture) Valid() bool {
+	switch e {
+	case CreateSandboxesV2JSONBodyArchitectureAmd64:
+		return true
+	case CreateSandboxesV2JSONBodyArchitectureArm64:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV2JSONBodyFailoverRegions.
+const (
+	CreateSandboxesV2JSONBodyFailoverRegionsArn1 CreateSandboxesV2JSONBodyFailoverRegions = "arn1"
+	CreateSandboxesV2JSONBodyFailoverRegionsBom1 CreateSandboxesV2JSONBodyFailoverRegions = "bom1"
+	CreateSandboxesV2JSONBodyFailoverRegionsCdg1 CreateSandboxesV2JSONBodyFailoverRegions = "cdg1"
+	CreateSandboxesV2JSONBodyFailoverRegionsCle1 CreateSandboxesV2JSONBodyFailoverRegions = "cle1"
+	CreateSandboxesV2JSONBodyFailoverRegionsCpt1 CreateSandboxesV2JSONBodyFailoverRegions = "cpt1"
+	CreateSandboxesV2JSONBodyFailoverRegionsDub1 CreateSandboxesV2JSONBodyFailoverRegions = "dub1"
+	CreateSandboxesV2JSONBodyFailoverRegionsFra1 CreateSandboxesV2JSONBodyFailoverRegions = "fra1"
+	CreateSandboxesV2JSONBodyFailoverRegionsGru1 CreateSandboxesV2JSONBodyFailoverRegions = "gru1"
+	CreateSandboxesV2JSONBodyFailoverRegionsHkg1 CreateSandboxesV2JSONBodyFailoverRegions = "hkg1"
+	CreateSandboxesV2JSONBodyFailoverRegionsHnd1 CreateSandboxesV2JSONBodyFailoverRegions = "hnd1"
+	CreateSandboxesV2JSONBodyFailoverRegionsIad1 CreateSandboxesV2JSONBodyFailoverRegions = "iad1"
+	CreateSandboxesV2JSONBodyFailoverRegionsIcn1 CreateSandboxesV2JSONBodyFailoverRegions = "icn1"
+	CreateSandboxesV2JSONBodyFailoverRegionsKix1 CreateSandboxesV2JSONBodyFailoverRegions = "kix1"
+	CreateSandboxesV2JSONBodyFailoverRegionsLhr1 CreateSandboxesV2JSONBodyFailoverRegions = "lhr1"
+	CreateSandboxesV2JSONBodyFailoverRegionsPdx1 CreateSandboxesV2JSONBodyFailoverRegions = "pdx1"
+	CreateSandboxesV2JSONBodyFailoverRegionsSfo1 CreateSandboxesV2JSONBodyFailoverRegions = "sfo1"
+	CreateSandboxesV2JSONBodyFailoverRegionsSin1 CreateSandboxesV2JSONBodyFailoverRegions = "sin1"
+	CreateSandboxesV2JSONBodyFailoverRegionsSyd1 CreateSandboxesV2JSONBodyFailoverRegions = "syd1"
+	CreateSandboxesV2JSONBodyFailoverRegionsYul1 CreateSandboxesV2JSONBodyFailoverRegions = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV2JSONBodyFailoverRegions enum.
+func (e CreateSandboxesV2JSONBodyFailoverRegions) Valid() bool {
+	switch e {
+	case CreateSandboxesV2JSONBodyFailoverRegionsArn1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsBom1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsCdg1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsCle1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsCpt1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsDub1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsFra1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsGru1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsHkg1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsHnd1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsIad1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsIcn1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsKix1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsLhr1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsPdx1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsSfo1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsSin1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsSyd1:
+		return true
+	case CreateSandboxesV2JSONBodyFailoverRegionsYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV2JSONBodyMountsMode.
+const (
+	CreateSandboxesV2JSONBodyMountsModeReadWrite CreateSandboxesV2JSONBodyMountsMode = "read-write"
+	CreateSandboxesV2JSONBodyMountsModeSnapshot  CreateSandboxesV2JSONBodyMountsMode = "snapshot"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV2JSONBodyMountsMode enum.
+func (e CreateSandboxesV2JSONBodyMountsMode) Valid() bool {
+	switch e {
+	case CreateSandboxesV2JSONBodyMountsModeReadWrite:
+		return true
+	case CreateSandboxesV2JSONBodyMountsModeSnapshot:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV2JSONBodyNetworkPolicy0Mode.
+const (
+	CreateSandboxesV2JSONBodyNetworkPolicy0ModeAllowAll     CreateSandboxesV2JSONBodyNetworkPolicy0Mode = "allow-all"
+	CreateSandboxesV2JSONBodyNetworkPolicy0ModeCustom       CreateSandboxesV2JSONBodyNetworkPolicy0Mode = "custom"
+	CreateSandboxesV2JSONBodyNetworkPolicy0ModeDefaultAllow CreateSandboxesV2JSONBodyNetworkPolicy0Mode = "default-allow"
+	CreateSandboxesV2JSONBodyNetworkPolicy0ModeDefaultDeny  CreateSandboxesV2JSONBodyNetworkPolicy0Mode = "default-deny"
+	CreateSandboxesV2JSONBodyNetworkPolicy0ModeDenyAll      CreateSandboxesV2JSONBodyNetworkPolicy0Mode = "deny-all"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV2JSONBodyNetworkPolicy0Mode enum.
+func (e CreateSandboxesV2JSONBodyNetworkPolicy0Mode) Valid() bool {
+	switch e {
+	case CreateSandboxesV2JSONBodyNetworkPolicy0ModeAllowAll:
+		return true
+	case CreateSandboxesV2JSONBodyNetworkPolicy0ModeCustom:
+		return true
+	case CreateSandboxesV2JSONBodyNetworkPolicy0ModeDefaultAllow:
+		return true
+	case CreateSandboxesV2JSONBodyNetworkPolicy0ModeDefaultDeny:
+		return true
+	case CreateSandboxesV2JSONBodyNetworkPolicy0ModeDenyAll:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV2JSONBodyRegion.
+const (
+	CreateSandboxesV2JSONBodyRegionArn1 CreateSandboxesV2JSONBodyRegion = "arn1"
+	CreateSandboxesV2JSONBodyRegionBom1 CreateSandboxesV2JSONBodyRegion = "bom1"
+	CreateSandboxesV2JSONBodyRegionCdg1 CreateSandboxesV2JSONBodyRegion = "cdg1"
+	CreateSandboxesV2JSONBodyRegionCle1 CreateSandboxesV2JSONBodyRegion = "cle1"
+	CreateSandboxesV2JSONBodyRegionCpt1 CreateSandboxesV2JSONBodyRegion = "cpt1"
+	CreateSandboxesV2JSONBodyRegionDub1 CreateSandboxesV2JSONBodyRegion = "dub1"
+	CreateSandboxesV2JSONBodyRegionFra1 CreateSandboxesV2JSONBodyRegion = "fra1"
+	CreateSandboxesV2JSONBodyRegionGru1 CreateSandboxesV2JSONBodyRegion = "gru1"
+	CreateSandboxesV2JSONBodyRegionHkg1 CreateSandboxesV2JSONBodyRegion = "hkg1"
+	CreateSandboxesV2JSONBodyRegionHnd1 CreateSandboxesV2JSONBodyRegion = "hnd1"
+	CreateSandboxesV2JSONBodyRegionIad1 CreateSandboxesV2JSONBodyRegion = "iad1"
+	CreateSandboxesV2JSONBodyRegionIcn1 CreateSandboxesV2JSONBodyRegion = "icn1"
+	CreateSandboxesV2JSONBodyRegionKix1 CreateSandboxesV2JSONBodyRegion = "kix1"
+	CreateSandboxesV2JSONBodyRegionLhr1 CreateSandboxesV2JSONBodyRegion = "lhr1"
+	CreateSandboxesV2JSONBodyRegionPdx1 CreateSandboxesV2JSONBodyRegion = "pdx1"
+	CreateSandboxesV2JSONBodyRegionSfo1 CreateSandboxesV2JSONBodyRegion = "sfo1"
+	CreateSandboxesV2JSONBodyRegionSin1 CreateSandboxesV2JSONBodyRegion = "sin1"
+	CreateSandboxesV2JSONBodyRegionSyd1 CreateSandboxesV2JSONBodyRegion = "syd1"
+	CreateSandboxesV2JSONBodyRegionYul1 CreateSandboxesV2JSONBodyRegion = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV2JSONBodyRegion enum.
+func (e CreateSandboxesV2JSONBodyRegion) Valid() bool {
+	switch e {
+	case CreateSandboxesV2JSONBodyRegionArn1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionBom1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionCdg1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionCle1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionCpt1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionDub1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionFra1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionGru1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionHkg1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionHnd1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionIad1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionIcn1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionKix1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionLhr1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionPdx1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionSfo1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionSin1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionSyd1:
+		return true
+	case CreateSandboxesV2JSONBodyRegionYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesV2JSONBodyRuntime.
+const (
+	CreateSandboxesV2JSONBodyRuntimeNode22    CreateSandboxesV2JSONBodyRuntime = "node22"
+	CreateSandboxesV2JSONBodyRuntimeNode24    CreateSandboxesV2JSONBodyRuntime = "node24"
+	CreateSandboxesV2JSONBodyRuntimeNode26    CreateSandboxesV2JSONBodyRuntime = "node26"
+	CreateSandboxesV2JSONBodyRuntimePython313 CreateSandboxesV2JSONBodyRuntime = "python3.13"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesV2JSONBodyRuntime enum.
+func (e CreateSandboxesV2JSONBodyRuntime) Valid() bool {
+	switch e {
+	case CreateSandboxesV2JSONBodyRuntimeNode22:
+		return true
+	case CreateSandboxesV2JSONBodyRuntimeNode24:
+		return true
+	case CreateSandboxesV2JSONBodyRuntimeNode26:
+		return true
+	case CreateSandboxesV2JSONBodyRuntimePython313:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListDrivesParamsSortBy.
+const (
+	ListDrivesParamsSortByCreatedAt ListDrivesParamsSortBy = "createdAt"
+	ListDrivesParamsSortByName      ListDrivesParamsSortBy = "name"
+	ListDrivesParamsSortByUpdatedAt ListDrivesParamsSortBy = "updatedAt"
+)
+
+// Valid indicates whether the value is a known member of the ListDrivesParamsSortBy enum.
+func (e ListDrivesParamsSortBy) Valid() bool {
+	switch e {
+	case ListDrivesParamsSortByCreatedAt:
+		return true
+	case ListDrivesParamsSortByName:
+		return true
+	case ListDrivesParamsSortByUpdatedAt:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListDrivesParamsSortOrder.
+const (
+	ListDrivesParamsSortOrderAsc  ListDrivesParamsSortOrder = "asc"
+	ListDrivesParamsSortOrderDesc ListDrivesParamsSortOrder = "desc"
+)
+
+// Valid indicates whether the value is a known member of the ListDrivesParamsSortOrder enum.
+func (e ListDrivesParamsSortOrder) Valid() bool {
+	switch e {
+	case ListDrivesParamsSortOrderAsc:
+		return true
+	case ListDrivesParamsSortOrderDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetOrCreateDriveJSONBodyRegion.
+const (
+	GetOrCreateDriveJSONBodyRegionArn1 GetOrCreateDriveJSONBodyRegion = "arn1"
+	GetOrCreateDriveJSONBodyRegionBom1 GetOrCreateDriveJSONBodyRegion = "bom1"
+	GetOrCreateDriveJSONBodyRegionCdg1 GetOrCreateDriveJSONBodyRegion = "cdg1"
+	GetOrCreateDriveJSONBodyRegionCle1 GetOrCreateDriveJSONBodyRegion = "cle1"
+	GetOrCreateDriveJSONBodyRegionCpt1 GetOrCreateDriveJSONBodyRegion = "cpt1"
+	GetOrCreateDriveJSONBodyRegionDub1 GetOrCreateDriveJSONBodyRegion = "dub1"
+	GetOrCreateDriveJSONBodyRegionFra1 GetOrCreateDriveJSONBodyRegion = "fra1"
+	GetOrCreateDriveJSONBodyRegionGru1 GetOrCreateDriveJSONBodyRegion = "gru1"
+	GetOrCreateDriveJSONBodyRegionHkg1 GetOrCreateDriveJSONBodyRegion = "hkg1"
+	GetOrCreateDriveJSONBodyRegionHnd1 GetOrCreateDriveJSONBodyRegion = "hnd1"
+	GetOrCreateDriveJSONBodyRegionIad1 GetOrCreateDriveJSONBodyRegion = "iad1"
+	GetOrCreateDriveJSONBodyRegionIcn1 GetOrCreateDriveJSONBodyRegion = "icn1"
+	GetOrCreateDriveJSONBodyRegionKix1 GetOrCreateDriveJSONBodyRegion = "kix1"
+	GetOrCreateDriveJSONBodyRegionLhr1 GetOrCreateDriveJSONBodyRegion = "lhr1"
+	GetOrCreateDriveJSONBodyRegionPdx1 GetOrCreateDriveJSONBodyRegion = "pdx1"
+	GetOrCreateDriveJSONBodyRegionSfo1 GetOrCreateDriveJSONBodyRegion = "sfo1"
+	GetOrCreateDriveJSONBodyRegionSin1 GetOrCreateDriveJSONBodyRegion = "sin1"
+	GetOrCreateDriveJSONBodyRegionSyd1 GetOrCreateDriveJSONBodyRegion = "syd1"
+	GetOrCreateDriveJSONBodyRegionYul1 GetOrCreateDriveJSONBodyRegion = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the GetOrCreateDriveJSONBodyRegion enum.
+func (e GetOrCreateDriveJSONBodyRegion) Valid() bool {
+	switch e {
+	case GetOrCreateDriveJSONBodyRegionArn1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionBom1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionCdg1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionCle1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionCpt1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionDub1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionFra1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionGru1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionHkg1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionHnd1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionIad1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionIcn1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionKix1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionLhr1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionPdx1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionSfo1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionSin1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionSyd1:
+		return true
+	case GetOrCreateDriveJSONBodyRegionYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListSessionsParamsSortOrder.
+const (
+	ListSessionsParamsSortOrderAsc  ListSessionsParamsSortOrder = "asc"
+	ListSessionsParamsSortOrderDesc ListSessionsParamsSortOrder = "desc"
+)
+
+// Valid indicates whether the value is a known member of the ListSessionsParamsSortOrder enum.
+func (e ListSessionsParamsSortOrder) Valid() bool {
+	switch e {
+	case ListSessionsParamsSortOrderAsc:
+		return true
+	case ListSessionsParamsSortOrderDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSessionCommandParamsWait.
+const (
+	GetSessionCommandParamsWaitFalse GetSessionCommandParamsWait = "false"
+	GetSessionCommandParamsWaitTrue  GetSessionCommandParamsWait = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetSessionCommandParamsWait enum.
+func (e GetSessionCommandParamsWait) Valid() bool {
+	switch e {
+	case GetSessionCommandParamsWaitFalse:
+		return true
+	case GetSessionCommandParamsWaitTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSessionNetworkPolicyJSONBody0Mode.
+const (
+	UpdateSessionNetworkPolicyJSONBody0ModeAllowAll     UpdateSessionNetworkPolicyJSONBody0Mode = "allow-all"
+	UpdateSessionNetworkPolicyJSONBody0ModeCustom       UpdateSessionNetworkPolicyJSONBody0Mode = "custom"
+	UpdateSessionNetworkPolicyJSONBody0ModeDefaultAllow UpdateSessionNetworkPolicyJSONBody0Mode = "default-allow"
+	UpdateSessionNetworkPolicyJSONBody0ModeDefaultDeny  UpdateSessionNetworkPolicyJSONBody0Mode = "default-deny"
+	UpdateSessionNetworkPolicyJSONBody0ModeDenyAll      UpdateSessionNetworkPolicyJSONBody0Mode = "deny-all"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSessionNetworkPolicyJSONBody0Mode enum.
+func (e UpdateSessionNetworkPolicyJSONBody0Mode) Valid() bool {
+	switch e {
+	case UpdateSessionNetworkPolicyJSONBody0ModeAllowAll:
+		return true
+	case UpdateSessionNetworkPolicyJSONBody0ModeCustom:
+		return true
+	case UpdateSessionNetworkPolicyJSONBody0ModeDefaultAllow:
+		return true
+	case UpdateSessionNetworkPolicyJSONBody0ModeDefaultDeny:
+		return true
+	case UpdateSessionNetworkPolicyJSONBody0ModeDenyAll:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListSessionSnapshotsParamsSortOrder.
+const (
+	ListSessionSnapshotsParamsSortOrderAsc  ListSessionSnapshotsParamsSortOrder = "asc"
+	ListSessionSnapshotsParamsSortOrderDesc ListSessionSnapshotsParamsSortOrder = "desc"
+)
+
+// Valid indicates whether the value is a known member of the ListSessionSnapshotsParamsSortOrder enum.
+func (e ListSessionSnapshotsParamsSortOrder) Valid() bool {
+	switch e {
+	case ListSessionSnapshotsParamsSortOrderAsc:
+		return true
+	case ListSessionSnapshotsParamsSortOrderDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetNamedSandbox200JSONResponseBodyResumed.
+const (
+	GetNamedSandbox200JSONResponseBodyResumedFalse GetNamedSandbox200JSONResponseBodyResumed = false
+	GetNamedSandbox200JSONResponseBodyResumedTrue  GetNamedSandbox200JSONResponseBodyResumed = true
+)
+
+// Valid indicates whether the value is a known member of the GetNamedSandbox200JSONResponseBodyResumed enum.
+func (e GetNamedSandbox200JSONResponseBodyResumed) Valid() bool {
+	switch e {
+	case GetNamedSandbox200JSONResponseBodyResumedFalse:
+		return true
+	case GetNamedSandbox200JSONResponseBodyResumedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSandboxJSONBodyFailoverRegions.
+const (
+	UpdateSandboxJSONBodyFailoverRegionsArn1 UpdateSandboxJSONBodyFailoverRegions = "arn1"
+	UpdateSandboxJSONBodyFailoverRegionsBom1 UpdateSandboxJSONBodyFailoverRegions = "bom1"
+	UpdateSandboxJSONBodyFailoverRegionsCdg1 UpdateSandboxJSONBodyFailoverRegions = "cdg1"
+	UpdateSandboxJSONBodyFailoverRegionsCle1 UpdateSandboxJSONBodyFailoverRegions = "cle1"
+	UpdateSandboxJSONBodyFailoverRegionsCpt1 UpdateSandboxJSONBodyFailoverRegions = "cpt1"
+	UpdateSandboxJSONBodyFailoverRegionsDub1 UpdateSandboxJSONBodyFailoverRegions = "dub1"
+	UpdateSandboxJSONBodyFailoverRegionsFra1 UpdateSandboxJSONBodyFailoverRegions = "fra1"
+	UpdateSandboxJSONBodyFailoverRegionsGru1 UpdateSandboxJSONBodyFailoverRegions = "gru1"
+	UpdateSandboxJSONBodyFailoverRegionsHkg1 UpdateSandboxJSONBodyFailoverRegions = "hkg1"
+	UpdateSandboxJSONBodyFailoverRegionsHnd1 UpdateSandboxJSONBodyFailoverRegions = "hnd1"
+	UpdateSandboxJSONBodyFailoverRegionsIad1 UpdateSandboxJSONBodyFailoverRegions = "iad1"
+	UpdateSandboxJSONBodyFailoverRegionsIcn1 UpdateSandboxJSONBodyFailoverRegions = "icn1"
+	UpdateSandboxJSONBodyFailoverRegionsKix1 UpdateSandboxJSONBodyFailoverRegions = "kix1"
+	UpdateSandboxJSONBodyFailoverRegionsLhr1 UpdateSandboxJSONBodyFailoverRegions = "lhr1"
+	UpdateSandboxJSONBodyFailoverRegionsPdx1 UpdateSandboxJSONBodyFailoverRegions = "pdx1"
+	UpdateSandboxJSONBodyFailoverRegionsSfo1 UpdateSandboxJSONBodyFailoverRegions = "sfo1"
+	UpdateSandboxJSONBodyFailoverRegionsSin1 UpdateSandboxJSONBodyFailoverRegions = "sin1"
+	UpdateSandboxJSONBodyFailoverRegionsSyd1 UpdateSandboxJSONBodyFailoverRegions = "syd1"
+	UpdateSandboxJSONBodyFailoverRegionsYul1 UpdateSandboxJSONBodyFailoverRegions = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSandboxJSONBodyFailoverRegions enum.
+func (e UpdateSandboxJSONBodyFailoverRegions) Valid() bool {
+	switch e {
+	case UpdateSandboxJSONBodyFailoverRegionsArn1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsBom1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsCdg1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsCle1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsCpt1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsDub1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsFra1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsGru1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsHkg1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsHnd1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsIad1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsIcn1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsKix1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsLhr1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsPdx1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsSfo1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsSin1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsSyd1:
+		return true
+	case UpdateSandboxJSONBodyFailoverRegionsYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSandboxJSONBodyMountsMode.
+const (
+	UpdateSandboxJSONBodyMountsModeReadWrite UpdateSandboxJSONBodyMountsMode = "read-write"
+	UpdateSandboxJSONBodyMountsModeSnapshot  UpdateSandboxJSONBodyMountsMode = "snapshot"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSandboxJSONBodyMountsMode enum.
+func (e UpdateSandboxJSONBodyMountsMode) Valid() bool {
+	switch e {
+	case UpdateSandboxJSONBodyMountsModeReadWrite:
+		return true
+	case UpdateSandboxJSONBodyMountsModeSnapshot:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSandboxJSONBodyNetworkPolicy0Mode.
+const (
+	UpdateSandboxJSONBodyNetworkPolicy0ModeAllowAll     UpdateSandboxJSONBodyNetworkPolicy0Mode = "allow-all"
+	UpdateSandboxJSONBodyNetworkPolicy0ModeCustom       UpdateSandboxJSONBodyNetworkPolicy0Mode = "custom"
+	UpdateSandboxJSONBodyNetworkPolicy0ModeDefaultAllow UpdateSandboxJSONBodyNetworkPolicy0Mode = "default-allow"
+	UpdateSandboxJSONBodyNetworkPolicy0ModeDefaultDeny  UpdateSandboxJSONBodyNetworkPolicy0Mode = "default-deny"
+	UpdateSandboxJSONBodyNetworkPolicy0ModeDenyAll      UpdateSandboxJSONBodyNetworkPolicy0Mode = "deny-all"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSandboxJSONBodyNetworkPolicy0Mode enum.
+func (e UpdateSandboxJSONBodyNetworkPolicy0Mode) Valid() bool {
+	switch e {
+	case UpdateSandboxJSONBodyNetworkPolicy0ModeAllowAll:
+		return true
+	case UpdateSandboxJSONBodyNetworkPolicy0ModeCustom:
+		return true
+	case UpdateSandboxJSONBodyNetworkPolicy0ModeDefaultAllow:
+		return true
+	case UpdateSandboxJSONBodyNetworkPolicy0ModeDefaultDeny:
+		return true
+	case UpdateSandboxJSONBodyNetworkPolicy0ModeDenyAll:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSandboxJSONBodyRegion.
+const (
+	UpdateSandboxJSONBodyRegionArn1 UpdateSandboxJSONBodyRegion = "arn1"
+	UpdateSandboxJSONBodyRegionBom1 UpdateSandboxJSONBodyRegion = "bom1"
+	UpdateSandboxJSONBodyRegionCdg1 UpdateSandboxJSONBodyRegion = "cdg1"
+	UpdateSandboxJSONBodyRegionCle1 UpdateSandboxJSONBodyRegion = "cle1"
+	UpdateSandboxJSONBodyRegionCpt1 UpdateSandboxJSONBodyRegion = "cpt1"
+	UpdateSandboxJSONBodyRegionDub1 UpdateSandboxJSONBodyRegion = "dub1"
+	UpdateSandboxJSONBodyRegionFra1 UpdateSandboxJSONBodyRegion = "fra1"
+	UpdateSandboxJSONBodyRegionGru1 UpdateSandboxJSONBodyRegion = "gru1"
+	UpdateSandboxJSONBodyRegionHkg1 UpdateSandboxJSONBodyRegion = "hkg1"
+	UpdateSandboxJSONBodyRegionHnd1 UpdateSandboxJSONBodyRegion = "hnd1"
+	UpdateSandboxJSONBodyRegionIad1 UpdateSandboxJSONBodyRegion = "iad1"
+	UpdateSandboxJSONBodyRegionIcn1 UpdateSandboxJSONBodyRegion = "icn1"
+	UpdateSandboxJSONBodyRegionKix1 UpdateSandboxJSONBodyRegion = "kix1"
+	UpdateSandboxJSONBodyRegionLhr1 UpdateSandboxJSONBodyRegion = "lhr1"
+	UpdateSandboxJSONBodyRegionPdx1 UpdateSandboxJSONBodyRegion = "pdx1"
+	UpdateSandboxJSONBodyRegionSfo1 UpdateSandboxJSONBodyRegion = "sfo1"
+	UpdateSandboxJSONBodyRegionSin1 UpdateSandboxJSONBodyRegion = "sin1"
+	UpdateSandboxJSONBodyRegionSyd1 UpdateSandboxJSONBodyRegion = "syd1"
+	UpdateSandboxJSONBodyRegionYul1 UpdateSandboxJSONBodyRegion = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSandboxJSONBodyRegion enum.
+func (e UpdateSandboxJSONBodyRegion) Valid() bool {
+	switch e {
+	case UpdateSandboxJSONBodyRegionArn1:
+		return true
+	case UpdateSandboxJSONBodyRegionBom1:
+		return true
+	case UpdateSandboxJSONBodyRegionCdg1:
+		return true
+	case UpdateSandboxJSONBodyRegionCle1:
+		return true
+	case UpdateSandboxJSONBodyRegionCpt1:
+		return true
+	case UpdateSandboxJSONBodyRegionDub1:
+		return true
+	case UpdateSandboxJSONBodyRegionFra1:
+		return true
+	case UpdateSandboxJSONBodyRegionGru1:
+		return true
+	case UpdateSandboxJSONBodyRegionHkg1:
+		return true
+	case UpdateSandboxJSONBodyRegionHnd1:
+		return true
+	case UpdateSandboxJSONBodyRegionIad1:
+		return true
+	case UpdateSandboxJSONBodyRegionIcn1:
+		return true
+	case UpdateSandboxJSONBodyRegionKix1:
+		return true
+	case UpdateSandboxJSONBodyRegionLhr1:
+		return true
+	case UpdateSandboxJSONBodyRegionPdx1:
+		return true
+	case UpdateSandboxJSONBodyRegionSfo1:
+		return true
+	case UpdateSandboxJSONBodyRegionSin1:
+		return true
+	case UpdateSandboxJSONBodyRegionSyd1:
+		return true
+	case UpdateSandboxJSONBodyRegionYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSandboxJSONBodyRuntime.
+const (
+	UpdateSandboxJSONBodyRuntimeNode22    UpdateSandboxJSONBodyRuntime = "node22"
+	UpdateSandboxJSONBodyRuntimeNode24    UpdateSandboxJSONBodyRuntime = "node24"
+	UpdateSandboxJSONBodyRuntimeNode26    UpdateSandboxJSONBodyRuntime = "node26"
+	UpdateSandboxJSONBodyRuntimePython313 UpdateSandboxJSONBodyRuntime = "python3.13"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSandboxJSONBodyRuntime enum.
+func (e UpdateSandboxJSONBodyRuntime) Valid() bool {
+	switch e {
+	case UpdateSandboxJSONBodyRuntimeNode22:
+		return true
+	case UpdateSandboxJSONBodyRuntimeNode24:
+		return true
+	case UpdateSandboxJSONBodyRuntimeNode26:
+		return true
+	case UpdateSandboxJSONBodyRuntimePython313:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSandbox200JSONResponseBody1Resumed.
+const (
+	UpdateSandbox200JSONResponseBody1ResumedFalse UpdateSandbox200JSONResponseBody1Resumed = false
+	UpdateSandbox200JSONResponseBody1ResumedTrue  UpdateSandbox200JSONResponseBody1Resumed = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateSandbox200JSONResponseBody1Resumed enum.
+func (e UpdateSandbox200JSONResponseBody1Resumed) Valid() bool {
+	switch e {
+	case UpdateSandbox200JSONResponseBody1ResumedFalse:
+		return true
+	case UpdateSandbox200JSONResponseBody1ResumedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV2JSONBodyFailoverRegions.
+const (
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsArn1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "arn1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsBom1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "bom1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsCdg1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "cdg1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsCle1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "cle1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsCpt1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "cpt1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsDub1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "dub1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsFra1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "fra1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsGru1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "gru1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsHkg1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "hkg1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsHnd1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "hnd1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsIad1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "iad1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsIcn1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "icn1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsKix1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "kix1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsLhr1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "lhr1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsPdx1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "pdx1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsSfo1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "sfo1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsSin1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "sin1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsSyd1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "syd1"
+	CreateSandboxesByNameForkV2JSONBodyFailoverRegionsYul1 CreateSandboxesByNameForkV2JSONBodyFailoverRegions = "yul1"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV2JSONBodyFailoverRegions enum.
+func (e CreateSandboxesByNameForkV2JSONBodyFailoverRegions) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsArn1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsBom1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsCdg1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsCle1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsCpt1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsDub1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsFra1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsGru1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsHkg1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsHnd1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsIad1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsIcn1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsKix1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsLhr1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsPdx1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsSfo1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsSin1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsSyd1:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyFailoverRegionsYul1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV2JSONBodyMountsMode.
+const (
+	CreateSandboxesByNameForkV2JSONBodyMountsModeReadWrite CreateSandboxesByNameForkV2JSONBodyMountsMode = "read-write"
+	CreateSandboxesByNameForkV2JSONBodyMountsModeSnapshot  CreateSandboxesByNameForkV2JSONBodyMountsMode = "snapshot"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV2JSONBodyMountsMode enum.
+func (e CreateSandboxesByNameForkV2JSONBodyMountsMode) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV2JSONBodyMountsModeReadWrite:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyMountsModeSnapshot:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode.
+const (
+	CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeAllowAll     CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode = "allow-all"
+	CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeCustom       CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode = "custom"
+	CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeDefaultAllow CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode = "default-allow"
+	CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeDefaultDeny  CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode = "default-deny"
+	CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeDenyAll      CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode = "deny-all"
+)
+
+// Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode enum.
+func (e CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode) Valid() bool {
+	switch e {
+	case CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeAllowAll:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeCustom:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeDefaultAllow:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeDefaultDeny:
+		return true
+	case CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0ModeDenyAll:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateSandboxesByNameForkV2JSONBodyRegion.
+const (
+	CreateSandboxesByNameForkV2JSONBodyRegionArn1 CreateSandboxesByNameForkV2JSONBodyRegion = "arn1"
+	CreateSandboxesByNameForkV2JSONBodyRegionBom1 CreateSandboxesByNameForkV2JSONBodyRegion = "bom1"
+	CreateSandboxesByNameForkV2JSONBodyRegionCdg1 CreateSandboxesByNameForkV2JSONBodyRegion = "cdg1"
+	CreateSandboxesByNameForkV2JSONBodyRegionCle1 CreateSandboxesByNameForkV2JSONBodyRegion = "cle1"
+	CreateSandboxesByNameForkV2JSONBodyRegionCpt1 CreateSandboxesByNameForkV2JSONBodyRegion = "cpt1"
+	CreateSandboxesByNameForkV2JSONBodyRegionDub1 CreateSandboxesByNameForkV2JSONBodyRegion = "dub1"
+	CreateSandboxesByNameForkV2JSONBodyRegionFra1 CreateSandboxesByNameForkV2JSONBodyRegion = "fra1"
+	CreateSandboxesByNameForkV2JSONBodyRegionGru1 CreateSandboxesByNameForkV2JSONBodyRegion = "gru1"
+	CreateSandboxesByNameForkV2JSONBodyRegionHkg1 CreateSandboxesByNameForkV2JSONBodyRegion = "hkg1"
+	CreateSandboxesByNameForkV2JSONBodyRegionHnd1 CreateSandboxesByNameForkV2JSONBodyRegion = "hnd1"
+	CreateSandboxesByNameForkV2JSONBodyRegionIad1 CreateSandboxesByNameForkV2JSONBodyRegion = "iad1"
+	CreateSandboxesByNameForkV2JSONBodyRegionIcn1 CreateSandboxesByNameForkV2JSONBodyRegion = "icn1"
+	CreateSandboxesByNameForkV2JSONBodyRegionKix1 CreateSandboxesByNameForkV2JSONBodyRegion = "kix1"
+	CreateSandboxesByNameForkV2JSONBodyRegionLhr1 CreateSandboxesByNameForkV2JSONBodyRegion = "lhr1"
+	CreateSandboxesByNameForkV2JSONBodyRegionPdx1 CreateSandboxesByNameForkV2JSONBodyRegion = "pdx1"
+	CreateSandboxesByNameForkV2JSONBodyRegionSfo1 CreateSandboxesByNameForkV2JSONBodyRegion = "sfo1"
+	CreateSandboxesByNameForkV2JSONBodyRegionSin1 CreateSandboxesByNameForkV2JSONBodyRegion = "sin1"
+	CreateSandboxesByNameForkV2JSONBodyRegionSyd1 CreateSandboxesByNameForkV2JSONBodyRegion = "syd1"
+	CreateSandboxesByNameForkV2JSONBodyRegionYul1 CreateSandboxesByNameForkV2JSONBodyRegion = "yul1"
+)
+
 // Valid indicates whether the value is a known member of the CreateSandboxesByNameForkV2JSONBodyRegion enum.
 func (e CreateSandboxesByNameForkV2JSONBodyRegion) Valid() bool {
 	switch e {
@@ -2339,6 +3424,7 @@ const (
 	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRedeployAttributionCard GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-redeploy-attribution-card"
 	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRequestAccess           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-request-access"
 	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbViewerUpgrade           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "nsnb-viewer-upgrade"
+	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginOrgAdminSync                GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "org-admin-sync"
 	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginOrganizationTeams           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "organization-teams"
 	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginSaml                        GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "saml"
 	GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginTeams                       GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin = "teams"
@@ -2378,6 +3464,8 @@ func (e GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin) Valid() bool {
 	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbRequestAccess:
 		return true
 	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginNsnbViewerUpgrade:
+		return true
+	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginOrgAdminSync:
 		return true
 	case GetTeamMembers200JSONResponseBodyMembersJoinedFromOriginOrganizationTeams:
 		return true
@@ -5392,10 +6480,11 @@ func (e GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineSelection)
 
 // Defines values for GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType.
 const (
-	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeBasic    GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "basic"
-	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeEnhanced GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "enhanced"
-	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeStandard GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "standard"
-	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeTurbo    GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "turbo"
+	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeBasic      GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "basic"
+	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeEnhanced   GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "enhanced"
+	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeN14cpu28gb GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "14cpu-28gb"
+	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeStandard   GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "standard"
+	GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeTurbo      GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "turbo"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType enum.
@@ -5404,6 +6493,8 @@ func (e GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineType) Vali
 	case GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeBasic:
 		return true
 	case GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeEnhanced:
+		return true
+	case GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeN14cpu28gb:
 		return true
 	case GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeStandard:
 		return true
@@ -5524,13 +6615,13 @@ func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Me
 
 // Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores.
 const (
-	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores = 30
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN14 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores = 14
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores enum.
 func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30:
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN14:
 		return true
 	default:
 		return false
@@ -5539,13 +6630,13 @@ func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Co
 
 // Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label.
 const (
-	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label = "turbo"
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelN14cpu28gb GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label = "14cpu-28gb"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label enum.
 func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo:
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelN14cpu28gb:
 		return true
 	default:
 		return false
@@ -5554,13 +6645,58 @@ func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2La
 
 // Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory.
 const (
-	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory = 61440
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN28672 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory = 28672
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory enum.
 func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440:
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN28672:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3CoresN30 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3LabelTurbo GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory.
+const (
+	GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3MemoryN61440 GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory enum.
+func (e GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3MemoryN61440:
 		return true
 	default:
 		return false
@@ -8023,10 +9159,11 @@ func (e GetProject200JSONResponseBodyResourceConfigBuildMachineSelection) Valid(
 
 // Defines values for GetProject200JSONResponseBodyResourceConfigBuildMachineType.
 const (
-	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeBasic    GetProject200JSONResponseBodyResourceConfigBuildMachineType = "basic"
-	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeEnhanced GetProject200JSONResponseBodyResourceConfigBuildMachineType = "enhanced"
-	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeStandard GetProject200JSONResponseBodyResourceConfigBuildMachineType = "standard"
-	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeTurbo    GetProject200JSONResponseBodyResourceConfigBuildMachineType = "turbo"
+	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeBasic      GetProject200JSONResponseBodyResourceConfigBuildMachineType = "basic"
+	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeEnhanced   GetProject200JSONResponseBodyResourceConfigBuildMachineType = "enhanced"
+	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeN14cpu28gb GetProject200JSONResponseBodyResourceConfigBuildMachineType = "14cpu-28gb"
+	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeStandard   GetProject200JSONResponseBodyResourceConfigBuildMachineType = "standard"
+	GetProject200JSONResponseBodyResourceConfigBuildMachineTypeTurbo      GetProject200JSONResponseBodyResourceConfigBuildMachineType = "turbo"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigBuildMachineType enum.
@@ -8035,6 +9172,8 @@ func (e GetProject200JSONResponseBodyResourceConfigBuildMachineType) Valid() boo
 	case GetProject200JSONResponseBodyResourceConfigBuildMachineTypeBasic:
 		return true
 	case GetProject200JSONResponseBodyResourceConfigBuildMachineTypeEnhanced:
+		return true
+	case GetProject200JSONResponseBodyResourceConfigBuildMachineTypeN14cpu28gb:
 		return true
 	case GetProject200JSONResponseBodyResourceConfigBuildMachineTypeStandard:
 		return true
@@ -8155,13 +9294,13 @@ func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory) V
 
 // Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores.
 const (
-	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 30
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN14 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 14
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores enum.
 func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30:
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN14:
 		return true
 	default:
 		return false
@@ -8170,13 +9309,13 @@ func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores) Va
 
 // Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label.
 const (
-	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "turbo"
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelN14cpu28gb GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "14cpu-28gb"
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label enum.
 func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo:
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelN14cpu28gb:
 		return true
 	default:
 		return false
@@ -8185,13 +9324,58 @@ func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label) Va
 
 // Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory.
 const (
-	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 61440
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN28672 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 28672
 )
 
 // Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory enum.
 func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory) Valid() bool {
 	switch e {
-	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440:
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN28672:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3CoresN30 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3LabelTurbo GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory.
+const (
+	GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3MemoryN61440 GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory enum.
+func (e GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory) Valid() bool {
+	switch e {
+	case GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3MemoryN61440:
 		return true
 	default:
 		return false
@@ -11581,10 +12765,11 @@ func (e UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineSelecti
 
 // Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType.
 const (
-	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeBasic    UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "basic"
-	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeEnhanced UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "enhanced"
-	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeStandard UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "standard"
-	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeTurbo    UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "turbo"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeBasic      UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "basic"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeEnhanced   UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "enhanced"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeN14cpu28gb UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "14cpu-28gb"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeStandard   UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "standard"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeTurbo      UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType = "turbo"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType enum.
@@ -11593,6 +12778,8 @@ func (e UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType) V
 	case UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeBasic:
 		return true
 	case UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeEnhanced:
+		return true
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeN14cpu28gb:
 		return true
 	case UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeStandard:
 		return true
@@ -11713,13 +12900,13 @@ func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine
 
 // Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores.
 const (
-	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores = 30
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN14 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores = 14
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores enum.
 func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN30:
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2CoresN14:
 		return true
 	default:
 		return false
@@ -11728,13 +12915,13 @@ func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine
 
 // Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label.
 const (
-	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label = "turbo"
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelN14cpu28gb UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label = "14cpu-28gb"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label enum.
 func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelTurbo:
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2LabelN14cpu28gb:
 		return true
 	default:
 		return false
@@ -11743,13 +12930,58 @@ func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine
 
 // Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory.
 const (
-	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory = 61440
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN28672 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory = 28672
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory enum.
 func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN61440:
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2MemoryN28672:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3CoresN30 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3LabelTurbo UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory.
+const (
+	UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3MemoryN61440 UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory enum.
+func (e UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3MemoryN61440:
 		return true
 	default:
 		return false
@@ -14212,10 +15444,11 @@ func (e UpdateProject200JSONResponseBodyResourceConfigBuildMachineSelection) Val
 
 // Defines values for UpdateProject200JSONResponseBodyResourceConfigBuildMachineType.
 const (
-	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeBasic    UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "basic"
-	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeEnhanced UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "enhanced"
-	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeStandard UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "standard"
-	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeTurbo    UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "turbo"
+	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeBasic      UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "basic"
+	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeEnhanced   UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "enhanced"
+	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeN14cpu28gb UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "14cpu-28gb"
+	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeStandard   UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "standard"
+	UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeTurbo      UpdateProject200JSONResponseBodyResourceConfigBuildMachineType = "turbo"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigBuildMachineType enum.
@@ -14224,6 +15457,8 @@ func (e UpdateProject200JSONResponseBodyResourceConfigBuildMachineType) Valid() 
 	case UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeBasic:
 		return true
 	case UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeEnhanced:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeN14cpu28gb:
 		return true
 	case UpdateProject200JSONResponseBodyResourceConfigBuildMachineTypeStandard:
 		return true
@@ -14344,13 +15579,13 @@ func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory
 
 // Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores.
 const (
-	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 30
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN14 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 14
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores enum.
 func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN30:
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN14:
 		return true
 	default:
 		return false
@@ -14359,13 +15594,13 @@ func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores)
 
 // Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label.
 const (
-	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "turbo"
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelN14cpu28gb UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "14cpu-28gb"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label enum.
 func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelTurbo:
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelN14cpu28gb:
 		return true
 	default:
 		return false
@@ -14374,13 +15609,58 @@ func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label)
 
 // Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory.
 const (
-	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 61440
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN28672 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 28672
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory enum.
 func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory) Valid() bool {
 	switch e {
-	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN61440:
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN28672:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3CoresN30 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3LabelTurbo UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3MemoryN61440 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3MemoryN61440:
 		return true
 	default:
 		return false
@@ -18826,1188 +20106,4 @@ type AiGatewayVirtualModelConfig struct {
 
 	// ZeroDataRetention Only use providers with zero data retention.
 	ZeroDataRetention *AiGatewayVirtualModelConfigZeroDataRetention `json:"zeroDataRetention,omitempty"`
-}
-
-// AiGatewayVirtualModelConfigAllowFallbackFromFast Allow fallback from fast to standard providers on failure.
-type AiGatewayVirtualModelConfigAllowFallbackFromFast bool
-
-// AiGatewayVirtualModelConfigCaching Use caching if available.
-type AiGatewayVirtualModelConfigCaching string
-
-// AiGatewayVirtualModelConfigDeleted Whether this VMC is soft-deleted.
-type AiGatewayVirtualModelConfigDeleted bool
-
-// AiGatewayVirtualModelConfigDisallowPromptTraining Only use providers that will not train on your prompts.
-type AiGatewayVirtualModelConfigDisallowPromptTraining bool
-
-// AiGatewayVirtualModelConfigHas Limit providers to those with these features.
-type AiGatewayVirtualModelConfigHas string
-
-// AiGatewayVirtualModelConfigHipaaCompliant Only use HIPAA-compliant providers.
-type AiGatewayVirtualModelConfigHipaaCompliant bool
-
-// AiGatewayVirtualModelConfigInferenceRegionProvidersScope Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.
-type AiGatewayVirtualModelConfigInferenceRegionProvidersScope string
-
-// AiGatewayVirtualModelConfigInferenceRegionScope Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.
-type AiGatewayVirtualModelConfigInferenceRegionScope string
-
-// AiGatewayVirtualModelConfigModels0 defines model for AiGatewayVirtualModelConfig.Models.0.
-type AiGatewayVirtualModelConfigModels0 = string
-
-// AiGatewayVirtualModelConfigModels1 For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`.
-type AiGatewayVirtualModelConfigModels1 struct {
-	// Intelligence Highest task level the member handles, in [0, 1]. Read by the intelligence selector.
-	Intelligence *float32 `json:"intelligence,omitempty"`
-	Slug         string   `json:"slug"`
-}
-
-// AiGatewayVirtualModelConfigModels2 For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`.
-type AiGatewayVirtualModelConfigModels2 struct {
-	Model string                               `json:"model"`
-	When  AiGatewayEvaluationFallbackCondition `json:"when"`
-}
-
-// AiGatewayVirtualModelConfig_Models_Item defines model for AiGatewayVirtualModelConfig.models.Item.
-type AiGatewayVirtualModelConfig_Models_Item struct {
-	union json.RawMessage
-}
-
-// AiGatewayVirtualModelConfigSelector For kind=router: how to order candidates. Absent means declared order.
-type AiGatewayVirtualModelConfigSelector string
-
-// AiGatewayVirtualModelConfigServiceTier Service tier for providers that support it.
-type AiGatewayVirtualModelConfigServiceTier string
-
-// AiGatewayVirtualModelConfigSort Rank eligible providers by an attribute.
-type AiGatewayVirtualModelConfigSort string
-
-// AiGatewayVirtualModelConfigSpeed Only use fastest providers with short timeouts.
-type AiGatewayVirtualModelConfigSpeed string
-
-// AiGatewayVirtualModelConfigZeroDataRetention Only use providers with zero data retention.
-type AiGatewayVirtualModelConfigZeroDataRetention bool
-
-// AiGatewayVirtualModelConfigList defines model for AiGatewayVirtualModelConfigList.
-type AiGatewayVirtualModelConfigList struct {
-	// Cursor Cursor for the next page, or null when no more pages remain.
-	Cursor *string `json:"cursor"`
-
-	// VirtualModelConfigs The page of VMCs.
-	VirtualModelConfigs []AiGatewayVirtualModelConfig `json:"virtualModelConfigs"`
-}
-
-// AuthToken Authentication token metadata.
-type AuthToken struct {
-	// ActiveAt Timestamp (in milliseconds) of when the token was most recently used.
-	//
-	// Example: 1632816536002
-	ActiveAt float32 `json:"activeAt"`
-
-	// CreatedAt Timestamp (in milliseconds) of when the token was created.
-	//
-	// Example: 1632816536002
-	CreatedAt float32 `json:"createdAt"`
-
-	// ExpiresAt Timestamp (in milliseconds) of when the token expires.
-	//
-	// Example: 1632816536002
-	ExpiresAt *float32 `json:"expiresAt,omitempty"`
-
-	// Id The unique identifier of the token.
-	//
-	// Example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
-	Id string `json:"id"`
-
-	// LeakedAt Timestamp (in milliseconds) of when the token was marked as leaked.
-	//
-	// Example: 1632816536002
-	LeakedAt *float32 `json:"leakedAt,omitempty"`
-
-	// LeakedUrl URL where the token was discovered as leaked.
-	LeakedUrl *string `json:"leakedUrl,omitempty"`
-
-	// Name The human-readable name of the token.
-	Name string `json:"name"`
-
-	// Origin The origin of how the token was created.
-	//
-	// Example: github
-	Origin *string `json:"origin,omitempty"`
-
-	// Prefix The token's prefix, for identification purposes.
-	//
-	// Example: vcp_
-	Prefix *string `json:"prefix,omitempty"`
-
-	// RevokedAt Timestamp (in milliseconds) of when the token was revoked.
-	//
-	// Example: 1632816536002
-	RevokedAt *float32 `json:"revokedAt,omitempty"`
-
-	// Scopes The access scopes granted to the token.
-	Scopes *[]AuthToken_Scopes_Item `json:"scopes,omitempty"`
-
-	// Suffix The last few characters of the token, for identification purposes.
-	//
-	// Example: abc123
-	Suffix *string `json:"suffix,omitempty"`
-
-	// Type The type of the token.
-	//
-	// Example: oauth2-token
-	Type string `json:"type"`
-}
-
-// AuthTokenScopes0 The access scopes granted to the token.
-type AuthTokenScopes0 struct {
-	CreatedAt float32                 `json:"createdAt"`
-	ExpiresAt *float32                `json:"expiresAt,omitempty"`
-	Origin    *AuthTokenScopes0Origin `json:"origin,omitempty"`
-	Sudo      *struct {
-		ExpiresAt float32 `json:"expiresAt"`
-
-		// Origin Possible step-up auth origins
-		Origin     AuthTokenScopes0SudoOrigin `json:"origin"`
-		VerifiedAt *float32                   `json:"verifiedAt,omitempty"`
-	} `json:"sudo,omitempty"`
-	Type AuthTokenScopes0Type `json:"type"`
-}
-
-// AuthTokenScopes0Origin defines model for AuthToken.Scopes.0.Origin.
-type AuthTokenScopes0Origin string
-
-// AuthTokenScopes0SudoOrigin Possible step-up auth origins
-type AuthTokenScopes0SudoOrigin string
-
-// AuthTokenScopes0Type defines model for AuthToken.Scopes.0.Type.
-type AuthTokenScopes0Type string
-
-// AuthTokenScopes1 The access scopes granted to the token.
-type AuthTokenScopes1 struct {
-	CreatedAt float32                 `json:"createdAt"`
-	ExpiresAt *float32                `json:"expiresAt,omitempty"`
-	Origin    *AuthTokenScopes1Origin `json:"origin,omitempty"`
-	TeamId    string                  `json:"teamId"`
-	Type      AuthTokenScopes1Type    `json:"type"`
-}
-
-// AuthTokenScopes1Origin defines model for AuthToken.Scopes.1.Origin.
-type AuthTokenScopes1Origin string
-
-// AuthTokenScopes1Type defines model for AuthToken.Scopes.1.Type.
-type AuthTokenScopes1Type string
-
-// AuthToken_Scopes_Item defines model for AuthToken.scopes.Item.
-type AuthToken_Scopes_Item struct {
-	union json.RawMessage
-}
-
-// AuthUser Data for the currently authenticated User.
-type AuthUser struct {
-	// AccountUpdateContext Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team).
-	AccountUpdateContext *struct {
-		// CanOptOut Whether this user can cancel their optional Account Update flow.
-		CanOptOut    AuthUserAccountUpdateContextCanOptOut `json:"canOptOut"`
-		ManagedTeams []struct {
-			Avatar    *string `json:"avatar"`
-			Name      string  `json:"name"`
-			Slug      string  `json:"slug"`
-			TeamId    string  `json:"teamId"`
-			WorkEmail string  `json:"workEmail"`
-		} `json:"managedTeams"`
-		Organization *struct {
-			Id   string `json:"id"`
-			Name string `json:"name"`
-			Slug string `json:"slug"`
-		} `json:"organization,omitempty"`
-		VerifiedEmuDomains []string `json:"verifiedEmuDomains"`
-	} `json:"accountUpdateContext,omitempty"`
-
-	// ActiveDashboardViews set of dashboard view preferences (cards or list) per scopeId
-	ActiveDashboardViews *[]struct {
-		FavoritesViewPreference *AuthUserActiveDashboardViewsFavoritesViewPreference `json:"favoritesViewPreference,omitempty"`
-		RecentsViewPreference   *AuthUserActiveDashboardViewsRecentsViewPreference   `json:"recentsViewPreference,omitempty"`
-		ScopeId                 string                                               `json:"scopeId"`
-		ViewPreference          *AuthUserActiveDashboardViewsViewPreference          `json:"viewPreference,omitempty"`
-	} `json:"activeDashboardViews,omitempty"`
-
-	// Avatar SHA1 hash of the avatar for the User account. Can be used in conjuction with the ... endpoint to retrieve the avatar image.
-	//
-	// Example: 22cb30c85ff45ac4c72de8981500006b28114aa1
-	Avatar *string `json:"avatar"`
-
-	// Billing An object containing billing infomation associated with the User account.
-	Billing *map[string]interface{} `json:"billing"`
-
-	// CreatedAt UNIX timestamp (in milliseconds) when the User account was created.
-	//
-	// Example: 1630748523395
-	CreatedAt float32 `json:"createdAt"`
-
-	// DataCache data cache settings
-	DataCache *struct {
-		ExcessBillingEnabled *AuthUserDataCacheExcessBillingEnabled `json:"excessBillingEnabled,omitempty"`
-	} `json:"dataCache,omitempty"`
-
-	// DefaultTeamId The user's default team.
-	DefaultTeamId *string `json:"defaultTeamId"`
-
-	// DismissedToasts A record of when, under a certain scopeId, a toast was dismissed
-	DismissedToasts *[]struct {
-		Dismissals []struct {
-			CreatedAt float32 `json:"createdAt"`
-			ScopeId   string  `json:"scopeId"`
-		} `json:"dismissals"`
-		Name string `json:"name"`
-	} `json:"dismissedToasts,omitempty"`
-
-	// Email Email address associated with the User account.
-	//
-	// Example: me@example.com
-	Email string `json:"email"`
-
-	// FavoriteProjectsAndSpaces A list of projects and spaces across teams that a user has marked as a favorite.
-	FavoriteProjectsAndSpaces *[]struct {
-		ProjectId string `json:"projectId"`
-		TeamId    string `json:"teamId"`
-	} `json:"favoriteProjectsAndSpaces,omitempty"`
-
-	// FeatureBlocks Feature blocks for the user
-	FeatureBlocks *struct {
-		// SpeedInsightsFree Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.
-		SpeedInsightsFree *struct {
-			BlockReason        AuthUserFeatureBlocksSpeedInsightsFreeBlockReason        `json:"blockReason"`
-			BlockedFrom        *float32                                                 `json:"blockedFrom,omitempty"`
-			BlockedUntil       *float32                                                 `json:"blockedUntil,omitempty"`
-			IsCurrentlyBlocked AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked `json:"isCurrentlyBlocked"`
-		} `json:"speedInsightsFree,omitempty"`
-		WebAnalytics *struct {
-			BlockedFrom        *float32                                            `json:"blockedFrom,omitempty"`
-			BlockedUntil       *float32                                            `json:"blockedUntil,omitempty"`
-			IsCurrentlyBlocked AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked `json:"isCurrentlyBlocked"`
-		} `json:"webAnalytics,omitempty"`
-	} `json:"featureBlocks,omitempty"`
-
-	// HasTrialAvailable Whether the user has a trial available for a paid plan subscription.
-	HasTrialAvailable AuthUserHasTrialAvailable `json:"hasTrialAvailable"`
-
-	// Id The User's unique identifier.
-	//
-	// Example: AEIIDYVk59zbFF2Sxfyxxmua
-	Id                       string                             `json:"id"`
-	ImportFlowGitNamespace   *AuthUser_ImportFlowGitNamespace   `json:"importFlowGitNamespace,omitempty"`
-	ImportFlowGitNamespaceId *AuthUser_ImportFlowGitNamespaceId `json:"importFlowGitNamespaceId,omitempty"`
-	ImportFlowGitProvider    *AuthUserImportFlowGitProvider     `json:"importFlowGitProvider,omitempty"`
-
-	// IsAccountUpdateRequired When `true`, the user must complete the EMU Update Account flow before they can use the dashboard.
-	IsAccountUpdateRequired *AuthUserIsAccountUpdateRequired `json:"isAccountUpdateRequired,omitempty"`
-
-	// IsEnterpriseManaged Indicates whether the user is managed by an enterprise.
-	IsEnterpriseManaged *AuthUserIsEnterpriseManaged `json:"isEnterpriseManaged,omitempty"`
-
-	// Name Name associated with the User account, or `null` if none has been provided.
-	//
-	// Example: John Doe
-	Name                            *string `json:"name"`
-	PreferredScopesAndGitNamespaces *[]struct {
-		GitNamespaceId *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId `json:"gitNamespaceId"`
-		ScopeId        string                                                   `json:"scopeId"`
-	} `json:"preferredScopesAndGitNamespaces,omitempty"`
-
-	// RemoteCaching remote caching settings
-	RemoteCaching *struct {
-		Enabled *AuthUserRemoteCachingEnabled `json:"enabled,omitempty"`
-	} `json:"remoteCaching,omitempty"`
-
-	// ResourceConfig An object containing infomation related to the amount of platform resources may be allocated to the User account.
-	ResourceConfig struct {
-		// AwsAccountIds An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		AwsAccountIds *[]string `json:"awsAccountIds,omitempty"`
-
-		// AwsAccountType An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		AwsAccountType *string `json:"awsAccountType,omitempty"`
-
-		// BlobStores An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		BlobStores *float32 `json:"blobStores,omitempty"`
-
-		// BuildEntitlements An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		BuildEntitlements *struct {
-			// EnhancedBuilds An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			EnhancedBuilds *AuthUserResourceConfigBuildEntitlementsEnhancedBuilds `json:"enhancedBuilds,omitempty"`
-		} `json:"buildEntitlements,omitempty"`
-
-		// BuildQueue An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		BuildQueue *struct {
-			// Configuration An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			Configuration *AuthUserResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-		} `json:"buildQueue,omitempty"`
-
-		// BulkRedirectsFreeLimitOverride An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		BulkRedirectsFreeLimitOverride *float32 `json:"bulkRedirectsFreeLimitOverride,omitempty"`
-
-		// CfZoneName An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		CfZoneName *string `json:"cfZoneName,omitempty"`
-
-		// ConcurrentBuilds An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		ConcurrentBuilds *float32 `json:"concurrentBuilds,omitempty"`
-
-		// CronJobsPerProject An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		CronJobsPerProject *float32 `json:"cronJobsPerProject,omitempty"`
-
-		// CustomEnvironmentsPerProject An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		CustomEnvironmentsPerProject *float32 `json:"customEnvironmentsPerProject,omitempty"`
-
-		// EdgeConfigSize An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		EdgeConfigSize *float32 `json:"edgeConfigSize,omitempty"`
-
-		// EdgeConfigs An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		EdgeConfigs *float32 `json:"edgeConfigs,omitempty"`
-
-		// EdgeFunctionExecutionTimeoutMs An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		EdgeFunctionExecutionTimeoutMs *float32 `json:"edgeFunctionExecutionTimeoutMs,omitempty"`
-
-		// EdgeFunctionMaxSizeBytes An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		EdgeFunctionMaxSizeBytes *float32 `json:"edgeFunctionMaxSizeBytes,omitempty"`
-
-		// ElasticConcurrencyEnabled An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		ElasticConcurrencyEnabled *AuthUserResourceConfigElasticConcurrencyEnabled `json:"elasticConcurrencyEnabled,omitempty"`
-
-		// FlagsExplorerOverridesThreshold An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		FlagsExplorerOverridesThreshold *float32 `json:"flagsExplorerOverridesThreshold,omitempty"`
-
-		// FlagsExplorerUnlimitedOverrides An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		FlagsExplorerUnlimitedOverrides *AuthUserResourceConfigFlagsExplorerUnlimitedOverrides `json:"flagsExplorerUnlimitedOverrides,omitempty"`
-
-		// ImageOptimizationType An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		ImageOptimizationType *string `json:"imageOptimizationType,omitempty"`
-
-		// IntegrationStores An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		IntegrationStores *float32 `json:"integrationStores,omitempty"`
-
-		// KvDatabases An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		KvDatabases *float32 `json:"kvDatabases,omitempty"`
-
-		// MicrofrontendGroupsPerTeam An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		MicrofrontendGroupsPerTeam *float32 `json:"microfrontendGroupsPerTeam,omitempty"`
-
-		// MicrofrontendProjectsPerGroup An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		MicrofrontendProjectsPerGroup *float32 `json:"microfrontendProjectsPerGroup,omitempty"`
-
-		// NodeType An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		NodeType *string `json:"nodeType,omitempty"`
-
-		// PostgresDatabases An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		PostgresDatabases *float32 `json:"postgresDatabases,omitempty"`
-
-		// Security An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		Security *struct {
-			// CustomRules An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			CustomRules *float32 `json:"customRules,omitempty"`
-
-			// IpBlocks An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			IpBlocks *float32 `json:"ipBlocks,omitempty"`
-
-			// IpBypass An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			IpBypass *float32 `json:"ipBypass,omitempty"`
-
-			// RateLimit An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			RateLimit *float32 `json:"rateLimit,omitempty"`
-
-			// SecurityLists An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			SecurityLists *float32 `json:"securityLists,omitempty"`
-
-			// TeamLevelConditions An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			TeamLevelConditions *float32 `json:"teamLevelConditions,omitempty"`
-
-			// TeamLevelRules An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			TeamLevelRules *float32 `json:"teamLevelRules,omitempty"`
-
-			// TeamLevelRulesets An object containing infomation related to the amount of platform resources may be allocated to the User account.
-			TeamLevelRulesets *float32 `json:"teamLevelRulesets,omitempty"`
-		} `json:"security,omitempty"`
-
-		// ServerlessFunctionMaxDuration An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		ServerlessFunctionMaxDuration *float32 `json:"serverlessFunctionMaxDuration,omitempty"`
-
-		// ServerlessFunctionMaxMemorySize An object containing infomation related to the amount of platform resources may be allocated to the User account.
-		ServerlessFunctionMaxMemorySize *float32 `json:"serverlessFunctionMaxMemorySize,omitempty"`
-	} `json:"resourceConfig"`
-
-	// ShouldShowEnterpriseManagedWelcome Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
-	ShouldShowEnterpriseManagedWelcome *AuthUserShouldShowEnterpriseManagedWelcome `json:"shouldShowEnterpriseManagedWelcome,omitempty"`
-
-	// SoftBlock When the User account has been "soft blocked", this property will contain the date when the restriction was enacted, and the identifier for why.
-	SoftBlock *struct {
-		BlockedAt               float32                                   `json:"blockedAt"`
-		BlockedDueToOverageType *AuthUserSoftBlockBlockedDueToOverageType `json:"blockedDueToOverageType,omitempty"`
-		Reason                  AuthUserSoftBlockReason                   `json:"reason"`
-
-		// UnpauseAt Since September 2026. Set only by `billing-usage-alerts` for usage plans with a `blockDurationMs`; its presence marks a pause that expires on its own.
-		UnpauseAt *float32 `json:"unpauseAt,omitempty"`
-	} `json:"softBlock"`
-
-	// StagingPrefix Prefix that will be used in the URL of "Preview" deployments created by the User account.
-	StagingPrefix string `json:"stagingPrefix"`
-
-	// Username Unique username associated with the User account.
-	//
-	// Example: jdoe
-	Username string `json:"username"`
-}
-
-// AuthUserAccountUpdateContextCanOptOut Whether this user can cancel their optional Account Update flow.
-type AuthUserAccountUpdateContextCanOptOut bool
-
-// AuthUserActiveDashboardViewsFavoritesViewPreference defines model for AuthUser.ActiveDashboardViews.FavoritesViewPreference.
-type AuthUserActiveDashboardViewsFavoritesViewPreference string
-
-// AuthUserActiveDashboardViewsRecentsViewPreference defines model for AuthUser.ActiveDashboardViews.RecentsViewPreference.
-type AuthUserActiveDashboardViewsRecentsViewPreference string
-
-// AuthUserActiveDashboardViewsViewPreference defines model for AuthUser.ActiveDashboardViews.ViewPreference.
-type AuthUserActiveDashboardViewsViewPreference string
-
-// AuthUserDataCacheExcessBillingEnabled defines model for AuthUser.DataCache.ExcessBillingEnabled.
-type AuthUserDataCacheExcessBillingEnabled bool
-
-// AuthUserFeatureBlocksSpeedInsightsFreeBlockReason defines model for AuthUser.FeatureBlocks.SpeedInsightsFree.BlockReason.
-type AuthUserFeatureBlocksSpeedInsightsFreeBlockReason string
-
-// AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked defines model for AuthUser.FeatureBlocks.SpeedInsightsFree.IsCurrentlyBlocked.
-type AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked bool
-
-// AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked defines model for AuthUser.FeatureBlocks.WebAnalytics.IsCurrentlyBlocked.
-type AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked bool
-
-// AuthUserHasTrialAvailable Whether the user has a trial available for a paid plan subscription.
-type AuthUserHasTrialAvailable bool
-
-// AuthUserImportFlowGitNamespace0 defines model for AuthUser.ImportFlowGitNamespace.0.
-type AuthUserImportFlowGitNamespace0 = string
-
-// AuthUserImportFlowGitNamespace1 defines model for AuthUser.ImportFlowGitNamespace.1.
-type AuthUserImportFlowGitNamespace1 = float32
-
-// AuthUser_ImportFlowGitNamespace defines model for AuthUser.ImportFlowGitNamespace.
-type AuthUser_ImportFlowGitNamespace struct {
-	union json.RawMessage
-}
-
-// AuthUserImportFlowGitNamespaceId0 defines model for AuthUser.ImportFlowGitNamespaceId.0.
-type AuthUserImportFlowGitNamespaceId0 = string
-
-// AuthUserImportFlowGitNamespaceId1 defines model for AuthUser.ImportFlowGitNamespaceId.1.
-type AuthUserImportFlowGitNamespaceId1 = float32
-
-// AuthUser_ImportFlowGitNamespaceId defines model for AuthUser.ImportFlowGitNamespaceId.
-type AuthUser_ImportFlowGitNamespaceId struct {
-	union json.RawMessage
-}
-
-// AuthUserImportFlowGitProvider defines model for AuthUser.ImportFlowGitProvider.
-type AuthUserImportFlowGitProvider string
-
-// AuthUserIsAccountUpdateRequired When `true`, the user must complete the EMU Update Account flow before they can use the dashboard.
-type AuthUserIsAccountUpdateRequired bool
-
-// AuthUserIsEnterpriseManaged Indicates whether the user is managed by an enterprise.
-type AuthUserIsEnterpriseManaged bool
-
-// AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0 defines model for AuthUser.PreferredScopesAndGitNamespaces.GitNamespaceId.0.
-type AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0 = string
-
-// AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1 defines model for AuthUser.PreferredScopesAndGitNamespaces.GitNamespaceId.1.
-type AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1 = float32
-
-// AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId defines model for AuthUser.PreferredScopesAndGitNamespaces.GitNamespaceId.
-type AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId struct {
-	union json.RawMessage
-}
-
-// AuthUserRemoteCachingEnabled defines model for AuthUser.RemoteCaching.Enabled.
-type AuthUserRemoteCachingEnabled bool
-
-// AuthUserResourceConfigBuildEntitlementsEnhancedBuilds An object containing infomation related to the amount of platform resources may be allocated to the User account.
-type AuthUserResourceConfigBuildEntitlementsEnhancedBuilds bool
-
-// AuthUserResourceConfigBuildQueueConfiguration An object containing infomation related to the amount of platform resources may be allocated to the User account.
-type AuthUserResourceConfigBuildQueueConfiguration string
-
-// AuthUserResourceConfigElasticConcurrencyEnabled An object containing infomation related to the amount of platform resources may be allocated to the User account.
-type AuthUserResourceConfigElasticConcurrencyEnabled bool
-
-// AuthUserResourceConfigFlagsExplorerUnlimitedOverrides An object containing infomation related to the amount of platform resources may be allocated to the User account.
-type AuthUserResourceConfigFlagsExplorerUnlimitedOverrides bool
-
-// AuthUserShouldShowEnterpriseManagedWelcome Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
-type AuthUserShouldShowEnterpriseManagedWelcome bool
-
-// AuthUserSoftBlockBlockedDueToOverageType defines model for AuthUser.SoftBlock.BlockedDueToOverageType.
-type AuthUserSoftBlockBlockedDueToOverageType string
-
-// AuthUserSoftBlockReason defines model for AuthUser.SoftBlock.Reason.
-type AuthUserSoftBlockReason string
-
-// AuthUserLimited A limited form of data for the currently authenticated User, due to the authentication token missing privileges to read the full User data.
-type AuthUserLimited struct {
-	// Avatar SHA1 hash of the avatar for the User account. Can be used in conjuction with the ... endpoint to retrieve the avatar image.
-	//
-	// Example: 22cb30c85ff45ac4c72de8981500006b28114aa1
-	Avatar *string `json:"avatar"`
-
-	// DefaultTeamId The user's default team.
-	DefaultTeamId *string `json:"defaultTeamId"`
-
-	// Email Email address associated with the User account.
-	//
-	// Example: me@example.com
-	Email string `json:"email"`
-
-	// Id The User's unique identifier.
-	//
-	// Example: AEIIDYVk59zbFF2Sxfyxxmua
-	Id string `json:"id"`
-
-	// IsEnterpriseManaged Indicates whether the user is managed by an enterprise.
-	IsEnterpriseManaged *AuthUserLimitedIsEnterpriseManaged `json:"isEnterpriseManaged,omitempty"`
-
-	// Limited Property indicating that this User data contains only limited information, due to the authentication token missing privileges to read the full User data. Re-login with email, GitHub, GitLab or Bitbucket in order to upgrade the authentication token with the necessary privileges.
-	Limited AuthUserLimitedLimited `json:"limited"`
-
-	// Name Name associated with the User account, or `null` if none has been provided.
-	//
-	// Example: John Doe
-	Name *string `json:"name"`
-
-	// ShouldShowEnterpriseManagedWelcome Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
-	ShouldShowEnterpriseManagedWelcome *AuthUserLimitedShouldShowEnterpriseManagedWelcome `json:"shouldShowEnterpriseManagedWelcome,omitempty"`
-
-	// Username Unique username associated with the User account.
-	//
-	// Example: jdoe
-	Username string `json:"username"`
-}
-
-// AuthUserLimitedIsEnterpriseManaged Indicates whether the user is managed by an enterprise.
-type AuthUserLimitedIsEnterpriseManaged bool
-
-// AuthUserLimitedLimited Property indicating that this User data contains only limited information, due to the authentication token missing privileges to read the full User data. Re-login with email, GitHub, GitLab or Bitbucket in order to upgrade the authentication token with the necessary privileges.
-type AuthUserLimitedLimited bool
-
-// AuthUserLimitedShouldShowEnterpriseManagedWelcome Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
-type AuthUserLimitedShouldShowEnterpriseManagedWelcome bool
-
-// BadRequest defines model for BadRequest.
-type BadRequest struct {
-	Code    BadRequestCode   `json:"code"`
-	Message string           `json:"message"`
-	Status  BadRequestStatus `json:"status"`
-}
-
-// BadRequestCode defines model for BadRequest.Code.
-type BadRequestCode string
-
-// BadRequestStatus defines model for BadRequest.Status.
-type BadRequestStatus float32
-
-// BoughtTooRecently The domain was bought too recently to determine verification status.
-type BoughtTooRecently struct {
-	Code    BoughtTooRecentlyCode   `json:"code"`
-	Message string                  `json:"message"`
-	Status  BoughtTooRecentlyStatus `json:"status"`
-}
-
-// BoughtTooRecentlyCode defines model for BoughtTooRecently.Code.
-type BoughtTooRecentlyCode string
-
-// BoughtTooRecentlyStatus defines model for BoughtTooRecently.Status.
-type BoughtTooRecentlyStatus float32
-
-// ConnectConnector A connector that defines how Vercel accesses an external service.
-type ConnectConnector struct {
-	// AccentColor Hex accent color (e.g., `#000000`) for branding.
-	AccentColor *string `json:"accentColor,omitempty"`
-
-	// AppTokens App-token capabilities and known grants for the connector.
-	AppTokens *struct {
-		// CrossInstallation Whether one app token can be used across installations.
-		CrossInstallation  ConnectConnectorAppTokensCrossInstallation  `json:"crossInstallation"`
-		IsStaticCredential ConnectConnectorAppTokensIsStaticCredential `json:"isStaticCredential"`
-
-		// PermissionsUrl Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
-		PermissionsUrl *string `json:"permissionsUrl,omitempty"`
-
-		// RequiresReinstallation True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
-		RequiresReinstallation *ConnectConnectorAppTokensRequiresReinstallation `json:"requiresReinstallation,omitempty"`
-
-		// Scopes Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector's enabled `clientCredentials.scopes` configuration.
-		Scopes *[]string `json:"scopes,omitempty"`
-
-		// SupportedAuthorizationDetails Supported OAuth authorization-detail type names.
-		SupportedAuthorizationDetails *[]string `json:"supportedAuthorizationDetails,omitempty"`
-
-		// SupportsRefinement Whether callers can narrow app-token grants per request.
-		SupportsRefinement ConnectConnectorAppTokensSupportsRefinement `json:"supportsRefinement"`
-
-		// SupportsResources Whether callers can request resource-specific app tokens.
-		SupportsResources *ConnectConnectorAppTokensSupportsResources `json:"supportsResources,omitempty"`
-	} `json:"appTokens,omitempty"`
-
-	// BackgroundColor Hex background color (e.g., `#000000`) for branding.
-	BackgroundColor *string `json:"backgroundColor,omitempty"`
-
-	// ClientUrl Provider-side URL for viewing or managing the resource represented by the connector. The destination can be an app, account, phone line, or service instance, depending on the connector type.
-	ClientUrl *string `json:"clientUrl,omitempty"`
-
-	// ConnectionMethod The connection method this connector was created from, when the create request named one.
-	ConnectionMethod *string `json:"connectionMethod,omitempty"`
-
-	// CreatedAt Creation time in epoch milliseconds.
-	CreatedAt float32 `json:"createdAt"`
-
-	// CreatedBy Principal that created the connector.
-	CreatedBy *ConnectConnector_CreatedBy `json:"createdBy,omitempty"`
-
-	// CreationMode How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
-	CreationMode *ConnectConnectorCreationMode `json:"creationMode,omitempty"`
-
-	// DefaultInstallationId Installation used when a token request does not specify an installation.
-	DefaultInstallationId *string `json:"defaultInstallationId,omitempty"`
-
-	// Devsite Developer website for the connected service.
-	Devsite *string `json:"devsite,omitempty"`
-
-	// DisplayName Human-readable connector name.
-	DisplayName string `json:"displayName"`
-
-	// Docsite Developer documentation for the connected service.
-	Docsite *string `json:"docsite,omitempty"`
-
-	// Events Known events this connector subscribes to (e.g. Slack bot events, GitHub webhook events). Names are type-specific and validated by the managed-create flow when forwarded to the third-party service.
-	Events *[]string `json:"events,omitempty"`
-
-	// Icon Connector branding icon. SHA-1 hash that resolves to the uploaded icon through the Vercel avatar service. Consumers render this with `https://vercel.com/api/www/avatar/{icon}`.
-	Icon *string `json:"icon,omitempty"`
-
-	// Id Stable `scl_` connector ID. Use this value directly in `{connector}`.
-	Id string `json:"id"`
-
-	// KnownStale Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
-	KnownStale *ConnectConnectorKnownStale `json:"knownStale,omitempty"`
-
-	// Managed Managed connector metadata exposed without leaking the manager connector or installation identifiers.
-	Managed *struct {
-		// Sync Whether Vercel synchronizes provider-side configuration.
-		Sync *ConnectConnectorManagedSync `json:"sync,omitempty"`
-	} `json:"managed,omitempty"`
-
-	// Name Connector name within the owning team.
-	Name string `json:"name"`
-
-	// RedirectUri Redirect URI registered with the third-party service for this connector, if any. Used by `startAuthorization`/`startInstallation` to replay the exact URI back to the provider's token endpoint. Absent on connectors created before this field was introduced; those callers fall back to the `https://connect.vercel.com/callback` default.
-	RedirectUri *string `json:"redirectUri,omitempty"`
-
-	// ReinstallAt Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.
-	ReinstallAt *float32 `json:"reinstallAt,omitempty"`
-
-	// Service Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses.
-	Service string `json:"service"`
-
-	// ServiceIcon Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry.
-	ServiceIcon *string `json:"serviceIcon,omitempty"`
-
-	// SupportedSubjectTypes Token subject types supported by the connector.
-	SupportedSubjectTypes []string `json:"supportedSubjectTypes"`
-
-	// SupportsIcon Whether the connector icon can propagate to the provider.
-	SupportsIcon interface{} `json:"supportsIcon"`
-
-	// SupportsInstallation Whether the connector supports an installation flow.
-	SupportsInstallation ConnectConnectorSupportsInstallation `json:"supportsInstallation"`
-
-	// SupportsManagedEjection Whether this managed connector can disconnect from its manager.
-	SupportsManagedEjection *ConnectConnectorSupportsManagedEjection `json:"supportsManagedEjection,omitempty"`
-
-	// SupportsRevocation Whether Connect can revoke tokens for this connector.
-	SupportsRevocation ConnectConnectorSupportsRevocation `json:"supportsRevocation"`
-
-	// SupportsTriggers Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
-	SupportsTriggers ConnectConnectorSupportsTriggers `json:"supportsTriggers"`
-
-	// Target Which of the service's products/surfaces this connector points at.
-	Target *string `json:"target,omitempty"`
-
-	// TriggerDestinations Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
-	TriggerDestinations *[]ConnectTriggerDestination `json:"triggerDestinations,omitempty"`
-
-	// Triggers Incoming trigger configuration. Only present when enabled.
-	Triggers *ConnectTriggerConfiguration `json:"triggers,omitempty"`
-
-	// Type Connector implementation type.
-	Type ConnectConnectorType `json:"type"`
-
-	// TypeIcon Icon identifier supplied by the connector type.
-	TypeIcon *string `json:"typeIcon,omitempty"`
-
-	// TypeName Human-readable name of the connector type.
-	TypeName string `json:"typeName"`
-
-	// Uid Team-scoped UID. URL-encode this value before using it in `{connector}`.
-	Uid string `json:"uid"`
-
-	// UpdatedAt Last update time in epoch milliseconds.
-	UpdatedAt float32 `json:"updatedAt"`
-
-	// UpdatedBy Principal that most recently updated the connector.
-	UpdatedBy *ConnectConnector_UpdatedBy `json:"updatedBy,omitempty"`
-
-	// UserTokens User-token capabilities and known grants for the connector.
-	UserTokens *struct {
-		// CrossInstallation Whether one user token can be used across installations.
-		CrossInstallation  ConnectConnectorUserTokensCrossInstallation  `json:"crossInstallation"`
-		IsStaticCredential ConnectConnectorUserTokensIsStaticCredential `json:"isStaticCredential"`
-
-		// ManualCredentialInput User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
-		ManualCredentialInput *ConnectConnectorUserTokensManualCredentialInput `json:"manualCredentialInput,omitempty"`
-
-		// Scopes Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector's enabled `userAuthorization.scopes` configuration.
-		Scopes *[]string `json:"scopes,omitempty"`
-
-		// SupportedAuthorizationDetails Supported OAuth authorization-detail type names.
-		SupportedAuthorizationDetails *[]string `json:"supportedAuthorizationDetails,omitempty"`
-
-		// SupportsRefinement Whether callers can narrow user-token grants per request.
-		SupportsRefinement ConnectConnectorUserTokensSupportsRefinement `json:"supportsRefinement"`
-
-		// SupportsResources Whether callers can request resource-specific user tokens.
-		SupportsResources *ConnectConnectorUserTokensSupportsResources `json:"supportsResources,omitempty"`
-	} `json:"userTokens,omitempty"`
-
-	// Website Public website for the connected service.
-	Website *string `json:"website,omitempty"`
-}
-
-// ConnectConnectorAppTokensCrossInstallation Whether one app token can be used across installations.
-type ConnectConnectorAppTokensCrossInstallation bool
-
-// ConnectConnectorAppTokensIsStaticCredential defines model for ConnectConnector.AppTokens.IsStaticCredential.
-type ConnectConnectorAppTokensIsStaticCredential bool
-
-// ConnectConnectorAppTokensRequiresReinstallation True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
-type ConnectConnectorAppTokensRequiresReinstallation bool
-
-// ConnectConnectorAppTokensSupportsRefinement Whether callers can narrow app-token grants per request.
-type ConnectConnectorAppTokensSupportsRefinement bool
-
-// ConnectConnectorAppTokensSupportsResources Whether callers can request resource-specific app tokens.
-type ConnectConnectorAppTokensSupportsResources bool
-
-// ConnectConnectorCreatedBy0 Principal that originally created the connector — either a Vercel user (interactive dashboard / CLI flow) or a Vercel deployment (OIDC-authenticated project, used by runtime auto-provisioning). See {@link ConnexPrincipal}. Optional: pre-existing rows from before this shape was introduced may carry no attribution at all.
-type ConnectConnectorCreatedBy0 struct {
-	// Id Vercel user ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorCreatedBy0Type `json:"type"`
-}
-
-// ConnectConnectorCreatedBy0Type Principal kind.
-type ConnectConnectorCreatedBy0Type string
-
-// ConnectConnectorCreatedBy1 Principal that originally created the connector — either a Vercel user (interactive dashboard / CLI flow) or a Vercel deployment (OIDC-authenticated project, used by runtime auto-provisioning). See {@link ConnexPrincipal}. Optional: pre-existing rows from before this shape was introduced may carry no attribution at all.
-type ConnectConnectorCreatedBy1 struct {
-	// Environment Deployment environment of the project principal.
-	Environment ConnectConnector_CreatedBy_1_Environment `json:"environment"`
-
-	// Id Vercel project ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorCreatedBy1Type `json:"type"`
-}
-
-// ConnectConnectorCreatedBy1Environment0 defines model for ConnectConnector.CreatedBy.1.Environment.0.
-type ConnectConnectorCreatedBy1Environment0 = string
-
-// ConnectConnectorCreatedBy1Environment1 defines model for ConnectConnector.CreatedBy.1.Environment.1.
-type ConnectConnectorCreatedBy1Environment1 string
-
-// ConnectConnector_CreatedBy_1_Environment Deployment environment of the project principal.
-type ConnectConnector_CreatedBy_1_Environment struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreatedBy1Type Principal kind.
-type ConnectConnectorCreatedBy1Type string
-
-// ConnectConnector_CreatedBy Principal that created the connector.
-type ConnectConnector_CreatedBy struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreationMode How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
-type ConnectConnectorCreationMode string
-
-// ConnectConnectorKnownStale Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
-type ConnectConnectorKnownStale bool
-
-// ConnectConnectorManagedSync Whether Vercel synchronizes provider-side configuration.
-type ConnectConnectorManagedSync bool
-
-// ConnectConnectorSupportsInstallation Whether the connector supports an installation flow.
-type ConnectConnectorSupportsInstallation bool
-
-// ConnectConnectorSupportsManagedEjection Whether this managed connector can disconnect from its manager.
-type ConnectConnectorSupportsManagedEjection bool
-
-// ConnectConnectorSupportsRevocation Whether Connect can revoke tokens for this connector.
-type ConnectConnectorSupportsRevocation bool
-
-// ConnectConnectorSupportsTriggers Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
-type ConnectConnectorSupportsTriggers bool
-
-// ConnectConnectorType Connector implementation type.
-type ConnectConnectorType string
-
-// ConnectConnectorUpdatedBy0 Principal that most recently mutated the connector. Same shape as {@link createdBy} but tracks the most recent updater, not the original creator. At create time the two fields point at the same principal; they diverge on the first subsequent update.
-type ConnectConnectorUpdatedBy0 struct {
-	// Id Vercel user ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorUpdatedBy0Type `json:"type"`
-}
-
-// ConnectConnectorUpdatedBy0Type Principal kind.
-type ConnectConnectorUpdatedBy0Type string
-
-// ConnectConnectorUpdatedBy1 Principal that most recently mutated the connector. Same shape as {@link createdBy} but tracks the most recent updater, not the original creator. At create time the two fields point at the same principal; they diverge on the first subsequent update.
-type ConnectConnectorUpdatedBy1 struct {
-	// Environment Deployment environment of the project principal.
-	Environment ConnectConnector_UpdatedBy_1_Environment `json:"environment"`
-
-	// Id Vercel project ID.
-	Id string `json:"id"`
-
-	// Type Principal kind.
-	Type ConnectConnectorUpdatedBy1Type `json:"type"`
-}
-
-// ConnectConnectorUpdatedBy1Environment0 defines model for ConnectConnector.UpdatedBy.1.Environment.0.
-type ConnectConnectorUpdatedBy1Environment0 = string
-
-// ConnectConnectorUpdatedBy1Environment1 defines model for ConnectConnector.UpdatedBy.1.Environment.1.
-type ConnectConnectorUpdatedBy1Environment1 string
-
-// ConnectConnector_UpdatedBy_1_Environment Deployment environment of the project principal.
-type ConnectConnector_UpdatedBy_1_Environment struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUpdatedBy1Type Principal kind.
-type ConnectConnectorUpdatedBy1Type string
-
-// ConnectConnector_UpdatedBy Principal that most recently updated the connector.
-type ConnectConnector_UpdatedBy struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorUserTokensCrossInstallation Whether one user token can be used across installations.
-type ConnectConnectorUserTokensCrossInstallation bool
-
-// ConnectConnectorUserTokensIsStaticCredential defines model for ConnectConnector.UserTokens.IsStaticCredential.
-type ConnectConnectorUserTokensIsStaticCredential bool
-
-// ConnectConnectorUserTokensManualCredentialInput User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
-type ConnectConnectorUserTokensManualCredentialInput bool
-
-// ConnectConnectorUserTokensSupportsRefinement Whether callers can narrow user-token grants per request.
-type ConnectConnectorUserTokensSupportsRefinement bool
-
-// ConnectConnectorUserTokensSupportsResources Whether callers can request resource-specific user tokens.
-type ConnectConnectorUserTokensSupportsResources bool
-
-// ConnectConnectorCreateData Provider configuration. With type, provide the complete configuration for that type. With service and connectionMethod, provide only credentials and preferences; Connect supplies the type, endpoints, templates, and defaults. Other connector types accept an arbitrary object.
-type ConnectConnectorCreateData struct {
-	union json.RawMessage
-}
-
-// ConnectConnectorCreateData0 defines model for ConnectConnectorCreateData.0.
-type ConnectConnectorCreateData0 struct {
-	// AuthorizationUrlParams Extra query parameters added to authorization URLs.
-	AuthorizationUrlParams *map[string]string `json:"authorizationUrlParams,omitempty"`
-
-	// ClientAssertion `private_key_jwt` client assertion settings.
-	ClientAssertion *struct {
-		// Claims Additional claims included in the client assertion.
-		Claims *map[string]interface{} `json:"claims,omitempty"`
-
-		// Ttl Client assertion lifetime in seconds.
-		Ttl *float32 `json:"ttl,omitempty"`
-
-		// Type OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.
-		Type *string `json:"type,omitempty"`
-	} `json:"clientAssertion,omitempty"`
-
-	// ClientCredentials Client credentials grant settings.
-	ClientCredentials *struct {
-		// Enabled Whether this OAuth grant is enabled.
-		Enabled bool `json:"enabled"`
-
-		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
-		Scopes *[]string `json:"scopes,omitempty"`
-	} `json:"clientCredentials,omitempty"`
-
-	// ClientId OAuth client ID assigned by the provider.
-	ClientId string `json:"clientId"`
-
-	// ClientName OAuth client name.
-	ClientName *string `json:"clientName,omitempty"`
-
-	// ClientSecret OAuth client secret.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-
-	// CodeChallengeMethod PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.
-	CodeChallengeMethod *string `json:"codeChallengeMethod,omitempty"`
-
-	// DefaultAudience Default audience used when a token request omits one. An empty string clears the default.
-	DefaultAudience *string `json:"defaultAudience,omitempty"`
-
-	// DefaultResource Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.
-	DefaultResource *string `json:"defaultResource,omitempty"`
-
-	// DefaultTokenExpiresIn Default token lifetime in seconds to use when the token response omits expires_in.
-	DefaultTokenExpiresIn *float32 `json:"defaultTokenExpiresIn,omitempty"`
-
-	// ForwardedClaims Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
-	ForwardedClaims *struct {
-		// IdToken ID token claim names that Connect can expose.
-		IdToken *[]string `json:"idToken,omitempty"`
-	} `json:"forwardedClaims,omitempty"`
-
-	// JwtBearer JWT bearer grant settings.
-	JwtBearer *struct {
-		// AdditionalClaims Additional claims included in generated JWT assertions.
-		AdditionalClaims *map[string]interface{} `json:"additionalClaims,omitempty"`
-
-		// Aud Default JWT audience claim.
-		Aud *string `json:"aud,omitempty"`
-
-		// Enabled Whether JWT bearer grants are enabled.
-		Enabled *bool `json:"enabled,omitempty"`
-
-		// Iss Default JWT issuer claim.
-		Iss *string `json:"iss,omitempty"`
-
-		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
-		Scopes *[]string `json:"scopes,omitempty"`
-
-		// Sub Default JWT subject claim.
-		Sub *string `json:"sub,omitempty"`
-
-		// Ttl JWT lifetime in seconds.
-		Ttl *float32 `json:"ttl,omitempty"`
-
-		// UseClientCredentials Whether JWT bearer requests also use client credentials.
-		UseClientCredentials *bool `json:"useClientCredentials,omitempty"`
-	} `json:"jwtBearer,omitempty"`
-
-	// PkceRequired Whether user authorization must use PKCE.
-	PkceRequired *bool `json:"pkceRequired,omitempty"`
-
-	// RefreshTokens Refresh token settings.
-	RefreshTokens *struct {
-		// Enabled Whether this OAuth grant is enabled.
-		Enabled bool `json:"enabled"`
-	} `json:"refreshTokens,omitempty"`
-
-	// ResponseType OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.
-	ResponseType *string `json:"responseType,omitempty"`
-
-	// ServerConfig Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
-	ServerConfig *ConnectConnectorCreateData_0_ServerConfig `json:"serverConfig,omitempty"`
-
-	// ServerUrl Authorization server base URL used for discovery.
-	ServerUrl *string `json:"serverUrl,omitempty"`
-
-	// TokenEndpointAuthMethod OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.
-	TokenEndpointAuthMethod *string `json:"tokenEndpointAuthMethod,omitempty"`
-
-	// UserAuthorization User authorization grant settings.
-	UserAuthorization *struct {
-		// Enabled Whether this OAuth grant is enabled.
-		Enabled bool `json:"enabled"`
-
-		// Scopes Default scopes to request when token params specify scopes: [\"*\"].
-		Scopes *[]string `json:"scopes,omitempty"`
-	} `json:"userAuthorization,omitempty"`
-}
-
-// ConnectConnectorCreateData0ServerConfigJwksKeysUse Intended key use: signing or encryption.
-type ConnectConnectorCreateData0ServerConfigJwksKeysUse string
-
-// ConnectConnectorCreateData_0_ServerConfig_Jwks_Keys_Item defines model for ConnectConnectorCreateData.0.ServerConfig.Jwks.Keys.Item.
-type ConnectConnectorCreateData_0_ServerConfig_Jwks_Keys_Item struct {
-	// Alg Algorithm intended for this key.
-	Alg *string `json:"alg,omitempty"`
-
-	// KeyOps Operations permitted for this key.
-	KeyOps *[]string `json:"key_ops,omitempty"`
-
-	// Kid JSON Web Key identifier.
-	Kid *string `json:"kid,omitempty"`
-
-	// Kty JSON Web Key type.
-	Kty string `json:"kty"`
-
-	// Use Intended key use: signing or encryption.
-	Use                  *ConnectConnectorCreateData0ServerConfigJwksKeysUse `json:"use,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:"-"`
-}
-
-// ConnectConnectorCreateData_0_ServerConfig_Jwks Inline authorization server JSON Web Key Set.
-type ConnectConnectorCreateData_0_ServerConfig_Jwks struct {
-	// Keys JSON Web Keys published by the authorization server.
-	Keys                 []ConnectConnectorCreateData_0_ServerConfig_Jwks_Keys_Item `json:"keys"`
-	AdditionalProperties map[string]interface{}                                     `json:"-"`
-}
-
-// ConnectConnectorCreateData_0_ServerConfig Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
-type ConnectConnectorCreateData_0_ServerConfig struct {
-	// AuthorizationDetailsTypesSupported OAuth authorization-detail types supported by the server.
-	AuthorizationDetailsTypesSupported *[]string `json:"authorization_details_types_supported,omitempty"`
-
-	// AuthorizationEndpoint OAuth authorization endpoint URL.
-	AuthorizationEndpoint *string `json:"authorization_endpoint,omitempty"`
-
-	// AuthorizationGrantProfilesSupported Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support.
-	AuthorizationGrantProfilesSupported *[]string `json:"authorization_grant_profiles_supported,omitempty"`
-
-	// ClaimTypesSupported OpenID Connect claim value types supported by the server.
-	ClaimTypesSupported *[]string `json:"claim_types_supported,omitempty"`
-
-	// ClaimsParameterSupported Whether authorization requests can use the claims parameter.
-	ClaimsParameterSupported *bool `json:"claims_parameter_supported,omitempty"`
-
-	// ClaimsSupported Claims that the authorization server can return.
-	ClaimsSupported *[]string `json:"claims_supported,omitempty"`
-
-	// ClientIdMetadataDocumentSupported Whether the server supports OAuth client ID metadata documents.
-	ClientIdMetadataDocumentSupported *bool `json:"client_id_metadata_document_supported,omitempty"`
-
-	// CodeChallengeMethodsSupported PKCE code challenge methods supported by the server.
-	CodeChallengeMethodsSupported *[]string `json:"code_challenge_methods_supported,omitempty"`
-
-	// DeviceAuthorizationEndpoint OAuth device authorization endpoint URL.
-	DeviceAuthorizationEndpoint *string `json:"device_authorization_endpoint,omitempty"`
-
-	// EndSessionEndpoint OpenID Connect session termination endpoint URL.
-	EndSessionEndpoint *string `json:"end_session_endpoint,omitempty"`
-
-	// GrantTypesSupported OAuth grant types supported by the server.
-	GrantTypesSupported *[]string `json:"grant_types_supported,omitempty"`
-
-	// IdTokenEncryptionAlgValuesSupported Key management algorithms supported for encrypted ID tokens.
-	IdTokenEncryptionAlgValuesSupported *[]string `json:"id_token_encryption_alg_values_supported,omitempty"`
-
-	// IdTokenEncryptionEncValuesSupported Content encryption algorithms supported for encrypted ID tokens.
-	IdTokenEncryptionEncValuesSupported *[]string `json:"id_token_encryption_enc_values_supported,omitempty"`
-
-	// IdTokenSigningAlgValuesSupported Signing algorithms supported for ID tokens.
-	IdTokenSigningAlgValuesSupported *[]string `json:"id_token_signing_alg_values_supported,omitempty"`
-
-	// IdentityChainingRequestedTokenTypesSupported Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support.
-	IdentityChainingRequestedTokenTypesSupported *[]string `json:"identity_chaining_requested_token_types_supported,omitempty"`
-
-	// IntrospectionEndpoint OAuth token introspection endpoint URL.
-	IntrospectionEndpoint *string `json:"introspection_endpoint,omitempty"`
-
-	// Issuer Authorization server issuer URL.
-	Issuer *string `json:"issuer,omitempty"`
-
-	// Jwks Inline authorization server JSON Web Key Set.
-	Jwks *ConnectConnectorCreateData_0_ServerConfig_Jwks `json:"jwks,omitempty"`
-
-	// JwksUri URL of the authorization server JSON Web Key Set.
-	JwksUri *string `json:"jwks_uri,omitempty"`
-
-	// LogoUri Authorization server logo URL.
-	LogoUri *string `json:"logo_uri,omitempty"`
-
-	// OpPolicyUri Authorization server privacy policy URL.
-	OpPolicyUri *string `json:"op_policy_uri,omitempty"`
-
-	// OpTosUri Authorization server terms of service URL.
-	OpTosUri *string `json:"op_tos_uri,omitempty"`
-
-	// PromptValuesSupported Authorization prompt values supported by the server.
-	PromptValuesSupported *[]string `json:"prompt_values_supported,omitempty"`
-
-	// RegistrationEndpoint OAuth dynamic client registration endpoint URL.
-	RegistrationEndpoint *string `json:"registration_endpoint,omitempty"`
-
-	// RequestParameterSupported Whether authorization requests can use signed request objects.
-	RequestParameterSupported *bool `json:"request_parameter_supported,omitempty"`
-
-	// RequestUriParameterSupported Whether authorization requests can use request_uri.
-	RequestUriParameterSupported *bool `json:"request_uri_parameter_supported,omitempty"`
-
-	// RequireRequestUriRegistration Whether request_uri values must be registered in advance.
-	RequireRequestUriRegistration *bool `json:"require_request_uri_registration,omitempty"`
-
-	// ResponseModesSupported OAuth response modes supported by the server.
-	ResponseModesSupported *[]string `json:"response_modes_supported,omitempty"`
-
-	// ResponseTypesSupported OAuth response types supported by the server.
-	ResponseTypesSupported *[]string `json:"response_types_supported,omitempty"`
-
-	// RevocationEndpoint OAuth token revocation endpoint URL.
-	RevocationEndpoint *string `json:"revocation_endpoint,omitempty"`
-
-	// ScopesSupported OAuth scopes supported by the server.
-	ScopesSupported *[]string `json:"scopes_supported,omitempty"`
-
-	// ServiceDocumentation Authorization server documentation URL.
-	ServiceDocumentation *string `json:"service_documentation,omitempty"`
-
-	// SubjectTypesSupported OpenID Connect subject identifier types supported by the server.
-	SubjectTypesSupported *[]string `json:"subject_types_supported,omitempty"`
-
-	// TokenEndpoint OAuth token endpoint URL.
-	TokenEndpoint *string `json:"token_endpoint,omitempty"`
-
-	// TokenEndpointAuthMethodsSupported Token endpoint client authentication methods supported by the server.
-	TokenEndpointAuthMethodsSupported *[]string `json:"token_endpoint_auth_methods_supported,omitempty"`
-
-	// TokenEndpointAuthSigningAlgValuesSupported Signing algorithms supported for token endpoint authentication.
-	TokenEndpointAuthSigningAlgValuesSupported *[]string `json:"token_endpoint_auth_signing_alg_values_supported,omitempty"`
-
-	// UserinfoEndpoint OpenID Connect UserInfo endpoint URL.
-	UserinfoEndpoint     *string                `json:"userinfo_endpoint,omitempty"`
-	AdditionalProperties map[string]interface{} `json:"-"`
-}
-
-// ConnectConnectorCreateData1 defines model for ConnectConnectorCreateData.1.
-type ConnectConnectorCreateData1 struct {
-	// Instructions Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
-	Instructions *string `json:"instructions,omitempty"`
-
-	// ServiceUrls The HTTPS resources the API key authenticates against.
-	ServiceUrls *[]string `json:"serviceUrls,omitempty"`
-
-	// SubjectType Which subject the connector issues tokens for. Defaults to \"app\" (connector-level keys). \"user\" connectors store no connector-level values; each user supplies their own key during authorization.
-	SubjectType *ConnectConnectorCreateData1SubjectType `json:"subjectType,omitempty"`
-
-	// Values Initial API key values stored by the connector.
-	Values *[]struct {
-		// ExpiresAt The timestamp when the API key value expires in milliseconds.
-		ExpiresAt *int `json:"expiresAt,omitempty"`
-
-		// Scope Optional scope associated with the API key value.
-		Scope *string `json:"scope,omitempty"`
-
-		// Value API key value.
-		Value *string `json:"value,omitempty"`
-	} `json:"values,omitempty"`
 }

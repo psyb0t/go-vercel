@@ -13,6 +13,10639 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParsePauseProjectResponse parses an HTTP response from a PauseProjectWithResponse call
+func ParsePauseProjectResponse(rsp *http.Response) (*PauseProjectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PauseProjectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseListPromoteAliasesResponse parses an HTTP response from a ListPromoteAliasesWithResponse call
+func ParseListPromoteAliasesResponse(rsp *http.Response) (*ListPromoteAliasesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListPromoteAliasesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListPromoteAliases200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRequestRollbackResponse parses an HTTP response from a RequestRollbackWithResponse call
+func ParseRequestRollbackResponse(rsp *http.Response) (*RequestRollbackResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RequestRollbackResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse parses an HTTP response from a UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithResponse call
+func ParseUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse(rsp *http.Response) (*UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseDeleteRoutesResponse parses an HTTP response from a DeleteRoutesWithResponse call
+func ParseDeleteRoutesResponse(rsp *http.Response) (*DeleteRoutesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteRoutesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			DeletedCount float32 `json:"deletedCount"`
+
+			// Version A version of routing rules stored in S3.
+			Version struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *DeleteRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *DeleteRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRoutesResponse parses an HTTP response from a GetRoutesWithResponse call
+func ParseGetRoutesResponse(rsp *http.Response) (*GetRoutesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRoutesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetRoutes200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAddRouteResponse parses an HTTP response from a AddRouteWithResponse call
+func ParseAddRouteResponse(rsp *http.Response) (*AddRouteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AddRouteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Route struct {
+				// Description Optional description of what the routing rule does.
+				Description *string `json:"description,omitempty"`
+
+				// Enabled Whether the routing rule is enabled. Defaults to true.
+				Enabled *AddRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
+
+				// Id Unique identifier for the routing rule.
+				Id string `json:"id"`
+
+				// Name Human-readable name for the routing rule.
+				Name string `json:"name"`
+
+				// RawDest Original destination provided by user.
+				RawDest *string `json:"rawDest,omitempty"`
+
+				// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
+				RawSrc *string `json:"rawSrc,omitempty"`
+
+				// Route The route definition from @vercel/routing-utils.
+				Route struct {
+					CaseSensitive *AddRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
+					Check         *AddRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
+					Continue      *AddRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
+					Dest          *string                                              `json:"dest,omitempty"`
+					Destination   *AddRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
+					Env           *[]string                                            `json:"env,omitempty"`
+					Has           *[]AddRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
+					Headers       *map[string]string                                   `json:"headers,omitempty"`
+					Important     *AddRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
+					Locale        *struct {
+						Cookie   *string            `json:"cookie,omitempty"`
+						Redirect *map[string]string `json:"redirect,omitempty"`
+					} `json:"locale,omitempty"`
+					Methods *[]string `json:"methods,omitempty"`
+
+					// Middleware A middleware index in the `middleware` key under the build result
+					Middleware *float32 `json:"middleware,omitempty"`
+
+					// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+					MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+					// MiddlewareRawSrc The original middleware matchers.
+					MiddlewareRawSrc *[]string                                               `json:"middlewareRawSrc,omitempty"`
+					Missing          *[]AddRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
+					Mitigate         *struct {
+						Action AddRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
+					} `json:"mitigate,omitempty"`
+					Override                  *AddRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
+					RespectOriginCacheControl *AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+					// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+					Source     *string                                                    `json:"source,omitempty"`
+					Src        string                                                     `json:"src"`
+					Status     *float32                                                   `json:"status,omitempty"`
+					StatusCode *float32                                                   `json:"statusCode,omitempty"`
+					Transforms *[]AddRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
+				} `json:"route"`
+				RouteType *AddRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
+
+				// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+				SrcSyntax *AddRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+
+				// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+				Staged *AddRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
+			} `json:"route"`
+
+			// Version A version of routing rules stored in S3.
+			Version struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *AddRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *AddRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseStageRoutesResponse parses an HTTP response from a StageRoutesWithResponse call
+func ParseStageRoutesResponse(rsp *http.Response) (*StageRoutesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StageRoutesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Version A version of routing rules stored in S3.
+			Version struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *StageRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *StageRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGenerateRouteResponse parses an HTTP response from a GenerateRouteWithResponse call
+func ParseGenerateRouteResponse(rsp *http.Response) (*GenerateRouteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateRouteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Error *string `json:"error,omitempty"`
+			Route *struct {
+				Actions []struct {
+					Dest    *string `json:"dest,omitempty"`
+					Headers *[]struct {
+						Key   string                                                `json:"key"`
+						Op    GenerateRoute200JSONResponseBodyRouteActionsHeadersOp `json:"op"`
+						Value *string                                               `json:"value,omitempty"`
+					} `json:"headers,omitempty"`
+					Status  *float32                                             `json:"status,omitempty"`
+					SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
+					Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
+				} `json:"actions"`
+				CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
+				Conditions    *[]struct {
+					Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
+					Key      *string                                                 `json:"key,omitempty"`
+					Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
+					Operator GenerateRoute200JSONResponseBodyRouteConditionsOperator `json:"operator"`
+					Value    *string                                                 `json:"value,omitempty"`
+				} `json:"conditions,omitempty"`
+				Description   string `json:"description"`
+				Name          string `json:"name"`
+				PathCondition struct {
+					Syntax GenerateRoute200JSONResponseBodyRoutePathConditionSyntax `json:"syntax"`
+					Value  string                                                   `json:"value"`
+				} `json:"pathCondition"`
+			} `json:"route,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRouteVersionsResponse parses an HTTP response from a GetRouteVersionsWithResponse call
+func ParseGetRouteVersionsResponse(rsp *http.Response) (*GetRouteVersionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRouteVersionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Versions []struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *GetRouteVersions200JSONResponseBodyVersionsIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *GetRouteVersions200JSONResponseBodyVersionsIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"versions"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateRouteVersionsResponse parses an HTTP response from a UpdateRouteVersionsWithResponse call
+func ParseUpdateRouteVersionsResponse(rsp *http.Response) (*UpdateRouteVersionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateRouteVersionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Version A version of routing rules stored in S3.
+			Version struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *UpdateRouteVersions200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *UpdateRouteVersions200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseEditRouteResponse parses an HTTP response from a EditRouteWithResponse call
+func ParseEditRouteResponse(rsp *http.Response) (*EditRouteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &EditRouteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Route *struct {
+				// Description Optional description of what the routing rule does.
+				Description *string `json:"description,omitempty"`
+
+				// Enabled Whether the routing rule is enabled. Defaults to true.
+				Enabled *EditRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
+
+				// Id Unique identifier for the routing rule.
+				Id string `json:"id"`
+
+				// Name Human-readable name for the routing rule.
+				Name string `json:"name"`
+
+				// RawDest Original destination provided by user.
+				RawDest *string `json:"rawDest,omitempty"`
+
+				// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
+				RawSrc *string `json:"rawSrc,omitempty"`
+
+				// Route The route definition from @vercel/routing-utils.
+				Route struct {
+					CaseSensitive *EditRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
+					Check         *EditRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
+					Continue      *EditRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
+					Dest          *string                                               `json:"dest,omitempty"`
+					Destination   *EditRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
+					Env           *[]string                                             `json:"env,omitempty"`
+					Has           *[]EditRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
+					Headers       *map[string]string                                    `json:"headers,omitempty"`
+					Important     *EditRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
+					Locale        *struct {
+						Cookie   *string            `json:"cookie,omitempty"`
+						Redirect *map[string]string `json:"redirect,omitempty"`
+					} `json:"locale,omitempty"`
+					Methods *[]string `json:"methods,omitempty"`
+
+					// Middleware A middleware index in the `middleware` key under the build result
+					Middleware *float32 `json:"middleware,omitempty"`
+
+					// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+					MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+					// MiddlewareRawSrc The original middleware matchers.
+					MiddlewareRawSrc *[]string                                                `json:"middlewareRawSrc,omitempty"`
+					Missing          *[]EditRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
+					Mitigate         *struct {
+						Action EditRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
+					} `json:"mitigate,omitempty"`
+					Override                  *EditRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
+					RespectOriginCacheControl *EditRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+					// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+					Source     *string                                                     `json:"source,omitempty"`
+					Src        string                                                      `json:"src"`
+					Status     *float32                                                    `json:"status,omitempty"`
+					StatusCode *float32                                                    `json:"statusCode,omitempty"`
+					Transforms *[]EditRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
+				} `json:"route"`
+				RouteType *EditRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
+
+				// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+				SrcSyntax *EditRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+
+				// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+				Staged *EditRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
+			} `json:"route,omitempty"`
+
+			// Version A version of routing rules stored in S3.
+			Version struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *EditRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *EditRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUnpauseProjectResponse parses an HTTP response from a UnpauseProjectWithResponse call
+func ParseUnpauseProjectResponse(rsp *http.Response) (*UnpauseProjectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UnpauseProjectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseAggregateEventsResponse parses an HTTP response from a AggregateEventsWithResponse call
+func ParseAggregateEventsResponse(rsp *http.Response) (*AggregateEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AggregateEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data  AggregateEvents200JSONResponseBody_Data `json:"data"`
+			Query struct {
+				Filter  *string                                                  `json:"filter,omitempty"`
+				GroupBy *[]AggregateEvents200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
+				Limit   float32                                                  `json:"limit"`
+				Since   string                                                   `json:"since"`
+				Until   string                                                   `json:"until"`
+			} `json:"query"`
+			Version float32 `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCountEventsResponse parses an HTTP response from a CountEventsWithResponse call
+func ParseCountEventsResponse(rsp *http.Response) (*CountEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CountEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data  CountEvents200JSONResponseBody_Data `json:"data"`
+			Query struct {
+				Filter *string `json:"filter,omitempty"`
+				Since  string  `json:"since"`
+				Until  string  `json:"until"`
+			} `json:"query"`
+			Version float32 `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAggregatePageviewsResponse parses an HTTP response from a AggregatePageviewsWithResponse call
+func ParseAggregatePageviewsResponse(rsp *http.Response) (*AggregatePageviewsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AggregatePageviewsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data  AggregatePageviews200JSONResponseBody_Data `json:"data"`
+			Query struct {
+				Filter  *string                                                     `json:"filter,omitempty"`
+				GroupBy *[]AggregatePageviews200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
+				Limit   float32                                                     `json:"limit"`
+				Since   string                                                      `json:"since"`
+				Until   string                                                      `json:"until"`
+			} `json:"query"`
+			Version float32 `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCountPageviewsResponse parses an HTTP response from a CountPageviewsWithResponse call
+func ParseCountPageviewsResponse(rsp *http.Response) (*CountPageviewsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CountPageviewsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data  CountPageviews200JSONResponseBody_Data `json:"data"`
+			Query struct {
+				Filter *string `json:"filter,omitempty"`
+				Since  string  `json:"since"`
+				Until  string  `json:"until"`
+			} `json:"query"`
+			Version float32 `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBulkAvailabilityResponse parses an HTTP response from a GetBulkAvailabilityWithResponse call
+func ParseGetBulkAvailabilityResponse(rsp *http.Response) (*GetBulkAvailabilityResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBulkAvailabilityResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Results []struct {
+				Available bool `json:"available"`
+
+				// Domain A valid domain name
+				Domain DomainName `json:"domain"`
+			} `json:"results"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest HttpApiDecodeError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBuyDomainsResponse parses an HTTP response from a BuyDomainsWithResponse call
+func ParseBuyDomainsResponse(rsp *http.Response) (*BuyDomainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BuyDomainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			UnderscoreLinks map[string]struct {
+				Href   string                                   `json:"href"`
+				Method BuyDomains200JSONResponseBodyLinksMethod `json:"method"`
+			} `json:"_links"`
+
+			// OrderId A valid order ID
+			OrderId OrderId `json:"orderId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BuyDomains400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BuyDomains403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBulkPriceResponse parses an HTTP response from a GetBulkPriceWithResponse call
+func ParseGetBulkPriceResponse(rsp *http.Response) (*GetBulkPriceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBulkPriceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Results []struct {
+				// Domain A valid domain name
+				Domain        DomainName                                            `json:"domain"`
+				PurchasePrice GetBulkPrice200JSONResponseBody_Results_PurchasePrice `json:"purchasePrice"`
+				RenewalPrice  GetBulkPrice200JSONResponseBody_Results_RenewalPrice  `json:"renewalPrice"`
+				TransferPrice GetBulkPrice200JSONResponseBody_Results_TransferPrice `json:"transferPrice"`
+				Years         float32                                               `json:"years"`
+			} `json:"results"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetBulkPrice400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseSearchDomainsResponse parses an HTTP response from a SearchDomainsWithResponse call
+func ParseSearchDomainsResponse(rsp *http.Response) (*SearchDomainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SearchDomainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Results []SearchDomains200JSONResponseBody_Results_Item `json:"results"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest HttpApiDecodeError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainAuthCodeResponse parses an HTTP response from a GetDomainAuthCodeWithResponse call
+func ParseGetDomainAuthCodeResponse(rsp *http.Response) (*GetDomainAuthCodeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainAuthCodeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AuthCode string `json:"authCode"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetDomainAuthCode400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest GetDomainAuthCode403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest DomainNotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest DomainCannotBeTransferedOutUntil
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateDomainAutoRenewResponse parses an HTTP response from a UpdateDomainAutoRenewWithResponse call
+func ParseUpdateDomainAutoRenewResponse(rsp *http.Response) (*UpdateDomainAutoRenewResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateDomainAutoRenewResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.StatusCode == 204:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UpdateDomainAutoRenew400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UpdateDomainAutoRenew403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest DomainNotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainAvailabilityResponse parses an HTTP response from a GetDomainAvailabilityWithResponse call
+func ParseGetDomainAvailabilityResponse(rsp *http.Response) (*GetDomainAvailabilityResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainAvailabilityResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Available bool `json:"available"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest HttpApiDecodeError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBuySingleDomainResponse parses an HTTP response from a BuySingleDomainWithResponse call
+func ParseBuySingleDomainResponse(rsp *http.Response) (*BuySingleDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BuySingleDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			UnderscoreLinks map[string]struct {
+				Href   string                                        `json:"href"`
+				Method BuySingleDomain200JSONResponseBodyLinksMethod `json:"method"`
+			} `json:"_links"`
+
+			// OrderId A valid order ID
+			OrderId OrderId `json:"orderId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BuySingleDomain400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BuySingleDomain403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetContactInfoSchemaResponse parses an HTTP response from a GetContactInfoSchemaWithResponse call
+func ParseGetContactInfoSchemaResponse(rsp *http.Response) (*GetContactInfoSchemaResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetContactInfoSchemaResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetContactInfoSchema400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainContactVerificationResponse parses an HTTP response from a GetDomainContactVerificationWithResponse call
+func ParseGetDomainContactVerificationResponse(rsp *http.Response) (*GetDomainContactVerificationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainContactVerificationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetDomainContactVerification200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetDomainContactVerification400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest GetDomainContactVerification403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest DomainNotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateDomainNameserversResponse parses an HTTP response from a UpdateDomainNameserversWithResponse call
+func ParseUpdateDomainNameserversResponse(rsp *http.Response) (*UpdateDomainNameserversResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateDomainNameserversResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.StatusCode == 204:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UpdateDomainNameservers400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UpdateDomainNameservers403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest DomainNotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainPriceResponse parses an HTTP response from a GetDomainPriceWithResponse call
+func ParseGetDomainPriceResponse(rsp *http.Response) (*GetDomainPriceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainPriceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PurchasePrice GetDomainPrice200JSONResponseBody_PurchasePrice `json:"purchasePrice"`
+			RenewalPrice  GetDomainPrice200JSONResponseBody_RenewalPrice  `json:"renewalPrice"`
+			TransferPrice GetDomainPrice200JSONResponseBody_TransferPrice `json:"transferPrice"`
+			Years         float32                                         `json:"years"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetDomainPrice400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRenewDomainResponse parses an HTTP response from a RenewDomainWithResponse call
+func ParseRenewDomainResponse(rsp *http.Response) (*RenewDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RenewDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			UnderscoreLinks map[string]struct {
+				Href   string                                    `json:"href"`
+				Method RenewDomain200JSONResponseBodyLinksMethod `json:"method"`
+			} `json:"_links"`
+
+			// OrderId A valid order ID
+			OrderId OrderId `json:"orderId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RenewDomain400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RenewDomain403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest DomainNotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainTransferInResponse parses an HTTP response from a GetDomainTransferInWithResponse call
+func ParseGetDomainTransferInResponse(rsp *http.Response) (*GetDomainTransferInResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainTransferInResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Status GetDomainTransferIn200JSONResponseBodyStatus `json:"status"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest HttpApiDecodeError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest GetDomainTransferIn403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseTransferInDomainResponse parses an HTTP response from a TransferInDomainWithResponse call
+func ParseTransferInDomainResponse(rsp *http.Response) (*TransferInDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &TransferInDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			UnderscoreLinks map[string]struct {
+				Href   string                                         `json:"href"`
+				Method TransferInDomain200JSONResponseBodyLinksMethod `json:"method"`
+			} `json:"_links"`
+
+			// OrderId A valid order ID
+			OrderId OrderId `json:"orderId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest TransferInDomain400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest TransferInDomain403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetOrderResponse parses an HTTP response from a GetOrderWithResponse call
+func ParseGetOrderResponse(rsp *http.Response) (*GetOrderResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOrderResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Domains []GetOrder200JSONResponseBody_Domains_Item `json:"domains"`
+			Error   *GetOrder200JSONResponseBody_Error         `json:"error,omitempty"`
+
+			// OrderId A valid order ID
+			OrderId OrderId                           `json:"orderId"`
+			Status  GetOrder200JSONResponseBodyStatus `json:"status"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest HttpApiDecodeError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest GetOrder403JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSupportedTldsResponse parses an HTTP response from a GetSupportedTldsWithResponse call
+func ParseGetSupportedTldsResponse(rsp *http.Response) (*GetSupportedTldsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSupportedTldsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []TldName
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest HttpApiDecodeError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTldResponse parses an HTTP response from a GetTldWithResponse call
+func ParseGetTldResponse(rsp *http.Response) (*GetTldResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTldResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// SupportedLanguageCodes The language codes that are supported for the TLD. The key is the language code, and the value is the name of the language.
+			SupportedLanguageCodes map[string]string `json:"supportedLanguageCodes"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetTld400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTldPriceResponse parses an HTTP response from a GetTldPriceWithResponse call
+func ParseGetTldPriceResponse(rsp *http.Response) (*GetTldPriceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTldPriceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PurchasePrice GetTldPrice200JSONResponseBody_PurchasePrice `json:"purchasePrice"`
+			RenewalPrice  GetTldPrice200JSONResponseBody_RenewalPrice  `json:"renewalPrice"`
+			TransferPrice GetTldPrice200JSONResponseBody_TransferPrice `json:"transferPrice"`
+
+			// Years The number of years the returned price is for.
+			Years float32 `json:"years"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest GetTldPrice400JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest NotAuthorizedForScope
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest TooManyRequests
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAttackChallengeModeResponse parses an HTTP response from a UpdateAttackChallengeModeWithResponse call
+func ParseUpdateAttackChallengeModeResponse(rsp *http.Response) (*UpdateAttackChallengeModeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAttackChallengeModeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AttackModeEnabled   UpdateAttackChallengeMode200JSONResponseBodyAttackModeEnabled `json:"attackModeEnabled"`
+			AttackModeUpdatedAt float32                                                       `json:"attackModeUpdatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetActiveAttackStatusResponse parses an HTTP response from a GetActiveAttackStatusWithResponse call
+func ParseGetActiveAttackStatusResponse(rsp *http.Response) (*GetActiveAttackStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetActiveAttackStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetActiveAttackStatus200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveBypassIpResponse parses an HTTP response from a RemoveBypassIpWithResponse call
+func ParseRemoveBypassIpResponse(rsp *http.Response) (*RemoveBypassIpResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveBypassIpResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Ok RemoveBypassIp200JSONResponseBodyOk `json:"ok"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBypassIpResponse parses an HTTP response from a GetBypassIpWithResponse call
+func ParseGetBypassIpResponse(rsp *http.Response) (*GetBypassIpResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBypassIpResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Pagination *struct {
+				Id      string `json:"Id"`
+				OwnerId string `json:"OwnerId"`
+			} `json:"pagination,omitempty"`
+			Result []struct {
+				Action        *GetBypassIp200JSONResponseBodyResultAction        `json:"Action,omitempty"`
+				ActorId       *string                                            `json:"ActorId,omitempty"`
+				CreatedAt     string                                             `json:"CreatedAt"`
+				DeletedAt     *string                                            `json:"DeletedAt,omitempty"`
+				Domain        string                                             `json:"Domain"`
+				ExpiresAt     *float32                                           `json:"ExpiresAt,omitempty"`
+				Id            string                                             `json:"Id"`
+				Ip            string                                             `json:"Ip"`
+				IsProjectRule *GetBypassIp200JSONResponseBodyResultIsProjectRule `json:"IsProjectRule,omitempty"`
+				Note          *string                                            `json:"Note,omitempty"`
+				OwnerId       string                                             `json:"OwnerId"`
+				ProjectId     *string                                            `json:"ProjectId,omitempty"`
+				UpdatedAt     string                                             `json:"UpdatedAt"`
+				UpdatedAtHour string                                             `json:"UpdatedAtHour"`
+			} `json:"result"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAddBypassIpResponse parses an HTTP response from a AddBypassIpWithResponse call
+func ParseAddBypassIpResponse(rsp *http.Response) (*AddBypassIpResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AddBypassIpResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AddBypassIp200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteConditionalBypassResponse parses an HTTP response from a DeleteConditionalBypassWithResponse call
+func ParseDeleteConditionalBypassResponse(rsp *http.Response) (*DeleteConditionalBypassResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteConditionalBypassResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetConditionalBypassResponse parses an HTTP response from a GetConditionalBypassWithResponse call
+func ParseGetConditionalBypassResponse(rsp *http.Response) (*GetConditionalBypassResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetConditionalBypassResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetConditionalBypass200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateConditionalBypassResponse parses an HTTP response from a CreateConditionalBypassWithResponse call
+func ParseCreateConditionalBypassResponse(rsp *http.Response) (*CreateConditionalBypassResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateConditionalBypassResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Condition      string `json:"condition"`
+			ConditionGroup []struct {
+				Conditions []struct {
+					Key   *string                                                                     `json:"key,omitempty"`
+					Neg   *CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg      `json:"neg,omitempty"`
+					Op    CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp        `json:"op"`
+					Type  CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsType      `json:"type"`
+					Value *CreateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+				} `json:"conditions"`
+			} `json:"conditionGroup"`
+			CreatedAt string  `json:"createdAt"`
+			Domain    string  `json:"domain"`
+			Id        string  `json:"id"`
+			Note      *string `json:"note,omitempty"`
+			ProjectId string  `json:"projectId"`
+			UpdatedAt string  `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSecurityFirewallConfigResponse parses an HTTP response from a GetSecurityFirewallConfigWithResponse call
+func ParseGetSecurityFirewallConfigResponse(rsp *http.Response) (*GetSecurityFirewallConfigResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSecurityFirewallConfigResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Active *struct {
+				BotIdEnabled *GetSecurityFirewallConfig200JSONResponseBodyActiveBotIdEnabled `json:"botIdEnabled,omitempty"`
+				Changes      []map[string]interface{}                                        `json:"changes"`
+				Conditions   *[]struct {
+					Active         GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsActive `json:"active"`
+					ConditionGroup []struct {
+						Conditions []struct {
+							Key   *string                                                                                         `json:"key,omitempty"`
+							Neg   *GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
+							Op    GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsOp          `json:"op"`
+							Type  GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsType        `json:"type"`
+							Value *GetSecurityFirewallConfig200JSONResponseBody_Active_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+						} `json:"conditions"`
+					} `json:"conditionGroup"`
+					Description *string `json:"description,omitempty"`
+					Id          string  `json:"id"`
+					Name        string  `json:"name"`
+				} `json:"conditions,omitempty"`
+				Crs *struct {
+					Gen struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsGenAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsGenActive `json:"active"`
+					} `json:"gen"`
+					Java struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsJavaAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsJavaActive `json:"active"`
+					} `json:"java"`
+					Lfi struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsLfiAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsLfiActive `json:"active"`
+					} `json:"lfi"`
+					Ma struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsMaAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsMaActive `json:"active"`
+					} `json:"ma"`
+					Php struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive `json:"active"`
+					} `json:"php"`
+					Rce struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive `json:"active"`
+					} `json:"rce"`
+					Rfi struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive `json:"active"`
+					} `json:"rfi"`
+					Sd struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive `json:"active"`
+					} `json:"sd"`
+					Sf struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive `json:"active"`
+					} `json:"sf"`
+					Sqli struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive `json:"active"`
+					} `json:"sqli"`
+					Xss struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive `json:"active"`
+					} `json:"xss"`
+				} `json:"crs,omitempty"`
+				FirewallEnabled GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled `json:"firewallEnabled"`
+				Id              string                                                            `json:"id"`
+				Ips             []struct {
+					Action   GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction `json:"action"`
+					Hostname string                                                      `json:"hostname"`
+					Id       string                                                      `json:"id"`
+					Ip       string                                                      `json:"ip"`
+					Notes    *string                                                     `json:"notes,omitempty"`
+				} `json:"ips"`
+				LogHeaders   *GetSecurityFirewallConfig200JSONResponseBody_Active_LogHeaders `json:"logHeaders,omitempty"`
+				ManagedRules *struct {
+					AiBots *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive  `json:"active"`
+						UpdatedAt *string                                                                     `json:"updatedAt,omitempty"`
+						UserId    *string                                                                     `json:"userId,omitempty"`
+						Username  *string                                                                     `json:"username,omitempty"`
+					} `json:"ai_bots,omitempty"`
+					BotProtection *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActive  `json:"active"`
+						UpdatedAt *string                                                                            `json:"updatedAt,omitempty"`
+						UserId    *string                                                                            `json:"userId,omitempty"`
+						Username  *string                                                                            `json:"username,omitempty"`
+					} `json:"bot_protection,omitempty"`
+					Owasp *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspActive  `json:"active"`
+						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
+						UserId    *string                                                                    `json:"userId,omitempty"`
+						Username  *string                                                                    `json:"username,omitempty"`
+					} `json:"owasp,omitempty"`
+					TrafficSources *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesActive  `json:"active"`
+						UpdatedAt *string                                                                             `json:"updatedAt,omitempty"`
+						UserId    *string                                                                             `json:"userId,omitempty"`
+						Username  *string                                                                             `json:"username,omitempty"`
+					} `json:"traffic_sources,omitempty"`
+					VercelRuleset *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetActive  `json:"active"`
+						UpdatedAt *string                                                                            `json:"updatedAt,omitempty"`
+						UserId    *string                                                                            `json:"userId,omitempty"`
+						Username  *string                                                                            `json:"username,omitempty"`
+					} `json:"vercel_ruleset,omitempty"`
+				} `json:"managedRules,omitempty"`
+				OwnerId    string                                                           `json:"ownerId"`
+				ProjectKey string                                                           `json:"projectKey"`
+				Rules      []GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_Item `json:"rules"`
+				Rulesets   *GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets    `json:"rulesets,omitempty"`
+				UpdatedAt  string                                                           `json:"updatedAt"`
+				Version    float32                                                          `json:"version"`
+			} `json:"active"`
+			Draft *struct {
+				BotIdEnabled *GetSecurityFirewallConfig200JSONResponseBodyDraftBotIdEnabled `json:"botIdEnabled,omitempty"`
+				Changes      []map[string]interface{}                                       `json:"changes"`
+				Conditions   *[]struct {
+					Active         GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsActive `json:"active"`
+					ConditionGroup []struct {
+						Conditions []struct {
+							Key   *string                                                                                        `json:"key,omitempty"`
+							Neg   *GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
+							Op    GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsOp          `json:"op"`
+							Type  GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsType        `json:"type"`
+							Value *GetSecurityFirewallConfig200JSONResponseBody_Draft_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+						} `json:"conditions"`
+					} `json:"conditionGroup"`
+					Description *string `json:"description,omitempty"`
+					Id          string  `json:"id"`
+					Name        string  `json:"name"`
+				} `json:"conditions,omitempty"`
+				Crs *struct {
+					Gen struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenActive `json:"active"`
+					} `json:"gen"`
+					Java struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaActive `json:"active"`
+					} `json:"java"`
+					Lfi struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiActive `json:"active"`
+					} `json:"lfi"`
+					Ma struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaActive `json:"active"`
+					} `json:"ma"`
+					Php struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpActive `json:"active"`
+					} `json:"php"`
+					Rce struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceActive `json:"active"`
+					} `json:"rce"`
+					Rfi struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiActive `json:"active"`
+					} `json:"rfi"`
+					Sd struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdActive `json:"active"`
+					} `json:"sd"`
+					Sf struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfActive `json:"active"`
+					} `json:"sf"`
+					Sqli struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActive `json:"active"`
+					} `json:"sqli"`
+					Xss struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActive `json:"active"`
+					} `json:"xss"`
+				} `json:"crs,omitempty"`
+				FirewallEnabled GetSecurityFirewallConfig200JSONResponseBodyDraftFirewallEnabled `json:"firewallEnabled"`
+				Id              string                                                           `json:"id"`
+				Ips             []struct {
+					Action   GetSecurityFirewallConfig200JSONResponseBodyDraftIpsAction `json:"action"`
+					Hostname string                                                     `json:"hostname"`
+					Id       string                                                     `json:"id"`
+					Ip       string                                                     `json:"ip"`
+					Notes    *string                                                    `json:"notes,omitempty"`
+				} `json:"ips"`
+				LogHeaders   *GetSecurityFirewallConfig200JSONResponseBody_Draft_LogHeaders `json:"logHeaders,omitempty"`
+				ManagedRules *struct {
+					AiBots *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsActive  `json:"active"`
+						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
+						UserId    *string                                                                    `json:"userId,omitempty"`
+						Username  *string                                                                    `json:"username,omitempty"`
+					} `json:"ai_bots,omitempty"`
+					BotProtection *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionActive  `json:"active"`
+						UpdatedAt *string                                                                           `json:"updatedAt,omitempty"`
+						UserId    *string                                                                           `json:"userId,omitempty"`
+						Username  *string                                                                           `json:"username,omitempty"`
+					} `json:"bot_protection,omitempty"`
+					Owasp *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspActive  `json:"active"`
+						UpdatedAt *string                                                                   `json:"updatedAt,omitempty"`
+						UserId    *string                                                                   `json:"userId,omitempty"`
+						Username  *string                                                                   `json:"username,omitempty"`
+					} `json:"owasp,omitempty"`
+					TrafficSources *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesActive  `json:"active"`
+						UpdatedAt *string                                                                            `json:"updatedAt,omitempty"`
+						UserId    *string                                                                            `json:"userId,omitempty"`
+						Username  *string                                                                            `json:"username,omitempty"`
+					} `json:"traffic_sources,omitempty"`
+					VercelRuleset *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetActive  `json:"active"`
+						UpdatedAt *string                                                                           `json:"updatedAt,omitempty"`
+						UserId    *string                                                                           `json:"userId,omitempty"`
+						Username  *string                                                                           `json:"username,omitempty"`
+					} `json:"vercel_ruleset,omitempty"`
+				} `json:"managedRules,omitempty"`
+				OwnerId    string                                                          `json:"ownerId"`
+				ProjectKey string                                                          `json:"projectKey"`
+				Rules      []GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_Item `json:"rules"`
+				Rulesets   *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets    `json:"rulesets,omitempty"`
+				UpdatedAt  string                                                          `json:"updatedAt"`
+				Version    float32                                                         `json:"version"`
+			} `json:"draft"`
+			Versions []struct {
+				BotIdEnabled *GetSecurityFirewallConfig200JSONResponseBodyVersionsBotIdEnabled `json:"botIdEnabled,omitempty"`
+				Changes      []map[string]interface{}                                          `json:"changes"`
+				Conditions   *[]struct {
+					Active         GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsActive `json:"active"`
+					ConditionGroup []struct {
+						Conditions []struct {
+							Key   *string                                                                                           `json:"key,omitempty"`
+							Neg   *GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
+							Op    GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsOp          `json:"op"`
+							Type  GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsType        `json:"type"`
+							Value *GetSecurityFirewallConfig200JSONResponseBody_Versions_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+						} `json:"conditions"`
+					} `json:"conditionGroup"`
+					Description *string `json:"description,omitempty"`
+					Id          string  `json:"id"`
+					Name        string  `json:"name"`
+				} `json:"conditions,omitempty"`
+				Crs *struct {
+					Gen struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenActive `json:"active"`
+					} `json:"gen"`
+					Java struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaActive `json:"active"`
+					} `json:"java"`
+					Lfi struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiActive `json:"active"`
+					} `json:"lfi"`
+					Ma struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaActive `json:"active"`
+					} `json:"ma"`
+					Php struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpActive `json:"active"`
+					} `json:"php"`
+					Rce struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceActive `json:"active"`
+					} `json:"rce"`
+					Rfi struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiActive `json:"active"`
+					} `json:"rfi"`
+					Sd struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdActive `json:"active"`
+					} `json:"sd"`
+					Sf struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfActive `json:"active"`
+					} `json:"sf"`
+					Sqli struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliActive `json:"active"`
+					} `json:"sqli"`
+					Xss struct {
+						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssAction `json:"action"`
+						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssActive `json:"active"`
+					} `json:"xss"`
+				} `json:"crs,omitempty"`
+				FirewallEnabled GetSecurityFirewallConfig200JSONResponseBodyVersionsFirewallEnabled `json:"firewallEnabled"`
+				Id              string                                                              `json:"id"`
+				Ips             []struct {
+					Action   GetSecurityFirewallConfig200JSONResponseBodyVersionsIpsAction `json:"action"`
+					Hostname string                                                        `json:"hostname"`
+					Id       string                                                        `json:"id"`
+					Ip       string                                                        `json:"ip"`
+					Notes    *string                                                       `json:"notes,omitempty"`
+				} `json:"ips"`
+				LogHeaders   *GetSecurityFirewallConfig200JSONResponseBody_Versions_LogHeaders `json:"logHeaders,omitempty"`
+				ManagedRules *struct {
+					AiBots *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsActive  `json:"active"`
+						UpdatedAt *string                                                                       `json:"updatedAt,omitempty"`
+						UserId    *string                                                                       `json:"userId,omitempty"`
+						Username  *string                                                                       `json:"username,omitempty"`
+					} `json:"ai_bots,omitempty"`
+					BotProtection *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionActive  `json:"active"`
+						UpdatedAt *string                                                                              `json:"updatedAt,omitempty"`
+						UserId    *string                                                                              `json:"userId,omitempty"`
+						Username  *string                                                                              `json:"username,omitempty"`
+					} `json:"bot_protection,omitempty"`
+					Owasp *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspActive  `json:"active"`
+						UpdatedAt *string                                                                      `json:"updatedAt,omitempty"`
+						UserId    *string                                                                      `json:"userId,omitempty"`
+						Username  *string                                                                      `json:"username,omitempty"`
+					} `json:"owasp,omitempty"`
+					TrafficSources *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesActive  `json:"active"`
+						UpdatedAt *string                                                                               `json:"updatedAt,omitempty"`
+						UserId    *string                                                                               `json:"userId,omitempty"`
+						Username  *string                                                                               `json:"username,omitempty"`
+					} `json:"traffic_sources,omitempty"`
+					VercelRuleset *struct {
+						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetAction `json:"action,omitempty"`
+						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetActive  `json:"active"`
+						UpdatedAt *string                                                                              `json:"updatedAt,omitempty"`
+						UserId    *string                                                                              `json:"userId,omitempty"`
+						Username  *string                                                                              `json:"username,omitempty"`
+					} `json:"vercel_ruleset,omitempty"`
+				} `json:"managedRules,omitempty"`
+				OwnerId    string                                                             `json:"ownerId"`
+				ProjectKey string                                                             `json:"projectKey"`
+				Rules      []GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_Item `json:"rules"`
+				Rulesets   *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets    `json:"rulesets,omitempty"`
+				UpdatedAt  string                                                             `json:"updatedAt"`
+				Version    float32                                                            `json:"version"`
+			} `json:"versions"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateFirewallConfigResponse parses an HTTP response from a UpdateFirewallConfigWithResponse call
+func ParseUpdateFirewallConfigResponse(rsp *http.Response) (*UpdateFirewallConfigResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateFirewallConfigResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePutFirewallConfigResponse parses an HTTP response from a PutFirewallConfigWithResponse call
+func ParsePutFirewallConfigResponse(rsp *http.Response) (*PutFirewallConfigResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutFirewallConfigResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Active struct {
+				BotIdEnabled *PutFirewallConfig200JSONResponseBodyActiveBotIdEnabled `json:"botIdEnabled,omitempty"`
+				Changes      []map[string]interface{}                                `json:"changes"`
+				Conditions   *[]struct {
+					Active         PutFirewallConfig200JSONResponseBodyActiveConditionsActive `json:"active"`
+					ConditionGroup []struct {
+						Conditions []struct {
+							Key   *string                                                                                 `json:"key,omitempty"`
+							Neg   *PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
+							Op    PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsOp          `json:"op"`
+							Type  PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsType        `json:"type"`
+							Value *PutFirewallConfig200JSONResponseBody_Active_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+						} `json:"conditions"`
+					} `json:"conditionGroup"`
+					Description *string `json:"description,omitempty"`
+					Id          string  `json:"id"`
+					Name        string  `json:"name"`
+				} `json:"conditions,omitempty"`
+
+				// Crs Custom Ruleset
+				Crs *struct {
+					// Gen Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+					Gen struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsGenAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsGenActive `json:"active"`
+					} `json:"gen"`
+
+					// Java Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
+					Java struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsJavaAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsJavaActive `json:"active"`
+					} `json:"java"`
+
+					// Lfi Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
+					Lfi struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsLfiAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsLfiActive `json:"active"`
+					} `json:"lfi"`
+
+					// Ma Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
+					Ma struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsMaAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsMaActive `json:"active"`
+					} `json:"ma"`
+
+					// Php PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+					Php struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsPhpAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsPhpActive `json:"active"`
+					} `json:"php"`
+
+					// Rce Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+					Rce struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsRceAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsRceActive `json:"active"`
+					} `json:"rce"`
+
+					// Rfi Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+					Rfi struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsRfiAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsRfiActive `json:"active"`
+					} `json:"rfi"`
+
+					// Sd Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
+					Sd struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsSdAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsSdActive `json:"active"`
+					} `json:"sd"`
+
+					// Sf Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
+					Sf struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsSfAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsSfActive `json:"active"`
+					} `json:"sf"`
+
+					// Sqli SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+					Sqli struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsSqliAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsSqliActive `json:"active"`
+					} `json:"sqli"`
+
+					// Xss XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+					Xss struct {
+						Action PutFirewallConfig200JSONResponseBodyActiveCrsXssAction `json:"action"`
+						Active PutFirewallConfig200JSONResponseBodyActiveCrsXssActive `json:"active"`
+					} `json:"xss"`
+				} `json:"crs,omitempty"`
+				FirewallEnabled PutFirewallConfig200JSONResponseBodyActiveFirewallEnabled `json:"firewallEnabled"`
+				Id              string                                                    `json:"id"`
+				Ips             []struct {
+					Action   PutFirewallConfig200JSONResponseBodyActiveIpsAction `json:"action"`
+					Hostname string                                              `json:"hostname"`
+					Id       string                                              `json:"id"`
+					Ip       string                                              `json:"ip"`
+					Notes    *string                                             `json:"notes,omitempty"`
+				} `json:"ips"`
+				LogHeaders   *PutFirewallConfig200JSONResponseBody_Active_LogHeaders `json:"logHeaders,omitempty"`
+				ManagedRules *struct {
+					AiBots *struct {
+						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction `json:"action,omitempty"`
+						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive  `json:"active"`
+						UpdatedAt *string                                                             `json:"updatedAt,omitempty"`
+						UserId    *string                                                             `json:"userId,omitempty"`
+						Username  *string                                                             `json:"username,omitempty"`
+					} `json:"ai_bots,omitempty"`
+					BotProtection *struct {
+						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction `json:"action,omitempty"`
+						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActive  `json:"active"`
+						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
+						UserId    *string                                                                    `json:"userId,omitempty"`
+						Username  *string                                                                    `json:"username,omitempty"`
+					} `json:"bot_protection,omitempty"`
+					Owasp *struct {
+						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspAction `json:"action,omitempty"`
+						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspActive  `json:"active"`
+						UpdatedAt *string                                                            `json:"updatedAt,omitempty"`
+						UserId    *string                                                            `json:"userId,omitempty"`
+						Username  *string                                                            `json:"username,omitempty"`
+					} `json:"owasp,omitempty"`
+					TrafficSources *struct {
+						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesActive  `json:"active"`
+						UpdatedAt *string                                                                     `json:"updatedAt,omitempty"`
+						UserId    *string                                                                     `json:"userId,omitempty"`
+						Username  *string                                                                     `json:"username,omitempty"`
+					} `json:"traffic_sources,omitempty"`
+					VercelRuleset *struct {
+						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetAction `json:"action,omitempty"`
+						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetActive  `json:"active"`
+						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
+						UserId    *string                                                                    `json:"userId,omitempty"`
+						Username  *string                                                                    `json:"username,omitempty"`
+					} `json:"vercel_ruleset,omitempty"`
+				} `json:"managedRules,omitempty"`
+				OwnerId    string                                                   `json:"ownerId"`
+				ProjectKey string                                                   `json:"projectKey"`
+				Rules      []PutFirewallConfig200JSONResponseBody_Active_Rules_Item `json:"rules"`
+				Rulesets   *PutFirewallConfig200JSONResponseBody_Active_Rulesets    `json:"rulesets,omitempty"`
+				UpdatedAt  string                                                   `json:"updatedAt"`
+				Version    float32                                                  `json:"version"`
+			} `json:"active"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGenerateFirewallRuleResponse parses an HTTP response from a GenerateFirewallRuleWithResponse call
+func ParseGenerateFirewallRuleResponse(rsp *http.Response) (*GenerateFirewallRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateFirewallRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Error *string `json:"error,omitempty"`
+			Rule  *struct {
+				Action struct {
+					Mitigate *struct {
+						Action         string  `json:"action"`
+						ActionDuration *string `json:"actionDuration,omitempty"`
+						RateLimit      *struct {
+							Action *string  `json:"action,omitempty"`
+							Algo   string   `json:"algo"`
+							Keys   []string `json:"keys"`
+							Limit  float32  `json:"limit"`
+							Window float32  `json:"window"`
+						} `json:"rateLimit,omitempty"`
+						Redirect *struct {
+							Location  string                                                                     `json:"location"`
+							Permanent GenerateFirewallRule200JSONResponseBodyRuleActionMitigateRedirectPermanent `json:"permanent"`
+						} `json:"redirect,omitempty"`
+					} `json:"mitigate,omitempty"`
+				} `json:"action"`
+				Active         GenerateFirewallRule200JSONResponseBodyRuleActive `json:"active"`
+				ConditionGroup []struct {
+					Conditions []struct {
+						Key   *string                                                                       `json:"key,omitempty"`
+						Neg   GenerateFirewallRule200JSONResponseBodyRuleConditionGroupConditionsNeg        `json:"neg"`
+						Op    string                                                                        `json:"op"`
+						Type  string                                                                        `json:"type"`
+						Value *GenerateFirewallRule200JSONResponseBody_Rule_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+					} `json:"conditions"`
+				} `json:"conditionGroup"`
+				Description *string `json:"description,omitempty"`
+				Name        string  `json:"name"`
+			} `json:"rule,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteSecurityFirewallConfigByConfigVersionResponse parses an HTTP response from a DeleteSecurityFirewallConfigByConfigVersionWithResponse call
+func ParseDeleteSecurityFirewallConfigByConfigVersionResponse(rsp *http.Response) (*DeleteSecurityFirewallConfigByConfigVersionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteSecurityFirewallConfigByConfigVersionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetFirewallConfigResponse parses an HTTP response from a GetFirewallConfigWithResponse call
+func ParseGetFirewallConfigResponse(rsp *http.Response) (*GetFirewallConfigResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetFirewallConfigResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			BotIdEnabled *GetFirewallConfig200JSONResponseBodyBotIdEnabled `json:"botIdEnabled,omitempty"`
+			Changes      []map[string]interface{}                          `json:"changes"`
+			Conditions   *[]struct {
+				Active         GetFirewallConfig200JSONResponseBodyConditionsActive `json:"active"`
+				ConditionGroup []struct {
+					Conditions []struct {
+						Key   *string                                                                          `json:"key,omitempty"`
+						Neg   *GetFirewallConfig200JSONResponseBodyConditionsConditionGroupConditionsNeg       `json:"neg,omitempty"`
+						Op    GetFirewallConfig200JSONResponseBodyConditionsConditionGroupConditionsOp         `json:"op"`
+						Type  GetFirewallConfig200JSONResponseBodyConditionsConditionGroupConditionsType       `json:"type"`
+						Value *GetFirewallConfig200JSONResponseBody_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+					} `json:"conditions"`
+				} `json:"conditionGroup"`
+				Description *string `json:"description,omitempty"`
+				Id          string  `json:"id"`
+				Name        string  `json:"name"`
+			} `json:"conditions,omitempty"`
+
+			// Crs Custom Ruleset
+			Crs *struct {
+				// Gen Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+				Gen struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsGenAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsGenActive `json:"active"`
+				} `json:"gen"`
+
+				// Java Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
+				Java struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsJavaAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsJavaActive `json:"active"`
+				} `json:"java"`
+
+				// Lfi Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
+				Lfi struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsLfiAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsLfiActive `json:"active"`
+				} `json:"lfi"`
+
+				// Ma Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
+				Ma struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsMaAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsMaActive `json:"active"`
+				} `json:"ma"`
+
+				// Php PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+				Php struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsPhpAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsPhpActive `json:"active"`
+				} `json:"php"`
+
+				// Rce Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+				Rce struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsRceAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsRceActive `json:"active"`
+				} `json:"rce"`
+
+				// Rfi Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+				Rfi struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsRfiAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsRfiActive `json:"active"`
+				} `json:"rfi"`
+
+				// Sd Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
+				Sd struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsSdAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsSdActive `json:"active"`
+				} `json:"sd"`
+
+				// Sf Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
+				Sf struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsSfAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsSfActive `json:"active"`
+				} `json:"sf"`
+
+				// Sqli SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+				Sqli struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsSqliAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsSqliActive `json:"active"`
+				} `json:"sqli"`
+
+				// Xss XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+				Xss struct {
+					Action GetFirewallConfig200JSONResponseBodyCrsXssAction `json:"action"`
+					Active GetFirewallConfig200JSONResponseBodyCrsXssActive `json:"active"`
+				} `json:"xss"`
+			} `json:"crs,omitempty"`
+			FirewallEnabled GetFirewallConfig200JSONResponseBodyFirewallEnabled `json:"firewallEnabled"`
+			Id              string                                              `json:"id"`
+			Ips             []struct {
+				Action   GetFirewallConfig200JSONResponseBodyIpsAction `json:"action"`
+				Hostname string                                        `json:"hostname"`
+				Id       string                                        `json:"id"`
+				Ip       string                                        `json:"ip"`
+				Notes    *string                                       `json:"notes,omitempty"`
+			} `json:"ips"`
+			LogHeaders   *GetFirewallConfig200JSONResponseBody_LogHeaders `json:"logHeaders,omitempty"`
+			ManagedRules *struct {
+				AiBots *struct {
+					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesAiBotsAction `json:"action,omitempty"`
+					Active    GetFirewallConfig200JSONResponseBodyManagedRulesAiBotsActive  `json:"active"`
+					UpdatedAt *string                                                       `json:"updatedAt,omitempty"`
+					UserId    *string                                                       `json:"userId,omitempty"`
+					Username  *string                                                       `json:"username,omitempty"`
+				} `json:"ai_bots,omitempty"`
+				BotProtection *struct {
+					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesBotProtectionAction `json:"action,omitempty"`
+					Active    GetFirewallConfig200JSONResponseBodyManagedRulesBotProtectionActive  `json:"active"`
+					UpdatedAt *string                                                              `json:"updatedAt,omitempty"`
+					UserId    *string                                                              `json:"userId,omitempty"`
+					Username  *string                                                              `json:"username,omitempty"`
+				} `json:"bot_protection,omitempty"`
+				Owasp *struct {
+					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesOwaspAction `json:"action,omitempty"`
+					Active    GetFirewallConfig200JSONResponseBodyManagedRulesOwaspActive  `json:"active"`
+					UpdatedAt *string                                                      `json:"updatedAt,omitempty"`
+					UserId    *string                                                      `json:"userId,omitempty"`
+					Username  *string                                                      `json:"username,omitempty"`
+				} `json:"owasp,omitempty"`
+				TrafficSources *struct {
+					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+					Active    GetFirewallConfig200JSONResponseBodyManagedRulesTrafficSourcesActive  `json:"active"`
+					UpdatedAt *string                                                               `json:"updatedAt,omitempty"`
+					UserId    *string                                                               `json:"userId,omitempty"`
+					Username  *string                                                               `json:"username,omitempty"`
+				} `json:"traffic_sources,omitempty"`
+				VercelRuleset *struct {
+					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesVercelRulesetAction `json:"action,omitempty"`
+					Active    GetFirewallConfig200JSONResponseBodyManagedRulesVercelRulesetActive  `json:"active"`
+					UpdatedAt *string                                                              `json:"updatedAt,omitempty"`
+					UserId    *string                                                              `json:"userId,omitempty"`
+					Username  *string                                                              `json:"username,omitempty"`
+				} `json:"vercel_ruleset,omitempty"`
+			} `json:"managedRules,omitempty"`
+			OwnerId    string                                            `json:"ownerId"`
+			ProjectKey string                                            `json:"projectKey"`
+			Rules      []GetFirewallConfig200JSONResponseBody_Rules_Item `json:"rules"`
+			Rulesets   *GetFirewallConfig200JSONResponseBody_Rulesets    `json:"rulesets,omitempty"`
+			UpdatedAt  string                                            `json:"updatedAt"`
+			Version    float32                                           `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSecurityFirewallConfigByConfigVersionActivateResponse parses an HTTP response from a CreateSecurityFirewallConfigByConfigVersionActivateWithResponse call
+func ParseCreateSecurityFirewallConfigByConfigVersionActivateResponse(rsp *http.Response) (*CreateSecurityFirewallConfigByConfigVersionActivateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSecurityFirewallConfigByConfigVersionActivateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			BotIdEnabled *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyBotIdEnabled `json:"botIdEnabled,omitempty"`
+			Changes      []map[string]interface{}                                                            `json:"changes"`
+			Conditions   *[]struct {
+				Active         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsActive `json:"active"`
+				ConditionGroup []struct {
+					Conditions []struct {
+						Key   *string                                                                                                            `json:"key,omitempty"`
+						Neg   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsNeg       `json:"neg,omitempty"`
+						Op    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsOp         `json:"op"`
+						Type  CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsType       `json:"type"`
+						Value *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+					} `json:"conditions"`
+				} `json:"conditionGroup"`
+				Description *string `json:"description,omitempty"`
+				Id          string  `json:"id"`
+				Name        string  `json:"name"`
+			} `json:"conditions,omitempty"`
+			Crs *struct {
+				Gen struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenActive `json:"active"`
+				} `json:"gen"`
+				Java struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaActive `json:"active"`
+				} `json:"java"`
+				Lfi struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiActive `json:"active"`
+				} `json:"lfi"`
+				Ma struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaActive `json:"active"`
+				} `json:"ma"`
+				Php struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpActive `json:"active"`
+				} `json:"php"`
+				Rce struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceActive `json:"active"`
+				} `json:"rce"`
+				Rfi struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiActive `json:"active"`
+				} `json:"rfi"`
+				Sd struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdActive `json:"active"`
+				} `json:"sd"`
+				Sf struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfActive `json:"active"`
+				} `json:"sf"`
+				Sqli struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliActive `json:"active"`
+				} `json:"sqli"`
+				Xss struct {
+					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssAction `json:"action"`
+					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssActive `json:"active"`
+				} `json:"xss"`
+			} `json:"crs,omitempty"`
+			FirewallEnabled CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyFirewallEnabled `json:"firewallEnabled"`
+			Id              string                                                                                `json:"id"`
+			Ips             []struct {
+				Action   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyIpsAction `json:"action"`
+				Hostname string                                                                          `json:"hostname"`
+				Id       string                                                                          `json:"id"`
+				Ip       string                                                                          `json:"ip"`
+				Notes    *string                                                                         `json:"notes,omitempty"`
+			} `json:"ips"`
+			LogHeaders   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_LogHeaders `json:"logHeaders,omitempty"`
+			ManagedRules *struct {
+				AiBots *struct {
+					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsAction `json:"action,omitempty"`
+					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsActive  `json:"active"`
+					UpdatedAt *string                                                                                         `json:"updatedAt,omitempty"`
+					UserId    *string                                                                                         `json:"userId,omitempty"`
+					Username  *string                                                                                         `json:"username,omitempty"`
+				} `json:"ai_bots,omitempty"`
+				BotProtection *struct {
+					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionAction `json:"action,omitempty"`
+					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionActive  `json:"active"`
+					UpdatedAt *string                                                                                                `json:"updatedAt,omitempty"`
+					UserId    *string                                                                                                `json:"userId,omitempty"`
+					Username  *string                                                                                                `json:"username,omitempty"`
+				} `json:"bot_protection,omitempty"`
+				Owasp *struct {
+					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspAction `json:"action,omitempty"`
+					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspActive  `json:"active"`
+					UpdatedAt *string                                                                                        `json:"updatedAt,omitempty"`
+					UserId    *string                                                                                        `json:"userId,omitempty"`
+					Username  *string                                                                                        `json:"username,omitempty"`
+				} `json:"owasp,omitempty"`
+				TrafficSources *struct {
+					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesActive  `json:"active"`
+					UpdatedAt *string                                                                                                 `json:"updatedAt,omitempty"`
+					UserId    *string                                                                                                 `json:"userId,omitempty"`
+					Username  *string                                                                                                 `json:"username,omitempty"`
+				} `json:"traffic_sources,omitempty"`
+				VercelRuleset *struct {
+					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetAction `json:"action,omitempty"`
+					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetActive  `json:"active"`
+					UpdatedAt *string                                                                                                `json:"updatedAt,omitempty"`
+					UserId    *string                                                                                                `json:"userId,omitempty"`
+					Username  *string                                                                                                `json:"username,omitempty"`
+				} `json:"vercel_ruleset,omitempty"`
+			} `json:"managedRules,omitempty"`
+			OwnerId    string                                                                              `json:"ownerId"`
+			ProjectKey string                                                                              `json:"projectKey"`
+			Rules      []CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item `json:"rules"`
+			Rulesets   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets    `json:"rulesets,omitempty"`
+			UpdatedAt  string                                                                              `json:"updatedAt"`
+			Version    float32                                                                             `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSecurityFirewallEventsResponse parses an HTTP response from a GetSecurityFirewallEventsWithResponse call
+func ParseGetSecurityFirewallEventsResponse(rsp *http.Response) (*GetSecurityFirewallEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSecurityFirewallEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Actions []struct {
+				Action     string                                                      `json:"action"`
+				ActionType string                                                      `json:"action_type"`
+				Count      float32                                                     `json:"count"`
+				EndTime    string                                                      `json:"endTime"`
+				Host       string                                                      `json:"host"`
+				IsActive   GetSecurityFirewallEvents200JSONResponseBodyActionsIsActive `json:"isActive"`
+				PublicIp   string                                                      `json:"public_ip"`
+				RuleId     *string                                                     `json:"ruleId"`
+				RuleName   *string                                                     `json:"ruleName"`
+				StartTime  string                                                      `json:"startTime"`
+			} `json:"actions"`
+			Pagination struct {
+				HasMore GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore `json:"hasMore"`
+
+				// Next Pass as `cursor` to fetch the next page; null when there are no more.
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSecurityFirewallEventsSummaryResponse parses an HTTP response from a GetSecurityFirewallEventsSummaryWithResponse call
+func ParseGetSecurityFirewallEventsSummaryResponse(rsp *http.Response) (*GetSecurityFirewallEventsSummaryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSecurityFirewallEventsSummaryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			BlockingIps    float32            `json:"blockingIps"`
+			ByAction       map[string]float32 `json:"byAction"`
+			ByActionType   map[string]float32 `json:"byActionType"`
+			ChallengingIps float32            `json:"challengingIps"`
+			Other          float32            `json:"other"`
+			Total          float32            `json:"total"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateIntegrationStoreDirectResponse parses an HTTP response from a CreateIntegrationStoreDirectWithResponse call
+func ParseCreateIntegrationStoreDirectResponse(rsp *http.Response) (*CreateIntegrationStoreDirectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateIntegrationStoreDirectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Store *struct {
+				BillingPlan *struct {
+					Cost        *string `json:"cost,omitempty"`
+					Description string  `json:"description"`
+					Details     *[]struct {
+						Label string  `json:"label"`
+						Value *string `json:"value,omitempty"`
+					} `json:"details,omitempty"`
+					Disabled           *CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled `json:"disabled,omitempty"`
+					EffectiveDate      *string                                                                  `json:"effectiveDate,omitempty"`
+					HighlightedDetails *[]struct {
+						Label string  `json:"label"`
+						Value *string `json:"value,omitempty"`
+					} `json:"highlightedDetails,omitempty"`
+					Id                                 string                                                                               `json:"id"`
+					InitialCharge                      *string                                                                              `json:"initialCharge,omitempty"`
+					MaximumAmount                      *string                                                                              `json:"maximumAmount,omitempty"`
+					MaximumAmountAutoPurchasePerPeriod *string                                                                              `json:"maximumAmountAutoPurchasePerPeriod,omitempty"`
+					MinimumAmount                      *string                                                                              `json:"minimumAmount,omitempty"`
+					Name                               string                                                                               `json:"name"`
+					PaymentMethodRequired              CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanPaymentMethodRequired `json:"paymentMethodRequired"`
+					PreauthorizationAmount             *float32                                                                             `json:"preauthorizationAmount,omitempty"`
+					Quote                              *[]struct {
+						Amount string `json:"amount"`
+						Line   string `json:"line"`
+					} `json:"quote,omitempty"`
+					Scope CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanScope `json:"scope"`
+					Type  CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanType  `json:"type"`
+				} `json:"billingPlan,omitempty"`
+				Capabilities *struct {
+					AgentTools     *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAgentTools        `json:"agentTools,omitempty"`
+					AutoSensitive  *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAutoSensitive     `json:"autoSensitive,omitempty"`
+					Billable       *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesBillable          `json:"billable,omitempty"`
+					Mcp            *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcp               `json:"mcp,omitempty"`
+					McpReadonly    *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcpReadonly       `json:"mcpReadonly,omitempty"`
+					Projects       *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesProjects          `json:"projects,omitempty"`
+					SecretRotation *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation `json:"secretRotation,omitempty"`
+					SecretsSync    *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretsSync       `json:"secretsSync,omitempty"`
+					Sso            *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSso               `json:"sso,omitempty"`
+					Transferable   *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesTransferable      `json:"transferable,omitempty"`
+					V0             *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesV0                `json:"v0,omitempty"`
+				} `json:"capabilities,omitempty"`
+				DirectPartnerConsoleUrl *string                                                                                         `json:"directPartnerConsoleUrl,omitempty"`
+				ExternalResourceId      string                                                                                          `json:"externalResourceId"`
+				ExternalResourceStatus  *CreateIntegrationStoreDirect200JSONResponseBodyStoreExternalResourceStatus                     `json:"externalResourceStatus,omitempty"`
+				Metadata                *map[string]CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties `json:"metadata,omitempty"`
+				Notification            *struct {
+					Href    *string                                                               `json:"href,omitempty"`
+					Level   CreateIntegrationStoreDirect200JSONResponseBodyStoreNotificationLevel `json:"level"`
+					Message *string                                                               `json:"message,omitempty"`
+					Title   string                                                                `json:"title"`
+				} `json:"notification,omitempty"`
+				Ownership *CreateIntegrationStoreDirect200JSONResponseBodyStoreOwnership `json:"ownership,omitempty"`
+
+				// ParentId The ID of the parent resource. Used to establish a parent-child relationship between resources, such as sandbox resources linking to their owner account resource.
+				ParentId *string `json:"parentId,omitempty"`
+				Product  struct {
+					// AgentSkills URLs to skills/guides for how AI agents should use this product. Providers can specify these to help agents understand how to interact with their integration.
+					AgentSkills  *[]string `json:"agentSkills,omitempty"`
+					Capabilities *struct {
+						AgentTools              *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAgentTools              `json:"agentTools,omitempty"`
+						AutoSensitive           *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAutoSensitive           `json:"autoSensitive,omitempty"`
+						Billable                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesBillable                `json:"billable,omitempty"`
+						ConnectedImportResource *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesConnectedImportResource `json:"connectedImportResource,omitempty"`
+						DatabaseUI              *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesDatabaseUI              `json:"databaseUI,omitempty"`
+						ImportResource          *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesImportResource          `json:"importResource,omitempty"`
+						Linking                 *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesLinking                 `json:"linking,omitempty"`
+						Mcp                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcp                     `json:"mcp,omitempty"`
+						McpReadonly             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcpReadonly             `json:"mcpReadonly,omitempty"`
+						NativeImportResource    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesNativeImportResource    `json:"nativeImportResource,omitempty"`
+						Projects                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesProjects                `json:"projects,omitempty"`
+						Sandbox                 *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSandbox                 `json:"sandbox,omitempty"`
+						SecretRotation          *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation      `json:"secretRotation,omitempty"`
+						SecretsSync             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretsSync             `json:"secretsSync,omitempty"`
+						Sso                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSso                     `json:"sso,omitempty"`
+						Transferable            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesTransferable            `json:"transferable,omitempty"`
+						V0                      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0                      `json:"v0,omitempty"`
+						V0Flavors               *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0Flavors               `json:"v0Flavors,omitempty"`
+					} `json:"capabilities,omitempty"`
+					DisableResourceRenaming *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductDisableResourceRenaming `json:"disableResourceRenaming,omitempty"`
+					Guides                  *[]struct {
+						Framework string `json:"framework"`
+						Steps     []struct {
+							Actions *[]struct {
+								Type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductGuidesStepsActionsType `json:"type"`
+							} `json:"actions,omitempty"`
+							Content string `json:"content"`
+							Title   string `json:"title"`
+						} `json:"steps"`
+						Title string `json:"title"`
+					} `json:"guides,omitempty"`
+					IconUrl     *string `json:"iconUrl,omitempty"`
+					Id          *string `json:"id,omitempty"`
+					Integration struct {
+						Capabilities *struct {
+							Billable                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable                `json:"billable,omitempty"`
+							Checks                  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks                  `json:"checks,omitempty"`
+							ConnectedImportResource *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource `json:"connectedImportResource,omitempty"`
+							ConnectedProvisioning   *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning   `json:"connectedProvisioning,omitempty"`
+							FlexCommitEligible      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible      `json:"flexCommitEligible,omitempty"`
+							ImportResource          *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource          `json:"importResource,omitempty"`
+							MaxAllowedTeams         *float32                                                                                                   `json:"maxAllowedTeams,omitempty"`
+							Mcp                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp                     `json:"mcp,omitempty"`
+							McpConfiguration        *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration        `json:"mcpConfiguration,omitempty"`
+							McpReadonly             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly             `json:"mcpReadonly,omitempty"`
+							NativeImportResource    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource    `json:"nativeImportResource,omitempty"`
+							Provisioning            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning            `json:"provisioning,omitempty"`
+							RequiresBrowserInstall  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall  `json:"requiresBrowserInstall,omitempty"`
+							SecretRotation          *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation     `json:"secretRotation,omitempty"`
+							Sso                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso                     `json:"sso,omitempty"`
+							TemplateCloneOnly       *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly       `json:"templateCloneOnly,omitempty"`
+							Transferable            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable            `json:"transferable,omitempty"`
+							UpdateConfiguration     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration     `json:"updateConfiguration,omitempty"`
+							V0Flavors               *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors               `json:"v0Flavors,omitempty"`
+						} `json:"capabilities,omitempty"`
+						Flags                            *[]string                                                                                               `json:"flags,omitempty"`
+						Icon                             string                                                                                                  `json:"icon"`
+						Id                               string                                                                                                  `json:"id"`
+						Name                             string                                                                                                  `json:"name"`
+						Slug                             string                                                                                                  `json:"slug"`
+						SupportsInstallationBillingPlans *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationSupportsInstallationBillingPlans `json:"supportsInstallationBillingPlans,omitempty"`
+					} `json:"integration"`
+					IntegrationConfigurationId string                                                                     `json:"integrationConfigurationId"`
+					LogDrainStatus             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductLogDrainStatus `json:"logDrainStatus,omitempty"`
+					MetadataSchema             *struct {
+						Properties map[string]CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_AdditionalProperties `json:"properties"`
+						Required   *[]string                                                                                                               `json:"required,omitempty"`
+						Type       CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaType                                           `json:"type"`
+						UiOrder    *[]string                                                                                                               `json:"ui:order,omitempty"`
+					} `json:"metadataSchema,omitempty"`
+					Name                    *string                                                                               `json:"name,omitempty"`
+					PrimaryProtocol         *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductPrimaryProtocol           `json:"primaryProtocol,omitempty"`
+					ProjectConnectionScopes *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreProductProjectConnectionScopes `json:"projectConnectionScopes,omitempty"`
+					Repl                    *struct {
+						Enabled              CreateIntegrationStoreDirect200JSONResponseBodyStoreProductReplEnabled              `json:"enabled"`
+						SupportsReadOnlyMode CreateIntegrationStoreDirect200JSONResponseBodyStoreProductReplSupportsReadOnlyMode `json:"supportsReadOnlyMode"`
+						WelcomeMessage       *string                                                                             `json:"welcomeMessage,omitempty"`
+					} `json:"repl,omitempty"`
+					ResourceLinks *[]struct {
+						Href  string `json:"href"`
+						Title string `json:"title"`
+					} `json:"resourceLinks,omitempty"`
+
+					// ResourceTitle Custom resource title to display during installation and configuration. If not provided, defaults to protocol-based defaults.
+					//
+					// Example: Instance
+					ResourceTitle                  *string                                                                                    `json:"resourceTitle,omitempty"`
+					ShortDescription               *string                                                                                    `json:"shortDescription,omitempty"`
+					ShowSSOLinkOnProjectConnection *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductShowSSOLinkOnProjectConnection `json:"showSSOLinkOnProjectConnection,omitempty"`
+					Slug                           *string                                                                                    `json:"slug,omitempty"`
+					SupportedProtocols             []CreateIntegrationStoreDirect200JSONResponseBodyStoreProductSupportedProtocols            `json:"supportedProtocols"`
+					Tags                           *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreProductTags                         `json:"tags,omitempty"`
+				} `json:"product"`
+				ProjectFilter *struct {
+					Git *struct {
+						Owners    *[]string                                                                         `json:"owners,omitempty"`
+						Providers CreateIntegrationStoreDirect200JSONResponseBody_Store_ProjectFilter_Git_Providers `json:"providers"`
+						Repos     *[]string                                                                         `json:"repos,omitempty"`
+					} `json:"git,omitempty"`
+				} `json:"projectFilter,omitempty"`
+				ProjectsMetadata []struct {
+					Deployments *struct {
+						Actions []struct {
+							Environments []string `json:"environments"`
+							Slug         string   `json:"slug"`
+						} `json:"actions"`
+						Required CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataDeploymentsRequired `json:"required"`
+					} `json:"deployments,omitempty"`
+					EnvVarPrefix         *string                                                                                   `json:"envVarPrefix"`
+					EnvironmentVariables []string                                                                                  `json:"environmentVariables"`
+					Environments         []string                                                                                  `json:"environments"`
+					Framework            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataFramework            `json:"framework,omitempty"`
+					Id                   string                                                                                    `json:"id"`
+					LatestDeployment     *string                                                                                   `json:"latestDeployment,omitempty"`
+					MakeEnvVarsSensitive *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
+					Name                 string                                                                                    `json:"name"`
+					ProjectId            string                                                                                    `json:"projectId"`
+					SecretsOutdated      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
+				} `json:"projectsMetadata"`
+				ProtocolSettings *struct {
+					Authentication *struct {
+						AppUrls *[]struct {
+							Target CreateIntegrationStoreDirect200JSONResponseBodyStoreProtocolSettingsAuthenticationAppUrlsTarget `json:"target"`
+							Url    string                                                                                          `json:"url"`
+						} `json:"appUrls,omitempty"`
+					} `json:"authentication,omitempty"`
+					Experimentation *struct {
+						EdgeConfigId               *string                                                                                                        `json:"edgeConfigId,omitempty"`
+						EdgeConfigSyncingEnabled   *CreateIntegrationStoreDirect200JSONResponseBodyStoreProtocolSettingsExperimentationEdgeConfigSyncingEnabled   `json:"edgeConfigSyncingEnabled,omitempty"`
+						EdgeConfigTokenId          *string                                                                                                        `json:"edgeConfigTokenId,omitempty"`
+						GlobalConfigId             *string                                                                                                        `json:"globalConfigId,omitempty"`
+						GlobalConfigSyncingEnabled *CreateIntegrationStoreDirect200JSONResponseBodyStoreProtocolSettingsExperimentationGlobalConfigSyncingEnabled `json:"globalConfigSyncingEnabled,omitempty"`
+					} `json:"experimentation,omitempty"`
+				} `json:"protocolSettings,omitempty"`
+
+				// SecretRotationCompletedAt The timestamp when secret rotation was completed.
+				SecretRotationCompletedAt *float32 `json:"secretRotationCompletedAt,omitempty"`
+
+				// SecretRotationRequestedAt The timestamp when secret rotation was requested.
+				SecretRotationRequestedAt *float32 `json:"secretRotationRequestedAt,omitempty"`
+
+				// SecretRotationRequestedBy The ID of the user/team who requested the secret rotation.
+				SecretRotationRequestedBy *string `json:"secretRotationRequestedBy,omitempty"`
+
+				// SecretRotationRequestedReason The reason for the secret rotation request.
+				SecretRotationRequestedReason *string `json:"secretRotationRequestedReason,omitempty"`
+				Secrets                       []struct {
+					FrameworkPublishable *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsFrameworkPublishable `json:"frameworkPublishable,omitempty"`
+					Length               float32                                                                          `json:"length"`
+					Name                 string                                                                           `json:"name"`
+					NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
+				} `json:"secrets"`
+				SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
+				Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
+
+				// Targets The deployment targets that this resource is available for.
+				Targets                *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreTargets         `json:"targets,omitempty"`
+				TotalConnectedProjects *float32                                                               `json:"totalConnectedProjects,omitempty"`
+				UsageQuotaExceeded     CreateIntegrationStoreDirect200JSONResponseBodyStoreUsageQuotaExceeded `json:"usageQuotaExceeded"`
+			} `json:"store"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateTeamResponse parses an HTTP response from a CreateTeamWithResponse call
+func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Id Id of the created team
+			//
+			// Example: team_nLlpyC6RE1qxqglFKbrMxlud
+			Id   string `json:"id"`
+			Slug string `json:"slug"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteTeamResponse parses an HTTP response from a DeleteTeamWithResponse call
+func ParseDeleteTeamResponse(rsp *http.Response) (*DeleteTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Id The ID of the deleted Team
+			//
+			// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
+			Id string `json:"id"`
+
+			// NewDefaultTeamIdError Signifies whether the default team update has failed, when newDefaultTeamId is provided in request query.
+			//
+			// Example: true
+			NewDefaultTeamIdError *DeleteTeam200JSONResponseBodyNewDefaultTeamIdError `json:"newDefaultTeamIdError,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePostTeamDsyncRolesResponse parses an HTTP response from a PostTeamDsyncRolesWithResponse call
+func ParsePostTeamDsyncRolesResponse(rsp *http.Response) (*PostTeamDsyncRolesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostTeamDsyncRolesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Ok PostTeamDsyncRoles200JSONResponseBodyOk `json:"ok"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListTeamFlagsResponse parses an HTTP response from a ListTeamFlagsWithResponse call
+func ParseListTeamFlagsResponse(rsp *http.Response) (*ListTeamFlagsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListTeamFlagsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data       []Flag `json:"data"`
+			Pagination struct {
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListTeamFlagSettingsResponse parses an HTTP response from a ListTeamFlagSettingsWithResponse call
+func ParseListTeamFlagSettingsResponse(rsp *http.Response) (*ListTeamFlagSettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListTeamFlagSettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListTeamFlagSettings200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteTeamInviteCodeResponse parses an HTTP response from a DeleteTeamInviteCodeWithResponse call
+func ParseDeleteTeamInviteCodeResponse(rsp *http.Response) (*DeleteTeamInviteCodeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteTeamInviteCodeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Id ID of the team.
+			Id string `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseJoinTeamResponse parses an HTTP response from a JoinTeamWithResponse call
+func ParseJoinTeamResponse(rsp *http.Response) (*JoinTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &JoinTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// From The origin of how the user joined.
+			//
+			// Example: email
+			From string `json:"from"`
+
+			// Name The name of the team the user joined.
+			//
+			// Example: My Team
+			Name string `json:"name"`
+
+			// Slug The slug of the team the user joined.
+			//
+			// Example: my-team
+			Slug string `json:"slug"`
+
+			// TeamId The ID of the team the user joined.
+			//
+			// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
+			TeamId string `json:"teamId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveTeamMemberResponse parses an HTTP response from a RemoveTeamMemberWithResponse call
+func ParseRemoveTeamMemberResponse(rsp *http.Response) (*RemoveTeamMemberResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveTeamMemberResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Id ID of the team.
+			Id string `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateTeamMemberResponse parses an HTTP response from a UpdateTeamMemberWithResponse call
+func ParseUpdateTeamMemberResponse(rsp *http.Response) (*UpdateTeamMemberResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateTeamMemberResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Id ID of the team.
+			Id string `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteMicrofrontendsGroupResponse parses an HTTP response from a DeleteMicrofrontendsGroupWithResponse call
+func ParseDeleteMicrofrontendsGroupResponse(rsp *http.Response) (*DeleteMicrofrontendsGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteMicrofrontendsGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateMicrofrontendsGroupResponse parses an HTTP response from a UpdateMicrofrontendsGroupWithResponse call
+func ParseUpdateMicrofrontendsGroupResponse(rsp *http.Response) (*UpdateMicrofrontendsGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateMicrofrontendsGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			UpdatedMicrofrontendsGroup struct {
+				EnablePolyrepoBranchRouting *UpdateMicrofrontendsGroup200JSONResponseBodyUpdatedMicrofrontendsGroupEnablePolyrepoBranchRouting `json:"enablePolyrepoBranchRouting,omitempty"`
+				FallbackEnvironment         *string                                                                                            `json:"fallbackEnvironment,omitempty"`
+				Id                          string                                                                                             `json:"id"`
+				Name                        *string                                                                                            `json:"name,omitempty"`
+				Slug                        *string                                                                                            `json:"slug,omitempty"`
+			} `json:"updatedMicrofrontendsGroup"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRequestAccessToTeamResponse parses an HTTP response from a RequestAccessToTeamWithResponse call
+func ParseRequestAccessToTeamResponse(rsp *http.Response) (*RequestAccessToTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RequestAccessToTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AccessRequestedAt *float32 `json:"accessRequestedAt,omitempty"`
+			Bitbucket         *struct {
+				Login *string `json:"login,omitempty"`
+			} `json:"bitbucket"`
+			Confirmed RequestAccessToTeam200JSONResponseBodyConfirmed `json:"confirmed"`
+			Github    *struct {
+				Login *string `json:"login,omitempty"`
+			} `json:"github"`
+			Gitlab *struct {
+				Login *string `json:"login,omitempty"`
+			} `json:"gitlab"`
+			JoinedFrom *struct {
+				CommitId         *string                                                      `json:"commitId,omitempty"`
+				DsyncConnectedAt *float32                                                     `json:"dsyncConnectedAt,omitempty"`
+				DsyncUserId      *string                                                      `json:"dsyncUserId,omitempty"`
+				GitUserId        *RequestAccessToTeam200JSONResponseBody_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
+				GitUserLogin     *string                                                      `json:"gitUserLogin,omitempty"`
+				IdpUserId        *string                                                      `json:"idpUserId,omitempty"`
+				Origin           RequestAccessToTeam200JSONResponseBodyJoinedFromOrigin       `json:"origin"`
+				RepoId           *string                                                      `json:"repoId,omitempty"`
+				RepoPath         *string                                                      `json:"repoPath,omitempty"`
+				SsoConnectedAt   *float32                                                     `json:"ssoConnectedAt,omitempty"`
+				SsoUserId        *string                                                      `json:"ssoUserId,omitempty"`
+			} `json:"joinedFrom,omitempty"`
+			TeamName string `json:"teamName"`
+			TeamSlug string `json:"teamSlug"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamAccessRequestResponse parses an HTTP response from a GetTeamAccessRequestWithResponse call
+func ParseGetTeamAccessRequestResponse(rsp *http.Response) (*GetTeamAccessRequestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamAccessRequestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// AccessRequestedAt Timestamp in milliseconds when the user requested access to the team.
+			//
+			// Example: 1588720733602
+			AccessRequestedAt float32 `json:"accessRequestedAt"`
+
+			// Bitbucket Map of the connected Bitbucket account.
+			Bitbucket *struct {
+				Login *string `json:"login,omitempty"`
+			} `json:"bitbucket"`
+
+			// Confirmed Current status of the membership. Will be `true` if confirmed, if pending it'll be `false`.
+			//
+			// Example: false
+			Confirmed GetTeamAccessRequest200JSONResponseBodyConfirmed `json:"confirmed"`
+
+			// Github Map of the connected GitHub account.
+			Github *struct {
+				Login *string `json:"login,omitempty"`
+			} `json:"github"`
+
+			// Gitlab Map of the connected GitLab account.
+			Gitlab *struct {
+				Login *string `json:"login,omitempty"`
+			} `json:"gitlab"`
+
+			// JoinedFrom A map that describes the origin from where the user joined.
+			JoinedFrom struct {
+				CommitId         *string                                                       `json:"commitId,omitempty"`
+				DsyncConnectedAt *float32                                                      `json:"dsyncConnectedAt,omitempty"`
+				DsyncUserId      *string                                                       `json:"dsyncUserId,omitempty"`
+				GitUserId        *GetTeamAccessRequest200JSONResponseBody_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
+				GitUserLogin     *string                                                       `json:"gitUserLogin,omitempty"`
+				IdpUserId        *string                                                       `json:"idpUserId,omitempty"`
+				Origin           GetTeamAccessRequest200JSONResponseBodyJoinedFromOrigin       `json:"origin"`
+				RepoId           *string                                                       `json:"repoId,omitempty"`
+				RepoPath         *string                                                       `json:"repoPath,omitempty"`
+				SsoConnectedAt   *float32                                                      `json:"ssoConnectedAt,omitempty"`
+				SsoUserId        *string                                                       `json:"ssoUserId,omitempty"`
+			} `json:"joinedFrom"`
+
+			// TeamName The name of the team.
+			//
+			// Example: My Team
+			TeamName string `json:"teamName"`
+
+			// TeamSlug The slug of the team.
+			//
+			// Example: my-team
+			TeamSlug string `json:"teamSlug"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRequestDeleteResponse parses an HTTP response from a RequestDeleteWithResponse call
+func ParseRequestDeleteResponse(rsp *http.Response) (*RequestDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RequestDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			// Email Email address of the User who has initiated deletion.
+			Email string `json:"email"`
+
+			// Id Unique identifier of the User who has initiated deletion.
+			Id string `json:"id"`
+
+			// Message User deletion progress status.
+			//
+			// Example: Verification email sent
+			Message string `json:"message"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListRepositoriesResponse parses an HTTP response from a ListRepositoriesWithResponse call
+func ParseListRepositoriesResponse(rsp *http.Response) (*ListRepositoriesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListRepositoriesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VcrRepositoryList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateRepositoryResponse parses an HTTP response from a CreateRepositoryWithResponse call
+func ParseCreateRepositoryResponse(rsp *http.Response) (*CreateRepositoryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateRepositoryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Repository A Vercel Container Registry repository.
+			Repository VcrRepository `json:"repository"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteRepositoryResponse parses an HTTP response from a DeleteRepositoryWithResponse call
+func ParseDeleteRepositoryResponse(rsp *http.Response) (*DeleteRepositoryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteRepositoryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRepositoryResponse parses an HTTP response from a GetRepositoryWithResponse call
+func ParseGetRepositoryResponse(rsp *http.Response) (*GetRepositoryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRepositoryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Repository A Vercel Container Registry repository.
+			Repository VcrRepository `json:"repository"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListRepositoryImagesResponse parses an HTTP response from a ListRepositoryImagesWithResponse call
+func ParseListRepositoryImagesResponse(rsp *http.Response) (*ListRepositoryImagesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListRepositoryImagesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VcrImageList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRepositoryImageResponse parses an HTTP response from a GetRepositoryImageWithResponse call
+func ParseGetRepositoryImageResponse(rsp *http.Response) (*GetRepositoryImageResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRepositoryImageResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Image A single image with its tags, status and resolved Dockerfile layer history.
+			Image VcrImageDetail `json:"image"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteRepositoryImageResponse parses an HTTP response from a DeleteRepositoryImageWithResponse call
+func ParseDeleteRepositoryImageResponse(rsp *http.Response) (*DeleteRepositoryImageResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteRepositoryImageResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveRepositoryPermissionResponse parses an HTTP response from a RemoveRepositoryPermissionWithResponse call
+func ParseRemoveRepositoryPermissionResponse(rsp *http.Response) (*RemoveRepositoryPermissionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveRepositoryPermissionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListRepositoryPermissionsResponse parses an HTTP response from a ListRepositoryPermissionsWithResponse call
+func ParseListRepositoryPermissionsResponse(rsp *http.Response) (*ListRepositoryPermissionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListRepositoryPermissionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VcrRepositoryPermissionList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAddRepositoryPermissionResponse parses an HTTP response from a AddRepositoryPermissionWithResponse call
+func ParseAddRepositoryPermissionResponse(rsp *http.Response) (*AddRepositoryPermissionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AddRepositoryPermissionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Permission A team's access grant to a Vercel Container Registry repository.
+			Permission VcrRepositoryPermission `json:"permission"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseClearRepositoryPermissionsResponse parses an HTTP response from a ClearRepositoryPermissionsWithResponse call
+func ParseClearRepositoryPermissionsResponse(rsp *http.Response) (*ClearRepositoryPermissionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ClearRepositoryPermissionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListRepositoryTagsResponse parses an HTTP response from a ListRepositoryTagsWithResponse call
+func ParseListRepositoryTagsResponse(rsp *http.Response) (*ListRepositoryTagsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListRepositoryTagsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			NextCursor *string `json:"nextCursor,omitempty"`
+			Tags       []struct {
+				Arch           *string                                          `json:"arch,omitempty"`
+				CreatedAt      string                                           `json:"createdAt"`
+				ImageId        string                                           `json:"imageId"`
+				Kind           ListRepositoryTags200JSONResponseBodyTagsKind    `json:"kind"`
+				ManifestDigest string                                           `json:"manifestDigest"`
+				Platform       *string                                          `json:"platform,omitempty"`
+				PushedBy       *string                                          `json:"pushedBy,omitempty"`
+				SizeInBytes    float32                                          `json:"sizeInBytes"`
+				Status         *ListRepositoryTags200JSONResponseBodyTagsStatus `json:"status"`
+				Tag            string                                           `json:"tag"`
+				UpdatedAt      string                                           `json:"updatedAt"`
+			} `json:"tags"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRepositoryTagResponse parses an HTTP response from a GetRepositoryTagWithResponse call
+func ParseGetRepositoryTagResponse(rsp *http.Response) (*GetRepositoryTagResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRepositoryTagResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Tag A tag pointing at an image in a Vercel Container Registry repository, enriched with the backing image's metadata and VHS-readiness status.
+			Tag VcrTag `json:"tag"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiInvocationAttemptsResponse parses an HTTP response from a ListVercelCiInvocationAttemptsWithResponse call
+func ParseListVercelCiInvocationAttemptsResponse(rsp *http.Response) (*ListVercelCiInvocationAttemptsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiInvocationAttemptsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Attempts []struct {
+				Attempt             float32 `json:"attempt"`
+				BootstrappingFailed *struct {
+					Reason string `json:"reason"`
+				} `json:"bootstrappingFailed,omitempty"`
+				BootstrappingStarted *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"bootstrappingStarted,omitempty"`
+				CommitSha string `json:"commitSha"`
+				Completed *struct {
+					CompletedAt float32                                                                          `json:"completedAt"`
+					Conclusion  *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Completed_Conclusion `json:"conclusion,omitempty"`
+				} `json:"completed,omitempty"`
+				CreatedAt             float32 `json:"createdAt"`
+				InvocationId          string  `json:"invocationId"`
+				JobDefinitionsCreated *struct {
+					Names       []string                                                                                 `json:"names"`
+					ScheduledAt *float32                                                                                 `json:"scheduledAt,omitempty"`
+					Source      *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_JobDefinitionsCreated_Source `json:"source,omitempty"`
+				} `json:"jobDefinitionsCreated,omitempty"`
+				Ref           string `json:"ref"`
+				RepositoryKey string `json:"repositoryKey"`
+
+				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
+				RunConclusion *struct {
+					Result ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_RunConclusion_Result `json:"result"`
+				} `json:"runConclusion,omitempty"`
+				SandboxNamed *struct {
+					ReadyAt          *float32 `json:"readyAt,omitempty"`
+					SandboxName      string   `json:"sandboxName"`
+					WorkingDirectory string   `json:"workingDirectory"`
+				} `json:"sandboxNamed,omitempty"`
+				SandboxSnapshotted *struct {
+					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
+					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
+					WorkingDirectory  string   `json:"workingDirectory"`
+				} `json:"sandboxSnapshotted,omitempty"`
+
+				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
+				SetupConclusion *struct {
+					Result ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_SetupConclusion_Result `json:"result"`
+				} `json:"setupConclusion,omitempty"`
+				Skipped *struct {
+					Reason string `json:"reason"`
+				} `json:"skipped,omitempty"`
+				Source ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Source `json:"source"`
+				Status ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status `json:"status"`
+				TeamId string                                                            `json:"teamId"`
+			} `json:"attempts"`
+			Repositories map[string]interface{} `json:"repositories"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiInvocationResponse parses an HTTP response from a GetVercelCiInvocationWithResponse call
+func ParseGetVercelCiInvocationResponse(rsp *http.Response) (*GetVercelCiInvocationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiInvocationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Invocation struct {
+				Attempt             float32 `json:"attempt"`
+				BootstrappingFailed *struct {
+					Reason string `json:"reason"`
+				} `json:"bootstrappingFailed,omitempty"`
+				BootstrappingStarted *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"bootstrappingStarted,omitempty"`
+				CommitSha string `json:"commitSha"`
+				Completed *struct {
+					CompletedAt float32                                                                   `json:"completedAt"`
+					Conclusion  *GetVercelCiInvocation200JSONResponseBody_Invocation_Completed_Conclusion `json:"conclusion,omitempty"`
+				} `json:"completed,omitempty"`
+				CreatedAt             float32 `json:"createdAt"`
+				InvocationId          string  `json:"invocationId"`
+				JobDefinitionsCreated *struct {
+					Names       []string                                                                          `json:"names"`
+					ScheduledAt *float32                                                                          `json:"scheduledAt,omitempty"`
+					Source      *GetVercelCiInvocation200JSONResponseBody_Invocation_JobDefinitionsCreated_Source `json:"source,omitempty"`
+				} `json:"jobDefinitionsCreated,omitempty"`
+				Ref           string `json:"ref"`
+				RepositoryKey string `json:"repositoryKey"`
+
+				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
+				RunConclusion *struct {
+					Result GetVercelCiInvocation200JSONResponseBody_Invocation_RunConclusion_Result `json:"result"`
+				} `json:"runConclusion,omitempty"`
+				SandboxNamed *struct {
+					ReadyAt          *float32 `json:"readyAt,omitempty"`
+					SandboxName      string   `json:"sandboxName"`
+					WorkingDirectory string   `json:"workingDirectory"`
+				} `json:"sandboxNamed,omitempty"`
+				SandboxSnapshotted *struct {
+					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
+					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
+					WorkingDirectory  string   `json:"workingDirectory"`
+				} `json:"sandboxSnapshotted,omitempty"`
+
+				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
+				SetupConclusion *struct {
+					Result GetVercelCiInvocation200JSONResponseBody_Invocation_SetupConclusion_Result `json:"result"`
+				} `json:"setupConclusion,omitempty"`
+				Skipped *struct {
+					Reason string `json:"reason"`
+				} `json:"skipped,omitempty"`
+				Source GetVercelCiInvocation200JSONResponseBody_Invocation_Source `json:"source"`
+				Status GetVercelCiInvocation200JSONResponseBody_Invocation_Status `json:"status"`
+				TeamId string                                                     `json:"teamId"`
+			} `json:"invocation"`
+			Repositories map[string]interface{} `json:"repositories"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiJobDefinitionsResponse parses an HTTP response from a ListVercelCiJobDefinitionsWithResponse call
+func ParseListVercelCiJobDefinitionsResponse(rsp *http.Response) (*ListVercelCiJobDefinitionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiJobDefinitionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			JobDefinitions []struct {
+				Command           string                                                            `json:"command"`
+				CreatedAt         float32                                                           `json:"createdAt"`
+				InvocationAttempt float32                                                           `json:"invocationAttempt"`
+				InvocationId      string                                                            `json:"invocationId"`
+				JobDefinitionId   string                                                            `json:"jobDefinitionId"`
+				Kind              ListVercelCiJobDefinitions200JSONResponseBody_JobDefinitions_Kind `json:"kind"`
+				Name              string                                                            `json:"name"`
+			} `json:"jobDefinitions"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiJobDefinitionResponse parses an HTTP response from a GetVercelCiJobDefinitionWithResponse call
+func ParseGetVercelCiJobDefinitionResponse(rsp *http.Response) (*GetVercelCiJobDefinitionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiJobDefinitionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			JobDefinition struct {
+				Command           string                                                         `json:"command"`
+				CreatedAt         float32                                                        `json:"createdAt"`
+				InvocationAttempt float32                                                        `json:"invocationAttempt"`
+				InvocationId      string                                                         `json:"invocationId"`
+				JobDefinitionId   string                                                         `json:"jobDefinitionId"`
+				Kind              GetVercelCiJobDefinition200JSONResponseBody_JobDefinition_Kind `json:"kind"`
+				Name              string                                                         `json:"name"`
+			} `json:"jobDefinition"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiJobRunsResponse parses an HTTP response from a ListVercelCiJobRunsWithResponse call
+func ParseListVercelCiJobRunsResponse(rsp *http.Response) (*ListVercelCiJobRunsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiJobRunsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			JobRuns []struct {
+				Attempt   float32 `json:"attempt"`
+				Completed *struct {
+					CompletedAt float32                                                             `json:"completedAt"`
+					Conclusion  ListVercelCiJobRuns200JSONResponseBody_JobRuns_Completed_Conclusion `json:"conclusion"`
+				} `json:"completed,omitempty"`
+				CreatedAt         float32 `json:"createdAt"`
+				InvocationAttempt float32 `json:"invocationAttempt"`
+				InvocationId      string  `json:"invocationId"`
+				JobDefinitionId   string  `json:"jobDefinitionId"`
+				Started           *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"started,omitempty"`
+			} `json:"jobRuns"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiJobRunResponse parses an HTTP response from a GetVercelCiJobRunWithResponse call
+func ParseGetVercelCiJobRunResponse(rsp *http.Response) (*GetVercelCiJobRunResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiJobRunResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			JobRun struct {
+				Attempt   float32 `json:"attempt"`
+				Completed *struct {
+					CompletedAt float32                                                          `json:"completedAt"`
+					Conclusion  GetVercelCiJobRun200JSONResponseBody_JobRun_Completed_Conclusion `json:"conclusion"`
+				} `json:"completed,omitempty"`
+				CreatedAt         float32 `json:"createdAt"`
+				InvocationAttempt float32 `json:"invocationAttempt"`
+				InvocationId      string  `json:"invocationId"`
+				JobDefinitionId   string  `json:"jobDefinitionId"`
+				Started           *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"started,omitempty"`
+			} `json:"jobRun"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiJobRunLogsResponse parses an HTTP response from a GetVercelCiJobRunLogsWithResponse call
+func ParseGetVercelCiJobRunLogsResponse(rsp *http.Response) (*GetVercelCiJobRunLogsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiJobRunLogsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Lines []struct {
+				Level     string  `json:"level"`
+				Message   string  `json:"message"`
+				Timestamp float32 `json:"timestamp"`
+			} `json:"lines"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiTaskDefinitionsResponse parses an HTTP response from a ListVercelCiTaskDefinitionsWithResponse call
+func ParseListVercelCiTaskDefinitionsResponse(rsp *http.Response) (*ListVercelCiTaskDefinitionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiTaskDefinitionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			TaskDefinitions []struct {
+				CreatedAt                   float32                                                                  `json:"createdAt"`
+				DependencyTaskDefinitionIds []string                                                                 `json:"dependencyTaskDefinitionIds"`
+				InvocationAttempt           float32                                                                  `json:"invocationAttempt"`
+				InvocationId                string                                                                   `json:"invocationId"`
+				JobDefinitionId             string                                                                   `json:"jobDefinitionId"`
+				JobRunAttempt               float32                                                                  `json:"jobRunAttempt"`
+				Name                        string                                                                   `json:"name"`
+				Operation                   ListVercelCiTaskDefinitions200JSONResponseBody_TaskDefinitions_Operation `json:"operation"`
+				PackageDirectory            *string                                                                  `json:"packageDirectory,omitempty"`
+				TaskDefinitionId            string                                                                   `json:"taskDefinitionId"`
+			} `json:"taskDefinitions"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiTaskRunLogsResponse parses an HTTP response from a GetVercelCiTaskRunLogsWithResponse call
+func ParseGetVercelCiTaskRunLogsResponse(rsp *http.Response) (*GetVercelCiTaskRunLogsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiTaskRunLogsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Lines []struct {
+				Level     string  `json:"level"`
+				Message   string  `json:"message"`
+				Timestamp float32 `json:"timestamp"`
+			} `json:"lines"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiTaskRunsResponse parses an HTTP response from a ListVercelCiTaskRunsWithResponse call
+func ParseListVercelCiTaskRunsResponse(rsp *http.Response) (*ListVercelCiTaskRunsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiTaskRunsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			TaskRuns []struct {
+				Attempt   float32 `json:"attempt"`
+				Completed *struct {
+					CompletedAt float32                                                               `json:"completedAt"`
+					Conclusion  ListVercelCiTaskRuns200JSONResponseBody_TaskRuns_Completed_Conclusion `json:"conclusion"`
+				} `json:"completed,omitempty"`
+				CreatedAt         float32 `json:"createdAt"`
+				DeploymentBinding *struct {
+					DeploymentCreatedAt float32 `json:"deploymentCreatedAt"`
+					DeploymentId        string  `json:"deploymentId"`
+					EventAt             float32 `json:"eventAt"`
+					ReadyState          *string `json:"readyState,omitempty"`
+				} `json:"deploymentBinding,omitempty"`
+				InvocationAttempt float32 `json:"invocationAttempt"`
+				InvocationId      string  `json:"invocationId"`
+				JobDefinitionId   string  `json:"jobDefinitionId"`
+				JobRunAttempt     float32 `json:"jobRunAttempt"`
+				Started           *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"started,omitempty"`
+				TaskDefinitionId string `json:"taskDefinitionId"`
+			} `json:"taskRuns"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiInvocationLogsResponse parses an HTTP response from a GetVercelCiInvocationLogsWithResponse call
+func ParseGetVercelCiInvocationLogsResponse(rsp *http.Response) (*GetVercelCiInvocationLogsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiInvocationLogsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Lines []struct {
+				Level     string  `json:"level"`
+				Message   string  `json:"message"`
+				Timestamp float32 `json:"timestamp"`
+			} `json:"lines"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRetryVercelCiInvocationResponse parses an HTTP response from a RetryVercelCiInvocationWithResponse call
+func ParseRetryVercelCiInvocationResponse(rsp *http.Response) (*RetryVercelCiInvocationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RetryVercelCiInvocationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Attempt      float32 `json:"attempt"`
+			InvocationId string  `json:"invocationId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiTaskLogsResponse parses an HTTP response from a GetVercelCiTaskLogsWithResponse call
+func ParseGetVercelCiTaskLogsResponse(rsp *http.Response) (*GetVercelCiTaskLogsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiTaskLogsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// HasMore Whether more tasks matched the filters than were returned. With `search`, whether more than 1000 lines matched.
+			HasMore bool `json:"hasMore"`
+			Tasks   []struct {
+				Conclusion      *GetVercelCiTaskLogs200JSONResponseBody_Tasks_Conclusion `json:"conclusion,omitempty"`
+				JobDefinitionId string                                                   `json:"jobDefinitionId"`
+				JobName         string                                                   `json:"jobName"`
+				JobRunAttempt   float32                                                  `json:"jobRunAttempt"`
+				Lines           []struct {
+					Level     string  `json:"level"`
+					Message   string  `json:"message"`
+					Timestamp float32 `json:"timestamp"`
+				} `json:"lines"`
+				TaskDefinitionId string   `json:"taskDefinitionId"`
+				TaskName         string   `json:"taskName"`
+				TaskRunAttempt   *float32 `json:"taskRunAttempt,omitempty"`
+			} `json:"tasks"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiInvocationTreeResponse parses an HTTP response from a GetVercelCiInvocationTreeWithResponse call
+func ParseGetVercelCiInvocationTreeResponse(rsp *http.Response) (*GetVercelCiInvocationTreeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiInvocationTreeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Invocation struct {
+				Attempt             float32 `json:"attempt"`
+				BootstrappingFailed *struct {
+					Reason string `json:"reason"`
+				} `json:"bootstrappingFailed,omitempty"`
+				BootstrappingStarted *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"bootstrappingStarted,omitempty"`
+				CommitSha string `json:"commitSha"`
+				Completed *struct {
+					CompletedAt float32                                                                       `json:"completedAt"`
+					Conclusion  *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Completed_Conclusion `json:"conclusion,omitempty"`
+				} `json:"completed,omitempty"`
+				CreatedAt             float32 `json:"createdAt"`
+				InvocationId          string  `json:"invocationId"`
+				JobDefinitionsCreated *struct {
+					Names       []string                                                                              `json:"names"`
+					ScheduledAt *float32                                                                              `json:"scheduledAt,omitempty"`
+					Source      *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source `json:"source,omitempty"`
+				} `json:"jobDefinitionsCreated,omitempty"`
+				Ref           string `json:"ref"`
+				RepositoryKey string `json:"repositoryKey"`
+
+				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
+				RunConclusion *struct {
+					Result GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result `json:"result"`
+				} `json:"runConclusion,omitempty"`
+				SandboxNamed *struct {
+					ReadyAt          *float32 `json:"readyAt,omitempty"`
+					SandboxName      string   `json:"sandboxName"`
+					WorkingDirectory string   `json:"workingDirectory"`
+				} `json:"sandboxNamed,omitempty"`
+				SandboxSnapshotted *struct {
+					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
+					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
+					WorkingDirectory  string   `json:"workingDirectory"`
+				} `json:"sandboxSnapshotted,omitempty"`
+
+				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
+				SetupConclusion *struct {
+					Result GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result `json:"result"`
+				} `json:"setupConclusion,omitempty"`
+				Skipped *struct {
+					Reason string `json:"reason"`
+				} `json:"skipped,omitempty"`
+				Source GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source `json:"source"`
+				Status GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status `json:"status"`
+				TeamId string                                                         `json:"teamId"`
+			} `json:"invocation"`
+			Jobs []struct {
+				Definition struct {
+					Command           string                                                            `json:"command"`
+					CreatedAt         float32                                                           `json:"createdAt"`
+					InvocationAttempt float32                                                           `json:"invocationAttempt"`
+					InvocationId      string                                                            `json:"invocationId"`
+					JobDefinitionId   string                                                            `json:"jobDefinitionId"`
+					Kind              GetVercelCiInvocationTree200JSONResponseBody_Jobs_Definition_Kind `json:"kind"`
+					Name              string                                                            `json:"name"`
+				} `json:"definition"`
+				Run *struct {
+					Attempt   float32 `json:"attempt"`
+					Completed *struct {
+						CompletedAt float32                                                                    `json:"completedAt"`
+						Conclusion  GetVercelCiInvocationTree200JSONResponseBody_Jobs_Run_Completed_Conclusion `json:"conclusion"`
+					} `json:"completed,omitempty"`
+					CreatedAt         float32 `json:"createdAt"`
+					InvocationAttempt float32 `json:"invocationAttempt"`
+					InvocationId      string  `json:"invocationId"`
+					JobDefinitionId   string  `json:"jobDefinitionId"`
+					Started           *struct {
+						StartedAt float32 `json:"startedAt"`
+					} `json:"started,omitempty"`
+				} `json:"run,omitempty"`
+				Tasks []struct {
+					Definition struct {
+						CreatedAt                   float32                                                                      `json:"createdAt"`
+						DependencyTaskDefinitionIds []string                                                                     `json:"dependencyTaskDefinitionIds"`
+						InvocationAttempt           float32                                                                      `json:"invocationAttempt"`
+						InvocationId                string                                                                       `json:"invocationId"`
+						JobDefinitionId             string                                                                       `json:"jobDefinitionId"`
+						JobRunAttempt               float32                                                                      `json:"jobRunAttempt"`
+						Name                        string                                                                       `json:"name"`
+						Operation                   GetVercelCiInvocationTree200JSONResponseBody_Jobs_Tasks_Definition_Operation `json:"operation"`
+						PackageDirectory            *string                                                                      `json:"packageDirectory,omitempty"`
+						TaskDefinitionId            string                                                                       `json:"taskDefinitionId"`
+					} `json:"definition"`
+					Run *struct {
+						Attempt   float32 `json:"attempt"`
+						Completed *struct {
+							CompletedAt float32                                                                          `json:"completedAt"`
+							Conclusion  GetVercelCiInvocationTree200JSONResponseBody_Jobs_Tasks_Run_Completed_Conclusion `json:"conclusion"`
+						} `json:"completed,omitempty"`
+						CreatedAt         float32 `json:"createdAt"`
+						DeploymentBinding *struct {
+							DeploymentCreatedAt float32 `json:"deploymentCreatedAt"`
+							DeploymentId        string  `json:"deploymentId"`
+							EventAt             float32 `json:"eventAt"`
+							ReadyState          *string `json:"readyState,omitempty"`
+						} `json:"deploymentBinding,omitempty"`
+						InvocationAttempt float32 `json:"invocationAttempt"`
+						InvocationId      string  `json:"invocationId"`
+						JobDefinitionId   string  `json:"jobDefinitionId"`
+						JobRunAttempt     float32 `json:"jobRunAttempt"`
+						Started           *struct {
+							StartedAt float32 `json:"startedAt"`
+						} `json:"started,omitempty"`
+						TaskDefinitionId string `json:"taskDefinitionId"`
+					} `json:"run,omitempty"`
+				} `json:"tasks"`
+			} `json:"jobs"`
+			Repositories map[string]interface{} `json:"repositories"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseSearchVercelCiLogsResponse parses an HTTP response from a SearchVercelCiLogsWithResponse call
+func ParseSearchVercelCiLogsResponse(rsp *http.Response) (*SearchVercelCiLogsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SearchVercelCiLogsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// HasMore Whether more than 1000 lines matched. The newest lines are returned.
+			HasMore     bool `json:"hasMore"`
+			Invocations []struct {
+				Attempt      float32 `json:"attempt"`
+				InvocationId string  `json:"invocationId"`
+				Tasks        []struct {
+					Conclusion      *SearchVercelCiLogs200JSONResponseBody_Invocations_Tasks_Conclusion `json:"conclusion,omitempty"`
+					JobDefinitionId string                                                              `json:"jobDefinitionId"`
+					JobName         string                                                              `json:"jobName"`
+					JobRunAttempt   float32                                                             `json:"jobRunAttempt"`
+					Lines           []struct {
+						Level     string  `json:"level"`
+						Message   string  `json:"message"`
+						Timestamp float32 `json:"timestamp"`
+					} `json:"lines"`
+					TaskDefinitionId string   `json:"taskDefinitionId"`
+					TaskName         string   `json:"taskName"`
+					TaskRunAttempt   *float32 `json:"taskRunAttempt,omitempty"`
+				} `json:"tasks"`
+			} `json:"invocations"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiRepositorySettingsResponse parses an HTTP response from a GetVercelCiRepositorySettingsWithResponse call
+func ParseGetVercelCiRepositorySettingsResponse(rsp *http.Response) (*GetVercelCiRepositorySettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiRepositorySettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			CiEnabled      bool                                                      `json:"ciEnabled"`
+			CiEnabledAt    *float32                                                  `json:"ciEnabledAt,omitempty"`
+			OrganizationId string                                                    `json:"organizationId"`
+			Provider       GetVercelCiRepositorySettings200JSONResponseBody_Provider `json:"provider"`
+			Repository     string                                                    `json:"repository"`
+			UpdatedAt      *float32                                                  `json:"updatedAt,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateVercelCiRepositorySettingsResponse parses an HTTP response from a UpdateVercelCiRepositorySettingsWithResponse call
+func ParseUpdateVercelCiRepositorySettingsResponse(rsp *http.Response) (*UpdateVercelCiRepositorySettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateVercelCiRepositorySettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			CiEnabled      bool                                                         `json:"ciEnabled"`
+			CiEnabledAt    *float32                                                     `json:"ciEnabledAt,omitempty"`
+			OrganizationId string                                                       `json:"organizationId"`
+			Provider       UpdateVercelCiRepositorySettings200JSONResponseBody_Provider `json:"provider"`
+			Repository     string                                                       `json:"repository"`
+			UpdatedAt      *float32                                                     `json:"updatedAt,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateVercelCiTaskAnalysisResponse parses an HTTP response from a CreateVercelCiTaskAnalysisWithResponse call
+func ParseCreateVercelCiTaskAnalysisResponse(rsp *http.Response) (*CreateVercelCiTaskAnalysisResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateVercelCiTaskAnalysisResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			AnalysisId string                                               `json:"analysisId"`
+			Status     CreateVercelCiTaskAnalysis202JSONResponseBody_Status `json:"status"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetVercelCiTaskAnalysisResponse parses an HTTP response from a GetVercelCiTaskAnalysisWithResponse call
+func ParseGetVercelCiTaskAnalysisResponse(rsp *http.Response) (*GetVercelCiTaskAnalysisResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVercelCiTaskAnalysisResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AnalysisId    string                                            `json:"analysisId"`
+			FailureReason *string                                           `json:"failureReason,omitempty"`
+			Status        GetVercelCiTaskAnalysis200JSONResponseBody_Status `json:"status"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateVercelCiTaskConfigurationPullRequestResponse parses an HTTP response from a CreateVercelCiTaskConfigurationPullRequestWithResponse call
+func ParseCreateVercelCiTaskConfigurationPullRequestResponse(rsp *http.Response) (*CreateVercelCiTaskConfigurationPullRequestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateVercelCiTaskConfigurationPullRequestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			ChangedTaskNames []string `json:"changedTaskNames"`
+			Url              string   `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiTaskAnalysisTasksResponse parses an HTTP response from a ListVercelCiTaskAnalysisTasksWithResponse call
+func ParseListVercelCiTaskAnalysisTasksResponse(rsp *http.Response) (*ListVercelCiTaskAnalysisTasksResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiTaskAnalysisTasksResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Pagination struct {
+				NextCursor *string `json:"nextCursor,omitempty"`
+			} `json:"pagination"`
+			Tasks []struct {
+				ConfigPath            string   `json:"configPath"`
+				Name                  string   `json:"name"`
+				RecommendationReasons []string `json:"recommendationReasons"`
+			} `json:"tasks"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetWebhooksResponse parses an HTTP response from a GetWebhooksWithResponse call
+func ParseGetWebhooksResponse(rsp *http.Response) (*GetWebhooksResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetWebhooksResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetWebhooks200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateWebhookResponse parses an HTTP response from a CreateWebhookWithResponse call
+func ParseCreateWebhookResponse(rsp *http.Response) (*CreateWebhookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateWebhookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
+
+			// CreatedAt A number containing the date when the webhook was created in in milliseconds
+			//
+			// Example: 1567024758130
+			CreatedAt float32 `json:"createdAt"`
+
+			// Events The webhooks events
+			//
+			// Example: deployment.created
+			Events []CreateWebhook200JSONResponseBodyEvents `json:"events"`
+
+			// Id The webhook id
+			//
+			// Example: account_hook_GflD6EYyo7F4ViYS
+			Id string `json:"id"`
+
+			// OwnerId The unique ID of the team the webhook belongs to
+			//
+			// Example: ZspSRT4ljIEEmMHgoDwKWDei
+			OwnerId string `json:"ownerId"`
+
+			// ProjectIds The ID of the projects the webhook is associated with
+			//
+			// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
+			ProjectIds *[]string `json:"projectIds,omitempty"`
+
+			// Secret The webhook secret used to sign the payload
+			Secret string `json:"secret"`
+
+			// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
+			//
+			// Example: 1567024758130
+			UpdatedAt float32 `json:"updatedAt"`
+
+			// Url A string with the URL of the webhook
+			//
+			// Example: https://my-webhook.com
+			Url string `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteWebhookResponse parses an HTTP response from a DeleteWebhookWithResponse call
+func ParseDeleteWebhookResponse(rsp *http.Response) (*DeleteWebhookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteWebhookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetWebhookResponse parses an HTTP response from a GetWebhookWithResponse call
+func ParseGetWebhookResponse(rsp *http.Response) (*GetWebhookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetWebhookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
+
+			// CreatedAt A number containing the date when the webhook was created in in milliseconds
+			//
+			// Example: 1567024758130
+			CreatedAt float32 `json:"createdAt"`
+
+			// Events The webhooks events
+			//
+			// Example: deployment.created
+			Events []GetWebhook200JSONResponseBodyEvents `json:"events"`
+
+			// Id The webhook id
+			//
+			// Example: account_hook_GflD6EYyo7F4ViYS
+			Id string `json:"id"`
+
+			// OwnerId The unique ID of the team the webhook belongs to
+			//
+			// Example: ZspSRT4ljIEEmMHgoDwKWDei
+			OwnerId string `json:"ownerId"`
+
+			// ProjectIds The ID of the projects the webhook is associated with
+			//
+			// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
+			ProjectIds *[]string `json:"projectIds,omitempty"`
+
+			// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
+			//
+			// Example: 1567024758130
+			UpdatedAt float32 `json:"updatedAt"`
+
+			// Url A string with the URL of the webhook
+			//
+			// Example: https://my-webhook.com
+			Url string `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectsResponse parses an HTTP response from a GetProjectsWithResponse call
+func ParseGetProjectsResponse(rsp *http.Response) (*GetProjectsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetProjects200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAddProjectDomainResponse parses an HTTP response from a AddProjectDomainWithResponse call
+func ParseAddProjectDomainResponse(rsp *http.Response) (*AddProjectDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AddProjectDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ApexName            string                                                 `json:"apexName"`
+			CreatedAt           *float32                                               `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                `json:"gitBranch,omitempty"`
+			Name                string                                                 `json:"name"`
+			ProjectId           string                                                 `json:"projectId"`
+			Redirect            *string                                                `json:"redirect,omitempty"`
+			RedirectStatusCode  *AddProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified AddProjectDomain200JSONResponseBodyVerified `json:"verified"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseFilterProjectEnvsResponse parses an HTTP response from a FilterProjectEnvsWithResponse call
+func ParseFilterProjectEnvsResponse(rsp *http.Response) (*FilterProjectEnvsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FilterProjectEnvsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FilterProjectEnvs200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateProjectEnvResponse parses an HTTP response from a CreateProjectEnvWithResponse call
+func ParseCreateProjectEnvResponse(rsp *http.Response) (*CreateProjectEnvResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateProjectEnvResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Created *CreateProjectEnv201JSONResponseBody_Created `json:"created,omitempty"`
+			Failed  []struct {
+				Error struct {
+					Action    *string                                                  `json:"action,omitempty"`
+					Code      string                                                   `json:"code"`
+					EnvVarId  *string                                                  `json:"envVarId,omitempty"`
+					EnvVarKey *string                                                  `json:"envVarKey,omitempty"`
+					GitBranch *string                                                  `json:"gitBranch,omitempty"`
+					Key       *string                                                  `json:"key,omitempty"`
+					Link      *string                                                  `json:"link,omitempty"`
+					Message   string                                                   `json:"message"`
+					Project   *string                                                  `json:"project,omitempty"`
+					Target    *CreateProjectEnv201JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
+					Value     *CreateProjectEnv201JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
+				} `json:"error"`
+			} `json:"failed"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRequestPromoteResponse parses an HTTP response from a RequestPromoteWithResponse call
+func ParseRequestPromoteResponse(rsp *http.Response) (*RequestPromoteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RequestPromoteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseCreateProjectResponse parses an HTTP response from a CreateProjectWithResponse call
+func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateProjectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AccountId string `json:"accountId"`
+			Alias     []struct {
+				ConfiguredBy        *CreateProject200JSONResponseBodyAliasConfiguredBy `json:"configuredBy,omitempty"`
+				ConfiguredChangedAt *float32                                           `json:"configuredChangedAt,omitempty"`
+				CreatedAt           *float32                                           `json:"createdAt,omitempty"`
+				Deployment          *struct {
+					Alias         *[]string                                                        `json:"alias,omitempty"`
+					AliasAssigned *CreateProject200JSONResponseBody_Alias_Deployment_AliasAssigned `json:"aliasAssigned,omitempty"`
+					AliasError    *struct {
+						Code    string `json:"code"`
+						Message string `json:"message"`
+					} `json:"aliasError,omitempty"`
+					AliasFinal       *string   `json:"aliasFinal,omitempty"`
+					AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
+					BranchMatcher    *struct {
+						// Pattern The pattern to match against branch names
+						Pattern string `json:"pattern"`
+
+						// Type The type of matching to perform
+						Type CreateProject200JSONResponseBodyAliasDeploymentBranchMatcherType `json:"type"`
+					} `json:"branchMatcher,omitempty"`
+					BuildingAt *float32 `json:"buildingAt,omitempty"`
+					Builds     *[]struct {
+						Dest *string `json:"dest,omitempty"`
+						Src  *string `json:"src,omitempty"`
+						Use  string  `json:"use"`
+					} `json:"builds,omitempty"`
+					ChecksConclusion       *CreateProject200JSONResponseBodyAliasDeploymentChecksConclusion     `json:"checksConclusion,omitempty"`
+					ChecksState            *CreateProject200JSONResponseBodyAliasDeploymentChecksState          `json:"checksState,omitempty"`
+					ConnectBuildsEnabled   *CreateProject200JSONResponseBodyAliasDeploymentConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+					ConnectConfigurationId *string                                                              `json:"connectConfigurationId,omitempty"`
+					CreatedAt              float32                                                              `json:"createdAt"`
+					CreatedIn              string                                                               `json:"createdIn"`
+					Creator                *struct {
+						Email       string  `json:"email"`
+						GithubLogin *string `json:"githubLogin,omitempty"`
+						GitlabLogin *string `json:"gitlabLogin,omitempty"`
+						Uid         string  `json:"uid"`
+						Username    string  `json:"username"`
+					} `json:"creator"`
+					DeletedAt          *float32                                               `json:"deletedAt,omitempty"`
+					DeploymentHostname string                                                 `json:"deploymentHostname"`
+					Forced             *CreateProject200JSONResponseBodyAliasDeploymentForced `json:"forced,omitempty"`
+					Id                 string                                                 `json:"id"`
+					Meta               *map[string]string                                     `json:"meta,omitempty"`
+					MonorepoManager    *string                                                `json:"monorepoManager,omitempty"`
+					Name               string                                                 `json:"name"`
+					OidcTokenClaims    *struct {
+						Aud                 string    `json:"aud"`
+						CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+						DeploymentId        *string   `json:"deployment_id,omitempty"`
+						Environment         string    `json:"environment"`
+						Iss                 string    `json:"iss"`
+						MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+						Owner               string    `json:"owner"`
+						OwnerId             string    `json:"owner_id"`
+						Plan                *string   `json:"plan,omitempty"`
+						Project             string    `json:"project"`
+						ProjectId           string    `json:"project_id"`
+						Scope               string    `json:"scope"`
+						Sub                 string    `json:"sub"`
+					} `json:"oidcTokenClaims,omitempty"`
+					Plan CreateProject200JSONResponseBodyAliasDeploymentPlan `json:"plan"`
+
+					// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+					//
+					// Example: false
+					PreviewCommentsEnabled *CreateProject200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+					Private                CreateProject200JSONResponseBodyAliasDeploymentPrivate                 `json:"private"`
+					ReadyAt                *float32                                                               `json:"readyAt,omitempty"`
+					ReadyState             CreateProject200JSONResponseBodyAliasDeploymentReadyState              `json:"readyState"`
+					ReadySubstate          *CreateProject200JSONResponseBodyAliasDeploymentReadySubstate          `json:"readySubstate,omitempty"`
+					RequestedAt            *float32                                                               `json:"requestedAt,omitempty"`
+					Target                 *string                                                                `json:"target,omitempty"`
+					TeamId                 *string                                                                `json:"teamId,omitempty"`
+					Type                   CreateProject200JSONResponseBodyAliasDeploymentType                    `json:"type"`
+					Url                    string                                                                 `json:"url"`
+
+					// UserId Present for user creators; omitted for app/integration/system creators.
+					UserId    *string                                                   `json:"userId,omitempty"`
+					WithCache *CreateProject200JSONResponseBodyAliasDeploymentWithCache `json:"withCache,omitempty"`
+				} `json:"deployment"`
+				Domain             string                                                   `json:"domain"`
+				Environment        CreateProject200JSONResponseBodyAliasEnvironment         `json:"environment"`
+				GitBranch          *string                                                  `json:"gitBranch,omitempty"`
+				Redirect           *string                                                  `json:"redirect,omitempty"`
+				RedirectStatusCode *CreateProject200JSONResponseBodyAliasRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+				Target             CreateProject200JSONResponseBodyAliasTarget              `json:"target"`
+			} `json:"alias"`
+			Analytics *struct {
+				CanceledAt          *float32 `json:"canceledAt,omitempty"`
+				DisabledAt          float32  `json:"disabledAt"`
+				EnabledAt           float32  `json:"enabledAt"`
+				Id                  string   `json:"id"`
+				PaidAt              *float32 `json:"paidAt,omitempty"`
+				SampleRatePercent   *float32 `json:"sampleRatePercent,omitempty"`
+				SpendLimitInDollars *float32 `json:"spendLimitInDollars,omitempty"`
+			} `json:"analytics,omitempty"`
+			AppliedCve55182Migration         *CreateProject200JSONResponseBodyAppliedCve55182Migration `json:"appliedCve55182Migration,omitempty"`
+			AutoAssignCustomDomains          *CreateProject200JSONResponseBodyAutoAssignCustomDomains  `json:"autoAssignCustomDomains,omitempty"`
+			AutoAssignCustomDomainsUpdatedBy *string                                                   `json:"autoAssignCustomDomainsUpdatedBy,omitempty"`
+			AutoExposeSystemEnvs             *CreateProject200JSONResponseBodyAutoExposeSystemEnvs     `json:"autoExposeSystemEnvs,omitempty"`
+			Avatar                           *string                                                   `json:"avatar,omitempty"`
+			AvatarDarkMode                   *string                                                   `json:"avatarDarkMode,omitempty"`
+			Blobs                            *struct {
+				// IsDefaultApp Marks the team-level, Vercel-managed default blob project (`vercel-blob-default-project`) that orphan blob stores are scoped to when connected without an explicit project. Set only by internal storage flows and immutable after creation — guards rely on it to protect the connected stores from being lost when the project is deleted or transferred.
+				IsDefaultApp *CreateProject200JSONResponseBodyBlobsIsDefaultApp `json:"isDefaultApp,omitempty"`
+			} `json:"blobs,omitempty"`
+			BuildCommand                *string                                               `json:"buildCommand,omitempty"`
+			CommandForIgnoringBuildStep *string                                               `json:"commandForIgnoringBuildStep,omitempty"`
+			ConcurrencyBucketName       *string                                               `json:"concurrencyBucketName,omitempty"`
+			ConnectBuildsEnabled        *CreateProject200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+			ConnectConfigurationId      *string                                               `json:"connectConfigurationId,omitempty"`
+			ConnectConfigurations       *[]struct {
+				Aws *struct {
+					SecurityGroupId *string  `json:"securityGroupId,omitempty"`
+					SubnetIds       []string `json:"subnetIds"`
+				} `json:"aws,omitempty"`
+				BuildsEnabled          CreateProject200JSONResponseBodyConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
+				ConnectConfigurationId string                                                             `json:"connectConfigurationId"`
+				CreatedAt              float32                                                            `json:"createdAt"`
+				Dc                     *string                                                            `json:"dc,omitempty"`
+				EnvId                  CreateProject200JSONResponseBody_ConnectConfigurations_EnvId       `json:"envId"`
+				Passive                CreateProject200JSONResponseBodyConnectConfigurationsPassive       `json:"passive"`
+				UpdatedAt              float32                                                            `json:"updatedAt"`
+			} `json:"connectConfigurations,omitempty"`
+			CreatedAt *float32                                  `json:"createdAt,omitempty"`
+			Creator   *CreateProject200JSONResponseBody_Creator `json:"creator,omitempty"`
+			Crons     *struct {
+				Definitions []struct {
+					// Description A human-readable description of what this cron job does.
+					Description *string `json:"description,omitempty"`
+
+					// Host The hostname that should be used.
+					//
+					// Example: vercel.com
+					Host string `json:"host"`
+
+					// HostInferred Whether the host was inferred from the production deployment URL rather than explicitly provided.
+					HostInferred *CreateProject200JSONResponseBodyCronsDefinitionsHostInferred `json:"hostInferred,omitempty"`
+
+					// Path The path that should be called for the cronjob.
+					//
+					// Example: /api/crons/sync-something?hello=world
+					Path string `json:"path"`
+
+					// Schedule The cron expression.
+					//
+					// Example: 0 0 * * *
+					Schedule string `json:"schedule"`
+
+					// Source The origin of this definition. 'api' means created via the API. Undefined means it originated from a deployment (vercel.json).
+					Source *CreateProject200JSONResponseBodyCronsDefinitionsSource `json:"source,omitempty"`
+				} `json:"definitions"`
+
+				// DeploymentId The ID of the Deployment from which the definitions originated.
+				DeploymentId *string `json:"deploymentId"`
+
+				// DisabledAt The time the feature was disabled for this project.
+				DisabledAt *float32 `json:"disabledAt"`
+
+				// EnabledAt The time the feature was enabled for this project. Note: It enables automatically with the first Deployment that outputs cronjobs.
+				EnabledAt float32 `json:"enabledAt"`
+				UpdatedAt float32 `json:"updatedAt"`
+			} `json:"crons,omitempty"`
+			CustomEnvironments *[]struct {
+				// BranchMatcher Configuration for matching git branches to this environment
+				BranchMatcher *struct {
+					// Pattern The pattern to match against branch names
+					Pattern string `json:"pattern"`
+
+					// Type The type of matching to perform
+					Type CreateProject200JSONResponseBodyCustomEnvironmentsBranchMatcherType `json:"type"`
+				} `json:"branchMatcher,omitempty"`
+
+				// CreatedAt Timestamp when the environment was created
+				CreatedAt float32 `json:"createdAt"`
+
+				// CurrentDeploymentAliases List of aliases for the current deployment
+				CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+				// Description Optional description of the environment's purpose
+				Description *string `json:"description,omitempty"`
+
+				// Domains List of domains associated with this environment
+				Domains *[]struct {
+					ApexName            string                                                                       `json:"apexName"`
+					CreatedAt           *float32                                                                     `json:"createdAt,omitempty"`
+					CustomEnvironmentId *string                                                                      `json:"customEnvironmentId,omitempty"`
+					GitBranch           *string                                                                      `json:"gitBranch,omitempty"`
+					Name                string                                                                       `json:"name"`
+					ProjectId           string                                                                       `json:"projectId"`
+					Redirect            *string                                                                      `json:"redirect,omitempty"`
+					RedirectStatusCode  *CreateProject200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+					UpdatedAt           *float32                                                                     `json:"updatedAt,omitempty"`
+
+					// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+					Verification *[]struct {
+						Domain string `json:"domain"`
+						Reason string `json:"reason"`
+						Type   string `json:"type"`
+						Value  string `json:"value"`
+					} `json:"verification,omitempty"`
+
+					// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+					Verified CreateProject200JSONResponseBodyCustomEnvironmentsDomainsVerified `json:"verified"`
+				} `json:"domains,omitempty"`
+
+				// Id Unique identifier for the custom environment (format: env_*)
+				Id string `json:"id"`
+
+				// Slug URL-friendly name of the environment
+				Slug string `json:"slug"`
+
+				// Type The type of environment (production, preview, or development)
+				Type CreateProject200JSONResponseBodyCustomEnvironmentsType `json:"type"`
+
+				// UpdatedAt Timestamp when the environment was last updated
+				UpdatedAt float32 `json:"updatedAt"`
+			} `json:"customEnvironments,omitempty"`
+			CustomerSupportCodeVisibility *CreateProject200JSONResponseBodyCustomerSupportCodeVisibility `json:"customerSupportCodeVisibility,omitempty"`
+			DataCache                     *struct {
+				StorageSizeBytes *float32                                              `json:"storageSizeBytes,omitempty"`
+				Unlimited        *CreateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
+				UserDisabled     CreateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
+			} `json:"dataCache,omitempty"`
+			DefaultResourceConfig struct {
+				BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
+				BuildMachineElasticReason      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
+				BuildMachineElasticTransition  *struct {
+					AlgorithmVersion string                                                                                      `json:"algorithmVersion"`
+					At               float32                                                                                     `json:"at"`
+					Direction        CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
+				} `json:"buildMachineElasticTransition,omitempty"`
+				BuildMachineSelection *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
+				BuildMachineType      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
+				BuildQueue            *struct {
+					Configuration *CreateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+				} `json:"buildQueue,omitempty"`
+				ElasticBuildMachine        *CreateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
+				ElasticConcurrencyEnabled  *CreateProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
+				EnableFunctionsBeta        *CreateProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
+				Fluid                      *CreateProject200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
+				FunctionDefaultMemoryType  *CreateProject200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
+				FunctionDefaultRegions     []string                                                                         `json:"functionDefaultRegions"`
+				FunctionDefaultTimeout     *float32                                                                         `json:"functionDefaultTimeout,omitempty"`
+				FunctionZeroConfigFailover *CreateProject200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
+				IsNSNBDisabled             *CreateProject200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
+			} `json:"defaultResourceConfig"`
+
+			// DeploymentExpiration Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.
+			DeploymentExpiration struct {
+				// DeploymentsToKeep Minimum number of production deployments to keep for this project, even if they are over the production expiration limit.
+				DeploymentsToKeep *float32 `json:"deploymentsToKeep,omitempty"`
+
+				// ExpirationDays Number of days to keep non-production deployments (mostly preview deployments) before soft deletion.
+				ExpirationDays *float32 `json:"expirationDays,omitempty"`
+
+				// ExpirationDaysCanceled Number of days to keep canceled deployments before soft deletion.
+				ExpirationDaysCanceled *float32 `json:"expirationDaysCanceled,omitempty"`
+
+				// ExpirationDaysErrored Number of days to keep errored deployments before soft deletion.
+				ExpirationDaysErrored *float32 `json:"expirationDaysErrored,omitempty"`
+
+				// ExpirationDaysProduction Number of days to keep production deployments before soft deletion.
+				ExpirationDaysProduction *float32 `json:"expirationDaysProduction,omitempty"`
+			} `json:"deploymentExpiration"`
+
+			// DeploymentPolicy Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident.
+			DeploymentPolicy *struct {
+				DeploymentSources *[]struct {
+					Enabled      CreateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled                `json:"enabled"`
+					Environments []CreateProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item `json:"environments"`
+					Sources      []CreateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources              `json:"sources"`
+				} `json:"deploymentSources,omitempty"`
+				GitSources *[]struct {
+					Enabled      CreateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnabled                `json:"enabled"`
+					Environments []CreateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item `json:"environments"`
+					Sources      []CreateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item      `json:"sources"`
+				} `json:"gitSources,omitempty"`
+			} `json:"deploymentPolicy,omitempty"`
+			DevCommand       *string                                          `json:"devCommand,omitempty"`
+			DirectoryListing CreateProject200JSONResponseBodyDirectoryListing `json:"directoryListing"`
+			DismissedToasts  *[]struct {
+				Action      CreateProject200JSONResponseBodyDismissedToastsAction   `json:"action"`
+				DismissedAt float32                                                 `json:"dismissedAt"`
+				Key         string                                                  `json:"key"`
+				Value       *CreateProject200JSONResponseBody_DismissedToasts_Value `json:"value"`
+			} `json:"dismissedToasts,omitempty"`
+			EnableAffectedProjectsDeployments *CreateProject200JSONResponseBodyEnableAffectedProjectsDeployments `json:"enableAffectedProjectsDeployments,omitempty"`
+			EnableExternalRewriteCaching      *CreateProject200JSONResponseBodyEnableExternalRewriteCaching      `json:"enableExternalRewriteCaching,omitempty"`
+			EnablePreviewFeedback             *CreateProject200JSONResponseBodyEnablePreviewFeedback             `json:"enablePreviewFeedback,omitempty"`
+			EnableProductionFeedback          *CreateProject200JSONResponseBodyEnableProductionFeedback          `json:"enableProductionFeedback,omitempty"`
+			Env                               *[]struct {
+				Comment              *string                                           `json:"comment,omitempty"`
+				ConfigurationId      *string                                           `json:"configurationId,omitempty"`
+				ContentHint          *CreateProject200JSONResponseBody_Env_ContentHint `json:"contentHint,omitempty"`
+				CreatedAt            *float32                                          `json:"createdAt,omitempty"`
+				CreatedBy            *string                                           `json:"createdBy,omitempty"`
+				CustomEnvironmentIds *[]string                                         `json:"customEnvironmentIds,omitempty"`
+				Decrypted            *CreateProject200JSONResponseBodyEnvDecrypted     `json:"decrypted,omitempty"`
+				EdgeConfigId         *string                                           `json:"edgeConfigId,omitempty"`
+				EdgeConfigTokenId    *string                                           `json:"edgeConfigTokenId,omitempty"`
+				GitBranch            *string                                           `json:"gitBranch,omitempty"`
+				Id                   *string                                           `json:"id,omitempty"`
+
+				// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
+				InternalContentHint *struct {
+					// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+					EncryptedValue string                                                     `json:"encryptedValue"`
+					Type           CreateProject200JSONResponseBodyEnvInternalContentHintType `json:"type"`
+				} `json:"internalContentHint,omitempty"`
+				Key string `json:"key"`
+
+				// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
+				LegacyValue *string `json:"legacyValue,omitempty"`
+
+				// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+				SunsetSecretId *string                                      `json:"sunsetSecretId,omitempty"`
+				Target         *CreateProject200JSONResponseBody_Env_Target `json:"target,omitempty"`
+				Type           CreateProject200JSONResponseBodyEnvType      `json:"type"`
+				UpdatedAt      *float32                                     `json:"updatedAt,omitempty"`
+				UpdatedBy      *string                                      `json:"updatedBy,omitempty"`
+				Value          string                                       `json:"value"`
+
+				// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+				Visibility *CreateProject200JSONResponseBodyEnvVisibility `json:"visibility,omitempty"`
+				VsmValue   *string                                        `json:"vsmValue,omitempty"`
+			} `json:"env,omitempty"`
+			Expiration *CreateProject200JSONResponseBody_Expiration `json:"expiration,omitempty"`
+			Features   *struct {
+				WebAnalytics *CreateProject200JSONResponseBodyFeaturesWebAnalytics `json:"webAnalytics,omitempty"`
+			} `json:"features,omitempty"`
+			Framework   *CreateProject200JSONResponseBodyFramework `json:"framework,omitempty"`
+			GitComments *struct {
+				// OnCommit Whether the Vercel bot should comment on commits
+				OnCommit CreateProject200JSONResponseBodyGitCommentsOnCommit `json:"onCommit"`
+
+				// OnPullRequest Whether the Vercel bot should comment on PRs
+				OnPullRequest CreateProject200JSONResponseBodyGitCommentsOnPullRequest `json:"onPullRequest"`
+			} `json:"gitComments,omitempty"`
+			GitForkProtection  *CreateProject200JSONResponseBodyGitForkProtection `json:"gitForkProtection,omitempty"`
+			GitLFS             *CreateProject200JSONResponseBodyGitLFS            `json:"gitLFS,omitempty"`
+			GitProviderOptions *struct {
+				// ConsolidatedGitCommitStatus Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment.
+				ConsolidatedGitCommitStatus *struct {
+					// Enabled Whether consolidated commit status is enabled.
+					Enabled CreateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled `json:"enabled"`
+
+					// PropagateFailures Whether to propagate individual deployment failures to the consolidated status.
+					PropagateFailures CreateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures `json:"propagateFailures"`
+				} `json:"consolidatedGitCommitStatus,omitempty"`
+
+				// CreateDeployments Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead
+				CreateDeployments CreateProject200JSONResponseBodyGitProviderOptionsCreateDeployments `json:"createDeployments"`
+
+				// DisableRepositoryDispatchEvents Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.
+				DisableRepositoryDispatchEvents *CreateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents,omitempty"`
+
+				// GitCommitStatus Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.
+				GitCommitStatus *CreateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus `json:"gitCommitStatus,omitempty"`
+
+				// RequireVerifiedCommits Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.
+				RequireVerifiedCommits *CreateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits `json:"requireVerifiedCommits,omitempty"`
+			} `json:"gitProviderOptions,omitempty"`
+			HasActiveBranches *CreateProject200JSONResponseBodyHasActiveBranches      `json:"hasActiveBranches,omitempty"`
+			HasDeployments    *CreateProject200JSONResponseBodyHasDeployments         `json:"hasDeployments,omitempty"`
+			Id                string                                                  `json:"id"`
+			InstallCommand    *string                                                 `json:"installCommand,omitempty"`
+			InternalRoutes    *[]CreateProject200JSONResponseBody_InternalRoutes_Item `json:"internalRoutes,omitempty"`
+			IpBuckets         *[]struct {
+				Bucket       string                                            `json:"bucket"`
+				Default      *CreateProject200JSONResponseBodyIpBucketsDefault `json:"default,omitempty"`
+				SupportUntil *float32                                          `json:"supportUntil,omitempty"`
+			} `json:"ipBuckets,omitempty"`
+			Jobs *struct {
+				FlagDefinitionsPresent *struct {
+					Targets []string `json:"targets"`
+				} `json:"flag-definitions-present,omitempty"`
+				Lint *struct {
+					Targets []string `json:"targets"`
+				} `json:"lint,omitempty"`
+				MfeConfigPresent *struct {
+					Targets []string `json:"targets"`
+				} `json:"mfe-config-present,omitempty"`
+				Typecheck *struct {
+					Targets []string `json:"targets"`
+				} `json:"typecheck,omitempty"`
+			} `json:"jobs,omitempty"`
+			LastAliasRequest *struct {
+				FromDeploymentId *string `json:"fromDeploymentId"`
+
+				// FromRollingReleaseId If rolling back from a rolling release, fromDeploymentId captures the "base" of that rolling release, and fromRollingReleaseId captures the "target" of that rolling release.
+				FromRollingReleaseId *string                                                   `json:"fromRollingReleaseId,omitempty"`
+				JobStatus            CreateProject200JSONResponseBodyLastAliasRequestJobStatus `json:"jobStatus"`
+				RequestedAt          float32                                                   `json:"requestedAt"`
+				ToDeploymentId       string                                                    `json:"toDeploymentId"`
+				Type                 CreateProject200JSONResponseBodyLastAliasRequestType      `json:"type"`
+			} `json:"lastAliasRequest,omitempty"`
+			LastRollbackTarget *map[string]interface{} `json:"lastRollbackTarget,omitempty"`
+			LatestDeployments  *[]struct {
+				Alias         *[]string                                                         `json:"alias,omitempty"`
+				AliasAssigned *CreateProject200JSONResponseBody_LatestDeployments_AliasAssigned `json:"aliasAssigned,omitempty"`
+				AliasError    *struct {
+					Code    string `json:"code"`
+					Message string `json:"message"`
+				} `json:"aliasError,omitempty"`
+				AliasFinal       *string   `json:"aliasFinal,omitempty"`
+				AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
+				BranchMatcher    *struct {
+					// Pattern The pattern to match against branch names
+					Pattern string `json:"pattern"`
+
+					// Type The type of matching to perform
+					Type CreateProject200JSONResponseBodyLatestDeploymentsBranchMatcherType `json:"type"`
+				} `json:"branchMatcher,omitempty"`
+				BuildingAt *float32 `json:"buildingAt,omitempty"`
+				Builds     *[]struct {
+					Dest *string `json:"dest,omitempty"`
+					Src  *string `json:"src,omitempty"`
+					Use  string  `json:"use"`
+				} `json:"builds,omitempty"`
+				ChecksConclusion       *CreateProject200JSONResponseBodyLatestDeploymentsChecksConclusion     `json:"checksConclusion,omitempty"`
+				ChecksState            *CreateProject200JSONResponseBodyLatestDeploymentsChecksState          `json:"checksState,omitempty"`
+				ConnectBuildsEnabled   *CreateProject200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+				ConnectConfigurationId *string                                                                `json:"connectConfigurationId,omitempty"`
+				CreatedAt              float32                                                                `json:"createdAt"`
+				CreatedIn              string                                                                 `json:"createdIn"`
+				Creator                *struct {
+					Email       string  `json:"email"`
+					GithubLogin *string `json:"githubLogin,omitempty"`
+					GitlabLogin *string `json:"gitlabLogin,omitempty"`
+					Uid         string  `json:"uid"`
+					Username    string  `json:"username"`
+				} `json:"creator"`
+				DeletedAt          *float32                                                 `json:"deletedAt,omitempty"`
+				DeploymentHostname string                                                   `json:"deploymentHostname"`
+				Forced             *CreateProject200JSONResponseBodyLatestDeploymentsForced `json:"forced,omitempty"`
+				Id                 string                                                   `json:"id"`
+				Meta               *map[string]string                                       `json:"meta,omitempty"`
+				MonorepoManager    *string                                                  `json:"monorepoManager,omitempty"`
+				Name               string                                                   `json:"name"`
+				OidcTokenClaims    *struct {
+					Aud                 string    `json:"aud"`
+					CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+					DeploymentId        *string   `json:"deployment_id,omitempty"`
+					Environment         string    `json:"environment"`
+					Iss                 string    `json:"iss"`
+					MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+					Owner               string    `json:"owner"`
+					OwnerId             string    `json:"owner_id"`
+					Plan                *string   `json:"plan,omitempty"`
+					Project             string    `json:"project"`
+					ProjectId           string    `json:"project_id"`
+					Scope               string    `json:"scope"`
+					Sub                 string    `json:"sub"`
+				} `json:"oidcTokenClaims,omitempty"`
+				Plan CreateProject200JSONResponseBodyLatestDeploymentsPlan `json:"plan"`
+
+				// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+				//
+				// Example: false
+				PreviewCommentsEnabled *CreateProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+				Private                CreateProject200JSONResponseBodyLatestDeploymentsPrivate                 `json:"private"`
+				ReadyAt                *float32                                                                 `json:"readyAt,omitempty"`
+				ReadyState             CreateProject200JSONResponseBodyLatestDeploymentsReadyState              `json:"readyState"`
+				ReadySubstate          *CreateProject200JSONResponseBodyLatestDeploymentsReadySubstate          `json:"readySubstate,omitempty"`
+				RequestedAt            *float32                                                                 `json:"requestedAt,omitempty"`
+				Target                 *string                                                                  `json:"target,omitempty"`
+				TeamId                 *string                                                                  `json:"teamId,omitempty"`
+				Type                   CreateProject200JSONResponseBodyLatestDeploymentsType                    `json:"type"`
+				Url                    string                                                                   `json:"url"`
+
+				// UserId Present for user creators; omitted for app/integration/system creators.
+				UserId    *string                                                     `json:"userId,omitempty"`
+				WithCache *CreateProject200JSONResponseBodyLatestDeploymentsWithCache `json:"withCache,omitempty"`
+			} `json:"latestDeployments,omitempty"`
+			Link            *CreateProject200JSONResponseBody_Link           `json:"link,omitempty"`
+			Live            *CreateProject200JSONResponseBodyLive            `json:"live,omitempty"`
+			Microfrontends  *CreateProject200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
+			Name            string                                           `json:"name"`
+			NodeVersion     CreateProject200JSONResponseBodyNodeVersion      `json:"nodeVersion"`
+			OidcTokenConfig *struct {
+				// Enabled Whether or not to generate OpenID Connect JSON Web Tokens.
+				Enabled *CreateProject200JSONResponseBodyOidcTokenConfigEnabled `json:"enabled,omitempty"`
+
+				// IssuerMode - team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`
+				IssuerMode *CreateProject200JSONResponseBodyOidcTokenConfigIssuerMode `json:"issuerMode,omitempty"`
+			} `json:"oidcTokenConfig,omitempty"`
+			OptionsAllowlist *struct {
+				Paths []struct {
+					Value string `json:"value"`
+				} `json:"paths"`
+			} `json:"optionsAllowlist,omitempty"`
+			OutputDirectory               *string `json:"outputDirectory,omitempty"`
+			PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
+			Passport                      *struct {
+				ConnectorId    string                                                 `json:"connectorId"`
+				DeploymentType CreateProject200JSONResponseBodyPassportDeploymentType `json:"deploymentType"`
+			} `json:"passport,omitempty"`
+
+			// PasswordProtection Password protection settings returned without the secret password hash.
+			PasswordProtection *struct {
+				DeploymentType CreateProject200JSONResponseBodyPasswordProtectionDeploymentType `json:"deploymentType"`
+			} `json:"passwordProtection,omitempty"`
+			Paused *CreateProject200JSONResponseBodyPaused `json:"paused,omitempty"`
+
+			// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			Permissions *struct {
+				// Monitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Monitoring *[]ACLAction `json:"Monitoring,omitempty"`
+
+				// NotificationMonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationMonitoringAlert *[]ACLAction `json:"NotificationMonitoringAlert,omitempty"`
+
+				// AccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AccessGroup *[]ACLAction `json:"accessGroup,omitempty"`
+
+				// Agent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Agent *[]ACLAction `json:"agent,omitempty"`
+
+				// AiGatewayApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayApiKey *[]ACLAction `json:"aiGatewayApiKey,omitempty"`
+
+				// AiGatewayApiKeyBypassAll Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayApiKeyBypassAll *[]ACLAction `json:"aiGatewayApiKeyBypassAll,omitempty"`
+
+				// AiGatewayApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayApiKeyOwnedBySelf *[]ACLAction `json:"aiGatewayApiKeyOwnedBySelf,omitempty"`
+
+				// AiGatewayApiKeySpendAttribution Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayApiKeySpendAttribution *[]ACLAction `json:"aiGatewayApiKeySpendAttribution,omitempty"`
+
+				// AiGatewayApiKeyZdrExemption Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayApiKeyZdrExemption *[]ACLAction `json:"aiGatewayApiKeyZdrExemption,omitempty"`
+
+				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
+
+				// AiGatewayCredits Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayCredits *[]ACLAction `json:"aiGatewayCredits,omitempty"`
+
+				// AiGatewayGuardrails Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayGuardrails *[]ACLAction `json:"aiGatewayGuardrails,omitempty"`
+
+				// AiGatewayPrivateModels Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayPrivateModels *[]ACLAction `json:"aiGatewayPrivateModels,omitempty"`
+
+				// AiGatewayRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayRules *[]ACLAction `json:"aiGatewayRules,omitempty"`
+
+				// AiGatewaySettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewaySettings *[]ACLAction `json:"aiGatewaySettings,omitempty"`
+
+				// AiGatewayTranscripts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayTranscripts *[]ACLAction `json:"aiGatewayTranscripts,omitempty"`
+
+				// AiGatewayTranscriptsSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayTranscriptsSettings *[]ACLAction `json:"aiGatewayTranscriptsSettings,omitempty"`
+
+				// AiGatewayUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayUsage *[]ACLAction `json:"aiGatewayUsage,omitempty"`
+
+				// AiGatewayVirtualModelConfigs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayVirtualModelConfigs *[]ACLAction `json:"aiGatewayVirtualModelConfigs,omitempty"`
+
+				// AlertRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AlertRules *[]ACLAction `json:"alertRules,omitempty"`
+
+				// Alerts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Alerts *[]ACLAction `json:"alerts,omitempty"`
+
+				// AliasGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AliasGlobal *[]ACLAction `json:"aliasGlobal,omitempty"`
+
+				// AliasProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AliasProject *[]ACLAction `json:"aliasProject,omitempty"`
+
+				// AliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AliasProtectionBypass *[]ACLAction `json:"aliasProtectionBypass,omitempty"`
+
+				// Analytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Analytics *[]ACLAction `json:"analytics,omitempty"`
+
+				// AnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AnalyticsSampling *[]ACLAction `json:"analyticsSampling,omitempty"`
+
+				// AnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AnalyticsUsage *[]ACLAction `json:"analyticsUsage,omitempty"`
+
+				// ApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ApiKey *[]ACLAction `json:"apiKey,omitempty"`
+
+				// ApiKeyAiGateway Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ApiKeyAiGateway *[]ACLAction `json:"apiKeyAiGateway,omitempty"`
+
+				// ApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ApiKeyOwnedBySelf *[]ACLAction `json:"apiKeyOwnedBySelf,omitempty"`
+
+				// AuditLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AuditLog *[]ACLAction `json:"auditLog,omitempty"`
+
+				// Automation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Automation *[]ACLAction `json:"automation,omitempty"`
+
+				// BillingAddress Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingAddress *[]ACLAction `json:"billingAddress,omitempty"`
+
+				// BillingInformation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingInformation *[]ACLAction `json:"billingInformation,omitempty"`
+
+				// BillingInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingInvoice *[]ACLAction `json:"billingInvoice,omitempty"`
+
+				// BillingInvoiceEmailRecipient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingInvoiceEmailRecipient *[]ACLAction `json:"billingInvoiceEmailRecipient,omitempty"`
+
+				// BillingInvoiceLanguage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingInvoiceLanguage *[]ACLAction `json:"billingInvoiceLanguage,omitempty"`
+
+				// BillingPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingPlan *[]ACLAction `json:"billingPlan,omitempty"`
+
+				// BillingPurchaseOrder Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingPurchaseOrder *[]ACLAction `json:"billingPurchaseOrder,omitempty"`
+
+				// BillingRefund Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingRefund *[]ACLAction `json:"billingRefund,omitempty"`
+
+				// BillingTaxId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BillingTaxId *[]ACLAction `json:"billingTaxId,omitempty"`
+
+				// Blob Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Blob *[]ACLAction `json:"blob,omitempty"`
+
+				// BlobStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BlobStoreTokenSet *[]ACLAction `json:"blobStoreTokenSet,omitempty"`
+
+				// Budget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Budget *[]ACLAction `json:"budget,omitempty"`
+
+				// BuildMachine Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BuildMachine *[]ACLAction `json:"buildMachine,omitempty"`
+
+				// BuildMachineDefault Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BuildMachineDefault *[]ACLAction `json:"buildMachineDefault,omitempty"`
+
+				// BulkRedirects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				BulkRedirects *[]ACLAction `json:"bulkRedirects,omitempty"`
+
+				// CacheArtifact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CacheArtifact *[]ACLAction `json:"cacheArtifact,omitempty"`
+
+				// CacheArtifactUsageEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CacheArtifactUsageEvent *[]ACLAction `json:"cacheArtifactUsageEvent,omitempty"`
+
+				// CiInvocations Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CiInvocations *[]ACLAction `json:"ciInvocations,omitempty"`
+
+				// CiLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CiLogs *[]ACLAction `json:"ciLogs,omitempty"`
+
+				// CodeChecks Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CodeChecks *[]ACLAction `json:"codeChecks,omitempty"`
+
+				// CodeOwners Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CodeOwners *[]ACLAction `json:"codeOwners,omitempty"`
+
+				// ConcurrentBuilds Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConcurrentBuilds *[]ACLAction `json:"concurrentBuilds,omitempty"`
+
+				// Connect Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Connect *[]ACLAction `json:"connect,omitempty"`
+
+				// ConnectConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnectConfiguration *[]ACLAction `json:"connectConfiguration,omitempty"`
+
+				// ConnectConfigurationLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnectConfigurationLink *[]ACLAction `json:"connectConfigurationLink,omitempty"`
+
+				// ConnectLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnectLogs *[]ACLAction `json:"connectLogs,omitempty"`
+
+				// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
+
+				// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
+
+				// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
+
+				// ConnexContact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexContact *[]ACLAction `json:"connexContact,omitempty"`
+
+				// ConnexInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexInstallation *[]ACLAction `json:"connexInstallation,omitempty"`
+
+				// ConnexToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ConnexToken *[]ACLAction `json:"connexToken,omitempty"`
+
+				// CursorOriginInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				CursorOriginInstallation *[]ACLAction `json:"cursorOriginInstallation,omitempty"`
+
+				// DataCacheBillingSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DataCacheBillingSettings *[]ACLAction `json:"dataCacheBillingSettings,omitempty"`
+
+				// DataCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DataCacheNamespace *[]ACLAction `json:"dataCacheNamespace,omitempty"`
+
+				// DefaultDeploymentProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DefaultDeploymentProtection *[]ACLAction `json:"defaultDeploymentProtection,omitempty"`
+
+				// Deployment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Deployment *[]ACLAction `json:"deployment,omitempty"`
+
+				// DeploymentBuildLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentBuildLogs *[]ACLAction `json:"deploymentBuildLogs,omitempty"`
+
+				// DeploymentCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentCheck *[]ACLAction `json:"deploymentCheck,omitempty"`
+
+				// DeploymentCheckPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentCheckPreview *[]ACLAction `json:"deploymentCheckPreview,omitempty"`
+
+				// DeploymentCheckReRunFromProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentCheckReRunFromProductionBranch *[]ACLAction `json:"deploymentCheckReRunFromProductionBranch,omitempty"`
+
+				// DeploymentPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentPolicy *[]ACLAction `json:"deploymentPolicy,omitempty"`
+
+				// DeploymentPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentPreview *[]ACLAction `json:"deploymentPreview,omitempty"`
+
+				// DeploymentPrivate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentPrivate *[]ACLAction `json:"deploymentPrivate,omitempty"`
+
+				// DeploymentProductionGit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentProductionGit *[]ACLAction `json:"deploymentProductionGit,omitempty"`
+
+				// DeploymentPromote Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentPromote *[]ACLAction `json:"deploymentPromote,omitempty"`
+
+				// DeploymentProtectionException Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentProtectionException *[]ACLAction `json:"deploymentProtectionException,omitempty"`
+
+				// DeploymentRollback Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentRollback *[]ACLAction `json:"deploymentRollback,omitempty"`
+
+				// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
+
+				// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Domain *[]ACLAction `json:"domain,omitempty"`
+
+				// DomainAcceptDelegation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainAcceptDelegation *[]ACLAction `json:"domainAcceptDelegation,omitempty"`
+
+				// DomainAuthCodes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainAuthCodes *[]ACLAction `json:"domainAuthCodes,omitempty"`
+
+				// DomainCertificate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainCertificate *[]ACLAction `json:"domainCertificate,omitempty"`
+
+				// DomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainCheckConfig *[]ACLAction `json:"domainCheckConfig,omitempty"`
+
+				// DomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainMove *[]ACLAction `json:"domainMove,omitempty"`
+
+				// DomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainPurchase *[]ACLAction `json:"domainPurchase,omitempty"`
+
+				// DomainRecord Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainRecord *[]ACLAction `json:"domainRecord,omitempty"`
+
+				// DomainTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DomainTransferIn *[]ACLAction `json:"domainTransferIn,omitempty"`
+
+				// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Drain *[]ACLAction `json:"drain,omitempty"`
+
+				// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
+
+				// EdgeConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EdgeConfig *[]ACLAction `json:"edgeConfig,omitempty"`
+
+				// EdgeConfigItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EdgeConfigItem *[]ACLAction `json:"edgeConfigItem,omitempty"`
+
+				// EdgeConfigSchema Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EdgeConfigSchema *[]ACLAction `json:"edgeConfigSchema,omitempty"`
+
+				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
+
+				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
+
+				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
+
+				// Environments Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Environments *[]ACLAction `json:"environments,omitempty"`
+
+				// Event Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Event *[]ACLAction `json:"event,omitempty"`
+
+				// FileUpload Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				FileUpload *[]ACLAction `json:"fileUpload,omitempty"`
+
+				// FlagsExplorerSubscription Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				FlagsExplorerSubscription *[]ACLAction `json:"flagsExplorerSubscription,omitempty"`
+
+				// GitCredentialGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GitCredentialGrant *[]ACLAction `json:"gitCredentialGrant,omitempty"`
+
+				// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
+
+				// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
+
+				// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
+
+				// Integration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Integration *[]ACLAction `json:"integration,omitempty"`
+
+				// IntegrationAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationAccount *[]ACLAction `json:"integrationAccount,omitempty"`
+
+				// IntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationConfiguration *[]ACLAction `json:"integrationConfiguration,omitempty"`
+
+				// IntegrationConfigurationProjects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationConfigurationProjects *[]ACLAction `json:"integrationConfigurationProjects,omitempty"`
+
+				// IntegrationConfigurationRole Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationConfigurationRole *[]ACLAction `json:"integrationConfigurationRole,omitempty"`
+
+				// IntegrationConfigurationTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationConfigurationTransfer *[]ACLAction `json:"integrationConfigurationTransfer,omitempty"`
+
+				// IntegrationDeploymentAction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationDeploymentAction *[]ACLAction `json:"integrationDeploymentAction,omitempty"`
+
+				// IntegrationEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationEvent *[]ACLAction `json:"integrationEvent,omitempty"`
+
+				// IntegrationLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationLog *[]ACLAction `json:"integrationLog,omitempty"`
+
+				// IntegrationPullRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationPullRequest *[]ACLAction `json:"integrationPullRequest,omitempty"`
+
+				// IntegrationResource Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationResource *[]ACLAction `json:"integrationResource,omitempty"`
+
+				// IntegrationResourceData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationResourceData *[]ACLAction `json:"integrationResourceData,omitempty"`
+
+				// IntegrationResourceReplCommand Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationResourceReplCommand *[]ACLAction `json:"integrationResourceReplCommand,omitempty"`
+
+				// IntegrationResourceSecrets Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationResourceSecrets *[]ACLAction `json:"integrationResourceSecrets,omitempty"`
+
+				// IntegrationSSOSession Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationSSOSession *[]ACLAction `json:"integrationSSOSession,omitempty"`
+
+				// IntegrationStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationStoreTokenSet *[]ACLAction `json:"integrationStoreTokenSet,omitempty"`
+
+				// IntegrationStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationStrict *[]ACLAction `json:"integrationStrict,omitempty"`
+
+				// IntegrationVercelConfigurationOverride Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IntegrationVercelConfigurationOverride *[]ACLAction `json:"integrationVercelConfigurationOverride,omitempty"`
+
+				// IpBlocking Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				IpBlocking *[]ACLAction `json:"ipBlocking,omitempty"`
+
+				// Job Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Job *[]ACLAction `json:"job,omitempty"`
+
+				// JobGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				JobGlobal *[]ACLAction `json:"jobGlobal,omitempty"`
+
+				// KmsIssuer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				KmsIssuer *[]ACLAction `json:"kmsIssuer,omitempty"`
+
+				// KmsProjectGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				KmsProjectGrant *[]ACLAction `json:"kmsProjectGrant,omitempty"`
+
+				// LogDrain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				LogDrain *[]ACLAction `json:"logDrain,omitempty"`
+
+				// Logs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Logs *[]ACLAction `json:"logs,omitempty"`
+
+				// LogsPreset Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				LogsPreset *[]ACLAction `json:"logsPreset,omitempty"`
+
+				// MarketplaceBillingData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceBillingData *[]ACLAction `json:"marketplaceBillingData,omitempty"`
+
+				// MarketplaceExperimentationEdgeConfigData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceExperimentationEdgeConfigData *[]ACLAction `json:"marketplaceExperimentationEdgeConfigData,omitempty"`
+
+				// MarketplaceExperimentationItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceExperimentationItem *[]ACLAction `json:"marketplaceExperimentationItem,omitempty"`
+
+				// MarketplaceFlexCommit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceFlexCommit *[]ACLAction `json:"marketplaceFlexCommit,omitempty"`
+
+				// MarketplaceInstallationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceInstallationMember *[]ACLAction `json:"marketplaceInstallationMember,omitempty"`
+
+				// MarketplaceInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceInvoice *[]ACLAction `json:"marketplaceInvoice,omitempty"`
+
+				// MarketplaceSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MarketplaceSettings *[]ACLAction `json:"marketplaceSettings,omitempty"`
+
+				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
+
+				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
+
+				// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
+
+				// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
+
+				// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
+
+				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
+
+				// MonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MonitoringAlert *[]ACLAction `json:"monitoringAlert,omitempty"`
+
+				// MonitoringChart Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MonitoringChart *[]ACLAction `json:"monitoringChart,omitempty"`
+
+				// MonitoringQuery Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MonitoringQuery *[]ACLAction `json:"monitoringQuery,omitempty"`
+
+				// MonitoringSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				MonitoringSettings *[]ACLAction `json:"monitoringSettings,omitempty"`
+
+				// NotificationCustomerBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationCustomerBudget *[]ACLAction `json:"notificationCustomerBudget,omitempty"`
+
+				// NotificationDeploymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDeploymentFailed *[]ACLAction `json:"notificationDeploymentFailed,omitempty"`
+
+				// NotificationDomainConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainConfiguration *[]ACLAction `json:"notificationDomainConfiguration,omitempty"`
+
+				// NotificationDomainExpire Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainExpire *[]ACLAction `json:"notificationDomainExpire,omitempty"`
+
+				// NotificationDomainMoved Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainMoved *[]ACLAction `json:"notificationDomainMoved,omitempty"`
+
+				// NotificationDomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainPurchase *[]ACLAction `json:"notificationDomainPurchase,omitempty"`
+
+				// NotificationDomainRenewal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainRenewal *[]ACLAction `json:"notificationDomainRenewal,omitempty"`
+
+				// NotificationDomainTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainTransfer *[]ACLAction `json:"notificationDomainTransfer,omitempty"`
+
+				// NotificationDomainUnverified Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationDomainUnverified *[]ACLAction `json:"notificationDomainUnverified,omitempty"`
+
+				// NotificationPaymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationPaymentFailed *[]ACLAction `json:"notificationPaymentFailed,omitempty"`
+
+				// NotificationPreferences Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationPreferences *[]ACLAction `json:"notificationPreferences,omitempty"`
+
+				// NotificationStatementOfReasons Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationStatementOfReasons *[]ACLAction `json:"notificationStatementOfReasons,omitempty"`
+
+				// NotificationUsageAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				NotificationUsageAlert *[]ACLAction `json:"notificationUsageAlert,omitempty"`
+
+				// Oauth2Application Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Oauth2Application *[]ACLAction `json:"oauth2Application,omitempty"`
+
+				// Oauth2Connection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Oauth2Connection *[]ACLAction `json:"oauth2Connection,omitempty"`
+
+				// ObservabilityConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ObservabilityConfiguration *[]ACLAction `json:"observabilityConfiguration,omitempty"`
+
+				// ObservabilityData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ObservabilityData *[]ACLAction `json:"observabilityData,omitempty"`
+
+				// ObservabilityFunnel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ObservabilityFunnel *[]ACLAction `json:"observabilityFunnel,omitempty"`
+
+				// ObservabilityNotebook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ObservabilityNotebook *[]ACLAction `json:"observabilityNotebook,omitempty"`
+
+				// OidcFederationPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OidcFederationPolicy *[]ACLAction `json:"oidcFederationPolicy,omitempty"`
+
+				// OnDemandBuild Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OnDemandBuild *[]ACLAction `json:"onDemandBuild,omitempty"`
+
+				// OnDemandConcurrency Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OnDemandConcurrency *[]ACLAction `json:"onDemandConcurrency,omitempty"`
+
+				// OpenTelemetryEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OpenTelemetryEndpoint *[]ACLAction `json:"openTelemetryEndpoint,omitempty"`
+
+				// OptionsAllowlist Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OptionsAllowlist *[]ACLAction `json:"optionsAllowlist,omitempty"`
+
+				// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Organization *[]ACLAction `json:"organization,omitempty"`
+
+				// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+				// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
+
+				// OwnEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OwnEvent *[]ACLAction `json:"ownEvent,omitempty"`
+
+				// PageIntegrity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PageIntegrity *[]ACLAction `json:"pageIntegrity,omitempty"`
+
+				// PasswordProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PasswordProtection *[]ACLAction `json:"passwordProtection,omitempty"`
+
+				// PasswordProtectionInvoiceItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PasswordProtectionInvoiceItem *[]ACLAction `json:"passwordProtectionInvoiceItem,omitempty"`
+
+				// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
+
+				// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Permissions *[]ACLAction `json:"permissions,omitempty"`
+
+				// Postgres Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Postgres *[]ACLAction `json:"postgres,omitempty"`
+
+				// PostgresStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PostgresStoreTokenSet *[]ACLAction `json:"postgresStoreTokenSet,omitempty"`
+
+				// PreviewDeploymentSuffix Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PreviewDeploymentSuffix *[]ACLAction `json:"previewDeploymentSuffix,omitempty"`
+
+				// PrivateCloudAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PrivateCloudAccount *[]ACLAction `json:"privateCloudAccount,omitempty"`
+
+				// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
+
+				// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
+
+				// ProductionAliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProductionAliasProtectionBypass *[]ACLAction `json:"productionAliasProtectionBypass,omitempty"`
+
+				// ProductionShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProductionShareableLink *[]ACLAction `json:"productionShareableLink,omitempty"`
+
+				// Project Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Project *[]ACLAction `json:"project,omitempty"`
+
+				// ProjectAccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectAccessGroup *[]ACLAction `json:"projectAccessGroup,omitempty"`
+
+				// ProjectAnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectAnalyticsSampling *[]ACLAction `json:"projectAnalyticsSampling,omitempty"`
+
+				// ProjectAnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectAnalyticsUsage *[]ACLAction `json:"projectAnalyticsUsage,omitempty"`
+
+				// ProjectCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectCheck *[]ACLAction `json:"projectCheck,omitempty"`
+
+				// ProjectCheckRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectCheckRun *[]ACLAction `json:"projectCheckRun,omitempty"`
+
+				// ProjectDeploymentExpiration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDeploymentExpiration *[]ACLAction `json:"projectDeploymentExpiration,omitempty"`
+
+				// ProjectDeploymentHook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDeploymentHook *[]ACLAction `json:"projectDeploymentHook,omitempty"`
+
+				// ProjectDeploymentProtectionStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDeploymentProtectionStrict *[]ACLAction `json:"projectDeploymentProtectionStrict,omitempty"`
+
+				// ProjectDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDomain *[]ACLAction `json:"projectDomain,omitempty"`
+
+				// ProjectDomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDomainCheckConfig *[]ACLAction `json:"projectDomainCheckConfig,omitempty"`
+
+				// ProjectDomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDomainMove *[]ACLAction `json:"projectDomainMove,omitempty"`
+
+				// ProjectDomainVerify Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectDomainVerify *[]ACLAction `json:"projectDomainVerify,omitempty"`
+
+				// ProjectEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectEnvVars *[]ACLAction `json:"projectEnvVars,omitempty"`
+
+				// ProjectEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectEnvVarsProduction *[]ACLAction `json:"projectEnvVarsProduction,omitempty"`
+
+				// ProjectEnvVarsUnownedByIntegration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectEnvVarsUnownedByIntegration *[]ACLAction `json:"projectEnvVarsUnownedByIntegration,omitempty"`
+
+				// ProjectEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectEvent *[]ACLAction `json:"projectEvent,omitempty"`
+
+				// ProjectFlags Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectFlags *[]ACLAction `json:"projectFlags,omitempty"`
+
+				// ProjectFlagsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectFlagsProduction *[]ACLAction `json:"projectFlagsProduction,omitempty"`
+
+				// ProjectFlagsSdkKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectFlagsSdkKey *[]ACLAction `json:"projectFlagsSdkKey,omitempty"`
+
+				// ProjectFromV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectFromV0 *[]ACLAction `json:"projectFromV0,omitempty"`
+
+				// ProjectId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectId *[]ACLAction `json:"projectId,omitempty"`
+
+				// ProjectIntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectIntegrationConfiguration *[]ACLAction `json:"projectIntegrationConfiguration,omitempty"`
+
+				// ProjectLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectLink *[]ACLAction `json:"projectLink,omitempty"`
+
+				// ProjectMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectMember *[]ACLAction `json:"projectMember,omitempty"`
+
+				// ProjectMonitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectMonitoring *[]ACLAction `json:"projectMonitoring,omitempty"`
+
+				// ProjectOIDCToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectOIDCToken *[]ACLAction `json:"projectOIDCToken,omitempty"`
+
+				// ProjectPermissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectPermissions *[]ACLAction `json:"projectPermissions,omitempty"`
+
+				// ProjectProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectProductionBranch *[]ACLAction `json:"projectProductionBranch,omitempty"`
+
+				// ProjectProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectProtectionBypass *[]ACLAction `json:"projectProtectionBypass,omitempty"`
+
+				// ProjectRollingRelease Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectRollingRelease *[]ACLAction `json:"projectRollingRelease,omitempty"`
+
+				// ProjectRoutes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectRoutes *[]ACLAction `json:"projectRoutes,omitempty"`
+
+				// ProjectSetting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectSetting *[]ACLAction `json:"projectSetting,omitempty"`
+
+				// ProjectSupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectSupportCase *[]ACLAction `json:"projectSupportCase,omitempty"`
+
+				// ProjectSupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectSupportCaseComment *[]ACLAction `json:"projectSupportCaseComment,omitempty"`
+
+				// ProjectTier Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectTier *[]ACLAction `json:"projectTier,omitempty"`
+
+				// ProjectTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectTransfer *[]ACLAction `json:"projectTransfer,omitempty"`
+
+				// ProjectTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectTransferIn *[]ACLAction `json:"projectTransferIn,omitempty"`
+
+				// ProjectTransferOut Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectTransferOut *[]ACLAction `json:"projectTransferOut,omitempty"`
+
+				// ProjectTransferRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectTransferRequest *[]ACLAction `json:"projectTransferRequest,omitempty"`
+
+				// ProjectUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ProjectUsage *[]ACLAction `json:"projectUsage,omitempty"`
+
+				// RateLimit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				RateLimit *[]ACLAction `json:"rateLimit,omitempty"`
+
+				// Redis Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Redis *[]ACLAction `json:"redis,omitempty"`
+
+				// RedisStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				RedisStoreTokenSet *[]ACLAction `json:"redisStoreTokenSet,omitempty"`
+
+				// RemoteCaching Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				RemoteCaching *[]ACLAction `json:"remoteCaching,omitempty"`
+
+				// Repository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Repository *[]ACLAction `json:"repository,omitempty"`
+
+				// SamlConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SamlConfig *[]ACLAction `json:"samlConfig,omitempty"`
+
+				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
+
+				// Secret Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Secret *[]ACLAction `json:"secret,omitempty"`
+
+				// SecurityConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SecurityConfig *[]ACLAction `json:"securityConfig,omitempty"`
+
+				// SecurityPlusConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SecurityPlusConfiguration *[]ACLAction `json:"securityPlusConfiguration,omitempty"`
+
+				// SensitiveEnvironmentVariablePolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SensitiveEnvironmentVariablePolicy *[]ACLAction `json:"sensitiveEnvironmentVariablePolicy,omitempty"`
+
+				// Setting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Setting *[]ACLAction `json:"setting,omitempty"`
+
+				// ShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ShareableLink *[]ACLAction `json:"shareableLink,omitempty"`
+
+				// ShareableLinkStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ShareableLinkStrict *[]ACLAction `json:"shareableLinkStrict,omitempty"`
+
+				// SharedEnvVarConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SharedEnvVarConnection *[]ACLAction `json:"sharedEnvVarConnection,omitempty"`
+
+				// SharedEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SharedEnvVars *[]ACLAction `json:"sharedEnvVars,omitempty"`
+
+				// SharedEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SharedEnvVarsProduction *[]ACLAction `json:"sharedEnvVarsProduction,omitempty"`
+
+				// SkewProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SkewProtection *[]ACLAction `json:"skewProtection,omitempty"`
+
+				// Space Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Space *[]ACLAction `json:"space,omitempty"`
+
+				// SpaceRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SpaceRun *[]ACLAction `json:"spaceRun,omitempty"`
+
+				// StoreIsLocked Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				StoreIsLocked *[]ACLAction `json:"storeIsLocked,omitempty"`
+
+				// StoreTokenSetSensitive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				StoreTokenSetSensitive *[]ACLAction `json:"storeTokenSetSensitive,omitempty"`
+
+				// StoreTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				StoreTransfer *[]ACLAction `json:"storeTransfer,omitempty"`
+
+				// SupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SupportCase *[]ACLAction `json:"supportCase,omitempty"`
+
+				// SupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SupportCaseComment *[]ACLAction `json:"supportCaseComment,omitempty"`
+
+				// Team Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Team *[]ACLAction `json:"team,omitempty"`
+
+				// TeamAccessRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamAccessRequest *[]ACLAction `json:"teamAccessRequest,omitempty"`
+
+				// TeamFellowMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamFellowMembership *[]ACLAction `json:"teamFellowMembership,omitempty"`
+
+				// TeamGitExclusivity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamGitExclusivity *[]ACLAction `json:"teamGitExclusivity,omitempty"`
+
+				// TeamInvite Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamInvite *[]ACLAction `json:"teamInvite,omitempty"`
+
+				// TeamInviteCode Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamInviteCode *[]ACLAction `json:"teamInviteCode,omitempty"`
+
+				// TeamInviteLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamInviteLink *[]ACLAction `json:"teamInviteLink,omitempty"`
+
+				// TeamJoin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamJoin *[]ACLAction `json:"teamJoin,omitempty"`
+
+				// TeamMemberMfaStatus Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamMemberMfaStatus *[]ACLAction `json:"teamMemberMfaStatus,omitempty"`
+
+				// TeamMicrofrontends Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamMicrofrontends *[]ACLAction `json:"teamMicrofrontends,omitempty"`
+
+				// TeamOwnMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamOwnMembership *[]ACLAction `json:"teamOwnMembership,omitempty"`
+
+				// TeamOwnMembershipDisconnectSAML Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamOwnMembershipDisconnectSAML *[]ACLAction `json:"teamOwnMembershipDisconnectSAML,omitempty"`
+
+				// TeamSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamSudo *[]ACLAction `json:"teamSudo,omitempty"`
+
+				// TeamTokenInvalidation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TeamTokenInvalidation *[]ACLAction `json:"teamTokenInvalidation,omitempty"`
+
+				// Token Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Token *[]ACLAction `json:"token,omitempty"`
+
+				// ToolbarComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				ToolbarComment *[]ACLAction `json:"toolbarComment,omitempty"`
+
+				// TrustedIps Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TrustedIps *[]ACLAction `json:"trustedIps,omitempty"`
+
+				// TrustedSources Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				TrustedSources *[]ACLAction `json:"trustedSources,omitempty"`
+
+				// Usage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Usage *[]ACLAction `json:"usage,omitempty"`
+
+				// UsageCycle Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				UsageCycle *[]ACLAction `json:"usageCycle,omitempty"`
+
+				// User Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				User *[]ACLAction `json:"user,omitempty"`
+
+				// UserConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				UserConnection *[]ACLAction `json:"userConnection,omitempty"`
+
+				// UserMfaConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				UserMfaConfiguration *[]ACLAction `json:"userMfaConfiguration,omitempty"`
+
+				// UserPreference Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				UserPreference *[]ACLAction `json:"userPreference,omitempty"`
+
+				// UserSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				UserSudo *[]ACLAction `json:"userSudo,omitempty"`
+
+				// V0Chat Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				V0Chat *[]ACLAction `json:"v0Chat,omitempty"`
+
+				// VcrRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				VcrRepository *[]ACLAction `json:"vcrRepository,omitempty"`
+
+				// VercelAppInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				VercelAppInstallation *[]ACLAction `json:"vercelAppInstallation,omitempty"`
+
+				// VercelAppInstallationRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				VercelAppInstallationRequest *[]ACLAction `json:"vercelAppInstallationRequest,omitempty"`
+
+				// VercelAuth Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				VercelAuth *[]ACLAction `json:"vercelAuth,omitempty"`
+
+				// VercelRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				VercelRun *[]ACLAction `json:"vercelRun,omitempty"`
+
+				// VpcPeeringConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				VpcPeeringConnection *[]ACLAction `json:"vpcPeeringConnection,omitempty"`
+
+				// WebAnalytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				WebAnalytics *[]ACLAction `json:"webAnalytics,omitempty"`
+
+				// WebAnalyticsPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				WebAnalyticsPlan *[]ACLAction `json:"webAnalyticsPlan,omitempty"`
+
+				// WebAuthn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				WebAuthn *[]ACLAction `json:"webAuthn,omitempty"`
+
+				// Webhook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Webhook *[]ACLAction `json:"webhook,omitempty"`
+
+				// WebhookEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				WebhookEvent *[]ACLAction `json:"webhook-event,omitempty"`
+
+				// WorkflowRunData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				WorkflowRunData *[]ACLAction `json:"workflowRunData,omitempty"`
+			} `json:"permissions,omitempty"`
+			ProductionDeploymentsFastLane *CreateProject200JSONResponseBodyProductionDeploymentsFastLane                     `json:"productionDeploymentsFastLane,omitempty"`
+			ProtectedSourcemaps           *CreateProject200JSONResponseBodyProtectedSourcemaps                               `json:"protectedSourcemaps,omitempty"`
+			ProtectionBypass              *map[string]CreateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+			ProtectionConfig              *struct {
+				SandboxUrls *struct {
+					InheritDeploymentProtection *CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
+				} `json:"sandboxUrls,omitempty"`
+			} `json:"protectionConfig,omitempty"`
+			ResourceConfig struct {
+				BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
+				BuildMachineElasticReason      *CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
+				BuildMachineElasticTransition  *struct {
+					AlgorithmVersion string                                                                               `json:"algorithmVersion"`
+					At               float32                                                                              `json:"at"`
+					Direction        CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
+				} `json:"buildMachineElasticTransition,omitempty"`
+				BuildMachineSelection *CreateProject200JSONResponseBodyResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
+				BuildMachineType      *CreateProject200JSONResponseBodyResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
+				BuildQueue            *struct {
+					Configuration *CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+				} `json:"buildQueue,omitempty"`
+				ElasticBuildMachine        *CreateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
+				ElasticConcurrencyEnabled  *CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
+				EnableFunctionsBeta        *CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
+				Fluid                      *CreateProject200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
+				FunctionDefaultMemoryType  *CreateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
+				FunctionDefaultRegions     []string                                                                  `json:"functionDefaultRegions"`
+				FunctionDefaultTimeout     *float32                                                                  `json:"functionDefaultTimeout,omitempty"`
+				FunctionZeroConfigFailover *CreateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
+				IsNSNBDisabled             *CreateProject200JSONResponseBodyResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
+			} `json:"resourceConfig"`
+
+			// RollbackDescription Description of why a project was rolled back, and by whom. Note that lastAliasRequest contains the from/to details of the rollback.
+			RollbackDescription *struct {
+				// CreatedAt Timestamp of when the rollback was requested.
+				CreatedAt float32 `json:"createdAt"`
+
+				// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
+				Description string `json:"description"`
+
+				// UserId The user who rolled back the project.
+				UserId string `json:"userId"`
+
+				// Username The username of the user who rolled back the project.
+				Username string `json:"username"`
+			} `json:"rollbackDescription,omitempty"`
+
+			// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
+			RollingRelease *struct {
+				// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
+				//
+				// Example: false
+				CanaryResponseHeader *CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
+
+				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
+				Gate *struct {
+					// Action What to do when the gate trips: pause the rollout, or roll it back.
+					Action CreateProject200JSONResponseBodyRollingReleaseGateAction `json:"action"`
+
+					// Checks The checks to evaluate. An empty array means nothing is evaluated.
+					Checks []struct {
+						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
+						//
+						// Example: ["/api/health"]
+						ExcludePaths *[]string `json:"excludePaths,omitempty"`
+
+						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
+						//
+						// Example: [503]
+						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
+
+						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
+						//
+						// Example: 30
+						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
+
+						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
+						//
+						// Example: 0.05
+						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
+
+						// Type The metric this check evaluates.
+						Type CreateProject200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
+					} `json:"checks"`
+
+					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
+					DryRun CreateProject200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
+
+					// Enabled Whether automated gating is enabled for this project's rollouts.
+					Enabled CreateProject200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
+
+					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
+					//
+					// Example: 3
+					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+
+					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
+					//
+					// Example: 5
+					WindowSize *float32 `json:"windowSize,omitempty"`
+				} `json:"gate,omitempty"`
+
+				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
+				Stages *[]struct {
+					// Duration Duration in minutes for automatic advancement to the next stage
+					//
+					// Example: 600
+					Duration *float32 `json:"duration,omitempty"`
+
+					// LinearShift Whether to linearly shift traffic over the duration of this stage
+					//
+					// Example: false
+					LinearShift *CreateProject200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+					// RequireApproval Whether or not this stage requires manual approval to proceed
+					//
+					// Example: false
+					RequireApproval *CreateProject200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
+
+					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+					//
+					// Example: 25
+					TargetPercentage float32 `json:"targetPercentage"`
+				} `json:"stages,omitempty"`
+
+				// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
+				//
+				// Example: production
+				Target string `json:"target"`
+			} `json:"rollingRelease,omitempty"`
+			RootDirectory *string `json:"rootDirectory,omitempty"`
+			Sandbox       *struct {
+				FailoverRegions *[]CreateProject200JSONResponseBodySandboxFailoverRegions `json:"failoverRegions,omitempty"`
+				Region          *CreateProject200JSONResponseBodySandboxRegion            `json:"region,omitempty"`
+			} `json:"sandbox,omitempty"`
+			Security *struct {
+				AttackModeActiveUntil  *float32                                                        `json:"attackModeActiveUntil,omitempty"`
+				AttackModeEnabled      *CreateProject200JSONResponseBodySecurityAttackModeEnabled      `json:"attackModeEnabled,omitempty"`
+				AttackModeUpdatedAt    *float32                                                        `json:"attackModeUpdatedAt,omitempty"`
+				BotIdEnabled           *CreateProject200JSONResponseBodySecurityBotIdEnabled           `json:"botIdEnabled,omitempty"`
+				FirewallBypassIps      *[]string                                                       `json:"firewallBypassIps,omitempty"`
+				FirewallConfigVersion  *float32                                                        `json:"firewallConfigVersion,omitempty"`
+				FirewallEnabled        *CreateProject200JSONResponseBodySecurityFirewallEnabled        `json:"firewallEnabled,omitempty"`
+				FirewallSeawallEnabled *CreateProject200JSONResponseBodySecurityFirewallSeawallEnabled `json:"firewallSeawallEnabled,omitempty"`
+				FirewallUpdatedAt      *float32                                                        `json:"firewallUpdatedAt,omitempty"`
+				Ja3Enabled             *CreateProject200JSONResponseBodySecurityJa3Enabled             `json:"ja3Enabled,omitempty"`
+				Ja4Enabled             *CreateProject200JSONResponseBodySecurityJa4Enabled             `json:"ja4Enabled,omitempty"`
+				LogHeaders             *CreateProject200JSONResponseBody_Security_LogHeaders           `json:"log_headers,omitempty"`
+				ManagedRules           *struct {
+					AiBots struct {
+						Action *CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction `json:"action,omitempty"`
+						Active CreateProject200JSONResponseBodySecurityManagedRulesAiBotsActive  `json:"active"`
+					} `json:"ai_bots"`
+					BotFilter struct {
+						Action *CreateProject200JSONResponseBodySecurityManagedRulesBotFilterAction `json:"action,omitempty"`
+						Active CreateProject200JSONResponseBodySecurityManagedRulesBotFilterActive  `json:"active"`
+					} `json:"bot_filter"`
+					Owasp struct {
+						Action *CreateProject200JSONResponseBodySecurityManagedRulesOwaspAction `json:"action,omitempty"`
+						Active CreateProject200JSONResponseBodySecurityManagedRulesOwaspActive  `json:"active"`
+					} `json:"owasp"`
+					TrafficSources struct {
+						Action *CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesAction `json:"action,omitempty"`
+						Active CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesActive  `json:"active"`
+					} `json:"traffic_sources"`
+					VercelRuleset struct {
+						Action *CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetAction `json:"action,omitempty"`
+						Active CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetActive  `json:"active"`
+					} `json:"vercel_ruleset"`
+				} `json:"managedRules,omitempty"`
+
+				// PageIntegrityEnabled Whether Page Integrity is enabled for this project. Used by the metadata service to gate DynamoDB lookups against the page-integrity-inventory table.
+				PageIntegrityEnabled *CreateProject200JSONResponseBodySecurityPageIntegrityEnabled `json:"pageIntegrityEnabled,omitempty"`
+				Rulesets             *map[string]struct {
+					Action         CreateProject200JSONResponseBodySecurityRulesetsAction         `json:"action"`
+					ActionDuration *string                                                        `json:"actionDuration,omitempty"`
+					BypassSystem   *CreateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
+					LogHeaders     *CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
+					RateLimit      *struct {
+						Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
+						Keys   []string                                                      `json:"keys"`
+						Limit  float32                                                       `json:"limit"`
+						Window float32                                                       `json:"window"`
+					} `json:"rateLimit,omitempty"`
+					Redirect *struct {
+						Location  string                                                            `json:"location"`
+						Permanent CreateProject200JSONResponseBodySecurityRulesetsRedirectPermanent `json:"permanent"`
+					} `json:"redirect,omitempty"`
+				} `json:"rulesets,omitempty"`
+			} `json:"security,omitempty"`
+			ServerlessFunctionZeroConfigFailover *CreateProject200JSONResponseBodyServerlessFunctionZeroConfigFailover `json:"serverlessFunctionZeroConfigFailover,omitempty"`
+			Services                             *[]struct {
+				// Framework Framework slug, when the service has one (omitted otherwise).
+				Framework *CreateProject200JSONResponseBodyServicesFramework `json:"framework,omitempty"`
+
+				// Runtime Generic runtime, e.g. 'node' | 'python' | 'go' | 'ruby' | 'rust' (Service.runtime). Omitted for static builds.
+				Runtime *string `json:"runtime,omitempty"`
+
+				// ServiceName Service name from the deployment (Service.name).
+				ServiceName string `json:"serviceName"`
+
+				// ServiceType Service kind (Service.type). Omitted for schemas that do not define one.
+				ServiceType *CreateProject200JSONResponseBodyServicesServiceType `json:"serviceType,omitempty"`
+			} `json:"services,omitempty"`
+			SkewProtectionAllowedDomains    *[]string                                                        `json:"skewProtectionAllowedDomains,omitempty"`
+			SkewProtectionBoundaryAt        *float32                                                         `json:"skewProtectionBoundaryAt,omitempty"`
+			SkewProtectionMaxAge            *float32                                                         `json:"skewProtectionMaxAge,omitempty"`
+			SkipGitConnectDuringLink        *CreateProject200JSONResponseBodySkipGitConnectDuringLink        `json:"skipGitConnectDuringLink,omitempty"`
+			SourceFilesOutsideRootDirectory *CreateProject200JSONResponseBodySourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+			SpeedInsights                   *struct {
+				CanceledAt *float32 `json:"canceledAt,omitempty"`
+
+				// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+				DataReceivedAt *float32                                              `json:"dataReceivedAt,omitempty"`
+				DisabledAt     *float32                                              `json:"disabledAt,omitempty"`
+				EnabledAt      *float32                                              `json:"enabledAt,omitempty"`
+				HasData        *CreateProject200JSONResponseBodySpeedInsightsHasData `json:"hasData,omitempty"`
+				Id             string                                                `json:"id"`
+				PaidAt         *float32                                              `json:"paidAt,omitempty"`
+			} `json:"speedInsights,omitempty"`
+			SsoProtection *struct {
+				April2026SecurityIncidentMigrationAppliedFrom *CreateProject200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
+				Cve55182MigrationAppliedFrom                  *CreateProject200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
+				DeploymentType                                CreateProject200JSONResponseBodySsoProtectionDeploymentType                                 `json:"deploymentType"`
+			} `json:"ssoProtection,omitempty"`
+			StaticIps *struct {
+				Builds  CreateProject200JSONResponseBodyStaticIpsBuilds  `json:"builds"`
+				Enabled CreateProject200JSONResponseBodyStaticIpsEnabled `json:"enabled"`
+				Regions []string                                         `json:"regions"`
+			} `json:"staticIps,omitempty"`
+			Targets *map[string]*struct {
+				Alias         *[]string                                               `json:"alias,omitempty"`
+				AliasAssigned *CreateProject200JSONResponseBody_Targets_AliasAssigned `json:"aliasAssigned,omitempty"`
+				AliasError    *struct {
+					Code    string `json:"code"`
+					Message string `json:"message"`
+				} `json:"aliasError,omitempty"`
+				AliasFinal       *string   `json:"aliasFinal,omitempty"`
+				AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
+				BranchMatcher    *struct {
+					// Pattern The pattern to match against branch names
+					Pattern string `json:"pattern"`
+
+					// Type The type of matching to perform
+					Type CreateProject200JSONResponseBodyTargetsBranchMatcherType `json:"type"`
+				} `json:"branchMatcher,omitempty"`
+				BuildingAt *float32 `json:"buildingAt,omitempty"`
+				Builds     *[]struct {
+					Dest *string `json:"dest,omitempty"`
+					Src  *string `json:"src,omitempty"`
+					Use  string  `json:"use"`
+				} `json:"builds,omitempty"`
+				ChecksConclusion       *CreateProject200JSONResponseBodyTargetsChecksConclusion     `json:"checksConclusion,omitempty"`
+				ChecksState            *CreateProject200JSONResponseBodyTargetsChecksState          `json:"checksState,omitempty"`
+				ConnectBuildsEnabled   *CreateProject200JSONResponseBodyTargetsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+				ConnectConfigurationId *string                                                      `json:"connectConfigurationId,omitempty"`
+				CreatedAt              float32                                                      `json:"createdAt"`
+				CreatedIn              string                                                       `json:"createdIn"`
+				Creator                *struct {
+					Email       string  `json:"email"`
+					GithubLogin *string `json:"githubLogin,omitempty"`
+					GitlabLogin *string `json:"gitlabLogin,omitempty"`
+					Uid         string  `json:"uid"`
+					Username    string  `json:"username"`
+				} `json:"creator"`
+				DeletedAt          *float32                                       `json:"deletedAt,omitempty"`
+				DeploymentHostname string                                         `json:"deploymentHostname"`
+				Forced             *CreateProject200JSONResponseBodyTargetsForced `json:"forced,omitempty"`
+				Id                 string                                         `json:"id"`
+				Meta               *map[string]string                             `json:"meta,omitempty"`
+				MonorepoManager    *string                                        `json:"monorepoManager,omitempty"`
+				Name               string                                         `json:"name"`
+				OidcTokenClaims    *struct {
+					Aud                 string    `json:"aud"`
+					CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+					DeploymentId        *string   `json:"deployment_id,omitempty"`
+					Environment         string    `json:"environment"`
+					Iss                 string    `json:"iss"`
+					MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+					Owner               string    `json:"owner"`
+					OwnerId             string    `json:"owner_id"`
+					Plan                *string   `json:"plan,omitempty"`
+					Project             string    `json:"project"`
+					ProjectId           string    `json:"project_id"`
+					Scope               string    `json:"scope"`
+					Sub                 string    `json:"sub"`
+				} `json:"oidcTokenClaims,omitempty"`
+				Plan CreateProject200JSONResponseBodyTargetsPlan `json:"plan"`
+
+				// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+				//
+				// Example: false
+				PreviewCommentsEnabled *CreateProject200JSONResponseBodyTargetsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+				Private                CreateProject200JSONResponseBodyTargetsPrivate                 `json:"private"`
+				ReadyAt                *float32                                                       `json:"readyAt,omitempty"`
+				ReadyState             CreateProject200JSONResponseBodyTargetsReadyState              `json:"readyState"`
+				ReadySubstate          *CreateProject200JSONResponseBodyTargetsReadySubstate          `json:"readySubstate,omitempty"`
+				RequestedAt            *float32                                                       `json:"requestedAt,omitempty"`
+				Target                 *string                                                        `json:"target,omitempty"`
+				TeamId                 *string                                                        `json:"teamId,omitempty"`
+				Type                   CreateProject200JSONResponseBodyTargetsType                    `json:"type"`
+				Url                    string                                                         `json:"url"`
+
+				// UserId Present for user creators; omitted for app/integration/system creators.
+				UserId    *string                                           `json:"userId,omitempty"`
+				WithCache *CreateProject200JSONResponseBodyTargetsWithCache `json:"withCache,omitempty"`
+			} `json:"targets,omitempty"`
+			Tier    *CreateProject200JSONResponseBodyTier `json:"tier,omitempty"`
+			Tracing *struct {
+				Domains       *string   `json:"domains,omitempty"`
+				IgnorePaths   *[]string `json:"ignorePaths,omitempty"`
+				SamplingRules *[]struct {
+					// Destination Which tracing destination this rule applies to. `internal` is the hidden Vercel production-tracing drain (internal delivery); `external` is any customer-configured drain. Derived from the owning drain's delivery type when project tracing is computed; absent on configs persisted before this field existed.
+					Destination *CreateProject200JSONResponseBodyTracingSamplingRulesDestination `json:"destination,omitempty"`
+					Env         *CreateProject200JSONResponseBodyTracingSamplingRulesEnv         `json:"env,omitempty"`
+					Rate        float32                                                          `json:"rate"`
+					RequestPath *string                                                          `json:"requestPath,omitempty"`
+				} `json:"samplingRules,omitempty"`
+			} `json:"tracing,omitempty"`
+			TransferCompletedAt      *float32                                     `json:"transferCompletedAt,omitempty"`
+			TransferStartedAt        *float32                                     `json:"transferStartedAt,omitempty"`
+			TransferToAccountId      *string                                      `json:"transferToAccountId,omitempty"`
+			TransferredFromAccountId *string                                      `json:"transferredFromAccountId,omitempty"`
+			TrustedIps               *CreateProject200JSONResponseBody_TrustedIps `json:"trustedIps,omitempty"`
+			TrustedSources           *struct {
+				// EnableVercelCiSameRepository Allow same-team Vercel CI access to preview and production deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
+				EnableVercelCiSameRepository *CreateProject200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository `json:"enableVercelCiSameRepository,omitempty"`
+				OidcProviders                *map[string][]struct {
+					Claims map[string][]string                                              `json:"claims"`
+					Label  *string                                                          `json:"label,omitempty"`
+					To     CreateProject200JSONResponseBody_TrustedSources_OidcProviders_To `json:"to"`
+				} `json:"oidcProviders,omitempty"`
+				Projects *map[string]struct {
+					// CustomAllow Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project.
+					CustomAllow *[]struct {
+						From CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From `json:"from"`
+						To   CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To   `json:"to"`
+					} `json:"customAllow,omitempty"`
+					Label *string `json:"label,omitempty"`
+				} `json:"projects,omitempty"`
+			} `json:"trustedSources,omitempty"`
+			UpdatedAt   *float32 `json:"updatedAt,omitempty"`
+			UsageStatus *struct {
+				// BypassThrottleUntil Timestamp until which throttling is bypassed (project pays list rates for overage).
+				BypassThrottleUntil *float32 `json:"bypassThrottleUntil,omitempty"`
+
+				// ExceededAllowanceUntil Timestamp until which the project has exceeded its CDN allowance.
+				ExceededAllowanceUntil *float32 `json:"exceededAllowanceUntil,omitempty"`
+
+				// Kind Billing mode. Always 'flat' for flat-rate projects.
+				Kind CreateProject200JSONResponseBodyUsageStatusKind `json:"kind"`
+
+				// TeamThrottled Synced from `team.billing.usageStatus.throttled`. When `true`, the team has throttled all of its projects regardless of `throttled`. The effective throttle the CDN enforces is `throttled || teamThrottled`.
+				TeamThrottled *CreateProject200JSONResponseBodyUsageStatusTeamThrottled `json:"teamThrottled,omitempty"`
+
+				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
+				Throttled *CreateProject200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
+			} `json:"usageStatus,omitempty"`
+			V0          *CreateProject200JSONResponseBodyV0        `json:"v0,omitempty"`
+			V0Created   *CreateProject200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
+			VercelFlags *struct {
+				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
+			WebAnalytics *struct {
+				CanceledAt *float32                                             `json:"canceledAt,omitempty"`
+				DisabledAt *float32                                             `json:"disabledAt,omitempty"`
+				EnabledAt  *float32                                             `json:"enabledAt,omitempty"`
+				HasData    *CreateProject200JSONResponseBodyWebAnalyticsHasData `json:"hasData,omitempty"`
+				Id         string                                               `json:"id"`
+			} `json:"webAnalytics,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 428:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCancelDeploymentResponse parses an HTTP response from a CancelDeploymentWithResponse call
+func ParseCancelDeploymentResponse(rsp *http.Response) (*CancelDeploymentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CancelDeploymentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Alias A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
+			//
+			// Example: []
+			Alias *[]string `json:"alias,omitempty"`
+
+			// AliasAssigned A boolean that will be true when the aliases from the alias property were assigned successfully
+			//
+			// Example: true
+			AliasAssigned   CancelDeployment200JSONResponseBodyAliasAssigned     `json:"aliasAssigned"`
+			AliasAssignedAt *CancelDeployment200JSONResponseBody_AliasAssignedAt `json:"aliasAssignedAt,omitempty"`
+
+			// AliasError An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+			AliasError *struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"aliasError,omitempty"`
+			AliasFinal   *string `json:"aliasFinal,omitempty"`
+			AliasWarning *struct {
+				Action  *string `json:"action,omitempty"`
+				Code    string  `json:"code"`
+				Link    *string `json:"link,omitempty"`
+				Message string  `json:"message"`
+			} `json:"aliasWarning,omitempty"`
+			AlwaysRefuseToBuild *CancelDeployment200JSONResponseBodyAlwaysRefuseToBuild `json:"alwaysRefuseToBuild,omitempty"`
+			Atproto             *CancelDeployment200JSONResponseBody_Atproto            `json:"atproto,omitempty"`
+
+			// Attribution Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
+			Attribution *struct {
+				// CommitMeta Commit metadata from the git commit author
+				CommitMeta *struct {
+					// Email Email from git commit author
+					Email *string `json:"email,omitempty"`
+
+					// IsVerified Whether the commit was signed/verified (GitHub only, others return undefined)
+					IsVerified *CancelDeployment200JSONResponseBodyAttributionCommitMetaIsVerified `json:"isVerified,omitempty"`
+
+					// Name Name from git commit author
+					Name *string `json:"name,omitempty"`
+				} `json:"commitMeta,omitempty"`
+
+				// GitUser Git provider user associated with the commit author email (only set if resolved)
+				GitUser *struct {
+					Id CancelDeployment200JSONResponseBody_Attribution_GitUser_Id `json:"id"`
+
+					// Login Git provider username/login
+					Login string `json:"login"`
+
+					// Provider The git provider (github, gitlab, bitbucket)
+					Provider *string `json:"provider,omitempty"`
+
+					// Type User type
+					Type *string `json:"type,omitempty"`
+				} `json:"gitUser,omitempty"`
+
+				// VercelUser Vercel user linked to the git provider account (only set if resolved)
+				VercelUser *struct {
+					// Id Vercel user ID
+					Id string `json:"id"`
+
+					// TeamRoles Team roles at time of deployment
+					TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+					// Username Vercel username
+					Username string `json:"username"`
+				} `json:"vercelUser,omitempty"`
+			} `json:"attribution,omitempty"`
+
+			// AutoAssignCustomDomains applies to custom domains only, defaults to `true`
+			AutoAssignCustomDomains *CancelDeployment200JSONResponseBodyAutoAssignCustomDomains `json:"autoAssignCustomDomains,omitempty"`
+			AutomaticAliases        *[]string                                                   `json:"automaticAliases,omitempty"`
+			BootedAt                float32                                                     `json:"bootedAt"`
+			Build                   struct {
+				Env []string `json:"env"`
+			} `json:"build"`
+			BuildArtifactUrls *[]string `json:"buildArtifactUrls,omitempty"`
+
+			// BuildContainerFinishedAt Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
+			BuildContainerFinishedAt *float32                                        `json:"buildContainerFinishedAt,omitempty"`
+			BuildErrorAt             *float32                                        `json:"buildErrorAt,omitempty"`
+			BuildSkipped             CancelDeployment200JSONResponseBodyBuildSkipped `json:"buildSkipped"`
+			BuildingAt               float32                                         `json:"buildingAt"`
+			Builds                   *[]struct {
+				Config *map[string]interface{} `json:"config,omitempty"`
+				Src    *string                 `json:"src,omitempty"`
+				Use    string                  `json:"use"`
+			} `json:"builds,omitempty"`
+			CanceledAt *float32 `json:"canceledAt,omitempty"`
+			Checks     *struct {
+				DeploymentAlias struct {
+					CompletedAt *float32                                                      `json:"completedAt,omitempty"`
+					StartedAt   float32                                                       `json:"startedAt"`
+					State       CancelDeployment200JSONResponseBodyChecksDeploymentAliasState `json:"state"`
+				} `json:"deployment-alias"`
+			} `json:"checks,omitempty"`
+			ChecksConclusion *CancelDeployment200JSONResponseBodyChecksConclusion `json:"checksConclusion,omitempty"`
+			ChecksState      *CancelDeployment200JSONResponseBodyChecksState      `json:"checksState,omitempty"`
+
+			// Config Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
+			Config *struct {
+				FunctionMemoryType CancelDeployment200JSONResponseBodyConfigFunctionMemoryType `json:"functionMemoryType"`
+				FunctionTimeout    *float32                                                    `json:"functionTimeout"`
+				FunctionType       CancelDeployment200JSONResponseBodyConfigFunctionType       `json:"functionType"`
+				IsUsingActiveCPU   *CancelDeployment200JSONResponseBodyConfigIsUsingActiveCPU  `json:"isUsingActiveCPU,omitempty"`
+
+				// ResourceConfig Build resource configuration snapshot for this deployment.
+				ResourceConfig *struct {
+					BuildMachine *struct {
+						// PurchaseType Machine type that was used for the build.
+						PurchaseType *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
+					} `json:"buildMachine,omitempty"`
+
+					// BuildQueue Build resource configuration snapshot for this deployment.
+					BuildQueue *struct {
+						// Configuration Build resource configuration snapshot for this deployment.
+						Configuration *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+					} `json:"buildQueue,omitempty"`
+
+					// ElasticConcurrency When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues
+					ElasticConcurrency *CancelDeployment200JSONResponseBodyConfigResourceConfigElasticConcurrency `json:"elasticConcurrency,omitempty"`
+				} `json:"resourceConfig,omitempty"`
+				SecureComputeFallbackRegion *string  `json:"secureComputeFallbackRegion"`
+				SecureComputePrimaryRegion  *string  `json:"secureComputePrimaryRegion"`
+				Version                     *float32 `json:"version,omitempty"`
+			} `json:"config,omitempty"`
+			ConnectBuildsEnabled   *CancelDeployment200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+			ConnectConfigurationId *string                                                  `json:"connectConfigurationId,omitempty"`
+
+			// CreatedAt A number containing the date when the deployment was created in milliseconds
+			//
+			// Example: 1540257589405
+			CreatedAt float32 `json:"createdAt"`
+			CreatedIn string  `json:"createdIn"`
+
+			// Creator Information about the deployment creator
+			Creator struct {
+				// Avatar The avatar of the user that created the deployment
+				Avatar *string `json:"avatar,omitempty"`
+
+				// Type Principal type of the deployment creator.
+				Type *CancelDeployment200JSONResponseBodyCreatorType `json:"type,omitempty"`
+
+				// Uid Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
+				//
+				// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
+				Uid string `json:"uid"`
+
+				// Username The username of the user that created the deployment
+				//
+				// Example: john-doe
+				Username *string `json:"username,omitempty"`
+			} `json:"creator"`
+			Crons *[]struct {
+				Path     string `json:"path"`
+				Schedule string `json:"schedule"`
+			} `json:"crons,omitempty"`
+			CustomEnvironment *CancelDeployment200JSONResponseBody_CustomEnvironment `json:"customEnvironment,omitempty"`
+
+			// DefaultRoute Computed field that is only available for deployments with a microfrontend configuration.
+			DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+			// DeletedAt A number containing the date when the deployment was deleted at milliseconds
+			//
+			// Example: 1540257589405
+			DeletedAt *float32 `json:"deletedAt,omitempty"`
+			Duration  struct {
+				// EndTime Unix timestamp in milliseconds when the build container exited.
+				EndTime *float32 `json:"endTime,omitempty"`
+
+				// EndTimeCapped Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
+				EndTimeCapped *float32 `json:"endTimeCapped,omitempty"`
+
+				// StartTime Unix timestamp in milliseconds when the deployment entered BUILDING.
+				StartTime *float32 `json:"startTime,omitempty"`
+
+				// TimeForBilling Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
+				TimeForBilling *float32 `json:"timeForBilling,omitempty"`
+
+				// TimeToContainerExit Milliseconds from entering BUILDING until the build container exited, without the billing cap.
+				TimeToContainerExit *float32 `json:"timeToContainerExit,omitempty"`
+
+				// TimeToContainerExitCapped Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
+				TimeToContainerExitCapped *float32 `json:"timeToContainerExitCapped,omitempty"`
+
+				// TimeToReady Milliseconds from entering BUILDING until the deployment reached its current ready state.
+				TimeToReady *float32 `json:"timeToReady,omitempty"`
+			} `json:"duration"`
+			Env          []string                                   `json:"env"`
+			ErrorCode    *string                                    `json:"errorCode,omitempty"`
+			ErrorLink    *string                                    `json:"errorLink,omitempty"`
+			ErrorMessage *string                                    `json:"errorMessage,omitempty"`
+			ErrorStep    *string                                    `json:"errorStep,omitempty"`
+			Flags        *CancelDeployment200JSONResponseBody_Flags `json:"flags,omitempty"`
+			Functions    *map[string]struct {
+				Affinity *struct {
+					Mode CancelDeployment200JSONResponseBodyFunctionsAffinityMode `json:"mode"`
+				} `json:"affinity,omitempty"`
+				Architecture            *CancelDeployment200JSONResponseBodyFunctionsArchitecture                  `json:"architecture,omitempty"`
+				ExcludeFiles            *string                                                                    `json:"excludeFiles,omitempty"`
+				ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
+				FunctionFailoverRegions *[]string                                                                  `json:"functionFailoverRegions,omitempty"`
+				IncludeFiles            *string                                                                    `json:"includeFiles,omitempty"`
+
+				// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+				InstallCommand       *string                                                           `json:"installCommand,omitempty"`
+				MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
+				MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
+				Memory               *float32                                                          `json:"memory,omitempty"`
+				Regions              *[]string                                                         `json:"regions,omitempty"`
+				Runtime              *string                                                           `json:"runtime,omitempty"`
+				SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
+			} `json:"functions,omitempty"`
+			GitRepo   *CancelDeployment200JSONResponseBody_GitRepo   `json:"gitRepo,omitempty"`
+			GitSource *CancelDeployment200JSONResponseBody_GitSource `json:"gitSource,omitempty"`
+
+			// Id A string holding the unique ID of the deployment
+			//
+			// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+			Id     string `json:"id"`
+			Images *struct {
+				ContentDispositionType *CancelDeployment200JSONResponseBodyImagesContentDispositionType `json:"contentDispositionType,omitempty"`
+				ContentSecurityPolicy  *string                                                          `json:"contentSecurityPolicy,omitempty"`
+				DangerouslyAllowSVG    *CancelDeployment200JSONResponseBodyImagesDangerouslyAllowSVG    `json:"dangerouslyAllowSVG,omitempty"`
+				Domains                *[]string                                                        `json:"domains,omitempty"`
+				Formats                *[]CancelDeployment200JSONResponseBodyImagesFormats              `json:"formats,omitempty"`
+				LocalPatterns          *[]struct {
+					// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
+					Pathname *string `json:"pathname,omitempty"`
+
+					// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
+					Search *string `json:"search,omitempty"`
+				} `json:"localPatterns,omitempty"`
+				MinimumCacheTTL *float32   `json:"minimumCacheTTL,omitempty"`
+				Qualities       *[]float32 `json:"qualities,omitempty"`
+				RemotePatterns  *[]struct {
+					// Hostname Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any number of subdomains.
+					Hostname string `json:"hostname"`
+
+					// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
+					Pathname *string `json:"pathname,omitempty"`
+
+					// Port Can be literal port such as `8080` or empty string meaning no port.
+					Port *string `json:"port,omitempty"`
+
+					// Protocol Must be `http` or `https`.
+					Protocol *CancelDeployment200JSONResponseBodyImagesRemotePatternsProtocol `json:"protocol,omitempty"`
+
+					// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
+					Search *string `json:"search,omitempty"`
+				} `json:"remotePatterns,omitempty"`
+				Sizes *[]float32 `json:"sizes,omitempty"`
+			} `json:"images,omitempty"`
+			InitReadyAt  *float32 `json:"initReadyAt,omitempty"`
+			InspectorUrl *string  `json:"inspectorUrl"`
+			Integrations *struct {
+				ClaimedAt   *float32                                              `json:"claimedAt,omitempty"`
+				CompletedAt *float32                                              `json:"completedAt,omitempty"`
+				SkippedAt   *float32                                              `json:"skippedAt,omitempty"`
+				SkippedBy   *string                                               `json:"skippedBy,omitempty"`
+				StartedAt   float32                                               `json:"startedAt"`
+				Status      CancelDeployment200JSONResponseBodyIntegrationsStatus `json:"status"`
+			} `json:"integrations,omitempty"`
+			IsFirstBranchDeployment   *CancelDeployment200JSONResponseBodyIsFirstBranchDeployment  `json:"isFirstBranchDeployment,omitempty"`
+			IsInConcurrentBuildsQueue CancelDeployment200JSONResponseBodyIsInConcurrentBuildsQueue `json:"isInConcurrentBuildsQueue"`
+			IsInSystemBuildsQueue     CancelDeployment200JSONResponseBodyIsInSystemBuildsQueue     `json:"isInSystemBuildsQueue"`
+
+			// IsInstantStatic Whether this deployment completed through the instant static fast path.
+			IsInstantStatic *CancelDeployment200JSONResponseBodyIsInstantStatic `json:"isInstantStatic,omitempty"`
+			Lambdas         *[]struct {
+				CreatedAt  *float32 `json:"createdAt,omitempty"`
+				Entrypoint *string  `json:"entrypoint,omitempty"`
+				Id         string   `json:"id"`
+				Output     []struct {
+					FunctionName string `json:"functionName"`
+					Path         string `json:"path"`
+				} `json:"output"`
+				ReadyState   *CancelDeployment200JSONResponseBodyLambdasReadyState `json:"readyState,omitempty"`
+				ReadyStateAt *float32                                              `json:"readyStateAt,omitempty"`
+			} `json:"lambdas,omitempty"`
+
+			// ManualProvisioning Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+			ManualProvisioning *struct {
+				// CompletedAt Timestamp when manual provisioning completed
+				CompletedAt *float32 `json:"completedAt,omitempty"`
+
+				// State Current provisioning state
+				State CancelDeployment200JSONResponseBodyManualProvisioningState `json:"state"`
+			} `json:"manualProvisioning,omitempty"`
+			Meta            map[string]string                                   `json:"meta"`
+			Microfrontends  *CancelDeployment200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
+			MonorepoManager *string                                             `json:"monorepoManager,omitempty"`
+
+			// Name The name of the project associated with the deployment at the time that the deployment was created
+			//
+			// Example: my-project
+			Name string `json:"name"`
+
+			// NodeVersion If set it overrides the `projectSettings.nodeVersion` for this deployment.
+			NodeVersion     *CancelDeployment200JSONResponseBodyNodeVersion `json:"nodeVersion,omitempty"`
+			OidcTokenClaims *struct {
+				Aud                 string    `json:"aud"`
+				CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+				DeploymentId        *string   `json:"deployment_id,omitempty"`
+				Environment         string    `json:"environment"`
+				Iss                 string    `json:"iss"`
+				MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+				Owner               string    `json:"owner"`
+				OwnerId             string    `json:"owner_id"`
+				Plan                *string   `json:"plan,omitempty"`
+				Project             string    `json:"project"`
+				ProjectId           string    `json:"project_id"`
+				Scope               string    `json:"scope"`
+				Sub                 string    `json:"sub"`
+			} `json:"oidcTokenClaims,omitempty"`
+			OomReport         *CancelDeployment200JSONResponseBodyOomReport `json:"oomReport,omitempty"`
+			OriginCacheRegion *string                                       `json:"originCacheRegion,omitempty"`
+			OwnerId           string                                        `json:"ownerId"`
+
+			// PassiveConnectConfigurationId Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)
+			PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
+
+			// PassiveRegions Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
+			PassiveRegions *[]string                               `json:"passiveRegions,omitempty"`
+			Plan           CancelDeployment200JSONResponseBodyPlan `json:"plan"`
+
+			// Platform Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
+			Platform *struct {
+				// Creator The user on the external platform who triggered the deployment.
+				Creator struct {
+					// Avatar URL of the platform user's avatar image.
+					Avatar *string `json:"avatar,omitempty"`
+
+					// Name Display name of the platform user.
+					Name string `json:"name"`
+				} `json:"creator"`
+
+				// Meta Arbitrary key-value metadata provided by the platform.
+				Meta *map[string]string `json:"meta,omitempty"`
+
+				// Origin Reference back to the entity on the platform that initiated the deployment.
+				Origin struct {
+					// Type Whether the value is an opaque identifier or a URL.
+					Type CancelDeployment200JSONResponseBodyPlatformOriginType `json:"type"`
+
+					// Value The identifier or URL pointing to the originating entity.
+					Value string `json:"value"`
+				} `json:"origin"`
+
+				// Source The external platform that created the deployment (e.g. its display name).
+				Source struct {
+					// Name Display name of the platform.
+					Name string `json:"name"`
+				} `json:"source"`
+			} `json:"platform,omitempty"`
+			Prebuilt *CancelDeployment200JSONResponseBodyPrebuilt `json:"prebuilt,omitempty"`
+
+			// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+			//
+			// Example: false
+			PreviewCommentsEnabled *CancelDeployment200JSONResponseBodyPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+
+			// Project The public project information associated with the deployment.
+			Project *struct {
+				Framework *string `json:"framework,omitempty"`
+				Id        string  `json:"id"`
+				Name      string  `json:"name"`
+			} `json:"project,omitempty"`
+			ProjectId       string `json:"projectId"`
+			ProjectSettings struct {
+				BuildCommand                *string                                                        `json:"buildCommand,omitempty"`
+				CommandForIgnoringBuildStep *string                                                        `json:"commandForIgnoringBuildStep,omitempty"`
+				DevCommand                  *string                                                        `json:"devCommand,omitempty"`
+				Framework                   *CancelDeployment200JSONResponseBodyProjectSettingsFramework   `json:"framework,omitempty"`
+				InstallCommand              *string                                                        `json:"installCommand,omitempty"`
+				NodeVersion                 *CancelDeployment200JSONResponseBodyProjectSettingsNodeVersion `json:"nodeVersion,omitempty"`
+				OutputDirectory             *string                                                        `json:"outputDirectory,omitempty"`
+				SpeedInsights               *struct {
+					CanceledAt *float32 `json:"canceledAt,omitempty"`
+
+					// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+					DataReceivedAt *float32                                                                `json:"dataReceivedAt,omitempty"`
+					DisabledAt     *float32                                                                `json:"disabledAt,omitempty"`
+					EnabledAt      *float32                                                                `json:"enabledAt,omitempty"`
+					HasData        *CancelDeployment200JSONResponseBodyProjectSettingsSpeedInsightsHasData `json:"hasData,omitempty"`
+					Id             string                                                                  `json:"id"`
+					PaidAt         *float32                                                                `json:"paidAt,omitempty"`
+				} `json:"speedInsights,omitempty"`
+
+				// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+				VercelFlags *struct {
+					EnabledAt *float32 `json:"enabledAt,omitempty"`
+				} `json:"vercelFlags,omitempty"`
+				WebAnalytics *struct {
+					CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
+					DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
+					EnabledAt  *float32                                                               `json:"enabledAt,omitempty"`
+					HasData    *CancelDeployment200JSONResponseBodyProjectSettingsWebAnalyticsHasData `json:"hasData,omitempty"`
+					Id         string                                                                 `json:"id"`
+				} `json:"webAnalytics,omitempty"`
+			} `json:"projectSettings"`
+
+			// Public A boolean representing if the deployment is public or not. By default this is `false`
+			//
+			// Example: false
+			Public CancelDeployment200JSONResponseBodyPublic `json:"public"`
+			Ready  *float32                                  `json:"ready,omitempty"`
+
+			// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+			//
+			// Example: READY
+			ReadyState       CancelDeployment200JSONResponseBodyReadyState `json:"readyState"`
+			ReadyStateReason *string                                       `json:"readyStateReason,omitempty"`
+
+			// ReadySubstate Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
+			ReadySubstate *CancelDeployment200JSONResponseBodyReadySubstate `json:"readySubstate,omitempty"`
+
+			// Regions The regions the deployment exists in
+			//
+			// Example: ["sfo1"]
+			Regions        []string `json:"regions"`
+			ResourceConfig *struct {
+				BuildMachine *CancelDeployment200JSONResponseBody_ResourceConfig_BuildMachine `json:"buildMachine,omitempty"`
+			} `json:"resourceConfig,omitempty"`
+			Routes *[]CancelDeployment200JSONResponseBody_Routes_Item `json:"routes"`
+
+			// SeatBlock NSNB Blocked metadata
+			SeatBlock *struct {
+				// BlockCode The NSNB decision code for the seat block. TODO: We should consolidate block types.
+				BlockCode CancelDeployment200JSONResponseBodySeatBlockBlockCode `json:"blockCode"`
+
+				// GitProvider The git provider type associated with gitUserId.
+				GitProvider *CancelDeployment200JSONResponseBodySeatBlockGitProvider `json:"gitProvider,omitempty"`
+				GitUserId   *CancelDeployment200JSONResponseBody_SeatBlock_GitUserId `json:"gitUserId,omitempty"`
+
+				// IsVerified Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
+				IsVerified *CancelDeployment200JSONResponseBodySeatBlockIsVerified `json:"isVerified,omitempty"`
+
+				// UserId The blocked vercel user ID.
+				UserId *string `json:"userId,omitempty"`
+			} `json:"seatBlock,omitempty"`
+
+			// Services Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
+			Services *[]CancelDeployment200JSONResponseBody_Services_Item `json:"services,omitempty"`
+
+			// SoftDeletedByRetention flag to indicate if the deployment was deleted by retention policy
+			//
+			// Example: true
+			SoftDeletedByRetention *CancelDeployment200JSONResponseBodySoftDeletedByRetention `json:"softDeletedByRetention,omitempty"`
+
+			// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+			//
+			// Example: cli
+			Source *CancelDeployment200JSONResponseBodySource `json:"source,omitempty"`
+			Status CancelDeployment200JSONResponseBodyStatus  `json:"status"`
+
+			// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+			Target *CancelDeployment200JSONResponseBodyTarget `json:"target,omitempty"`
+
+			// Team The team that owns the deployment if any
+			Team *struct {
+				Avatar *string `json:"avatar,omitempty"`
+				Id     string  `json:"id"`
+				Name   string  `json:"name"`
+				Slug   string  `json:"slug"`
+			} `json:"team,omitempty"`
+			TtyBuildLogs *CancelDeployment200JSONResponseBodyTtyBuildLogs `json:"ttyBuildLogs,omitempty"`
+			Type         CancelDeployment200JSONResponseBodyType          `json:"type"`
+
+			// UndeletedAt A number containing the date when the deployment was undeleted at milliseconds
+			//
+			// Example: 1540257589405
+			UndeletedAt *float32 `json:"undeletedAt,omitempty"`
+
+			// Url A string with the unique URL of the deployment
+			//
+			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+			Url string `json:"url"`
+
+			// UserAliases An array of domains that were provided by the user when creating the Deployment.
+			//
+			// Example: ["sub1.example.com","sub2.example.com"]
+			UserAliases *[]string `json:"userAliases,omitempty"`
+
+			// UserConfiguredDeploymentId Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
+			//
+			// Example: abc123
+			UserConfiguredDeploymentId *string `json:"userConfiguredDeploymentId,omitempty"`
+
+			// Version The platform version that was used to create the deployment.
+			//
+			// Example: 2
+			Version CancelDeployment200JSONResponseBodyVersion `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateDeploymentResponse parses an HTTP response from a CreateDeploymentWithResponse call
+func ParseCreateDeploymentResponse(rsp *http.Response) (*CreateDeploymentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateDeploymentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CreateDeployment200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 426:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDeploymentResponse parses an HTTP response from a GetDeploymentWithResponse call
+func ParseGetDeploymentResponse(rsp *http.Response) (*GetDeploymentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDeploymentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetDeployment200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseDeleteDeploymentResponse parses an HTTP response from a DeleteDeploymentWithResponse call
 func ParseDeleteDeploymentResponse(rsp *http.Response) (*DeleteDeploymentResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -5753,7 +16386,6 @@ func ParseGetDeploymentsResponse(rsp *http.Response) (*GetDeploymentsResponse, e
 
 				// Checks Detailed information about v2 deployment checks. Includes information about blocked workflows in the deployment lifecycle.
 				Checks *struct {
-					// DeploymentAlias Detailed information about v2 deployment checks. Includes information about blocked workflows in the deployment lifecycle.
 					DeploymentAlias struct {
 						CompletedAt *float32                                                               `json:"completedAt,omitempty"`
 						StartedAt   float32                                                                `json:"startedAt"`
@@ -7445,6 +18077,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 
 				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
 				// AiGatewayCredits Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayCredits *[]ACLAction `json:"aiGatewayCredits,omitempty"`
@@ -9253,6 +19888,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
+
 				// AiGatewayCredits Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayCredits *[]ACLAction `json:"aiGatewayCredits,omitempty"`
 
@@ -10510,939 +21148,6 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectsByIdOrNameCustomEnvironmentsResponse parses an HTTP response from a GetProjectsByIdOrNameCustomEnvironmentsWithResponse call
-func ParseGetProjectsByIdOrNameCustomEnvironmentsResponse(rsp *http.Response) (*GetProjectsByIdOrNameCustomEnvironmentsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectsByIdOrNameCustomEnvironmentsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// AccountLimit The maximum number of custom environments allowed either by the team's plan type or a custom override.
-			AccountLimit struct {
-				Total float32 `json:"total"`
-			} `json:"accountLimit"`
-			Environments []struct {
-				// BranchMatcher Configuration for matching git branches to this environment
-				BranchMatcher *struct {
-					// Pattern The pattern to match against branch names
-					Pattern string `json:"pattern"`
-
-					// Type The type of matching to perform
-					Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsBranchMatcherType `json:"type"`
-				} `json:"branchMatcher,omitempty"`
-
-				// CreatedAt Timestamp when the environment was created
-				CreatedAt float32 `json:"createdAt"`
-
-				// CurrentDeploymentAliases List of aliases for the current deployment
-				CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-				// Description Optional description of the environment's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Domains List of domains associated with this environment
-				Domains *[]struct {
-					ApexName            string                                                                                           `json:"apexName"`
-					CreatedAt           *float32                                                                                         `json:"createdAt,omitempty"`
-					CustomEnvironmentId *string                                                                                          `json:"customEnvironmentId,omitempty"`
-					GitBranch           *string                                                                                          `json:"gitBranch,omitempty"`
-					Name                string                                                                                           `json:"name"`
-					ProjectId           string                                                                                           `json:"projectId"`
-					Redirect            *string                                                                                          `json:"redirect,omitempty"`
-					RedirectStatusCode  *GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-					UpdatedAt           *float32                                                                                         `json:"updatedAt,omitempty"`
-
-					// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-					Verification *[]struct {
-						Domain string `json:"domain"`
-						Reason string `json:"reason"`
-						Type   string `json:"type"`
-						Value  string `json:"value"`
-					} `json:"verification,omitempty"`
-
-					// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-					Verified GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsVerified `json:"verified"`
-				} `json:"domains,omitempty"`
-
-				// Id Unique identifier for the custom environment (format: env_*)
-				Id string `json:"id"`
-
-				// Slug URL-friendly name of the environment
-				Slug string `json:"slug"`
-
-				// Type The type of environment (production, preview, or development)
-				Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsType `json:"type"`
-
-				// UpdatedAt Timestamp when the environment was last updated
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"environments"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateCustomEnvironmentResponse parses an HTTP response from a CreateCustomEnvironmentWithResponse call
-func ParseCreateCustomEnvironmentResponse(rsp *http.Response) (*CreateCustomEnvironmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateCustomEnvironmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// BranchMatcher Configuration for matching git branches to this environment
-			BranchMatcher *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type CreateCustomEnvironment201JSONResponseBodyBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-
-			// CreatedAt Timestamp when the environment was created
-			CreatedAt float32 `json:"createdAt"`
-
-			// CurrentDeploymentAliases List of aliases for the current deployment
-			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-			// Description Optional description of the environment's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Domains List of domains associated with this environment
-			Domains *[]struct {
-				ApexName            string                                                               `json:"apexName"`
-				CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
-				CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
-				GitBranch           *string                                                              `json:"gitBranch,omitempty"`
-				Name                string                                                               `json:"name"`
-				ProjectId           string                                                               `json:"projectId"`
-				Redirect            *string                                                              `json:"redirect,omitempty"`
-				RedirectStatusCode  *CreateCustomEnvironment201JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-				UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
-
-				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-				Verification *[]struct {
-					Domain string `json:"domain"`
-					Reason string `json:"reason"`
-					Type   string `json:"type"`
-					Value  string `json:"value"`
-				} `json:"verification,omitempty"`
-
-				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-				Verified CreateCustomEnvironment201JSONResponseBodyDomainsVerified `json:"verified"`
-			} `json:"domains,omitempty"`
-
-			// Id Unique identifier for the custom environment (format: env_*)
-			Id string `json:"id"`
-
-			// Slug URL-friendly name of the environment
-			Slug string `json:"slug"`
-
-			// Type The type of environment (production, preview, or development)
-			Type CreateCustomEnvironment201JSONResponseBodyType `json:"type"`
-
-			// UpdatedAt Timestamp when the environment was last updated
-			UpdatedAt float32 `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveCustomEnvironmentResponse parses an HTTP response from a RemoveCustomEnvironmentWithResponse call
-func ParseRemoveCustomEnvironmentResponse(rsp *http.Response) (*RemoveCustomEnvironmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveCustomEnvironmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// BranchMatcher Configuration for matching git branches to this environment
-			BranchMatcher *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type RemoveCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-
-			// CreatedAt Timestamp when the environment was created
-			CreatedAt float32 `json:"createdAt"`
-
-			// CurrentDeploymentAliases List of aliases for the current deployment
-			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-			// Description Optional description of the environment's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Domains List of domains associated with this environment
-			Domains *[]struct {
-				ApexName            string                                                               `json:"apexName"`
-				CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
-				CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
-				GitBranch           *string                                                              `json:"gitBranch,omitempty"`
-				Name                string                                                               `json:"name"`
-				ProjectId           string                                                               `json:"projectId"`
-				Redirect            *string                                                              `json:"redirect,omitempty"`
-				RedirectStatusCode  *RemoveCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-				UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
-
-				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-				Verification *[]struct {
-					Domain string `json:"domain"`
-					Reason string `json:"reason"`
-					Type   string `json:"type"`
-					Value  string `json:"value"`
-				} `json:"verification,omitempty"`
-
-				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-				Verified RemoveCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
-			} `json:"domains,omitempty"`
-
-			// Id Unique identifier for the custom environment (format: env_*)
-			Id string `json:"id"`
-
-			// Slug URL-friendly name of the environment
-			Slug string `json:"slug"`
-
-			// Type The type of environment (production, preview, or development)
-			Type RemoveCustomEnvironment200JSONResponseBodyType `json:"type"`
-
-			// UpdatedAt Timestamp when the environment was last updated
-			UpdatedAt float32 `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetCustomEnvironmentResponse parses an HTTP response from a GetCustomEnvironmentWithResponse call
-func ParseGetCustomEnvironmentResponse(rsp *http.Response) (*GetCustomEnvironmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetCustomEnvironmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// BranchMatcher Configuration for matching git branches to this environment
-			BranchMatcher *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type GetCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-
-			// CreatedAt Timestamp when the environment was created
-			CreatedAt float32 `json:"createdAt"`
-
-			// CurrentDeploymentAliases List of aliases for the current deployment
-			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-			// Description Optional description of the environment's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Domains List of domains associated with this environment
-			Domains *[]struct {
-				ApexName            string                                                            `json:"apexName"`
-				CreatedAt           *float32                                                          `json:"createdAt,omitempty"`
-				CustomEnvironmentId *string                                                           `json:"customEnvironmentId,omitempty"`
-				GitBranch           *string                                                           `json:"gitBranch,omitempty"`
-				Name                string                                                            `json:"name"`
-				ProjectId           string                                                            `json:"projectId"`
-				Redirect            *string                                                           `json:"redirect,omitempty"`
-				RedirectStatusCode  *GetCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-				UpdatedAt           *float32                                                          `json:"updatedAt,omitempty"`
-
-				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-				Verification *[]struct {
-					Domain string `json:"domain"`
-					Reason string `json:"reason"`
-					Type   string `json:"type"`
-					Value  string `json:"value"`
-				} `json:"verification,omitempty"`
-
-				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-				Verified GetCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
-			} `json:"domains,omitempty"`
-
-			// Id Unique identifier for the custom environment (format: env_*)
-			Id string `json:"id"`
-
-			// Slug URL-friendly name of the environment
-			Slug string `json:"slug"`
-
-			// Type The type of environment (production, preview, or development)
-			Type GetCustomEnvironment200JSONResponseBodyType `json:"type"`
-
-			// UpdatedAt Timestamp when the environment was last updated
-			UpdatedAt float32 `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateCustomEnvironmentResponse parses an HTTP response from a UpdateCustomEnvironmentWithResponse call
-func ParseUpdateCustomEnvironmentResponse(rsp *http.Response) (*UpdateCustomEnvironmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateCustomEnvironmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// BranchMatcher Configuration for matching git branches to this environment
-			BranchMatcher *struct {
-				// Pattern The pattern to match against branch names
-				Pattern string `json:"pattern"`
-
-				// Type The type of matching to perform
-				Type UpdateCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
-			} `json:"branchMatcher,omitempty"`
-
-			// CreatedAt Timestamp when the environment was created
-			CreatedAt float32 `json:"createdAt"`
-
-			// CurrentDeploymentAliases List of aliases for the current deployment
-			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-			// Description Optional description of the environment's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Domains List of domains associated with this environment
-			Domains *[]struct {
-				ApexName            string                                                               `json:"apexName"`
-				CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
-				CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
-				GitBranch           *string                                                              `json:"gitBranch,omitempty"`
-				Name                string                                                               `json:"name"`
-				ProjectId           string                                                               `json:"projectId"`
-				Redirect            *string                                                              `json:"redirect,omitempty"`
-				RedirectStatusCode  *UpdateCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-				UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
-
-				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-				Verification *[]struct {
-					Domain string `json:"domain"`
-					Reason string `json:"reason"`
-					Type   string `json:"type"`
-					Value  string `json:"value"`
-				} `json:"verification,omitempty"`
-
-				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-				Verified UpdateCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
-			} `json:"domains,omitempty"`
-
-			// Id Unique identifier for the custom environment (format: env_*)
-			Id string `json:"id"`
-
-			// Slug URL-friendly name of the environment
-			Slug string `json:"slug"`
-
-			// Type The type of environment (production, preview, or development)
-			Type UpdateCustomEnvironment200JSONResponseBodyType `json:"type"`
-
-			// UpdatedAt Timestamp when the environment was last updated
-			UpdatedAt float32 `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectDomainsResponse parses an HTTP response from a GetProjectDomainsWithResponse call
-func ParseGetProjectDomainsResponse(rsp *http.Response) (*GetProjectDomainsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectDomainsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetProjectDomains200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveProjectDomainResponse parses an HTTP response from a RemoveProjectDomainWithResponse call
-func ParseRemoveProjectDomainResponse(rsp *http.Response) (*RemoveProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest map[string]interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectDomainResponse parses an HTTP response from a GetProjectDomainWithResponse call
-func ParseGetProjectDomainResponse(rsp *http.Response) (*GetProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ApexName            string                                                 `json:"apexName"`
-			CreatedAt           *float32                                               `json:"createdAt,omitempty"`
-			CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
-			GitBranch           *string                                                `json:"gitBranch,omitempty"`
-			Name                string                                                 `json:"name"`
-			ProjectId           string                                                 `json:"projectId"`
-			Redirect            *string                                                `json:"redirect,omitempty"`
-			RedirectStatusCode  *GetProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
-
-			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-			Verification *[]struct {
-				Domain string `json:"domain"`
-				Reason string `json:"reason"`
-				Type   string `json:"type"`
-				Value  string `json:"value"`
-			} `json:"verification,omitempty"`
-
-			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-			Verified GetProjectDomain200JSONResponseBodyVerified `json:"verified"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateProjectDomainResponse parses an HTTP response from a UpdateProjectDomainWithResponse call
-func ParseUpdateProjectDomainResponse(rsp *http.Response) (*UpdateProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ApexName            string                                                    `json:"apexName"`
-			CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
-			CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
-			GitBranch           *string                                                   `json:"gitBranch,omitempty"`
-			Name                string                                                    `json:"name"`
-			ProjectId           string                                                    `json:"projectId"`
-			Redirect            *string                                                   `json:"redirect,omitempty"`
-			RedirectStatusCode  *UpdateProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
-
-			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-			Verification *[]struct {
-				Domain string `json:"domain"`
-				Reason string `json:"reason"`
-				Type   string `json:"type"`
-				Value  string `json:"value"`
-			} `json:"verification,omitempty"`
-
-			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-			Verified UpdateProjectDomain200JSONResponseBodyVerified `json:"verified"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseVerifyProjectDomainResponse parses an HTTP response from a VerifyProjectDomainWithResponse call
-func ParseVerifyProjectDomainResponse(rsp *http.Response) (*VerifyProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VerifyProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ApexName            string                                                    `json:"apexName"`
-			CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
-			CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
-			GitBranch           *string                                                   `json:"gitBranch,omitempty"`
-			Name                string                                                    `json:"name"`
-			ProjectId           string                                                    `json:"projectId"`
-			Redirect            *string                                                   `json:"redirect,omitempty"`
-			RedirectStatusCode  *VerifyProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
-
-			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-			Verified VerifyProjectDomain200JSONResponseBodyVerified `json:"verified"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveProjectEnvResponse parses an HTTP response from a RemoveProjectEnvWithResponse call
-func ParseRemoveProjectEnvResponse(rsp *http.Response) (*RemoveProjectEnvResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveProjectEnvResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RemoveProjectEnv200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseEditProjectEnvResponse parses an HTTP response from a EditProjectEnvWithResponse call
-func ParseEditProjectEnvResponse(rsp *http.Response) (*EditProjectEnvResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &EditProjectEnvResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Comment              *string                                        `json:"comment,omitempty"`
-			ConfigurationId      *string                                        `json:"configurationId,omitempty"`
-			ContentHint          *EditProjectEnv200JSONResponseBody_ContentHint `json:"contentHint,omitempty"`
-			CreatedAt            *float32                                       `json:"createdAt,omitempty"`
-			CreatedBy            *string                                        `json:"createdBy,omitempty"`
-			CustomEnvironmentIds *[]string                                      `json:"customEnvironmentIds,omitempty"`
-			Decrypted            *EditProjectEnv200JSONResponseBodyDecrypted    `json:"decrypted,omitempty"`
-			EdgeConfigId         *string                                        `json:"edgeConfigId,omitempty"`
-			EdgeConfigTokenId    *string                                        `json:"edgeConfigTokenId,omitempty"`
-			GitBranch            *string                                        `json:"gitBranch,omitempty"`
-			Id                   *string                                        `json:"id,omitempty"`
-
-			// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
-			InternalContentHint *struct {
-				// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
-				EncryptedValue string                                                   `json:"encryptedValue"`
-				Type           EditProjectEnv200JSONResponseBodyInternalContentHintType `json:"type"`
-			} `json:"internalContentHint,omitempty"`
-			Key string `json:"key"`
-
-			// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
-			LegacyValue *string `json:"legacyValue,omitempty"`
-
-			// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
-			SunsetSecretId *string                                   `json:"sunsetSecretId,omitempty"`
-			Target         *EditProjectEnv200JSONResponseBody_Target `json:"target,omitempty"`
-			Type           EditProjectEnv200JSONResponseBodyType     `json:"type"`
-			UpdatedAt      *float32                                  `json:"updatedAt,omitempty"`
-			UpdatedBy      *string                                   `json:"updatedBy,omitempty"`
-			Value          string                                    `json:"value"`
-
-			// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
-			Visibility *EditProjectEnv200JSONResponseBodyVisibility `json:"visibility,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateWebInsightsToggleResponse parses an HTTP response from a CreateWebInsightsToggleWithResponse call
-func ParseCreateWebInsightsToggleResponse(rsp *http.Response) (*CreateWebInsightsToggleResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateWebInsightsToggleResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Value CreateWebInsightsToggle200JSONResponseBodyValue `json:"value"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
 		break // No content-type
 
 	}

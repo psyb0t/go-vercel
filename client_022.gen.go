@@ -5,7 +5,6 @@ package vercel
 
 import (
 	"bytes"
-	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -15,6 +14,2973 @@ import (
 
 	"github.com/oapi-codegen/runtime"
 )
+
+// NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest calls the generic UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription builder with application/json body
+func NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest(server string, projectId string, deploymentId string, body UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequestWithBody(server, projectId, deploymentId, "application/json", bodyReader)
+}
+
+// NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequestWithBody constructs an http.Request for the UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription method, with any body, and a specified content type
+func NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequestWithBody(server string, projectId string, deploymentId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/rollback/%s/update-description", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteRoutesRequest calls the generic DeleteRoutes builder with application/json body
+func NewDeleteRoutesRequest(server string, projectId string, params *DeleteRoutesParams, body DeleteRoutesJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewDeleteRoutesRequestWithBody(server, projectId, params, "application/json", bodyReader)
+}
+
+// NewDeleteRoutesRequestWithBody constructs an http.Request for the DeleteRoutes method, with any body, and a specified content type
+func NewDeleteRoutesRequestWithBody(server string, projectId string, params *DeleteRoutesParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetRoutesRequest constructs an http.Request for the GetRoutes method
+func NewGetRoutesRequest(server string, projectId string, params *GetRoutesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.VersionId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "versionId", *params.VersionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Q != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "q", *params.Q, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Diff != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "diff", *params.Diff, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewAddRouteRequest calls the generic AddRoute builder with application/json body
+func NewAddRouteRequest(server string, projectId string, params *AddRouteParams, body AddRouteJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewAddRouteRequestWithBody(server, projectId, params, "application/json", bodyReader)
+}
+
+// NewAddRouteRequestWithBody constructs an http.Request for the AddRoute method, with any body, and a specified content type
+func NewAddRouteRequestWithBody(server string, projectId string, params *AddRouteParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewStageRoutesRequest calls the generic StageRoutes builder with application/json body
+func NewStageRoutesRequest(server string, projectId string, params *StageRoutesParams, body StageRoutesJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewStageRoutesRequestWithBody(server, projectId, params, "application/json", bodyReader)
+}
+
+// NewStageRoutesRequestWithBody constructs an http.Request for the StageRoutes method, with any body, and a specified content type
+func NewStageRoutesRequestWithBody(server string, projectId string, params *StageRoutesParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateRouteRequest calls the generic GenerateRoute builder with application/json body
+func NewGenerateRouteRequest(server string, projectId string, params *GenerateRouteParams, body GenerateRouteJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateRouteRequestWithBody(server, projectId, params, "application/json", bodyReader)
+}
+
+// NewGenerateRouteRequestWithBody constructs an http.Request for the GenerateRoute method, with any body, and a specified content type
+func NewGenerateRouteRequestWithBody(server string, projectId string, params *GenerateRouteParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes/generate", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetRouteVersionsRequest constructs an http.Request for the GetRouteVersions method
+func NewGetRouteVersionsRequest(server string, projectId string, params *GetRouteVersionsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes/versions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateRouteVersionsRequest calls the generic UpdateRouteVersions builder with application/json body
+func NewUpdateRouteVersionsRequest(server string, projectId string, params *UpdateRouteVersionsParams, body UpdateRouteVersionsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateRouteVersionsRequestWithBody(server, projectId, params, "application/json", bodyReader)
+}
+
+// NewUpdateRouteVersionsRequestWithBody constructs an http.Request for the UpdateRouteVersions method, with any body, and a specified content type
+func NewUpdateRouteVersionsRequestWithBody(server string, projectId string, params *UpdateRouteVersionsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes/versions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewEditRouteRequest calls the generic EditRoute builder with application/json body
+func NewEditRouteRequest(server string, projectId string, routeId string, params *EditRouteParams, body EditRouteJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewEditRouteRequestWithBody(server, projectId, routeId, params, "application/json", bodyReader)
+}
+
+// NewEditRouteRequestWithBody constructs an http.Request for the EditRoute method, with any body, and a specified content type
+func NewEditRouteRequestWithBody(server string, projectId string, routeId string, params *EditRouteParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "routeId", routeId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/routes/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUnpauseProjectRequest constructs an http.Request for the UnpauseProject method
+func NewUnpauseProjectRequest(server string, projectId string, params *UnpauseProjectParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/projects/%s/unpause", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewAggregateEventsRequest constructs an http.Request for the AggregateEvents method
+func NewAggregateEventsRequest(server string, params *AggregateEventsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/query/web-analytics/events/aggregate")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.By != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "by", params.By, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCountEventsRequest constructs an http.Request for the CountEvents method
+func NewCountEventsRequest(server string, params *CountEventsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/query/web-analytics/events/count")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewAggregatePageviewsRequest constructs an http.Request for the AggregatePageviews method
+func NewAggregatePageviewsRequest(server string, params *AggregatePageviewsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/query/web-analytics/visits/aggregate")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.By != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "by", params.By, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCountPageviewsRequest constructs an http.Request for the CountPageviews method
+func NewCountPageviewsRequest(server string, params *CountPageviewsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/query/web-analytics/visits/count")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetBulkAvailabilityRequest calls the generic GetBulkAvailability builder with application/json body
+func NewGetBulkAvailabilityRequest(server string, params *GetBulkAvailabilityParams, body GetBulkAvailabilityJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetBulkAvailabilityRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetBulkAvailabilityRequestWithBody constructs an http.Request for the GetBulkAvailability method, with any body, and a specified content type
+func NewGetBulkAvailabilityRequestWithBody(server string, params *GetBulkAvailabilityParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/availability")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBuyDomainsRequest calls the generic BuyDomains builder with application/json body
+func NewBuyDomainsRequest(server string, params *BuyDomainsParams, body BuyDomainsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBuyDomainsRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewBuyDomainsRequestWithBody constructs an http.Request for the BuyDomains method, with any body, and a specified content type
+func NewBuyDomainsRequestWithBody(server string, params *BuyDomainsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/buy")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetBulkPriceRequest calls the generic GetBulkPrice builder with application/json body
+func NewGetBulkPriceRequest(server string, params *GetBulkPriceParams, body GetBulkPriceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetBulkPriceRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetBulkPriceRequestWithBody constructs an http.Request for the GetBulkPrice method, with any body, and a specified content type
+func NewGetBulkPriceRequestWithBody(server string, params *GetBulkPriceParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/price")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewSearchDomainsRequest calls the generic SearchDomains builder with application/json body
+func NewSearchDomainsRequest(server string, params *SearchDomainsParams, body SearchDomainsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewSearchDomainsRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewSearchDomainsRequestWithBody constructs an http.Request for the SearchDomains method, with any body, and a specified content type
+func NewSearchDomainsRequestWithBody(server string, params *SearchDomainsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/search")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDomainAuthCodeRequest constructs an http.Request for the GetDomainAuthCode method
+func NewGetDomainAuthCodeRequest(server string, domain DomainName, params *GetDomainAuthCodeParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/auth-code", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateDomainAutoRenewRequest calls the generic UpdateDomainAutoRenew builder with application/json body
+func NewUpdateDomainAutoRenewRequest(server string, domain DomainName, params *UpdateDomainAutoRenewParams, body UpdateDomainAutoRenewJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateDomainAutoRenewRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewUpdateDomainAutoRenewRequestWithBody constructs an http.Request for the UpdateDomainAutoRenew method, with any body, and a specified content type
+func NewUpdateDomainAutoRenewRequestWithBody(server string, domain DomainName, params *UpdateDomainAutoRenewParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/auto-renew", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDomainAvailabilityRequest constructs an http.Request for the GetDomainAvailability method
+func NewGetDomainAvailabilityRequest(server string, domain DomainName, params *GetDomainAvailabilityParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/availability", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBuySingleDomainRequest calls the generic BuySingleDomain builder with application/json body
+func NewBuySingleDomainRequest(server string, domain DomainName, params *BuySingleDomainParams, body BuySingleDomainJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBuySingleDomainRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewBuySingleDomainRequestWithBody constructs an http.Request for the BuySingleDomain method, with any body, and a specified content type
+func NewBuySingleDomainRequestWithBody(server string, domain DomainName, params *BuySingleDomainParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/buy", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetContactInfoSchemaRequest constructs an http.Request for the GetContactInfoSchema method
+func NewGetContactInfoSchemaRequest(server string, domain DomainName, params *GetContactInfoSchemaParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/contact-info/schema", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDomainContactVerificationRequest constructs an http.Request for the GetDomainContactVerification method
+func NewGetDomainContactVerificationRequest(server string, domain DomainName, params *GetDomainContactVerificationParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/contact-verification", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateDomainNameserversRequest calls the generic UpdateDomainNameservers builder with application/json body
+func NewUpdateDomainNameserversRequest(server string, domain DomainName, params *UpdateDomainNameserversParams, body UpdateDomainNameserversJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateDomainNameserversRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewUpdateDomainNameserversRequestWithBody constructs an http.Request for the UpdateDomainNameservers method, with any body, and a specified content type
+func NewUpdateDomainNameserversRequestWithBody(server string, domain DomainName, params *UpdateDomainNameserversParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/nameservers", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDomainPriceRequest constructs an http.Request for the GetDomainPrice method
+func NewGetDomainPriceRequest(server string, domain DomainName, params *GetDomainPriceParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/price", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Years != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "years", *params.Years, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewRenewDomainRequest calls the generic RenewDomain builder with application/json body
+func NewRenewDomainRequest(server string, domain DomainName, params *RenewDomainParams, body RenewDomainJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRenewDomainRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewRenewDomainRequestWithBody constructs an http.Request for the RenewDomain method, with any body, and a specified content type
+func NewRenewDomainRequestWithBody(server string, domain DomainName, params *RenewDomainParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/renew", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDomainTransferInRequest constructs an http.Request for the GetDomainTransferIn method
+func NewGetDomainTransferInRequest(server string, domain DomainName, params *GetDomainTransferInParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/transfer", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewTransferInDomainRequest calls the generic TransferInDomain builder with application/json body
+func NewTransferInDomainRequest(server string, domain DomainName, params *TransferInDomainParams, body TransferInDomainJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewTransferInDomainRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewTransferInDomainRequestWithBody constructs an http.Request for the TransferInDomain method, with any body, and a specified content type
+func NewTransferInDomainRequestWithBody(server string, domain DomainName, params *TransferInDomainParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/domains/%s/transfer", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetOrderRequest constructs an http.Request for the GetOrder method
+func NewGetOrderRequest(server string, orderId OrderId, params *GetOrderParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orderId", orderId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/orders/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetSupportedTldsRequest constructs an http.Request for the GetSupportedTlds method
+func NewGetSupportedTldsRequest(server string, params *GetSupportedTldsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/tlds/supported")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetTldRequest constructs an http.Request for the GetTld method
+func NewGetTldRequest(server string, tld TldName, params *GetTldParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "tld", tld, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/tlds/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetTldPriceRequest constructs an http.Request for the GetTldPrice method
+func NewGetTldPriceRequest(server string, tld TldName, params *GetTldPriceParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "tld", tld, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/registrar/tlds/%s/price", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Years != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "years", *params.Years, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateAttackChallengeModeRequest calls the generic UpdateAttackChallengeMode builder with application/json body
+func NewUpdateAttackChallengeModeRequest(server string, params *UpdateAttackChallengeModeParams, body UpdateAttackChallengeModeJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAttackChallengeModeRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewUpdateAttackChallengeModeRequestWithBody constructs an http.Request for the UpdateAttackChallengeMode method, with any body, and a specified content type
+func NewUpdateAttackChallengeModeRequestWithBody(server string, params *UpdateAttackChallengeModeParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/security/attack-mode")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetActiveAttackStatusRequest constructs an http.Request for the GetActiveAttackStatus method
+func NewGetActiveAttackStatusRequest(server string, params *GetActiveAttackStatusParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/security/firewall/attack-status")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewRemoveBypassIpRequest calls the generic RemoveBypassIp builder with application/json body
+func NewRemoveBypassIpRequest(server string, params *RemoveBypassIpParams, body RemoveBypassIpJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRemoveBypassIpRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewRemoveBypassIpRequestWithBody constructs an http.Request for the RemoveBypassIp method, with any body, and a specified content type
+func NewRemoveBypassIpRequestWithBody(server string, params *RemoveBypassIpParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/security/firewall/bypass")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetBypassIpRequest constructs an http.Request for the GetBypassIp method
+func NewGetBypassIpRequest(server string, params *GetBypassIpParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/security/firewall/bypass")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.SourceIp != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sourceIp", *params.SourceIp, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Domain != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "domain", *params.Domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ProjectScope != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectScope", *params.ProjectScope, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "offset", *params.Offset, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
 
 // NewAddBypassIpRequest calls the generic AddBypassIp builder with application/json body
 func NewAddBypassIpRequest(server string, params *AddBypassIpParams, body AddBypassIpJSONRequestBody) (*http.Request, error) {
@@ -17069,7086 +20035,4 @@ func NewUpdateProjectRequestWithBody(server string, idOrName string, params *Upd
 	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
-}
-
-// NewGetProjectsByIdOrNameCustomEnvironmentsRequest constructs an http.Request for the GetProjectsByIdOrNameCustomEnvironments method
-func NewGetProjectsByIdOrNameCustomEnvironmentsRequest(server string, idOrName string, params *GetProjectsByIdOrNameCustomEnvironmentsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/custom-environments", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.GitBranch != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "gitBranch", *params.GitBranch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateCustomEnvironmentRequest calls the generic CreateCustomEnvironment builder with application/json body
-func NewCreateCustomEnvironmentRequest(server string, idOrName string, params *CreateCustomEnvironmentParams, body CreateCustomEnvironmentJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateCustomEnvironmentRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewCreateCustomEnvironmentRequestWithBody constructs an http.Request for the CreateCustomEnvironment method, with any body, and a specified content type
-func NewCreateCustomEnvironmentRequestWithBody(server string, idOrName string, params *CreateCustomEnvironmentParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/custom-environments", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRemoveCustomEnvironmentRequest calls the generic RemoveCustomEnvironment builder with application/json body
-func NewRemoveCustomEnvironmentRequest(server string, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, body RemoveCustomEnvironmentJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewRemoveCustomEnvironmentRequestWithBody(server, idOrName, environmentSlugOrId, params, "application/json", bodyReader)
-}
-
-// NewRemoveCustomEnvironmentRequestWithBody constructs an http.Request for the RemoveCustomEnvironment method, with any body, and a specified content type
-func NewRemoveCustomEnvironmentRequestWithBody(server string, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "environmentSlugOrId", environmentSlugOrId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/custom-environments/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetCustomEnvironmentRequest constructs an http.Request for the GetCustomEnvironment method
-func NewGetCustomEnvironmentRequest(server string, idOrName string, environmentSlugOrId string, params *GetCustomEnvironmentParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "environmentSlugOrId", environmentSlugOrId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/custom-environments/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateCustomEnvironmentRequest calls the generic UpdateCustomEnvironment builder with application/json body
-func NewUpdateCustomEnvironmentRequest(server string, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, body UpdateCustomEnvironmentJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateCustomEnvironmentRequestWithBody(server, idOrName, environmentSlugOrId, params, "application/json", bodyReader)
-}
-
-// NewUpdateCustomEnvironmentRequestWithBody constructs an http.Request for the UpdateCustomEnvironment method, with any body, and a specified content type
-func NewUpdateCustomEnvironmentRequestWithBody(server string, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "environmentSlugOrId", environmentSlugOrId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/custom-environments/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetProjectDomainsRequest constructs an http.Request for the GetProjectDomains method
-func NewGetProjectDomainsRequest(server string, idOrName struct {
-	union json.RawMessage
-}, params *GetProjectDomainsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/domains", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "production", params.Production, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.Target != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "target", *params.Target, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.CustomEnvironmentId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "customEnvironmentId", *params.CustomEnvironmentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.GitBranch != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "gitBranch", *params.GitBranch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "redirects", params.Redirects, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.Redirect != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "redirect", *params.Redirect, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "verified", params.Verified, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Since != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Until != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "order", params.Order, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewRemoveProjectDomainRequest calls the generic RemoveProjectDomain builder with application/json body
-func NewRemoveProjectDomainRequest(server string, idOrName string, domain string, params *RemoveProjectDomainParams, body RemoveProjectDomainJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewRemoveProjectDomainRequestWithBody(server, idOrName, domain, params, "application/json", bodyReader)
-}
-
-// NewRemoveProjectDomainRequestWithBody constructs an http.Request for the RemoveProjectDomain method, with any body, and a specified content type
-func NewRemoveProjectDomainRequestWithBody(server string, idOrName string, domain string, params *RemoveProjectDomainParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/domains/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetProjectDomainRequest constructs an http.Request for the GetProjectDomain method
-func NewGetProjectDomainRequest(server string, idOrName string, domain string, params *GetProjectDomainParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/domains/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateProjectDomainRequest calls the generic UpdateProjectDomain builder with application/json body
-func NewUpdateProjectDomainRequest(server string, idOrName string, domain string, params *UpdateProjectDomainParams, body UpdateProjectDomainJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateProjectDomainRequestWithBody(server, idOrName, domain, params, "application/json", bodyReader)
-}
-
-// NewUpdateProjectDomainRequestWithBody constructs an http.Request for the UpdateProjectDomain method, with any body, and a specified content type
-func NewUpdateProjectDomainRequestWithBody(server string, idOrName string, domain string, params *UpdateProjectDomainParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/domains/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewVerifyProjectDomainRequest constructs an http.Request for the VerifyProjectDomain method
-func NewVerifyProjectDomainRequest(server string, idOrName string, domain string, params *VerifyProjectDomainParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/domains/%s/verify", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewRemoveProjectEnvRequest constructs an http.Request for the RemoveProjectEnv method
-func NewRemoveProjectEnvRequest(server string, idOrName string, id string, params *RemoveProjectEnvParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/env/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.CustomEnvironmentId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "customEnvironmentId", *params.CustomEnvironmentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewEditProjectEnvRequest calls the generic EditProjectEnv builder with application/json body
-func NewEditProjectEnvRequest(server string, idOrName string, id string, params *EditProjectEnvParams, body EditProjectEnvJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewEditProjectEnvRequestWithBody(server, idOrName, id, params, "application/json", bodyReader)
-}
-
-// NewEditProjectEnvRequestWithBody constructs an http.Request for the EditProjectEnv method, with any body, and a specified content type
-func NewEditProjectEnvRequestWithBody(server string, idOrName string, id string, params *EditProjectEnvParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v9/projects/%s/env/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCreateWebInsightsToggleRequest calls the generic CreateWebInsightsToggle builder with application/json body
-func NewCreateWebInsightsToggleRequest(server string, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateWebInsightsToggleRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateWebInsightsToggleRequestWithBody constructs an http.Request for the CreateWebInsightsToggle method, with any body, and a specified content type
-func NewCreateWebInsightsToggleRequestWithBody(server string, params *CreateWebInsightsToggleParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/web/insights/toggle")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-func (c *Client) applyEditors(ctx context.Context, req *http.Request, additionalEditors []RequestEditorFn) error {
-	for _, r := range c.RequestEditors {
-		if err := r(ctx, req); err != nil {
-			return err
-		}
-	}
-	for _, r := range additionalEditors {
-		if err := r(ctx, req); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// ClientWithResponses builds on ClientInterface to offer response payloads
-type ClientWithResponses struct {
-	ClientInterface
-}
-
-// NewClientWithResponses creates a new ClientWithResponses, which wraps
-// Client with return type handling
-func NewClientWithResponses(server string, opts ...ClientOption) (*ClientWithResponses, error) {
-	client, err := NewClient(server, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &ClientWithResponses{client}, nil
-}
-
-// WithBaseURL overrides the baseURL.
-func WithBaseURL(baseURL string) ClientOption {
-	return func(c *Client) error {
-		newBaseURL, err := url.Parse(baseURL)
-		if err != nil {
-			return err
-		}
-		c.Server = newBaseURL.String()
-		return nil
-	}
-}
-
-// ClientWithResponsesInterface is the interface specification for the client with responses above.
-type ClientWithResponsesInterface interface {
-
-	// ArchiveAiGatewayBudgetWithResponse Archive AI Gateway budget
-	//
-	// Archive a team-, project-, or user-scope AI Gateway budget.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /ai-gateway/budgets (the `ArchiveAiGatewayBudget` operationId).
-	ArchiveAiGatewayBudgetWithResponse(ctx context.Context, params *ArchiveAiGatewayBudgetParams, reqEditors ...RequestEditorFn) (*ArchiveAiGatewayBudgetResponse, error)
-
-	// UpsertAiGatewayBudgetWithBodyWithResponse Upsert AI Gateway budget
-	//
-	// Create or update a team-, project-, or user-scope AI Gateway budget.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
-	UpsertAiGatewayBudgetWithBodyWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetResponse, error)
-
-	// UpsertAiGatewayBudgetWithResponse Upsert AI Gateway budget
-	//
-	// Create or update a team-, project-, or user-scope AI Gateway budget.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
-	UpsertAiGatewayBudgetWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetParams, body UpsertAiGatewayBudgetJSONRequestBody, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetResponse, error)
-
-	// ArchiveAiGatewayBudgetDefaultWithResponse Archive AI Gateway budget default
-	//
-	// Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /ai-gateway/budgets/defaults (the `ArchiveAiGatewayBudgetDefault` operationId).
-	ArchiveAiGatewayBudgetDefaultWithResponse(ctx context.Context, params *ArchiveAiGatewayBudgetDefaultParams, reqEditors ...RequestEditorFn) (*ArchiveAiGatewayBudgetDefaultResponse, error)
-
-	// UpsertAiGatewayBudgetDefaultWithBodyWithResponse Upsert AI Gateway budget default
-	//
-	// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
-	UpsertAiGatewayBudgetDefaultWithBodyWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetDefaultResponse, error)
-
-	// UpsertAiGatewayBudgetDefaultWithResponse Upsert AI Gateway budget default
-	//
-	// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
-	UpsertAiGatewayBudgetDefaultWithResponse(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, body UpsertAiGatewayBudgetDefaultJSONRequestBody, reqEditors ...RequestEditorFn) (*UpsertAiGatewayBudgetDefaultResponse, error)
-
-	// ListAiGatewayBudgetDefaultsWithResponse List AI Gateway budget defaults
-	//
-	// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /ai-gateway/budgets/defaults/list (the `ListAiGatewayBudgetDefaults` operationId).
-	ListAiGatewayBudgetDefaultsWithResponse(ctx context.Context, params *ListAiGatewayBudgetDefaultsParams, reqEditors ...RequestEditorFn) (*ListAiGatewayBudgetDefaultsResponse, error)
-
-	// ListAiGatewayBudgetsWithResponse List AI Gateway budgets
-	//
-	// List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
-	ListAiGatewayBudgetsWithResponse(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*ListAiGatewayBudgetsResponse, error)
-
-	// DeleteAiGatewayRuleWithResponse Delete rule
-	//
-	// Delete a routing rule (soft delete).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /ai-gateway/rules (the `DeleteAiGatewayRule` operationId).
-	DeleteAiGatewayRuleWithResponse(ctx context.Context, params *DeleteAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayRuleResponse, error)
-
-	// ListAiGatewayRulesWithResponse List rules
-	//
-	// List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /ai-gateway/rules (the `ListAiGatewayRules` operationId).
-	ListAiGatewayRulesWithResponse(ctx context.Context, params *ListAiGatewayRulesParams, reqEditors ...RequestEditorFn) (*ListAiGatewayRulesResponse, error)
-
-	// UpdateAiGatewayRuleWithResponse Update rule
-	//
-	// Update a routing rule (enabled, action, or description)
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
-	UpdateAiGatewayRuleWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error)
-
-	// CreateAiGatewayRuleWithResponse Create rule
-	//
-	// Create a routing rule.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
-	CreateAiGatewayRuleWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error)
-
-	// DeleteAiGatewayVirtualModelConfigWithResponse Delete virtual model config
-	//
-	// Delete a virtual model config (soft delete).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /ai-gateway/virtual-model-configs (the `DeleteAiGatewayVirtualModelConfig` operationId).
-	DeleteAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *DeleteAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayVirtualModelConfigResponse, error)
-
-	// GetAiGatewayVirtualModelConfigWithResponse Get virtual model config
-	//
-	// Get a virtual model config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
-	GetAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigResponse, error)
-
-	// UpdateAiGatewayVirtualModelConfigWithResponse Update virtual model config
-	//
-	// Update a virtual model config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
-	UpdateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error)
-
-	// CreateAiGatewayVirtualModelConfigWithResponse Create virtual model config
-	//
-	// Create a virtual model config (VMC).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
-	CreateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error)
-
-	// ListAiGatewayVirtualModelConfigsWithResponse List virtual model configs
-	//
-	// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /ai-gateway/virtual-model-configs/list (the `ListAiGatewayVirtualModelConfigs` operationId).
-	ListAiGatewayVirtualModelConfigsWithResponse(ctx context.Context, params *ListAiGatewayVirtualModelConfigsParams, reqEditors ...RequestEditorFn) (*ListAiGatewayVirtualModelConfigsResponse, error)
-
-	// DeleteAiGatewayVirtualModelConfigBySlugWithResponse Delete virtual model config
-	//
-	// Delete a virtual model config by path slug (soft delete).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /ai-gateway/virtual-model-configs/{vmcSlug} (the `DeleteAiGatewayVirtualModelConfigBySlug` operationId).
-	DeleteAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *DeleteAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayVirtualModelConfigBySlugResponse, error)
-
-	// GetAiGatewayVirtualModelConfigBySlugWithResponse Get virtual model config
-	//
-	// Get a virtual model config by path slug.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /ai-gateway/virtual-model-configs/{vmcSlug} (the `GetAiGatewayVirtualModelConfigBySlug` operationId).
-	GetAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *GetAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigBySlugResponse, error)
-
-	// UpdateAiGatewayVirtualModelConfigBySlugWithResponse Update virtual model config
-	//
-	// Update a virtual model config by path slug.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-	UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error)
-
-	// PatchUrlProtectionBypassWithBodyWithResponse Update the protection bypass for a URL
-	//
-	// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-	PatchUrlProtectionBypassWithBodyWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error)
-
-	// PatchUrlProtectionBypassWithResponse Update the protection bypass for a URL
-	//
-	// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-	PatchUrlProtectionBypassWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, body PatchUrlProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error)
-
-	// CreateApiKeysWithBodyWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request,
-	// with any type of body and a specified content type.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	CreateApiKeysWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error)
-
-	// CreateApiKeysWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request.
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	CreateApiKeysWithResponse(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error)
-
-	// UpdateApiKeyQuotaWithBodyWithResponse Update an AI Gateway API key budget
-	//
-	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
-	UpdateApiKeyQuotaWithBodyWithResponse(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error)
-
-	// UpdateApiKeyQuotaWithResponse Update an AI Gateway API key budget
-	//
-	// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
-	UpdateApiKeyQuotaWithResponse(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateApiKeyQuotaResponse, error)
-
-	// GetDomainsRecordsByRecordIdWithResponse performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	GetDomainsRecordsByRecordIdWithResponse(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*GetDomainsRecordsByRecordIdResponse, error)
-
-	// ReplaceDomainsByDomainRecordsWithResponse performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	ReplaceDomainsByDomainRecordsWithResponse(ctx context.Context, domain string, reqEditors ...RequestEditorFn) (*ReplaceDomainsByDomainRecordsResponse, error)
-
-	// AcceptProjectTransferRequestWithBodyWithResponse Accept project transfer request
-	//
-	// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
-	AcceptProjectTransferRequestWithBodyWithResponse(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AcceptProjectTransferRequestResponse, error)
-
-	// AcceptProjectTransferRequestWithResponse Accept project transfer request
-	//
-	// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
-	AcceptProjectTransferRequestWithResponse(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, body AcceptProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*AcceptProjectTransferRequestResponse, error)
-
-	// CreateProjectTransferRequestWithBodyWithResponse Create project transfer request
-	//
-	// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-	CreateProjectTransferRequestWithBodyWithResponse(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectTransferRequestResponse, error)
-
-	// CreateProjectTransferRequestWithResponse Create project transfer request
-	//
-	// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-	CreateProjectTransferRequestWithResponse(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, body CreateProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectTransferRequestResponse, error)
-
-	// CreateSpeedInsightsToggleWithBodyWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request,
-	// with any type of body and a specified content type.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	CreateSpeedInsightsToggleWithBodyWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error)
-
-	// CreateSpeedInsightsToggleWithResponse performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request.
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	CreateSpeedInsightsToggleWithResponse(ctx context.Context, params *CreateSpeedInsightsToggleParams, body CreateSpeedInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSpeedInsightsToggleResponse, error)
-
-	// CreateStorageStoresBlobWithBodyWithResponse Create a Blob store
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-	CreateStorageStoresBlobWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStorageStoresBlobResponse, error)
-
-	// CreateStorageStoresBlobWithResponse Create a Blob store
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-	CreateStorageStoresBlobWithResponse(ctx context.Context, body CreateStorageStoresBlobJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateStorageStoresBlobResponse, error)
-
-	// DeleteStorageStoresBlobByIdWithResponse Delete a Blob store
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /storage/stores/blob/{id} (the `DeleteStorageStoresBlobById` operationId).
-	DeleteStorageStoresBlobByIdWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStorageStoresBlobByIdResponse, error)
-
-	// GetStorageStoresByIdWithResponse Get a store
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /storage/stores/{id} (the `GetStorageStoresById` operationId).
-	GetStorageStoresByIdWithResponse(ctx context.Context, id string, params *GetStorageStoresByIdParams, reqEditors ...RequestEditorFn) (*GetStorageStoresByIdResponse, error)
-
-	// ListAccessGroupsWithResponse List access groups for a team, project or member
-	//
-	// List access groups.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/access-groups (the `ListAccessGroups` operationId).
-	ListAccessGroupsWithResponse(ctx context.Context, params *ListAccessGroupsParams, reqEditors ...RequestEditorFn) (*ListAccessGroupsResponse, error)
-
-	// CreateAccessGroupWithBodyWithResponse Creates an access group
-	//
-	// Allows to create an access group.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-	CreateAccessGroupWithBodyWithResponse(ctx context.Context, params *CreateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessGroupResponse, error)
-
-	// CreateAccessGroupWithResponse Creates an access group
-	//
-	// Allows to create an access group.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-	CreateAccessGroupWithResponse(ctx context.Context, params *CreateAccessGroupParams, body CreateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccessGroupResponse, error)
-
-	// CreateAccessGroupProjectWithBodyWithResponse Create an access group project
-	//
-	// Allows creation of an access group project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/access-groups/{accessGroupIdOrName}/projects (the `CreateAccessGroupProject` operationId).
-	CreateAccessGroupProjectWithBodyWithResponse(ctx context.Context, accessGroupIdOrName string, params *CreateAccessGroupProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessGroupProjectResponse, error)
-
-	// CreateAccessGroupProjectWithResponse Create an access group project
-	//
-	// Allows creation of an access group project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/access-groups/{accessGroupIdOrName}/projects (the `CreateAccessGroupProject` operationId).
-	CreateAccessGroupProjectWithResponse(ctx context.Context, accessGroupIdOrName string, params *CreateAccessGroupProjectParams, body CreateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccessGroupProjectResponse, error)
-
-	// DeleteAccessGroupProjectWithResponse Delete an access group project
-	//
-	// Allows deletion of an access group project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `DeleteAccessGroupProject` operationId).
-	DeleteAccessGroupProjectWithResponse(ctx context.Context, accessGroupIdOrName string, projectId string, params *DeleteAccessGroupProjectParams, reqEditors ...RequestEditorFn) (*DeleteAccessGroupProjectResponse, error)
-
-	// ReadAccessGroupProjectWithResponse Reads an access group project
-	//
-	// Allows reading an access group project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `ReadAccessGroupProject` operationId).
-	ReadAccessGroupProjectWithResponse(ctx context.Context, accessGroupIdOrName string, projectId string, params *ReadAccessGroupProjectParams, reqEditors ...RequestEditorFn) (*ReadAccessGroupProjectResponse, error)
-
-	// UpdateAccessGroupProjectWithBodyWithResponse Update an access group project
-	//
-	// Allows update of an access group project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
-	UpdateAccessGroupProjectWithBodyWithResponse(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAccessGroupProjectResponse, error)
-
-	// UpdateAccessGroupProjectWithResponse Update an access group project
-	//
-	// Allows update of an access group project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
-	UpdateAccessGroupProjectWithResponse(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, body UpdateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAccessGroupProjectResponse, error)
-
-	// DeleteAccessGroupWithResponse Deletes an access group
-	//
-	// Allows to delete an access group.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/access-groups/{idOrName} (the `DeleteAccessGroup` operationId).
-	DeleteAccessGroupWithResponse(ctx context.Context, idOrName string, params *DeleteAccessGroupParams, reqEditors ...RequestEditorFn) (*DeleteAccessGroupResponse, error)
-
-	// ReadAccessGroupWithResponse Reads an access group
-	//
-	// Allows to read an access group.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/access-groups/{idOrName} (the `ReadAccessGroup` operationId).
-	ReadAccessGroupWithResponse(ctx context.Context, idOrName string, params *ReadAccessGroupParams, reqEditors ...RequestEditorFn) (*ReadAccessGroupResponse, error)
-
-	// UpdateAccessGroupWithBodyWithResponse Update an access group
-	//
-	// Allows to update an access group metadata.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
-	UpdateAccessGroupWithBodyWithResponse(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAccessGroupResponse, error)
-
-	// UpdateAccessGroupWithResponse Update an access group
-	//
-	// Allows to update an access group metadata.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
-	UpdateAccessGroupWithResponse(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, body UpdateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAccessGroupResponse, error)
-
-	// ListAccessGroupMembersWithResponse List members of an access group
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/access-groups/{idOrName}/members (the `ListAccessGroupMembers` operationId).
-	ListAccessGroupMembersWithResponse(ctx context.Context, idOrName string, params *ListAccessGroupMembersParams, reqEditors ...RequestEditorFn) (*ListAccessGroupMembersResponse, error)
-
-	// ListAccessGroupProjectsWithResponse List projects of an access group
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/access-groups/{idOrName}/projects (the `ListAccessGroupProjects` operationId).
-	ListAccessGroupProjectsWithResponse(ctx context.Context, idOrName string, params *ListAccessGroupProjectsParams, reqEditors ...RequestEditorFn) (*ListAccessGroupProjectsResponse, error)
-
-	// ListAiGatewayRoutersWithResponse List AI Gateway routers
-	//
-	// List the authenticated team's active and archived custom routers.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/ai-gateway/routers (the `ListAiGatewayRouters` operationId).
-	ListAiGatewayRoutersWithResponse(ctx context.Context, params *ListAiGatewayRoutersParams, reqEditors ...RequestEditorFn) (*ListAiGatewayRoutersResponse, error)
-
-	// BuyCreditsWithBodyWithResponse Purchase credits
-	//
-	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
-	BuyCreditsWithBodyWithResponse(ctx context.Context, params *BuyCreditsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BuyCreditsResponse, error)
-
-	// BuyCreditsWithResponse Purchase credits
-	//
-	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
-	BuyCreditsWithResponse(ctx context.Context, params *BuyCreditsParams, body BuyCreditsJSONRequestBody, reqEditors ...RequestEditorFn) (*BuyCreditsResponse, error)
-
-	// ListBillingChargesWithResponse List FOCUS billing charges
-	//
-	// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/billing/charges (the `ListBillingCharges` operationId).
-	ListBillingChargesWithResponse(ctx context.Context, params *ListBillingChargesParams, reqEditors ...RequestEditorFn) (*ListBillingChargesResponse, error)
-
-	// ListContractCommitmentsWithResponse List FOCUS contract commitments
-	//
-	// Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for a specified Vercel team. The response is streamed as newline-delimited JSON (JSONL). This endpoint is only applicable to Enterprise Vercel customers. An empty response is returned for non-Enterprise (Pro/Flex) customers.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/billing/contract-commitments (the `ListContractCommitments` operationId).
-	ListContractCommitmentsWithResponse(ctx context.Context, params *ListContractCommitmentsParams, reqEditors ...RequestEditorFn) (*ListContractCommitmentsResponse, error)
-
-	// DeleteRedirectsWithBodyWithResponse Delete project-level redirects.
-	//
-	// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
-	DeleteRedirectsWithBodyWithResponse(ctx context.Context, params *DeleteRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteRedirectsResponse, error)
-
-	// DeleteRedirectsWithResponse Delete project-level redirects.
-	//
-	// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
-	DeleteRedirectsWithResponse(ctx context.Context, params *DeleteRedirectsParams, body DeleteRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteRedirectsResponse, error)
-
-	// GetRedirectsWithResponse Gets project-level redirects.
-	//
-	// Get the version history for a project's bulk redirects.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/bulk-redirects (the `GetRedirects` operationId).
-	GetRedirectsWithResponse(ctx context.Context, params *GetRedirectsParams, reqEditors ...RequestEditorFn) (*GetRedirectsResponse, error)
-
-	// EditRedirectWithBodyWithResponse Edit a project-level redirect.
-	//
-	// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
-	EditRedirectWithBodyWithResponse(ctx context.Context, params *EditRedirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EditRedirectResponse, error)
-
-	// EditRedirectWithResponse Edit a project-level redirect.
-	//
-	// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
-	EditRedirectWithResponse(ctx context.Context, params *EditRedirectParams, body EditRedirectJSONRequestBody, reqEditors ...RequestEditorFn) (*EditRedirectResponse, error)
-
-	// StageRedirectsWithBodyWithResponse Stages new redirects for a project.
-	//
-	// Stages new redirects for a project and returns the new version.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
-	StageRedirectsWithBodyWithResponse(ctx context.Context, params *StageRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StageRedirectsResponse, error)
-
-	// StageRedirectsWithResponse Stages new redirects for a project.
-	//
-	// Stages new redirects for a project and returns the new version.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
-	StageRedirectsWithResponse(ctx context.Context, params *StageRedirectsParams, body StageRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*StageRedirectsResponse, error)
-
-	// RestoreRedirectsWithBodyWithResponse Restore staged project-level redirects to their production version.
-	//
-	// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
-	RestoreRedirectsWithBodyWithResponse(ctx context.Context, params *RestoreRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RestoreRedirectsResponse, error)
-
-	// RestoreRedirectsWithResponse Restore staged project-level redirects to their production version.
-	//
-	// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
-	RestoreRedirectsWithResponse(ctx context.Context, params *RestoreRedirectsParams, body RestoreRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*RestoreRedirectsResponse, error)
-
-	// GetVersionsWithResponse Get the version history for a project's redirects.
-	//
-	// Get the version history for a project's bulk redirects.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/bulk-redirects/versions (the `GetVersions` operationId).
-	GetVersionsWithResponse(ctx context.Context, params *GetVersionsParams, reqEditors ...RequestEditorFn) (*GetVersionsResponse, error)
-
-	// UpdateVersionWithBodyWithResponse Promote a staging version to production or restore a previous production version.
-	//
-	// Update a version by promoting staging to production or restoring a previous production version.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
-	UpdateVersionWithBodyWithResponse(ctx context.Context, params *UpdateVersionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateVersionResponse, error)
-
-	// UpdateVersionWithResponse Promote a staging version to production or restore a previous production version.
-	//
-	// Update a version by promoting staging to production or restoring a previous production version.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
-	UpdateVersionWithResponse(ctx context.Context, params *UpdateVersionParams, body UpdateVersionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateVersionResponse, error)
-
-	// CreateConnectorAuthorizationRequestWithBodyWithResponse Create a Connect authorization request
-	//
-	// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-	CreateConnectorAuthorizationRequestWithBodyWithResponse(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateConnectorAuthorizationRequestResponse, error)
-
-	// CreateConnectorAuthorizationRequestWithResponse Create a Connect authorization request
-	//
-	// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-	CreateConnectorAuthorizationRequestWithResponse(ctx context.Context, connector string, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateConnectorAuthorizationRequestResponse, error)
-
-	// CreateConnectorWithBodyWithResponse Create a connector
-	//
-	// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
-	CreateConnectorWithBodyWithResponse(ctx context.Context, params *CreateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateConnectorResponse, error)
-
-	// CreateConnectorWithResponse Create a connector
-	//
-	// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
-	CreateConnectorWithResponse(ctx context.Context, params *CreateConnectorParams, body CreateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateConnectorResponse, error)
-
-	// DeleteConnectorWithResponse Delete a connector
-	//
-	// Delete a connector, its project connections, and its installation records.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/connect/connectors/{connector} (the `DeleteConnector` operationId).
-	DeleteConnectorWithResponse(ctx context.Context, connector string, params *DeleteConnectorParams, reqEditors ...RequestEditorFn) (*DeleteConnectorResponse, error)
-
-	// GetConnectorWithResponse Get a connector
-	//
-	// Get the connector by ID. Accepts a dashboard/team requester or a deployment's project OIDC token; project requesters may only read connectors linked to their project and environment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/connect/connectors/{connector} (the `GetConnector` operationId).
-	GetConnectorWithResponse(ctx context.Context, connector string, params *GetConnectorParams, reqEditors ...RequestEditorFn) (*GetConnectorResponse, error)
-
-	// EjectManagedConnectorWithResponse Eject a managed connector
-	//
-	// Disconnect a managed connector from its provider-side manager.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/connectors/{connector}/managed/eject (the `EjectManagedConnector` operationId).
-	EjectManagedConnectorWithResponse(ctx context.Context, connector string, params *EjectManagedConnectorParams, reqEditors ...RequestEditorFn) (*EjectManagedConnectorResponse, error)
-
-	// DeleteConnectorProjectConnectionWithResponse Disconnect a connector from a project
-	//
-	// Disconnect a connector from a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId} (the `DeleteConnectorProjectConnection` operationId).
-	DeleteConnectorProjectConnectionWithResponse(ctx context.Context, connector string, projectId string, params *DeleteConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*DeleteConnectorProjectConnectionResponse, error)
-
-	// GetConnectorProjectConnectionWithResponse Get a connector project connection
-	//
-	// Get the configuration that connects a connector to a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/connect/connectors/{connector}/projects/{projectId} (the `GetConnectorProjectConnection` operationId).
-	GetConnectorProjectConnectionWithResponse(ctx context.Context, connector string, projectId string, params *GetConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*GetConnectorProjectConnectionResponse, error)
-
-	// UpsertConnectorProjectConnectionWithBodyWithResponse Create or update a connector project connection
-	//
-	// Connect a connector to a project, or replace the environments on an existing project connection.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
-	UpsertConnectorProjectConnectionWithBodyWithResponse(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpsertConnectorProjectConnectionResponse, error)
-
-	// UpsertConnectorProjectConnectionWithResponse Create or update a connector project connection
-	//
-	// Connect a connector to a project, or replace the environments on an existing project connection.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
-	UpsertConnectorProjectConnectionWithResponse(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, body UpsertConnectorProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpsertConnectorProjectConnectionResponse, error)
-
-	// ReplaceConnectorTriggerDestinationsWithBodyWithResponse Update connector trigger destinations
-	//
-	// Replace the full set of destinations that receive trigger requests for a connector.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
-	ReplaceConnectorTriggerDestinationsWithBodyWithResponse(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ReplaceConnectorTriggerDestinationsResponse, error)
-
-	// ReplaceConnectorTriggerDestinationsWithResponse Update connector trigger destinations
-	//
-	// Replace the full set of destinations that receive trigger requests for a connector.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
-	ReplaceConnectorTriggerDestinationsWithResponse(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, body ReplaceConnectorTriggerDestinationsJSONRequestBody, reqEditors ...RequestEditorFn) (*ReplaceConnectorTriggerDestinationsResponse, error)
-
-	// ListNetworksWithResponse List Secure Compute networks
-	//
-	// Allows to list Secure Compute networks.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/connect/networks (the `ListNetworks` operationId).
-	ListNetworksWithResponse(ctx context.Context, params *ListNetworksParams, reqEditors ...RequestEditorFn) (*ListNetworksResponse, error)
-
-	// CreateNetworkWithBodyWithResponse Create a Secure Compute network
-	//
-	// Allows to create a Secure Compute network.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
-	CreateNetworkWithBodyWithResponse(ctx context.Context, params *CreateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateNetworkResponse, error)
-
-	// CreateNetworkWithResponse Create a Secure Compute network
-	//
-	// Allows to create a Secure Compute network.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
-	CreateNetworkWithResponse(ctx context.Context, params *CreateNetworkParams, body CreateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateNetworkResponse, error)
-
-	// DeleteNetworkWithResponse Delete a Secure Compute network
-	//
-	// Allows to delete a Secure Compute network.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/connect/networks/{networkId} (the `DeleteNetwork` operationId).
-	DeleteNetworkWithResponse(ctx context.Context, networkId string, params *DeleteNetworkParams, reqEditors ...RequestEditorFn) (*DeleteNetworkResponse, error)
-
-	// ReadNetworkWithResponse Read a Secure Compute network
-	//
-	// Allows to read a Secure Compute network.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/connect/networks/{networkId} (the `ReadNetwork` operationId).
-	ReadNetworkWithResponse(ctx context.Context, networkId string, params *ReadNetworkParams, reqEditors ...RequestEditorFn) (*ReadNetworkResponse, error)
-
-	// UpdateNetworkWithBodyWithResponse Update a Secure Compute network
-	//
-	// Allows to update a Secure Compute network.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
-	UpdateNetworkWithBodyWithResponse(ctx context.Context, networkId string, params *UpdateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateNetworkResponse, error)
-
-	// UpdateNetworkWithResponse Update a Secure Compute network
-	//
-	// Allows to update a Secure Compute network.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
-	UpdateNetworkWithResponse(ctx context.Context, networkId string, params *UpdateNetworkParams, body UpdateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateNetworkResponse, error)
-
-	// GetConnectorTokenWithBodyWithResponse Get a Connect token
-	//
-	// Get an access token for a connector identified by the path parameter and scoped to the requester.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-	GetConnectorTokenWithBodyWithResponse(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetConnectorTokenResponse, error)
-
-	// GetConnectorTokenWithResponse Get a Connect token
-	//
-	// Get an access token for a connector identified by the path parameter and scoped to the requester.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-	GetConnectorTokenWithResponse(ctx context.Context, connector string, body GetConnectorTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*GetConnectorTokenResponse, error)
-
-	// GetAllChecksWithResponse Retrieve a list of all checks
-	//
-	// List all of the checks created for a deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/deployments/{deploymentId}/checks (the `GetAllChecks` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	GetAllChecksWithResponse(ctx context.Context, deploymentId string, params *GetAllChecksParams, reqEditors ...RequestEditorFn) (*GetAllChecksResponse, error)
-
-	// CreateCheckWithBodyWithResponse Creates a new Check
-	//
-	// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	CreateCheckWithBodyWithResponse(ctx context.Context, deploymentId string, params *CreateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateCheckResponse, error)
-
-	// CreateCheckWithResponse Creates a new Check
-	//
-	// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	CreateCheckWithResponse(ctx context.Context, deploymentId string, params *CreateCheckParams, body CreateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateCheckResponse, error)
-
-	// GetCheckWithResponse Get a single check
-	//
-	// Return a detailed response for a single check.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/deployments/{deploymentId}/checks/{checkId} (the `GetCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	GetCheckWithResponse(ctx context.Context, deploymentId string, checkId string, params *GetCheckParams, reqEditors ...RequestEditorFn) (*GetCheckResponse, error)
-
-	// UpdateCheckWithBodyWithResponse Update a check
-	//
-	// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateCheckWithBodyWithResponse(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCheckResponse, error)
-
-	// UpdateCheckWithResponse Update a check
-	//
-	// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateCheckWithResponse(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, body UpdateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCheckResponse, error)
-
-	// RerequestCheckWithResponse Rerequest a check
-	//
-	// Rerequest a selected check that has failed.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/deployments/{deploymentId}/checks/{checkId}/rerequest (the `RerequestCheck` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	RerequestCheckWithResponse(ctx context.Context, deploymentId string, checkId string, params *RerequestCheckParams, reqEditors ...RequestEditorFn) (*RerequestCheckResponse, error)
-
-	// GetDeploymentFeatureFlagsWithResponse Retrieve the feature flags of a deployment
-	//
-	// Retrieve the feature flags of a deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/deployments/{deploymentId}/feature-flags (the `GetDeploymentFeatureFlags` operationId).
-	GetDeploymentFeatureFlagsWithResponse(ctx context.Context, deploymentId string, params *GetDeploymentFeatureFlagsParams, reqEditors ...RequestEditorFn) (*GetDeploymentFeatureFlagsResponse, error)
-
-	// UpdateIntegrationDeploymentActionWithBodyWithResponse Update deployment integration action
-	//
-	// Updates the deployment integration action for the specified integration installation.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
-	UpdateIntegrationDeploymentActionWithBodyWithResponse(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIntegrationDeploymentActionResponse, error)
-
-	// UpdateIntegrationDeploymentActionWithResponse Update deployment integration action
-	//
-	// Updates the deployment integration action for the specified integration installation.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
-	UpdateIntegrationDeploymentActionWithResponse(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, body UpdateIntegrationDeploymentActionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIntegrationDeploymentActionResponse, error)
-
-	// UpdateRecordWithBodyWithResponse Update an existing DNS record
-	//
-	// Updates an existing DNS record for a domain name.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
-	UpdateRecordWithBodyWithResponse(ctx context.Context, recordId string, params *UpdateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateRecordResponse, error)
-
-	// UpdateRecordWithResponse Update an existing DNS record
-	//
-	// Updates an existing DNS record for a domain name.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
-	UpdateRecordWithResponse(ctx context.Context, recordId string, params *UpdateRecordParams, body UpdateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateRecordResponse, error)
-
-	// GetDomainProjectDomainsWithResponse List Project Domains by Apex Domain
-	//
-	// List all project domains associated with an apex domain owned by the authenticated account.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/domains/{domain}/project-domains (the `GetDomainProjectDomains` operationId).
-	GetDomainProjectDomainsWithResponse(ctx context.Context, domain string, params *GetDomainProjectDomainsParams, reqEditors ...RequestEditorFn) (*GetDomainProjectDomainsResponse, error)
-
-	// GetDrainsWithResponse Retrieve a list of all Drains
-	//
-	// Allows to retrieve the list of Drains of the authenticated team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/drains (the `GetDrains` operationId).
-	GetDrainsWithResponse(ctx context.Context, params *GetDrainsParams, reqEditors ...RequestEditorFn) (*GetDrainsResponse, error)
-
-	// CreateDrainWithBodyWithResponse Create a new Drain
-	//
-	// Create a new Drain with the provided configuration.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
-	CreateDrainWithBodyWithResponse(ctx context.Context, params *CreateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDrainResponse, error)
-
-	// CreateDrainWithResponse Create a new Drain
-	//
-	// Create a new Drain with the provided configuration.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
-	CreateDrainWithResponse(ctx context.Context, params *CreateDrainParams, body CreateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDrainResponse, error)
-
-	// TestDrainWithBodyWithResponse Validate Drain delivery configuration
-	//
-	// Validate the delivery configuration of a Drain using sample events.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
-	TestDrainWithBodyWithResponse(ctx context.Context, params *TestDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*TestDrainResponse, error)
-
-	// TestDrainWithResponse Validate Drain delivery configuration
-	//
-	// Validate the delivery configuration of a Drain using sample events.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
-	TestDrainWithResponse(ctx context.Context, params *TestDrainParams, body TestDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*TestDrainResponse, error)
-
-	// DeleteDrainWithResponse Delete a drain
-	//
-	// Delete a specific Drain by passing the drain id in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/drains/{id} (the `DeleteDrain` operationId).
-	DeleteDrainWithResponse(ctx context.Context, id string, params *DeleteDrainParams, reqEditors ...RequestEditorFn) (*DeleteDrainResponse, error)
-
-	// GetDrainWithResponse Find a Drain by id
-	//
-	// Get the information for a specific Drain by passing the drain id in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/drains/{id} (the `GetDrain` operationId).
-	GetDrainWithResponse(ctx context.Context, id string, params *GetDrainParams, reqEditors ...RequestEditorFn) (*GetDrainResponse, error)
-
-	// UpdateDrainWithBodyWithResponse Update an existing Drain
-	//
-	// Update the configuration of an existing drain.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
-	UpdateDrainWithBodyWithResponse(ctx context.Context, id string, params *UpdateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDrainResponse, error)
-
-	// UpdateDrainWithResponse Update an existing Drain
-	//
-	// Update the configuration of an existing drain.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
-	UpdateDrainWithResponse(ctx context.Context, id string, params *UpdateDrainParams, body UpdateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDrainResponse, error)
-
-	// DangerouslyDeleteBySrcImagesWithBodyWithResponse Dangerously delete by source image
-	//
-	// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
-	DangerouslyDeleteBySrcImagesWithBodyWithResponse(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DangerouslyDeleteBySrcImagesResponse, error)
-
-	// DangerouslyDeleteBySrcImagesWithResponse Dangerously delete by source image
-	//
-	// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
-	DangerouslyDeleteBySrcImagesWithResponse(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, body DangerouslyDeleteBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*DangerouslyDeleteBySrcImagesResponse, error)
-
-	// DangerouslyDeleteByTagsWithBodyWithResponse Dangerously delete by tag
-	//
-	// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
-	DangerouslyDeleteByTagsWithBodyWithResponse(ctx context.Context, params *DangerouslyDeleteByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DangerouslyDeleteByTagsResponse, error)
-
-	// DangerouslyDeleteByTagsWithResponse Dangerously delete by tag
-	//
-	// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
-	DangerouslyDeleteByTagsWithResponse(ctx context.Context, params *DangerouslyDeleteByTagsParams, body DangerouslyDeleteByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*DangerouslyDeleteByTagsResponse, error)
-
-	// InvalidateBySrcImagesWithBodyWithResponse Invalidate by source image
-	//
-	// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
-	InvalidateBySrcImagesWithBodyWithResponse(ctx context.Context, params *InvalidateBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*InvalidateBySrcImagesResponse, error)
-
-	// InvalidateBySrcImagesWithResponse Invalidate by source image
-	//
-	// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
-	InvalidateBySrcImagesWithResponse(ctx context.Context, params *InvalidateBySrcImagesParams, body InvalidateBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*InvalidateBySrcImagesResponse, error)
-
-	// InvalidateByTagsWithBodyWithResponse Invalidate by tag
-	//
-	// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
-	InvalidateByTagsWithBodyWithResponse(ctx context.Context, params *InvalidateByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*InvalidateByTagsResponse, error)
-
-	// InvalidateByTagsWithResponse Invalidate by tag
-	//
-	// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
-	InvalidateByTagsWithResponse(ctx context.Context, params *InvalidateByTagsParams, body InvalidateByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*InvalidateByTagsResponse, error)
-
-	// DeleteSharedEnvVariableWithBodyWithResponse Delete one or more Env Var
-	//
-	// Deletes one or many Shared Environment Variables for a given team.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
-	DeleteSharedEnvVariableWithBodyWithResponse(ctx context.Context, params *DeleteSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteSharedEnvVariableResponse, error)
-
-	// DeleteSharedEnvVariableWithResponse Delete one or more Env Var
-	//
-	// Deletes one or many Shared Environment Variables for a given team.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
-	DeleteSharedEnvVariableWithResponse(ctx context.Context, params *DeleteSharedEnvVariableParams, body DeleteSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteSharedEnvVariableResponse, error)
-
-	// ListSharedEnvVariableWithResponse Lists all Shared Environment Variables for a team
-	//
-	// Lists all Shared Environment Variables for a team, taking into account optional filters.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/env (the `ListSharedEnvVariable` operationId).
-	ListSharedEnvVariableWithResponse(ctx context.Context, params *ListSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*ListSharedEnvVariableResponse, error)
-
-	// UpdateSharedEnvVariableWithBodyWithResponse Updates one or more shared environment variables
-	//
-	// Updates a given Shared Environment Variable for a Team.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
-	UpdateSharedEnvVariableWithBodyWithResponse(ctx context.Context, params *UpdateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSharedEnvVariableResponse, error)
-
-	// UpdateSharedEnvVariableWithResponse Updates one or more shared environment variables
-	//
-	// Updates a given Shared Environment Variable for a Team.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
-	UpdateSharedEnvVariableWithResponse(ctx context.Context, params *UpdateSharedEnvVariableParams, body UpdateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSharedEnvVariableResponse, error)
-
-	// CreateSharedEnvVariableWithBodyWithResponse Create one or more shared environment variables
-	//
-	// Creates shared environment variable(s) for a team.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
-	CreateSharedEnvVariableWithBodyWithResponse(ctx context.Context, params *CreateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSharedEnvVariableResponse, error)
-
-	// CreateSharedEnvVariableWithResponse Create one or more shared environment variables
-	//
-	// Creates shared environment variable(s) for a team.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
-	CreateSharedEnvVariableWithResponse(ctx context.Context, params *CreateSharedEnvVariableParams, body CreateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSharedEnvVariableResponse, error)
-
-	// GetSharedEnvVarWithResponse Retrieve the decrypted value of a Shared Environment Variable by id.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/env/{id} (the `GetSharedEnvVar` operationId).
-	GetSharedEnvVarWithResponse(ctx context.Context, id string, params *GetSharedEnvVarParams, reqEditors ...RequestEditorFn) (*GetSharedEnvVarResponse, error)
-
-	// UnlinkSharedEnvVariableWithResponse Disconnects a shared environment variable for a given project
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/env/{id}/unlink/{projectId} (the `UnlinkSharedEnvVariable` operationId).
-	UnlinkSharedEnvVariableWithResponse(ctx context.Context, id string, projectId string, params *UnlinkSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*UnlinkSharedEnvVariableResponse, error)
-
-	// ListEventTypesWithResponse List Event Types
-	//
-	// Returns the list of user-facing event types with descriptions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/events/types (the `ListEventTypes` operationId).
-	ListEventTypesWithResponse(ctx context.Context, params *ListEventTypesParams, reqEditors ...RequestEditorFn) (*ListEventTypesResponse2, error)
-
-	// GetEdgeConfigsWithResponse Get Global Configs
-	//
-	// Returns all Global Configs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config (the `GetEdgeConfigs` operationId).
-	GetEdgeConfigsWithResponse(ctx context.Context, params *GetEdgeConfigsParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigsResponse, error)
-
-	// CreateEdgeConfigWithBodyWithResponse Create a Global Config
-	//
-	// Creates a Global Config.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
-	CreateEdgeConfigWithBodyWithResponse(ctx context.Context, params *CreateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEdgeConfigResponse, error)
-
-	// CreateEdgeConfigWithResponse Create a Global Config
-	//
-	// Creates a Global Config.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
-	CreateEdgeConfigWithResponse(ctx context.Context, params *CreateEdgeConfigParams, body CreateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEdgeConfigResponse, error)
-
-	// DeleteEdgeConfigWithResponse Delete a Global Config
-	//
-	// Delete a Global Config by id.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId} (the `DeleteEdgeConfig` operationId).
-	DeleteEdgeConfigWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigParams, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigResponse, error)
-
-	// GetEdgeConfigWithResponse Get a Global Config
-	//
-	// Returns a Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId} (the `GetEdgeConfig` operationId).
-	GetEdgeConfigWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigResponse, error)
-
-	// UpdateEdgeConfigWithBodyWithResponse Update a Global Config
-	//
-	// Updates a Global Config.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
-	UpdateEdgeConfigWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEdgeConfigResponse, error)
-
-	// UpdateEdgeConfigWithResponse Update a Global Config
-	//
-	// Updates a Global Config.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
-	UpdateEdgeConfigWithResponse(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, body UpdateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateEdgeConfigResponse, error)
-
-	// GetEdgeConfigBackupsWithResponse Get Global Config backups
-	//
-	// Returns backups of a Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/backups (the `GetEdgeConfigBackups` operationId).
-	GetEdgeConfigBackupsWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigBackupsParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigBackupsResponse, error)
-
-	// GetEdgeConfigBackupWithResponse Get Global Config backup
-	//
-	// Retrieves a specific version of a Global Config from backup storage. The `user` field is only included when the caller can list team members.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} (the `GetEdgeConfigBackup` operationId).
-	GetEdgeConfigBackupWithResponse(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *GetEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigBackupResponse, error)
-
-	// RestoreEdgeConfigBackupWithResponse Restore Global Config backup
-	//
-	// Restores a Global Config backup.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore (the `RestoreEdgeConfigBackup` operationId).
-	RestoreEdgeConfigBackupWithResponse(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *RestoreEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*RestoreEdgeConfigBackupResponse, error)
-
-	// GetEdgeConfigItemWithResponse Get a Global Config item
-	//
-	// Returns a specific Global Config Item.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} (the `GetEdgeConfigItem` operationId).
-	GetEdgeConfigItemWithResponse(ctx context.Context, edgeConfigId string, edgeConfigItemKey string, params *GetEdgeConfigItemParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigItemResponse, error)
-
-	// GetEdgeConfigItemsWithResponse Get Global Config items
-	//
-	// Returns all items of a Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/items (the `GetEdgeConfigItems` operationId).
-	GetEdgeConfigItemsWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigItemsParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigItemsResponse, error)
-
-	// PatchEdgeConfigItemsWithBodyWithResponse Update Global Config items in batch
-	//
-	// Update multiple Global Config Items in batch.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-	PatchEdgeConfigItemsWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEdgeConfigItemsResponse, error)
-
-	// PatchEdgeConfigItemsWithResponse Update Global Config items in batch
-	//
-	// Update multiple Global Config Items in batch.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-	PatchEdgeConfigItemsWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEdgeConfigItemsResponse, error)
-
-	// DeleteEdgeConfigSchemaWithResponse Delete a Global Config's schema
-	//
-	// Deletes the schema of existing Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId}/schema (the `DeleteEdgeConfigSchema` operationId).
-	DeleteEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigSchemaResponse, error)
-
-	// GetEdgeConfigSchemaWithResponse Get Global Config schema
-	//
-	// Returns the schema of a Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/schema (the `GetEdgeConfigSchema` operationId).
-	GetEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigSchemaResponse, error)
-
-	// PatchEdgeConfigSchemaWithBodyWithResponse Update Global Config schema
-	//
-	// Update a Global Config's schema.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-	PatchEdgeConfigSchemaWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEdgeConfigSchemaResponse, error)
-
-	// PatchEdgeConfigSchemaWithResponse Update Global Config schema
-	//
-	// Update a Global Config's schema.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-	PatchEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEdgeConfigSchemaResponse, error)
-
-	// CreateEdgeConfigTokenWithBodyWithResponse Create a Global Config token
-	//
-	// Adds a token to an existing Global Config.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-	CreateEdgeConfigTokenWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error)
-
-	// CreateEdgeConfigTokenWithResponse Create a Global Config token
-	//
-	// Adds a token to an existing Global Config.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-	CreateEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error)
-
-	// GetEdgeConfigTokenWithResponse Get Global Config token meta data
-	//
-	// Return meta data about a Global Config token.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
-	GetEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokenResponse, error)
-
-	// DeleteEdgeConfigTokensWithBodyWithResponse Delete one or more Global Config tokens
-	//
-	// Deletes one or more tokens of an existing Global Config.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-	DeleteEdgeConfigTokensWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigTokensResponse, error)
-
-	// DeleteEdgeConfigTokensWithResponse Delete one or more Global Config tokens
-	//
-	// Deletes one or more tokens of an existing Global Config.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-	DeleteEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigTokensResponse, error)
-
-	// GetEdgeConfigTokensWithResponse Get all tokens of a Global Config
-	//
-	// Returns all tokens of a Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
-	GetEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokensResponse, error)
-
-	// UpdateInstallationWithBodyWithResponse Update Installation
-	//
-	// This endpoint updates an integration installation.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-	UpdateInstallationWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error)
-
-	// UpdateInstallationWithResponse Update Installation
-	//
-	// This endpoint updates an integration installation.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-	UpdateInstallationWithResponse(ctx context.Context, integrationConfigurationId string, body UpdateInstallationJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error)
-
-	// GetAccountInfoWithResponse Get Account Information
-	//
-	// Fetches the best account or user’s contact info.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/account (the `GetAccountInfo` operationId).
-	GetAccountInfoWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*GetAccountInfoResponse, error)
-
-	// SubmitBillingDataWithBodyWithResponse Submit Billing Data
-	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-	SubmitBillingDataWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitBillingDataResponse, error)
-
-	// SubmitBillingDataWithResponse Submit Billing Data
-	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-	SubmitBillingDataWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitBillingDataJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitBillingDataResponse, error)
-
-	// SubmitPrepaymentBalancesWithBodyWithResponse Submit Prepayment Balances
-	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-	SubmitPrepaymentBalancesWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitPrepaymentBalancesResponse, error)
-
-	// SubmitPrepaymentBalancesWithResponse Submit Prepayment Balances
-	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-	SubmitPrepaymentBalancesWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitPrepaymentBalancesJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitPrepaymentBalancesResponse, error)
-
-	// FinalizeInstallationWithResponse Finalize Installation
-	//
-	// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
-	FinalizeInstallationWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*FinalizeInstallationResponse, error)
-
-	// SubmitInvoiceWithBodyWithResponse Submit Invoice
-	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-	SubmitInvoiceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitInvoiceResponse, error)
-
-	// SubmitInvoiceWithResponse Submit Invoice
-	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-	SubmitInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitInvoiceResponse, error)
-
-	// GetInvoiceWithResponse Get Invoice
-	//
-	// Get Invoice details and status for a given invoice ID.<br/> <br/> See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} (the `GetInvoice` operationId).
-	GetInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, reqEditors ...RequestEditorFn) (*GetInvoiceResponse, error)
-
-	// UpdateInvoiceWithBodyWithResponse Invoice Actions
-	//
-	// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-	UpdateInvoiceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInvoiceResponse, error)
-
-	// UpdateInvoiceWithResponse Invoice Actions
-	//
-	// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-	UpdateInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, body UpdateInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInvoiceResponse, error)
-
-	// RevokeInstallationCredentialWithBodyWithResponse Revoke Installation Credential
-	//
-	// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-	RevokeInstallationCredentialWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RevokeInstallationCredentialResponse, error)
-
-	// RevokeInstallationCredentialWithResponse Revoke Installation Credential
-	//
-	// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-	RevokeInstallationCredentialWithResponse(ctx context.Context, integrationConfigurationId string, body RevokeInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*RevokeInstallationCredentialResponse, error)
-
-	// RotateInstallationCredentialWithBodyWithResponse Rotate Installation Credential
-	//
-	// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-	RotateInstallationCredentialWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateInstallationCredentialResponse, error)
-
-	// RotateInstallationCredentialWithResponse Rotate Installation Credential
-	//
-	// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-	RotateInstallationCredentialWithResponse(ctx context.Context, integrationConfigurationId string, body RotateInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateInstallationCredentialResponse, error)
-
-	// CreateEventWithBodyWithResponse Create Event
-	//
-	// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-	CreateEventWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEventResponse, error)
-
-	// CreateEventWithResponse Create Event
-	//
-	// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-	CreateEventWithResponse(ctx context.Context, integrationConfigurationId string, body CreateEventJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEventResponse, error)
-
-	// GetMemberWithResponse Get Member Information
-	//
-	// Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/member/{memberId} (the `GetMember` operationId).
-	GetMemberWithResponse(ctx context.Context, integrationConfigurationId string, memberId string, reqEditors ...RequestEditorFn) (*GetMemberResponse, error)
-
-	// UpdateResourceSecretsWithBodyWithResponse Deprecated: true. Update Resource Secrets (Deprecated)
-	//
-	// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateResourceSecretsWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsResponse, error)
-
-	// UpdateResourceSecretsWithResponse Deprecated: true. Update Resource Secrets (Deprecated)
-	//
-	// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	UpdateResourceSecretsWithResponse(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, body UpdateResourceSecretsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsResponse, error)
-
-	// GetIntegrationResourcesWithResponse Get Integration Resources
-	//
-	// Get all resources for a given installation ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources (the `GetIntegrationResources` operationId).
-	GetIntegrationResourcesWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*GetIntegrationResourcesResponse, error)
-
-	// DeleteIntegrationResourceWithResponse Delete Integration Resource
-	//
-	// Delete a resource owned by the selected installation ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `DeleteIntegrationResource` operationId).
-	DeleteIntegrationResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*DeleteIntegrationResourceResponse, error)
-
-	// GetIntegrationResourceWithResponse Get Integration Resource
-	//
-	// Get a resource by its partner ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `GetIntegrationResource` operationId).
-	GetIntegrationResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*GetIntegrationResourceResponse, error)
-
-	// UpdateResourceWithBodyWithResponse Update Resource
-	//
-	// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
-	UpdateResourceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceResponse, error)
-
-	// UpdateResourceWithResponse Update Resource
-	//
-	// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
-	UpdateResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateResourceResponse, error)
-
-	// ImportResourceWithBodyWithResponse Import Resource
-	//
-	// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
-	ImportResourceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ImportResourceResponse, error)
-
-	// ImportResourceWithResponse Import Resource
-	//
-	// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
-	ImportResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body ImportResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*ImportResourceResponse, error)
-
-	// GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse Get the data of a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error)
-
-	// HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse Get the data of a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error)
-
-	// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBodyWithResponse Push data into a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error)
-
-	// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse Push data into a user-provided Global Config
-	//
-	// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-	ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error)
-
-	// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBodyWithResponse Create one or multiple experimentation items
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
-	CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse, error)
-
-	// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithResponse Create one or multiple experimentation items
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
-	CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse, error)
-
-	// DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse Delete an existing experimentation item
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-	DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, reqEditors ...RequestEditorFn) (*DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse, error)
-
-	// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBodyWithResponse Patch an existing experimentation item
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-	UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse, error)
-
-	// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse Patch an existing experimentation item
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-	UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, body UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse, error)
-
-	// UpdateResourceSecretsByIdWithBodyWithResponse Update Resource Secrets
-	//
-	// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
-	UpdateResourceSecretsByIdWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsByIdResponse, error)
-
-	// UpdateResourceSecretsByIdWithResponse Update Resource Secrets
-	//
-	// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
-	UpdateResourceSecretsByIdWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceSecretsByIdJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsByIdResponse, error)
-
-	// DeleteConfigurationWithResponse Delete an integration configuration
-	//
-	// Allows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/integrations/configuration/{id} (the `DeleteConfiguration` operationId).
-	DeleteConfigurationWithResponse(ctx context.Context, id string, params *DeleteConfigurationParams, reqEditors ...RequestEditorFn) (*DeleteConfigurationResponse, error)
-
-	// GetConfigurationWithResponse Retrieve an integration configuration
-	//
-	// Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/integrations/configuration/{id} (the `GetConfiguration` operationId).
-	GetConfigurationWithResponse(ctx context.Context, id string, params *GetConfigurationParams, reqEditors ...RequestEditorFn) (*GetConfigurationResponse, error)
-
-	// GetConfigurationProductsWithResponse List products for integration configuration
-	//
-	// Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/integrations/configuration/{id}/products (the `GetConfigurationProducts` operationId).
-	GetConfigurationProductsWithResponse(ctx context.Context, id string, params *GetConfigurationProductsParams, reqEditors ...RequestEditorFn) (*GetConfigurationProductsResponse, error)
-
-	// GetConfigurationsWithResponse Get configurations for the authenticated user or team
-	//
-	// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/integrations/configurations (the `GetConfigurations` operationId).
-	GetConfigurationsWithResponse(ctx context.Context, params *GetConfigurationsParams, reqEditors ...RequestEditorFn) (*GetConfigurationsResponse, error)
-
-	// GitNamespacesWithResponse List git namespaces by provider
-	//
-	// Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/integrations/git-namespaces (the `GitNamespaces` operationId).
-	GitNamespacesWithResponse(ctx context.Context, params *GitNamespacesParams, reqEditors ...RequestEditorFn) (*GitNamespacesResponse, error)
-
-	// ConnectIntegrationResourceToProjectWithBodyWithResponse Connect integration resource to project
-	//
-	// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
-	ConnectIntegrationResourceToProjectWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ConnectIntegrationResourceToProjectResponse, error)
-
-	// ConnectIntegrationResourceToProjectWithResponse Connect integration resource to project
-	//
-	// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
-	ConnectIntegrationResourceToProjectWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, body ConnectIntegrationResourceToProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*ConnectIntegrationResourceToProjectResponse, error)
-
-	// GetBillingPlansWithResponse List integration billing plans
-	//
-	// Get a list of billing plans for an integration and product.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans (the `GetBillingPlans` operationId).
-	GetBillingPlansWithResponse(ctx context.Context, integrationIdOrSlug string, productIdOrSlug string, params *GetBillingPlansParams, reqEditors ...RequestEditorFn) (*GetBillingPlansResponse, error)
-
-	// DeleteIntegrationLogDrainWithResponse Deletes the Integration log drain with the provided `id` (deprecated)
-	//
-	// Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/integrations/log-drains/{id} (the `DeleteIntegrationLogDrain` operationId).
-	DeleteIntegrationLogDrainWithResponse(ctx context.Context, id string, params *DeleteIntegrationLogDrainParams, reqEditors ...RequestEditorFn) (*DeleteIntegrationLogDrainResponse, error)
-
-	// SearchRepoWithResponse List git repositories linked to namespace by provider
-	//
-	// Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/integrations/search-repo (the `SearchRepo` operationId).
-	SearchRepoWithResponse(ctx context.Context, params *SearchRepoParams, reqEditors ...RequestEditorFn) (*SearchRepoResponse, error)
-
-	// ExchangeSsoTokenWithBodyWithResponse SSO Token Exchange
-	//
-	// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
-	ExchangeSsoTokenWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExchangeSsoTokenResponse, error)
-
-	// ExchangeSsoTokenWithResponse SSO Token Exchange
-	//
-	// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
-	ExchangeSsoTokenWithResponse(ctx context.Context, body ExchangeSsoTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*ExchangeSsoTokenResponse, error)
-
-	// ListKmsIssuersWithResponse List issuers
-	//
-	// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/kms/issuers (the `ListKmsIssuers` operationId).
-	ListKmsIssuersWithResponse(ctx context.Context, params *ListKmsIssuersParams, reqEditors ...RequestEditorFn) (*ListKmsIssuersResponse, error)
-
-	// CreateKmsIssuerWithBodyWithResponse Create an issuer
-	//
-	// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
-	CreateKmsIssuerWithBodyWithResponse(ctx context.Context, params *CreateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKmsIssuerResponse, error)
-
-	// CreateKmsIssuerWithResponse Create an issuer
-	//
-	// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
-	CreateKmsIssuerWithResponse(ctx context.Context, params *CreateKmsIssuerParams, body CreateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKmsIssuerResponse, error)
-
-	// DeleteKmsIssuerWithResponse Delete an issuer
-	//
-	// Delete a KMS issuer and its signing keys.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/kms/issuers/{issuerId} (the `DeleteKmsIssuer` operationId).
-	DeleteKmsIssuerWithResponse(ctx context.Context, issuerId string, params *DeleteKmsIssuerParams, reqEditors ...RequestEditorFn) (*DeleteKmsIssuerResponse, error)
-
-	// GetKmsIssuerWithResponse Get an issuer
-	//
-	// Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/kms/issuers/{issuerId} (the `GetKmsIssuer` operationId).
-	GetKmsIssuerWithResponse(ctx context.Context, issuerId string, params *GetKmsIssuerParams, reqEditors ...RequestEditorFn) (*GetKmsIssuerResponse, error)
-
-	// UpdateKmsIssuerWithBodyWithResponse Update an issuer
-	//
-	// Update a KMS issuer's name or claims schema.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
-	UpdateKmsIssuerWithBodyWithResponse(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerResponse, error)
-
-	// UpdateKmsIssuerWithResponse Update an issuer
-	//
-	// Update a KMS issuer's name or claims schema.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
-	UpdateKmsIssuerWithResponse(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, body UpdateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerResponse, error)
-
-	// CreateKmsSigningKeyWithBodyWithResponse Create a signing key
-	//
-	// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
-	CreateKmsSigningKeyWithBodyWithResponse(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKmsSigningKeyResponse, error)
-
-	// CreateKmsSigningKeyWithResponse Create a signing key
-	//
-	// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
-	CreateKmsSigningKeyWithResponse(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, body CreateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKmsSigningKeyResponse, error)
-
-	// ActivateKmsSigningKeyWithBodyWithResponse Activate a signing key
-	//
-	// Activate a pending signing key so the issuer starts signing with it.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
-	ActivateKmsSigningKeyWithBodyWithResponse(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ActivateKmsSigningKeyResponse, error)
-
-	// ActivateKmsSigningKeyWithResponse Activate a signing key
-	//
-	// Activate a pending signing key so the issuer starts signing with it.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
-	ActivateKmsSigningKeyWithResponse(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, body ActivateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*ActivateKmsSigningKeyResponse, error)
-
-	// RevokeKmsSigningKeyWithResponse Revoke a signing key
-	//
-	// Immediately revoke a signing key that is already scheduled for revocation.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke (the `RevokeKmsSigningKey` operationId).
-	RevokeKmsSigningKeyWithResponse(ctx context.Context, issuerId string, keyId string, params *RevokeKmsSigningKeyParams, reqEditors ...RequestEditorFn) (*RevokeKmsSigningKeyResponse, error)
-
-	// CreateKmsIssuerPolicyWithBodyWithResponse Create an issuer policy
-	//
-	// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
-	CreateKmsIssuerPolicyWithBodyWithResponse(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKmsIssuerPolicyResponse, error)
-
-	// CreateKmsIssuerPolicyWithResponse Create an issuer policy
-	//
-	// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
-	CreateKmsIssuerPolicyWithResponse(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, body CreateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKmsIssuerPolicyResponse, error)
-
-	// DeleteKmsIssuerPolicyWithResponse Delete an issuer policy
-	//
-	// Remove a policy from a KMS issuer.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `DeleteKmsIssuerPolicy` operationId).
-	DeleteKmsIssuerPolicyWithResponse(ctx context.Context, issuerId string, kind DeleteKmsIssuerPolicyParamsKind, policyKey string, params *DeleteKmsIssuerPolicyParams, reqEditors ...RequestEditorFn) (*DeleteKmsIssuerPolicyResponse, error)
-
-	// UpdateKmsIssuerPolicyWithBodyWithResponse Update an issuer policy
-	//
-	// Update an existing KMS issuer policy's environments or token claims.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
-	UpdateKmsIssuerPolicyWithBodyWithResponse(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerPolicyResponse, error)
-
-	// UpdateKmsIssuerPolicyWithResponse Update an issuer policy
-	//
-	// Update an existing KMS issuer policy's environments or token claims.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
-	UpdateKmsIssuerPolicyWithResponse(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, body UpdateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerPolicyResponse, error)
-
-	// SignKmsMessageWithBodyWithResponse Sign a message
-	//
-	// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
-	SignKmsMessageWithBodyWithResponse(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SignKmsMessageResponse, error)
-
-	// SignKmsMessageWithResponse Sign a message
-	//
-	// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
-	SignKmsMessageWithResponse(ctx context.Context, issuerId string, body SignKmsMessageJSONRequestBody, reqEditors ...RequestEditorFn) (*SignKmsMessageResponse, error)
-
-	// SignKmsTokenWithBodyWithResponse Sign a token
-	//
-	// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
-	SignKmsTokenWithBodyWithResponse(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SignKmsTokenResponse, error)
-
-	// SignKmsTokenWithResponse Sign a token
-	//
-	// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
-	SignKmsTokenWithResponse(ctx context.Context, issuerId string, body SignKmsTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*SignKmsTokenResponse, error)
-
-	// GetAllLogDrainsWithResponse Retrieves a list of all the Log Drains (deprecated)
-	//
-	// Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/log-drains (the `GetAllLogDrains` operationId).
-	GetAllLogDrainsWithResponse(ctx context.Context, params *GetAllLogDrainsParams, reqEditors ...RequestEditorFn) (*GetAllLogDrainsResponse, error)
-
-	// CreateConfigurableLogDrainWithBodyWithResponse Creates a Configurable Log Drain (deprecated)
-	//
-	// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
-	CreateConfigurableLogDrainWithBodyWithResponse(ctx context.Context, params *CreateConfigurableLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateConfigurableLogDrainResponse, error)
-
-	// CreateConfigurableLogDrainWithResponse Creates a Configurable Log Drain (deprecated)
-	//
-	// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
-	CreateConfigurableLogDrainWithResponse(ctx context.Context, params *CreateConfigurableLogDrainParams, body CreateConfigurableLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateConfigurableLogDrainResponse, error)
-
-	// DeleteConfigurableLogDrainWithResponse Deletes a Configurable Log Drain (deprecated)
-	//
-	// Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/log-drains/{id} (the `DeleteConfigurableLogDrain` operationId).
-	DeleteConfigurableLogDrainWithResponse(ctx context.Context, id string, params *DeleteConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*DeleteConfigurableLogDrainResponse, error)
-
-	// GetConfigurableLogDrainWithResponse Retrieves a Configurable Log Drain (deprecated)
-	//
-	// Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/log-drains/{id} (the `GetConfigurableLogDrain` operationId).
-	GetConfigurableLogDrainWithResponse(ctx context.Context, id string, params *GetConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*GetConfigurableLogDrainResponse, error)
-
-	// CreateMicrofrontendsGroupWithApplicationsWithBodyWithResponse Create a microfrontends group with applications
-	//
-	// Creates a microfrontends group and attaches multiple projects in a single request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
-	CreateMicrofrontendsGroupWithApplicationsWithBodyWithResponse(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateMicrofrontendsGroupWithApplicationsResponse, error)
-
-	// CreateMicrofrontendsGroupWithApplicationsWithResponse Create a microfrontends group with applications
-	//
-	// Creates a microfrontends group and attaches multiple projects in a single request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
-	CreateMicrofrontendsGroupWithApplicationsWithResponse(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, body CreateMicrofrontendsGroupWithApplicationsJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateMicrofrontendsGroupWithApplicationsResponse, error)
-
-	// GetMicrofrontendsGroupsWithResponse List microfrontends groups
-	//
-	// Get the microfrontends group IDs for a team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/microfrontends/groups (the `GetMicrofrontendsGroups` operationId).
-	GetMicrofrontendsGroupsWithResponse(ctx context.Context, params *GetMicrofrontendsGroupsParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsGroupsResponse, error)
-
-	// GetMicrofrontendsInGroupWithResponse List projects in a microfrontends group
-	//
-	// Get the microfrontends for a given group ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/microfrontends/groups/{groupId}/projects (the `GetMicrofrontendsInGroup` operationId).
-	GetMicrofrontendsInGroupWithResponse(ctx context.Context, groupId string, params *GetMicrofrontendsInGroupParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsInGroupResponse, error)
-
-	// GetMicrofrontendsConfigForProjectWithResponse Get microfrontends config for a project
-	//
-	// Get the microfrontends config for a project by ID or name.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config (the `GetMicrofrontendsConfigForProject` operationId).
-	GetMicrofrontendsConfigForProjectWithResponse(ctx context.Context, projectIdOrName string, params *GetMicrofrontendsConfigForProjectParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsConfigForProjectResponse, error)
-
-	// GetMicrofrontendsConfigWithResponse Get microfrontends config for a deployment
-	//
-	// Get the microfrontends config for a deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/microfrontends/{deploymentId}/config (the `GetMicrofrontendsConfig` operationId).
-	GetMicrofrontendsConfigWithResponse(ctx context.Context, deploymentId string, params *GetMicrofrontendsConfigParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsConfigResponse, error)
-
-	// ListPrivateLinkEndpointsWithResponse List PrivateLink endpoints
-	//
-	// Lists all PrivateLink endpoints for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/networking/privatelink/endpoints (the `ListPrivateLinkEndpoints` operationId).
-	ListPrivateLinkEndpointsWithResponse(ctx context.Context, params *ListPrivateLinkEndpointsParams, reqEditors ...RequestEditorFn) (*ListPrivateLinkEndpointsResponse, error)
-
-	// CreatePrivateLinkEndpointWithBodyWithResponse Create a PrivateLink endpoint
-	//
-	// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
-	CreatePrivateLinkEndpointWithBodyWithResponse(ctx context.Context, params *CreatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePrivateLinkEndpointResponse, error)
-
-	// CreatePrivateLinkEndpointWithResponse Create a PrivateLink endpoint
-	//
-	// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
-	CreatePrivateLinkEndpointWithResponse(ctx context.Context, params *CreatePrivateLinkEndpointParams, body CreatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*CreatePrivateLinkEndpointResponse, error)
-
-	// DeletePrivateLinkEndpointWithResponse Delete a PrivateLink endpoint
-	//
-	// Deletes a PrivateLink endpoint. The endpoint is removed asynchronously. Repeating the request for an endpoint that is already being deleted retries its cleanup and also returns `204`. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/networking/privatelink/endpoints/{endpointId} (the `DeletePrivateLinkEndpoint` operationId).
-	DeletePrivateLinkEndpointWithResponse(ctx context.Context, endpointId string, params *DeletePrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*DeletePrivateLinkEndpointResponse, error)
-
-	// ReadPrivateLinkEndpointWithResponse Read a PrivateLink endpoint
-	//
-	// Reads a single PrivateLink endpoint.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/networking/privatelink/endpoints/{endpointId} (the `ReadPrivateLinkEndpoint` operationId).
-	ReadPrivateLinkEndpointWithResponse(ctx context.Context, endpointId string, params *ReadPrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*ReadPrivateLinkEndpointResponse, error)
-
-	// UpdatePrivateLinkEndpointWithBodyWithResponse Update a PrivateLink endpoint
-	//
-	// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
-	UpdatePrivateLinkEndpointWithBodyWithResponse(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePrivateLinkEndpointResponse, error)
-
-	// UpdatePrivateLinkEndpointWithResponse Update a PrivateLink endpoint
-	//
-	// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
-	UpdatePrivateLinkEndpointWithResponse(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, body UpdatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdatePrivateLinkEndpointResponse, error)
-
-	// GetObservabilityConfigurationProjectsWithResponse Lists disabled Observability Plus projects
-	//
-	// Lists the projects that are currently configured as disabled for Observability Plus on a team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/observability/manage/configuration/projects (the `GetObservabilityConfigurationProjects` operationId).
-	GetObservabilityConfigurationProjectsWithResponse(ctx context.Context, params *GetObservabilityConfigurationProjectsParams, reqEditors ...RequestEditorFn) (*GetObservabilityConfigurationProjectsResponse, error)
-
-	// UpdateObservabilityConfigurationProjectWithBodyWithResponse Updates a disabled Observability Plus project setting
-	//
-	// Updates whether Observability Plus is disabled for a single project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
-	UpdateObservabilityConfigurationProjectWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateObservabilityConfigurationProjectResponse, error)
-
-	// UpdateObservabilityConfigurationProjectWithResponse Updates a disabled Observability Plus project setting
-	//
-	// Updates whether Observability Plus is disabled for a single project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
-	UpdateObservabilityConfigurationProjectWithResponse(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, body UpdateObservabilityConfigurationProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateObservabilityConfigurationProjectResponse, error)
-
-	// ListOrganizationsWithResponse List Organizations
-	//
-	// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/organizations (the `ListOrganizations` operationId).
-	ListOrganizationsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListOrganizationsResponse, error)
-
-	// CreateOrganizationWithBodyWithResponse Create an Organization
-	//
-	// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
-	CreateOrganizationWithBodyWithResponse(ctx context.Context, params *CreateOrganizationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateOrganizationResponse, error)
-
-	// CreateOrganizationWithResponse Create an Organization
-	//
-	// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
-	CreateOrganizationWithResponse(ctx context.Context, params *CreateOrganizationParams, body CreateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateOrganizationResponse, error)
-
-	// GetOrganizationWithResponse Get an Organization
-	//
-	// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/organizations/{organizationId} (the `GetOrganization` operationId).
-	GetOrganizationWithResponse(ctx context.Context, organizationId string, params *GetOrganizationParams, reqEditors ...RequestEditorFn) (*GetOrganizationResponse, error)
-
-	// UpdateOrganizationWithBodyWithResponse Update an Organization
-	//
-	// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
-	UpdateOrganizationWithBodyWithResponse(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateOrganizationResponse, error)
-
-	// UpdateOrganizationWithResponse Update an Organization
-	//
-	// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
-	UpdateOrganizationWithResponse(ctx context.Context, organizationId string, body UpdateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateOrganizationResponse, error)
-
-	// ListOrganizationTeamsWithResponse List Organization Teams
-	//
-	// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/organizations/{organizationId}/teams (the `ListOrganizationTeams` operationId).
-	ListOrganizationTeamsWithResponse(ctx context.Context, organizationId string, params *ListOrganizationTeamsParams, reqEditors ...RequestEditorFn) (*ListOrganizationTeamsResponse, error)
-
-	// AddOrganizationTeamWithBodyWithResponse Create or Add Team to Organization
-	//
-	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
-	AddOrganizationTeamWithBodyWithResponse(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddOrganizationTeamResponse, error)
-
-	// AddOrganizationTeamWithResponse Create or Add Team to Organization
-	//
-	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
-	AddOrganizationTeamWithResponse(ctx context.Context, organizationId string, body AddOrganizationTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*AddOrganizationTeamResponse, error)
-
-	// RemoveOrganizationTeamWithResponse Delete Team from Organization
-	//
-	// Delete a team from an organization. This endpoint is in private beta. Contact your Vercel account team for access.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} (the `RemoveOrganizationTeam` operationId).
-	RemoveOrganizationTeamWithResponse(ctx context.Context, organizationId string, targetTeamId string, reqEditors ...RequestEditorFn) (*RemoveOrganizationTeamResponse, error)
-
-	// GetProjectTraceWithResponse Get a project trace by request ID
-	//
-	// Returns the OTEL trace for a given Vercel CLI request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/traces (the `GetProjectTrace` operationId).
-	GetProjectTraceWithResponse(ctx context.Context, params *GetProjectTraceParams, reqEditors ...RequestEditorFn) (*GetProjectTraceResponse, error)
-
-	// CreateTraceSessionWithBodyWithResponse Create a trace session token for a deployment
-	//
-	// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
-	CreateTraceSessionWithBodyWithResponse(ctx context.Context, params *CreateTraceSessionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTraceSessionResponse, error)
-
-	// CreateTraceSessionWithResponse Create a trace session token for a deployment
-	//
-	// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
-	CreateTraceSessionWithResponse(ctx context.Context, params *CreateTraceSessionParams, body CreateTraceSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateTraceSessionResponse, error)
-
-	// DeleteProjectAvatarWithResponse Delete a project avatar
-	//
-	// Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so the next production deploy can run auto-detection again. Does not delete the stored image.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/avatar (the `DeleteProjectAvatar` operationId).
-	DeleteProjectAvatarWithResponse(ctx context.Context, idOrName string, params *DeleteProjectAvatarParams, reqEditors ...RequestEditorFn) (*DeleteProjectAvatarResponse, error)
-
-	// UploadProjectAvatarWithBodyWithResponse Upload a project avatar
-	//
-	// Upload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared `@api/project-avatar-upload` helper so it can be reused by background workers.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/avatar (the `UploadProjectAvatar` operationId).
-	UploadProjectAvatarWithBodyWithResponse(ctx context.Context, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadProjectAvatarResponse, error)
-
-	// GetProjectBoxesWithResponse Get project daemons
-	//
-	// List the daemons of a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
-	GetProjectBoxesWithResponse(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*GetProjectBoxesResponse, error)
-
-	// PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
-	//
-	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
-	PutProjectDaemonInstancesWithBodyWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error)
-
-	// PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
-	//
-	// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
-	PutProjectDaemonInstancesWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error)
-
-	// RestartProjectDaemonInstanceWithResponse Force restart a project daemon instance
-	//
-	// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
-	RestartProjectDaemonInstanceWithResponse(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*RestartProjectDaemonInstanceResponse, error)
-
-	// MoveProjectDomainWithBodyWithResponse Move a project domain
-	//
-	// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
-	MoveProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*MoveProjectDomainResponse, error)
-
-	// MoveProjectDomainWithResponse Move a project domain
-	//
-	// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
-	MoveProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, body MoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*MoveProjectDomainResponse, error)
-
-	// BatchRemoveProjectEnvWithBodyWithResponse Batch remove environment variables
-	//
-	// Delete multiple environment variables for a given project in a single batch operation.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
-	BatchRemoveProjectEnvWithBodyWithResponse(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BatchRemoveProjectEnvResponse, error)
-
-	// BatchRemoveProjectEnvWithResponse Batch remove environment variables
-	//
-	// Delete multiple environment variables for a given project in a single batch operation.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
-	BatchRemoveProjectEnvWithResponse(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, body BatchRemoveProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*BatchRemoveProjectEnvResponse, error)
-
-	// GetProjectEnvWithResponse Retrieve the decrypted value of an environment variable of a project by id
-	//
-	// Retrieve the environment variable for a given project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/env/{id} (the `GetProjectEnv` operationId).
-	GetProjectEnvWithResponse(ctx context.Context, idOrName string, id string, params *GetProjectEnvParams, reqEditors ...RequestEditorFn) (*GetProjectEnvResponse, error)
-
-	// GetProjectMembersWithResponse List project members
-	//
-	// Lists all members of a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/members (the `GetProjectMembers` operationId).
-	GetProjectMembersWithResponse(ctx context.Context, idOrName string, params *GetProjectMembersParams, reqEditors ...RequestEditorFn) (*GetProjectMembersResponse, error)
-
-	// AddProjectMemberWithBodyWithResponse Adds a new member to a project.
-	//
-	// Adds a new member to the project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
-	AddProjectMemberWithBodyWithResponse(ctx context.Context, idOrName string, params *AddProjectMemberParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddProjectMemberResponse, error)
-
-	// AddProjectMemberWithResponse Adds a new member to a project.
-	//
-	// Adds a new member to the project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
-	AddProjectMemberWithResponse(ctx context.Context, idOrName string, params *AddProjectMemberParams, body AddProjectMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*AddProjectMemberResponse, error)
-
-	// RemoveProjectMemberWithResponse Remove a Project Member
-	//
-	// Remove a member from a specific project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/members/{uid} (the `RemoveProjectMember` operationId).
-	RemoveProjectMemberWithResponse(ctx context.Context, idOrName string, uid string, params *RemoveProjectMemberParams, reqEditors ...RequestEditorFn) (*RemoveProjectMemberResponse, error)
-
-	// UpdateProjectProtectionBypassWithBodyWithResponse Update Protection Bypass for Automation
-	//
-	// Update the deployment protection automation bypass for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
-	UpdateProjectProtectionBypassWithBodyWithResponse(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectProtectionBypassResponse, error)
-
-	// UpdateProjectProtectionBypassWithResponse Update Protection Bypass for Automation
-	//
-	// Update the deployment protection automation bypass for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
-	UpdateProjectProtectionBypassWithResponse(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, body UpdateProjectProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectProtectionBypassResponse, error)
-
-	// GetRollingReleaseWithResponse Get the active rolling release information for a project
-	//
-	// Return the Rolling Release for a project, regardless of whether the rollout is active, aborted, or completed. If the feature is enabled but no deployment has occurred yet, null will be returned.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/rolling-release (the `GetRollingRelease` operationId).
-	GetRollingReleaseWithResponse(ctx context.Context, idOrName string, params *GetRollingReleaseParams, reqEditors ...RequestEditorFn) (*GetRollingReleaseResponse, error)
-
-	// ApproveRollingReleaseStageWithBodyWithResponse Update the active rolling release to the next stage for a project
-	//
-	// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
-	ApproveRollingReleaseStageWithBodyWithResponse(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ApproveRollingReleaseStageResponse, error)
-
-	// ApproveRollingReleaseStageWithResponse Update the active rolling release to the next stage for a project
-	//
-	// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
-	ApproveRollingReleaseStageWithResponse(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, body ApproveRollingReleaseStageJSONRequestBody, reqEditors ...RequestEditorFn) (*ApproveRollingReleaseStageResponse, error)
-
-	// GetRollingReleaseBillingStatusWithResponse Get rolling release billing status
-	//
-	// Get the Rolling Releases billing status for a project. The team level billing status is used to determine if the project can be configured for rolling releases.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/rolling-release/billing (the `GetRollingReleaseBillingStatus` operationId).
-	GetRollingReleaseBillingStatusWithResponse(ctx context.Context, idOrName string, params *GetRollingReleaseBillingStatusParams, reqEditors ...RequestEditorFn) (*GetRollingReleaseBillingStatusResponse, error)
-
-	// CompleteRollingReleaseWithBodyWithResponse Complete the rolling release for the project
-	//
-	// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
-	CompleteRollingReleaseWithBodyWithResponse(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CompleteRollingReleaseResponse, error)
-
-	// CompleteRollingReleaseWithResponse Complete the rolling release for the project
-	//
-	// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
-	CompleteRollingReleaseWithResponse(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, body CompleteRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*CompleteRollingReleaseResponse, error)
-
-	// DeleteRollingReleaseConfigWithResponse Delete rolling release configuration
-	//
-	// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that's already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{idOrName}/rolling-release/config (the `DeleteRollingReleaseConfig` operationId).
-	DeleteRollingReleaseConfigWithResponse(ctx context.Context, idOrName string, params *DeleteRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*DeleteRollingReleaseConfigResponse, error)
-
-	// GetRollingReleaseConfigWithResponse Get rolling release configuration
-	//
-	// Get the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{idOrName}/rolling-release/config (the `GetRollingReleaseConfig` operationId).
-	GetRollingReleaseConfigWithResponse(ctx context.Context, idOrName string, params *GetRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*GetRollingReleaseConfigResponse, error)
-
-	// UpdateRollingReleaseConfigWithResponse Update the rolling release settings for the project
-	//
-	// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: "abort" to roll back (default), or "complete" to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that's already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn't configured already.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/rolling-release/config (the `UpdateRollingReleaseConfig` operationId).
-	UpdateRollingReleaseConfigWithResponse(ctx context.Context, idOrName string, params *UpdateRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*UpdateRollingReleaseConfigResponse, error)
-
-	// StartRollingReleaseWithBodyWithResponse Start a rolling release for the project
-	//
-	// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
-	StartRollingReleaseWithBodyWithResponse(ctx context.Context, idOrName string, params *StartRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StartRollingReleaseResponse, error)
-
-	// StartRollingReleaseWithResponse Start a rolling release for the project
-	//
-	// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
-	StartRollingReleaseWithResponse(ctx context.Context, idOrName string, params *StartRollingReleaseParams, body StartRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*StartRollingReleaseResponse, error)
-
-	// UpdateStaticIpsWithBodyWithResponse Configures Static IPs for a project
-	//
-	// Allows configuring Static IPs for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
-	UpdateStaticIpsWithBodyWithResponse(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStaticIpsResponse, error)
-
-	// UpdateStaticIpsWithResponse Configures Static IPs for a project
-	//
-	// Allows configuring Static IPs for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
-	UpdateStaticIpsWithResponse(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, body UpdateStaticIpsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateStaticIpsResponse, error)
-
-	// GetProjectTokenWithBodyWithResponse Generate a project OIDC token
-	//
-	// Generates an OIDC token for the project and returns it.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
-	GetProjectTokenWithBodyWithResponse(ctx context.Context, idOrName string, params *GetProjectTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetProjectTokenResponse, error)
-
-	// GetProjectTokenWithResponse Generate a project OIDC token
-	//
-	// Generates an OIDC token for the project and returns it.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
-	GetProjectTokenWithResponse(ctx context.Context, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*GetProjectTokenResponse, error)
-
-	// ListFlagsWithResponse List flags
-	//
-	// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags (the `ListFlags` operationId).
-	ListFlagsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagsParams, reqEditors ...RequestEditorFn) (*ListFlagsResponse, error)
-
-	// CreateFlagWithBodyWithResponse Create a flag
-	//
-	// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
-	CreateFlagWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagResponse, error)
-
-	// CreateFlagWithResponse Create a flag
-	//
-	// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
-	CreateFlagWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagParams, body CreateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagResponse, error)
-
-	// DeleteFlagWithResponse Delete a flag
-	//
-	// Permanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `DeleteFlag` operationId).
-	DeleteFlagWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *DeleteFlagParams, reqEditors ...RequestEditorFn) (*DeleteFlagResponse, error)
-
-	// GetFlagWithResponse Get a flag
-	//
-	// Retrieve a specific feature flag by its ID or slug.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `GetFlag` operationId).
-	GetFlagWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *GetFlagParams, reqEditors ...RequestEditorFn) (*GetFlagResponse, error)
-
-	// UpdateFlagWithBodyWithResponse Update a flag
-	//
-	// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
-	UpdateFlagWithBodyWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFlagResponse, error)
-
-	// UpdateFlagWithResponse Update a flag
-	//
-	// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
-	UpdateFlagWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, body UpdateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFlagResponse, error)
-
-	// ListFlagVersionsWithResponse List flag versions
-	//
-	// Lists flag versions for a given flag.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
-	ListFlagVersionsWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*ListFlagVersionsResponse, error)
-
-	// ListFlagLabelsWithResponse List attribute labels
-	//
-	// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
-	ListFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelsResponse, error)
-
-	// ListFlagLabelCountsWithResponse List attribute label counts
-	//
-	// List label counts for configured entity attributes, including empty ones.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
-	ListFlagLabelCountsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelCountsResponse, error)
-
-	// LookupFlagLabelsWithBodyWithResponse Look up attribute labels
-	//
-	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
-	LookupFlagLabelsWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error)
-
-	// LookupFlagLabelsWithResponse Look up attribute labels
-	//
-	// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
-	LookupFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error)
-
-	// GetSdkKeysWithResponse Get all SDK keys
-	//
-	// Gets all SDK keys for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `GetSdkKeys` operationId).
-	GetSdkKeysWithResponse(ctx context.Context, projectIdOrName string, params *GetSdkKeysParams, reqEditors ...RequestEditorFn) (*GetSdkKeysResponse, error)
-
-	// CreateSdkKeyWithBodyWithResponse Create an SDK key
-	//
-	// Creates an SDK key.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
-	CreateSdkKeyWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSdkKeyResponse, error)
-
-	// CreateSdkKeyWithResponse Create an SDK key
-	//
-	// Creates an SDK key.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
-	CreateSdkKeyWithResponse(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, body CreateSdkKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSdkKeyResponse, error)
-
-	// DeleteSdkKeyWithResponse Delete an SDK key
-	//
-	// Deletes an SDK key.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} (the `DeleteSdkKey` operationId).
-	DeleteSdkKeyWithResponse(ctx context.Context, projectIdOrName string, hashKey string, params *DeleteSdkKeyParams, reqEditors ...RequestEditorFn) (*DeleteSdkKeyResponse, error)
-
-	// ListFlagSegmentsWithResponse List segments
-	//
-	// List all feature flag segments for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments (the `ListFlagSegments` operationId).
-	ListFlagSegmentsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagSegmentsParams, reqEditors ...RequestEditorFn) (*ListFlagSegmentsResponse, error)
-
-	// CreateFlagSegmentWithBodyWithResponse Create a segment
-	//
-	// Create a new feature flag segment.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
-	CreateFlagSegmentWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagSegmentResponse, error)
-
-	// CreateFlagSegmentWithResponse Create a segment
-	//
-	// Create a new feature flag segment.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
-	CreateFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, body CreateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagSegmentResponse, error)
-
-	// DeleteFlagSegmentWithResponse Delete a segment
-	//
-	// Delete a feature flag segment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `DeleteFlagSegment` operationId).
-	DeleteFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *DeleteFlagSegmentParams, reqEditors ...RequestEditorFn) (*DeleteFlagSegmentResponse, error)
-
-	// GetFlagSegmentWithResponse Get a segment
-	//
-	// Retrieve a feature flag segment by ID or slug.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `GetFlagSegment` operationId).
-	GetFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *GetFlagSegmentParams, reqEditors ...RequestEditorFn) (*GetFlagSegmentResponse, error)
-
-	// UpdateFlagSegmentWithBodyWithResponse Update a segment
-	//
-	// Update an existing feature flag segment.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
-	UpdateFlagSegmentWithBodyWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFlagSegmentResponse, error)
-
-	// UpdateFlagSegmentWithResponse Update a segment
-	//
-	// Update an existing feature flag segment.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
-	UpdateFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, body UpdateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFlagSegmentResponse, error)
-
-	// GetFlagSettingsWithResponse Get project flag settings
-	//
-	// Retrieve feature flag settings for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/settings (the `GetFlagSettings` operationId).
-	GetFlagSettingsWithResponse(ctx context.Context, projectIdOrName string, params *GetFlagSettingsParams, reqEditors ...RequestEditorFn) (*GetFlagSettingsResponse, error)
-
-	// UpdateFlagSettingsWithBodyWithResponse Update project flag settings
-	//
-	// Update feature flag settings for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
-	UpdateFlagSettingsWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFlagSettingsResponse, error)
-
-	// UpdateFlagSettingsWithResponse Update project flag settings
-	//
-	// Update feature flag settings for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
-	UpdateFlagSettingsWithResponse(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, body UpdateFlagSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFlagSettingsResponse, error)
-
-	// GetRuntimeLogsWithResponse Get logs for a deployment
-	//
-	// Returns a stream of logs for a given deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs (the `GetRuntimeLogs` operationId).
-	GetRuntimeLogsWithResponse(ctx context.Context, projectId string, deploymentId string, params *GetRuntimeLogsParams, reqEditors ...RequestEditorFn) (*GetRuntimeLogsResponse, error)
-
-	// UpdateMicrofrontendsWithBodyWithResponse Update the microfrontends settings
-	//
-	// Update the microfrontends settings for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
-	UpdateMicrofrontendsWithBodyWithResponse(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsResponse, error)
-
-	// UpdateMicrofrontendsWithResponse Update the microfrontends settings
-	//
-	// Update the microfrontends settings for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
-	UpdateMicrofrontendsWithResponse(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, body UpdateMicrofrontendsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsResponse, error)
-
-	// PauseProjectWithResponse Pause a project
-	//
-	// Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/pause (the `PauseProject` operationId).
-	PauseProjectWithResponse(ctx context.Context, projectId string, params *PauseProjectParams, reqEditors ...RequestEditorFn) (*PauseProjectResponse, error)
-
-	// ListPromoteAliasesWithResponse Gets a list of aliases with status for the current promote
-	//
-	// Get a list of aliases related to the last promote request with their mapping status.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectId}/promote/aliases (the `ListPromoteAliases` operationId).
-	ListPromoteAliasesWithResponse(ctx context.Context, projectId string, params *ListPromoteAliasesParams, reqEditors ...RequestEditorFn) (*ListPromoteAliasesResponse, error)
-
-	// RequestRollbackWithResponse Point production traffic to a previous production deployment by ID
-	//
-	// Allows users to rollback to a deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/rollback/{deploymentId} (the `RequestRollback` operationId).
-	RequestRollbackWithResponse(ctx context.Context, projectId string, deploymentId string, params *RequestRollbackParams, reqEditors ...RequestEditorFn) (*RequestRollbackResponse, error)
-
-	// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBodyWithResponse Updates the description for a rollback
-	//
-	// Updates the reason for a rollback, without changing the rollback status itself.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
-	UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBodyWithResponse(ctx context.Context, projectId string, deploymentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse, error)
-
-	// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithResponse Updates the description for a rollback
-	//
-	// Updates the reason for a rollback, without changing the rollback status itself.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
-	UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithResponse(ctx context.Context, projectId string, deploymentId string, body UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse, error)
-
-	// DeleteRoutesWithBodyWithResponse Delete routing rules
-	//
-	// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
-	DeleteRoutesWithBodyWithResponse(ctx context.Context, projectId string, params *DeleteRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteRoutesResponse, error)
-
-	// DeleteRoutesWithResponse Delete routing rules
-	//
-	// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
-	DeleteRoutesWithResponse(ctx context.Context, projectId string, params *DeleteRoutesParams, body DeleteRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteRoutesResponse, error)
-
-	// GetRoutesWithResponse Get project routing rules
-	//
-	// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectId}/routes (the `GetRoutes` operationId).
-	GetRoutesWithResponse(ctx context.Context, projectId string, params *GetRoutesParams, reqEditors ...RequestEditorFn) (*GetRoutesResponse, error)
-
-	// AddRouteWithBodyWithResponse Add a routing rule
-	//
-	// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
-	AddRouteWithBodyWithResponse(ctx context.Context, projectId string, params *AddRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddRouteResponse, error)
-
-	// AddRouteWithResponse Add a routing rule
-	//
-	// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
-	AddRouteWithResponse(ctx context.Context, projectId string, params *AddRouteParams, body AddRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*AddRouteResponse, error)
-
-	// StageRoutesWithBodyWithResponse Stage routing rules
-	//
-	// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
-	StageRoutesWithBodyWithResponse(ctx context.Context, projectId string, params *StageRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StageRoutesResponse, error)
-
-	// StageRoutesWithResponse Stage routing rules
-	//
-	// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
-	StageRoutesWithResponse(ctx context.Context, projectId string, params *StageRoutesParams, body StageRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*StageRoutesResponse, error)
-
-	// GenerateRouteWithBodyWithResponse Generate a routing rule from natural language
-	//
-	// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
-	GenerateRouteWithBodyWithResponse(ctx context.Context, projectId string, params *GenerateRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateRouteResponse, error)
-
-	// GenerateRouteWithResponse Generate a routing rule from natural language
-	//
-	// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
-	GenerateRouteWithResponse(ctx context.Context, projectId string, params *GenerateRouteParams, body GenerateRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateRouteResponse, error)
-
-	// GetRouteVersionsWithResponse Get routing rule version history
-	//
-	// Get the version history for a project's routing rules. Returns the staging version (if one exists) followed by production versions, most recent first. The staging version has `isStaging: true` and the current production version has `isLive: true`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/projects/{projectId}/routes/versions (the `GetRouteVersions` operationId).
-	GetRouteVersionsWithResponse(ctx context.Context, projectId string, params *GetRouteVersionsParams, reqEditors ...RequestEditorFn) (*GetRouteVersionsResponse, error)
-
-	// UpdateRouteVersionsWithBodyWithResponse Promote, restore, or discard a routing rule version
-	//
-	// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
-	UpdateRouteVersionsWithBodyWithResponse(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateRouteVersionsResponse, error)
-
-	// UpdateRouteVersionsWithResponse Promote, restore, or discard a routing rule version
-	//
-	// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
-	UpdateRouteVersionsWithResponse(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, body UpdateRouteVersionsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateRouteVersionsResponse, error)
-
-	// EditRouteWithBodyWithResponse Edit a routing rule
-	//
-	// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
-	EditRouteWithBodyWithResponse(ctx context.Context, projectId string, routeId string, params *EditRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EditRouteResponse, error)
-
-	// EditRouteWithResponse Edit a routing rule
-	//
-	// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
-	EditRouteWithResponse(ctx context.Context, projectId string, routeId string, params *EditRouteParams, body EditRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*EditRouteResponse, error)
-
-	// UnpauseProjectWithResponse Unpause a project
-	//
-	// Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/projects/{projectId}/unpause (the `UnpauseProject` operationId).
-	UnpauseProjectWithResponse(ctx context.Context, projectId string, params *UnpauseProjectParams, reqEditors ...RequestEditorFn) (*UnpauseProjectResponse, error)
-
-	// AggregateEventsWithResponse Aggregates custom events
-	//
-	// Counts custom events on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/query/web-analytics/events/aggregate (the `AggregateEvents` operationId).
-	AggregateEventsWithResponse(ctx context.Context, params *AggregateEventsParams, reqEditors ...RequestEditorFn) (*AggregateEventsResponse, error)
-
-	// CountEventsWithResponse Counts custom events
-	//
-	// Counts the number of custom events on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/query/web-analytics/events/count (the `CountEvents` operationId).
-	CountEventsWithResponse(ctx context.Context, params *CountEventsParams, reqEditors ...RequestEditorFn) (*CountEventsResponse, error)
-
-	// AggregatePageviewsWithResponse Aggregates page views
-	//
-	// Counts pageviews on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/query/web-analytics/visits/aggregate (the `AggregatePageviews` operationId).
-	AggregatePageviewsWithResponse(ctx context.Context, params *AggregatePageviewsParams, reqEditors ...RequestEditorFn) (*AggregatePageviewsResponse, error)
-
-	// CountPageviewsWithResponse Counts page views
-	//
-	// Counts the number of page views on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/query/web-analytics/visits/count (the `CountPageviews` operationId).
-	CountPageviewsWithResponse(ctx context.Context, params *CountPageviewsParams, reqEditors ...RequestEditorFn) (*CountPageviewsResponse, error)
-
-	// GetBulkAvailabilityWithBodyWithResponse Get availability for multiple domains
-	//
-	// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
-	GetBulkAvailabilityWithBodyWithResponse(ctx context.Context, params *GetBulkAvailabilityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetBulkAvailabilityResponse, error)
-
-	// GetBulkAvailabilityWithResponse Get availability for multiple domains
-	//
-	// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
-	GetBulkAvailabilityWithResponse(ctx context.Context, params *GetBulkAvailabilityParams, body GetBulkAvailabilityJSONRequestBody, reqEditors ...RequestEditorFn) (*GetBulkAvailabilityResponse, error)
-
-	// BuyDomainsWithBodyWithResponse Buy multiple domains
-	//
-	// Buy multiple domains at once.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
-	BuyDomainsWithBodyWithResponse(ctx context.Context, params *BuyDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BuyDomainsResponse, error)
-
-	// BuyDomainsWithResponse Buy multiple domains
-	//
-	// Buy multiple domains at once.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
-	BuyDomainsWithResponse(ctx context.Context, params *BuyDomainsParams, body BuyDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*BuyDomainsResponse, error)
-
-	// GetBulkPriceWithBodyWithResponse Get price data for multiple domains
-	//
-	// Get price data for multiple domains in a single request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
-	GetBulkPriceWithBodyWithResponse(ctx context.Context, params *GetBulkPriceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetBulkPriceResponse, error)
-
-	// GetBulkPriceWithResponse Get price data for multiple domains
-	//
-	// Get price data for multiple domains in a single request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
-	GetBulkPriceWithResponse(ctx context.Context, params *GetBulkPriceParams, body GetBulkPriceJSONRequestBody, reqEditors ...RequestEditorFn) (*GetBulkPriceResponse, error)
-
-	// SearchDomainsWithBodyWithResponse Get Domain Availability and Pricing
-	//
-	// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
-	SearchDomainsWithBodyWithResponse(ctx context.Context, params *SearchDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SearchDomainsResponse, error)
-
-	// SearchDomainsWithResponse Get Domain Availability and Pricing
-	//
-	// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
-	SearchDomainsWithResponse(ctx context.Context, params *SearchDomainsParams, body SearchDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*SearchDomainsResponse, error)
-
-	// GetDomainAuthCodeWithResponse Get the auth code for a domain
-	//
-	// Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/auth-code (the `GetDomainAuthCode` operationId).
-	GetDomainAuthCodeWithResponse(ctx context.Context, domain DomainName, params *GetDomainAuthCodeParams, reqEditors ...RequestEditorFn) (*GetDomainAuthCodeResponse, error)
-
-	// UpdateDomainAutoRenewWithBodyWithResponse Update auto-renew for a domain
-	//
-	// Update the auto-renew setting for a domain.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
-	UpdateDomainAutoRenewWithBodyWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDomainAutoRenewResponse, error)
-
-	// UpdateDomainAutoRenewWithResponse Update auto-renew for a domain
-	//
-	// Update the auto-renew setting for a domain.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
-	UpdateDomainAutoRenewWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, body UpdateDomainAutoRenewJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDomainAutoRenewResponse, error)
-
-	// GetDomainAvailabilityWithResponse Get availability for a domain
-	//
-	// Get availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/availability (the `GetDomainAvailability` operationId).
-	GetDomainAvailabilityWithResponse(ctx context.Context, domain DomainName, params *GetDomainAvailabilityParams, reqEditors ...RequestEditorFn) (*GetDomainAvailabilityResponse, error)
-
-	// BuySingleDomainWithBodyWithResponse Buy a domain
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
-	BuySingleDomainWithBodyWithResponse(ctx context.Context, domain DomainName, params *BuySingleDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BuySingleDomainResponse, error)
-
-	// BuySingleDomainWithResponse Buy a domain
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
-	BuySingleDomainWithResponse(ctx context.Context, domain DomainName, params *BuySingleDomainParams, body BuySingleDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*BuySingleDomainResponse, error)
-
-	// GetContactInfoSchemaWithResponse Get contact info schema
-	//
-	// Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/contact-info/schema (the `GetContactInfoSchema` operationId).
-	GetContactInfoSchemaWithResponse(ctx context.Context, domain DomainName, params *GetContactInfoSchemaParams, reqEditors ...RequestEditorFn) (*GetContactInfoSchemaResponse, error)
-
-	// GetDomainContactVerificationWithResponse Get contact verification status for a domain
-	//
-	// Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/contact-verification (the `GetDomainContactVerification` operationId).
-	GetDomainContactVerificationWithResponse(ctx context.Context, domain DomainName, params *GetDomainContactVerificationParams, reqEditors ...RequestEditorFn) (*GetDomainContactVerificationResponse, error)
-
-	// UpdateDomainNameserversWithBodyWithResponse Update nameservers for a domain
-	//
-	// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
-	UpdateDomainNameserversWithBodyWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDomainNameserversResponse, error)
-
-	// UpdateDomainNameserversWithResponse Update nameservers for a domain
-	//
-	// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
-	UpdateDomainNameserversWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, body UpdateDomainNameserversJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDomainNameserversResponse, error)
-
-	// GetDomainPriceWithResponse Get price data for a domain
-	//
-	// Get price data for a specific domain.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/price (the `GetDomainPrice` operationId).
-	GetDomainPriceWithResponse(ctx context.Context, domain DomainName, params *GetDomainPriceParams, reqEditors ...RequestEditorFn) (*GetDomainPriceResponse, error)
-
-	// RenewDomainWithBodyWithResponse Renew a domain
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
-	RenewDomainWithBodyWithResponse(ctx context.Context, domain DomainName, params *RenewDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RenewDomainResponse, error)
-
-	// RenewDomainWithResponse Renew a domain
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
-	RenewDomainWithResponse(ctx context.Context, domain DomainName, params *RenewDomainParams, body RenewDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*RenewDomainResponse, error)
-
-	// GetDomainTransferInWithResponse Get a domain's transfer status
-	//
-	// Get the transfer status for a domain.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/domains/{domain}/transfer (the `GetDomainTransferIn` operationId).
-	GetDomainTransferInWithResponse(ctx context.Context, domain DomainName, params *GetDomainTransferInParams, reqEditors ...RequestEditorFn) (*GetDomainTransferInResponse, error)
-
-	// TransferInDomainWithBodyWithResponse Transfer-in a domain
-	//
-	// Transfer a domain in from another registrar.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
-	TransferInDomainWithBodyWithResponse(ctx context.Context, domain DomainName, params *TransferInDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*TransferInDomainResponse, error)
-
-	// TransferInDomainWithResponse Transfer-in a domain
-	//
-	// Transfer a domain in from another registrar.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
-	TransferInDomainWithResponse(ctx context.Context, domain DomainName, params *TransferInDomainParams, body TransferInDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*TransferInDomainResponse, error)
-
-	// GetOrderWithResponse Get a domain order
-	//
-	// Get information about a domain order by its ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/orders/{orderId} (the `GetOrder` operationId).
-	GetOrderWithResponse(ctx context.Context, orderId OrderId, params *GetOrderParams, reqEditors ...RequestEditorFn) (*GetOrderResponse, error)
-
-	// GetSupportedTldsWithResponse Get supported TLDs
-	//
-	// Get a list of TLDs supported by Vercel.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/tlds/supported (the `GetSupportedTlds` operationId).
-	GetSupportedTldsWithResponse(ctx context.Context, params *GetSupportedTldsParams, reqEditors ...RequestEditorFn) (*GetSupportedTldsResponse, error)
-
-	// GetTldWithResponse Get TLD
-	//
-	// Get the metadata for a specific TLD.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/tlds/{tld} (the `GetTld` operationId).
-	GetTldWithResponse(ctx context.Context, tld TldName, params *GetTldParams, reqEditors ...RequestEditorFn) (*GetTldResponse, error)
-
-	// GetTldPriceWithResponse Get TLD price data
-	//
-	// Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/registrar/tlds/{tld}/price (the `GetTldPrice` operationId).
-	GetTldPriceWithResponse(ctx context.Context, tld TldName, params *GetTldPriceParams, reqEditors ...RequestEditorFn) (*GetTldPriceResponse, error)
-
-	// UpdateAttackChallengeModeWithBodyWithResponse Update Attack Challenge mode
-	//
-	// Update the setting for determining if the project has Attack Challenge mode enabled.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
-	UpdateAttackChallengeModeWithBodyWithResponse(ctx context.Context, params *UpdateAttackChallengeModeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAttackChallengeModeResponse, error)
-
-	// UpdateAttackChallengeModeWithResponse Update Attack Challenge mode
-	//
-	// Update the setting for determining if the project has Attack Challenge mode enabled.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
-	UpdateAttackChallengeModeWithResponse(ctx context.Context, params *UpdateAttackChallengeModeParams, body UpdateAttackChallengeModeJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAttackChallengeModeResponse, error)
-
-	// GetActiveAttackStatusWithResponse Read active attack data
-	//
-	// Retrieve active attack data within the last N days (default: 1 day)
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/attack-status (the `GetActiveAttackStatus` operationId).
-	GetActiveAttackStatusWithResponse(ctx context.Context, params *GetActiveAttackStatusParams, reqEditors ...RequestEditorFn) (*GetActiveAttackStatusResponse, error)
-
-	// RemoveBypassIpWithBodyWithResponse Remove System Bypass Rule
-	//
-	// Remove system bypass rules.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
-	RemoveBypassIpWithBodyWithResponse(ctx context.Context, params *RemoveBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveBypassIpResponse, error)
-
-	// RemoveBypassIpWithResponse Remove System Bypass Rule
-	//
-	// Remove system bypass rules.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
-	RemoveBypassIpWithResponse(ctx context.Context, params *RemoveBypassIpParams, body RemoveBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveBypassIpResponse, error)
-
-	// GetBypassIpWithResponse Read System Bypass
-	//
-	// Retrieve the system bypass rules configured for the specified project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/bypass (the `GetBypassIp` operationId).
-	GetBypassIpWithResponse(ctx context.Context, params *GetBypassIpParams, reqEditors ...RequestEditorFn) (*GetBypassIpResponse, error)
-
-	// AddBypassIpWithBodyWithResponse Create System Bypass Rule
-	//
-	// Create new system bypass rules.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
-	AddBypassIpWithBodyWithResponse(ctx context.Context, params *AddBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddBypassIpResponse, error)
-
-	// AddBypassIpWithResponse Create System Bypass Rule
-	//
-	// Create new system bypass rules.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
-	AddBypassIpWithResponse(ctx context.Context, params *AddBypassIpParams, body AddBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*AddBypassIpResponse, error)
-
-	// DeleteConditionalBypassWithResponse Delete conditional firewall bypass
-	//
-	// Delete a conditional firewall bypass rule from a project domain.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/security/firewall/bypass/rules (the `DeleteConditionalBypass` operationId).
-	DeleteConditionalBypassWithResponse(ctx context.Context, params *DeleteConditionalBypassParams, reqEditors ...RequestEditorFn) (*DeleteConditionalBypassResponse, error)
-
-	// GetConditionalBypassWithResponse Get conditional firewall bypasses
-	//
-	// Retrieve conditional firewall bypass rules for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/bypass/rules (the `GetConditionalBypass` operationId).
-	GetConditionalBypassWithResponse(ctx context.Context, params *GetConditionalBypassParams, reqEditors ...RequestEditorFn) (*GetConditionalBypassResponse, error)
-
-	// CreateConditionalBypassWithBodyWithResponse Create conditional firewall bypass
-	//
-	// Create a conditional firewall bypass rule for a project domain.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
-	CreateConditionalBypassWithBodyWithResponse(ctx context.Context, params *CreateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateConditionalBypassResponse, error)
-
-	// CreateConditionalBypassWithResponse Create conditional firewall bypass
-	//
-	// Create a conditional firewall bypass rule for a project domain.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
-	CreateConditionalBypassWithResponse(ctx context.Context, params *CreateConditionalBypassParams, body CreateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateConditionalBypassResponse, error)
-
-	// GetSecurityFirewallConfigWithResponse Returns activated WAF config
-	//
-	// Lists WAF configs for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/config (the `GetSecurityFirewallConfig` operationId).
-	GetSecurityFirewallConfigWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSecurityFirewallConfigResponse, error)
-
-	// UpdateFirewallConfigWithBodyWithResponse Update Firewall Configuration
-	//
-	// Process updates to modify the existing firewall config for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
-	UpdateFirewallConfigWithBodyWithResponse(ctx context.Context, params *UpdateFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFirewallConfigResponse, error)
-
-	// UpdateFirewallConfigWithResponse Update Firewall Configuration
-	//
-	// Process updates to modify the existing firewall config for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
-	UpdateFirewallConfigWithResponse(ctx context.Context, params *UpdateFirewallConfigParams, body UpdateFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFirewallConfigResponse, error)
-
-	// PutFirewallConfigWithBodyWithResponse Put Firewall Configuration
-	//
-	// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
-	PutFirewallConfigWithBodyWithResponse(ctx context.Context, params *PutFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutFirewallConfigResponse, error)
-
-	// PutFirewallConfigWithResponse Put Firewall Configuration
-	//
-	// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
-	PutFirewallConfigWithResponse(ctx context.Context, params *PutFirewallConfigParams, body PutFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*PutFirewallConfigResponse, error)
-
-	// GenerateFirewallRuleWithResponse Generate a firewall rule from natural language
-	//
-	// Generate a firewall rule from a natural language description.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/firewall/config/generate-rule (the `GenerateFirewallRule` operationId).
-	GenerateFirewallRuleWithResponse(ctx context.Context, params *GenerateFirewallRuleParams, reqEditors ...RequestEditorFn) (*GenerateFirewallRuleResponse, error)
-
-	// DeleteSecurityFirewallConfigByConfigVersionWithResponse Returns activated WAF config
-	//
-	// Promotes a draft WAF config to an active config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/security/firewall/config/{configVersion} (the `DeleteSecurityFirewallConfigByConfigVersion` operationId).
-	DeleteSecurityFirewallConfigByConfigVersionWithResponse(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*DeleteSecurityFirewallConfigByConfigVersionResponse, error)
-
-	// GetFirewallConfigWithResponse Read Firewall Configuration
-	//
-	// Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/config/{configVersion} (the `GetFirewallConfig` operationId).
-	GetFirewallConfigWithResponse(ctx context.Context, configVersion string, params *GetFirewallConfigParams, reqEditors ...RequestEditorFn) (*GetFirewallConfigResponse, error)
-
-	// CreateSecurityFirewallConfigByConfigVersionActivateWithResponse Returns activated WAF config
-	//
-	// Promotes a draft WAF config to an active config.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/security/firewall/config/{configVersion}/activate (the `CreateSecurityFirewallConfigByConfigVersionActivate` operationId).
-	CreateSecurityFirewallConfigByConfigVersionActivateWithResponse(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*CreateSecurityFirewallConfigByConfigVersionActivateResponse, error)
-
-	// GetSecurityFirewallEventsWithResponse Read Firewall Actions by Project
-	//
-	// Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/events (the `GetSecurityFirewallEvents` operationId).
-	GetSecurityFirewallEventsWithResponse(ctx context.Context, params *GetSecurityFirewallEventsParams, reqEditors ...RequestEditorFn) (*GetSecurityFirewallEventsResponse, error)
-
-	// GetSecurityFirewallEventsSummaryWithResponse Read Firewall Actions Summary by Project
-	//
-	// Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/security/firewall/events/summary (the `GetSecurityFirewallEventsSummary` operationId).
-	GetSecurityFirewallEventsSummaryWithResponse(ctx context.Context, params *GetSecurityFirewallEventsSummaryParams, reqEditors ...RequestEditorFn) (*GetSecurityFirewallEventsSummaryResponse, error)
-
-	// CreateIntegrationStoreDirectWithBodyWithResponse Create integration store (free and paid plans)
-	//
-	// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
-	CreateIntegrationStoreDirectWithBodyWithResponse(ctx context.Context, params *CreateIntegrationStoreDirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIntegrationStoreDirectResponse, error)
-
-	// CreateIntegrationStoreDirectWithResponse Create integration store (free and paid plans)
-	//
-	// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
-	CreateIntegrationStoreDirectWithResponse(ctx context.Context, params *CreateIntegrationStoreDirectParams, body CreateIntegrationStoreDirectJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIntegrationStoreDirectResponse, error)
-
-	// CreateTeamWithBodyWithResponse Create a Team
-	//
-	// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
-	CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error)
-
-	// CreateTeamWithResponse Create a Team
-	//
-	// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
-	CreateTeamWithResponse(ctx context.Context, body CreateTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error)
-
-	// DeleteTeamWithBodyWithResponse Delete a Team
-	//
-	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
-	DeleteTeamWithBodyWithResponse(ctx context.Context, teamId string, params *DeleteTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error)
-
-	// DeleteTeamWithResponse Delete a Team
-	//
-	// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
-	DeleteTeamWithResponse(ctx context.Context, teamId string, params *DeleteTeamParams, body DeleteTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error)
-
-	// PostTeamDsyncRolesWithBodyWithResponse Update Team Directory Sync Role Mappings
-	//
-	// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
-	PostTeamDsyncRolesWithBodyWithResponse(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostTeamDsyncRolesResponse, error)
-
-	// PostTeamDsyncRolesWithResponse Update Team Directory Sync Role Mappings
-	//
-	// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
-	PostTeamDsyncRolesWithResponse(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, body PostTeamDsyncRolesJSONRequestBody, reqEditors ...RequestEditorFn) (*PostTeamDsyncRolesResponse, error)
-
-	// ListTeamFlagsWithResponse List all flags for a team
-	//
-	// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/teams/{teamId}/feature-flags/flags (the `ListTeamFlags` operationId).
-	ListTeamFlagsWithResponse(ctx context.Context, teamId string, params *ListTeamFlagsParams, reqEditors ...RequestEditorFn) (*ListTeamFlagsResponse, error)
-
-	// ListTeamFlagSettingsWithResponse List team project flag settings
-	//
-	// Retrieve feature flag settings for projects in a team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/teams/{teamId}/feature-flags/settings (the `ListTeamFlagSettings` operationId).
-	ListTeamFlagSettingsWithResponse(ctx context.Context, teamId string, params *ListTeamFlagSettingsParams, reqEditors ...RequestEditorFn) (*ListTeamFlagSettingsResponse, error)
-
-	// DeleteTeamInviteCodeWithResponse Delete a Team invite code
-	//
-	// Delete an active Team invite code.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/teams/{teamId}/invites/{inviteId} (the `DeleteTeamInviteCode` operationId).
-	DeleteTeamInviteCodeWithResponse(ctx context.Context, teamId string, inviteId string, reqEditors ...RequestEditorFn) (*DeleteTeamInviteCodeResponse, error)
-
-	// JoinTeamWithBodyWithResponse Join a team
-	//
-	// Join a team with a provided invite code or team ID.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
-	JoinTeamWithBodyWithResponse(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*JoinTeamResponse, error)
-
-	// JoinTeamWithResponse Join a team
-	//
-	// Join a team with a provided invite code or team ID.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
-	JoinTeamWithResponse(ctx context.Context, teamId string, body JoinTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*JoinTeamResponse, error)
-
-	// RemoveTeamMemberWithResponse Remove a Team Member
-	//
-	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
-	RemoveTeamMemberWithResponse(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*RemoveTeamMemberResponse, error)
-
-	// UpdateTeamMemberWithBodyWithResponse Update a Team Member
-	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
-	UpdateTeamMemberWithBodyWithResponse(ctx context.Context, teamId string, uid string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateTeamMemberResponse, error)
-
-	// UpdateTeamMemberWithResponse Update a Team Member
-	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
-	UpdateTeamMemberWithResponse(ctx context.Context, teamId string, uid string, body UpdateTeamMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateTeamMemberResponse, error)
-
-	// DeleteMicrofrontendsGroupWithResponse Delete a microfrontends group
-	//
-	// Deletes a microfrontends group from the team associated with the group ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/teams/{teamId}/microfrontends/{groupId} (the `DeleteMicrofrontendsGroup` operationId).
-	DeleteMicrofrontendsGroupWithResponse(ctx context.Context, teamId string, groupId string, params *DeleteMicrofrontendsGroupParams, reqEditors ...RequestEditorFn) (*DeleteMicrofrontendsGroupResponse, error)
-
-	// UpdateMicrofrontendsGroupWithBodyWithResponse Update a microfrontends group
-	//
-	// Updates a microfrontends group's settings.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
-	UpdateMicrofrontendsGroupWithBodyWithResponse(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsGroupResponse, error)
-
-	// UpdateMicrofrontendsGroupWithResponse Update a microfrontends group
-	//
-	// Updates a microfrontends group's settings.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
-	UpdateMicrofrontendsGroupWithResponse(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, body UpdateMicrofrontendsGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsGroupResponse, error)
-
-	// RequestAccessToTeamWithBodyWithResponse Request access to a team
-	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
-	RequestAccessToTeamWithBodyWithResponse(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RequestAccessToTeamResponse, error)
-
-	// RequestAccessToTeamWithResponse Request access to a team
-	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
-	RequestAccessToTeamWithResponse(ctx context.Context, teamId string, body RequestAccessToTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*RequestAccessToTeamResponse, error)
-
-	// GetTeamAccessRequestWithResponse Get access request status
-	//
-	// Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/teams/{teamId}/request/{userId} (the `GetTeamAccessRequest` operationId).
-	GetTeamAccessRequestWithResponse(ctx context.Context, teamId string, userId string, reqEditors ...RequestEditorFn) (*GetTeamAccessRequestResponse, error)
-
-	// RequestDeleteWithBodyWithResponse Delete User Account
-	//
-	// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
-	RequestDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RequestDeleteResponse, error)
-
-	// RequestDeleteWithResponse Delete User Account
-	//
-	// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
-	RequestDeleteWithResponse(ctx context.Context, body RequestDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*RequestDeleteResponse, error)
-
-	// ListRepositoriesWithResponse List repositories
-	//
-	// List container registry repositories for a project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository (the `ListRepositories` operationId).
-	ListRepositoriesWithResponse(ctx context.Context, params *ListRepositoriesParams, reqEditors ...RequestEditorFn) (*ListRepositoriesResponse, error)
-
-	// CreateRepositoryWithBodyWithResponse Create a repository
-	//
-	// Create a container registry repository for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
-	CreateRepositoryWithBodyWithResponse(ctx context.Context, params *CreateRepositoryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateRepositoryResponse, error)
-
-	// CreateRepositoryWithResponse Create a repository
-	//
-	// Create a container registry repository for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
-	CreateRepositoryWithResponse(ctx context.Context, params *CreateRepositoryParams, body CreateRepositoryJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateRepositoryResponse, error)
-
-	// DeleteRepositoryWithResponse Delete a repository
-	//
-	// Schedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName} (the `DeleteRepository` operationId).
-	DeleteRepositoryWithResponse(ctx context.Context, idOrName string, params *DeleteRepositoryParams, reqEditors ...RequestEditorFn) (*DeleteRepositoryResponse, error)
-
-	// GetRepositoryWithResponse Get a repository
-	//
-	// Fetch a container registry repository for a project by ID or name.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName} (the `GetRepository` operationId).
-	GetRepositoryWithResponse(ctx context.Context, idOrName string, params *GetRepositoryParams, reqEditors ...RequestEditorFn) (*GetRepositoryResponse, error)
-
-	// ListRepositoryImagesWithResponse List repository images
-	//
-	// List images for a container registry repository, including their tags.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/images (the `ListRepositoryImages` operationId).
-	ListRepositoryImagesWithResponse(ctx context.Context, idOrName string, params *ListRepositoryImagesParams, reqEditors ...RequestEditorFn) (*ListRepositoryImagesResponse, error)
-
-	// GetRepositoryImageWithResponse Get a repository image
-	//
-	// Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} (the `GetRepositoryImage` operationId).
-	GetRepositoryImageWithResponse(ctx context.Context, idOrName string, imageIdOrDigest string, params *GetRepositoryImageParams, reqEditors ...RequestEditorFn) (*GetRepositoryImageResponse, error)
-
-	// DeleteRepositoryImageWithResponse Delete a repository image
-	//
-	// Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/images/{imageId} (the `DeleteRepositoryImage` operationId).
-	DeleteRepositoryImageWithResponse(ctx context.Context, idOrName string, imageId string, params *DeleteRepositoryImageParams, reqEditors ...RequestEditorFn) (*DeleteRepositoryImageResponse, error)
-
-	// RemoveRepositoryPermissionWithBodyWithResponse Remove a repository permission
-	//
-	// Revoke a team's access to a VCR repository.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
-	RemoveRepositoryPermissionWithBodyWithResponse(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveRepositoryPermissionResponse, error)
-
-	// RemoveRepositoryPermissionWithResponse Remove a repository permission
-	//
-	// Revoke a team's access to a VCR repository.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
-	RemoveRepositoryPermissionWithResponse(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, body RemoveRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveRepositoryPermissionResponse, error)
-
-	// ListRepositoryPermissionsWithResponse List repository permissions
-	//
-	// List the teams a VCR repository is shared with.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/permissions (the `ListRepositoryPermissions` operationId).
-	ListRepositoryPermissionsWithResponse(ctx context.Context, idOrName string, params *ListRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*ListRepositoryPermissionsResponse, error)
-
-	// AddRepositoryPermissionWithBodyWithResponse Add a repository permission
-	//
-	// Grant a team access to a VCR repository. Sharing applies to the whole repository.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
-	AddRepositoryPermissionWithBodyWithResponse(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddRepositoryPermissionResponse, error)
-
-	// AddRepositoryPermissionWithResponse Add a repository permission
-	//
-	// Grant a team access to a VCR repository. Sharing applies to the whole repository.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
-	AddRepositoryPermissionWithResponse(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, body AddRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*AddRepositoryPermissionResponse, error)
-
-	// ClearRepositoryPermissionsWithResponse Clear all repository permissions
-	//
-	// Revoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions/all (the `ClearRepositoryPermissions` operationId).
-	ClearRepositoryPermissionsWithResponse(ctx context.Context, idOrName string, params *ClearRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*ClearRepositoryPermissionsResponse, error)
-
-	// ListRepositoryTagsWithResponse List repository tags
-	//
-	// List a repository's tags.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/tags (the `ListRepositoryTags` operationId).
-	ListRepositoryTagsWithResponse(ctx context.Context, idOrName string, params *ListRepositoryTagsParams, reqEditors ...RequestEditorFn) (*ListRepositoryTagsResponse, error)
-
-	// GetRepositoryTagWithResponse Get a repository tag
-	//
-	// Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vcr/repository/{idOrName}/tags/{tag} (the `GetRepositoryTag` operationId).
-	GetRepositoryTagWithResponse(ctx context.Context, idOrName string, tag string, params *GetRepositoryTagParams, reqEditors ...RequestEditorFn) (*GetRepositoryTagResponse, error)
-
-	// ListVercelCiInvocationAttemptsWithResponse List all attempts for an invocation
-	//
-	// List Invocation Attempts.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts (the `ListVercelCiInvocationAttempts` operationId).
-	ListVercelCiInvocationAttemptsWithResponse(ctx context.Context, invocationId string, params *ListVercelCiInvocationAttemptsParams, reqEditors ...RequestEditorFn) (*ListVercelCiInvocationAttemptsResponse, error)
-
-	// GetVercelCiInvocationWithResponse Get a specific invocation attempt
-	//
-	// Get Invocation.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt} (the `GetVercelCiInvocation` operationId).
-	GetVercelCiInvocationWithResponse(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationResponse, error)
-
-	// ListVercelCiJobDefinitionsWithResponse List job definitions for an invocation attempt
-	//
-	// List Job Definitions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions (the `ListVercelCiJobDefinitions` operationId).
-	ListVercelCiJobDefinitionsWithResponse(ctx context.Context, invocationId string, attempt string, params *ListVercelCiJobDefinitionsParams, reqEditors ...RequestEditorFn) (*ListVercelCiJobDefinitionsResponse, error)
-
-	// GetVercelCiJobDefinitionWithResponse Get a specific job definition
-	//
-	// Get Job Definition.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId} (the `GetVercelCiJobDefinition` operationId).
-	GetVercelCiJobDefinitionWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *GetVercelCiJobDefinitionParams, reqEditors ...RequestEditorFn) (*GetVercelCiJobDefinitionResponse, error)
-
-	// ListVercelCiJobRunsWithResponse List all runs for a job definition
-	//
-	// List Job Runs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs (the `ListVercelCiJobRuns` operationId).
-	ListVercelCiJobRunsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *ListVercelCiJobRunsParams, reqEditors ...RequestEditorFn) (*ListVercelCiJobRunsResponse, error)
-
-	// GetVercelCiJobRunWithResponse Get a specific job run attempt
-	//
-	// Get Job Run.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt} (the `GetVercelCiJobRun` operationId).
-	GetVercelCiJobRunWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunParams, reqEditors ...RequestEditorFn) (*GetVercelCiJobRunResponse, error)
-
-	// GetVercelCiJobRunLogsWithResponse Get log lines for a specific job run attempt
-	//
-	// Get Job Run Logs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs (the `GetVercelCiJobRunLogs` operationId).
-	GetVercelCiJobRunLogsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiJobRunLogsResponse, error)
-
-	// ListVercelCiTaskDefinitionsWithResponse List all task definitions for a job run
-	//
-	// List Task Definitions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions (the `ListVercelCiTaskDefinitions` operationId).
-	ListVercelCiTaskDefinitionsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskDefinitionsParams, reqEditors ...RequestEditorFn) (*ListVercelCiTaskDefinitionsResponse, error)
-
-	// GetVercelCiTaskRunLogsWithResponse Get log lines for a specific task run attempt
-	//
-	// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs (the `GetVercelCiTaskRunLogs` operationId).
-	GetVercelCiTaskRunLogsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, taskDefinitionId string, taskRunAttempt string, params *GetVercelCiTaskRunLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiTaskRunLogsResponse, error)
-
-	// ListVercelCiTaskRunsWithResponse List task runs for a job run
-	//
-	// List Task Runs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs (the `ListVercelCiTaskRuns` operationId).
-	ListVercelCiTaskRunsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskRunsParams, reqEditors ...RequestEditorFn) (*ListVercelCiTaskRunsResponse, error)
-
-	// GetVercelCiInvocationLogsWithResponse Get log lines for an invocation attempt
-	//
-	// Get Invocation Logs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs (the `GetVercelCiInvocationLogs` operationId).
-	GetVercelCiInvocationLogsWithResponse(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationLogsResponse, error)
-
-	// RetryVercelCiInvocationWithResponse Retry a terminal Vercel CI invocation attempt
-	//
-	// Retry Invocation.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/retry (the `RetryVercelCiInvocation` operationId).
-	RetryVercelCiInvocationWithResponse(ctx context.Context, invocationId string, attempt string, params *RetryVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*RetryVercelCiInvocationResponse, error)
-
-	// GetVercelCiTaskLogsWithResponse Get log lines for the tasks of an invocation attempt
-	//
-	// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs (the `GetVercelCiTaskLogs` operationId).
-	GetVercelCiTaskLogsWithResponse(ctx context.Context, invocationId string, attempt string, params *GetVercelCiTaskLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiTaskLogsResponse, error)
-
-	// GetVercelCiInvocationTreeWithResponse Get an invocation with its jobs and tasks
-	//
-	// Returns an invocation attempt together with every job definition, its latest job run, and the task definitions and active task runs of that job run. Defaults to the latest attempt when `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes (`completed`) or the stream reaches its maximum duration (`timeout`), after which clients should reconnect.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/tree (the `GetVercelCiInvocationTree` operationId).
-	GetVercelCiInvocationTreeWithResponse(ctx context.Context, invocationId string, params *GetVercelCiInvocationTreeParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationTreeResponse, error)
-
-	// SearchVercelCiLogsWithResponse Search the task logs of several invocation attempts
-	//
-	// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/log-search (the `SearchVercelCiLogs` operationId).
-	SearchVercelCiLogsWithResponse(ctx context.Context, params *SearchVercelCiLogsParams, reqEditors ...RequestEditorFn) (*SearchVercelCiLogsResponse, error)
-
-	// GetVercelCiRepositorySettingsWithResponse Get Vercel CI settings for a connected repository
-	//
-	// Get Repository Settings.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/repository-settings (the `GetVercelCiRepositorySettings` operationId).
-	GetVercelCiRepositorySettingsWithResponse(ctx context.Context, params *GetVercelCiRepositorySettingsParams, reqEditors ...RequestEditorFn) (*GetVercelCiRepositorySettingsResponse, error)
-
-	// UpdateVercelCiRepositorySettingsWithBodyWithResponse Enable or disable Vercel CI for a connected repository
-	//
-	// Update Repository Settings.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
-	UpdateVercelCiRepositorySettingsWithBodyWithResponse(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateVercelCiRepositorySettingsResponse, error)
-
-	// UpdateVercelCiRepositorySettingsWithResponse Enable or disable Vercel CI for a connected repository
-	//
-	// Update Repository Settings.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
-	UpdateVercelCiRepositorySettingsWithResponse(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, body UpdateVercelCiRepositorySettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateVercelCiRepositorySettingsResponse, error)
-
-	// CreateVercelCiTaskAnalysisWithBodyWithResponse Start an asynchronous Vercel CI task analysis
-	//
-	// Create task analysis.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
-	CreateVercelCiTaskAnalysisWithBodyWithResponse(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskAnalysisResponse, error)
-
-	// CreateVercelCiTaskAnalysisWithResponse Start an asynchronous Vercel CI task analysis
-	//
-	// Create task analysis.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
-	CreateVercelCiTaskAnalysisWithResponse(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, body CreateVercelCiTaskAnalysisJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskAnalysisResponse, error)
-
-	// GetVercelCiTaskAnalysisWithResponse Get the current status of a Vercel CI task analysis
-	//
-	// Get task analysis.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId} (the `GetVercelCiTaskAnalysis` operationId).
-	GetVercelCiTaskAnalysisWithResponse(ctx context.Context, analysisId string, params *GetVercelCiTaskAnalysisParams, reqEditors ...RequestEditorFn) (*GetVercelCiTaskAnalysisResponse, error)
-
-	// CreateVercelCiTaskConfigurationPullRequestWithBodyWithResponse Create a GitHub pull request that adds Vercel CI tags for the completed analysis
-	//
-	// Create task configuration pull request.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
-	CreateVercelCiTaskConfigurationPullRequestWithBodyWithResponse(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskConfigurationPullRequestResponse, error)
-
-	// CreateVercelCiTaskConfigurationPullRequestWithResponse Create a GitHub pull request that adds Vercel CI tags for the completed analysis
-	//
-	// Create task configuration pull request.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
-	CreateVercelCiTaskConfigurationPullRequestWithResponse(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, body CreateVercelCiTaskConfigurationPullRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskConfigurationPullRequestResponse, error)
-
-	// ListVercelCiTaskAnalysisTasksWithResponse List discovered tasks for a completed Vercel CI task analysis
-	//
-	// List task analysis tasks.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId}/tasks (the `ListVercelCiTaskAnalysisTasks` operationId).
-	ListVercelCiTaskAnalysisTasksWithResponse(ctx context.Context, analysisId string, params *ListVercelCiTaskAnalysisTasksParams, reqEditors ...RequestEditorFn) (*ListVercelCiTaskAnalysisTasksResponse, error)
-
-	// GetWebhooksWithResponse Get a list of webhooks
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/webhooks (the `GetWebhooks` operationId).
-	GetWebhooksWithResponse(ctx context.Context, params *GetWebhooksParams, reqEditors ...RequestEditorFn) (*GetWebhooksResponse, error)
-
-	// CreateWebhookWithBodyWithResponse Creates a webhook
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
-	CreateWebhookWithBodyWithResponse(ctx context.Context, params *CreateWebhookParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateWebhookResponse, error)
-
-	// CreateWebhookWithResponse Creates a webhook
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
-	CreateWebhookWithResponse(ctx context.Context, params *CreateWebhookParams, body CreateWebhookJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateWebhookResponse, error)
-
-	// DeleteWebhookWithResponse Deletes a webhook
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/webhooks/{id} (the `DeleteWebhook` operationId).
-	DeleteWebhookWithResponse(ctx context.Context, id string, params *DeleteWebhookParams, reqEditors ...RequestEditorFn) (*DeleteWebhookResponse, error)
-
-	// GetWebhookWithResponse Get a webhook
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/webhooks/{id} (the `GetWebhook` operationId).
-	GetWebhookWithResponse(ctx context.Context, id string, params *GetWebhookParams, reqEditors ...RequestEditorFn) (*GetWebhookResponse, error)
-
-	// GetProjectsWithResponse Retrieve a list of projects
-	//
-	// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v10/projects (the `GetProjects` operationId).
-	GetProjectsWithResponse(ctx context.Context, params *GetProjectsParams, reqEditors ...RequestEditorFn) (*GetProjectsResponse, error)
-
-	// AddProjectDomainWithBodyWithResponse Add a domain to a project
-	//
-	// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
-	AddProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, params *AddProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddProjectDomainResponse, error)
-
-	// AddProjectDomainWithResponse Add a domain to a project
-	//
-	// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
-	AddProjectDomainWithResponse(ctx context.Context, idOrName string, params *AddProjectDomainParams, body AddProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*AddProjectDomainResponse, error)
-
-	// FilterProjectEnvsWithResponse Retrieve the environment variables of a project by id or name
-	//
-	// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v10/projects/{idOrName}/env (the `FilterProjectEnvs` operationId).
-	FilterProjectEnvsWithResponse(ctx context.Context, idOrName string, params *FilterProjectEnvsParams, reqEditors ...RequestEditorFn) (*FilterProjectEnvsResponse, error)
-
-	// CreateProjectEnvWithBodyWithResponse Create one or more environment variables
-	//
-	// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
-	CreateProjectEnvWithBodyWithResponse(ctx context.Context, idOrName string, params *CreateProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectEnvResponse, error)
-
-	// CreateProjectEnvWithResponse Create one or more environment variables
-	//
-	// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
-	CreateProjectEnvWithResponse(ctx context.Context, idOrName string, params *CreateProjectEnvParams, body CreateProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectEnvResponse, error)
-
-	// RequestPromoteWithResponse Point production traffic to a given deployment
-	//
-	// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v10/projects/{projectId}/promote/{deploymentId} (the `RequestPromote` operationId).
-	RequestPromoteWithResponse(ctx context.Context, projectId string, deploymentId string, params *RequestPromoteParams, reqEditors ...RequestEditorFn) (*RequestPromoteResponse, error)
-
-	// CreateProjectWithBodyWithResponse Create a new project
-	//
-	// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v11/projects (the `CreateProject` operationId).
-	CreateProjectWithBodyWithResponse(ctx context.Context, params *CreateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectResponse, error)
-
-	// CreateProjectWithResponse Create a new project
-	//
-	// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v11/projects (the `CreateProject` operationId).
-	CreateProjectWithResponse(ctx context.Context, params *CreateProjectParams, body CreateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectResponse, error)
-
-	// CancelDeploymentWithResponse Cancel a deployment
-	//
-	// Cancels a deployment that is currently in progress, stopping the build before it completes. Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with known errors — without waiting for them to finish. Returns 400 if the deployment is no longer cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object with `readyState: 'CANCELED'` on success.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v12/deployments/{id}/cancel (the `CancelDeployment` operationId).
-	CancelDeploymentWithResponse(ctx context.Context, id string, params *CancelDeploymentParams, reqEditors ...RequestEditorFn) (*CancelDeploymentResponse, error)
-
-	// CreateDeploymentWithBodyWithResponse Create a new deployment
-	//
-	// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
-	CreateDeploymentWithBodyWithResponse(ctx context.Context, params *CreateDeploymentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDeploymentResponse, error)
-
-	// CreateDeploymentWithResponse Create a new deployment
-	//
-	// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
-	CreateDeploymentWithResponse(ctx context.Context, params *CreateDeploymentParams, body CreateDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDeploymentResponse, error)
-
-	// GetDeploymentWithResponse Get a deployment by ID or URL
-	//
-	// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v13/deployments/{idOrUrl} (the `GetDeployment` operationId).
-	GetDeploymentWithResponse(ctx context.Context, idOrUrl string, params *GetDeploymentParams, reqEditors ...RequestEditorFn) (*GetDeploymentResponse, error)
-
-	// DeleteDeploymentWithResponse Delete a Deployment
-	//
-	// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v13/deployments/{id} (the `DeleteDeployment` operationId).
-	DeleteDeploymentWithResponse(ctx context.Context, id string, params *DeleteDeploymentParams, reqEditors ...RequestEditorFn) (*DeleteDeploymentResponse, error)
-
-	// GetRootWithResponse Check registry API version support
-	//
-	// GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/ (the `GetRoot` operationId).
-	GetRootWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetRootResponse, error)
-
-	// DeleteAliasWithResponse Delete an Alias
-	//
-	// Delete an Alias with the specified ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/aliases/{aliasId} (the `DeleteAlias` operationId).
-	DeleteAliasWithResponse(ctx context.Context, aliasId struct {
-		union json.RawMessage
-	}, params *DeleteAliasParams, reqEditors ...RequestEditorFn) (*DeleteAliasResponse, error)
-
-	// ListConnectorsWithResponse List connectors
-	//
-	// List connectors that belong to a team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/connect/connectors (the `ListConnectors` operationId).
-	ListConnectorsWithResponse(ctx context.Context, params *ListConnectorsParams, reqEditors ...RequestEditorFn) (*ListConnectorsResponse, error)
-
-	// UpdateConnectorWithBodyWithResponse Update a connector
-	//
-	// Update a connector and return the connector with any service-side update signals that the caller must handle.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-	UpdateConnectorWithBodyWithResponse(ctx context.Context, connector string, params *UpdateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateConnectorResponse, error)
-
-	// UpdateConnectorWithResponse Update a connector
-	//
-	// Update a connector and return the connector with any service-side update signals that the caller must handle.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-	UpdateConnectorWithResponse(ctx context.Context, connector string, params *UpdateConnectorParams, body UpdateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateConnectorResponse, error)
-
-	// ListConnectorProjectConnectionsWithResponse List projects for a connector
-	//
-	// List the projects connected to a connector and the environments where each connection is available.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/connect/connectors/{connector}/projects (the `ListConnectorProjectConnections` operationId).
-	ListConnectorProjectConnectionsWithResponse(ctx context.Context, connector string, params *ListConnectorProjectConnectionsParams, reqEditors ...RequestEditorFn) (*ListConnectorProjectConnectionsResponse, error)
-
-	// ListProjectConnectorConnectionsWithResponse List connectors for a project
-	//
-	// List the connectors connected to a project and the environments where each connection is available.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/connect/projects/{projectId}/connectors (the `ListProjectConnectorConnections` operationId).
-	ListProjectConnectorConnectionsWithResponse(ctx context.Context, projectId string, params *ListProjectConnectorConnectionsParams, reqEditors ...RequestEditorFn) (*ListProjectConnectorConnectionsResponse, error)
-
-	// ListDeploymentCheckRunsWithResponse List check runs for a deployment
-	//
-	// List all check runs for a deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/deployments/{deploymentId}/check-runs (the `ListDeploymentCheckRuns` operationId).
-	ListDeploymentCheckRunsWithResponse(ctx context.Context, deploymentId string, params *ListDeploymentCheckRunsParams, reqEditors ...RequestEditorFn) (*ListDeploymentCheckRunsResponse, error)
-
-	// CreateDeploymentCheckRunWithBodyWithResponse Create a check run
-	//
-	// Creates a new check run for a deployment.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-	CreateDeploymentCheckRunWithBodyWithResponse(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDeploymentCheckRunResponse, error)
-
-	// CreateDeploymentCheckRunWithResponse Create a check run
-	//
-	// Creates a new check run for a deployment.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-	CreateDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDeploymentCheckRunResponse, error)
-
-	// GetDeploymentCheckRunWithResponse Get a check run
-	//
-	// Return a detailed response for a single check run.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `GetDeploymentCheckRun` operationId).
-	GetDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *GetDeploymentCheckRunParams, reqEditors ...RequestEditorFn) (*GetDeploymentCheckRunResponse, error)
-
-	// UpdateDeploymentCheckRunWithBodyWithResponse Update a check run
-	//
-	// Update an existing check run for a deployment.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-	UpdateDeploymentCheckRunWithBodyWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDeploymentCheckRunResponse, error)
-
-	// UpdateDeploymentCheckRunWithResponse Update a check run
-	//
-	// Update an existing check run for a deployment.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-	UpdateDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, body UpdateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDeploymentCheckRunResponse, error)
-
-	// ListDeploymentAliasesWithResponse List Deployment Aliases
-	//
-	// Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/deployments/{id}/aliases (the `ListDeploymentAliases` operationId).
-	ListDeploymentAliasesWithResponse(ctx context.Context, id string, params *ListDeploymentAliasesParams, reqEditors ...RequestEditorFn) (*ListDeploymentAliasesResponse, error)
-
-	// AssignAliasWithBodyWithResponse Assign an Alias
-	//
-	// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
-	AssignAliasWithBodyWithResponse(ctx context.Context, id struct {
-		union json.RawMessage
-	}, params *AssignAliasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AssignAliasResponse, error)
-
-	// AssignAliasWithResponse Assign an Alias
-	//
-	// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
-	AssignAliasWithResponse(ctx context.Context, id struct {
-		union json.RawMessage
-	}, params *AssignAliasParams, body AssignAliasJSONRequestBody, reqEditors ...RequestEditorFn) (*AssignAliasResponse, error)
-
-	// CreateRecordWithBodyWithResponse Create a DNS record
-	//
-	// Creates a DNS record for a domain.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
-	CreateRecordWithBodyWithResponse(ctx context.Context, domain string, params *CreateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateRecordResponse, error)
-
-	// CreateRecordWithResponse Create a DNS record
-	//
-	// Creates a DNS record for a domain.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
-	CreateRecordWithResponse(ctx context.Context, domain string, params *CreateRecordParams, body CreateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateRecordResponse, error)
-
-	// RemoveRecordWithResponse Delete a DNS record
-	//
-	// Removes an existing DNS record from a domain name.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/domains/{domain}/records/{recordId} (the `RemoveRecord` operationId).
-	RemoveRecordWithResponse(ctx context.Context, domain string, recordId string, params *RemoveRecordParams, reqEditors ...RequestEditorFn) (*RemoveRecordResponse, error)
-
-	// UploadFileWithBodyWithResponse Upload Deployment Files
-	//
-	// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/files (the `UploadFile` operationId).
-	UploadFileWithBodyWithResponse(ctx context.Context, params *UploadFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFileResponse, error)
-
-	// GetIntegrationLogDrainsWithResponse Retrieves a list of Integration log drains (deprecated)
-	//
-	// Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/integrations/log-drains (the `GetIntegrationLogDrains` operationId).
-	GetIntegrationLogDrainsWithResponse(ctx context.Context, params *GetIntegrationLogDrainsParams, reqEditors ...RequestEditorFn) (*GetIntegrationLogDrainsResponse, error)
-
-	// CreateLogDrainWithBodyWithResponse Creates a new Integration Log Drain (deprecated)
-	//
-	// Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/integrations/log-drains (the `CreateLogDrain` operationId).
-	CreateLogDrainWithBodyWithResponse(ctx context.Context, params *CreateLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateLogDrainResponse, error)
-
-	// CreateLogDrainWithResponse Creates a new Integration Log Drain (deprecated)
-	//
-	// Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/integrations/log-drains (the `CreateLogDrain` operationId).
-	CreateLogDrainWithResponse(ctx context.Context, params *CreateLogDrainParams, body CreateLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateLogDrainResponse, error)
-
-	// CreateObservabilityQueryWithBodyWithResponse performs a POST /v2/observability/query (the `CreateObservabilityQuery` operationId) request,
-	// with any type of body and a specified content type.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	CreateObservabilityQueryWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateObservabilityQueryResponse, error)
-
-	// CreateObservabilityQueryWithResponse performs a POST /v2/observability/query (the `CreateObservabilityQuery` operationId) request.
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	CreateObservabilityQueryWithResponse(ctx context.Context, body CreateObservabilityQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateObservabilityQueryResponse, error)
-
-	// GetObservabilitySchemaWithResponse performs a GET /v2/observability/schema (the `GetObservabilitySchema` operationId) request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	GetObservabilitySchemaWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetObservabilitySchemaResponse, error)
-
-	// GetObservabilitySchemaByMetricIdWithResponse performs a GET /v2/observability/schema/{metricId} (the `GetObservabilitySchemaByMetricId` operationId) request.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	GetObservabilitySchemaByMetricIdWithResponse(ctx context.Context, metricId string, reqEditors ...RequestEditorFn) (*GetObservabilitySchemaByMetricIdResponse, error)
-
-	// ListProjectChecksWithResponse List all checks for a project
-	//
-	// List all checks for a project, optionally filtered by target.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/checks (the `ListProjectChecks` operationId).
-	ListProjectChecksWithResponse(ctx context.Context, projectIdOrName string, params *ListProjectChecksParams, reqEditors ...RequestEditorFn) (*ListProjectChecksResponse, error)
-
-	// CreateProjectCheckWithBodyWithResponse Create a check
-	//
-	// Creates a new check for a project.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/projects/{projectIdOrName}/checks (the `CreateProjectCheck` operationId).
-	CreateProjectCheckWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateProjectCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectCheckResponse, error)
-
-	// CreateProjectCheckWithResponse Create a check
-	//
-	// Creates a new check for a project.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/projects/{projectIdOrName}/checks (the `CreateProjectCheck` operationId).
-	CreateProjectCheckWithResponse(ctx context.Context, projectIdOrName string, params *CreateProjectCheckParams, body CreateProjectCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectCheckResponse, error)
-
-	// DeleteProjectCheckWithResponse Delete a check
-	//
-	// Delete an existing check and all of its runs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/projects/{projectIdOrName}/checks/{checkId} (the `DeleteProjectCheck` operationId).
-	DeleteProjectCheckWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *DeleteProjectCheckParams, reqEditors ...RequestEditorFn) (*DeleteProjectCheckResponse, error)
-
-	// GetProjectCheckWithResponse Get a check
-	//
-	// Return a detailed response for a single check.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/checks/{checkId} (the `GetProjectCheck` operationId).
-	GetProjectCheckWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *GetProjectCheckParams, reqEditors ...RequestEditorFn) (*GetProjectCheckResponse, error)
-
-	// UpdateProjectCheckWithBodyWithResponse Update a check
-	//
-	// Update an existing check.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/projects/{projectIdOrName}/checks/{checkId} (the `UpdateProjectCheck` operationId).
-	UpdateProjectCheckWithBodyWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *UpdateProjectCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectCheckResponse, error)
-
-	// UpdateProjectCheckWithResponse Update a check
-	//
-	// Update an existing check.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/projects/{projectIdOrName}/checks/{checkId} (the `UpdateProjectCheck` operationId).
-	UpdateProjectCheckWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *UpdateProjectCheckParams, body UpdateProjectCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectCheckResponse, error)
-
-	// ListCheckRunsWithResponse List runs for a check
-	//
-	// List all runs associated with a given check.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs (the `ListCheckRuns` operationId).
-	ListCheckRunsWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *ListCheckRunsParams, reqEditors ...RequestEditorFn) (*ListCheckRunsResponse, error)
-
-	// ListFlagsV2WithResponse List flags
-	//
-	// Retrieve feature flags for a project. Returns an opaque cursor for pagination.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/projects/{projectIdOrName}/feature-flags/flags (the `ListFlagsV2` operationId).
-	ListFlagsV2WithResponse(ctx context.Context, projectIdOrName string, params *ListFlagsV2Params, reqEditors ...RequestEditorFn) (*ListFlagsV2Response, error)
-
-	// ListNamedSandboxesWithResponse List sandboxes
-	//
-	// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status. Overdue sessions for running and stopping sandboxes are recovered before returning the page, so an entry may no longer match its queried status after recovery.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes (the `ListNamedSandboxes` operationId).
-	ListNamedSandboxesWithResponse(ctx context.Context, params *ListNamedSandboxesParams, reqEditors ...RequestEditorFn) (*ListNamedSandboxesResponse, error)
-
-	// CreateSandboxesV2WithBodyWithResponse Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes (the `CreateSandboxesV2` operationId).
-	CreateSandboxesV2WithBodyWithResponse(ctx context.Context, params *CreateSandboxesV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesV2Response, error)
-
-	// CreateSandboxesV2WithResponse Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes (the `CreateSandboxesV2` operationId).
-	CreateSandboxesV2WithResponse(ctx context.Context, params *CreateSandboxesV2Params, body CreateSandboxesV2JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesV2Response, error)
-
-	// ListDrivesWithResponse List drives
-	//
-	// Retrieves a paginated list of drives belonging to a specific project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/drives (the `ListDrives` operationId).
-	ListDrivesWithResponse(ctx context.Context, params *ListDrivesParams, reqEditors ...RequestEditorFn) (*ListDrivesResponse, error)
-
-	// GetDriveWithResponse Get a drive
-	//
-	// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/drives/{nameOrId} (the `GetDrive` operationId).
-	GetDriveWithResponse(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*GetDriveResponse, error)
-
-	// DeleteDriveWithResponse Delete a drive
-	//
-	// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
-	DeleteDriveWithResponse(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*DeleteDriveResponse, error)
-
-	// GetOrCreateDriveWithBodyWithResponse Get or create a drive
-	//
-	// Gets an existing drive by project and name, or creates it when it does not exist.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
-	GetOrCreateDriveWithBodyWithResponse(ctx context.Context, name string, params *GetOrCreateDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetOrCreateDriveResponse, error)
-
-	// GetOrCreateDriveWithResponse Get or create a drive
-	//
-	// Gets an existing drive by project and name, or creates it when it does not exist.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
-	GetOrCreateDriveWithResponse(ctx context.Context, name string, params *GetOrCreateDriveParams, body GetOrCreateDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*GetOrCreateDriveResponse, error)
-
-	// ForkDriveWithBodyWithResponse Fork a drive
-	//
-	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
-	ForkDriveWithBodyWithResponse(ctx context.Context, name string, params *ForkDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForkDriveResponse, error)
-
-	// ForkDriveWithResponse Fork a drive
-	//
-	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
-	ForkDriveWithResponse(ctx context.Context, name string, params *ForkDriveParams, body ForkDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*ForkDriveResponse, error)
-
-	// ListSessionsWithResponse List sessions
-	//
-	// Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by creation time and paginated using an opaque cursor.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/sessions (the `ListSessions` operationId).
-	ListSessionsWithResponse(ctx context.Context, params *ListSessionsParams, reqEditors ...RequestEditorFn) (*ListSessionsResponse, error)
-
-	// GetSessionWithResponse Get a session
-	//
-	// Retrieves detailed information about a specific session, including its current status, resource configuration, and exposed routes.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId} (the `GetSession` operationId).
-	GetSessionWithResponse(ctx context.Context, sessionId string, params *GetSessionParams, reqEditors ...RequestEditorFn) (*GetSessionResponse, error)
-
-	// ListSessionCommandsWithResponse List commands
-	//
-	// Retrieves a list of all commands that have been executed in a session, including their current status, exit codes, and execution times, ordered from the most recent to the oldest.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd (the `ListSessionCommands` operationId).
-	ListSessionCommandsWithResponse(ctx context.Context, sessionId string, params *ListSessionCommandsParams, reqEditors ...RequestEditorFn) (*ListSessionCommandsResponse, error)
-
-	// RunSessionCommandWithBodyWithResponse Execute a command
-	//
-	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd (the `RunSessionCommand` operationId).
-	RunSessionCommandWithBodyWithResponse(ctx context.Context, sessionId string, params *RunSessionCommandParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RunSessionCommandResponse, error)
-
-	// RunSessionCommandWithResponse Execute a command
-	//
-	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd (the `RunSessionCommand` operationId).
-	RunSessionCommandWithResponse(ctx context.Context, sessionId string, params *RunSessionCommandParams, body RunSessionCommandJSONRequestBody, reqEditors ...RequestEditorFn) (*RunSessionCommandResponse, error)
-
-	// GetSessionCommandWithResponse Get a command
-	//
-	// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId} (the `GetSessionCommand` operationId).
-	GetSessionCommandWithResponse(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandParams, reqEditors ...RequestEditorFn) (*GetSessionCommandResponse, error)
-
-	// KillSessionCommandWithBodyWithResponse Kill a command
-	//
-	// Sends a signal to terminate a running command in a session. The signal can be used to gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be running for this operation to succeed.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill (the `KillSessionCommand` operationId).
-	KillSessionCommandWithBodyWithResponse(ctx context.Context, sessionId string, cmdId string, params *KillSessionCommandParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*KillSessionCommandResponse, error)
-
-	// KillSessionCommandWithResponse Kill a command
-	//
-	// Sends a signal to terminate a running command in a session. The signal can be used to gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be running for this operation to succeed.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill (the `KillSessionCommand` operationId).
-	KillSessionCommandWithResponse(ctx context.Context, sessionId string, cmdId string, params *KillSessionCommandParams, body KillSessionCommandJSONRequestBody, reqEditors ...RequestEditorFn) (*KillSessionCommandResponse, error)
-
-	// GetSessionCommandLogsWithResponse Stream command logs
-	//
-	// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs (the `GetSessionCommandLogs` operationId).
-	GetSessionCommandLogsWithResponse(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandLogsParams, reqEditors ...RequestEditorFn) (*GetSessionCommandLogsResponse, error)
-
-	// WriteSessionCommandStdinWithBodyWithResponse Write to command stdin
-	//
-	// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/stdin (the `WriteSessionCommandStdin` operationId).
-	WriteSessionCommandStdinWithBodyWithResponse(ctx context.Context, sessionId string, cmdId string, params *WriteSessionCommandStdinParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*WriteSessionCommandStdinResponse, error)
-
-	// WriteSessionCommandStdinWithResponse Write to command stdin
-	//
-	// Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set `offset` to the position in stdin where `data` starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns `bytesWritten`, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no `data` and no `close` writes nothing and returns it.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/stdin (the `WriteSessionCommandStdin` operationId).
-	WriteSessionCommandStdinWithResponse(ctx context.Context, sessionId string, cmdId string, params *WriteSessionCommandStdinParams, body WriteSessionCommandStdinJSONRequestBody, reqEditors ...RequestEditorFn) (*WriteSessionCommandStdinResponse, error)
-
-	// ExtendSessionTimeoutWithBodyWithResponse Extend session timeout
-	//
-	// Extends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/extend-timeout (the `ExtendSessionTimeout` operationId).
-	ExtendSessionTimeoutWithBodyWithResponse(ctx context.Context, sessionId string, params *ExtendSessionTimeoutParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExtendSessionTimeoutResponse, error)
-
-	// ExtendSessionTimeoutWithResponse Extend session timeout
-	//
-	// Extends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/extend-timeout (the `ExtendSessionTimeout` operationId).
-	ExtendSessionTimeoutWithResponse(ctx context.Context, sessionId string, params *ExtendSessionTimeoutParams, body ExtendSessionTimeoutJSONRequestBody, reqEditors ...RequestEditorFn) (*ExtendSessionTimeoutResponse, error)
-
-	// CreateSessionDirectoryWithBodyWithResponse Create a directory
-	//
-	// Creates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/mkdir (the `CreateSessionDirectory` operationId).
-	CreateSessionDirectoryWithBodyWithResponse(ctx context.Context, sessionId string, params *CreateSessionDirectoryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSessionDirectoryResponse, error)
-
-	// CreateSessionDirectoryWithResponse Create a directory
-	//
-	// Creates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/mkdir (the `CreateSessionDirectory` operationId).
-	CreateSessionDirectoryWithResponse(ctx context.Context, sessionId string, params *CreateSessionDirectoryParams, body CreateSessionDirectoryJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSessionDirectoryResponse, error)
-
-	// ReadSessionFileWithBodyWithResponse Read a file
-	//
-	// Downloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/read (the `ReadSessionFile` operationId).
-	ReadSessionFileWithBodyWithResponse(ctx context.Context, sessionId string, params *ReadSessionFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ReadSessionFileResponse, error)
-
-	// ReadSessionFileWithResponse Read a file
-	//
-	// Downloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/read (the `ReadSessionFile` operationId).
-	ReadSessionFileWithResponse(ctx context.Context, sessionId string, params *ReadSessionFileParams, body ReadSessionFileJSONRequestBody, reqEditors ...RequestEditorFn) (*ReadSessionFileResponse, error)
-
-	// WriteSessionFilesWithResponse Write files
-	//
-	// Uploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session's working directory, or to a custom directory specified via the `x-cwd` header.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/fs/write (the `WriteSessionFiles` operationId).
-	WriteSessionFilesWithResponse(ctx context.Context, sessionId string, params *WriteSessionFilesParams, reqEditors ...RequestEditorFn) (*WriteSessionFilesResponse, error)
-
-	// UpdateSessionNetworkPolicyWithBodyWithResponse Update network policy
-	//
-	// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/network-policy (the `UpdateSessionNetworkPolicy` operationId).
-	UpdateSessionNetworkPolicyWithBodyWithResponse(ctx context.Context, sessionId string, params *UpdateSessionNetworkPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSessionNetworkPolicyResponse, error)
-
-	// UpdateSessionNetworkPolicyWithResponse Update network policy
-	//
-	// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/network-policy (the `UpdateSessionNetworkPolicy` operationId).
-	UpdateSessionNetworkPolicyWithResponse(ctx context.Context, sessionId string, params *UpdateSessionNetworkPolicyParams, body UpdateSessionNetworkPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSessionNetworkPolicyResponse, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV2WithBodyWithResponse Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV2` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV2WithBodyWithResponse(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesSessionsBySessionIdSnapshotV2Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV2WithResponse Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV2` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV2WithResponse(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV2Params, body CreateSandboxesSessionsBySessionIdSnapshotV2JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesSessionsBySessionIdSnapshotV2Response, error)
-
-	// StopSessionWithResponse Stop a session
-	//
-	// Stops a running session and releases its allocated resources. All running processes within the session will be terminated. This action cannot be undone. A stopped session cannot be restarted.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/sessions/{sessionId}/stop (the `StopSession` operationId).
-	StopSessionWithResponse(ctx context.Context, sessionId string, params *StopSessionParams, reqEditors ...RequestEditorFn) (*StopSessionResponse, error)
-
-	// ListSessionSnapshotsWithResponse List snapshots
-	//
-	// Retrieves a paginated list of snapshots for a specific project.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/snapshots (the `ListSessionSnapshots` operationId).
-	ListSessionSnapshotsWithResponse(ctx context.Context, params *ListSessionSnapshotsParams, reqEditors ...RequestEditorFn) (*ListSessionSnapshotsResponse, error)
-
-	// DeleteSessionSnapshotWithResponse Delete a snapshot
-	//
-	// Permanently deletes a snapshot and frees its associated storage. This action cannot be undone. After deletion, the snapshot can no longer be used to create new sessions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/sandboxes/snapshots/{snapshotId} (the `DeleteSessionSnapshot` operationId).
-	DeleteSessionSnapshotWithResponse(ctx context.Context, snapshotId string, params *DeleteSessionSnapshotParams, reqEditors ...RequestEditorFn) (*DeleteSessionSnapshotResponse, error)
-
-	// GetSessionSnapshotWithResponse Get a snapshot
-	//
-	// Retrieves detailed information about a specific snapshot, including its creation time, size, expiration date, and the source session it was created from.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/snapshots/{snapshotId} (the `GetSessionSnapshot` operationId).
-	GetSessionSnapshotWithResponse(ctx context.Context, snapshotId string, params *GetSessionSnapshotParams, reqEditors ...RequestEditorFn) (*GetSessionSnapshotResponse, error)
-
-	// DeleteSandboxWithResponse Delete a sandbox
-	//
-	// Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata. When the config item is already missing, the returned sandbox uses stored metadata and defaults; config fields may be stale.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/sandboxes/{name} (the `DeleteSandbox` operationId).
-	DeleteSandboxWithResponse(ctx context.Context, name string, params *DeleteSandboxParams, reqEditors ...RequestEditorFn) (*DeleteSandboxResponse, error)
-
-	// GetNamedSandboxWithResponse Get a named sandbox
-	//
-	// Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox is stopped and resume is true, a new sandbox will be created from the most recent snapshot. Returns 404 if the named sandbox or its configuration no longer exists.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/sandboxes/{name} (the `GetNamedSandbox` operationId).
-	GetNamedSandboxWithResponse(ctx context.Context, name string, params *GetNamedSandboxParams, reqEditors ...RequestEditorFn) (*GetNamedSandboxResponse, error)
-
-	// UpdateSandboxWithBodyWithResponse Update a sandbox
-	//
-	// Updates the configuration of a sandbox. Only the provided fields will be modified; omitted fields remain unchanged.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/sandboxes/{name} (the `UpdateSandbox` operationId).
-	UpdateSandboxWithBodyWithResponse(ctx context.Context, name string, params *UpdateSandboxParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSandboxResponse, error)
-
-	// UpdateSandboxWithResponse Update a sandbox
-	//
-	// Updates the configuration of a sandbox. Only the provided fields will be modified; omitted fields remain unchanged.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/sandboxes/{name} (the `UpdateSandbox` operationId).
-	UpdateSandboxWithResponse(ctx context.Context, name string, params *UpdateSandboxParams, body UpdateSandboxJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSandboxResponse, error)
-
-	// CreateSandboxesByNameForkV2WithBodyWithResponse Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV2` operationId).
-	CreateSandboxesByNameForkV2WithBodyWithResponse(ctx context.Context, name string, params *CreateSandboxesByNameForkV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesByNameForkV2Response, error)
-
-	// CreateSandboxesByNameForkV2WithResponse Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV2` operationId).
-	CreateSandboxesByNameForkV2WithResponse(ctx context.Context, name string, params *CreateSandboxesByNameForkV2Params, body CreateSandboxesByNameForkV2JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesByNameForkV2Response, error)
-
-	// GetTeamsWithResponse List all teams
-	//
-	// Get a paginated list of all the Teams the authenticated User is a member of.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/teams (the `GetTeams` operationId).
-	GetTeamsWithResponse(ctx context.Context, params *GetTeamsParams, reqEditors ...RequestEditorFn) (*GetTeamsResponse, error)
-
-	// GetTeamWithResponse Get a Team
-	//
-	// Get information for the Team specified by the `teamId` parameter.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/teams/{teamId} (the `GetTeam` operationId).
-	GetTeamWithResponse(ctx context.Context, teamId string, params *GetTeamParams, reqEditors ...RequestEditorFn) (*GetTeamResponse, error)
-
-	// PatchTeamWithBodyWithResponse Update a Team
-	//
-	// Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/teams/{teamId} (the `PatchTeam` operationId).
-	PatchTeamWithBodyWithResponse(ctx context.Context, teamId string, params *PatchTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchTeamResponse, error)
-
-	// PatchTeamWithResponse Update a Team
-	//
-	// Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/teams/{teamId} (the `PatchTeam` operationId).
-	PatchTeamWithResponse(ctx context.Context, teamId string, params *PatchTeamParams, body PatchTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchTeamResponse, error)
-
-	// ListTeamFlagsV2WithResponse List all flags for a team
-	//
-	// Retrieve all feature flags for a team across all projects. Returns an opaque cursor for pagination.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/teams/{teamId}/feature-flags/flags (the `ListTeamFlagsV2` operationId).
-	ListTeamFlagsV2WithResponse(ctx context.Context, teamId string, params *ListTeamFlagsV2Params, reqEditors ...RequestEditorFn) (*ListTeamFlagsV2Response, error)
-
-	// InviteUserToTeamWithBodyWithResponse Invite a user
-	//
-	// Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user to be invited must be specified by email.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/teams/{teamId}/members (the `InviteUserToTeam` operationId).
-	InviteUserToTeamWithBodyWithResponse(ctx context.Context, teamId string, params *InviteUserToTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*InviteUserToTeamResponse, error)
-
-	// InviteUserToTeamWithResponse Invite a user
-	//
-	// Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user to be invited must be specified by email.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/teams/{teamId}/members (the `InviteUserToTeam` operationId).
-	InviteUserToTeamWithResponse(ctx context.Context, teamId string, params *InviteUserToTeamParams, body InviteUserToTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*InviteUserToTeamResponse, error)
-
-	// GetAuthUserWithResponse Get the User
-	//
-	// Retrieves information related to the currently authenticated User.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/user (the `GetAuthUser` operationId).
-	GetAuthUserWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAuthUserResponse, error)
-
-	// ListVercelCiBranchesWithResponse List Vercel CI branch suggestions for a team
-	//
-	// List branches.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/vercel-ci/branches (the `ListVercelCiBranches` operationId).
-	ListVercelCiBranchesWithResponse(ctx context.Context, params *ListVercelCiBranchesParams, reqEditors ...RequestEditorFn) (*ListVercelCiBranchesResponse, error)
-
-	// ListVercelCiInvocationsWithResponse List invocations for a team, optionally filtered by repository and invocation metadata
-	//
-	// List Invocations.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/vercel-ci/invocations (the `ListVercelCiInvocations` operationId).
-	ListVercelCiInvocationsWithResponse(ctx context.Context, params *ListVercelCiInvocationsParams, reqEditors ...RequestEditorFn) (*ListVercelCiInvocationsResponse, error)
-
-	// CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithResponse Start a blob upload
-	//
-	// POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=<digest>&from=<repo>] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ (the `CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads` operationId).
-	CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, params *CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsParams, reqEditors ...RequestEditorFn) (*CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse, error)
-
-	// DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse Cancel a blob upload
-	//
-	// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse Get blob upload status
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error)
-
-	// UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse Upload a blob chunk
-	//
-	// PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error)
-
-	// ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse Complete a blob upload
-	//
-	// PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=<digest> Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-	ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, params *ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidParams, reqEditors ...RequestEditorFn) (*ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error)
-
-	// DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse Delete a blob
-	//
-	// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. Matches the behaviour of most public registries.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-	DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse Download a blob
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error)
-
-	// HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse Check if a blob exists
-	//
-	// HEAD /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Check whether a blob exists. Used by the Docker client before pushing a layer to avoid re-uploading content that already exists.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-	HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error)
-
-	// DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse Delete an image manifest
-	//
-	// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse Pull an image manifest
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error)
-
-	// HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse Check if a manifest exists
-	//
-	// HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest exists. Used by Docker client during push to determine if a manifest (or config blob referenced by digest) is already present.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error)
-
-	// ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse Push an image manifest
-	//
-	// PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-	ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error)
-
-	// GetByTeamSlugByProjectSlugByRepositoryNameTagsListWithResponse List image tags
-	//
-	// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response's `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list (the `GetByTeamSlugByProjectSlugByRepositoryNameTagsList` operationId).
-	GetByTeamSlugByProjectSlugByRepositoryNameTagsListWithResponse(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, params *GetByTeamSlugByProjectSlugByRepositoryNameTagsListParams, reqEditors ...RequestEditorFn) (*GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse, error)
-
-	// GetDeploymentEventsWithResponse Get deployment events
-	//
-	// Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v3/deployments/{idOrUrl}/events (the `GetDeploymentEvents` operationId).
-	GetDeploymentEventsWithResponse(ctx context.Context, idOrUrl string, params *GetDeploymentEventsParams, reqEditors ...RequestEditorFn) (*GetDeploymentEventsResponse, error)
-
-	// PatchDomainWithBodyWithResponse Update or move apex domain
-	//
-	// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v3/domains/{domain} (the `PatchDomain` operationId).
-	PatchDomainWithBodyWithResponse(ctx context.Context, domain string, params *PatchDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchDomainResponse, error)
-
-	// PatchDomainWithResponse Update or move apex domain
-	//
-	// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v3/domains/{domain} (the `PatchDomain` operationId).
-	PatchDomainWithResponse(ctx context.Context, domain string, params *PatchDomainParams, body PatchDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchDomainResponse, error)
-
-	// ListUserEventsWithResponse List User Events
-	//
-	// Retrieves a list of "events" generated by the User on Vercel. Events are generated when the User performs a particular action, such as logging in, creating a deployment, and joining a Team (just to name a few). When the `teamId` parameter is supplied, then the events that are returned will be in relation to the Team that was specified.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v3/events (the `ListUserEvents` operationId).
-	ListUserEventsWithResponse(ctx context.Context, params *ListUserEventsParams, reqEditors ...RequestEditorFn) (*ListUserEventsResponse, error)
-
-	// CreateSandboxesV3WithBodyWithResponse Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/sandboxes (the `CreateSandboxesV3` operationId).
-	CreateSandboxesV3WithBodyWithResponse(ctx context.Context, params *CreateSandboxesV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesV3Response, error)
-
-	// CreateSandboxesV3WithResponse Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/sandboxes (the `CreateSandboxesV3` operationId).
-	CreateSandboxesV3WithResponse(ctx context.Context, params *CreateSandboxesV3Params, body CreateSandboxesV3JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesV3Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV3WithBodyWithResponse Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV3` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV3WithBodyWithResponse(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesSessionsBySessionIdSnapshotV3Response, error)
-
-	// CreateSandboxesSessionsBySessionIdSnapshotV3WithResponse Create a snapshot
-	//
-	// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV3` operationId).
-	CreateSandboxesSessionsBySessionIdSnapshotV3WithResponse(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, body CreateSandboxesSessionsBySessionIdSnapshotV3JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesSessionsBySessionIdSnapshotV3Response, error)
-
-	// CreateSandboxesByNameForkV3WithBodyWithResponse Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV3` operationId).
-	CreateSandboxesByNameForkV3WithBodyWithResponse(ctx context.Context, name string, params *CreateSandboxesByNameForkV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesByNameForkV3Response, error)
-
-	// CreateSandboxesByNameForkV3WithResponse Fork a named sandbox
-	//
-	// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV3` operationId).
-	CreateSandboxesByNameForkV3WithResponse(ctx context.Context, name string, params *CreateSandboxesByNameForkV3Params, body CreateSandboxesByNameForkV3JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesByNameForkV3Response, error)
-
-	// GetTeamMembersWithResponse List team members
-	//
-	// Get a paginated list of team members for the provided team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v3/teams/{teamId}/members (the `GetTeamMembers` operationId).
-	GetTeamMembersWithResponse(ctx context.Context, teamId string, params *GetTeamMembersParams, reqEditors ...RequestEditorFn) (*GetTeamMembersResponse, error)
-
-	// CreateAuthTokenWithBodyWithResponse Create an Auth Token
-	//
-	// Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/user/tokens (the `CreateAuthToken` operationId).
-	CreateAuthTokenWithBodyWithResponse(ctx context.Context, params *CreateAuthTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAuthTokenResponse, error)
-
-	// CreateAuthTokenWithResponse Create an Auth Token
-	//
-	// Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v3/user/tokens (the `CreateAuthToken` operationId).
-	CreateAuthTokenWithResponse(ctx context.Context, params *CreateAuthTokenParams, body CreateAuthTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAuthTokenResponse, error)
-
-	// DeleteAuthTokenWithResponse Delete an authentication token
-	//
-	// Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v3/user/tokens/{tokenId} (the `DeleteAuthToken` operationId).
-	DeleteAuthTokenWithResponse(ctx context.Context, tokenId string, params *DeleteAuthTokenParams, reqEditors ...RequestEditorFn) (*DeleteAuthTokenResponse, error)
-
-	// ListAliasesWithResponse List aliases
-	//
-	// Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v4/aliases (the `ListAliases` operationId).
-	ListAliasesWithResponse(ctx context.Context, params *ListAliasesParams, reqEditors ...RequestEditorFn) (*ListAliasesResponse, error)
-
-	// GetAliasWithResponse Get an Alias
-	//
-	// Retrieves an Alias for the given host name or alias ID.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v4/aliases/{idOrAlias} (the `GetAlias` operationId).
-	GetAliasWithResponse(ctx context.Context, idOrAlias string, params *GetAliasParams, reqEditors ...RequestEditorFn) (*GetAliasResponse, error)
-
-	// CreateSandboxesV4WithBodyWithResponse Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v4/sandboxes (the `CreateSandboxesV4` operationId).
-	CreateSandboxesV4WithBodyWithResponse(ctx context.Context, params *CreateSandboxesV4Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesV4Response, error)
-
-	// CreateSandboxesV4WithResponse Create a named sandbox
-	//
-	// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v4/sandboxes (the `CreateSandboxesV4` operationId).
-	CreateSandboxesV4WithResponse(ctx context.Context, params *CreateSandboxesV4Params, body CreateSandboxesV4JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSandboxesV4Response, error)
-
-	// GetDomainsWithResponse List all the domains
-	//
-	// Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v5/domains (the `GetDomains` operationId).
-	GetDomainsWithResponse(ctx context.Context, params *GetDomainsParams, reqEditors ...RequestEditorFn) (*GetDomainsResponse, error)
-
-	// GetDomainWithResponse Get Information for a Single Domain
-	//
-	// Get information for a single domain in an account or team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v5/domains/{domain} (the `GetDomain` operationId).
-	GetDomainWithResponse(ctx context.Context, domain string, params *GetDomainParams, reqEditors ...RequestEditorFn) (*GetDomainResponse, error)
-
-	// GetRecordsWithResponse List existing DNS records
-	//
-	// Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v5/domains/{domain}/records (the `GetRecords` operationId).
-	GetRecordsWithResponse(ctx context.Context, domain string, params *GetRecordsParams, reqEditors ...RequestEditorFn) (*GetRecordsResponse, error)
-
-	// GetAuthTokenWithResponse Get Auth Token Metadata
-	//
-	// Retrieve metadata about an authentication token belonging to the currently authenticated User.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v5/user/tokens/{tokenId} (the `GetAuthToken` operationId).
-	GetAuthTokenWithResponse(ctx context.Context, tokenId string, reqEditors ...RequestEditorFn) (*GetAuthTokenResponse, error)
-
-	// ListDeploymentFilesWithResponse List Deployment Files
-	//
-	// Allows to retrieve the file structure of the source code of a deployment by supplying the deployment unique identifier. If the deployment was created with the Vercel CLI or the API directly with the `files` key, it will have a file tree that can be retrievable.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v6/deployments/{id}/files (the `ListDeploymentFiles` operationId).
-	ListDeploymentFilesWithResponse(ctx context.Context, id string, params *ListDeploymentFilesParams, reqEditors ...RequestEditorFn) (*ListDeploymentFilesResponse, error)
-
-	// DeleteDomainWithResponse Remove a domain by name
-	//
-	// Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v6/domains/{domain} (the `DeleteDomain` operationId).
-	DeleteDomainWithResponse(ctx context.Context, domain string, params *DeleteDomainParams, reqEditors ...RequestEditorFn) (*DeleteDomainResponse, error)
-
-	// GetDomainConfigWithResponse Get a Domain's configuration
-	//
-	// Get a Domain's configuration.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v6/domains/{domain}/config (the `GetDomainConfig` operationId).
-	GetDomainConfigWithResponse(ctx context.Context, domain string, params *GetDomainConfigParams, reqEditors ...RequestEditorFn) (*GetDomainConfigResponse, error)
-
-	// ListAuthTokensWithResponse List Auth Tokens
-	//
-	// Retrieve a list of the current User's authentication tokens.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v6/user/tokens (the `ListAuthTokens` operationId).
-	ListAuthTokensWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAuthTokensResponse, error)
-
-	// GetDeploymentsWithResponse List deployments
-	//
-	// List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v7/deployments (the `GetDeployments` operationId).
-	GetDeploymentsWithResponse(ctx context.Context, params *GetDeploymentsParams, reqEditors ...RequestEditorFn) (*GetDeploymentsResponse, error)
-
-	// CreateOrTransferDomainWithBodyWithResponse Add an existing domain to the Vercel platform
-	//
-	// This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v7/domains (the `CreateOrTransferDomain` operationId).
-	CreateOrTransferDomainWithBodyWithResponse(ctx context.Context, params *CreateOrTransferDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateOrTransferDomainResponse, error)
-
-	// CreateOrTransferDomainWithResponse Add an existing domain to the Vercel platform
-	//
-	// This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v7/domains (the `CreateOrTransferDomain` operationId).
-	CreateOrTransferDomainWithResponse(ctx context.Context, params *CreateOrTransferDomainParams, body CreateOrTransferDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateOrTransferDomainResponse, error)
-
-	// DeleteAllArtifactsWithResponse Delete all cache artifacts
-	//
-	// Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v8/artifacts (the `DeleteAllArtifacts` operationId).
-	DeleteAllArtifactsWithResponse(ctx context.Context, params *DeleteAllArtifactsParams, reqEditors ...RequestEditorFn) (*DeleteAllArtifactsResponse, error)
-
-	// ArtifactQueryWithBodyWithResponse Query information about an artifact
-	//
-	// Query information about an array of artifacts.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v8/artifacts (the `ArtifactQuery` operationId).
-	ArtifactQueryWithBodyWithResponse(ctx context.Context, params *ArtifactQueryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ArtifactQueryResponse, error)
-
-	// ArtifactQueryWithResponse Query information about an artifact
-	//
-	// Query information about an array of artifacts.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v8/artifacts (the `ArtifactQuery` operationId).
-	ArtifactQueryWithResponse(ctx context.Context, params *ArtifactQueryParams, body ArtifactQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*ArtifactQueryResponse, error)
-
-	// RecordEventsWithBodyWithResponse Record an artifacts cache usage event
-	//
-	// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v8/artifacts/events (the `RecordEvents` operationId).
-	RecordEventsWithBodyWithResponse(ctx context.Context, params *RecordEventsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RecordEventsResponse, error)
-
-	// RecordEventsWithResponse Record an artifacts cache usage event
-	//
-	// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v8/artifacts/events (the `RecordEvents` operationId).
-	RecordEventsWithResponse(ctx context.Context, params *RecordEventsParams, body RecordEventsJSONRequestBody, reqEditors ...RequestEditorFn) (*RecordEventsResponse, error)
-
-	// StatusWithResponse Get status of Remote Caching for this principal
-	//
-	// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v8/artifacts/status (the `Status` operationId).
-	StatusWithResponse(ctx context.Context, params *StatusParams, reqEditors ...RequestEditorFn) (*StatusResponse, error)
-
-	// DownloadArtifactWithResponse Download a cache artifact
-	//
-	// Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v8/artifacts/{hash} (the `DownloadArtifact` operationId).
-	DownloadArtifactWithResponse(ctx context.Context, hash string, params *DownloadArtifactParams, reqEditors ...RequestEditorFn) (*DownloadArtifactResponse, error)
-
-	// ArtifactExistsWithResponse Check if a cache artifact exists
-	//
-	// Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with HEAD /v8/artifacts/{hash} (the `ArtifactExists` operationId).
-	ArtifactExistsWithResponse(ctx context.Context, hash string, params *ArtifactExistsParams, reqEditors ...RequestEditorFn) (*ArtifactExistsResponse, error)
-
-	// UploadArtifactWithBodyWithResponse Upload a cache artifact
-	//
-	// Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v8/artifacts/{hash} (the `UploadArtifact` operationId).
-	UploadArtifactWithBodyWithResponse(ctx context.Context, hash string, params *UploadArtifactParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadArtifactResponse, error)
-
-	// GetCertsWithResponse Get certs
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v8/certs (the `GetCerts` operationId).
-	GetCertsWithResponse(ctx context.Context, params *GetCertsParams, reqEditors ...RequestEditorFn) (*GetCertsResponse, error)
-
-	// IssueCertWithBodyWithResponse Issue a new cert
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v8/certs (the `IssueCert` operationId).
-	IssueCertWithBodyWithResponse(ctx context.Context, params *IssueCertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IssueCertResponse, error)
-
-	// IssueCertWithResponse Issue a new cert
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v8/certs (the `IssueCert` operationId).
-	IssueCertWithResponse(ctx context.Context, params *IssueCertParams, body IssueCertJSONRequestBody, reqEditors ...RequestEditorFn) (*IssueCertResponse, error)
-
-	// UploadCertWithBodyWithResponse Upload a cert
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v8/certs (the `UploadCert` operationId).
-	UploadCertWithBodyWithResponse(ctx context.Context, params *UploadCertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadCertResponse, error)
-
-	// UploadCertWithResponse Upload a cert
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v8/certs (the `UploadCert` operationId).
-	UploadCertWithResponse(ctx context.Context, params *UploadCertParams, body UploadCertJSONRequestBody, reqEditors ...RequestEditorFn) (*UploadCertResponse, error)
-
-	// RemoveCertWithResponse Remove cert
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v8/certs/{id} (the `RemoveCert` operationId).
-	RemoveCertWithResponse(ctx context.Context, id string, params *RemoveCertParams, reqEditors ...RequestEditorFn) (*RemoveCertResponse, error)
-
-	// GetCertByIdWithResponse Get cert by id
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v8/certs/{id} (the `GetCertById` operationId).
-	GetCertByIdWithResponse(ctx context.Context, id string, params *GetCertByIdParams, reqEditors ...RequestEditorFn) (*GetCertByIdResponse, error)
-
-	// GetDeploymentFileContentsWithResponse Get Deployment File Contents
-	//
-	// Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v8/deployments/{id}/files/{fileId} (the `GetDeploymentFileContents` operationId).
-	GetDeploymentFileContentsWithResponse(ctx context.Context, id string, fileId string, params *GetDeploymentFileContentsParams, reqEditors ...RequestEditorFn) (*GetDeploymentFileContentsResponse, error)
-
-	// ClaimDomainOwnershipWithResponse Claim Domain Ownership
-	//
-	// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v9/domains/{domain}/claim (the `ClaimDomainOwnership` operationId).
-	ClaimDomainOwnershipWithResponse(ctx context.Context, domain string, params *ClaimDomainOwnershipParams, reqEditors ...RequestEditorFn) (*ClaimDomainOwnershipResponse, error)
-
-	// GetDomainVerificationRecordWithResponse Get Domain Verification Record
-	//
-	// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v9/domains/{domain}/verification (the `GetDomainVerificationRecord` operationId).
-	GetDomainVerificationRecordWithResponse(ctx context.Context, domain string, params *GetDomainVerificationRecordParams, reqEditors ...RequestEditorFn) (*GetDomainVerificationRecordResponse, error)
-
-	// DeleteProjectWithResponse Delete a Project
-	//
-	// Delete a specific project by passing either the project `id` or `name` in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName} (the `DeleteProject` operationId).
-	DeleteProjectWithResponse(ctx context.Context, idOrName string, params *DeleteProjectParams, reqEditors ...RequestEditorFn) (*DeleteProjectResponse, error)
-
-	// GetProjectWithResponse Find a project by id or name
-	//
-	// Get the information for a specific project by passing either the project `id` or `name` in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v9/projects/{idOrName} (the `GetProject` operationId).
-	GetProjectWithResponse(ctx context.Context, idOrName string, params *GetProjectParams, reqEditors ...RequestEditorFn) (*GetProjectResponse, error)
-
-	// UpdateProjectWithBodyWithResponse Update an existing project
-	//
-	// Update the fields of a project using either its `name` or `id`.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName} (the `UpdateProject` operationId).
-	UpdateProjectWithBodyWithResponse(ctx context.Context, idOrName string, params *UpdateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectResponse, error)
-
-	// UpdateProjectWithResponse Update an existing project
-	//
-	// Update the fields of a project using either its `name` or `id`.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName} (the `UpdateProject` operationId).
-	UpdateProjectWithResponse(ctx context.Context, idOrName string, params *UpdateProjectParams, body UpdateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectResponse, error)
-
-	// GetProjectsByIdOrNameCustomEnvironmentsWithResponse Retrieve custom environments
-	//
-	// Retrieve custom environments for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/custom-environments (the `GetProjectsByIdOrNameCustomEnvironments` operationId).
-	GetProjectsByIdOrNameCustomEnvironmentsWithResponse(ctx context.Context, idOrName string, params *GetProjectsByIdOrNameCustomEnvironmentsParams, reqEditors ...RequestEditorFn) (*GetProjectsByIdOrNameCustomEnvironmentsResponse, error)
-
-	// CreateCustomEnvironmentWithBodyWithResponse Create a custom environment for the current project.
-	//
-	// Creates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v9/projects/{idOrName}/custom-environments (the `CreateCustomEnvironment` operationId).
-	CreateCustomEnvironmentWithBodyWithResponse(ctx context.Context, idOrName string, params *CreateCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateCustomEnvironmentResponse, error)
-
-	// CreateCustomEnvironmentWithResponse Create a custom environment for the current project.
-	//
-	// Creates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v9/projects/{idOrName}/custom-environments (the `CreateCustomEnvironment` operationId).
-	CreateCustomEnvironmentWithResponse(ctx context.Context, idOrName string, params *CreateCustomEnvironmentParams, body CreateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateCustomEnvironmentResponse, error)
-
-	// RemoveCustomEnvironmentWithBodyWithResponse Remove a custom environment
-	//
-	// Remove a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `RemoveCustomEnvironment` operationId).
-	RemoveCustomEnvironmentWithBodyWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveCustomEnvironmentResponse, error)
-
-	// RemoveCustomEnvironmentWithResponse Remove a custom environment
-	//
-	// Remove a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `RemoveCustomEnvironment` operationId).
-	RemoveCustomEnvironmentWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, body RemoveCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveCustomEnvironmentResponse, error)
-
-	// GetCustomEnvironmentWithResponse Retrieve a custom environment
-	//
-	// Retrieve a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `GetCustomEnvironment` operationId).
-	GetCustomEnvironmentWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *GetCustomEnvironmentParams, reqEditors ...RequestEditorFn) (*GetCustomEnvironmentResponse, error)
-
-	// UpdateCustomEnvironmentWithBodyWithResponse Update a custom environment
-	//
-	// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-	UpdateCustomEnvironmentWithBodyWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCustomEnvironmentResponse, error)
-
-	// UpdateCustomEnvironmentWithResponse Update a custom environment
-	//
-	// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-	UpdateCustomEnvironmentWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, body UpdateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCustomEnvironmentResponse, error)
-
-	// GetProjectDomainsWithResponse Retrieve project domains by project by id or name
-	//
-	// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/domains (the `GetProjectDomains` operationId).
-	GetProjectDomainsWithResponse(ctx context.Context, idOrName struct {
-		union json.RawMessage
-	}, params *GetProjectDomainsParams, reqEditors ...RequestEditorFn) (*GetProjectDomainsResponse, error)
-
-	// RemoveProjectDomainWithBodyWithResponse Remove a domain from a project
-	//
-	// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-	RemoveProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveProjectDomainResponse, error)
-
-	// RemoveProjectDomainWithResponse Remove a domain from a project
-	//
-	// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-	RemoveProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, body RemoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveProjectDomainResponse, error)
-
-	// GetProjectDomainWithResponse Get a project domain
-	//
-	// Get project domain by project id/name and domain name.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v9/projects/{idOrName}/domains/{domain} (the `GetProjectDomain` operationId).
-	GetProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *GetProjectDomainParams, reqEditors ...RequestEditorFn) (*GetProjectDomainResponse, error)
-
-	// UpdateProjectDomainWithBodyWithResponse Update a project domain
-	//
-	// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-	UpdateProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectDomainResponse, error)
-
-	// UpdateProjectDomainWithResponse Update a project domain
-	//
-	// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-	UpdateProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, body UpdateProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectDomainResponse, error)
-
-	// VerifyProjectDomainWithResponse Verify project domain
-	//
-	// Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v9/projects/{idOrName}/domains/{domain}/verify (the `VerifyProjectDomain` operationId).
-	VerifyProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *VerifyProjectDomainParams, reqEditors ...RequestEditorFn) (*VerifyProjectDomainResponse, error)
-
-	// RemoveProjectEnvWithResponse Remove an environment variable
-	//
-	// Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v9/projects/{idOrName}/env/{id} (the `RemoveProjectEnv` operationId).
-	RemoveProjectEnvWithResponse(ctx context.Context, idOrName string, id string, params *RemoveProjectEnvParams, reqEditors ...RequestEditorFn) (*RemoveProjectEnvResponse, error)
-
-	// EditProjectEnvWithBodyWithResponse Edit an environment variable
-	//
-	// Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/env/{id} (the `EditProjectEnv` operationId).
-	EditProjectEnvWithBodyWithResponse(ctx context.Context, idOrName string, id string, params *EditProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EditProjectEnvResponse, error)
-
-	// EditProjectEnvWithResponse Edit an environment variable
-	//
-	// Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v9/projects/{idOrName}/env/{id} (the `EditProjectEnv` operationId).
-	EditProjectEnvWithResponse(ctx context.Context, idOrName string, id string, params *EditProjectEnvParams, body EditProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*EditProjectEnvResponse, error)
-
-	// CreateWebInsightsToggleWithBodyWithResponse performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request,
-	// with any type of body and a specified content type.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	CreateWebInsightsToggleWithBodyWithResponse(ctx context.Context, params *CreateWebInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateWebInsightsToggleResponse, error)
-
-	// CreateWebInsightsToggleWithResponse performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request.
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	CreateWebInsightsToggleWithResponse(ctx context.Context, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateWebInsightsToggleResponse, error)
 }

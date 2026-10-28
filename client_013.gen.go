@@ -11,6 +11,1797 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// GetProject200JSONResponseBodyLink6Type defines parameters for GetProject.
+type GetProject200JSONResponseBodyLink6Type string
+
+// GetProject200JSONResponseBodyLink7 defines parameters for GetProject.
+type GetProject200JSONResponseBodyLink7 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId string `json:"gitCredentialId"`
+
+	// Owner Owner (namespace) slug, e.g. `acme`.
+	Owner string `json:"owner"`
+
+	// OwnerId Origin namespace id (`ns_…`) of the owner.
+	OwnerId          string `json:"ownerId"`
+	ProductionBranch string `json:"productionBranch"`
+	Repo             string `json:"repo"`
+
+	// RepoId Origin repository id.
+	RepoId     string                                        `json:"repoId"`
+	Sourceless *GetProject200JSONResponseBodyLink7Sourceless `json:"sourceless,omitempty"`
+	Type       GetProject200JSONResponseBodyLink7Type        `json:"type"`
+	UpdatedAt  *float32                                      `json:"updatedAt,omitempty"`
+}
+
+// GetProject200JSONResponseBodyLink7Sourceless defines parameters for GetProject.
+type GetProject200JSONResponseBodyLink7Sourceless bool
+
+// GetProject200JSONResponseBodyLink7Type defines parameters for GetProject.
+type GetProject200JSONResponseBodyLink7Type string
+
+// GetProject200JSONResponseBody_Link defines parameters for GetProject.
+type GetProject200JSONResponseBody_Link struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyLive defines parameters for GetProject.
+type GetProject200JSONResponseBodyLive bool
+
+// GetProject200JSONResponseBodyMicrofrontends0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends0 struct {
+	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// Enabled Whether microfrontends are enabled for this project.
+	Enabled GetProject200JSONResponseBodyMicrofrontends0Enabled `json:"enabled"`
+
+	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+	FreeProjectForLegacyLimits *GetProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+
+	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+	GroupIds     []string                                                 `json:"groupIds"`
+	IsDefaultApp GetProject200JSONResponseBodyMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
+
+	// UpdatedAt Timestamp when the microfrontends settings were last updated.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetProject200JSONResponseBodyMicrofrontends0Enabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends0Enabled bool
+
+// GetProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits bool
+
+// GetProject200JSONResponseBodyMicrofrontends0IsDefaultApp defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends0IsDefaultApp bool
+
+// GetProject200JSONResponseBodyMicrofrontends1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1 struct {
+	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+	DoNotRouteWithMicrofrontendsRouting *GetProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
+
+	// Enabled Whether microfrontends are enabled for this project.
+	Enabled GetProject200JSONResponseBodyMicrofrontends1Enabled `json:"enabled"`
+
+	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+	FreeProjectForLegacyLimits *GetProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+
+	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+	GroupIds     []string                                                  `json:"groupIds"`
+	IsDefaultApp *GetProject200JSONResponseBodyMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
+
+	// RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
+	RouteObservabilityToThisProject *GetProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
+
+	// UpdatedAt Timestamp when the microfrontends settings were last updated.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
+
+// GetProject200JSONResponseBodyMicrofrontends1Enabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1Enabled bool
+
+// GetProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits bool
+
+// GetProject200JSONResponseBodyMicrofrontends1IsDefaultApp defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1IsDefaultApp bool
+
+// GetProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject bool
+
+// GetProject200JSONResponseBodyMicrofrontends2 defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends2 struct {
+	Enabled                    GetProject200JSONResponseBodyMicrofrontends2Enabled                     `json:"enabled"`
+	FreeProjectForLegacyLimits *GetProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	GroupIds                   []interface{}                                                           `json:"groupIds"`
+	UpdatedAt                  float32                                                                 `json:"updatedAt"`
+}
+
+// GetProject200JSONResponseBodyMicrofrontends2Enabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends2Enabled bool
+
+// GetProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits bool
+
+// GetProject200JSONResponseBody_Microfrontends defines parameters for GetProject.
+type GetProject200JSONResponseBody_Microfrontends struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyNodeVersion defines parameters for GetProject.
+type GetProject200JSONResponseBodyNodeVersion string
+
+// GetProject200JSONResponseBodyOidcTokenConfigEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyOidcTokenConfigEnabled bool
+
+// GetProject200JSONResponseBodyOidcTokenConfigIssuerMode defines parameters for GetProject.
+type GetProject200JSONResponseBodyOidcTokenConfigIssuerMode string
+
+// GetProject200JSONResponseBodyPassportDeploymentType defines parameters for GetProject.
+type GetProject200JSONResponseBodyPassportDeploymentType string
+
+// GetProject200JSONResponseBodyPasswordProtectionDeploymentType defines parameters for GetProject.
+type GetProject200JSONResponseBodyPasswordProtectionDeploymentType string
+
+// GetProject200JSONResponseBodyPaused defines parameters for GetProject.
+type GetProject200JSONResponseBodyPaused bool
+
+// GetProject200JSONResponseBodyProductionDeploymentsFastLane defines parameters for GetProject.
+type GetProject200JSONResponseBodyProductionDeploymentsFastLane bool
+
+// GetProject200JSONResponseBodyProtectedSourcemaps defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectedSourcemaps bool
+
+// GetProject200JSONResponseBodyProtectionBypass0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectionBypass0 struct {
+	ConfigurationId string                                              `json:"configurationId"`
+	CreatedAt       float32                                             `json:"createdAt"`
+	CreatedBy       string                                              `json:"createdBy"`
+	IntegrationId   string                                              `json:"integrationId"`
+	Scope           GetProject200JSONResponseBodyProtectionBypass0Scope `json:"scope"`
+}
+
+// GetProject200JSONResponseBodyProtectionBypass0Scope defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectionBypass0Scope string
+
+// GetProject200JSONResponseBodyProtectionBypass1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectionBypass1 struct {
+	CreatedAt float32 `json:"createdAt"`
+	CreatedBy string  `json:"createdBy"`
+
+	// IsEnvVar When there was only one bypass, it was automatically set as an env var on deployments. With multiple bypasses, there is always one bypass that is selected as the default, and gets set as an env var on deployments. As this is a new field, undefined means that the bypass is the env var. If there are any automation bypasses, exactly one must be the env var.
+	IsEnvVar *GetProject200JSONResponseBodyProtectionBypass1IsEnvVar `json:"isEnvVar,omitempty"`
+
+	// Note Optional note about the bypass to be displayed in the UI
+	Note  *string                                             `json:"note,omitempty"`
+	Scope GetProject200JSONResponseBodyProtectionBypass1Scope `json:"scope"`
+}
+
+// GetProject200JSONResponseBodyProtectionBypass1IsEnvVar defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectionBypass1IsEnvVar bool
+
+// GetProject200JSONResponseBodyProtectionBypass1Scope defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectionBypass1Scope string
+
+// GetProject200JSONResponseBody_ProtectionBypass_AdditionalProperties defines parameters for GetProject.
+type GetProject200JSONResponseBody_ProtectionBypass_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection defines parameters for GetProject.
+type GetProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection bool
+
+// GetProject200JSONResponseBodyResourceConfigBuildMachineElasticReason defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigBuildMachineElasticReason string
+
+// GetProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection string
+
+// GetProject200JSONResponseBodyResourceConfigBuildMachineSelection defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigBuildMachineSelection string
+
+// GetProject200JSONResponseBodyResourceConfigBuildMachineType defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigBuildMachineType string
+
+// GetProject200JSONResponseBodyResourceConfigBuildQueueConfiguration defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigBuildQueueConfiguration string
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0 struct {
+	Cores  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label string
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
+	Cores  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
+	Cores  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3 defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3 struct {
+	Cores  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores  `json:"cores"`
+	Label  GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label  `json:"label"`
+	Memory GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory `json:"memory"`
+}
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores float32
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label string
+
+// GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory float32
+
+// GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for GetProject.
+type GetProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
+
+// GetProject200JSONResponseBodyResourceConfigEnableFunctionsBeta defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigEnableFunctionsBeta bool
+
+// GetProject200JSONResponseBodyResourceConfigFluid defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigFluid bool
+
+// GetProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType string
+
+// GetProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover bool
+
+// GetProject200JSONResponseBodyResourceConfigIsNSNBDisabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyResourceConfigIsNSNBDisabled bool
+
+// GetProject200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
+
+// GetProject200JSONResponseBodyRollingReleaseGateAction defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseGateAction string
+
+// GetProject200JSONResponseBodyRollingReleaseGateChecksType defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseGateChecksType string
+
+// GetProject200JSONResponseBodyRollingReleaseGateDryRun defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseGateDryRun bool
+
+// GetProject200JSONResponseBodyRollingReleaseGateEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseGateEnabled bool
+
+// GetProject200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// GetProject200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for GetProject.
+type GetProject200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// GetProject200JSONResponseBodySandboxFailoverRegions defines parameters for GetProject.
+type GetProject200JSONResponseBodySandboxFailoverRegions string
+
+// GetProject200JSONResponseBodySandboxRegion defines parameters for GetProject.
+type GetProject200JSONResponseBodySandboxRegion string
+
+// GetProject200JSONResponseBodySecurityAttackModeEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityAttackModeEnabled bool
+
+// GetProject200JSONResponseBodySecurityBotIdEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityBotIdEnabled bool
+
+// GetProject200JSONResponseBodySecurityFirewallEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityFirewallEnabled bool
+
+// GetProject200JSONResponseBodySecurityFirewallSeawallEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityFirewallSeawallEnabled bool
+
+// GetProject200JSONResponseBodySecurityJa3Enabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityJa3Enabled bool
+
+// GetProject200JSONResponseBodySecurityJa4Enabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityJa4Enabled bool
+
+// GetProject200JSONResponseBodySecurityLogHeaders0 defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityLogHeaders0 = []string
+
+// GetProject200JSONResponseBodySecurityLogHeaders1 defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityLogHeaders1 string
+
+// GetProject200JSONResponseBody_Security_LogHeaders defines parameters for GetProject.
+type GetProject200JSONResponseBody_Security_LogHeaders struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodySecurityManagedRulesAiBotsAction defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesAiBotsAction string
+
+// GetProject200JSONResponseBodySecurityManagedRulesAiBotsActive defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesAiBotsActive bool
+
+// GetProject200JSONResponseBodySecurityManagedRulesBotFilterAction defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesBotFilterAction string
+
+// GetProject200JSONResponseBodySecurityManagedRulesBotFilterActive defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesBotFilterActive bool
+
+// GetProject200JSONResponseBodySecurityManagedRulesOwaspAction defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesOwaspAction string
+
+// GetProject200JSONResponseBodySecurityManagedRulesOwaspActive defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesOwaspActive bool
+
+// GetProject200JSONResponseBodySecurityManagedRulesTrafficSourcesAction defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesTrafficSourcesAction string
+
+// GetProject200JSONResponseBodySecurityManagedRulesTrafficSourcesActive defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesTrafficSourcesActive bool
+
+// GetProject200JSONResponseBodySecurityManagedRulesVercelRulesetAction defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesVercelRulesetAction string
+
+// GetProject200JSONResponseBodySecurityManagedRulesVercelRulesetActive defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityManagedRulesVercelRulesetActive bool
+
+// GetProject200JSONResponseBodySecurityPageIntegrityEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityPageIntegrityEnabled bool
+
+// GetProject200JSONResponseBodySecurityRulesetsAction defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityRulesetsAction string
+
+// GetProject200JSONResponseBodySecurityRulesetsBypassSystem defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityRulesetsBypassSystem bool
+
+// GetProject200JSONResponseBodySecurityRulesetsLogHeaders0 defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityRulesetsLogHeaders0 = []string
+
+// GetProject200JSONResponseBodySecurityRulesetsLogHeaders1 defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityRulesetsLogHeaders1 string
+
+// GetProject200JSONResponseBody_Security_Rulesets_LogHeaders defines parameters for GetProject.
+type GetProject200JSONResponseBody_Security_Rulesets_LogHeaders struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo string
+
+// GetProject200JSONResponseBodySecurityRulesetsRedirectPermanent defines parameters for GetProject.
+type GetProject200JSONResponseBodySecurityRulesetsRedirectPermanent bool
+
+// GetProject200JSONResponseBodyServerlessFunctionZeroConfigFailover defines parameters for GetProject.
+type GetProject200JSONResponseBodyServerlessFunctionZeroConfigFailover bool
+
+// GetProject200JSONResponseBodyServicesFramework defines parameters for GetProject.
+type GetProject200JSONResponseBodyServicesFramework string
+
+// GetProject200JSONResponseBodyServicesServiceType defines parameters for GetProject.
+type GetProject200JSONResponseBodyServicesServiceType string
+
+// GetProject200JSONResponseBodySkipGitConnectDuringLink defines parameters for GetProject.
+type GetProject200JSONResponseBodySkipGitConnectDuringLink bool
+
+// GetProject200JSONResponseBodySourceFilesOutsideRootDirectory defines parameters for GetProject.
+type GetProject200JSONResponseBodySourceFilesOutsideRootDirectory bool
+
+// GetProject200JSONResponseBodySpeedInsightsHasData defines parameters for GetProject.
+type GetProject200JSONResponseBodySpeedInsightsHasData bool
+
+// GetProject200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines parameters for GetProject.
+type GetProject200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
+
+// GetProject200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom defines parameters for GetProject.
+type GetProject200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom string
+
+// GetProject200JSONResponseBodySsoProtectionDeploymentType defines parameters for GetProject.
+type GetProject200JSONResponseBodySsoProtectionDeploymentType string
+
+// GetProject200JSONResponseBodyStaticIpsBuilds defines parameters for GetProject.
+type GetProject200JSONResponseBodyStaticIpsBuilds bool
+
+// GetProject200JSONResponseBodyStaticIpsEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyStaticIpsEnabled bool
+
+// GetProject200JSONResponseBodyTargetsAliasAssigned0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsAliasAssigned0 = float32
+
+// GetProject200JSONResponseBodyTargetsAliasAssigned1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsAliasAssigned1 bool
+
+// GetProject200JSONResponseBody_Targets_AliasAssigned defines parameters for GetProject.
+type GetProject200JSONResponseBody_Targets_AliasAssigned struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyTargetsBranchMatcherType defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsBranchMatcherType string
+
+// GetProject200JSONResponseBodyTargetsChecksConclusion defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsChecksConclusion string
+
+// GetProject200JSONResponseBodyTargetsChecksState defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsChecksState string
+
+// GetProject200JSONResponseBodyTargetsConnectBuildsEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsConnectBuildsEnabled bool
+
+// GetProject200JSONResponseBodyTargetsForced defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsForced bool
+
+// GetProject200JSONResponseBodyTargetsPlan defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsPlan string
+
+// GetProject200JSONResponseBodyTargetsPreviewCommentsEnabled defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsPreviewCommentsEnabled bool
+
+// GetProject200JSONResponseBodyTargetsPrivate defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsPrivate bool
+
+// GetProject200JSONResponseBodyTargetsReadyState defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsReadyState string
+
+// GetProject200JSONResponseBodyTargetsReadySubstate defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsReadySubstate string
+
+// GetProject200JSONResponseBodyTargetsType defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsType string
+
+// GetProject200JSONResponseBodyTargetsWithCache defines parameters for GetProject.
+type GetProject200JSONResponseBodyTargetsWithCache bool
+
+// GetProject200JSONResponseBodyTier defines parameters for GetProject.
+type GetProject200JSONResponseBodyTier string
+
+// GetProject200JSONResponseBodyTracingSamplingRulesDestination defines parameters for GetProject.
+type GetProject200JSONResponseBodyTracingSamplingRulesDestination string
+
+// GetProject200JSONResponseBodyTracingSamplingRulesEnv defines parameters for GetProject.
+type GetProject200JSONResponseBodyTracingSamplingRulesEnv string
+
+// GetProject200JSONResponseBodyTrustedIps0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedIps0 struct {
+	Addresses []struct {
+		Note  *string `json:"note,omitempty"`
+		Value string  `json:"value"`
+	} `json:"addresses"`
+	DeploymentType GetProject200JSONResponseBodyTrustedIps0DeploymentType `json:"deploymentType"`
+	ProtectionMode GetProject200JSONResponseBodyTrustedIps0ProtectionMode `json:"protectionMode"`
+}
+
+// GetProject200JSONResponseBodyTrustedIps0DeploymentType defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedIps0DeploymentType string
+
+// GetProject200JSONResponseBodyTrustedIps0ProtectionMode defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedIps0ProtectionMode string
+
+// GetProject200JSONResponseBodyTrustedIps1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedIps1 struct {
+	DeploymentType GetProject200JSONResponseBodyTrustedIps1DeploymentType `json:"deploymentType"`
+}
+
+// GetProject200JSONResponseBodyTrustedIps1DeploymentType defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedIps1DeploymentType string
+
+// GetProject200JSONResponseBody_TrustedIps defines parameters for GetProject.
+type GetProject200JSONResponseBody_TrustedIps struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository bool
+
+// GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 struct {
+	Preset *GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset `json:"preset,omitempty"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs []string `json:"slugs"`
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset string
+
+// GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 struct {
+	Preset GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset `json:"preset"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs *[]string `json:"slugs,omitempty"`
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset string
+
+// GetProject200JSONResponseBody_TrustedSources_OidcProviders_To defines parameters for GetProject.
+type GetProject200JSONResponseBody_TrustedSources_OidcProviders_To struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 struct {
+	Preset *GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset `json:"preset,omitempty"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs []string `json:"slugs"`
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset string
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 struct {
+	Preset GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset `json:"preset"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs *[]string `json:"slugs,omitempty"`
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset string
+
+// GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From defines parameters for GetProject.
+type GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 struct {
+	Preset *GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset `json:"preset,omitempty"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs []string `json:"slugs"`
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset string
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 struct {
+	Preset GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset `json:"preset"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs *[]string `json:"slugs,omitempty"`
+}
+
+// GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset defines parameters for GetProject.
+type GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset string
+
+// GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To defines parameters for GetProject.
+type GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To struct {
+	union json.RawMessage
+}
+
+// GetProject200JSONResponseBodyUsageStatusKind defines parameters for GetProject.
+type GetProject200JSONResponseBodyUsageStatusKind string
+
+// GetProject200JSONResponseBodyUsageStatusTeamThrottled defines parameters for GetProject.
+type GetProject200JSONResponseBodyUsageStatusTeamThrottled bool
+
+// GetProject200JSONResponseBodyUsageStatusThrottled defines parameters for GetProject.
+type GetProject200JSONResponseBodyUsageStatusThrottled bool
+
+// GetProject200JSONResponseBodyV0 defines parameters for GetProject.
+type GetProject200JSONResponseBodyV0 bool
+
+// GetProject200JSONResponseBodyV0Created defines parameters for GetProject.
+type GetProject200JSONResponseBodyV0Created bool
+
+// GetProject200JSONResponseBodyWebAnalyticsHasData defines parameters for GetProject.
+type GetProject200JSONResponseBodyWebAnalyticsHasData bool
+
+// UpdateProjectJSONBody defines parameters for UpdateProject.
+type UpdateProjectJSONBody struct {
+	AutoAssignCustomDomains          *bool   `json:"autoAssignCustomDomains,omitempty"`
+	AutoAssignCustomDomainsUpdatedBy *string `json:"autoAssignCustomDomainsUpdatedBy,omitempty"`
+	AutoExposeSystemEnvs             *bool   `json:"autoExposeSystemEnvs,omitempty"`
+
+	// BuildCommand The build command for this project. When `null` is used this value will be automatically detected
+	BuildCommand                *string `json:"buildCommand,omitempty"`
+	CommandForIgnoringBuildStep *string `json:"commandForIgnoringBuildStep,omitempty"`
+
+	// ConnectConfigurations The list of connections from project environments to dedicated Secure Compute networks. Shared networks must be managed through the shared-connect-links endpoint.
+	ConnectConfigurations *[]UpdateProjectJSONBody_ConnectConfigurations_Item `json:"connectConfigurations,omitempty"`
+
+	// CustomerSupportCodeVisibility Specifies whether customer support can see git source for a deployment
+	CustomerSupportCodeVisibility *bool                                   `json:"customerSupportCodeVisibility,omitempty"`
+	DeploymentPolicy              *UpdateProjectJSONBody_DeploymentPolicy `json:"deploymentPolicy,omitempty"`
+
+	// DevCommand The dev command for this project. When `null` is used this value will be automatically detected
+	DevCommand       *string `json:"devCommand,omitempty"`
+	DirectoryListing *bool   `json:"directoryListing,omitempty"`
+
+	// DismissedToasts An array of objects representing a Dismissed Toast in regards to a Project. Objects are either merged with existing toasts (on key match), or added to the `dimissedToasts` array.`
+	DismissedToasts *[]struct {
+		// Action Whether the toast was dismissed, the action was accepted, or the dismissal with this key should be removed
+		Action interface{} `json:"action"`
+
+		// DismissedAt unix timestamp representing the time the toast was dimissed
+		DismissedAt float32 `json:"dismissedAt"`
+
+		// Key unique identifier for the dismissed toast
+		Key   string                                      `json:"key"`
+		Value UpdateProjectJSONBody_DismissedToasts_Value `json:"value"`
+	} `json:"dismissedToasts,omitempty"`
+
+	// EnableAffectedProjectsDeployments Opt-in to skip deployments when there are no changes to the root directory and its dependencies
+	EnableAffectedProjectsDeployments *bool `json:"enableAffectedProjectsDeployments,omitempty"`
+
+	// EnableExternalRewriteCaching Specifies whether external rewrite caching is enabled for this project.
+	EnableExternalRewriteCaching *bool `json:"enableExternalRewriteCaching,omitempty"`
+
+	// EnablePreviewFeedback Opt-in to preview toolbar on the project level
+	EnablePreviewFeedback *bool `json:"enablePreviewFeedback,omitempty"`
+
+	// EnableProductionFeedback Opt-in to production toolbar on the project level
+	EnableProductionFeedback *bool `json:"enableProductionFeedback,omitempty"`
+
+	// Framework The framework that is being used for this project. When `null` is used no framework is selected
+	Framework *UpdateProjectJSONBodyFramework `json:"framework,omitempty"`
+
+	// GitForkProtection Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed
+	GitForkProtection *bool `json:"gitForkProtection,omitempty"`
+
+	// GitLFS Specifies whether Git LFS is enabled for this project.
+	GitLFS *bool `json:"gitLFS,omitempty"`
+
+	// InstallCommand The install command for this project. When `null` is used this value will be automatically detected
+	InstallCommand *string `json:"installCommand,omitempty"`
+
+	// Name The desired name for the project
+	//
+	// Example: a-project-name
+	Name        *string                           `json:"name,omitempty"`
+	NodeVersion *UpdateProjectJSONBodyNodeVersion `json:"nodeVersion,omitempty"`
+
+	// OidcTokenConfig OpenID Connect JSON Web Token generation configuration.
+	OidcTokenConfig *struct {
+		// Enabled Whether or not to generate OpenID Connect JSON Web Tokens.
+		// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+		Enabled *bool `json:"enabled,omitempty"`
+
+		// IssuerMode team: `https://oidc.vercel.com/[team_slug]` global: `https://oidc.vercel.com`
+		IssuerMode *UpdateProjectJSONBodyOidcTokenConfigIssuerMode `json:"issuerMode,omitempty"`
+	} `json:"oidcTokenConfig,omitempty"`
+
+	// OptionsAllowlist Specify a list of paths that should not be protected by Deployment Protection to enable Cors preflight requests
+	OptionsAllowlist *struct {
+		Paths []struct {
+			// Value The regex path that should not be protected by Deployment Protection
+			Value string `json:"value"`
+		} `json:"paths"`
+	} `json:"optionsAllowlist,omitempty"`
+
+	// OutputDirectory The output directory of the project. When `null` is used this value will be automatically detected
+	OutputDirectory *string `json:"outputDirectory,omitempty"`
+
+	// Passport Passport configuration for the project.
+	Passport *struct {
+		ConnectorId    string                                       `json:"connectorId"`
+		DeploymentType *UpdateProjectJSONBodyPassportDeploymentType `json:"deploymentType,omitempty"`
+	} `json:"passport,omitempty"`
+
+	// PasswordProtection Allows to protect project deployments with a password
+	PasswordProtection *struct {
+		// DeploymentType Specify if the password will apply to every Deployment Target or just Preview
+		DeploymentType UpdateProjectJSONBodyPasswordProtectionDeploymentType `json:"deploymentType"`
+
+		// Password The password that will be used to protect Project Deployments
+		Password *string `json:"password,omitempty"`
+	} `json:"passwordProtection,omitempty"`
+
+	// PreviewDeploymentSuffix Custom domain suffix for preview deployments. Takes precedence over team-level suffix. Must be a domain owned by the team.
+	PreviewDeploymentSuffix *string `json:"previewDeploymentSuffix,omitempty"`
+
+	// PreviewDeploymentsDisabled Specifies whether preview deployments are disabled for this project.
+	PreviewDeploymentsDisabled *bool `json:"previewDeploymentsDisabled,omitempty"`
+
+	// ProtectedSourcemaps Specifies whether sourcemaps are protected and require authentication to access.
+	ProtectedSourcemaps *bool `json:"protectedSourcemaps,omitempty"`
+
+	// PublicSource Deprecated. Accepted for backwards compatibility but ignored.
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	PublicSource *bool `json:"publicSource,omitempty"`
+
+	// ResourceConfig Specifies resource override configuration for the project
+	ResourceConfig *struct {
+		BuildMachineElasticLastUpdated *float32    `json:"buildMachineElasticLastUpdated,omitempty"`
+		BuildMachineElasticReason      interface{} `json:"buildMachineElasticReason,omitempty"`
+		BuildMachineElasticTransition  *struct {
+			AlgorithmVersion string                                                                    `json:"algorithmVersion"`
+			At               float32                                                                   `json:"at"`
+			Direction        UpdateProjectJSONBodyResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
+		} `json:"buildMachineElasticTransition,omitempty"`
+		BuildMachineSelection *UpdateProjectJSONBodyResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
+		BuildMachineType      interface{}                                               `json:"buildMachineType,omitempty"`
+		BuildQueue            *struct {
+			Configuration *UpdateProjectJSONBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+		} `json:"buildQueue,omitempty"`
+		ElasticConcurrencyEnabled *bool       `json:"elasticConcurrencyEnabled,omitempty"`
+		EnableFunctionsBeta       *bool       `json:"enableFunctionsBeta,omitempty"`
+		Fluid                     *bool       `json:"fluid,omitempty"`
+		FunctionDefaultMemoryType interface{} `json:"functionDefaultMemoryType,omitempty"`
+
+		// FunctionDefaultRegions The regions to deploy Vercel Functions to for this project
+		FunctionDefaultRegions *[]string `json:"functionDefaultRegions,omitempty"`
+		FunctionDefaultTimeout *float32  `json:"functionDefaultTimeout,omitempty"`
+
+		// FunctionZeroConfigFailover Specifies whether Zero Config Failover is enabled for this project.
+		FunctionZeroConfigFailover *UpdateProjectJSONBody_ResourceConfig_FunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
+		IsNSNBDisabled             *bool                                                            `json:"isNSNBDisabled,omitempty"`
+	} `json:"resourceConfig,omitempty"`
+
+	// RootDirectory The name of a directory or relative path to the source code of your project. When `null` is used it will default to the project root
+	RootDirectory *string `json:"rootDirectory,omitempty"`
+
+	// Sandbox Specifies the default region and failover regions for sandboxes created in the project
+	Sandbox *struct {
+		// FailoverRegions The regions sandboxes in this project fall back to when they cannot be created in `region`.
+		//
+		// Example: ["sfo1","cle1"]
+		FailoverRegions *[]interface{} `json:"failoverRegions,omitempty"`
+
+		// Region The Vercel region sandboxes in this project are created in by default.
+		//
+		// Example: iad1
+		Region interface{} `json:"region,omitempty"`
+	} `json:"sandbox,omitempty"`
+
+	// ServerlessFunctionRegion The region to deploy Serverless Functions in this project
+	ServerlessFunctionRegion *string `json:"serverlessFunctionRegion,omitempty"`
+
+	// ServerlessFunctionZeroConfigFailover Specifies whether Zero Config Failover is enabled for this project.
+	ServerlessFunctionZeroConfigFailover *UpdateProjectJSONBody_ServerlessFunctionZeroConfigFailover `json:"serverlessFunctionZeroConfigFailover,omitempty"`
+
+	// SkewProtectionAllowedDomains Cross-site domains allowed to fetch skew-protected assets (hostnames, optionally with leading wildcard like *.example.com).
+	SkewProtectionAllowedDomains *[]string `json:"skewProtectionAllowedDomains,omitempty"`
+
+	// SkewProtectionBoundaryAt Deployments created before this absolute datetime have Skew Protection disabled. Value is in milliseconds since epoch to match \"createdAt\" fields.
+	SkewProtectionBoundaryAt *int `json:"skewProtectionBoundaryAt,omitempty"`
+
+	// SkewProtectionMaxAge Deployments created before this rolling window have Skew Protection disabled. Value is in seconds to match \"revalidate\" fields.
+	SkewProtectionMaxAge *int `json:"skewProtectionMaxAge,omitempty"`
+
+	// SkipGitConnectDuringLink Opts-out of the message prompting a CLI user to connect a Git repository in `vercel link`.
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	SkipGitConnectDuringLink *bool `json:"skipGitConnectDuringLink,omitempty"`
+
+	// SourceFilesOutsideRootDirectory Indicates if there are source files outside of the root directory
+	SourceFilesOutsideRootDirectory *bool `json:"sourceFilesOutsideRootDirectory,omitempty"`
+
+	// SsoProtection Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team
+	SsoProtection *struct {
+		// DeploymentType Specify if the Vercel Authentication (SSO Protection) will apply to every Deployment Target or just Preview
+		DeploymentType UpdateProjectJSONBodySsoProtectionDeploymentType `json:"deploymentType"`
+	} `json:"ssoProtection,omitempty"`
+
+	// StaticIps Manage Static IPs for this project
+	StaticIps *struct {
+		// Enabled Opt-in to Static IPs for this project
+		Enabled bool `json:"enabled"`
+	} `json:"staticIps,omitempty"`
+
+	// Tracing Tracing configuration for this project
+	Tracing *struct {
+		// Domains Comma-separated list of drain endpoint domains
+		Domains *string `json:"domains,omitempty"`
+
+		// IgnorePaths Paths to ignore for tracing
+		IgnorePaths *[]string `json:"ignorePaths,omitempty"`
+
+		// SamplingRules Sampling rules for trace collection
+		SamplingRules *[]struct {
+			// Destination Tracing destination this rule applies to. Derived server-side when project tracing is computed; accepted here so a computed config can round-trip through this endpoint.
+			Destination *UpdateProjectJSONBodyTracingSamplingRulesDestination `json:"destination,omitempty"`
+
+			// Env Environment to apply sampling to
+			Env *UpdateProjectJSONBodyTracingSamplingRulesEnv `json:"env,omitempty"`
+
+			// Rate Sampling rate from 0 to 1
+			Rate float32 `json:"rate"`
+
+			// RequestPath Request path prefix to apply the sampling rule to
+			RequestPath *string `json:"requestPath,omitempty"`
+		} `json:"samplingRules,omitempty"`
+	} `json:"tracing,omitempty"`
+
+	// TrustedIps Restricts access to deployments based on the incoming request IP address
+	TrustedIps *struct {
+		Addresses []struct {
+			// Note An optional note explaining what the IP address or subnet is used for
+			Note *string `json:"note,omitempty"`
+
+			// Value The IP addresses that are allowlisted. Supports IPv4 addresses and CIDR notations. IPv6 is not supported
+			Value string `json:"value"`
+		} `json:"addresses"`
+
+		// DeploymentType Specify if the Trusted IPs will apply to every Deployment Target or just Preview
+		DeploymentType UpdateProjectJSONBodyTrustedIpsDeploymentType `json:"deploymentType"`
+	} `json:"trustedIps,omitempty"`
+
+	// TrustedSources Deployment Protection Trusted Sources
+	TrustedSources *struct {
+		// EnableVercelCiSameRepository Allow same-team Vercel CI access to preview and production deployments built from the same repository as the CI run. The deployment source repository, not the current project repository link, is authoritative. Defaults to enabled when not stored. Omitting this field preserves its stored value, including when trustedSources is cleared. Set true explicitly to re-enable.
+		EnableVercelCiSameRepository *bool `json:"enableVercelCiSameRepository,omitempty"`
+		OidcProviders                *map[string][]struct {
+			Claims map[string][]string `json:"claims"`
+
+			// Label The label or description of the trusted source
+			Label *string `json:"label,omitempty"`
+
+			// To A set of environments, expressed as explicit slugs, a named preset, or both. At least one of `slugs` or `preset` must be set.
+			To UpdateProjectJSONBody_TrustedSources_OidcProviders_To `json:"to"`
+		} `json:"oidcProviders,omitempty"`
+		Projects *map[string]struct {
+			// CustomAllow Optional overrides for the default same-env-by-slug matching. An empty array denies all access and is only allowed for the current project.
+			CustomAllow *[]struct {
+				// From A set of environments, expressed as explicit slugs, a named preset, or both. At least one of `slugs` or `preset` must be set.
+				From UpdateProjectJSONBody_TrustedSources_Projects_CustomAllow_From `json:"from"`
+
+				// To A set of environments, expressed as explicit slugs, a named preset, or both. At least one of `slugs` or `preset` must be set.
+				To UpdateProjectJSONBody_TrustedSources_Projects_CustomAllow_To `json:"to"`
+			} `json:"customAllow,omitempty"`
+
+			// Label The label or description of the trusted source
+			Label *string `json:"label,omitempty"`
+		} `json:"projects,omitempty"`
+	} `json:"trustedSources,omitempty"`
+}
+
+// UpdateProjectParams defines parameters for UpdateProject.
+type UpdateProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateProjectJSONBodyConnectConfigurations0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyConnectConfigurations0 = map[string]interface{}
+
+// UpdateProjectJSONBody_ConnectConfigurations_Item defines parameters for UpdateProject.
+type UpdateProjectJSONBody_ConnectConfigurations_Item struct {
+	// BuildsEnabled Flag saying if project builds should use Secure Compute
+	BuildsEnabled bool `json:"buildsEnabled"`
+
+	// ConnectConfigurationId The ID of the Secure Compute network
+	ConnectConfigurationId string `json:"connectConfigurationId"`
+
+	// EnvId The ID of the environment
+	EnvId string `json:"envId"`
+
+	// Passive Whether the configuration should be passive, meaning builds will not run there and only passive Serverless Functions will be deployed
+	Passive bool `json:"passive"`
+	union   json.RawMessage
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0 struct {
+	DeploymentSources *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources `json:"deploymentSources,omitempty"`
+	GitSources        *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources        `json:"gitSources,omitempty"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0 = []struct {
+	Enabled      bool                                                                             `json:"enabled"`
+	Environments []UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item `json:"environments"`
+	Sources      []UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Sources                `json:"sources"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0 struct {
+	Target UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target `json:"target"`
+	Type   UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type   `json:"type"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0Target string
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0Type string
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1 struct {
+	EnvironmentId string                                                                    `json:"environmentId"`
+	Type          UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type `json:"type"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1Type string
+
+// UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Sources defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Sources string
+
+// UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1 = string
+
+// UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0 = []struct {
+	Enabled      bool                                                                      `json:"enabled"`
+	Environments []UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item `json:"environments"`
+	Sources      []UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item      `json:"sources"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0 struct {
+	Target UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0Target `json:"target"`
+	Type   UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0Type   `json:"type"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0Target defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0Target string
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0Type defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0Type string
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1 struct {
+	EnvironmentId string                                                             `json:"environmentId"`
+	Type          UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1Type `json:"type"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1Type defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1Type string
+
+// UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0 struct {
+	Org      string                                                            `json:"org"`
+	Provider UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0Provider `json:"provider"`
+	Repo     *string                                                           `json:"repo,omitempty"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0Provider defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0Provider string
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1 struct {
+	Namespace string                                                            `json:"namespace"`
+	Project   *string                                                           `json:"project,omitempty"`
+	Provider  UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1Provider `json:"provider"`
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1Provider defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1Provider string
+
+// UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy0GitSources1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy0GitSources1 = string
+
+// UpdateProjectJSONBody_DeploymentPolicy_0_GitSources defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DeploymentPolicy_0_GitSources struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDeploymentPolicy1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDeploymentPolicy1 = string
+
+// UpdateProjectJSONBody_DeploymentPolicy defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DeploymentPolicy struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDismissedToastsValue0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue0 = string
+
+// UpdateProjectJSONBodyDismissedToastsValue1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue1 = string
+
+// UpdateProjectJSONBodyDismissedToastsValue2 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue2 = bool
+
+// UpdateProjectJSONBodyDismissedToastsValue3 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue3 = float32
+
+// UpdateProjectJSONBodyDismissedToastsValue4 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4 struct {
+	CurrentValue  UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue  `json:"currentValue"`
+	PreviousValue UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue `json:"previousValue"`
+}
+
+// UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0 = float32
+
+// UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1 = bool
+
+// UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2 = string
+
+// UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0 = float32
+
+// UpdateProjectJSONBodyDismissedToastsValue4PreviousValue1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4PreviousValue1 = bool
+
+// UpdateProjectJSONBodyDismissedToastsValue4PreviousValue2 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyDismissedToastsValue4PreviousValue2 = string
+
+// UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBody_DismissedToasts_Value defines parameters for UpdateProject.
+type UpdateProjectJSONBody_DismissedToasts_Value struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyFramework defines parameters for UpdateProject.
+type UpdateProjectJSONBodyFramework string
+
+// UpdateProjectJSONBodyNodeVersion defines parameters for UpdateProject.
+type UpdateProjectJSONBodyNodeVersion string
+
+// UpdateProjectJSONBodyOidcTokenConfigIssuerMode defines parameters for UpdateProject.
+type UpdateProjectJSONBodyOidcTokenConfigIssuerMode string
+
+// UpdateProjectJSONBodyPassportDeploymentType defines parameters for UpdateProject.
+type UpdateProjectJSONBodyPassportDeploymentType string
+
+// UpdateProjectJSONBodyPasswordProtectionDeploymentType defines parameters for UpdateProject.
+type UpdateProjectJSONBodyPasswordProtectionDeploymentType string
+
+// UpdateProjectJSONBodyResourceConfigBuildMachineElasticTransitionDirection defines parameters for UpdateProject.
+type UpdateProjectJSONBodyResourceConfigBuildMachineElasticTransitionDirection string
+
+// UpdateProjectJSONBodyResourceConfigBuildMachineSelection defines parameters for UpdateProject.
+type UpdateProjectJSONBodyResourceConfigBuildMachineSelection string
+
+// UpdateProjectJSONBodyResourceConfigBuildQueueConfiguration defines parameters for UpdateProject.
+type UpdateProjectJSONBodyResourceConfigBuildQueueConfiguration string
+
+// UpdateProjectJSONBodyResourceConfigFunctionZeroConfigFailover0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyResourceConfigFunctionZeroConfigFailover0 = bool
+
+// UpdateProjectJSONBody_ResourceConfig_FunctionZeroConfigFailover defines parameters for UpdateProject.
+type UpdateProjectJSONBody_ResourceConfig_FunctionZeroConfigFailover struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodyServerlessFunctionZeroConfigFailover0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyServerlessFunctionZeroConfigFailover0 = bool
+
+// UpdateProjectJSONBody_ServerlessFunctionZeroConfigFailover defines parameters for UpdateProject.
+type UpdateProjectJSONBody_ServerlessFunctionZeroConfigFailover struct {
+	union json.RawMessage
+}
+
+// UpdateProjectJSONBodySsoProtectionDeploymentType defines parameters for UpdateProject.
+type UpdateProjectJSONBodySsoProtectionDeploymentType string
+
+// UpdateProjectJSONBodyTracingSamplingRulesDestination defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTracingSamplingRulesDestination string
+
+// UpdateProjectJSONBodyTracingSamplingRulesEnv defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTracingSamplingRulesEnv string
+
+// UpdateProjectJSONBodyTrustedIpsDeploymentType defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedIpsDeploymentType string
+
+// UpdateProjectJSONBodyTrustedSourcesOidcProvidersToPreset defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesOidcProvidersToPreset string
+
+// UpdateProjectJSONBodyTrustedSourcesOidcProvidersTo0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesOidcProvidersTo0 = interface{}
+
+// UpdateProjectJSONBodyTrustedSourcesOidcProvidersTo1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesOidcProvidersTo1 = interface{}
+
+// UpdateProjectJSONBody_TrustedSources_OidcProviders_To defines parameters for UpdateProject.
+type UpdateProjectJSONBody_TrustedSources_OidcProviders_To struct {
+	Preset *UpdateProjectJSONBodyTrustedSourcesOidcProvidersToPreset `json:"preset,omitempty"`
+	Slugs  *[]string                                                 `json:"slugs,omitempty"`
+	union  json.RawMessage
+}
+
+// UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFromPreset defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFromPreset string
+
+// UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFrom0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFrom0 = interface{}
+
+// UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFrom1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFrom1 = interface{}
+
+// UpdateProjectJSONBody_TrustedSources_Projects_CustomAllow_From defines parameters for UpdateProject.
+type UpdateProjectJSONBody_TrustedSources_Projects_CustomAllow_From struct {
+	Preset *UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowFromPreset `json:"preset,omitempty"`
+	Slugs  *[]string                                                         `json:"slugs,omitempty"`
+	union  json.RawMessage
+}
+
+// UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowToPreset defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowToPreset string
+
+// UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowTo0 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowTo0 = interface{}
+
+// UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowTo1 defines parameters for UpdateProject.
+type UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowTo1 = interface{}
+
+// UpdateProjectJSONBody_TrustedSources_Projects_CustomAllow_To defines parameters for UpdateProject.
+type UpdateProjectJSONBody_TrustedSources_Projects_CustomAllow_To struct {
+	Preset *UpdateProjectJSONBodyTrustedSourcesProjectsCustomAllowToPreset `json:"preset,omitempty"`
+	Slugs  *[]string                                                       `json:"slugs,omitempty"`
+	union  json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyAliasConfiguredBy defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasConfiguredBy string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentAliasAssigned0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentAliasAssigned0 = float32
+
+// UpdateProject200JSONResponseBodyAliasDeploymentAliasAssigned1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentAliasAssigned1 bool
+
+// UpdateProject200JSONResponseBody_Alias_Deployment_AliasAssigned defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_Alias_Deployment_AliasAssigned struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyAliasDeploymentBranchMatcherType defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentBranchMatcherType string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentChecksConclusion defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentChecksConclusion string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentChecksState defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentChecksState string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentConnectBuildsEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentConnectBuildsEnabled bool
+
+// UpdateProject200JSONResponseBodyAliasDeploymentForced defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentForced bool
+
+// UpdateProject200JSONResponseBodyAliasDeploymentPlan defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentPlan string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled bool
+
+// UpdateProject200JSONResponseBodyAliasDeploymentPrivate defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentPrivate bool
+
+// UpdateProject200JSONResponseBodyAliasDeploymentReadyState defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentReadyState string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentReadySubstate defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentReadySubstate string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentType defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentType string
+
+// UpdateProject200JSONResponseBodyAliasDeploymentWithCache defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasDeploymentWithCache bool
+
+// UpdateProject200JSONResponseBodyAliasEnvironment defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasEnvironment string
+
+// UpdateProject200JSONResponseBodyAliasRedirectStatusCode defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasRedirectStatusCode float32
+
+// UpdateProject200JSONResponseBodyAliasTarget defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAliasTarget string
+
+// UpdateProject200JSONResponseBodyAppliedCve55182Migration defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAppliedCve55182Migration bool
+
+// UpdateProject200JSONResponseBodyAutoAssignCustomDomains defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAutoAssignCustomDomains bool
+
+// UpdateProject200JSONResponseBodyAutoExposeSystemEnvs defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyAutoExposeSystemEnvs bool
+
+// UpdateProject200JSONResponseBodyBlobsIsDefaultApp defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyBlobsIsDefaultApp bool
+
+// UpdateProject200JSONResponseBodyConnectBuildsEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyConnectBuildsEnabled bool
+
+// UpdateProject200JSONResponseBodyConnectConfigurationsBuildsEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyConnectConfigurationsBuildsEnabled bool
+
+// UpdateProject200JSONResponseBodyConnectConfigurationsEnvId0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyConnectConfigurationsEnvId0 = string
+
+// UpdateProject200JSONResponseBodyConnectConfigurationsEnvId1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyConnectConfigurationsEnvId1 string
+
+// UpdateProject200JSONResponseBody_ConnectConfigurations_EnvId defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_ConnectConfigurations_EnvId struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyConnectConfigurationsPassive defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyConnectConfigurationsPassive bool
+
+// UpdateProject200JSONResponseBodyCreator0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator0 struct {
+	Type UpdateProject200JSONResponseBodyCreator0Type `json:"type"`
+	User struct {
+		Id string `json:"id"`
+	} `json:"user"`
+	Via *UpdateProject200JSONResponseBody_Creator_0_Via `json:"via"`
+}
+
+// UpdateProject200JSONResponseBodyCreator0Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator0Type string
+
+// UpdateProject200JSONResponseBodyCreator0Via0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator0Via0 struct {
+	App struct {
+		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+		ClientId *string `json:"clientId,omitempty"`
+
+		// Id The internal ID of the Vercel App backing this principal.
+		Id string `json:"id"`
+	} `json:"app"`
+	Type UpdateProject200JSONResponseBodyCreator0Via0Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator0Via0Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator0Via0Type string
+
+// UpdateProject200JSONResponseBodyCreator0Via1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator0Via1 struct {
+	Integration struct {
+		ConfigurationId string `json:"configurationId"`
+		IntegrationId   string `json:"integrationId"`
+	} `json:"integration"`
+	Type UpdateProject200JSONResponseBodyCreator0Via1Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator0Via1Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator0Via1Type string
+
+// UpdateProject200JSONResponseBody_Creator_0_Via defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_Creator_0_Via struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyCreator1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator1 struct {
+	Project struct {
+		Id string `json:"id"`
+	} `json:"project"`
+	Type UpdateProject200JSONResponseBodyCreator1Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator1Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator1Type string
+
+// UpdateProject200JSONResponseBodyCreator2 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator2 struct {
+	App struct {
+		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+		ClientId *string `json:"clientId,omitempty"`
+
+		// Id The internal ID of the Vercel App backing this principal.
+		Id string `json:"id"`
+	} `json:"app"`
+	Type UpdateProject200JSONResponseBodyCreator2Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator2Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator2Type string
+
+// UpdateProject200JSONResponseBodyCreator3 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator3 struct {
+	Integration struct {
+		ConfigurationId string `json:"configurationId"`
+		IntegrationId   string `json:"integrationId"`
+	} `json:"integration"`
+	Type UpdateProject200JSONResponseBodyCreator3Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator3Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator3Type string
+
+// UpdateProject200JSONResponseBodyCreator4 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator4 struct {
+	Type UpdateProject200JSONResponseBodyCreator4Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyCreator4Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCreator4Type string
+
+// UpdateProject200JSONResponseBody_Creator defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_Creator struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyCronsDefinitionsHostInferred defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCronsDefinitionsHostInferred bool
+
+// UpdateProject200JSONResponseBodyCronsDefinitionsSource defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCronsDefinitionsSource string
+
+// UpdateProject200JSONResponseBodyCustomEnvironmentsBranchMatcherType defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCustomEnvironmentsBranchMatcherType string
+
+// UpdateProject200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode float32
+
+// UpdateProject200JSONResponseBodyCustomEnvironmentsDomainsVerified defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCustomEnvironmentsDomainsVerified bool
+
+// UpdateProject200JSONResponseBodyCustomEnvironmentsType defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCustomEnvironmentsType string
+
+// UpdateProject200JSONResponseBodyCustomerSupportCodeVisibility defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyCustomerSupportCodeVisibility bool
+
+// UpdateProject200JSONResponseBodyDataCacheUnlimited defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDataCacheUnlimited bool
+
+// UpdateProject200JSONResponseBodyDataCacheUserDisabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDataCacheUserDisabled bool
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineSelection defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineSelection string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineType string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 struct {
+	Cores  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 struct {
+	Cores  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 struct {
+	Cores  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3 struct {
+	Cores  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores  `json:"cores"`
+	Label  UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label  `json:"label"`
+	Memory UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory `json:"memory"`
+}
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores float32
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory float32
+
+// UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled bool
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta bool
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigFluid defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigFluid bool
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType string
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover bool
+
+// UpdateProject200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled bool
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled bool
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 struct {
+	Target UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Target `json:"target"`
+	Type   UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Type   `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Target defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Target string
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Type string
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 struct {
+	EnvironmentId string                                                                             `json:"environmentId"`
+	Type          UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1Type string
+
+// UpdateProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources string
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnabled defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnabled bool
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 struct {
+	Target UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Target `json:"target"`
+	Type   UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Type   `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Target defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Target string
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Type string
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 struct {
+	EnvironmentId string                                                                      `json:"environmentId"`
+	Type          UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1Type string
+
+// UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0 struct {
+	Org      string                                                                     `json:"org"`
+	Provider UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0Provider `json:"provider"`
+	Repo     *string                                                                    `json:"repo,omitempty"`
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0Provider defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0Provider string
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1 struct {
+	Namespace string                                                                     `json:"namespace"`
+	Project   *string                                                                    `json:"project,omitempty"`
+	Provider  UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1Provider `json:"provider"`
+}
+
+// UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1Provider defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1Provider string
+
+// UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyDirectoryListing defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDirectoryListing bool
+
+// UpdateProject200JSONResponseBodyDismissedToastsAction defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsAction string
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue0 = string
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue1 = float32
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2 struct {
+	CurrentValue  UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue  `json:"currentValue"`
+	PreviousValue UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue `json:"previousValue"`
+}
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0 = string
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1 = float32
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2 bool
+
+// UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0 = string
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1 = float32
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2 bool
+
+// UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyDismissedToastsValue3 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyDismissedToastsValue3 bool
+
+// UpdateProject200JSONResponseBody_DismissedToasts_Value defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBody_DismissedToasts_Value struct {
+	union json.RawMessage
+}
+
+// UpdateProject200JSONResponseBodyEnableAffectedProjectsDeployments defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnableAffectedProjectsDeployments bool
+
+// UpdateProject200JSONResponseBodyEnableExternalRewriteCaching defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnableExternalRewriteCaching bool
+
+// UpdateProject200JSONResponseBodyEnablePreviewFeedback defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnablePreviewFeedback bool
+
+// UpdateProject200JSONResponseBodyEnableProductionFeedback defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnableProductionFeedback bool
+
+// UpdateProject200JSONResponseBodyEnvContentHint0 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint0 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint0Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint0Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint0Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint1 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint1 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint1Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint1Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint1Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint2 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint2 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint2Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint2Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint2Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint3 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint3 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint3Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint3Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint3Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint4 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint4 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint4Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint4Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint4Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint5 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint5 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint5Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint5Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint5Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint6 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint6 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint6Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint6Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint6Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint7 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint7 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint7Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint7Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint7Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint8 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint8 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint8Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint8Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint8Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint9 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint9 struct {
+	StoreId string                                              `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint9Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint9Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint9Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint10 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint10 struct {
+	StoreId string                                               `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint10Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint10Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint10Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint11 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint11 struct {
+	StoreId string                                               `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint11Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint11Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint11Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint12 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint12 struct {
+	StoreId string                                               `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint12Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint12Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint12Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint13 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint13 struct {
+	StoreId string                                               `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint13Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint13Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint13Type string
+
+// UpdateProject200JSONResponseBodyEnvContentHint14 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint14 struct {
+	StoreId string                                               `json:"storeId"`
+	Type    UpdateProject200JSONResponseBodyEnvContentHint14Type `json:"type"`
+}
+
+// UpdateProject200JSONResponseBodyEnvContentHint14Type defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyEnvContentHint14Type string
+
 // UpdateProject200JSONResponseBodyEnvContentHint15 defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyEnvContentHint15 struct {
 	IntegrationConfigurationId string                                               `json:"integrationConfigurationId"`
@@ -685,6 +2476,22 @@ type UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label str
 
 // UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
+
+// UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 struct {
+	Cores  UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores  `json:"cores"`
+	Label  UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label  `json:"label"`
+	Memory UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory `json:"memory"`
+}
+
+// UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores float32
+
+// UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label string
+
+// UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory float32
 
 // UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
@@ -2332,6 +4139,12 @@ type UpsertAiGatewayBudgetJSONRequestBody UpsertAiGatewayBudgetJSONBody
 
 // UpsertAiGatewayBudgetDefaultJSONRequestBody defines body for UpsertAiGatewayBudgetDefault for application/json ContentType.
 type UpsertAiGatewayBudgetDefaultJSONRequestBody UpsertAiGatewayBudgetDefaultJSONBody
+
+// CreateAiGatewayByokCredentialJSONRequestBody defines body for CreateAiGatewayByokCredential for application/json ContentType.
+type CreateAiGatewayByokCredentialJSONRequestBody CreateAiGatewayByokCredentialJSONBody
+
+// UpdateAiGatewayByokCredentialJSONRequestBody defines body for UpdateAiGatewayByokCredential for application/json ContentType.
+type UpdateAiGatewayByokCredentialJSONRequestBody UpdateAiGatewayByokCredentialJSONBody
 
 // PatchUrlProtectionBypassJSONRequestBody defines body for PatchUrlProtectionBypass for application/json ContentType.
 type PatchUrlProtectionBypassJSONRequestBody PatchUrlProtectionBypassJSONBody
@@ -14801,22 +16614,22 @@ func (t *UserEvent_Payload_374_Name) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsUserEventPayload438Next0 returns the union data inside the UserEvent_Payload_438_Next_AdditionalProperties as a UserEventPayload438Next0
-func (t UserEvent_Payload_438_Next_AdditionalProperties) AsUserEventPayload438Next0() (UserEventPayload438Next0, error) {
-	var body UserEventPayload438Next0
+// AsUserEventPayload439Next0 returns the union data inside the UserEvent_Payload_439_Next_AdditionalProperties as a UserEventPayload439Next0
+func (t UserEvent_Payload_439_Next_AdditionalProperties) AsUserEventPayload439Next0() (UserEventPayload439Next0, error) {
+	var body UserEventPayload439Next0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload438Next0 overwrites any union data inside the UserEvent_Payload_438_Next_AdditionalProperties as the provided UserEventPayload438Next0
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) FromUserEventPayload438Next0(v UserEventPayload438Next0) error {
+// FromUserEventPayload439Next0 overwrites any union data inside the UserEvent_Payload_439_Next_AdditionalProperties as the provided UserEventPayload439Next0
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) FromUserEventPayload439Next0(v UserEventPayload439Next0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload438Next0 performs a merge with any union data inside the UserEvent_Payload_438_Next_AdditionalProperties, using the provided UserEventPayload438Next0
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) MergeUserEventPayload438Next0(v UserEventPayload438Next0) error {
+// MergeUserEventPayload439Next0 performs a merge with any union data inside the UserEvent_Payload_439_Next_AdditionalProperties, using the provided UserEventPayload439Next0
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) MergeUserEventPayload439Next0(v UserEventPayload439Next0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14827,22 +16640,22 @@ func (t *UserEvent_Payload_438_Next_AdditionalProperties) MergeUserEventPayload4
 	return err
 }
 
-// AsUserEventPayload438Next1 returns the union data inside the UserEvent_Payload_438_Next_AdditionalProperties as a UserEventPayload438Next1
-func (t UserEvent_Payload_438_Next_AdditionalProperties) AsUserEventPayload438Next1() (UserEventPayload438Next1, error) {
-	var body UserEventPayload438Next1
+// AsUserEventPayload439Next1 returns the union data inside the UserEvent_Payload_439_Next_AdditionalProperties as a UserEventPayload439Next1
+func (t UserEvent_Payload_439_Next_AdditionalProperties) AsUserEventPayload439Next1() (UserEventPayload439Next1, error) {
+	var body UserEventPayload439Next1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload438Next1 overwrites any union data inside the UserEvent_Payload_438_Next_AdditionalProperties as the provided UserEventPayload438Next1
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) FromUserEventPayload438Next1(v UserEventPayload438Next1) error {
+// FromUserEventPayload439Next1 overwrites any union data inside the UserEvent_Payload_439_Next_AdditionalProperties as the provided UserEventPayload439Next1
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) FromUserEventPayload439Next1(v UserEventPayload439Next1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload438Next1 performs a merge with any union data inside the UserEvent_Payload_438_Next_AdditionalProperties, using the provided UserEventPayload438Next1
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) MergeUserEventPayload438Next1(v UserEventPayload438Next1) error {
+// MergeUserEventPayload439Next1 performs a merge with any union data inside the UserEvent_Payload_439_Next_AdditionalProperties, using the provided UserEventPayload439Next1
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) MergeUserEventPayload439Next1(v UserEventPayload439Next1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14853,22 +16666,22 @@ func (t *UserEvent_Payload_438_Next_AdditionalProperties) MergeUserEventPayload4
 	return err
 }
 
-// AsUserEventPayload438Next2 returns the union data inside the UserEvent_Payload_438_Next_AdditionalProperties as a UserEventPayload438Next2
-func (t UserEvent_Payload_438_Next_AdditionalProperties) AsUserEventPayload438Next2() (UserEventPayload438Next2, error) {
-	var body UserEventPayload438Next2
+// AsUserEventPayload439Next2 returns the union data inside the UserEvent_Payload_439_Next_AdditionalProperties as a UserEventPayload439Next2
+func (t UserEvent_Payload_439_Next_AdditionalProperties) AsUserEventPayload439Next2() (UserEventPayload439Next2, error) {
+	var body UserEventPayload439Next2
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload438Next2 overwrites any union data inside the UserEvent_Payload_438_Next_AdditionalProperties as the provided UserEventPayload438Next2
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) FromUserEventPayload438Next2(v UserEventPayload438Next2) error {
+// FromUserEventPayload439Next2 overwrites any union data inside the UserEvent_Payload_439_Next_AdditionalProperties as the provided UserEventPayload439Next2
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) FromUserEventPayload439Next2(v UserEventPayload439Next2) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload438Next2 performs a merge with any union data inside the UserEvent_Payload_438_Next_AdditionalProperties, using the provided UserEventPayload438Next2
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) MergeUserEventPayload438Next2(v UserEventPayload438Next2) error {
+// MergeUserEventPayload439Next2 performs a merge with any union data inside the UserEvent_Payload_439_Next_AdditionalProperties, using the provided UserEventPayload439Next2
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) MergeUserEventPayload439Next2(v UserEventPayload439Next2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14879,32 +16692,32 @@ func (t *UserEvent_Payload_438_Next_AdditionalProperties) MergeUserEventPayload4
 	return err
 }
 
-func (t UserEvent_Payload_438_Next_AdditionalProperties) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_439_Next_AdditionalProperties) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_438_Next_AdditionalProperties) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_439_Next_AdditionalProperties) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsUserEventPayload438Previous0 returns the union data inside the UserEvent_Payload_438_Previous_AdditionalProperties as a UserEventPayload438Previous0
-func (t UserEvent_Payload_438_Previous_AdditionalProperties) AsUserEventPayload438Previous0() (UserEventPayload438Previous0, error) {
-	var body UserEventPayload438Previous0
+// AsUserEventPayload439Previous0 returns the union data inside the UserEvent_Payload_439_Previous_AdditionalProperties as a UserEventPayload439Previous0
+func (t UserEvent_Payload_439_Previous_AdditionalProperties) AsUserEventPayload439Previous0() (UserEventPayload439Previous0, error) {
+	var body UserEventPayload439Previous0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload438Previous0 overwrites any union data inside the UserEvent_Payload_438_Previous_AdditionalProperties as the provided UserEventPayload438Previous0
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) FromUserEventPayload438Previous0(v UserEventPayload438Previous0) error {
+// FromUserEventPayload439Previous0 overwrites any union data inside the UserEvent_Payload_439_Previous_AdditionalProperties as the provided UserEventPayload439Previous0
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) FromUserEventPayload439Previous0(v UserEventPayload439Previous0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload438Previous0 performs a merge with any union data inside the UserEvent_Payload_438_Previous_AdditionalProperties, using the provided UserEventPayload438Previous0
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) MergeUserEventPayload438Previous0(v UserEventPayload438Previous0) error {
+// MergeUserEventPayload439Previous0 performs a merge with any union data inside the UserEvent_Payload_439_Previous_AdditionalProperties, using the provided UserEventPayload439Previous0
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) MergeUserEventPayload439Previous0(v UserEventPayload439Previous0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14915,22 +16728,22 @@ func (t *UserEvent_Payload_438_Previous_AdditionalProperties) MergeUserEventPayl
 	return err
 }
 
-// AsUserEventPayload438Previous1 returns the union data inside the UserEvent_Payload_438_Previous_AdditionalProperties as a UserEventPayload438Previous1
-func (t UserEvent_Payload_438_Previous_AdditionalProperties) AsUserEventPayload438Previous1() (UserEventPayload438Previous1, error) {
-	var body UserEventPayload438Previous1
+// AsUserEventPayload439Previous1 returns the union data inside the UserEvent_Payload_439_Previous_AdditionalProperties as a UserEventPayload439Previous1
+func (t UserEvent_Payload_439_Previous_AdditionalProperties) AsUserEventPayload439Previous1() (UserEventPayload439Previous1, error) {
+	var body UserEventPayload439Previous1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload438Previous1 overwrites any union data inside the UserEvent_Payload_438_Previous_AdditionalProperties as the provided UserEventPayload438Previous1
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) FromUserEventPayload438Previous1(v UserEventPayload438Previous1) error {
+// FromUserEventPayload439Previous1 overwrites any union data inside the UserEvent_Payload_439_Previous_AdditionalProperties as the provided UserEventPayload439Previous1
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) FromUserEventPayload439Previous1(v UserEventPayload439Previous1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload438Previous1 performs a merge with any union data inside the UserEvent_Payload_438_Previous_AdditionalProperties, using the provided UserEventPayload438Previous1
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) MergeUserEventPayload438Previous1(v UserEventPayload438Previous1) error {
+// MergeUserEventPayload439Previous1 performs a merge with any union data inside the UserEvent_Payload_439_Previous_AdditionalProperties, using the provided UserEventPayload439Previous1
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) MergeUserEventPayload439Previous1(v UserEventPayload439Previous1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14941,22 +16754,22 @@ func (t *UserEvent_Payload_438_Previous_AdditionalProperties) MergeUserEventPayl
 	return err
 }
 
-// AsUserEventPayload438Previous2 returns the union data inside the UserEvent_Payload_438_Previous_AdditionalProperties as a UserEventPayload438Previous2
-func (t UserEvent_Payload_438_Previous_AdditionalProperties) AsUserEventPayload438Previous2() (UserEventPayload438Previous2, error) {
-	var body UserEventPayload438Previous2
+// AsUserEventPayload439Previous2 returns the union data inside the UserEvent_Payload_439_Previous_AdditionalProperties as a UserEventPayload439Previous2
+func (t UserEvent_Payload_439_Previous_AdditionalProperties) AsUserEventPayload439Previous2() (UserEventPayload439Previous2, error) {
+	var body UserEventPayload439Previous2
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromUserEventPayload438Previous2 overwrites any union data inside the UserEvent_Payload_438_Previous_AdditionalProperties as the provided UserEventPayload438Previous2
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) FromUserEventPayload438Previous2(v UserEventPayload438Previous2) error {
+// FromUserEventPayload439Previous2 overwrites any union data inside the UserEvent_Payload_439_Previous_AdditionalProperties as the provided UserEventPayload439Previous2
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) FromUserEventPayload439Previous2(v UserEventPayload439Previous2) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeUserEventPayload438Previous2 performs a merge with any union data inside the UserEvent_Payload_438_Previous_AdditionalProperties, using the provided UserEventPayload438Previous2
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) MergeUserEventPayload438Previous2(v UserEventPayload438Previous2) error {
+// MergeUserEventPayload439Previous2 performs a merge with any union data inside the UserEvent_Payload_439_Previous_AdditionalProperties, using the provided UserEventPayload439Previous2
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) MergeUserEventPayload439Previous2(v UserEventPayload439Previous2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14967,12 +16780,12 @@ func (t *UserEvent_Payload_438_Previous_AdditionalProperties) MergeUserEventPayl
 	return err
 }
 
-func (t UserEvent_Payload_438_Previous_AdditionalProperties) MarshalJSON() ([]byte, error) {
+func (t UserEvent_Payload_439_Previous_AdditionalProperties) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *UserEvent_Payload_438_Previous_AdditionalProperties) UnmarshalJSON(b []byte) error {
+func (t *UserEvent_Payload_439_Previous_AdditionalProperties) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -18191,1826 +20004,6 @@ func (t *UserEvent_Payload) FromUserEventPayload123(v UserEventPayload123) error
 
 // MergeUserEventPayload123 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload123
 func (t *UserEvent_Payload) MergeUserEventPayload123(v UserEventPayload123) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload124 returns the union data inside the UserEvent_Payload as a UserEventPayload124
-func (t UserEvent_Payload) AsUserEventPayload124() (UserEventPayload124, error) {
-	var body UserEventPayload124
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload124 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload124
-func (t *UserEvent_Payload) FromUserEventPayload124(v UserEventPayload124) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload124 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload124
-func (t *UserEvent_Payload) MergeUserEventPayload124(v UserEventPayload124) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload125 returns the union data inside the UserEvent_Payload as a UserEventPayload125
-func (t UserEvent_Payload) AsUserEventPayload125() (UserEventPayload125, error) {
-	var body UserEventPayload125
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload125 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload125
-func (t *UserEvent_Payload) FromUserEventPayload125(v UserEventPayload125) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload125 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload125
-func (t *UserEvent_Payload) MergeUserEventPayload125(v UserEventPayload125) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload126 returns the union data inside the UserEvent_Payload as a UserEventPayload126
-func (t UserEvent_Payload) AsUserEventPayload126() (UserEventPayload126, error) {
-	var body UserEventPayload126
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload126 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload126
-func (t *UserEvent_Payload) FromUserEventPayload126(v UserEventPayload126) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload126 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload126
-func (t *UserEvent_Payload) MergeUserEventPayload126(v UserEventPayload126) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload127 returns the union data inside the UserEvent_Payload as a UserEventPayload127
-func (t UserEvent_Payload) AsUserEventPayload127() (UserEventPayload127, error) {
-	var body UserEventPayload127
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload127 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload127
-func (t *UserEvent_Payload) FromUserEventPayload127(v UserEventPayload127) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload127 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload127
-func (t *UserEvent_Payload) MergeUserEventPayload127(v UserEventPayload127) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload128 returns the union data inside the UserEvent_Payload as a UserEventPayload128
-func (t UserEvent_Payload) AsUserEventPayload128() (UserEventPayload128, error) {
-	var body UserEventPayload128
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload128 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload128
-func (t *UserEvent_Payload) FromUserEventPayload128(v UserEventPayload128) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload128 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload128
-func (t *UserEvent_Payload) MergeUserEventPayload128(v UserEventPayload128) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload129 returns the union data inside the UserEvent_Payload as a UserEventPayload129
-func (t UserEvent_Payload) AsUserEventPayload129() (UserEventPayload129, error) {
-	var body UserEventPayload129
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload129 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload129
-func (t *UserEvent_Payload) FromUserEventPayload129(v UserEventPayload129) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload129 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload129
-func (t *UserEvent_Payload) MergeUserEventPayload129(v UserEventPayload129) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload130 returns the union data inside the UserEvent_Payload as a UserEventPayload130
-func (t UserEvent_Payload) AsUserEventPayload130() (UserEventPayload130, error) {
-	var body UserEventPayload130
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload130 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload130
-func (t *UserEvent_Payload) FromUserEventPayload130(v UserEventPayload130) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload130 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload130
-func (t *UserEvent_Payload) MergeUserEventPayload130(v UserEventPayload130) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload131 returns the union data inside the UserEvent_Payload as a UserEventPayload131
-func (t UserEvent_Payload) AsUserEventPayload131() (UserEventPayload131, error) {
-	var body UserEventPayload131
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload131 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload131
-func (t *UserEvent_Payload) FromUserEventPayload131(v UserEventPayload131) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload131 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload131
-func (t *UserEvent_Payload) MergeUserEventPayload131(v UserEventPayload131) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload132 returns the union data inside the UserEvent_Payload as a UserEventPayload132
-func (t UserEvent_Payload) AsUserEventPayload132() (UserEventPayload132, error) {
-	var body UserEventPayload132
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload132 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload132
-func (t *UserEvent_Payload) FromUserEventPayload132(v UserEventPayload132) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload132 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload132
-func (t *UserEvent_Payload) MergeUserEventPayload132(v UserEventPayload132) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload133 returns the union data inside the UserEvent_Payload as a UserEventPayload133
-func (t UserEvent_Payload) AsUserEventPayload133() (UserEventPayload133, error) {
-	var body UserEventPayload133
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload133 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload133
-func (t *UserEvent_Payload) FromUserEventPayload133(v UserEventPayload133) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload133 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload133
-func (t *UserEvent_Payload) MergeUserEventPayload133(v UserEventPayload133) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload134 returns the union data inside the UserEvent_Payload as a UserEventPayload134
-func (t UserEvent_Payload) AsUserEventPayload134() (UserEventPayload134, error) {
-	var body UserEventPayload134
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload134 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload134
-func (t *UserEvent_Payload) FromUserEventPayload134(v UserEventPayload134) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload134 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload134
-func (t *UserEvent_Payload) MergeUserEventPayload134(v UserEventPayload134) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload135 returns the union data inside the UserEvent_Payload as a UserEventPayload135
-func (t UserEvent_Payload) AsUserEventPayload135() (UserEventPayload135, error) {
-	var body UserEventPayload135
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload135 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload135
-func (t *UserEvent_Payload) FromUserEventPayload135(v UserEventPayload135) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload135 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload135
-func (t *UserEvent_Payload) MergeUserEventPayload135(v UserEventPayload135) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload136 returns the union data inside the UserEvent_Payload as a UserEventPayload136
-func (t UserEvent_Payload) AsUserEventPayload136() (UserEventPayload136, error) {
-	var body UserEventPayload136
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload136 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload136
-func (t *UserEvent_Payload) FromUserEventPayload136(v UserEventPayload136) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload136 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload136
-func (t *UserEvent_Payload) MergeUserEventPayload136(v UserEventPayload136) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload137 returns the union data inside the UserEvent_Payload as a UserEventPayload137
-func (t UserEvent_Payload) AsUserEventPayload137() (UserEventPayload137, error) {
-	var body UserEventPayload137
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload137 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload137
-func (t *UserEvent_Payload) FromUserEventPayload137(v UserEventPayload137) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload137 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload137
-func (t *UserEvent_Payload) MergeUserEventPayload137(v UserEventPayload137) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload138 returns the union data inside the UserEvent_Payload as a UserEventPayload138
-func (t UserEvent_Payload) AsUserEventPayload138() (UserEventPayload138, error) {
-	var body UserEventPayload138
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload138 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload138
-func (t *UserEvent_Payload) FromUserEventPayload138(v UserEventPayload138) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload138 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload138
-func (t *UserEvent_Payload) MergeUserEventPayload138(v UserEventPayload138) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload139 returns the union data inside the UserEvent_Payload as a UserEventPayload139
-func (t UserEvent_Payload) AsUserEventPayload139() (UserEventPayload139, error) {
-	var body UserEventPayload139
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload139 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload139
-func (t *UserEvent_Payload) FromUserEventPayload139(v UserEventPayload139) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload139 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload139
-func (t *UserEvent_Payload) MergeUserEventPayload139(v UserEventPayload139) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload140 returns the union data inside the UserEvent_Payload as a UserEventPayload140
-func (t UserEvent_Payload) AsUserEventPayload140() (UserEventPayload140, error) {
-	var body UserEventPayload140
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload140 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload140
-func (t *UserEvent_Payload) FromUserEventPayload140(v UserEventPayload140) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload140 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload140
-func (t *UserEvent_Payload) MergeUserEventPayload140(v UserEventPayload140) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload141 returns the union data inside the UserEvent_Payload as a UserEventPayload141
-func (t UserEvent_Payload) AsUserEventPayload141() (UserEventPayload141, error) {
-	var body UserEventPayload141
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload141 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload141
-func (t *UserEvent_Payload) FromUserEventPayload141(v UserEventPayload141) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload141 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload141
-func (t *UserEvent_Payload) MergeUserEventPayload141(v UserEventPayload141) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload142 returns the union data inside the UserEvent_Payload as a UserEventPayload142
-func (t UserEvent_Payload) AsUserEventPayload142() (UserEventPayload142, error) {
-	var body UserEventPayload142
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload142 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload142
-func (t *UserEvent_Payload) FromUserEventPayload142(v UserEventPayload142) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload142 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload142
-func (t *UserEvent_Payload) MergeUserEventPayload142(v UserEventPayload142) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload143 returns the union data inside the UserEvent_Payload as a UserEventPayload143
-func (t UserEvent_Payload) AsUserEventPayload143() (UserEventPayload143, error) {
-	var body UserEventPayload143
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload143 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload143
-func (t *UserEvent_Payload) FromUserEventPayload143(v UserEventPayload143) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload143 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload143
-func (t *UserEvent_Payload) MergeUserEventPayload143(v UserEventPayload143) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload144 returns the union data inside the UserEvent_Payload as a UserEventPayload144
-func (t UserEvent_Payload) AsUserEventPayload144() (UserEventPayload144, error) {
-	var body UserEventPayload144
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload144 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload144
-func (t *UserEvent_Payload) FromUserEventPayload144(v UserEventPayload144) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload144 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload144
-func (t *UserEvent_Payload) MergeUserEventPayload144(v UserEventPayload144) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload145 returns the union data inside the UserEvent_Payload as a UserEventPayload145
-func (t UserEvent_Payload) AsUserEventPayload145() (UserEventPayload145, error) {
-	var body UserEventPayload145
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload145 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload145
-func (t *UserEvent_Payload) FromUserEventPayload145(v UserEventPayload145) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload145 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload145
-func (t *UserEvent_Payload) MergeUserEventPayload145(v UserEventPayload145) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload146 returns the union data inside the UserEvent_Payload as a UserEventPayload146
-func (t UserEvent_Payload) AsUserEventPayload146() (UserEventPayload146, error) {
-	var body UserEventPayload146
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload146 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload146
-func (t *UserEvent_Payload) FromUserEventPayload146(v UserEventPayload146) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload146 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload146
-func (t *UserEvent_Payload) MergeUserEventPayload146(v UserEventPayload146) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload147 returns the union data inside the UserEvent_Payload as a UserEventPayload147
-func (t UserEvent_Payload) AsUserEventPayload147() (UserEventPayload147, error) {
-	var body UserEventPayload147
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload147 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload147
-func (t *UserEvent_Payload) FromUserEventPayload147(v UserEventPayload147) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload147 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload147
-func (t *UserEvent_Payload) MergeUserEventPayload147(v UserEventPayload147) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload148 returns the union data inside the UserEvent_Payload as a UserEventPayload148
-func (t UserEvent_Payload) AsUserEventPayload148() (UserEventPayload148, error) {
-	var body UserEventPayload148
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload148 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload148
-func (t *UserEvent_Payload) FromUserEventPayload148(v UserEventPayload148) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload148 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload148
-func (t *UserEvent_Payload) MergeUserEventPayload148(v UserEventPayload148) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload149 returns the union data inside the UserEvent_Payload as a UserEventPayload149
-func (t UserEvent_Payload) AsUserEventPayload149() (UserEventPayload149, error) {
-	var body UserEventPayload149
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload149 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload149
-func (t *UserEvent_Payload) FromUserEventPayload149(v UserEventPayload149) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload149 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload149
-func (t *UserEvent_Payload) MergeUserEventPayload149(v UserEventPayload149) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload150 returns the union data inside the UserEvent_Payload as a UserEventPayload150
-func (t UserEvent_Payload) AsUserEventPayload150() (UserEventPayload150, error) {
-	var body UserEventPayload150
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload150 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload150
-func (t *UserEvent_Payload) FromUserEventPayload150(v UserEventPayload150) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload150 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload150
-func (t *UserEvent_Payload) MergeUserEventPayload150(v UserEventPayload150) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload151 returns the union data inside the UserEvent_Payload as a UserEventPayload151
-func (t UserEvent_Payload) AsUserEventPayload151() (UserEventPayload151, error) {
-	var body UserEventPayload151
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload151 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload151
-func (t *UserEvent_Payload) FromUserEventPayload151(v UserEventPayload151) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload151 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload151
-func (t *UserEvent_Payload) MergeUserEventPayload151(v UserEventPayload151) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload152 returns the union data inside the UserEvent_Payload as a UserEventPayload152
-func (t UserEvent_Payload) AsUserEventPayload152() (UserEventPayload152, error) {
-	var body UserEventPayload152
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload152 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload152
-func (t *UserEvent_Payload) FromUserEventPayload152(v UserEventPayload152) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload152 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload152
-func (t *UserEvent_Payload) MergeUserEventPayload152(v UserEventPayload152) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload153 returns the union data inside the UserEvent_Payload as a UserEventPayload153
-func (t UserEvent_Payload) AsUserEventPayload153() (UserEventPayload153, error) {
-	var body UserEventPayload153
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload153 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload153
-func (t *UserEvent_Payload) FromUserEventPayload153(v UserEventPayload153) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload153 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload153
-func (t *UserEvent_Payload) MergeUserEventPayload153(v UserEventPayload153) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload154 returns the union data inside the UserEvent_Payload as a UserEventPayload154
-func (t UserEvent_Payload) AsUserEventPayload154() (UserEventPayload154, error) {
-	var body UserEventPayload154
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload154 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload154
-func (t *UserEvent_Payload) FromUserEventPayload154(v UserEventPayload154) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload154 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload154
-func (t *UserEvent_Payload) MergeUserEventPayload154(v UserEventPayload154) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload155 returns the union data inside the UserEvent_Payload as a UserEventPayload155
-func (t UserEvent_Payload) AsUserEventPayload155() (UserEventPayload155, error) {
-	var body UserEventPayload155
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload155 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload155
-func (t *UserEvent_Payload) FromUserEventPayload155(v UserEventPayload155) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload155 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload155
-func (t *UserEvent_Payload) MergeUserEventPayload155(v UserEventPayload155) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload156 returns the union data inside the UserEvent_Payload as a UserEventPayload156
-func (t UserEvent_Payload) AsUserEventPayload156() (UserEventPayload156, error) {
-	var body UserEventPayload156
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload156 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload156
-func (t *UserEvent_Payload) FromUserEventPayload156(v UserEventPayload156) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload156 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload156
-func (t *UserEvent_Payload) MergeUserEventPayload156(v UserEventPayload156) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload157 returns the union data inside the UserEvent_Payload as a UserEventPayload157
-func (t UserEvent_Payload) AsUserEventPayload157() (UserEventPayload157, error) {
-	var body UserEventPayload157
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload157 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload157
-func (t *UserEvent_Payload) FromUserEventPayload157(v UserEventPayload157) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload157 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload157
-func (t *UserEvent_Payload) MergeUserEventPayload157(v UserEventPayload157) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload158 returns the union data inside the UserEvent_Payload as a UserEventPayload158
-func (t UserEvent_Payload) AsUserEventPayload158() (UserEventPayload158, error) {
-	var body UserEventPayload158
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload158 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload158
-func (t *UserEvent_Payload) FromUserEventPayload158(v UserEventPayload158) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload158 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload158
-func (t *UserEvent_Payload) MergeUserEventPayload158(v UserEventPayload158) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload159 returns the union data inside the UserEvent_Payload as a UserEventPayload159
-func (t UserEvent_Payload) AsUserEventPayload159() (UserEventPayload159, error) {
-	var body UserEventPayload159
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload159 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload159
-func (t *UserEvent_Payload) FromUserEventPayload159(v UserEventPayload159) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload159 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload159
-func (t *UserEvent_Payload) MergeUserEventPayload159(v UserEventPayload159) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload160 returns the union data inside the UserEvent_Payload as a UserEventPayload160
-func (t UserEvent_Payload) AsUserEventPayload160() (UserEventPayload160, error) {
-	var body UserEventPayload160
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload160 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload160
-func (t *UserEvent_Payload) FromUserEventPayload160(v UserEventPayload160) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload160 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload160
-func (t *UserEvent_Payload) MergeUserEventPayload160(v UserEventPayload160) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload161 returns the union data inside the UserEvent_Payload as a UserEventPayload161
-func (t UserEvent_Payload) AsUserEventPayload161() (UserEventPayload161, error) {
-	var body UserEventPayload161
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload161 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload161
-func (t *UserEvent_Payload) FromUserEventPayload161(v UserEventPayload161) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload161 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload161
-func (t *UserEvent_Payload) MergeUserEventPayload161(v UserEventPayload161) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload162 returns the union data inside the UserEvent_Payload as a UserEventPayload162
-func (t UserEvent_Payload) AsUserEventPayload162() (UserEventPayload162, error) {
-	var body UserEventPayload162
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload162 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload162
-func (t *UserEvent_Payload) FromUserEventPayload162(v UserEventPayload162) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload162 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload162
-func (t *UserEvent_Payload) MergeUserEventPayload162(v UserEventPayload162) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload163 returns the union data inside the UserEvent_Payload as a UserEventPayload163
-func (t UserEvent_Payload) AsUserEventPayload163() (UserEventPayload163, error) {
-	var body UserEventPayload163
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload163 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload163
-func (t *UserEvent_Payload) FromUserEventPayload163(v UserEventPayload163) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload163 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload163
-func (t *UserEvent_Payload) MergeUserEventPayload163(v UserEventPayload163) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload164 returns the union data inside the UserEvent_Payload as a UserEventPayload164
-func (t UserEvent_Payload) AsUserEventPayload164() (UserEventPayload164, error) {
-	var body UserEventPayload164
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload164 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload164
-func (t *UserEvent_Payload) FromUserEventPayload164(v UserEventPayload164) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload164 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload164
-func (t *UserEvent_Payload) MergeUserEventPayload164(v UserEventPayload164) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload165 returns the union data inside the UserEvent_Payload as a UserEventPayload165
-func (t UserEvent_Payload) AsUserEventPayload165() (UserEventPayload165, error) {
-	var body UserEventPayload165
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload165 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload165
-func (t *UserEvent_Payload) FromUserEventPayload165(v UserEventPayload165) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload165 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload165
-func (t *UserEvent_Payload) MergeUserEventPayload165(v UserEventPayload165) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload166 returns the union data inside the UserEvent_Payload as a UserEventPayload166
-func (t UserEvent_Payload) AsUserEventPayload166() (UserEventPayload166, error) {
-	var body UserEventPayload166
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload166 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload166
-func (t *UserEvent_Payload) FromUserEventPayload166(v UserEventPayload166) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload166 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload166
-func (t *UserEvent_Payload) MergeUserEventPayload166(v UserEventPayload166) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload167 returns the union data inside the UserEvent_Payload as a UserEventPayload167
-func (t UserEvent_Payload) AsUserEventPayload167() (UserEventPayload167, error) {
-	var body UserEventPayload167
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload167 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload167
-func (t *UserEvent_Payload) FromUserEventPayload167(v UserEventPayload167) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload167 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload167
-func (t *UserEvent_Payload) MergeUserEventPayload167(v UserEventPayload167) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload168 returns the union data inside the UserEvent_Payload as a UserEventPayload168
-func (t UserEvent_Payload) AsUserEventPayload168() (UserEventPayload168, error) {
-	var body UserEventPayload168
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload168 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload168
-func (t *UserEvent_Payload) FromUserEventPayload168(v UserEventPayload168) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload168 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload168
-func (t *UserEvent_Payload) MergeUserEventPayload168(v UserEventPayload168) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload169 returns the union data inside the UserEvent_Payload as a UserEventPayload169
-func (t UserEvent_Payload) AsUserEventPayload169() (UserEventPayload169, error) {
-	var body UserEventPayload169
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload169 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload169
-func (t *UserEvent_Payload) FromUserEventPayload169(v UserEventPayload169) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload169 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload169
-func (t *UserEvent_Payload) MergeUserEventPayload169(v UserEventPayload169) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload170 returns the union data inside the UserEvent_Payload as a UserEventPayload170
-func (t UserEvent_Payload) AsUserEventPayload170() (UserEventPayload170, error) {
-	var body UserEventPayload170
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload170 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload170
-func (t *UserEvent_Payload) FromUserEventPayload170(v UserEventPayload170) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload170 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload170
-func (t *UserEvent_Payload) MergeUserEventPayload170(v UserEventPayload170) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload171 returns the union data inside the UserEvent_Payload as a UserEventPayload171
-func (t UserEvent_Payload) AsUserEventPayload171() (UserEventPayload171, error) {
-	var body UserEventPayload171
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload171 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload171
-func (t *UserEvent_Payload) FromUserEventPayload171(v UserEventPayload171) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload171 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload171
-func (t *UserEvent_Payload) MergeUserEventPayload171(v UserEventPayload171) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload172 returns the union data inside the UserEvent_Payload as a UserEventPayload172
-func (t UserEvent_Payload) AsUserEventPayload172() (UserEventPayload172, error) {
-	var body UserEventPayload172
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload172 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload172
-func (t *UserEvent_Payload) FromUserEventPayload172(v UserEventPayload172) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload172 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload172
-func (t *UserEvent_Payload) MergeUserEventPayload172(v UserEventPayload172) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload173 returns the union data inside the UserEvent_Payload as a UserEventPayload173
-func (t UserEvent_Payload) AsUserEventPayload173() (UserEventPayload173, error) {
-	var body UserEventPayload173
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload173 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload173
-func (t *UserEvent_Payload) FromUserEventPayload173(v UserEventPayload173) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload173 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload173
-func (t *UserEvent_Payload) MergeUserEventPayload173(v UserEventPayload173) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload174 returns the union data inside the UserEvent_Payload as a UserEventPayload174
-func (t UserEvent_Payload) AsUserEventPayload174() (UserEventPayload174, error) {
-	var body UserEventPayload174
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload174 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload174
-func (t *UserEvent_Payload) FromUserEventPayload174(v UserEventPayload174) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload174 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload174
-func (t *UserEvent_Payload) MergeUserEventPayload174(v UserEventPayload174) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload175 returns the union data inside the UserEvent_Payload as a UserEventPayload175
-func (t UserEvent_Payload) AsUserEventPayload175() (UserEventPayload175, error) {
-	var body UserEventPayload175
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload175 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload175
-func (t *UserEvent_Payload) FromUserEventPayload175(v UserEventPayload175) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload175 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload175
-func (t *UserEvent_Payload) MergeUserEventPayload175(v UserEventPayload175) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload176 returns the union data inside the UserEvent_Payload as a UserEventPayload176
-func (t UserEvent_Payload) AsUserEventPayload176() (UserEventPayload176, error) {
-	var body UserEventPayload176
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload176 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload176
-func (t *UserEvent_Payload) FromUserEventPayload176(v UserEventPayload176) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload176 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload176
-func (t *UserEvent_Payload) MergeUserEventPayload176(v UserEventPayload176) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload177 returns the union data inside the UserEvent_Payload as a UserEventPayload177
-func (t UserEvent_Payload) AsUserEventPayload177() (UserEventPayload177, error) {
-	var body UserEventPayload177
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload177 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload177
-func (t *UserEvent_Payload) FromUserEventPayload177(v UserEventPayload177) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload177 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload177
-func (t *UserEvent_Payload) MergeUserEventPayload177(v UserEventPayload177) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload178 returns the union data inside the UserEvent_Payload as a UserEventPayload178
-func (t UserEvent_Payload) AsUserEventPayload178() (UserEventPayload178, error) {
-	var body UserEventPayload178
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload178 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload178
-func (t *UserEvent_Payload) FromUserEventPayload178(v UserEventPayload178) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload178 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload178
-func (t *UserEvent_Payload) MergeUserEventPayload178(v UserEventPayload178) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload179 returns the union data inside the UserEvent_Payload as a UserEventPayload179
-func (t UserEvent_Payload) AsUserEventPayload179() (UserEventPayload179, error) {
-	var body UserEventPayload179
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload179 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload179
-func (t *UserEvent_Payload) FromUserEventPayload179(v UserEventPayload179) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload179 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload179
-func (t *UserEvent_Payload) MergeUserEventPayload179(v UserEventPayload179) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload180 returns the union data inside the UserEvent_Payload as a UserEventPayload180
-func (t UserEvent_Payload) AsUserEventPayload180() (UserEventPayload180, error) {
-	var body UserEventPayload180
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload180 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload180
-func (t *UserEvent_Payload) FromUserEventPayload180(v UserEventPayload180) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload180 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload180
-func (t *UserEvent_Payload) MergeUserEventPayload180(v UserEventPayload180) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload181 returns the union data inside the UserEvent_Payload as a UserEventPayload181
-func (t UserEvent_Payload) AsUserEventPayload181() (UserEventPayload181, error) {
-	var body UserEventPayload181
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload181 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload181
-func (t *UserEvent_Payload) FromUserEventPayload181(v UserEventPayload181) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload181 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload181
-func (t *UserEvent_Payload) MergeUserEventPayload181(v UserEventPayload181) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload182 returns the union data inside the UserEvent_Payload as a UserEventPayload182
-func (t UserEvent_Payload) AsUserEventPayload182() (UserEventPayload182, error) {
-	var body UserEventPayload182
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload182 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload182
-func (t *UserEvent_Payload) FromUserEventPayload182(v UserEventPayload182) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload182 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload182
-func (t *UserEvent_Payload) MergeUserEventPayload182(v UserEventPayload182) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload183 returns the union data inside the UserEvent_Payload as a UserEventPayload183
-func (t UserEvent_Payload) AsUserEventPayload183() (UserEventPayload183, error) {
-	var body UserEventPayload183
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload183 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload183
-func (t *UserEvent_Payload) FromUserEventPayload183(v UserEventPayload183) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload183 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload183
-func (t *UserEvent_Payload) MergeUserEventPayload183(v UserEventPayload183) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload184 returns the union data inside the UserEvent_Payload as a UserEventPayload184
-func (t UserEvent_Payload) AsUserEventPayload184() (UserEventPayload184, error) {
-	var body UserEventPayload184
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload184 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload184
-func (t *UserEvent_Payload) FromUserEventPayload184(v UserEventPayload184) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload184 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload184
-func (t *UserEvent_Payload) MergeUserEventPayload184(v UserEventPayload184) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload185 returns the union data inside the UserEvent_Payload as a UserEventPayload185
-func (t UserEvent_Payload) AsUserEventPayload185() (UserEventPayload185, error) {
-	var body UserEventPayload185
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload185 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload185
-func (t *UserEvent_Payload) FromUserEventPayload185(v UserEventPayload185) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload185 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload185
-func (t *UserEvent_Payload) MergeUserEventPayload185(v UserEventPayload185) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload186 returns the union data inside the UserEvent_Payload as a UserEventPayload186
-func (t UserEvent_Payload) AsUserEventPayload186() (UserEventPayload186, error) {
-	var body UserEventPayload186
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload186 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload186
-func (t *UserEvent_Payload) FromUserEventPayload186(v UserEventPayload186) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload186 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload186
-func (t *UserEvent_Payload) MergeUserEventPayload186(v UserEventPayload186) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload187 returns the union data inside the UserEvent_Payload as a UserEventPayload187
-func (t UserEvent_Payload) AsUserEventPayload187() (UserEventPayload187, error) {
-	var body UserEventPayload187
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload187 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload187
-func (t *UserEvent_Payload) FromUserEventPayload187(v UserEventPayload187) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload187 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload187
-func (t *UserEvent_Payload) MergeUserEventPayload187(v UserEventPayload187) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload188 returns the union data inside the UserEvent_Payload as a UserEventPayload188
-func (t UserEvent_Payload) AsUserEventPayload188() (UserEventPayload188, error) {
-	var body UserEventPayload188
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload188 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload188
-func (t *UserEvent_Payload) FromUserEventPayload188(v UserEventPayload188) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload188 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload188
-func (t *UserEvent_Payload) MergeUserEventPayload188(v UserEventPayload188) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload189 returns the union data inside the UserEvent_Payload as a UserEventPayload189
-func (t UserEvent_Payload) AsUserEventPayload189() (UserEventPayload189, error) {
-	var body UserEventPayload189
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload189 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload189
-func (t *UserEvent_Payload) FromUserEventPayload189(v UserEventPayload189) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload189 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload189
-func (t *UserEvent_Payload) MergeUserEventPayload189(v UserEventPayload189) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload190 returns the union data inside the UserEvent_Payload as a UserEventPayload190
-func (t UserEvent_Payload) AsUserEventPayload190() (UserEventPayload190, error) {
-	var body UserEventPayload190
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload190 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload190
-func (t *UserEvent_Payload) FromUserEventPayload190(v UserEventPayload190) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload190 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload190
-func (t *UserEvent_Payload) MergeUserEventPayload190(v UserEventPayload190) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload191 returns the union data inside the UserEvent_Payload as a UserEventPayload191
-func (t UserEvent_Payload) AsUserEventPayload191() (UserEventPayload191, error) {
-	var body UserEventPayload191
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload191 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload191
-func (t *UserEvent_Payload) FromUserEventPayload191(v UserEventPayload191) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload191 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload191
-func (t *UserEvent_Payload) MergeUserEventPayload191(v UserEventPayload191) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload192 returns the union data inside the UserEvent_Payload as a UserEventPayload192
-func (t UserEvent_Payload) AsUserEventPayload192() (UserEventPayload192, error) {
-	var body UserEventPayload192
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload192 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload192
-func (t *UserEvent_Payload) FromUserEventPayload192(v UserEventPayload192) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload192 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload192
-func (t *UserEvent_Payload) MergeUserEventPayload192(v UserEventPayload192) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload193 returns the union data inside the UserEvent_Payload as a UserEventPayload193
-func (t UserEvent_Payload) AsUserEventPayload193() (UserEventPayload193, error) {
-	var body UserEventPayload193
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload193 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload193
-func (t *UserEvent_Payload) FromUserEventPayload193(v UserEventPayload193) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload193 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload193
-func (t *UserEvent_Payload) MergeUserEventPayload193(v UserEventPayload193) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err

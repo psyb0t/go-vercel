@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.11.0, 2026-10-28
+
+- Added the AI Gateway BYOK credential endpoints `ListAiGatewayByokCredentials`, `GetAiGatewayByokCredential`, `CreateAiGatewayByokCredential`, `UpdateAiGatewayByokCredential` and `DeleteAiGatewayByokCredential`, plus the `WithBody` variants for create and update. They are on `Client`, `ClientInterface`, `ClientWithResponses` and `ClientWithResponsesInterface`, the latter two as `...WithResponse` methods.
+- Removed the `...ResourceConfigElasticBuildMachine2` `Cores`, `Memory` and `Label` types and their `N30`, `N61440` and `Turbo` constants from the project response bodies, for both `ResourceConfig` and `DefaultResourceConfig`. This covers `CreateProject`, `GetProject`, `UpdateProject`, `DeleteProjectAvatar`, `UploadProjectAvatar`, `UpdateMicrofrontends`, `GetMicrofrontendsInGroup` and `GetProjects`. A `...ElasticBuildMachine3` variant with `From...` and `Merge...` methods is added in its place.
+- Changed the `JSON200` field and `GetJSON200` method types on `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `DeleteProjectAvatarResponse`, `UploadProjectAvatarResponse`, `UpdateMicrofrontendsResponse` and `GetMicrofrontendsInGroupResponse`, and `GetProjects200JSONResponseBody2.Projects`. Code that assigns these to explicitly typed values must be updated.
+- Changed the `Builder` field type on `Services0` and `Services1` of `CancelDeployment200JSONResponseBody`, `CreateDeployment200JSONResponseBody1` and `GetDeployment200JSONResponseBody1`. Daemon liveness probes gained `HttpGet` scheme types with `HTTP` and `HTTPS` constants.
+- Reshaped many `UserEventPayload` types again, including `UserEventPayload412`, `UserEventPayload413`, `UserEventPayload495`, `UserEventPayload496`, `UserEventPayload499` and `UserEventPayload500`. Removed `UserEvent_Payload_438_Next_AdditionalProperties` and `UserEvent_Payload_438_Previous_AdditionalProperties`.
+- Added the `ListEventTypeNameConnectBrandingUpdated` and `ListEventTypeReplacedByConnectBrandingUpdated` constants.
+- The rest of the diff reorders generated code across the `client_*.gen.go` files and adds `client_029.gen.go`.
+- Generated from spec version 0.0.1.
+
 ## v0.10.1, 2026-10-28
 
 - Updated Semgrep in the development image to 1.182.1 and refreshed its locked dependencies. certifi 2026.10.23 drops the emSign root CAs whose intermediate keys were compromised (GHSA-6q48-6c7w-9gw2).

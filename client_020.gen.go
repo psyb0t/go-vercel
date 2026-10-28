@@ -4,17 +4,2331 @@
 package vercel
 
 import (
-	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
-	"net/url"
 	"strings"
 
 	"github.com/oapi-codegen/runtime"
 )
+
+// FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 overwrites any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item, using the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 returns the union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as a UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+func (t UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) AsUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1() (UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1, error) {
+	var body UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 overwrites any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item as the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item, using the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0 returns the union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as a UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+func (t UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) AsUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0() (UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0, error) {
+	var body UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0 overwrites any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item, using the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1 returns the union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as a UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+func (t UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) AsUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1() (UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1, error) {
+	var body UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1 overwrites any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item as the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) FromUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item, using the provided UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) MergeUpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1(v UpdateProject200JSONResponseBodyDeploymentPolicyGitSourcesSources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as a UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) AsUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0() (UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) FromUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0(v UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0(v UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as a UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) AsUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1() (UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) FromUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1(v UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1(v UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as a UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) AsUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2() (UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) FromUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2(v UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2(v UpdateProject200JSONResponseBodyDismissedToastsValue2CurrentValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_CurrentValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as a UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) AsUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0() (UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) FromUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0(v UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0(v UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as a UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) AsUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1() (UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) FromUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1(v UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1(v UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as a UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) AsUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2() (UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) FromUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2(v UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2(v UpdateProject200JSONResponseBodyDismissedToastsValue2PreviousValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value_2_PreviousValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue0 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as a UpdateProject200JSONResponseBodyDismissedToastsValue0
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value) AsUpdateProject200JSONResponseBodyDismissedToastsValue0() (UpdateProject200JSONResponseBodyDismissedToastsValue0, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue0 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as the provided UpdateProject200JSONResponseBodyDismissedToastsValue0
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) FromUpdateProject200JSONResponseBodyDismissedToastsValue0(v UpdateProject200JSONResponseBodyDismissedToastsValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue0
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) MergeUpdateProject200JSONResponseBodyDismissedToastsValue0(v UpdateProject200JSONResponseBodyDismissedToastsValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue1 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as a UpdateProject200JSONResponseBodyDismissedToastsValue1
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value) AsUpdateProject200JSONResponseBodyDismissedToastsValue1() (UpdateProject200JSONResponseBodyDismissedToastsValue1, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue1 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as the provided UpdateProject200JSONResponseBodyDismissedToastsValue1
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) FromUpdateProject200JSONResponseBodyDismissedToastsValue1(v UpdateProject200JSONResponseBodyDismissedToastsValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue1
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) MergeUpdateProject200JSONResponseBodyDismissedToastsValue1(v UpdateProject200JSONResponseBodyDismissedToastsValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue2 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as a UpdateProject200JSONResponseBodyDismissedToastsValue2
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value) AsUpdateProject200JSONResponseBodyDismissedToastsValue2() (UpdateProject200JSONResponseBodyDismissedToastsValue2, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue2 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as the provided UpdateProject200JSONResponseBodyDismissedToastsValue2
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) FromUpdateProject200JSONResponseBodyDismissedToastsValue2(v UpdateProject200JSONResponseBodyDismissedToastsValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue2
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) MergeUpdateProject200JSONResponseBodyDismissedToastsValue2(v UpdateProject200JSONResponseBodyDismissedToastsValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyDismissedToastsValue3 returns the union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as a UpdateProject200JSONResponseBodyDismissedToastsValue3
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value) AsUpdateProject200JSONResponseBodyDismissedToastsValue3() (UpdateProject200JSONResponseBodyDismissedToastsValue3, error) {
+	var body UpdateProject200JSONResponseBodyDismissedToastsValue3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyDismissedToastsValue3 overwrites any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value as the provided UpdateProject200JSONResponseBodyDismissedToastsValue3
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) FromUpdateProject200JSONResponseBodyDismissedToastsValue3(v UpdateProject200JSONResponseBodyDismissedToastsValue3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyDismissedToastsValue3 performs a merge with any union data inside the UpdateProject200JSONResponseBody_DismissedToasts_Value, using the provided UpdateProject200JSONResponseBodyDismissedToastsValue3
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) MergeUpdateProject200JSONResponseBodyDismissedToastsValue3(v UpdateProject200JSONResponseBodyDismissedToastsValue3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_DismissedToasts_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_DismissedToasts_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint0 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint0
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint0() (UpdateProject200JSONResponseBodyEnvContentHint0, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint0 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint0
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint0(v UpdateProject200JSONResponseBodyEnvContentHint0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint0
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint0(v UpdateProject200JSONResponseBodyEnvContentHint0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint1 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint1
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint1() (UpdateProject200JSONResponseBodyEnvContentHint1, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint1 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint1
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint1(v UpdateProject200JSONResponseBodyEnvContentHint1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint1
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint1(v UpdateProject200JSONResponseBodyEnvContentHint1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint2 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint2
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint2() (UpdateProject200JSONResponseBodyEnvContentHint2, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint2 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint2
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint2(v UpdateProject200JSONResponseBodyEnvContentHint2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint2
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint2(v UpdateProject200JSONResponseBodyEnvContentHint2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint3 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint3
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint3() (UpdateProject200JSONResponseBodyEnvContentHint3, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint3 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint3
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint3(v UpdateProject200JSONResponseBodyEnvContentHint3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint3 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint3
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint3(v UpdateProject200JSONResponseBodyEnvContentHint3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint4 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint4
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint4() (UpdateProject200JSONResponseBodyEnvContentHint4, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint4 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint4
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint4(v UpdateProject200JSONResponseBodyEnvContentHint4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint4 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint4
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint4(v UpdateProject200JSONResponseBodyEnvContentHint4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint5 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint5
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint5() (UpdateProject200JSONResponseBodyEnvContentHint5, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint5 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint5
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint5(v UpdateProject200JSONResponseBodyEnvContentHint5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint5 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint5
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint5(v UpdateProject200JSONResponseBodyEnvContentHint5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint6 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint6
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint6() (UpdateProject200JSONResponseBodyEnvContentHint6, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint6 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint6
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint6(v UpdateProject200JSONResponseBodyEnvContentHint6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint6 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint6
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint6(v UpdateProject200JSONResponseBodyEnvContentHint6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint7 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint7
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint7() (UpdateProject200JSONResponseBodyEnvContentHint7, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint7 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint7
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint7(v UpdateProject200JSONResponseBodyEnvContentHint7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint7 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint7
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint7(v UpdateProject200JSONResponseBodyEnvContentHint7) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint8 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint8
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint8() (UpdateProject200JSONResponseBodyEnvContentHint8, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint8
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint8 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint8
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint8(v UpdateProject200JSONResponseBodyEnvContentHint8) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint8 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint8
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint8(v UpdateProject200JSONResponseBodyEnvContentHint8) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint9 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint9
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint9() (UpdateProject200JSONResponseBodyEnvContentHint9, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint9
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint9 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint9
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint9(v UpdateProject200JSONResponseBodyEnvContentHint9) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint9 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint9
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint9(v UpdateProject200JSONResponseBodyEnvContentHint9) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint10 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint10
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint10() (UpdateProject200JSONResponseBodyEnvContentHint10, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint10
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint10 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint10
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint10(v UpdateProject200JSONResponseBodyEnvContentHint10) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint10 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint10
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint10(v UpdateProject200JSONResponseBodyEnvContentHint10) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint11 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint11
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint11() (UpdateProject200JSONResponseBodyEnvContentHint11, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint11
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint11 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint11
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint11(v UpdateProject200JSONResponseBodyEnvContentHint11) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint11 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint11
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint11(v UpdateProject200JSONResponseBodyEnvContentHint11) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint12 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint12
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint12() (UpdateProject200JSONResponseBodyEnvContentHint12, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint12
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint12 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint12
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint12(v UpdateProject200JSONResponseBodyEnvContentHint12) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint12 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint12
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint12(v UpdateProject200JSONResponseBodyEnvContentHint12) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint13 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint13
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint13() (UpdateProject200JSONResponseBodyEnvContentHint13, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint13
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint13 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint13
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint13(v UpdateProject200JSONResponseBodyEnvContentHint13) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint13 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint13
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint13(v UpdateProject200JSONResponseBodyEnvContentHint13) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint14 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint14
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint14() (UpdateProject200JSONResponseBodyEnvContentHint14, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint14
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint14 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint14
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint14(v UpdateProject200JSONResponseBodyEnvContentHint14) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint14 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint14
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint14(v UpdateProject200JSONResponseBodyEnvContentHint14) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint15 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint15
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint15() (UpdateProject200JSONResponseBodyEnvContentHint15, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint15
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint15 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint15
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint15(v UpdateProject200JSONResponseBodyEnvContentHint15) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint15 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint15
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint15(v UpdateProject200JSONResponseBodyEnvContentHint15) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvContentHint16 returns the union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as a UpdateProject200JSONResponseBodyEnvContentHint16
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) AsUpdateProject200JSONResponseBodyEnvContentHint16() (UpdateProject200JSONResponseBodyEnvContentHint16, error) {
+	var body UpdateProject200JSONResponseBodyEnvContentHint16
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvContentHint16 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint as the provided UpdateProject200JSONResponseBodyEnvContentHint16
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) FromUpdateProject200JSONResponseBodyEnvContentHint16(v UpdateProject200JSONResponseBodyEnvContentHint16) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvContentHint16 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_ContentHint, using the provided UpdateProject200JSONResponseBodyEnvContentHint16
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) MergeUpdateProject200JSONResponseBodyEnvContentHint16(v UpdateProject200JSONResponseBodyEnvContentHint16) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Env_ContentHint) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Env_ContentHint) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvTarget0 returns the union data inside the UpdateProject200JSONResponseBody_Env_Target as a UpdateProject200JSONResponseBodyEnvTarget0
+func (t UpdateProject200JSONResponseBody_Env_Target) AsUpdateProject200JSONResponseBodyEnvTarget0() (UpdateProject200JSONResponseBodyEnvTarget0, error) {
+	var body UpdateProject200JSONResponseBodyEnvTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvTarget0 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_Target as the provided UpdateProject200JSONResponseBodyEnvTarget0
+func (t *UpdateProject200JSONResponseBody_Env_Target) FromUpdateProject200JSONResponseBodyEnvTarget0(v UpdateProject200JSONResponseBodyEnvTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvTarget0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_Target, using the provided UpdateProject200JSONResponseBodyEnvTarget0
+func (t *UpdateProject200JSONResponseBody_Env_Target) MergeUpdateProject200JSONResponseBodyEnvTarget0(v UpdateProject200JSONResponseBodyEnvTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyEnvTarget1 returns the union data inside the UpdateProject200JSONResponseBody_Env_Target as a UpdateProject200JSONResponseBodyEnvTarget1
+func (t UpdateProject200JSONResponseBody_Env_Target) AsUpdateProject200JSONResponseBodyEnvTarget1() (UpdateProject200JSONResponseBodyEnvTarget1, error) {
+	var body UpdateProject200JSONResponseBodyEnvTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyEnvTarget1 overwrites any union data inside the UpdateProject200JSONResponseBody_Env_Target as the provided UpdateProject200JSONResponseBodyEnvTarget1
+func (t *UpdateProject200JSONResponseBody_Env_Target) FromUpdateProject200JSONResponseBodyEnvTarget1(v UpdateProject200JSONResponseBodyEnvTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyEnvTarget1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Env_Target, using the provided UpdateProject200JSONResponseBodyEnvTarget1
+func (t *UpdateProject200JSONResponseBody_Env_Target) MergeUpdateProject200JSONResponseBodyEnvTarget1(v UpdateProject200JSONResponseBodyEnvTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Env_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Env_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyExpiration0 returns the union data inside the UpdateProject200JSONResponseBody_Expiration as a UpdateProject200JSONResponseBodyExpiration0
+func (t UpdateProject200JSONResponseBody_Expiration) AsUpdateProject200JSONResponseBodyExpiration0() (UpdateProject200JSONResponseBodyExpiration0, error) {
+	var body UpdateProject200JSONResponseBodyExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyExpiration0 overwrites any union data inside the UpdateProject200JSONResponseBody_Expiration as the provided UpdateProject200JSONResponseBodyExpiration0
+func (t *UpdateProject200JSONResponseBody_Expiration) FromUpdateProject200JSONResponseBodyExpiration0(v UpdateProject200JSONResponseBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyExpiration0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Expiration, using the provided UpdateProject200JSONResponseBodyExpiration0
+func (t *UpdateProject200JSONResponseBody_Expiration) MergeUpdateProject200JSONResponseBodyExpiration0(v UpdateProject200JSONResponseBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyExpiration1 returns the union data inside the UpdateProject200JSONResponseBody_Expiration as a UpdateProject200JSONResponseBodyExpiration1
+func (t UpdateProject200JSONResponseBody_Expiration) AsUpdateProject200JSONResponseBodyExpiration1() (UpdateProject200JSONResponseBodyExpiration1, error) {
+	var body UpdateProject200JSONResponseBodyExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyExpiration1 overwrites any union data inside the UpdateProject200JSONResponseBody_Expiration as the provided UpdateProject200JSONResponseBodyExpiration1
+func (t *UpdateProject200JSONResponseBody_Expiration) FromUpdateProject200JSONResponseBodyExpiration1(v UpdateProject200JSONResponseBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyExpiration1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Expiration, using the provided UpdateProject200JSONResponseBodyExpiration1
+func (t *UpdateProject200JSONResponseBody_Expiration) MergeUpdateProject200JSONResponseBodyExpiration1(v UpdateProject200JSONResponseBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyInternalRoutes1Has0 returns the union data inside the UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item as a UpdateProject200JSONResponseBodyInternalRoutes1Has0
+func (t UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) AsUpdateProject200JSONResponseBodyInternalRoutes1Has0() (UpdateProject200JSONResponseBodyInternalRoutes1Has0, error) {
+	var body UpdateProject200JSONResponseBodyInternalRoutes1Has0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyInternalRoutes1Has0 overwrites any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item as the provided UpdateProject200JSONResponseBodyInternalRoutes1Has0
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) FromUpdateProject200JSONResponseBodyInternalRoutes1Has0(v UpdateProject200JSONResponseBodyInternalRoutes1Has0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyInternalRoutes1Has0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item, using the provided UpdateProject200JSONResponseBodyInternalRoutes1Has0
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) MergeUpdateProject200JSONResponseBodyInternalRoutes1Has0(v UpdateProject200JSONResponseBodyInternalRoutes1Has0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyInternalRoutes1Has1 returns the union data inside the UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item as a UpdateProject200JSONResponseBodyInternalRoutes1Has1
+func (t UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) AsUpdateProject200JSONResponseBodyInternalRoutes1Has1() (UpdateProject200JSONResponseBodyInternalRoutes1Has1, error) {
+	var body UpdateProject200JSONResponseBodyInternalRoutes1Has1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyInternalRoutes1Has1 overwrites any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item as the provided UpdateProject200JSONResponseBodyInternalRoutes1Has1
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) FromUpdateProject200JSONResponseBodyInternalRoutes1Has1(v UpdateProject200JSONResponseBodyInternalRoutes1Has1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyInternalRoutes1Has1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item, using the provided UpdateProject200JSONResponseBodyInternalRoutes1Has1
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) MergeUpdateProject200JSONResponseBodyInternalRoutes1Has1(v UpdateProject200JSONResponseBodyInternalRoutes1Has1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_1_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyInternalRoutes0 returns the union data inside the UpdateProject200JSONResponseBody_InternalRoutes_Item as a UpdateProject200JSONResponseBodyInternalRoutes0
+func (t UpdateProject200JSONResponseBody_InternalRoutes_Item) AsUpdateProject200JSONResponseBodyInternalRoutes0() (UpdateProject200JSONResponseBodyInternalRoutes0, error) {
+	var body UpdateProject200JSONResponseBodyInternalRoutes0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyInternalRoutes0 overwrites any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_Item as the provided UpdateProject200JSONResponseBodyInternalRoutes0
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_Item) FromUpdateProject200JSONResponseBodyInternalRoutes0(v UpdateProject200JSONResponseBodyInternalRoutes0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyInternalRoutes0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_Item, using the provided UpdateProject200JSONResponseBodyInternalRoutes0
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_Item) MergeUpdateProject200JSONResponseBodyInternalRoutes0(v UpdateProject200JSONResponseBodyInternalRoutes0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyInternalRoutes1 returns the union data inside the UpdateProject200JSONResponseBody_InternalRoutes_Item as a UpdateProject200JSONResponseBodyInternalRoutes1
+func (t UpdateProject200JSONResponseBody_InternalRoutes_Item) AsUpdateProject200JSONResponseBodyInternalRoutes1() (UpdateProject200JSONResponseBodyInternalRoutes1, error) {
+	var body UpdateProject200JSONResponseBodyInternalRoutes1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyInternalRoutes1 overwrites any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_Item as the provided UpdateProject200JSONResponseBodyInternalRoutes1
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_Item) FromUpdateProject200JSONResponseBodyInternalRoutes1(v UpdateProject200JSONResponseBodyInternalRoutes1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyInternalRoutes1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_InternalRoutes_Item, using the provided UpdateProject200JSONResponseBodyInternalRoutes1
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_Item) MergeUpdateProject200JSONResponseBodyInternalRoutes1(v UpdateProject200JSONResponseBodyInternalRoutes1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_InternalRoutes_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_InternalRoutes_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0 returns the union data inside the UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned as a UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) AsUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0() (UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0, error) {
+	var body UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0 overwrites any union data inside the UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned as the provided UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t *UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) FromUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0(v UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned, using the provided UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t *UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) MergeUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0(v UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1 returns the union data inside the UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned as a UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) AsUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1() (UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1, error) {
+	var body UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1 overwrites any union data inside the UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned as the provided UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t *UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) FromUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1(v UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned, using the provided UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t *UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) MergeUpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1(v UpdateProject200JSONResponseBodyLatestDeploymentsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_LatestDeployments_AliasAssigned) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink0 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink0
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink0() (UpdateProject200JSONResponseBodyLink0, error) {
+	var body UpdateProject200JSONResponseBodyLink0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink0 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink0
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink0(v UpdateProject200JSONResponseBodyLink0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink0
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink0(v UpdateProject200JSONResponseBodyLink0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink1 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink1
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink1() (UpdateProject200JSONResponseBodyLink1, error) {
+	var body UpdateProject200JSONResponseBodyLink1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink1 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink1
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink1(v UpdateProject200JSONResponseBodyLink1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink1
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink1(v UpdateProject200JSONResponseBodyLink1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink2 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink2
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink2() (UpdateProject200JSONResponseBodyLink2, error) {
+	var body UpdateProject200JSONResponseBodyLink2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink2 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink2
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink2(v UpdateProject200JSONResponseBodyLink2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink2
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink2(v UpdateProject200JSONResponseBodyLink2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink3 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink3
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink3() (UpdateProject200JSONResponseBodyLink3, error) {
+	var body UpdateProject200JSONResponseBodyLink3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink3 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink3
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink3(v UpdateProject200JSONResponseBodyLink3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink3 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink3
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink3(v UpdateProject200JSONResponseBodyLink3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink4 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink4
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink4() (UpdateProject200JSONResponseBodyLink4, error) {
+	var body UpdateProject200JSONResponseBodyLink4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink4 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink4
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink4(v UpdateProject200JSONResponseBodyLink4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink4 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink4
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink4(v UpdateProject200JSONResponseBodyLink4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink5 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink5
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink5() (UpdateProject200JSONResponseBodyLink5, error) {
+	var body UpdateProject200JSONResponseBodyLink5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink5 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink5
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink5(v UpdateProject200JSONResponseBodyLink5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink5 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink5
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink5(v UpdateProject200JSONResponseBodyLink5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink6 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink6
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink6() (UpdateProject200JSONResponseBodyLink6, error) {
+	var body UpdateProject200JSONResponseBodyLink6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink6 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink6
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink6(v UpdateProject200JSONResponseBodyLink6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink6 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink6
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink6(v UpdateProject200JSONResponseBodyLink6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyLink7 returns the union data inside the UpdateProject200JSONResponseBody_Link as a UpdateProject200JSONResponseBodyLink7
+func (t UpdateProject200JSONResponseBody_Link) AsUpdateProject200JSONResponseBodyLink7() (UpdateProject200JSONResponseBodyLink7, error) {
+	var body UpdateProject200JSONResponseBodyLink7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyLink7 overwrites any union data inside the UpdateProject200JSONResponseBody_Link as the provided UpdateProject200JSONResponseBodyLink7
+func (t *UpdateProject200JSONResponseBody_Link) FromUpdateProject200JSONResponseBodyLink7(v UpdateProject200JSONResponseBodyLink7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyLink7 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Link, using the provided UpdateProject200JSONResponseBodyLink7
+func (t *UpdateProject200JSONResponseBody_Link) MergeUpdateProject200JSONResponseBodyLink7(v UpdateProject200JSONResponseBodyLink7) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Link) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Link) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyMicrofrontends0 returns the union data inside the UpdateProject200JSONResponseBody_Microfrontends as a UpdateProject200JSONResponseBodyMicrofrontends0
+func (t UpdateProject200JSONResponseBody_Microfrontends) AsUpdateProject200JSONResponseBodyMicrofrontends0() (UpdateProject200JSONResponseBodyMicrofrontends0, error) {
+	var body UpdateProject200JSONResponseBodyMicrofrontends0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyMicrofrontends0 overwrites any union data inside the UpdateProject200JSONResponseBody_Microfrontends as the provided UpdateProject200JSONResponseBodyMicrofrontends0
+func (t *UpdateProject200JSONResponseBody_Microfrontends) FromUpdateProject200JSONResponseBodyMicrofrontends0(v UpdateProject200JSONResponseBodyMicrofrontends0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyMicrofrontends0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Microfrontends, using the provided UpdateProject200JSONResponseBodyMicrofrontends0
+func (t *UpdateProject200JSONResponseBody_Microfrontends) MergeUpdateProject200JSONResponseBodyMicrofrontends0(v UpdateProject200JSONResponseBodyMicrofrontends0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyMicrofrontends1 returns the union data inside the UpdateProject200JSONResponseBody_Microfrontends as a UpdateProject200JSONResponseBodyMicrofrontends1
+func (t UpdateProject200JSONResponseBody_Microfrontends) AsUpdateProject200JSONResponseBodyMicrofrontends1() (UpdateProject200JSONResponseBodyMicrofrontends1, error) {
+	var body UpdateProject200JSONResponseBodyMicrofrontends1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyMicrofrontends1 overwrites any union data inside the UpdateProject200JSONResponseBody_Microfrontends as the provided UpdateProject200JSONResponseBodyMicrofrontends1
+func (t *UpdateProject200JSONResponseBody_Microfrontends) FromUpdateProject200JSONResponseBodyMicrofrontends1(v UpdateProject200JSONResponseBodyMicrofrontends1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyMicrofrontends1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Microfrontends, using the provided UpdateProject200JSONResponseBodyMicrofrontends1
+func (t *UpdateProject200JSONResponseBody_Microfrontends) MergeUpdateProject200JSONResponseBodyMicrofrontends1(v UpdateProject200JSONResponseBodyMicrofrontends1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyMicrofrontends2 returns the union data inside the UpdateProject200JSONResponseBody_Microfrontends as a UpdateProject200JSONResponseBodyMicrofrontends2
+func (t UpdateProject200JSONResponseBody_Microfrontends) AsUpdateProject200JSONResponseBodyMicrofrontends2() (UpdateProject200JSONResponseBodyMicrofrontends2, error) {
+	var body UpdateProject200JSONResponseBodyMicrofrontends2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyMicrofrontends2 overwrites any union data inside the UpdateProject200JSONResponseBody_Microfrontends as the provided UpdateProject200JSONResponseBodyMicrofrontends2
+func (t *UpdateProject200JSONResponseBody_Microfrontends) FromUpdateProject200JSONResponseBodyMicrofrontends2(v UpdateProject200JSONResponseBodyMicrofrontends2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyMicrofrontends2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Microfrontends, using the provided UpdateProject200JSONResponseBodyMicrofrontends2
+func (t *UpdateProject200JSONResponseBody_Microfrontends) MergeUpdateProject200JSONResponseBodyMicrofrontends2(v UpdateProject200JSONResponseBodyMicrofrontends2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Microfrontends) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Microfrontends) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyProtectionBypass0 returns the union data inside the UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties as a UpdateProject200JSONResponseBodyProtectionBypass0
+func (t UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) AsUpdateProject200JSONResponseBodyProtectionBypass0() (UpdateProject200JSONResponseBodyProtectionBypass0, error) {
+	var body UpdateProject200JSONResponseBodyProtectionBypass0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyProtectionBypass0 overwrites any union data inside the UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties as the provided UpdateProject200JSONResponseBodyProtectionBypass0
+func (t *UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) FromUpdateProject200JSONResponseBodyProtectionBypass0(v UpdateProject200JSONResponseBodyProtectionBypass0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyProtectionBypass0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties, using the provided UpdateProject200JSONResponseBodyProtectionBypass0
+func (t *UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) MergeUpdateProject200JSONResponseBodyProtectionBypass0(v UpdateProject200JSONResponseBodyProtectionBypass0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyProtectionBypass1 returns the union data inside the UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties as a UpdateProject200JSONResponseBodyProtectionBypass1
+func (t UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) AsUpdateProject200JSONResponseBodyProtectionBypass1() (UpdateProject200JSONResponseBodyProtectionBypass1, error) {
+	var body UpdateProject200JSONResponseBodyProtectionBypass1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyProtectionBypass1 overwrites any union data inside the UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties as the provided UpdateProject200JSONResponseBodyProtectionBypass1
+func (t *UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) FromUpdateProject200JSONResponseBodyProtectionBypass1(v UpdateProject200JSONResponseBodyProtectionBypass1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyProtectionBypass1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties, using the provided UpdateProject200JSONResponseBodyProtectionBypass1
+func (t *UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) MergeUpdateProject200JSONResponseBodyProtectionBypass1(v UpdateProject200JSONResponseBodyProtectionBypass1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 returns the union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as a UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) AsUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3() (UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3, error) {
+	var body UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 overwrites any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine as the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) FromUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 performs a merge with any union data inside the UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine, using the provided UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MergeUpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3(v UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodySecurityLogHeaders0 returns the union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders as a UpdateProject200JSONResponseBodySecurityLogHeaders0
+func (t UpdateProject200JSONResponseBody_Security_LogHeaders) AsUpdateProject200JSONResponseBodySecurityLogHeaders0() (UpdateProject200JSONResponseBodySecurityLogHeaders0, error) {
+	var body UpdateProject200JSONResponseBodySecurityLogHeaders0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodySecurityLogHeaders0 overwrites any union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders as the provided UpdateProject200JSONResponseBodySecurityLogHeaders0
+func (t *UpdateProject200JSONResponseBody_Security_LogHeaders) FromUpdateProject200JSONResponseBodySecurityLogHeaders0(v UpdateProject200JSONResponseBodySecurityLogHeaders0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodySecurityLogHeaders0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders, using the provided UpdateProject200JSONResponseBodySecurityLogHeaders0
+func (t *UpdateProject200JSONResponseBody_Security_LogHeaders) MergeUpdateProject200JSONResponseBodySecurityLogHeaders0(v UpdateProject200JSONResponseBodySecurityLogHeaders0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodySecurityLogHeaders1 returns the union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders as a UpdateProject200JSONResponseBodySecurityLogHeaders1
+func (t UpdateProject200JSONResponseBody_Security_LogHeaders) AsUpdateProject200JSONResponseBodySecurityLogHeaders1() (UpdateProject200JSONResponseBodySecurityLogHeaders1, error) {
+	var body UpdateProject200JSONResponseBodySecurityLogHeaders1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodySecurityLogHeaders1 overwrites any union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders as the provided UpdateProject200JSONResponseBodySecurityLogHeaders1
+func (t *UpdateProject200JSONResponseBody_Security_LogHeaders) FromUpdateProject200JSONResponseBodySecurityLogHeaders1(v UpdateProject200JSONResponseBodySecurityLogHeaders1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodySecurityLogHeaders1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Security_LogHeaders, using the provided UpdateProject200JSONResponseBodySecurityLogHeaders1
+func (t *UpdateProject200JSONResponseBody_Security_LogHeaders) MergeUpdateProject200JSONResponseBodySecurityLogHeaders1(v UpdateProject200JSONResponseBodySecurityLogHeaders1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Security_LogHeaders) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Security_LogHeaders) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0 returns the union data inside the UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders as a UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0
+func (t UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) AsUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0() (UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0, error) {
+	var body UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0 overwrites any union data inside the UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders as the provided UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0
+func (t *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) FromUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0(v UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders, using the provided UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0
+func (t *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) MergeUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0(v UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1 returns the union data inside the UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders as a UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1
+func (t UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) AsUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1() (UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1, error) {
+	var body UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1 overwrites any union data inside the UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders as the provided UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1
+func (t *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) FromUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1(v UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders, using the provided UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1
+func (t *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) MergeUpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1(v UpdateProject200JSONResponseBodySecurityRulesetsLogHeaders1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTargetsAliasAssigned0 returns the union data inside the UpdateProject200JSONResponseBody_Targets_AliasAssigned as a UpdateProject200JSONResponseBodyTargetsAliasAssigned0
+func (t UpdateProject200JSONResponseBody_Targets_AliasAssigned) AsUpdateProject200JSONResponseBodyTargetsAliasAssigned0() (UpdateProject200JSONResponseBodyTargetsAliasAssigned0, error) {
+	var body UpdateProject200JSONResponseBodyTargetsAliasAssigned0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTargetsAliasAssigned0 overwrites any union data inside the UpdateProject200JSONResponseBody_Targets_AliasAssigned as the provided UpdateProject200JSONResponseBodyTargetsAliasAssigned0
+func (t *UpdateProject200JSONResponseBody_Targets_AliasAssigned) FromUpdateProject200JSONResponseBodyTargetsAliasAssigned0(v UpdateProject200JSONResponseBodyTargetsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTargetsAliasAssigned0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Targets_AliasAssigned, using the provided UpdateProject200JSONResponseBodyTargetsAliasAssigned0
+func (t *UpdateProject200JSONResponseBody_Targets_AliasAssigned) MergeUpdateProject200JSONResponseBodyTargetsAliasAssigned0(v UpdateProject200JSONResponseBodyTargetsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTargetsAliasAssigned1 returns the union data inside the UpdateProject200JSONResponseBody_Targets_AliasAssigned as a UpdateProject200JSONResponseBodyTargetsAliasAssigned1
+func (t UpdateProject200JSONResponseBody_Targets_AliasAssigned) AsUpdateProject200JSONResponseBodyTargetsAliasAssigned1() (UpdateProject200JSONResponseBodyTargetsAliasAssigned1, error) {
+	var body UpdateProject200JSONResponseBodyTargetsAliasAssigned1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTargetsAliasAssigned1 overwrites any union data inside the UpdateProject200JSONResponseBody_Targets_AliasAssigned as the provided UpdateProject200JSONResponseBodyTargetsAliasAssigned1
+func (t *UpdateProject200JSONResponseBody_Targets_AliasAssigned) FromUpdateProject200JSONResponseBodyTargetsAliasAssigned1(v UpdateProject200JSONResponseBodyTargetsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTargetsAliasAssigned1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_Targets_AliasAssigned, using the provided UpdateProject200JSONResponseBodyTargetsAliasAssigned1
+func (t *UpdateProject200JSONResponseBody_Targets_AliasAssigned) MergeUpdateProject200JSONResponseBodyTargetsAliasAssigned1(v UpdateProject200JSONResponseBodyTargetsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_Targets_AliasAssigned) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_Targets_AliasAssigned) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedIps0 returns the union data inside the UpdateProject200JSONResponseBody_TrustedIps as a UpdateProject200JSONResponseBodyTrustedIps0
+func (t UpdateProject200JSONResponseBody_TrustedIps) AsUpdateProject200JSONResponseBodyTrustedIps0() (UpdateProject200JSONResponseBodyTrustedIps0, error) {
+	var body UpdateProject200JSONResponseBodyTrustedIps0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedIps0 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedIps as the provided UpdateProject200JSONResponseBodyTrustedIps0
+func (t *UpdateProject200JSONResponseBody_TrustedIps) FromUpdateProject200JSONResponseBodyTrustedIps0(v UpdateProject200JSONResponseBodyTrustedIps0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedIps0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedIps, using the provided UpdateProject200JSONResponseBodyTrustedIps0
+func (t *UpdateProject200JSONResponseBody_TrustedIps) MergeUpdateProject200JSONResponseBodyTrustedIps0(v UpdateProject200JSONResponseBodyTrustedIps0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedIps1 returns the union data inside the UpdateProject200JSONResponseBody_TrustedIps as a UpdateProject200JSONResponseBodyTrustedIps1
+func (t UpdateProject200JSONResponseBody_TrustedIps) AsUpdateProject200JSONResponseBodyTrustedIps1() (UpdateProject200JSONResponseBodyTrustedIps1, error) {
+	var body UpdateProject200JSONResponseBodyTrustedIps1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedIps1 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedIps as the provided UpdateProject200JSONResponseBodyTrustedIps1
+func (t *UpdateProject200JSONResponseBody_TrustedIps) FromUpdateProject200JSONResponseBodyTrustedIps1(v UpdateProject200JSONResponseBodyTrustedIps1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedIps1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedIps, using the provided UpdateProject200JSONResponseBodyTrustedIps1
+func (t *UpdateProject200JSONResponseBody_TrustedIps) MergeUpdateProject200JSONResponseBodyTrustedIps1(v UpdateProject200JSONResponseBodyTrustedIps1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_TrustedIps) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_TrustedIps) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 returns the union data inside the UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To as a UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) AsUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0() (UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0, error) {
+	var body UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To as the provided UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t *UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) FromUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0(v UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To, using the provided UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t *UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) MergeUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0(v UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 returns the union data inside the UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To as a UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) AsUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1() (UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1, error) {
+	var body UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To as the provided UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t *UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) FromUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1(v UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To, using the provided UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t *UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) MergeUpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1(v UpdateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_TrustedSources_OidcProviders_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 returns the union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as a UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0() (UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0, error) {
+	var body UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From, using the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 returns the union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as a UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1() (UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1, error) {
+	var body UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From, using the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 returns the union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as a UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0() (UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0, error) {
+	var body UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To, using the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 returns the union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as a UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) AsUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1() (UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1, error) {
+	var body UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 overwrites any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) FromUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 performs a merge with any union data inside the UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To, using the provided UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MergeUpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1(v UpdateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetProjectDomains200JSONResponseBody0 returns the union data inside the GetProjectDomains200JSONResponseBody as a GetProjectDomains200JSONResponseBody0
+func (t GetProjectDomains200JSONResponseBody) AsGetProjectDomains200JSONResponseBody0() (GetProjectDomains200JSONResponseBody0, error) {
+	var body GetProjectDomains200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProjectDomains200JSONResponseBody0 overwrites any union data inside the GetProjectDomains200JSONResponseBody as the provided GetProjectDomains200JSONResponseBody0
+func (t *GetProjectDomains200JSONResponseBody) FromGetProjectDomains200JSONResponseBody0(v GetProjectDomains200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProjectDomains200JSONResponseBody0 performs a merge with any union data inside the GetProjectDomains200JSONResponseBody, using the provided GetProjectDomains200JSONResponseBody0
+func (t *GetProjectDomains200JSONResponseBody) MergeGetProjectDomains200JSONResponseBody0(v GetProjectDomains200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProjectDomains200JSONResponseBody1 returns the union data inside the GetProjectDomains200JSONResponseBody as a GetProjectDomains200JSONResponseBody1
+func (t GetProjectDomains200JSONResponseBody) AsGetProjectDomains200JSONResponseBody1() (GetProjectDomains200JSONResponseBody1, error) {
+	var body GetProjectDomains200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProjectDomains200JSONResponseBody1 overwrites any union data inside the GetProjectDomains200JSONResponseBody as the provided GetProjectDomains200JSONResponseBody1
+func (t *GetProjectDomains200JSONResponseBody) FromGetProjectDomains200JSONResponseBody1(v GetProjectDomains200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProjectDomains200JSONResponseBody1 performs a merge with any union data inside the GetProjectDomains200JSONResponseBody, using the provided GetProjectDomains200JSONResponseBody1
+func (t *GetProjectDomains200JSONResponseBody) MergeGetProjectDomains200JSONResponseBody1(v GetProjectDomains200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetProjectDomains200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetProjectDomains200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint0 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint0
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint0() (RemoveProjectEnv200JSONResponseBody0ContentHint0, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint0 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint0
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint0(v RemoveProjectEnv200JSONResponseBody0ContentHint0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveProjectEnv200JSONResponseBody0ContentHint0 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint0
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint0(v RemoveProjectEnv200JSONResponseBody0ContentHint0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint1 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint1
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint1() (RemoveProjectEnv200JSONResponseBody0ContentHint1, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint1 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint1
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint1(v RemoveProjectEnv200JSONResponseBody0ContentHint1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveProjectEnv200JSONResponseBody0ContentHint1 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint1
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint1(v RemoveProjectEnv200JSONResponseBody0ContentHint1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint2 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint2
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint2() (RemoveProjectEnv200JSONResponseBody0ContentHint2, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint2 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint2
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint2(v RemoveProjectEnv200JSONResponseBody0ContentHint2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveProjectEnv200JSONResponseBody0ContentHint2 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint2
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint2(v RemoveProjectEnv200JSONResponseBody0ContentHint2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint3 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint3
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint3() (RemoveProjectEnv200JSONResponseBody0ContentHint3, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint3 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint3
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint3(v RemoveProjectEnv200JSONResponseBody0ContentHint3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveProjectEnv200JSONResponseBody0ContentHint3 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint3
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint3(v RemoveProjectEnv200JSONResponseBody0ContentHint3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint4 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint4
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint4() (RemoveProjectEnv200JSONResponseBody0ContentHint4, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint4 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint4
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint4(v RemoveProjectEnv200JSONResponseBody0ContentHint4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveProjectEnv200JSONResponseBody0ContentHint4 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint4
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint4(v RemoveProjectEnv200JSONResponseBody0ContentHint4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint5 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint5
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint5() (RemoveProjectEnv200JSONResponseBody0ContentHint5, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint5 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint5
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint5(v RemoveProjectEnv200JSONResponseBody0ContentHint5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveProjectEnv200JSONResponseBody0ContentHint5 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint5
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint5(v RemoveProjectEnv200JSONResponseBody0ContentHint5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRemoveProjectEnv200JSONResponseBody0ContentHint6 returns the union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as a RemoveProjectEnv200JSONResponseBody0ContentHint6
+func (t RemoveProjectEnv200JSONResponseBody_0_ContentHint) AsRemoveProjectEnv200JSONResponseBody0ContentHint6() (RemoveProjectEnv200JSONResponseBody0ContentHint6, error) {
+	var body RemoveProjectEnv200JSONResponseBody0ContentHint6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveProjectEnv200JSONResponseBody0ContentHint6 overwrites any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint as the provided RemoveProjectEnv200JSONResponseBody0ContentHint6
+func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) FromRemoveProjectEnv200JSONResponseBody0ContentHint6(v RemoveProjectEnv200JSONResponseBody0ContentHint6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
 
 // MergeRemoveProjectEnv200JSONResponseBody0ContentHint6 performs a merge with any union data inside the RemoveProjectEnv200JSONResponseBody_0_ContentHint, using the provided RemoveProjectEnv200JSONResponseBody0ContentHint6
 func (t *RemoveProjectEnv200JSONResponseBody_0_ContentHint) MergeRemoveProjectEnv200JSONResponseBody0ContentHint6(v RemoveProjectEnv200JSONResponseBody0ContentHint6) error {
@@ -2127,6 +4441,63 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
 	ListAiGatewayBudgets(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAiGatewayByokCredentialWithBody Create a BYOK credential
+	//
+	// Create a new BYOK credential.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /ai-gateway/byok-credentials (the `CreateAiGatewayByokCredential` operationId).
+	CreateAiGatewayByokCredentialWithBody(ctx context.Context, params *CreateAiGatewayByokCredentialParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAiGatewayByokCredential Create a BYOK credential
+	//
+	// Create a new BYOK credential.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /ai-gateway/byok-credentials (the `CreateAiGatewayByokCredential` operationId).
+	CreateAiGatewayByokCredential(ctx context.Context, params *CreateAiGatewayByokCredentialParams, body CreateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAiGatewayByokCredentials List BYOK credentials
+	//
+	// List BYOK credentials for an owner, optionally filtered by provider
+	//
+	// Corresponds with GET /ai-gateway/byok-credentials/list (the `ListAiGatewayByokCredentials` operationId).
+	ListAiGatewayByokCredentials(ctx context.Context, params *ListAiGatewayByokCredentialsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAiGatewayByokCredential Delete a BYOK credential
+	//
+	// Delete a BYOK credential (soft delete) and its model mappings.
+	//
+	// Corresponds with DELETE /ai-gateway/byok-credentials/{credentialId} (the `DeleteAiGatewayByokCredential` operationId).
+	DeleteAiGatewayByokCredential(ctx context.Context, credentialId string, params *DeleteAiGatewayByokCredentialParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAiGatewayByokCredential Get a BYOK credential
+	//
+	// Get a BYOK credential by ID. The credential value is never returned.
+	//
+	// Corresponds with GET /ai-gateway/byok-credentials/{credentialId} (the `GetAiGatewayByokCredential` operationId).
+	GetAiGatewayByokCredential(ctx context.Context, credentialId string, params *GetAiGatewayByokCredentialParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAiGatewayByokCredentialWithBody Update a BYOK credential
+	//
+	// Update a BYOK credential. Send `credential` to replace the key value in place, which keeps the credential ID, settings and model mappings.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
+	UpdateAiGatewayByokCredentialWithBody(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAiGatewayByokCredential Update a BYOK credential
+	//
+	// Update a BYOK credential. Send `credential` to replace the key value in place, which keeps the credential ID, settings and model mappings.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
+	UpdateAiGatewayByokCredential(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, body UpdateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteAiGatewayRule Delete rule
 	//
@@ -7434,6 +9805,133 @@ func (c *Client) ListAiGatewayBudgetDefaults(ctx context.Context, params *ListAi
 // Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
 func (c *Client) ListAiGatewayBudgets(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListAiGatewayBudgetsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayByokCredentialWithBody Create a BYOK credential
+//
+// Create a new BYOK credential.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /ai-gateway/byok-credentials (the `CreateAiGatewayByokCredential` operationId).
+func (c *Client) CreateAiGatewayByokCredentialWithBody(ctx context.Context, params *CreateAiGatewayByokCredentialParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayByokCredentialRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayByokCredential Create a BYOK credential
+//
+// Create a new BYOK credential.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /ai-gateway/byok-credentials (the `CreateAiGatewayByokCredential` operationId).
+func (c *Client) CreateAiGatewayByokCredential(ctx context.Context, params *CreateAiGatewayByokCredentialParams, body CreateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayByokCredentialRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAiGatewayByokCredentials List BYOK credentials
+//
+// # List BYOK credentials for an owner, optionally filtered by provider
+//
+// Corresponds with GET /ai-gateway/byok-credentials/list (the `ListAiGatewayByokCredentials` operationId).
+func (c *Client) ListAiGatewayByokCredentials(ctx context.Context, params *ListAiGatewayByokCredentialsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiGatewayByokCredentialsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAiGatewayByokCredential Delete a BYOK credential
+//
+// Delete a BYOK credential (soft delete) and its model mappings.
+//
+// Corresponds with DELETE /ai-gateway/byok-credentials/{credentialId} (the `DeleteAiGatewayByokCredential` operationId).
+func (c *Client) DeleteAiGatewayByokCredential(ctx context.Context, credentialId string, params *DeleteAiGatewayByokCredentialParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAiGatewayByokCredentialRequest(c.Server, credentialId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAiGatewayByokCredential Get a BYOK credential
+//
+// Get a BYOK credential by ID. The credential value is never returned.
+//
+// Corresponds with GET /ai-gateway/byok-credentials/{credentialId} (the `GetAiGatewayByokCredential` operationId).
+func (c *Client) GetAiGatewayByokCredential(ctx context.Context, credentialId string, params *GetAiGatewayByokCredentialParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAiGatewayByokCredentialRequest(c.Server, credentialId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAiGatewayByokCredentialWithBody Update a BYOK credential
+//
+// Update a BYOK credential. Send `credential` to replace the key value in place, which keeps the credential ID, settings and model mappings.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
+func (c *Client) UpdateAiGatewayByokCredentialWithBody(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayByokCredentialRequestWithBody(c.Server, credentialId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAiGatewayByokCredential Update a BYOK credential
+//
+// Update a BYOK credential. Send `credential` to replace the key value in place, which keeps the credential ID, settings and model mappings.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
+func (c *Client) UpdateAiGatewayByokCredential(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, body UpdateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayByokCredentialRequest(c.Server, credentialId, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -17522,2496 +20020,4 @@ func (c *Client) InviteUserToTeam(ctx context.Context, teamId string, params *In
 		return nil, err
 	}
 	return c.Client.Do(req)
-}
-
-// GetAuthUser Get the User
-//
-// Retrieves information related to the currently authenticated User.
-//
-// Corresponds with GET /v2/user (the `GetAuthUser` operationId).
-func (c *Client) GetAuthUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAuthUserRequest(c.Server)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListVercelCiBranches List Vercel CI branch suggestions for a team
-//
-// List branches.
-//
-// Corresponds with GET /v2/vercel-ci/branches (the `ListVercelCiBranches` operationId).
-func (c *Client) ListVercelCiBranches(ctx context.Context, params *ListVercelCiBranchesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListVercelCiBranchesRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListVercelCiInvocations List invocations for a team, optionally filtered by repository and invocation metadata
-//
-// List Invocations.
-//
-// Corresponds with GET /v2/vercel-ci/invocations (the `ListVercelCiInvocations` operationId).
-func (c *Client) ListVercelCiInvocations(ctx context.Context, params *ListVercelCiInvocationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListVercelCiInvocationsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads Start a blob upload
-//
-// POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=<digest>&from=<repo>] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.
-//
-// Corresponds with POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ (the `CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads` operationId).
-func (c *Client) CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, params *CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsRequest(c.Server, teamSlug, projectSlug, repositoryName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Cancel a blob upload
-//
-// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.
-//
-// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-func (c *Client) DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(c.Server, teamSlug, projectSlug, repositoryName, uuid)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Get blob upload status
-//
-// GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.
-//
-// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-func (c *Client) GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(c.Server, teamSlug, projectSlug, repositoryName, uuid)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Upload a blob chunk
-//
-// PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.
-//
-// Corresponds with PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-func (c *Client) UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(c.Server, teamSlug, projectSlug, repositoryName, uuid)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid Complete a blob upload
-//
-// PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=<digest> Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.
-//
-// Corresponds with PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} (the `ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid` operationId).
-func (c *Client) ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, uuid string, params *ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(c.Server, teamSlug, projectSlug, repositoryName, uuid, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest Delete a blob
-//
-// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. Matches the behaviour of most public registries.
-//
-// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-func (c *Client) DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest(c.Server, teamSlug, projectSlug, repositoryName, digest)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest Download a blob
-//
-// GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.
-//
-// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-func (c *Client) GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest(c.Server, teamSlug, projectSlug, repositoryName, digest)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest Check if a blob exists
-//
-// HEAD /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Check whether a blob exists. Used by the Docker client before pushing a layer to avoid re-uploading content that already exists.
-//
-// Corresponds with HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} (the `HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest` operationId).
-func (c *Client) HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest(c.Server, teamSlug, projectSlug, repositoryName, digest)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Delete an image manifest
-//
-// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.
-//
-// Corresponds with DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-func (c *Client) DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(c.Server, teamSlug, projectSlug, repositoryName, reference)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Pull an image manifest
-//
-// GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.
-//
-// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-func (c *Client) GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(c.Server, teamSlug, projectSlug, repositoryName, reference)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Check if a manifest exists
-//
-// HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest exists. Used by Docker client during push to determine if a manifest (or config blob referenced by digest) is already present.
-//
-// Corresponds with HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-func (c *Client) HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(c.Server, teamSlug, projectSlug, repositoryName, reference)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference Push an image manifest
-//
-// PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.
-//
-// Corresponds with PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} (the `ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference` operationId).
-func (c *Client) ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, reference string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(c.Server, teamSlug, projectSlug, repositoryName, reference)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetByTeamSlugByProjectSlugByRepositoryNameTagsList List image tags
-//
-// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response's `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
-//
-// Corresponds with GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list (the `GetByTeamSlugByProjectSlugByRepositoryNameTagsList` operationId).
-func (c *Client) GetByTeamSlugByProjectSlugByRepositoryNameTagsList(ctx context.Context, teamSlug string, projectSlug string, repositoryName string, params *GetByTeamSlugByProjectSlugByRepositoryNameTagsListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetByTeamSlugByProjectSlugByRepositoryNameTagsListRequest(c.Server, teamSlug, projectSlug, repositoryName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDeploymentEvents Get deployment events
-//
-// Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
-//
-// Corresponds with GET /v3/deployments/{idOrUrl}/events (the `GetDeploymentEvents` operationId).
-func (c *Client) GetDeploymentEvents(ctx context.Context, idOrUrl string, params *GetDeploymentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDeploymentEventsRequest(c.Server, idOrUrl, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchDomainWithBody Update or move apex domain
-//
-// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v3/domains/{domain} (the `PatchDomain` operationId).
-func (c *Client) PatchDomainWithBody(ctx context.Context, domain string, params *PatchDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchDomainRequestWithBody(c.Server, domain, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchDomain Update or move apex domain
-//
-// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v3/domains/{domain} (the `PatchDomain` operationId).
-func (c *Client) PatchDomain(ctx context.Context, domain string, params *PatchDomainParams, body PatchDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchDomainRequest(c.Server, domain, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListUserEvents List User Events
-//
-// Retrieves a list of "events" generated by the User on Vercel. Events are generated when the User performs a particular action, such as logging in, creating a deployment, and joining a Team (just to name a few). When the `teamId` parameter is supplied, then the events that are returned will be in relation to the Team that was specified.
-//
-// Corresponds with GET /v3/events (the `ListUserEvents` operationId).
-func (c *Client) ListUserEvents(ctx context.Context, params *ListUserEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListUserEventsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesV3WithBody Create a named sandbox
-//
-// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v3/sandboxes (the `CreateSandboxesV3` operationId).
-func (c *Client) CreateSandboxesV3WithBody(ctx context.Context, params *CreateSandboxesV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesV3RequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesV3 Create a named sandbox
-//
-// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v3/sandboxes (the `CreateSandboxesV3` operationId).
-func (c *Client) CreateSandboxesV3(ctx context.Context, params *CreateSandboxesV3Params, body CreateSandboxesV3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesV3Request(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesSessionsBySessionIdSnapshotV3WithBody Create a snapshot
-//
-// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v3/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV3` operationId).
-func (c *Client) CreateSandboxesSessionsBySessionIdSnapshotV3WithBody(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesSessionsBySessionIdSnapshotV3RequestWithBody(c.Server, sessionId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesSessionsBySessionIdSnapshotV3 Create a snapshot
-//
-// Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v3/sandboxes/sessions/{sessionId}/snapshot (the `CreateSandboxesSessionsBySessionIdSnapshotV3` operationId).
-func (c *Client) CreateSandboxesSessionsBySessionIdSnapshotV3(ctx context.Context, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, body CreateSandboxesSessionsBySessionIdSnapshotV3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesSessionsBySessionIdSnapshotV3Request(c.Server, sessionId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesByNameForkV3WithBody Fork a named sandbox
-//
-// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v3/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV3` operationId).
-func (c *Client) CreateSandboxesByNameForkV3WithBody(ctx context.Context, name string, params *CreateSandboxesByNameForkV3Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesByNameForkV3RequestWithBody(c.Server, name, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesByNameForkV3 Fork a named sandbox
-//
-// Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v3/sandboxes/{name}/fork (the `CreateSandboxesByNameForkV3` operationId).
-func (c *Client) CreateSandboxesByNameForkV3(ctx context.Context, name string, params *CreateSandboxesByNameForkV3Params, body CreateSandboxesByNameForkV3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesByNameForkV3Request(c.Server, name, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetTeamMembers List team members
-//
-// Get a paginated list of team members for the provided team.
-//
-// Corresponds with GET /v3/teams/{teamId}/members (the `GetTeamMembers` operationId).
-func (c *Client) GetTeamMembers(ctx context.Context, teamId string, params *GetTeamMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetTeamMembersRequest(c.Server, teamId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAuthTokenWithBody Create an Auth Token
-//
-// Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v3/user/tokens (the `CreateAuthToken` operationId).
-func (c *Client) CreateAuthTokenWithBody(ctx context.Context, params *CreateAuthTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAuthTokenRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAuthToken Create an Auth Token
-//
-// Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v3/user/tokens (the `CreateAuthToken` operationId).
-func (c *Client) CreateAuthToken(ctx context.Context, params *CreateAuthTokenParams, body CreateAuthTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAuthTokenRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAuthToken Delete an authentication token
-//
-// Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.
-//
-// Corresponds with DELETE /v3/user/tokens/{tokenId} (the `DeleteAuthToken` operationId).
-func (c *Client) DeleteAuthToken(ctx context.Context, tokenId string, params *DeleteAuthTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAuthTokenRequest(c.Server, tokenId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAliases List aliases
-//
-// Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
-//
-// Corresponds with GET /v4/aliases (the `ListAliases` operationId).
-func (c *Client) ListAliases(ctx context.Context, params *ListAliasesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAliasesRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAlias Get an Alias
-//
-// Retrieves an Alias for the given host name or alias ID.
-//
-// Corresponds with GET /v4/aliases/{idOrAlias} (the `GetAlias` operationId).
-func (c *Client) GetAlias(ctx context.Context, idOrAlias string, params *GetAliasParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAliasRequest(c.Server, idOrAlias, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesV4WithBody Create a named sandbox
-//
-// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v4/sandboxes (the `CreateSandboxesV4` operationId).
-func (c *Client) CreateSandboxesV4WithBody(ctx context.Context, params *CreateSandboxesV4Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesV4RequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSandboxesV4 Create a named sandbox
-//
-// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v4/sandboxes (the `CreateSandboxesV4` operationId).
-func (c *Client) CreateSandboxesV4(ctx context.Context, params *CreateSandboxesV4Params, body CreateSandboxesV4JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSandboxesV4Request(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDomains List all the domains
-//
-// Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
-//
-// Corresponds with GET /v5/domains (the `GetDomains` operationId).
-func (c *Client) GetDomains(ctx context.Context, params *GetDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDomain Get Information for a Single Domain
-//
-// Get information for a single domain in an account or team.
-//
-// Corresponds with GET /v5/domains/{domain} (the `GetDomain` operationId).
-func (c *Client) GetDomain(ctx context.Context, domain string, params *GetDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetRecords List existing DNS records
-//
-// Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
-//
-// Corresponds with GET /v5/domains/{domain}/records (the `GetRecords` operationId).
-func (c *Client) GetRecords(ctx context.Context, domain string, params *GetRecordsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetRecordsRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAuthToken Get Auth Token Metadata
-//
-// Retrieve metadata about an authentication token belonging to the currently authenticated User.
-//
-// Corresponds with GET /v5/user/tokens/{tokenId} (the `GetAuthToken` operationId).
-func (c *Client) GetAuthToken(ctx context.Context, tokenId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAuthTokenRequest(c.Server, tokenId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListDeploymentFiles List Deployment Files
-//
-// Allows to retrieve the file structure of the source code of a deployment by supplying the deployment unique identifier. If the deployment was created with the Vercel CLI or the API directly with the `files` key, it will have a file tree that can be retrievable.
-//
-// Corresponds with GET /v6/deployments/{id}/files (the `ListDeploymentFiles` operationId).
-func (c *Client) ListDeploymentFiles(ctx context.Context, id string, params *ListDeploymentFilesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListDeploymentFilesRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteDomain Remove a domain by name
-//
-// Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
-//
-// Corresponds with DELETE /v6/domains/{domain} (the `DeleteDomain` operationId).
-func (c *Client) DeleteDomain(ctx context.Context, domain string, params *DeleteDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteDomainRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDomainConfig Get a Domain's configuration
-//
-// Get a Domain's configuration.
-//
-// Corresponds with GET /v6/domains/{domain}/config (the `GetDomainConfig` operationId).
-func (c *Client) GetDomainConfig(ctx context.Context, domain string, params *GetDomainConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainConfigRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAuthTokens List Auth Tokens
-//
-// Retrieve a list of the current User's authentication tokens.
-//
-// Corresponds with GET /v6/user/tokens (the `ListAuthTokens` operationId).
-func (c *Client) ListAuthTokens(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAuthTokensRequest(c.Server)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDeployments List deployments
-//
-// List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
-//
-// Corresponds with GET /v7/deployments (the `GetDeployments` operationId).
-func (c *Client) GetDeployments(ctx context.Context, params *GetDeploymentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDeploymentsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateOrTransferDomainWithBody Add an existing domain to the Vercel platform
-//
-// This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v7/domains (the `CreateOrTransferDomain` operationId).
-func (c *Client) CreateOrTransferDomainWithBody(ctx context.Context, params *CreateOrTransferDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateOrTransferDomainRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateOrTransferDomain Add an existing domain to the Vercel platform
-//
-// This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v7/domains (the `CreateOrTransferDomain` operationId).
-func (c *Client) CreateOrTransferDomain(ctx context.Context, params *CreateOrTransferDomainParams, body CreateOrTransferDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateOrTransferDomainRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAllArtifacts Delete all cache artifacts
-//
-// Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
-//
-// Corresponds with DELETE /v8/artifacts (the `DeleteAllArtifacts` operationId).
-func (c *Client) DeleteAllArtifacts(ctx context.Context, params *DeleteAllArtifactsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAllArtifactsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ArtifactQueryWithBody Query information about an artifact
-//
-// Query information about an array of artifacts.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v8/artifacts (the `ArtifactQuery` operationId).
-func (c *Client) ArtifactQueryWithBody(ctx context.Context, params *ArtifactQueryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewArtifactQueryRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ArtifactQuery Query information about an artifact
-//
-// Query information about an array of artifacts.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v8/artifacts (the `ArtifactQuery` operationId).
-func (c *Client) ArtifactQuery(ctx context.Context, params *ArtifactQueryParams, body ArtifactQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewArtifactQueryRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RecordEventsWithBody Record an artifacts cache usage event
-//
-// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v8/artifacts/events (the `RecordEvents` operationId).
-func (c *Client) RecordEventsWithBody(ctx context.Context, params *RecordEventsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRecordEventsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RecordEvents Record an artifacts cache usage event
-//
-// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v8/artifacts/events (the `RecordEvents` operationId).
-func (c *Client) RecordEvents(ctx context.Context, params *RecordEventsParams, body RecordEventsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRecordEventsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// Status Get status of Remote Caching for this principal
-//
-// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
-//
-// Corresponds with GET /v8/artifacts/status (the `Status` operationId).
-func (c *Client) Status(ctx context.Context, params *StatusParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewStatusRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DownloadArtifact Download a cache artifact
-//
-// Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
-//
-// Corresponds with GET /v8/artifacts/{hash} (the `DownloadArtifact` operationId).
-func (c *Client) DownloadArtifact(ctx context.Context, hash string, params *DownloadArtifactParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDownloadArtifactRequest(c.Server, hash, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ArtifactExists Check if a cache artifact exists
-//
-// Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
-//
-// Corresponds with HEAD /v8/artifacts/{hash} (the `ArtifactExists` operationId).
-func (c *Client) ArtifactExists(ctx context.Context, hash string, params *ArtifactExistsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewArtifactExistsRequest(c.Server, hash, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UploadArtifactWithBody Upload a cache artifact
-//
-// Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v8/artifacts/{hash} (the `UploadArtifact` operationId).
-func (c *Client) UploadArtifactWithBody(ctx context.Context, hash string, params *UploadArtifactParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUploadArtifactRequestWithBody(c.Server, hash, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetCerts Get certs
-//
-// Corresponds with GET /v8/certs (the `GetCerts` operationId).
-func (c *Client) GetCerts(ctx context.Context, params *GetCertsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetCertsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// IssueCertWithBody Issue a new cert
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v8/certs (the `IssueCert` operationId).
-func (c *Client) IssueCertWithBody(ctx context.Context, params *IssueCertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewIssueCertRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// IssueCert Issue a new cert
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v8/certs (the `IssueCert` operationId).
-func (c *Client) IssueCert(ctx context.Context, params *IssueCertParams, body IssueCertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewIssueCertRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UploadCertWithBody Upload a cert
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v8/certs (the `UploadCert` operationId).
-func (c *Client) UploadCertWithBody(ctx context.Context, params *UploadCertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUploadCertRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UploadCert Upload a cert
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v8/certs (the `UploadCert` operationId).
-func (c *Client) UploadCert(ctx context.Context, params *UploadCertParams, body UploadCertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUploadCertRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveCert Remove cert
-//
-// Corresponds with DELETE /v8/certs/{id} (the `RemoveCert` operationId).
-func (c *Client) RemoveCert(ctx context.Context, id string, params *RemoveCertParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveCertRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetCertById Get cert by id
-//
-// Corresponds with GET /v8/certs/{id} (the `GetCertById` operationId).
-func (c *Client) GetCertById(ctx context.Context, id string, params *GetCertByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetCertByIdRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDeploymentFileContents Get Deployment File Contents
-//
-// Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
-//
-// Corresponds with GET /v8/deployments/{id}/files/{fileId} (the `GetDeploymentFileContents` operationId).
-func (c *Client) GetDeploymentFileContents(ctx context.Context, id string, fileId string, params *GetDeploymentFileContentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDeploymentFileContentsRequest(c.Server, id, fileId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ClaimDomainOwnership Claim Domain Ownership
-//
-// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
-//
-// Corresponds with POST /v9/domains/{domain}/claim (the `ClaimDomainOwnership` operationId).
-func (c *Client) ClaimDomainOwnership(ctx context.Context, domain string, params *ClaimDomainOwnershipParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewClaimDomainOwnershipRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDomainVerificationRecord Get Domain Verification Record
-//
-// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.
-//
-// Corresponds with GET /v9/domains/{domain}/verification (the `GetDomainVerificationRecord` operationId).
-func (c *Client) GetDomainVerificationRecord(ctx context.Context, domain string, params *GetDomainVerificationRecordParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainVerificationRecordRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteProject Delete a Project
-//
-// Delete a specific project by passing either the project `id` or `name` in the URL.
-//
-// Corresponds with DELETE /v9/projects/{idOrName} (the `DeleteProject` operationId).
-func (c *Client) DeleteProject(ctx context.Context, idOrName string, params *DeleteProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteProjectRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetProject Find a project by id or name
-//
-// Get the information for a specific project by passing either the project `id` or `name` in the URL.
-//
-// Corresponds with GET /v9/projects/{idOrName} (the `GetProject` operationId).
-func (c *Client) GetProject(ctx context.Context, idOrName string, params *GetProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetProjectRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateProjectWithBody Update an existing project
-//
-// Update the fields of a project using either its `name` or `id`.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName} (the `UpdateProject` operationId).
-func (c *Client) UpdateProjectWithBody(ctx context.Context, idOrName string, params *UpdateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateProjectRequestWithBody(c.Server, idOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateProject Update an existing project
-//
-// Update the fields of a project using either its `name` or `id`.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName} (the `UpdateProject` operationId).
-func (c *Client) UpdateProject(ctx context.Context, idOrName string, params *UpdateProjectParams, body UpdateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateProjectRequest(c.Server, idOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetProjectsByIdOrNameCustomEnvironments Retrieve custom environments
-//
-// Retrieve custom environments for the project. Must not be named 'Production' or 'Preview'.
-//
-// Corresponds with GET /v9/projects/{idOrName}/custom-environments (the `GetProjectsByIdOrNameCustomEnvironments` operationId).
-func (c *Client) GetProjectsByIdOrNameCustomEnvironments(ctx context.Context, idOrName string, params *GetProjectsByIdOrNameCustomEnvironmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetProjectsByIdOrNameCustomEnvironmentsRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateCustomEnvironmentWithBody Create a custom environment for the current project.
-//
-// Creates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v9/projects/{idOrName}/custom-environments (the `CreateCustomEnvironment` operationId).
-func (c *Client) CreateCustomEnvironmentWithBody(ctx context.Context, idOrName string, params *CreateCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateCustomEnvironmentRequestWithBody(c.Server, idOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateCustomEnvironment Create a custom environment for the current project.
-//
-// Creates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v9/projects/{idOrName}/custom-environments (the `CreateCustomEnvironment` operationId).
-func (c *Client) CreateCustomEnvironment(ctx context.Context, idOrName string, params *CreateCustomEnvironmentParams, body CreateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateCustomEnvironmentRequest(c.Server, idOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveCustomEnvironmentWithBody Remove a custom environment
-//
-// Remove a custom environment for the project. Must not be named 'Production' or 'Preview'.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `RemoveCustomEnvironment` operationId).
-func (c *Client) RemoveCustomEnvironmentWithBody(ctx context.Context, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveCustomEnvironmentRequestWithBody(c.Server, idOrName, environmentSlugOrId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveCustomEnvironment Remove a custom environment
-//
-// Remove a custom environment for the project. Must not be named 'Production' or 'Preview'.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `RemoveCustomEnvironment` operationId).
-func (c *Client) RemoveCustomEnvironment(ctx context.Context, idOrName string, environmentSlugOrId string, params *RemoveCustomEnvironmentParams, body RemoveCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveCustomEnvironmentRequest(c.Server, idOrName, environmentSlugOrId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetCustomEnvironment Retrieve a custom environment
-//
-// Retrieve a custom environment for the project. Must not be named 'Production' or 'Preview'.
-//
-// Corresponds with GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `GetCustomEnvironment` operationId).
-func (c *Client) GetCustomEnvironment(ctx context.Context, idOrName string, environmentSlugOrId string, params *GetCustomEnvironmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetCustomEnvironmentRequest(c.Server, idOrName, environmentSlugOrId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateCustomEnvironmentWithBody Update a custom environment
-//
-// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-func (c *Client) UpdateCustomEnvironmentWithBody(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateCustomEnvironmentRequestWithBody(c.Server, idOrName, environmentSlugOrId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateCustomEnvironment Update a custom environment
-//
-// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-func (c *Client) UpdateCustomEnvironment(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, body UpdateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateCustomEnvironmentRequest(c.Server, idOrName, environmentSlugOrId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetProjectDomains Retrieve project domains by project by id or name
-//
-// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
-//
-// Corresponds with GET /v9/projects/{idOrName}/domains (the `GetProjectDomains` operationId).
-func (c *Client) GetProjectDomains(ctx context.Context, idOrName struct {
-	union json.RawMessage
-}, params *GetProjectDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetProjectDomainsRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveProjectDomainWithBody Remove a domain from a project
-//
-// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-func (c *Client) RemoveProjectDomainWithBody(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveProjectDomainRequestWithBody(c.Server, idOrName, domain, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveProjectDomain Remove a domain from a project
-//
-// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-func (c *Client) RemoveProjectDomain(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, body RemoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveProjectDomainRequest(c.Server, idOrName, domain, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetProjectDomain Get a project domain
-//
-// Get project domain by project id/name and domain name.
-//
-// Corresponds with GET /v9/projects/{idOrName}/domains/{domain} (the `GetProjectDomain` operationId).
-func (c *Client) GetProjectDomain(ctx context.Context, idOrName string, domain string, params *GetProjectDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetProjectDomainRequest(c.Server, idOrName, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateProjectDomainWithBody Update a project domain
-//
-// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-func (c *Client) UpdateProjectDomainWithBody(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateProjectDomainRequestWithBody(c.Server, idOrName, domain, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateProjectDomain Update a project domain
-//
-// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-func (c *Client) UpdateProjectDomain(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, body UpdateProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateProjectDomainRequest(c.Server, idOrName, domain, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// VerifyProjectDomain Verify project domain
-//
-// Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
-//
-// Corresponds with POST /v9/projects/{idOrName}/domains/{domain}/verify (the `VerifyProjectDomain` operationId).
-func (c *Client) VerifyProjectDomain(ctx context.Context, idOrName string, domain string, params *VerifyProjectDomainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVerifyProjectDomainRequest(c.Server, idOrName, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveProjectEnv Remove an environment variable
-//
-// Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/env/{id} (the `RemoveProjectEnv` operationId).
-func (c *Client) RemoveProjectEnv(ctx context.Context, idOrName string, id string, params *RemoveProjectEnvParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveProjectEnvRequest(c.Server, idOrName, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// EditProjectEnvWithBody Edit an environment variable
-//
-// Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/env/{id} (the `EditProjectEnv` operationId).
-func (c *Client) EditProjectEnvWithBody(ctx context.Context, idOrName string, id string, params *EditProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewEditProjectEnvRequestWithBody(c.Server, idOrName, id, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// EditProjectEnv Edit an environment variable
-//
-// Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/env/{id} (the `EditProjectEnv` operationId).
-func (c *Client) EditProjectEnv(ctx context.Context, idOrName string, id string, params *EditProjectEnvParams, body EditProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewEditProjectEnvRequest(c.Server, idOrName, id, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateWebInsightsToggleWithBody performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request,
-// with any type of body and a specified content type.
-func (c *Client) CreateWebInsightsToggleWithBody(ctx context.Context, params *CreateWebInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateWebInsightsToggleRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateWebInsightsToggle performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request.
-// Takes a body of the `application/json` content type.
-func (c *Client) CreateWebInsightsToggle(ctx context.Context, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateWebInsightsToggleRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// NewArchiveAiGatewayBudgetRequest constructs an http.Request for the ArchiveAiGatewayBudget method
-func NewArchiveAiGatewayBudgetRequest(server string, params *ArchiveAiGatewayBudgetParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/budgets")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "scopeType", params.ScopeType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.ProjectId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.UserId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "userId", *params.UserId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpsertAiGatewayBudgetRequest calls the generic UpsertAiGatewayBudget builder with application/json body
-func NewUpsertAiGatewayBudgetRequest(server string, params *UpsertAiGatewayBudgetParams, body UpsertAiGatewayBudgetJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpsertAiGatewayBudgetRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewUpsertAiGatewayBudgetRequestWithBody constructs an http.Request for the UpsertAiGatewayBudget method, with any body, and a specified content type
-func NewUpsertAiGatewayBudgetRequestWithBody(server string, params *UpsertAiGatewayBudgetParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/budgets")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewArchiveAiGatewayBudgetDefaultRequest constructs an http.Request for the ArchiveAiGatewayBudgetDefault method
-func NewArchiveAiGatewayBudgetDefaultRequest(server string, params *ArchiveAiGatewayBudgetDefaultParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/budgets/defaults")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "scopeType", params.ScopeType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpsertAiGatewayBudgetDefaultRequest calls the generic UpsertAiGatewayBudgetDefault builder with application/json body
-func NewUpsertAiGatewayBudgetDefaultRequest(server string, params *UpsertAiGatewayBudgetDefaultParams, body UpsertAiGatewayBudgetDefaultJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpsertAiGatewayBudgetDefaultRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewUpsertAiGatewayBudgetDefaultRequestWithBody constructs an http.Request for the UpsertAiGatewayBudgetDefault method, with any body, and a specified content type
-func NewUpsertAiGatewayBudgetDefaultRequestWithBody(server string, params *UpsertAiGatewayBudgetDefaultParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/budgets/defaults")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewListAiGatewayBudgetDefaultsRequest constructs an http.Request for the ListAiGatewayBudgetDefaults method
-func NewListAiGatewayBudgetDefaultsRequest(server string, params *ListAiGatewayBudgetDefaultsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/budgets/defaults/list")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListAiGatewayBudgetsRequest constructs an http.Request for the ListAiGatewayBudgets method
-func NewListAiGatewayBudgetsRequest(server string, params *ListAiGatewayBudgetsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/budgets/list")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ScopeType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "scopeType", *params.ScopeType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.IncludeDefaultCovered != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeDefaultCovered", *params.IncludeDefaultCovered, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Cursor != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDeleteAiGatewayRuleRequest constructs an http.Request for the DeleteAiGatewayRule method
-func NewDeleteAiGatewayRuleRequest(server string, params *DeleteAiGatewayRuleParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/rules")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "ruleId", params.RuleId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListAiGatewayRulesRequest constructs an http.Request for the ListAiGatewayRules method
-func NewListAiGatewayRulesRequest(server string, params *ListAiGatewayRulesParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/rules")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.IncludeDisabled != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeDisabled", *params.IncludeDisabled, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Cursor != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateAiGatewayRuleRequest constructs an http.Request for the UpdateAiGatewayRule method
-func NewUpdateAiGatewayRuleRequest(server string, params *UpdateAiGatewayRuleParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/rules")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateAiGatewayRuleRequest constructs an http.Request for the CreateAiGatewayRule method
-func NewCreateAiGatewayRuleRequest(server string, params *CreateAiGatewayRuleParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/rules")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDeleteAiGatewayVirtualModelConfigRequest constructs an http.Request for the DeleteAiGatewayVirtualModelConfig method
-func NewDeleteAiGatewayVirtualModelConfigRequest(server string, params *DeleteAiGatewayVirtualModelConfigParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/ai-gateway/virtual-model-configs")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.OwnerId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "ownerId", *params.OwnerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "virtualModelSlug", params.VirtualModelSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.UpdatedBy != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "updatedBy", *params.UpdatedBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.ActingIp != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "actingIp", *params.ActingIp, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.ActingUserAgent != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "actingUserAgent", *params.ActingUserAgent, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
 }

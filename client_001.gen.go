@@ -1521,6 +1521,24 @@ func (e ConnectConnectorCreationMode) Valid() bool {
 	}
 }
 
+// Defines values for ConnectConnectorHasMcpEventDeliveries.
+const (
+	ConnectConnectorHasMcpEventDeliveriesFalse ConnectConnectorHasMcpEventDeliveries = false
+	ConnectConnectorHasMcpEventDeliveriesTrue  ConnectConnectorHasMcpEventDeliveries = true
+)
+
+// Valid indicates whether the value is a known member of the ConnectConnectorHasMcpEventDeliveries enum.
+func (e ConnectConnectorHasMcpEventDeliveries) Valid() bool {
+	switch e {
+	case ConnectConnectorHasMcpEventDeliveriesFalse:
+		return true
+	case ConnectConnectorHasMcpEventDeliveriesTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ConnectConnectorKnownStale.
 const (
 	ConnectConnectorKnownStaleFalse ConnectConnectorKnownStale = false
@@ -1551,6 +1569,27 @@ func (e ConnectConnectorManagedSync) Valid() bool {
 	case ConnectConnectorManagedSyncFalse:
 		return true
 	case ConnectConnectorManagedSyncTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ConnectConnectorMcpEventsUiVisibility.
+const (
+	ConnectConnectorMcpEventsUiVisibilityAuto ConnectConnectorMcpEventsUiVisibility = "auto"
+	ConnectConnectorMcpEventsUiVisibilityHide ConnectConnectorMcpEventsUiVisibility = "hide"
+	ConnectConnectorMcpEventsUiVisibilityShow ConnectConnectorMcpEventsUiVisibility = "show"
+)
+
+// Valid indicates whether the value is a known member of the ConnectConnectorMcpEventsUiVisibility enum.
+func (e ConnectConnectorMcpEventsUiVisibility) Valid() bool {
+	switch e {
+	case ConnectConnectorMcpEventsUiVisibilityAuto:
+		return true
+	case ConnectConnectorMcpEventsUiVisibilityHide:
+		return true
+	case ConnectConnectorMcpEventsUiVisibilityShow:
 		return true
 	default:
 		return false
@@ -2070,6 +2109,24 @@ func (e ConnectConnectorCreateResultCreationMode) Valid() bool {
 	}
 }
 
+// Defines values for ConnectConnectorCreateResultHasMcpEventDeliveries.
+const (
+	ConnectConnectorCreateResultHasMcpEventDeliveriesFalse ConnectConnectorCreateResultHasMcpEventDeliveries = false
+	ConnectConnectorCreateResultHasMcpEventDeliveriesTrue  ConnectConnectorCreateResultHasMcpEventDeliveries = true
+)
+
+// Valid indicates whether the value is a known member of the ConnectConnectorCreateResultHasMcpEventDeliveries enum.
+func (e ConnectConnectorCreateResultHasMcpEventDeliveries) Valid() bool {
+	switch e {
+	case ConnectConnectorCreateResultHasMcpEventDeliveriesFalse:
+		return true
+	case ConnectConnectorCreateResultHasMcpEventDeliveriesTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ConnectConnectorCreateResultKnownStale.
 const (
 	ConnectConnectorCreateResultKnownStaleFalse ConnectConnectorCreateResultKnownStale = false
@@ -2100,6 +2157,27 @@ func (e ConnectConnectorCreateResultManagedSync) Valid() bool {
 	case ConnectConnectorCreateResultManagedSyncFalse:
 		return true
 	case ConnectConnectorCreateResultManagedSyncTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ConnectConnectorCreateResultMcpEventsUiVisibility.
+const (
+	ConnectConnectorCreateResultMcpEventsUiVisibilityAuto ConnectConnectorCreateResultMcpEventsUiVisibility = "auto"
+	ConnectConnectorCreateResultMcpEventsUiVisibilityHide ConnectConnectorCreateResultMcpEventsUiVisibility = "hide"
+	ConnectConnectorCreateResultMcpEventsUiVisibilityShow ConnectConnectorCreateResultMcpEventsUiVisibility = "show"
+)
+
+// Valid indicates whether the value is a known member of the ConnectConnectorCreateResultMcpEventsUiVisibility enum.
+func (e ConnectConnectorCreateResultMcpEventsUiVisibility) Valid() bool {
+	switch e {
+	case ConnectConnectorCreateResultMcpEventsUiVisibilityAuto:
+		return true
+	case ConnectConnectorCreateResultMcpEventsUiVisibilityHide:
+		return true
+	case ConnectConnectorCreateResultMcpEventsUiVisibilityShow:
 		return true
 	default:
 		return false
@@ -2547,6 +2625,27 @@ func (e ConnectTriggerConfigurationEnabled) Valid() bool {
 	case ConnectTriggerConfigurationEnabledFalse:
 		return true
 	case ConnectTriggerConfigurationEnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ConnectUpdateConnectorRequestMcpEventsUiVisibility.
+const (
+	ConnectUpdateConnectorRequestMcpEventsUiVisibilityAuto ConnectUpdateConnectorRequestMcpEventsUiVisibility = "auto"
+	ConnectUpdateConnectorRequestMcpEventsUiVisibilityHide ConnectUpdateConnectorRequestMcpEventsUiVisibility = "hide"
+	ConnectUpdateConnectorRequestMcpEventsUiVisibilityShow ConnectUpdateConnectorRequestMcpEventsUiVisibility = "show"
+)
+
+// Valid indicates whether the value is a known member of the ConnectUpdateConnectorRequestMcpEventsUiVisibility enum.
+func (e ConnectUpdateConnectorRequestMcpEventsUiVisibility) Valid() bool {
+	switch e {
+	case ConnectUpdateConnectorRequestMcpEventsUiVisibilityAuto:
+		return true
+	case ConnectUpdateConnectorRequestMcpEventsUiVisibilityHide:
+		return true
+	case ConnectUpdateConnectorRequestMcpEventsUiVisibilityShow:
 		return true
 	default:
 		return false
@@ -4075,6 +4174,7 @@ const (
 	ListEventTypeNameConnectAttachProject                            ListEventTypeName = "connect-attach-project"
 	ListEventTypeNameConnectBitbucket                                ListEventTypeName = "connect-bitbucket"
 	ListEventTypeNameConnectBitbucketApp                             ListEventTypeName = "connect-bitbucket-app"
+	ListEventTypeNameConnectBrandingUpdated                          ListEventTypeName = "connect-branding-updated"
 	ListEventTypeNameConnectCancelMcpEventSubscription               ListEventTypeName = "connect-cancel-mcp-event-subscription"
 	ListEventTypeNameConnectConfigurationCreated                     ListEventTypeName = "connect-configuration-created"
 	ListEventTypeNameConnectConfigurationDeleted                     ListEventTypeName = "connect-configuration-deleted"
@@ -4942,6 +5042,8 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameConnectBitbucket:
 		return true
 	case ListEventTypeNameConnectBitbucketApp:
+		return true
+	case ListEventTypeNameConnectBrandingUpdated:
 		return true
 	case ListEventTypeNameConnectCancelMcpEventSubscription:
 		return true
@@ -6310,6 +6412,7 @@ const (
 	ListEventTypeReplacedByConnectAttachProject                            ListEventTypeReplacedBy = "connect-attach-project"
 	ListEventTypeReplacedByConnectBitbucket                                ListEventTypeReplacedBy = "connect-bitbucket"
 	ListEventTypeReplacedByConnectBitbucketApp                             ListEventTypeReplacedBy = "connect-bitbucket-app"
+	ListEventTypeReplacedByConnectBrandingUpdated                          ListEventTypeReplacedBy = "connect-branding-updated"
 	ListEventTypeReplacedByConnectCancelMcpEventSubscription               ListEventTypeReplacedBy = "connect-cancel-mcp-event-subscription"
 	ListEventTypeReplacedByConnectConfigurationCreated                     ListEventTypeReplacedBy = "connect-configuration-created"
 	ListEventTypeReplacedByConnectConfigurationDeleted                     ListEventTypeReplacedBy = "connect-configuration-deleted"
@@ -7177,6 +7280,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByConnectBitbucket:
 		return true
 	case ListEventTypeReplacedByConnectBitbucketApp:
+		return true
+	case ListEventTypeReplacedByConnectBrandingUpdated:
 		return true
 	case ListEventTypeReplacedByConnectCancelMcpEventSubscription:
 		return true
@@ -8895,6 +9000,24 @@ func (e OrganizationTeamBillingPlan) Valid() bool {
 	}
 }
 
+// Defines values for OrganizationTeamDsyncMode.
+const (
+	OrganizationTeamDsyncModeOrganization OrganizationTeamDsyncMode = "organization"
+	OrganizationTeamDsyncModeTeam         OrganizationTeamDsyncMode = "team"
+)
+
+// Valid indicates whether the value is a known member of the OrganizationTeamDsyncMode enum.
+func (e OrganizationTeamDsyncMode) Valid() bool {
+	switch e {
+	case OrganizationTeamDsyncModeOrganization:
+		return true
+	case OrganizationTeamDsyncModeTeam:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for OrganizationTeamSsoMode.
 const (
 	OrganizationTeamSsoModeOrganization OrganizationTeamSsoMode = "organization"
@@ -8925,6 +9048,24 @@ func (e OrganizationTeamListItemBillingPlan) Valid() bool {
 	case OrganizationTeamListItemBillingPlanEnterprise:
 		return true
 	case OrganizationTeamListItemBillingPlanPlatform:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OrganizationTeamListItemDsyncMode.
+const (
+	OrganizationTeamListItemDsyncModeOrganization OrganizationTeamListItemDsyncMode = "organization"
+	OrganizationTeamListItemDsyncModeTeam         OrganizationTeamListItemDsyncMode = "team"
+)
+
+// Valid indicates whether the value is a known member of the OrganizationTeamListItemDsyncMode enum.
+func (e OrganizationTeamListItemDsyncMode) Valid() bool {
+	switch e {
+	case OrganizationTeamListItemDsyncModeOrganization:
+		return true
+	case OrganizationTeamListItemDsyncModeTeam:
 		return true
 	default:
 		return false
@@ -10110,6 +10251,7 @@ const (
 	TeamMembershipJoinedFromOriginNsnbRedeployAttributionCard TeamMembershipJoinedFromOrigin = "nsnb-redeploy-attribution-card"
 	TeamMembershipJoinedFromOriginNsnbRequestAccess           TeamMembershipJoinedFromOrigin = "nsnb-request-access"
 	TeamMembershipJoinedFromOriginNsnbViewerUpgrade           TeamMembershipJoinedFromOrigin = "nsnb-viewer-upgrade"
+	TeamMembershipJoinedFromOriginOrgAdminSync                TeamMembershipJoinedFromOrigin = "org-admin-sync"
 	TeamMembershipJoinedFromOriginOrganizationTeams           TeamMembershipJoinedFromOrigin = "organization-teams"
 	TeamMembershipJoinedFromOriginSaml                        TeamMembershipJoinedFromOrigin = "saml"
 	TeamMembershipJoinedFromOriginTeams                       TeamMembershipJoinedFromOrigin = "teams"
@@ -10149,6 +10291,8 @@ func (e TeamMembershipJoinedFromOrigin) Valid() bool {
 	case TeamMembershipJoinedFromOriginNsnbRequestAccess:
 		return true
 	case TeamMembershipJoinedFromOriginNsnbViewerUpgrade:
+		return true
+	case TeamMembershipJoinedFromOriginOrgAdminSync:
 		return true
 	case TeamMembershipJoinedFromOriginOrganizationTeams:
 		return true
@@ -10836,6 +10980,7 @@ const (
 	TeamLimitedMembershipJoinedFromOriginNsnbRedeployAttributionCard TeamLimitedMembershipJoinedFromOrigin = "nsnb-redeploy-attribution-card"
 	TeamLimitedMembershipJoinedFromOriginNsnbRequestAccess           TeamLimitedMembershipJoinedFromOrigin = "nsnb-request-access"
 	TeamLimitedMembershipJoinedFromOriginNsnbViewerUpgrade           TeamLimitedMembershipJoinedFromOrigin = "nsnb-viewer-upgrade"
+	TeamLimitedMembershipJoinedFromOriginOrgAdminSync                TeamLimitedMembershipJoinedFromOrigin = "org-admin-sync"
 	TeamLimitedMembershipJoinedFromOriginOrganizationTeams           TeamLimitedMembershipJoinedFromOrigin = "organization-teams"
 	TeamLimitedMembershipJoinedFromOriginSaml                        TeamLimitedMembershipJoinedFromOrigin = "saml"
 	TeamLimitedMembershipJoinedFromOriginTeams                       TeamLimitedMembershipJoinedFromOrigin = "teams"
@@ -10875,6 +11020,8 @@ func (e TeamLimitedMembershipJoinedFromOrigin) Valid() bool {
 	case TeamLimitedMembershipJoinedFromOriginNsnbRequestAccess:
 		return true
 	case TeamLimitedMembershipJoinedFromOriginNsnbViewerUpgrade:
+		return true
+	case TeamLimitedMembershipJoinedFromOriginOrgAdminSync:
 		return true
 	case TeamLimitedMembershipJoinedFromOriginOrganizationTeams:
 		return true
@@ -12334,6 +12481,7 @@ const (
 	UserEventPayload65PermissionsManageWebAnalytics                    UserEventPayload65Permissions = "manage:web-analytics"
 	UserEventPayload65PermissionsReadAccessGroup                       UserEventPayload65Permissions = "read:access-group"
 	UserEventPayload65PermissionsReadAiGatewayBudgets                  UserEventPayload65Permissions = "read:ai-gateway-budgets"
+	UserEventPayload65PermissionsReadAiGatewayByokCredentials          UserEventPayload65Permissions = "read:ai-gateway-byok-credentials"
 	UserEventPayload65PermissionsReadAiGatewayGuardrails               UserEventPayload65Permissions = "read:ai-gateway-guardrails"
 	UserEventPayload65PermissionsReadAiGatewayPrivateModels            UserEventPayload65Permissions = "read:ai-gateway-private-models"
 	UserEventPayload65PermissionsReadAiGatewayRules                    UserEventPayload65Permissions = "read:ai-gateway-rules"
@@ -12370,6 +12518,7 @@ const (
 	UserEventPayload65PermissionsReadWriteAccessGroup                  UserEventPayload65Permissions = "read-write:access-group"
 	UserEventPayload65PermissionsReadWriteAiGatewayApiKey              UserEventPayload65Permissions = "read-write:ai-gateway-api-key"
 	UserEventPayload65PermissionsReadWriteAiGatewayBudgets             UserEventPayload65Permissions = "read-write:ai-gateway-budgets"
+	UserEventPayload65PermissionsReadWriteAiGatewayByokCredentials     UserEventPayload65Permissions = "read-write:ai-gateway-byok-credentials"
 	UserEventPayload65PermissionsReadWriteAiGatewayGuardrails          UserEventPayload65Permissions = "read-write:ai-gateway-guardrails"
 	UserEventPayload65PermissionsReadWriteAiGatewayPrivateModels       UserEventPayload65Permissions = "read-write:ai-gateway-private-models"
 	UserEventPayload65PermissionsReadWriteAiGatewayRules               UserEventPayload65Permissions = "read-write:ai-gateway-rules"
@@ -12421,6 +12570,8 @@ func (e UserEventPayload65Permissions) Valid() bool {
 	case UserEventPayload65PermissionsReadAccessGroup:
 		return true
 	case UserEventPayload65PermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload65PermissionsReadAiGatewayByokCredentials:
 		return true
 	case UserEventPayload65PermissionsReadAiGatewayGuardrails:
 		return true
@@ -12493,6 +12644,8 @@ func (e UserEventPayload65Permissions) Valid() bool {
 	case UserEventPayload65PermissionsReadWriteAiGatewayApiKey:
 		return true
 	case UserEventPayload65PermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload65PermissionsReadWriteAiGatewayByokCredentials:
 		return true
 	case UserEventPayload65PermissionsReadWriteAiGatewayGuardrails:
 		return true
@@ -12604,6 +12757,7 @@ const (
 	UserEventPayload67NextPermissionsManageWebAnalytics                    UserEventPayload67NextPermissions = "manage:web-analytics"
 	UserEventPayload67NextPermissionsReadAccessGroup                       UserEventPayload67NextPermissions = "read:access-group"
 	UserEventPayload67NextPermissionsReadAiGatewayBudgets                  UserEventPayload67NextPermissions = "read:ai-gateway-budgets"
+	UserEventPayload67NextPermissionsReadAiGatewayByokCredentials          UserEventPayload67NextPermissions = "read:ai-gateway-byok-credentials"
 	UserEventPayload67NextPermissionsReadAiGatewayGuardrails               UserEventPayload67NextPermissions = "read:ai-gateway-guardrails"
 	UserEventPayload67NextPermissionsReadAiGatewayPrivateModels            UserEventPayload67NextPermissions = "read:ai-gateway-private-models"
 	UserEventPayload67NextPermissionsReadAiGatewayRules                    UserEventPayload67NextPermissions = "read:ai-gateway-rules"
@@ -12640,6 +12794,7 @@ const (
 	UserEventPayload67NextPermissionsReadWriteAccessGroup                  UserEventPayload67NextPermissions = "read-write:access-group"
 	UserEventPayload67NextPermissionsReadWriteAiGatewayApiKey              UserEventPayload67NextPermissions = "read-write:ai-gateway-api-key"
 	UserEventPayload67NextPermissionsReadWriteAiGatewayBudgets             UserEventPayload67NextPermissions = "read-write:ai-gateway-budgets"
+	UserEventPayload67NextPermissionsReadWriteAiGatewayByokCredentials     UserEventPayload67NextPermissions = "read-write:ai-gateway-byok-credentials"
 	UserEventPayload67NextPermissionsReadWriteAiGatewayGuardrails          UserEventPayload67NextPermissions = "read-write:ai-gateway-guardrails"
 	UserEventPayload67NextPermissionsReadWriteAiGatewayPrivateModels       UserEventPayload67NextPermissions = "read-write:ai-gateway-private-models"
 	UserEventPayload67NextPermissionsReadWriteAiGatewayRules               UserEventPayload67NextPermissions = "read-write:ai-gateway-rules"
@@ -12691,6 +12846,8 @@ func (e UserEventPayload67NextPermissions) Valid() bool {
 	case UserEventPayload67NextPermissionsReadAccessGroup:
 		return true
 	case UserEventPayload67NextPermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload67NextPermissionsReadAiGatewayByokCredentials:
 		return true
 	case UserEventPayload67NextPermissionsReadAiGatewayGuardrails:
 		return true
@@ -12763,6 +12920,8 @@ func (e UserEventPayload67NextPermissions) Valid() bool {
 	case UserEventPayload67NextPermissionsReadWriteAiGatewayApiKey:
 		return true
 	case UserEventPayload67NextPermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload67NextPermissionsReadWriteAiGatewayByokCredentials:
 		return true
 	case UserEventPayload67NextPermissionsReadWriteAiGatewayGuardrails:
 		return true
@@ -12873,6 +13032,7 @@ const (
 	UserEventPayload68AfterPermissionsManageWebAnalytics                    UserEventPayload68AfterPermissions = "manage:web-analytics"
 	UserEventPayload68AfterPermissionsReadAccessGroup                       UserEventPayload68AfterPermissions = "read:access-group"
 	UserEventPayload68AfterPermissionsReadAiGatewayBudgets                  UserEventPayload68AfterPermissions = "read:ai-gateway-budgets"
+	UserEventPayload68AfterPermissionsReadAiGatewayByokCredentials          UserEventPayload68AfterPermissions = "read:ai-gateway-byok-credentials"
 	UserEventPayload68AfterPermissionsReadAiGatewayGuardrails               UserEventPayload68AfterPermissions = "read:ai-gateway-guardrails"
 	UserEventPayload68AfterPermissionsReadAiGatewayPrivateModels            UserEventPayload68AfterPermissions = "read:ai-gateway-private-models"
 	UserEventPayload68AfterPermissionsReadAiGatewayRules                    UserEventPayload68AfterPermissions = "read:ai-gateway-rules"
@@ -12908,6 +13068,7 @@ const (
 	UserEventPayload68AfterPermissionsReadWriteAccessGroup                  UserEventPayload68AfterPermissions = "read-write:access-group"
 	UserEventPayload68AfterPermissionsReadWriteAiGatewayApiKey              UserEventPayload68AfterPermissions = "read-write:ai-gateway-api-key"
 	UserEventPayload68AfterPermissionsReadWriteAiGatewayBudgets             UserEventPayload68AfterPermissions = "read-write:ai-gateway-budgets"
+	UserEventPayload68AfterPermissionsReadWriteAiGatewayByokCredentials     UserEventPayload68AfterPermissions = "read-write:ai-gateway-byok-credentials"
 	UserEventPayload68AfterPermissionsReadWriteAiGatewayGuardrails          UserEventPayload68AfterPermissions = "read-write:ai-gateway-guardrails"
 	UserEventPayload68AfterPermissionsReadWriteAiGatewayPrivateModels       UserEventPayload68AfterPermissions = "read-write:ai-gateway-private-models"
 	UserEventPayload68AfterPermissionsReadWriteAiGatewayRules               UserEventPayload68AfterPermissions = "read-write:ai-gateway-rules"
@@ -12956,6 +13117,8 @@ func (e UserEventPayload68AfterPermissions) Valid() bool {
 	case UserEventPayload68AfterPermissionsReadAccessGroup:
 		return true
 	case UserEventPayload68AfterPermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload68AfterPermissionsReadAiGatewayByokCredentials:
 		return true
 	case UserEventPayload68AfterPermissionsReadAiGatewayGuardrails:
 		return true
@@ -13026,6 +13189,8 @@ func (e UserEventPayload68AfterPermissions) Valid() bool {
 	case UserEventPayload68AfterPermissionsReadWriteAiGatewayApiKey:
 		return true
 	case UserEventPayload68AfterPermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload68AfterPermissionsReadWriteAiGatewayByokCredentials:
 		return true
 	case UserEventPayload68AfterPermissionsReadWriteAiGatewayGuardrails:
 		return true
@@ -13155,6 +13320,7 @@ const (
 	UserEventPayload68BeforePermissionsManageWebAnalytics                    UserEventPayload68BeforePermissions = "manage:web-analytics"
 	UserEventPayload68BeforePermissionsReadAccessGroup                       UserEventPayload68BeforePermissions = "read:access-group"
 	UserEventPayload68BeforePermissionsReadAiGatewayBudgets                  UserEventPayload68BeforePermissions = "read:ai-gateway-budgets"
+	UserEventPayload68BeforePermissionsReadAiGatewayByokCredentials          UserEventPayload68BeforePermissions = "read:ai-gateway-byok-credentials"
 	UserEventPayload68BeforePermissionsReadAiGatewayGuardrails               UserEventPayload68BeforePermissions = "read:ai-gateway-guardrails"
 	UserEventPayload68BeforePermissionsReadAiGatewayPrivateModels            UserEventPayload68BeforePermissions = "read:ai-gateway-private-models"
 	UserEventPayload68BeforePermissionsReadAiGatewayRules                    UserEventPayload68BeforePermissions = "read:ai-gateway-rules"
@@ -13190,6 +13356,7 @@ const (
 	UserEventPayload68BeforePermissionsReadWriteAccessGroup                  UserEventPayload68BeforePermissions = "read-write:access-group"
 	UserEventPayload68BeforePermissionsReadWriteAiGatewayApiKey              UserEventPayload68BeforePermissions = "read-write:ai-gateway-api-key"
 	UserEventPayload68BeforePermissionsReadWriteAiGatewayBudgets             UserEventPayload68BeforePermissions = "read-write:ai-gateway-budgets"
+	UserEventPayload68BeforePermissionsReadWriteAiGatewayByokCredentials     UserEventPayload68BeforePermissions = "read-write:ai-gateway-byok-credentials"
 	UserEventPayload68BeforePermissionsReadWriteAiGatewayGuardrails          UserEventPayload68BeforePermissions = "read-write:ai-gateway-guardrails"
 	UserEventPayload68BeforePermissionsReadWriteAiGatewayPrivateModels       UserEventPayload68BeforePermissions = "read-write:ai-gateway-private-models"
 	UserEventPayload68BeforePermissionsReadWriteAiGatewayRules               UserEventPayload68BeforePermissions = "read-write:ai-gateway-rules"
@@ -13238,6 +13405,8 @@ func (e UserEventPayload68BeforePermissions) Valid() bool {
 	case UserEventPayload68BeforePermissionsReadAccessGroup:
 		return true
 	case UserEventPayload68BeforePermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload68BeforePermissionsReadAiGatewayByokCredentials:
 		return true
 	case UserEventPayload68BeforePermissionsReadAiGatewayGuardrails:
 		return true
@@ -13308,6 +13477,8 @@ func (e UserEventPayload68BeforePermissions) Valid() bool {
 	case UserEventPayload68BeforePermissionsReadWriteAiGatewayApiKey:
 		return true
 	case UserEventPayload68BeforePermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload68BeforePermissionsReadWriteAiGatewayByokCredentials:
 		return true
 	case UserEventPayload68BeforePermissionsReadWriteAiGatewayGuardrails:
 		return true
@@ -13437,6 +13608,7 @@ const (
 	UserEventPayload69PermissionsManageWebAnalytics                    UserEventPayload69Permissions = "manage:web-analytics"
 	UserEventPayload69PermissionsReadAccessGroup                       UserEventPayload69Permissions = "read:access-group"
 	UserEventPayload69PermissionsReadAiGatewayBudgets                  UserEventPayload69Permissions = "read:ai-gateway-budgets"
+	UserEventPayload69PermissionsReadAiGatewayByokCredentials          UserEventPayload69Permissions = "read:ai-gateway-byok-credentials"
 	UserEventPayload69PermissionsReadAiGatewayGuardrails               UserEventPayload69Permissions = "read:ai-gateway-guardrails"
 	UserEventPayload69PermissionsReadAiGatewayPrivateModels            UserEventPayload69Permissions = "read:ai-gateway-private-models"
 	UserEventPayload69PermissionsReadAiGatewayRules                    UserEventPayload69Permissions = "read:ai-gateway-rules"
@@ -13472,6 +13644,7 @@ const (
 	UserEventPayload69PermissionsReadWriteAccessGroup                  UserEventPayload69Permissions = "read-write:access-group"
 	UserEventPayload69PermissionsReadWriteAiGatewayApiKey              UserEventPayload69Permissions = "read-write:ai-gateway-api-key"
 	UserEventPayload69PermissionsReadWriteAiGatewayBudgets             UserEventPayload69Permissions = "read-write:ai-gateway-budgets"
+	UserEventPayload69PermissionsReadWriteAiGatewayByokCredentials     UserEventPayload69Permissions = "read-write:ai-gateway-byok-credentials"
 	UserEventPayload69PermissionsReadWriteAiGatewayGuardrails          UserEventPayload69Permissions = "read-write:ai-gateway-guardrails"
 	UserEventPayload69PermissionsReadWriteAiGatewayPrivateModels       UserEventPayload69Permissions = "read-write:ai-gateway-private-models"
 	UserEventPayload69PermissionsReadWriteAiGatewayRules               UserEventPayload69Permissions = "read-write:ai-gateway-rules"
@@ -13520,6 +13693,8 @@ func (e UserEventPayload69Permissions) Valid() bool {
 	case UserEventPayload69PermissionsReadAccessGroup:
 		return true
 	case UserEventPayload69PermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload69PermissionsReadAiGatewayByokCredentials:
 		return true
 	case UserEventPayload69PermissionsReadAiGatewayGuardrails:
 		return true
@@ -13590,6 +13765,8 @@ func (e UserEventPayload69Permissions) Valid() bool {
 	case UserEventPayload69PermissionsReadWriteAiGatewayApiKey:
 		return true
 	case UserEventPayload69PermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload69PermissionsReadWriteAiGatewayByokCredentials:
 		return true
 	case UserEventPayload69PermissionsReadWriteAiGatewayGuardrails:
 		return true
@@ -19362,6 +19539,7 @@ const (
 	UserEventPayload258RemovedUsersJoinedFromOriginNsnbRedeployAttributionCard UserEventPayload258RemovedUsersJoinedFromOrigin = "nsnb-redeploy-attribution-card"
 	UserEventPayload258RemovedUsersJoinedFromOriginNsnbRequestAccess           UserEventPayload258RemovedUsersJoinedFromOrigin = "nsnb-request-access"
 	UserEventPayload258RemovedUsersJoinedFromOriginNsnbViewerUpgrade           UserEventPayload258RemovedUsersJoinedFromOrigin = "nsnb-viewer-upgrade"
+	UserEventPayload258RemovedUsersJoinedFromOriginOrgAdminSync                UserEventPayload258RemovedUsersJoinedFromOrigin = "org-admin-sync"
 	UserEventPayload258RemovedUsersJoinedFromOriginOrganizationTeams           UserEventPayload258RemovedUsersJoinedFromOrigin = "organization-teams"
 	UserEventPayload258RemovedUsersJoinedFromOriginSaml                        UserEventPayload258RemovedUsersJoinedFromOrigin = "saml"
 	UserEventPayload258RemovedUsersJoinedFromOriginTeams                       UserEventPayload258RemovedUsersJoinedFromOrigin = "teams"
@@ -19401,6 +19579,8 @@ func (e UserEventPayload258RemovedUsersJoinedFromOrigin) Valid() bool {
 	case UserEventPayload258RemovedUsersJoinedFromOriginNsnbRequestAccess:
 		return true
 	case UserEventPayload258RemovedUsersJoinedFromOriginNsnbViewerUpgrade:
+		return true
+	case UserEventPayload258RemovedUsersJoinedFromOriginOrgAdminSync:
 		return true
 	case UserEventPayload258RemovedUsersJoinedFromOriginOrganizationTeams:
 		return true
@@ -19572,6 +19752,7 @@ const (
 	UserEventPayload259RemovedUsersJoinedFromOriginNsnbRedeployAttributionCard UserEventPayload259RemovedUsersJoinedFromOrigin = "nsnb-redeploy-attribution-card"
 	UserEventPayload259RemovedUsersJoinedFromOriginNsnbRequestAccess           UserEventPayload259RemovedUsersJoinedFromOrigin = "nsnb-request-access"
 	UserEventPayload259RemovedUsersJoinedFromOriginNsnbViewerUpgrade           UserEventPayload259RemovedUsersJoinedFromOrigin = "nsnb-viewer-upgrade"
+	UserEventPayload259RemovedUsersJoinedFromOriginOrgAdminSync                UserEventPayload259RemovedUsersJoinedFromOrigin = "org-admin-sync"
 	UserEventPayload259RemovedUsersJoinedFromOriginOrganizationTeams           UserEventPayload259RemovedUsersJoinedFromOrigin = "organization-teams"
 	UserEventPayload259RemovedUsersJoinedFromOriginSaml                        UserEventPayload259RemovedUsersJoinedFromOrigin = "saml"
 	UserEventPayload259RemovedUsersJoinedFromOriginTeams                       UserEventPayload259RemovedUsersJoinedFromOrigin = "teams"
@@ -19611,6 +19792,8 @@ func (e UserEventPayload259RemovedUsersJoinedFromOrigin) Valid() bool {
 	case UserEventPayload259RemovedUsersJoinedFromOriginNsnbRequestAccess:
 		return true
 	case UserEventPayload259RemovedUsersJoinedFromOriginNsnbViewerUpgrade:
+		return true
+	case UserEventPayload259RemovedUsersJoinedFromOriginOrgAdminSync:
 		return true
 	case UserEventPayload259RemovedUsersJoinedFromOriginOrganizationTeams:
 		return true
@@ -19818,192 +20001,6 @@ func (e UserEventPayload273Action) Valid() bool {
 	case UserEventPayload273ActionRegenerated:
 		return true
 	case UserEventPayload273ActionUpdated:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload273IsEnvVar.
-const (
-	UserEventPayload273IsEnvVarFalse UserEventPayload273IsEnvVar = false
-	UserEventPayload273IsEnvVarTrue  UserEventPayload273IsEnvVar = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload273IsEnvVar enum.
-func (e UserEventPayload273IsEnvVar) Valid() bool {
-	switch e {
-	case UserEventPayload273IsEnvVarFalse:
-		return true
-	case UserEventPayload273IsEnvVarTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload276EnableAffectedProjectsDeployments.
-const (
-	UserEventPayload276EnableAffectedProjectsDeploymentsFalse UserEventPayload276EnableAffectedProjectsDeployments = false
-	UserEventPayload276EnableAffectedProjectsDeploymentsTrue  UserEventPayload276EnableAffectedProjectsDeployments = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload276EnableAffectedProjectsDeployments enum.
-func (e UserEventPayload276EnableAffectedProjectsDeployments) Valid() bool {
-	switch e {
-	case UserEventPayload276EnableAffectedProjectsDeploymentsFalse:
-		return true
-	case UserEventPayload276EnableAffectedProjectsDeploymentsTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload277EnableExternalRewriteCaching.
-const (
-	UserEventPayload277EnableExternalRewriteCachingFalse UserEventPayload277EnableExternalRewriteCaching = false
-	UserEventPayload277EnableExternalRewriteCachingTrue  UserEventPayload277EnableExternalRewriteCaching = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload277EnableExternalRewriteCaching enum.
-func (e UserEventPayload277EnableExternalRewriteCaching) Valid() bool {
-	switch e {
-	case UserEventPayload277EnableExternalRewriteCachingFalse:
-		return true
-	case UserEventPayload277EnableExternalRewriteCachingTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload279ProductionDeploymentsFastLane.
-const (
-	UserEventPayload279ProductionDeploymentsFastLaneFalse UserEventPayload279ProductionDeploymentsFastLane = false
-	UserEventPayload279ProductionDeploymentsFastLaneTrue  UserEventPayload279ProductionDeploymentsFastLane = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload279ProductionDeploymentsFastLane enum.
-func (e UserEventPayload279ProductionDeploymentsFastLane) Valid() bool {
-	switch e {
-	case UserEventPayload279ProductionDeploymentsFastLaneFalse:
-		return true
-	case UserEventPayload279ProductionDeploymentsFastLaneTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload280SourceFilesOutsideRootDirectory.
-const (
-	UserEventPayload280SourceFilesOutsideRootDirectoryFalse UserEventPayload280SourceFilesOutsideRootDirectory = false
-	UserEventPayload280SourceFilesOutsideRootDirectoryTrue  UserEventPayload280SourceFilesOutsideRootDirectory = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload280SourceFilesOutsideRootDirectory enum.
-func (e UserEventPayload280SourceFilesOutsideRootDirectory) Valid() bool {
-	switch e {
-	case UserEventPayload280SourceFilesOutsideRootDirectoryFalse:
-		return true
-	case UserEventPayload280SourceFilesOutsideRootDirectoryTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload281IsSystemInitiated.
-const (
-	UserEventPayload281IsSystemInitiatedFalse UserEventPayload281IsSystemInitiated = false
-	UserEventPayload281IsSystemInitiatedTrue  UserEventPayload281IsSystemInitiated = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload281IsSystemInitiated enum.
-func (e UserEventPayload281IsSystemInitiated) Valid() bool {
-	switch e {
-	case UserEventPayload281IsSystemInitiatedFalse:
-		return true
-	case UserEventPayload281IsSystemInitiatedTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload282Widget.
-const (
-	UserEventPayload282WidgetAlert                            UserEventPayload282Widget = "alert"
-	UserEventPayload282WidgetAnalyticsOnline                  UserEventPayload282Widget = "analytics-online"
-	UserEventPayload282WidgetAnalyticsPageViews               UserEventPayload282Widget = "analytics-page-views"
-	UserEventPayload282WidgetAnalyticsVisitors                UserEventPayload282Widget = "analytics-visitors"
-	UserEventPayload282WidgetFirewallAllowed                  UserEventPayload282Widget = "firewall-allowed"
-	UserEventPayload282WidgetFirewallDenied                   UserEventPayload282Widget = "firewall-denied"
-	UserEventPayload282WidgetObservabilityAlert               UserEventPayload282Widget = "observability-alert"
-	UserEventPayload282WidgetObservabilityEdgeRequests        UserEventPayload282Widget = "observability-edge-requests"
-	UserEventPayload282WidgetObservabilityErrorRate           UserEventPayload282Widget = "observability-error-rate"
-	UserEventPayload282WidgetObservabilityFunctionInvocations UserEventPayload282Widget = "observability-function-invocations"
-	UserEventPayload282WidgetOnline                           UserEventPayload282Widget = "online"
-	UserEventPayload282WidgetRes                              UserEventPayload282Widget = "res"
-	UserEventPayload282WidgetShortcut                         UserEventPayload282Widget = "shortcut"
-	UserEventPayload282WidgetSpeedInsightsCls                 UserEventPayload282Widget = "speed-insights-cls"
-	UserEventPayload282WidgetSpeedInsightsLcp                 UserEventPayload282Widget = "speed-insights-lcp"
-	UserEventPayload282WidgetSpeedInsightsRes                 UserEventPayload282Widget = "speed-insights-res"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload282Widget enum.
-func (e UserEventPayload282Widget) Valid() bool {
-	switch e {
-	case UserEventPayload282WidgetAlert:
-		return true
-	case UserEventPayload282WidgetAnalyticsOnline:
-		return true
-	case UserEventPayload282WidgetAnalyticsPageViews:
-		return true
-	case UserEventPayload282WidgetAnalyticsVisitors:
-		return true
-	case UserEventPayload282WidgetFirewallAllowed:
-		return true
-	case UserEventPayload282WidgetFirewallDenied:
-		return true
-	case UserEventPayload282WidgetObservabilityAlert:
-		return true
-	case UserEventPayload282WidgetObservabilityEdgeRequests:
-		return true
-	case UserEventPayload282WidgetObservabilityErrorRate:
-		return true
-	case UserEventPayload282WidgetObservabilityFunctionInvocations:
-		return true
-	case UserEventPayload282WidgetOnline:
-		return true
-	case UserEventPayload282WidgetRes:
-		return true
-	case UserEventPayload282WidgetShortcut:
-		return true
-	case UserEventPayload282WidgetSpeedInsightsCls:
-		return true
-	case UserEventPayload282WidgetSpeedInsightsLcp:
-		return true
-	case UserEventPayload282WidgetSpeedInsightsRes:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload284Updated.
-const (
-	UserEventPayload284UpdatedFalse UserEventPayload284Updated = false
-	UserEventPayload284UpdatedTrue  UserEventPayload284Updated = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload284Updated enum.
-func (e UserEventPayload284Updated) Valid() bool {
-	switch e {
-	case UserEventPayload284UpdatedFalse:
-		return true
-	case UserEventPayload284UpdatedTrue:
 		return true
 	default:
 		return false
