@@ -9,6 +9,437 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CancelDeployment200JSONResponseBodyCustomEnvironment0BranchMatcherType defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyCustomEnvironment0BranchMatcherType string
+
+// CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsRedirectStatusCode defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsRedirectStatusCode float32
+
+// CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsVerified defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsVerified bool
+
+// CancelDeployment200JSONResponseBodyCustomEnvironment0Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyCustomEnvironment0Type string
+
+// CancelDeployment200JSONResponseBodyCustomEnvironment1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyCustomEnvironment1 struct {
+	Id string `json:"id"`
+}
+
+// CancelDeployment200JSONResponseBody_CustomEnvironment defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_CustomEnvironment struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyFlags0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFlags0 struct {
+	Definitions map[string]struct {
+		Description *string `json:"description,omitempty"`
+		Options     *[]struct {
+			Label *string        `json:"label,omitempty"`
+			Value *FlagJSONValue `json:"value"`
+		} `json:"options,omitempty"`
+		Url *string `json:"url,omitempty"`
+	} `json:"definitions"`
+}
+
+// CancelDeployment200JSONResponseBodyFlags1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFlags1 = []map[string]interface{}
+
+// CancelDeployment200JSONResponseBody_Flags defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_Flags struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyFunctionsAffinityMode defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsAffinityMode string
+
+// CancelDeployment200JSONResponseBodyFunctionsArchitecture defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsArchitecture string
+
+// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0 struct {
+	// Consumer Name of the consumer group for this trigger (REQUIRED)
+	Consumer string `json:"consumer"`
+
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v1beta" (REQUIRED)
+	Type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0Type string
+
+// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1 struct {
+	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+
+	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
+
+	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
+
+	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
+
+	// Topic Name of the queue topic to consume from (REQUIRED)
+	Topic string `json:"topic"`
+
+	// Type Event type - must be "queue/v2beta" (REQUIRED)
+	Type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1Type string
+
+// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2 struct {
+	// Type Event type - must be "schedule/v1beta" (REQUIRED)
+	Type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2Type string
+
+// CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyFunctionsMaxDuration0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsMaxDuration0 = float32
+
+// CancelDeployment200JSONResponseBodyFunctionsMaxDuration1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsMaxDuration1 string
+
+// CancelDeployment200JSONResponseBody_Functions_MaxDuration defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_Functions_MaxDuration struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation bool
+
+// CancelDeployment200JSONResponseBodyGitRepo0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo0 struct {
+	DefaultBranch string                                               `json:"defaultBranch"`
+	Name          string                                               `json:"name"`
+	Namespace     string                                               `json:"namespace"`
+	OwnerType     CancelDeployment200JSONResponseBodyGitRepo0OwnerType `json:"ownerType"`
+	Path          string                                               `json:"path"`
+	Private       CancelDeployment200JSONResponseBodyGitRepo0Private   `json:"private"`
+	ProjectId     float32                                              `json:"projectId"`
+	Type          CancelDeployment200JSONResponseBodyGitRepo0Type      `json:"type"`
+	Url           string                                               `json:"url"`
+}
+
+// CancelDeployment200JSONResponseBodyGitRepo0OwnerType defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo0OwnerType string
+
+// CancelDeployment200JSONResponseBodyGitRepo0Private defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo0Private bool
+
+// CancelDeployment200JSONResponseBodyGitRepo0Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo0Type string
+
+// CancelDeployment200JSONResponseBodyGitRepo1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo1 struct {
+	DefaultBranch string                                               `json:"defaultBranch"`
+	Name          string                                               `json:"name"`
+	Org           string                                               `json:"org"`
+	OwnerType     CancelDeployment200JSONResponseBodyGitRepo1OwnerType `json:"ownerType"`
+	Path          string                                               `json:"path"`
+	Private       CancelDeployment200JSONResponseBodyGitRepo1Private   `json:"private"`
+	Repo          string                                               `json:"repo"`
+	RepoId        float32                                              `json:"repoId"`
+	RepoOwnerId   float32                                              `json:"repoOwnerId"`
+	Type          CancelDeployment200JSONResponseBodyGitRepo1Type      `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitRepo1OwnerType defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo1OwnerType string
+
+// CancelDeployment200JSONResponseBodyGitRepo1Private defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo1Private bool
+
+// CancelDeployment200JSONResponseBodyGitRepo1Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo1Type string
+
+// CancelDeployment200JSONResponseBodyGitRepo2 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo2 struct {
+	DefaultBranch string                                               `json:"defaultBranch"`
+	Name          string                                               `json:"name"`
+	Owner         string                                               `json:"owner"`
+	OwnerType     CancelDeployment200JSONResponseBodyGitRepo2OwnerType `json:"ownerType"`
+	Path          string                                               `json:"path"`
+	Private       CancelDeployment200JSONResponseBodyGitRepo2Private   `json:"private"`
+	RepoUuid      string                                               `json:"repoUuid"`
+	Slug          string                                               `json:"slug"`
+	Type          CancelDeployment200JSONResponseBodyGitRepo2Type      `json:"type"`
+	WorkspaceUuid string                                               `json:"workspaceUuid"`
+}
+
+// CancelDeployment200JSONResponseBodyGitRepo2OwnerType defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo2OwnerType string
+
+// CancelDeployment200JSONResponseBodyGitRepo2Private defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo2Private bool
+
+// CancelDeployment200JSONResponseBodyGitRepo2Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo2Type string
+
+// CancelDeployment200JSONResponseBodyGitRepo3 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo3 struct {
+	DefaultBranch string                                               `json:"defaultBranch"`
+	Name          string                                               `json:"name"`
+	Org           string                                               `json:"org"`
+	OwnerType     CancelDeployment200JSONResponseBodyGitRepo3OwnerType `json:"ownerType"`
+	Path          string                                               `json:"path"`
+	Private       CancelDeployment200JSONResponseBodyGitRepo3Private   `json:"private"`
+	Repo          string                                               `json:"repo"`
+	Type          CancelDeployment200JSONResponseBodyGitRepo3Type      `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitRepo3OwnerType defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo3OwnerType string
+
+// CancelDeployment200JSONResponseBodyGitRepo3Private defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo3Private bool
+
+// CancelDeployment200JSONResponseBodyGitRepo3Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo3Type string
+
+// CancelDeployment200JSONResponseBodyGitRepo4 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo4 struct {
+	DefaultBranch string `json:"defaultBranch"`
+	Name          string `json:"name"`
+
+	// Owner Owner (namespace) slug.
+	Owner     string                                               `json:"owner"`
+	OwnerType CancelDeployment200JSONResponseBodyGitRepo4OwnerType `json:"ownerType"`
+	Path      string                                               `json:"path"`
+	Private   CancelDeployment200JSONResponseBodyGitRepo4Private   `json:"private"`
+	Repo      string                                               `json:"repo"`
+
+	// RepoId Origin repository id.
+	RepoId string                                          `json:"repoId"`
+	Type   CancelDeployment200JSONResponseBodyGitRepo4Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitRepo4OwnerType defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo4OwnerType string
+
+// CancelDeployment200JSONResponseBodyGitRepo4Private defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo4Private bool
+
+// CancelDeployment200JSONResponseBodyGitRepo4Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitRepo4Type string
+
+// CancelDeployment200JSONResponseBody_GitRepo defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_GitRepo struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyGitSource0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource0 struct {
+	PrId   *float32                                               `json:"prId,omitempty"`
+	Ref    *string                                                `json:"ref,omitempty"`
+	RepoId CancelDeployment200JSONResponseBody_GitSource_0_RepoId `json:"repoId"`
+	Sha    *string                                                `json:"sha,omitempty"`
+	Type   CancelDeployment200JSONResponseBodyGitSource0Type      `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource0RepoId0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource0RepoId0 = string
+
+// CancelDeployment200JSONResponseBodyGitSource0RepoId1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource0RepoId1 = float32
+
+// CancelDeployment200JSONResponseBody_GitSource_0_RepoId defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_GitSource_0_RepoId struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyGitSource0Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource0Type string
+
+// CancelDeployment200JSONResponseBodyGitSource1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource1 struct {
+	Org  string                                            `json:"org"`
+	PrId *float32                                          `json:"prId,omitempty"`
+	Ref  *string                                           `json:"ref,omitempty"`
+	Repo string                                            `json:"repo"`
+	Sha  *string                                           `json:"sha,omitempty"`
+	Type CancelDeployment200JSONResponseBodyGitSource1Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource1Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource1Type string
+
+// CancelDeployment200JSONResponseBodyGitSource2 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource2 struct {
+	Host   string                                                 `json:"host"`
+	PrId   *float32                                               `json:"prId,omitempty"`
+	Ref    *string                                                `json:"ref,omitempty"`
+	RepoId CancelDeployment200JSONResponseBody_GitSource_2_RepoId `json:"repoId"`
+	Sha    *string                                                `json:"sha,omitempty"`
+	Type   CancelDeployment200JSONResponseBodyGitSource2Type      `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource2RepoId0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource2RepoId0 = string
+
+// CancelDeployment200JSONResponseBodyGitSource2RepoId1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource2RepoId1 = float32
+
+// CancelDeployment200JSONResponseBody_GitSource_2_RepoId defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_GitSource_2_RepoId struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyGitSource2Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource2Type string
+
+// CancelDeployment200JSONResponseBodyGitSource3 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource3 struct {
+	Host string                                            `json:"host"`
+	Org  string                                            `json:"org"`
+	PrId *float32                                          `json:"prId,omitempty"`
+	Ref  *string                                           `json:"ref,omitempty"`
+	Repo string                                            `json:"repo"`
+	Sha  *string                                           `json:"sha,omitempty"`
+	Type CancelDeployment200JSONResponseBodyGitSource3Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource3Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource3Type string
+
+// CancelDeployment200JSONResponseBodyGitSource4 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource4 struct {
+	PrId   *float32                                               `json:"prId,omitempty"`
+	Ref    *string                                                `json:"ref,omitempty"`
+	RepoId CancelDeployment200JSONResponseBody_GitSource_4_RepoId `json:"repoId"`
+	Sha    *string                                                `json:"sha,omitempty"`
+	Type   CancelDeployment200JSONResponseBodyGitSource4Type      `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource4RepoId0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource4RepoId0 = string
+
+// CancelDeployment200JSONResponseBodyGitSource4RepoId1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource4RepoId1 = float32
+
+// CancelDeployment200JSONResponseBody_GitSource_4_RepoId defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_GitSource_4_RepoId struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyGitSource4Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource4Type string
+
+// CancelDeployment200JSONResponseBodyGitSource5 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource5 struct {
+	Org  string                                            `json:"org"`
+	PrId *float32                                          `json:"prId,omitempty"`
+	Ref  *string                                           `json:"ref,omitempty"`
+	Repo string                                            `json:"repo"`
+	Sha  *string                                           `json:"sha,omitempty"`
+	Type CancelDeployment200JSONResponseBodyGitSource5Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource5Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource5Type string
+
+// CancelDeployment200JSONResponseBodyGitSource6 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource6 struct {
+	PrId      *float32                                                  `json:"prId,omitempty"`
+	ProjectId CancelDeployment200JSONResponseBody_GitSource_6_ProjectId `json:"projectId"`
+	Ref       *string                                                   `json:"ref,omitempty"`
+	Sha       *string                                                   `json:"sha,omitempty"`
+	Type      CancelDeployment200JSONResponseBodyGitSource6Type         `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource6ProjectId0 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource6ProjectId0 = string
+
+// CancelDeployment200JSONResponseBodyGitSource6ProjectId1 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource6ProjectId1 = float32
+
+// CancelDeployment200JSONResponseBody_GitSource_6_ProjectId defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBody_GitSource_6_ProjectId struct {
+	union json.RawMessage
+}
+
+// CancelDeployment200JSONResponseBodyGitSource6Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource6Type string
+
+// CancelDeployment200JSONResponseBodyGitSource7 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource7 struct {
+	PrId          *float32                                          `json:"prId,omitempty"`
+	Ref           *string                                           `json:"ref,omitempty"`
+	RepoUuid      string                                            `json:"repoUuid"`
+	Sha           *string                                           `json:"sha,omitempty"`
+	Type          CancelDeployment200JSONResponseBodyGitSource7Type `json:"type"`
+	WorkspaceUuid *string                                           `json:"workspaceUuid,omitempty"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource7Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource7Type string
+
+// CancelDeployment200JSONResponseBodyGitSource8 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource8 struct {
+	Owner string                                            `json:"owner"`
+	PrId  *float32                                          `json:"prId,omitempty"`
+	Ref   *string                                           `json:"ref,omitempty"`
+	Sha   *string                                           `json:"sha,omitempty"`
+	Slug  string                                            `json:"slug"`
+	Type  CancelDeployment200JSONResponseBodyGitSource8Type `json:"type"`
+}
+
+// CancelDeployment200JSONResponseBodyGitSource8Type defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource8Type string
+
+// CancelDeployment200JSONResponseBodyGitSource9 defines parameters for CancelDeployment.
+type CancelDeployment200JSONResponseBodyGitSource9 struct {
+	CommitMetadata *struct {
+		Author struct {
+			Date  string `json:"date"`
+			Email string `json:"email"`
+			Name  string `json:"name"`
+		} `json:"author"`
+		Committer struct {
+			Date  string `json:"date"`
+			Email string `json:"email"`
+			Name  string `json:"name"`
+		} `json:"committer"`
+		Message string `json:"message"`
+	} `json:"commitMetadata,omitempty"`
+	Org          *string                                           `json:"org,omitempty"`
+	PrId         *float32                                          `json:"prId,omitempty"`
+	Ref          *string                                           `json:"ref,omitempty"`
+	Repo         *string                                           `json:"repo,omitempty"`
+	RepoId       string                                            `json:"repoId"`
+	RepoPushedAt *float32                                          `json:"repoPushedAt,omitempty"`
+	Sha          string                                            `json:"sha"`
+	Type         CancelDeployment200JSONResponseBodyGitSource9Type `json:"type"`
+}
+
 // CancelDeployment200JSONResponseBodyGitSource9Type defines parameters for CancelDeployment.
 type CancelDeployment200JSONResponseBodyGitSource9Type string
 
@@ -19578,433 +20009,3 @@ type GetProject200JSONResponseBodyEnvContentHint13 struct {
 	StoreId string                                            `json:"storeId"`
 	Type    GetProject200JSONResponseBodyEnvContentHint13Type `json:"type"`
 }
-
-// GetProject200JSONResponseBodyEnvContentHint13Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint13Type string
-
-// GetProject200JSONResponseBodyEnvContentHint14 defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint14 struct {
-	StoreId string                                            `json:"storeId"`
-	Type    GetProject200JSONResponseBodyEnvContentHint14Type `json:"type"`
-}
-
-// GetProject200JSONResponseBodyEnvContentHint14Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint14Type string
-
-// GetProject200JSONResponseBodyEnvContentHint15 defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint15 struct {
-	IntegrationConfigurationId string                                            `json:"integrationConfigurationId"`
-	IntegrationId              string                                            `json:"integrationId"`
-	IntegrationProductId       string                                            `json:"integrationProductId"`
-	StoreId                    string                                            `json:"storeId"`
-	Type                       GetProject200JSONResponseBodyEnvContentHint15Type `json:"type"`
-}
-
-// GetProject200JSONResponseBodyEnvContentHint15Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint15Type string
-
-// GetProject200JSONResponseBodyEnvContentHint16 defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint16 struct {
-	ProjectId string                                            `json:"projectId"`
-	Type      GetProject200JSONResponseBodyEnvContentHint16Type `json:"type"`
-}
-
-// GetProject200JSONResponseBodyEnvContentHint16Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvContentHint16Type string
-
-// GetProject200JSONResponseBody_Env_ContentHint defines parameters for GetProject.
-type GetProject200JSONResponseBody_Env_ContentHint struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyEnvDecrypted defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvDecrypted bool
-
-// GetProject200JSONResponseBodyEnvInternalContentHintType defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvInternalContentHintType string
-
-// GetProject200JSONResponseBodyEnvTarget0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvTarget0 = []string
-
-// GetProject200JSONResponseBodyEnvTarget1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvTarget1 string
-
-// GetProject200JSONResponseBody_Env_Target defines parameters for GetProject.
-type GetProject200JSONResponseBody_Env_Target struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyEnvType defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvType string
-
-// GetProject200JSONResponseBodyEnvVisibility defines parameters for GetProject.
-type GetProject200JSONResponseBodyEnvVisibility string
-
-// GetProject200JSONResponseBodyExpiration0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyExpiration0 struct {
-	// ExpiresAt Unix ms timestamp when the project is scheduled to expire.
-	ExpiresAt float32 `json:"expiresAt"`
-}
-
-// GetProject200JSONResponseBodyExpiration1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyExpiration1 struct {
-	// LockedAt Unix ms timestamp when the project was locked.
-	LockedAt float32 `json:"lockedAt"`
-
-	// LockedBy ID of the user, app, or integration that locked the project, or `system`.
-	LockedBy string `json:"lockedBy"`
-}
-
-// GetProject200JSONResponseBody_Expiration defines parameters for GetProject.
-type GetProject200JSONResponseBody_Expiration struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyFeaturesWebAnalytics defines parameters for GetProject.
-type GetProject200JSONResponseBodyFeaturesWebAnalytics bool
-
-// GetProject200JSONResponseBodyFramework defines parameters for GetProject.
-type GetProject200JSONResponseBodyFramework string
-
-// GetProject200JSONResponseBodyGitCommentsOnCommit defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitCommentsOnCommit bool
-
-// GetProject200JSONResponseBodyGitCommentsOnPullRequest defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitCommentsOnPullRequest bool
-
-// GetProject200JSONResponseBodyGitForkProtection defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitForkProtection bool
-
-// GetProject200JSONResponseBodyGitLFS defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitLFS bool
-
-// GetProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled bool
-
-// GetProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures bool
-
-// GetProject200JSONResponseBodyGitProviderOptionsCreateDeployments defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitProviderOptionsCreateDeployments string
-
-// GetProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents bool
-
-// GetProject200JSONResponseBodyGitProviderOptionsGitCommitStatus defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitProviderOptionsGitCommitStatus bool
-
-// GetProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits defines parameters for GetProject.
-type GetProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits bool
-
-// GetProject200JSONResponseBodyHasActiveBranches defines parameters for GetProject.
-type GetProject200JSONResponseBodyHasActiveBranches bool
-
-// GetProject200JSONResponseBodyHasDeployments defines parameters for GetProject.
-type GetProject200JSONResponseBodyHasDeployments bool
-
-// GetProject200JSONResponseBodyInternalRoutes0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes0 struct {
-	Expiry *float32 `json:"expiry,omitempty"`
-	Src    string   `json:"src"`
-	Status float32  `json:"status"`
-}
-
-// GetProject200JSONResponseBodyInternalRoutes1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1 struct {
-	Has      []GetProject200JSONResponseBody_InternalRoutes_1_Has_Item `json:"has"`
-	Mitigate struct {
-		Action GetProject200JSONResponseBodyInternalRoutes1MitigateAction `json:"action"`
-	} `json:"mitigate"`
-	Src *string `json:"src,omitempty"`
-}
-
-// GetProject200JSONResponseBodyInternalRoutes1Has0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1Has0 struct {
-	Key   GetProject200JSONResponseBodyInternalRoutes1Has0Key  `json:"key"`
-	Type  GetProject200JSONResponseBodyInternalRoutes1Has0Type `json:"type"`
-	Value struct {
-		Eq string `json:"eq"`
-	} `json:"value"`
-}
-
-// GetProject200JSONResponseBodyInternalRoutes1Has0Key defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1Has0Key string
-
-// GetProject200JSONResponseBodyInternalRoutes1Has0Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1Has0Type string
-
-// GetProject200JSONResponseBodyInternalRoutes1Has1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1Has1 struct {
-	Type  GetProject200JSONResponseBodyInternalRoutes1Has1Type `json:"type"`
-	Value struct {
-		Eq string `json:"eq"`
-	} `json:"value"`
-}
-
-// GetProject200JSONResponseBodyInternalRoutes1Has1Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1Has1Type string
-
-// GetProject200JSONResponseBody_InternalRoutes_1_Has_Item defines parameters for GetProject.
-type GetProject200JSONResponseBody_InternalRoutes_1_Has_Item struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyInternalRoutes1MitigateAction defines parameters for GetProject.
-type GetProject200JSONResponseBodyInternalRoutes1MitigateAction string
-
-// GetProject200JSONResponseBody_InternalRoutes_Item defines parameters for GetProject.
-type GetProject200JSONResponseBody_InternalRoutes_Item struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyIpBucketsDefault defines parameters for GetProject.
-type GetProject200JSONResponseBodyIpBucketsDefault bool
-
-// GetProject200JSONResponseBodyLastAliasRequestJobStatus defines parameters for GetProject.
-type GetProject200JSONResponseBodyLastAliasRequestJobStatus string
-
-// GetProject200JSONResponseBodyLastAliasRequestType defines parameters for GetProject.
-type GetProject200JSONResponseBodyLastAliasRequestType string
-
-// GetProject200JSONResponseBodyLatestDeploymentsAliasAssigned0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsAliasAssigned0 = float32
-
-// GetProject200JSONResponseBodyLatestDeploymentsAliasAssigned1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsAliasAssigned1 bool
-
-// GetProject200JSONResponseBody_LatestDeployments_AliasAssigned defines parameters for GetProject.
-type GetProject200JSONResponseBody_LatestDeployments_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyLatestDeploymentsBranchMatcherType defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsBranchMatcherType string
-
-// GetProject200JSONResponseBodyLatestDeploymentsChecksConclusion defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsChecksConclusion string
-
-// GetProject200JSONResponseBodyLatestDeploymentsChecksState defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsChecksState string
-
-// GetProject200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled bool
-
-// GetProject200JSONResponseBodyLatestDeploymentsForced defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsForced bool
-
-// GetProject200JSONResponseBodyLatestDeploymentsPlan defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsPlan string
-
-// GetProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled bool
-
-// GetProject200JSONResponseBodyLatestDeploymentsPrivate defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsPrivate bool
-
-// GetProject200JSONResponseBodyLatestDeploymentsReadyState defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsReadyState string
-
-// GetProject200JSONResponseBodyLatestDeploymentsReadySubstate defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsReadySubstate string
-
-// GetProject200JSONResponseBodyLatestDeploymentsType defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsType string
-
-// GetProject200JSONResponseBodyLatestDeploymentsWithCache defines parameters for GetProject.
-type GetProject200JSONResponseBodyLatestDeploymentsWithCache bool
-
-// GetProject200JSONResponseBodyLink0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink0 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                      `json:"repoOwnerId,omitempty"`
-	Sourceless  *GetProject200JSONResponseBodyLink0Sourceless `json:"sourceless,omitempty"`
-	Type        GetProject200JSONResponseBodyLink0Type        `json:"type"`
-	UpdatedAt   *float32                                      `json:"updatedAt,omitempty"`
-}
-
-// GetProject200JSONResponseBodyLink0Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink0Sourceless bool
-
-// GetProject200JSONResponseBodyLink0Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink0Type string
-
-// GetProject200JSONResponseBodyLink1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink1 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                      `json:"repoOwnerId,omitempty"`
-	Sourceless  *GetProject200JSONResponseBodyLink1Sourceless `json:"sourceless,omitempty"`
-	Type        GetProject200JSONResponseBodyLink1Type        `json:"type"`
-	UpdatedAt   *float32                                      `json:"updatedAt,omitempty"`
-}
-
-// GetProject200JSONResponseBodyLink1Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink1Sourceless bool
-
-// GetProject200JSONResponseBodyLink1Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink1Type string
-
-// GetProject200JSONResponseBodyLink2 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink2 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Host             string   `json:"host"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                      `json:"repoOwnerId,omitempty"`
-	Sourceless  *GetProject200JSONResponseBodyLink2Sourceless `json:"sourceless,omitempty"`
-	Type        GetProject200JSONResponseBodyLink2Type        `json:"type"`
-	UpdatedAt   *float32                                      `json:"updatedAt,omitempty"`
-}
-
-// GetProject200JSONResponseBodyLink2Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink2Sourceless bool
-
-// GetProject200JSONResponseBodyLink2Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink2Type string
-
-// GetProject200JSONResponseBodyLink3 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink3 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId          string `json:"gitCredentialId"`
-	ProductionBranch         string `json:"productionBranch"`
-	ProjectId                string `json:"projectId"`
-	ProjectName              string `json:"projectName"`
-	ProjectNameWithNamespace string `json:"projectNameWithNamespace"`
-	ProjectNamespace         string `json:"projectNamespace"`
-
-	// ProjectOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
-	ProjectOwnerId *float32                                      `json:"projectOwnerId,omitempty"`
-	ProjectUrl     string                                        `json:"projectUrl"`
-	Sourceless     *GetProject200JSONResponseBodyLink3Sourceless `json:"sourceless,omitempty"`
-	Type           GetProject200JSONResponseBodyLink3Type        `json:"type"`
-	UpdatedAt      *float32                                      `json:"updatedAt,omitempty"`
-}
-
-// GetProject200JSONResponseBodyLink3Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink3Sourceless bool
-
-// GetProject200JSONResponseBodyLink3Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink3Type string
-
-// GetProject200JSONResponseBodyLink4 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink4 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                        `json:"gitCredentialId"`
-	Name             string                                        `json:"name"`
-	Owner            string                                        `json:"owner"`
-	ProductionBranch string                                        `json:"productionBranch"`
-	Slug             string                                        `json:"slug"`
-	Sourceless       *GetProject200JSONResponseBodyLink4Sourceless `json:"sourceless,omitempty"`
-	Type             GetProject200JSONResponseBodyLink4Type        `json:"type"`
-	UpdatedAt        *float32                                      `json:"updatedAt,omitempty"`
-	Uuid             string                                        `json:"uuid"`
-	WorkspaceUuid    string                                        `json:"workspaceUuid"`
-}
-
-// GetProject200JSONResponseBodyLink4Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink4Sourceless bool
-
-// GetProject200JSONResponseBodyLink4Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink4Type string
-
-// GetProject200JSONResponseBodyLink5 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink5 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                        `json:"gitCredentialId"`
-	Org              string                                        `json:"org"`
-	ProductionBranch string                                        `json:"productionBranch"`
-	Repo             string                                        `json:"repo"`
-	RepoId           string                                        `json:"repoId"`
-	Sourceless       *GetProject200JSONResponseBodyLink5Sourceless `json:"sourceless,omitempty"`
-	Type             GetProject200JSONResponseBodyLink5Type        `json:"type"`
-	UpdatedAt        *float32                                      `json:"updatedAt,omitempty"`
-}
-
-// GetProject200JSONResponseBodyLink5Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink5Sourceless bool
-
-// GetProject200JSONResponseBodyLink5Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink5Type string
-
-// GetProject200JSONResponseBodyLink6 defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink6 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                        `json:"gitCredentialId"`
-	Org              string                                        `json:"org"`
-	ProductionBranch string                                        `json:"productionBranch"`
-	Repo             string                                        `json:"repo"`
-	RepoId           string                                        `json:"repoId"`
-	Sourceless       *GetProject200JSONResponseBodyLink6Sourceless `json:"sourceless,omitempty"`
-	Type             GetProject200JSONResponseBodyLink6Type        `json:"type"`
-	UpdatedAt        *float32                                      `json:"updatedAt,omitempty"`
-}
-
-// GetProject200JSONResponseBodyLink6Sourceless defines parameters for GetProject.
-type GetProject200JSONResponseBodyLink6Sourceless bool

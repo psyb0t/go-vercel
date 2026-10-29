@@ -5,7 +5,464 @@ package vercel
 
 import (
 	"encoding/json"
+	"time"
 )
+
+// CountEventsParamsSince0 defines parameters for CountEvents.
+type CountEventsParamsSince0 = float32
+
+// CountEventsParamsSince1 defines parameters for CountEvents.
+type CountEventsParamsSince1 = string
+
+// CountEventsParamsUntil0 defines parameters for CountEvents.
+type CountEventsParamsUntil0 = float32
+
+// CountEventsParamsUntil1 defines parameters for CountEvents.
+type CountEventsParamsUntil1 = string
+
+// CountEvents200JSONResponseBodyData0 defines parameters for CountEvents.
+type CountEvents200JSONResponseBodyData0 struct {
+	BrowserName          string             `json:"browserName"`
+	Country              string             `json:"country"`
+	DeviceType           string             `json:"deviceType"`
+	Environment          string             `json:"environment"`
+	EventData            string             `json:"eventData"`
+	EventName            string             `json:"eventName"`
+	Flags                string             `json:"flags"`
+	GroupId              string             `json:"groupId"`
+	OsName               string             `json:"osName"`
+	ProjectId            string             `json:"projectId"`
+	ProjectName          string             `json:"projectName"`
+	ReferrerHostname     string             `json:"referrerHostname"`
+	RequestHostname      string             `json:"requestHostname"`
+	RequestPath          string             `json:"requestPath"`
+	Route                string             `json:"route"`
+	UserId               string             `json:"userId"`
+	UtmCampaign          string             `json:"utmCampaign"`
+	UtmContent           string             `json:"utmContent"`
+	UtmMedium            string             `json:"utmMedium"`
+	UtmSource            string             `json:"utmSource"`
+	UtmTerm              string             `json:"utmTerm"`
+	VisitorId            string             `json:"visitorId"`
+	AdditionalProperties map[string]float32 `json:"-"`
+}
+
+// CountEvents200JSONResponseBodyData1 defines parameters for CountEvents.
+type CountEvents200JSONResponseBodyData1 struct {
+	Count    float32 `json:"count"`
+	Visitors float32 `json:"visitors"`
+}
+
+// CountEvents200JSONResponseBody_Data defines parameters for CountEvents.
+type CountEvents200JSONResponseBody_Data struct {
+	union json.RawMessage
+}
+
+// AggregatePageviewsParams defines parameters for AggregatePageviews.
+type AggregatePageviewsParams struct {
+	// ProjectId The project identifier or the project name
+	ProjectId string `form:"projectId" json:"projectId"`
+
+	// By Up to two dimensions used to break down results.
+	//
+	// At most one time granularity is allowed: hour, day, week, month, year.
+	//
+	// Other dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.
+	//
+	// JSON dimensions: flags. Used bare, it breaks down results by key, for example flags returns one group per flag name. With a key, it breaks down results by that key's value, for example flags/beta_banner. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag'.
+	By []string `form:"by" json:"by"`
+
+	// Since Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data from (including) this date and time.
+	// Will be adjusted according to the desired time granularity.
+	Since struct {
+		union json.RawMessage
+	} `form:"since" json:"since"`
+
+	// Until Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data until (including) this date.
+	// Will be adjusted according to the desired time granularity.
+	Until struct {
+		union json.RawMessage
+	} `form:"until" json:"until"`
+
+	// Limit Number of distinct results, default to 10. Other results are grouped into "Others" group.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Filter OData-compliant filter. Encode the value when sending it in a URL.
+	//
+	// Allows filtering on one or multiple dimensions. By default, filters for production environment only.
+	//
+	// Supported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.
+	//
+	// JSON dimensions filtered by key: flags/<name>, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.
+	//
+	// Supported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// AggregatePageviewsParamsSince0 defines parameters for AggregatePageviews.
+type AggregatePageviewsParamsSince0 = float32
+
+// AggregatePageviewsParamsSince1 defines parameters for AggregatePageviews.
+type AggregatePageviewsParamsSince1 = string
+
+// AggregatePageviewsParamsUntil0 defines parameters for AggregatePageviews.
+type AggregatePageviewsParamsUntil0 = float32
+
+// AggregatePageviewsParamsUntil1 defines parameters for AggregatePageviews.
+type AggregatePageviewsParamsUntil1 = string
+
+// AggregatePageviews200JSONResponseBodyData0 defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBodyData0 = []struct {
+	BrowserName      *string   `json:"browserName,omitempty"`
+	Country          *string   `json:"country,omitempty"`
+	DeviceType       *string   `json:"deviceType,omitempty"`
+	Environment      *string   `json:"environment,omitempty"`
+	Flags            *string   `json:"flags,omitempty"`
+	GroupId          *string   `json:"groupId,omitempty"`
+	OsName           *string   `json:"osName,omitempty"`
+	ProjectId        *string   `json:"projectId,omitempty"`
+	ProjectName      *string   `json:"projectName,omitempty"`
+	ReferrerHostname *string   `json:"referrerHostname,omitempty"`
+	RequestHostname  *string   `json:"requestHostname,omitempty"`
+	RequestPath      *string   `json:"requestPath,omitempty"`
+	Route            *string   `json:"route,omitempty"`
+	Timestamp        time.Time `json:"timestamp"`
+	UserId           *string   `json:"userId,omitempty"`
+	UtmCampaign      *string   `json:"utmCampaign,omitempty"`
+	UtmContent       *string   `json:"utmContent,omitempty"`
+	UtmMedium        *string   `json:"utmMedium,omitempty"`
+	UtmSource        *string   `json:"utmSource,omitempty"`
+	UtmTerm          *string   `json:"utmTerm,omitempty"`
+	VisitorId        *string   `json:"visitorId,omitempty"`
+}
+
+// AggregatePageviews200JSONResponseBodyData1 defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBodyData1 = []AggregatePageviews200JSONResponseBody_Data_1_Item
+
+// AggregatePageviews200JSONResponseBody_Data_1_Item defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBody_Data_1_Item struct {
+	BrowserName          string             `json:"browserName"`
+	Country              string             `json:"country"`
+	DeviceType           string             `json:"deviceType"`
+	Environment          string             `json:"environment"`
+	Flags                string             `json:"flags"`
+	GroupId              string             `json:"groupId"`
+	OsName               string             `json:"osName"`
+	ProjectId            string             `json:"projectId"`
+	ProjectName          string             `json:"projectName"`
+	ReferrerHostname     string             `json:"referrerHostname"`
+	RequestHostname      string             `json:"requestHostname"`
+	RequestPath          string             `json:"requestPath"`
+	Route                string             `json:"route"`
+	UserId               string             `json:"userId"`
+	UtmCampaign          string             `json:"utmCampaign"`
+	UtmContent           string             `json:"utmContent"`
+	UtmMedium            string             `json:"utmMedium"`
+	UtmSource            string             `json:"utmSource"`
+	UtmTerm              string             `json:"utmTerm"`
+	VisitorId            string             `json:"visitorId"`
+	AdditionalProperties map[string]float32 `json:"-"`
+}
+
+// AggregatePageviews200JSONResponseBody_Data defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBody_Data struct {
+	union json.RawMessage
+}
+
+// AggregatePageviews200JSONResponseBodyQueryGroupBy0 defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBodyQueryGroupBy0 = string
+
+// AggregatePageviews200JSONResponseBodyQueryGroupBy1 defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBodyQueryGroupBy1 string
+
+// AggregatePageviews200JSONResponseBody_Query_GroupBy_Item defines parameters for AggregatePageviews.
+type AggregatePageviews200JSONResponseBody_Query_GroupBy_Item struct {
+	union json.RawMessage
+}
+
+// CountPageviewsParams defines parameters for CountPageviews.
+type CountPageviewsParams struct {
+	// ProjectId The project identifier or the project name
+	ProjectId string `form:"projectId" json:"projectId"`
+
+	// Since Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data from (including) this date and time.
+	// Will be adjusted according to the desired time granularity.
+	Since *struct {
+		union json.RawMessage
+	} `form:"since,omitempty" json:"since,omitempty"`
+
+	// Until Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data until (including) this date.
+	// Will be adjusted according to the desired time granularity.
+	Until *struct {
+		union json.RawMessage
+	} `form:"until,omitempty" json:"until,omitempty"`
+
+	// Filter OData-compliant filter. Encode the value when sending it in a URL.
+	//
+	// Allows filtering on one or multiple dimensions.
+	//
+	// Supported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.
+	//
+	// JSON dimensions filtered by key: flags/<name>, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.
+	//
+	// Supported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CountPageviewsParamsSince0 defines parameters for CountPageviews.
+type CountPageviewsParamsSince0 = float32
+
+// CountPageviewsParamsSince1 defines parameters for CountPageviews.
+type CountPageviewsParamsSince1 = string
+
+// CountPageviewsParamsUntil0 defines parameters for CountPageviews.
+type CountPageviewsParamsUntil0 = float32
+
+// CountPageviewsParamsUntil1 defines parameters for CountPageviews.
+type CountPageviewsParamsUntil1 = string
+
+// CountPageviews200JSONResponseBodyData0 defines parameters for CountPageviews.
+type CountPageviews200JSONResponseBodyData0 struct {
+	BrowserName          string             `json:"browserName"`
+	Country              string             `json:"country"`
+	DeviceType           string             `json:"deviceType"`
+	Environment          string             `json:"environment"`
+	Flags                string             `json:"flags"`
+	GroupId              string             `json:"groupId"`
+	OsName               string             `json:"osName"`
+	ProjectId            string             `json:"projectId"`
+	ProjectName          string             `json:"projectName"`
+	ReferrerHostname     string             `json:"referrerHostname"`
+	RequestHostname      string             `json:"requestHostname"`
+	RequestPath          string             `json:"requestPath"`
+	Route                string             `json:"route"`
+	UserId               string             `json:"userId"`
+	UtmCampaign          string             `json:"utmCampaign"`
+	UtmContent           string             `json:"utmContent"`
+	UtmMedium            string             `json:"utmMedium"`
+	UtmSource            string             `json:"utmSource"`
+	UtmTerm              string             `json:"utmTerm"`
+	VisitorId            string             `json:"visitorId"`
+	AdditionalProperties map[string]float32 `json:"-"`
+}
+
+// CountPageviews200JSONResponseBodyData1 defines parameters for CountPageviews.
+type CountPageviews200JSONResponseBodyData1 struct {
+	Pageviews float32 `json:"pageviews"`
+	Visitors  float32 `json:"visitors"`
+}
+
+// CountPageviews200JSONResponseBody_Data defines parameters for CountPageviews.
+type CountPageviews200JSONResponseBody_Data struct {
+	union json.RawMessage
+}
+
+// GetBulkAvailabilityJSONBody defines parameters for GetBulkAvailability.
+type GetBulkAvailabilityJSONBody struct {
+	// Domains an array of at most 50 item(s)
+	Domains []DomainName `json:"domains"`
+}
+
+// GetBulkAvailabilityParams defines parameters for GetBulkAvailability.
+type GetBulkAvailabilityParams struct {
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+}
+
+// BuyDomainsJSONBody defines parameters for BuyDomains.
+type BuyDomainsJSONBody struct {
+	// ContactInformation The contact information for the domain. Some TLDs require additional contact information. Use the [Get contact info schema](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-contact-info-schema) endpoint to retrieve the required fields.
+	ContactInformation struct {
+		Additional *map[string]interface{} `json:"additional,omitempty"`
+
+		// Address1 a non empty string
+		Address1 NonEmptyTrimmedString `json:"address1"`
+
+		// Address2 a non empty string
+		Address2 *NonEmptyTrimmedString `json:"address2,omitempty"`
+
+		// City a non empty string
+		City NonEmptyTrimmedString `json:"city"`
+
+		// CompanyName a non empty string
+		CompanyName *NonEmptyTrimmedString `json:"companyName,omitempty"`
+
+		// Country A valid ISO 3166-1 alpha-2 country code
+		Country CountryCode `json:"country"`
+
+		// Email A valid RFC 5322 email address
+		Email EmailAddress `json:"email"`
+
+		// Fax A valid E.164 phone number
+		Fax *E164PhoneNumber `json:"fax,omitempty"`
+
+		// FirstName a non empty string
+		FirstName NonEmptyTrimmedString `json:"firstName"`
+
+		// LastName a non empty string
+		LastName NonEmptyTrimmedString `json:"lastName"`
+
+		// Phone A valid E.164 phone number
+		Phone E164PhoneNumber `json:"phone"`
+
+		// State a non empty string
+		State NonEmptyTrimmedString `json:"state"`
+
+		// Zip a non empty string
+		Zip NonEmptyTrimmedString `json:"zip"`
+	} `json:"contactInformation"`
+	Domains []struct {
+		// AutoRenew Whether the domain should be auto-renewed before it expires. This can be configured later through the Vercel Dashboard or the [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) endpoint.
+		AutoRenew bool `json:"autoRenew"`
+
+		// DomainName A valid domain name
+		DomainName    DomainName `json:"domainName"`
+		ExpectedPrice float32    `json:"expectedPrice"`
+
+		// LanguageCode The language code for the domain. For punycode domains, this must be provided. The list of supported language codes for a TLD can be retrieved from the [Get TLD](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-tld) endpoint.
+		LanguageCode *string `json:"languageCode,omitempty"`
+
+		// Years The number of years to purchase the domain for.
+		Years float32 `json:"years"`
+	} `json:"domains"`
+}
+
+// BuyDomainsParams defines parameters for BuyDomains.
+type BuyDomainsParams struct {
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+}
+
+// BuyDomains200JSONResponseBodyLinksMethod defines parameters for BuyDomains.
+type BuyDomains200JSONResponseBodyLinksMethod string
+
+// BuyDomains400JSONResponseBody defines parameters for BuyDomains.
+type BuyDomains400JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// BuyDomains403JSONResponseBody defines parameters for BuyDomains.
+type BuyDomains403JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GetBulkPriceJSONBody defines parameters for GetBulkPrice.
+type GetBulkPriceJSONBody struct {
+	// Domains an array of at most 50 item(s)
+	Domains []DomainName `json:"domains"`
+
+	// Years The number of years to get the price for. If not provided, the minimum number of years for the TLD will be used.
+	Years *float32 `json:"years,omitempty"`
+}
+
+// GetBulkPriceParams defines parameters for GetBulkPrice.
+type GetBulkPriceParams struct {
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+}
+
+// GetBulkPrice200JSONResponseBodyResultsPurchasePrice0 defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBodyResultsPurchasePrice0 = float32
+
+// GetBulkPrice200JSONResponseBodyResultsPurchasePrice1 defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBodyResultsPurchasePrice1 = string
+
+// GetBulkPrice200JSONResponseBody_Results_PurchasePrice defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBody_Results_PurchasePrice struct {
+	union json.RawMessage
+}
+
+// GetBulkPrice200JSONResponseBodyResultsRenewalPrice0 defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBodyResultsRenewalPrice0 = float32
+
+// GetBulkPrice200JSONResponseBodyResultsRenewalPrice1 defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBodyResultsRenewalPrice1 = string
+
+// GetBulkPrice200JSONResponseBody_Results_RenewalPrice defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBody_Results_RenewalPrice struct {
+	union json.RawMessage
+}
+
+// GetBulkPrice200JSONResponseBodyResultsTransferPrice0 defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBodyResultsTransferPrice0 = float32
+
+// GetBulkPrice200JSONResponseBodyResultsTransferPrice1 defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBodyResultsTransferPrice1 = string
+
+// GetBulkPrice200JSONResponseBody_Results_TransferPrice defines parameters for GetBulkPrice.
+type GetBulkPrice200JSONResponseBody_Results_TransferPrice struct {
+	union json.RawMessage
+}
+
+// GetBulkPrice400JSONResponseBody defines parameters for GetBulkPrice.
+type GetBulkPrice400JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// SearchDomainsJSONBody defines parameters for SearchDomains.
+type SearchDomainsJSONBody struct {
+	// Domains an array of at most 200 item(s)
+	Domains []DomainName `json:"domains"`
+}
+
+// SearchDomainsParams defines parameters for SearchDomains.
+type SearchDomainsParams struct {
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+}
+
+// SearchDomains200JSONResponseBodyResults0 defines parameters for SearchDomains.
+type SearchDomains200JSONResponseBodyResults0 struct {
+	// Available `false` means the domain is unavailable or its availability could not be confirmed.
+	Available SearchDomains200JSONResponseBodyResults0Available `json:"available"`
+
+	// Domain A valid domain name
+	Domain DomainName `json:"domain"`
+}
+
+// SearchDomains200JSONResponseBodyResults0Available defines parameters for SearchDomains.
+type SearchDomains200JSONResponseBodyResults0Available bool
+
+// SearchDomains200JSONResponseBodyResults1 defines parameters for SearchDomains.
+type SearchDomains200JSONResponseBodyResults1 struct {
+	Available SearchDomains200JSONResponseBodyResults1Available `json:"available"`
+
+	// Domain A valid domain name
+	Domain       DomainName `json:"domain"`
+	Premium      bool       `json:"premium"`
+	Price        float32    `json:"price"`
+	RenewalPrice float32    `json:"renewalPrice"`
+	Years        float32    `json:"years"`
+}
+
+// SearchDomains200JSONResponseBodyResults1Available defines parameters for SearchDomains.
+type SearchDomains200JSONResponseBodyResults1Available bool
+
+// SearchDomains200JSONResponseBody_Results_Item defines parameters for SearchDomains.
+type SearchDomains200JSONResponseBody_Results_Item struct {
+	union json.RawMessage
+}
+
+// GetDomainAuthCodeParams defines parameters for GetDomainAuthCode.
+type GetDomainAuthCodeParams struct {
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+}
 
 // GetDomainAuthCode400JSONResponseBody defines parameters for GetDomainAuthCode.
 type GetDomainAuthCode400JSONResponseBody struct {
@@ -19576,435 +20033,4 @@ type CancelDeployment200JSONResponseBodyCustomEnvironment0 struct {
 
 	// UpdatedAt Timestamp when the environment was last updated
 	UpdatedAt float32 `json:"updatedAt"`
-}
-
-// CancelDeployment200JSONResponseBodyCustomEnvironment0BranchMatcherType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCustomEnvironment0BranchMatcherType string
-
-// CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsRedirectStatusCode defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsRedirectStatusCode float32
-
-// CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsVerified defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsVerified bool
-
-// CancelDeployment200JSONResponseBodyCustomEnvironment0Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCustomEnvironment0Type string
-
-// CancelDeployment200JSONResponseBodyCustomEnvironment1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCustomEnvironment1 struct {
-	Id string `json:"id"`
-}
-
-// CancelDeployment200JSONResponseBody_CustomEnvironment defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_CustomEnvironment struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyFlags0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFlags0 struct {
-	Definitions map[string]struct {
-		Description *string `json:"description,omitempty"`
-		Options     *[]struct {
-			Label *string        `json:"label,omitempty"`
-			Value *FlagJSONValue `json:"value"`
-		} `json:"options,omitempty"`
-		Url *string `json:"url,omitempty"`
-	} `json:"definitions"`
-}
-
-// CancelDeployment200JSONResponseBodyFlags1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFlags1 = []map[string]interface{}
-
-// CancelDeployment200JSONResponseBody_Flags defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_Flags struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyFunctionsAffinityMode defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsAffinityMode string
-
-// CancelDeployment200JSONResponseBodyFunctionsArchitecture defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsArchitecture string
-
-// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0 struct {
-	// Consumer Name of the consumer group for this trigger (REQUIRED)
-	Consumer string `json:"consumer"`
-
-	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
-	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-
-	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
-
-	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
-
-	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
-	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
-
-	// Topic Name of the queue topic to consume from (REQUIRED)
-	Topic string `json:"topic"`
-
-	// Type Event type - must be "queue/v1beta" (REQUIRED)
-	Type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers0Type string
-
-// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1 struct {
-	// InitialDelaySeconds Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
-	InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-
-	// MaxConcurrency Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxConcurrency *float32 `json:"maxConcurrency,omitempty"`
-
-	// MaxDeliveries Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
-	MaxDeliveries *float32 `json:"maxDeliveries,omitempty"`
-
-	// RetryAfterSeconds Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
-	RetryAfterSeconds *float32 `json:"retryAfterSeconds,omitempty"`
-
-	// Topic Name of the queue topic to consume from (REQUIRED)
-	Topic string `json:"topic"`
-
-	// Type Event type - must be "queue/v2beta" (REQUIRED)
-	Type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers1Type string
-
-// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2 struct {
-	// Type Event type - must be "schedule/v1beta" (REQUIRED)
-	Type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsExperimentalTriggers2Type string
-
-// CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyFunctionsMaxDuration0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsMaxDuration0 = float32
-
-// CancelDeployment200JSONResponseBodyFunctionsMaxDuration1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsMaxDuration1 string
-
-// CancelDeployment200JSONResponseBody_Functions_MaxDuration defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_Functions_MaxDuration struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation bool
-
-// CancelDeployment200JSONResponseBodyGitRepo0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo0 struct {
-	DefaultBranch string                                               `json:"defaultBranch"`
-	Name          string                                               `json:"name"`
-	Namespace     string                                               `json:"namespace"`
-	OwnerType     CancelDeployment200JSONResponseBodyGitRepo0OwnerType `json:"ownerType"`
-	Path          string                                               `json:"path"`
-	Private       CancelDeployment200JSONResponseBodyGitRepo0Private   `json:"private"`
-	ProjectId     float32                                              `json:"projectId"`
-	Type          CancelDeployment200JSONResponseBodyGitRepo0Type      `json:"type"`
-	Url           string                                               `json:"url"`
-}
-
-// CancelDeployment200JSONResponseBodyGitRepo0OwnerType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo0OwnerType string
-
-// CancelDeployment200JSONResponseBodyGitRepo0Private defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo0Private bool
-
-// CancelDeployment200JSONResponseBodyGitRepo0Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo0Type string
-
-// CancelDeployment200JSONResponseBodyGitRepo1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo1 struct {
-	DefaultBranch string                                               `json:"defaultBranch"`
-	Name          string                                               `json:"name"`
-	Org           string                                               `json:"org"`
-	OwnerType     CancelDeployment200JSONResponseBodyGitRepo1OwnerType `json:"ownerType"`
-	Path          string                                               `json:"path"`
-	Private       CancelDeployment200JSONResponseBodyGitRepo1Private   `json:"private"`
-	Repo          string                                               `json:"repo"`
-	RepoId        float32                                              `json:"repoId"`
-	RepoOwnerId   float32                                              `json:"repoOwnerId"`
-	Type          CancelDeployment200JSONResponseBodyGitRepo1Type      `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitRepo1OwnerType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo1OwnerType string
-
-// CancelDeployment200JSONResponseBodyGitRepo1Private defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo1Private bool
-
-// CancelDeployment200JSONResponseBodyGitRepo1Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo1Type string
-
-// CancelDeployment200JSONResponseBodyGitRepo2 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo2 struct {
-	DefaultBranch string                                               `json:"defaultBranch"`
-	Name          string                                               `json:"name"`
-	Owner         string                                               `json:"owner"`
-	OwnerType     CancelDeployment200JSONResponseBodyGitRepo2OwnerType `json:"ownerType"`
-	Path          string                                               `json:"path"`
-	Private       CancelDeployment200JSONResponseBodyGitRepo2Private   `json:"private"`
-	RepoUuid      string                                               `json:"repoUuid"`
-	Slug          string                                               `json:"slug"`
-	Type          CancelDeployment200JSONResponseBodyGitRepo2Type      `json:"type"`
-	WorkspaceUuid string                                               `json:"workspaceUuid"`
-}
-
-// CancelDeployment200JSONResponseBodyGitRepo2OwnerType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo2OwnerType string
-
-// CancelDeployment200JSONResponseBodyGitRepo2Private defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo2Private bool
-
-// CancelDeployment200JSONResponseBodyGitRepo2Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo2Type string
-
-// CancelDeployment200JSONResponseBodyGitRepo3 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo3 struct {
-	DefaultBranch string                                               `json:"defaultBranch"`
-	Name          string                                               `json:"name"`
-	Org           string                                               `json:"org"`
-	OwnerType     CancelDeployment200JSONResponseBodyGitRepo3OwnerType `json:"ownerType"`
-	Path          string                                               `json:"path"`
-	Private       CancelDeployment200JSONResponseBodyGitRepo3Private   `json:"private"`
-	Repo          string                                               `json:"repo"`
-	Type          CancelDeployment200JSONResponseBodyGitRepo3Type      `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitRepo3OwnerType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo3OwnerType string
-
-// CancelDeployment200JSONResponseBodyGitRepo3Private defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo3Private bool
-
-// CancelDeployment200JSONResponseBodyGitRepo3Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo3Type string
-
-// CancelDeployment200JSONResponseBodyGitRepo4 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo4 struct {
-	DefaultBranch string `json:"defaultBranch"`
-	Name          string `json:"name"`
-
-	// Owner Owner (namespace) slug.
-	Owner     string                                               `json:"owner"`
-	OwnerType CancelDeployment200JSONResponseBodyGitRepo4OwnerType `json:"ownerType"`
-	Path      string                                               `json:"path"`
-	Private   CancelDeployment200JSONResponseBodyGitRepo4Private   `json:"private"`
-	Repo      string                                               `json:"repo"`
-
-	// RepoId Origin repository id.
-	RepoId string                                          `json:"repoId"`
-	Type   CancelDeployment200JSONResponseBodyGitRepo4Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitRepo4OwnerType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo4OwnerType string
-
-// CancelDeployment200JSONResponseBodyGitRepo4Private defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo4Private bool
-
-// CancelDeployment200JSONResponseBodyGitRepo4Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitRepo4Type string
-
-// CancelDeployment200JSONResponseBody_GitRepo defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_GitRepo struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyGitSource0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource0 struct {
-	PrId   *float32                                               `json:"prId,omitempty"`
-	Ref    *string                                                `json:"ref,omitempty"`
-	RepoId CancelDeployment200JSONResponseBody_GitSource_0_RepoId `json:"repoId"`
-	Sha    *string                                                `json:"sha,omitempty"`
-	Type   CancelDeployment200JSONResponseBodyGitSource0Type      `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource0RepoId0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource0RepoId0 = string
-
-// CancelDeployment200JSONResponseBodyGitSource0RepoId1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource0RepoId1 = float32
-
-// CancelDeployment200JSONResponseBody_GitSource_0_RepoId defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_GitSource_0_RepoId struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyGitSource0Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource0Type string
-
-// CancelDeployment200JSONResponseBodyGitSource1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource1 struct {
-	Org  string                                            `json:"org"`
-	PrId *float32                                          `json:"prId,omitempty"`
-	Ref  *string                                           `json:"ref,omitempty"`
-	Repo string                                            `json:"repo"`
-	Sha  *string                                           `json:"sha,omitempty"`
-	Type CancelDeployment200JSONResponseBodyGitSource1Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource1Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource1Type string
-
-// CancelDeployment200JSONResponseBodyGitSource2 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource2 struct {
-	Host   string                                                 `json:"host"`
-	PrId   *float32                                               `json:"prId,omitempty"`
-	Ref    *string                                                `json:"ref,omitempty"`
-	RepoId CancelDeployment200JSONResponseBody_GitSource_2_RepoId `json:"repoId"`
-	Sha    *string                                                `json:"sha,omitempty"`
-	Type   CancelDeployment200JSONResponseBodyGitSource2Type      `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource2RepoId0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource2RepoId0 = string
-
-// CancelDeployment200JSONResponseBodyGitSource2RepoId1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource2RepoId1 = float32
-
-// CancelDeployment200JSONResponseBody_GitSource_2_RepoId defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_GitSource_2_RepoId struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyGitSource2Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource2Type string
-
-// CancelDeployment200JSONResponseBodyGitSource3 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource3 struct {
-	Host string                                            `json:"host"`
-	Org  string                                            `json:"org"`
-	PrId *float32                                          `json:"prId,omitempty"`
-	Ref  *string                                           `json:"ref,omitempty"`
-	Repo string                                            `json:"repo"`
-	Sha  *string                                           `json:"sha,omitempty"`
-	Type CancelDeployment200JSONResponseBodyGitSource3Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource3Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource3Type string
-
-// CancelDeployment200JSONResponseBodyGitSource4 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource4 struct {
-	PrId   *float32                                               `json:"prId,omitempty"`
-	Ref    *string                                                `json:"ref,omitempty"`
-	RepoId CancelDeployment200JSONResponseBody_GitSource_4_RepoId `json:"repoId"`
-	Sha    *string                                                `json:"sha,omitempty"`
-	Type   CancelDeployment200JSONResponseBodyGitSource4Type      `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource4RepoId0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource4RepoId0 = string
-
-// CancelDeployment200JSONResponseBodyGitSource4RepoId1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource4RepoId1 = float32
-
-// CancelDeployment200JSONResponseBody_GitSource_4_RepoId defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_GitSource_4_RepoId struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyGitSource4Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource4Type string
-
-// CancelDeployment200JSONResponseBodyGitSource5 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource5 struct {
-	Org  string                                            `json:"org"`
-	PrId *float32                                          `json:"prId,omitempty"`
-	Ref  *string                                           `json:"ref,omitempty"`
-	Repo string                                            `json:"repo"`
-	Sha  *string                                           `json:"sha,omitempty"`
-	Type CancelDeployment200JSONResponseBodyGitSource5Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource5Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource5Type string
-
-// CancelDeployment200JSONResponseBodyGitSource6 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource6 struct {
-	PrId      *float32                                                  `json:"prId,omitempty"`
-	ProjectId CancelDeployment200JSONResponseBody_GitSource_6_ProjectId `json:"projectId"`
-	Ref       *string                                                   `json:"ref,omitempty"`
-	Sha       *string                                                   `json:"sha,omitempty"`
-	Type      CancelDeployment200JSONResponseBodyGitSource6Type         `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource6ProjectId0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource6ProjectId0 = string
-
-// CancelDeployment200JSONResponseBodyGitSource6ProjectId1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource6ProjectId1 = float32
-
-// CancelDeployment200JSONResponseBody_GitSource_6_ProjectId defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_GitSource_6_ProjectId struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyGitSource6Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource6Type string
-
-// CancelDeployment200JSONResponseBodyGitSource7 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource7 struct {
-	PrId          *float32                                          `json:"prId,omitempty"`
-	Ref           *string                                           `json:"ref,omitempty"`
-	RepoUuid      string                                            `json:"repoUuid"`
-	Sha           *string                                           `json:"sha,omitempty"`
-	Type          CancelDeployment200JSONResponseBodyGitSource7Type `json:"type"`
-	WorkspaceUuid *string                                           `json:"workspaceUuid,omitempty"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource7Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource7Type string
-
-// CancelDeployment200JSONResponseBodyGitSource8 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource8 struct {
-	Owner string                                            `json:"owner"`
-	PrId  *float32                                          `json:"prId,omitempty"`
-	Ref   *string                                           `json:"ref,omitempty"`
-	Sha   *string                                           `json:"sha,omitempty"`
-	Slug  string                                            `json:"slug"`
-	Type  CancelDeployment200JSONResponseBodyGitSource8Type `json:"type"`
-}
-
-// CancelDeployment200JSONResponseBodyGitSource8Type defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource8Type string
-
-// CancelDeployment200JSONResponseBodyGitSource9 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyGitSource9 struct {
-	CommitMetadata *struct {
-		Author struct {
-			Date  string `json:"date"`
-			Email string `json:"email"`
-			Name  string `json:"name"`
-		} `json:"author"`
-		Committer struct {
-			Date  string `json:"date"`
-			Email string `json:"email"`
-			Name  string `json:"name"`
-		} `json:"committer"`
-		Message string `json:"message"`
-	} `json:"commitMetadata,omitempty"`
-	Org          *string                                           `json:"org,omitempty"`
-	PrId         *float32                                          `json:"prId,omitempty"`
-	Ref          *string                                           `json:"ref,omitempty"`
-	Repo         *string                                           `json:"repo,omitempty"`
-	RepoId       string                                            `json:"repoId"`
-	RepoPushedAt *float32                                          `json:"repoPushedAt,omitempty"`
-	Sha          string                                            `json:"sha"`
-	Type         CancelDeployment200JSONResponseBodyGitSource9Type `json:"type"`
 }

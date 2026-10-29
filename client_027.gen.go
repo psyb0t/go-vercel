@@ -353,6 +353,7 @@ func ParseCreateAiGatewayByokCredentialResponse(rsp *http.Response) (*CreateAiGa
 			Name              string                                                            `json:"name"`
 			OwnerId           string                                                            `json:"ownerId"`
 			ProviderSlug      string                                                            `json:"providerSlug"`
+			RotatedAt         *float32                                                          `json:"rotatedAt"`
 			UpdatedAt         float32                                                           `json:"updatedAt"`
 			ZeroDataRetention CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
 		}
@@ -417,6 +418,7 @@ func ParseListAiGatewayByokCredentialsResponse(rsp *http.Response) (*ListAiGatew
 				Name              string                                                                      `json:"name"`
 				OwnerId           string                                                                      `json:"ownerId"`
 				ProviderSlug      string                                                                      `json:"providerSlug"`
+				RotatedAt         *float32                                                                    `json:"rotatedAt"`
 				UpdatedAt         float32                                                                     `json:"updatedAt"`
 				ZeroDataRetention ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention `json:"zeroDataRetention"`
 			} `json:"credentials"`
@@ -516,6 +518,7 @@ func ParseGetAiGatewayByokCredentialResponse(rsp *http.Response) (*GetAiGatewayB
 			Name              string                                                         `json:"name"`
 			OwnerId           string                                                         `json:"ownerId"`
 			ProviderSlug      string                                                         `json:"providerSlug"`
+			RotatedAt         *float32                                                       `json:"rotatedAt"`
 			UpdatedAt         float32                                                        `json:"updatedAt"`
 			ZeroDataRetention GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
 		}
@@ -570,6 +573,7 @@ func ParseUpdateAiGatewayByokCredentialResponse(rsp *http.Response) (*UpdateAiGa
 			Name              string                                                            `json:"name"`
 			OwnerId           string                                                            `json:"ownerId"`
 			ProviderSlug      string                                                            `json:"providerSlug"`
+			RotatedAt         *float32                                                          `json:"rotatedAt"`
 			UpdatedAt         float32                                                           `json:"updatedAt"`
 			ZeroDataRetention UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
 		}
@@ -3144,6 +3148,9 @@ func ParseCreateConnectorResponse(rsp *http.Response) (*CreateConnectorResponse,
 		}
 		response.JSON502 = &dest
 
+	case rsp.StatusCode == 503:
+		break // No content-type
+
 	case rsp.StatusCode == 504:
 		break // No content-type
 
@@ -3629,6 +3636,9 @@ func ParseUpsertConnectorProjectConnectionResponse(rsp *http.Response) (*UpsertC
 	case rsp.StatusCode == 501:
 		break // No content-type
 
+	case rsp.StatusCode == 503:
+		break // No content-type
+
 	case rsp.StatusCode == 504:
 		break // No content-type
 
@@ -3715,6 +3725,9 @@ func ParseReplaceConnectorTriggerDestinationsResponse(rsp *http.Response) (*Repl
 		response.JSON500 = &dest
 
 	case rsp.StatusCode == 501:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
 		break // No content-type
 
 	case rsp.StatusCode == 504:

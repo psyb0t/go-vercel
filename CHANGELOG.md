@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.12.0, 2026-10-29
+
+- Changed the `Options` field of `BuyCredits200JSONResponseBody2OrbSubscriptionIntentConfiguration0` and `...Configuration1`: `ResourceIds` is removed from both.
+- Added `BuyCredits200JSONResponseBody2OrbSubscriptionIntentConfiguration4` for the adjust plan item quantity intent, with its `Output` effective behavior and pricing source types, plus `AsBuyCredits200JSONResponseBody2OrbSubscriptionIntentConfiguration4`, `From...` and `Merge...` on `BuyCredits200JSONResponseBody_2_OrbSubscriptionIntent_Configuration`.
+- Changed the anonymous JSON body type of `CreateAiGatewayByokCredentialResponse.JSON201`, `GetAiGatewayByokCredentialResponse.JSON200`, `ListAiGatewayByokCredentialsResponse.JSON200` and `UpdateAiGatewayByokCredentialResponse.JSON200`, and of their `GetJSON...` methods.
+- Renumbered many `UserEventPayloadNNN` types. For example `UserEventPayload113` and `UserEventPayload253` lose `Set` and `UnmarshalJSON`, `UserEventPayload114` and `UserEventPayload254` gain them, and `UserEvent_Payload` loses `FromUserEventPayload123` and `MergeUserEventPayload123` but gains the `From...` and `Merge...` methods for `UserEventPayload122`, `503`, `504` and `505`.
+- Changed field types on many `UserEventPayload` types, such as `UserEventPayload128.DeploymentId` (`*string` to `string`), `UserEventPayload130.Mode` and `PreviousMode` (now pointers), `UserEventPayload150.DestinationId` and `DestinationName` (now `*string`), `UserEventPayload174.Key` (now `*string`) and `UserEventPayload183.ConfigVersion`. Several types such as `UserEventPayload114`, `125` and `128` are no longer comparable.
+- Moved the `Client` field from `UserEventPayload396` to `UserEventPayload397`.
+- Added `UserEventPayload102.BuildsEnabled` and `UserEventPayload102.Passive`.
+- Added the event types `ListEventTypeNameTeamDataCacheUserDisabledUpdated`, `ListEventTypeNameVercelAgentSecurityFindingCreated` and their `ListEventTypeReplacedBy...` counterparts.
+
 ## v0.11.0, 2026-10-28
 
 - Added the AI Gateway BYOK credential endpoints `ListAiGatewayByokCredentials`, `GetAiGatewayByokCredential`, `CreateAiGatewayByokCredential`, `UpdateAiGatewayByokCredential` and `DeleteAiGatewayByokCredential`, plus the `WithBody` variants for create and update. They are on `Client`, `ClientInterface`, `ClientWithResponses` and `ClientWithResponsesInterface`, the latter two as `...WithResponse` methods.
