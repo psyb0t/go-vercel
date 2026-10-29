@@ -2716,6 +2716,64 @@ func ParseCreateConditionalBypassResponse(rsp *http.Response) (*CreateConditiona
 	return response, nil
 }
 
+// ParseUpdateConditionalBypassResponse parses an HTTP response from a UpdateConditionalBypassWithResponse call
+func ParseUpdateConditionalBypassResponse(rsp *http.Response) (*UpdateConditionalBypassResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateConditionalBypassResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Condition      string `json:"condition"`
+			ConditionGroup []struct {
+				Conditions []struct {
+					Key   *string                                                                     `json:"key,omitempty"`
+					Neg   *UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg      `json:"neg,omitempty"`
+					Op    UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp        `json:"op"`
+					Type  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType      `json:"type"`
+					Value *UpdateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+				} `json:"conditions"`
+			} `json:"conditionGroup"`
+			CreatedAt string  `json:"createdAt"`
+			Domain    string  `json:"domain"`
+			Id        string  `json:"id"`
+			Note      *string `json:"note,omitempty"`
+			ProjectId string  `json:"projectId"`
+			UpdatedAt string  `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGetSecurityFirewallConfigResponse parses an HTTP response from a GetSecurityFirewallConfigWithResponse call
 func ParseGetSecurityFirewallConfigResponse(rsp *http.Response) (*GetSecurityFirewallConfigResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)

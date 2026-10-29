@@ -4304,6 +4304,7 @@ const (
 	ListEventTypeNameFirewallBypassDeleted                           ListEventTypeName = "firewall-bypass-deleted"
 	ListEventTypeNameFirewallConditionalBypassCreated                ListEventTypeName = "firewall-conditional-bypass-created"
 	ListEventTypeNameFirewallConditionalBypassDeleted                ListEventTypeName = "firewall-conditional-bypass-deleted"
+	ListEventTypeNameFirewallConditionalBypassUpdated                ListEventTypeName = "firewall-conditional-bypass-updated"
 	ListEventTypeNameFirewallConfigModified                          ListEventTypeName = "firewall-config-modified"
 	ListEventTypeNameFirewallConfigPromoted                          ListEventTypeName = "firewall-config-promoted"
 	ListEventTypeNameFirewallConfigRemoved                           ListEventTypeName = "firewall-config-removed"
@@ -4715,6 +4716,7 @@ const (
 	ListEventTypeNameTeamProgramEnrollmentChanged                    ListEventTypeName = "team-program-enrollment-changed"
 	ListEventTypeNameTeamRemoteCachingPurge                          ListEventTypeName = "team-remote-caching-purge"
 	ListEventTypeNameTeamRemoteCachingUpdate                         ListEventTypeName = "team-remote-caching-update"
+	ListEventTypeNameTeamRuntimeCacheUpdated                         ListEventTypeName = "team-runtime-cache-updated"
 	ListEventTypeNameTeamSamlEnforced                                ListEventTypeName = "team-saml-enforced"
 	ListEventTypeNameTeamSamlRoles                                   ListEventTypeName = "team-saml-roles"
 	ListEventTypeNameTeamSlugUpdate                                  ListEventTypeName = "team-slug-update"
@@ -5304,6 +5306,8 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameFirewallConditionalBypassCreated:
 		return true
 	case ListEventTypeNameFirewallConditionalBypassDeleted:
+		return true
+	case ListEventTypeNameFirewallConditionalBypassUpdated:
 		return true
 	case ListEventTypeNameFirewallConfigModified:
 		return true
@@ -6127,6 +6131,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameTeamRemoteCachingUpdate:
 		return true
+	case ListEventTypeNameTeamRuntimeCacheUpdated:
+		return true
 	case ListEventTypeNameTeamSamlEnforced:
 		return true
 	case ListEventTypeNameTeamSamlRoles:
@@ -6548,6 +6554,7 @@ const (
 	ListEventTypeReplacedByFirewallBypassDeleted                           ListEventTypeReplacedBy = "firewall-bypass-deleted"
 	ListEventTypeReplacedByFirewallConditionalBypassCreated                ListEventTypeReplacedBy = "firewall-conditional-bypass-created"
 	ListEventTypeReplacedByFirewallConditionalBypassDeleted                ListEventTypeReplacedBy = "firewall-conditional-bypass-deleted"
+	ListEventTypeReplacedByFirewallConditionalBypassUpdated                ListEventTypeReplacedBy = "firewall-conditional-bypass-updated"
 	ListEventTypeReplacedByFirewallConfigModified                          ListEventTypeReplacedBy = "firewall-config-modified"
 	ListEventTypeReplacedByFirewallConfigPromoted                          ListEventTypeReplacedBy = "firewall-config-promoted"
 	ListEventTypeReplacedByFirewallConfigRemoved                           ListEventTypeReplacedBy = "firewall-config-removed"
@@ -6959,6 +6966,7 @@ const (
 	ListEventTypeReplacedByTeamProgramEnrollmentChanged                    ListEventTypeReplacedBy = "team-program-enrollment-changed"
 	ListEventTypeReplacedByTeamRemoteCachingPurge                          ListEventTypeReplacedBy = "team-remote-caching-purge"
 	ListEventTypeReplacedByTeamRemoteCachingUpdate                         ListEventTypeReplacedBy = "team-remote-caching-update"
+	ListEventTypeReplacedByTeamRuntimeCacheUpdated                         ListEventTypeReplacedBy = "team-runtime-cache-updated"
 	ListEventTypeReplacedByTeamSamlEnforced                                ListEventTypeReplacedBy = "team-saml-enforced"
 	ListEventTypeReplacedByTeamSamlRoles                                   ListEventTypeReplacedBy = "team-saml-roles"
 	ListEventTypeReplacedByTeamSlugUpdate                                  ListEventTypeReplacedBy = "team-slug-update"
@@ -7548,6 +7556,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByFirewallConditionalBypassCreated:
 		return true
 	case ListEventTypeReplacedByFirewallConditionalBypassDeleted:
+		return true
+	case ListEventTypeReplacedByFirewallConditionalBypassUpdated:
 		return true
 	case ListEventTypeReplacedByFirewallConfigModified:
 		return true
@@ -8370,6 +8380,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByTeamRemoteCachingPurge:
 		return true
 	case ListEventTypeReplacedByTeamRemoteCachingUpdate:
+		return true
+	case ListEventTypeReplacedByTeamRuntimeCacheUpdated:
 		return true
 	case ListEventTypeReplacedByTeamSamlEnforced:
 		return true
@@ -19989,19 +20001,4 @@ func (e UserEventPayload266Scope) Valid() bool {
 // Defines values for UserEventPayload267Scope.
 const (
 	UserEventPayload267ScopeNetwork UserEventPayload267Scope = "network"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload267Scope enum.
-func (e UserEventPayload267Scope) Valid() bool {
-	switch e {
-	case UserEventPayload267ScopeNetwork:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload268Scope.
-const (
-	UserEventPayload268ScopeProject UserEventPayload268Scope = "project"
 )

@@ -19284,6 +19284,357 @@ func (e CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsType) 
 	}
 }
 
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions0Key.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions0KeyUserAgent UpdateConditionalBypassJSONBodyConditionGroupConditions0Key = "user-agent"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions0Key enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions0Key) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions0KeyUserAgent:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions0Op.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions0OpEq  UpdateConditionalBypassJSONBodyConditionGroupConditions0Op = "eq"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions0OpPre UpdateConditionalBypassJSONBodyConditionGroupConditions0Op = "pre"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions0OpSub UpdateConditionalBypassJSONBodyConditionGroupConditions0Op = "sub"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions0OpSuf UpdateConditionalBypassJSONBodyConditionGroupConditions0Op = "suf"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions0Op enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions0Op) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions0OpEq:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions0OpPre:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions0OpSub:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions0OpSuf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions0Type.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions0TypeUserAgent UpdateConditionalBypassJSONBodyConditionGroupConditions0Type = "user_agent"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions0Type enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions0Type) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions0TypeUserAgent:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions1Op.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions1OpEq  UpdateConditionalBypassJSONBodyConditionGroupConditions1Op = "eq"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions1OpPre UpdateConditionalBypassJSONBodyConditionGroupConditions1Op = "pre"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions1OpSub UpdateConditionalBypassJSONBodyConditionGroupConditions1Op = "sub"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions1OpSuf UpdateConditionalBypassJSONBodyConditionGroupConditions1Op = "suf"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions1Op enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions1Op) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions1OpEq:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions1OpPre:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions1OpSub:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions1OpSuf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions1Type.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions1TypePath UpdateConditionalBypassJSONBodyConditionGroupConditions1Type = "path"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions1Type enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions1Type) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions1TypePath:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions2Op.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions2OpEq  UpdateConditionalBypassJSONBodyConditionGroupConditions2Op = "eq"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions2OpPre UpdateConditionalBypassJSONBodyConditionGroupConditions2Op = "pre"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions2OpSub UpdateConditionalBypassJSONBodyConditionGroupConditions2Op = "sub"
+	UpdateConditionalBypassJSONBodyConditionGroupConditions2OpSuf UpdateConditionalBypassJSONBodyConditionGroupConditions2Op = "suf"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions2Op enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions2Op) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions2OpEq:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions2OpPre:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions2OpSub:
+		return true
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions2OpSuf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions2Type.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions2TypeHeader UpdateConditionalBypassJSONBodyConditionGroupConditions2Type = "header"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions2Type enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions2Type) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions2TypeHeader:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions3Op.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions3OpEx UpdateConditionalBypassJSONBodyConditionGroupConditions3Op = "ex"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions3Op enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions3Op) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions3OpEx:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypassJSONBodyConditionGroupConditions3Type.
+const (
+	UpdateConditionalBypassJSONBodyConditionGroupConditions3TypeHeader UpdateConditionalBypassJSONBodyConditionGroupConditions3Type = "header"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypassJSONBodyConditionGroupConditions3Type enum.
+func (e UpdateConditionalBypassJSONBodyConditionGroupConditions3Type) Valid() bool {
+	switch e {
+	case UpdateConditionalBypassJSONBodyConditionGroupConditions3TypeHeader:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg.
+const (
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNegFalse UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg = false
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNegTrue  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg enum.
+func (e UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg) Valid() bool {
+	switch e {
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNegFalse:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNegTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp.
+const (
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpEq   UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "eq"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpEx   UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "ex"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpGt   UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "gt"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpGte  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "gte"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpInc  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "inc"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpList UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "list"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpLt   UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "lt"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpLte  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "lte"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpNeq  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "neq"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpNex  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "nex"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpNinc UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "ninc"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpPre  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "pre"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpRe   UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "re"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpSub  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "sub"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpSuf  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp = "suf"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp enum.
+func (e UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp) Valid() bool {
+	switch e {
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpEq:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpEx:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpGt:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpGte:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpInc:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpList:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpLt:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpLte:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpNeq:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpNex:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpNinc:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpPre:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpRe:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpSub:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOpSuf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType.
+const (
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotCategory       UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "bot_category"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotName           UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "bot_name"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotProtection     UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "bot_protection"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotStatus         UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "bot_status"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeCookie            UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "cookie"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeDomainEnvironment UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "domain_environment"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeEnvironment       UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "environment"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoAsNumber       UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "geo_as_number"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoCity           UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "geo_city"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoContinent      UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "geo_continent"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoCountry        UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "geo_country"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoCountryRegion  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "geo_country_region"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeHeader            UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "header"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeHost              UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "host"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeIpAddress         UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "ip_address"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeJa3Digest         UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "ja3_digest"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeJa4Digest         UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "ja4_digest"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeMethod            UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "method"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypePath              UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "path"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeProtocol          UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "protocol"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeQuery             UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "query"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRateLimitApiId    UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "rate_limit_api_id"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRawPath           UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "raw_path"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRegion            UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "region"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeResponseCode      UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "response_code"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRoute             UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "route"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRuleset           UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "ruleset"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeScheme            UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "scheme"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeServerAction      UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "server_action"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeSharedCondition   UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "shared_condition"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeTargetPath        UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "target_path"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeTrafficSource     UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "traffic_source"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeTrustedSource     UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "trusted_source"
+	UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeUserAgent         UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType = "user_agent"
+)
+
+// Valid indicates whether the value is a known member of the UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType enum.
+func (e UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType) Valid() bool {
+	switch e {
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotCategory:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotName:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotProtection:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeBotStatus:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeCookie:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeDomainEnvironment:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeEnvironment:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoAsNumber:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoCity:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoContinent:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoCountry:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeGeoCountryRegion:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeHeader:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeHost:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeIpAddress:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeJa3Digest:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeJa4Digest:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeMethod:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypePath:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeProtocol:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeQuery:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRateLimitApiId:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRawPath:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRegion:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeResponseCode:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRoute:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeRuleset:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeScheme:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeServerAction:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeSharedCondition:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeTargetPath:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeTrafficSource:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeTrustedSource:
+		return true
+	case UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsTypeUserAgent:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveBotIdEnabled.
 const (
 	GetSecurityFirewallConfig200JSONResponseBodyActiveBotIdEnabledFalse GetSecurityFirewallConfig200JSONResponseBodyActiveBotIdEnabled = false
@@ -19652,358 +20003,3 @@ func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsMaActive) Valid() b
 		return false
 	}
 }
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActionDeny GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActionLog  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabledFalse GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabledTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabledFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabledTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionBypass    GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction = "bypass"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionChallenge GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction = "challenge"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionDeny      GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionLog       GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionBypass:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionChallenge:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveIpsActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveLogHeaders1.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveLogHeaders1Asterisk GetSecurityFirewallConfig200JSONResponseBodyActiveLogHeaders1 = "*"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveLogHeaders1 enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveLogHeaders1) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveLogHeaders1Asterisk:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActionChallenge GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction = "challenge"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActionDeny      GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActionLog       GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction = "log"
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActionChallenge:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActionDeny:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActionLog:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActiveFalse GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive = false
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActiveTrue  GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive = true
-)
-
-// Valid indicates whether the value is a known member of the GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive enum.
-func (e GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive) Valid() bool {
-	switch e {
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActiveFalse:
-		return true
-	case GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActiveTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction.
-const (
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActionChallenge GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction = "challenge"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActionDeny      GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction = "deny"
-	GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActionLog       GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction = "log"
-)

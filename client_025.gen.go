@@ -1290,6 +1290,81 @@ func (r CreateConditionalBypassResponse) ContentType() string {
 	return ""
 }
 
+type UpdateConditionalBypassResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Condition      string `json:"condition"`
+		ConditionGroup []struct {
+			Conditions []struct {
+				Key   *string                                                                     `json:"key,omitempty"`
+				Neg   *UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg      `json:"neg,omitempty"`
+				Op    UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp        `json:"op"`
+				Type  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType      `json:"type"`
+				Value *UpdateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+			} `json:"conditions"`
+		} `json:"conditionGroup"`
+		CreatedAt string  `json:"createdAt"`
+		Domain    string  `json:"domain"`
+		Id        string  `json:"id"`
+		Note      *string `json:"note,omitempty"`
+		ProjectId string  `json:"projectId"`
+		UpdatedAt string  `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateConditionalBypassResponse) GetJSON200() *struct {
+	Condition      string `json:"condition"`
+	ConditionGroup []struct {
+		Conditions []struct {
+			Key   *string                                                                     `json:"key,omitempty"`
+			Neg   *UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg      `json:"neg,omitempty"`
+			Op    UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp        `json:"op"`
+			Type  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType      `json:"type"`
+			Value *UpdateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value `json:"value,omitempty"`
+		} `json:"conditions"`
+	} `json:"conditionGroup"`
+	CreatedAt string  `json:"createdAt"`
+	Domain    string  `json:"domain"`
+	Id        string  `json:"id"`
+	Note      *string `json:"note,omitempty"`
+	ProjectId string  `json:"projectId"`
+	UpdatedAt string  `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateConditionalBypassResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateConditionalBypassResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateConditionalBypassResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateConditionalBypassResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetSecurityFirewallConfigResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -19943,71 +20018,4 @@ type GetDomainConfigResponse struct {
 			Value []string `json:"value"`
 		} `json:"recommendedIPv4"`
 	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDomainConfigResponse) GetJSON200() *struct {
-	// AcceptedChallenges Which challenge types the domain can use for issuing certs.
-	AcceptedChallenges []GetDomainConfig200JSONResponseBodyAcceptedChallenges `json:"acceptedChallenges"`
-
-	// ConfiguredBy How we see the domain's configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain's A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.
-	ConfiguredBy *GetDomainConfig200JSONResponseBodyConfiguredBy `json:"configuredBy"`
-
-	// Misconfigured Whether or not the domain is configured AND we can automatically generate a TLS certificate.
-	Misconfigured GetDomainConfig200JSONResponseBodyMisconfigured `json:"misconfigured"`
-
-	// RecommendedCNAME Recommended CNAMEs for the domain. rank=1 is the preferred value to use.
-	RecommendedCNAME []struct {
-		Rank  float32 `json:"rank"`
-		Value string  `json:"value"`
-	} `json:"recommendedCNAME"`
-
-	// RecommendedIPv4 Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.
-	RecommendedIPv4 []struct {
-		Rank  float32  `json:"rank"`
-		Value []string `json:"value"`
-	} `json:"recommendedIPv4"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetDomainConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetDomainConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetDomainConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetDomainConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAuthTokensResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ListAuthTokens200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAuthTokensResponse) GetJSON200() *ListAuthTokens200JSONResponseBody {
-	return r.JSON200
 }

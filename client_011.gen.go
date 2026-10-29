@@ -8,6 +8,315 @@ import (
 	"time"
 )
 
+// EditRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteMissing1Value1Eq1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing1Value1Eq1 = float32
+
+// EditRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Missing_1_Value defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Missing_1_Value struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Missing_Item defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Missing_Item struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteMitigateAction defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMitigateAction string
+
+// EditRoute200JSONResponseBodyRouteRouteOverride defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteOverride bool
+
+// EditRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl bool
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0 struct {
+	Args   *EditRoute200JSONResponseBody_Route_Route_Transforms_0_Args `json:"args,omitempty"`
+	Env    *[]string                                                   `json:"env,omitempty"`
+	Op     EditRoute200JSONResponseBodyRouteRouteTransforms0Op         `json:"op"`
+	Target struct {
+		Key EditRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key `json:"key"`
+	} `json:"target"`
+	Type EditRoute200JSONResponseBodyRouteRouteTransforms0Type `json:"type"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0Args0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0Args0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0Args1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0Args1 = []string
+
+// EditRoute200JSONResponseBody_Route_Route_Transforms_0_Args defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Transforms_0_Args struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0Op defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0Op string
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1 struct {
+	Eq   *EditRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                               `json:"gt,omitempty"`
+	Gte  *float32                                                               `json:"gte,omitempty"`
+	Inc  *[]string                                                              `json:"inc,omitempty"`
+	Lt   *float32                                                               `json:"lt,omitempty"`
+	Lte  *float32                                                               `json:"lte,omitempty"`
+	Neq  *string                                                                `json:"neq,omitempty"`
+	Ninc *[]string                                                              `json:"ninc,omitempty"`
+	Pre  *string                                                                `json:"pre,omitempty"`
+	Suf  *string                                                                `json:"suf,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq1 = float32
+
+// EditRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms0Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms0Type string
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms1 struct {
+	Args string                                                `json:"args"`
+	Env  *[]string                                             `json:"env,omitempty"`
+	Op   EditRoute200JSONResponseBodyRouteRouteTransforms1Op   `json:"op"`
+	Type EditRoute200JSONResponseBodyRouteRouteTransforms1Type `json:"type"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms1Op defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms1Op string
+
+// EditRoute200JSONResponseBodyRouteRouteTransforms1Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteTransforms1Type string
+
+// EditRoute200JSONResponseBody_Route_Route_Transforms_Item defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Transforms_Item struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteType defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteType string
+
+// EditRoute200JSONResponseBodyRouteSrcSyntax defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteSrcSyntax string
+
+// EditRoute200JSONResponseBodyRouteStaged defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteStaged bool
+
+// EditRoute200JSONResponseBodyVersionIsLive defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyVersionIsLive bool
+
+// EditRoute200JSONResponseBodyVersionIsStaging defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyVersionIsStaging bool
+
+// UnpauseProjectParams defines parameters for UnpauseProject.
+type UnpauseProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// AggregateEventsParams defines parameters for AggregateEvents.
+type AggregateEventsParams struct {
+	// ProjectId The project identifier or the project name
+	ProjectId string `form:"projectId" json:"projectId"`
+
+	// By Up to two dimensions used to break down results.
+	//
+	// At most one time granularity is allowed: hour, day, week, month, year.
+	//
+	// Other dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.
+	//
+	// JSON dimensions: flags, eventData. Used bare, they break down results by key, for example flags returns one group per flag name. With a key, they break down results by that key's value, for example eventData/plan. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag'.
+	By []string `form:"by" json:"by"`
+
+	// Since Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data from (including) this date and time.
+	// Will be adjusted according to the desired time granularity.
+	Since struct {
+		union json.RawMessage
+	} `form:"since" json:"since"`
+
+	// Until Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data until (including) this date.
+	// Will be adjusted according to the desired time granularity.
+	Until struct {
+		union json.RawMessage
+	} `form:"until" json:"until"`
+
+	// Limit Number of distinct results, default to 10. Other results are grouped into "Others" group.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Filter OData-compliant filter. Encode the value when sending it in a URL.
+	//
+	// Allows filtering on one or multiple dimensions. By default, filters for production environment only.
+	//
+	// Supported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.
+	//
+	// JSON dimensions filtered by key: flags/<name>, eventData/<property>, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.
+	//
+	// Supported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// AggregateEventsParamsSince0 defines parameters for AggregateEvents.
+type AggregateEventsParamsSince0 = float32
+
+// AggregateEventsParamsSince1 defines parameters for AggregateEvents.
+type AggregateEventsParamsSince1 = string
+
+// AggregateEventsParamsUntil0 defines parameters for AggregateEvents.
+type AggregateEventsParamsUntil0 = float32
+
+// AggregateEventsParamsUntil1 defines parameters for AggregateEvents.
+type AggregateEventsParamsUntil1 = string
+
+// AggregateEvents200JSONResponseBodyData0 defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBodyData0 = []struct {
+	BrowserName      *string   `json:"browserName,omitempty"`
+	Country          *string   `json:"country,omitempty"`
+	DeviceType       *string   `json:"deviceType,omitempty"`
+	Environment      *string   `json:"environment,omitempty"`
+	EventData        *string   `json:"eventData,omitempty"`
+	EventName        *string   `json:"eventName,omitempty"`
+	Flags            *string   `json:"flags,omitempty"`
+	GroupId          *string   `json:"groupId,omitempty"`
+	OsName           *string   `json:"osName,omitempty"`
+	ProjectId        *string   `json:"projectId,omitempty"`
+	ProjectName      *string   `json:"projectName,omitempty"`
+	ReferrerHostname *string   `json:"referrerHostname,omitempty"`
+	RequestHostname  *string   `json:"requestHostname,omitempty"`
+	RequestPath      *string   `json:"requestPath,omitempty"`
+	Route            *string   `json:"route,omitempty"`
+	Timestamp        time.Time `json:"timestamp"`
+	UserId           *string   `json:"userId,omitempty"`
+	UtmCampaign      *string   `json:"utmCampaign,omitempty"`
+	UtmContent       *string   `json:"utmContent,omitempty"`
+	UtmMedium        *string   `json:"utmMedium,omitempty"`
+	UtmSource        *string   `json:"utmSource,omitempty"`
+	UtmTerm          *string   `json:"utmTerm,omitempty"`
+	VisitorId        *string   `json:"visitorId,omitempty"`
+}
+
+// AggregateEvents200JSONResponseBodyData1 defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBodyData1 = []AggregateEvents200JSONResponseBody_Data_1_Item
+
+// AggregateEvents200JSONResponseBody_Data_1_Item defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBody_Data_1_Item struct {
+	BrowserName          string             `json:"browserName"`
+	Country              string             `json:"country"`
+	DeviceType           string             `json:"deviceType"`
+	Environment          string             `json:"environment"`
+	EventData            string             `json:"eventData"`
+	EventName            string             `json:"eventName"`
+	Flags                string             `json:"flags"`
+	GroupId              string             `json:"groupId"`
+	OsName               string             `json:"osName"`
+	ProjectId            string             `json:"projectId"`
+	ProjectName          string             `json:"projectName"`
+	ReferrerHostname     string             `json:"referrerHostname"`
+	RequestHostname      string             `json:"requestHostname"`
+	RequestPath          string             `json:"requestPath"`
+	Route                string             `json:"route"`
+	UserId               string             `json:"userId"`
+	UtmCampaign          string             `json:"utmCampaign"`
+	UtmContent           string             `json:"utmContent"`
+	UtmMedium            string             `json:"utmMedium"`
+	UtmSource            string             `json:"utmSource"`
+	UtmTerm              string             `json:"utmTerm"`
+	VisitorId            string             `json:"visitorId"`
+	AdditionalProperties map[string]float32 `json:"-"`
+}
+
+// AggregateEvents200JSONResponseBody_Data defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBody_Data struct {
+	union json.RawMessage
+}
+
+// AggregateEvents200JSONResponseBodyQueryGroupBy0 defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBodyQueryGroupBy0 = string
+
+// AggregateEvents200JSONResponseBodyQueryGroupBy1 defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBodyQueryGroupBy1 string
+
+// AggregateEvents200JSONResponseBody_Query_GroupBy_Item defines parameters for AggregateEvents.
+type AggregateEvents200JSONResponseBody_Query_GroupBy_Item struct {
+	union json.RawMessage
+}
+
+// CountEventsParams defines parameters for CountEvents.
+type CountEventsParams struct {
+	// ProjectId The project identifier or the project name
+	ProjectId string `form:"projectId" json:"projectId"`
+
+	// Since Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data from (including) this date and time.
+	// Will be adjusted according to the desired time granularity.
+	Since *struct {
+		union json.RawMessage
+	} `form:"since,omitempty" json:"since,omitempty"`
+
+	// Until Timestamp in milliseconds, or a valid Date string.
+	//
+	// Selects data until (including) this date.
+	// Will be adjusted according to the desired time granularity.
+	Until *struct {
+		union json.RawMessage
+	} `form:"until,omitempty" json:"until,omitempty"`
+
+	// Filter OData-compliant filter. Encode the value when sending it in a URL.
+	//
+	// Allows filtering on one or multiple dimensions.
+	//
+	// Supported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.
+	//
+	// JSON dimensions filtered by key: flags/<name>, eventData/<property>, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.
+	//
+	// Supported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // CountEventsParamsSince0 defines parameters for CountEvents.
 type CountEventsParamsSince0 = float32
 
@@ -1796,6 +2105,109 @@ type CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue2 = 
 
 // CreateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value defines parameters for CreateConditionalBypass.
 type CreateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value struct {
+	union json.RawMessage
+}
+
+// UpdateConditionalBypassJSONBody defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBody struct {
+	ConditionGroup []struct {
+		Conditions []UpdateConditionalBypassJSONBody_ConditionGroup_Conditions_Item `json:"conditions"`
+	} `json:"conditionGroup"`
+	Domain string  `json:"domain"`
+	Note   *string `json:"note,omitempty"`
+}
+
+// UpdateConditionalBypassParams defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassParams struct {
+	ProjectId string  `form:"projectId" json:"projectId"`
+	Slug      *string `form:"slug,omitempty" json:"slug,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+}
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions0 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions0 struct {
+	Key   *UpdateConditionalBypassJSONBodyConditionGroupConditions0Key `json:"key,omitempty"`
+	Op    UpdateConditionalBypassJSONBodyConditionGroupConditions0Op   `json:"op"`
+	Type  UpdateConditionalBypassJSONBodyConditionGroupConditions0Type `json:"type"`
+	Value string                                                       `json:"value"`
+}
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions0Key defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions0Key string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions0Op defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions0Op string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions0Type defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions0Type string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions1 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions1 struct {
+	Op    UpdateConditionalBypassJSONBodyConditionGroupConditions1Op   `json:"op"`
+	Type  UpdateConditionalBypassJSONBodyConditionGroupConditions1Type `json:"type"`
+	Value string                                                       `json:"value"`
+}
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions1Op defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions1Op string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions1Type defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions1Type string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions2 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions2 struct {
+	Key   string                                                       `json:"key"`
+	Op    UpdateConditionalBypassJSONBodyConditionGroupConditions2Op   `json:"op"`
+	Type  UpdateConditionalBypassJSONBodyConditionGroupConditions2Type `json:"type"`
+	Value string                                                       `json:"value"`
+}
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions2Op defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions2Op string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions2Type defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions2Type string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions3 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions3 struct {
+	Key  string                                                       `json:"key"`
+	Op   UpdateConditionalBypassJSONBodyConditionGroupConditions3Op   `json:"op"`
+	Type UpdateConditionalBypassJSONBodyConditionGroupConditions3Type `json:"type"`
+}
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions3Op defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions3Op string
+
+// UpdateConditionalBypassJSONBodyConditionGroupConditions3Type defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBodyConditionGroupConditions3Type string
+
+// UpdateConditionalBypassJSONBody_ConditionGroup_Conditions_Item defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypassJSONBody_ConditionGroup_Conditions_Item struct {
+	union json.RawMessage
+}
+
+// UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg bool
+
+// UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp string
+
+// UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType string
+
+// UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue0 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue0 = string
+
+// UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue1 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue1 = float32
+
+// UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue2 defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsValue2 = []string
+
+// UpdateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value defines parameters for UpdateConditionalBypass.
+type UpdateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value struct {
 	union json.RawMessage
 }
 
@@ -19595,442 +20007,3 @@ type CreateProject200JSONResponseBody_Security_LogHeaders struct {
 
 // CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction defines parameters for CreateProject.
 type CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction string
-
-// CreateProject200JSONResponseBodySecurityManagedRulesAiBotsActive defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesAiBotsActive bool
-
-// CreateProject200JSONResponseBodySecurityManagedRulesBotFilterAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesBotFilterAction string
-
-// CreateProject200JSONResponseBodySecurityManagedRulesBotFilterActive defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesBotFilterActive bool
-
-// CreateProject200JSONResponseBodySecurityManagedRulesOwaspAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesOwaspAction string
-
-// CreateProject200JSONResponseBodySecurityManagedRulesOwaspActive defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesOwaspActive bool
-
-// CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesAction string
-
-// CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesActive defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesTrafficSourcesActive bool
-
-// CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetAction string
-
-// CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetActive defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesVercelRulesetActive bool
-
-// CreateProject200JSONResponseBodySecurityPageIntegrityEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityPageIntegrityEnabled bool
-
-// CreateProject200JSONResponseBodySecurityRulesetsAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityRulesetsAction string
-
-// CreateProject200JSONResponseBodySecurityRulesetsBypassSystem defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityRulesetsBypassSystem bool
-
-// CreateProject200JSONResponseBodySecurityRulesetsLogHeaders0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityRulesetsLogHeaders0 = []string
-
-// CreateProject200JSONResponseBodySecurityRulesetsLogHeaders1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityRulesetsLogHeaders1 string
-
-// CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo string
-
-// CreateProject200JSONResponseBodySecurityRulesetsRedirectPermanent defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityRulesetsRedirectPermanent bool
-
-// CreateProject200JSONResponseBodyServerlessFunctionZeroConfigFailover defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyServerlessFunctionZeroConfigFailover bool
-
-// CreateProject200JSONResponseBodyServicesFramework defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyServicesFramework string
-
-// CreateProject200JSONResponseBodyServicesServiceType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyServicesServiceType string
-
-// CreateProject200JSONResponseBodySkipGitConnectDuringLink defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySkipGitConnectDuringLink bool
-
-// CreateProject200JSONResponseBodySourceFilesOutsideRootDirectory defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySourceFilesOutsideRootDirectory bool
-
-// CreateProject200JSONResponseBodySpeedInsightsHasData defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySpeedInsightsHasData bool
-
-// CreateProject200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
-
-// CreateProject200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom string
-
-// CreateProject200JSONResponseBodySsoProtectionDeploymentType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySsoProtectionDeploymentType string
-
-// CreateProject200JSONResponseBodyStaticIpsBuilds defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyStaticIpsBuilds bool
-
-// CreateProject200JSONResponseBodyStaticIpsEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyStaticIpsEnabled bool
-
-// CreateProject200JSONResponseBodyTargetsAliasAssigned0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsAliasAssigned0 = float32
-
-// CreateProject200JSONResponseBodyTargetsAliasAssigned1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsAliasAssigned1 bool
-
-// CreateProject200JSONResponseBody_Targets_AliasAssigned defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_Targets_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyTargetsBranchMatcherType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsBranchMatcherType string
-
-// CreateProject200JSONResponseBodyTargetsChecksConclusion defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsChecksConclusion string
-
-// CreateProject200JSONResponseBodyTargetsChecksState defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsChecksState string
-
-// CreateProject200JSONResponseBodyTargetsConnectBuildsEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsConnectBuildsEnabled bool
-
-// CreateProject200JSONResponseBodyTargetsForced defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsForced bool
-
-// CreateProject200JSONResponseBodyTargetsPlan defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsPlan string
-
-// CreateProject200JSONResponseBodyTargetsPreviewCommentsEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsPreviewCommentsEnabled bool
-
-// CreateProject200JSONResponseBodyTargetsPrivate defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsPrivate bool
-
-// CreateProject200JSONResponseBodyTargetsReadyState defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsReadyState string
-
-// CreateProject200JSONResponseBodyTargetsReadySubstate defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsReadySubstate string
-
-// CreateProject200JSONResponseBodyTargetsType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsType string
-
-// CreateProject200JSONResponseBodyTargetsWithCache defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTargetsWithCache bool
-
-// CreateProject200JSONResponseBodyTier defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTier string
-
-// CreateProject200JSONResponseBodyTracingSamplingRulesDestination defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTracingSamplingRulesDestination string
-
-// CreateProject200JSONResponseBodyTracingSamplingRulesEnv defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTracingSamplingRulesEnv string
-
-// CreateProject200JSONResponseBodyTrustedIps0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedIps0 struct {
-	Addresses []struct {
-		Note  *string `json:"note,omitempty"`
-		Value string  `json:"value"`
-	} `json:"addresses"`
-	DeploymentType CreateProject200JSONResponseBodyTrustedIps0DeploymentType `json:"deploymentType"`
-	ProtectionMode CreateProject200JSONResponseBodyTrustedIps0ProtectionMode `json:"protectionMode"`
-}
-
-// CreateProject200JSONResponseBodyTrustedIps0DeploymentType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedIps0DeploymentType string
-
-// CreateProject200JSONResponseBodyTrustedIps0ProtectionMode defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedIps0ProtectionMode string
-
-// CreateProject200JSONResponseBodyTrustedIps1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedIps1 struct {
-	DeploymentType CreateProject200JSONResponseBodyTrustedIps1DeploymentType `json:"deploymentType"`
-}
-
-// CreateProject200JSONResponseBodyTrustedIps1DeploymentType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedIps1DeploymentType string
-
-// CreateProject200JSONResponseBody_TrustedIps defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_TrustedIps struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository bool
-
-// CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 struct {
-	Preset *CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset `json:"preset,omitempty"`
-
-	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
-	Slugs []string `json:"slugs"`
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset string
-
-// CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 struct {
-	Preset CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset `json:"preset"`
-
-	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
-	Slugs *[]string `json:"slugs,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset string
-
-// CreateProject200JSONResponseBody_TrustedSources_OidcProviders_To defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_TrustedSources_OidcProviders_To struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 struct {
-	Preset *CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset `json:"preset,omitempty"`
-
-	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
-	Slugs []string `json:"slugs"`
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset string
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 struct {
-	Preset CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset `json:"preset"`
-
-	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
-	Slugs *[]string `json:"slugs,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset string
-
-// CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 struct {
-	Preset *CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset `json:"preset,omitempty"`
-
-	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
-	Slugs []string `json:"slugs"`
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset string
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 struct {
-	Preset CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset `json:"preset"`
-
-	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
-	Slugs *[]string `json:"slugs,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset string
-
-// CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyUsageStatusKind defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyUsageStatusKind string
-
-// CreateProject200JSONResponseBodyUsageStatusTeamThrottled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyUsageStatusTeamThrottled bool
-
-// CreateProject200JSONResponseBodyUsageStatusThrottled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyUsageStatusThrottled bool
-
-// CreateProject200JSONResponseBodyV0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyV0 bool
-
-// CreateProject200JSONResponseBodyV0Created defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyV0Created bool
-
-// CreateProject200JSONResponseBodyWebAnalyticsHasData defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyWebAnalyticsHasData bool
-
-// CancelDeploymentParams defines parameters for CancelDeployment.
-type CancelDeploymentParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CancelDeployment200JSONResponseBodyAliasAssigned defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAliasAssigned bool
-
-// CancelDeployment200JSONResponseBodyAliasAssignedAt0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAliasAssignedAt0 = float32
-
-// CancelDeployment200JSONResponseBodyAliasAssignedAt1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAliasAssignedAt1 bool
-
-// CancelDeployment200JSONResponseBody_AliasAssignedAt defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_AliasAssignedAt struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyAlwaysRefuseToBuild defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAlwaysRefuseToBuild bool
-
-// CancelDeployment200JSONResponseBodyAtproto0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAtproto0 struct {
-	Enabled CancelDeployment200JSONResponseBodyAtproto0Enabled `json:"enabled"`
-}
-
-// CancelDeployment200JSONResponseBodyAtproto0Enabled defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAtproto0Enabled bool
-
-// CancelDeployment200JSONResponseBodyAtproto1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAtproto1 struct {
-	Enabled      CancelDeployment200JSONResponseBodyAtproto1Enabled `json:"enabled"`
-	Subscription struct {
-		Collections []string                                                        `json:"collections"`
-		Dids        *[]string                                                       `json:"dids,omitempty"`
-		Kinds       *[]CancelDeployment200JSONResponseBodyAtproto1SubscriptionKinds `json:"kinds,omitempty"`
-		Path        string                                                          `json:"path"`
-	} `json:"subscription"`
-}
-
-// CancelDeployment200JSONResponseBodyAtproto1Enabled defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAtproto1Enabled bool
-
-// CancelDeployment200JSONResponseBodyAtproto1SubscriptionKinds defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAtproto1SubscriptionKinds string
-
-// CancelDeployment200JSONResponseBody_Atproto defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_Atproto struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyAttributionCommitMetaIsVerified defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAttributionCommitMetaIsVerified bool
-
-// CancelDeployment200JSONResponseBodyAttributionGitUserId0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAttributionGitUserId0 = string
-
-// CancelDeployment200JSONResponseBodyAttributionGitUserId1 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAttributionGitUserId1 = float32
-
-// CancelDeployment200JSONResponseBody_Attribution_GitUser_Id defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBody_Attribution_GitUser_Id struct {
-	union json.RawMessage
-}
-
-// CancelDeployment200JSONResponseBodyAutoAssignCustomDomains defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyAutoAssignCustomDomains bool
-
-// CancelDeployment200JSONResponseBodyBuildSkipped defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyBuildSkipped bool
-
-// CancelDeployment200JSONResponseBodyChecksDeploymentAliasState defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyChecksDeploymentAliasState string
-
-// CancelDeployment200JSONResponseBodyChecksConclusion defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyChecksConclusion string
-
-// CancelDeployment200JSONResponseBodyChecksState defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyChecksState string
-
-// CancelDeployment200JSONResponseBodyConfigFunctionMemoryType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConfigFunctionMemoryType string
-
-// CancelDeployment200JSONResponseBodyConfigFunctionType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConfigFunctionType string
-
-// CancelDeployment200JSONResponseBodyConfigIsUsingActiveCPU defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConfigIsUsingActiveCPU bool
-
-// CancelDeployment200JSONResponseBodyConfigResourceConfigBuildMachinePurchaseType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConfigResourceConfigBuildMachinePurchaseType string
-
-// CancelDeployment200JSONResponseBodyConfigResourceConfigBuildQueueConfiguration defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConfigResourceConfigBuildQueueConfiguration string
-
-// CancelDeployment200JSONResponseBodyConfigResourceConfigElasticConcurrency defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConfigResourceConfigElasticConcurrency string
-
-// CancelDeployment200JSONResponseBodyConnectBuildsEnabled defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyConnectBuildsEnabled bool
-
-// CancelDeployment200JSONResponseBodyCreatorType defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCreatorType string
-
-// CancelDeployment200JSONResponseBodyCustomEnvironment0 defines parameters for CancelDeployment.
-type CancelDeployment200JSONResponseBodyCustomEnvironment0 struct {
-	// BranchMatcher Configuration for matching git branches to this environment
-	BranchMatcher *struct {
-		// Pattern The pattern to match against branch names
-		Pattern string `json:"pattern"`
-
-		// Type The type of matching to perform
-		Type CancelDeployment200JSONResponseBodyCustomEnvironment0BranchMatcherType `json:"type"`
-	} `json:"branchMatcher,omitempty"`
-
-	// CreatedAt Timestamp when the environment was created
-	CreatedAt float32 `json:"createdAt"`
-
-	// CurrentDeploymentAliases List of aliases for the current deployment
-	CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-	// Description Optional description of the environment's purpose
-	Description *string `json:"description,omitempty"`
-
-	// Domains List of domains associated with this environment
-	Domains *[]struct {
-		ApexName            string                                                                          `json:"apexName"`
-		CreatedAt           *float32                                                                        `json:"createdAt,omitempty"`
-		CustomEnvironmentId *string                                                                         `json:"customEnvironmentId,omitempty"`
-		GitBranch           *string                                                                         `json:"gitBranch,omitempty"`
-		Name                string                                                                          `json:"name"`
-		ProjectId           string                                                                          `json:"projectId"`
-		Redirect            *string                                                                         `json:"redirect,omitempty"`
-		RedirectStatusCode  *CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-		UpdatedAt           *float32                                                                        `json:"updatedAt,omitempty"`
-
-		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-		Verification *[]struct {
-			Domain string `json:"domain"`
-			Reason string `json:"reason"`
-			Type   string `json:"type"`
-			Value  string `json:"value"`
-		} `json:"verification,omitempty"`
-
-		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-		Verified CancelDeployment200JSONResponseBodyCustomEnvironment0DomainsVerified `json:"verified"`
-	} `json:"domains,omitempty"`
-
-	// Id Unique identifier for the custom environment (format: env_*)
-	Id string `json:"id"`
-
-	// Slug URL-friendly name of the environment
-	Slug string `json:"slug"`
-
-	// Type The type of environment (production, preview, or development)
-	Type CancelDeployment200JSONResponseBodyCustomEnvironment0Type `json:"type"`
-
-	// UpdatedAt Timestamp when the environment was last updated
-	UpdatedAt float32 `json:"updatedAt"`
-}

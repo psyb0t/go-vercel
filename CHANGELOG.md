@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.13.0, 2026-10-29
+
+- Removed `GetConfiguration200JSONResponseBody0.TransferRequest` and the types behind it: `GetConfiguration200JSONResponseBody0TransferRequest0`, `GetConfiguration200JSONResponseBody0TransferRequest1` and `GetConfiguration200JSONResponseBody_0_TransferRequest`, with their `Kind` and `BillingPlan` enums and constants.
+- Added the `UpdateConditionalBypass` and `UpdateConditionalBypassWithBody` methods on `Client` and `ClientInterface`, plus `UpdateConditionalBypassWithResponse` and `UpdateConditionalBypassWithBodyWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Also added `NewUpdateConditionalBypassRequest`, `NewUpdateConditionalBypassRequestWithBody` and `ParseUpdateConditionalBypassResponse`, with the `UpdateConditionalBypass200JSONResponseBody...` condition `Type`, `Op` and `Neg` types and constants.
+- Reshaped many `UserEventPayload` types again. `UserEventPayload407` to `UserEventPayload419` lose most of their fields, for example `UserEventPayload407.TeamId`, `UserEventPayload407.RemovedUsers` and `UserEventPayload419.NewPlan`. `UserEventPayload412.Enabled` changes from `*UserEventPayload412Enabled` to `UserEventPayload412Enabled`, `UserEventPayload413.Enabled` becomes a pointer and `UserEventPayload413Enabled` changes from `string` to `bool`. `UserEventPayload416` is no longer comparable.
+- Removed `UserEvent_Payload_442_Next_AdditionalProperties` and `UserEvent_Payload_442_Previous_AdditionalProperties`.
+- Added `...SourceProjectOverviewRecommendedIntegrations` types for `CreateIntegrationStoreDirectJSONBody`, `GetBillingPlansParams`, `GetConfiguration200JSONResponseBody0` to `2` and `GetConfigurations200JSONResponseBody0` and `1`.
+- Added the event types `ListEventTypeNameFirewallConditionalBypassUpdated` and `ListEventTypeNameTeamRuntimeCacheUpdated`, with their `ListEventTypeReplacedBy...` counterparts.
+- Generated from spec version 0.0.1.
+
 ## v0.12.0, 2026-10-29
 
 - Changed the `Options` field of `BuyCredits200JSONResponseBody2OrbSubscriptionIntentConfiguration0` and `...Configuration1`: `ResourceIds` is removed from both.

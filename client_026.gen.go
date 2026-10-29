@@ -12,6 +12,73 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetDomainConfigResponse) GetJSON200() *struct {
+	// AcceptedChallenges Which challenge types the domain can use for issuing certs.
+	AcceptedChallenges []GetDomainConfig200JSONResponseBodyAcceptedChallenges `json:"acceptedChallenges"`
+
+	// ConfiguredBy How we see the domain's configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain's A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.
+	ConfiguredBy *GetDomainConfig200JSONResponseBodyConfiguredBy `json:"configuredBy"`
+
+	// Misconfigured Whether or not the domain is configured AND we can automatically generate a TLS certificate.
+	Misconfigured GetDomainConfig200JSONResponseBodyMisconfigured `json:"misconfigured"`
+
+	// RecommendedCNAME Recommended CNAMEs for the domain. rank=1 is the preferred value to use.
+	RecommendedCNAME []struct {
+		Rank  float32 `json:"rank"`
+		Value string  `json:"value"`
+	} `json:"recommendedCNAME"`
+
+	// RecommendedIPv4 Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.
+	RecommendedIPv4 []struct {
+		Rank  float32  `json:"rank"`
+		Value []string `json:"value"`
+	} `json:"recommendedIPv4"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetDomainConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDomainConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDomainConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetDomainConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAuthTokensResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ListAuthTokens200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAuthTokensResponse) GetJSON200() *ListAuthTokens200JSONResponseBody {
+	return r.JSON200
+}
+
 // GetBody returns the raw response body bytes
 func (r ListAuthTokensResponse) GetBody() []byte {
 	return r.Body
@@ -16142,6 +16209,36 @@ func (c *ClientWithResponses) CreateConditionalBypassWithResponse(ctx context.Co
 	return ParseCreateConditionalBypassResponse(rsp)
 }
 
+// UpdateConditionalBypassWithBodyWithResponse Update conditional firewall bypass
+//
+// Update a conditional firewall bypass rule for a project domain. Replaces conditions and the note for the domain's existing rule. Omitting `note` clears it. The rule ID, domain, creator, and creation time are preserved. Missing or deleted rules are not created.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/security/firewall/bypass/rules (the `UpdateConditionalBypass` operationId).
+func (c *ClientWithResponses) UpdateConditionalBypassWithBodyWithResponse(ctx context.Context, params *UpdateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateConditionalBypassResponse, error) {
+	rsp, err := c.UpdateConditionalBypassWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateConditionalBypassResponse(rsp)
+}
+
+// UpdateConditionalBypassWithResponse Update conditional firewall bypass
+//
+// Update a conditional firewall bypass rule for a project domain. Replaces conditions and the note for the domain's existing rule. Omitting `note` clears it. The rule ID, domain, creator, and creation time are preserved. Missing or deleted rules are not created.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/security/firewall/bypass/rules (the `UpdateConditionalBypass` operationId).
+func (c *ClientWithResponses) UpdateConditionalBypassWithResponse(ctx context.Context, params *UpdateConditionalBypassParams, body UpdateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateConditionalBypassResponse, error) {
+	rsp, err := c.UpdateConditionalBypass(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateConditionalBypassResponse(rsp)
+}
+
 // GetSecurityFirewallConfigWithResponse Returns activated WAF config
 //
 // Lists WAF configs for a project.
@@ -19916,111 +20013,4 @@ func (c *ClientWithResponses) UpdateCustomEnvironmentWithBodyWithResponse(ctx co
 		return nil, err
 	}
 	return ParseUpdateCustomEnvironmentResponse(rsp)
-}
-
-// UpdateCustomEnvironmentWithResponse Update a custom environment
-//
-// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
-func (c *ClientWithResponses) UpdateCustomEnvironmentWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, body UpdateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCustomEnvironmentResponse, error) {
-	rsp, err := c.UpdateCustomEnvironment(ctx, idOrName, environmentSlugOrId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateCustomEnvironmentResponse(rsp)
-}
-
-// GetProjectDomainsWithResponse Retrieve project domains by project by id or name
-//
-// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v9/projects/{idOrName}/domains (the `GetProjectDomains` operationId).
-func (c *ClientWithResponses) GetProjectDomainsWithResponse(ctx context.Context, idOrName struct {
-	union json.RawMessage
-}, params *GetProjectDomainsParams, reqEditors ...RequestEditorFn) (*GetProjectDomainsResponse, error) {
-	rsp, err := c.GetProjectDomains(ctx, idOrName, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetProjectDomainsResponse(rsp)
-}
-
-// RemoveProjectDomainWithBodyWithResponse Remove a domain from a project
-//
-// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-func (c *ClientWithResponses) RemoveProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveProjectDomainResponse, error) {
-	rsp, err := c.RemoveProjectDomainWithBody(ctx, idOrName, domain, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRemoveProjectDomainResponse(rsp)
-}
-
-// RemoveProjectDomainWithResponse Remove a domain from a project
-//
-// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
-func (c *ClientWithResponses) RemoveProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, body RemoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveProjectDomainResponse, error) {
-	rsp, err := c.RemoveProjectDomain(ctx, idOrName, domain, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRemoveProjectDomainResponse(rsp)
-}
-
-// GetProjectDomainWithResponse Get a project domain
-//
-// Get project domain by project id/name and domain name.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v9/projects/{idOrName}/domains/{domain} (the `GetProjectDomain` operationId).
-func (c *ClientWithResponses) GetProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *GetProjectDomainParams, reqEditors ...RequestEditorFn) (*GetProjectDomainResponse, error) {
-	rsp, err := c.GetProjectDomain(ctx, idOrName, domain, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetProjectDomainResponse(rsp)
-}
-
-// UpdateProjectDomainWithBodyWithResponse Update a project domain
-//
-// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-func (c *ClientWithResponses) UpdateProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectDomainResponse, error) {
-	rsp, err := c.UpdateProjectDomainWithBody(ctx, idOrName, domain, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateProjectDomainResponse(rsp)
-}
-
-// UpdateProjectDomainWithResponse Update a project domain
-//
-// Update a project domain's configuration, including the name, git branch and redirect of the domain.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
-func (c *ClientWithResponses) UpdateProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, body UpdateProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectDomainResponse, error) {
-	rsp, err := c.UpdateProjectDomain(ctx, idOrName, domain, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateProjectDomainResponse(rsp)
 }

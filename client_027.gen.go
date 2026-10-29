@@ -12,6 +12,113 @@ import (
 	"time"
 )
 
+// UpdateCustomEnvironmentWithResponse Update a custom environment
+//
+// Update a custom environment for the project. Must not be named 'Production' or 'Preview'.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} (the `UpdateCustomEnvironment` operationId).
+func (c *ClientWithResponses) UpdateCustomEnvironmentWithResponse(ctx context.Context, idOrName string, environmentSlugOrId string, params *UpdateCustomEnvironmentParams, body UpdateCustomEnvironmentJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCustomEnvironmentResponse, error) {
+	rsp, err := c.UpdateCustomEnvironment(ctx, idOrName, environmentSlugOrId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateCustomEnvironmentResponse(rsp)
+}
+
+// GetProjectDomainsWithResponse Retrieve project domains by project by id or name
+//
+// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v9/projects/{idOrName}/domains (the `GetProjectDomains` operationId).
+func (c *ClientWithResponses) GetProjectDomainsWithResponse(ctx context.Context, idOrName struct {
+	union json.RawMessage
+}, params *GetProjectDomainsParams, reqEditors ...RequestEditorFn) (*GetProjectDomainsResponse, error) {
+	rsp, err := c.GetProjectDomains(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectDomainsResponse(rsp)
+}
+
+// RemoveProjectDomainWithBodyWithResponse Remove a domain from a project
+//
+// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
+func (c *ClientWithResponses) RemoveProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveProjectDomainResponse, error) {
+	rsp, err := c.RemoveProjectDomainWithBody(ctx, idOrName, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveProjectDomainResponse(rsp)
+}
+
+// RemoveProjectDomainWithResponse Remove a domain from a project
+//
+// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v9/projects/{idOrName}/domains/{domain} (the `RemoveProjectDomain` operationId).
+func (c *ClientWithResponses) RemoveProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *RemoveProjectDomainParams, body RemoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveProjectDomainResponse, error) {
+	rsp, err := c.RemoveProjectDomain(ctx, idOrName, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveProjectDomainResponse(rsp)
+}
+
+// GetProjectDomainWithResponse Get a project domain
+//
+// Get project domain by project id/name and domain name.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v9/projects/{idOrName}/domains/{domain} (the `GetProjectDomain` operationId).
+func (c *ClientWithResponses) GetProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *GetProjectDomainParams, reqEditors ...RequestEditorFn) (*GetProjectDomainResponse, error) {
+	rsp, err := c.GetProjectDomain(ctx, idOrName, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectDomainResponse(rsp)
+}
+
+// UpdateProjectDomainWithBodyWithResponse Update a project domain
+//
+// Update a project domain's configuration, including the name, git branch and redirect of the domain.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
+func (c *ClientWithResponses) UpdateProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectDomainResponse, error) {
+	rsp, err := c.UpdateProjectDomainWithBody(ctx, idOrName, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectDomainResponse(rsp)
+}
+
+// UpdateProjectDomainWithResponse Update a project domain
+//
+// Update a project domain's configuration, including the name, git branch and redirect of the domain.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v9/projects/{idOrName}/domains/{domain} (the `UpdateProjectDomain` operationId).
+func (c *ClientWithResponses) UpdateProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *UpdateProjectDomainParams, body UpdateProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectDomainResponse, error) {
+	rsp, err := c.UpdateProjectDomain(ctx, idOrName, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectDomainResponse(rsp)
+}
+
 // VerifyProjectDomainWithResponse Verify project domain
 //
 // Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
