@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.14.0, 2026-10-30
+
+- Added the `DisconnectConnectorProjectEnvironment` method on `Client` and `ClientInterface`, and `DisconnectConnectorProjectEnvironmentWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Also added `NewDisconnectConnectorProjectEnvironmentRequest`, `ParseDisconnectConnectorProjectEnvironmentResponse`, `DisconnectConnectorProjectEnvironmentParams`, `DisconnectConnectorProjectEnvironmentResponse` and the `DisconnectConnectorProjectEnvironmentParamsEnvironment0` and `...Environment1` types. Custom implementations of the two interfaces must add the new methods.
+- Added `GitComments` and `GitProviderOptions` to `UpdateProjectJSONBody` and `UpdateProjectJSONRequestBody`, with the `UpdateProjectJSONBodyGitProviderOptionsCreateDeployments` type and its `...Disabled` and `...Enabled` constants.
+- Added `CodeChannels` to `ConnectConnectorCreateData7` and `ConnectConnectorUpdateData5`.
+- Reshaped many `UserEventPayload` types again. `UserEventPayload201` to `UserEventPayload216` lose most of their fields, for example `UserEventPayload201.Queries`, `UserEventPayload210.ProjectId` and `UserEventPayload216.Username`, along with their enum types. `UserEventPayload304` to `UserEventPayload313` lose fields such as `GitProvider`, `OnCommit` and `ProjectName`. `UserEventPayload300.Next` and `Previous` now hold `FunctionDefaultMemoryType`, and `UserEventPayload301.Next` and `Previous` now hold `FunctionDefaultRegions`.
+- Changed field types: `UserEventPayload213.LogDrainUrl` from `string` to `*string` and `UserEventPayload311.RequireVerifiedCommits` to a pointer. `UserEventPayload203`, `UserEventPayload205` and `UserEventPayload301` are no longer comparable.
+- Moved `Set` and `UnmarshalJSON` from `UserEventPayload254` to `UserEventPayload255`. `UserEvent_Payload` gains `FromUserEventPayload507`, `FromUserEventPayload508`, `MergeUserEventPayload507` and `MergeUserEventPayload508`.
+- Added the event types `ListEventTypeNameAiSecurityReview`, `ListEventTypeNameIntegrationSecretRotated` and `ListEventTypeNameIntegrationPreviousSecretRevoked`, with their `ListEventTypeReplacedBy...` and `UserEventType...` counterparts.
+- The rest of the diff reorders generated code across the `client_*.gen.go` files.
+- Generated from spec version 0.0.1.
+
 ## v0.13.0, 2026-10-29
 
 - Removed `GetConfiguration200JSONResponseBody0.TransferRequest` and the types behind it: `GetConfiguration200JSONResponseBody0TransferRequest0`, `GetConfiguration200JSONResponseBody0TransferRequest1` and `GetConfiguration200JSONResponseBody_0_TransferRequest`, with their `Kind` and `BillingPlan` enums and constants.

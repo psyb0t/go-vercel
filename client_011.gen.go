@@ -8,6 +8,98 @@ import (
 	"time"
 )
 
+// EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq1 = float32
+
+// EditRoute200JSONResponseBody_Route_Route_Has_1_Value_1_Eq defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Has_1_Value defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Has_Item defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Has_Item struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteImportant defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteImportant bool
+
+// EditRoute200JSONResponseBodyRouteRouteMissing0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing0 struct {
+	Type  EditRoute200JSONResponseBodyRouteRouteMissing0Type       `json:"type"`
+	Value EditRoute200JSONResponseBody_Route_Route_Missing_0_Value `json:"value"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteMissing0Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing0Type string
+
+// EditRoute200JSONResponseBodyRouteRouteMissing0Value0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing0Value0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteMissing0Value1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing0Value1 struct {
+	Eq   *EditRoute200JSONResponseBody_Route_Route_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                       `json:"gt,omitempty"`
+	Gte  *float32                                                       `json:"gte,omitempty"`
+	Inc  *[]string                                                      `json:"inc,omitempty"`
+	Lt   *float32                                                       `json:"lt,omitempty"`
+	Lte  *float32                                                       `json:"lte,omitempty"`
+	Neq  *string                                                        `json:"neq,omitempty"`
+	Ninc *[]string                                                      `json:"ninc,omitempty"`
+	Pre  *string                                                        `json:"pre,omitempty"`
+	Re   *string                                                        `json:"re,omitempty"`
+	Suf  *string                                                        `json:"suf,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq1 = float32
+
+// EditRoute200JSONResponseBody_Route_Route_Missing_0_Value_1_Eq defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Missing_0_Value defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteMissing1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing1 struct {
+	Key   string                                                    `json:"key"`
+	Type  EditRoute200JSONResponseBodyRouteRouteMissing1Type        `json:"type"`
+	Value *EditRoute200JSONResponseBody_Route_Route_Missing_1_Value `json:"value,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteMissing1Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing1Type string
+
+// EditRoute200JSONResponseBodyRouteRouteMissing1Value0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing1Value0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteMissing1Value1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteMissing1Value1 struct {
+	Eq   *EditRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                       `json:"gt,omitempty"`
+	Gte  *float32                                                       `json:"gte,omitempty"`
+	Inc  *[]string                                                      `json:"inc,omitempty"`
+	Lt   *float32                                                       `json:"lt,omitempty"`
+	Lte  *float32                                                       `json:"lte,omitempty"`
+	Neq  *string                                                        `json:"neq,omitempty"`
+	Ninc *[]string                                                      `json:"ninc,omitempty"`
+	Pre  *string                                                        `json:"pre,omitempty"`
+	Re   *string                                                        `json:"re,omitempty"`
+	Suf  *string                                                        `json:"suf,omitempty"`
+}
+
 // EditRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 defines parameters for EditRoute.
 type EditRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 = string
 
@@ -19916,94 +20008,3 @@ type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 struct {
 	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label  `json:"label"`
 	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory `json:"memory"`
 }
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label string
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory float32
-
-// CreateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
-
-// CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta bool
-
-// CreateProject200JSONResponseBodyResourceConfigFluid defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigFluid bool
-
-// CreateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType string
-
-// CreateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover bool
-
-// CreateProject200JSONResponseBodyResourceConfigIsNSNBDisabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigIsNSNBDisabled bool
-
-// CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
-
-// CreateProject200JSONResponseBodyRollingReleaseGateAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseGateAction string
-
-// CreateProject200JSONResponseBodyRollingReleaseGateChecksType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseGateChecksType string
-
-// CreateProject200JSONResponseBodyRollingReleaseGateDryRun defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseGateDryRun bool
-
-// CreateProject200JSONResponseBodyRollingReleaseGateEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseGateEnabled bool
-
-// CreateProject200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseStagesLinearShift bool
-
-// CreateProject200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyRollingReleaseStagesRequireApproval bool
-
-// CreateProject200JSONResponseBodySandboxFailoverRegions defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySandboxFailoverRegions string
-
-// CreateProject200JSONResponseBodySandboxRegion defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySandboxRegion string
-
-// CreateProject200JSONResponseBodySecurityAttackModeEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityAttackModeEnabled bool
-
-// CreateProject200JSONResponseBodySecurityBotIdEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityBotIdEnabled bool
-
-// CreateProject200JSONResponseBodySecurityFirewallEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityFirewallEnabled bool
-
-// CreateProject200JSONResponseBodySecurityFirewallSeawallEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityFirewallSeawallEnabled bool
-
-// CreateProject200JSONResponseBodySecurityJa3Enabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityJa3Enabled bool
-
-// CreateProject200JSONResponseBodySecurityJa4Enabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityJa4Enabled bool
-
-// CreateProject200JSONResponseBodySecurityLogHeaders0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityLogHeaders0 = []string
-
-// CreateProject200JSONResponseBodySecurityLogHeaders1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityLogHeaders1 string
-
-// CreateProject200JSONResponseBody_Security_LogHeaders defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_Security_LogHeaders struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction defines parameters for CreateProject.
-type CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction string

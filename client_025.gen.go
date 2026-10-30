@@ -8,6 +8,1796 @@ import (
 	"time"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r AddRouteResponse) GetJSON200() *struct {
+	Route struct {
+		// Description Optional description of what the routing rule does.
+		Description *string `json:"description,omitempty"`
+
+		// Enabled Whether the routing rule is enabled. Defaults to true.
+		Enabled *AddRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
+
+		// Id Unique identifier for the routing rule.
+		Id string `json:"id"`
+
+		// Name Human-readable name for the routing rule.
+		Name string `json:"name"`
+
+		// RawDest Original destination provided by user.
+		RawDest *string `json:"rawDest,omitempty"`
+
+		// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
+		RawSrc *string `json:"rawSrc,omitempty"`
+
+		// Route The route definition from @vercel/routing-utils.
+		Route struct {
+			CaseSensitive *AddRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
+			Check         *AddRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
+			Continue      *AddRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
+			Dest          *string                                              `json:"dest,omitempty"`
+			Destination   *AddRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
+			Env           *[]string                                            `json:"env,omitempty"`
+			Has           *[]AddRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
+			Headers       *map[string]string                                   `json:"headers,omitempty"`
+			Important     *AddRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
+			Locale        *struct {
+				Cookie   *string            `json:"cookie,omitempty"`
+				Redirect *map[string]string `json:"redirect,omitempty"`
+			} `json:"locale,omitempty"`
+			Methods *[]string `json:"methods,omitempty"`
+
+			// Middleware A middleware index in the `middleware` key under the build result
+			Middleware *float32 `json:"middleware,omitempty"`
+
+			// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+			MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+			// MiddlewareRawSrc The original middleware matchers.
+			MiddlewareRawSrc *[]string                                               `json:"middlewareRawSrc,omitempty"`
+			Missing          *[]AddRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
+			Mitigate         *struct {
+				Action AddRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
+			} `json:"mitigate,omitempty"`
+			Override                  *AddRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
+			RespectOriginCacheControl *AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+			// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+			Source     *string                                                    `json:"source,omitempty"`
+			Src        string                                                     `json:"src"`
+			Status     *float32                                                   `json:"status,omitempty"`
+			StatusCode *float32                                                   `json:"statusCode,omitempty"`
+			Transforms *[]AddRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
+		} `json:"route"`
+		RouteType *AddRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
+
+		// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+		SrcSyntax *AddRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+
+		// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+		Staged *AddRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
+	} `json:"route"`
+
+	// Version A version of routing rules stored in S3.
+	Version struct {
+		// Alias The staging alias for previewing this version.
+		Alias *string `json:"alias,omitempty"`
+
+		// CreatedBy The user who created this version.
+		CreatedBy string `json:"createdBy"`
+
+		// Id Unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *AddRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version is staged and not yet promoted to production.
+		IsStaging *AddRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// LastModified Timestamp of when this version was last modified.
+		LastModified float32 `json:"lastModified"`
+
+		// RuleCount The number of routing rules in this version.
+		RuleCount *float32 `json:"ruleCount,omitempty"`
+
+		// S3Key The S3 key where the routing rules are stored.
+		S3Key string `json:"s3Key"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r AddRouteResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r AddRouteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AddRouteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r AddRouteResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type StageRoutesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Version A version of routing rules stored in S3.
+		Version struct {
+			// Alias The staging alias for previewing this version.
+			Alias *string `json:"alias,omitempty"`
+
+			// CreatedBy The user who created this version.
+			CreatedBy string `json:"createdBy"`
+
+			// Id Unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *StageRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version is staged and not yet promoted to production.
+			IsStaging *StageRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// LastModified Timestamp of when this version was last modified.
+			LastModified float32 `json:"lastModified"`
+
+			// RuleCount The number of routing rules in this version.
+			RuleCount *float32 `json:"ruleCount,omitempty"`
+
+			// S3Key The S3 key where the routing rules are stored.
+			S3Key string `json:"s3Key"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r StageRoutesResponse) GetJSON200() *struct {
+	// Version A version of routing rules stored in S3.
+	Version struct {
+		// Alias The staging alias for previewing this version.
+		Alias *string `json:"alias,omitempty"`
+
+		// CreatedBy The user who created this version.
+		CreatedBy string `json:"createdBy"`
+
+		// Id Unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *StageRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version is staged and not yet promoted to production.
+		IsStaging *StageRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// LastModified Timestamp of when this version was last modified.
+		LastModified float32 `json:"lastModified"`
+
+		// RuleCount The number of routing rules in this version.
+		RuleCount *float32 `json:"ruleCount,omitempty"`
+
+		// S3Key The S3 key where the routing rules are stored.
+		S3Key string `json:"s3Key"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r StageRoutesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r StageRoutesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r StageRoutesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r StageRoutesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenerateRouteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Error *string `json:"error,omitempty"`
+		Route *struct {
+			Actions []struct {
+				Dest    *string `json:"dest,omitempty"`
+				Headers *[]struct {
+					Key   string                                                `json:"key"`
+					Op    GenerateRoute200JSONResponseBodyRouteActionsHeadersOp `json:"op"`
+					Value *string                                               `json:"value,omitempty"`
+				} `json:"headers,omitempty"`
+				Status  *float32                                             `json:"status,omitempty"`
+				SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
+				Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
+			} `json:"actions"`
+			CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
+			Conditions    *[]struct {
+				Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
+				Key      *string                                                 `json:"key,omitempty"`
+				Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
+				Operator GenerateRoute200JSONResponseBodyRouteConditionsOperator `json:"operator"`
+				Value    *string                                                 `json:"value,omitempty"`
+			} `json:"conditions,omitempty"`
+			Description   string `json:"description"`
+			Name          string `json:"name"`
+			PathCondition struct {
+				Syntax GenerateRoute200JSONResponseBodyRoutePathConditionSyntax `json:"syntax"`
+				Value  string                                                   `json:"value"`
+			} `json:"pathCondition"`
+		} `json:"route,omitempty"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateRouteResponse) GetJSON200() *struct {
+	Error *string `json:"error,omitempty"`
+	Route *struct {
+		Actions []struct {
+			Dest    *string `json:"dest,omitempty"`
+			Headers *[]struct {
+				Key   string                                                `json:"key"`
+				Op    GenerateRoute200JSONResponseBodyRouteActionsHeadersOp `json:"op"`
+				Value *string                                               `json:"value,omitempty"`
+			} `json:"headers,omitempty"`
+			Status  *float32                                             `json:"status,omitempty"`
+			SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
+			Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
+		} `json:"actions"`
+		CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
+		Conditions    *[]struct {
+			Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
+			Key      *string                                                 `json:"key,omitempty"`
+			Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
+			Operator GenerateRoute200JSONResponseBodyRouteConditionsOperator `json:"operator"`
+			Value    *string                                                 `json:"value,omitempty"`
+		} `json:"conditions,omitempty"`
+		Description   string `json:"description"`
+		Name          string `json:"name"`
+		PathCondition struct {
+			Syntax GenerateRoute200JSONResponseBodyRoutePathConditionSyntax `json:"syntax"`
+			Value  string                                                   `json:"value"`
+		} `json:"pathCondition"`
+	} `json:"route,omitempty"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateRouteResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateRouteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateRouteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateRouteResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetRouteVersionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Versions []struct {
+			// Alias The staging alias for previewing this version.
+			Alias *string `json:"alias,omitempty"`
+
+			// CreatedBy The user who created this version.
+			CreatedBy string `json:"createdBy"`
+
+			// Id Unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *GetRouteVersions200JSONResponseBodyVersionsIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version is staged and not yet promoted to production.
+			IsStaging *GetRouteVersions200JSONResponseBodyVersionsIsStaging `json:"isStaging,omitempty"`
+
+			// LastModified Timestamp of when this version was last modified.
+			LastModified float32 `json:"lastModified"`
+
+			// RuleCount The number of routing rules in this version.
+			RuleCount *float32 `json:"ruleCount,omitempty"`
+
+			// S3Key The S3 key where the routing rules are stored.
+			S3Key string `json:"s3Key"`
+		} `json:"versions"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetRouteVersionsResponse) GetJSON200() *struct {
+	Versions []struct {
+		// Alias The staging alias for previewing this version.
+		Alias *string `json:"alias,omitempty"`
+
+		// CreatedBy The user who created this version.
+		CreatedBy string `json:"createdBy"`
+
+		// Id Unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *GetRouteVersions200JSONResponseBodyVersionsIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version is staged and not yet promoted to production.
+		IsStaging *GetRouteVersions200JSONResponseBodyVersionsIsStaging `json:"isStaging,omitempty"`
+
+		// LastModified Timestamp of when this version was last modified.
+		LastModified float32 `json:"lastModified"`
+
+		// RuleCount The number of routing rules in this version.
+		RuleCount *float32 `json:"ruleCount,omitempty"`
+
+		// S3Key The S3 key where the routing rules are stored.
+		S3Key string `json:"s3Key"`
+	} `json:"versions"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetRouteVersionsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetRouteVersionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetRouteVersionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetRouteVersionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateRouteVersionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Version A version of routing rules stored in S3.
+		Version struct {
+			// Alias The staging alias for previewing this version.
+			Alias *string `json:"alias,omitempty"`
+
+			// CreatedBy The user who created this version.
+			CreatedBy string `json:"createdBy"`
+
+			// Id Unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *UpdateRouteVersions200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version is staged and not yet promoted to production.
+			IsStaging *UpdateRouteVersions200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// LastModified Timestamp of when this version was last modified.
+			LastModified float32 `json:"lastModified"`
+
+			// RuleCount The number of routing rules in this version.
+			RuleCount *float32 `json:"ruleCount,omitempty"`
+
+			// S3Key The S3 key where the routing rules are stored.
+			S3Key string `json:"s3Key"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateRouteVersionsResponse) GetJSON200() *struct {
+	// Version A version of routing rules stored in S3.
+	Version struct {
+		// Alias The staging alias for previewing this version.
+		Alias *string `json:"alias,omitempty"`
+
+		// CreatedBy The user who created this version.
+		CreatedBy string `json:"createdBy"`
+
+		// Id Unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *UpdateRouteVersions200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version is staged and not yet promoted to production.
+		IsStaging *UpdateRouteVersions200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// LastModified Timestamp of when this version was last modified.
+		LastModified float32 `json:"lastModified"`
+
+		// RuleCount The number of routing rules in this version.
+		RuleCount *float32 `json:"ruleCount,omitempty"`
+
+		// S3Key The S3 key where the routing rules are stored.
+		S3Key string `json:"s3Key"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateRouteVersionsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateRouteVersionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateRouteVersionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateRouteVersionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type EditRouteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Route *struct {
+			// Description Optional description of what the routing rule does.
+			Description *string `json:"description,omitempty"`
+
+			// Enabled Whether the routing rule is enabled. Defaults to true.
+			Enabled *EditRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
+
+			// Id Unique identifier for the routing rule.
+			Id string `json:"id"`
+
+			// Name Human-readable name for the routing rule.
+			Name string `json:"name"`
+
+			// RawDest Original destination provided by user.
+			RawDest *string `json:"rawDest,omitempty"`
+
+			// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
+			RawSrc *string `json:"rawSrc,omitempty"`
+
+			// Route The route definition from @vercel/routing-utils.
+			Route struct {
+				CaseSensitive *EditRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
+				Check         *EditRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
+				Continue      *EditRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
+				Dest          *string                                               `json:"dest,omitempty"`
+				Destination   *EditRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
+				Env           *[]string                                             `json:"env,omitempty"`
+				Has           *[]EditRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
+				Headers       *map[string]string                                    `json:"headers,omitempty"`
+				Important     *EditRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
+				Locale        *struct {
+					Cookie   *string            `json:"cookie,omitempty"`
+					Redirect *map[string]string `json:"redirect,omitempty"`
+				} `json:"locale,omitempty"`
+				Methods *[]string `json:"methods,omitempty"`
+
+				// Middleware A middleware index in the `middleware` key under the build result
+				Middleware *float32 `json:"middleware,omitempty"`
+
+				// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+				MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+				// MiddlewareRawSrc The original middleware matchers.
+				MiddlewareRawSrc *[]string                                                `json:"middlewareRawSrc,omitempty"`
+				Missing          *[]EditRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
+				Mitigate         *struct {
+					Action EditRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
+				} `json:"mitigate,omitempty"`
+				Override                  *EditRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
+				RespectOriginCacheControl *EditRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+				// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+				Source     *string                                                     `json:"source,omitempty"`
+				Src        string                                                      `json:"src"`
+				Status     *float32                                                    `json:"status,omitempty"`
+				StatusCode *float32                                                    `json:"statusCode,omitempty"`
+				Transforms *[]EditRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
+			} `json:"route"`
+			RouteType *EditRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
+
+			// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+			SrcSyntax *EditRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+
+			// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+			Staged *EditRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
+		} `json:"route,omitempty"`
+
+		// Version A version of routing rules stored in S3.
+		Version struct {
+			// Alias The staging alias for previewing this version.
+			Alias *string `json:"alias,omitempty"`
+
+			// CreatedBy The user who created this version.
+			CreatedBy string `json:"createdBy"`
+
+			// Id Unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *EditRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version is staged and not yet promoted to production.
+			IsStaging *EditRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// LastModified Timestamp of when this version was last modified.
+			LastModified float32 `json:"lastModified"`
+
+			// RuleCount The number of routing rules in this version.
+			RuleCount *float32 `json:"ruleCount,omitempty"`
+
+			// S3Key The S3 key where the routing rules are stored.
+			S3Key string `json:"s3Key"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r EditRouteResponse) GetJSON200() *struct {
+	Route *struct {
+		// Description Optional description of what the routing rule does.
+		Description *string `json:"description,omitempty"`
+
+		// Enabled Whether the routing rule is enabled. Defaults to true.
+		Enabled *EditRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
+
+		// Id Unique identifier for the routing rule.
+		Id string `json:"id"`
+
+		// Name Human-readable name for the routing rule.
+		Name string `json:"name"`
+
+		// RawDest Original destination provided by user.
+		RawDest *string `json:"rawDest,omitempty"`
+
+		// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
+		RawSrc *string `json:"rawSrc,omitempty"`
+
+		// Route The route definition from @vercel/routing-utils.
+		Route struct {
+			CaseSensitive *EditRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
+			Check         *EditRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
+			Continue      *EditRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
+			Dest          *string                                               `json:"dest,omitempty"`
+			Destination   *EditRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
+			Env           *[]string                                             `json:"env,omitempty"`
+			Has           *[]EditRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
+			Headers       *map[string]string                                    `json:"headers,omitempty"`
+			Important     *EditRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
+			Locale        *struct {
+				Cookie   *string            `json:"cookie,omitempty"`
+				Redirect *map[string]string `json:"redirect,omitempty"`
+			} `json:"locale,omitempty"`
+			Methods *[]string `json:"methods,omitempty"`
+
+			// Middleware A middleware index in the `middleware` key under the build result
+			Middleware *float32 `json:"middleware,omitempty"`
+
+			// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+			MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+			// MiddlewareRawSrc The original middleware matchers.
+			MiddlewareRawSrc *[]string                                                `json:"middlewareRawSrc,omitempty"`
+			Missing          *[]EditRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
+			Mitigate         *struct {
+				Action EditRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
+			} `json:"mitigate,omitempty"`
+			Override                  *EditRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
+			RespectOriginCacheControl *EditRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+			// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+			Source     *string                                                     `json:"source,omitempty"`
+			Src        string                                                      `json:"src"`
+			Status     *float32                                                    `json:"status,omitempty"`
+			StatusCode *float32                                                    `json:"statusCode,omitempty"`
+			Transforms *[]EditRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
+		} `json:"route"`
+		RouteType *EditRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
+
+		// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+		SrcSyntax *EditRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+
+		// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+		Staged *EditRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
+	} `json:"route,omitempty"`
+
+	// Version A version of routing rules stored in S3.
+	Version struct {
+		// Alias The staging alias for previewing this version.
+		Alias *string `json:"alias,omitempty"`
+
+		// CreatedBy The user who created this version.
+		CreatedBy string `json:"createdBy"`
+
+		// Id Unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *EditRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version is staged and not yet promoted to production.
+		IsStaging *EditRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// LastModified Timestamp of when this version was last modified.
+		LastModified float32 `json:"lastModified"`
+
+		// RuleCount The number of routing rules in this version.
+		RuleCount *float32 `json:"ruleCount,omitempty"`
+
+		// S3Key The S3 key where the routing rules are stored.
+		S3Key string `json:"s3Key"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r EditRouteResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r EditRouteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r EditRouteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r EditRouteResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UnpauseProjectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r UnpauseProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UnpauseProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UnpauseProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UnpauseProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type AggregateEventsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data  AggregateEvents200JSONResponseBody_Data `json:"data"`
+		Query struct {
+			Filter  *string                                                  `json:"filter,omitempty"`
+			GroupBy *[]AggregateEvents200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
+			Limit   float32                                                  `json:"limit"`
+			Since   string                                                   `json:"since"`
+			Until   string                                                   `json:"until"`
+		} `json:"query"`
+		Version float32 `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r AggregateEventsResponse) GetJSON200() *struct {
+	Data  AggregateEvents200JSONResponseBody_Data `json:"data"`
+	Query struct {
+		Filter  *string                                                  `json:"filter,omitempty"`
+		GroupBy *[]AggregateEvents200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
+		Limit   float32                                                  `json:"limit"`
+		Since   string                                                   `json:"since"`
+		Until   string                                                   `json:"until"`
+	} `json:"query"`
+	Version float32 `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r AggregateEventsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r AggregateEventsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AggregateEventsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r AggregateEventsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CountEventsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data  CountEvents200JSONResponseBody_Data `json:"data"`
+		Query struct {
+			Filter *string `json:"filter,omitempty"`
+			Since  string  `json:"since"`
+			Until  string  `json:"until"`
+		} `json:"query"`
+		Version float32 `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CountEventsResponse) GetJSON200() *struct {
+	Data  CountEvents200JSONResponseBody_Data `json:"data"`
+	Query struct {
+		Filter *string `json:"filter,omitempty"`
+		Since  string  `json:"since"`
+		Until  string  `json:"until"`
+	} `json:"query"`
+	Version float32 `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CountEventsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CountEventsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CountEventsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CountEventsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type AggregatePageviewsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data  AggregatePageviews200JSONResponseBody_Data `json:"data"`
+		Query struct {
+			Filter  *string                                                     `json:"filter,omitempty"`
+			GroupBy *[]AggregatePageviews200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
+			Limit   float32                                                     `json:"limit"`
+			Since   string                                                      `json:"since"`
+			Until   string                                                      `json:"until"`
+		} `json:"query"`
+		Version float32 `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r AggregatePageviewsResponse) GetJSON200() *struct {
+	Data  AggregatePageviews200JSONResponseBody_Data `json:"data"`
+	Query struct {
+		Filter  *string                                                     `json:"filter,omitempty"`
+		GroupBy *[]AggregatePageviews200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
+		Limit   float32                                                     `json:"limit"`
+		Since   string                                                      `json:"since"`
+		Until   string                                                      `json:"until"`
+	} `json:"query"`
+	Version float32 `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r AggregatePageviewsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r AggregatePageviewsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AggregatePageviewsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r AggregatePageviewsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CountPageviewsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data  CountPageviews200JSONResponseBody_Data `json:"data"`
+		Query struct {
+			Filter *string `json:"filter,omitempty"`
+			Since  string  `json:"since"`
+			Until  string  `json:"until"`
+		} `json:"query"`
+		Version float32 `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CountPageviewsResponse) GetJSON200() *struct {
+	Data  CountPageviews200JSONResponseBody_Data `json:"data"`
+	Query struct {
+		Filter *string `json:"filter,omitempty"`
+		Since  string  `json:"since"`
+		Until  string  `json:"until"`
+	} `json:"query"`
+	Version float32 `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CountPageviewsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CountPageviewsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CountPageviewsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CountPageviewsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetBulkAvailabilityResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Results []struct {
+			Available bool `json:"available"`
+
+			// Domain A valid domain name
+			Domain DomainName `json:"domain"`
+		} `json:"results"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *HttpApiDecodeError
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *NotAuthorizedForScope
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetBulkAvailabilityResponse) GetJSON200() *struct {
+	Results []struct {
+		Available bool `json:"available"`
+
+		// Domain A valid domain name
+		Domain DomainName `json:"domain"`
+	} `json:"results"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetBulkAvailabilityResponse) GetJSON400() *HttpApiDecodeError {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetBulkAvailabilityResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetBulkAvailabilityResponse) GetJSON403() *NotAuthorizedForScope {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetBulkAvailabilityResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetBulkAvailabilityResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetBulkAvailabilityResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBulkAvailabilityResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBulkAvailabilityResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetBulkAvailabilityResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BuyDomainsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		UnderscoreLinks map[string]struct {
+			Href   string                                   `json:"href"`
+			Method BuyDomains200JSONResponseBodyLinksMethod `json:"method"`
+		} `json:"_links"`
+
+		// OrderId A valid order ID
+		OrderId OrderId `json:"orderId"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *BuyDomains400JSONResponseBody
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *BuyDomains403JSONResponseBody
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r BuyDomainsResponse) GetJSON200() *struct {
+	UnderscoreLinks map[string]struct {
+		Href   string                                   `json:"href"`
+		Method BuyDomains200JSONResponseBodyLinksMethod `json:"method"`
+	} `json:"_links"`
+
+	// OrderId A valid order ID
+	OrderId OrderId `json:"orderId"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r BuyDomainsResponse) GetJSON400() *BuyDomains400JSONResponseBody {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r BuyDomainsResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r BuyDomainsResponse) GetJSON403() *BuyDomains403JSONResponseBody {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r BuyDomainsResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r BuyDomainsResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r BuyDomainsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r BuyDomainsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BuyDomainsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BuyDomainsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetBulkPriceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Results []struct {
+			// Domain A valid domain name
+			Domain        DomainName                                            `json:"domain"`
+			PurchasePrice GetBulkPrice200JSONResponseBody_Results_PurchasePrice `json:"purchasePrice"`
+			RenewalPrice  GetBulkPrice200JSONResponseBody_Results_RenewalPrice  `json:"renewalPrice"`
+			TransferPrice GetBulkPrice200JSONResponseBody_Results_TransferPrice `json:"transferPrice"`
+			Years         float32                                               `json:"years"`
+		} `json:"results"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *GetBulkPrice400JSONResponseBody
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *NotAuthorizedForScope
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetBulkPriceResponse) GetJSON200() *struct {
+	Results []struct {
+		// Domain A valid domain name
+		Domain        DomainName                                            `json:"domain"`
+		PurchasePrice GetBulkPrice200JSONResponseBody_Results_PurchasePrice `json:"purchasePrice"`
+		RenewalPrice  GetBulkPrice200JSONResponseBody_Results_RenewalPrice  `json:"renewalPrice"`
+		TransferPrice GetBulkPrice200JSONResponseBody_Results_TransferPrice `json:"transferPrice"`
+		Years         float32                                               `json:"years"`
+	} `json:"results"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetBulkPriceResponse) GetJSON400() *GetBulkPrice400JSONResponseBody {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetBulkPriceResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetBulkPriceResponse) GetJSON403() *NotAuthorizedForScope {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetBulkPriceResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetBulkPriceResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetBulkPriceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBulkPriceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBulkPriceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetBulkPriceResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type SearchDomainsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Results []SearchDomains200JSONResponseBody_Results_Item `json:"results"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *HttpApiDecodeError
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *NotAuthorizedForScope
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r SearchDomainsResponse) GetJSON200() *struct {
+	Results []SearchDomains200JSONResponseBody_Results_Item `json:"results"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r SearchDomainsResponse) GetJSON400() *HttpApiDecodeError {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r SearchDomainsResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r SearchDomainsResponse) GetJSON403() *NotAuthorizedForScope {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r SearchDomainsResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r SearchDomainsResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r SearchDomainsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r SearchDomainsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r SearchDomainsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r SearchDomainsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetDomainAuthCodeResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		AuthCode string `json:"authCode"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *GetDomainAuthCode400JSONResponseBody
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *GetDomainAuthCode403JSONResponseBody
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *DomainNotFound
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *DomainCannotBeTransferedOutUntil
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON200() *struct {
+	AuthCode string `json:"authCode"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON400() *GetDomainAuthCode400JSONResponseBody {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON403() *GetDomainAuthCode403JSONResponseBody {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON404() *DomainNotFound {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON409() *DomainCannotBeTransferedOutUntil {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetDomainAuthCodeResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetDomainAuthCodeResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDomainAuthCodeResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDomainAuthCodeResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetDomainAuthCodeResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateDomainAutoRenewResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *UpdateDomainAutoRenew400JSONResponseBody
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *UpdateDomainAutoRenew403JSONResponseBody
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *DomainNotFound
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r UpdateDomainAutoRenewResponse) GetJSON400() *UpdateDomainAutoRenew400JSONResponseBody {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r UpdateDomainAutoRenewResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r UpdateDomainAutoRenewResponse) GetJSON403() *UpdateDomainAutoRenew403JSONResponseBody {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r UpdateDomainAutoRenewResponse) GetJSON404() *DomainNotFound {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r UpdateDomainAutoRenewResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r UpdateDomainAutoRenewResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateDomainAutoRenewResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateDomainAutoRenewResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateDomainAutoRenewResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateDomainAutoRenewResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetDomainAvailabilityResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Available bool `json:"available"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *HttpApiDecodeError
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *NotAuthorizedForScope
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *NotFound
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON200() *struct {
+	Available bool `json:"available"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON400() *HttpApiDecodeError {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON403() *NotAuthorizedForScope {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON404() *NotFound {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetDomainAvailabilityResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetDomainAvailabilityResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDomainAvailabilityResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDomainAvailabilityResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetDomainAvailabilityResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BuySingleDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		UnderscoreLinks map[string]struct {
+			Href   string                                        `json:"href"`
+			Method BuySingleDomain200JSONResponseBodyLinksMethod `json:"method"`
+		} `json:"_links"`
+
+		// OrderId A valid order ID
+		OrderId OrderId `json:"orderId"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *BuySingleDomain400JSONResponseBody
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *BuySingleDomain403JSONResponseBody
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r BuySingleDomainResponse) GetJSON200() *struct {
+	UnderscoreLinks map[string]struct {
+		Href   string                                        `json:"href"`
+		Method BuySingleDomain200JSONResponseBodyLinksMethod `json:"method"`
+	} `json:"_links"`
+
+	// OrderId A valid order ID
+	OrderId OrderId `json:"orderId"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r BuySingleDomainResponse) GetJSON400() *BuySingleDomain400JSONResponseBody {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r BuySingleDomainResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r BuySingleDomainResponse) GetJSON403() *BuySingleDomain403JSONResponseBody {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r BuySingleDomainResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r BuySingleDomainResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r BuySingleDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r BuySingleDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BuySingleDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BuySingleDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetContactInfoSchemaResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *map[string]interface{}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *GetContactInfoSchema400JSONResponseBody
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *Unauthorized
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *NotAuthorizedForScope
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *TooManyRequests
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *InternalServerError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetContactInfoSchemaResponse) GetJSON200() *map[string]interface{} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetContactInfoSchemaResponse) GetJSON400() *GetContactInfoSchema400JSONResponseBody {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetContactInfoSchemaResponse) GetJSON401() *Unauthorized {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetContactInfoSchemaResponse) GetJSON403() *NotAuthorizedForScope {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetContactInfoSchemaResponse) GetJSON429() *TooManyRequests {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetContactInfoSchemaResponse) GetJSON500() *InternalServerError {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetContactInfoSchemaResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetContactInfoSchemaResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetContactInfoSchemaResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetContactInfoSchemaResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetDomainContactVerificationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -18219,1803 +20009,4 @@ func (r GetDeploymentEventsResponse) GetApplicationstreamJSON200() *GetDeploymen
 // GetBody returns the raw response body bytes
 func (r GetDeploymentEventsResponse) GetBody() []byte {
 	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetDeploymentEventsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetDeploymentEventsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetDeploymentEventsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PatchDomainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *PatchDomain200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PatchDomainResponse) GetJSON200() *PatchDomain200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r PatchDomainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PatchDomainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PatchDomainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PatchDomainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListUserEventsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Events Array of events generated by the User.
-		Events []UserEvent `json:"events"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListUserEventsResponse) GetJSON200() *struct {
-	// Events Array of events generated by the User.
-	Events []UserEvent `json:"events"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListUserEventsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListUserEventsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListUserEventsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListUserEventsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateSandboxesV3Response struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Routes []SandboxPublicRoute `json:"routes"`
-
-		// Sandbox This object contains information related to a Vercel NamedSandbox.
-		Sandbox NamedSandbox `json:"sandbox"`
-
-		// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-		Session Session `json:"session"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateSandboxesV3Response) GetJSON200() *struct {
-	Routes []SandboxPublicRoute `json:"routes"`
-
-	// Sandbox This object contains information related to a Vercel NamedSandbox.
-	Sandbox NamedSandbox `json:"sandbox"`
-
-	// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-	Session Session `json:"session"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateSandboxesV3Response) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateSandboxesV3Response) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateSandboxesV3Response) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateSandboxesV3Response) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateSandboxesSessionsBySessionIdSnapshotV3Response struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-		Session Session `json:"session"`
-
-		// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-		Snapshot Snapshot `json:"snapshot"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateSandboxesSessionsBySessionIdSnapshotV3Response) GetJSON201() *struct {
-	// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-	Session Session `json:"session"`
-
-	// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-	Snapshot Snapshot `json:"snapshot"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateSandboxesSessionsBySessionIdSnapshotV3Response) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateSandboxesSessionsBySessionIdSnapshotV3Response) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateSandboxesSessionsBySessionIdSnapshotV3Response) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateSandboxesSessionsBySessionIdSnapshotV3Response) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateSandboxesByNameForkV3Response struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Routes []SandboxPublicRoute `json:"routes"`
-
-		// Sandbox This object contains information related to a Vercel NamedSandbox.
-		Sandbox NamedSandbox `json:"sandbox"`
-
-		// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-		Session Session `json:"session"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateSandboxesByNameForkV3Response) GetJSON200() *struct {
-	Routes []SandboxPublicRoute `json:"routes"`
-
-	// Sandbox This object contains information related to a Vercel NamedSandbox.
-	Sandbox NamedSandbox `json:"sandbox"`
-
-	// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-	Session Session `json:"session"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateSandboxesByNameForkV3Response) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateSandboxesByNameForkV3Response) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateSandboxesByNameForkV3Response) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateSandboxesByNameForkV3Response) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetTeamMembersResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		EmailInviteCodes *[]struct {
-			AccessGroups    *[]string                                                             `json:"accessGroups,omitempty"`
-			CreatedAt       *float32                                                              `json:"createdAt,omitempty"`
-			Email           *string                                                               `json:"email,omitempty"`
-			Entitlements    *[]string                                                             `json:"entitlements,omitempty"`
-			Expired         *GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired             `json:"expired,omitempty"`
-			Id              string                                                                `json:"id"`
-			IsDSyncUser     GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser          `json:"isDSyncUser"`
-			Projects        *map[string]GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects `json:"projects,omitempty"`
-			Role            *GetTeamMembers200JSONResponseBodyEmailInviteCodesRole                `json:"role,omitempty"`
-			TeamPermissions *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions   `json:"teamPermissions,omitempty"`
-			TeamRoles       *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles         `json:"teamRoles,omitempty"`
-		} `json:"emailInviteCodes,omitempty"`
-		Members []struct {
-			// AccessRequestedAt Timestamp in milliseconds for when this team member was accepted by an owner.
-			//
-			// Example: 1588820733602
-			AccessRequestedAt *float32 `json:"accessRequestedAt,omitempty"`
-
-			// Avatar ID of the file for the Avatar of this member.
-			//
-			// Example: 123a6c5209bc3778245d011443644c8d27dc2c50
-			Avatar *string `json:"avatar,omitempty"`
-
-			// Bitbucket Information about the Bitbucket account of this user.
-			Bitbucket *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"bitbucket,omitempty"`
-
-			// Confirmed Boolean that indicates if this member was confirmed by an owner.
-			//
-			// Example: true
-			Confirmed GetTeamMembers200JSONResponseBodyMembersConfirmed `json:"confirmed"`
-
-			// CreatedAt Timestamp in milliseconds when this member was added.
-			//
-			// Example: 1588720733602
-			CreatedAt float32 `json:"createdAt"`
-
-			// Email The email of this member.
-			//
-			// Example: jane.doe@example.com
-			Email string `json:"email"`
-
-			// Github Information about the GitHub account for this user.
-			Github *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"github,omitempty"`
-
-			// Gitlab Information about the GitLab account of this user.
-			Gitlab *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"gitlab,omitempty"`
-
-			// IsEnterpriseManaged Indicates whether the user is managed by an enterprise.
-			IsEnterpriseManaged *GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged `json:"isEnterpriseManaged,omitempty"`
-
-			// JoinedFrom Map with information about the members origin if they joined by requesting access.
-			JoinedFrom *struct {
-				CommitId         *string                                                         `json:"commitId,omitempty"`
-				DsyncConnectedAt *float32                                                        `json:"dsyncConnectedAt,omitempty"`
-				DsyncUserId      *string                                                         `json:"dsyncUserId,omitempty"`
-				GitUserId        *GetTeamMembers200JSONResponseBody_Members_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
-				GitUserLogin     *string                                                         `json:"gitUserLogin,omitempty"`
-				IdpUserId        *string                                                         `json:"idpUserId,omitempty"`
-				Origin           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin        `json:"origin"`
-				RepoId           *string                                                         `json:"repoId,omitempty"`
-				RepoPath         *string                                                         `json:"repoPath,omitempty"`
-				SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
-				SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
-			} `json:"joinedFrom,omitempty"`
-
-			// Name The name of this user.
-			//
-			// Example: Jane Doe
-			Name *string `json:"name,omitempty"`
-
-			// Projects Array of project memberships
-			Projects *[]struct {
-				Id   string                                                `json:"id"`
-				Name string                                                `json:"name"`
-				Role *GetTeamMembers200JSONResponseBodyMembersProjectsRole `json:"role,omitempty"`
-			} `json:"projects,omitempty"`
-
-			// Role Role of this user in the team.
-			//
-			// Example: OWNER
-			Role GetTeamMembers200JSONResponseBodyMembersRole `json:"role"`
-
-			// Uid The ID of this user.
-			//
-			// Example: zTuNVUXEAvvnNN3IaqinkyMw
-			Uid string `json:"uid"`
-
-			// Username The unique username of this user.
-			//
-			// Example: jane-doe
-			Username string `json:"username"`
-		} `json:"members"`
-		Pagination struct {
-			// Count Amount of items in the current page.
-			//
-			// Example: 20
-			Count   float32                                            `json:"count"`
-			HasNext GetTeamMembers200JSONResponseBodyPaginationHasNext `json:"hasNext"`
-
-			// Next Timestamp that must be used to request the next page.
-			//
-			// Example: 1540095775951
-			Next *float32 `json:"next"`
-
-			// Prev Timestamp that must be used to request the previous page.
-			//
-			// Example: 1540095775951
-			Prev *float32 `json:"prev"`
-		} `json:"pagination"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetTeamMembersResponse) GetJSON200() *struct {
-	EmailInviteCodes *[]struct {
-		AccessGroups    *[]string                                                             `json:"accessGroups,omitempty"`
-		CreatedAt       *float32                                                              `json:"createdAt,omitempty"`
-		Email           *string                                                               `json:"email,omitempty"`
-		Entitlements    *[]string                                                             `json:"entitlements,omitempty"`
-		Expired         *GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired             `json:"expired,omitempty"`
-		Id              string                                                                `json:"id"`
-		IsDSyncUser     GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser          `json:"isDSyncUser"`
-		Projects        *map[string]GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects `json:"projects,omitempty"`
-		Role            *GetTeamMembers200JSONResponseBodyEmailInviteCodesRole                `json:"role,omitempty"`
-		TeamPermissions *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions   `json:"teamPermissions,omitempty"`
-		TeamRoles       *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles         `json:"teamRoles,omitempty"`
-	} `json:"emailInviteCodes,omitempty"`
-	Members []struct {
-		// AccessRequestedAt Timestamp in milliseconds for when this team member was accepted by an owner.
-		//
-		// Example: 1588820733602
-		AccessRequestedAt *float32 `json:"accessRequestedAt,omitempty"`
-
-		// Avatar ID of the file for the Avatar of this member.
-		//
-		// Example: 123a6c5209bc3778245d011443644c8d27dc2c50
-		Avatar *string `json:"avatar,omitempty"`
-
-		// Bitbucket Information about the Bitbucket account of this user.
-		Bitbucket *struct {
-			Login *string `json:"login,omitempty"`
-		} `json:"bitbucket,omitempty"`
-
-		// Confirmed Boolean that indicates if this member was confirmed by an owner.
-		//
-		// Example: true
-		Confirmed GetTeamMembers200JSONResponseBodyMembersConfirmed `json:"confirmed"`
-
-		// CreatedAt Timestamp in milliseconds when this member was added.
-		//
-		// Example: 1588720733602
-		CreatedAt float32 `json:"createdAt"`
-
-		// Email The email of this member.
-		//
-		// Example: jane.doe@example.com
-		Email string `json:"email"`
-
-		// Github Information about the GitHub account for this user.
-		Github *struct {
-			Login *string `json:"login,omitempty"`
-		} `json:"github,omitempty"`
-
-		// Gitlab Information about the GitLab account of this user.
-		Gitlab *struct {
-			Login *string `json:"login,omitempty"`
-		} `json:"gitlab,omitempty"`
-
-		// IsEnterpriseManaged Indicates whether the user is managed by an enterprise.
-		IsEnterpriseManaged *GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged `json:"isEnterpriseManaged,omitempty"`
-
-		// JoinedFrom Map with information about the members origin if they joined by requesting access.
-		JoinedFrom *struct {
-			CommitId         *string                                                         `json:"commitId,omitempty"`
-			DsyncConnectedAt *float32                                                        `json:"dsyncConnectedAt,omitempty"`
-			DsyncUserId      *string                                                         `json:"dsyncUserId,omitempty"`
-			GitUserId        *GetTeamMembers200JSONResponseBody_Members_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
-			GitUserLogin     *string                                                         `json:"gitUserLogin,omitempty"`
-			IdpUserId        *string                                                         `json:"idpUserId,omitempty"`
-			Origin           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin        `json:"origin"`
-			RepoId           *string                                                         `json:"repoId,omitempty"`
-			RepoPath         *string                                                         `json:"repoPath,omitempty"`
-			SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
-			SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
-		} `json:"joinedFrom,omitempty"`
-
-		// Name The name of this user.
-		//
-		// Example: Jane Doe
-		Name *string `json:"name,omitempty"`
-
-		// Projects Array of project memberships
-		Projects *[]struct {
-			Id   string                                                `json:"id"`
-			Name string                                                `json:"name"`
-			Role *GetTeamMembers200JSONResponseBodyMembersProjectsRole `json:"role,omitempty"`
-		} `json:"projects,omitempty"`
-
-		// Role Role of this user in the team.
-		//
-		// Example: OWNER
-		Role GetTeamMembers200JSONResponseBodyMembersRole `json:"role"`
-
-		// Uid The ID of this user.
-		//
-		// Example: zTuNVUXEAvvnNN3IaqinkyMw
-		Uid string `json:"uid"`
-
-		// Username The unique username of this user.
-		//
-		// Example: jane-doe
-		Username string `json:"username"`
-	} `json:"members"`
-	Pagination struct {
-		// Count Amount of items in the current page.
-		//
-		// Example: 20
-		Count   float32                                            `json:"count"`
-		HasNext GetTeamMembers200JSONResponseBodyPaginationHasNext `json:"hasNext"`
-
-		// Next Timestamp that must be used to request the next page.
-		//
-		// Example: 1540095775951
-		Next *float32 `json:"next"`
-
-		// Prev Timestamp that must be used to request the previous page.
-		//
-		// Example: 1540095775951
-		Prev *float32 `json:"prev"`
-	} `json:"pagination"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetTeamMembersResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetTeamMembersResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetTeamMembersResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetTeamMembersResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateAuthTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// BearerToken The authentication token's actual value. This token is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
-		//
-		// Example: uRKJSTt0L4RaSkiMj41QTkxM
-		BearerToken string `json:"bearerToken"`
-
-		// Token Authentication token metadata.
-		Token AuthToken `json:"token"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateAuthTokenResponse) GetJSON200() *struct {
-	// BearerToken The authentication token's actual value. This token is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
-	//
-	// Example: uRKJSTt0L4RaSkiMj41QTkxM
-	BearerToken string `json:"bearerToken"`
-
-	// Token Authentication token metadata.
-	Token AuthToken `json:"token"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateAuthTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAuthTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAuthTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAuthTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAuthTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// TokenId The unique identifier of the token that was deleted.
-		//
-		// Example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
-		TokenId string `json:"tokenId"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r DeleteAuthTokenResponse) GetJSON200() *struct {
-	// TokenId The unique identifier of the token that was deleted.
-	//
-	// Example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
-	TokenId string `json:"tokenId"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteAuthTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAuthTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAuthTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAuthTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAliasesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Aliases []struct {
-			// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
-			//
-			// Example: my-alias.vercel.app
-			Alias string `json:"alias"`
-
-			// Created The date when the alias was created
-			//
-			// Example: 2017-04-26T23:00:34.232Z
-			Created time.Time `json:"created"`
-
-			// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
-			//
-			// Example: 1540095775941
-			CreatedAt *float32 `json:"createdAt,omitempty"`
-
-			// Creator Information of the user who created the alias
-			Creator *struct {
-				// Email Email of the user who created the alias
-				//
-				// Example: john-doe@gmail.com
-				Email *string `json:"email,omitempty"`
-
-				// Uid ID of the user who created the alias
-				//
-				// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
-				Uid string `json:"uid"`
-
-				// Username Username of the user who created the alias
-				//
-				// Example: john-doe
-				Username *string `json:"username,omitempty"`
-			} `json:"creator,omitempty"`
-
-			// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
-			//
-			// Example: 1540095775941
-			DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-			// Deployment A map with the deployment ID, URL and metadata
-			Deployment *struct {
-				// Id The deployment unique identifier
-				//
-				// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-				Id string `json:"id"`
-
-				// Meta The deployment metadata
-				//
-				// Example: {}
-				Meta *string `json:"meta,omitempty"`
-
-				// Url The deployment unique URL
-				//
-				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-				Url *string `json:"url,omitempty"`
-			} `json:"deployment,omitempty"`
-
-			// DeploymentId The deployment ID
-			//
-			// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-			DeploymentId *string `json:"deploymentId"`
-
-			// Microfrontends The microfrontends for the alias including the routing configuration
-			Microfrontends *struct {
-				Applications ListAliases200JSONResponseBody_Aliases_Microfrontends_Applications `json:"applications"`
-				DefaultApp   struct {
-					ProjectId string `json:"projectId"`
-				} `json:"defaultApp"`
-			} `json:"microfrontends,omitempty"`
-
-			// ProjectId The unique identifier of the project
-			//
-			// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-			ProjectId *string `json:"projectId"`
-
-			// ProtectionBypass The protection bypass for the alias
-			ProtectionBypass *map[string]ListAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-
-			// Redirect Target destination domain for redirect when the alias is a redirect
-			Redirect *string `json:"redirect,omitempty"`
-
-			// RedirectStatusCode Status code to be used on redirect
-			RedirectStatusCode *ListAliases200JSONResponseBodyAliasesRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-
-			// Uid The unique identifier of the alias
-			Uid string `json:"uid"`
-
-			// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
-			//
-			// Example: 1540095775941
-			UpdatedAt *float32 `json:"updatedAt,omitempty"`
-		} `json:"aliases"`
-
-		// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-		Pagination Pagination `json:"pagination"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAliasesResponse) GetJSON200() *struct {
-	Aliases []struct {
-		// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
-		//
-		// Example: my-alias.vercel.app
-		Alias string `json:"alias"`
-
-		// Created The date when the alias was created
-		//
-		// Example: 2017-04-26T23:00:34.232Z
-		Created time.Time `json:"created"`
-
-		// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
-		//
-		// Example: 1540095775941
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-
-		// Creator Information of the user who created the alias
-		Creator *struct {
-			// Email Email of the user who created the alias
-			//
-			// Example: john-doe@gmail.com
-			Email *string `json:"email,omitempty"`
-
-			// Uid ID of the user who created the alias
-			//
-			// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
-			Uid string `json:"uid"`
-
-			// Username Username of the user who created the alias
-			//
-			// Example: john-doe
-			Username *string `json:"username,omitempty"`
-		} `json:"creator,omitempty"`
-
-		// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
-		//
-		// Example: 1540095775941
-		DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-		// Deployment A map with the deployment ID, URL and metadata
-		Deployment *struct {
-			// Id The deployment unique identifier
-			//
-			// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-			Id string `json:"id"`
-
-			// Meta The deployment metadata
-			//
-			// Example: {}
-			Meta *string `json:"meta,omitempty"`
-
-			// Url The deployment unique URL
-			//
-			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-			Url *string `json:"url,omitempty"`
-		} `json:"deployment,omitempty"`
-
-		// DeploymentId The deployment ID
-		//
-		// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-		DeploymentId *string `json:"deploymentId"`
-
-		// Microfrontends The microfrontends for the alias including the routing configuration
-		Microfrontends *struct {
-			Applications ListAliases200JSONResponseBody_Aliases_Microfrontends_Applications `json:"applications"`
-			DefaultApp   struct {
-				ProjectId string `json:"projectId"`
-			} `json:"defaultApp"`
-		} `json:"microfrontends,omitempty"`
-
-		// ProjectId The unique identifier of the project
-		//
-		// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-		ProjectId *string `json:"projectId"`
-
-		// ProtectionBypass The protection bypass for the alias
-		ProtectionBypass *map[string]ListAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-
-		// Redirect Target destination domain for redirect when the alias is a redirect
-		Redirect *string `json:"redirect,omitempty"`
-
-		// RedirectStatusCode Status code to be used on redirect
-		RedirectStatusCode *ListAliases200JSONResponseBodyAliasesRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-
-		// Uid The unique identifier of the alias
-		Uid string `json:"uid"`
-
-		// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
-		//
-		// Example: 1540095775941
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-	} `json:"aliases"`
-
-	// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-	Pagination Pagination `json:"pagination"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListAliasesResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAliasesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAliasesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAliasesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAliasResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
-		//
-		// Example: my-alias.vercel.app
-		Alias string `json:"alias"`
-
-		// Created The date when the alias was created
-		//
-		// Example: 2017-04-26T23:00:34.232Z
-		Created time.Time `json:"created"`
-
-		// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
-		//
-		// Example: 1540095775941
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-
-		// Creator Information of the user who created the alias
-		Creator *struct {
-			// Email Email of the user who created the alias
-			//
-			// Example: john-doe@gmail.com
-			Email *string `json:"email,omitempty"`
-
-			// Uid ID of the user who created the alias
-			//
-			// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
-			Uid string `json:"uid"`
-
-			// Username Username of the user who created the alias
-			//
-			// Example: john-doe
-			Username *string `json:"username,omitempty"`
-		} `json:"creator,omitempty"`
-
-		// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
-		//
-		// Example: 1540095775941
-		DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-		// Deployment A map with the deployment ID, URL and metadata
-		Deployment *struct {
-			// Id The deployment unique identifier
-			//
-			// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-			Id string `json:"id"`
-
-			// Meta The deployment metadata
-			//
-			// Example: {}
-			Meta *string `json:"meta,omitempty"`
-
-			// Url The deployment unique URL
-			//
-			// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-			Url *string `json:"url,omitempty"`
-		} `json:"deployment,omitempty"`
-
-		// DeploymentId The deployment ID
-		//
-		// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-		DeploymentId *string `json:"deploymentId"`
-
-		// Microfrontends The microfrontends for the alias including the routing configuration
-		Microfrontends *struct {
-			Applications GetAlias200JSONResponseBody_Microfrontends_Applications `json:"applications"`
-			DefaultApp   struct {
-				ProjectId string `json:"projectId"`
-			} `json:"defaultApp"`
-		} `json:"microfrontends,omitempty"`
-
-		// ProjectId The unique identifier of the project
-		//
-		// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-		ProjectId *string `json:"projectId"`
-
-		// ProtectionBypass The protection bypass for the alias
-		ProtectionBypass *map[string]GetAlias200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-
-		// Redirect Target destination domain for redirect when the alias is a redirect
-		Redirect *string `json:"redirect,omitempty"`
-
-		// RedirectStatusCode Status code to be used on redirect
-		RedirectStatusCode *GetAlias200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-
-		// Uid The unique identifier of the alias
-		Uid string `json:"uid"`
-
-		// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
-		//
-		// Example: 1540095775941
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAliasResponse) GetJSON200() *struct {
-	// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
-	//
-	// Example: my-alias.vercel.app
-	Alias string `json:"alias"`
-
-	// Created The date when the alias was created
-	//
-	// Example: 2017-04-26T23:00:34.232Z
-	Created time.Time `json:"created"`
-
-	// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
-	//
-	// Example: 1540095775941
-	CreatedAt *float32 `json:"createdAt,omitempty"`
-
-	// Creator Information of the user who created the alias
-	Creator *struct {
-		// Email Email of the user who created the alias
-		//
-		// Example: john-doe@gmail.com
-		Email *string `json:"email,omitempty"`
-
-		// Uid ID of the user who created the alias
-		//
-		// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
-		Uid string `json:"uid"`
-
-		// Username Username of the user who created the alias
-		//
-		// Example: john-doe
-		Username *string `json:"username,omitempty"`
-	} `json:"creator,omitempty"`
-
-	// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
-	//
-	// Example: 1540095775941
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-	// Deployment A map with the deployment ID, URL and metadata
-	Deployment *struct {
-		// Id The deployment unique identifier
-		//
-		// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-		Id string `json:"id"`
-
-		// Meta The deployment metadata
-		//
-		// Example: {}
-		Meta *string `json:"meta,omitempty"`
-
-		// Url The deployment unique URL
-		//
-		// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-		Url *string `json:"url,omitempty"`
-	} `json:"deployment,omitempty"`
-
-	// DeploymentId The deployment ID
-	//
-	// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
-	DeploymentId *string `json:"deploymentId"`
-
-	// Microfrontends The microfrontends for the alias including the routing configuration
-	Microfrontends *struct {
-		Applications GetAlias200JSONResponseBody_Microfrontends_Applications `json:"applications"`
-		DefaultApp   struct {
-			ProjectId string `json:"projectId"`
-		} `json:"defaultApp"`
-	} `json:"microfrontends,omitempty"`
-
-	// ProjectId The unique identifier of the project
-	//
-	// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-	ProjectId *string `json:"projectId"`
-
-	// ProtectionBypass The protection bypass for the alias
-	ProtectionBypass *map[string]GetAlias200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-
-	// Redirect Target destination domain for redirect when the alias is a redirect
-	Redirect *string `json:"redirect,omitempty"`
-
-	// RedirectStatusCode Status code to be used on redirect
-	RedirectStatusCode *GetAlias200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-
-	// Uid The unique identifier of the alias
-	Uid string `json:"uid"`
-
-	// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
-	//
-	// Example: 1540095775941
-	UpdatedAt *float32 `json:"updatedAt,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAliasResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAliasResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAliasResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAliasResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateSandboxesV4Response struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Routes []SandboxPublicRoute `json:"routes"`
-
-		// Sandbox This object contains information related to a Vercel NamedSandbox.
-		Sandbox NamedSandbox `json:"sandbox"`
-
-		// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-		Session Session `json:"session"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateSandboxesV4Response) GetJSON200() *struct {
-	Routes []SandboxPublicRoute `json:"routes"`
-
-	// Sandbox This object contains information related to a Vercel NamedSandbox.
-	Sandbox NamedSandbox `json:"sandbox"`
-
-	// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-	Session Session `json:"session"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateSandboxesV4Response) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateSandboxesV4Response) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateSandboxesV4Response) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateSandboxesV4Response) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetDomainsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Domains []struct {
-			// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
-			//
-			// Example: 1613602938882
-			BoughtAt *float32 `json:"boughtAt"`
-
-			// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
-			//
-			// Example: 1613602938882
-			CreatedAt float32 `json:"createdAt"`
-
-			// Creator An object containing information of the domain creator, including the user's id, username, and email.
-			//
-			// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
-			Creator struct {
-				CustomerId       *string                                                      `json:"customerId,omitempty"`
-				Email            string                                                       `json:"email"`
-				Id               string                                                       `json:"id"`
-				IsDomainReseller *GetDomains200JSONResponseBodyDomainsCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
-				Username         string                                                       `json:"username"`
-			} `json:"creator"`
-
-			// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
-			//
-			// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-			CustomNameservers *[]string `json:"customNameservers,omitempty"`
-
-			// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
-			//
-			// Example: auto
-			EchMode GetDomains200JSONResponseBodyDomainsEchMode `json:"echMode"`
-
-			// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
-			ExpiresAt *float32 `json:"expiresAt"`
-
-			// Id The unique identifier of the domain.
-			//
-			// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
-			Id string `json:"id"`
-
-			// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
-			//
-			// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
-			IntendedNameservers []string `json:"intendedNameservers"`
-
-			// Name The domain name.
-			//
-			// Example: example.com
-			Name string `json:"name"`
-
-			// Nameservers A list of the current nameservers of the domain.
-			//
-			// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-			Nameservers []string `json:"nameservers"`
-
-			// Renew Indicates whether the domain is set to automatically renew.
-			//
-			// Example: true
-			Renew *GetDomains200JSONResponseBodyDomainsRenew `json:"renew,omitempty"`
-
-			// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
-			//
-			// Example: zeit.world
-			ServiceType GetDomains200JSONResponseBodyDomainsServiceType `json:"serviceType"`
-			TeamId      *string                                         `json:"teamId"`
-
-			// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
-			//
-			// Example: 1613602938882
-			TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
-
-			// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
-			//
-			// Example: 1613602938882
-			TransferredAt *float32 `json:"transferredAt,omitempty"`
-			UserId        string   `json:"userId"`
-
-			// Verified If the domain has the ownership verified.
-			//
-			// Example: true
-			Verified GetDomains200JSONResponseBodyDomainsVerified `json:"verified"`
-		} `json:"domains"`
-
-		// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-		Pagination Pagination `json:"pagination"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDomainsResponse) GetJSON200() *struct {
-	Domains []struct {
-		// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
-		//
-		// Example: 1613602938882
-		BoughtAt *float32 `json:"boughtAt"`
-
-		// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
-		//
-		// Example: 1613602938882
-		CreatedAt float32 `json:"createdAt"`
-
-		// Creator An object containing information of the domain creator, including the user's id, username, and email.
-		//
-		// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
-		Creator struct {
-			CustomerId       *string                                                      `json:"customerId,omitempty"`
-			Email            string                                                       `json:"email"`
-			Id               string                                                       `json:"id"`
-			IsDomainReseller *GetDomains200JSONResponseBodyDomainsCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
-			Username         string                                                       `json:"username"`
-		} `json:"creator"`
-
-		// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
-		//
-		// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-		CustomNameservers *[]string `json:"customNameservers,omitempty"`
-
-		// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
-		//
-		// Example: auto
-		EchMode GetDomains200JSONResponseBodyDomainsEchMode `json:"echMode"`
-
-		// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
-		ExpiresAt *float32 `json:"expiresAt"`
-
-		// Id The unique identifier of the domain.
-		//
-		// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
-		Id string `json:"id"`
-
-		// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
-		//
-		// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
-		IntendedNameservers []string `json:"intendedNameservers"`
-
-		// Name The domain name.
-		//
-		// Example: example.com
-		Name string `json:"name"`
-
-		// Nameservers A list of the current nameservers of the domain.
-		//
-		// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-		Nameservers []string `json:"nameservers"`
-
-		// Renew Indicates whether the domain is set to automatically renew.
-		//
-		// Example: true
-		Renew *GetDomains200JSONResponseBodyDomainsRenew `json:"renew,omitempty"`
-
-		// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
-		//
-		// Example: zeit.world
-		ServiceType GetDomains200JSONResponseBodyDomainsServiceType `json:"serviceType"`
-		TeamId      *string                                         `json:"teamId"`
-
-		// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
-		//
-		// Example: 1613602938882
-		TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
-
-		// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
-		//
-		// Example: 1613602938882
-		TransferredAt *float32 `json:"transferredAt,omitempty"`
-		UserId        string   `json:"userId"`
-
-		// Verified If the domain has the ownership verified.
-		//
-		// Example: true
-		Verified GetDomains200JSONResponseBodyDomainsVerified `json:"verified"`
-	} `json:"domains"`
-
-	// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-	Pagination Pagination `json:"pagination"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetDomainsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetDomainsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetDomainsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetDomainsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetDomainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Domain struct {
-			// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
-			//
-			// Example: 1613602938882
-			BoughtAt *float32 `json:"boughtAt"`
-
-			// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
-			//
-			// Example: 1613602938882
-			CreatedAt float32 `json:"createdAt"`
-
-			// Creator An object containing information of the domain creator, including the user's id, username, and email.
-			//
-			// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
-			Creator struct {
-				CustomerId       *string                                                    `json:"customerId,omitempty"`
-				Email            string                                                     `json:"email"`
-				Id               string                                                     `json:"id"`
-				IsDomainReseller *GetDomain200JSONResponseBodyDomainCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
-				Username         string                                                     `json:"username"`
-			} `json:"creator"`
-
-			// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
-			//
-			// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-			CustomNameservers *[]string `json:"customNameservers,omitempty"`
-
-			// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
-			//
-			// Example: auto
-			EchMode GetDomain200JSONResponseBodyDomainEchMode `json:"echMode"`
-
-			// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
-			ExpiresAt *float32 `json:"expiresAt"`
-
-			// Id The unique identifier of the domain.
-			//
-			// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
-			Id string `json:"id"`
-
-			// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
-			//
-			// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
-			IntendedNameservers []string `json:"intendedNameservers"`
-
-			// Name The domain name.
-			//
-			// Example: example.com
-			Name string `json:"name"`
-
-			// Nameservers A list of the current nameservers of the domain.
-			//
-			// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-			Nameservers []string `json:"nameservers"`
-
-			// Renew Indicates whether the domain is set to automatically renew.
-			//
-			// Example: true
-			Renew *GetDomain200JSONResponseBodyDomainRenew `json:"renew,omitempty"`
-
-			// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
-			//
-			// Example: zeit.world
-			ServiceType GetDomain200JSONResponseBodyDomainServiceType `json:"serviceType"`
-			Suffix      GetDomain200JSONResponseBodyDomainSuffix      `json:"suffix"`
-			TeamId      *string                                       `json:"teamId"`
-
-			// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
-			//
-			// Example: 1613602938882
-			TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
-
-			// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
-			//
-			// Example: 1613602938882
-			TransferredAt *float32 `json:"transferredAt,omitempty"`
-			UserId        string   `json:"userId"`
-
-			// Verified If the domain has the ownership verified.
-			//
-			// Example: true
-			Verified GetDomain200JSONResponseBodyDomainVerified `json:"verified"`
-		} `json:"domain"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDomainResponse) GetJSON200() *struct {
-	Domain struct {
-		// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
-		//
-		// Example: 1613602938882
-		BoughtAt *float32 `json:"boughtAt"`
-
-		// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
-		//
-		// Example: 1613602938882
-		CreatedAt float32 `json:"createdAt"`
-
-		// Creator An object containing information of the domain creator, including the user's id, username, and email.
-		//
-		// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
-		Creator struct {
-			CustomerId       *string                                                    `json:"customerId,omitempty"`
-			Email            string                                                     `json:"email"`
-			Id               string                                                     `json:"id"`
-			IsDomainReseller *GetDomain200JSONResponseBodyDomainCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
-			Username         string                                                     `json:"username"`
-		} `json:"creator"`
-
-		// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
-		//
-		// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-		CustomNameservers *[]string `json:"customNameservers,omitempty"`
-
-		// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
-		//
-		// Example: auto
-		EchMode GetDomain200JSONResponseBodyDomainEchMode `json:"echMode"`
-
-		// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
-		ExpiresAt *float32 `json:"expiresAt"`
-
-		// Id The unique identifier of the domain.
-		//
-		// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
-		Id string `json:"id"`
-
-		// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
-		//
-		// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
-		IntendedNameservers []string `json:"intendedNameservers"`
-
-		// Name The domain name.
-		//
-		// Example: example.com
-		Name string `json:"name"`
-
-		// Nameservers A list of the current nameservers of the domain.
-		//
-		// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
-		Nameservers []string `json:"nameservers"`
-
-		// Renew Indicates whether the domain is set to automatically renew.
-		//
-		// Example: true
-		Renew *GetDomain200JSONResponseBodyDomainRenew `json:"renew,omitempty"`
-
-		// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
-		//
-		// Example: zeit.world
-		ServiceType GetDomain200JSONResponseBodyDomainServiceType `json:"serviceType"`
-		Suffix      GetDomain200JSONResponseBodyDomainSuffix      `json:"suffix"`
-		TeamId      *string                                       `json:"teamId"`
-
-		// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
-		//
-		// Example: 1613602938882
-		TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
-
-		// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
-		//
-		// Example: 1613602938882
-		TransferredAt *float32 `json:"transferredAt,omitempty"`
-		UserId        string   `json:"userId"`
-
-		// Verified If the domain has the ownership verified.
-		//
-		// Example: true
-		Verified GetDomain200JSONResponseBodyDomainVerified `json:"verified"`
-	} `json:"domain"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetDomainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetDomainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetDomainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetDomainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetRecordsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetRecords200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetRecordsResponse) GetJSON200() *GetRecords200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetRecordsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetRecordsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetRecordsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetRecordsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAuthTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Token Authentication token metadata.
-		Token AuthToken `json:"token"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAuthTokenResponse) GetJSON200() *struct {
-	// Token Authentication token metadata.
-	Token AuthToken `json:"token"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAuthTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAuthTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAuthTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAuthTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListDeploymentFilesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]FileTree
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListDeploymentFilesResponse) GetJSON200() *[]FileTree {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListDeploymentFilesResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListDeploymentFilesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListDeploymentFilesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListDeploymentFilesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteDomainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Uid string `json:"uid"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r DeleteDomainResponse) GetJSON200() *struct {
-	Uid string `json:"uid"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteDomainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteDomainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteDomainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteDomainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetDomainConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// AcceptedChallenges Which challenge types the domain can use for issuing certs.
-		AcceptedChallenges []GetDomainConfig200JSONResponseBodyAcceptedChallenges `json:"acceptedChallenges"`
-
-		// ConfiguredBy How we see the domain's configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain's A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.
-		ConfiguredBy *GetDomainConfig200JSONResponseBodyConfiguredBy `json:"configuredBy"`
-
-		// Misconfigured Whether or not the domain is configured AND we can automatically generate a TLS certificate.
-		Misconfigured GetDomainConfig200JSONResponseBodyMisconfigured `json:"misconfigured"`
-
-		// RecommendedCNAME Recommended CNAMEs for the domain. rank=1 is the preferred value to use.
-		RecommendedCNAME []struct {
-			Rank  float32 `json:"rank"`
-			Value string  `json:"value"`
-		} `json:"recommendedCNAME"`
-
-		// RecommendedIPv4 Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.
-		RecommendedIPv4 []struct {
-			Rank  float32  `json:"rank"`
-			Value []string `json:"value"`
-		} `json:"recommendedIPv4"`
-	}
 }

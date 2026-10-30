@@ -10,6 +10,90 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDrain200JSONResponseBody0Delivery2Type defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery2Type string
+
+// CreateDrain200JSONResponseBody0Delivery3 defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3 struct {
+	Compression          CreateDrain200JSONResponseBody0Delivery3Compression           `json:"compression"`
+	Encoding             CreateDrain200JSONResponseBody0Delivery3Encoding              `json:"encoding"`
+	Endpoint             string                                                        `json:"endpoint"`
+	FileStructure        CreateDrain200JSONResponseBody0Delivery3FileStructure         `json:"fileStructure"`
+	ObjectAcl            *CreateDrain200JSONResponseBody0Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
+	Region               string                                                        `json:"region"`
+	RoleArn              string                                                        `json:"roleArn"`
+	ServerSideEncryption *CreateDrain200JSONResponseBody0Delivery3ServerSideEncryption `json:"serverSideEncryption,omitempty"`
+	Type                 CreateDrain200JSONResponseBody0Delivery3Type                  `json:"type"`
+}
+
+// CreateDrain200JSONResponseBody0Delivery3Compression defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3Compression string
+
+// CreateDrain200JSONResponseBody0Delivery3Encoding defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3Encoding string
+
+// CreateDrain200JSONResponseBody0Delivery3FileStructure defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3FileStructure string
+
+// CreateDrain200JSONResponseBody0Delivery3ObjectAcl defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3ObjectAcl string
+
+// CreateDrain200JSONResponseBody0Delivery3ServerSideEncryption defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3ServerSideEncryption string
+
+// CreateDrain200JSONResponseBody0Delivery3Type defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery3Type string
+
+// CreateDrain200JSONResponseBody0Delivery4 defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery4 struct {
+	Target CreateDrain200JSONResponseBody0Delivery4Target `json:"target"`
+	Type   CreateDrain200JSONResponseBody0Delivery4Type   `json:"type"`
+}
+
+// CreateDrain200JSONResponseBody0Delivery4Target defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery4Target string
+
+// CreateDrain200JSONResponseBody0Delivery4Type defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0Delivery4Type string
+
+// CreateDrain200JSONResponseBody_0_Delivery defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody_0_Delivery struct {
+	union json.RawMessage
+}
+
+// CreateDrain200JSONResponseBody0DeliveryStatsState defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0DeliveryStatsState string
+
+// CreateDrain200JSONResponseBody0DeliveryStatsWindow defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0DeliveryStatsWindow string
+
+// CreateDrain200JSONResponseBody0DisabledReason defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0DisabledReason string
+
+// CreateDrain200JSONResponseBody0FilterV2Filter0 defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0FilterV2Filter0 struct {
+	Deployment *struct {
+		Environments *[]CreateDrain200JSONResponseBody0FilterV2Filter0DeploymentEnvironments `json:"environments,omitempty"`
+	} `json:"deployment,omitempty"`
+	Log *struct {
+		LegacyExcludeCachedStaticAssetLogs *CreateDrain200JSONResponseBody0FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs `json:"legacy_excludeCachedStaticAssetLogs,omitempty"`
+		Sources                            *[]CreateDrain200JSONResponseBody0FilterV2Filter0LogSources                          `json:"sources,omitempty"`
+	} `json:"log,omitempty"`
+	Project *struct {
+		Ids *[]string `json:"ids,omitempty"`
+	} `json:"project,omitempty"`
+	Type CreateDrain200JSONResponseBody0FilterV2Filter0Type `json:"type"`
+}
+
+// CreateDrain200JSONResponseBody0FilterV2Filter0DeploymentEnvironments defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0FilterV2Filter0DeploymentEnvironments string
+
+// CreateDrain200JSONResponseBody0FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs bool
+
+// CreateDrain200JSONResponseBody0FilterV2Filter0LogSources defines parameters for CreateDrain.
+type CreateDrain200JSONResponseBody0FilterV2Filter0LogSources string
+
 // CreateDrain200JSONResponseBody0FilterV2Filter0Type defines parameters for CreateDrain.
 type CreateDrain200JSONResponseBody0FilterV2Filter0Type string
 
@@ -19926,95 +20010,3 @@ type EditRoute200JSONResponseBodyRouteRouteHas1Value1 struct {
 
 // EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq0 defines parameters for EditRoute.
 type EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq0 = string
-
-// EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq1 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq1 = float32
-
-// EditRoute200JSONResponseBody_Route_Route_Has_1_Value_1_Eq defines parameters for EditRoute.
-type EditRoute200JSONResponseBody_Route_Route_Has_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// EditRoute200JSONResponseBody_Route_Route_Has_1_Value defines parameters for EditRoute.
-type EditRoute200JSONResponseBody_Route_Route_Has_1_Value struct {
-	union json.RawMessage
-}
-
-// EditRoute200JSONResponseBody_Route_Route_Has_Item defines parameters for EditRoute.
-type EditRoute200JSONResponseBody_Route_Route_Has_Item struct {
-	union json.RawMessage
-}
-
-// EditRoute200JSONResponseBodyRouteRouteImportant defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteImportant bool
-
-// EditRoute200JSONResponseBodyRouteRouteMissing0 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing0 struct {
-	Type  EditRoute200JSONResponseBodyRouteRouteMissing0Type       `json:"type"`
-	Value EditRoute200JSONResponseBody_Route_Route_Missing_0_Value `json:"value"`
-}
-
-// EditRoute200JSONResponseBodyRouteRouteMissing0Type defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing0Type string
-
-// EditRoute200JSONResponseBodyRouteRouteMissing0Value0 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing0Value0 = string
-
-// EditRoute200JSONResponseBodyRouteRouteMissing0Value1 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing0Value1 struct {
-	Eq   *EditRoute200JSONResponseBody_Route_Route_Missing_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                       `json:"gt,omitempty"`
-	Gte  *float32                                                       `json:"gte,omitempty"`
-	Inc  *[]string                                                      `json:"inc,omitempty"`
-	Lt   *float32                                                       `json:"lt,omitempty"`
-	Lte  *float32                                                       `json:"lte,omitempty"`
-	Neq  *string                                                        `json:"neq,omitempty"`
-	Ninc *[]string                                                      `json:"ninc,omitempty"`
-	Pre  *string                                                        `json:"pre,omitempty"`
-	Re   *string                                                        `json:"re,omitempty"`
-	Suf  *string                                                        `json:"suf,omitempty"`
-}
-
-// EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq0 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq0 = string
-
-// EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq1 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing0Value1Eq1 = float32
-
-// EditRoute200JSONResponseBody_Route_Route_Missing_0_Value_1_Eq defines parameters for EditRoute.
-type EditRoute200JSONResponseBody_Route_Route_Missing_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// EditRoute200JSONResponseBody_Route_Route_Missing_0_Value defines parameters for EditRoute.
-type EditRoute200JSONResponseBody_Route_Route_Missing_0_Value struct {
-	union json.RawMessage
-}
-
-// EditRoute200JSONResponseBodyRouteRouteMissing1 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing1 struct {
-	Key   string                                                    `json:"key"`
-	Type  EditRoute200JSONResponseBodyRouteRouteMissing1Type        `json:"type"`
-	Value *EditRoute200JSONResponseBody_Route_Route_Missing_1_Value `json:"value,omitempty"`
-}
-
-// EditRoute200JSONResponseBodyRouteRouteMissing1Type defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing1Type string
-
-// EditRoute200JSONResponseBodyRouteRouteMissing1Value0 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing1Value0 = string
-
-// EditRoute200JSONResponseBodyRouteRouteMissing1Value1 defines parameters for EditRoute.
-type EditRoute200JSONResponseBodyRouteRouteMissing1Value1 struct {
-	Eq   *EditRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                       `json:"gt,omitempty"`
-	Gte  *float32                                                       `json:"gte,omitempty"`
-	Inc  *[]string                                                      `json:"inc,omitempty"`
-	Lt   *float32                                                       `json:"lt,omitempty"`
-	Lte  *float32                                                       `json:"lte,omitempty"`
-	Neq  *string                                                        `json:"neq,omitempty"`
-	Ninc *[]string                                                      `json:"ninc,omitempty"`
-	Pre  *string                                                        `json:"pre,omitempty"`
-	Re   *string                                                        `json:"re,omitempty"`
-	Suf  *string                                                        `json:"suf,omitempty"`
-}

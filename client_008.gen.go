@@ -12207,6 +12207,24 @@ func (e UpdateProjectJSONBodyFramework) Valid() bool {
 	}
 }
 
+// Defines values for UpdateProjectJSONBodyGitProviderOptionsCreateDeployments.
+const (
+	UpdateProjectJSONBodyGitProviderOptionsCreateDeploymentsDisabled UpdateProjectJSONBodyGitProviderOptionsCreateDeployments = "disabled"
+	UpdateProjectJSONBodyGitProviderOptionsCreateDeploymentsEnabled  UpdateProjectJSONBodyGitProviderOptionsCreateDeployments = "enabled"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProjectJSONBodyGitProviderOptionsCreateDeployments enum.
+func (e UpdateProjectJSONBodyGitProviderOptionsCreateDeployments) Valid() bool {
+	switch e {
+	case UpdateProjectJSONBodyGitProviderOptionsCreateDeploymentsDisabled:
+		return true
+	case UpdateProjectJSONBodyGitProviderOptionsCreateDeploymentsEnabled:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateProjectJSONBodyNodeVersion.
 const (
 	UpdateProjectJSONBodyNodeVersionN10X UpdateProjectJSONBodyNodeVersion = "10.x"
@@ -19984,28 +20002,3 @@ func (e EditProjectEnv200JSONResponseBodyContentHint6Type) Valid() bool {
 const (
 	EditProjectEnv200JSONResponseBodyContentHint7TypePostgresUrl EditProjectEnv200JSONResponseBodyContentHint7Type = "postgres-url"
 )
-
-// Valid indicates whether the value is a known member of the EditProjectEnv200JSONResponseBodyContentHint7Type enum.
-func (e EditProjectEnv200JSONResponseBodyContentHint7Type) Valid() bool {
-	switch e {
-	case EditProjectEnv200JSONResponseBodyContentHint7TypePostgresUrl:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for EditProjectEnv200JSONResponseBodyContentHint8Type.
-const (
-	EditProjectEnv200JSONResponseBodyContentHint8TypePostgresUrlNonPooling EditProjectEnv200JSONResponseBodyContentHint8Type = "postgres-url-non-pooling"
-)
-
-// Valid indicates whether the value is a known member of the EditProjectEnv200JSONResponseBodyContentHint8Type enum.
-func (e EditProjectEnv200JSONResponseBodyContentHint8Type) Valid() bool {
-	switch e {
-	case EditProjectEnv200JSONResponseBodyContentHint8TypePostgresUrlNonPooling:
-		return true
-	default:
-		return false
-	}
-}

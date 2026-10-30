@@ -14,6 +14,175 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy as a UpdateProjectJSONBodyDeploymentPolicy0
+func (t UpdateProjectJSONBody_DeploymentPolicy) AsUpdateProjectJSONBodyDeploymentPolicy0() (UpdateProjectJSONBodyDeploymentPolicy0, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy as the provided UpdateProjectJSONBodyDeploymentPolicy0
+func (t *UpdateProjectJSONBody_DeploymentPolicy) FromUpdateProjectJSONBodyDeploymentPolicy0(v UpdateProjectJSONBodyDeploymentPolicy0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy, using the provided UpdateProjectJSONBodyDeploymentPolicy0
+func (t *UpdateProjectJSONBody_DeploymentPolicy) MergeUpdateProjectJSONBodyDeploymentPolicy0(v UpdateProjectJSONBodyDeploymentPolicy0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy1 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy as a UpdateProjectJSONBodyDeploymentPolicy1
+func (t UpdateProjectJSONBody_DeploymentPolicy) AsUpdateProjectJSONBodyDeploymentPolicy1() (UpdateProjectJSONBodyDeploymentPolicy1, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy as the provided UpdateProjectJSONBodyDeploymentPolicy1
+func (t *UpdateProjectJSONBody_DeploymentPolicy) FromUpdateProjectJSONBodyDeploymentPolicy1(v UpdateProjectJSONBodyDeploymentPolicy1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy1 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy, using the provided UpdateProjectJSONBodyDeploymentPolicy1
+func (t *UpdateProjectJSONBody_DeploymentPolicy) MergeUpdateProjectJSONBodyDeploymentPolicy1(v UpdateProjectJSONBodyDeploymentPolicy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DeploymentPolicy) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_DeploymentPolicy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDismissedToastsValue4CurrentValue0 returns the union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue as a UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0
+func (t UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) AsUpdateProjectJSONBodyDismissedToastsValue4CurrentValue0() (UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0, error) {
+	var body UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDismissedToastsValue4CurrentValue0 overwrites any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue as the provided UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) FromUpdateProjectJSONBodyDismissedToastsValue4CurrentValue0(v UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDismissedToastsValue4CurrentValue0 performs a merge with any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue, using the provided UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) MergeUpdateProjectJSONBodyDismissedToastsValue4CurrentValue0(v UpdateProjectJSONBodyDismissedToastsValue4CurrentValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDismissedToastsValue4CurrentValue1 returns the union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue as a UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1
+func (t UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) AsUpdateProjectJSONBodyDismissedToastsValue4CurrentValue1() (UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1, error) {
+	var body UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDismissedToastsValue4CurrentValue1 overwrites any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue as the provided UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) FromUpdateProjectJSONBodyDismissedToastsValue4CurrentValue1(v UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDismissedToastsValue4CurrentValue1 performs a merge with any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue, using the provided UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) MergeUpdateProjectJSONBodyDismissedToastsValue4CurrentValue1(v UpdateProjectJSONBodyDismissedToastsValue4CurrentValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDismissedToastsValue4CurrentValue2 returns the union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue as a UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2
+func (t UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) AsUpdateProjectJSONBodyDismissedToastsValue4CurrentValue2() (UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2, error) {
+	var body UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDismissedToastsValue4CurrentValue2 overwrites any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue as the provided UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) FromUpdateProjectJSONBodyDismissedToastsValue4CurrentValue2(v UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDismissedToastsValue4CurrentValue2 performs a merge with any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue, using the provided UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) MergeUpdateProjectJSONBodyDismissedToastsValue4CurrentValue2(v UpdateProjectJSONBodyDismissedToastsValue4CurrentValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_CurrentValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDismissedToastsValue4PreviousValue0 returns the union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue as a UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0
+func (t UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue) AsUpdateProjectJSONBodyDismissedToastsValue4PreviousValue0() (UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0, error) {
+	var body UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDismissedToastsValue4PreviousValue0 overwrites any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue as the provided UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0
+func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue) FromUpdateProjectJSONBodyDismissedToastsValue4PreviousValue0(v UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
 // MergeUpdateProjectJSONBodyDismissedToastsValue4PreviousValue0 performs a merge with any union data inside the UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue, using the provided UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0
 func (t *UpdateProjectJSONBody_DismissedToasts_Value_4_PreviousValue) MergeUpdateProjectJSONBodyDismissedToastsValue4PreviousValue0(v UpdateProjectJSONBodyDismissedToastsValue4PreviousValue0) error {
 	b, err := json.Marshal(v)
@@ -6175,6 +6344,15 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
 	UpsertConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, body UpsertConnectorProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DisconnectConnectorProjectEnvironment Disconnect a connector from a project environment
+	//
+	// Remove a connector's access and event destinations for one project environment. Other environments, the connector, and its provider installations are preserved. Preview disconnect removes destinations for every preview branch in the project. Disconnecting the last environment also releases the project-local UID. Safe to retry.
+	//
+	// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment} (the `DisconnectConnectorProjectEnvironment` operationId).
+	DisconnectConnectorProjectEnvironment(ctx context.Context, connector string, projectId string, environment struct {
+		union json.RawMessage
+	}, params *DisconnectConnectorProjectEnvironmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ReplaceConnectorTriggerDestinationsWithBody Update connector trigger destinations
 	//
@@ -12357,6 +12535,25 @@ func (c *Client) UpsertConnectorProjectConnectionWithBody(ctx context.Context, c
 // Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
 func (c *Client) UpsertConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, body UpsertConnectorProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpsertConnectorProjectConnectionRequest(c.Server, connector, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DisconnectConnectorProjectEnvironment Disconnect a connector from a project environment
+//
+// Remove a connector's access and event destinations for one project environment. Other environments, the connector, and its provider installations are preserved. Preview disconnect removes destinations for every preview branch in the project. Disconnecting the last environment also releases the project-local UID. Safe to retry.
+//
+// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment} (the `DisconnectConnectorProjectEnvironment` operationId).
+func (c *Client) DisconnectConnectorProjectEnvironment(ctx context.Context, connector string, projectId string, environment struct {
+	union json.RawMessage
+}, params *DisconnectConnectorProjectEnvironmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDisconnectConnectorProjectEnvironmentRequest(c.Server, connector, projectId, environment, params)
 	if err != nil {
 		return nil, err
 	}
@@ -19824,194 +20021,6 @@ func (c *Client) ListDeploymentCheckRuns(ctx context.Context, deploymentId strin
 // Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
 func (c *Client) CreateDeploymentCheckRunWithBody(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateDeploymentCheckRunRequestWithBody(c.Server, deploymentId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateDeploymentCheckRun Create a check run
-//
-// Creates a new check run for a deployment.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-func (c *Client) CreateDeploymentCheckRun(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateDeploymentCheckRunRequest(c.Server, deploymentId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDeploymentCheckRun Get a check run
-//
-// Return a detailed response for a single check run.
-//
-// Corresponds with GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `GetDeploymentCheckRun` operationId).
-func (c *Client) GetDeploymentCheckRun(ctx context.Context, deploymentId string, checkRunId string, params *GetDeploymentCheckRunParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDeploymentCheckRunRequest(c.Server, deploymentId, checkRunId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateDeploymentCheckRunWithBody Update a check run
-//
-// Update an existing check run for a deployment.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-func (c *Client) UpdateDeploymentCheckRunWithBody(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateDeploymentCheckRunRequestWithBody(c.Server, deploymentId, checkRunId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateDeploymentCheckRun Update a check run
-//
-// Update an existing check run for a deployment.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-func (c *Client) UpdateDeploymentCheckRun(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, body UpdateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateDeploymentCheckRunRequest(c.Server, deploymentId, checkRunId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListDeploymentAliases List Deployment Aliases
-//
-// Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
-//
-// Corresponds with GET /v2/deployments/{id}/aliases (the `ListDeploymentAliases` operationId).
-func (c *Client) ListDeploymentAliases(ctx context.Context, id string, params *ListDeploymentAliasesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListDeploymentAliasesRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// AssignAliasWithBody Assign an Alias
-//
-// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
-func (c *Client) AssignAliasWithBody(ctx context.Context, id struct {
-	union json.RawMessage
-}, params *AssignAliasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAssignAliasRequestWithBody(c.Server, id, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// AssignAlias Assign an Alias
-//
-// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
-func (c *Client) AssignAlias(ctx context.Context, id struct {
-	union json.RawMessage
-}, params *AssignAliasParams, body AssignAliasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAssignAliasRequest(c.Server, id, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateRecordWithBody Create a DNS record
-//
-// Creates a DNS record for a domain.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
-func (c *Client) CreateRecordWithBody(ctx context.Context, domain string, params *CreateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateRecordRequestWithBody(c.Server, domain, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateRecord Create a DNS record
-//
-// Creates a DNS record for a domain.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
-func (c *Client) CreateRecord(ctx context.Context, domain string, params *CreateRecordParams, body CreateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateRecordRequest(c.Server, domain, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RemoveRecord Delete a DNS record
-//
-// Removes an existing DNS record from a domain name.
-//
-// Corresponds with DELETE /v2/domains/{domain}/records/{recordId} (the `RemoveRecord` operationId).
-func (c *Client) RemoveRecord(ctx context.Context, domain string, recordId string, params *RemoveRecordParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRemoveRecordRequest(c.Server, domain, recordId, params)
 	if err != nil {
 		return nil, err
 	}

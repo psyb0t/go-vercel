@@ -9,6 +9,97 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label string
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory float32
+
+// CreateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for CreateProject.
+type CreateProject200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
+
+// CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
+
+// CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta bool
+
+// CreateProject200JSONResponseBodyResourceConfigFluid defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigFluid bool
+
+// CreateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType string
+
+// CreateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover bool
+
+// CreateProject200JSONResponseBodyResourceConfigIsNSNBDisabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigIsNSNBDisabled bool
+
+// CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
+
+// CreateProject200JSONResponseBodyRollingReleaseGateAction defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseGateAction string
+
+// CreateProject200JSONResponseBodyRollingReleaseGateChecksType defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseGateChecksType string
+
+// CreateProject200JSONResponseBodyRollingReleaseGateDryRun defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseGateDryRun bool
+
+// CreateProject200JSONResponseBodyRollingReleaseGateEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseGateEnabled bool
+
+// CreateProject200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// CreateProject200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// CreateProject200JSONResponseBodySandboxFailoverRegions defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySandboxFailoverRegions string
+
+// CreateProject200JSONResponseBodySandboxRegion defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySandboxRegion string
+
+// CreateProject200JSONResponseBodySecurityAttackModeEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityAttackModeEnabled bool
+
+// CreateProject200JSONResponseBodySecurityBotIdEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityBotIdEnabled bool
+
+// CreateProject200JSONResponseBodySecurityFirewallEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityFirewallEnabled bool
+
+// CreateProject200JSONResponseBodySecurityFirewallSeawallEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityFirewallSeawallEnabled bool
+
+// CreateProject200JSONResponseBodySecurityJa3Enabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityJa3Enabled bool
+
+// CreateProject200JSONResponseBodySecurityJa4Enabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityJa4Enabled bool
+
+// CreateProject200JSONResponseBodySecurityLogHeaders0 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityLogHeaders0 = []string
+
+// CreateProject200JSONResponseBodySecurityLogHeaders1 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityLogHeaders1 string
+
+// CreateProject200JSONResponseBody_Security_LogHeaders defines parameters for CreateProject.
+type CreateProject200JSONResponseBody_Security_LogHeaders struct {
+	union json.RawMessage
+}
+
+// CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction defines parameters for CreateProject.
+type CreateProject200JSONResponseBodySecurityManagedRulesAiBotsAction string
+
 // CreateProject200JSONResponseBodySecurityManagedRulesAiBotsActive defines parameters for CreateProject.
 type CreateProject200JSONResponseBodySecurityManagedRulesAiBotsActive bool
 
@@ -19917,102 +20008,3 @@ type GetProject200JSONResponseBodyAliasRedirectStatusCode float32
 
 // GetProject200JSONResponseBodyAliasTarget defines parameters for GetProject.
 type GetProject200JSONResponseBodyAliasTarget string
-
-// GetProject200JSONResponseBodyAppliedCve55182Migration defines parameters for GetProject.
-type GetProject200JSONResponseBodyAppliedCve55182Migration bool
-
-// GetProject200JSONResponseBodyAutoAssignCustomDomains defines parameters for GetProject.
-type GetProject200JSONResponseBodyAutoAssignCustomDomains bool
-
-// GetProject200JSONResponseBodyAutoExposeSystemEnvs defines parameters for GetProject.
-type GetProject200JSONResponseBodyAutoExposeSystemEnvs bool
-
-// GetProject200JSONResponseBodyBlobsIsDefaultApp defines parameters for GetProject.
-type GetProject200JSONResponseBodyBlobsIsDefaultApp bool
-
-// GetProject200JSONResponseBodyConnectBuildsEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyConnectBuildsEnabled bool
-
-// GetProject200JSONResponseBodyConnectConfigurationsBuildsEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyConnectConfigurationsBuildsEnabled bool
-
-// GetProject200JSONResponseBodyConnectConfigurationsEnvId0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyConnectConfigurationsEnvId0 = string
-
-// GetProject200JSONResponseBodyConnectConfigurationsEnvId1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyConnectConfigurationsEnvId1 string
-
-// GetProject200JSONResponseBody_ConnectConfigurations_EnvId defines parameters for GetProject.
-type GetProject200JSONResponseBody_ConnectConfigurations_EnvId struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyConnectConfigurationsPassive defines parameters for GetProject.
-type GetProject200JSONResponseBodyConnectConfigurationsPassive bool
-
-// GetProject200JSONResponseBodyCreator0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator0 struct {
-	Type GetProject200JSONResponseBodyCreator0Type `json:"type"`
-	User struct {
-		Id string `json:"id"`
-	} `json:"user"`
-	Via *GetProject200JSONResponseBody_Creator_0_Via `json:"via"`
-}
-
-// GetProject200JSONResponseBodyCreator0Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator0Type string
-
-// GetProject200JSONResponseBodyCreator0Via0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator0Via0 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type GetProject200JSONResponseBodyCreator0Via0Type `json:"type"`
-}
-
-// GetProject200JSONResponseBodyCreator0Via0Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator0Via0Type string
-
-// GetProject200JSONResponseBodyCreator0Via1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator0Via1 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type GetProject200JSONResponseBodyCreator0Via1Type `json:"type"`
-}
-
-// GetProject200JSONResponseBodyCreator0Via1Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator0Via1Type string
-
-// GetProject200JSONResponseBody_Creator_0_Via defines parameters for GetProject.
-type GetProject200JSONResponseBody_Creator_0_Via struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyCreator1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator1 struct {
-	Project struct {
-		Id string `json:"id"`
-	} `json:"project"`
-	Type GetProject200JSONResponseBodyCreator1Type `json:"type"`
-}
-
-// GetProject200JSONResponseBodyCreator1Type defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator1Type string
-
-// GetProject200JSONResponseBodyCreator2 defines parameters for GetProject.
-type GetProject200JSONResponseBodyCreator2 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type GetProject200JSONResponseBodyCreator2Type `json:"type"`
-}
