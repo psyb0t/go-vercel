@@ -14,6 +14,278 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item, using the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources as a UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0() (UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources as the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources, using the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources as a UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1() (UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources as the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources, using the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as a UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0() (UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item, using the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as a UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1() (UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item, using the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Environments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as a UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0() (UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item, using the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as a UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1() (UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item, using the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0Sources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources as a UpdateProjectJSONBodyDeploymentPolicy0GitSources0
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) AsUpdateProjectJSONBodyDeploymentPolicy0GitSources0() (UpdateProjectJSONBodyDeploymentPolicy0GitSources0, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0GitSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources as the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) FromUpdateProjectJSONBodyDeploymentPolicy0GitSources0(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources, using the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources0(v UpdateProjectJSONBodyDeploymentPolicy0GitSources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0GitSources1 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources as a UpdateProjectJSONBodyDeploymentPolicy0GitSources1
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) AsUpdateProjectJSONBodyDeploymentPolicy0GitSources1() (UpdateProjectJSONBodyDeploymentPolicy0GitSources1, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0GitSources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0GitSources1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources as the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) FromUpdateProjectJSONBodyDeploymentPolicy0GitSources1(v UpdateProjectJSONBodyDeploymentPolicy0GitSources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources1 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_GitSources, using the provided UpdateProjectJSONBodyDeploymentPolicy0GitSources1
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) MergeUpdateProjectJSONBodyDeploymentPolicy0GitSources1(v UpdateProjectJSONBodyDeploymentPolicy0GitSources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
 func (t *UpdateProjectJSONBody_DeploymentPolicy_0_GitSources) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
@@ -19733,294 +20005,6 @@ func (c *Client) CreateProjectEnv(ctx context.Context, idOrName string, params *
 // Corresponds with POST /v10/projects/{projectId}/promote/{deploymentId} (the `RequestPromote` operationId).
 func (c *Client) RequestPromote(ctx context.Context, projectId string, deploymentId string, params *RequestPromoteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRequestPromoteRequest(c.Server, projectId, deploymentId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateProjectWithBody Create a new project
-//
-// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v11/projects (the `CreateProject` operationId).
-func (c *Client) CreateProjectWithBody(ctx context.Context, params *CreateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateProjectRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateProject Create a new project
-//
-// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v11/projects (the `CreateProject` operationId).
-func (c *Client) CreateProject(ctx context.Context, params *CreateProjectParams, body CreateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateProjectRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CancelDeployment Cancel a deployment
-//
-// Cancels a deployment that is currently in progress, stopping the build before it completes. Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with known errors — without waiting for them to finish. Returns 400 if the deployment is no longer cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object with `readyState: 'CANCELED'` on success.
-//
-// Corresponds with PATCH /v12/deployments/{id}/cancel (the `CancelDeployment` operationId).
-func (c *Client) CancelDeployment(ctx context.Context, id string, params *CancelDeploymentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCancelDeploymentRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateDeploymentWithBody Create a new deployment
-//
-// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
-func (c *Client) CreateDeploymentWithBody(ctx context.Context, params *CreateDeploymentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateDeploymentRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateDeployment Create a new deployment
-//
-// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
-func (c *Client) CreateDeployment(ctx context.Context, params *CreateDeploymentParams, body CreateDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateDeploymentRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDeployment Get a deployment by ID or URL
-//
-// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
-//
-// Corresponds with GET /v13/deployments/{idOrUrl} (the `GetDeployment` operationId).
-func (c *Client) GetDeployment(ctx context.Context, idOrUrl string, params *GetDeploymentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDeploymentRequest(c.Server, idOrUrl, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteDeployment Delete a Deployment
-//
-// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
-//
-// Corresponds with DELETE /v13/deployments/{id} (the `DeleteDeployment` operationId).
-func (c *Client) DeleteDeployment(ctx context.Context, id string, params *DeleteDeploymentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteDeploymentRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetRoot Check registry API version support
-//
-// GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.
-//
-// Corresponds with GET /v2/ (the `GetRoot` operationId).
-func (c *Client) GetRoot(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetRootRequest(c.Server)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAlias Delete an Alias
-//
-// Delete an Alias with the specified ID.
-//
-// Corresponds with DELETE /v2/aliases/{aliasId} (the `DeleteAlias` operationId).
-func (c *Client) DeleteAlias(ctx context.Context, aliasId struct {
-	union json.RawMessage
-}, params *DeleteAliasParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAliasRequest(c.Server, aliasId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListConnectors List connectors
-//
-// List connectors that belong to a team.
-//
-// Corresponds with GET /v2/connect/connectors (the `ListConnectors` operationId).
-func (c *Client) ListConnectors(ctx context.Context, params *ListConnectorsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListConnectorsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateConnectorWithBody Update a connector
-//
-// Update a connector and return the connector with any service-side update signals that the caller must handle.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-func (c *Client) UpdateConnectorWithBody(ctx context.Context, connector string, params *UpdateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateConnectorRequestWithBody(c.Server, connector, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateConnector Update a connector
-//
-// Update a connector and return the connector with any service-side update signals that the caller must handle.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-func (c *Client) UpdateConnector(ctx context.Context, connector string, params *UpdateConnectorParams, body UpdateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateConnectorRequest(c.Server, connector, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListConnectorProjectConnections List projects for a connector
-//
-// List the projects connected to a connector and the environments where each connection is available.
-//
-// Corresponds with GET /v2/connect/connectors/{connector}/projects (the `ListConnectorProjectConnections` operationId).
-func (c *Client) ListConnectorProjectConnections(ctx context.Context, connector string, params *ListConnectorProjectConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListConnectorProjectConnectionsRequest(c.Server, connector, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListProjectConnectorConnections List connectors for a project
-//
-// List the connectors connected to a project and the environments where each connection is available.
-//
-// Corresponds with GET /v2/connect/projects/{projectId}/connectors (the `ListProjectConnectorConnections` operationId).
-func (c *Client) ListProjectConnectorConnections(ctx context.Context, projectId string, params *ListProjectConnectorConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListProjectConnectorConnectionsRequest(c.Server, projectId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListDeploymentCheckRuns List check runs for a deployment
-//
-// List all check runs for a deployment.
-//
-// Corresponds with GET /v2/deployments/{deploymentId}/check-runs (the `ListDeploymentCheckRuns` operationId).
-func (c *Client) ListDeploymentCheckRuns(ctx context.Context, deploymentId string, params *ListDeploymentCheckRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListDeploymentCheckRunsRequest(c.Server, deploymentId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateDeploymentCheckRunWithBody Create a check run
-//
-// Creates a new check run for a deployment.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-func (c *Client) CreateDeploymentCheckRunWithBody(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateDeploymentCheckRunRequestWithBody(c.Server, deploymentId, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}

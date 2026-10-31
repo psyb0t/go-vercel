@@ -9,6 +9,240 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateProject200JSONResponseBodyLink7Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink7Sourceless bool
+
+// CreateProject200JSONResponseBodyLink7Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink7Type string
+
+// CreateProject200JSONResponseBody_Link defines parameters for CreateProject.
+type CreateProject200JSONResponseBody_Link struct {
+	union json.RawMessage
+}
+
+// CreateProject200JSONResponseBodyLive defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLive bool
+
+// CreateProject200JSONResponseBodyMicrofrontends0 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends0 struct {
+	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// Enabled Whether microfrontends are enabled for this project.
+	Enabled CreateProject200JSONResponseBodyMicrofrontends0Enabled `json:"enabled"`
+
+	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+	FreeProjectForLegacyLimits *CreateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+
+	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+	GroupIds     []string                                                    `json:"groupIds"`
+	IsDefaultApp CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
+
+	// UpdatedAt Timestamp when the microfrontends settings were last updated.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// CreateProject200JSONResponseBodyMicrofrontends0Enabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends0Enabled bool
+
+// CreateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits bool
+
+// CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp bool
+
+// CreateProject200JSONResponseBodyMicrofrontends1 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends1 struct {
+	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+	DoNotRouteWithMicrofrontendsRouting *CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
+
+	// Enabled Whether microfrontends are enabled for this project.
+	Enabled CreateProject200JSONResponseBodyMicrofrontends1Enabled `json:"enabled"`
+
+	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+	FreeProjectForLegacyLimits *CreateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+
+	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+	GroupIds     []string                                                     `json:"groupIds"`
+	IsDefaultApp *CreateProject200JSONResponseBodyMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
+
+	// RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
+	RouteObservabilityToThisProject *CreateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
+
+	// UpdatedAt Timestamp when the microfrontends settings were last updated.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
+
+// CreateProject200JSONResponseBodyMicrofrontends1Enabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends1Enabled bool
+
+// CreateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits bool
+
+// CreateProject200JSONResponseBodyMicrofrontends1IsDefaultApp defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends1IsDefaultApp bool
+
+// CreateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject bool
+
+// CreateProject200JSONResponseBodyMicrofrontends2 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends2 struct {
+	Enabled                    CreateProject200JSONResponseBodyMicrofrontends2Enabled                     `json:"enabled"`
+	FreeProjectForLegacyLimits *CreateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	GroupIds                   []interface{}                                                              `json:"groupIds"`
+	UpdatedAt                  float32                                                                    `json:"updatedAt"`
+}
+
+// CreateProject200JSONResponseBodyMicrofrontends2Enabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends2Enabled bool
+
+// CreateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits bool
+
+// CreateProject200JSONResponseBody_Microfrontends defines parameters for CreateProject.
+type CreateProject200JSONResponseBody_Microfrontends struct {
+	union json.RawMessage
+}
+
+// CreateProject200JSONResponseBodyNodeVersion defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyNodeVersion string
+
+// CreateProject200JSONResponseBodyOidcTokenConfigEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyOidcTokenConfigEnabled bool
+
+// CreateProject200JSONResponseBodyOidcTokenConfigIssuerMode defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyOidcTokenConfigIssuerMode string
+
+// CreateProject200JSONResponseBodyPassportDeploymentType defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyPassportDeploymentType string
+
+// CreateProject200JSONResponseBodyPasswordProtectionDeploymentType defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyPasswordProtectionDeploymentType string
+
+// CreateProject200JSONResponseBodyPaused defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyPaused bool
+
+// CreateProject200JSONResponseBodyProductionDeploymentsFastLane defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProductionDeploymentsFastLane bool
+
+// CreateProject200JSONResponseBodyProtectedSourcemaps defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectedSourcemaps bool
+
+// CreateProject200JSONResponseBodyProtectionBypass0 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectionBypass0 struct {
+	ConfigurationId string                                                 `json:"configurationId"`
+	CreatedAt       float32                                                `json:"createdAt"`
+	CreatedBy       string                                                 `json:"createdBy"`
+	IntegrationId   string                                                 `json:"integrationId"`
+	Scope           CreateProject200JSONResponseBodyProtectionBypass0Scope `json:"scope"`
+}
+
+// CreateProject200JSONResponseBodyProtectionBypass0Scope defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectionBypass0Scope string
+
+// CreateProject200JSONResponseBodyProtectionBypass1 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectionBypass1 struct {
+	CreatedAt float32 `json:"createdAt"`
+	CreatedBy string  `json:"createdBy"`
+
+	// IsEnvVar When there was only one bypass, it was automatically set as an env var on deployments. With multiple bypasses, there is always one bypass that is selected as the default, and gets set as an env var on deployments. As this is a new field, undefined means that the bypass is the env var. If there are any automation bypasses, exactly one must be the env var.
+	IsEnvVar *CreateProject200JSONResponseBodyProtectionBypass1IsEnvVar `json:"isEnvVar,omitempty"`
+
+	// Note Optional note about the bypass to be displayed in the UI
+	Note  *string                                                `json:"note,omitempty"`
+	Scope CreateProject200JSONResponseBodyProtectionBypass1Scope `json:"scope"`
+}
+
+// CreateProject200JSONResponseBodyProtectionBypass1IsEnvVar defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectionBypass1IsEnvVar bool
+
+// CreateProject200JSONResponseBodyProtectionBypass1Scope defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectionBypass1Scope string
+
+// CreateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties defines parameters for CreateProject.
+type CreateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection bool
+
+// CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason string
+
+// CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection string
+
+// CreateProject200JSONResponseBodyResourceConfigBuildMachineSelection defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigBuildMachineSelection string
+
+// CreateProject200JSONResponseBodyResourceConfigBuildMachineType defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigBuildMachineType string
+
+// CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration string
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 struct {
+	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label string
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
+	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
+	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
+
+// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 struct {
+	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores  `json:"cores"`
+	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label  `json:"label"`
+	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory `json:"memory"`
+}
+
 // CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores defines parameters for CreateProject.
 type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores float32
 
@@ -19778,233 +20012,3 @@ type ArtifactExistsParams struct {
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
-
-// UploadArtifactParams defines parameters for UploadArtifact.
-type UploadArtifactParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-
-	// ContentLength The artifact size in bytes
-	ContentLength float32 `json:"Content-Length"`
-
-	// XArtifactDuration The time taken to generate the uploaded artifact in milliseconds.
-	XArtifactDuration *float32 `json:"x-artifact-duration,omitempty"`
-
-	// XArtifactClientCi The continuous integration or delivery environment where this artifact was generated.
-	XArtifactClientCi *string `json:"x-artifact-client-ci,omitempty"`
-
-	// XArtifactClientInteractive 1 if the client is an interactive shell. Otherwise 0
-	XArtifactClientInteractive *int `json:"x-artifact-client-interactive,omitempty"`
-
-	// XArtifactTag The base64 encoded tag for this artifact. The value is sent back to clients when the artifact is downloaded as the header `x-artifact-tag`
-	XArtifactTag *string `json:"x-artifact-tag,omitempty"`
-
-	// XArtifactSha The SHA of the source control revision that generated this artifact.
-	XArtifactSha *string `json:"x-artifact-sha,omitempty"`
-
-	// XArtifactDirtyHash A hash representing uncommitted changes in the working directory when this artifact was generated.
-	XArtifactDirtyHash *string `json:"x-artifact-dirty-hash,omitempty"`
-}
-
-// GetCertsParams defines parameters for GetCerts.
-type GetCertsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetCerts200JSONResponseBodyCertsAutoRenew defines parameters for GetCerts.
-type GetCerts200JSONResponseBodyCertsAutoRenew bool
-
-// IssueCertJSONBody defines parameters for IssueCert.
-type IssueCertJSONBody struct {
-	// Cns The common names the cert should be issued for
-	Cns *[]string `json:"cns,omitempty"`
-}
-
-// IssueCertParams defines parameters for IssueCert.
-type IssueCertParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// IssueCert200JSONResponseBodyAutoRenew defines parameters for IssueCert.
-type IssueCert200JSONResponseBodyAutoRenew bool
-
-// UploadCertJSONBody defines parameters for UploadCert.
-type UploadCertJSONBody struct {
-	// Ca The certificate authority
-	Ca string `json:"ca"`
-
-	// Cert The certificate
-	Cert string `json:"cert"`
-
-	// Key The certificate key
-	Key string `json:"key"`
-
-	// SkipValidation Skip validation of the certificate
-	SkipValidation *bool `json:"skipValidation,omitempty"`
-}
-
-// UploadCertParams defines parameters for UploadCert.
-type UploadCertParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UploadCert200JSONResponseBodyAutoRenew defines parameters for UploadCert.
-type UploadCert200JSONResponseBodyAutoRenew bool
-
-// RemoveCertParams defines parameters for RemoveCert.
-type RemoveCertParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetCertByIdParams defines parameters for GetCertById.
-type GetCertByIdParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetCertById200JSONResponseBodyAutoRenew defines parameters for GetCertById.
-type GetCertById200JSONResponseBodyAutoRenew bool
-
-// GetDeploymentFileContentsParams defines parameters for GetDeploymentFileContents.
-type GetDeploymentFileContentsParams struct {
-	// Path Path to the file to fetch (only for Git deployments)
-	Path *string `form:"path,omitempty" json:"path,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ClaimDomainOwnershipParams defines parameters for ClaimDomainOwnership.
-type ClaimDomainOwnershipParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ClaimDomainOwnership200JSONResponseBodyDomainCreatorIsDomainReseller defines parameters for ClaimDomainOwnership.
-type ClaimDomainOwnership200JSONResponseBodyDomainCreatorIsDomainReseller bool
-
-// ClaimDomainOwnership200JSONResponseBodyDomainEchMode defines parameters for ClaimDomainOwnership.
-type ClaimDomainOwnership200JSONResponseBodyDomainEchMode string
-
-// ClaimDomainOwnership200JSONResponseBodyDomainRenew defines parameters for ClaimDomainOwnership.
-type ClaimDomainOwnership200JSONResponseBodyDomainRenew bool
-
-// ClaimDomainOwnership200JSONResponseBodyDomainServiceType defines parameters for ClaimDomainOwnership.
-type ClaimDomainOwnership200JSONResponseBodyDomainServiceType string
-
-// ClaimDomainOwnership200JSONResponseBodyDomainVerified defines parameters for ClaimDomainOwnership.
-type ClaimDomainOwnership200JSONResponseBodyDomainVerified bool
-
-// GetDomainVerificationRecordParams defines parameters for GetDomainVerificationRecord.
-type GetDomainVerificationRecordParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// DeleteProjectParams defines parameters for DeleteProject.
-type DeleteProjectParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetProjectParams defines parameters for GetProject.
-type GetProjectParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetProject200JSONResponseBodyAliasConfiguredBy defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasConfiguredBy string
-
-// GetProject200JSONResponseBodyAliasDeploymentAliasAssigned0 defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentAliasAssigned0 = float32
-
-// GetProject200JSONResponseBodyAliasDeploymentAliasAssigned1 defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentAliasAssigned1 bool
-
-// GetProject200JSONResponseBody_Alias_Deployment_AliasAssigned defines parameters for GetProject.
-type GetProject200JSONResponseBody_Alias_Deployment_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// GetProject200JSONResponseBodyAliasDeploymentBranchMatcherType defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentBranchMatcherType string
-
-// GetProject200JSONResponseBodyAliasDeploymentChecksConclusion defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentChecksConclusion string
-
-// GetProject200JSONResponseBodyAliasDeploymentChecksState defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentChecksState string
-
-// GetProject200JSONResponseBodyAliasDeploymentConnectBuildsEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentConnectBuildsEnabled bool
-
-// GetProject200JSONResponseBodyAliasDeploymentForced defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentForced bool
-
-// GetProject200JSONResponseBodyAliasDeploymentPlan defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentPlan string
-
-// GetProject200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled bool
-
-// GetProject200JSONResponseBodyAliasDeploymentPrivate defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentPrivate bool
-
-// GetProject200JSONResponseBodyAliasDeploymentReadyState defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentReadyState string
-
-// GetProject200JSONResponseBodyAliasDeploymentReadySubstate defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentReadySubstate string
-
-// GetProject200JSONResponseBodyAliasDeploymentType defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentType string
-
-// GetProject200JSONResponseBodyAliasDeploymentWithCache defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasDeploymentWithCache bool
-
-// GetProject200JSONResponseBodyAliasEnvironment defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasEnvironment string
-
-// GetProject200JSONResponseBodyAliasRedirectStatusCode defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasRedirectStatusCode float32
-
-// GetProject200JSONResponseBodyAliasTarget defines parameters for GetProject.
-type GetProject200JSONResponseBodyAliasTarget string

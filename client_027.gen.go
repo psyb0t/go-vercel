@@ -12,6 +12,354 @@ import (
 	"time"
 )
 
+// AssignAliasWithBodyWithResponse Assign an Alias
+//
+// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
+func (c *ClientWithResponses) AssignAliasWithBodyWithResponse(ctx context.Context, id struct {
+	union json.RawMessage
+}, params *AssignAliasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AssignAliasResponse, error) {
+	rsp, err := c.AssignAliasWithBody(ctx, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAssignAliasResponse(rsp)
+}
+
+// AssignAliasWithResponse Assign an Alias
+//
+// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/deployments/{id}/aliases (the `AssignAlias` operationId).
+func (c *ClientWithResponses) AssignAliasWithResponse(ctx context.Context, id struct {
+	union json.RawMessage
+}, params *AssignAliasParams, body AssignAliasJSONRequestBody, reqEditors ...RequestEditorFn) (*AssignAliasResponse, error) {
+	rsp, err := c.AssignAlias(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAssignAliasResponse(rsp)
+}
+
+// CreateRecordWithBodyWithResponse Create a DNS record
+//
+// Creates a DNS record for a domain.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
+func (c *ClientWithResponses) CreateRecordWithBodyWithResponse(ctx context.Context, domain string, params *CreateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateRecordResponse, error) {
+	rsp, err := c.CreateRecordWithBody(ctx, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateRecordResponse(rsp)
+}
+
+// CreateRecordWithResponse Create a DNS record
+//
+// Creates a DNS record for a domain.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/domains/{domain}/records (the `CreateRecord` operationId).
+func (c *ClientWithResponses) CreateRecordWithResponse(ctx context.Context, domain string, params *CreateRecordParams, body CreateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateRecordResponse, error) {
+	rsp, err := c.CreateRecord(ctx, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateRecordResponse(rsp)
+}
+
+// RemoveRecordWithResponse Delete a DNS record
+//
+// Removes an existing DNS record from a domain name.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v2/domains/{domain}/records/{recordId} (the `RemoveRecord` operationId).
+func (c *ClientWithResponses) RemoveRecordWithResponse(ctx context.Context, domain string, recordId string, params *RemoveRecordParams, reqEditors ...RequestEditorFn) (*RemoveRecordResponse, error) {
+	rsp, err := c.RemoveRecord(ctx, domain, recordId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveRecordResponse(rsp)
+}
+
+// UploadFileWithBodyWithResponse Upload Deployment Files
+//
+// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/files (the `UploadFile` operationId).
+func (c *ClientWithResponses) UploadFileWithBodyWithResponse(ctx context.Context, params *UploadFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFileResponse, error) {
+	rsp, err := c.UploadFileWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUploadFileResponse(rsp)
+}
+
+// GetIntegrationLogDrainsWithResponse Retrieves a list of Integration log drains (deprecated)
+//
+// Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/integrations/log-drains (the `GetIntegrationLogDrains` operationId).
+func (c *ClientWithResponses) GetIntegrationLogDrainsWithResponse(ctx context.Context, params *GetIntegrationLogDrainsParams, reqEditors ...RequestEditorFn) (*GetIntegrationLogDrainsResponse, error) {
+	rsp, err := c.GetIntegrationLogDrains(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetIntegrationLogDrainsResponse(rsp)
+}
+
+// CreateLogDrainWithBodyWithResponse Creates a new Integration Log Drain (deprecated)
+//
+// Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/integrations/log-drains (the `CreateLogDrain` operationId).
+func (c *ClientWithResponses) CreateLogDrainWithBodyWithResponse(ctx context.Context, params *CreateLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateLogDrainResponse, error) {
+	rsp, err := c.CreateLogDrainWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateLogDrainResponse(rsp)
+}
+
+// CreateLogDrainWithResponse Creates a new Integration Log Drain (deprecated)
+//
+// Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/integrations/log-drains (the `CreateLogDrain` operationId).
+func (c *ClientWithResponses) CreateLogDrainWithResponse(ctx context.Context, params *CreateLogDrainParams, body CreateLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateLogDrainResponse, error) {
+	rsp, err := c.CreateLogDrain(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateLogDrainResponse(rsp)
+}
+
+// CreateObservabilityQueryWithBodyWithResponse performs a POST /v2/observability/query (the `CreateObservabilityQuery` operationId) request,
+// with any type of body and a specified content type.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateObservabilityQueryWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateObservabilityQueryResponse, error) {
+	rsp, err := c.CreateObservabilityQueryWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateObservabilityQueryResponse(rsp)
+}
+
+// CreateObservabilityQueryWithResponse performs a POST /v2/observability/query (the `CreateObservabilityQuery` operationId) request.
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateObservabilityQueryWithResponse(ctx context.Context, body CreateObservabilityQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateObservabilityQueryResponse, error) {
+	rsp, err := c.CreateObservabilityQuery(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateObservabilityQueryResponse(rsp)
+}
+
+// GetObservabilitySchemaWithResponse performs a GET /v2/observability/schema (the `GetObservabilitySchema` operationId) request.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) GetObservabilitySchemaWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetObservabilitySchemaResponse, error) {
+	rsp, err := c.GetObservabilitySchema(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetObservabilitySchemaResponse(rsp)
+}
+
+// GetObservabilitySchemaByMetricIdWithResponse performs a GET /v2/observability/schema/{metricId} (the `GetObservabilitySchemaByMetricId` operationId) request.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) GetObservabilitySchemaByMetricIdWithResponse(ctx context.Context, metricId string, reqEditors ...RequestEditorFn) (*GetObservabilitySchemaByMetricIdResponse, error) {
+	rsp, err := c.GetObservabilitySchemaByMetricId(ctx, metricId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetObservabilitySchemaByMetricIdResponse(rsp)
+}
+
+// ListProjectChecksWithResponse List all checks for a project
+//
+// List all checks for a project, optionally filtered by target.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/projects/{projectIdOrName}/checks (the `ListProjectChecks` operationId).
+func (c *ClientWithResponses) ListProjectChecksWithResponse(ctx context.Context, projectIdOrName string, params *ListProjectChecksParams, reqEditors ...RequestEditorFn) (*ListProjectChecksResponse, error) {
+	rsp, err := c.ListProjectChecks(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListProjectChecksResponse(rsp)
+}
+
+// CreateProjectCheckWithBodyWithResponse Create a check
+//
+// Creates a new check for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/projects/{projectIdOrName}/checks (the `CreateProjectCheck` operationId).
+func (c *ClientWithResponses) CreateProjectCheckWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateProjectCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectCheckResponse, error) {
+	rsp, err := c.CreateProjectCheckWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectCheckResponse(rsp)
+}
+
+// CreateProjectCheckWithResponse Create a check
+//
+// Creates a new check for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/projects/{projectIdOrName}/checks (the `CreateProjectCheck` operationId).
+func (c *ClientWithResponses) CreateProjectCheckWithResponse(ctx context.Context, projectIdOrName string, params *CreateProjectCheckParams, body CreateProjectCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectCheckResponse, error) {
+	rsp, err := c.CreateProjectCheck(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectCheckResponse(rsp)
+}
+
+// DeleteProjectCheckWithResponse Delete a check
+//
+// Delete an existing check and all of its runs.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v2/projects/{projectIdOrName}/checks/{checkId} (the `DeleteProjectCheck` operationId).
+func (c *ClientWithResponses) DeleteProjectCheckWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *DeleteProjectCheckParams, reqEditors ...RequestEditorFn) (*DeleteProjectCheckResponse, error) {
+	rsp, err := c.DeleteProjectCheck(ctx, projectIdOrName, checkId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteProjectCheckResponse(rsp)
+}
+
+// GetProjectCheckWithResponse Get a check
+//
+// Return a detailed response for a single check.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/projects/{projectIdOrName}/checks/{checkId} (the `GetProjectCheck` operationId).
+func (c *ClientWithResponses) GetProjectCheckWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *GetProjectCheckParams, reqEditors ...RequestEditorFn) (*GetProjectCheckResponse, error) {
+	rsp, err := c.GetProjectCheck(ctx, projectIdOrName, checkId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectCheckResponse(rsp)
+}
+
+// UpdateProjectCheckWithBodyWithResponse Update a check
+//
+// Update an existing check.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v2/projects/{projectIdOrName}/checks/{checkId} (the `UpdateProjectCheck` operationId).
+func (c *ClientWithResponses) UpdateProjectCheckWithBodyWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *UpdateProjectCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectCheckResponse, error) {
+	rsp, err := c.UpdateProjectCheckWithBody(ctx, projectIdOrName, checkId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectCheckResponse(rsp)
+}
+
+// UpdateProjectCheckWithResponse Update a check
+//
+// Update an existing check.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v2/projects/{projectIdOrName}/checks/{checkId} (the `UpdateProjectCheck` operationId).
+func (c *ClientWithResponses) UpdateProjectCheckWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *UpdateProjectCheckParams, body UpdateProjectCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectCheckResponse, error) {
+	rsp, err := c.UpdateProjectCheck(ctx, projectIdOrName, checkId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectCheckResponse(rsp)
+}
+
+// ListCheckRunsWithResponse List runs for a check
+//
+// List all runs associated with a given check.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs (the `ListCheckRuns` operationId).
+func (c *ClientWithResponses) ListCheckRunsWithResponse(ctx context.Context, projectIdOrName string, checkId string, params *ListCheckRunsParams, reqEditors ...RequestEditorFn) (*ListCheckRunsResponse, error) {
+	rsp, err := c.ListCheckRuns(ctx, projectIdOrName, checkId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListCheckRunsResponse(rsp)
+}
+
+// ListFlagsV2WithResponse List flags
+//
+// Retrieve feature flags for a project. Returns an opaque cursor for pagination.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/projects/{projectIdOrName}/feature-flags/flags (the `ListFlagsV2` operationId).
+func (c *ClientWithResponses) ListFlagsV2WithResponse(ctx context.Context, projectIdOrName string, params *ListFlagsV2Params, reqEditors ...RequestEditorFn) (*ListFlagsV2Response, error) {
+	rsp, err := c.ListFlagsV2(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagsV2Response(rsp)
+}
+
+// ListNamedSandboxesWithResponse List sandboxes
+//
+// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status. Overdue sessions for running and stopping sandboxes are recovered before returning the page, so an entry may no longer match its queried status after recovery.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/sandboxes (the `ListNamedSandboxes` operationId).
+func (c *ClientWithResponses) ListNamedSandboxesWithResponse(ctx context.Context, params *ListNamedSandboxesParams, reqEditors ...RequestEditorFn) (*ListNamedSandboxesResponse, error) {
+	rsp, err := c.ListNamedSandboxes(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListNamedSandboxesResponse(rsp)
+}
+
+// CreateSandboxesV2WithBodyWithResponse Create a named sandbox
+//
+// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/sandboxes (the `CreateSandboxesV2` operationId).
+func (c *ClientWithResponses) CreateSandboxesV2WithBodyWithResponse(ctx context.Context, params *CreateSandboxesV2Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSandboxesV2Response, error) {
+	rsp, err := c.CreateSandboxesV2WithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateSandboxesV2Response(rsp)
+}
+
 // CreateSandboxesV2WithResponse Create a named sandbox
 //
 // Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
@@ -9859,16 +10207,17 @@ func ParseListKmsIssuersResponse(rsp *http.Response) (*ListKmsIssuersResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			Issuers []struct {
-				Algorithm    ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
-				ClaimsSchema *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
-				CreatedAt    string                                                    `json:"createdAt"`
-				Id           string                                                    `json:"id"`
-				ManagedBy    *string                                                   `json:"managedBy,omitempty"`
-				Name         string                                                    `json:"name"`
-				Origin       ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
-				OwnerId      string                                                    `json:"ownerId"`
-				Policies     []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
-				SigningKeys  []struct {
+				Algorithm       ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
+				ClaimsSchema    *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
+				CreatedAt       string                                                    `json:"createdAt"`
+				DiscoveryLayout ListKmsIssuers200JSONResponseBodyIssuersDiscoveryLayout   `json:"discoveryLayout"`
+				Id              string                                                    `json:"id"`
+				ManagedBy       *string                                                   `json:"managedBy,omitempty"`
+				Name            string                                                    `json:"name"`
+				Origin          ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
+				OwnerId         string                                                    `json:"ownerId"`
+				Policies        []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
+				SigningKeys     []struct {
 					ActivateAt *string `json:"activateAt,omitempty"`
 
 					// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -9954,16 +10303,17 @@ func ParseCreateKmsIssuerResponse(rsp *http.Response) (*CreateKmsIssuerResponse,
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
-			Algorithm    CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
-			ClaimsSchema *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-			CreatedAt    string                                             `json:"createdAt"`
-			Id           string                                             `json:"id"`
-			ManagedBy    *string                                            `json:"managedBy,omitempty"`
-			Name         string                                             `json:"name"`
-			Origin       CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
-			OwnerId      string                                             `json:"ownerId"`
-			Policies     []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
-			SigningKeys  []struct {
+			Algorithm       CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
+			ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+			CreatedAt       string                                             `json:"createdAt"`
+			DiscoveryLayout CreateKmsIssuer201JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+			Id              string                                             `json:"id"`
+			ManagedBy       *string                                            `json:"managedBy,omitempty"`
+			Name            string                                             `json:"name"`
+			Origin          CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
+			OwnerId         string                                             `json:"ownerId"`
+			Policies        []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
+			SigningKeys     []struct {
 				ActivateAt *string `json:"activateAt,omitempty"`
 
 				// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -10020,6 +10370,9 @@ func ParseCreateKmsIssuerResponse(rsp *http.Response) (*CreateKmsIssuerResponse,
 	case rsp.StatusCode == 404:
 		break // No content-type
 
+	case rsp.StatusCode == 409:
+		break // No content-type
+
 	case rsp.StatusCode == 410:
 		break // No content-type
 
@@ -10060,16 +10413,17 @@ func ParseGetKmsIssuerResponse(rsp *http.Response) (*GetKmsIssuerResponse, error
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			Algorithm    GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-			ClaimsSchema *map[string]interface{}                         `json:"claimsSchema,omitempty"`
-			CreatedAt    string                                          `json:"createdAt"`
-			Id           string                                          `json:"id"`
-			ManagedBy    *string                                         `json:"managedBy,omitempty"`
-			Name         string                                          `json:"name"`
-			Origin       GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-			OwnerId      string                                          `json:"ownerId"`
-			Policies     []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-			SigningKeys  []struct {
+			Algorithm       GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+			ClaimsSchema    *map[string]interface{}                         `json:"claimsSchema,omitempty"`
+			CreatedAt       string                                          `json:"createdAt"`
+			DiscoveryLayout GetKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+			Id              string                                          `json:"id"`
+			ManagedBy       *string                                         `json:"managedBy,omitempty"`
+			Name            string                                          `json:"name"`
+			Origin          GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+			OwnerId         string                                          `json:"ownerId"`
+			Policies        []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+			SigningKeys     []struct {
 				ActivateAt *string `json:"activateAt,omitempty"`
 
 				// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -10150,16 +10504,17 @@ func ParseUpdateKmsIssuerResponse(rsp *http.Response) (*UpdateKmsIssuerResponse,
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			Algorithm    UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-			ClaimsSchema *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-			CreatedAt    string                                             `json:"createdAt"`
-			Id           string                                             `json:"id"`
-			ManagedBy    *string                                            `json:"managedBy,omitempty"`
-			Name         string                                             `json:"name"`
-			Origin       UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-			OwnerId      string                                             `json:"ownerId"`
-			Policies     []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-			SigningKeys  []struct {
+			Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+			ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+			CreatedAt       string                                             `json:"createdAt"`
+			DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+			Id              string                                             `json:"id"`
+			ManagedBy       *string                                            `json:"managedBy,omitempty"`
+			Name            string                                             `json:"name"`
+			Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+			OwnerId         string                                             `json:"ownerId"`
+			Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+			SigningKeys     []struct {
 				ActivateAt *string `json:"activateAt,omitempty"`
 
 				// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -10402,16 +10757,17 @@ func ParseRevokeKmsSigningKeyResponse(rsp *http.Response) (*RevokeKmsSigningKeyR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			Algorithm    RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
-			ClaimsSchema *map[string]interface{}                                `json:"claimsSchema,omitempty"`
-			CreatedAt    string                                                 `json:"createdAt"`
-			Id           string                                                 `json:"id"`
-			ManagedBy    *string                                                `json:"managedBy,omitempty"`
-			Name         string                                                 `json:"name"`
-			Origin       RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
-			OwnerId      string                                                 `json:"ownerId"`
-			Policies     []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
-			SigningKeys  []struct {
+			Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
+			ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
+			CreatedAt       string                                                 `json:"createdAt"`
+			DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+			Id              string                                                 `json:"id"`
+			ManagedBy       *string                                                `json:"managedBy,omitempty"`
+			Name            string                                                 `json:"name"`
+			Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
+			OwnerId         string                                                 `json:"ownerId"`
+			Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
+			SigningKeys     []struct {
 				ActivateAt *string `json:"activateAt,omitempty"`
 
 				// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -19632,375 +19988,6 @@ func ParseListFlagLabelCountsResponse(rsp *http.Response) (*ListFlagLabelCountsR
 				Next *string `json:"next"`
 			} `json:"pagination"`
 		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseLookupFlagLabelsResponse parses an HTTP response from a LookupFlagLabelsWithResponse call
-func ParseLookupFlagLabelsResponse(rsp *http.Response) (*LookupFlagLabelsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &LookupFlagLabelsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				AttributeKey string `json:"attributeKey"`
-				EntityKind   string `json:"entityKind"`
-				Label        string `json:"label"`
-				Value        string `json:"value"`
-			} `json:"data"`
-			Missing []struct {
-				AttributeKey string `json:"attributeKey"`
-				EntityKind   string `json:"entityKind"`
-				Value        string `json:"value"`
-			} `json:"missing"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetSdkKeysResponse parses an HTTP response from a GetSdkKeysWithResponse call
-func ParseGetSdkKeysResponse(rsp *http.Response) (*GetSdkKeysResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetSdkKeysResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				CreatedAt   float32  `json:"createdAt"`
-				CreatedBy   string   `json:"createdBy"`
-				DeletedAt   *float32 `json:"deletedAt,omitempty"`
-				Environment string   `json:"environment"`
-				HashKey     string   `json:"hashKey"`
-				Label       *string  `json:"label,omitempty"`
-
-				// PartialKeyValue Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`).
-				PartialKeyValue string                                `json:"partialKeyValue"`
-				ProjectId       string                                `json:"projectId"`
-				Type            GetSdkKeys200JSONResponseBodyDataType `json:"type"`
-				UpdatedAt       float32                               `json:"updatedAt"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateSdkKeyResponse parses an HTTP response from a CreateSdkKeyWithResponse call
-func ParseCreateSdkKeyResponse(rsp *http.Response) (*CreateSdkKeyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateSdkKeyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FlagsSdkKeyWithSecrets
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteSdkKeyResponse parses an HTTP response from a DeleteSdkKeyWithResponse call
-func ParseDeleteSdkKeyResponse(rsp *http.Response) (*DeleteSdkKeyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteSdkKeyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseListFlagSegmentsResponse parses an HTTP response from a ListFlagSegmentsWithResponse call
-func ParseListFlagSegmentsResponse(rsp *http.Response) (*ListFlagSegmentsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListFlagSegmentsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []Segment `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateFlagSegmentResponse parses an HTTP response from a CreateFlagSegmentWithResponse call
-func ParseCreateFlagSegmentResponse(rsp *http.Response) (*CreateFlagSegmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateFlagSegmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			CreatedAt float32 `json:"createdAt"`
-			CreatedBy *string `json:"createdBy,omitempty"`
-			Data      struct {
-				Exclude *map[string]map[string][]struct {
-					Note  *string `json:"note,omitempty"`
-					Value string  `json:"value"`
-				} `json:"exclude,omitempty"`
-				Include *map[string]map[string][]struct {
-					Note  *string `json:"note,omitempty"`
-					Value string  `json:"value"`
-				} `json:"include,omitempty"`
-				Rules *[]struct {
-					Conditions []struct {
-						Cmp        CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmp `json:"cmp"`
-						CmpOptions *struct {
-							IgnoreCase *CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-						} `json:"cmpOptions,omitempty"`
-						Lhs CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Lhs  `json:"lhs"`
-						Rhs *CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-					} `json:"conditions"`
-					Id      string                                                  `json:"id"`
-					Outcome CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome `json:"outcome"`
-				} `json:"rules,omitempty"`
-			} `json:"data"`
-			Description    *string                                      `json:"description,omitempty"`
-			Hint           string                                       `json:"hint"`
-			Id             string                                       `json:"id"`
-			Label          string                                       `json:"label"`
-			ProjectId      string                                       `json:"projectId"`
-			Slug           string                                       `json:"slug"`
-			TypeName       CreateFlagSegment201JSONResponseBodyTypeName `json:"typeName"`
-			UpdatedAt      float32                                      `json:"updatedAt"`
-			UsedByFlags    *[]string                                    `json:"usedByFlags,omitempty"`
-			UsedBySegments *[]string                                    `json:"usedBySegments,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteFlagSegmentResponse parses an HTTP response from a DeleteFlagSegmentWithResponse call
-func ParseDeleteFlagSegmentResponse(rsp *http.Response) (*DeleteFlagSegmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteFlagSegmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseGetFlagSegmentResponse parses an HTTP response from a GetFlagSegmentWithResponse call
-func ParseGetFlagSegmentResponse(rsp *http.Response) (*GetFlagSegmentResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetFlagSegmentResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Segment
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

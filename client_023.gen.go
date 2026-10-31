@@ -17,6 +17,267 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewListAuthTokensRequest constructs an http.Request for the ListAuthTokens method
+func NewListAuthTokensRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v6/user/tokens")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDeploymentsRequest constructs an http.Request for the GetDeployments method
+func NewGetDeploymentsRequest(server string, params *GetDeploymentsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v7/deployments")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.App != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "app", *params.App, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.From != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "from", *params.From, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ProjectIds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIds", *params.ProjectIds, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Target != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "target", *params.Target, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.To != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "to", *params.To, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Users != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "users", *params.Users, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.State != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "state", *params.State, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.RollbackCandidate != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "rollbackCandidate", *params.RollbackCandidate, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Branch != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "branch", *params.Branch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Sha != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sha", *params.Sha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCreateOrTransferDomainRequest calls the generic CreateOrTransferDomain builder with application/json body
 func NewCreateOrTransferDomainRequest(server string, params *CreateOrTransferDomainParams, body CreateOrTransferDomainJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -18623,16 +18884,17 @@ type ListKmsIssuersResponse struct {
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
 		Issuers []struct {
-			Algorithm    ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
-			ClaimsSchema *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
-			CreatedAt    string                                                    `json:"createdAt"`
-			Id           string                                                    `json:"id"`
-			ManagedBy    *string                                                   `json:"managedBy,omitempty"`
-			Name         string                                                    `json:"name"`
-			Origin       ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
-			OwnerId      string                                                    `json:"ownerId"`
-			Policies     []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
-			SigningKeys  []struct {
+			Algorithm       ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
+			ClaimsSchema    *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
+			CreatedAt       string                                                    `json:"createdAt"`
+			DiscoveryLayout ListKmsIssuers200JSONResponseBodyIssuersDiscoveryLayout   `json:"discoveryLayout"`
+			Id              string                                                    `json:"id"`
+			ManagedBy       *string                                                   `json:"managedBy,omitempty"`
+			Name            string                                                    `json:"name"`
+			Origin          ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
+			OwnerId         string                                                    `json:"ownerId"`
+			Policies        []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
+			SigningKeys     []struct {
 				ActivateAt *string `json:"activateAt,omitempty"`
 
 				// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -18682,16 +18944,17 @@ type ListKmsIssuersResponse struct {
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r ListKmsIssuersResponse) GetJSON200() *struct {
 	Issuers []struct {
-		Algorithm    ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
-		ClaimsSchema *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
-		CreatedAt    string                                                    `json:"createdAt"`
-		Id           string                                                    `json:"id"`
-		ManagedBy    *string                                                   `json:"managedBy,omitempty"`
-		Name         string                                                    `json:"name"`
-		Origin       ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
-		OwnerId      string                                                    `json:"ownerId"`
-		Policies     []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
-		SigningKeys  []struct {
+		Algorithm       ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                                    `json:"createdAt"`
+		DiscoveryLayout ListKmsIssuers200JSONResponseBodyIssuersDiscoveryLayout   `json:"discoveryLayout"`
+		Id              string                                                    `json:"id"`
+		ManagedBy       *string                                                   `json:"managedBy,omitempty"`
+		Name            string                                                    `json:"name"`
+		Origin          ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
+		OwnerId         string                                                    `json:"ownerId"`
+		Policies        []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
 			ActivateAt *string `json:"activateAt,omitempty"`
 
 			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -18773,16 +19036,17 @@ type CreateKmsIssuerResponse struct {
 	HTTPResponse *http.Response
 	// JSON201 the response for an HTTP 201 `application/json` response
 	JSON201 *struct {
-		Algorithm    CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-		CreatedAt    string                                             `json:"createdAt"`
-		Id           string                                             `json:"id"`
-		ManagedBy    *string                                            `json:"managedBy,omitempty"`
-		Name         string                                             `json:"name"`
-		Origin       CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId      string                                             `json:"ownerId"`
-		Policies     []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys  []struct {
+		Algorithm       CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                             `json:"createdAt"`
+		DiscoveryLayout CreateKmsIssuer201JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+		Id              string                                             `json:"id"`
+		ManagedBy       *string                                            `json:"managedBy,omitempty"`
+		Name            string                                             `json:"name"`
+		Origin          CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
+		OwnerId         string                                             `json:"ownerId"`
+		Policies        []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
 			ActivateAt *string `json:"activateAt,omitempty"`
 
 			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -18826,16 +19090,17 @@ type CreateKmsIssuerResponse struct {
 
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r CreateKmsIssuerResponse) GetJSON201() *struct {
-	Algorithm    CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-	CreatedAt    string                                             `json:"createdAt"`
-	Id           string                                             `json:"id"`
-	ManagedBy    *string                                            `json:"managedBy,omitempty"`
-	Name         string                                             `json:"name"`
-	Origin       CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId      string                                             `json:"ownerId"`
-	Policies     []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys  []struct {
+	Algorithm       CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                             `json:"createdAt"`
+	DiscoveryLayout CreateKmsIssuer201JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                             `json:"id"`
+	ManagedBy       *string                                            `json:"managedBy,omitempty"`
+	Name            string                                             `json:"name"`
+	Origin          CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                             `json:"ownerId"`
+	Policies        []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
 		ActivateAt *string `json:"activateAt,omitempty"`
 
 		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -18946,16 +19211,17 @@ type GetKmsIssuerResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		Algorithm    GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema *map[string]interface{}                         `json:"claimsSchema,omitempty"`
-		CreatedAt    string                                          `json:"createdAt"`
-		Id           string                                          `json:"id"`
-		ManagedBy    *string                                         `json:"managedBy,omitempty"`
-		Name         string                                          `json:"name"`
-		Origin       GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId      string                                          `json:"ownerId"`
-		Policies     []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys  []struct {
+		Algorithm       GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                         `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                          `json:"createdAt"`
+		DiscoveryLayout GetKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+		Id              string                                          `json:"id"`
+		ManagedBy       *string                                         `json:"managedBy,omitempty"`
+		Name            string                                          `json:"name"`
+		Origin          GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+		OwnerId         string                                          `json:"ownerId"`
+		Policies        []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
 			ActivateAt *string `json:"activateAt,omitempty"`
 
 			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -18999,16 +19265,17 @@ type GetKmsIssuerResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetKmsIssuerResponse) GetJSON200() *struct {
-	Algorithm    GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema *map[string]interface{}                         `json:"claimsSchema,omitempty"`
-	CreatedAt    string                                          `json:"createdAt"`
-	Id           string                                          `json:"id"`
-	ManagedBy    *string                                         `json:"managedBy,omitempty"`
-	Name         string                                          `json:"name"`
-	Origin       GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId      string                                          `json:"ownerId"`
-	Policies     []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys  []struct {
+	Algorithm       GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                         `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                          `json:"createdAt"`
+	DiscoveryLayout GetKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                          `json:"id"`
+	ManagedBy       *string                                         `json:"managedBy,omitempty"`
+	Name            string                                          `json:"name"`
+	Origin          GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                          `json:"ownerId"`
+	Policies        []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
 		ActivateAt *string `json:"activateAt,omitempty"`
 
 		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -19085,16 +19352,17 @@ type UpdateKmsIssuerResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		Algorithm    UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-		CreatedAt    string                                             `json:"createdAt"`
-		Id           string                                             `json:"id"`
-		ManagedBy    *string                                            `json:"managedBy,omitempty"`
-		Name         string                                             `json:"name"`
-		Origin       UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId      string                                             `json:"ownerId"`
-		Policies     []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys  []struct {
+		Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                             `json:"createdAt"`
+		DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+		Id              string                                             `json:"id"`
+		ManagedBy       *string                                            `json:"managedBy,omitempty"`
+		Name            string                                             `json:"name"`
+		Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+		OwnerId         string                                             `json:"ownerId"`
+		Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
 			ActivateAt *string `json:"activateAt,omitempty"`
 
 			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -19138,16 +19406,17 @@ type UpdateKmsIssuerResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r UpdateKmsIssuerResponse) GetJSON200() *struct {
-	Algorithm    UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-	CreatedAt    string                                             `json:"createdAt"`
-	Id           string                                             `json:"id"`
-	ManagedBy    *string                                            `json:"managedBy,omitempty"`
-	Name         string                                             `json:"name"`
-	Origin       UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId      string                                             `json:"ownerId"`
-	Policies     []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys  []struct {
+	Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                             `json:"createdAt"`
+	DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                             `json:"id"`
+	ManagedBy       *string                                            `json:"managedBy,omitempty"`
+	Name            string                                             `json:"name"`
+	Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                             `json:"ownerId"`
+	Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
 		ActivateAt *string `json:"activateAt,omitempty"`
 
 		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -19454,16 +19723,17 @@ type RevokeKmsSigningKeyResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		Algorithm    RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema *map[string]interface{}                                `json:"claimsSchema,omitempty"`
-		CreatedAt    string                                                 `json:"createdAt"`
-		Id           string                                                 `json:"id"`
-		ManagedBy    *string                                                `json:"managedBy,omitempty"`
-		Name         string                                                 `json:"name"`
-		Origin       RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId      string                                                 `json:"ownerId"`
-		Policies     []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys  []struct {
+		Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                                 `json:"createdAt"`
+		DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+		Id              string                                                 `json:"id"`
+		ManagedBy       *string                                                `json:"managedBy,omitempty"`
+		Name            string                                                 `json:"name"`
+		Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
+		OwnerId         string                                                 `json:"ownerId"`
+		Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
 			ActivateAt *string `json:"activateAt,omitempty"`
 
 			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -19507,16 +19777,17 @@ type RevokeKmsSigningKeyResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r RevokeKmsSigningKeyResponse) GetJSON200() *struct {
-	Algorithm    RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema *map[string]interface{}                                `json:"claimsSchema,omitempty"`
-	CreatedAt    string                                                 `json:"createdAt"`
-	Id           string                                                 `json:"id"`
-	ManagedBy    *string                                                `json:"managedBy,omitempty"`
-	Name         string                                                 `json:"name"`
-	Origin       RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId      string                                                 `json:"ownerId"`
-	Policies     []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys  []struct {
+	Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                                 `json:"createdAt"`
+	DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                                 `json:"id"`
+	ManagedBy       *string                                                `json:"managedBy,omitempty"`
+	Name            string                                                 `json:"name"`
+	Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                                 `json:"ownerId"`
+	Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
 		ActivateAt *string `json:"activateAt,omitempty"`
 
 		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
@@ -19751,268 +20022,4 @@ func (r SignKmsMessageResponse) Status() string {
 		return r.HTTPResponse.Status
 	}
 	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r SignKmsMessageResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r SignKmsMessageResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type SignKmsTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Algorithm Algorithm of the signing key.
-		Algorithm string `json:"algorithm"`
-
-		// Fingerprint SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
-		Fingerprint string `json:"fingerprint"`
-
-		// KeyId Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
-		KeyId string `json:"keyId"`
-
-		// Token Compact JWT signed by the issuer's active signing key.
-		Token string `json:"token"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r SignKmsTokenResponse) GetJSON200() *struct {
-	// Algorithm Algorithm of the signing key.
-	Algorithm string `json:"algorithm"`
-
-	// Fingerprint SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
-	Fingerprint string `json:"fingerprint"`
-
-	// KeyId Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
-	KeyId string `json:"keyId"`
-
-	// Token Compact JWT signed by the issuer's active signing key.
-	Token string `json:"token"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r SignKmsTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r SignKmsTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r SignKmsTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r SignKmsTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAllLogDrainsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetAllLogDrains200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAllLogDrainsResponse) GetJSON200() *GetAllLogDrains200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAllLogDrainsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAllLogDrainsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAllLogDrainsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAllLogDrainsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateConfigurableLogDrainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *map[string]interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateConfigurableLogDrainResponse) GetJSON200() *map[string]interface{} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateConfigurableLogDrainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateConfigurableLogDrainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateConfigurableLogDrainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateConfigurableLogDrainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteConfigurableLogDrainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteConfigurableLogDrainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteConfigurableLogDrainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteConfigurableLogDrainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteConfigurableLogDrainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConfigurableLogDrainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		ClientId                    *string `json:"clientId,omitempty"`
-		ConfigurationId             *string `json:"configurationId,omitempty"`
-		CreatedFrom                 string  `json:"createdFrom"`
-		IntegrationConfigurationUri *string `json:"integrationConfigurationUri,omitempty"`
-		IntegrationIcon             *string `json:"integrationIcon,omitempty"`
-		IntegrationWebsite          *string `json:"integrationWebsite,omitempty"`
-		ProjectsMetadata            *[]struct {
-			Framework        *GetConfigurableLogDrain200JSONResponseBodyProjectsMetadataFramework `json:"framework,omitempty"`
-			Id               string                                                               `json:"id"`
-			LatestDeployment *string                                                              `json:"latestDeployment,omitempty"`
-			Name             string                                                               `json:"name"`
-		} `json:"projectsMetadata,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConfigurableLogDrainResponse) GetJSON200() *struct {
-	ClientId                    *string `json:"clientId,omitempty"`
-	ConfigurationId             *string `json:"configurationId,omitempty"`
-	CreatedFrom                 string  `json:"createdFrom"`
-	IntegrationConfigurationUri *string `json:"integrationConfigurationUri,omitempty"`
-	IntegrationIcon             *string `json:"integrationIcon,omitempty"`
-	IntegrationWebsite          *string `json:"integrationWebsite,omitempty"`
-	ProjectsMetadata            *[]struct {
-		Framework        *GetConfigurableLogDrain200JSONResponseBodyProjectsMetadataFramework `json:"framework,omitempty"`
-		Id               string                                                               `json:"id"`
-		LatestDeployment *string                                                              `json:"latestDeployment,omitempty"`
-		Name             string                                                               `json:"name"`
-	} `json:"projectsMetadata,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConfigurableLogDrainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConfigurableLogDrainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConfigurableLogDrainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConfigurableLogDrainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
 }

@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.15.0, 2026-10-31
+
+- Replaced `ConnectConnectorTypeAwsAlpha` and `ConnectConnectorCreateResultTypeAwsAlpha` with `ConnectConnectorTypeAwsOidc` and `ConnectConnectorCreateResultTypeAwsOidc`. The value changes from `aws-alpha` to `aws-oidc`.
+- Added a `DiscoveryLayout` field to the KMS issuer responses: `CreateKmsIssuerResponse.JSON201`, `GetKmsIssuerResponse.JSON200`, `ListKmsIssuersResponse.JSON200`, `RevokeKmsSigningKeyResponse.JSON200` and `UpdateKmsIssuerResponse.JSON200`, with the `...DiscoveryLayout` types and `...DiscoveryLayoutConnect` and `...DiscoveryLayoutKms` constants. The anonymous struct types of these fields and their `GetJSON200` and `GetJSON201` getters change, so code that names them must change.
+- Moved `Set` and `UnmarshalJSON` from `UserEventPayload255` to `UserEventPayload256`. `UserEvent_Payload` gains `FromUserEventPayload509` and `MergeUserEventPayload509`.
+- Reshaped many `UserEventPayload` types from `UserEventPayload239` onward. Fields shifted between neighbouring types, for example `UserEventPayload239.ConnectionType` and `OrganizationSlug` are removed, `UserEventPayload239` gains `Next`, `Previous`, `TeamId` and `TeamName`, and `UserEventPayload240.Enforced` is removed while `UserEventPayload241.Enforced` is added. Their enum types and constants move with them.
+- Changed field types on several payloads, for example `UserEventPayload248.Justification`, `UserEventPayload269.Current`, `UserEventPayload300.Next` and `UserEventPayload312.RequireVerifiedCommits`.
+- Added the event type `ListEventTypeNameOrganizationTeamDsyncUpdate` with `ListEventTypeReplacedByOrganizationTeamDsyncUpdate`.
+- The rest of the diff reorders generated code across the `client_*.gen.go` files and adds `client_029.gen.go`.
+- Generated from spec version 0.0.1.
+
 ## v0.14.0, 2026-10-30
 
 - Added the `DisconnectConnectorProjectEnvironment` method on `Client` and `ClientInterface`, and `DisconnectConnectorProjectEnvironmentWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Also added `NewDisconnectConnectorProjectEnvironmentRequest`, `ParseDisconnectConnectorProjectEnvironmentResponse`, `DisconnectConnectorProjectEnvironmentParams`, `DisconnectConnectorProjectEnvironmentResponse` and the `DisconnectConnectorProjectEnvironmentParamsEnvironment0` and `...Environment1` types. Custom implementations of the two interfaces must add the new methods.

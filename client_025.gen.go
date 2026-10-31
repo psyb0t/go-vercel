@@ -8,6 +8,356 @@ import (
 	"time"
 )
 
+type ListPromoteAliasesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ListPromoteAliases200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListPromoteAliasesResponse) GetJSON200() *ListPromoteAliases200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListPromoteAliasesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListPromoteAliasesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListPromoteAliasesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListPromoteAliasesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RequestRollbackResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r RequestRollbackResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RequestRollbackResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RequestRollbackResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RequestRollbackResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteRoutesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		DeletedCount float32 `json:"deletedCount"`
+
+		// Version A version of routing rules stored in S3.
+		Version struct {
+			// Alias The staging alias for previewing this version.
+			Alias *string `json:"alias,omitempty"`
+
+			// CreatedBy The user who created this version.
+			CreatedBy string `json:"createdBy"`
+
+			// Id Unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *DeleteRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version is staged and not yet promoted to production.
+			IsStaging *DeleteRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// LastModified Timestamp of when this version was last modified.
+			LastModified float32 `json:"lastModified"`
+
+			// RuleCount The number of routing rules in this version.
+			RuleCount *float32 `json:"ruleCount,omitempty"`
+
+			// S3Key The S3 key where the routing rules are stored.
+			S3Key string `json:"s3Key"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteRoutesResponse) GetJSON200() *struct {
+	DeletedCount float32 `json:"deletedCount"`
+
+	// Version A version of routing rules stored in S3.
+	Version struct {
+		// Alias The staging alias for previewing this version.
+		Alias *string `json:"alias,omitempty"`
+
+		// CreatedBy The user who created this version.
+		CreatedBy string `json:"createdBy"`
+
+		// Id Unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *DeleteRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version is staged and not yet promoted to production.
+		IsStaging *DeleteRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// LastModified Timestamp of when this version was last modified.
+		LastModified float32 `json:"lastModified"`
+
+		// RuleCount The number of routing rules in this version.
+		RuleCount *float32 `json:"ruleCount,omitempty"`
+
+		// S3Key The S3 key where the routing rules are stored.
+		S3Key string `json:"s3Key"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteRoutesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteRoutesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteRoutesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteRoutesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetRoutesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetRoutes200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetRoutesResponse) GetJSON200() *GetRoutes200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetRoutesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetRoutesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetRoutesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetRoutesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type AddRouteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Route struct {
+			// Description Optional description of what the routing rule does.
+			Description *string `json:"description,omitempty"`
+
+			// Enabled Whether the routing rule is enabled. Defaults to true.
+			Enabled *AddRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
+
+			// Id Unique identifier for the routing rule.
+			Id string `json:"id"`
+
+			// Name Human-readable name for the routing rule.
+			Name string `json:"name"`
+
+			// RawDest Original destination provided by user.
+			RawDest *string `json:"rawDest,omitempty"`
+
+			// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
+			RawSrc *string `json:"rawSrc,omitempty"`
+
+			// Route The route definition from @vercel/routing-utils.
+			Route struct {
+				CaseSensitive *AddRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
+				Check         *AddRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
+				Continue      *AddRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
+				Dest          *string                                              `json:"dest,omitempty"`
+				Destination   *AddRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
+				Env           *[]string                                            `json:"env,omitempty"`
+				Has           *[]AddRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
+				Headers       *map[string]string                                   `json:"headers,omitempty"`
+				Important     *AddRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
+				Locale        *struct {
+					Cookie   *string            `json:"cookie,omitempty"`
+					Redirect *map[string]string `json:"redirect,omitempty"`
+				} `json:"locale,omitempty"`
+				Methods *[]string `json:"methods,omitempty"`
+
+				// Middleware A middleware index in the `middleware` key under the build result
+				Middleware *float32 `json:"middleware,omitempty"`
+
+				// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+				MiddlewarePath *string `json:"middlewarePath,omitempty"`
+
+				// MiddlewareRawSrc The original middleware matchers.
+				MiddlewareRawSrc *[]string                                               `json:"middlewareRawSrc,omitempty"`
+				Missing          *[]AddRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
+				Mitigate         *struct {
+					Action AddRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
+				} `json:"mitigate,omitempty"`
+				Override                  *AddRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
+				RespectOriginCacheControl *AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
+
+				// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
+				Source     *string                                                    `json:"source,omitempty"`
+				Src        string                                                     `json:"src"`
+				Status     *float32                                                   `json:"status,omitempty"`
+				StatusCode *float32                                                   `json:"statusCode,omitempty"`
+				Transforms *[]AddRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
+			} `json:"route"`
+			RouteType *AddRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
+
+			// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+			SrcSyntax *AddRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+
+			// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+			Staged *AddRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
+		} `json:"route"`
+
+		// Version A version of routing rules stored in S3.
+		Version struct {
+			// Alias The staging alias for previewing this version.
+			Alias *string `json:"alias,omitempty"`
+
+			// CreatedBy The user who created this version.
+			CreatedBy string `json:"createdBy"`
+
+			// Id Unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *AddRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version is staged and not yet promoted to production.
+			IsStaging *AddRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// LastModified Timestamp of when this version was last modified.
+			LastModified float32 `json:"lastModified"`
+
+			// RuleCount The number of routing rules in this version.
+			RuleCount *float32 `json:"ruleCount,omitempty"`
+
+			// S3Key The S3 key where the routing rules are stored.
+			S3Key string `json:"s3Key"`
+		} `json:"version"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r AddRouteResponse) GetJSON200() *struct {
 	Route struct {
@@ -19656,357 +20006,4 @@ func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse
 		return r.HTTPResponse.Status
 	}
 	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) GetJSON200() *interface{} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON202 the response for an HTTP 202 `application/json` response
-	JSON202 *interface{}
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetJSON202() *interface{} {
-	return r.JSON202
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetJSON200() *interface{} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *interface{}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetJSON201() *interface{} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Name string   `json:"name"`
-		Tags []string `json:"tags"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse) GetJSON200() *struct {
-	Name string   `json:"name"`
-	Tags []string `json:"tags"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetDeploymentEventsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]*GetDeploymentEvents200JSONResponseBody_Item
-	// ApplicationstreamJSON200 the response for an HTTP 200 `application/stream+json` response
-	ApplicationstreamJSON200 *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDeploymentEventsResponse) GetJSON200() *[]*GetDeploymentEvents200JSONResponseBody_Item {
-	return r.JSON200
-}
-
-// GetApplicationstreamJSON200 returns the response for an HTTP 200 `application/stream+json` response
-func (r GetDeploymentEventsResponse) GetApplicationstreamJSON200() *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody {
-	return r.ApplicationstreamJSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetDeploymentEventsResponse) GetBody() []byte {
-	return r.Body
 }

@@ -8,6 +8,250 @@ import (
 	"time"
 )
 
+// GenerateRouteParams defines parameters for GenerateRoute.
+type GenerateRouteParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GenerateRoute200JSONResponseBodyRouteActionsHeadersOp defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteActionsHeadersOp string
+
+// GenerateRoute200JSONResponseBodyRouteActionsSubType defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteActionsSubType string
+
+// GenerateRoute200JSONResponseBodyRouteActionsType defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteActionsType string
+
+// GenerateRoute200JSONResponseBodyRouteCaseSensitive defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteCaseSensitive bool
+
+// GenerateRoute200JSONResponseBodyRouteConditionsField defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteConditionsField string
+
+// GenerateRoute200JSONResponseBodyRouteConditionsMissing defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteConditionsMissing bool
+
+// GenerateRoute200JSONResponseBodyRouteConditionsOperator defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRouteConditionsOperator string
+
+// GenerateRoute200JSONResponseBodyRoutePathConditionSyntax defines parameters for GenerateRoute.
+type GenerateRoute200JSONResponseBodyRoutePathConditionSyntax string
+
+// GetRouteVersionsParams defines parameters for GetRouteVersions.
+type GetRouteVersionsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetRouteVersions200JSONResponseBodyVersionsIsLive defines parameters for GetRouteVersions.
+type GetRouteVersions200JSONResponseBodyVersionsIsLive bool
+
+// GetRouteVersions200JSONResponseBodyVersionsIsStaging defines parameters for GetRouteVersions.
+type GetRouteVersions200JSONResponseBodyVersionsIsStaging bool
+
+// UpdateRouteVersionsJSONBody defines parameters for UpdateRouteVersions.
+type UpdateRouteVersionsJSONBody struct {
+	Action UpdateRouteVersionsJSONBodyAction `json:"action"`
+	Id     string                            `json:"id"`
+}
+
+// UpdateRouteVersionsParams defines parameters for UpdateRouteVersions.
+type UpdateRouteVersionsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateRouteVersionsJSONBodyAction defines parameters for UpdateRouteVersions.
+type UpdateRouteVersionsJSONBodyAction string
+
+// UpdateRouteVersions200JSONResponseBodyVersionIsLive defines parameters for UpdateRouteVersions.
+type UpdateRouteVersions200JSONResponseBodyVersionIsLive bool
+
+// UpdateRouteVersions200JSONResponseBodyVersionIsStaging defines parameters for UpdateRouteVersions.
+type UpdateRouteVersions200JSONResponseBodyVersionIsStaging bool
+
+// EditRouteJSONBody defines parameters for EditRoute.
+type EditRouteJSONBody struct {
+	// Restore If true, restores the staged route to the value in the production version.
+	Restore *bool `json:"restore,omitempty"`
+
+	// Route The full route object to replace the existing route with
+	Route *struct {
+		Description *string `json:"description,omitempty"`
+		Enabled     *bool   `json:"enabled,omitempty"`
+		Name        string  `json:"name"`
+		Route       struct {
+			CaseSensitive *bool   `json:"caseSensitive,omitempty"`
+			Dest          *string `json:"dest,omitempty"`
+			Has           *[]struct {
+				Key   *string                             `json:"key,omitempty"`
+				Type  *EditRouteJSONBodyRouteRouteHasType `json:"type,omitempty"`
+				Value *string                             `json:"value,omitempty"`
+			} `json:"has,omitempty"`
+			Headers *map[string]interface{} `json:"headers,omitempty"`
+			Missing *[]struct {
+				Key   *string                                 `json:"key,omitempty"`
+				Type  *EditRouteJSONBodyRouteRouteMissingType `json:"type,omitempty"`
+				Value *string                                 `json:"value,omitempty"`
+			} `json:"missing,omitempty"`
+			RespectOriginCacheControl *bool  `json:"respectOriginCacheControl,omitempty"`
+			Src                       string `json:"src"`
+			Status                    *int   `json:"status,omitempty"`
+			Transforms                *[]struct {
+				Args   interface{}                                `json:"args,omitempty"`
+				Env    *[]string                                  `json:"env,omitempty"`
+				Op     *EditRouteJSONBodyRouteRouteTransformsOp   `json:"op,omitempty"`
+				Target *map[string]interface{}                    `json:"target,omitempty"`
+				Type   *EditRouteJSONBodyRouteRouteTransformsType `json:"type,omitempty"`
+			} `json:"transforms,omitempty"`
+		} `json:"route"`
+
+		// SrcSyntax Pattern syntax type. If not provided, inferred from pattern.
+		SrcSyntax *EditRouteJSONBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
+	} `json:"route,omitempty"`
+}
+
+// EditRouteParams defines parameters for EditRoute.
+type EditRouteParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// EditRouteJSONBodyRouteRouteHasType defines parameters for EditRoute.
+type EditRouteJSONBodyRouteRouteHasType string
+
+// EditRouteJSONBodyRouteRouteMissingType defines parameters for EditRoute.
+type EditRouteJSONBodyRouteRouteMissingType string
+
+// EditRouteJSONBodyRouteRouteTransformsOp defines parameters for EditRoute.
+type EditRouteJSONBodyRouteRouteTransformsOp string
+
+// EditRouteJSONBodyRouteRouteTransformsType defines parameters for EditRoute.
+type EditRouteJSONBodyRouteRouteTransformsType string
+
+// EditRouteJSONBodyRouteSrcSyntax defines parameters for EditRoute.
+type EditRouteJSONBodyRouteSrcSyntax string
+
+// EditRoute200JSONResponseBodyRouteEnabled defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteEnabled bool
+
+// EditRoute200JSONResponseBodyRouteRouteCaseSensitive defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteCaseSensitive bool
+
+// EditRoute200JSONResponseBodyRouteRouteCheck defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteCheck bool
+
+// EditRoute200JSONResponseBodyRouteRouteContinue defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteContinue bool
+
+// EditRoute200JSONResponseBodyRouteRouteDestination0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteDestination0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteDestination1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteDestination1 struct {
+	// Path Routing-only path used to select a route inside the target service.
+	Path    *string `json:"path,omitempty"`
+	Service string  `json:"service"`
+
+	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+	Type *EditRoute200JSONResponseBodyRouteRouteDestination1Type `json:"type,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteDestination1Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteDestination1Type string
+
+// EditRoute200JSONResponseBody_Route_Route_Destination defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Destination struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteHas0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas0 struct {
+	Type  EditRoute200JSONResponseBodyRouteRouteHas0Type       `json:"type"`
+	Value EditRoute200JSONResponseBody_Route_Route_Has_0_Value `json:"value"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteHas0Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas0Type string
+
+// EditRoute200JSONResponseBodyRouteRouteHas0Value0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas0Value0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteHas0Value1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas0Value1 struct {
+	Eq   *EditRoute200JSONResponseBody_Route_Route_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                   `json:"gt,omitempty"`
+	Gte  *float32                                                   `json:"gte,omitempty"`
+	Inc  *[]string                                                  `json:"inc,omitempty"`
+	Lt   *float32                                                   `json:"lt,omitempty"`
+	Lte  *float32                                                   `json:"lte,omitempty"`
+	Neq  *string                                                    `json:"neq,omitempty"`
+	Ninc *[]string                                                  `json:"ninc,omitempty"`
+	Pre  *string                                                    `json:"pre,omitempty"`
+	Re   *string                                                    `json:"re,omitempty"`
+	Suf  *string                                                    `json:"suf,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteHas0Value1Eq0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas0Value1Eq0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteHas0Value1Eq1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas0Value1Eq1 = float32
+
+// EditRoute200JSONResponseBody_Route_Route_Has_0_Value_1_Eq defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBody_Route_Route_Has_0_Value defines parameters for EditRoute.
+type EditRoute200JSONResponseBody_Route_Route_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// EditRoute200JSONResponseBodyRouteRouteHas1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas1 struct {
+	Key   string                                                `json:"key"`
+	Type  EditRoute200JSONResponseBodyRouteRouteHas1Type        `json:"type"`
+	Value *EditRoute200JSONResponseBody_Route_Route_Has_1_Value `json:"value,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteHas1Type defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas1Type string
+
+// EditRoute200JSONResponseBodyRouteRouteHas1Value0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas1Value0 = string
+
+// EditRoute200JSONResponseBodyRouteRouteHas1Value1 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas1Value1 struct {
+	Eq   *EditRoute200JSONResponseBody_Route_Route_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                   `json:"gt,omitempty"`
+	Gte  *float32                                                   `json:"gte,omitempty"`
+	Inc  *[]string                                                  `json:"inc,omitempty"`
+	Lt   *float32                                                   `json:"lt,omitempty"`
+	Lte  *float32                                                   `json:"lte,omitempty"`
+	Neq  *string                                                    `json:"neq,omitempty"`
+	Ninc *[]string                                                  `json:"ninc,omitempty"`
+	Pre  *string                                                    `json:"pre,omitempty"`
+	Re   *string                                                    `json:"re,omitempty"`
+	Suf  *string                                                    `json:"suf,omitempty"`
+}
+
+// EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq0 defines parameters for EditRoute.
+type EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq0 = string
+
 // EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq1 defines parameters for EditRoute.
 type EditRoute200JSONResponseBodyRouteRouteHas1Value1Eq1 = float32
 
@@ -19773,238 +20017,4 @@ type CreateProject200JSONResponseBodyLink7 struct {
 	Sourceless *CreateProject200JSONResponseBodyLink7Sourceless `json:"sourceless,omitempty"`
 	Type       CreateProject200JSONResponseBodyLink7Type        `json:"type"`
 	UpdatedAt  *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink7Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink7Sourceless bool
-
-// CreateProject200JSONResponseBodyLink7Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink7Type string
-
-// CreateProject200JSONResponseBody_Link defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_Link struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyLive defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLive bool
-
-// CreateProject200JSONResponseBodyMicrofrontends0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends0 struct {
-	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
-	DefaultRoute *string `json:"defaultRoute,omitempty"`
-
-	// Enabled Whether microfrontends are enabled for this project.
-	Enabled CreateProject200JSONResponseBodyMicrofrontends0Enabled `json:"enabled"`
-
-	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-	FreeProjectForLegacyLimits *CreateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
-
-	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-	GroupIds     []string                                                    `json:"groupIds"`
-	IsDefaultApp CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
-
-	// UpdatedAt Timestamp when the microfrontends settings were last updated.
-	UpdatedAt float32 `json:"updatedAt"`
-}
-
-// CreateProject200JSONResponseBodyMicrofrontends0Enabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends0Enabled bool
-
-// CreateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits bool
-
-// CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp bool
-
-// CreateProject200JSONResponseBodyMicrofrontends1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends1 struct {
-	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
-	DefaultRoute *string `json:"defaultRoute,omitempty"`
-
-	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-	DoNotRouteWithMicrofrontendsRouting *CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
-
-	// Enabled Whether microfrontends are enabled for this project.
-	Enabled CreateProject200JSONResponseBodyMicrofrontends1Enabled `json:"enabled"`
-
-	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-	FreeProjectForLegacyLimits *CreateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
-
-	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-	GroupIds     []string                                                     `json:"groupIds"`
-	IsDefaultApp *CreateProject200JSONResponseBodyMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
-
-	// RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
-	RouteObservabilityToThisProject *CreateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
-
-	// UpdatedAt Timestamp when the microfrontends settings were last updated.
-	UpdatedAt float32 `json:"updatedAt"`
-}
-
-// CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
-
-// CreateProject200JSONResponseBodyMicrofrontends1Enabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends1Enabled bool
-
-// CreateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits bool
-
-// CreateProject200JSONResponseBodyMicrofrontends1IsDefaultApp defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends1IsDefaultApp bool
-
-// CreateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject bool
-
-// CreateProject200JSONResponseBodyMicrofrontends2 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends2 struct {
-	Enabled                    CreateProject200JSONResponseBodyMicrofrontends2Enabled                     `json:"enabled"`
-	FreeProjectForLegacyLimits *CreateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
-	GroupIds                   []interface{}                                                              `json:"groupIds"`
-	UpdatedAt                  float32                                                                    `json:"updatedAt"`
-}
-
-// CreateProject200JSONResponseBodyMicrofrontends2Enabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends2Enabled bool
-
-// CreateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits bool
-
-// CreateProject200JSONResponseBody_Microfrontends defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_Microfrontends struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyNodeVersion defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyNodeVersion string
-
-// CreateProject200JSONResponseBodyOidcTokenConfigEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyOidcTokenConfigEnabled bool
-
-// CreateProject200JSONResponseBodyOidcTokenConfigIssuerMode defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyOidcTokenConfigIssuerMode string
-
-// CreateProject200JSONResponseBodyPassportDeploymentType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyPassportDeploymentType string
-
-// CreateProject200JSONResponseBodyPasswordProtectionDeploymentType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyPasswordProtectionDeploymentType string
-
-// CreateProject200JSONResponseBodyPaused defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyPaused bool
-
-// CreateProject200JSONResponseBodyProductionDeploymentsFastLane defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProductionDeploymentsFastLane bool
-
-// CreateProject200JSONResponseBodyProtectedSourcemaps defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectedSourcemaps bool
-
-// CreateProject200JSONResponseBodyProtectionBypass0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectionBypass0 struct {
-	ConfigurationId string                                                 `json:"configurationId"`
-	CreatedAt       float32                                                `json:"createdAt"`
-	CreatedBy       string                                                 `json:"createdBy"`
-	IntegrationId   string                                                 `json:"integrationId"`
-	Scope           CreateProject200JSONResponseBodyProtectionBypass0Scope `json:"scope"`
-}
-
-// CreateProject200JSONResponseBodyProtectionBypass0Scope defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectionBypass0Scope string
-
-// CreateProject200JSONResponseBodyProtectionBypass1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectionBypass1 struct {
-	CreatedAt float32 `json:"createdAt"`
-	CreatedBy string  `json:"createdBy"`
-
-	// IsEnvVar When there was only one bypass, it was automatically set as an env var on deployments. With multiple bypasses, there is always one bypass that is selected as the default, and gets set as an env var on deployments. As this is a new field, undefined means that the bypass is the env var. If there are any automation bypasses, exactly one must be the env var.
-	IsEnvVar *CreateProject200JSONResponseBodyProtectionBypass1IsEnvVar `json:"isEnvVar,omitempty"`
-
-	// Note Optional note about the bypass to be displayed in the UI
-	Note  *string                                                `json:"note,omitempty"`
-	Scope CreateProject200JSONResponseBodyProtectionBypass1Scope `json:"scope"`
-}
-
-// CreateProject200JSONResponseBodyProtectionBypass1IsEnvVar defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectionBypass1IsEnvVar bool
-
-// CreateProject200JSONResponseBodyProtectionBypass1Scope defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectionBypass1Scope string
-
-// CreateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties defines parameters for CreateProject.
-type CreateProject200JSONResponseBody_ProtectionBypass_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection bool
-
-// CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason string
-
-// CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection string
-
-// CreateProject200JSONResponseBodyResourceConfigBuildMachineSelection defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigBuildMachineSelection string
-
-// CreateProject200JSONResponseBodyResourceConfigBuildMachineType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigBuildMachineType string
-
-// CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration string
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0 struct {
-	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores  `json:"cores"`
-	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label  `json:"label"`
-	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory `json:"memory"`
-}
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label string
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
-	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
-	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
-	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
-}
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
-	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
-	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
-	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
-}
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
-
-// CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3 struct {
-	Cores  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores  `json:"cores"`
-	Label  CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label  `json:"label"`
-	Memory CreateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory `json:"memory"`
 }
