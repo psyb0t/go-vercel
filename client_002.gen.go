@@ -3193,6 +3193,24 @@ func (e UserEventPayload402PreviousProjectScope) Valid() bool {
 	}
 }
 
+// Defines values for UserEventPayload406TargetKind.
+const (
+	UserEventPayload406TargetKindProject    UserEventPayload406TargetKind = "project"
+	UserEventPayload406TargetKindRepository UserEventPayload406TargetKind = "repository"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload406TargetKind enum.
+func (e UserEventPayload406TargetKind) Valid() bool {
+	switch e {
+	case UserEventPayload406TargetKindProject:
+		return true
+	case UserEventPayload406TargetKindRepository:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UserEventPayload407Next.
 const (
 	UserEventPayload407NextAutoApproval   UserEventPayload407Next = "auto-approval"
@@ -19987,24 +20005,6 @@ func (e GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaPropert
 	case GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled2Create:
 		return true
 	case GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiDisabled2Update:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1.
-const (
-	GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1False GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 = false
-	GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1True  GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 = true
-)
-
-// Valid indicates whether the value is a known member of the GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1 enum.
-func (e GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1) Valid() bool {
-	switch e {
-	case GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1False:
-		return true
-	case GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaProperties1UiHidden1True:
 		return true
 	default:
 		return false

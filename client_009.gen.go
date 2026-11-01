@@ -14081,15 +14081,17 @@ type UserEventPayload405 struct {
 
 // UserEventPayload406 The payload of the event, if requested.
 type UserEventPayload406 struct {
-	BranchRef     *string `json:"branchRef"`
-	DeploymentId  string  `json:"deploymentId"`
-	Environment   string  `json:"environment"`
+	BranchRef *string `json:"branchRef"`
+
+	// DeploymentId Null for a repository's findings and those of an undeployed commit.
+	DeploymentId *string `json:"deploymentId"`
+
+	// Environment Null for a repository's findings.
+	Environment   *string `json:"environment"`
 	EventId       string  `json:"eventId"`
 	FindingId     string  `json:"findingId"`
 	FindingNumber float32 `json:"findingNumber"`
 	OccurredAt    float32 `json:"occurredAt"`
-	ProjectId     string  `json:"projectId"`
-	ProjectName   string  `json:"projectName"`
 	SessionId     string  `json:"sessionId"`
 
 	// SessionKind Currently emitted session kinds: chat, investigation.
@@ -14097,9 +14099,17 @@ type UserEventPayload406 struct {
 	Severity    string `json:"severity"`
 
 	// Surface Currently emitted surfaces: dashboard, internal, slack, automation, github.
-	Surface            string `json:"surface"`
-	VulnerabilityClass string `json:"vulnerabilityClass"`
+	Surface  string `json:"surface"`
+	TargetId string `json:"targetId"`
+
+	// TargetKind A repository's findings are in code no project runs.
+	TargetKind         UserEventPayload406TargetKind `json:"targetKind"`
+	TargetName         string                        `json:"targetName"`
+	VulnerabilityClass string                        `json:"vulnerabilityClass"`
 }
+
+// UserEventPayload406TargetKind A repository's findings are in code no project runs.
+type UserEventPayload406TargetKind string
 
 // UserEventPayload407 The payload of the event, if requested.
 type UserEventPayload407 struct {
@@ -20006,6 +20016,3 @@ type CreateDrainJSONBodyDelivery0 struct {
 	Secret      *string                                  `json:"secret,omitempty"`
 	Type        string                                   `json:"type"`
 }
-
-// CreateDrainJSONBodyDelivery0Compression defines parameters for CreateDrain.
-type CreateDrainJSONBodyDelivery0Compression string

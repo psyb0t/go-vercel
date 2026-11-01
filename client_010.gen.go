@@ -10,6 +10,9 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDrainJSONBodyDelivery0Compression defines parameters for CreateDrain.
+type CreateDrainJSONBodyDelivery0Compression string
+
 // CreateDrainJSONBodyDelivery0Encoding defines parameters for CreateDrain.
 type CreateDrainJSONBodyDelivery0Encoding string
 

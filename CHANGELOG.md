@@ -2,6 +2,14 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.16.0, 2026-11-01
+
+- Removed `UserEventPayload406.ProjectId` and `UserEventPayload406.ProjectName`.
+- Changed `UserEventPayload406.DeploymentId` and `UserEventPayload406.Environment` from `string` to `*string`. Both are null for a repository's findings.
+- Added `UserEventPayload406.TargetId`, `TargetKind` and `TargetName`, with the `UserEventPayload406TargetKind` type and the `UserEventPayload406TargetKindProject` and `UserEventPayload406TargetKindRepository` constants.
+- The rest of the diff moves generated enum code between the `client_*.gen.go` files.
+- Generated from spec version 0.0.1.
+
 ## v0.15.0, 2026-10-31
 
 - Replaced `ConnectConnectorTypeAwsAlpha` and `ConnectConnectorCreateResultTypeAwsAlpha` with `ConnectConnectorTypeAwsOidc` and `ConnectConnectorCreateResultTypeAwsOidc`. The value changes from `aws-alpha` to `aws-oidc`.
