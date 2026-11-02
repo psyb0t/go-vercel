@@ -10,6 +10,158 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetDrains200JSONResponseBodyDrains1FilterV2Filter0DeploymentEnvironments defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Filter0DeploymentEnvironments string
+
+// GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs bool
+
+// GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogSources defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogSources string
+
+// GetDrains200JSONResponseBodyDrains1FilterV2Filter0Type defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Filter0Type string
+
+// GetDrains200JSONResponseBodyDrains1FilterV2Filter1 defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Filter1 struct {
+	Text string                                                 `json:"text"`
+	Type GetDrains200JSONResponseBodyDrains1FilterV2Filter1Type `json:"type"`
+}
+
+// GetDrains200JSONResponseBodyDrains1FilterV2Filter1Type defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Filter1Type string
+
+// GetDrains200JSONResponseBody_Drains_1_FilterV2_Filter defines parameters for GetDrains.
+type GetDrains200JSONResponseBody_Drains_1_FilterV2_Filter struct {
+	union json.RawMessage
+}
+
+// GetDrains200JSONResponseBodyDrains1FilterV2Version defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1FilterV2Version string
+
+// GetDrains200JSONResponseBodyDrains1ProjectAccess0 defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1ProjectAccess0 struct {
+	Access    GetDrains200JSONResponseBodyDrains1ProjectAccess0Access    `json:"access"`
+	ManagedBy GetDrains200JSONResponseBodyDrains1ProjectAccess0ManagedBy `json:"managedBy"`
+}
+
+// GetDrains200JSONResponseBodyDrains1ProjectAccess0Access defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1ProjectAccess0Access string
+
+// GetDrains200JSONResponseBodyDrains1ProjectAccess0ManagedBy defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1ProjectAccess0ManagedBy string
+
+// GetDrains200JSONResponseBodyDrains1ProjectAccess1 defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1ProjectAccess1 struct {
+	Access     GetDrains200JSONResponseBodyDrains1ProjectAccess1Access    `json:"access"`
+	ManagedBy  GetDrains200JSONResponseBodyDrains1ProjectAccess1ManagedBy `json:"managedBy"`
+	ProjectIds []string                                                   `json:"projectIds"`
+}
+
+// GetDrains200JSONResponseBodyDrains1ProjectAccess1Access defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1ProjectAccess1Access string
+
+// GetDrains200JSONResponseBodyDrains1ProjectAccess1ManagedBy defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1ProjectAccess1ManagedBy string
+
+// GetDrains200JSONResponseBody_Drains_1_ProjectAccess defines parameters for GetDrains.
+type GetDrains200JSONResponseBody_Drains_1_ProjectAccess struct {
+	union json.RawMessage
+}
+
+// GetDrains200JSONResponseBodyDrains1SamplingEnv defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1SamplingEnv string
+
+// GetDrains200JSONResponseBodyDrains1SamplingType defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1SamplingType string
+
+// GetDrains200JSONResponseBodyDrains1Source0 defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1Source0 struct {
+	// DefaultFor Informational marker for a system-owned default drain.
+	DefaultFor *GetDrains200JSONResponseBodyDrains1Source0DefaultFor `json:"defaultFor,omitempty"`
+	Kind       GetDrains200JSONResponseBodyDrains1Source0Kind        `json:"kind"`
+}
+
+// GetDrains200JSONResponseBodyDrains1Source0DefaultFor defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1Source0DefaultFor string
+
+// GetDrains200JSONResponseBodyDrains1Source0Kind defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1Source0Kind string
+
+// GetDrains200JSONResponseBodyDrains1Source1 defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1Source1 struct {
+	ExternalResourceId         *string                                        `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                         `json:"integrationConfigurationId"`
+	IntegrationId              string                                         `json:"integrationId"`
+	Kind                       GetDrains200JSONResponseBodyDrains1Source1Kind `json:"kind"`
+	ResourceId                 *string                                        `json:"resourceId,omitempty"`
+}
+
+// GetDrains200JSONResponseBodyDrains1Source1Kind defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1Source1Kind string
+
+// GetDrains200JSONResponseBody_Drains_1_Source defines parameters for GetDrains.
+type GetDrains200JSONResponseBody_Drains_1_Source struct {
+	union json.RawMessage
+}
+
+// GetDrains200JSONResponseBodyDrains1Status defines parameters for GetDrains.
+type GetDrains200JSONResponseBodyDrains1Status string
+
+// GetDrains200JSONResponseBody_Drains defines parameters for GetDrains.
+type GetDrains200JSONResponseBody_Drains struct {
+	union json.RawMessage
+}
+
+// CreateDrainJSONBody defines parameters for CreateDrain.
+type CreateDrainJSONBody struct {
+	Delivery *CreateDrainJSONBody_Delivery `json:"delivery,omitempty"`
+	Filter   *struct {
+		Filter  CreateDrainJSONBody_Filter_Filter `json:"filter"`
+		Version string                            `json:"version"`
+	} `json:"filter,omitempty"`
+	Name       string                      `json:"name"`
+	ProjectIds *[]string                   `json:"projectIds,omitempty"`
+	Projects   CreateDrainJSONBodyProjects `json:"projects"`
+	Sampling   *[]struct {
+		// Env Environment to apply sampling to
+		Env *CreateDrainJSONBodySamplingEnv `json:"env,omitempty"`
+
+		// Rate Sampling rate from 0 to 1 (e.g., 0.1 for 10%)
+		Rate float32 `json:"rate"`
+
+		// RequestPath Request path prefix to apply the sampling rule to
+		RequestPath *string `json:"requestPath,omitempty"`
+		Type        string  `json:"type"`
+	} `json:"sampling,omitempty"`
+	Schemas map[string]struct {
+		Version string `json:"version"`
+	} `json:"schemas"`
+	Source     *CreateDrainJSONBody_Source `json:"source,omitempty"`
+	Transforms *[]struct {
+		Id string `json:"id"`
+	} `json:"transforms,omitempty"`
+}
+
+// CreateDrainParams defines parameters for CreateDrain.
+type CreateDrainParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateDrainJSONBodyDelivery0 defines parameters for CreateDrain.
+type CreateDrainJSONBodyDelivery0 struct {
+	Compression *CreateDrainJSONBodyDelivery0Compression `json:"compression,omitempty"`
+	Encoding    CreateDrainJSONBodyDelivery0Encoding     `json:"encoding"`
+	Endpoint    string                                   `json:"endpoint"`
+	Headers     map[string]string                        `json:"headers"`
+	Secret      *string                                  `json:"secret,omitempty"`
+	Type        string                                   `json:"type"`
+}
+
 // CreateDrainJSONBodyDelivery0Compression defines parameters for CreateDrain.
 type CreateDrainJSONBodyDelivery0Compression string
 
@@ -14258,6 +14410,65 @@ type GetProjectTokenParams struct {
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
 
+// GetFlagsProjectConnectionsParams defines parameters for GetFlagsProjectConnections.
+type GetFlagsProjectConnectionsParams struct {
+	// Role List connections where this project is the source (default) or the consumer
+	Role *GetFlagsProjectConnectionsParamsRole `form:"role,omitempty" json:"role,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetFlagsProjectConnectionsParamsRole defines parameters for GetFlagsProjectConnections.
+type GetFlagsProjectConnectionsParamsRole string
+
+// GetFlagsProjectConnections200JSONResponseBody0 defines parameters for GetFlagsProjectConnections.
+type GetFlagsProjectConnections200JSONResponseBody0 = map[string]interface{}
+
+// GetFlagsProjectConnections200JSONResponseBody1 defines parameters for GetFlagsProjectConnections.
+type GetFlagsProjectConnections200JSONResponseBody1 struct {
+	Data []struct {
+		ConsumerProjectId   string  `json:"consumerProjectId"`
+		ConsumerProjectName *string `json:"consumerProjectName,omitempty"`
+		CreatedAt           float32 `json:"createdAt"`
+		CreatedBy           string  `json:"createdBy"`
+		SourceProjectId     string  `json:"sourceProjectId"`
+		SourceProjectName   *string `json:"sourceProjectName,omitempty"`
+	} `json:"data"`
+}
+
+// GetFlagsProjectConnections200JSONResponseBody defines parameters for GetFlagsProjectConnections.
+type GetFlagsProjectConnections200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// CreateFlagsProjectConnectionJSONBody defines parameters for CreateFlagsProjectConnection.
+type CreateFlagsProjectConnectionJSONBody struct {
+	// ConsumerProjectId The project in the same team that may read the flags of this project
+	ConsumerProjectId string `json:"consumerProjectId"`
+}
+
+// CreateFlagsProjectConnectionParams defines parameters for CreateFlagsProjectConnection.
+type CreateFlagsProjectConnectionParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteFlagsProjectConnectionParams defines parameters for DeleteFlagsProjectConnection.
+type DeleteFlagsProjectConnectionParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // ListFlagsParams defines parameters for ListFlags.
 type ListFlagsParams struct {
 	// State The state of the flags to retrieve. Defaults to `active`.
@@ -19799,238 +20010,3 @@ type AddRoute200JSONResponseBodyRouteRouteMissing1Type string
 
 // AddRoute200JSONResponseBodyRouteRouteMissing1Value0 defines parameters for AddRoute.
 type AddRoute200JSONResponseBodyRouteRouteMissing1Value0 = string
-
-// AddRoute200JSONResponseBodyRouteRouteMissing1Value1 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteMissing1Value1 struct {
-	Eq   *AddRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                      `json:"gt,omitempty"`
-	Gte  *float32                                                      `json:"gte,omitempty"`
-	Inc  *[]string                                                     `json:"inc,omitempty"`
-	Lt   *float32                                                      `json:"lt,omitempty"`
-	Lte  *float32                                                      `json:"lte,omitempty"`
-	Neq  *string                                                       `json:"neq,omitempty"`
-	Ninc *[]string                                                     `json:"ninc,omitempty"`
-	Pre  *string                                                       `json:"pre,omitempty"`
-	Re   *string                                                       `json:"re,omitempty"`
-	Suf  *string                                                       `json:"suf,omitempty"`
-}
-
-// AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 = string
-
-// AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq1 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq1 = float32
-
-// AddRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBody_Route_Route_Missing_1_Value defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Missing_1_Value struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBody_Route_Route_Missing_Item defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Missing_Item struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBodyRouteRouteMitigateAction defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteMitigateAction string
-
-// AddRoute200JSONResponseBodyRouteRouteOverride defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteOverride bool
-
-// AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl bool
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0 struct {
-	Args   *AddRoute200JSONResponseBody_Route_Route_Transforms_0_Args `json:"args,omitempty"`
-	Env    *[]string                                                  `json:"env,omitempty"`
-	Op     AddRoute200JSONResponseBodyRouteRouteTransforms0Op         `json:"op"`
-	Target struct {
-		Key AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key `json:"key"`
-	} `json:"target"`
-	Type AddRoute200JSONResponseBodyRouteRouteTransforms0Type `json:"type"`
-}
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0Args0 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0Args0 = string
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0Args1 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0Args1 = []string
-
-// AddRoute200JSONResponseBody_Route_Route_Transforms_0_Args defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Transforms_0_Args struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0Op defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0Op string
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey0 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey0 = string
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1 struct {
-	Eq   *AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                              `json:"gt,omitempty"`
-	Gte  *float32                                                              `json:"gte,omitempty"`
-	Inc  *[]string                                                             `json:"inc,omitempty"`
-	Lt   *float32                                                              `json:"lt,omitempty"`
-	Lte  *float32                                                              `json:"lte,omitempty"`
-	Neq  *string                                                               `json:"neq,omitempty"`
-	Ninc *[]string                                                             `json:"ninc,omitempty"`
-	Pre  *string                                                               `json:"pre,omitempty"`
-	Suf  *string                                                               `json:"suf,omitempty"`
-}
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq0 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq0 = string
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq1 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq1 = float32
-
-// AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms0Type defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms0Type string
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms1 defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms1 struct {
-	Args string                                               `json:"args"`
-	Env  *[]string                                            `json:"env,omitempty"`
-	Op   AddRoute200JSONResponseBodyRouteRouteTransforms1Op   `json:"op"`
-	Type AddRoute200JSONResponseBodyRouteRouteTransforms1Type `json:"type"`
-}
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms1Op defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms1Op string
-
-// AddRoute200JSONResponseBodyRouteRouteTransforms1Type defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteTransforms1Type string
-
-// AddRoute200JSONResponseBody_Route_Route_Transforms_Item defines parameters for AddRoute.
-type AddRoute200JSONResponseBody_Route_Route_Transforms_Item struct {
-	union json.RawMessage
-}
-
-// AddRoute200JSONResponseBodyRouteRouteType defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteRouteType string
-
-// AddRoute200JSONResponseBodyRouteSrcSyntax defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteSrcSyntax string
-
-// AddRoute200JSONResponseBodyRouteStaged defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyRouteStaged bool
-
-// AddRoute200JSONResponseBodyVersionIsLive defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyVersionIsLive bool
-
-// AddRoute200JSONResponseBodyVersionIsStaging defines parameters for AddRoute.
-type AddRoute200JSONResponseBodyVersionIsStaging bool
-
-// StageRoutesJSONBody defines parameters for StageRoutes.
-type StageRoutesJSONBody struct {
-	Overwrite *bool `json:"overwrite,omitempty"`
-	Routes    *[]struct {
-		Description *string `json:"description,omitempty"`
-		Enabled     *bool   `json:"enabled,omitempty"`
-		Id          string  `json:"id"`
-		Name        string  `json:"name"`
-		Route       struct {
-			CaseSensitive *bool   `json:"caseSensitive,omitempty"`
-			Dest          *string `json:"dest,omitempty"`
-			Has           *[]struct {
-				Key   *string                                `json:"key,omitempty"`
-				Type  *StageRoutesJSONBodyRoutesRouteHasType `json:"type,omitempty"`
-				Value *string                                `json:"value,omitempty"`
-			} `json:"has,omitempty"`
-			Headers *map[string]interface{} `json:"headers,omitempty"`
-			Missing *[]struct {
-				Key   *string                                    `json:"key,omitempty"`
-				Type  *StageRoutesJSONBodyRoutesRouteMissingType `json:"type,omitempty"`
-				Value *string                                    `json:"value,omitempty"`
-			} `json:"missing,omitempty"`
-			RespectOriginCacheControl *bool  `json:"respectOriginCacheControl,omitempty"`
-			Src                       string `json:"src"`
-			Status                    *int   `json:"status,omitempty"`
-			Transforms                *[]struct {
-				Args   interface{}                                   `json:"args,omitempty"`
-				Env    *[]string                                     `json:"env,omitempty"`
-				Op     *StageRoutesJSONBodyRoutesRouteTransformsOp   `json:"op,omitempty"`
-				Target *map[string]interface{}                       `json:"target,omitempty"`
-				Type   *StageRoutesJSONBodyRoutesRouteTransformsType `json:"type,omitempty"`
-			} `json:"transforms,omitempty"`
-		} `json:"route"`
-	} `json:"routes,omitempty"`
-}
-
-// StageRoutesParams defines parameters for StageRoutes.
-type StageRoutesParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// StageRoutesJSONBodyRoutesRouteHasType defines parameters for StageRoutes.
-type StageRoutesJSONBodyRoutesRouteHasType string
-
-// StageRoutesJSONBodyRoutesRouteMissingType defines parameters for StageRoutes.
-type StageRoutesJSONBodyRoutesRouteMissingType string
-
-// StageRoutesJSONBodyRoutesRouteTransformsOp defines parameters for StageRoutes.
-type StageRoutesJSONBodyRoutesRouteTransformsOp string
-
-// StageRoutesJSONBodyRoutesRouteTransformsType defines parameters for StageRoutes.
-type StageRoutesJSONBodyRoutesRouteTransformsType string
-
-// StageRoutes200JSONResponseBodyVersionIsLive defines parameters for StageRoutes.
-type StageRoutes200JSONResponseBodyVersionIsLive bool
-
-// StageRoutes200JSONResponseBodyVersionIsStaging defines parameters for StageRoutes.
-type StageRoutes200JSONResponseBodyVersionIsStaging bool
-
-// GenerateRouteJSONBody defines parameters for GenerateRoute.
-type GenerateRouteJSONBody struct {
-	CurrentRoute *struct {
-		Actions []struct {
-			Dest    *string `json:"dest,omitempty"`
-			Headers *[]struct {
-				Key   *string `json:"key,omitempty"`
-				Op    *string `json:"op,omitempty"`
-				Value *string `json:"value,omitempty"`
-			} `json:"headers,omitempty"`
-			Status  *int    `json:"status,omitempty"`
-			SubType *string `json:"subType,omitempty"`
-			Type    *string `json:"type,omitempty"`
-		} `json:"actions"`
-		CaseSensitive *bool `json:"caseSensitive,omitempty"`
-		Conditions    *[]struct {
-			Field    *string `json:"field,omitempty"`
-			Key      *string `json:"key,omitempty"`
-			Missing  *bool   `json:"missing,omitempty"`
-			Operator *string `json:"operator,omitempty"`
-			Value    *string `json:"value,omitempty"`
-		} `json:"conditions,omitempty"`
-		Description   *string `json:"description,omitempty"`
-		Name          *string `json:"name,omitempty"`
-		PathCondition struct {
-			Syntax *string `json:"syntax,omitempty"`
-			Value  *string `json:"value,omitempty"`
-		} `json:"pathCondition"`
-	} `json:"currentRoute,omitempty"`
-	Prompt string `json:"prompt"`
-}

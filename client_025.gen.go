@@ -8,6 +8,69 @@ import (
 	"time"
 )
 
+// GetBody returns the raw response body bytes
+func (r UpdateMicrofrontendsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateMicrofrontendsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateMicrofrontendsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateMicrofrontendsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PauseProjectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r PauseProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PauseProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PauseProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PauseProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListPromoteAliasesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -11572,6 +11635,9 @@ type CreateProjectResponse struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -12418,6 +12484,9 @@ type CreateProjectResponse struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -13345,6 +13414,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		FlagDefinitionsPresent *struct {
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+		HealthCheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 		Lint *struct {
 			Targets []string `json:"targets"`
 		} `json:"lint,omitempty"`
@@ -14191,6 +14263,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 
 		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+		// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -19932,78 +20007,4 @@ func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) St
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON202 the response for an HTTP 202 `application/json` response
-	JSON202 *interface{}
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetJSON202() *interface{} {
-	return r.JSON202
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *interface{}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetJSON201() *interface{} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
 }

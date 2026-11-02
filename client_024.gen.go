@@ -7,6 +7,767 @@ import (
 	"net/http"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetKmsIssuerResponse) GetJSON200() *struct {
+	Algorithm       GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                         `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                          `json:"createdAt"`
+	DiscoveryLayout GetKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                          `json:"id"`
+	ManagedBy       *string                                         `json:"managedBy,omitempty"`
+	Name            string                                          `json:"name"`
+	Origin          GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                          `json:"ownerId"`
+	Policies        []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
+		ActivateAt *string `json:"activateAt,omitempty"`
+
+		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+		ActivatedAt *string `json:"activatedAt,omitempty"`
+		Algorithm   string  `json:"algorithm"`
+
+		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+		CertificatePem *string `json:"certificatePem,omitempty"`
+		CreatedAt      string  `json:"createdAt"`
+
+		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+		ImportKeyId *string `json:"importKeyId,omitempty"`
+		IssuerId    string  `json:"issuerId"`
+
+		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+		KeyId     string `json:"keyId"`
+		PublicKey *struct {
+			Alg    *string   `json:"alg,omitempty"`
+			KeyOps *[]string `json:"key_ops,omitempty"`
+			Kid    *string   `json:"kid,omitempty"`
+			Kty    *string   `json:"kty,omitempty"`
+			Use    *string   `json:"use,omitempty"`
+
+			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+			X5c *[]string `json:"x5c,omitempty"`
+
+			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+			X5tS256 *string `json:"x5t#S256,omitempty"`
+		} `json:"publicKey,omitempty"`
+		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+		PublicKeyPem *string                                          `json:"publicKeyPem,omitempty"`
+		RevokeAt     *string                                          `json:"revokeAt,omitempty"`
+		Status       GetKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
+		UpdatedAt    string                                           `json:"updatedAt"`
+	} `json:"signingKeys"`
+	UpdatedAt string `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetKmsIssuerResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetKmsIssuerResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetKmsIssuerResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetKmsIssuerResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateKmsIssuerResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                             `json:"createdAt"`
+		DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+		Id              string                                             `json:"id"`
+		ManagedBy       *string                                            `json:"managedBy,omitempty"`
+		Name            string                                             `json:"name"`
+		Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+		OwnerId         string                                             `json:"ownerId"`
+		Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
+			ActivateAt *string `json:"activateAt,omitempty"`
+
+			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+			ActivatedAt *string `json:"activatedAt,omitempty"`
+			Algorithm   string  `json:"algorithm"`
+
+			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+			CertificatePem *string `json:"certificatePem,omitempty"`
+			CreatedAt      string  `json:"createdAt"`
+
+			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+			ImportKeyId *string `json:"importKeyId,omitempty"`
+			IssuerId    string  `json:"issuerId"`
+
+			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+			KeyId     string `json:"keyId"`
+			PublicKey *struct {
+				Alg    *string   `json:"alg,omitempty"`
+				KeyOps *[]string `json:"key_ops,omitempty"`
+				Kid    *string   `json:"kid,omitempty"`
+				Kty    *string   `json:"kty,omitempty"`
+				Use    *string   `json:"use,omitempty"`
+
+				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+				X5c *[]string `json:"x5c,omitempty"`
+
+				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+				X5tS256 *string `json:"x5t#S256,omitempty"`
+			} `json:"publicKey,omitempty"`
+			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+			PublicKeyPem *string                                             `json:"publicKeyPem,omitempty"`
+			RevokeAt     *string                                             `json:"revokeAt,omitempty"`
+			Status       UpdateKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
+			UpdatedAt    string                                              `json:"updatedAt"`
+		} `json:"signingKeys"`
+		UpdatedAt string `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateKmsIssuerResponse) GetJSON200() *struct {
+	Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                             `json:"createdAt"`
+	DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                             `json:"id"`
+	ManagedBy       *string                                            `json:"managedBy,omitempty"`
+	Name            string                                             `json:"name"`
+	Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                             `json:"ownerId"`
+	Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
+		ActivateAt *string `json:"activateAt,omitempty"`
+
+		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+		ActivatedAt *string `json:"activatedAt,omitempty"`
+		Algorithm   string  `json:"algorithm"`
+
+		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+		CertificatePem *string `json:"certificatePem,omitempty"`
+		CreatedAt      string  `json:"createdAt"`
+
+		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+		ImportKeyId *string `json:"importKeyId,omitempty"`
+		IssuerId    string  `json:"issuerId"`
+
+		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+		KeyId     string `json:"keyId"`
+		PublicKey *struct {
+			Alg    *string   `json:"alg,omitempty"`
+			KeyOps *[]string `json:"key_ops,omitempty"`
+			Kid    *string   `json:"kid,omitempty"`
+			Kty    *string   `json:"kty,omitempty"`
+			Use    *string   `json:"use,omitempty"`
+
+			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+			X5c *[]string `json:"x5c,omitempty"`
+
+			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+			X5tS256 *string `json:"x5t#S256,omitempty"`
+		} `json:"publicKey,omitempty"`
+		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+		PublicKeyPem *string                                             `json:"publicKeyPem,omitempty"`
+		RevokeAt     *string                                             `json:"revokeAt,omitempty"`
+		Status       UpdateKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
+		UpdatedAt    string                                              `json:"updatedAt"`
+	} `json:"signingKeys"`
+	UpdatedAt string `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateKmsIssuerResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateKmsIssuerResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateKmsIssuerResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateKmsIssuerResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateKmsSigningKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ActivateAt *string `json:"activateAt,omitempty"`
+
+		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+		ActivatedAt *string `json:"activatedAt,omitempty"`
+		Algorithm   string  `json:"algorithm"`
+
+		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+		CertificatePem *string `json:"certificatePem,omitempty"`
+		CreatedAt      string  `json:"createdAt"`
+
+		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+		ImportKeyId *string `json:"importKeyId,omitempty"`
+		IssuerId    string  `json:"issuerId"`
+
+		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+		KeyId     string `json:"keyId"`
+		PublicKey *struct {
+			Alg    *string   `json:"alg,omitempty"`
+			KeyOps *[]string `json:"key_ops,omitempty"`
+			Kid    *string   `json:"kid,omitempty"`
+			Kty    *string   `json:"kty,omitempty"`
+			Use    *string   `json:"use,omitempty"`
+
+			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+			X5c *[]string `json:"x5c,omitempty"`
+
+			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+			X5tS256 *string `json:"x5t#S256,omitempty"`
+		} `json:"publicKey,omitempty"`
+		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+		PublicKeyPem *string                                      `json:"publicKeyPem,omitempty"`
+		RevokeAt     *string                                      `json:"revokeAt,omitempty"`
+		Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
+		UpdatedAt    string                                       `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CreateKmsSigningKeyResponse) GetJSON200() *struct {
+	ActivateAt *string `json:"activateAt,omitempty"`
+
+	// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+	ActivatedAt *string `json:"activatedAt,omitempty"`
+	Algorithm   string  `json:"algorithm"`
+
+	// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+	CertificatePem *string `json:"certificatePem,omitempty"`
+	CreatedAt      string  `json:"createdAt"`
+
+	// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+	ImportKeyId *string `json:"importKeyId,omitempty"`
+	IssuerId    string  `json:"issuerId"`
+
+	// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+	KeyId     string `json:"keyId"`
+	PublicKey *struct {
+		Alg    *string   `json:"alg,omitempty"`
+		KeyOps *[]string `json:"key_ops,omitempty"`
+		Kid    *string   `json:"kid,omitempty"`
+		Kty    *string   `json:"kty,omitempty"`
+		Use    *string   `json:"use,omitempty"`
+
+		// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+		X5c *[]string `json:"x5c,omitempty"`
+
+		// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+		X5tS256 *string `json:"x5t#S256,omitempty"`
+	} `json:"publicKey,omitempty"`
+	PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+	// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+	PublicKeyPem *string                                      `json:"publicKeyPem,omitempty"`
+	RevokeAt     *string                                      `json:"revokeAt,omitempty"`
+	Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
+	UpdatedAt    string                                       `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateKmsSigningKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateKmsSigningKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateKmsSigningKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateKmsSigningKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ActivateKmsSigningKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ActivateAt *string `json:"activateAt,omitempty"`
+
+		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+		ActivatedAt *string `json:"activatedAt,omitempty"`
+		Algorithm   string  `json:"algorithm"`
+
+		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+		CertificatePem *string `json:"certificatePem,omitempty"`
+		CreatedAt      string  `json:"createdAt"`
+
+		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+		ImportKeyId *string `json:"importKeyId,omitempty"`
+		IssuerId    string  `json:"issuerId"`
+
+		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+		KeyId     string `json:"keyId"`
+		PublicKey *struct {
+			Alg    *string   `json:"alg,omitempty"`
+			KeyOps *[]string `json:"key_ops,omitempty"`
+			Kid    *string   `json:"kid,omitempty"`
+			Kty    *string   `json:"kty,omitempty"`
+			Use    *string   `json:"use,omitempty"`
+
+			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+			X5c *[]string `json:"x5c,omitempty"`
+
+			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+			X5tS256 *string `json:"x5t#S256,omitempty"`
+		} `json:"publicKey,omitempty"`
+		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+		PublicKeyPem *string                                        `json:"publicKeyPem,omitempty"`
+		RevokeAt     *string                                        `json:"revokeAt,omitempty"`
+		Status       ActivateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
+		UpdatedAt    string                                         `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ActivateKmsSigningKeyResponse) GetJSON200() *struct {
+	ActivateAt *string `json:"activateAt,omitempty"`
+
+	// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+	ActivatedAt *string `json:"activatedAt,omitempty"`
+	Algorithm   string  `json:"algorithm"`
+
+	// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+	CertificatePem *string `json:"certificatePem,omitempty"`
+	CreatedAt      string  `json:"createdAt"`
+
+	// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+	ImportKeyId *string `json:"importKeyId,omitempty"`
+	IssuerId    string  `json:"issuerId"`
+
+	// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+	KeyId     string `json:"keyId"`
+	PublicKey *struct {
+		Alg    *string   `json:"alg,omitempty"`
+		KeyOps *[]string `json:"key_ops,omitempty"`
+		Kid    *string   `json:"kid,omitempty"`
+		Kty    *string   `json:"kty,omitempty"`
+		Use    *string   `json:"use,omitempty"`
+
+		// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+		X5c *[]string `json:"x5c,omitempty"`
+
+		// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+		X5tS256 *string `json:"x5t#S256,omitempty"`
+	} `json:"publicKey,omitempty"`
+	PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+	// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+	PublicKeyPem *string                                        `json:"publicKeyPem,omitempty"`
+	RevokeAt     *string                                        `json:"revokeAt,omitempty"`
+	Status       ActivateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
+	UpdatedAt    string                                         `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ActivateKmsSigningKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ActivateKmsSigningKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ActivateKmsSigningKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ActivateKmsSigningKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RevokeKmsSigningKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
+		ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
+		CreatedAt       string                                                 `json:"createdAt"`
+		DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+		Id              string                                                 `json:"id"`
+		ManagedBy       *string                                                `json:"managedBy,omitempty"`
+		Name            string                                                 `json:"name"`
+		Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
+		OwnerId         string                                                 `json:"ownerId"`
+		Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
+		SigningKeys     []struct {
+			ActivateAt *string `json:"activateAt,omitempty"`
+
+			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+			ActivatedAt *string `json:"activatedAt,omitempty"`
+			Algorithm   string  `json:"algorithm"`
+
+			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+			CertificatePem *string `json:"certificatePem,omitempty"`
+			CreatedAt      string  `json:"createdAt"`
+
+			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+			ImportKeyId *string `json:"importKeyId,omitempty"`
+			IssuerId    string  `json:"issuerId"`
+
+			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+			KeyId     string `json:"keyId"`
+			PublicKey *struct {
+				Alg    *string   `json:"alg,omitempty"`
+				KeyOps *[]string `json:"key_ops,omitempty"`
+				Kid    *string   `json:"kid,omitempty"`
+				Kty    *string   `json:"kty,omitempty"`
+				Use    *string   `json:"use,omitempty"`
+
+				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+				X5c *[]string `json:"x5c,omitempty"`
+
+				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+				X5tS256 *string `json:"x5t#S256,omitempty"`
+			} `json:"publicKey,omitempty"`
+			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+			PublicKeyPem *string                                                 `json:"publicKeyPem,omitempty"`
+			RevokeAt     *string                                                 `json:"revokeAt,omitempty"`
+			Status       RevokeKmsSigningKey200JSONResponseBodySigningKeysStatus `json:"status"`
+			UpdatedAt    string                                                  `json:"updatedAt"`
+		} `json:"signingKeys"`
+		UpdatedAt string `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RevokeKmsSigningKeyResponse) GetJSON200() *struct {
+	Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
+	ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
+	CreatedAt       string                                                 `json:"createdAt"`
+	DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
+	Id              string                                                 `json:"id"`
+	ManagedBy       *string                                                `json:"managedBy,omitempty"`
+	Name            string                                                 `json:"name"`
+	Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
+	OwnerId         string                                                 `json:"ownerId"`
+	Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
+	SigningKeys     []struct {
+		ActivateAt *string `json:"activateAt,omitempty"`
+
+		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+		ActivatedAt *string `json:"activatedAt,omitempty"`
+		Algorithm   string  `json:"algorithm"`
+
+		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+		CertificatePem *string `json:"certificatePem,omitempty"`
+		CreatedAt      string  `json:"createdAt"`
+
+		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+		ImportKeyId *string `json:"importKeyId,omitempty"`
+		IssuerId    string  `json:"issuerId"`
+
+		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+		KeyId     string `json:"keyId"`
+		PublicKey *struct {
+			Alg    *string   `json:"alg,omitempty"`
+			KeyOps *[]string `json:"key_ops,omitempty"`
+			Kid    *string   `json:"kid,omitempty"`
+			Kty    *string   `json:"kty,omitempty"`
+			Use    *string   `json:"use,omitempty"`
+
+			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+			X5c *[]string `json:"x5c,omitempty"`
+
+			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+			X5tS256 *string `json:"x5t#S256,omitempty"`
+		} `json:"publicKey,omitempty"`
+		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+		PublicKeyPem *string                                                 `json:"publicKeyPem,omitempty"`
+		RevokeAt     *string                                                 `json:"revokeAt,omitempty"`
+		Status       RevokeKmsSigningKey200JSONResponseBodySigningKeysStatus `json:"status"`
+		UpdatedAt    string                                                  `json:"updatedAt"`
+	} `json:"signingKeys"`
+	UpdatedAt string `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r RevokeKmsSigningKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RevokeKmsSigningKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RevokeKmsSigningKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RevokeKmsSigningKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateKmsIssuerPolicyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *CreateKmsIssuerPolicy201JSONResponseBody
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r CreateKmsIssuerPolicyResponse) GetJSON201() *CreateKmsIssuerPolicy201JSONResponseBody {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateKmsIssuerPolicyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateKmsIssuerPolicyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateKmsIssuerPolicyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateKmsIssuerPolicyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteKmsIssuerPolicyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteKmsIssuerPolicyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteKmsIssuerPolicyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteKmsIssuerPolicyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteKmsIssuerPolicyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateKmsIssuerPolicyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *UpdateKmsIssuerPolicy200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateKmsIssuerPolicyResponse) GetJSON200() *UpdateKmsIssuerPolicy200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateKmsIssuerPolicyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateKmsIssuerPolicyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateKmsIssuerPolicyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateKmsIssuerPolicyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type SignKmsMessageResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Algorithm Algorithm of the signing key.
+		Algorithm string `json:"algorithm"`
+
+		// Fingerprint SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
+		Fingerprint string `json:"fingerprint"`
+
+		// KeyId Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
+		KeyId string `json:"keyId"`
+
+		// Signature Standard-base64 encoding of the raw signature over the decoded message bytes.
+		Signature string `json:"signature"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r SignKmsMessageResponse) GetJSON200() *struct {
+	// Algorithm Algorithm of the signing key.
+	Algorithm string `json:"algorithm"`
+
+	// Fingerprint SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
+	Fingerprint string `json:"fingerprint"`
+
+	// KeyId Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
+	KeyId string `json:"keyId"`
+
+	// Signature Standard-base64 encoding of the raw signature over the decoded message bytes.
+	Signature string `json:"signature"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r SignKmsMessageResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r SignKmsMessageResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
 // StatusCode returns HTTPResponse.StatusCode
 func (r SignKmsMessageResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
@@ -758,6 +1519,9 @@ type GetMicrofrontendsInGroupResponse struct {
 				FlagDefinitionsPresent *struct {
 					Targets []string `json:"targets"`
 				} `json:"flag-definitions-present,omitempty"`
+				HealthCheck *struct {
+					Targets []string `json:"targets"`
+				} `json:"health-check,omitempty"`
 				Lint *struct {
 					Targets []string `json:"targets"`
 				} `json:"lint,omitempty"`
@@ -1604,6 +2368,9 @@ type GetMicrofrontendsInGroupResponse struct {
 
 				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+				// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -2534,6 +3301,9 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -3380,6 +4150,9 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -5266,6 +6039,9 @@ type DeleteProjectAvatarResponse struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -6112,6 +6888,9 @@ type DeleteProjectAvatarResponse struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -7039,6 +7818,9 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		FlagDefinitionsPresent *struct {
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+		HealthCheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 		Lint *struct {
 			Targets []string `json:"targets"`
 		} `json:"lint,omitempty"`
@@ -7885,6 +8667,9 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 
 		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+		// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -8845,6 +9630,9 @@ type UploadProjectAvatarResponse struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -9691,6 +10479,9 @@ type UploadProjectAvatarResponse struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -10618,6 +11409,9 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		FlagDefinitionsPresent *struct {
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+		HealthCheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 		Lint *struct {
 			Targets []string `json:"targets"`
 		} `json:"lint,omitempty"`
@@ -11464,6 +12258,9 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 
 		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+		// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -14892,6 +15689,136 @@ func (r GetProjectTokenResponse) ContentType() string {
 	return ""
 }
 
+type GetFlagsProjectConnectionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetFlagsProjectConnections200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetFlagsProjectConnectionsResponse) GetJSON200() *GetFlagsProjectConnections200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetFlagsProjectConnectionsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetFlagsProjectConnectionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetFlagsProjectConnectionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetFlagsProjectConnectionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateFlagsProjectConnectionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ConsumerProjectId   string  `json:"consumerProjectId"`
+		ConsumerProjectName string  `json:"consumerProjectName"`
+		CreatedAt           float32 `json:"createdAt"`
+		CreatedBy           string  `json:"createdBy"`
+		SourceProjectId     string  `json:"sourceProjectId"`
+		SourceProjectName   string  `json:"sourceProjectName"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CreateFlagsProjectConnectionResponse) GetJSON200() *struct {
+	ConsumerProjectId   string  `json:"consumerProjectId"`
+	ConsumerProjectName string  `json:"consumerProjectName"`
+	CreatedAt           float32 `json:"createdAt"`
+	CreatedBy           string  `json:"createdBy"`
+	SourceProjectId     string  `json:"sourceProjectId"`
+	SourceProjectName   string  `json:"sourceProjectName"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateFlagsProjectConnectionResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateFlagsProjectConnectionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateFlagsProjectConnectionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateFlagsProjectConnectionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteFlagsProjectConnectionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteFlagsProjectConnectionResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteFlagsProjectConnectionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteFlagsProjectConnectionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteFlagsProjectConnectionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListFlagsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -16784,6 +17711,9 @@ type UpdateMicrofrontendsResponse struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -17630,6 +18560,9 @@ type UpdateMicrofrontendsResponse struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -18557,6 +19490,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		FlagDefinitionsPresent *struct {
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+		HealthCheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 		Lint *struct {
 			Targets []string `json:"targets"`
 		} `json:"lint,omitempty"`
@@ -19404,6 +20340,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Schedule *[]ACLAction `json:"schedule,omitempty"`
 
+		// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
+
 		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
 
@@ -19948,67 +20887,4 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 	} `json:"webAnalytics,omitempty"`
 } {
 	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateMicrofrontendsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateMicrofrontendsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateMicrofrontendsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateMicrofrontendsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PauseProjectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r PauseProjectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PauseProjectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PauseProjectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PauseProjectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
 }

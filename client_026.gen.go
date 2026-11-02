@@ -13,6 +13,80 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *interface{}
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetJSON202() *interface{} {
+	return r.JSON202
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *interface{}
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetJSON201() *interface{} {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
 // StatusCode returns HTTPResponse.StatusCode
 func (r ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
@@ -4428,6 +4502,9 @@ type GetProjectResponse struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -5274,6 +5351,9 @@ type GetProjectResponse struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -6212,6 +6292,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		FlagDefinitionsPresent *struct {
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+		HealthCheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 		Lint *struct {
 			Targets []string `json:"targets"`
 		} `json:"lint,omitempty"`
@@ -7058,6 +7141,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 
 		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+		// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -8018,6 +8104,9 @@ type UpdateProjectResponse struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -8864,6 +8953,9 @@ type UpdateProjectResponse struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -9791,6 +9883,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		FlagDefinitionsPresent *struct {
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+		HealthCheck *struct {
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 		Lint *struct {
 			Targets []string `json:"targets"`
 		} `json:"lint,omitempty"`
@@ -10637,6 +10732,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 
 		// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+		// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 		// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -16992,6 +17090,66 @@ func (c *ClientWithResponses) GetProjectTokenWithResponse(ctx context.Context, i
 	return ParseGetProjectTokenResponse(rsp)
 }
 
+// GetFlagsProjectConnectionsWithResponse List flags project connections
+//
+// Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/connections (the `GetFlagsProjectConnections` operationId).
+func (c *ClientWithResponses) GetFlagsProjectConnectionsWithResponse(ctx context.Context, projectIdOrName string, params *GetFlagsProjectConnectionsParams, reqEditors ...RequestEditorFn) (*GetFlagsProjectConnectionsResponse, error) {
+	rsp, err := c.GetFlagsProjectConnections(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFlagsProjectConnectionsResponse(rsp)
+}
+
+// CreateFlagsProjectConnectionWithBodyWithResponse Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *ClientWithResponses) CreateFlagsProjectConnectionWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagsProjectConnectionResponse, error) {
+	rsp, err := c.CreateFlagsProjectConnectionWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagsProjectConnectionResponse(rsp)
+}
+
+// CreateFlagsProjectConnectionWithResponse Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *ClientWithResponses) CreateFlagsProjectConnectionWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, body CreateFlagsProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagsProjectConnectionResponse, error) {
+	rsp, err := c.CreateFlagsProjectConnection(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagsProjectConnectionResponse(rsp)
+}
+
+// DeleteFlagsProjectConnectionWithResponse Disconnect a project from the flags of this project
+//
+// Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} (the `DeleteFlagsProjectConnection` operationId).
+func (c *ClientWithResponses) DeleteFlagsProjectConnectionWithResponse(ctx context.Context, projectIdOrName string, consumerProjectId string, params *DeleteFlagsProjectConnectionParams, reqEditors ...RequestEditorFn) (*DeleteFlagsProjectConnectionResponse, error) {
+	rsp, err := c.DeleteFlagsProjectConnection(ctx, projectIdOrName, consumerProjectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteFlagsProjectConnectionResponse(rsp)
+}
+
 // ListFlagsWithResponse List flags
 //
 // Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
@@ -19854,169 +20012,4 @@ func (c *ClientWithResponses) ListConnectorsWithResponse(ctx context.Context, pa
 		return nil, err
 	}
 	return ParseListConnectorsResponse(rsp)
-}
-
-// UpdateConnectorWithBodyWithResponse Update a connector
-//
-// Update a connector and return the connector with any service-side update signals that the caller must handle.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-func (c *ClientWithResponses) UpdateConnectorWithBodyWithResponse(ctx context.Context, connector string, params *UpdateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateConnectorResponse, error) {
-	rsp, err := c.UpdateConnectorWithBody(ctx, connector, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateConnectorResponse(rsp)
-}
-
-// UpdateConnectorWithResponse Update a connector
-//
-// Update a connector and return the connector with any service-side update signals that the caller must handle.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
-func (c *ClientWithResponses) UpdateConnectorWithResponse(ctx context.Context, connector string, params *UpdateConnectorParams, body UpdateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateConnectorResponse, error) {
-	rsp, err := c.UpdateConnector(ctx, connector, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateConnectorResponse(rsp)
-}
-
-// ListConnectorProjectConnectionsWithResponse List projects for a connector
-//
-// List the projects connected to a connector and the environments where each connection is available.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v2/connect/connectors/{connector}/projects (the `ListConnectorProjectConnections` operationId).
-func (c *ClientWithResponses) ListConnectorProjectConnectionsWithResponse(ctx context.Context, connector string, params *ListConnectorProjectConnectionsParams, reqEditors ...RequestEditorFn) (*ListConnectorProjectConnectionsResponse, error) {
-	rsp, err := c.ListConnectorProjectConnections(ctx, connector, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListConnectorProjectConnectionsResponse(rsp)
-}
-
-// ListProjectConnectorConnectionsWithResponse List connectors for a project
-//
-// List the connectors connected to a project and the environments where each connection is available.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v2/connect/projects/{projectId}/connectors (the `ListProjectConnectorConnections` operationId).
-func (c *ClientWithResponses) ListProjectConnectorConnectionsWithResponse(ctx context.Context, projectId string, params *ListProjectConnectorConnectionsParams, reqEditors ...RequestEditorFn) (*ListProjectConnectorConnectionsResponse, error) {
-	rsp, err := c.ListProjectConnectorConnections(ctx, projectId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListProjectConnectorConnectionsResponse(rsp)
-}
-
-// ListDeploymentCheckRunsWithResponse List check runs for a deployment
-//
-// List all check runs for a deployment.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v2/deployments/{deploymentId}/check-runs (the `ListDeploymentCheckRuns` operationId).
-func (c *ClientWithResponses) ListDeploymentCheckRunsWithResponse(ctx context.Context, deploymentId string, params *ListDeploymentCheckRunsParams, reqEditors ...RequestEditorFn) (*ListDeploymentCheckRunsResponse, error) {
-	rsp, err := c.ListDeploymentCheckRuns(ctx, deploymentId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListDeploymentCheckRunsResponse(rsp)
-}
-
-// CreateDeploymentCheckRunWithBodyWithResponse Create a check run
-//
-// Creates a new check run for a deployment.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-func (c *ClientWithResponses) CreateDeploymentCheckRunWithBodyWithResponse(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDeploymentCheckRunResponse, error) {
-	rsp, err := c.CreateDeploymentCheckRunWithBody(ctx, deploymentId, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateDeploymentCheckRunResponse(rsp)
-}
-
-// CreateDeploymentCheckRunWithResponse Create a check run
-//
-// Creates a new check run for a deployment.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
-func (c *ClientWithResponses) CreateDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDeploymentCheckRunResponse, error) {
-	rsp, err := c.CreateDeploymentCheckRun(ctx, deploymentId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateDeploymentCheckRunResponse(rsp)
-}
-
-// GetDeploymentCheckRunWithResponse Get a check run
-//
-// Return a detailed response for a single check run.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `GetDeploymentCheckRun` operationId).
-func (c *ClientWithResponses) GetDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *GetDeploymentCheckRunParams, reqEditors ...RequestEditorFn) (*GetDeploymentCheckRunResponse, error) {
-	rsp, err := c.GetDeploymentCheckRun(ctx, deploymentId, checkRunId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetDeploymentCheckRunResponse(rsp)
-}
-
-// UpdateDeploymentCheckRunWithBodyWithResponse Update a check run
-//
-// Update an existing check run for a deployment.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-func (c *ClientWithResponses) UpdateDeploymentCheckRunWithBodyWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDeploymentCheckRunResponse, error) {
-	rsp, err := c.UpdateDeploymentCheckRunWithBody(ctx, deploymentId, checkRunId, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateDeploymentCheckRunResponse(rsp)
-}
-
-// UpdateDeploymentCheckRunWithResponse Update a check run
-//
-// Update an existing check run for a deployment.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
-func (c *ClientWithResponses) UpdateDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, body UpdateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDeploymentCheckRunResponse, error) {
-	rsp, err := c.UpdateDeploymentCheckRun(ctx, deploymentId, checkRunId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateDeploymentCheckRunResponse(rsp)
-}
-
-// ListDeploymentAliasesWithResponse List Deployment Aliases
-//
-// Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v2/deployments/{id}/aliases (the `ListDeploymentAliases` operationId).
-func (c *ClientWithResponses) ListDeploymentAliasesWithResponse(ctx context.Context, id string, params *ListDeploymentAliasesParams, reqEditors ...RequestEditorFn) (*ListDeploymentAliasesResponse, error) {
-	rsp, err := c.ListDeploymentAliases(ctx, id, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListDeploymentAliasesResponse(rsp)
 }

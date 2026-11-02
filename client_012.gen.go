@@ -9,6 +9,256 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateProject200JSONResponseBodyLatestDeploymentsForced defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsForced bool
+
+// CreateProject200JSONResponseBodyLatestDeploymentsPlan defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsPlan string
+
+// CreateProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled bool
+
+// CreateProject200JSONResponseBodyLatestDeploymentsPrivate defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsPrivate bool
+
+// CreateProject200JSONResponseBodyLatestDeploymentsReadyState defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsReadyState string
+
+// CreateProject200JSONResponseBodyLatestDeploymentsReadySubstate defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsReadySubstate string
+
+// CreateProject200JSONResponseBodyLatestDeploymentsType defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsType string
+
+// CreateProject200JSONResponseBodyLatestDeploymentsWithCache defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLatestDeploymentsWithCache bool
+
+// CreateProject200JSONResponseBodyLink0 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink0 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string   `json:"gitCredentialId"`
+	Org              string   `json:"org"`
+	ProductionBranch string   `json:"productionBranch"`
+	Repo             *string  `json:"repo,omitempty"`
+	RepoId           *float32 `json:"repoId,omitempty"`
+
+	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+	RepoOwnerId *float32                                         `json:"repoOwnerId,omitempty"`
+	Sourceless  *CreateProject200JSONResponseBodyLink0Sourceless `json:"sourceless,omitempty"`
+	Type        CreateProject200JSONResponseBodyLink0Type        `json:"type"`
+	UpdatedAt   *float32                                         `json:"updatedAt,omitempty"`
+}
+
+// CreateProject200JSONResponseBodyLink0Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink0Sourceless bool
+
+// CreateProject200JSONResponseBodyLink0Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink0Type string
+
+// CreateProject200JSONResponseBodyLink1 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink1 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string   `json:"gitCredentialId"`
+	Org              string   `json:"org"`
+	ProductionBranch string   `json:"productionBranch"`
+	Repo             *string  `json:"repo,omitempty"`
+	RepoId           *float32 `json:"repoId,omitempty"`
+
+	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+	RepoOwnerId *float32                                         `json:"repoOwnerId,omitempty"`
+	Sourceless  *CreateProject200JSONResponseBodyLink1Sourceless `json:"sourceless,omitempty"`
+	Type        CreateProject200JSONResponseBodyLink1Type        `json:"type"`
+	UpdatedAt   *float32                                         `json:"updatedAt,omitempty"`
+}
+
+// CreateProject200JSONResponseBodyLink1Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink1Sourceless bool
+
+// CreateProject200JSONResponseBodyLink1Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink1Type string
+
+// CreateProject200JSONResponseBodyLink2 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink2 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string   `json:"gitCredentialId"`
+	Host             string   `json:"host"`
+	Org              string   `json:"org"`
+	ProductionBranch string   `json:"productionBranch"`
+	Repo             *string  `json:"repo,omitempty"`
+	RepoId           *float32 `json:"repoId,omitempty"`
+
+	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+	RepoOwnerId *float32                                         `json:"repoOwnerId,omitempty"`
+	Sourceless  *CreateProject200JSONResponseBodyLink2Sourceless `json:"sourceless,omitempty"`
+	Type        CreateProject200JSONResponseBodyLink2Type        `json:"type"`
+	UpdatedAt   *float32                                         `json:"updatedAt,omitempty"`
+}
+
+// CreateProject200JSONResponseBodyLink2Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink2Sourceless bool
+
+// CreateProject200JSONResponseBodyLink2Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink2Type string
+
+// CreateProject200JSONResponseBodyLink3 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink3 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId          string `json:"gitCredentialId"`
+	ProductionBranch         string `json:"productionBranch"`
+	ProjectId                string `json:"projectId"`
+	ProjectName              string `json:"projectName"`
+	ProjectNameWithNamespace string `json:"projectNameWithNamespace"`
+	ProjectNamespace         string `json:"projectNamespace"`
+
+	// ProjectOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+	ProjectOwnerId *float32                                         `json:"projectOwnerId,omitempty"`
+	ProjectUrl     string                                           `json:"projectUrl"`
+	Sourceless     *CreateProject200JSONResponseBodyLink3Sourceless `json:"sourceless,omitempty"`
+	Type           CreateProject200JSONResponseBodyLink3Type        `json:"type"`
+	UpdatedAt      *float32                                         `json:"updatedAt,omitempty"`
+}
+
+// CreateProject200JSONResponseBodyLink3Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink3Sourceless bool
+
+// CreateProject200JSONResponseBodyLink3Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink3Type string
+
+// CreateProject200JSONResponseBodyLink4 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink4 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                           `json:"gitCredentialId"`
+	Name             string                                           `json:"name"`
+	Owner            string                                           `json:"owner"`
+	ProductionBranch string                                           `json:"productionBranch"`
+	Slug             string                                           `json:"slug"`
+	Sourceless       *CreateProject200JSONResponseBodyLink4Sourceless `json:"sourceless,omitempty"`
+	Type             CreateProject200JSONResponseBodyLink4Type        `json:"type"`
+	UpdatedAt        *float32                                         `json:"updatedAt,omitempty"`
+	Uuid             string                                           `json:"uuid"`
+	WorkspaceUuid    string                                           `json:"workspaceUuid"`
+}
+
+// CreateProject200JSONResponseBodyLink4Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink4Sourceless bool
+
+// CreateProject200JSONResponseBodyLink4Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink4Type string
+
+// CreateProject200JSONResponseBodyLink5 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink5 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                           `json:"gitCredentialId"`
+	Org              string                                           `json:"org"`
+	ProductionBranch string                                           `json:"productionBranch"`
+	Repo             string                                           `json:"repo"`
+	RepoId           string                                           `json:"repoId"`
+	Sourceless       *CreateProject200JSONResponseBodyLink5Sourceless `json:"sourceless,omitempty"`
+	Type             CreateProject200JSONResponseBodyLink5Type        `json:"type"`
+	UpdatedAt        *float32                                         `json:"updatedAt,omitempty"`
+}
+
+// CreateProject200JSONResponseBodyLink5Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink5Sourceless bool
+
+// CreateProject200JSONResponseBodyLink5Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink5Type string
+
+// CreateProject200JSONResponseBodyLink6 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink6 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                           `json:"gitCredentialId"`
+	Org              string                                           `json:"org"`
+	ProductionBranch string                                           `json:"productionBranch"`
+	Repo             string                                           `json:"repo"`
+	RepoId           string                                           `json:"repoId"`
+	Sourceless       *CreateProject200JSONResponseBodyLink6Sourceless `json:"sourceless,omitempty"`
+	Type             CreateProject200JSONResponseBodyLink6Type        `json:"type"`
+	UpdatedAt        *float32                                         `json:"updatedAt,omitempty"`
+}
+
+// CreateProject200JSONResponseBodyLink6Sourceless defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink6Sourceless bool
+
+// CreateProject200JSONResponseBodyLink6Type defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink6Type string
+
+// CreateProject200JSONResponseBodyLink7 defines parameters for CreateProject.
+type CreateProject200JSONResponseBodyLink7 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId string `json:"gitCredentialId"`
+
+	// Owner Owner (namespace) slug, e.g. `acme`.
+	Owner string `json:"owner"`
+
+	// OwnerId Origin namespace id (`ns_…`) of the owner.
+	OwnerId          string `json:"ownerId"`
+	ProductionBranch string `json:"productionBranch"`
+	Repo             string `json:"repo"`
+
+	// RepoId Origin repository id.
+	RepoId     string                                           `json:"repoId"`
+	Sourceless *CreateProject200JSONResponseBodyLink7Sourceless `json:"sourceless,omitempty"`
+	Type       CreateProject200JSONResponseBodyLink7Type        `json:"type"`
+	UpdatedAt  *float32                                         `json:"updatedAt,omitempty"`
+}
+
 // CreateProject200JSONResponseBodyLink7Sourceless defines parameters for CreateProject.
 type CreateProject200JSONResponseBodyLink7Sourceless bool
 
@@ -19760,255 +20010,3 @@ type GetDeployments200JSONResponseBodyDeploymentsSeatBlockGitProvider string
 
 // GetDeployments200JSONResponseBodyDeploymentsSeatBlockGitUserId0 defines parameters for GetDeployments.
 type GetDeployments200JSONResponseBodyDeploymentsSeatBlockGitUserId0 = string
-
-// GetDeployments200JSONResponseBodyDeploymentsSeatBlockGitUserId1 defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsSeatBlockGitUserId1 = float32
-
-// GetDeployments200JSONResponseBody_Deployments_SeatBlock_GitUserId defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBody_Deployments_SeatBlock_GitUserId struct {
-	union json.RawMessage
-}
-
-// GetDeployments200JSONResponseBodyDeploymentsSeatBlockIsVerified defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsSeatBlockIsVerified bool
-
-// GetDeployments200JSONResponseBodyDeploymentsSoftDeletedByRetention defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsSoftDeletedByRetention bool
-
-// GetDeployments200JSONResponseBodyDeploymentsSource defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsSource string
-
-// GetDeployments200JSONResponseBodyDeploymentsState defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsState string
-
-// GetDeployments200JSONResponseBodyDeploymentsTarget defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsTarget string
-
-// GetDeployments200JSONResponseBodyDeploymentsType defines parameters for GetDeployments.
-type GetDeployments200JSONResponseBodyDeploymentsType string
-
-// CreateOrTransferDomainJSONBody defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomainJSONBody struct {
-	// Method The domain operation to perform. It can be either `add` or `move-in`.
-	//
-	// Example: add
-	Method *string `json:"method,omitempty"`
-	union  json.RawMessage
-}
-
-// CreateOrTransferDomainParams defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomainParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateOrTransferDomainJSONBody0 defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomainJSONBody0 struct {
-	// CdnEnabled Whether the domain has the Vercel CDN enabled or not.
-	//
-	// Example: true
-	CdnEnabled *bool `json:"cdnEnabled,omitempty"`
-
-	// Method The domain operation to perform.
-	//
-	// Example: add
-	Method *string `json:"method,omitempty"`
-
-	// Name The domain name you want to add.
-	//
-	// Example: example.com
-	Name string `json:"name"`
-
-	// Zone Whether to create a DNS zone on Vercel. Set `true` if using Vercel nameservers.
-	Zone *bool `json:"zone,omitempty"`
-}
-
-// CreateOrTransferDomainJSONBody1 defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomainJSONBody1 struct {
-	// Method The domain operation to perform.
-	//
-	// Example: move-in
-	Method string `json:"method"`
-
-	// Name The domain name you want to add.
-	//
-	// Example: example.com
-	Name string `json:"name"`
-
-	// Token The move-in token from Move Requested email.
-	//
-	// Example: fdhfr820ad#@FAdlj$$
-	Token *string `json:"token,omitempty"`
-}
-
-// CreateOrTransferDomain200JSONResponseBodyDomainCreatorIsDomainReseller defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomain200JSONResponseBodyDomainCreatorIsDomainReseller bool
-
-// CreateOrTransferDomain200JSONResponseBodyDomainEchMode defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomain200JSONResponseBodyDomainEchMode string
-
-// CreateOrTransferDomain200JSONResponseBodyDomainRenew defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomain200JSONResponseBodyDomainRenew bool
-
-// CreateOrTransferDomain200JSONResponseBodyDomainServiceType defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomain200JSONResponseBodyDomainServiceType string
-
-// CreateOrTransferDomain200JSONResponseBodyDomainVerified defines parameters for CreateOrTransferDomain.
-type CreateOrTransferDomain200JSONResponseBodyDomainVerified bool
-
-// DeleteAllArtifactsParams defines parameters for DeleteAllArtifacts.
-type DeleteAllArtifactsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ArtifactQueryJSONBody defines parameters for ArtifactQuery.
-type ArtifactQueryJSONBody struct {
-	// Hashes artifact hashes
-	//
-	// Example: ["12HKQaOmR5t5Uy6vdcQsNIiZgHGB","34HKQaOmR5t5Uy6vasdasdasdasd"]
-	Hashes []string `json:"hashes"`
-}
-
-// ArtifactQueryParams defines parameters for ArtifactQuery.
-type ArtifactQueryParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ArtifactQuery200JSONResponseBody0 defines parameters for ArtifactQuery.
-type ArtifactQuery200JSONResponseBody0 struct {
-	DirtyHash      *string `json:"dirtyHash,omitempty"`
-	Sha            *string `json:"sha,omitempty"`
-	Size           float32 `json:"size"`
-	Tag            *string `json:"tag,omitempty"`
-	TaskDurationMs float32 `json:"taskDurationMs"`
-}
-
-// ArtifactQuery200JSONResponseBody1 defines parameters for ArtifactQuery.
-type ArtifactQuery200JSONResponseBody1 struct {
-	Error struct {
-		Message string `json:"message"`
-	} `json:"error"`
-}
-
-// ArtifactQuery200JSONResponseBody_AdditionalProperties defines parameters for ArtifactQuery.
-type ArtifactQuery200JSONResponseBody_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// RecordEventsJSONBody defines parameters for RecordEvents.
-type RecordEventsJSONBody = []struct {
-	// Duration The time taken to generate the artifact. This should be sent as a body parameter on `HIT` events.
-	//
-	// Example: 400
-	Duration *float32 `json:"duration,omitempty"`
-
-	// Event One of `HIT` or `MISS`. `HIT` specifies that a cached artifact for `hash` was found in the cache. `MISS` specifies that a cached artifact with `hash` was not found.
-	Event RecordEventsJSONBodyEvent `json:"event"`
-
-	// Hash The artifact hash
-	//
-	// Example: 12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-	Hash string `json:"hash"`
-
-	// SessionId A UUID (universally unique identifer) for the session that generated this event.
-	SessionId string `json:"sessionId"`
-
-	// Source One of `LOCAL` or `REMOTE`. `LOCAL` specifies that the cache event was from the user's filesystem cache. `REMOTE` specifies that the cache event is from a remote cache.
-	Source RecordEventsJSONBodySource `json:"source"`
-}
-
-// RecordEventsParams defines parameters for RecordEvents.
-type RecordEventsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-
-	// XArtifactClientCi The continuous integration or delivery environment where this artifact is downloaded.
-	XArtifactClientCi *string `json:"x-artifact-client-ci,omitempty"`
-
-	// XArtifactClientInteractive 1 if the client is an interactive shell. Otherwise 0
-	XArtifactClientInteractive *int `json:"x-artifact-client-interactive,omitempty"`
-}
-
-// RecordEventsJSONBodyEvent defines parameters for RecordEvents.
-type RecordEventsJSONBodyEvent string
-
-// RecordEventsJSONBodySource defines parameters for RecordEvents.
-type RecordEventsJSONBodySource string
-
-// StatusParams defines parameters for Status.
-type StatusParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// Status200JSONResponseBody0 defines parameters for Status.
-type Status200JSONResponseBody0 struct {
-	Status string `json:"status"`
-}
-
-// Status200JSONResponseBody1 defines parameters for Status.
-type Status200JSONResponseBody1 struct {
-	Status Status200JSONResponseBody1Status `json:"status"`
-}
-
-// Status200JSONResponseBody1Status defines parameters for Status.
-type Status200JSONResponseBody1Status string
-
-// Status200JSONResponseBody2 defines parameters for Status.
-type Status200JSONResponseBody2 struct {
-	// ReadOnly Present and `true` when the token can read artifacts but cannot upload them.
-	ReadOnly *Status200JSONResponseBody2ReadOnly `json:"readOnly,omitempty"`
-	Status   Status200JSONResponseBody2Status    `json:"status"`
-}
-
-// Status200JSONResponseBody2ReadOnly defines parameters for Status.
-type Status200JSONResponseBody2ReadOnly bool
-
-// Status200JSONResponseBody2Status defines parameters for Status.
-type Status200JSONResponseBody2Status string
-
-// Status200JSONResponseBody defines parameters for Status.
-type Status200JSONResponseBody struct {
-	union json.RawMessage
-}
-
-// DownloadArtifactParams defines parameters for DownloadArtifact.
-type DownloadArtifactParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-
-	// XArtifactClientCi The continuous integration or delivery environment where this artifact is downloaded.
-	XArtifactClientCi *string `json:"x-artifact-client-ci,omitempty"`
-
-	// XArtifactClientInteractive 1 if the client is an interactive shell. Otherwise 0
-	XArtifactClientInteractive *int `json:"x-artifact-client-interactive,omitempty"`
-}
-
-// ArtifactExistsParams defines parameters for ArtifactExists.
-type ArtifactExistsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}

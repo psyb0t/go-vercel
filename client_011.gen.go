@@ -8,6 +8,241 @@ import (
 	"time"
 )
 
+// AddRoute200JSONResponseBodyRouteRouteMissing1Value1 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteMissing1Value1 struct {
+	Eq   *AddRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                      `json:"gt,omitempty"`
+	Gte  *float32                                                      `json:"gte,omitempty"`
+	Inc  *[]string                                                     `json:"inc,omitempty"`
+	Lt   *float32                                                      `json:"lt,omitempty"`
+	Lte  *float32                                                      `json:"lte,omitempty"`
+	Neq  *string                                                       `json:"neq,omitempty"`
+	Ninc *[]string                                                     `json:"ninc,omitempty"`
+	Pre  *string                                                       `json:"pre,omitempty"`
+	Re   *string                                                       `json:"re,omitempty"`
+	Suf  *string                                                       `json:"suf,omitempty"`
+}
+
+// AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq0 = string
+
+// AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq1 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteMissing1Value1Eq1 = float32
+
+// AddRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Missing_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBody_Route_Route_Missing_1_Value defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Missing_1_Value struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBody_Route_Route_Missing_Item defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Missing_Item struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBodyRouteRouteMitigateAction defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteMitigateAction string
+
+// AddRoute200JSONResponseBodyRouteRouteOverride defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteOverride bool
+
+// AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl bool
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0 struct {
+	Args   *AddRoute200JSONResponseBody_Route_Route_Transforms_0_Args `json:"args,omitempty"`
+	Env    *[]string                                                  `json:"env,omitempty"`
+	Op     AddRoute200JSONResponseBodyRouteRouteTransforms0Op         `json:"op"`
+	Target struct {
+		Key AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key `json:"key"`
+	} `json:"target"`
+	Type AddRoute200JSONResponseBodyRouteRouteTransforms0Type `json:"type"`
+}
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0Args0 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0Args0 = string
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0Args1 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0Args1 = []string
+
+// AddRoute200JSONResponseBody_Route_Route_Transforms_0_Args defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Transforms_0_Args struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0Op defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0Op string
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey0 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey0 = string
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1 struct {
+	Eq   *AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                              `json:"gt,omitempty"`
+	Gte  *float32                                                              `json:"gte,omitempty"`
+	Inc  *[]string                                                             `json:"inc,omitempty"`
+	Lt   *float32                                                              `json:"lt,omitempty"`
+	Lte  *float32                                                              `json:"lte,omitempty"`
+	Neq  *string                                                               `json:"neq,omitempty"`
+	Ninc *[]string                                                             `json:"ninc,omitempty"`
+	Pre  *string                                                               `json:"pre,omitempty"`
+	Suf  *string                                                               `json:"suf,omitempty"`
+}
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq0 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq0 = string
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq1 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0TargetKey1Eq1 = float32
+
+// AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key_1_Eq struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Transforms_0_Target_Key struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms0Type defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms0Type string
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms1 defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms1 struct {
+	Args string                                               `json:"args"`
+	Env  *[]string                                            `json:"env,omitempty"`
+	Op   AddRoute200JSONResponseBodyRouteRouteTransforms1Op   `json:"op"`
+	Type AddRoute200JSONResponseBodyRouteRouteTransforms1Type `json:"type"`
+}
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms1Op defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms1Op string
+
+// AddRoute200JSONResponseBodyRouteRouteTransforms1Type defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteTransforms1Type string
+
+// AddRoute200JSONResponseBody_Route_Route_Transforms_Item defines parameters for AddRoute.
+type AddRoute200JSONResponseBody_Route_Route_Transforms_Item struct {
+	union json.RawMessage
+}
+
+// AddRoute200JSONResponseBodyRouteRouteType defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteRouteType string
+
+// AddRoute200JSONResponseBodyRouteSrcSyntax defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteSrcSyntax string
+
+// AddRoute200JSONResponseBodyRouteStaged defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyRouteStaged bool
+
+// AddRoute200JSONResponseBodyVersionIsLive defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyVersionIsLive bool
+
+// AddRoute200JSONResponseBodyVersionIsStaging defines parameters for AddRoute.
+type AddRoute200JSONResponseBodyVersionIsStaging bool
+
+// StageRoutesJSONBody defines parameters for StageRoutes.
+type StageRoutesJSONBody struct {
+	Overwrite *bool `json:"overwrite,omitempty"`
+	Routes    *[]struct {
+		Description *string `json:"description,omitempty"`
+		Enabled     *bool   `json:"enabled,omitempty"`
+		Id          string  `json:"id"`
+		Name        string  `json:"name"`
+		Route       struct {
+			CaseSensitive *bool   `json:"caseSensitive,omitempty"`
+			Dest          *string `json:"dest,omitempty"`
+			Has           *[]struct {
+				Key   *string                                `json:"key,omitempty"`
+				Type  *StageRoutesJSONBodyRoutesRouteHasType `json:"type,omitempty"`
+				Value *string                                `json:"value,omitempty"`
+			} `json:"has,omitempty"`
+			Headers *map[string]interface{} `json:"headers,omitempty"`
+			Missing *[]struct {
+				Key   *string                                    `json:"key,omitempty"`
+				Type  *StageRoutesJSONBodyRoutesRouteMissingType `json:"type,omitempty"`
+				Value *string                                    `json:"value,omitempty"`
+			} `json:"missing,omitempty"`
+			RespectOriginCacheControl *bool  `json:"respectOriginCacheControl,omitempty"`
+			Src                       string `json:"src"`
+			Status                    *int   `json:"status,omitempty"`
+			Transforms                *[]struct {
+				Args   interface{}                                   `json:"args,omitempty"`
+				Env    *[]string                                     `json:"env,omitempty"`
+				Op     *StageRoutesJSONBodyRoutesRouteTransformsOp   `json:"op,omitempty"`
+				Target *map[string]interface{}                       `json:"target,omitempty"`
+				Type   *StageRoutesJSONBodyRoutesRouteTransformsType `json:"type,omitempty"`
+			} `json:"transforms,omitempty"`
+		} `json:"route"`
+	} `json:"routes,omitempty"`
+}
+
+// StageRoutesParams defines parameters for StageRoutes.
+type StageRoutesParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// StageRoutesJSONBodyRoutesRouteHasType defines parameters for StageRoutes.
+type StageRoutesJSONBodyRoutesRouteHasType string
+
+// StageRoutesJSONBodyRoutesRouteMissingType defines parameters for StageRoutes.
+type StageRoutesJSONBodyRoutesRouteMissingType string
+
+// StageRoutesJSONBodyRoutesRouteTransformsOp defines parameters for StageRoutes.
+type StageRoutesJSONBodyRoutesRouteTransformsOp string
+
+// StageRoutesJSONBodyRoutesRouteTransformsType defines parameters for StageRoutes.
+type StageRoutesJSONBodyRoutesRouteTransformsType string
+
+// StageRoutes200JSONResponseBodyVersionIsLive defines parameters for StageRoutes.
+type StageRoutes200JSONResponseBodyVersionIsLive bool
+
+// StageRoutes200JSONResponseBodyVersionIsStaging defines parameters for StageRoutes.
+type StageRoutes200JSONResponseBodyVersionIsStaging bool
+
+// GenerateRouteJSONBody defines parameters for GenerateRoute.
+type GenerateRouteJSONBody struct {
+	CurrentRoute *struct {
+		Actions []struct {
+			Dest    *string `json:"dest,omitempty"`
+			Headers *[]struct {
+				Key   *string `json:"key,omitempty"`
+				Op    *string `json:"op,omitempty"`
+				Value *string `json:"value,omitempty"`
+			} `json:"headers,omitempty"`
+			Status  *int    `json:"status,omitempty"`
+			SubType *string `json:"subType,omitempty"`
+			Type    *string `json:"type,omitempty"`
+		} `json:"actions"`
+		CaseSensitive *bool `json:"caseSensitive,omitempty"`
+		Conditions    *[]struct {
+			Field    *string `json:"field,omitempty"`
+			Key      *string `json:"key,omitempty"`
+			Missing  *bool   `json:"missing,omitempty"`
+			Operator *string `json:"operator,omitempty"`
+			Value    *string `json:"value,omitempty"`
+		} `json:"conditions,omitempty"`
+		Description   *string `json:"description,omitempty"`
+		Name          *string `json:"name,omitempty"`
+		PathCondition struct {
+			Syntax *string `json:"syntax,omitempty"`
+			Value  *string `json:"value,omitempty"`
+		} `json:"pathCondition"`
+	} `json:"currentRoute,omitempty"`
+	Prompt string `json:"prompt"`
+}
+
 // GenerateRouteParams defines parameters for GenerateRoute.
 type GenerateRouteParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -14386,6 +14621,9 @@ type GetProjects200JSONResponseBody2 struct {
 			FlagDefinitionsPresent *struct {
 				Targets []string `json:"targets"`
 			} `json:"flag-definitions-present,omitempty"`
+			HealthCheck *struct {
+				Targets []string `json:"targets"`
+			} `json:"health-check,omitempty"`
 			Lint *struct {
 				Targets []string `json:"targets"`
 			} `json:"lint,omitempty"`
@@ -15232,6 +15470,9 @@ type GetProjects200JSONResponseBody2 struct {
 
 			// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+			// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 			// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -19768,253 +20009,3 @@ type CreateProject200JSONResponseBodyLatestDeploymentsChecksState string
 
 // CreateProject200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled defines parameters for CreateProject.
 type CreateProject200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled bool
-
-// CreateProject200JSONResponseBodyLatestDeploymentsForced defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsForced bool
-
-// CreateProject200JSONResponseBodyLatestDeploymentsPlan defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsPlan string
-
-// CreateProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled bool
-
-// CreateProject200JSONResponseBodyLatestDeploymentsPrivate defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsPrivate bool
-
-// CreateProject200JSONResponseBodyLatestDeploymentsReadyState defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsReadyState string
-
-// CreateProject200JSONResponseBodyLatestDeploymentsReadySubstate defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsReadySubstate string
-
-// CreateProject200JSONResponseBodyLatestDeploymentsType defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsType string
-
-// CreateProject200JSONResponseBodyLatestDeploymentsWithCache defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLatestDeploymentsWithCache bool
-
-// CreateProject200JSONResponseBodyLink0 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink0 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                         `json:"repoOwnerId,omitempty"`
-	Sourceless  *CreateProject200JSONResponseBodyLink0Sourceless `json:"sourceless,omitempty"`
-	Type        CreateProject200JSONResponseBodyLink0Type        `json:"type"`
-	UpdatedAt   *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink0Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink0Sourceless bool
-
-// CreateProject200JSONResponseBodyLink0Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink0Type string
-
-// CreateProject200JSONResponseBodyLink1 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink1 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                         `json:"repoOwnerId,omitempty"`
-	Sourceless  *CreateProject200JSONResponseBodyLink1Sourceless `json:"sourceless,omitempty"`
-	Type        CreateProject200JSONResponseBodyLink1Type        `json:"type"`
-	UpdatedAt   *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink1Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink1Sourceless bool
-
-// CreateProject200JSONResponseBodyLink1Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink1Type string
-
-// CreateProject200JSONResponseBodyLink2 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink2 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Host             string   `json:"host"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                         `json:"repoOwnerId,omitempty"`
-	Sourceless  *CreateProject200JSONResponseBodyLink2Sourceless `json:"sourceless,omitempty"`
-	Type        CreateProject200JSONResponseBodyLink2Type        `json:"type"`
-	UpdatedAt   *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink2Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink2Sourceless bool
-
-// CreateProject200JSONResponseBodyLink2Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink2Type string
-
-// CreateProject200JSONResponseBodyLink3 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink3 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId          string `json:"gitCredentialId"`
-	ProductionBranch         string `json:"productionBranch"`
-	ProjectId                string `json:"projectId"`
-	ProjectName              string `json:"projectName"`
-	ProjectNameWithNamespace string `json:"projectNameWithNamespace"`
-	ProjectNamespace         string `json:"projectNamespace"`
-
-	// ProjectOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
-	ProjectOwnerId *float32                                         `json:"projectOwnerId,omitempty"`
-	ProjectUrl     string                                           `json:"projectUrl"`
-	Sourceless     *CreateProject200JSONResponseBodyLink3Sourceless `json:"sourceless,omitempty"`
-	Type           CreateProject200JSONResponseBodyLink3Type        `json:"type"`
-	UpdatedAt      *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink3Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink3Sourceless bool
-
-// CreateProject200JSONResponseBodyLink3Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink3Type string
-
-// CreateProject200JSONResponseBodyLink4 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink4 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                           `json:"gitCredentialId"`
-	Name             string                                           `json:"name"`
-	Owner            string                                           `json:"owner"`
-	ProductionBranch string                                           `json:"productionBranch"`
-	Slug             string                                           `json:"slug"`
-	Sourceless       *CreateProject200JSONResponseBodyLink4Sourceless `json:"sourceless,omitempty"`
-	Type             CreateProject200JSONResponseBodyLink4Type        `json:"type"`
-	UpdatedAt        *float32                                         `json:"updatedAt,omitempty"`
-	Uuid             string                                           `json:"uuid"`
-	WorkspaceUuid    string                                           `json:"workspaceUuid"`
-}
-
-// CreateProject200JSONResponseBodyLink4Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink4Sourceless bool
-
-// CreateProject200JSONResponseBodyLink4Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink4Type string
-
-// CreateProject200JSONResponseBodyLink5 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink5 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                           `json:"gitCredentialId"`
-	Org              string                                           `json:"org"`
-	ProductionBranch string                                           `json:"productionBranch"`
-	Repo             string                                           `json:"repo"`
-	RepoId           string                                           `json:"repoId"`
-	Sourceless       *CreateProject200JSONResponseBodyLink5Sourceless `json:"sourceless,omitempty"`
-	Type             CreateProject200JSONResponseBodyLink5Type        `json:"type"`
-	UpdatedAt        *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink5Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink5Sourceless bool
-
-// CreateProject200JSONResponseBodyLink5Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink5Type string
-
-// CreateProject200JSONResponseBodyLink6 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink6 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                           `json:"gitCredentialId"`
-	Org              string                                           `json:"org"`
-	ProductionBranch string                                           `json:"productionBranch"`
-	Repo             string                                           `json:"repo"`
-	RepoId           string                                           `json:"repoId"`
-	Sourceless       *CreateProject200JSONResponseBodyLink6Sourceless `json:"sourceless,omitempty"`
-	Type             CreateProject200JSONResponseBodyLink6Type        `json:"type"`
-	UpdatedAt        *float32                                         `json:"updatedAt,omitempty"`
-}
-
-// CreateProject200JSONResponseBodyLink6Sourceless defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink6Sourceless bool
-
-// CreateProject200JSONResponseBodyLink6Type defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink6Type string
-
-// CreateProject200JSONResponseBodyLink7 defines parameters for CreateProject.
-type CreateProject200JSONResponseBodyLink7 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId string `json:"gitCredentialId"`
-
-	// Owner Owner (namespace) slug, e.g. `acme`.
-	Owner string `json:"owner"`
-
-	// OwnerId Origin namespace id (`ns_…`) of the owner.
-	OwnerId          string `json:"ownerId"`
-	ProductionBranch string `json:"productionBranch"`
-	Repo             string `json:"repo"`
-
-	// RepoId Origin repository id.
-	RepoId     string                                           `json:"repoId"`
-	Sourceless *CreateProject200JSONResponseBodyLink7Sourceless `json:"sourceless,omitempty"`
-	Type       CreateProject200JSONResponseBodyLink7Type        `json:"type"`
-	UpdatedAt  *float32                                         `json:"updatedAt,omitempty"`
-}

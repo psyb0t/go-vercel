@@ -12,6 +12,171 @@ import (
 	"time"
 )
 
+// UpdateConnectorWithBodyWithResponse Update a connector
+//
+// Update a connector and return the connector with any service-side update signals that the caller must handle.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
+func (c *ClientWithResponses) UpdateConnectorWithBodyWithResponse(ctx context.Context, connector string, params *UpdateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateConnectorResponse, error) {
+	rsp, err := c.UpdateConnectorWithBody(ctx, connector, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateConnectorResponse(rsp)
+}
+
+// UpdateConnectorWithResponse Update a connector
+//
+// Update a connector and return the connector with any service-side update signals that the caller must handle.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v2/connect/connectors/{connector} (the `UpdateConnector` operationId).
+func (c *ClientWithResponses) UpdateConnectorWithResponse(ctx context.Context, connector string, params *UpdateConnectorParams, body UpdateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateConnectorResponse, error) {
+	rsp, err := c.UpdateConnector(ctx, connector, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateConnectorResponse(rsp)
+}
+
+// ListConnectorProjectConnectionsWithResponse List projects for a connector
+//
+// List the projects connected to a connector and the environments where each connection is available.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/connect/connectors/{connector}/projects (the `ListConnectorProjectConnections` operationId).
+func (c *ClientWithResponses) ListConnectorProjectConnectionsWithResponse(ctx context.Context, connector string, params *ListConnectorProjectConnectionsParams, reqEditors ...RequestEditorFn) (*ListConnectorProjectConnectionsResponse, error) {
+	rsp, err := c.ListConnectorProjectConnections(ctx, connector, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListConnectorProjectConnectionsResponse(rsp)
+}
+
+// ListProjectConnectorConnectionsWithResponse List connectors for a project
+//
+// List the connectors connected to a project and the environments where each connection is available.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/connect/projects/{projectId}/connectors (the `ListProjectConnectorConnections` operationId).
+func (c *ClientWithResponses) ListProjectConnectorConnectionsWithResponse(ctx context.Context, projectId string, params *ListProjectConnectorConnectionsParams, reqEditors ...RequestEditorFn) (*ListProjectConnectorConnectionsResponse, error) {
+	rsp, err := c.ListProjectConnectorConnections(ctx, projectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListProjectConnectorConnectionsResponse(rsp)
+}
+
+// ListDeploymentCheckRunsWithResponse List check runs for a deployment
+//
+// List all check runs for a deployment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/deployments/{deploymentId}/check-runs (the `ListDeploymentCheckRuns` operationId).
+func (c *ClientWithResponses) ListDeploymentCheckRunsWithResponse(ctx context.Context, deploymentId string, params *ListDeploymentCheckRunsParams, reqEditors ...RequestEditorFn) (*ListDeploymentCheckRunsResponse, error) {
+	rsp, err := c.ListDeploymentCheckRuns(ctx, deploymentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDeploymentCheckRunsResponse(rsp)
+}
+
+// CreateDeploymentCheckRunWithBodyWithResponse Create a check run
+//
+// Creates a new check run for a deployment.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
+func (c *ClientWithResponses) CreateDeploymentCheckRunWithBodyWithResponse(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDeploymentCheckRunResponse, error) {
+	rsp, err := c.CreateDeploymentCheckRunWithBody(ctx, deploymentId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDeploymentCheckRunResponse(rsp)
+}
+
+// CreateDeploymentCheckRunWithResponse Create a check run
+//
+// Creates a new check run for a deployment.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/deployments/{deploymentId}/check-runs (the `CreateDeploymentCheckRun` operationId).
+func (c *ClientWithResponses) CreateDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDeploymentCheckRunResponse, error) {
+	rsp, err := c.CreateDeploymentCheckRun(ctx, deploymentId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDeploymentCheckRunResponse(rsp)
+}
+
+// GetDeploymentCheckRunWithResponse Get a check run
+//
+// Return a detailed response for a single check run.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `GetDeploymentCheckRun` operationId).
+func (c *ClientWithResponses) GetDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *GetDeploymentCheckRunParams, reqEditors ...RequestEditorFn) (*GetDeploymentCheckRunResponse, error) {
+	rsp, err := c.GetDeploymentCheckRun(ctx, deploymentId, checkRunId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDeploymentCheckRunResponse(rsp)
+}
+
+// UpdateDeploymentCheckRunWithBodyWithResponse Update a check run
+//
+// Update an existing check run for a deployment.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
+func (c *ClientWithResponses) UpdateDeploymentCheckRunWithBodyWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDeploymentCheckRunResponse, error) {
+	rsp, err := c.UpdateDeploymentCheckRunWithBody(ctx, deploymentId, checkRunId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDeploymentCheckRunResponse(rsp)
+}
+
+// UpdateDeploymentCheckRunWithResponse Update a check run
+//
+// Update an existing check run for a deployment.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} (the `UpdateDeploymentCheckRun` operationId).
+func (c *ClientWithResponses) UpdateDeploymentCheckRunWithResponse(ctx context.Context, deploymentId string, checkRunId string, params *UpdateDeploymentCheckRunParams, body UpdateDeploymentCheckRunJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDeploymentCheckRunResponse, error) {
+	rsp, err := c.UpdateDeploymentCheckRun(ctx, deploymentId, checkRunId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDeploymentCheckRunResponse(rsp)
+}
+
+// ListDeploymentAliasesWithResponse List Deployment Aliases
+//
+// Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/deployments/{id}/aliases (the `ListDeploymentAliases` operationId).
+func (c *ClientWithResponses) ListDeploymentAliasesWithResponse(ctx context.Context, id string, params *ListDeploymentAliasesParams, reqEditors ...RequestEditorFn) (*ListDeploymentAliasesResponse, error) {
+	rsp, err := c.ListDeploymentAliases(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDeploymentAliasesResponse(rsp)
+}
+
 // AssignAliasWithBodyWithResponse Assign an Alias
 //
 // Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
@@ -11685,6 +11850,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					FlagDefinitionsPresent *struct {
 						Targets []string `json:"targets"`
 					} `json:"flag-definitions-present,omitempty"`
+					HealthCheck *struct {
+						Targets []string `json:"targets"`
+					} `json:"health-check,omitempty"`
 					Lint *struct {
 						Targets []string `json:"targets"`
 					} `json:"lint,omitempty"`
@@ -12531,6 +12699,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 
 					// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+					// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 					// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -14382,6 +14553,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				FlagDefinitionsPresent *struct {
 					Targets []string `json:"targets"`
 				} `json:"flag-definitions-present,omitempty"`
+				HealthCheck *struct {
+					Targets []string `json:"targets"`
+				} `json:"health-check,omitempty"`
 				Lint *struct {
 					Targets []string `json:"targets"`
 				} `json:"lint,omitempty"`
@@ -15228,6 +15402,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 
 				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+				// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -16192,6 +16369,9 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 				FlagDefinitionsPresent *struct {
 					Targets []string `json:"targets"`
 				} `json:"flag-definitions-present,omitempty"`
+				HealthCheck *struct {
+					Targets []string `json:"targets"`
+				} `json:"health-check,omitempty"`
 				Lint *struct {
 					Targets []string `json:"targets"`
 				} `json:"lint,omitempty"`
@@ -17038,6 +17218,9 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 
 				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+				// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -19485,6 +19668,123 @@ func ParseGetProjectTokenResponse(rsp *http.Response) (*GetProjectTokenResponse,
 	return response, nil
 }
 
+// ParseGetFlagsProjectConnectionsResponse parses an HTTP response from a GetFlagsProjectConnectionsWithResponse call
+func ParseGetFlagsProjectConnectionsResponse(rsp *http.Response) (*GetFlagsProjectConnectionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetFlagsProjectConnectionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetFlagsProjectConnections200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateFlagsProjectConnectionResponse parses an HTTP response from a CreateFlagsProjectConnectionWithResponse call
+func ParseCreateFlagsProjectConnectionResponse(rsp *http.Response) (*CreateFlagsProjectConnectionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateFlagsProjectConnectionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ConsumerProjectId   string  `json:"consumerProjectId"`
+			ConsumerProjectName string  `json:"consumerProjectName"`
+			CreatedAt           float32 `json:"createdAt"`
+			CreatedBy           string  `json:"createdBy"`
+			SourceProjectId     string  `json:"sourceProjectId"`
+			SourceProjectName   string  `json:"sourceProjectName"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteFlagsProjectConnectionResponse parses an HTTP response from a DeleteFlagsProjectConnectionWithResponse call
+func ParseDeleteFlagsProjectConnectionResponse(rsp *http.Response) (*DeleteFlagsProjectConnectionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteFlagsProjectConnectionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
 // ParseListFlagsResponse parses an HTTP response from a ListFlagsWithResponse call
 func ParseListFlagsResponse(rsp *http.Response) (*ListFlagsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -19792,220 +20092,6 @@ func ParseUpdateFlagResponse(rsp *http.Response) (*UpdateFlagResponse, error) {
 		break // No content-type
 
 	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListFlagVersionsResponse parses an HTTP response from a ListFlagVersionsWithResponse call
-func ParseListFlagVersionsResponse(rsp *http.Response) (*ListFlagVersionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListFlagVersionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Pagination map[string]interface{} `json:"pagination"`
-			Versions   []struct {
-				ChangedEnvironments []string `json:"changedEnvironments"`
-				CreatedAt           float32  `json:"createdAt"`
-				CreatedBy           *string  `json:"createdBy,omitempty"`
-				Data                struct {
-					Description  *string `json:"description,omitempty"`
-					Environments map[string]struct {
-						Active        ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsActive          `json:"active"`
-						Fallthrough   ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough `json:"fallthrough"`
-						PausedOutcome struct {
-							Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsPausedOutcomeType `json:"type"`
-							VariantId string                                                                       `json:"variantId"`
-						} `json:"pausedOutcome"`
-						Reuse *struct {
-							Active      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsReuseActive `json:"active"`
-							Environment string                                                                 `json:"environment"`
-						} `json:"reuse,omitempty"`
-						Revision *float32 `json:"revision,omitempty"`
-						Rules    []struct {
-							Conditions []struct {
-								Cmp        ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmp `json:"cmp"`
-								CmpOptions *struct {
-									IgnoreCase *ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-								} `json:"cmpOptions,omitempty"`
-								Lhs ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Lhs  `json:"lhs"`
-								Rhs *ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-							} `json:"conditions"`
-							Id      string                                                                       `json:"id"`
-							Outcome ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome `json:"outcome"`
-						} `json:"rules"`
-						Targets *map[string]map[string]map[string][]struct {
-							Note  *string `json:"note,omitempty"`
-							Value string  `json:"value"`
-						} `json:"targets,omitempty"`
-					} `json:"environments"`
-					MaintainerIds *[]string                                                 `json:"maintainerIds,omitempty"`
-					Permanent     *ListFlagVersions200JSONResponseBodyVersionsDataPermanent `json:"permanent,omitempty"`
-					Seed          float32                                                   `json:"seed"`
-					State         ListFlagVersions200JSONResponseBodyVersionsDataState      `json:"state"`
-					Tags          *[]string                                                 `json:"tags,omitempty"`
-					Variants      []struct {
-						Description *string                                                           `json:"description,omitempty"`
-						Id          string                                                            `json:"id"`
-						Label       *string                                                           `json:"label,omitempty"`
-						Value       *ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value `json:"value"`
-					} `json:"variants"`
-				} `json:"data"`
-				FlagId   string  `json:"flagId"`
-				Id       string  `json:"id"`
-				Message  *string `json:"message,omitempty"`
-				Metadata *struct {
-					Creator *struct {
-						Id   string `json:"id"`
-						Name string `json:"name"`
-					} `json:"creator,omitempty"`
-				} `json:"metadata,omitempty"`
-				Revision float32 `json:"revision"`
-			} `json:"versions"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 304:
-		break // No content-type
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListFlagLabelsResponse parses an HTTP response from a ListFlagLabelsWithResponse call
-func ParseListFlagLabelsResponse(rsp *http.Response) (*ListFlagLabelsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListFlagLabelsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				AttributeKey string `json:"attributeKey"`
-				EntityKind   string `json:"entityKind"`
-				Label        string `json:"label"`
-				Value        string `json:"value"`
-			} `json:"data"`
-			Pagination struct {
-				Next *string `json:"next"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListFlagLabelCountsResponse parses an HTTP response from a ListFlagLabelCountsWithResponse call
-func ParseListFlagLabelCountsResponse(rsp *http.Response) (*ListFlagLabelCountsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListFlagLabelCountsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				AttributeKey string  `json:"attributeKey"`
-				Count        float32 `json:"count"`
-				EntityKind   string  `json:"entityKind"`
-			} `json:"data"`
-			Pagination struct {
-				Next *string `json:"next"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
 		break // No content-type
 
 	case rsp.StatusCode == 410:

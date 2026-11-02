@@ -14,6 +14,330 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 returns the union data inside the GetProject200JSONResponseBody_TrustedSources_OidcProviders_To as a GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) AsGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0() (GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0, error) {
+	var body GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 overwrites any union data inside the GetProject200JSONResponseBody_TrustedSources_OidcProviders_To as the provided GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t *GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) FromGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0(v GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0 performs a merge with any union data inside the GetProject200JSONResponseBody_TrustedSources_OidcProviders_To, using the provided GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0
+func (t *GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) MergeGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0(v GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 returns the union data inside the GetProject200JSONResponseBody_TrustedSources_OidcProviders_To as a GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) AsGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1() (GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1, error) {
+	var body GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 overwrites any union data inside the GetProject200JSONResponseBody_TrustedSources_OidcProviders_To as the provided GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t *GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) FromGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1(v GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1 performs a merge with any union data inside the GetProject200JSONResponseBody_TrustedSources_OidcProviders_To, using the provided GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1
+func (t *GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) MergeGetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1(v GetProject200JSONResponseBodyTrustedSourcesOidcProvidersTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetProject200JSONResponseBody_TrustedSources_OidcProviders_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 returns the union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as a GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0() (GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0, error) {
+	var body GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 overwrites any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 performs a merge with any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From, using the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 returns the union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as a GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1() (GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1, error) {
+	var body GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 overwrites any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From as the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 performs a merge with any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From, using the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_From) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 returns the union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as a GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0() (GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0, error) {
+	var body GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 overwrites any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 performs a merge with any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To, using the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 returns the union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as a GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) AsGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1() (GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1, error) {
+	var body GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 overwrites any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To as the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) FromGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 performs a merge with any union data inside the GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To, using the provided GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MergeGetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1(v GetProject200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetProject200JSONResponseBody_TrustedSources_Projects_CustomAllow_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateProjectJSONBodyConnectConfigurations0 returns the union data inside the UpdateProjectJSONBody_ConnectConfigurations_Item as a UpdateProjectJSONBodyConnectConfigurations0
+func (t UpdateProjectJSONBody_ConnectConfigurations_Item) AsUpdateProjectJSONBodyConnectConfigurations0() (UpdateProjectJSONBodyConnectConfigurations0, error) {
+	var body UpdateProjectJSONBodyConnectConfigurations0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyConnectConfigurations0 overwrites any union data inside the UpdateProjectJSONBody_ConnectConfigurations_Item as the provided UpdateProjectJSONBodyConnectConfigurations0
+func (t *UpdateProjectJSONBody_ConnectConfigurations_Item) FromUpdateProjectJSONBodyConnectConfigurations0(v UpdateProjectJSONBodyConnectConfigurations0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyConnectConfigurations0 performs a merge with any union data inside the UpdateProjectJSONBody_ConnectConfigurations_Item, using the provided UpdateProjectJSONBodyConnectConfigurations0
+func (t *UpdateProjectJSONBody_ConnectConfigurations_Item) MergeUpdateProjectJSONBodyConnectConfigurations0(v UpdateProjectJSONBodyConnectConfigurations0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateProjectJSONBody_ConnectConfigurations_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	if err != nil {
+		return nil, err
+	}
+	object := make(map[string]json.RawMessage)
+	if t.union != nil {
+		err = json.Unmarshal(b, &object)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	object["buildsEnabled"], err = json.Marshal(t.BuildsEnabled)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'buildsEnabled': %w", err)
+	}
+
+	object["connectConfigurationId"], err = json.Marshal(t.ConnectConfigurationId)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'connectConfigurationId': %w", err)
+	}
+
+	object["envId"], err = json.Marshal(t.EnvId)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'envId': %w", err)
+	}
+
+	object["passive"], err = json.Marshal(t.Passive)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'passive': %w", err)
+	}
+
+	b, err = json.Marshal(object)
+	return b, err
+}
+
+func (t *UpdateProjectJSONBody_ConnectConfigurations_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	if err != nil {
+		return err
+	}
+	object := make(map[string]json.RawMessage)
+	err = json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["buildsEnabled"]; found {
+		err = json.Unmarshal(raw, &t.BuildsEnabled)
+		if err != nil {
+			return fmt.Errorf("error reading 'buildsEnabled': %w", err)
+		}
+	}
+
+	if raw, found := object["connectConfigurationId"]; found {
+		err = json.Unmarshal(raw, &t.ConnectConfigurationId)
+		if err != nil {
+			return fmt.Errorf("error reading 'connectConfigurationId': %w", err)
+		}
+	}
+
+	if raw, found := object["envId"]; found {
+		err = json.Unmarshal(raw, &t.EnvId)
+		if err != nil {
+			return fmt.Errorf("error reading 'envId': %w", err)
+		}
+	}
+
+	if raw, found := object["passive"]; found {
+		err = json.Unmarshal(raw, &t.Passive)
+		if err != nil {
+			return fmt.Errorf("error reading 'passive': %w", err)
+		}
+	}
+
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as a UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0() (UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0 performs a merge with any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item, using the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) MergeUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1 returns the union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as a UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+func (t UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) AsUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1() (UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1, error) {
+	var body UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
 // FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1 overwrites any union data inside the UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as the provided UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1
 func (t *UpdateProjectJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) FromUpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1(v UpdateProjectJSONBodyDeploymentPolicy0DeploymentSources0Environments1) error {
 	b, err := json.Marshal(v)
@@ -8402,6 +8726,38 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
 	GetProjectToken(ctx context.Context, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetFlagsProjectConnections List flags project connections
+	//
+	// Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.
+	//
+	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/connections (the `GetFlagsProjectConnections` operationId).
+	GetFlagsProjectConnections(ctx context.Context, projectIdOrName string, params *GetFlagsProjectConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateFlagsProjectConnectionWithBody Connect a project to the flags of this project
+	//
+	// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+	CreateFlagsProjectConnectionWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateFlagsProjectConnection Connect a project to the flags of this project
+	//
+	// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+	CreateFlagsProjectConnection(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, body CreateFlagsProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteFlagsProjectConnection Disconnect a project from the flags of this project
+	//
+	// Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.
+	//
+	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} (the `DeleteFlagsProjectConnection` operationId).
+	DeleteFlagsProjectConnection(ctx context.Context, projectIdOrName string, consumerProjectId string, params *DeleteFlagsProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListFlags List flags
 	//
 	// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
@@ -16743,6 +17099,78 @@ func (c *Client) GetProjectToken(ctx context.Context, idOrName string, params *G
 	return c.Client.Do(req)
 }
 
+// GetFlagsProjectConnections List flags project connections
+//
+// Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/connections (the `GetFlagsProjectConnections` operationId).
+func (c *Client) GetFlagsProjectConnections(ctx context.Context, projectIdOrName string, params *GetFlagsProjectConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFlagsProjectConnectionsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagsProjectConnectionWithBody Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *Client) CreateFlagsProjectConnectionWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagsProjectConnectionRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagsProjectConnection Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *Client) CreateFlagsProjectConnection(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, body CreateFlagsProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagsProjectConnectionRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteFlagsProjectConnection Disconnect a project from the flags of this project
+//
+// Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} (the `DeleteFlagsProjectConnection` operationId).
+func (c *Client) DeleteFlagsProjectConnection(ctx context.Context, projectIdOrName string, consumerProjectId string, params *DeleteFlagsProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteFlagsProjectConnectionRequest(c.Server, projectIdOrName, consumerProjectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListFlags List flags
 //
 // Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
@@ -19583,428 +20011,6 @@ func (c *Client) GetVercelCiInvocationLogs(ctx context.Context, invocationId str
 // Corresponds with POST /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/retry (the `RetryVercelCiInvocation` operationId).
 func (c *Client) RetryVercelCiInvocation(ctx context.Context, invocationId string, attempt string, params *RetryVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRetryVercelCiInvocationRequest(c.Server, invocationId, attempt, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetVercelCiTaskLogs Get log lines for the tasks of an invocation attempt
-//
-// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
-//
-// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs (the `GetVercelCiTaskLogs` operationId).
-func (c *Client) GetVercelCiTaskLogs(ctx context.Context, invocationId string, attempt string, params *GetVercelCiTaskLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetVercelCiTaskLogsRequest(c.Server, invocationId, attempt, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetVercelCiInvocationTree Get an invocation with its jobs and tasks
-//
-// Returns an invocation attempt together with every job definition, its latest job run, and the task definitions and active task runs of that job run. Defaults to the latest attempt when `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes (`completed`) or the stream reaches its maximum duration (`timeout`), after which clients should reconnect.
-//
-// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/tree (the `GetVercelCiInvocationTree` operationId).
-func (c *Client) GetVercelCiInvocationTree(ctx context.Context, invocationId string, params *GetVercelCiInvocationTreeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetVercelCiInvocationTreeRequest(c.Server, invocationId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SearchVercelCiLogs Search the task logs of several invocation attempts
-//
-// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
-//
-// Corresponds with GET /v1/vercel-ci/log-search (the `SearchVercelCiLogs` operationId).
-func (c *Client) SearchVercelCiLogs(ctx context.Context, params *SearchVercelCiLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSearchVercelCiLogsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetVercelCiRepositorySettings Get Vercel CI settings for a connected repository
-//
-// Get Repository Settings.
-//
-// Corresponds with GET /v1/vercel-ci/repository-settings (the `GetVercelCiRepositorySettings` operationId).
-func (c *Client) GetVercelCiRepositorySettings(ctx context.Context, params *GetVercelCiRepositorySettingsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetVercelCiRepositorySettingsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateVercelCiRepositorySettingsWithBody Enable or disable Vercel CI for a connected repository
-//
-// Update Repository Settings.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
-func (c *Client) UpdateVercelCiRepositorySettingsWithBody(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateVercelCiRepositorySettingsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateVercelCiRepositorySettings Enable or disable Vercel CI for a connected repository
-//
-// Update Repository Settings.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
-func (c *Client) UpdateVercelCiRepositorySettings(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, body UpdateVercelCiRepositorySettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateVercelCiRepositorySettingsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateVercelCiTaskAnalysisWithBody Start an asynchronous Vercel CI task analysis
-//
-// Create task analysis.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
-func (c *Client) CreateVercelCiTaskAnalysisWithBody(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateVercelCiTaskAnalysisRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateVercelCiTaskAnalysis Start an asynchronous Vercel CI task analysis
-//
-// Create task analysis.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
-func (c *Client) CreateVercelCiTaskAnalysis(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, body CreateVercelCiTaskAnalysisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateVercelCiTaskAnalysisRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetVercelCiTaskAnalysis Get the current status of a Vercel CI task analysis
-//
-// Get task analysis.
-//
-// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId} (the `GetVercelCiTaskAnalysis` operationId).
-func (c *Client) GetVercelCiTaskAnalysis(ctx context.Context, analysisId string, params *GetVercelCiTaskAnalysisParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetVercelCiTaskAnalysisRequest(c.Server, analysisId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateVercelCiTaskConfigurationPullRequestWithBody Create a GitHub pull request that adds Vercel CI tags for the completed analysis
-//
-// Create task configuration pull request.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
-func (c *Client) CreateVercelCiTaskConfigurationPullRequestWithBody(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateVercelCiTaskConfigurationPullRequestRequestWithBody(c.Server, analysisId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateVercelCiTaskConfigurationPullRequest Create a GitHub pull request that adds Vercel CI tags for the completed analysis
-//
-// Create task configuration pull request.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
-func (c *Client) CreateVercelCiTaskConfigurationPullRequest(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, body CreateVercelCiTaskConfigurationPullRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateVercelCiTaskConfigurationPullRequestRequest(c.Server, analysisId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListVercelCiTaskAnalysisTasks List discovered tasks for a completed Vercel CI task analysis
-//
-// List task analysis tasks.
-//
-// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId}/tasks (the `ListVercelCiTaskAnalysisTasks` operationId).
-func (c *Client) ListVercelCiTaskAnalysisTasks(ctx context.Context, analysisId string, params *ListVercelCiTaskAnalysisTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListVercelCiTaskAnalysisTasksRequest(c.Server, analysisId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetWebhooks Get a list of webhooks
-//
-// Corresponds with GET /v1/webhooks (the `GetWebhooks` operationId).
-func (c *Client) GetWebhooks(ctx context.Context, params *GetWebhooksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetWebhooksRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateWebhookWithBody Creates a webhook
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
-func (c *Client) CreateWebhookWithBody(ctx context.Context, params *CreateWebhookParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateWebhookRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateWebhook Creates a webhook
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
-func (c *Client) CreateWebhook(ctx context.Context, params *CreateWebhookParams, body CreateWebhookJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateWebhookRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteWebhook Deletes a webhook
-//
-// Corresponds with DELETE /v1/webhooks/{id} (the `DeleteWebhook` operationId).
-func (c *Client) DeleteWebhook(ctx context.Context, id string, params *DeleteWebhookParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteWebhookRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetWebhook Get a webhook
-//
-// Corresponds with GET /v1/webhooks/{id} (the `GetWebhook` operationId).
-func (c *Client) GetWebhook(ctx context.Context, id string, params *GetWebhookParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetWebhookRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetProjects Retrieve a list of projects
-//
-// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
-//
-// Corresponds with GET /v10/projects (the `GetProjects` operationId).
-func (c *Client) GetProjects(ctx context.Context, params *GetProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetProjectsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// AddProjectDomainWithBody Add a domain to a project
-//
-// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
-func (c *Client) AddProjectDomainWithBody(ctx context.Context, idOrName string, params *AddProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAddProjectDomainRequestWithBody(c.Server, idOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// AddProjectDomain Add a domain to a project
-//
-// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
-func (c *Client) AddProjectDomain(ctx context.Context, idOrName string, params *AddProjectDomainParams, body AddProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAddProjectDomainRequest(c.Server, idOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// FilterProjectEnvs Retrieve the environment variables of a project by id or name
-//
-// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
-//
-// Corresponds with GET /v10/projects/{idOrName}/env (the `FilterProjectEnvs` operationId).
-func (c *Client) FilterProjectEnvs(ctx context.Context, idOrName string, params *FilterProjectEnvsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewFilterProjectEnvsRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateProjectEnvWithBody Create one or more environment variables
-//
-// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
-func (c *Client) CreateProjectEnvWithBody(ctx context.Context, idOrName string, params *CreateProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateProjectEnvRequestWithBody(c.Server, idOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateProjectEnv Create one or more environment variables
-//
-// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
-func (c *Client) CreateProjectEnv(ctx context.Context, idOrName string, params *CreateProjectEnvParams, body CreateProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateProjectEnvRequest(c.Server, idOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RequestPromote Point production traffic to a given deployment
-//
-// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
-//
-// Corresponds with POST /v10/projects/{projectId}/promote/{deploymentId} (the `RequestPromote` operationId).
-func (c *Client) RequestPromote(ctx context.Context, projectId string, deploymentId string, params *RequestPromoteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRequestPromoteRequest(c.Server, projectId, deploymentId, params)
 	if err != nil {
 		return nil, err
 	}

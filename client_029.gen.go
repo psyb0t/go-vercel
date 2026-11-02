@@ -10,6 +10,237 @@ import (
 	"strings"
 )
 
+// ParseGetCertByIdResponse parses an HTTP response from a GetCertByIdWithResponse call
+func ParseGetCertByIdResponse(rsp *http.Response) (*GetCertByIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCertByIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AutoRenew GetCertById200JSONResponseBodyAutoRenew `json:"autoRenew"`
+			Cns       []string                                `json:"cns"`
+			CreatedAt float32                                 `json:"createdAt"`
+			ExpiresAt float32                                 `json:"expiresAt"`
+			Id        string                                  `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDeploymentFileContentsResponse parses an HTTP response from a GetDeploymentFileContentsWithResponse call
+func ParseGetDeploymentFileContentsResponse(rsp *http.Response) (*GetDeploymentFileContentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDeploymentFileContentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseClaimDomainOwnershipResponse parses an HTTP response from a ClaimDomainOwnershipWithResponse call
+func ParseClaimDomainOwnershipResponse(rsp *http.Response) (*ClaimDomainOwnershipResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ClaimDomainOwnershipResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Domain struct {
+				// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
+				//
+				// Example: 1613602938882
+				BoughtAt *float32 `json:"boughtAt"`
+
+				// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
+				//
+				// Example: 1613602938882
+				CreatedAt float32 `json:"createdAt"`
+
+				// Creator An object containing information of the domain creator, including the user's id, username, and email.
+				//
+				// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
+				Creator struct {
+					CustomerId       *string                                                               `json:"customerId,omitempty"`
+					Email            string                                                                `json:"email"`
+					Id               string                                                                `json:"id"`
+					IsDomainReseller *ClaimDomainOwnership200JSONResponseBodyDomainCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
+					Username         string                                                                `json:"username"`
+				} `json:"creator"`
+
+				// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				CustomNameservers *[]string `json:"customNameservers,omitempty"`
+
+				// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
+				//
+				// Example: auto
+				EchMode ClaimDomainOwnership200JSONResponseBodyDomainEchMode `json:"echMode"`
+
+				// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
+				ExpiresAt *float32 `json:"expiresAt"`
+
+				// Id The unique identifier of the domain.
+				//
+				// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+				Id string `json:"id"`
+
+				// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
+				//
+				// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
+				IntendedNameservers []string `json:"intendedNameservers"`
+
+				// Name The domain name.
+				//
+				// Example: example.com
+				Name string `json:"name"`
+
+				// Nameservers A list of the current nameservers of the domain.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				Nameservers []string `json:"nameservers"`
+
+				// Renew Indicates whether the domain is set to automatically renew.
+				//
+				// Example: true
+				Renew *ClaimDomainOwnership200JSONResponseBodyDomainRenew `json:"renew,omitempty"`
+
+				// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
+				//
+				// Example: zeit.world
+				ServiceType ClaimDomainOwnership200JSONResponseBodyDomainServiceType `json:"serviceType"`
+				TeamId      *string                                                  `json:"teamId"`
+
+				// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
+				//
+				// Example: 1613602938882
+				TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
+
+				// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
+				//
+				// Example: 1613602938882
+				TransferredAt *float32 `json:"transferredAt,omitempty"`
+				UserId        string   `json:"userId"`
+
+				// Verified If the domain has the ownership verified.
+				//
+				// Example: true
+				Verified ClaimDomainOwnership200JSONResponseBodyDomainVerified `json:"verified"`
+			} `json:"domain"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainVerificationRecordResponse parses an HTTP response from a GetDomainVerificationRecordWithResponse call
+func ParseGetDomainVerificationRecordResponse(rsp *http.Response) (*GetDomainVerificationRecordResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainVerificationRecordResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			TxtRecord          string `json:"txtRecord"`
+			VerificationDomain string `json:"verificationDomain"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseDeleteProjectResponse parses an HTTP response from a DeleteProjectWithResponse call
 func ParseDeleteProjectResponse(rsp *http.Response) (*DeleteProjectResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -432,6 +663,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				FlagDefinitionsPresent *struct {
 					Targets []string `json:"targets"`
 				} `json:"flag-definitions-present,omitempty"`
+				HealthCheck *struct {
+					Targets []string `json:"targets"`
+				} `json:"health-check,omitempty"`
 				Lint *struct {
 					Targets []string `json:"targets"`
 				} `json:"lint,omitempty"`
@@ -1278,6 +1512,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 
 				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+				// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
@@ -2242,6 +2479,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				FlagDefinitionsPresent *struct {
 					Targets []string `json:"targets"`
 				} `json:"flag-definitions-present,omitempty"`
+				HealthCheck *struct {
+					Targets []string `json:"targets"`
+				} `json:"health-check,omitempty"`
 				Lint *struct {
 					Targets []string `json:"targets"`
 				} `json:"lint,omitempty"`
@@ -3088,6 +3328,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 
 				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Schedule *[]ACLAction `json:"schedule,omitempty"`
+
+				// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
 
 				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`

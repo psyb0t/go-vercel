@@ -10,6 +10,147 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint8Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint8TypePostgresUrlNonPooling RemoveProjectEnv200JSONResponseBody2ContentHint8Type = "postgres-url-non-pooling"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint8Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint8Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint8TypePostgresUrlNonPooling:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint9Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint9TypePostgresPrismaUrl RemoveProjectEnv200JSONResponseBody2ContentHint9Type = "postgres-prisma-url"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint9Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint9Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint9TypePostgresPrismaUrl:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint10Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint10TypePostgresUser RemoveProjectEnv200JSONResponseBody2ContentHint10Type = "postgres-user"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint10Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint10Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint10TypePostgresUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint11Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint11TypePostgresHost RemoveProjectEnv200JSONResponseBody2ContentHint11Type = "postgres-host"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint11Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint11Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint11TypePostgresHost:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint12Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint12TypePostgresPassword RemoveProjectEnv200JSONResponseBody2ContentHint12Type = "postgres-password"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint12Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint12Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint12TypePostgresPassword:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint13Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint13TypePostgresDatabase RemoveProjectEnv200JSONResponseBody2ContentHint13Type = "postgres-database"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint13Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint13Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint13TypePostgresDatabase:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint14Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint14TypePostgresUrlNoSsl RemoveProjectEnv200JSONResponseBody2ContentHint14Type = "postgres-url-no-ssl"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint14Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint14Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint14TypePostgresUrlNoSsl:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint15Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint15TypeIntegrationStoreSecret RemoveProjectEnv200JSONResponseBody2ContentHint15Type = "integration-store-secret"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint15Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint15Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint15TypeIntegrationStoreSecret:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2ContentHint16Type.
+const (
+	RemoveProjectEnv200JSONResponseBody2ContentHint16TypeFlagsConnectionString RemoveProjectEnv200JSONResponseBody2ContentHint16Type = "flags-connection-string"
+)
+
+// Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2ContentHint16Type enum.
+func (e RemoveProjectEnv200JSONResponseBody2ContentHint16Type) Valid() bool {
+	switch e {
+	case RemoveProjectEnv200JSONResponseBody2ContentHint16TypeFlagsConnectionString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveProjectEnv200JSONResponseBody2Decrypted.
+const (
+	RemoveProjectEnv200JSONResponseBody2DecryptedFalse RemoveProjectEnv200JSONResponseBody2Decrypted = false
+	RemoveProjectEnv200JSONResponseBody2DecryptedTrue  RemoveProjectEnv200JSONResponseBody2Decrypted = true
+)
+
 // Valid indicates whether the value is a known member of the RemoveProjectEnv200JSONResponseBody2Decrypted enum.
 func (e RemoveProjectEnv200JSONResponseBody2Decrypted) Valid() bool {
 	switch e {
@@ -5798,6 +5939,12 @@ type Team struct {
 			// Targets Default job configuration applied to new projects created in this team.
 			Targets []string `json:"targets"`
 		} `json:"flag-definitions-present,omitempty"`
+
+		// HealthCheck Default job configuration applied to new projects created in this team.
+		HealthCheck *struct {
+			// Targets Default job configuration applied to new projects created in this team.
+			Targets []string `json:"targets"`
+		} `json:"health-check,omitempty"`
 
 		// Lint Default job configuration applied to new projects created in this team.
 		Lint *struct {
@@ -19863,156 +20010,4 @@ type GetDrains200JSONResponseBodyDrains1FilterV2Filter0 struct {
 		Ids *[]string `json:"ids,omitempty"`
 	} `json:"project,omitempty"`
 	Type GetDrains200JSONResponseBodyDrains1FilterV2Filter0Type `json:"type"`
-}
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Filter0DeploymentEnvironments defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Filter0DeploymentEnvironments string
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogLegacyExcludeCachedStaticAssetLogs bool
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogSources defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Filter0LogSources string
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Filter0Type defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Filter0Type string
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Filter1 defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Filter1 struct {
-	Text string                                                 `json:"text"`
-	Type GetDrains200JSONResponseBodyDrains1FilterV2Filter1Type `json:"type"`
-}
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Filter1Type defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Filter1Type string
-
-// GetDrains200JSONResponseBody_Drains_1_FilterV2_Filter defines parameters for GetDrains.
-type GetDrains200JSONResponseBody_Drains_1_FilterV2_Filter struct {
-	union json.RawMessage
-}
-
-// GetDrains200JSONResponseBodyDrains1FilterV2Version defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1FilterV2Version string
-
-// GetDrains200JSONResponseBodyDrains1ProjectAccess0 defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1ProjectAccess0 struct {
-	Access    GetDrains200JSONResponseBodyDrains1ProjectAccess0Access    `json:"access"`
-	ManagedBy GetDrains200JSONResponseBodyDrains1ProjectAccess0ManagedBy `json:"managedBy"`
-}
-
-// GetDrains200JSONResponseBodyDrains1ProjectAccess0Access defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1ProjectAccess0Access string
-
-// GetDrains200JSONResponseBodyDrains1ProjectAccess0ManagedBy defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1ProjectAccess0ManagedBy string
-
-// GetDrains200JSONResponseBodyDrains1ProjectAccess1 defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1ProjectAccess1 struct {
-	Access     GetDrains200JSONResponseBodyDrains1ProjectAccess1Access    `json:"access"`
-	ManagedBy  GetDrains200JSONResponseBodyDrains1ProjectAccess1ManagedBy `json:"managedBy"`
-	ProjectIds []string                                                   `json:"projectIds"`
-}
-
-// GetDrains200JSONResponseBodyDrains1ProjectAccess1Access defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1ProjectAccess1Access string
-
-// GetDrains200JSONResponseBodyDrains1ProjectAccess1ManagedBy defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1ProjectAccess1ManagedBy string
-
-// GetDrains200JSONResponseBody_Drains_1_ProjectAccess defines parameters for GetDrains.
-type GetDrains200JSONResponseBody_Drains_1_ProjectAccess struct {
-	union json.RawMessage
-}
-
-// GetDrains200JSONResponseBodyDrains1SamplingEnv defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1SamplingEnv string
-
-// GetDrains200JSONResponseBodyDrains1SamplingType defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1SamplingType string
-
-// GetDrains200JSONResponseBodyDrains1Source0 defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1Source0 struct {
-	// DefaultFor Informational marker for a system-owned default drain.
-	DefaultFor *GetDrains200JSONResponseBodyDrains1Source0DefaultFor `json:"defaultFor,omitempty"`
-	Kind       GetDrains200JSONResponseBodyDrains1Source0Kind        `json:"kind"`
-}
-
-// GetDrains200JSONResponseBodyDrains1Source0DefaultFor defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1Source0DefaultFor string
-
-// GetDrains200JSONResponseBodyDrains1Source0Kind defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1Source0Kind string
-
-// GetDrains200JSONResponseBodyDrains1Source1 defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1Source1 struct {
-	ExternalResourceId         *string                                        `json:"externalResourceId,omitempty"`
-	IntegrationConfigurationId string                                         `json:"integrationConfigurationId"`
-	IntegrationId              string                                         `json:"integrationId"`
-	Kind                       GetDrains200JSONResponseBodyDrains1Source1Kind `json:"kind"`
-	ResourceId                 *string                                        `json:"resourceId,omitempty"`
-}
-
-// GetDrains200JSONResponseBodyDrains1Source1Kind defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1Source1Kind string
-
-// GetDrains200JSONResponseBody_Drains_1_Source defines parameters for GetDrains.
-type GetDrains200JSONResponseBody_Drains_1_Source struct {
-	union json.RawMessage
-}
-
-// GetDrains200JSONResponseBodyDrains1Status defines parameters for GetDrains.
-type GetDrains200JSONResponseBodyDrains1Status string
-
-// GetDrains200JSONResponseBody_Drains defines parameters for GetDrains.
-type GetDrains200JSONResponseBody_Drains struct {
-	union json.RawMessage
-}
-
-// CreateDrainJSONBody defines parameters for CreateDrain.
-type CreateDrainJSONBody struct {
-	Delivery *CreateDrainJSONBody_Delivery `json:"delivery,omitempty"`
-	Filter   *struct {
-		Filter  CreateDrainJSONBody_Filter_Filter `json:"filter"`
-		Version string                            `json:"version"`
-	} `json:"filter,omitempty"`
-	Name       string                      `json:"name"`
-	ProjectIds *[]string                   `json:"projectIds,omitempty"`
-	Projects   CreateDrainJSONBodyProjects `json:"projects"`
-	Sampling   *[]struct {
-		// Env Environment to apply sampling to
-		Env *CreateDrainJSONBodySamplingEnv `json:"env,omitempty"`
-
-		// Rate Sampling rate from 0 to 1 (e.g., 0.1 for 10%)
-		Rate float32 `json:"rate"`
-
-		// RequestPath Request path prefix to apply the sampling rule to
-		RequestPath *string `json:"requestPath,omitempty"`
-		Type        string  `json:"type"`
-	} `json:"sampling,omitempty"`
-	Schemas map[string]struct {
-		Version string `json:"version"`
-	} `json:"schemas"`
-	Source     *CreateDrainJSONBody_Source `json:"source,omitempty"`
-	Transforms *[]struct {
-		Id string `json:"id"`
-	} `json:"transforms,omitempty"`
-}
-
-// CreateDrainParams defines parameters for CreateDrain.
-type CreateDrainParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateDrainJSONBodyDelivery0 defines parameters for CreateDrain.
-type CreateDrainJSONBodyDelivery0 struct {
-	Compression *CreateDrainJSONBodyDelivery0Compression `json:"compression,omitempty"`
-	Encoding    CreateDrainJSONBodyDelivery0Encoding     `json:"encoding"`
-	Endpoint    string                                   `json:"endpoint"`
-	Headers     map[string]string                        `json:"headers"`
-	Secret      *string                                  `json:"secret,omitempty"`
-	Type        string                                   `json:"type"`
 }

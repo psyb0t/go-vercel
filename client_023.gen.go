@@ -17,6 +17,763 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewGetAliasRequest constructs an http.Request for the GetAlias method
+func NewGetAliasRequest(server string, idOrAlias string, params *GetAliasParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrAlias", idOrAlias, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v4/aliases/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.From != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "from", *params.From, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateSandboxesV4Request calls the generic CreateSandboxesV4 builder with application/json body
+func NewCreateSandboxesV4Request(server string, params *CreateSandboxesV4Params, body CreateSandboxesV4JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSandboxesV4RequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateSandboxesV4RequestWithBody constructs an http.Request for the CreateSandboxesV4 method, with any body, and a specified content type
+func NewCreateSandboxesV4RequestWithBody(server string, params *CreateSandboxesV4Params, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v4/sandboxes")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDomainsRequest constructs an http.Request for the GetDomains method
+func NewGetDomainsRequest(server string, params *GetDomainsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5/domains")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDomainRequest constructs an http.Request for the GetDomain method
+func NewGetDomainRequest(server string, domain string, params *GetDomainParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5/domains/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetRecordsRequest constructs an http.Request for the GetRecords method
+func NewGetRecordsRequest(server string, domain string, params *GetRecordsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5/domains/%s/records", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAuthTokenRequest constructs an http.Request for the GetAuthToken method
+func NewGetAuthTokenRequest(server string, tokenId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "tokenId", tokenId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5/user/tokens/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListDeploymentFilesRequest constructs an http.Request for the ListDeploymentFiles method
+func NewListDeploymentFilesRequest(server string, id string, params *ListDeploymentFilesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v6/deployments/%s/files", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteDomainRequest constructs an http.Request for the DeleteDomain method
+func NewDeleteDomainRequest(server string, domain string, params *DeleteDomainParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v6/domains/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDomainConfigRequest constructs an http.Request for the GetDomainConfig method
+func NewGetDomainConfigRequest(server string, domain string, params *GetDomainConfigParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v6/domains/%s/config", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectIdOrName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIdOrName", *params.ProjectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "strict", params.Strict, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewListAuthTokensRequest constructs an http.Request for the ListAuthTokens method
 func NewListAuthTokensRequest(server string) (*http.Request, error) {
 	var err error
@@ -5801,6 +6558,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
 	GetProjectTokenWithResponse(ctx context.Context, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*GetProjectTokenResponse, error)
+
+	// GetFlagsProjectConnectionsWithResponse List flags project connections
+	//
+	// Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/connections (the `GetFlagsProjectConnections` operationId).
+	GetFlagsProjectConnectionsWithResponse(ctx context.Context, projectIdOrName string, params *GetFlagsProjectConnectionsParams, reqEditors ...RequestEditorFn) (*GetFlagsProjectConnectionsResponse, error)
+
+	// CreateFlagsProjectConnectionWithBodyWithResponse Connect a project to the flags of this project
+	//
+	// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+	CreateFlagsProjectConnectionWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagsProjectConnectionResponse, error)
+
+	// CreateFlagsProjectConnectionWithResponse Connect a project to the flags of this project
+	//
+	// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+	CreateFlagsProjectConnectionWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, body CreateFlagsProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagsProjectConnectionResponse, error)
+
+	// DeleteFlagsProjectConnectionWithResponse Disconnect a project from the flags of this project
+	//
+	// Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} (the `DeleteFlagsProjectConnection` operationId).
+	DeleteFlagsProjectConnectionWithResponse(ctx context.Context, projectIdOrName string, consumerProjectId string, params *DeleteFlagsProjectConnectionParams, reqEditors ...RequestEditorFn) (*DeleteFlagsProjectConnectionResponse, error)
 
 	// ListFlagsWithResponse List flags
 	//
@@ -19261,765 +20054,4 @@ type GetKmsIssuerResponse struct {
 		} `json:"signingKeys"`
 		UpdatedAt string `json:"updatedAt"`
 	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetKmsIssuerResponse) GetJSON200() *struct {
-	Algorithm       GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema    *map[string]interface{}                         `json:"claimsSchema,omitempty"`
-	CreatedAt       string                                          `json:"createdAt"`
-	DiscoveryLayout GetKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-	Id              string                                          `json:"id"`
-	ManagedBy       *string                                         `json:"managedBy,omitempty"`
-	Name            string                                          `json:"name"`
-	Origin          GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId         string                                          `json:"ownerId"`
-	Policies        []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys     []struct {
-		ActivateAt *string `json:"activateAt,omitempty"`
-
-		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-		ActivatedAt *string `json:"activatedAt,omitempty"`
-		Algorithm   string  `json:"algorithm"`
-
-		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-		CertificatePem *string `json:"certificatePem,omitempty"`
-		CreatedAt      string  `json:"createdAt"`
-
-		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-		ImportKeyId *string `json:"importKeyId,omitempty"`
-		IssuerId    string  `json:"issuerId"`
-
-		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-		KeyId     string `json:"keyId"`
-		PublicKey *struct {
-			Alg    *string   `json:"alg,omitempty"`
-			KeyOps *[]string `json:"key_ops,omitempty"`
-			Kid    *string   `json:"kid,omitempty"`
-			Kty    *string   `json:"kty,omitempty"`
-			Use    *string   `json:"use,omitempty"`
-
-			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-			X5c *[]string `json:"x5c,omitempty"`
-
-			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-			X5tS256 *string `json:"x5t#S256,omitempty"`
-		} `json:"publicKey,omitempty"`
-		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-		PublicKeyPem *string                                          `json:"publicKeyPem,omitempty"`
-		RevokeAt     *string                                          `json:"revokeAt,omitempty"`
-		Status       GetKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
-		UpdatedAt    string                                           `json:"updatedAt"`
-	} `json:"signingKeys"`
-	UpdatedAt string `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetKmsIssuerResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetKmsIssuerResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetKmsIssuerResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetKmsIssuerResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateKmsIssuerResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-		CreatedAt       string                                             `json:"createdAt"`
-		DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-		Id              string                                             `json:"id"`
-		ManagedBy       *string                                            `json:"managedBy,omitempty"`
-		Name            string                                             `json:"name"`
-		Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId         string                                             `json:"ownerId"`
-		Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys     []struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                             `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                             `json:"revokeAt,omitempty"`
-			Status       UpdateKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
-			UpdatedAt    string                                              `json:"updatedAt"`
-		} `json:"signingKeys"`
-		UpdatedAt string `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateKmsIssuerResponse) GetJSON200() *struct {
-	Algorithm       UpdateKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-	CreatedAt       string                                             `json:"createdAt"`
-	DiscoveryLayout UpdateKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-	Id              string                                             `json:"id"`
-	ManagedBy       *string                                            `json:"managedBy,omitempty"`
-	Name            string                                             `json:"name"`
-	Origin          UpdateKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId         string                                             `json:"ownerId"`
-	Policies        []UpdateKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys     []struct {
-		ActivateAt *string `json:"activateAt,omitempty"`
-
-		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-		ActivatedAt *string `json:"activatedAt,omitempty"`
-		Algorithm   string  `json:"algorithm"`
-
-		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-		CertificatePem *string `json:"certificatePem,omitempty"`
-		CreatedAt      string  `json:"createdAt"`
-
-		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-		ImportKeyId *string `json:"importKeyId,omitempty"`
-		IssuerId    string  `json:"issuerId"`
-
-		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-		KeyId     string `json:"keyId"`
-		PublicKey *struct {
-			Alg    *string   `json:"alg,omitempty"`
-			KeyOps *[]string `json:"key_ops,omitempty"`
-			Kid    *string   `json:"kid,omitempty"`
-			Kty    *string   `json:"kty,omitempty"`
-			Use    *string   `json:"use,omitempty"`
-
-			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-			X5c *[]string `json:"x5c,omitempty"`
-
-			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-			X5tS256 *string `json:"x5t#S256,omitempty"`
-		} `json:"publicKey,omitempty"`
-		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-		PublicKeyPem *string                                             `json:"publicKeyPem,omitempty"`
-		RevokeAt     *string                                             `json:"revokeAt,omitempty"`
-		Status       UpdateKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
-		UpdatedAt    string                                              `json:"updatedAt"`
-	} `json:"signingKeys"`
-	UpdatedAt string `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateKmsIssuerResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateKmsIssuerResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateKmsIssuerResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateKmsIssuerResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateKmsSigningKeyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		ActivateAt *string `json:"activateAt,omitempty"`
-
-		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-		ActivatedAt *string `json:"activatedAt,omitempty"`
-		Algorithm   string  `json:"algorithm"`
-
-		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-		CertificatePem *string `json:"certificatePem,omitempty"`
-		CreatedAt      string  `json:"createdAt"`
-
-		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-		ImportKeyId *string `json:"importKeyId,omitempty"`
-		IssuerId    string  `json:"issuerId"`
-
-		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-		KeyId     string `json:"keyId"`
-		PublicKey *struct {
-			Alg    *string   `json:"alg,omitempty"`
-			KeyOps *[]string `json:"key_ops,omitempty"`
-			Kid    *string   `json:"kid,omitempty"`
-			Kty    *string   `json:"kty,omitempty"`
-			Use    *string   `json:"use,omitempty"`
-
-			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-			X5c *[]string `json:"x5c,omitempty"`
-
-			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-			X5tS256 *string `json:"x5t#S256,omitempty"`
-		} `json:"publicKey,omitempty"`
-		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-		PublicKeyPem *string                                      `json:"publicKeyPem,omitempty"`
-		RevokeAt     *string                                      `json:"revokeAt,omitempty"`
-		Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
-		UpdatedAt    string                                       `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateKmsSigningKeyResponse) GetJSON200() *struct {
-	ActivateAt *string `json:"activateAt,omitempty"`
-
-	// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-	ActivatedAt *string `json:"activatedAt,omitempty"`
-	Algorithm   string  `json:"algorithm"`
-
-	// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-	CertificatePem *string `json:"certificatePem,omitempty"`
-	CreatedAt      string  `json:"createdAt"`
-
-	// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-	ImportKeyId *string `json:"importKeyId,omitempty"`
-	IssuerId    string  `json:"issuerId"`
-
-	// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-	KeyId     string `json:"keyId"`
-	PublicKey *struct {
-		Alg    *string   `json:"alg,omitempty"`
-		KeyOps *[]string `json:"key_ops,omitempty"`
-		Kid    *string   `json:"kid,omitempty"`
-		Kty    *string   `json:"kty,omitempty"`
-		Use    *string   `json:"use,omitempty"`
-
-		// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-		X5c *[]string `json:"x5c,omitempty"`
-
-		// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-		X5tS256 *string `json:"x5t#S256,omitempty"`
-	} `json:"publicKey,omitempty"`
-	PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-	// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-	PublicKeyPem *string                                      `json:"publicKeyPem,omitempty"`
-	RevokeAt     *string                                      `json:"revokeAt,omitempty"`
-	Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
-	UpdatedAt    string                                       `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateKmsSigningKeyResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateKmsSigningKeyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateKmsSigningKeyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateKmsSigningKeyResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ActivateKmsSigningKeyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		ActivateAt *string `json:"activateAt,omitempty"`
-
-		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-		ActivatedAt *string `json:"activatedAt,omitempty"`
-		Algorithm   string  `json:"algorithm"`
-
-		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-		CertificatePem *string `json:"certificatePem,omitempty"`
-		CreatedAt      string  `json:"createdAt"`
-
-		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-		ImportKeyId *string `json:"importKeyId,omitempty"`
-		IssuerId    string  `json:"issuerId"`
-
-		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-		KeyId     string `json:"keyId"`
-		PublicKey *struct {
-			Alg    *string   `json:"alg,omitempty"`
-			KeyOps *[]string `json:"key_ops,omitempty"`
-			Kid    *string   `json:"kid,omitempty"`
-			Kty    *string   `json:"kty,omitempty"`
-			Use    *string   `json:"use,omitempty"`
-
-			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-			X5c *[]string `json:"x5c,omitempty"`
-
-			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-			X5tS256 *string `json:"x5t#S256,omitempty"`
-		} `json:"publicKey,omitempty"`
-		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-		PublicKeyPem *string                                        `json:"publicKeyPem,omitempty"`
-		RevokeAt     *string                                        `json:"revokeAt,omitempty"`
-		Status       ActivateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
-		UpdatedAt    string                                         `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ActivateKmsSigningKeyResponse) GetJSON200() *struct {
-	ActivateAt *string `json:"activateAt,omitempty"`
-
-	// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-	ActivatedAt *string `json:"activatedAt,omitempty"`
-	Algorithm   string  `json:"algorithm"`
-
-	// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-	CertificatePem *string `json:"certificatePem,omitempty"`
-	CreatedAt      string  `json:"createdAt"`
-
-	// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-	ImportKeyId *string `json:"importKeyId,omitempty"`
-	IssuerId    string  `json:"issuerId"`
-
-	// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-	KeyId     string `json:"keyId"`
-	PublicKey *struct {
-		Alg    *string   `json:"alg,omitempty"`
-		KeyOps *[]string `json:"key_ops,omitempty"`
-		Kid    *string   `json:"kid,omitempty"`
-		Kty    *string   `json:"kty,omitempty"`
-		Use    *string   `json:"use,omitempty"`
-
-		// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-		X5c *[]string `json:"x5c,omitempty"`
-
-		// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-		X5tS256 *string `json:"x5t#S256,omitempty"`
-	} `json:"publicKey,omitempty"`
-	PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-	// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-	PublicKeyPem *string                                        `json:"publicKeyPem,omitempty"`
-	RevokeAt     *string                                        `json:"revokeAt,omitempty"`
-	Status       ActivateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
-	UpdatedAt    string                                         `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ActivateKmsSigningKeyResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ActivateKmsSigningKeyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ActivateKmsSigningKeyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ActivateKmsSigningKeyResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type RevokeKmsSigningKeyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
-		CreatedAt       string                                                 `json:"createdAt"`
-		DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-		Id              string                                                 `json:"id"`
-		ManagedBy       *string                                                `json:"managedBy,omitempty"`
-		Name            string                                                 `json:"name"`
-		Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId         string                                                 `json:"ownerId"`
-		Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys     []struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                                 `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                                 `json:"revokeAt,omitempty"`
-			Status       RevokeKmsSigningKey200JSONResponseBodySigningKeysStatus `json:"status"`
-			UpdatedAt    string                                                  `json:"updatedAt"`
-		} `json:"signingKeys"`
-		UpdatedAt string `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r RevokeKmsSigningKeyResponse) GetJSON200() *struct {
-	Algorithm       RevokeKmsSigningKey200JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema    *map[string]interface{}                                `json:"claimsSchema,omitempty"`
-	CreatedAt       string                                                 `json:"createdAt"`
-	DiscoveryLayout RevokeKmsSigningKey200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-	Id              string                                                 `json:"id"`
-	ManagedBy       *string                                                `json:"managedBy,omitempty"`
-	Name            string                                                 `json:"name"`
-	Origin          RevokeKmsSigningKey200JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId         string                                                 `json:"ownerId"`
-	Policies        []RevokeKmsSigningKey200JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys     []struct {
-		ActivateAt *string `json:"activateAt,omitempty"`
-
-		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-		ActivatedAt *string `json:"activatedAt,omitempty"`
-		Algorithm   string  `json:"algorithm"`
-
-		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-		CertificatePem *string `json:"certificatePem,omitempty"`
-		CreatedAt      string  `json:"createdAt"`
-
-		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-		ImportKeyId *string `json:"importKeyId,omitempty"`
-		IssuerId    string  `json:"issuerId"`
-
-		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-		KeyId     string `json:"keyId"`
-		PublicKey *struct {
-			Alg    *string   `json:"alg,omitempty"`
-			KeyOps *[]string `json:"key_ops,omitempty"`
-			Kid    *string   `json:"kid,omitempty"`
-			Kty    *string   `json:"kty,omitempty"`
-			Use    *string   `json:"use,omitempty"`
-
-			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-			X5c *[]string `json:"x5c,omitempty"`
-
-			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-			X5tS256 *string `json:"x5t#S256,omitempty"`
-		} `json:"publicKey,omitempty"`
-		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-		PublicKeyPem *string                                                 `json:"publicKeyPem,omitempty"`
-		RevokeAt     *string                                                 `json:"revokeAt,omitempty"`
-		Status       RevokeKmsSigningKey200JSONResponseBodySigningKeysStatus `json:"status"`
-		UpdatedAt    string                                                  `json:"updatedAt"`
-	} `json:"signingKeys"`
-	UpdatedAt string `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r RevokeKmsSigningKeyResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r RevokeKmsSigningKeyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r RevokeKmsSigningKeyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r RevokeKmsSigningKeyResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateKmsIssuerPolicyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *CreateKmsIssuerPolicy201JSONResponseBody
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateKmsIssuerPolicyResponse) GetJSON201() *CreateKmsIssuerPolicy201JSONResponseBody {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateKmsIssuerPolicyResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateKmsIssuerPolicyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateKmsIssuerPolicyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateKmsIssuerPolicyResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteKmsIssuerPolicyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteKmsIssuerPolicyResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteKmsIssuerPolicyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteKmsIssuerPolicyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteKmsIssuerPolicyResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateKmsIssuerPolicyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *UpdateKmsIssuerPolicy200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateKmsIssuerPolicyResponse) GetJSON200() *UpdateKmsIssuerPolicy200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateKmsIssuerPolicyResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateKmsIssuerPolicyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateKmsIssuerPolicyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateKmsIssuerPolicyResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type SignKmsMessageResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Algorithm Algorithm of the signing key.
-		Algorithm string `json:"algorithm"`
-
-		// Fingerprint SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
-		Fingerprint string `json:"fingerprint"`
-
-		// KeyId Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
-		KeyId string `json:"keyId"`
-
-		// Signature Standard-base64 encoding of the raw signature over the decoded message bytes.
-		Signature string `json:"signature"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r SignKmsMessageResponse) GetJSON200() *struct {
-	// Algorithm Algorithm of the signing key.
-	Algorithm string `json:"algorithm"`
-
-	// Fingerprint SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
-	Fingerprint string `json:"fingerprint"`
-
-	// KeyId Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
-	KeyId string `json:"keyId"`
-
-	// Signature Standard-base64 encoding of the raw signature over the decoded message bytes.
-	Signature string `json:"signature"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r SignKmsMessageResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r SignKmsMessageResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
 }

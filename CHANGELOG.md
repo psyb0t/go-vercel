@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.17.0, 2026-11-02
+
+- Added the flags project connection endpoints: `CreateFlagsProjectConnection` and `CreateFlagsProjectConnectionWithBody`, `DeleteFlagsProjectConnection` and `GetFlagsProjectConnections` on `Client` and `ClientInterface`, and `CreateFlagsProjectConnectionWithResponse`, `CreateFlagsProjectConnectionWithBodyWithResponse`, `DeleteFlagsProjectConnectionWithResponse` and `GetFlagsProjectConnectionsWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Custom implementations of the two interfaces must add the new methods.
+- Added the matching request builders `NewCreateFlagsProjectConnectionRequest`, `NewCreateFlagsProjectConnectionRequestWithBody`, `NewDeleteFlagsProjectConnectionRequest` and `NewGetFlagsProjectConnectionsRequest`, and the parsers `ParseCreateFlagsProjectConnectionResponse`, `ParseDeleteFlagsProjectConnectionResponse` and `ParseGetFlagsProjectConnectionsResponse`.
+- Added the types `CreateFlagsProjectConnectionJSONBody`, `CreateFlagsProjectConnectionJSONRequestBody`, `CreateFlagsProjectConnectionParams`, `CreateFlagsProjectConnectionResponse`, `DeleteFlagsProjectConnectionParams`, `DeleteFlagsProjectConnectionResponse`, `GetFlagsProjectConnectionsParams`, `GetFlagsProjectConnectionsResponse` and `GetFlagsProjectConnections200JSONResponseBody` with its `0` and `1` variants. `GetFlagsProjectConnectionsParamsRole` has the constants `GetFlagsProjectConnectionsParamsRoleConsumer` and `GetFlagsProjectConnectionsParamsRoleSource`.
+- Changed the anonymous project struct in `JSON200` and `GetJSON200` of `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UpdateMicrofrontendsResponse`, `DeleteProjectAvatarResponse`, `UploadProjectAvatarResponse` and `GetMicrofrontendsInGroupResponse`, and `GetProjects200JSONResponseBody2.Projects`. Code that names these struct types must change.
+- Added a `HealthCheck` job to the anonymous struct of `Team.DefaultProjectJobs`, so code that names that struct type must change.
+- The rest of the diff reorders generated code across the `client_*.gen.go` files and adds `client_029.gen.go`.
+- Generated from spec version 0.0.1.
+
 ## v0.16.0, 2026-11-01
 
 - Removed `UserEventPayload406.ProjectId` and `UserEventPayload406.ProjectName`.
