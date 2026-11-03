@@ -12,6 +12,4691 @@ import (
 	"time"
 )
 
+// UpdateResourceSecretsWithResponse Deprecated: true. Update Resource Secrets (Deprecated)
+//
+// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *ClientWithResponses) UpdateResourceSecretsWithResponse(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, body UpdateResourceSecretsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsResponse, error) {
+	rsp, err := c.UpdateResourceSecrets(ctx, integrationConfigurationId, integrationProductIdOrSlug, resourceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateResourceSecretsResponse(rsp)
+}
+
+// GetIntegrationResourcesWithResponse Get Integration Resources
+//
+// Get all resources for a given installation ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources (the `GetIntegrationResources` operationId).
+func (c *ClientWithResponses) GetIntegrationResourcesWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*GetIntegrationResourcesResponse, error) {
+	rsp, err := c.GetIntegrationResources(ctx, integrationConfigurationId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetIntegrationResourcesResponse(rsp)
+}
+
+// DeleteIntegrationResourceWithResponse Delete Integration Resource
+//
+// Delete a resource owned by the selected installation ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `DeleteIntegrationResource` operationId).
+func (c *ClientWithResponses) DeleteIntegrationResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*DeleteIntegrationResourceResponse, error) {
+	rsp, err := c.DeleteIntegrationResource(ctx, integrationConfigurationId, resourceId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteIntegrationResourceResponse(rsp)
+}
+
+// GetIntegrationResourceWithResponse Get Integration Resource
+//
+// Get a resource by its partner ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `GetIntegrationResource` operationId).
+func (c *ClientWithResponses) GetIntegrationResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*GetIntegrationResourceResponse, error) {
+	rsp, err := c.GetIntegrationResource(ctx, integrationConfigurationId, resourceId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetIntegrationResourceResponse(rsp)
+}
+
+// UpdateResourceWithBodyWithResponse Update Resource
+//
+// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
+func (c *ClientWithResponses) UpdateResourceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceResponse, error) {
+	rsp, err := c.UpdateResourceWithBody(ctx, integrationConfigurationId, resourceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateResourceResponse(rsp)
+}
+
+// UpdateResourceWithResponse Update Resource
+//
+// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
+func (c *ClientWithResponses) UpdateResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateResourceResponse, error) {
+	rsp, err := c.UpdateResource(ctx, integrationConfigurationId, resourceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateResourceResponse(rsp)
+}
+
+// ImportResourceWithBodyWithResponse Import Resource
+//
+// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
+func (c *ClientWithResponses) ImportResourceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ImportResourceResponse, error) {
+	rsp, err := c.ImportResourceWithBody(ctx, integrationConfigurationId, resourceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseImportResourceResponse(rsp)
+}
+
+// ImportResourceWithResponse Import Resource
+//
+// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
+func (c *ClientWithResponses) ImportResourceWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body ImportResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*ImportResourceResponse, error) {
+	rsp, err := c.ImportResource(ctx, integrationConfigurationId, resourceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseImportResourceResponse(rsp)
+}
+
+// GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse Get the data of a user-provided Global Config
+//
+// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
+func (c *ClientWithResponses) GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error) {
+	rsp, err := c.GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx, integrationConfigurationId, resourceId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse(rsp)
+}
+
+// HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse Get the data of a user-provided Global Config
+//
+// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
+func (c *ClientWithResponses) HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error) {
+	rsp, err := c.HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx, integrationConfigurationId, resourceId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseHeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse(rsp)
+}
+
+// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBodyWithResponse Push data into a user-provided Global Config
+//
+// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
+func (c *ClientWithResponses) ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error) {
+	rsp, err := c.ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBody(ctx, integrationConfigurationId, resourceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse(rsp)
+}
+
+// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse Push data into a user-provided Global Config
+//
+// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
+func (c *ClientWithResponses) ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse, error) {
+	rsp, err := c.ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx, integrationConfigurationId, resourceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse(rsp)
+}
+
+// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBodyWithResponse Create one or multiple experimentation items
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
+func (c *ClientWithResponses) CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse, error) {
+	rsp, err := c.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBody(ctx, integrationConfigurationId, resourceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse(rsp)
+}
+
+// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithResponse Create one or multiple experimentation items
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
+func (c *ClientWithResponses) CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse, error) {
+	rsp, err := c.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(ctx, integrationConfigurationId, resourceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse(rsp)
+}
+
+// DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse Delete an existing experimentation item
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
+func (c *ClientWithResponses) DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, reqEditors ...RequestEditorFn) (*DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse, error) {
+	rsp, err := c.DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(ctx, integrationConfigurationId, resourceId, itemId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse(rsp)
+}
+
+// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBodyWithResponse Patch an existing experimentation item
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
+func (c *ClientWithResponses) UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse, error) {
+	rsp, err := c.UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBody(ctx, integrationConfigurationId, resourceId, itemId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse(rsp)
+}
+
+// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse Patch an existing experimentation item
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
+func (c *ClientWithResponses) UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, body UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse, error) {
+	rsp, err := c.UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(ctx, integrationConfigurationId, resourceId, itemId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse(rsp)
+}
+
+// UpdateResourceSecretsByIdWithBodyWithResponse Update Resource Secrets
+//
+// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
+func (c *ClientWithResponses) UpdateResourceSecretsByIdWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsByIdResponse, error) {
+	rsp, err := c.UpdateResourceSecretsByIdWithBody(ctx, integrationConfigurationId, resourceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateResourceSecretsByIdResponse(rsp)
+}
+
+// UpdateResourceSecretsByIdWithResponse Update Resource Secrets
+//
+// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
+func (c *ClientWithResponses) UpdateResourceSecretsByIdWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceSecretsByIdJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsByIdResponse, error) {
+	rsp, err := c.UpdateResourceSecretsById(ctx, integrationConfigurationId, resourceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateResourceSecretsByIdResponse(rsp)
+}
+
+// DeleteConfigurationWithResponse Delete an integration configuration
+//
+// Allows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/integrations/configuration/{id} (the `DeleteConfiguration` operationId).
+func (c *ClientWithResponses) DeleteConfigurationWithResponse(ctx context.Context, id string, params *DeleteConfigurationParams, reqEditors ...RequestEditorFn) (*DeleteConfigurationResponse, error) {
+	rsp, err := c.DeleteConfiguration(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteConfigurationResponse(rsp)
+}
+
+// GetConfigurationWithResponse Retrieve an integration configuration
+//
+// Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/configuration/{id} (the `GetConfiguration` operationId).
+func (c *ClientWithResponses) GetConfigurationWithResponse(ctx context.Context, id string, params *GetConfigurationParams, reqEditors ...RequestEditorFn) (*GetConfigurationResponse, error) {
+	rsp, err := c.GetConfiguration(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetConfigurationResponse(rsp)
+}
+
+// GetConfigurationProductsWithResponse List products for integration configuration
+//
+// Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/configuration/{id}/products (the `GetConfigurationProducts` operationId).
+func (c *ClientWithResponses) GetConfigurationProductsWithResponse(ctx context.Context, id string, params *GetConfigurationProductsParams, reqEditors ...RequestEditorFn) (*GetConfigurationProductsResponse, error) {
+	rsp, err := c.GetConfigurationProducts(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetConfigurationProductsResponse(rsp)
+}
+
+// GetConfigurationsWithResponse Get configurations for the authenticated user or team
+//
+// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/configurations (the `GetConfigurations` operationId).
+func (c *ClientWithResponses) GetConfigurationsWithResponse(ctx context.Context, params *GetConfigurationsParams, reqEditors ...RequestEditorFn) (*GetConfigurationsResponse, error) {
+	rsp, err := c.GetConfigurations(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetConfigurationsResponse(rsp)
+}
+
+// GitNamespacesWithResponse List git namespaces by provider
+//
+// Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/git-namespaces (the `GitNamespaces` operationId).
+func (c *ClientWithResponses) GitNamespacesWithResponse(ctx context.Context, params *GitNamespacesParams, reqEditors ...RequestEditorFn) (*GitNamespacesResponse, error) {
+	rsp, err := c.GitNamespaces(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGitNamespacesResponse(rsp)
+}
+
+// ConnectIntegrationResourceToProjectWithBodyWithResponse Connect integration resource to project
+//
+// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
+func (c *ClientWithResponses) ConnectIntegrationResourceToProjectWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ConnectIntegrationResourceToProjectResponse, error) {
+	rsp, err := c.ConnectIntegrationResourceToProjectWithBody(ctx, integrationConfigurationId, resourceId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseConnectIntegrationResourceToProjectResponse(rsp)
+}
+
+// ConnectIntegrationResourceToProjectWithResponse Connect integration resource to project
+//
+// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
+func (c *ClientWithResponses) ConnectIntegrationResourceToProjectWithResponse(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, body ConnectIntegrationResourceToProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*ConnectIntegrationResourceToProjectResponse, error) {
+	rsp, err := c.ConnectIntegrationResourceToProject(ctx, integrationConfigurationId, resourceId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseConnectIntegrationResourceToProjectResponse(rsp)
+}
+
+// GetBillingPlansWithResponse List integration billing plans
+//
+// Get a list of billing plans for an integration and product.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans (the `GetBillingPlans` operationId).
+func (c *ClientWithResponses) GetBillingPlansWithResponse(ctx context.Context, integrationIdOrSlug string, productIdOrSlug string, params *GetBillingPlansParams, reqEditors ...RequestEditorFn) (*GetBillingPlansResponse, error) {
+	rsp, err := c.GetBillingPlans(ctx, integrationIdOrSlug, productIdOrSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBillingPlansResponse(rsp)
+}
+
+// DeleteIntegrationLogDrainWithResponse Deletes the Integration log drain with the provided `id` (deprecated)
+//
+// Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/integrations/log-drains/{id} (the `DeleteIntegrationLogDrain` operationId).
+func (c *ClientWithResponses) DeleteIntegrationLogDrainWithResponse(ctx context.Context, id string, params *DeleteIntegrationLogDrainParams, reqEditors ...RequestEditorFn) (*DeleteIntegrationLogDrainResponse, error) {
+	rsp, err := c.DeleteIntegrationLogDrain(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteIntegrationLogDrainResponse(rsp)
+}
+
+// SearchRepoWithResponse List git repositories linked to namespace by provider
+//
+// Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/search-repo (the `SearchRepo` operationId).
+func (c *ClientWithResponses) SearchRepoWithResponse(ctx context.Context, params *SearchRepoParams, reqEditors ...RequestEditorFn) (*SearchRepoResponse, error) {
+	rsp, err := c.SearchRepo(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSearchRepoResponse(rsp)
+}
+
+// ExchangeSsoTokenWithBodyWithResponse SSO Token Exchange
+//
+// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
+func (c *ClientWithResponses) ExchangeSsoTokenWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExchangeSsoTokenResponse, error) {
+	rsp, err := c.ExchangeSsoTokenWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseExchangeSsoTokenResponse(rsp)
+}
+
+// ExchangeSsoTokenWithResponse SSO Token Exchange
+//
+// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
+func (c *ClientWithResponses) ExchangeSsoTokenWithResponse(ctx context.Context, body ExchangeSsoTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*ExchangeSsoTokenResponse, error) {
+	rsp, err := c.ExchangeSsoToken(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseExchangeSsoTokenResponse(rsp)
+}
+
+// ListKmsIssuersWithResponse List issuers
+//
+// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/kms/issuers (the `ListKmsIssuers` operationId).
+func (c *ClientWithResponses) ListKmsIssuersWithResponse(ctx context.Context, params *ListKmsIssuersParams, reqEditors ...RequestEditorFn) (*ListKmsIssuersResponse, error) {
+	rsp, err := c.ListKmsIssuers(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListKmsIssuersResponse(rsp)
+}
+
+// CreateKmsIssuerWithBodyWithResponse Create an issuer
+//
+// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
+func (c *ClientWithResponses) CreateKmsIssuerWithBodyWithResponse(ctx context.Context, params *CreateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKmsIssuerResponse, error) {
+	rsp, err := c.CreateKmsIssuerWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateKmsIssuerResponse(rsp)
+}
+
+// CreateKmsIssuerWithResponse Create an issuer
+//
+// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
+func (c *ClientWithResponses) CreateKmsIssuerWithResponse(ctx context.Context, params *CreateKmsIssuerParams, body CreateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKmsIssuerResponse, error) {
+	rsp, err := c.CreateKmsIssuer(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateKmsIssuerResponse(rsp)
+}
+
+// DeleteKmsIssuerWithResponse Delete an issuer
+//
+// Delete a KMS issuer and its signing keys.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/kms/issuers/{issuerId} (the `DeleteKmsIssuer` operationId).
+func (c *ClientWithResponses) DeleteKmsIssuerWithResponse(ctx context.Context, issuerId string, params *DeleteKmsIssuerParams, reqEditors ...RequestEditorFn) (*DeleteKmsIssuerResponse, error) {
+	rsp, err := c.DeleteKmsIssuer(ctx, issuerId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteKmsIssuerResponse(rsp)
+}
+
+// GetKmsIssuerWithResponse Get an issuer
+//
+// Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/kms/issuers/{issuerId} (the `GetKmsIssuer` operationId).
+func (c *ClientWithResponses) GetKmsIssuerWithResponse(ctx context.Context, issuerId string, params *GetKmsIssuerParams, reqEditors ...RequestEditorFn) (*GetKmsIssuerResponse, error) {
+	rsp, err := c.GetKmsIssuer(ctx, issuerId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetKmsIssuerResponse(rsp)
+}
+
+// UpdateKmsIssuerWithBodyWithResponse Update an issuer
+//
+// Update a KMS issuer's name or claims schema.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
+func (c *ClientWithResponses) UpdateKmsIssuerWithBodyWithResponse(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerResponse, error) {
+	rsp, err := c.UpdateKmsIssuerWithBody(ctx, issuerId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateKmsIssuerResponse(rsp)
+}
+
+// UpdateKmsIssuerWithResponse Update an issuer
+//
+// Update a KMS issuer's name or claims schema.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
+func (c *ClientWithResponses) UpdateKmsIssuerWithResponse(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, body UpdateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerResponse, error) {
+	rsp, err := c.UpdateKmsIssuer(ctx, issuerId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateKmsIssuerResponse(rsp)
+}
+
+// CreateKmsSigningKeyWithBodyWithResponse Create a signing key
+//
+// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
+func (c *ClientWithResponses) CreateKmsSigningKeyWithBodyWithResponse(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKmsSigningKeyResponse, error) {
+	rsp, err := c.CreateKmsSigningKeyWithBody(ctx, issuerId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateKmsSigningKeyResponse(rsp)
+}
+
+// CreateKmsSigningKeyWithResponse Create a signing key
+//
+// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
+func (c *ClientWithResponses) CreateKmsSigningKeyWithResponse(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, body CreateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKmsSigningKeyResponse, error) {
+	rsp, err := c.CreateKmsSigningKey(ctx, issuerId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateKmsSigningKeyResponse(rsp)
+}
+
+// ActivateKmsSigningKeyWithBodyWithResponse Activate a signing key
+//
+// Activate a pending signing key so the issuer starts signing with it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
+func (c *ClientWithResponses) ActivateKmsSigningKeyWithBodyWithResponse(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ActivateKmsSigningKeyResponse, error) {
+	rsp, err := c.ActivateKmsSigningKeyWithBody(ctx, issuerId, keyId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseActivateKmsSigningKeyResponse(rsp)
+}
+
+// ActivateKmsSigningKeyWithResponse Activate a signing key
+//
+// Activate a pending signing key so the issuer starts signing with it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
+func (c *ClientWithResponses) ActivateKmsSigningKeyWithResponse(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, body ActivateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*ActivateKmsSigningKeyResponse, error) {
+	rsp, err := c.ActivateKmsSigningKey(ctx, issuerId, keyId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseActivateKmsSigningKeyResponse(rsp)
+}
+
+// RevokeKmsSigningKeyWithResponse Revoke a signing key
+//
+// Immediately revoke a signing key that is already scheduled for revocation.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke (the `RevokeKmsSigningKey` operationId).
+func (c *ClientWithResponses) RevokeKmsSigningKeyWithResponse(ctx context.Context, issuerId string, keyId string, params *RevokeKmsSigningKeyParams, reqEditors ...RequestEditorFn) (*RevokeKmsSigningKeyResponse, error) {
+	rsp, err := c.RevokeKmsSigningKey(ctx, issuerId, keyId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRevokeKmsSigningKeyResponse(rsp)
+}
+
+// CreateKmsIssuerPolicyWithBodyWithResponse Create an issuer policy
+//
+// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
+func (c *ClientWithResponses) CreateKmsIssuerPolicyWithBodyWithResponse(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKmsIssuerPolicyResponse, error) {
+	rsp, err := c.CreateKmsIssuerPolicyWithBody(ctx, issuerId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateKmsIssuerPolicyResponse(rsp)
+}
+
+// CreateKmsIssuerPolicyWithResponse Create an issuer policy
+//
+// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
+func (c *ClientWithResponses) CreateKmsIssuerPolicyWithResponse(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, body CreateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKmsIssuerPolicyResponse, error) {
+	rsp, err := c.CreateKmsIssuerPolicy(ctx, issuerId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateKmsIssuerPolicyResponse(rsp)
+}
+
+// DeleteKmsIssuerPolicyWithResponse Delete an issuer policy
+//
+// Remove a policy from a KMS issuer.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `DeleteKmsIssuerPolicy` operationId).
+func (c *ClientWithResponses) DeleteKmsIssuerPolicyWithResponse(ctx context.Context, issuerId string, kind DeleteKmsIssuerPolicyParamsKind, policyKey string, params *DeleteKmsIssuerPolicyParams, reqEditors ...RequestEditorFn) (*DeleteKmsIssuerPolicyResponse, error) {
+	rsp, err := c.DeleteKmsIssuerPolicy(ctx, issuerId, kind, policyKey, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteKmsIssuerPolicyResponse(rsp)
+}
+
+// UpdateKmsIssuerPolicyWithBodyWithResponse Update an issuer policy
+//
+// Update an existing KMS issuer policy's environments or token claims.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
+func (c *ClientWithResponses) UpdateKmsIssuerPolicyWithBodyWithResponse(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerPolicyResponse, error) {
+	rsp, err := c.UpdateKmsIssuerPolicyWithBody(ctx, issuerId, kind, policyKey, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateKmsIssuerPolicyResponse(rsp)
+}
+
+// UpdateKmsIssuerPolicyWithResponse Update an issuer policy
+//
+// Update an existing KMS issuer policy's environments or token claims.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
+func (c *ClientWithResponses) UpdateKmsIssuerPolicyWithResponse(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, body UpdateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateKmsIssuerPolicyResponse, error) {
+	rsp, err := c.UpdateKmsIssuerPolicy(ctx, issuerId, kind, policyKey, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateKmsIssuerPolicyResponse(rsp)
+}
+
+// SignKmsMessageWithBodyWithResponse Sign a message
+//
+// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
+func (c *ClientWithResponses) SignKmsMessageWithBodyWithResponse(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SignKmsMessageResponse, error) {
+	rsp, err := c.SignKmsMessageWithBody(ctx, issuerId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSignKmsMessageResponse(rsp)
+}
+
+// SignKmsMessageWithResponse Sign a message
+//
+// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
+func (c *ClientWithResponses) SignKmsMessageWithResponse(ctx context.Context, issuerId string, body SignKmsMessageJSONRequestBody, reqEditors ...RequestEditorFn) (*SignKmsMessageResponse, error) {
+	rsp, err := c.SignKmsMessage(ctx, issuerId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSignKmsMessageResponse(rsp)
+}
+
+// SignKmsTokenWithBodyWithResponse Sign a token
+//
+// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
+func (c *ClientWithResponses) SignKmsTokenWithBodyWithResponse(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SignKmsTokenResponse, error) {
+	rsp, err := c.SignKmsTokenWithBody(ctx, issuerId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSignKmsTokenResponse(rsp)
+}
+
+// SignKmsTokenWithResponse Sign a token
+//
+// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
+func (c *ClientWithResponses) SignKmsTokenWithResponse(ctx context.Context, issuerId string, body SignKmsTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*SignKmsTokenResponse, error) {
+	rsp, err := c.SignKmsToken(ctx, issuerId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSignKmsTokenResponse(rsp)
+}
+
+// GetAllLogDrainsWithResponse Retrieves a list of all the Log Drains (deprecated)
+//
+// Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/log-drains (the `GetAllLogDrains` operationId).
+func (c *ClientWithResponses) GetAllLogDrainsWithResponse(ctx context.Context, params *GetAllLogDrainsParams, reqEditors ...RequestEditorFn) (*GetAllLogDrainsResponse, error) {
+	rsp, err := c.GetAllLogDrains(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAllLogDrainsResponse(rsp)
+}
+
+// CreateConfigurableLogDrainWithBodyWithResponse Creates a Configurable Log Drain (deprecated)
+//
+// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
+func (c *ClientWithResponses) CreateConfigurableLogDrainWithBodyWithResponse(ctx context.Context, params *CreateConfigurableLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateConfigurableLogDrainResponse, error) {
+	rsp, err := c.CreateConfigurableLogDrainWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateConfigurableLogDrainResponse(rsp)
+}
+
+// CreateConfigurableLogDrainWithResponse Creates a Configurable Log Drain (deprecated)
+//
+// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
+func (c *ClientWithResponses) CreateConfigurableLogDrainWithResponse(ctx context.Context, params *CreateConfigurableLogDrainParams, body CreateConfigurableLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateConfigurableLogDrainResponse, error) {
+	rsp, err := c.CreateConfigurableLogDrain(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateConfigurableLogDrainResponse(rsp)
+}
+
+// DeleteConfigurableLogDrainWithResponse Deletes a Configurable Log Drain (deprecated)
+//
+// Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/log-drains/{id} (the `DeleteConfigurableLogDrain` operationId).
+func (c *ClientWithResponses) DeleteConfigurableLogDrainWithResponse(ctx context.Context, id string, params *DeleteConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*DeleteConfigurableLogDrainResponse, error) {
+	rsp, err := c.DeleteConfigurableLogDrain(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteConfigurableLogDrainResponse(rsp)
+}
+
+// GetConfigurableLogDrainWithResponse Retrieves a Configurable Log Drain (deprecated)
+//
+// Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/log-drains/{id} (the `GetConfigurableLogDrain` operationId).
+func (c *ClientWithResponses) GetConfigurableLogDrainWithResponse(ctx context.Context, id string, params *GetConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*GetConfigurableLogDrainResponse, error) {
+	rsp, err := c.GetConfigurableLogDrain(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetConfigurableLogDrainResponse(rsp)
+}
+
+// CreateMicrofrontendsGroupWithApplicationsWithBodyWithResponse Create a microfrontends group with applications
+//
+// Creates a microfrontends group and attaches multiple projects in a single request.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
+func (c *ClientWithResponses) CreateMicrofrontendsGroupWithApplicationsWithBodyWithResponse(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateMicrofrontendsGroupWithApplicationsResponse, error) {
+	rsp, err := c.CreateMicrofrontendsGroupWithApplicationsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateMicrofrontendsGroupWithApplicationsResponse(rsp)
+}
+
+// CreateMicrofrontendsGroupWithApplicationsWithResponse Create a microfrontends group with applications
+//
+// Creates a microfrontends group and attaches multiple projects in a single request.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
+func (c *ClientWithResponses) CreateMicrofrontendsGroupWithApplicationsWithResponse(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, body CreateMicrofrontendsGroupWithApplicationsJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateMicrofrontendsGroupWithApplicationsResponse, error) {
+	rsp, err := c.CreateMicrofrontendsGroupWithApplications(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateMicrofrontendsGroupWithApplicationsResponse(rsp)
+}
+
+// GetMicrofrontendsGroupsWithResponse List microfrontends groups
+//
+// Get the microfrontends group IDs for a team.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/microfrontends/groups (the `GetMicrofrontendsGroups` operationId).
+func (c *ClientWithResponses) GetMicrofrontendsGroupsWithResponse(ctx context.Context, params *GetMicrofrontendsGroupsParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsGroupsResponse, error) {
+	rsp, err := c.GetMicrofrontendsGroups(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMicrofrontendsGroupsResponse(rsp)
+}
+
+// GetMicrofrontendsInGroupWithResponse List projects in a microfrontends group
+//
+// Get the microfrontends for a given group ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/microfrontends/groups/{groupId}/projects (the `GetMicrofrontendsInGroup` operationId).
+func (c *ClientWithResponses) GetMicrofrontendsInGroupWithResponse(ctx context.Context, groupId string, params *GetMicrofrontendsInGroupParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsInGroupResponse, error) {
+	rsp, err := c.GetMicrofrontendsInGroup(ctx, groupId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMicrofrontendsInGroupResponse(rsp)
+}
+
+// GetMicrofrontendsConfigForProjectWithResponse Get microfrontends config for a project
+//
+// Get the microfrontends config for a project by ID or name.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config (the `GetMicrofrontendsConfigForProject` operationId).
+func (c *ClientWithResponses) GetMicrofrontendsConfigForProjectWithResponse(ctx context.Context, projectIdOrName string, params *GetMicrofrontendsConfigForProjectParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsConfigForProjectResponse, error) {
+	rsp, err := c.GetMicrofrontendsConfigForProject(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMicrofrontendsConfigForProjectResponse(rsp)
+}
+
+// GetMicrofrontendsConfigWithResponse Get microfrontends config for a deployment
+//
+// Get the microfrontends config for a deployment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/microfrontends/{deploymentId}/config (the `GetMicrofrontendsConfig` operationId).
+func (c *ClientWithResponses) GetMicrofrontendsConfigWithResponse(ctx context.Context, deploymentId string, params *GetMicrofrontendsConfigParams, reqEditors ...RequestEditorFn) (*GetMicrofrontendsConfigResponse, error) {
+	rsp, err := c.GetMicrofrontendsConfig(ctx, deploymentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMicrofrontendsConfigResponse(rsp)
+}
+
+// ListPrivateLinkEndpointsWithResponse List PrivateLink endpoints
+//
+// Lists all PrivateLink endpoints for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/networking/privatelink/endpoints (the `ListPrivateLinkEndpoints` operationId).
+func (c *ClientWithResponses) ListPrivateLinkEndpointsWithResponse(ctx context.Context, params *ListPrivateLinkEndpointsParams, reqEditors ...RequestEditorFn) (*ListPrivateLinkEndpointsResponse, error) {
+	rsp, err := c.ListPrivateLinkEndpoints(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListPrivateLinkEndpointsResponse(rsp)
+}
+
+// CreatePrivateLinkEndpointWithBodyWithResponse Create a PrivateLink endpoint
+//
+// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
+func (c *ClientWithResponses) CreatePrivateLinkEndpointWithBodyWithResponse(ctx context.Context, params *CreatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePrivateLinkEndpointResponse, error) {
+	rsp, err := c.CreatePrivateLinkEndpointWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreatePrivateLinkEndpointResponse(rsp)
+}
+
+// CreatePrivateLinkEndpointWithResponse Create a PrivateLink endpoint
+//
+// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
+func (c *ClientWithResponses) CreatePrivateLinkEndpointWithResponse(ctx context.Context, params *CreatePrivateLinkEndpointParams, body CreatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*CreatePrivateLinkEndpointResponse, error) {
+	rsp, err := c.CreatePrivateLinkEndpoint(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreatePrivateLinkEndpointResponse(rsp)
+}
+
+// DeletePrivateLinkEndpointWithResponse Delete a PrivateLink endpoint
+//
+// Deletes a PrivateLink endpoint. The endpoint is removed asynchronously. Repeating the request for an endpoint that is already being deleted retries its cleanup and also returns `204`. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/networking/privatelink/endpoints/{endpointId} (the `DeletePrivateLinkEndpoint` operationId).
+func (c *ClientWithResponses) DeletePrivateLinkEndpointWithResponse(ctx context.Context, endpointId string, params *DeletePrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*DeletePrivateLinkEndpointResponse, error) {
+	rsp, err := c.DeletePrivateLinkEndpoint(ctx, endpointId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeletePrivateLinkEndpointResponse(rsp)
+}
+
+// ReadPrivateLinkEndpointWithResponse Read a PrivateLink endpoint
+//
+// Reads a single PrivateLink endpoint.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/networking/privatelink/endpoints/{endpointId} (the `ReadPrivateLinkEndpoint` operationId).
+func (c *ClientWithResponses) ReadPrivateLinkEndpointWithResponse(ctx context.Context, endpointId string, params *ReadPrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*ReadPrivateLinkEndpointResponse, error) {
+	rsp, err := c.ReadPrivateLinkEndpoint(ctx, endpointId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseReadPrivateLinkEndpointResponse(rsp)
+}
+
+// UpdatePrivateLinkEndpointWithBodyWithResponse Update a PrivateLink endpoint
+//
+// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
+func (c *ClientWithResponses) UpdatePrivateLinkEndpointWithBodyWithResponse(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePrivateLinkEndpointResponse, error) {
+	rsp, err := c.UpdatePrivateLinkEndpointWithBody(ctx, endpointId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdatePrivateLinkEndpointResponse(rsp)
+}
+
+// UpdatePrivateLinkEndpointWithResponse Update a PrivateLink endpoint
+//
+// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
+func (c *ClientWithResponses) UpdatePrivateLinkEndpointWithResponse(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, body UpdatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdatePrivateLinkEndpointResponse, error) {
+	rsp, err := c.UpdatePrivateLinkEndpoint(ctx, endpointId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdatePrivateLinkEndpointResponse(rsp)
+}
+
+// GetObservabilityConfigurationProjectsWithResponse Lists disabled Observability Plus projects
+//
+// Lists the projects that are currently configured as disabled for Observability Plus on a team.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/observability/manage/configuration/projects (the `GetObservabilityConfigurationProjects` operationId).
+func (c *ClientWithResponses) GetObservabilityConfigurationProjectsWithResponse(ctx context.Context, params *GetObservabilityConfigurationProjectsParams, reqEditors ...RequestEditorFn) (*GetObservabilityConfigurationProjectsResponse, error) {
+	rsp, err := c.GetObservabilityConfigurationProjects(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetObservabilityConfigurationProjectsResponse(rsp)
+}
+
+// UpdateObservabilityConfigurationProjectWithBodyWithResponse Updates a disabled Observability Plus project setting
+//
+// Updates whether Observability Plus is disabled for a single project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
+func (c *ClientWithResponses) UpdateObservabilityConfigurationProjectWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateObservabilityConfigurationProjectResponse, error) {
+	rsp, err := c.UpdateObservabilityConfigurationProjectWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateObservabilityConfigurationProjectResponse(rsp)
+}
+
+// UpdateObservabilityConfigurationProjectWithResponse Updates a disabled Observability Plus project setting
+//
+// Updates whether Observability Plus is disabled for a single project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
+func (c *ClientWithResponses) UpdateObservabilityConfigurationProjectWithResponse(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, body UpdateObservabilityConfigurationProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateObservabilityConfigurationProjectResponse, error) {
+	rsp, err := c.UpdateObservabilityConfigurationProject(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateObservabilityConfigurationProjectResponse(rsp)
+}
+
+// ListOrganizationsWithResponse List Organizations
+//
+// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/organizations (the `ListOrganizations` operationId).
+func (c *ClientWithResponses) ListOrganizationsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListOrganizationsResponse, error) {
+	rsp, err := c.ListOrganizations(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListOrganizationsResponse(rsp)
+}
+
+// CreateOrganizationWithBodyWithResponse Create an Organization
+//
+// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
+func (c *ClientWithResponses) CreateOrganizationWithBodyWithResponse(ctx context.Context, params *CreateOrganizationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateOrganizationResponse, error) {
+	rsp, err := c.CreateOrganizationWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateOrganizationResponse(rsp)
+}
+
+// CreateOrganizationWithResponse Create an Organization
+//
+// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
+func (c *ClientWithResponses) CreateOrganizationWithResponse(ctx context.Context, params *CreateOrganizationParams, body CreateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateOrganizationResponse, error) {
+	rsp, err := c.CreateOrganization(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateOrganizationResponse(rsp)
+}
+
+// GetOrganizationWithResponse Get an Organization
+//
+// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/organizations/{organizationId} (the `GetOrganization` operationId).
+func (c *ClientWithResponses) GetOrganizationWithResponse(ctx context.Context, organizationId string, params *GetOrganizationParams, reqEditors ...RequestEditorFn) (*GetOrganizationResponse, error) {
+	rsp, err := c.GetOrganization(ctx, organizationId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOrganizationResponse(rsp)
+}
+
+// UpdateOrganizationWithBodyWithResponse Update an Organization
+//
+// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
+func (c *ClientWithResponses) UpdateOrganizationWithBodyWithResponse(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateOrganizationResponse, error) {
+	rsp, err := c.UpdateOrganizationWithBody(ctx, organizationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateOrganizationResponse(rsp)
+}
+
+// UpdateOrganizationWithResponse Update an Organization
+//
+// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
+func (c *ClientWithResponses) UpdateOrganizationWithResponse(ctx context.Context, organizationId string, body UpdateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateOrganizationResponse, error) {
+	rsp, err := c.UpdateOrganization(ctx, organizationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateOrganizationResponse(rsp)
+}
+
+// ListOrganizationTeamsWithResponse List Organization Teams
+//
+// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/organizations/{organizationId}/teams (the `ListOrganizationTeams` operationId).
+func (c *ClientWithResponses) ListOrganizationTeamsWithResponse(ctx context.Context, organizationId string, params *ListOrganizationTeamsParams, reqEditors ...RequestEditorFn) (*ListOrganizationTeamsResponse, error) {
+	rsp, err := c.ListOrganizationTeams(ctx, organizationId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListOrganizationTeamsResponse(rsp)
+}
+
+// AddOrganizationTeamWithBodyWithResponse Create or Add Team to Organization
+//
+// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
+func (c *ClientWithResponses) AddOrganizationTeamWithBodyWithResponse(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddOrganizationTeamResponse, error) {
+	rsp, err := c.AddOrganizationTeamWithBody(ctx, organizationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddOrganizationTeamResponse(rsp)
+}
+
+// AddOrganizationTeamWithResponse Create or Add Team to Organization
+//
+// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
+func (c *ClientWithResponses) AddOrganizationTeamWithResponse(ctx context.Context, organizationId string, body AddOrganizationTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*AddOrganizationTeamResponse, error) {
+	rsp, err := c.AddOrganizationTeam(ctx, organizationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddOrganizationTeamResponse(rsp)
+}
+
+// RemoveOrganizationTeamWithResponse Delete Team from Organization
+//
+// Delete a team from an organization. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} (the `RemoveOrganizationTeam` operationId).
+func (c *ClientWithResponses) RemoveOrganizationTeamWithResponse(ctx context.Context, organizationId string, targetTeamId string, reqEditors ...RequestEditorFn) (*RemoveOrganizationTeamResponse, error) {
+	rsp, err := c.RemoveOrganizationTeam(ctx, organizationId, targetTeamId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveOrganizationTeamResponse(rsp)
+}
+
+// GetProjectTraceWithResponse Get a project trace by request ID
+//
+// Returns the OTEL trace for a given Vercel CLI request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/traces (the `GetProjectTrace` operationId).
+func (c *ClientWithResponses) GetProjectTraceWithResponse(ctx context.Context, params *GetProjectTraceParams, reqEditors ...RequestEditorFn) (*GetProjectTraceResponse, error) {
+	rsp, err := c.GetProjectTrace(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectTraceResponse(rsp)
+}
+
+// CreateTraceSessionWithBodyWithResponse Create a trace session token for a deployment
+//
+// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
+func (c *ClientWithResponses) CreateTraceSessionWithBodyWithResponse(ctx context.Context, params *CreateTraceSessionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTraceSessionResponse, error) {
+	rsp, err := c.CreateTraceSessionWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateTraceSessionResponse(rsp)
+}
+
+// CreateTraceSessionWithResponse Create a trace session token for a deployment
+//
+// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
+func (c *ClientWithResponses) CreateTraceSessionWithResponse(ctx context.Context, params *CreateTraceSessionParams, body CreateTraceSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateTraceSessionResponse, error) {
+	rsp, err := c.CreateTraceSession(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateTraceSessionResponse(rsp)
+}
+
+// DeleteProjectAvatarWithResponse Delete a project avatar
+//
+// Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so the next production deploy can run auto-detection again. Does not delete the stored image.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/avatar (the `DeleteProjectAvatar` operationId).
+func (c *ClientWithResponses) DeleteProjectAvatarWithResponse(ctx context.Context, idOrName string, params *DeleteProjectAvatarParams, reqEditors ...RequestEditorFn) (*DeleteProjectAvatarResponse, error) {
+	rsp, err := c.DeleteProjectAvatar(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteProjectAvatarResponse(rsp)
+}
+
+// UploadProjectAvatarWithBodyWithResponse Upload a project avatar
+//
+// Upload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared `@api/project-avatar-upload` helper so it can be reused by background workers.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/avatar (the `UploadProjectAvatar` operationId).
+func (c *ClientWithResponses) UploadProjectAvatarWithBodyWithResponse(ctx context.Context, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadProjectAvatarResponse, error) {
+	rsp, err := c.UploadProjectAvatarWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUploadProjectAvatarResponse(rsp)
+}
+
+// GetProjectBoxesWithResponse Get project daemons
+//
+// List the daemons of a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
+func (c *ClientWithResponses) GetProjectBoxesWithResponse(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*GetProjectBoxesResponse, error) {
+	rsp, err := c.GetProjectBoxes(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectBoxesResponse(rsp)
+}
+
+// PutProjectDaemonInstancesWithBodyWithResponse Override a project daemon's instance counts
+//
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *ClientWithResponses) PutProjectDaemonInstancesWithBodyWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error) {
+	rsp, err := c.PutProjectDaemonInstancesWithBody(ctx, idOrName, daemonName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutProjectDaemonInstancesResponse(rsp)
+}
+
+// PutProjectDaemonInstancesWithResponse Override a project daemon's instance counts
+//
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *ClientWithResponses) PutProjectDaemonInstancesWithResponse(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*PutProjectDaemonInstancesResponse, error) {
+	rsp, err := c.PutProjectDaemonInstances(ctx, idOrName, daemonName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutProjectDaemonInstancesResponse(rsp)
+}
+
+// RestartProjectDaemonInstanceWithResponse Force restart a project daemon instance
+//
+// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
+func (c *ClientWithResponses) RestartProjectDaemonInstanceWithResponse(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*RestartProjectDaemonInstanceResponse, error) {
+	rsp, err := c.RestartProjectDaemonInstance(ctx, idOrName, daemonName, instanceId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRestartProjectDaemonInstanceResponse(rsp)
+}
+
+// MoveProjectDomainWithBodyWithResponse Move a project domain
+//
+// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
+func (c *ClientWithResponses) MoveProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*MoveProjectDomainResponse, error) {
+	rsp, err := c.MoveProjectDomainWithBody(ctx, idOrName, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseMoveProjectDomainResponse(rsp)
+}
+
+// MoveProjectDomainWithResponse Move a project domain
+//
+// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
+func (c *ClientWithResponses) MoveProjectDomainWithResponse(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, body MoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*MoveProjectDomainResponse, error) {
+	rsp, err := c.MoveProjectDomain(ctx, idOrName, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseMoveProjectDomainResponse(rsp)
+}
+
+// BatchRemoveProjectEnvWithBodyWithResponse Batch remove environment variables
+//
+// Delete multiple environment variables for a given project in a single batch operation.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
+func (c *ClientWithResponses) BatchRemoveProjectEnvWithBodyWithResponse(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BatchRemoveProjectEnvResponse, error) {
+	rsp, err := c.BatchRemoveProjectEnvWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBatchRemoveProjectEnvResponse(rsp)
+}
+
+// BatchRemoveProjectEnvWithResponse Batch remove environment variables
+//
+// Delete multiple environment variables for a given project in a single batch operation.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
+func (c *ClientWithResponses) BatchRemoveProjectEnvWithResponse(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, body BatchRemoveProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*BatchRemoveProjectEnvResponse, error) {
+	rsp, err := c.BatchRemoveProjectEnv(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBatchRemoveProjectEnvResponse(rsp)
+}
+
+// GetProjectEnvWithResponse Retrieve the decrypted value of an environment variable of a project by id
+//
+// Retrieve the environment variable for a given project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/env/{id} (the `GetProjectEnv` operationId).
+func (c *ClientWithResponses) GetProjectEnvWithResponse(ctx context.Context, idOrName string, id string, params *GetProjectEnvParams, reqEditors ...RequestEditorFn) (*GetProjectEnvResponse, error) {
+	rsp, err := c.GetProjectEnv(ctx, idOrName, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectEnvResponse(rsp)
+}
+
+// GetProjectMembersWithResponse List project members
+//
+// Lists all members of a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/members (the `GetProjectMembers` operationId).
+func (c *ClientWithResponses) GetProjectMembersWithResponse(ctx context.Context, idOrName string, params *GetProjectMembersParams, reqEditors ...RequestEditorFn) (*GetProjectMembersResponse, error) {
+	rsp, err := c.GetProjectMembers(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectMembersResponse(rsp)
+}
+
+// AddProjectMemberWithBodyWithResponse Adds a new member to a project.
+//
+// Adds a new member to the project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
+func (c *ClientWithResponses) AddProjectMemberWithBodyWithResponse(ctx context.Context, idOrName string, params *AddProjectMemberParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddProjectMemberResponse, error) {
+	rsp, err := c.AddProjectMemberWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddProjectMemberResponse(rsp)
+}
+
+// AddProjectMemberWithResponse Adds a new member to a project.
+//
+// Adds a new member to the project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
+func (c *ClientWithResponses) AddProjectMemberWithResponse(ctx context.Context, idOrName string, params *AddProjectMemberParams, body AddProjectMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*AddProjectMemberResponse, error) {
+	rsp, err := c.AddProjectMember(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddProjectMemberResponse(rsp)
+}
+
+// RemoveProjectMemberWithResponse Remove a Project Member
+//
+// Remove a member from a specific project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/members/{uid} (the `RemoveProjectMember` operationId).
+func (c *ClientWithResponses) RemoveProjectMemberWithResponse(ctx context.Context, idOrName string, uid string, params *RemoveProjectMemberParams, reqEditors ...RequestEditorFn) (*RemoveProjectMemberResponse, error) {
+	rsp, err := c.RemoveProjectMember(ctx, idOrName, uid, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveProjectMemberResponse(rsp)
+}
+
+// UpdateProjectProtectionBypassWithBodyWithResponse Update Protection Bypass for Automation
+//
+// Update the deployment protection automation bypass for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
+func (c *ClientWithResponses) UpdateProjectProtectionBypassWithBodyWithResponse(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectProtectionBypassResponse, error) {
+	rsp, err := c.UpdateProjectProtectionBypassWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectProtectionBypassResponse(rsp)
+}
+
+// UpdateProjectProtectionBypassWithResponse Update Protection Bypass for Automation
+//
+// Update the deployment protection automation bypass for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
+func (c *ClientWithResponses) UpdateProjectProtectionBypassWithResponse(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, body UpdateProjectProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectProtectionBypassResponse, error) {
+	rsp, err := c.UpdateProjectProtectionBypass(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectProtectionBypassResponse(rsp)
+}
+
+// GetRollingReleaseWithResponse Get the active rolling release information for a project
+//
+// Return the Rolling Release for a project, regardless of whether the rollout is active, aborted, or completed. If the feature is enabled but no deployment has occurred yet, null will be returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/rolling-release (the `GetRollingRelease` operationId).
+func (c *ClientWithResponses) GetRollingReleaseWithResponse(ctx context.Context, idOrName string, params *GetRollingReleaseParams, reqEditors ...RequestEditorFn) (*GetRollingReleaseResponse, error) {
+	rsp, err := c.GetRollingRelease(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRollingReleaseResponse(rsp)
+}
+
+// ApproveRollingReleaseStageWithBodyWithResponse Update the active rolling release to the next stage for a project
+//
+// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
+func (c *ClientWithResponses) ApproveRollingReleaseStageWithBodyWithResponse(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ApproveRollingReleaseStageResponse, error) {
+	rsp, err := c.ApproveRollingReleaseStageWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseApproveRollingReleaseStageResponse(rsp)
+}
+
+// ApproveRollingReleaseStageWithResponse Update the active rolling release to the next stage for a project
+//
+// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
+func (c *ClientWithResponses) ApproveRollingReleaseStageWithResponse(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, body ApproveRollingReleaseStageJSONRequestBody, reqEditors ...RequestEditorFn) (*ApproveRollingReleaseStageResponse, error) {
+	rsp, err := c.ApproveRollingReleaseStage(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseApproveRollingReleaseStageResponse(rsp)
+}
+
+// GetRollingReleaseBillingStatusWithResponse Get rolling release billing status
+//
+// Get the Rolling Releases billing status for a project. The team level billing status is used to determine if the project can be configured for rolling releases.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/rolling-release/billing (the `GetRollingReleaseBillingStatus` operationId).
+func (c *ClientWithResponses) GetRollingReleaseBillingStatusWithResponse(ctx context.Context, idOrName string, params *GetRollingReleaseBillingStatusParams, reqEditors ...RequestEditorFn) (*GetRollingReleaseBillingStatusResponse, error) {
+	rsp, err := c.GetRollingReleaseBillingStatus(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRollingReleaseBillingStatusResponse(rsp)
+}
+
+// CompleteRollingReleaseWithBodyWithResponse Complete the rolling release for the project
+//
+// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
+func (c *ClientWithResponses) CompleteRollingReleaseWithBodyWithResponse(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CompleteRollingReleaseResponse, error) {
+	rsp, err := c.CompleteRollingReleaseWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCompleteRollingReleaseResponse(rsp)
+}
+
+// CompleteRollingReleaseWithResponse Complete the rolling release for the project
+//
+// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
+func (c *ClientWithResponses) CompleteRollingReleaseWithResponse(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, body CompleteRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*CompleteRollingReleaseResponse, error) {
+	rsp, err := c.CompleteRollingRelease(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCompleteRollingReleaseResponse(rsp)
+}
+
+// DeleteRollingReleaseConfigWithResponse Delete rolling release configuration
+//
+// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that's already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/rolling-release/config (the `DeleteRollingReleaseConfig` operationId).
+func (c *ClientWithResponses) DeleteRollingReleaseConfigWithResponse(ctx context.Context, idOrName string, params *DeleteRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*DeleteRollingReleaseConfigResponse, error) {
+	rsp, err := c.DeleteRollingReleaseConfig(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteRollingReleaseConfigResponse(rsp)
+}
+
+// GetRollingReleaseConfigWithResponse Get rolling release configuration
+//
+// Get the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{idOrName}/rolling-release/config (the `GetRollingReleaseConfig` operationId).
+func (c *ClientWithResponses) GetRollingReleaseConfigWithResponse(ctx context.Context, idOrName string, params *GetRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*GetRollingReleaseConfigResponse, error) {
+	rsp, err := c.GetRollingReleaseConfig(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRollingReleaseConfigResponse(rsp)
+}
+
+// UpdateRollingReleaseConfigWithResponse Update the rolling release settings for the project
+//
+// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: "abort" to roll back (default), or "complete" to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that's already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn't configured already.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/rolling-release/config (the `UpdateRollingReleaseConfig` operationId).
+func (c *ClientWithResponses) UpdateRollingReleaseConfigWithResponse(ctx context.Context, idOrName string, params *UpdateRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*UpdateRollingReleaseConfigResponse, error) {
+	rsp, err := c.UpdateRollingReleaseConfig(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateRollingReleaseConfigResponse(rsp)
+}
+
+// StartRollingReleaseWithBodyWithResponse Start a rolling release for the project
+//
+// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
+func (c *ClientWithResponses) StartRollingReleaseWithBodyWithResponse(ctx context.Context, idOrName string, params *StartRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StartRollingReleaseResponse, error) {
+	rsp, err := c.StartRollingReleaseWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStartRollingReleaseResponse(rsp)
+}
+
+// StartRollingReleaseWithResponse Start a rolling release for the project
+//
+// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
+func (c *ClientWithResponses) StartRollingReleaseWithResponse(ctx context.Context, idOrName string, params *StartRollingReleaseParams, body StartRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*StartRollingReleaseResponse, error) {
+	rsp, err := c.StartRollingRelease(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStartRollingReleaseResponse(rsp)
+}
+
+// UpdateStaticIpsWithBodyWithResponse Configures Static IPs for a project
+//
+// Allows configuring Static IPs for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
+func (c *ClientWithResponses) UpdateStaticIpsWithBodyWithResponse(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStaticIpsResponse, error) {
+	rsp, err := c.UpdateStaticIpsWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateStaticIpsResponse(rsp)
+}
+
+// UpdateStaticIpsWithResponse Configures Static IPs for a project
+//
+// Allows configuring Static IPs for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
+func (c *ClientWithResponses) UpdateStaticIpsWithResponse(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, body UpdateStaticIpsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateStaticIpsResponse, error) {
+	rsp, err := c.UpdateStaticIps(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateStaticIpsResponse(rsp)
+}
+
+// GetProjectTokenWithBodyWithResponse Generate a project OIDC token
+//
+// Generates an OIDC token for the project and returns it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
+func (c *ClientWithResponses) GetProjectTokenWithBodyWithResponse(ctx context.Context, idOrName string, params *GetProjectTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetProjectTokenResponse, error) {
+	rsp, err := c.GetProjectTokenWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectTokenResponse(rsp)
+}
+
+// GetProjectTokenWithResponse Generate a project OIDC token
+//
+// Generates an OIDC token for the project and returns it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
+func (c *ClientWithResponses) GetProjectTokenWithResponse(ctx context.Context, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*GetProjectTokenResponse, error) {
+	rsp, err := c.GetProjectToken(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectTokenResponse(rsp)
+}
+
+// GetFlagsProjectConnectionsWithResponse List flags project connections
+//
+// Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/connections (the `GetFlagsProjectConnections` operationId).
+func (c *ClientWithResponses) GetFlagsProjectConnectionsWithResponse(ctx context.Context, projectIdOrName string, params *GetFlagsProjectConnectionsParams, reqEditors ...RequestEditorFn) (*GetFlagsProjectConnectionsResponse, error) {
+	rsp, err := c.GetFlagsProjectConnections(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFlagsProjectConnectionsResponse(rsp)
+}
+
+// CreateFlagsProjectConnectionWithBodyWithResponse Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *ClientWithResponses) CreateFlagsProjectConnectionWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagsProjectConnectionResponse, error) {
+	rsp, err := c.CreateFlagsProjectConnectionWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagsProjectConnectionResponse(rsp)
+}
+
+// CreateFlagsProjectConnectionWithResponse Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *ClientWithResponses) CreateFlagsProjectConnectionWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, body CreateFlagsProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagsProjectConnectionResponse, error) {
+	rsp, err := c.CreateFlagsProjectConnection(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagsProjectConnectionResponse(rsp)
+}
+
+// DeleteFlagsProjectConnectionWithResponse Disconnect a project from the flags of this project
+//
+// Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} (the `DeleteFlagsProjectConnection` operationId).
+func (c *ClientWithResponses) DeleteFlagsProjectConnectionWithResponse(ctx context.Context, projectIdOrName string, consumerProjectId string, params *DeleteFlagsProjectConnectionParams, reqEditors ...RequestEditorFn) (*DeleteFlagsProjectConnectionResponse, error) {
+	rsp, err := c.DeleteFlagsProjectConnection(ctx, projectIdOrName, consumerProjectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteFlagsProjectConnectionResponse(rsp)
+}
+
+// ListFlagsWithResponse List flags
+//
+// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags (the `ListFlags` operationId).
+func (c *ClientWithResponses) ListFlagsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagsParams, reqEditors ...RequestEditorFn) (*ListFlagsResponse, error) {
+	rsp, err := c.ListFlags(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagsResponse(rsp)
+}
+
+// CreateFlagWithBodyWithResponse Create a flag
+//
+// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
+func (c *ClientWithResponses) CreateFlagWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagResponse, error) {
+	rsp, err := c.CreateFlagWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagResponse(rsp)
+}
+
+// CreateFlagWithResponse Create a flag
+//
+// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
+func (c *ClientWithResponses) CreateFlagWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagParams, body CreateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagResponse, error) {
+	rsp, err := c.CreateFlag(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagResponse(rsp)
+}
+
+// DeleteFlagWithResponse Delete a flag
+//
+// Permanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `DeleteFlag` operationId).
+func (c *ClientWithResponses) DeleteFlagWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *DeleteFlagParams, reqEditors ...RequestEditorFn) (*DeleteFlagResponse, error) {
+	rsp, err := c.DeleteFlag(ctx, projectIdOrName, flagIdOrSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteFlagResponse(rsp)
+}
+
+// GetFlagWithResponse Get a flag
+//
+// Retrieve a specific feature flag by its ID or slug.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `GetFlag` operationId).
+func (c *ClientWithResponses) GetFlagWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *GetFlagParams, reqEditors ...RequestEditorFn) (*GetFlagResponse, error) {
+	rsp, err := c.GetFlag(ctx, projectIdOrName, flagIdOrSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFlagResponse(rsp)
+}
+
+// UpdateFlagWithBodyWithResponse Update a flag
+//
+// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
+func (c *ClientWithResponses) UpdateFlagWithBodyWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFlagResponse, error) {
+	rsp, err := c.UpdateFlagWithBody(ctx, projectIdOrName, flagIdOrSlug, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFlagResponse(rsp)
+}
+
+// UpdateFlagWithResponse Update a flag
+//
+// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
+func (c *ClientWithResponses) UpdateFlagWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, body UpdateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFlagResponse, error) {
+	rsp, err := c.UpdateFlag(ctx, projectIdOrName, flagIdOrSlug, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFlagResponse(rsp)
+}
+
+// ListFlagVersionsWithResponse List flag versions
+//
+// Lists flag versions for a given flag.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
+func (c *ClientWithResponses) ListFlagVersionsWithResponse(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*ListFlagVersionsResponse, error) {
+	rsp, err := c.ListFlagVersions(ctx, projectIdOrName, flagIdOrSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagVersionsResponse(rsp)
+}
+
+// ListFlagLabelsWithResponse List attribute labels
+//
+// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
+func (c *ClientWithResponses) ListFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelsResponse, error) {
+	rsp, err := c.ListFlagLabels(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagLabelsResponse(rsp)
+}
+
+// ListFlagLabelCountsWithResponse List attribute label counts
+//
+// List label counts for configured entity attributes, including empty ones.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
+func (c *ClientWithResponses) ListFlagLabelCountsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*ListFlagLabelCountsResponse, error) {
+	rsp, err := c.ListFlagLabelCounts(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagLabelCountsResponse(rsp)
+}
+
+// LookupFlagLabelsWithBodyWithResponse Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *ClientWithResponses) LookupFlagLabelsWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error) {
+	rsp, err := c.LookupFlagLabelsWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseLookupFlagLabelsResponse(rsp)
+}
+
+// LookupFlagLabelsWithResponse Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *ClientWithResponses) LookupFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error) {
+	rsp, err := c.LookupFlagLabels(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseLookupFlagLabelsResponse(rsp)
+}
+
+// GetSdkKeysWithResponse Get all SDK keys
+//
+// Gets all SDK keys for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `GetSdkKeys` operationId).
+func (c *ClientWithResponses) GetSdkKeysWithResponse(ctx context.Context, projectIdOrName string, params *GetSdkKeysParams, reqEditors ...RequestEditorFn) (*GetSdkKeysResponse, error) {
+	rsp, err := c.GetSdkKeys(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSdkKeysResponse(rsp)
+}
+
+// CreateSdkKeyWithBodyWithResponse Create an SDK key
+//
+// Creates an SDK key.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
+func (c *ClientWithResponses) CreateSdkKeyWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSdkKeyResponse, error) {
+	rsp, err := c.CreateSdkKeyWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateSdkKeyResponse(rsp)
+}
+
+// CreateSdkKeyWithResponse Create an SDK key
+//
+// Creates an SDK key.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
+func (c *ClientWithResponses) CreateSdkKeyWithResponse(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, body CreateSdkKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateSdkKeyResponse, error) {
+	rsp, err := c.CreateSdkKey(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateSdkKeyResponse(rsp)
+}
+
+// DeleteSdkKeyWithResponse Delete an SDK key
+//
+// Deletes an SDK key.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} (the `DeleteSdkKey` operationId).
+func (c *ClientWithResponses) DeleteSdkKeyWithResponse(ctx context.Context, projectIdOrName string, hashKey string, params *DeleteSdkKeyParams, reqEditors ...RequestEditorFn) (*DeleteSdkKeyResponse, error) {
+	rsp, err := c.DeleteSdkKey(ctx, projectIdOrName, hashKey, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteSdkKeyResponse(rsp)
+}
+
+// ListFlagSegmentsWithResponse List segments
+//
+// List all feature flag segments for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments (the `ListFlagSegments` operationId).
+func (c *ClientWithResponses) ListFlagSegmentsWithResponse(ctx context.Context, projectIdOrName string, params *ListFlagSegmentsParams, reqEditors ...RequestEditorFn) (*ListFlagSegmentsResponse, error) {
+	rsp, err := c.ListFlagSegments(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFlagSegmentsResponse(rsp)
+}
+
+// CreateFlagSegmentWithBodyWithResponse Create a segment
+//
+// Create a new feature flag segment.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
+func (c *ClientWithResponses) CreateFlagSegmentWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFlagSegmentResponse, error) {
+	rsp, err := c.CreateFlagSegmentWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagSegmentResponse(rsp)
+}
+
+// CreateFlagSegmentWithResponse Create a segment
+//
+// Create a new feature flag segment.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
+func (c *ClientWithResponses) CreateFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, body CreateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFlagSegmentResponse, error) {
+	rsp, err := c.CreateFlagSegment(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFlagSegmentResponse(rsp)
+}
+
+// DeleteFlagSegmentWithResponse Delete a segment
+//
+// Delete a feature flag segment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `DeleteFlagSegment` operationId).
+func (c *ClientWithResponses) DeleteFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *DeleteFlagSegmentParams, reqEditors ...RequestEditorFn) (*DeleteFlagSegmentResponse, error) {
+	rsp, err := c.DeleteFlagSegment(ctx, projectIdOrName, segmentIdOrSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteFlagSegmentResponse(rsp)
+}
+
+// GetFlagSegmentWithResponse Get a segment
+//
+// Retrieve a feature flag segment by ID or slug.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `GetFlagSegment` operationId).
+func (c *ClientWithResponses) GetFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *GetFlagSegmentParams, reqEditors ...RequestEditorFn) (*GetFlagSegmentResponse, error) {
+	rsp, err := c.GetFlagSegment(ctx, projectIdOrName, segmentIdOrSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFlagSegmentResponse(rsp)
+}
+
+// UpdateFlagSegmentWithBodyWithResponse Update a segment
+//
+// Update an existing feature flag segment.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
+func (c *ClientWithResponses) UpdateFlagSegmentWithBodyWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFlagSegmentResponse, error) {
+	rsp, err := c.UpdateFlagSegmentWithBody(ctx, projectIdOrName, segmentIdOrSlug, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFlagSegmentResponse(rsp)
+}
+
+// UpdateFlagSegmentWithResponse Update a segment
+//
+// Update an existing feature flag segment.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
+func (c *ClientWithResponses) UpdateFlagSegmentWithResponse(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, body UpdateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFlagSegmentResponse, error) {
+	rsp, err := c.UpdateFlagSegment(ctx, projectIdOrName, segmentIdOrSlug, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFlagSegmentResponse(rsp)
+}
+
+// GetFlagSettingsWithResponse Get project flag settings
+//
+// Retrieve feature flag settings for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/settings (the `GetFlagSettings` operationId).
+func (c *ClientWithResponses) GetFlagSettingsWithResponse(ctx context.Context, projectIdOrName string, params *GetFlagSettingsParams, reqEditors ...RequestEditorFn) (*GetFlagSettingsResponse, error) {
+	rsp, err := c.GetFlagSettings(ctx, projectIdOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFlagSettingsResponse(rsp)
+}
+
+// UpdateFlagSettingsWithBodyWithResponse Update project flag settings
+//
+// Update feature flag settings for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
+func (c *ClientWithResponses) UpdateFlagSettingsWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFlagSettingsResponse, error) {
+	rsp, err := c.UpdateFlagSettingsWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFlagSettingsResponse(rsp)
+}
+
+// UpdateFlagSettingsWithResponse Update project flag settings
+//
+// Update feature flag settings for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
+func (c *ClientWithResponses) UpdateFlagSettingsWithResponse(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, body UpdateFlagSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFlagSettingsResponse, error) {
+	rsp, err := c.UpdateFlagSettings(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFlagSettingsResponse(rsp)
+}
+
+// GetRuntimeLogsWithResponse Get logs for a deployment
+//
+// Returns a stream of logs for a given deployment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs (the `GetRuntimeLogs` operationId).
+func (c *ClientWithResponses) GetRuntimeLogsWithResponse(ctx context.Context, projectId string, deploymentId string, params *GetRuntimeLogsParams, reqEditors ...RequestEditorFn) (*GetRuntimeLogsResponse, error) {
+	rsp, err := c.GetRuntimeLogs(ctx, projectId, deploymentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRuntimeLogsResponse(rsp)
+}
+
+// UpdateMicrofrontendsWithBodyWithResponse Update the microfrontends settings
+//
+// Update the microfrontends settings for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
+func (c *ClientWithResponses) UpdateMicrofrontendsWithBodyWithResponse(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsResponse, error) {
+	rsp, err := c.UpdateMicrofrontendsWithBody(ctx, projectId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateMicrofrontendsResponse(rsp)
+}
+
+// UpdateMicrofrontendsWithResponse Update the microfrontends settings
+//
+// Update the microfrontends settings for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
+func (c *ClientWithResponses) UpdateMicrofrontendsWithResponse(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, body UpdateMicrofrontendsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsResponse, error) {
+	rsp, err := c.UpdateMicrofrontends(ctx, projectId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateMicrofrontendsResponse(rsp)
+}
+
+// PauseProjectWithResponse Pause a project
+//
+// Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/pause (the `PauseProject` operationId).
+func (c *ClientWithResponses) PauseProjectWithResponse(ctx context.Context, projectId string, params *PauseProjectParams, reqEditors ...RequestEditorFn) (*PauseProjectResponse, error) {
+	rsp, err := c.PauseProject(ctx, projectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePauseProjectResponse(rsp)
+}
+
+// ListPromoteAliasesWithResponse Gets a list of aliases with status for the current promote
+//
+// Get a list of aliases related to the last promote request with their mapping status.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectId}/promote/aliases (the `ListPromoteAliases` operationId).
+func (c *ClientWithResponses) ListPromoteAliasesWithResponse(ctx context.Context, projectId string, params *ListPromoteAliasesParams, reqEditors ...RequestEditorFn) (*ListPromoteAliasesResponse, error) {
+	rsp, err := c.ListPromoteAliases(ctx, projectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListPromoteAliasesResponse(rsp)
+}
+
+// RequestRollbackWithResponse Point production traffic to a previous production deployment by ID
+//
+// Allows users to rollback to a deployment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/rollback/{deploymentId} (the `RequestRollback` operationId).
+func (c *ClientWithResponses) RequestRollbackWithResponse(ctx context.Context, projectId string, deploymentId string, params *RequestRollbackParams, reqEditors ...RequestEditorFn) (*RequestRollbackResponse, error) {
+	rsp, err := c.RequestRollback(ctx, projectId, deploymentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRequestRollbackResponse(rsp)
+}
+
+// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBodyWithResponse Updates the description for a rollback
+//
+// Updates the reason for a rollback, without changing the rollback status itself.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
+func (c *ClientWithResponses) UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBodyWithResponse(ctx context.Context, projectId string, deploymentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse, error) {
+	rsp, err := c.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBody(ctx, projectId, deploymentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse(rsp)
+}
+
+// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithResponse Updates the description for a rollback
+//
+// Updates the reason for a rollback, without changing the rollback status itself.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
+func (c *ClientWithResponses) UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithResponse(ctx context.Context, projectId string, deploymentId string, body UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse, error) {
+	rsp, err := c.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription(ctx, projectId, deploymentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionResponse(rsp)
+}
+
+// DeleteRoutesWithBodyWithResponse Delete routing rules
+//
+// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
+func (c *ClientWithResponses) DeleteRoutesWithBodyWithResponse(ctx context.Context, projectId string, params *DeleteRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteRoutesResponse, error) {
+	rsp, err := c.DeleteRoutesWithBody(ctx, projectId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteRoutesResponse(rsp)
+}
+
+// DeleteRoutesWithResponse Delete routing rules
+//
+// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
+func (c *ClientWithResponses) DeleteRoutesWithResponse(ctx context.Context, projectId string, params *DeleteRoutesParams, body DeleteRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteRoutesResponse, error) {
+	rsp, err := c.DeleteRoutes(ctx, projectId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteRoutesResponse(rsp)
+}
+
+// GetRoutesWithResponse Get project routing rules
+//
+// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectId}/routes (the `GetRoutes` operationId).
+func (c *ClientWithResponses) GetRoutesWithResponse(ctx context.Context, projectId string, params *GetRoutesParams, reqEditors ...RequestEditorFn) (*GetRoutesResponse, error) {
+	rsp, err := c.GetRoutes(ctx, projectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRoutesResponse(rsp)
+}
+
+// AddRouteWithBodyWithResponse Add a routing rule
+//
+// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
+func (c *ClientWithResponses) AddRouteWithBodyWithResponse(ctx context.Context, projectId string, params *AddRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddRouteResponse, error) {
+	rsp, err := c.AddRouteWithBody(ctx, projectId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddRouteResponse(rsp)
+}
+
+// AddRouteWithResponse Add a routing rule
+//
+// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
+func (c *ClientWithResponses) AddRouteWithResponse(ctx context.Context, projectId string, params *AddRouteParams, body AddRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*AddRouteResponse, error) {
+	rsp, err := c.AddRoute(ctx, projectId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddRouteResponse(rsp)
+}
+
+// StageRoutesWithBodyWithResponse Stage routing rules
+//
+// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
+func (c *ClientWithResponses) StageRoutesWithBodyWithResponse(ctx context.Context, projectId string, params *StageRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StageRoutesResponse, error) {
+	rsp, err := c.StageRoutesWithBody(ctx, projectId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStageRoutesResponse(rsp)
+}
+
+// StageRoutesWithResponse Stage routing rules
+//
+// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
+func (c *ClientWithResponses) StageRoutesWithResponse(ctx context.Context, projectId string, params *StageRoutesParams, body StageRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*StageRoutesResponse, error) {
+	rsp, err := c.StageRoutes(ctx, projectId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStageRoutesResponse(rsp)
+}
+
+// GenerateRouteWithBodyWithResponse Generate a routing rule from natural language
+//
+// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
+func (c *ClientWithResponses) GenerateRouteWithBodyWithResponse(ctx context.Context, projectId string, params *GenerateRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateRouteResponse, error) {
+	rsp, err := c.GenerateRouteWithBody(ctx, projectId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateRouteResponse(rsp)
+}
+
+// GenerateRouteWithResponse Generate a routing rule from natural language
+//
+// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
+func (c *ClientWithResponses) GenerateRouteWithResponse(ctx context.Context, projectId string, params *GenerateRouteParams, body GenerateRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateRouteResponse, error) {
+	rsp, err := c.GenerateRoute(ctx, projectId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateRouteResponse(rsp)
+}
+
+// GetRouteVersionsWithResponse Get routing rule version history
+//
+// Get the version history for a project's routing rules. Returns the staging version (if one exists) followed by production versions, most recent first. The staging version has `isStaging: true` and the current production version has `isLive: true`.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/projects/{projectId}/routes/versions (the `GetRouteVersions` operationId).
+func (c *ClientWithResponses) GetRouteVersionsWithResponse(ctx context.Context, projectId string, params *GetRouteVersionsParams, reqEditors ...RequestEditorFn) (*GetRouteVersionsResponse, error) {
+	rsp, err := c.GetRouteVersions(ctx, projectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRouteVersionsResponse(rsp)
+}
+
+// UpdateRouteVersionsWithBodyWithResponse Promote, restore, or discard a routing rule version
+//
+// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
+func (c *ClientWithResponses) UpdateRouteVersionsWithBodyWithResponse(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateRouteVersionsResponse, error) {
+	rsp, err := c.UpdateRouteVersionsWithBody(ctx, projectId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateRouteVersionsResponse(rsp)
+}
+
+// UpdateRouteVersionsWithResponse Promote, restore, or discard a routing rule version
+//
+// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
+func (c *ClientWithResponses) UpdateRouteVersionsWithResponse(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, body UpdateRouteVersionsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateRouteVersionsResponse, error) {
+	rsp, err := c.UpdateRouteVersions(ctx, projectId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateRouteVersionsResponse(rsp)
+}
+
+// EditRouteWithBodyWithResponse Edit a routing rule
+//
+// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
+func (c *ClientWithResponses) EditRouteWithBodyWithResponse(ctx context.Context, projectId string, routeId string, params *EditRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EditRouteResponse, error) {
+	rsp, err := c.EditRouteWithBody(ctx, projectId, routeId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseEditRouteResponse(rsp)
+}
+
+// EditRouteWithResponse Edit a routing rule
+//
+// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
+func (c *ClientWithResponses) EditRouteWithResponse(ctx context.Context, projectId string, routeId string, params *EditRouteParams, body EditRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*EditRouteResponse, error) {
+	rsp, err := c.EditRoute(ctx, projectId, routeId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseEditRouteResponse(rsp)
+}
+
+// UnpauseProjectWithResponse Unpause a project
+//
+// Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectId}/unpause (the `UnpauseProject` operationId).
+func (c *ClientWithResponses) UnpauseProjectWithResponse(ctx context.Context, projectId string, params *UnpauseProjectParams, reqEditors ...RequestEditorFn) (*UnpauseProjectResponse, error) {
+	rsp, err := c.UnpauseProject(ctx, projectId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUnpauseProjectResponse(rsp)
+}
+
+// AggregateEventsWithResponse Aggregates custom events
+//
+// Counts custom events on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/query/web-analytics/events/aggregate (the `AggregateEvents` operationId).
+func (c *ClientWithResponses) AggregateEventsWithResponse(ctx context.Context, params *AggregateEventsParams, reqEditors ...RequestEditorFn) (*AggregateEventsResponse, error) {
+	rsp, err := c.AggregateEvents(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAggregateEventsResponse(rsp)
+}
+
+// CountEventsWithResponse Counts custom events
+//
+// Counts the number of custom events on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/query/web-analytics/events/count (the `CountEvents` operationId).
+func (c *ClientWithResponses) CountEventsWithResponse(ctx context.Context, params *CountEventsParams, reqEditors ...RequestEditorFn) (*CountEventsResponse, error) {
+	rsp, err := c.CountEvents(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCountEventsResponse(rsp)
+}
+
+// AggregatePageviewsWithResponse Aggregates page views
+//
+// Counts pageviews on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/query/web-analytics/visits/aggregate (the `AggregatePageviews` operationId).
+func (c *ClientWithResponses) AggregatePageviewsWithResponse(ctx context.Context, params *AggregatePageviewsParams, reqEditors ...RequestEditorFn) (*AggregatePageviewsResponse, error) {
+	rsp, err := c.AggregatePageviews(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAggregatePageviewsResponse(rsp)
+}
+
+// CountPageviewsWithResponse Counts page views
+//
+// Counts the number of page views on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/query/web-analytics/visits/count (the `CountPageviews` operationId).
+func (c *ClientWithResponses) CountPageviewsWithResponse(ctx context.Context, params *CountPageviewsParams, reqEditors ...RequestEditorFn) (*CountPageviewsResponse, error) {
+	rsp, err := c.CountPageviews(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCountPageviewsResponse(rsp)
+}
+
+// GetBulkAvailabilityWithBodyWithResponse Get availability for multiple domains
+//
+// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
+func (c *ClientWithResponses) GetBulkAvailabilityWithBodyWithResponse(ctx context.Context, params *GetBulkAvailabilityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetBulkAvailabilityResponse, error) {
+	rsp, err := c.GetBulkAvailabilityWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBulkAvailabilityResponse(rsp)
+}
+
+// GetBulkAvailabilityWithResponse Get availability for multiple domains
+//
+// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
+func (c *ClientWithResponses) GetBulkAvailabilityWithResponse(ctx context.Context, params *GetBulkAvailabilityParams, body GetBulkAvailabilityJSONRequestBody, reqEditors ...RequestEditorFn) (*GetBulkAvailabilityResponse, error) {
+	rsp, err := c.GetBulkAvailability(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBulkAvailabilityResponse(rsp)
+}
+
+// BuyDomainsWithBodyWithResponse Buy multiple domains
+//
+// Buy multiple domains at once.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
+func (c *ClientWithResponses) BuyDomainsWithBodyWithResponse(ctx context.Context, params *BuyDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BuyDomainsResponse, error) {
+	rsp, err := c.BuyDomainsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBuyDomainsResponse(rsp)
+}
+
+// BuyDomainsWithResponse Buy multiple domains
+//
+// Buy multiple domains at once.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
+func (c *ClientWithResponses) BuyDomainsWithResponse(ctx context.Context, params *BuyDomainsParams, body BuyDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*BuyDomainsResponse, error) {
+	rsp, err := c.BuyDomains(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBuyDomainsResponse(rsp)
+}
+
+// GetBulkPriceWithBodyWithResponse Get price data for multiple domains
+//
+// Get price data for multiple domains in a single request.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
+func (c *ClientWithResponses) GetBulkPriceWithBodyWithResponse(ctx context.Context, params *GetBulkPriceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetBulkPriceResponse, error) {
+	rsp, err := c.GetBulkPriceWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBulkPriceResponse(rsp)
+}
+
+// GetBulkPriceWithResponse Get price data for multiple domains
+//
+// Get price data for multiple domains in a single request.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
+func (c *ClientWithResponses) GetBulkPriceWithResponse(ctx context.Context, params *GetBulkPriceParams, body GetBulkPriceJSONRequestBody, reqEditors ...RequestEditorFn) (*GetBulkPriceResponse, error) {
+	rsp, err := c.GetBulkPrice(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBulkPriceResponse(rsp)
+}
+
+// SearchDomainsWithBodyWithResponse Get Domain Availability and Pricing
+//
+// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
+func (c *ClientWithResponses) SearchDomainsWithBodyWithResponse(ctx context.Context, params *SearchDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SearchDomainsResponse, error) {
+	rsp, err := c.SearchDomainsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSearchDomainsResponse(rsp)
+}
+
+// SearchDomainsWithResponse Get Domain Availability and Pricing
+//
+// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
+func (c *ClientWithResponses) SearchDomainsWithResponse(ctx context.Context, params *SearchDomainsParams, body SearchDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*SearchDomainsResponse, error) {
+	rsp, err := c.SearchDomains(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSearchDomainsResponse(rsp)
+}
+
+// GetDomainAuthCodeWithResponse Get the auth code for a domain
+//
+// Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/auth-code (the `GetDomainAuthCode` operationId).
+func (c *ClientWithResponses) GetDomainAuthCodeWithResponse(ctx context.Context, domain DomainName, params *GetDomainAuthCodeParams, reqEditors ...RequestEditorFn) (*GetDomainAuthCodeResponse, error) {
+	rsp, err := c.GetDomainAuthCode(ctx, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDomainAuthCodeResponse(rsp)
+}
+
+// UpdateDomainAutoRenewWithBodyWithResponse Update auto-renew for a domain
+//
+// Update the auto-renew setting for a domain.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
+func (c *ClientWithResponses) UpdateDomainAutoRenewWithBodyWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDomainAutoRenewResponse, error) {
+	rsp, err := c.UpdateDomainAutoRenewWithBody(ctx, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDomainAutoRenewResponse(rsp)
+}
+
+// UpdateDomainAutoRenewWithResponse Update auto-renew for a domain
+//
+// Update the auto-renew setting for a domain.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
+func (c *ClientWithResponses) UpdateDomainAutoRenewWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, body UpdateDomainAutoRenewJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDomainAutoRenewResponse, error) {
+	rsp, err := c.UpdateDomainAutoRenew(ctx, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDomainAutoRenewResponse(rsp)
+}
+
+// GetDomainAvailabilityWithResponse Get availability for a domain
+//
+// Get availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/availability (the `GetDomainAvailability` operationId).
+func (c *ClientWithResponses) GetDomainAvailabilityWithResponse(ctx context.Context, domain DomainName, params *GetDomainAvailabilityParams, reqEditors ...RequestEditorFn) (*GetDomainAvailabilityResponse, error) {
+	rsp, err := c.GetDomainAvailability(ctx, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDomainAvailabilityResponse(rsp)
+}
+
+// BuySingleDomainWithBodyWithResponse Buy a domain
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
+func (c *ClientWithResponses) BuySingleDomainWithBodyWithResponse(ctx context.Context, domain DomainName, params *BuySingleDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BuySingleDomainResponse, error) {
+	rsp, err := c.BuySingleDomainWithBody(ctx, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBuySingleDomainResponse(rsp)
+}
+
+// BuySingleDomainWithResponse Buy a domain
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
+func (c *ClientWithResponses) BuySingleDomainWithResponse(ctx context.Context, domain DomainName, params *BuySingleDomainParams, body BuySingleDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*BuySingleDomainResponse, error) {
+	rsp, err := c.BuySingleDomain(ctx, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBuySingleDomainResponse(rsp)
+}
+
+// GetContactInfoSchemaWithResponse Get contact info schema
+//
+// Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/contact-info/schema (the `GetContactInfoSchema` operationId).
+func (c *ClientWithResponses) GetContactInfoSchemaWithResponse(ctx context.Context, domain DomainName, params *GetContactInfoSchemaParams, reqEditors ...RequestEditorFn) (*GetContactInfoSchemaResponse, error) {
+	rsp, err := c.GetContactInfoSchema(ctx, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetContactInfoSchemaResponse(rsp)
+}
+
+// GetDomainContactVerificationWithResponse Get contact verification status for a domain
+//
+// Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/contact-verification (the `GetDomainContactVerification` operationId).
+func (c *ClientWithResponses) GetDomainContactVerificationWithResponse(ctx context.Context, domain DomainName, params *GetDomainContactVerificationParams, reqEditors ...RequestEditorFn) (*GetDomainContactVerificationResponse, error) {
+	rsp, err := c.GetDomainContactVerification(ctx, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDomainContactVerificationResponse(rsp)
+}
+
+// UpdateDomainNameserversWithBodyWithResponse Update nameservers for a domain
+//
+// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
+func (c *ClientWithResponses) UpdateDomainNameserversWithBodyWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDomainNameserversResponse, error) {
+	rsp, err := c.UpdateDomainNameserversWithBody(ctx, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDomainNameserversResponse(rsp)
+}
+
+// UpdateDomainNameserversWithResponse Update nameservers for a domain
+//
+// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
+func (c *ClientWithResponses) UpdateDomainNameserversWithResponse(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, body UpdateDomainNameserversJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDomainNameserversResponse, error) {
+	rsp, err := c.UpdateDomainNameservers(ctx, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDomainNameserversResponse(rsp)
+}
+
+// GetDomainPriceWithResponse Get price data for a domain
+//
+// Get price data for a specific domain.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/price (the `GetDomainPrice` operationId).
+func (c *ClientWithResponses) GetDomainPriceWithResponse(ctx context.Context, domain DomainName, params *GetDomainPriceParams, reqEditors ...RequestEditorFn) (*GetDomainPriceResponse, error) {
+	rsp, err := c.GetDomainPrice(ctx, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDomainPriceResponse(rsp)
+}
+
+// RenewDomainWithBodyWithResponse Renew a domain
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
+func (c *ClientWithResponses) RenewDomainWithBodyWithResponse(ctx context.Context, domain DomainName, params *RenewDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RenewDomainResponse, error) {
+	rsp, err := c.RenewDomainWithBody(ctx, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRenewDomainResponse(rsp)
+}
+
+// RenewDomainWithResponse Renew a domain
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
+func (c *ClientWithResponses) RenewDomainWithResponse(ctx context.Context, domain DomainName, params *RenewDomainParams, body RenewDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*RenewDomainResponse, error) {
+	rsp, err := c.RenewDomain(ctx, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRenewDomainResponse(rsp)
+}
+
+// GetDomainTransferInWithResponse Get a domain's transfer status
+//
+// Get the transfer status for a domain.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/transfer (the `GetDomainTransferIn` operationId).
+func (c *ClientWithResponses) GetDomainTransferInWithResponse(ctx context.Context, domain DomainName, params *GetDomainTransferInParams, reqEditors ...RequestEditorFn) (*GetDomainTransferInResponse, error) {
+	rsp, err := c.GetDomainTransferIn(ctx, domain, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDomainTransferInResponse(rsp)
+}
+
+// TransferInDomainWithBodyWithResponse Transfer-in a domain
+//
+// Transfer a domain in from another registrar.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
+func (c *ClientWithResponses) TransferInDomainWithBodyWithResponse(ctx context.Context, domain DomainName, params *TransferInDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*TransferInDomainResponse, error) {
+	rsp, err := c.TransferInDomainWithBody(ctx, domain, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseTransferInDomainResponse(rsp)
+}
+
+// TransferInDomainWithResponse Transfer-in a domain
+//
+// Transfer a domain in from another registrar.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
+func (c *ClientWithResponses) TransferInDomainWithResponse(ctx context.Context, domain DomainName, params *TransferInDomainParams, body TransferInDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*TransferInDomainResponse, error) {
+	rsp, err := c.TransferInDomain(ctx, domain, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseTransferInDomainResponse(rsp)
+}
+
+// GetOrderWithResponse Get a domain order
+//
+// Get information about a domain order by its ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/orders/{orderId} (the `GetOrder` operationId).
+func (c *ClientWithResponses) GetOrderWithResponse(ctx context.Context, orderId OrderId, params *GetOrderParams, reqEditors ...RequestEditorFn) (*GetOrderResponse, error) {
+	rsp, err := c.GetOrder(ctx, orderId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOrderResponse(rsp)
+}
+
+// GetSupportedTldsWithResponse Get supported TLDs
+//
+// Get a list of TLDs supported by Vercel.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/tlds/supported (the `GetSupportedTlds` operationId).
+func (c *ClientWithResponses) GetSupportedTldsWithResponse(ctx context.Context, params *GetSupportedTldsParams, reqEditors ...RequestEditorFn) (*GetSupportedTldsResponse, error) {
+	rsp, err := c.GetSupportedTlds(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSupportedTldsResponse(rsp)
+}
+
+// GetTldWithResponse Get TLD
+//
+// Get the metadata for a specific TLD.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/tlds/{tld} (the `GetTld` operationId).
+func (c *ClientWithResponses) GetTldWithResponse(ctx context.Context, tld TldName, params *GetTldParams, reqEditors ...RequestEditorFn) (*GetTldResponse, error) {
+	rsp, err := c.GetTld(ctx, tld, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetTldResponse(rsp)
+}
+
+// GetTldPriceWithResponse Get TLD price data
+//
+// Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/registrar/tlds/{tld}/price (the `GetTldPrice` operationId).
+func (c *ClientWithResponses) GetTldPriceWithResponse(ctx context.Context, tld TldName, params *GetTldPriceParams, reqEditors ...RequestEditorFn) (*GetTldPriceResponse, error) {
+	rsp, err := c.GetTldPrice(ctx, tld, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetTldPriceResponse(rsp)
+}
+
+// UpdateAttackChallengeModeWithBodyWithResponse Update Attack Challenge mode
+//
+// Update the setting for determining if the project has Attack Challenge mode enabled.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
+func (c *ClientWithResponses) UpdateAttackChallengeModeWithBodyWithResponse(ctx context.Context, params *UpdateAttackChallengeModeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAttackChallengeModeResponse, error) {
+	rsp, err := c.UpdateAttackChallengeModeWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAttackChallengeModeResponse(rsp)
+}
+
+// UpdateAttackChallengeModeWithResponse Update Attack Challenge mode
+//
+// Update the setting for determining if the project has Attack Challenge mode enabled.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
+func (c *ClientWithResponses) UpdateAttackChallengeModeWithResponse(ctx context.Context, params *UpdateAttackChallengeModeParams, body UpdateAttackChallengeModeJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAttackChallengeModeResponse, error) {
+	rsp, err := c.UpdateAttackChallengeMode(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAttackChallengeModeResponse(rsp)
+}
+
+// GetActiveAttackStatusWithResponse Read active attack data
+//
+// Retrieve active attack data within the last N days (default: 1 day)
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/attack-status (the `GetActiveAttackStatus` operationId).
+func (c *ClientWithResponses) GetActiveAttackStatusWithResponse(ctx context.Context, params *GetActiveAttackStatusParams, reqEditors ...RequestEditorFn) (*GetActiveAttackStatusResponse, error) {
+	rsp, err := c.GetActiveAttackStatus(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetActiveAttackStatusResponse(rsp)
+}
+
+// RemoveBypassIpWithBodyWithResponse Remove System Bypass Rule
+//
+// Remove system bypass rules.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
+func (c *ClientWithResponses) RemoveBypassIpWithBodyWithResponse(ctx context.Context, params *RemoveBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveBypassIpResponse, error) {
+	rsp, err := c.RemoveBypassIpWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveBypassIpResponse(rsp)
+}
+
+// RemoveBypassIpWithResponse Remove System Bypass Rule
+//
+// Remove system bypass rules.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
+func (c *ClientWithResponses) RemoveBypassIpWithResponse(ctx context.Context, params *RemoveBypassIpParams, body RemoveBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveBypassIpResponse, error) {
+	rsp, err := c.RemoveBypassIp(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveBypassIpResponse(rsp)
+}
+
+// GetBypassIpWithResponse Read System Bypass
+//
+// Retrieve the system bypass rules configured for the specified project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/bypass (the `GetBypassIp` operationId).
+func (c *ClientWithResponses) GetBypassIpWithResponse(ctx context.Context, params *GetBypassIpParams, reqEditors ...RequestEditorFn) (*GetBypassIpResponse, error) {
+	rsp, err := c.GetBypassIp(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBypassIpResponse(rsp)
+}
+
+// AddBypassIpWithBodyWithResponse Create System Bypass Rule
+//
+// Create new system bypass rules.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
+func (c *ClientWithResponses) AddBypassIpWithBodyWithResponse(ctx context.Context, params *AddBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddBypassIpResponse, error) {
+	rsp, err := c.AddBypassIpWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddBypassIpResponse(rsp)
+}
+
+// AddBypassIpWithResponse Create System Bypass Rule
+//
+// Create new system bypass rules.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
+func (c *ClientWithResponses) AddBypassIpWithResponse(ctx context.Context, params *AddBypassIpParams, body AddBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*AddBypassIpResponse, error) {
+	rsp, err := c.AddBypassIp(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddBypassIpResponse(rsp)
+}
+
+// DeleteConditionalBypassWithResponse Delete conditional firewall bypass
+//
+// Delete a conditional firewall bypass rule from a project domain.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/security/firewall/bypass/rules (the `DeleteConditionalBypass` operationId).
+func (c *ClientWithResponses) DeleteConditionalBypassWithResponse(ctx context.Context, params *DeleteConditionalBypassParams, reqEditors ...RequestEditorFn) (*DeleteConditionalBypassResponse, error) {
+	rsp, err := c.DeleteConditionalBypass(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteConditionalBypassResponse(rsp)
+}
+
+// GetConditionalBypassWithResponse Get conditional firewall bypasses
+//
+// Retrieve conditional firewall bypass rules for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/bypass/rules (the `GetConditionalBypass` operationId).
+func (c *ClientWithResponses) GetConditionalBypassWithResponse(ctx context.Context, params *GetConditionalBypassParams, reqEditors ...RequestEditorFn) (*GetConditionalBypassResponse, error) {
+	rsp, err := c.GetConditionalBypass(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetConditionalBypassResponse(rsp)
+}
+
+// CreateConditionalBypassWithBodyWithResponse Create conditional firewall bypass
+//
+// Create a conditional firewall bypass rule for a project domain.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
+func (c *ClientWithResponses) CreateConditionalBypassWithBodyWithResponse(ctx context.Context, params *CreateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateConditionalBypassResponse, error) {
+	rsp, err := c.CreateConditionalBypassWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateConditionalBypassResponse(rsp)
+}
+
+// CreateConditionalBypassWithResponse Create conditional firewall bypass
+//
+// Create a conditional firewall bypass rule for a project domain.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
+func (c *ClientWithResponses) CreateConditionalBypassWithResponse(ctx context.Context, params *CreateConditionalBypassParams, body CreateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateConditionalBypassResponse, error) {
+	rsp, err := c.CreateConditionalBypass(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateConditionalBypassResponse(rsp)
+}
+
+// UpdateConditionalBypassWithBodyWithResponse Update conditional firewall bypass
+//
+// Update a conditional firewall bypass rule for a project domain. Replaces conditions and the note for the domain's existing rule. Omitting `note` clears it. The rule ID, domain, creator, and creation time are preserved. Missing or deleted rules are not created.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/security/firewall/bypass/rules (the `UpdateConditionalBypass` operationId).
+func (c *ClientWithResponses) UpdateConditionalBypassWithBodyWithResponse(ctx context.Context, params *UpdateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateConditionalBypassResponse, error) {
+	rsp, err := c.UpdateConditionalBypassWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateConditionalBypassResponse(rsp)
+}
+
+// UpdateConditionalBypassWithResponse Update conditional firewall bypass
+//
+// Update a conditional firewall bypass rule for a project domain. Replaces conditions and the note for the domain's existing rule. Omitting `note` clears it. The rule ID, domain, creator, and creation time are preserved. Missing or deleted rules are not created.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/security/firewall/bypass/rules (the `UpdateConditionalBypass` operationId).
+func (c *ClientWithResponses) UpdateConditionalBypassWithResponse(ctx context.Context, params *UpdateConditionalBypassParams, body UpdateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateConditionalBypassResponse, error) {
+	rsp, err := c.UpdateConditionalBypass(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateConditionalBypassResponse(rsp)
+}
+
+// GetSecurityFirewallConfigWithResponse Returns activated WAF config
+//
+// Lists WAF configs for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/config (the `GetSecurityFirewallConfig` operationId).
+func (c *ClientWithResponses) GetSecurityFirewallConfigWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSecurityFirewallConfigResponse, error) {
+	rsp, err := c.GetSecurityFirewallConfig(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSecurityFirewallConfigResponse(rsp)
+}
+
+// UpdateFirewallConfigWithBodyWithResponse Update Firewall Configuration
+//
+// Process updates to modify the existing firewall config for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
+func (c *ClientWithResponses) UpdateFirewallConfigWithBodyWithResponse(ctx context.Context, params *UpdateFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFirewallConfigResponse, error) {
+	rsp, err := c.UpdateFirewallConfigWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFirewallConfigResponse(rsp)
+}
+
+// UpdateFirewallConfigWithResponse Update Firewall Configuration
+//
+// Process updates to modify the existing firewall config for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
+func (c *ClientWithResponses) UpdateFirewallConfigWithResponse(ctx context.Context, params *UpdateFirewallConfigParams, body UpdateFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFirewallConfigResponse, error) {
+	rsp, err := c.UpdateFirewallConfig(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFirewallConfigResponse(rsp)
+}
+
+// PutFirewallConfigWithBodyWithResponse Put Firewall Configuration
+//
+// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
+func (c *ClientWithResponses) PutFirewallConfigWithBodyWithResponse(ctx context.Context, params *PutFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutFirewallConfigResponse, error) {
+	rsp, err := c.PutFirewallConfigWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutFirewallConfigResponse(rsp)
+}
+
+// PutFirewallConfigWithResponse Put Firewall Configuration
+//
+// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
+func (c *ClientWithResponses) PutFirewallConfigWithResponse(ctx context.Context, params *PutFirewallConfigParams, body PutFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*PutFirewallConfigResponse, error) {
+	rsp, err := c.PutFirewallConfig(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutFirewallConfigResponse(rsp)
+}
+
+// GenerateFirewallRuleWithResponse Generate a firewall rule from natural language
+//
+// Generate a firewall rule from a natural language description.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/firewall/config/generate-rule (the `GenerateFirewallRule` operationId).
+func (c *ClientWithResponses) GenerateFirewallRuleWithResponse(ctx context.Context, params *GenerateFirewallRuleParams, reqEditors ...RequestEditorFn) (*GenerateFirewallRuleResponse, error) {
+	rsp, err := c.GenerateFirewallRule(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateFirewallRuleResponse(rsp)
+}
+
+// DeleteSecurityFirewallConfigByConfigVersionWithResponse Returns activated WAF config
+//
+// Promotes a draft WAF config to an active config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/security/firewall/config/{configVersion} (the `DeleteSecurityFirewallConfigByConfigVersion` operationId).
+func (c *ClientWithResponses) DeleteSecurityFirewallConfigByConfigVersionWithResponse(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*DeleteSecurityFirewallConfigByConfigVersionResponse, error) {
+	rsp, err := c.DeleteSecurityFirewallConfigByConfigVersion(ctx, configVersion, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteSecurityFirewallConfigByConfigVersionResponse(rsp)
+}
+
+// GetFirewallConfigWithResponse Read Firewall Configuration
+//
+// Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/config/{configVersion} (the `GetFirewallConfig` operationId).
+func (c *ClientWithResponses) GetFirewallConfigWithResponse(ctx context.Context, configVersion string, params *GetFirewallConfigParams, reqEditors ...RequestEditorFn) (*GetFirewallConfigResponse, error) {
+	rsp, err := c.GetFirewallConfig(ctx, configVersion, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFirewallConfigResponse(rsp)
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivateWithResponse Returns activated WAF config
+//
+// Promotes a draft WAF config to an active config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/security/firewall/config/{configVersion}/activate (the `CreateSecurityFirewallConfigByConfigVersionActivate` operationId).
+func (c *ClientWithResponses) CreateSecurityFirewallConfigByConfigVersionActivateWithResponse(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*CreateSecurityFirewallConfigByConfigVersionActivateResponse, error) {
+	rsp, err := c.CreateSecurityFirewallConfigByConfigVersionActivate(ctx, configVersion, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateSecurityFirewallConfigByConfigVersionActivateResponse(rsp)
+}
+
+// GetSecurityFirewallEventsWithResponse Read Firewall Actions by Project
+//
+// Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/events (the `GetSecurityFirewallEvents` operationId).
+func (c *ClientWithResponses) GetSecurityFirewallEventsWithResponse(ctx context.Context, params *GetSecurityFirewallEventsParams, reqEditors ...RequestEditorFn) (*GetSecurityFirewallEventsResponse, error) {
+	rsp, err := c.GetSecurityFirewallEvents(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSecurityFirewallEventsResponse(rsp)
+}
+
+// GetSecurityFirewallEventsSummaryWithResponse Read Firewall Actions Summary by Project
+//
+// Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/security/firewall/events/summary (the `GetSecurityFirewallEventsSummary` operationId).
+func (c *ClientWithResponses) GetSecurityFirewallEventsSummaryWithResponse(ctx context.Context, params *GetSecurityFirewallEventsSummaryParams, reqEditors ...RequestEditorFn) (*GetSecurityFirewallEventsSummaryResponse, error) {
+	rsp, err := c.GetSecurityFirewallEventsSummary(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSecurityFirewallEventsSummaryResponse(rsp)
+}
+
+// CreateIntegrationStoreDirectWithBodyWithResponse Create integration store (free and paid plans)
+//
+// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
+func (c *ClientWithResponses) CreateIntegrationStoreDirectWithBodyWithResponse(ctx context.Context, params *CreateIntegrationStoreDirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIntegrationStoreDirectResponse, error) {
+	rsp, err := c.CreateIntegrationStoreDirectWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateIntegrationStoreDirectResponse(rsp)
+}
+
+// CreateIntegrationStoreDirectWithResponse Create integration store (free and paid plans)
+//
+// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
+func (c *ClientWithResponses) CreateIntegrationStoreDirectWithResponse(ctx context.Context, params *CreateIntegrationStoreDirectParams, body CreateIntegrationStoreDirectJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIntegrationStoreDirectResponse, error) {
+	rsp, err := c.CreateIntegrationStoreDirect(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateIntegrationStoreDirectResponse(rsp)
+}
+
+// CreateTeamWithBodyWithResponse Create a Team
+//
+// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
+func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error) {
+	rsp, err := c.CreateTeamWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateTeamResponse(rsp)
+}
+
+// CreateTeamWithResponse Create a Team
+//
+// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
+func (c *ClientWithResponses) CreateTeamWithResponse(ctx context.Context, body CreateTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error) {
+	rsp, err := c.CreateTeam(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateTeamResponse(rsp)
+}
+
+// DeleteTeamWithBodyWithResponse Delete a Team
+//
+// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
+func (c *ClientWithResponses) DeleteTeamWithBodyWithResponse(ctx context.Context, teamId string, params *DeleteTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error) {
+	rsp, err := c.DeleteTeamWithBody(ctx, teamId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteTeamResponse(rsp)
+}
+
+// DeleteTeamWithResponse Delete a Team
+//
+// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
+func (c *ClientWithResponses) DeleteTeamWithResponse(ctx context.Context, teamId string, params *DeleteTeamParams, body DeleteTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error) {
+	rsp, err := c.DeleteTeam(ctx, teamId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteTeamResponse(rsp)
+}
+
+// PostTeamDsyncRolesWithBodyWithResponse Update Team Directory Sync Role Mappings
+//
+// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
+func (c *ClientWithResponses) PostTeamDsyncRolesWithBodyWithResponse(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostTeamDsyncRolesResponse, error) {
+	rsp, err := c.PostTeamDsyncRolesWithBody(ctx, teamId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostTeamDsyncRolesResponse(rsp)
+}
+
+// PostTeamDsyncRolesWithResponse Update Team Directory Sync Role Mappings
+//
+// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
+func (c *ClientWithResponses) PostTeamDsyncRolesWithResponse(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, body PostTeamDsyncRolesJSONRequestBody, reqEditors ...RequestEditorFn) (*PostTeamDsyncRolesResponse, error) {
+	rsp, err := c.PostTeamDsyncRoles(ctx, teamId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostTeamDsyncRolesResponse(rsp)
+}
+
+// ListTeamFlagsWithResponse List all flags for a team
+//
+// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/teams/{teamId}/feature-flags/flags (the `ListTeamFlags` operationId).
+func (c *ClientWithResponses) ListTeamFlagsWithResponse(ctx context.Context, teamId string, params *ListTeamFlagsParams, reqEditors ...RequestEditorFn) (*ListTeamFlagsResponse, error) {
+	rsp, err := c.ListTeamFlags(ctx, teamId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListTeamFlagsResponse(rsp)
+}
+
+// ListTeamFlagSettingsWithResponse List team project flag settings
+//
+// Retrieve feature flag settings for projects in a team.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/teams/{teamId}/feature-flags/settings (the `ListTeamFlagSettings` operationId).
+func (c *ClientWithResponses) ListTeamFlagSettingsWithResponse(ctx context.Context, teamId string, params *ListTeamFlagSettingsParams, reqEditors ...RequestEditorFn) (*ListTeamFlagSettingsResponse, error) {
+	rsp, err := c.ListTeamFlagSettings(ctx, teamId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListTeamFlagSettingsResponse(rsp)
+}
+
+// DeleteTeamInviteCodeWithResponse Delete a Team invite code
+//
+// Delete an active Team invite code.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/teams/{teamId}/invites/{inviteId} (the `DeleteTeamInviteCode` operationId).
+func (c *ClientWithResponses) DeleteTeamInviteCodeWithResponse(ctx context.Context, teamId string, inviteId string, reqEditors ...RequestEditorFn) (*DeleteTeamInviteCodeResponse, error) {
+	rsp, err := c.DeleteTeamInviteCode(ctx, teamId, inviteId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteTeamInviteCodeResponse(rsp)
+}
+
+// JoinTeamWithBodyWithResponse Join a team
+//
+// Join a team with a provided invite code or team ID.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
+func (c *ClientWithResponses) JoinTeamWithBodyWithResponse(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*JoinTeamResponse, error) {
+	rsp, err := c.JoinTeamWithBody(ctx, teamId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseJoinTeamResponse(rsp)
+}
+
+// JoinTeamWithResponse Join a team
+//
+// Join a team with a provided invite code or team ID.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
+func (c *ClientWithResponses) JoinTeamWithResponse(ctx context.Context, teamId string, body JoinTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*JoinTeamResponse, error) {
+	rsp, err := c.JoinTeam(ctx, teamId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseJoinTeamResponse(rsp)
+}
+
+// RemoveTeamMemberWithResponse Remove a Team Member
+//
+// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
+func (c *ClientWithResponses) RemoveTeamMemberWithResponse(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*RemoveTeamMemberResponse, error) {
+	rsp, err := c.RemoveTeamMember(ctx, teamId, uid, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveTeamMemberResponse(rsp)
+}
+
+// UpdateTeamMemberWithBodyWithResponse Update a Team Member
+//
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
+func (c *ClientWithResponses) UpdateTeamMemberWithBodyWithResponse(ctx context.Context, teamId string, uid string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateTeamMemberResponse, error) {
+	rsp, err := c.UpdateTeamMemberWithBody(ctx, teamId, uid, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateTeamMemberResponse(rsp)
+}
+
+// UpdateTeamMemberWithResponse Update a Team Member
+//
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
+func (c *ClientWithResponses) UpdateTeamMemberWithResponse(ctx context.Context, teamId string, uid string, body UpdateTeamMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateTeamMemberResponse, error) {
+	rsp, err := c.UpdateTeamMember(ctx, teamId, uid, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateTeamMemberResponse(rsp)
+}
+
+// DeleteMicrofrontendsGroupWithResponse Delete a microfrontends group
+//
+// Deletes a microfrontends group from the team associated with the group ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/teams/{teamId}/microfrontends/{groupId} (the `DeleteMicrofrontendsGroup` operationId).
+func (c *ClientWithResponses) DeleteMicrofrontendsGroupWithResponse(ctx context.Context, teamId string, groupId string, params *DeleteMicrofrontendsGroupParams, reqEditors ...RequestEditorFn) (*DeleteMicrofrontendsGroupResponse, error) {
+	rsp, err := c.DeleteMicrofrontendsGroup(ctx, teamId, groupId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteMicrofrontendsGroupResponse(rsp)
+}
+
+// UpdateMicrofrontendsGroupWithBodyWithResponse Update a microfrontends group
+//
+// Updates a microfrontends group's settings.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
+func (c *ClientWithResponses) UpdateMicrofrontendsGroupWithBodyWithResponse(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsGroupResponse, error) {
+	rsp, err := c.UpdateMicrofrontendsGroupWithBody(ctx, teamId, groupId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateMicrofrontendsGroupResponse(rsp)
+}
+
+// UpdateMicrofrontendsGroupWithResponse Update a microfrontends group
+//
+// Updates a microfrontends group's settings.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
+func (c *ClientWithResponses) UpdateMicrofrontendsGroupWithResponse(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, body UpdateMicrofrontendsGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateMicrofrontendsGroupResponse, error) {
+	rsp, err := c.UpdateMicrofrontendsGroup(ctx, teamId, groupId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateMicrofrontendsGroupResponse(rsp)
+}
+
+// RequestAccessToTeamWithBodyWithResponse Request access to a team
+//
+// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
+func (c *ClientWithResponses) RequestAccessToTeamWithBodyWithResponse(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RequestAccessToTeamResponse, error) {
+	rsp, err := c.RequestAccessToTeamWithBody(ctx, teamId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRequestAccessToTeamResponse(rsp)
+}
+
+// RequestAccessToTeamWithResponse Request access to a team
+//
+// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
+func (c *ClientWithResponses) RequestAccessToTeamWithResponse(ctx context.Context, teamId string, body RequestAccessToTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*RequestAccessToTeamResponse, error) {
+	rsp, err := c.RequestAccessToTeam(ctx, teamId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRequestAccessToTeamResponse(rsp)
+}
+
+// GetTeamAccessRequestWithResponse Get access request status
+//
+// Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/teams/{teamId}/request/{userId} (the `GetTeamAccessRequest` operationId).
+func (c *ClientWithResponses) GetTeamAccessRequestWithResponse(ctx context.Context, teamId string, userId string, reqEditors ...RequestEditorFn) (*GetTeamAccessRequestResponse, error) {
+	rsp, err := c.GetTeamAccessRequest(ctx, teamId, userId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetTeamAccessRequestResponse(rsp)
+}
+
+// RequestDeleteWithBodyWithResponse Delete User Account
+//
+// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
+func (c *ClientWithResponses) RequestDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RequestDeleteResponse, error) {
+	rsp, err := c.RequestDeleteWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRequestDeleteResponse(rsp)
+}
+
+// RequestDeleteWithResponse Delete User Account
+//
+// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
+func (c *ClientWithResponses) RequestDeleteWithResponse(ctx context.Context, body RequestDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*RequestDeleteResponse, error) {
+	rsp, err := c.RequestDelete(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRequestDeleteResponse(rsp)
+}
+
+// ListRepositoriesWithResponse List repositories
+//
+// List container registry repositories for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository (the `ListRepositories` operationId).
+func (c *ClientWithResponses) ListRepositoriesWithResponse(ctx context.Context, params *ListRepositoriesParams, reqEditors ...RequestEditorFn) (*ListRepositoriesResponse, error) {
+	rsp, err := c.ListRepositories(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListRepositoriesResponse(rsp)
+}
+
+// CreateRepositoryWithBodyWithResponse Create a repository
+//
+// Create a container registry repository for a project.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
+func (c *ClientWithResponses) CreateRepositoryWithBodyWithResponse(ctx context.Context, params *CreateRepositoryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateRepositoryResponse, error) {
+	rsp, err := c.CreateRepositoryWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateRepositoryResponse(rsp)
+}
+
+// CreateRepositoryWithResponse Create a repository
+//
+// Create a container registry repository for a project.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
+func (c *ClientWithResponses) CreateRepositoryWithResponse(ctx context.Context, params *CreateRepositoryParams, body CreateRepositoryJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateRepositoryResponse, error) {
+	rsp, err := c.CreateRepository(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateRepositoryResponse(rsp)
+}
+
+// DeleteRepositoryWithResponse Delete a repository
+//
+// Schedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName} (the `DeleteRepository` operationId).
+func (c *ClientWithResponses) DeleteRepositoryWithResponse(ctx context.Context, idOrName string, params *DeleteRepositoryParams, reqEditors ...RequestEditorFn) (*DeleteRepositoryResponse, error) {
+	rsp, err := c.DeleteRepository(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteRepositoryResponse(rsp)
+}
+
+// GetRepositoryWithResponse Get a repository
+//
+// Fetch a container registry repository for a project by ID or name.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName} (the `GetRepository` operationId).
+func (c *ClientWithResponses) GetRepositoryWithResponse(ctx context.Context, idOrName string, params *GetRepositoryParams, reqEditors ...RequestEditorFn) (*GetRepositoryResponse, error) {
+	rsp, err := c.GetRepository(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRepositoryResponse(rsp)
+}
+
+// ListRepositoryImagesWithResponse List repository images
+//
+// List images for a container registry repository, including their tags.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/images (the `ListRepositoryImages` operationId).
+func (c *ClientWithResponses) ListRepositoryImagesWithResponse(ctx context.Context, idOrName string, params *ListRepositoryImagesParams, reqEditors ...RequestEditorFn) (*ListRepositoryImagesResponse, error) {
+	rsp, err := c.ListRepositoryImages(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListRepositoryImagesResponse(rsp)
+}
+
+// GetRepositoryImageWithResponse Get a repository image
+//
+// Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} (the `GetRepositoryImage` operationId).
+func (c *ClientWithResponses) GetRepositoryImageWithResponse(ctx context.Context, idOrName string, imageIdOrDigest string, params *GetRepositoryImageParams, reqEditors ...RequestEditorFn) (*GetRepositoryImageResponse, error) {
+	rsp, err := c.GetRepositoryImage(ctx, idOrName, imageIdOrDigest, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRepositoryImageResponse(rsp)
+}
+
+// DeleteRepositoryImageWithResponse Delete a repository image
+//
+// Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/images/{imageId} (the `DeleteRepositoryImage` operationId).
+func (c *ClientWithResponses) DeleteRepositoryImageWithResponse(ctx context.Context, idOrName string, imageId string, params *DeleteRepositoryImageParams, reqEditors ...RequestEditorFn) (*DeleteRepositoryImageResponse, error) {
+	rsp, err := c.DeleteRepositoryImage(ctx, idOrName, imageId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteRepositoryImageResponse(rsp)
+}
+
+// RemoveRepositoryPermissionWithBodyWithResponse Remove a repository permission
+//
+// Revoke a team's access to a VCR repository.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
+func (c *ClientWithResponses) RemoveRepositoryPermissionWithBodyWithResponse(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RemoveRepositoryPermissionResponse, error) {
+	rsp, err := c.RemoveRepositoryPermissionWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveRepositoryPermissionResponse(rsp)
+}
+
+// RemoveRepositoryPermissionWithResponse Remove a repository permission
+//
+// Revoke a team's access to a VCR repository.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
+func (c *ClientWithResponses) RemoveRepositoryPermissionWithResponse(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, body RemoveRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*RemoveRepositoryPermissionResponse, error) {
+	rsp, err := c.RemoveRepositoryPermission(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRemoveRepositoryPermissionResponse(rsp)
+}
+
+// ListRepositoryPermissionsWithResponse List repository permissions
+//
+// List the teams a VCR repository is shared with.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/permissions (the `ListRepositoryPermissions` operationId).
+func (c *ClientWithResponses) ListRepositoryPermissionsWithResponse(ctx context.Context, idOrName string, params *ListRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*ListRepositoryPermissionsResponse, error) {
+	rsp, err := c.ListRepositoryPermissions(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListRepositoryPermissionsResponse(rsp)
+}
+
+// AddRepositoryPermissionWithBodyWithResponse Add a repository permission
+//
+// Grant a team access to a VCR repository. Sharing applies to the whole repository.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
+func (c *ClientWithResponses) AddRepositoryPermissionWithBodyWithResponse(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddRepositoryPermissionResponse, error) {
+	rsp, err := c.AddRepositoryPermissionWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddRepositoryPermissionResponse(rsp)
+}
+
+// AddRepositoryPermissionWithResponse Add a repository permission
+//
+// Grant a team access to a VCR repository. Sharing applies to the whole repository.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
+func (c *ClientWithResponses) AddRepositoryPermissionWithResponse(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, body AddRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*AddRepositoryPermissionResponse, error) {
+	rsp, err := c.AddRepositoryPermission(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddRepositoryPermissionResponse(rsp)
+}
+
+// ClearRepositoryPermissionsWithResponse Clear all repository permissions
+//
+// Revoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions/all (the `ClearRepositoryPermissions` operationId).
+func (c *ClientWithResponses) ClearRepositoryPermissionsWithResponse(ctx context.Context, idOrName string, params *ClearRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*ClearRepositoryPermissionsResponse, error) {
+	rsp, err := c.ClearRepositoryPermissions(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseClearRepositoryPermissionsResponse(rsp)
+}
+
+// ListRepositoryTagsWithResponse List repository tags
+//
+// List a repository's tags.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/tags (the `ListRepositoryTags` operationId).
+func (c *ClientWithResponses) ListRepositoryTagsWithResponse(ctx context.Context, idOrName string, params *ListRepositoryTagsParams, reqEditors ...RequestEditorFn) (*ListRepositoryTagsResponse, error) {
+	rsp, err := c.ListRepositoryTags(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListRepositoryTagsResponse(rsp)
+}
+
+// GetRepositoryTagWithResponse Get a repository tag
+//
+// Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/tags/{tag} (the `GetRepositoryTag` operationId).
+func (c *ClientWithResponses) GetRepositoryTagWithResponse(ctx context.Context, idOrName string, tag string, params *GetRepositoryTagParams, reqEditors ...RequestEditorFn) (*GetRepositoryTagResponse, error) {
+	rsp, err := c.GetRepositoryTag(ctx, idOrName, tag, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRepositoryTagResponse(rsp)
+}
+
+// ListVercelCiInvocationAttemptsWithResponse List all attempts for an invocation
+//
+// List Invocation Attempts.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts (the `ListVercelCiInvocationAttempts` operationId).
+func (c *ClientWithResponses) ListVercelCiInvocationAttemptsWithResponse(ctx context.Context, invocationId string, params *ListVercelCiInvocationAttemptsParams, reqEditors ...RequestEditorFn) (*ListVercelCiInvocationAttemptsResponse, error) {
+	rsp, err := c.ListVercelCiInvocationAttempts(ctx, invocationId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListVercelCiInvocationAttemptsResponse(rsp)
+}
+
+// GetVercelCiInvocationWithResponse Get a specific invocation attempt
+//
+// Get Invocation.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt} (the `GetVercelCiInvocation` operationId).
+func (c *ClientWithResponses) GetVercelCiInvocationWithResponse(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationResponse, error) {
+	rsp, err := c.GetVercelCiInvocation(ctx, invocationId, attempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiInvocationResponse(rsp)
+}
+
+// ListVercelCiJobDefinitionsWithResponse List job definitions for an invocation attempt
+//
+// List Job Definitions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions (the `ListVercelCiJobDefinitions` operationId).
+func (c *ClientWithResponses) ListVercelCiJobDefinitionsWithResponse(ctx context.Context, invocationId string, attempt string, params *ListVercelCiJobDefinitionsParams, reqEditors ...RequestEditorFn) (*ListVercelCiJobDefinitionsResponse, error) {
+	rsp, err := c.ListVercelCiJobDefinitions(ctx, invocationId, attempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListVercelCiJobDefinitionsResponse(rsp)
+}
+
+// GetVercelCiJobDefinitionWithResponse Get a specific job definition
+//
+// Get Job Definition.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId} (the `GetVercelCiJobDefinition` operationId).
+func (c *ClientWithResponses) GetVercelCiJobDefinitionWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *GetVercelCiJobDefinitionParams, reqEditors ...RequestEditorFn) (*GetVercelCiJobDefinitionResponse, error) {
+	rsp, err := c.GetVercelCiJobDefinition(ctx, invocationId, attempt, jobDefinitionId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiJobDefinitionResponse(rsp)
+}
+
+// ListVercelCiJobRunsWithResponse List all runs for a job definition
+//
+// List Job Runs.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs (the `ListVercelCiJobRuns` operationId).
+func (c *ClientWithResponses) ListVercelCiJobRunsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *ListVercelCiJobRunsParams, reqEditors ...RequestEditorFn) (*ListVercelCiJobRunsResponse, error) {
+	rsp, err := c.ListVercelCiJobRuns(ctx, invocationId, attempt, jobDefinitionId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListVercelCiJobRunsResponse(rsp)
+}
+
+// GetVercelCiJobRunWithResponse Get a specific job run attempt
+//
+// Get Job Run.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt} (the `GetVercelCiJobRun` operationId).
+func (c *ClientWithResponses) GetVercelCiJobRunWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunParams, reqEditors ...RequestEditorFn) (*GetVercelCiJobRunResponse, error) {
+	rsp, err := c.GetVercelCiJobRun(ctx, invocationId, attempt, jobDefinitionId, runAttempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiJobRunResponse(rsp)
+}
+
+// GetVercelCiJobRunLogsWithResponse Get log lines for a specific job run attempt
+//
+// Get Job Run Logs.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs (the `GetVercelCiJobRunLogs` operationId).
+func (c *ClientWithResponses) GetVercelCiJobRunLogsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiJobRunLogsResponse, error) {
+	rsp, err := c.GetVercelCiJobRunLogs(ctx, invocationId, attempt, jobDefinitionId, runAttempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiJobRunLogsResponse(rsp)
+}
+
+// ListVercelCiTaskDefinitionsWithResponse List all task definitions for a job run
+//
+// List Task Definitions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions (the `ListVercelCiTaskDefinitions` operationId).
+func (c *ClientWithResponses) ListVercelCiTaskDefinitionsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskDefinitionsParams, reqEditors ...RequestEditorFn) (*ListVercelCiTaskDefinitionsResponse, error) {
+	rsp, err := c.ListVercelCiTaskDefinitions(ctx, invocationId, attempt, jobDefinitionId, runAttempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListVercelCiTaskDefinitionsResponse(rsp)
+}
+
+// GetVercelCiTaskRunLogsWithResponse Get log lines for a specific task run attempt
+//
+// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs (the `GetVercelCiTaskRunLogs` operationId).
+func (c *ClientWithResponses) GetVercelCiTaskRunLogsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, taskDefinitionId string, taskRunAttempt string, params *GetVercelCiTaskRunLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiTaskRunLogsResponse, error) {
+	rsp, err := c.GetVercelCiTaskRunLogs(ctx, invocationId, attempt, jobDefinitionId, runAttempt, taskDefinitionId, taskRunAttempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiTaskRunLogsResponse(rsp)
+}
+
+// ListVercelCiTaskRunsWithResponse List task runs for a job run
+//
+// List Task Runs.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs (the `ListVercelCiTaskRuns` operationId).
+func (c *ClientWithResponses) ListVercelCiTaskRunsWithResponse(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskRunsParams, reqEditors ...RequestEditorFn) (*ListVercelCiTaskRunsResponse, error) {
+	rsp, err := c.ListVercelCiTaskRuns(ctx, invocationId, attempt, jobDefinitionId, runAttempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListVercelCiTaskRunsResponse(rsp)
+}
+
+// GetVercelCiInvocationLogsWithResponse Get log lines for an invocation attempt
+//
+// Get Invocation Logs.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs (the `GetVercelCiInvocationLogs` operationId).
+func (c *ClientWithResponses) GetVercelCiInvocationLogsWithResponse(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationLogsResponse, error) {
+	rsp, err := c.GetVercelCiInvocationLogs(ctx, invocationId, attempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiInvocationLogsResponse(rsp)
+}
+
+// RetryVercelCiInvocationWithResponse Retry a terminal Vercel CI invocation attempt
+//
+// Retry Invocation.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/retry (the `RetryVercelCiInvocation` operationId).
+func (c *ClientWithResponses) RetryVercelCiInvocationWithResponse(ctx context.Context, invocationId string, attempt string, params *RetryVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*RetryVercelCiInvocationResponse, error) {
+	rsp, err := c.RetryVercelCiInvocation(ctx, invocationId, attempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRetryVercelCiInvocationResponse(rsp)
+}
+
+// GetVercelCiTaskLogsWithResponse Get log lines for the tasks of an invocation attempt
+//
+// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs (the `GetVercelCiTaskLogs` operationId).
+func (c *ClientWithResponses) GetVercelCiTaskLogsWithResponse(ctx context.Context, invocationId string, attempt string, params *GetVercelCiTaskLogsParams, reqEditors ...RequestEditorFn) (*GetVercelCiTaskLogsResponse, error) {
+	rsp, err := c.GetVercelCiTaskLogs(ctx, invocationId, attempt, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiTaskLogsResponse(rsp)
+}
+
+// GetVercelCiInvocationTreeWithResponse Get an invocation with its jobs and tasks
+//
+// Returns an invocation attempt together with every job definition, its latest job run, and the task definitions and active task runs of that job run. Defaults to the latest attempt when `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes (`completed`) or the stream reaches its maximum duration (`timeout`), after which clients should reconnect.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/tree (the `GetVercelCiInvocationTree` operationId).
+func (c *ClientWithResponses) GetVercelCiInvocationTreeWithResponse(ctx context.Context, invocationId string, params *GetVercelCiInvocationTreeParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationTreeResponse, error) {
+	rsp, err := c.GetVercelCiInvocationTree(ctx, invocationId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiInvocationTreeResponse(rsp)
+}
+
+// SearchVercelCiLogsWithResponse Search the task logs of several invocation attempts
+//
+// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/log-search (the `SearchVercelCiLogs` operationId).
+func (c *ClientWithResponses) SearchVercelCiLogsWithResponse(ctx context.Context, params *SearchVercelCiLogsParams, reqEditors ...RequestEditorFn) (*SearchVercelCiLogsResponse, error) {
+	rsp, err := c.SearchVercelCiLogs(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSearchVercelCiLogsResponse(rsp)
+}
+
+// GetVercelCiRepositorySettingsWithResponse Get Vercel CI settings for a connected repository
+//
+// Get Repository Settings.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/repository-settings (the `GetVercelCiRepositorySettings` operationId).
+func (c *ClientWithResponses) GetVercelCiRepositorySettingsWithResponse(ctx context.Context, params *GetVercelCiRepositorySettingsParams, reqEditors ...RequestEditorFn) (*GetVercelCiRepositorySettingsResponse, error) {
+	rsp, err := c.GetVercelCiRepositorySettings(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiRepositorySettingsResponse(rsp)
+}
+
+// UpdateVercelCiRepositorySettingsWithBodyWithResponse Enable or disable Vercel CI for a connected repository
+//
+// Update Repository Settings.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
+func (c *ClientWithResponses) UpdateVercelCiRepositorySettingsWithBodyWithResponse(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateVercelCiRepositorySettingsResponse, error) {
+	rsp, err := c.UpdateVercelCiRepositorySettingsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateVercelCiRepositorySettingsResponse(rsp)
+}
+
+// UpdateVercelCiRepositorySettingsWithResponse Enable or disable Vercel CI for a connected repository
+//
+// Update Repository Settings.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/vercel-ci/repository-settings (the `UpdateVercelCiRepositorySettings` operationId).
+func (c *ClientWithResponses) UpdateVercelCiRepositorySettingsWithResponse(ctx context.Context, params *UpdateVercelCiRepositorySettingsParams, body UpdateVercelCiRepositorySettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateVercelCiRepositorySettingsResponse, error) {
+	rsp, err := c.UpdateVercelCiRepositorySettings(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateVercelCiRepositorySettingsResponse(rsp)
+}
+
+// CreateVercelCiTaskAnalysisWithBodyWithResponse Start an asynchronous Vercel CI task analysis
+//
+// Create task analysis.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
+func (c *ClientWithResponses) CreateVercelCiTaskAnalysisWithBodyWithResponse(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskAnalysisResponse, error) {
+	rsp, err := c.CreateVercelCiTaskAnalysisWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateVercelCiTaskAnalysisResponse(rsp)
+}
+
+// CreateVercelCiTaskAnalysisWithResponse Start an asynchronous Vercel CI task analysis
+//
+// Create task analysis.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vercel-ci/task-analyses (the `CreateVercelCiTaskAnalysis` operationId).
+func (c *ClientWithResponses) CreateVercelCiTaskAnalysisWithResponse(ctx context.Context, params *CreateVercelCiTaskAnalysisParams, body CreateVercelCiTaskAnalysisJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskAnalysisResponse, error) {
+	rsp, err := c.CreateVercelCiTaskAnalysis(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateVercelCiTaskAnalysisResponse(rsp)
+}
+
+// GetVercelCiTaskAnalysisWithResponse Get the current status of a Vercel CI task analysis
+//
+// Get task analysis.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId} (the `GetVercelCiTaskAnalysis` operationId).
+func (c *ClientWithResponses) GetVercelCiTaskAnalysisWithResponse(ctx context.Context, analysisId string, params *GetVercelCiTaskAnalysisParams, reqEditors ...RequestEditorFn) (*GetVercelCiTaskAnalysisResponse, error) {
+	rsp, err := c.GetVercelCiTaskAnalysis(ctx, analysisId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVercelCiTaskAnalysisResponse(rsp)
+}
+
+// CreateVercelCiTaskConfigurationPullRequestWithBodyWithResponse Create a GitHub pull request that adds Vercel CI tags for the completed analysis
+//
+// Create task configuration pull request.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
+func (c *ClientWithResponses) CreateVercelCiTaskConfigurationPullRequestWithBodyWithResponse(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskConfigurationPullRequestResponse, error) {
+	rsp, err := c.CreateVercelCiTaskConfigurationPullRequestWithBody(ctx, analysisId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateVercelCiTaskConfigurationPullRequestResponse(rsp)
+}
+
+// CreateVercelCiTaskConfigurationPullRequestWithResponse Create a GitHub pull request that adds Vercel CI tags for the completed analysis
+//
+// Create task configuration pull request.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/vercel-ci/task-analyses/{analysisId}/pull-request (the `CreateVercelCiTaskConfigurationPullRequest` operationId).
+func (c *ClientWithResponses) CreateVercelCiTaskConfigurationPullRequestWithResponse(ctx context.Context, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, body CreateVercelCiTaskConfigurationPullRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateVercelCiTaskConfigurationPullRequestResponse, error) {
+	rsp, err := c.CreateVercelCiTaskConfigurationPullRequest(ctx, analysisId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateVercelCiTaskConfigurationPullRequestResponse(rsp)
+}
+
+// ListVercelCiTaskAnalysisTasksWithResponse List discovered tasks for a completed Vercel CI task analysis
+//
+// List task analysis tasks.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/vercel-ci/task-analyses/{analysisId}/tasks (the `ListVercelCiTaskAnalysisTasks` operationId).
+func (c *ClientWithResponses) ListVercelCiTaskAnalysisTasksWithResponse(ctx context.Context, analysisId string, params *ListVercelCiTaskAnalysisTasksParams, reqEditors ...RequestEditorFn) (*ListVercelCiTaskAnalysisTasksResponse, error) {
+	rsp, err := c.ListVercelCiTaskAnalysisTasks(ctx, analysisId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListVercelCiTaskAnalysisTasksResponse(rsp)
+}
+
+// GetWebhooksWithResponse Get a list of webhooks
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/webhooks (the `GetWebhooks` operationId).
+func (c *ClientWithResponses) GetWebhooksWithResponse(ctx context.Context, params *GetWebhooksParams, reqEditors ...RequestEditorFn) (*GetWebhooksResponse, error) {
+	rsp, err := c.GetWebhooks(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetWebhooksResponse(rsp)
+}
+
+// CreateWebhookWithBodyWithResponse Creates a webhook
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
+func (c *ClientWithResponses) CreateWebhookWithBodyWithResponse(ctx context.Context, params *CreateWebhookParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateWebhookResponse, error) {
+	rsp, err := c.CreateWebhookWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateWebhookResponse(rsp)
+}
+
+// CreateWebhookWithResponse Creates a webhook
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/webhooks (the `CreateWebhook` operationId).
+func (c *ClientWithResponses) CreateWebhookWithResponse(ctx context.Context, params *CreateWebhookParams, body CreateWebhookJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateWebhookResponse, error) {
+	rsp, err := c.CreateWebhook(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateWebhookResponse(rsp)
+}
+
+// DeleteWebhookWithResponse Deletes a webhook
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/webhooks/{id} (the `DeleteWebhook` operationId).
+func (c *ClientWithResponses) DeleteWebhookWithResponse(ctx context.Context, id string, params *DeleteWebhookParams, reqEditors ...RequestEditorFn) (*DeleteWebhookResponse, error) {
+	rsp, err := c.DeleteWebhook(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteWebhookResponse(rsp)
+}
+
+// GetWebhookWithResponse Get a webhook
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/webhooks/{id} (the `GetWebhook` operationId).
+func (c *ClientWithResponses) GetWebhookWithResponse(ctx context.Context, id string, params *GetWebhookParams, reqEditors ...RequestEditorFn) (*GetWebhookResponse, error) {
+	rsp, err := c.GetWebhook(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetWebhookResponse(rsp)
+}
+
+// GetProjectsWithResponse Retrieve a list of projects
+//
+// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v10/projects (the `GetProjects` operationId).
+func (c *ClientWithResponses) GetProjectsWithResponse(ctx context.Context, params *GetProjectsParams, reqEditors ...RequestEditorFn) (*GetProjectsResponse, error) {
+	rsp, err := c.GetProjects(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectsResponse(rsp)
+}
+
+// AddProjectDomainWithBodyWithResponse Add a domain to a project
+//
+// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
+func (c *ClientWithResponses) AddProjectDomainWithBodyWithResponse(ctx context.Context, idOrName string, params *AddProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddProjectDomainResponse, error) {
+	rsp, err := c.AddProjectDomainWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddProjectDomainResponse(rsp)
+}
+
+// AddProjectDomainWithResponse Add a domain to a project
+//
+// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v10/projects/{idOrName}/domains (the `AddProjectDomain` operationId).
+func (c *ClientWithResponses) AddProjectDomainWithResponse(ctx context.Context, idOrName string, params *AddProjectDomainParams, body AddProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*AddProjectDomainResponse, error) {
+	rsp, err := c.AddProjectDomain(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddProjectDomainResponse(rsp)
+}
+
+// FilterProjectEnvsWithResponse Retrieve the environment variables of a project by id or name
+//
+// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v10/projects/{idOrName}/env (the `FilterProjectEnvs` operationId).
+func (c *ClientWithResponses) FilterProjectEnvsWithResponse(ctx context.Context, idOrName string, params *FilterProjectEnvsParams, reqEditors ...RequestEditorFn) (*FilterProjectEnvsResponse, error) {
+	rsp, err := c.FilterProjectEnvs(ctx, idOrName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFilterProjectEnvsResponse(rsp)
+}
+
+// CreateProjectEnvWithBodyWithResponse Create one or more environment variables
+//
+// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
+func (c *ClientWithResponses) CreateProjectEnvWithBodyWithResponse(ctx context.Context, idOrName string, params *CreateProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectEnvResponse, error) {
+	rsp, err := c.CreateProjectEnvWithBody(ctx, idOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectEnvResponse(rsp)
+}
+
+// CreateProjectEnvWithResponse Create one or more environment variables
+//
+// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v10/projects/{idOrName}/env (the `CreateProjectEnv` operationId).
+func (c *ClientWithResponses) CreateProjectEnvWithResponse(ctx context.Context, idOrName string, params *CreateProjectEnvParams, body CreateProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectEnvResponse, error) {
+	rsp, err := c.CreateProjectEnv(ctx, idOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectEnvResponse(rsp)
+}
+
+// RequestPromoteWithResponse Point production traffic to a given deployment
+//
+// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v10/projects/{projectId}/promote/{deploymentId} (the `RequestPromote` operationId).
+func (c *ClientWithResponses) RequestPromoteWithResponse(ctx context.Context, projectId string, deploymentId string, params *RequestPromoteParams, reqEditors ...RequestEditorFn) (*RequestPromoteResponse, error) {
+	rsp, err := c.RequestPromote(ctx, projectId, deploymentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRequestPromoteResponse(rsp)
+}
+
+// CreateProjectWithBodyWithResponse Create a new project
+//
+// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v11/projects (the `CreateProject` operationId).
+func (c *ClientWithResponses) CreateProjectWithBodyWithResponse(ctx context.Context, params *CreateProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateProjectResponse, error) {
+	rsp, err := c.CreateProjectWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectResponse(rsp)
+}
+
+// CreateProjectWithResponse Create a new project
+//
+// Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v11/projects (the `CreateProject` operationId).
+func (c *ClientWithResponses) CreateProjectWithResponse(ctx context.Context, params *CreateProjectParams, body CreateProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateProjectResponse, error) {
+	rsp, err := c.CreateProject(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateProjectResponse(rsp)
+}
+
+// CancelDeploymentWithResponse Cancel a deployment
+//
+// Cancels a deployment that is currently in progress, stopping the build before it completes. Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with known errors — without waiting for them to finish. Returns 400 if the deployment is no longer cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object with `readyState: 'CANCELED'` on success.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v12/deployments/{id}/cancel (the `CancelDeployment` operationId).
+func (c *ClientWithResponses) CancelDeploymentWithResponse(ctx context.Context, id string, params *CancelDeploymentParams, reqEditors ...RequestEditorFn) (*CancelDeploymentResponse, error) {
+	rsp, err := c.CancelDeployment(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCancelDeploymentResponse(rsp)
+}
+
+// CreateDeploymentWithBodyWithResponse Create a new deployment
+//
+// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
+func (c *ClientWithResponses) CreateDeploymentWithBodyWithResponse(ctx context.Context, params *CreateDeploymentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDeploymentResponse, error) {
+	rsp, err := c.CreateDeploymentWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDeploymentResponse(rsp)
+}
+
+// CreateDeploymentWithResponse Create a new deployment
+//
+// Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v13/deployments (the `CreateDeployment` operationId).
+func (c *ClientWithResponses) CreateDeploymentWithResponse(ctx context.Context, params *CreateDeploymentParams, body CreateDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDeploymentResponse, error) {
+	rsp, err := c.CreateDeployment(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDeploymentResponse(rsp)
+}
+
+// GetDeploymentWithResponse Get a deployment by ID or URL
+//
+// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v13/deployments/{idOrUrl} (the `GetDeployment` operationId).
+func (c *ClientWithResponses) GetDeploymentWithResponse(ctx context.Context, idOrUrl string, params *GetDeploymentParams, reqEditors ...RequestEditorFn) (*GetDeploymentResponse, error) {
+	rsp, err := c.GetDeployment(ctx, idOrUrl, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDeploymentResponse(rsp)
+}
+
+// DeleteDeploymentWithResponse Delete a Deployment
+//
+// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v13/deployments/{id} (the `DeleteDeployment` operationId).
+func (c *ClientWithResponses) DeleteDeploymentWithResponse(ctx context.Context, id string, params *DeleteDeploymentParams, reqEditors ...RequestEditorFn) (*DeleteDeploymentResponse, error) {
+	rsp, err := c.DeleteDeployment(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteDeploymentResponse(rsp)
+}
+
+// GetRootWithResponse Check registry API version support
+//
+// GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/ (the `GetRoot` operationId).
+func (c *ClientWithResponses) GetRootWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetRootResponse, error) {
+	rsp, err := c.GetRoot(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetRootResponse(rsp)
+}
+
+// DeleteAliasWithResponse Delete an Alias
+//
+// Delete an Alias with the specified ID.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v2/aliases/{aliasId} (the `DeleteAlias` operationId).
+func (c *ClientWithResponses) DeleteAliasWithResponse(ctx context.Context, aliasId struct {
+	union json.RawMessage
+}, params *DeleteAliasParams, reqEditors ...RequestEditorFn) (*DeleteAliasResponse, error) {
+	rsp, err := c.DeleteAlias(ctx, aliasId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAliasResponse(rsp)
+}
+
+// ListConnectorsWithResponse List connectors
+//
+// List connectors that belong to a team.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v2/connect/connectors (the `ListConnectors` operationId).
+func (c *ClientWithResponses) ListConnectorsWithResponse(ctx context.Context, params *ListConnectorsParams, reqEditors ...RequestEditorFn) (*ListConnectorsResponse, error) {
+	rsp, err := c.ListConnectors(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListConnectorsResponse(rsp)
+}
+
 // UpdateConnectorWithBodyWithResponse Update a connector
 //
 // Update a connector and return the connector with any service-side update signals that the caller must handle.
@@ -12547,6 +17232,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
 
+					// PrivateNpmUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					PrivateNpmUsage *[]ACLAction `json:"privateNpmUsage,omitempty"`
+
 					// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
 
@@ -12912,13 +17600,14 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 					CreatedAt float32 `json:"createdAt"`
 
 					// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
-					Description string `json:"description"`
+					Description string                                                                              `json:"description"`
+					Principal   *GetMicrofrontendsInGroup200JSONResponseBody_Projects_RollbackDescription_Principal `json:"principal,omitempty"`
 
-					// UserId The user who rolled back the project.
-					UserId string `json:"userId"`
+					// UserId The ID of the user who rolled back the project, when the principal was a user.
+					UserId *string `json:"userId,omitempty"`
 
-					// Username The username of the user who rolled back the project.
-					Username string `json:"username"`
+					// Username The username of the user who rolled back the project, when the principal was a user.
+					Username *string `json:"username,omitempty"`
 				} `json:"rollbackDescription,omitempty"`
 
 				// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
@@ -15250,6 +19939,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
 
+				// PrivateNpmUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PrivateNpmUsage *[]ACLAction `json:"privateNpmUsage,omitempty"`
+
 				// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
 
@@ -15615,13 +20307,14 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				CreatedAt float32 `json:"createdAt"`
 
 				// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
-				Description string `json:"description"`
+				Description string                                                                `json:"description"`
+				Principal   *DeleteProjectAvatar200JSONResponseBody_RollbackDescription_Principal `json:"principal,omitempty"`
 
-				// UserId The user who rolled back the project.
-				UserId string `json:"userId"`
+				// UserId The ID of the user who rolled back the project, when the principal was a user.
+				UserId *string `json:"userId,omitempty"`
 
-				// Username The username of the user who rolled back the project.
-				Username string `json:"username"`
+				// Username The username of the user who rolled back the project, when the principal was a user.
+				Username *string `json:"username,omitempty"`
 			} `json:"rollbackDescription,omitempty"`
 
 			// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
@@ -15964,4134 +20657,6 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 		break // No content-type
 
 	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUploadProjectAvatarResponse parses an HTTP response from a UploadProjectAvatarWithResponse call
-func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UploadProjectAvatarResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AccountId string `json:"accountId"`
-			Alias     []struct {
-				ConfiguredBy        *UploadProjectAvatar200JSONResponseBodyAliasConfiguredBy `json:"configuredBy,omitempty"`
-				ConfiguredChangedAt *float32                                                 `json:"configuredChangedAt,omitempty"`
-				CreatedAt           *float32                                                 `json:"createdAt,omitempty"`
-				Deployment          *struct {
-					Alias         *[]string                                                              `json:"alias,omitempty"`
-					AliasAssigned *UploadProjectAvatar200JSONResponseBody_Alias_Deployment_AliasAssigned `json:"aliasAssigned,omitempty"`
-					AliasError    *struct {
-						Code    string `json:"code"`
-						Message string `json:"message"`
-					} `json:"aliasError,omitempty"`
-					AliasFinal       *string   `json:"aliasFinal,omitempty"`
-					AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
-					BranchMatcher    *struct {
-						// Pattern The pattern to match against branch names
-						Pattern string `json:"pattern"`
-
-						// Type The type of matching to perform
-						Type UploadProjectAvatar200JSONResponseBodyAliasDeploymentBranchMatcherType `json:"type"`
-					} `json:"branchMatcher,omitempty"`
-					BuildingAt *float32 `json:"buildingAt,omitempty"`
-					Builds     *[]struct {
-						Dest *string `json:"dest,omitempty"`
-						Src  *string `json:"src,omitempty"`
-						Use  string  `json:"use"`
-					} `json:"builds,omitempty"`
-					ChecksConclusion       *UploadProjectAvatar200JSONResponseBodyAliasDeploymentChecksConclusion     `json:"checksConclusion,omitempty"`
-					ChecksState            *UploadProjectAvatar200JSONResponseBodyAliasDeploymentChecksState          `json:"checksState,omitempty"`
-					ConnectBuildsEnabled   *UploadProjectAvatar200JSONResponseBodyAliasDeploymentConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-					ConnectConfigurationId *string                                                                    `json:"connectConfigurationId,omitempty"`
-					CreatedAt              float32                                                                    `json:"createdAt"`
-					CreatedIn              string                                                                     `json:"createdIn"`
-					Creator                *struct {
-						Email       string  `json:"email"`
-						GithubLogin *string `json:"githubLogin,omitempty"`
-						GitlabLogin *string `json:"gitlabLogin,omitempty"`
-						Uid         string  `json:"uid"`
-						Username    string  `json:"username"`
-					} `json:"creator"`
-					DeletedAt          *float32                                                     `json:"deletedAt,omitempty"`
-					DeploymentHostname string                                                       `json:"deploymentHostname"`
-					Forced             *UploadProjectAvatar200JSONResponseBodyAliasDeploymentForced `json:"forced,omitempty"`
-					Id                 string                                                       `json:"id"`
-					Meta               *map[string]string                                           `json:"meta,omitempty"`
-					MonorepoManager    *string                                                      `json:"monorepoManager,omitempty"`
-					Name               string                                                       `json:"name"`
-					OidcTokenClaims    *struct {
-						Aud                 string    `json:"aud"`
-						CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-						DeploymentId        *string   `json:"deployment_id,omitempty"`
-						Environment         string    `json:"environment"`
-						Iss                 string    `json:"iss"`
-						MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-						Owner               string    `json:"owner"`
-						OwnerId             string    `json:"owner_id"`
-						Plan                *string   `json:"plan,omitempty"`
-						Project             string    `json:"project"`
-						ProjectId           string    `json:"project_id"`
-						Scope               string    `json:"scope"`
-						Sub                 string    `json:"sub"`
-					} `json:"oidcTokenClaims,omitempty"`
-					Plan UploadProjectAvatar200JSONResponseBodyAliasDeploymentPlan `json:"plan"`
-
-					// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-					//
-					// Example: false
-					PreviewCommentsEnabled *UploadProjectAvatar200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-					Private                UploadProjectAvatar200JSONResponseBodyAliasDeploymentPrivate                 `json:"private"`
-					ReadyAt                *float32                                                                     `json:"readyAt,omitempty"`
-					ReadyState             UploadProjectAvatar200JSONResponseBodyAliasDeploymentReadyState              `json:"readyState"`
-					ReadySubstate          *UploadProjectAvatar200JSONResponseBodyAliasDeploymentReadySubstate          `json:"readySubstate,omitempty"`
-					RequestedAt            *float32                                                                     `json:"requestedAt,omitempty"`
-					Target                 *string                                                                      `json:"target,omitempty"`
-					TeamId                 *string                                                                      `json:"teamId,omitempty"`
-					Type                   UploadProjectAvatar200JSONResponseBodyAliasDeploymentType                    `json:"type"`
-					Url                    string                                                                       `json:"url"`
-
-					// UserId Present for user creators; omitted for app/integration/system creators.
-					UserId    *string                                                         `json:"userId,omitempty"`
-					WithCache *UploadProjectAvatar200JSONResponseBodyAliasDeploymentWithCache `json:"withCache,omitempty"`
-				} `json:"deployment"`
-				Domain             string                                                         `json:"domain"`
-				Environment        UploadProjectAvatar200JSONResponseBodyAliasEnvironment         `json:"environment"`
-				GitBranch          *string                                                        `json:"gitBranch,omitempty"`
-				Redirect           *string                                                        `json:"redirect,omitempty"`
-				RedirectStatusCode *UploadProjectAvatar200JSONResponseBodyAliasRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-				Target             UploadProjectAvatar200JSONResponseBodyAliasTarget              `json:"target"`
-			} `json:"alias"`
-			Analytics *struct {
-				CanceledAt          *float32 `json:"canceledAt,omitempty"`
-				DisabledAt          float32  `json:"disabledAt"`
-				EnabledAt           float32  `json:"enabledAt"`
-				Id                  string   `json:"id"`
-				PaidAt              *float32 `json:"paidAt,omitempty"`
-				SampleRatePercent   *float32 `json:"sampleRatePercent,omitempty"`
-				SpendLimitInDollars *float32 `json:"spendLimitInDollars,omitempty"`
-			} `json:"analytics,omitempty"`
-			AppliedCve55182Migration         *UploadProjectAvatar200JSONResponseBodyAppliedCve55182Migration `json:"appliedCve55182Migration,omitempty"`
-			AutoAssignCustomDomains          *UploadProjectAvatar200JSONResponseBodyAutoAssignCustomDomains  `json:"autoAssignCustomDomains,omitempty"`
-			AutoAssignCustomDomainsUpdatedBy *string                                                         `json:"autoAssignCustomDomainsUpdatedBy,omitempty"`
-			AutoExposeSystemEnvs             *UploadProjectAvatar200JSONResponseBodyAutoExposeSystemEnvs     `json:"autoExposeSystemEnvs,omitempty"`
-			Avatar                           *string                                                         `json:"avatar,omitempty"`
-			AvatarDarkMode                   *string                                                         `json:"avatarDarkMode,omitempty"`
-			Blobs                            *struct {
-				// IsDefaultApp Marks the team-level, Vercel-managed default blob project (`vercel-blob-default-project`) that orphan blob stores are scoped to when connected without an explicit project. Set only by internal storage flows and immutable after creation — guards rely on it to protect the connected stores from being lost when the project is deleted or transferred.
-				IsDefaultApp *UploadProjectAvatar200JSONResponseBodyBlobsIsDefaultApp `json:"isDefaultApp,omitempty"`
-			} `json:"blobs,omitempty"`
-			BuildCommand                *string                                                     `json:"buildCommand,omitempty"`
-			CommandForIgnoringBuildStep *string                                                     `json:"commandForIgnoringBuildStep,omitempty"`
-			ConcurrencyBucketName       *string                                                     `json:"concurrencyBucketName,omitempty"`
-			ConnectBuildsEnabled        *UploadProjectAvatar200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-			ConnectConfigurationId      *string                                                     `json:"connectConfigurationId,omitempty"`
-			ConnectConfigurations       *[]struct {
-				Aws *struct {
-					SecurityGroupId *string  `json:"securityGroupId,omitempty"`
-					SubnetIds       []string `json:"subnetIds"`
-				} `json:"aws,omitempty"`
-				BuildsEnabled          UploadProjectAvatar200JSONResponseBodyConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
-				ConnectConfigurationId string                                                                   `json:"connectConfigurationId"`
-				CreatedAt              float32                                                                  `json:"createdAt"`
-				Dc                     *string                                                                  `json:"dc,omitempty"`
-				EnvId                  UploadProjectAvatar200JSONResponseBody_ConnectConfigurations_EnvId       `json:"envId"`
-				Passive                UploadProjectAvatar200JSONResponseBodyConnectConfigurationsPassive       `json:"passive"`
-				UpdatedAt              float32                                                                  `json:"updatedAt"`
-			} `json:"connectConfigurations,omitempty"`
-			CreatedAt *float32                                        `json:"createdAt,omitempty"`
-			Creator   *UploadProjectAvatar200JSONResponseBody_Creator `json:"creator,omitempty"`
-			Crons     *struct {
-				Definitions []struct {
-					// Description A human-readable description of what this cron job does.
-					Description *string `json:"description,omitempty"`
-
-					// Host The hostname that should be used.
-					//
-					// Example: vercel.com
-					Host string `json:"host"`
-
-					// HostInferred Whether the host was inferred from the production deployment URL rather than explicitly provided.
-					HostInferred *UploadProjectAvatar200JSONResponseBodyCronsDefinitionsHostInferred `json:"hostInferred,omitempty"`
-
-					// Path The path that should be called for the cronjob.
-					//
-					// Example: /api/crons/sync-something?hello=world
-					Path string `json:"path"`
-
-					// Schedule The cron expression.
-					//
-					// Example: 0 0 * * *
-					Schedule string `json:"schedule"`
-
-					// Source The origin of this definition. 'api' means created via the API. Undefined means it originated from a deployment (vercel.json).
-					Source *UploadProjectAvatar200JSONResponseBodyCronsDefinitionsSource `json:"source,omitempty"`
-				} `json:"definitions"`
-
-				// DeploymentId The ID of the Deployment from which the definitions originated.
-				DeploymentId *string `json:"deploymentId"`
-
-				// DisabledAt The time the feature was disabled for this project.
-				DisabledAt *float32 `json:"disabledAt"`
-
-				// EnabledAt The time the feature was enabled for this project. Note: It enables automatically with the first Deployment that outputs cronjobs.
-				EnabledAt float32 `json:"enabledAt"`
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"crons,omitempty"`
-			CustomEnvironments *[]struct {
-				// BranchMatcher Configuration for matching git branches to this environment
-				BranchMatcher *struct {
-					// Pattern The pattern to match against branch names
-					Pattern string `json:"pattern"`
-
-					// Type The type of matching to perform
-					Type UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsBranchMatcherType `json:"type"`
-				} `json:"branchMatcher,omitempty"`
-
-				// CreatedAt Timestamp when the environment was created
-				CreatedAt float32 `json:"createdAt"`
-
-				// CurrentDeploymentAliases List of aliases for the current deployment
-				CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
-
-				// Description Optional description of the environment's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Domains List of domains associated with this environment
-				Domains *[]struct {
-					ApexName            string                                                                             `json:"apexName"`
-					CreatedAt           *float32                                                                           `json:"createdAt,omitempty"`
-					CustomEnvironmentId *string                                                                            `json:"customEnvironmentId,omitempty"`
-					GitBranch           *string                                                                            `json:"gitBranch,omitempty"`
-					Name                string                                                                             `json:"name"`
-					ProjectId           string                                                                             `json:"projectId"`
-					Redirect            *string                                                                            `json:"redirect,omitempty"`
-					RedirectStatusCode  *UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-					UpdatedAt           *float32                                                                           `json:"updatedAt,omitempty"`
-
-					// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-					Verification *[]struct {
-						Domain string `json:"domain"`
-						Reason string `json:"reason"`
-						Type   string `json:"type"`
-						Value  string `json:"value"`
-					} `json:"verification,omitempty"`
-
-					// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-					Verified UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsDomainsVerified `json:"verified"`
-				} `json:"domains,omitempty"`
-
-				// Id Unique identifier for the custom environment (format: env_*)
-				Id string `json:"id"`
-
-				// Slug URL-friendly name of the environment
-				Slug string `json:"slug"`
-
-				// Type The type of environment (production, preview, or development)
-				Type UploadProjectAvatar200JSONResponseBodyCustomEnvironmentsType `json:"type"`
-
-				// UpdatedAt Timestamp when the environment was last updated
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"customEnvironments,omitempty"`
-			CustomerSupportCodeVisibility *UploadProjectAvatar200JSONResponseBodyCustomerSupportCodeVisibility `json:"customerSupportCodeVisibility,omitempty"`
-			DataCache                     *struct {
-				StorageSizeBytes *float32                                                    `json:"storageSizeBytes,omitempty"`
-				Unlimited        *UploadProjectAvatar200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
-				UserDisabled     UploadProjectAvatar200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
-			} `json:"dataCache,omitempty"`
-			DefaultResourceConfig struct {
-				BuildMachineElasticLastUpdated *float32                                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
-				BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
-				BuildMachineElasticTransition  *struct {
-					AlgorithmVersion string                                                                                            `json:"algorithmVersion"`
-					At               float32                                                                                           `json:"at"`
-					Direction        UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
-				} `json:"buildMachineElasticTransition,omitempty"`
-				BuildMachineSelection *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
-				BuildMachineType      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
-				BuildQueue            *struct {
-					Configuration *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-				} `json:"buildQueue,omitempty"`
-				ElasticBuildMachine        *UploadProjectAvatar200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
-				ElasticConcurrencyEnabled  *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
-				EnableFunctionsBeta        *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
-				Fluid                      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFluid                      `json:"fluid,omitempty"`
-				FunctionDefaultMemoryType  *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
-				FunctionDefaultRegions     []string                                                                               `json:"functionDefaultRegions"`
-				FunctionDefaultTimeout     *float32                                                                               `json:"functionDefaultTimeout,omitempty"`
-				FunctionZeroConfigFailover *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
-				IsNSNBDisabled             *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
-			} `json:"defaultResourceConfig"`
-
-			// DeploymentExpiration Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.
-			DeploymentExpiration struct {
-				// DeploymentsToKeep Minimum number of production deployments to keep for this project, even if they are over the production expiration limit.
-				DeploymentsToKeep *float32 `json:"deploymentsToKeep,omitempty"`
-
-				// ExpirationDays Number of days to keep non-production deployments (mostly preview deployments) before soft deletion.
-				ExpirationDays *float32 `json:"expirationDays,omitempty"`
-
-				// ExpirationDaysCanceled Number of days to keep canceled deployments before soft deletion.
-				ExpirationDaysCanceled *float32 `json:"expirationDaysCanceled,omitempty"`
-
-				// ExpirationDaysErrored Number of days to keep errored deployments before soft deletion.
-				ExpirationDaysErrored *float32 `json:"expirationDaysErrored,omitempty"`
-
-				// ExpirationDaysProduction Number of days to keep production deployments before soft deletion.
-				ExpirationDaysProduction *float32 `json:"expirationDaysProduction,omitempty"`
-			} `json:"deploymentExpiration"`
-
-			// DeploymentPolicy Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident.
-			DeploymentPolicy *struct {
-				DeploymentSources *[]struct {
-					Enabled      UploadProjectAvatar200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled                `json:"enabled"`
-					Environments []UploadProjectAvatar200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item `json:"environments"`
-					Sources      []UploadProjectAvatar200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources              `json:"sources"`
-				} `json:"deploymentSources,omitempty"`
-				GitSources *[]struct {
-					Enabled      UploadProjectAvatar200JSONResponseBodyDeploymentPolicyGitSourcesEnabled                `json:"enabled"`
-					Environments []UploadProjectAvatar200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item `json:"environments"`
-					Sources      []UploadProjectAvatar200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item      `json:"sources"`
-				} `json:"gitSources,omitempty"`
-			} `json:"deploymentPolicy,omitempty"`
-			DevCommand       *string                                                `json:"devCommand,omitempty"`
-			DirectoryListing UploadProjectAvatar200JSONResponseBodyDirectoryListing `json:"directoryListing"`
-			DismissedToasts  *[]struct {
-				Action      UploadProjectAvatar200JSONResponseBodyDismissedToastsAction   `json:"action"`
-				DismissedAt float32                                                       `json:"dismissedAt"`
-				Key         string                                                        `json:"key"`
-				Value       *UploadProjectAvatar200JSONResponseBody_DismissedToasts_Value `json:"value"`
-			} `json:"dismissedToasts,omitempty"`
-			EnableAffectedProjectsDeployments *UploadProjectAvatar200JSONResponseBodyEnableAffectedProjectsDeployments `json:"enableAffectedProjectsDeployments,omitempty"`
-			EnableExternalRewriteCaching      *UploadProjectAvatar200JSONResponseBodyEnableExternalRewriteCaching      `json:"enableExternalRewriteCaching,omitempty"`
-			EnablePreviewFeedback             *UploadProjectAvatar200JSONResponseBodyEnablePreviewFeedback             `json:"enablePreviewFeedback,omitempty"`
-			EnableProductionFeedback          *UploadProjectAvatar200JSONResponseBodyEnableProductionFeedback          `json:"enableProductionFeedback,omitempty"`
-			Env                               *[]struct {
-				Comment              *string                                                 `json:"comment,omitempty"`
-				ConfigurationId      *string                                                 `json:"configurationId,omitempty"`
-				ContentHint          *UploadProjectAvatar200JSONResponseBody_Env_ContentHint `json:"contentHint,omitempty"`
-				CreatedAt            *float32                                                `json:"createdAt,omitempty"`
-				CreatedBy            *string                                                 `json:"createdBy,omitempty"`
-				CustomEnvironmentIds *[]string                                               `json:"customEnvironmentIds,omitempty"`
-				Decrypted            *UploadProjectAvatar200JSONResponseBodyEnvDecrypted     `json:"decrypted,omitempty"`
-				EdgeConfigId         *string                                                 `json:"edgeConfigId,omitempty"`
-				EdgeConfigTokenId    *string                                                 `json:"edgeConfigTokenId,omitempty"`
-				GitBranch            *string                                                 `json:"gitBranch,omitempty"`
-				Id                   *string                                                 `json:"id,omitempty"`
-
-				// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
-				InternalContentHint *struct {
-					// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
-					EncryptedValue string                                                           `json:"encryptedValue"`
-					Type           UploadProjectAvatar200JSONResponseBodyEnvInternalContentHintType `json:"type"`
-				} `json:"internalContentHint,omitempty"`
-				Key string `json:"key"`
-
-				// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
-				LegacyValue *string `json:"legacyValue,omitempty"`
-
-				// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
-				SunsetSecretId *string                                            `json:"sunsetSecretId,omitempty"`
-				Target         *UploadProjectAvatar200JSONResponseBody_Env_Target `json:"target,omitempty"`
-				Type           UploadProjectAvatar200JSONResponseBodyEnvType      `json:"type"`
-				UpdatedAt      *float32                                           `json:"updatedAt,omitempty"`
-				UpdatedBy      *string                                            `json:"updatedBy,omitempty"`
-				Value          string                                             `json:"value"`
-
-				// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
-				Visibility *UploadProjectAvatar200JSONResponseBodyEnvVisibility `json:"visibility,omitempty"`
-				VsmValue   *string                                              `json:"vsmValue,omitempty"`
-			} `json:"env,omitempty"`
-			Expiration *UploadProjectAvatar200JSONResponseBody_Expiration `json:"expiration,omitempty"`
-			Features   *struct {
-				WebAnalytics *UploadProjectAvatar200JSONResponseBodyFeaturesWebAnalytics `json:"webAnalytics,omitempty"`
-			} `json:"features,omitempty"`
-			Framework   *UploadProjectAvatar200JSONResponseBodyFramework `json:"framework,omitempty"`
-			GitComments *struct {
-				// OnCommit Whether the Vercel bot should comment on commits
-				OnCommit UploadProjectAvatar200JSONResponseBodyGitCommentsOnCommit `json:"onCommit"`
-
-				// OnPullRequest Whether the Vercel bot should comment on PRs
-				OnPullRequest UploadProjectAvatar200JSONResponseBodyGitCommentsOnPullRequest `json:"onPullRequest"`
-			} `json:"gitComments,omitempty"`
-			GitForkProtection  *UploadProjectAvatar200JSONResponseBodyGitForkProtection `json:"gitForkProtection,omitempty"`
-			GitLFS             *UploadProjectAvatar200JSONResponseBodyGitLFS            `json:"gitLFS,omitempty"`
-			GitProviderOptions *struct {
-				// ConsolidatedGitCommitStatus Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment.
-				ConsolidatedGitCommitStatus *struct {
-					// Enabled Whether consolidated commit status is enabled.
-					Enabled UploadProjectAvatar200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled `json:"enabled"`
-
-					// PropagateFailures Whether to propagate individual deployment failures to the consolidated status.
-					PropagateFailures UploadProjectAvatar200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures `json:"propagateFailures"`
-				} `json:"consolidatedGitCommitStatus,omitempty"`
-
-				// CreateDeployments Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead
-				CreateDeployments UploadProjectAvatar200JSONResponseBodyGitProviderOptionsCreateDeployments `json:"createDeployments"`
-
-				// DisableRepositoryDispatchEvents Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.
-				DisableRepositoryDispatchEvents *UploadProjectAvatar200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents,omitempty"`
-
-				// GitCommitStatus Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.
-				GitCommitStatus *UploadProjectAvatar200JSONResponseBodyGitProviderOptionsGitCommitStatus `json:"gitCommitStatus,omitempty"`
-
-				// RequireVerifiedCommits Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.
-				RequireVerifiedCommits *UploadProjectAvatar200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits `json:"requireVerifiedCommits,omitempty"`
-			} `json:"gitProviderOptions,omitempty"`
-			HasActiveBranches *UploadProjectAvatar200JSONResponseBodyHasActiveBranches      `json:"hasActiveBranches,omitempty"`
-			HasDeployments    *UploadProjectAvatar200JSONResponseBodyHasDeployments         `json:"hasDeployments,omitempty"`
-			Id                string                                                        `json:"id"`
-			InstallCommand    *string                                                       `json:"installCommand,omitempty"`
-			InternalRoutes    *[]UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item `json:"internalRoutes,omitempty"`
-			IpBuckets         *[]struct {
-				Bucket       string                                                  `json:"bucket"`
-				Default      *UploadProjectAvatar200JSONResponseBodyIpBucketsDefault `json:"default,omitempty"`
-				SupportUntil *float32                                                `json:"supportUntil,omitempty"`
-			} `json:"ipBuckets,omitempty"`
-			Jobs *struct {
-				FlagDefinitionsPresent *struct {
-					Targets []string `json:"targets"`
-				} `json:"flag-definitions-present,omitempty"`
-				HealthCheck *struct {
-					Targets []string `json:"targets"`
-				} `json:"health-check,omitempty"`
-				Lint *struct {
-					Targets []string `json:"targets"`
-				} `json:"lint,omitempty"`
-				MfeConfigPresent *struct {
-					Targets []string `json:"targets"`
-				} `json:"mfe-config-present,omitempty"`
-				Typecheck *struct {
-					Targets []string `json:"targets"`
-				} `json:"typecheck,omitempty"`
-			} `json:"jobs,omitempty"`
-			LastAliasRequest *struct {
-				FromDeploymentId *string `json:"fromDeploymentId"`
-
-				// FromRollingReleaseId If rolling back from a rolling release, fromDeploymentId captures the "base" of that rolling release, and fromRollingReleaseId captures the "target" of that rolling release.
-				FromRollingReleaseId *string                                                         `json:"fromRollingReleaseId,omitempty"`
-				JobStatus            UploadProjectAvatar200JSONResponseBodyLastAliasRequestJobStatus `json:"jobStatus"`
-				RequestedAt          float32                                                         `json:"requestedAt"`
-				ToDeploymentId       string                                                          `json:"toDeploymentId"`
-				Type                 UploadProjectAvatar200JSONResponseBodyLastAliasRequestType      `json:"type"`
-			} `json:"lastAliasRequest,omitempty"`
-			LastRollbackTarget *map[string]interface{} `json:"lastRollbackTarget,omitempty"`
-			LatestDeployments  *[]struct {
-				Alias         *[]string                                                               `json:"alias,omitempty"`
-				AliasAssigned *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned `json:"aliasAssigned,omitempty"`
-				AliasError    *struct {
-					Code    string `json:"code"`
-					Message string `json:"message"`
-				} `json:"aliasError,omitempty"`
-				AliasFinal       *string   `json:"aliasFinal,omitempty"`
-				AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
-				BranchMatcher    *struct {
-					// Pattern The pattern to match against branch names
-					Pattern string `json:"pattern"`
-
-					// Type The type of matching to perform
-					Type UploadProjectAvatar200JSONResponseBodyLatestDeploymentsBranchMatcherType `json:"type"`
-				} `json:"branchMatcher,omitempty"`
-				BuildingAt *float32 `json:"buildingAt,omitempty"`
-				Builds     *[]struct {
-					Dest *string `json:"dest,omitempty"`
-					Src  *string `json:"src,omitempty"`
-					Use  string  `json:"use"`
-				} `json:"builds,omitempty"`
-				ChecksConclusion       *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsChecksConclusion     `json:"checksConclusion,omitempty"`
-				ChecksState            *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsChecksState          `json:"checksState,omitempty"`
-				ConnectBuildsEnabled   *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-				ConnectConfigurationId *string                                                                      `json:"connectConfigurationId,omitempty"`
-				CreatedAt              float32                                                                      `json:"createdAt"`
-				CreatedIn              string                                                                       `json:"createdIn"`
-				Creator                *struct {
-					Email       string  `json:"email"`
-					GithubLogin *string `json:"githubLogin,omitempty"`
-					GitlabLogin *string `json:"gitlabLogin,omitempty"`
-					Uid         string  `json:"uid"`
-					Username    string  `json:"username"`
-				} `json:"creator"`
-				DeletedAt          *float32                                                       `json:"deletedAt,omitempty"`
-				DeploymentHostname string                                                         `json:"deploymentHostname"`
-				Forced             *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsForced `json:"forced,omitempty"`
-				Id                 string                                                         `json:"id"`
-				Meta               *map[string]string                                             `json:"meta,omitempty"`
-				MonorepoManager    *string                                                        `json:"monorepoManager,omitempty"`
-				Name               string                                                         `json:"name"`
-				OidcTokenClaims    *struct {
-					Aud                 string    `json:"aud"`
-					CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-					DeploymentId        *string   `json:"deployment_id,omitempty"`
-					Environment         string    `json:"environment"`
-					Iss                 string    `json:"iss"`
-					MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-					Owner               string    `json:"owner"`
-					OwnerId             string    `json:"owner_id"`
-					Plan                *string   `json:"plan,omitempty"`
-					Project             string    `json:"project"`
-					ProjectId           string    `json:"project_id"`
-					Scope               string    `json:"scope"`
-					Sub                 string    `json:"sub"`
-				} `json:"oidcTokenClaims,omitempty"`
-				Plan UploadProjectAvatar200JSONResponseBodyLatestDeploymentsPlan `json:"plan"`
-
-				// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-				//
-				// Example: false
-				PreviewCommentsEnabled *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-				Private                UploadProjectAvatar200JSONResponseBodyLatestDeploymentsPrivate                 `json:"private"`
-				ReadyAt                *float32                                                                       `json:"readyAt,omitempty"`
-				ReadyState             UploadProjectAvatar200JSONResponseBodyLatestDeploymentsReadyState              `json:"readyState"`
-				ReadySubstate          *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsReadySubstate          `json:"readySubstate,omitempty"`
-				RequestedAt            *float32                                                                       `json:"requestedAt,omitempty"`
-				Target                 *string                                                                        `json:"target,omitempty"`
-				TeamId                 *string                                                                        `json:"teamId,omitempty"`
-				Type                   UploadProjectAvatar200JSONResponseBodyLatestDeploymentsType                    `json:"type"`
-				Url                    string                                                                         `json:"url"`
-
-				// UserId Present for user creators; omitted for app/integration/system creators.
-				UserId    *string                                                           `json:"userId,omitempty"`
-				WithCache *UploadProjectAvatar200JSONResponseBodyLatestDeploymentsWithCache `json:"withCache,omitempty"`
-			} `json:"latestDeployments,omitempty"`
-			Link            *UploadProjectAvatar200JSONResponseBody_Link           `json:"link,omitempty"`
-			Live            *UploadProjectAvatar200JSONResponseBodyLive            `json:"live,omitempty"`
-			Microfrontends  *UploadProjectAvatar200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
-			Name            string                                                 `json:"name"`
-			NodeVersion     UploadProjectAvatar200JSONResponseBodyNodeVersion      `json:"nodeVersion"`
-			OidcTokenConfig *struct {
-				// Enabled Whether or not to generate OpenID Connect JSON Web Tokens.
-				Enabled *UploadProjectAvatar200JSONResponseBodyOidcTokenConfigEnabled `json:"enabled,omitempty"`
-
-				// IssuerMode - team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`
-				IssuerMode *UploadProjectAvatar200JSONResponseBodyOidcTokenConfigIssuerMode `json:"issuerMode,omitempty"`
-			} `json:"oidcTokenConfig,omitempty"`
-			OptionsAllowlist *struct {
-				Paths []struct {
-					Value string `json:"value"`
-				} `json:"paths"`
-			} `json:"optionsAllowlist,omitempty"`
-			OutputDirectory               *string `json:"outputDirectory,omitempty"`
-			PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
-			Passport                      *struct {
-				ConnectorId    string                                                       `json:"connectorId"`
-				DeploymentType UploadProjectAvatar200JSONResponseBodyPassportDeploymentType `json:"deploymentType"`
-			} `json:"passport,omitempty"`
-
-			// PasswordProtection Password protection settings returned without the secret password hash.
-			PasswordProtection *struct {
-				DeploymentType UploadProjectAvatar200JSONResponseBodyPasswordProtectionDeploymentType `json:"deploymentType"`
-			} `json:"passwordProtection,omitempty"`
-			Paused *UploadProjectAvatar200JSONResponseBodyPaused `json:"paused,omitempty"`
-
-			// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-			Permissions *struct {
-				// Monitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Monitoring *[]ACLAction `json:"Monitoring,omitempty"`
-
-				// NotificationMonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationMonitoringAlert *[]ACLAction `json:"NotificationMonitoringAlert,omitempty"`
-
-				// AccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AccessGroup *[]ACLAction `json:"accessGroup,omitempty"`
-
-				// Agent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Agent *[]ACLAction `json:"agent,omitempty"`
-
-				// AiGatewayApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayApiKey *[]ACLAction `json:"aiGatewayApiKey,omitempty"`
-
-				// AiGatewayApiKeyBypassAll Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayApiKeyBypassAll *[]ACLAction `json:"aiGatewayApiKeyBypassAll,omitempty"`
-
-				// AiGatewayApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayApiKeyOwnedBySelf *[]ACLAction `json:"aiGatewayApiKeyOwnedBySelf,omitempty"`
-
-				// AiGatewayApiKeySpendAttribution Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayApiKeySpendAttribution *[]ACLAction `json:"aiGatewayApiKeySpendAttribution,omitempty"`
-
-				// AiGatewayApiKeyZdrExemption Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayApiKeyZdrExemption *[]ACLAction `json:"aiGatewayApiKeyZdrExemption,omitempty"`
-
-				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
-
-				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
-
-				// AiGatewayCredits Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayCredits *[]ACLAction `json:"aiGatewayCredits,omitempty"`
-
-				// AiGatewayGuardrails Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayGuardrails *[]ACLAction `json:"aiGatewayGuardrails,omitempty"`
-
-				// AiGatewayPrivateModels Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayPrivateModels *[]ACLAction `json:"aiGatewayPrivateModels,omitempty"`
-
-				// AiGatewayRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayRules *[]ACLAction `json:"aiGatewayRules,omitempty"`
-
-				// AiGatewaySettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewaySettings *[]ACLAction `json:"aiGatewaySettings,omitempty"`
-
-				// AiGatewayTranscripts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayTranscripts *[]ACLAction `json:"aiGatewayTranscripts,omitempty"`
-
-				// AiGatewayTranscriptsSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayTranscriptsSettings *[]ACLAction `json:"aiGatewayTranscriptsSettings,omitempty"`
-
-				// AiGatewayUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayUsage *[]ACLAction `json:"aiGatewayUsage,omitempty"`
-
-				// AiGatewayVirtualModelConfigs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AiGatewayVirtualModelConfigs *[]ACLAction `json:"aiGatewayVirtualModelConfigs,omitempty"`
-
-				// AlertRules Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AlertRules *[]ACLAction `json:"alertRules,omitempty"`
-
-				// Alerts Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Alerts *[]ACLAction `json:"alerts,omitempty"`
-
-				// AliasGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AliasGlobal *[]ACLAction `json:"aliasGlobal,omitempty"`
-
-				// AliasProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AliasProject *[]ACLAction `json:"aliasProject,omitempty"`
-
-				// AliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AliasProtectionBypass *[]ACLAction `json:"aliasProtectionBypass,omitempty"`
-
-				// Analytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Analytics *[]ACLAction `json:"analytics,omitempty"`
-
-				// AnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AnalyticsSampling *[]ACLAction `json:"analyticsSampling,omitempty"`
-
-				// AnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AnalyticsUsage *[]ACLAction `json:"analyticsUsage,omitempty"`
-
-				// ApiKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ApiKey *[]ACLAction `json:"apiKey,omitempty"`
-
-				// ApiKeyAiGateway Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ApiKeyAiGateway *[]ACLAction `json:"apiKeyAiGateway,omitempty"`
-
-				// ApiKeyOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ApiKeyOwnedBySelf *[]ACLAction `json:"apiKeyOwnedBySelf,omitempty"`
-
-				// AuditLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				AuditLog *[]ACLAction `json:"auditLog,omitempty"`
-
-				// Automation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Automation *[]ACLAction `json:"automation,omitempty"`
-
-				// BillingAddress Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingAddress *[]ACLAction `json:"billingAddress,omitempty"`
-
-				// BillingInformation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingInformation *[]ACLAction `json:"billingInformation,omitempty"`
-
-				// BillingInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingInvoice *[]ACLAction `json:"billingInvoice,omitempty"`
-
-				// BillingInvoiceEmailRecipient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingInvoiceEmailRecipient *[]ACLAction `json:"billingInvoiceEmailRecipient,omitempty"`
-
-				// BillingInvoiceLanguage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingInvoiceLanguage *[]ACLAction `json:"billingInvoiceLanguage,omitempty"`
-
-				// BillingPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingPlan *[]ACLAction `json:"billingPlan,omitempty"`
-
-				// BillingPurchaseOrder Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingPurchaseOrder *[]ACLAction `json:"billingPurchaseOrder,omitempty"`
-
-				// BillingRefund Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingRefund *[]ACLAction `json:"billingRefund,omitempty"`
-
-				// BillingTaxId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BillingTaxId *[]ACLAction `json:"billingTaxId,omitempty"`
-
-				// Blob Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Blob *[]ACLAction `json:"blob,omitempty"`
-
-				// BlobStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BlobStoreTokenSet *[]ACLAction `json:"blobStoreTokenSet,omitempty"`
-
-				// Budget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Budget *[]ACLAction `json:"budget,omitempty"`
-
-				// BuildMachine Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BuildMachine *[]ACLAction `json:"buildMachine,omitempty"`
-
-				// BuildMachineDefault Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BuildMachineDefault *[]ACLAction `json:"buildMachineDefault,omitempty"`
-
-				// BulkRedirects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				BulkRedirects *[]ACLAction `json:"bulkRedirects,omitempty"`
-
-				// CacheArtifact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CacheArtifact *[]ACLAction `json:"cacheArtifact,omitempty"`
-
-				// CacheArtifactUsageEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CacheArtifactUsageEvent *[]ACLAction `json:"cacheArtifactUsageEvent,omitempty"`
-
-				// CiInvocations Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CiInvocations *[]ACLAction `json:"ciInvocations,omitempty"`
-
-				// CiLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CiLogs *[]ACLAction `json:"ciLogs,omitempty"`
-
-				// CodeChecks Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CodeChecks *[]ACLAction `json:"codeChecks,omitempty"`
-
-				// CodeOwners Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CodeOwners *[]ACLAction `json:"codeOwners,omitempty"`
-
-				// ConcurrentBuilds Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConcurrentBuilds *[]ACLAction `json:"concurrentBuilds,omitempty"`
-
-				// Connect Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Connect *[]ACLAction `json:"connect,omitempty"`
-
-				// ConnectConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnectConfiguration *[]ACLAction `json:"connectConfiguration,omitempty"`
-
-				// ConnectConfigurationLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnectConfigurationLink *[]ACLAction `json:"connectConfigurationLink,omitempty"`
-
-				// ConnectLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnectLogs *[]ACLAction `json:"connectLogs,omitempty"`
-
-				// ConnexClient Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnexClient *[]ACLAction `json:"connexClient,omitempty"`
-
-				// ConnexClientAccess Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnexClientAccess *[]ACLAction `json:"connexClientAccess,omitempty"`
-
-				// ConnexClientProject Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnexClientProject *[]ACLAction `json:"connexClientProject,omitempty"`
-
-				// ConnexContact Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnexContact *[]ACLAction `json:"connexContact,omitempty"`
-
-				// ConnexInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnexInstallation *[]ACLAction `json:"connexInstallation,omitempty"`
-
-				// ConnexToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ConnexToken *[]ACLAction `json:"connexToken,omitempty"`
-
-				// CursorOriginInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				CursorOriginInstallation *[]ACLAction `json:"cursorOriginInstallation,omitempty"`
-
-				// DataCacheBillingSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DataCacheBillingSettings *[]ACLAction `json:"dataCacheBillingSettings,omitempty"`
-
-				// DataCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DataCacheNamespace *[]ACLAction `json:"dataCacheNamespace,omitempty"`
-
-				// DefaultDeploymentProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DefaultDeploymentProtection *[]ACLAction `json:"defaultDeploymentProtection,omitempty"`
-
-				// Deployment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Deployment *[]ACLAction `json:"deployment,omitempty"`
-
-				// DeploymentBuildLogs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentBuildLogs *[]ACLAction `json:"deploymentBuildLogs,omitempty"`
-
-				// DeploymentCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentCheck *[]ACLAction `json:"deploymentCheck,omitempty"`
-
-				// DeploymentCheckPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentCheckPreview *[]ACLAction `json:"deploymentCheckPreview,omitempty"`
-
-				// DeploymentCheckReRunFromProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentCheckReRunFromProductionBranch *[]ACLAction `json:"deploymentCheckReRunFromProductionBranch,omitempty"`
-
-				// DeploymentPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentPolicy *[]ACLAction `json:"deploymentPolicy,omitempty"`
-
-				// DeploymentPreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentPreview *[]ACLAction `json:"deploymentPreview,omitempty"`
-
-				// DeploymentPrivate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentPrivate *[]ACLAction `json:"deploymentPrivate,omitempty"`
-
-				// DeploymentProductionGit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentProductionGit *[]ACLAction `json:"deploymentProductionGit,omitempty"`
-
-				// DeploymentPromote Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentPromote *[]ACLAction `json:"deploymentPromote,omitempty"`
-
-				// DeploymentProtectionException Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentProtectionException *[]ACLAction `json:"deploymentProtectionException,omitempty"`
-
-				// DeploymentRollback Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentRollback *[]ACLAction `json:"deploymentRollback,omitempty"`
-
-				// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
-
-				// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Domain *[]ACLAction `json:"domain,omitempty"`
-
-				// DomainAcceptDelegation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainAcceptDelegation *[]ACLAction `json:"domainAcceptDelegation,omitempty"`
-
-				// DomainAuthCodes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainAuthCodes *[]ACLAction `json:"domainAuthCodes,omitempty"`
-
-				// DomainCertificate Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainCertificate *[]ACLAction `json:"domainCertificate,omitempty"`
-
-				// DomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainCheckConfig *[]ACLAction `json:"domainCheckConfig,omitempty"`
-
-				// DomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainMove *[]ACLAction `json:"domainMove,omitempty"`
-
-				// DomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainPurchase *[]ACLAction `json:"domainPurchase,omitempty"`
-
-				// DomainRecord Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainRecord *[]ACLAction `json:"domainRecord,omitempty"`
-
-				// DomainTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				DomainTransferIn *[]ACLAction `json:"domainTransferIn,omitempty"`
-
-				// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Drain *[]ACLAction `json:"drain,omitempty"`
-
-				// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
-
-				// EdgeConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EdgeConfig *[]ACLAction `json:"edgeConfig,omitempty"`
-
-				// EdgeConfigItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EdgeConfigItem *[]ACLAction `json:"edgeConfigItem,omitempty"`
-
-				// EdgeConfigSchema Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EdgeConfigSchema *[]ACLAction `json:"edgeConfigSchema,omitempty"`
-
-				// EdgeConfigToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EdgeConfigToken *[]ACLAction `json:"edgeConfigToken,omitempty"`
-
-				// EmaSetup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EmaSetup *[]ACLAction `json:"emaSetup,omitempty"`
-
-				// EndpointVerification Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				EndpointVerification *[]ACLAction `json:"endpointVerification,omitempty"`
-
-				// Environments Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Environments *[]ACLAction `json:"environments,omitempty"`
-
-				// Event Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Event *[]ACLAction `json:"event,omitempty"`
-
-				// FileUpload Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				FileUpload *[]ACLAction `json:"fileUpload,omitempty"`
-
-				// FlagsExplorerSubscription Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				FlagsExplorerSubscription *[]ACLAction `json:"flagsExplorerSubscription,omitempty"`
-
-				// GitCredentialGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				GitCredentialGrant *[]ACLAction `json:"gitCredentialGrant,omitempty"`
-
-				// GitRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				GitRepository *[]ACLAction `json:"gitRepository,omitempty"`
-
-				// GithubUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				GithubUsage *[]ACLAction `json:"githubUsage,omitempty"`
-
-				// ImageOptimizationNewPrice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ImageOptimizationNewPrice *[]ACLAction `json:"imageOptimizationNewPrice,omitempty"`
-
-				// Integration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Integration *[]ACLAction `json:"integration,omitempty"`
-
-				// IntegrationAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationAccount *[]ACLAction `json:"integrationAccount,omitempty"`
-
-				// IntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationConfiguration *[]ACLAction `json:"integrationConfiguration,omitempty"`
-
-				// IntegrationConfigurationProjects Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationConfigurationProjects *[]ACLAction `json:"integrationConfigurationProjects,omitempty"`
-
-				// IntegrationConfigurationRole Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationConfigurationRole *[]ACLAction `json:"integrationConfigurationRole,omitempty"`
-
-				// IntegrationConfigurationTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationConfigurationTransfer *[]ACLAction `json:"integrationConfigurationTransfer,omitempty"`
-
-				// IntegrationDeploymentAction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationDeploymentAction *[]ACLAction `json:"integrationDeploymentAction,omitempty"`
-
-				// IntegrationEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationEvent *[]ACLAction `json:"integrationEvent,omitempty"`
-
-				// IntegrationLog Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationLog *[]ACLAction `json:"integrationLog,omitempty"`
-
-				// IntegrationPullRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationPullRequest *[]ACLAction `json:"integrationPullRequest,omitempty"`
-
-				// IntegrationResource Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationResource *[]ACLAction `json:"integrationResource,omitempty"`
-
-				// IntegrationResourceData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationResourceData *[]ACLAction `json:"integrationResourceData,omitempty"`
-
-				// IntegrationResourceReplCommand Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationResourceReplCommand *[]ACLAction `json:"integrationResourceReplCommand,omitempty"`
-
-				// IntegrationResourceSecrets Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationResourceSecrets *[]ACLAction `json:"integrationResourceSecrets,omitempty"`
-
-				// IntegrationSSOSession Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationSSOSession *[]ACLAction `json:"integrationSSOSession,omitempty"`
-
-				// IntegrationStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationStoreTokenSet *[]ACLAction `json:"integrationStoreTokenSet,omitempty"`
-
-				// IntegrationStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationStrict *[]ACLAction `json:"integrationStrict,omitempty"`
-
-				// IntegrationVercelConfigurationOverride Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IntegrationVercelConfigurationOverride *[]ACLAction `json:"integrationVercelConfigurationOverride,omitempty"`
-
-				// IpBlocking Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				IpBlocking *[]ACLAction `json:"ipBlocking,omitempty"`
-
-				// Job Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Job *[]ACLAction `json:"job,omitempty"`
-
-				// JobGlobal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				JobGlobal *[]ACLAction `json:"jobGlobal,omitempty"`
-
-				// KmsIssuer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				KmsIssuer *[]ACLAction `json:"kmsIssuer,omitempty"`
-
-				// KmsProjectGrant Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				KmsProjectGrant *[]ACLAction `json:"kmsProjectGrant,omitempty"`
-
-				// LogDrain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				LogDrain *[]ACLAction `json:"logDrain,omitempty"`
-
-				// Logs Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Logs *[]ACLAction `json:"logs,omitempty"`
-
-				// LogsPreset Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				LogsPreset *[]ACLAction `json:"logsPreset,omitempty"`
-
-				// MarketplaceBillingData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceBillingData *[]ACLAction `json:"marketplaceBillingData,omitempty"`
-
-				// MarketplaceExperimentationEdgeConfigData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceExperimentationEdgeConfigData *[]ACLAction `json:"marketplaceExperimentationEdgeConfigData,omitempty"`
-
-				// MarketplaceExperimentationItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceExperimentationItem *[]ACLAction `json:"marketplaceExperimentationItem,omitempty"`
-
-				// MarketplaceFlexCommit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceFlexCommit *[]ACLAction `json:"marketplaceFlexCommit,omitempty"`
-
-				// MarketplaceInstallationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceInstallationMember *[]ACLAction `json:"marketplaceInstallationMember,omitempty"`
-
-				// MarketplaceInvoice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceInvoice *[]ACLAction `json:"marketplaceInvoice,omitempty"`
-
-				// MarketplaceSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MarketplaceSettings *[]ACLAction `json:"marketplaceSettings,omitempty"`
-
-				// Messageboard Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Messageboard *[]ACLAction `json:"messageboard,omitempty"`
-
-				// MessageboardChannel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardChannel *[]ACLAction `json:"messageboardChannel,omitempty"`
-
-				// MessageboardMessage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardMessage *[]ACLAction `json:"messageboardMessage,omitempty"`
-
-				// MessageboardModeration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardModeration *[]ACLAction `json:"messageboardModeration,omitempty"`
-
-				// MessageboardReaction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardReaction *[]ACLAction `json:"messageboardReaction,omitempty"`
-
-				// MessageboardTask Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MessageboardTask *[]ACLAction `json:"messageboardTask,omitempty"`
-
-				// MonitoringAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MonitoringAlert *[]ACLAction `json:"monitoringAlert,omitempty"`
-
-				// MonitoringChart Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MonitoringChart *[]ACLAction `json:"monitoringChart,omitempty"`
-
-				// MonitoringQuery Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MonitoringQuery *[]ACLAction `json:"monitoringQuery,omitempty"`
-
-				// MonitoringSettings Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				MonitoringSettings *[]ACLAction `json:"monitoringSettings,omitempty"`
-
-				// NotificationCustomerBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationCustomerBudget *[]ACLAction `json:"notificationCustomerBudget,omitempty"`
-
-				// NotificationDeploymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDeploymentFailed *[]ACLAction `json:"notificationDeploymentFailed,omitempty"`
-
-				// NotificationDomainConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainConfiguration *[]ACLAction `json:"notificationDomainConfiguration,omitempty"`
-
-				// NotificationDomainExpire Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainExpire *[]ACLAction `json:"notificationDomainExpire,omitempty"`
-
-				// NotificationDomainMoved Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainMoved *[]ACLAction `json:"notificationDomainMoved,omitempty"`
-
-				// NotificationDomainPurchase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainPurchase *[]ACLAction `json:"notificationDomainPurchase,omitempty"`
-
-				// NotificationDomainRenewal Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainRenewal *[]ACLAction `json:"notificationDomainRenewal,omitempty"`
-
-				// NotificationDomainTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainTransfer *[]ACLAction `json:"notificationDomainTransfer,omitempty"`
-
-				// NotificationDomainUnverified Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationDomainUnverified *[]ACLAction `json:"notificationDomainUnverified,omitempty"`
-
-				// NotificationPaymentFailed Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationPaymentFailed *[]ACLAction `json:"notificationPaymentFailed,omitempty"`
-
-				// NotificationPreferences Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationPreferences *[]ACLAction `json:"notificationPreferences,omitempty"`
-
-				// NotificationStatementOfReasons Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationStatementOfReasons *[]ACLAction `json:"notificationStatementOfReasons,omitempty"`
-
-				// NotificationUsageAlert Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				NotificationUsageAlert *[]ACLAction `json:"notificationUsageAlert,omitempty"`
-
-				// Oauth2Application Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Oauth2Application *[]ACLAction `json:"oauth2Application,omitempty"`
-
-				// Oauth2Connection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Oauth2Connection *[]ACLAction `json:"oauth2Connection,omitempty"`
-
-				// ObservabilityConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ObservabilityConfiguration *[]ACLAction `json:"observabilityConfiguration,omitempty"`
-
-				// ObservabilityData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ObservabilityData *[]ACLAction `json:"observabilityData,omitempty"`
-
-				// ObservabilityFunnel Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ObservabilityFunnel *[]ACLAction `json:"observabilityFunnel,omitempty"`
-
-				// ObservabilityNotebook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ObservabilityNotebook *[]ACLAction `json:"observabilityNotebook,omitempty"`
-
-				// OidcFederationPolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OidcFederationPolicy *[]ACLAction `json:"oidcFederationPolicy,omitempty"`
-
-				// OnDemandBuild Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OnDemandBuild *[]ACLAction `json:"onDemandBuild,omitempty"`
-
-				// OnDemandConcurrency Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OnDemandConcurrency *[]ACLAction `json:"onDemandConcurrency,omitempty"`
-
-				// OpenTelemetryEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OpenTelemetryEndpoint *[]ACLAction `json:"openTelemetryEndpoint,omitempty"`
-
-				// OptionsAllowlist Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OptionsAllowlist *[]ACLAction `json:"optionsAllowlist,omitempty"`
-
-				// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Organization *[]ACLAction `json:"organization,omitempty"`
-
-				// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
-
-				// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
-
-				// OwnEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				OwnEvent *[]ACLAction `json:"ownEvent,omitempty"`
-
-				// PageIntegrity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PageIntegrity *[]ACLAction `json:"pageIntegrity,omitempty"`
-
-				// PasswordProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PasswordProtection *[]ACLAction `json:"passwordProtection,omitempty"`
-
-				// PasswordProtectionInvoiceItem Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PasswordProtectionInvoiceItem *[]ACLAction `json:"passwordProtectionInvoiceItem,omitempty"`
-
-				// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
-
-				// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Permissions *[]ACLAction `json:"permissions,omitempty"`
-
-				// Postgres Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Postgres *[]ACLAction `json:"postgres,omitempty"`
-
-				// PostgresStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PostgresStoreTokenSet *[]ACLAction `json:"postgresStoreTokenSet,omitempty"`
-
-				// PreviewDeploymentSuffix Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PreviewDeploymentSuffix *[]ACLAction `json:"previewDeploymentSuffix,omitempty"`
-
-				// PrivateCloudAccount Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PrivateCloudAccount *[]ACLAction `json:"privateCloudAccount,omitempty"`
-
-				// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
-
-				// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
-
-				// ProductionAliasProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProductionAliasProtectionBypass *[]ACLAction `json:"productionAliasProtectionBypass,omitempty"`
-
-				// ProductionShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProductionShareableLink *[]ACLAction `json:"productionShareableLink,omitempty"`
-
-				// Project Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Project *[]ACLAction `json:"project,omitempty"`
-
-				// ProjectAccessGroup Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectAccessGroup *[]ACLAction `json:"projectAccessGroup,omitempty"`
-
-				// ProjectAnalyticsSampling Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectAnalyticsSampling *[]ACLAction `json:"projectAnalyticsSampling,omitempty"`
-
-				// ProjectAnalyticsUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectAnalyticsUsage *[]ACLAction `json:"projectAnalyticsUsage,omitempty"`
-
-				// ProjectCheck Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectCheck *[]ACLAction `json:"projectCheck,omitempty"`
-
-				// ProjectCheckRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectCheckRun *[]ACLAction `json:"projectCheckRun,omitempty"`
-
-				// ProjectDeploymentExpiration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDeploymentExpiration *[]ACLAction `json:"projectDeploymentExpiration,omitempty"`
-
-				// ProjectDeploymentHook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDeploymentHook *[]ACLAction `json:"projectDeploymentHook,omitempty"`
-
-				// ProjectDeploymentProtectionStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDeploymentProtectionStrict *[]ACLAction `json:"projectDeploymentProtectionStrict,omitempty"`
-
-				// ProjectDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDomain *[]ACLAction `json:"projectDomain,omitempty"`
-
-				// ProjectDomainCheckConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDomainCheckConfig *[]ACLAction `json:"projectDomainCheckConfig,omitempty"`
-
-				// ProjectDomainMove Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDomainMove *[]ACLAction `json:"projectDomainMove,omitempty"`
-
-				// ProjectDomainVerify Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectDomainVerify *[]ACLAction `json:"projectDomainVerify,omitempty"`
-
-				// ProjectEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectEnvVars *[]ACLAction `json:"projectEnvVars,omitempty"`
-
-				// ProjectEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectEnvVarsProduction *[]ACLAction `json:"projectEnvVarsProduction,omitempty"`
-
-				// ProjectEnvVarsUnownedByIntegration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectEnvVarsUnownedByIntegration *[]ACLAction `json:"projectEnvVarsUnownedByIntegration,omitempty"`
-
-				// ProjectEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectEvent *[]ACLAction `json:"projectEvent,omitempty"`
-
-				// ProjectFlags Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectFlags *[]ACLAction `json:"projectFlags,omitempty"`
-
-				// ProjectFlagsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectFlagsProduction *[]ACLAction `json:"projectFlagsProduction,omitempty"`
-
-				// ProjectFlagsSdkKey Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectFlagsSdkKey *[]ACLAction `json:"projectFlagsSdkKey,omitempty"`
-
-				// ProjectFromV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectFromV0 *[]ACLAction `json:"projectFromV0,omitempty"`
-
-				// ProjectId Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectId *[]ACLAction `json:"projectId,omitempty"`
-
-				// ProjectIntegrationConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectIntegrationConfiguration *[]ACLAction `json:"projectIntegrationConfiguration,omitempty"`
-
-				// ProjectLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectLink *[]ACLAction `json:"projectLink,omitempty"`
-
-				// ProjectMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectMember *[]ACLAction `json:"projectMember,omitempty"`
-
-				// ProjectMonitoring Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectMonitoring *[]ACLAction `json:"projectMonitoring,omitempty"`
-
-				// ProjectOIDCToken Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectOIDCToken *[]ACLAction `json:"projectOIDCToken,omitempty"`
-
-				// ProjectPermissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectPermissions *[]ACLAction `json:"projectPermissions,omitempty"`
-
-				// ProjectProductionBranch Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectProductionBranch *[]ACLAction `json:"projectProductionBranch,omitempty"`
-
-				// ProjectProtectionBypass Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectProtectionBypass *[]ACLAction `json:"projectProtectionBypass,omitempty"`
-
-				// ProjectRollingRelease Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectRollingRelease *[]ACLAction `json:"projectRollingRelease,omitempty"`
-
-				// ProjectRoutes Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectRoutes *[]ACLAction `json:"projectRoutes,omitempty"`
-
-				// ProjectSetting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectSetting *[]ACLAction `json:"projectSetting,omitempty"`
-
-				// ProjectSupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectSupportCase *[]ACLAction `json:"projectSupportCase,omitempty"`
-
-				// ProjectSupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectSupportCaseComment *[]ACLAction `json:"projectSupportCaseComment,omitempty"`
-
-				// ProjectTier Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectTier *[]ACLAction `json:"projectTier,omitempty"`
-
-				// ProjectTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectTransfer *[]ACLAction `json:"projectTransfer,omitempty"`
-
-				// ProjectTransferIn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectTransferIn *[]ACLAction `json:"projectTransferIn,omitempty"`
-
-				// ProjectTransferOut Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectTransferOut *[]ACLAction `json:"projectTransferOut,omitempty"`
-
-				// ProjectTransferRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectTransferRequest *[]ACLAction `json:"projectTransferRequest,omitempty"`
-
-				// ProjectUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ProjectUsage *[]ACLAction `json:"projectUsage,omitempty"`
-
-				// RateLimit Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				RateLimit *[]ACLAction `json:"rateLimit,omitempty"`
-
-				// Redis Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Redis *[]ACLAction `json:"redis,omitempty"`
-
-				// RedisStoreTokenSet Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				RedisStoreTokenSet *[]ACLAction `json:"redisStoreTokenSet,omitempty"`
-
-				// RemoteCaching Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				RemoteCaching *[]ACLAction `json:"remoteCaching,omitempty"`
-
-				// Repository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Repository *[]ACLAction `json:"repository,omitempty"`
-
-				// SamlConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SamlConfig *[]ACLAction `json:"samlConfig,omitempty"`
-
-				// Schedule Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Schedule *[]ACLAction `json:"schedule,omitempty"`
-
-				// SchedulePreview Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SchedulePreview *[]ACLAction `json:"schedulePreview,omitempty"`
-
-				// SeawallConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SeawallConfig *[]ACLAction `json:"seawallConfig,omitempty"`
-
-				// Secret Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Secret *[]ACLAction `json:"secret,omitempty"`
-
-				// SecurityConfig Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SecurityConfig *[]ACLAction `json:"securityConfig,omitempty"`
-
-				// SecurityPlusConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SecurityPlusConfiguration *[]ACLAction `json:"securityPlusConfiguration,omitempty"`
-
-				// SensitiveEnvironmentVariablePolicy Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SensitiveEnvironmentVariablePolicy *[]ACLAction `json:"sensitiveEnvironmentVariablePolicy,omitempty"`
-
-				// Setting Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Setting *[]ACLAction `json:"setting,omitempty"`
-
-				// ShareableLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ShareableLink *[]ACLAction `json:"shareableLink,omitempty"`
-
-				// ShareableLinkStrict Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ShareableLinkStrict *[]ACLAction `json:"shareableLinkStrict,omitempty"`
-
-				// SharedEnvVarConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SharedEnvVarConnection *[]ACLAction `json:"sharedEnvVarConnection,omitempty"`
-
-				// SharedEnvVars Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SharedEnvVars *[]ACLAction `json:"sharedEnvVars,omitempty"`
-
-				// SharedEnvVarsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SharedEnvVarsProduction *[]ACLAction `json:"sharedEnvVarsProduction,omitempty"`
-
-				// SkewProtection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SkewProtection *[]ACLAction `json:"skewProtection,omitempty"`
-
-				// Space Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Space *[]ACLAction `json:"space,omitempty"`
-
-				// SpaceRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SpaceRun *[]ACLAction `json:"spaceRun,omitempty"`
-
-				// StoreIsLocked Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				StoreIsLocked *[]ACLAction `json:"storeIsLocked,omitempty"`
-
-				// StoreTokenSetSensitive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				StoreTokenSetSensitive *[]ACLAction `json:"storeTokenSetSensitive,omitempty"`
-
-				// StoreTransfer Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				StoreTransfer *[]ACLAction `json:"storeTransfer,omitempty"`
-
-				// SupportCase Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SupportCase *[]ACLAction `json:"supportCase,omitempty"`
-
-				// SupportCaseComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				SupportCaseComment *[]ACLAction `json:"supportCaseComment,omitempty"`
-
-				// Team Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Team *[]ACLAction `json:"team,omitempty"`
-
-				// TeamAccessRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamAccessRequest *[]ACLAction `json:"teamAccessRequest,omitempty"`
-
-				// TeamFellowMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamFellowMembership *[]ACLAction `json:"teamFellowMembership,omitempty"`
-
-				// TeamGitExclusivity Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamGitExclusivity *[]ACLAction `json:"teamGitExclusivity,omitempty"`
-
-				// TeamInvite Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamInvite *[]ACLAction `json:"teamInvite,omitempty"`
-
-				// TeamInviteCode Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamInviteCode *[]ACLAction `json:"teamInviteCode,omitempty"`
-
-				// TeamInviteLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamInviteLink *[]ACLAction `json:"teamInviteLink,omitempty"`
-
-				// TeamJoin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamJoin *[]ACLAction `json:"teamJoin,omitempty"`
-
-				// TeamMemberMfaStatus Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamMemberMfaStatus *[]ACLAction `json:"teamMemberMfaStatus,omitempty"`
-
-				// TeamMicrofrontends Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamMicrofrontends *[]ACLAction `json:"teamMicrofrontends,omitempty"`
-
-				// TeamOwnMembership Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamOwnMembership *[]ACLAction `json:"teamOwnMembership,omitempty"`
-
-				// TeamOwnMembershipDisconnectSAML Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamOwnMembershipDisconnectSAML *[]ACLAction `json:"teamOwnMembershipDisconnectSAML,omitempty"`
-
-				// TeamSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamSudo *[]ACLAction `json:"teamSudo,omitempty"`
-
-				// TeamTokenInvalidation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TeamTokenInvalidation *[]ACLAction `json:"teamTokenInvalidation,omitempty"`
-
-				// Token Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Token *[]ACLAction `json:"token,omitempty"`
-
-				// ToolbarComment Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				ToolbarComment *[]ACLAction `json:"toolbarComment,omitempty"`
-
-				// TrustedIps Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TrustedIps *[]ACLAction `json:"trustedIps,omitempty"`
-
-				// TrustedSources Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				TrustedSources *[]ACLAction `json:"trustedSources,omitempty"`
-
-				// Usage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Usage *[]ACLAction `json:"usage,omitempty"`
-
-				// UsageCycle Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				UsageCycle *[]ACLAction `json:"usageCycle,omitempty"`
-
-				// User Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				User *[]ACLAction `json:"user,omitempty"`
-
-				// UserConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				UserConnection *[]ACLAction `json:"userConnection,omitempty"`
-
-				// UserMfaConfiguration Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				UserMfaConfiguration *[]ACLAction `json:"userMfaConfiguration,omitempty"`
-
-				// UserPreference Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				UserPreference *[]ACLAction `json:"userPreference,omitempty"`
-
-				// UserSudo Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				UserSudo *[]ACLAction `json:"userSudo,omitempty"`
-
-				// V0Chat Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				V0Chat *[]ACLAction `json:"v0Chat,omitempty"`
-
-				// VcrRepository Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				VcrRepository *[]ACLAction `json:"vcrRepository,omitempty"`
-
-				// VercelAppInstallation Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				VercelAppInstallation *[]ACLAction `json:"vercelAppInstallation,omitempty"`
-
-				// VercelAppInstallationRequest Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				VercelAppInstallationRequest *[]ACLAction `json:"vercelAppInstallationRequest,omitempty"`
-
-				// VercelAuth Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				VercelAuth *[]ACLAction `json:"vercelAuth,omitempty"`
-
-				// VercelRun Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				VercelRun *[]ACLAction `json:"vercelRun,omitempty"`
-
-				// VpcPeeringConnection Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				VpcPeeringConnection *[]ACLAction `json:"vpcPeeringConnection,omitempty"`
-
-				// WebAnalytics Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				WebAnalytics *[]ACLAction `json:"webAnalytics,omitempty"`
-
-				// WebAnalyticsPlan Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				WebAnalyticsPlan *[]ACLAction `json:"webAnalyticsPlan,omitempty"`
-
-				// WebAuthn Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				WebAuthn *[]ACLAction `json:"webAuthn,omitempty"`
-
-				// Webhook Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				Webhook *[]ACLAction `json:"webhook,omitempty"`
-
-				// WebhookEvent Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				WebhookEvent *[]ACLAction `json:"webhook-event,omitempty"`
-
-				// WorkflowRunData Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
-				WorkflowRunData *[]ACLAction `json:"workflowRunData,omitempty"`
-			} `json:"permissions,omitempty"`
-			ProductionDeploymentsFastLane *UploadProjectAvatar200JSONResponseBodyProductionDeploymentsFastLane                     `json:"productionDeploymentsFastLane,omitempty"`
-			ProtectedSourcemaps           *UploadProjectAvatar200JSONResponseBodyProtectedSourcemaps                               `json:"protectedSourcemaps,omitempty"`
-			ProtectionBypass              *map[string]UploadProjectAvatar200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-			ProtectionConfig              *struct {
-				SandboxUrls *struct {
-					InheritDeploymentProtection *UploadProjectAvatar200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
-				} `json:"sandboxUrls,omitempty"`
-			} `json:"protectionConfig,omitempty"`
-			ResourceConfig struct {
-				BuildMachineElasticLastUpdated *float32                                                                       `json:"buildMachineElasticLastUpdated,omitempty"`
-				BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
-				BuildMachineElasticTransition  *struct {
-					AlgorithmVersion string                                                                                     `json:"algorithmVersion"`
-					At               float32                                                                                    `json:"at"`
-					Direction        UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticTransitionDirection `json:"direction"`
-				} `json:"buildMachineElasticTransition,omitempty"`
-				BuildMachineSelection *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineSelection `json:"buildMachineSelection,omitempty"`
-				BuildMachineType      *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineType      `json:"buildMachineType,omitempty"`
-				BuildQueue            *struct {
-					Configuration *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
-				} `json:"buildQueue,omitempty"`
-				ElasticBuildMachine        *UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine      `json:"elasticBuildMachine,omitempty"`
-				ElasticConcurrencyEnabled  *UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled  `json:"elasticConcurrencyEnabled,omitempty"`
-				EnableFunctionsBeta        *UploadProjectAvatar200JSONResponseBodyResourceConfigEnableFunctionsBeta        `json:"enableFunctionsBeta,omitempty"`
-				Fluid                      *UploadProjectAvatar200JSONResponseBodyResourceConfigFluid                      `json:"fluid,omitempty"`
-				FunctionDefaultMemoryType  *UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionDefaultMemoryType  `json:"functionDefaultMemoryType,omitempty"`
-				FunctionDefaultRegions     []string                                                                        `json:"functionDefaultRegions"`
-				FunctionDefaultTimeout     *float32                                                                        `json:"functionDefaultTimeout,omitempty"`
-				FunctionZeroConfigFailover *UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionZeroConfigFailover `json:"functionZeroConfigFailover,omitempty"`
-				IsNSNBDisabled             *UploadProjectAvatar200JSONResponseBodyResourceConfigIsNSNBDisabled             `json:"isNSNBDisabled,omitempty"`
-			} `json:"resourceConfig"`
-
-			// RollbackDescription Description of why a project was rolled back, and by whom. Note that lastAliasRequest contains the from/to details of the rollback.
-			RollbackDescription *struct {
-				// CreatedAt Timestamp of when the rollback was requested.
-				CreatedAt float32 `json:"createdAt"`
-
-				// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
-				Description string `json:"description"`
-
-				// UserId The user who rolled back the project.
-				UserId string `json:"userId"`
-
-				// Username The username of the user who rolled back the project.
-				Username string `json:"username"`
-			} `json:"rollbackDescription,omitempty"`
-
-			// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
-			RollingRelease *struct {
-				// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
-				//
-				// Example: false
-				CanaryResponseHeader *UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-				Gate *struct {
-					// Action What to do when the gate trips: pause the rollout, or roll it back.
-					Action UploadProjectAvatar200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-					// Checks The checks to evaluate. An empty array means nothing is evaluated.
-					Checks []struct {
-						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-						//
-						// Example: ["/api/health"]
-						ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-						//
-						// Example: [503]
-						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-						//
-						// Example: 30
-						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-						//
-						// Example: 0.05
-						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-						// Type The metric this check evaluates.
-						Type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-					} `json:"checks"`
-
-					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-					DryRun UploadProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-					// Enabled Whether automated gating is enabled for this project's rollouts.
-					Enabled UploadProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-					//
-					// Example: 3
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-					//
-					// Example: 5
-					WindowSize *float32 `json:"windowSize,omitempty"`
-				} `json:"gate,omitempty"`
-
-				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
-				Stages *[]struct {
-					// Duration Duration in minutes for automatic advancement to the next stage
-					//
-					// Example: 600
-					Duration *float32 `json:"duration,omitempty"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					//
-					// Example: false
-					RequireApproval *UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"stages,omitempty"`
-
-				// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
-				//
-				// Example: production
-				Target string `json:"target"`
-			} `json:"rollingRelease,omitempty"`
-			RootDirectory *string `json:"rootDirectory,omitempty"`
-			Sandbox       *struct {
-				FailoverRegions *[]UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions `json:"failoverRegions,omitempty"`
-				Region          *UploadProjectAvatar200JSONResponseBodySandboxRegion            `json:"region,omitempty"`
-			} `json:"sandbox,omitempty"`
-			Security *struct {
-				AttackModeActiveUntil  *float32                                                              `json:"attackModeActiveUntil,omitempty"`
-				AttackModeEnabled      *UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled      `json:"attackModeEnabled,omitempty"`
-				AttackModeUpdatedAt    *float32                                                              `json:"attackModeUpdatedAt,omitempty"`
-				BotIdEnabled           *UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled           `json:"botIdEnabled,omitempty"`
-				FirewallBypassIps      *[]string                                                             `json:"firewallBypassIps,omitempty"`
-				FirewallConfigVersion  *float32                                                              `json:"firewallConfigVersion,omitempty"`
-				FirewallEnabled        *UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled        `json:"firewallEnabled,omitempty"`
-				FirewallSeawallEnabled *UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled `json:"firewallSeawallEnabled,omitempty"`
-				FirewallUpdatedAt      *float32                                                              `json:"firewallUpdatedAt,omitempty"`
-				Ja3Enabled             *UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled             `json:"ja3Enabled,omitempty"`
-				Ja4Enabled             *UploadProjectAvatar200JSONResponseBodySecurityJa4Enabled             `json:"ja4Enabled,omitempty"`
-				LogHeaders             *UploadProjectAvatar200JSONResponseBody_Security_LogHeaders           `json:"log_headers,omitempty"`
-				ManagedRules           *struct {
-					AiBots struct {
-						Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesAiBotsAction `json:"action,omitempty"`
-						Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesAiBotsActive  `json:"active"`
-					} `json:"ai_bots"`
-					BotFilter struct {
-						Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesBotFilterAction `json:"action,omitempty"`
-						Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesBotFilterActive  `json:"active"`
-					} `json:"bot_filter"`
-					Owasp struct {
-						Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesOwaspAction `json:"action,omitempty"`
-						Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesOwaspActive  `json:"active"`
-					} `json:"owasp"`
-					TrafficSources struct {
-						Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-						Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesTrafficSourcesActive  `json:"active"`
-					} `json:"traffic_sources"`
-					VercelRuleset struct {
-						Action *UploadProjectAvatar200JSONResponseBodySecurityManagedRulesVercelRulesetAction `json:"action,omitempty"`
-						Active UploadProjectAvatar200JSONResponseBodySecurityManagedRulesVercelRulesetActive  `json:"active"`
-					} `json:"vercel_ruleset"`
-				} `json:"managedRules,omitempty"`
-
-				// PageIntegrityEnabled Whether Page Integrity is enabled for this project. Used by the metadata service to gate DynamoDB lookups against the page-integrity-inventory table.
-				PageIntegrityEnabled *UploadProjectAvatar200JSONResponseBodySecurityPageIntegrityEnabled `json:"pageIntegrityEnabled,omitempty"`
-				Rulesets             *map[string]struct {
-					Action         UploadProjectAvatar200JSONResponseBodySecurityRulesetsAction         `json:"action"`
-					ActionDuration *string                                                              `json:"actionDuration,omitempty"`
-					BypassSystem   *UploadProjectAvatar200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
-					LogHeaders     *UploadProjectAvatar200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
-					RateLimit      *struct {
-						Algo   UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                            `json:"keys"`
-						Limit  float32                                                             `json:"limit"`
-						Window float32                                                             `json:"window"`
-					} `json:"rateLimit,omitempty"`
-					Redirect *struct {
-						Location  string                                                                  `json:"location"`
-						Permanent UploadProjectAvatar200JSONResponseBodySecurityRulesetsRedirectPermanent `json:"permanent"`
-					} `json:"redirect,omitempty"`
-				} `json:"rulesets,omitempty"`
-			} `json:"security,omitempty"`
-			ServerlessFunctionZeroConfigFailover *UploadProjectAvatar200JSONResponseBodyServerlessFunctionZeroConfigFailover `json:"serverlessFunctionZeroConfigFailover,omitempty"`
-			Services                             *[]struct {
-				// Framework Framework slug, when the service has one (omitted otherwise).
-				Framework *UploadProjectAvatar200JSONResponseBodyServicesFramework `json:"framework,omitempty"`
-
-				// Runtime Generic runtime, e.g. 'node' | 'python' | 'go' | 'ruby' | 'rust' (Service.runtime). Omitted for static builds.
-				Runtime *string `json:"runtime,omitempty"`
-
-				// ServiceName Service name from the deployment (Service.name).
-				ServiceName string `json:"serviceName"`
-
-				// ServiceType Service kind (Service.type). Omitted for schemas that do not define one.
-				ServiceType *UploadProjectAvatar200JSONResponseBodyServicesServiceType `json:"serviceType,omitempty"`
-			} `json:"services,omitempty"`
-			SkewProtectionAllowedDomains    *[]string                                                              `json:"skewProtectionAllowedDomains,omitempty"`
-			SkewProtectionBoundaryAt        *float32                                                               `json:"skewProtectionBoundaryAt,omitempty"`
-			SkewProtectionMaxAge            *float32                                                               `json:"skewProtectionMaxAge,omitempty"`
-			SkipGitConnectDuringLink        *UploadProjectAvatar200JSONResponseBodySkipGitConnectDuringLink        `json:"skipGitConnectDuringLink,omitempty"`
-			SourceFilesOutsideRootDirectory *UploadProjectAvatar200JSONResponseBodySourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
-			SpeedInsights                   *struct {
-				CanceledAt *float32 `json:"canceledAt,omitempty"`
-
-				// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
-				DataReceivedAt *float32                                                    `json:"dataReceivedAt,omitempty"`
-				DisabledAt     *float32                                                    `json:"disabledAt,omitempty"`
-				EnabledAt      *float32                                                    `json:"enabledAt,omitempty"`
-				HasData        *UploadProjectAvatar200JSONResponseBodySpeedInsightsHasData `json:"hasData,omitempty"`
-				Id             string                                                      `json:"id"`
-				PaidAt         *float32                                                    `json:"paidAt,omitempty"`
-			} `json:"speedInsights,omitempty"`
-			SsoProtection *struct {
-				April2026SecurityIncidentMigrationAppliedFrom *UploadProjectAvatar200JSONResponseBodySsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
-				Cve55182MigrationAppliedFrom                  *UploadProjectAvatar200JSONResponseBodySsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
-				DeploymentType                                UploadProjectAvatar200JSONResponseBodySsoProtectionDeploymentType                                 `json:"deploymentType"`
-			} `json:"ssoProtection,omitempty"`
-			StaticIps *struct {
-				Builds  UploadProjectAvatar200JSONResponseBodyStaticIpsBuilds  `json:"builds"`
-				Enabled UploadProjectAvatar200JSONResponseBodyStaticIpsEnabled `json:"enabled"`
-				Regions []string                                               `json:"regions"`
-			} `json:"staticIps,omitempty"`
-			Targets *map[string]*struct {
-				Alias         *[]string                                                     `json:"alias,omitempty"`
-				AliasAssigned *UploadProjectAvatar200JSONResponseBody_Targets_AliasAssigned `json:"aliasAssigned,omitempty"`
-				AliasError    *struct {
-					Code    string `json:"code"`
-					Message string `json:"message"`
-				} `json:"aliasError,omitempty"`
-				AliasFinal       *string   `json:"aliasFinal,omitempty"`
-				AutomaticAliases *[]string `json:"automaticAliases,omitempty"`
-				BranchMatcher    *struct {
-					// Pattern The pattern to match against branch names
-					Pattern string `json:"pattern"`
-
-					// Type The type of matching to perform
-					Type UploadProjectAvatar200JSONResponseBodyTargetsBranchMatcherType `json:"type"`
-				} `json:"branchMatcher,omitempty"`
-				BuildingAt *float32 `json:"buildingAt,omitempty"`
-				Builds     *[]struct {
-					Dest *string `json:"dest,omitempty"`
-					Src  *string `json:"src,omitempty"`
-					Use  string  `json:"use"`
-				} `json:"builds,omitempty"`
-				ChecksConclusion       *UploadProjectAvatar200JSONResponseBodyTargetsChecksConclusion     `json:"checksConclusion,omitempty"`
-				ChecksState            *UploadProjectAvatar200JSONResponseBodyTargetsChecksState          `json:"checksState,omitempty"`
-				ConnectBuildsEnabled   *UploadProjectAvatar200JSONResponseBodyTargetsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
-				ConnectConfigurationId *string                                                            `json:"connectConfigurationId,omitempty"`
-				CreatedAt              float32                                                            `json:"createdAt"`
-				CreatedIn              string                                                             `json:"createdIn"`
-				Creator                *struct {
-					Email       string  `json:"email"`
-					GithubLogin *string `json:"githubLogin,omitempty"`
-					GitlabLogin *string `json:"gitlabLogin,omitempty"`
-					Uid         string  `json:"uid"`
-					Username    string  `json:"username"`
-				} `json:"creator"`
-				DeletedAt          *float32                                             `json:"deletedAt,omitempty"`
-				DeploymentHostname string                                               `json:"deploymentHostname"`
-				Forced             *UploadProjectAvatar200JSONResponseBodyTargetsForced `json:"forced,omitempty"`
-				Id                 string                                               `json:"id"`
-				Meta               *map[string]string                                   `json:"meta,omitempty"`
-				MonorepoManager    *string                                              `json:"monorepoManager,omitempty"`
-				Name               string                                               `json:"name"`
-				OidcTokenClaims    *struct {
-					Aud                 string    `json:"aud"`
-					CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
-					DeploymentId        *string   `json:"deployment_id,omitempty"`
-					Environment         string    `json:"environment"`
-					Iss                 string    `json:"iss"`
-					MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
-					Owner               string    `json:"owner"`
-					OwnerId             string    `json:"owner_id"`
-					Plan                *string   `json:"plan,omitempty"`
-					Project             string    `json:"project"`
-					ProjectId           string    `json:"project_id"`
-					Scope               string    `json:"scope"`
-					Sub                 string    `json:"sub"`
-				} `json:"oidcTokenClaims,omitempty"`
-				Plan UploadProjectAvatar200JSONResponseBodyTargetsPlan `json:"plan"`
-
-				// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
-				//
-				// Example: false
-				PreviewCommentsEnabled *UploadProjectAvatar200JSONResponseBodyTargetsPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
-				Private                UploadProjectAvatar200JSONResponseBodyTargetsPrivate                 `json:"private"`
-				ReadyAt                *float32                                                             `json:"readyAt,omitempty"`
-				ReadyState             UploadProjectAvatar200JSONResponseBodyTargetsReadyState              `json:"readyState"`
-				ReadySubstate          *UploadProjectAvatar200JSONResponseBodyTargetsReadySubstate          `json:"readySubstate,omitempty"`
-				RequestedAt            *float32                                                             `json:"requestedAt,omitempty"`
-				Target                 *string                                                              `json:"target,omitempty"`
-				TeamId                 *string                                                              `json:"teamId,omitempty"`
-				Type                   UploadProjectAvatar200JSONResponseBodyTargetsType                    `json:"type"`
-				Url                    string                                                               `json:"url"`
-
-				// UserId Present for user creators; omitted for app/integration/system creators.
-				UserId    *string                                                 `json:"userId,omitempty"`
-				WithCache *UploadProjectAvatar200JSONResponseBodyTargetsWithCache `json:"withCache,omitempty"`
-			} `json:"targets,omitempty"`
-			Tier    *UploadProjectAvatar200JSONResponseBodyTier `json:"tier,omitempty"`
-			Tracing *struct {
-				Domains       *string   `json:"domains,omitempty"`
-				IgnorePaths   *[]string `json:"ignorePaths,omitempty"`
-				SamplingRules *[]struct {
-					// Destination Which tracing destination this rule applies to. `internal` is the hidden Vercel production-tracing drain (internal delivery); `external` is any customer-configured drain. Derived from the owning drain's delivery type when project tracing is computed; absent on configs persisted before this field existed.
-					Destination *UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesDestination `json:"destination,omitempty"`
-					Env         *UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesEnv         `json:"env,omitempty"`
-					Rate        float32                                                                `json:"rate"`
-					RequestPath *string                                                                `json:"requestPath,omitempty"`
-				} `json:"samplingRules,omitempty"`
-			} `json:"tracing,omitempty"`
-			TransferCompletedAt      *float32                                           `json:"transferCompletedAt,omitempty"`
-			TransferStartedAt        *float32                                           `json:"transferStartedAt,omitempty"`
-			TransferToAccountId      *string                                            `json:"transferToAccountId,omitempty"`
-			TransferredFromAccountId *string                                            `json:"transferredFromAccountId,omitempty"`
-			TrustedIps               *UploadProjectAvatar200JSONResponseBody_TrustedIps `json:"trustedIps,omitempty"`
-			TrustedSources           *struct {
-				// EnableVercelCiSameRepository Allow same-team Vercel CI access to preview and production deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
-				EnableVercelCiSameRepository *UploadProjectAvatar200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository `json:"enableVercelCiSameRepository,omitempty"`
-				OidcProviders                *map[string][]struct {
-					Claims map[string][]string                                                    `json:"claims"`
-					Label  *string                                                                `json:"label,omitempty"`
-					To     UploadProjectAvatar200JSONResponseBody_TrustedSources_OidcProviders_To `json:"to"`
-				} `json:"oidcProviders,omitempty"`
-				Projects *map[string]struct {
-					// CustomAllow Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project.
-					CustomAllow *[]struct {
-						From UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_From `json:"from"`
-						To   UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_To   `json:"to"`
-					} `json:"customAllow,omitempty"`
-					Label *string `json:"label,omitempty"`
-				} `json:"projects,omitempty"`
-			} `json:"trustedSources,omitempty"`
-			UpdatedAt   *float32 `json:"updatedAt,omitempty"`
-			UsageStatus *struct {
-				// BypassThrottleUntil Timestamp until which throttling is bypassed (project pays list rates for overage).
-				BypassThrottleUntil *float32 `json:"bypassThrottleUntil,omitempty"`
-
-				// ExceededAllowanceUntil Timestamp until which the project has exceeded its CDN allowance.
-				ExceededAllowanceUntil *float32 `json:"exceededAllowanceUntil,omitempty"`
-
-				// Kind Billing mode. Always 'flat' for flat-rate projects.
-				Kind UploadProjectAvatar200JSONResponseBodyUsageStatusKind `json:"kind"`
-
-				// TeamThrottled Synced from `team.billing.usageStatus.throttled`. When `true`, the team has throttled all of its projects regardless of `throttled`. The effective throttle the CDN enforces is `throttled || teamThrottled`.
-				TeamThrottled *UploadProjectAvatar200JSONResponseBodyUsageStatusTeamThrottled `json:"teamThrottled,omitempty"`
-
-				// Throttled Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).
-				Throttled *UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled `json:"throttled,omitempty"`
-			} `json:"usageStatus,omitempty"`
-			V0          *UploadProjectAvatar200JSONResponseBodyV0        `json:"v0,omitempty"`
-			V0Created   *UploadProjectAvatar200JSONResponseBodyV0Created `json:"v0Created,omitempty"`
-			VercelFlags *struct {
-				// EnabledAt When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync.
-				EnabledAt *float32 `json:"enabledAt,omitempty"`
-			} `json:"vercelFlags,omitempty"`
-			WebAnalytics *struct {
-				CanceledAt *float32                                                   `json:"canceledAt,omitempty"`
-				DisabledAt *float32                                                   `json:"disabledAt,omitempty"`
-				EnabledAt  *float32                                                   `json:"enabledAt,omitempty"`
-				HasData    *UploadProjectAvatar200JSONResponseBodyWebAnalyticsHasData `json:"hasData,omitempty"`
-				Id         string                                                     `json:"id"`
-			} `json:"webAnalytics,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 413:
-		break // No content-type
-
-	case rsp.StatusCode == 415:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectBoxesResponse parses an HTTP response from a GetProjectBoxesWithResponse call
-func ParseGetProjectBoxesResponse(rsp *http.Response) (*GetProjectBoxesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectBoxesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Daemons []struct {
-				Config struct {
-					Command             *[]string                                                              `json:"command,omitempty"`
-					ConfiguredInstances *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances `json:"configuredInstances,omitempty"`
-					Image               struct {
-						Requested string `json:"requested"`
-						Resolved  string `json:"resolved"`
-					} `json:"image"`
-					Instances     GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances `json:"instances"`
-					LivenessProbe *struct {
-						FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-						HttpGet          struct {
-							Host        *string `json:"host,omitempty"`
-							HttpHeaders *[]struct {
-								Name  string `json:"name"`
-								Value string `json:"value"`
-							} `json:"httpHeaders,omitempty"`
-							Path   string                                                                    `json:"path"`
-							Port   float32                                                                   `json:"port"`
-							Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
-						} `json:"httpGet"`
-						InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-						PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
-						SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
-						TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
-					} `json:"livenessProbe,omitempty"`
-					Resources struct {
-						Requests struct {
-							Memory string `json:"memory"`
-						} `json:"requests"`
-					} `json:"resources"`
-					TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
-				} `json:"config"`
-				CreatedAt string `json:"createdAt"`
-
-				// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
-				DeploymentId *string `json:"deploymentId,omitempty"`
-				Instances    struct {
-					Desired float32 `json:"desired"`
-					Items   []struct {
-						Alive         *GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive `json:"alive,omitempty"`
-						Id            string                                                        `json:"id"`
-						Image         *string                                                       `json:"image,omitempty"`
-						LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
-						MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
-						Region        string                                                        `json:"region"`
-						StartedAt     string                                                        `json:"startedAt"`
-						StoppedAt     *string                                                       `json:"stoppedAt,omitempty"`
-					} `json:"items"`
-					Ready float32 `json:"ready"`
-					Total float32 `json:"total"`
-				} `json:"instances"`
-				Name      string                                           `json:"name"`
-				Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
-				Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
-				UpdatedAt string                                           `json:"updatedAt"`
-			} `json:"daemons"`
-			Pagination struct {
-				Count float32 `json:"count"`
-				Next  *string `json:"next,omitempty"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParsePutProjectDaemonInstancesResponse parses an HTTP response from a PutProjectDaemonInstancesWithResponse call
-func ParsePutProjectDaemonInstancesResponse(rsp *http.Response) (*PutProjectDaemonInstancesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PutProjectDaemonInstancesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRestartProjectDaemonInstanceResponse parses an HTTP response from a RestartProjectDaemonInstanceWithResponse call
-func ParseRestartProjectDaemonInstanceResponse(rsp *http.Response) (*RestartProjectDaemonInstanceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RestartProjectDaemonInstanceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseMoveProjectDomainResponse parses an HTTP response from a MoveProjectDomainWithResponse call
-func ParseMoveProjectDomainResponse(rsp *http.Response) (*MoveProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &MoveProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ApexName            string                                                  `json:"apexName"`
-			CreatedAt           *float32                                                `json:"createdAt,omitempty"`
-			CustomEnvironmentId *string                                                 `json:"customEnvironmentId,omitempty"`
-			GitBranch           *string                                                 `json:"gitBranch,omitempty"`
-			Name                string                                                  `json:"name"`
-			ProjectId           string                                                  `json:"projectId"`
-			Redirect            *string                                                 `json:"redirect,omitempty"`
-			RedirectStatusCode  *MoveProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			UpdatedAt           *float32                                                `json:"updatedAt,omitempty"`
-
-			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-			Verification *[]struct {
-				Domain string `json:"domain"`
-				Reason string `json:"reason"`
-				Type   string `json:"type"`
-				Value  string `json:"value"`
-			} `json:"verification,omitempty"`
-
-			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-			Verified MoveProjectDomain200JSONResponseBodyVerified `json:"verified"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseBatchRemoveProjectEnvResponse parses an HTTP response from a BatchRemoveProjectEnvWithResponse call
-func ParseBatchRemoveProjectEnvResponse(rsp *http.Response) (*BatchRemoveProjectEnvResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BatchRemoveProjectEnvResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Deleted float32  `json:"deleted"`
-			Ids     []string `json:"ids"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectEnvResponse parses an HTTP response from a GetProjectEnvWithResponse call
-func ParseGetProjectEnvResponse(rsp *http.Response) (*GetProjectEnvResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectEnvResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetProjectEnv200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectMembersResponse parses an HTTP response from a GetProjectMembersWithResponse call
-func ParseGetProjectMembersResponse(rsp *http.Response) (*GetProjectMembersResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectMembersResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetProjectMembers200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseAddProjectMemberResponse parses an HTTP response from a AddProjectMemberWithResponse call
-func ParseAddProjectMemberResponse(rsp *http.Response) (*AddProjectMemberResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AddProjectMemberResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Id string `json:"id"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveProjectMemberResponse parses an HTTP response from a RemoveProjectMemberWithResponse call
-func ParseRemoveProjectMemberResponse(rsp *http.Response) (*RemoveProjectMemberResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveProjectMemberResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Id string `json:"id"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateProjectProtectionBypassResponse parses an HTTP response from a UpdateProjectProtectionBypassWithResponse call
-func ParseUpdateProjectProtectionBypassResponse(rsp *http.Response) (*UpdateProjectProtectionBypassResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateProjectProtectionBypassResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ProtectionBypass *map[string]UpdateProjectProtectionBypass200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRollingReleaseResponse parses an HTTP response from a GetRollingReleaseWithResponse call
-func ParseGetRollingReleaseResponse(rsp *http.Response) (*GetRollingReleaseResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRollingReleaseResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-			RollingRelease *struct {
-				// ActiveStage The currently active stage, null if the rollout is aborted
-				//
-				// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-				ActiveStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"activeStage"`
-
-				// AdvancementType The advancement type of the rolling release
-				//
-				// Example: manual-approval
-				AdvancementType GetRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-				// CanaryDeployment The canary deployment being rolled out
-				//
-				// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-				CanaryDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                     `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"canaryDeployment"`
-
-				// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-				CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-				// CurrentDeployment The current deployment receiving production traffic
-				//
-				// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-				CurrentDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                      `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"currentDeployment"`
-
-				// NextStage The next stage to be activated, null if not in ACTIVE state
-				//
-				// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-				NextStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"nextStage"`
-
-				// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-				//
-				// Example: dpl_ghi789
-				QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-				// Stages All stages configured for this rolling release
-				//
-				// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-				Stages []struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage GetRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *GetRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval GetRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"stages"`
-
-				// StartedAt Unix timestamp in milliseconds when the rolling release started
-				//
-				// Example: 1716210500000
-				StartedAt float32 `json:"startedAt"`
-
-				// State The current state of the rolling release
-				//
-				// Example: ACTIVE
-				State GetRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
-
-				// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-				Substate *GetRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-				// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-				//
-				// Example: 1716210600000
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"rollingRelease"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseApproveRollingReleaseStageResponse parses an HTTP response from a ApproveRollingReleaseStageWithResponse call
-func ParseApproveRollingReleaseStageResponse(rsp *http.Response) (*ApproveRollingReleaseStageResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ApproveRollingReleaseStageResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-			RollingRelease *struct {
-				// ActiveStage The currently active stage, null if the rollout is aborted
-				//
-				// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-				ActiveStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"activeStage"`
-
-				// AdvancementType The advancement type of the rolling release
-				//
-				// Example: manual-approval
-				AdvancementType ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-				// CanaryDeployment The canary deployment being rolled out
-				//
-				// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-				CanaryDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                              `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"canaryDeployment"`
-
-				// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-				CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-				// CurrentDeployment The current deployment receiving production traffic
-				//
-				// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-				CurrentDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                               `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"currentDeployment"`
-
-				// NextStage The next stage to be activated, null if not in ACTIVE state
-				//
-				// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-				NextStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"nextStage"`
-
-				// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-				//
-				// Example: dpl_ghi789
-				QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-				// Stages All stages configured for this rolling release
-				//
-				// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-				Stages []struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"stages"`
-
-				// StartedAt Unix timestamp in milliseconds when the rolling release started
-				//
-				// Example: 1716210500000
-				StartedAt float32 `json:"startedAt"`
-
-				// State The current state of the rolling release
-				//
-				// Example: ACTIVE
-				State ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseState `json:"state"`
-
-				// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-				Substate *ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-				// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-				//
-				// Example: 1716210600000
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"rollingRelease"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRollingReleaseBillingStatusResponse parses an HTTP response from a GetRollingReleaseBillingStatusWithResponse call
-func ParseGetRollingReleaseBillingStatusResponse(rsp *http.Response) (*GetRollingReleaseBillingStatusResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRollingReleaseBillingStatusResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetRollingReleaseBillingStatus200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCompleteRollingReleaseResponse parses an HTTP response from a CompleteRollingReleaseWithResponse call
-func ParseCompleteRollingReleaseResponse(rsp *http.Response) (*CompleteRollingReleaseResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CompleteRollingReleaseResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-			RollingRelease *struct {
-				// ActiveStage The currently active stage, null if the rollout is aborted
-				//
-				// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-				ActiveStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"activeStage"`
-
-				// AdvancementType The advancement type of the rolling release
-				//
-				// Example: manual-approval
-				AdvancementType CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-				// CanaryDeployment The canary deployment being rolled out
-				//
-				// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-				CanaryDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                          `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"canaryDeployment"`
-
-				// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-				CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-				// CurrentDeployment The current deployment receiving production traffic
-				//
-				// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-				CurrentDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                           `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"currentDeployment"`
-
-				// NextStage The next stage to be activated, null if not in ACTIVE state
-				//
-				// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-				NextStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"nextStage"`
-
-				// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-				//
-				// Example: dpl_ghi789
-				QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-				// Stages All stages configured for this rolling release
-				//
-				// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-				Stages []struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"stages"`
-
-				// StartedAt Unix timestamp in milliseconds when the rolling release started
-				//
-				// Example: 1716210500000
-				StartedAt float32 `json:"startedAt"`
-
-				// State The current state of the rolling release
-				//
-				// Example: ACTIVE
-				State CompleteRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
-
-				// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-				Substate *CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-				// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-				//
-				// Example: 1716210600000
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"rollingRelease"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteRollingReleaseConfigResponse parses an HTTP response from a DeleteRollingReleaseConfigWithResponse call
-func ParseDeleteRollingReleaseConfigResponse(rsp *http.Response) (*DeleteRollingReleaseConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteRollingReleaseConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			RollingRelease interface{} `json:"rollingRelease"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRollingReleaseConfigResponse parses an HTTP response from a GetRollingReleaseConfigWithResponse call
-func ParseGetRollingReleaseConfigResponse(rsp *http.Response) (*GetRollingReleaseConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRollingReleaseConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
-			RollingRelease *struct {
-				// CanaryResponseHeader Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
-				//
-				// Example: false
-				CanaryResponseHeader *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-				Gate *struct {
-					// Action What to do when the gate trips: pause the rollout, or roll it back.
-					Action GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-					// Checks The checks to evaluate. An empty array means nothing is evaluated.
-					Checks []struct {
-						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-						//
-						// Example: ["/api/health"]
-						ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-						//
-						// Example: [503]
-						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-						//
-						// Example: 30
-						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-						//
-						// Example: 0.05
-						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-						// Type The metric this check evaluates.
-						Type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-					} `json:"checks"`
-
-					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-					DryRun GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-					// Enabled Whether automated gating is enabled for this project's rollouts.
-					Enabled GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-					//
-					// Example: 3
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-					//
-					// Example: 5
-					WindowSize *float32 `json:"windowSize,omitempty"`
-				} `json:"gate,omitempty"`
-
-				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
-				Stages *[]struct {
-					// Duration Duration in minutes for automatic advancement to the next stage
-					//
-					// Example: 600
-					Duration *float32 `json:"duration,omitempty"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					//
-					// Example: false
-					RequireApproval *GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"stages,omitempty"`
-
-				// Target The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
-				//
-				// Example: production
-				Target string `json:"target"`
-			} `json:"rollingRelease"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateRollingReleaseConfigResponse parses an HTTP response from a UpdateRollingReleaseConfigWithResponse call
-func ParseUpdateRollingReleaseConfigResponse(rsp *http.Response) (*UpdateRollingReleaseConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateRollingReleaseConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest UpdateRollingReleaseConfig200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseStartRollingReleaseResponse parses an HTTP response from a StartRollingReleaseWithResponse call
-func ParseStartRollingReleaseResponse(rsp *http.Response) (*StartRollingReleaseResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &StartRollingReleaseResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// RollingRelease Rolling release information including configuration and document details, or null if no rolling release exists
-			RollingRelease *struct {
-				// ActiveStage The currently active stage, null if the rollout is aborted
-				//
-				// Example: {"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25}
-				ActiveStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"activeStage"`
-
-				// AdvancementType The advancement type of the rolling release
-				//
-				// Example: manual-approval
-				AdvancementType StartRollingRelease200JSONResponseBodyRollingReleaseAdvancementType `json:"advancementType"`
-
-				// CanaryDeployment The canary deployment being rolled out
-				//
-				// Example: {"createdAt":1716210100000,"id":"dpl_def456","name":"my-shop@9c7e2f4","readyState":"READY","readyStateAt":1716210400000,"source":"git","target":"production","url":"9c7e2f4-my-shop.vercel.app"}
-				CanaryDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                       `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"canaryDeployment"`
-
-				// CurrentCanaryPercentage When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
-				CurrentCanaryPercentage *float32 `json:"currentCanaryPercentage,omitempty"`
-
-				// CurrentDeployment The current deployment receiving production traffic
-				//
-				// Example: {"createdAt":1716206500000,"id":"dpl_abc123","name":"my-shop@main","readyState":"READY","readyStateAt":1716206800000,"source":"git","target":"production","url":"my-shop.vercel.app"}
-				CurrentDeployment *struct {
-					// CreatedAt A number containing the date when the deployment was created in milliseconds
-					//
-					// Example: 1540257589405
-					CreatedAt float32 `json:"createdAt"`
-
-					// Id A string holding the unique ID of the deployment
-					//
-					// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
-					Id string `json:"id"`
-
-					// Name The name of the project associated with the deployment at the time that the deployment was created
-					//
-					// Example: my-project
-					Name string `json:"name"`
-
-					// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-					//
-					// Example: READY
-					ReadyState   StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState `json:"readyState"`
-					ReadyStateAt *float32                                                                        `json:"readyStateAt,omitempty"`
-
-					// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-					//
-					// Example: cli
-					Source *StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource `json:"source,omitempty"`
-
-					// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-					Target *StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget `json:"target,omitempty"`
-
-					// Url A string with the unique URL of the deployment
-					//
-					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
-					Url string `json:"url"`
-				} `json:"currentDeployment"`
-
-				// NextStage The next stage to be activated, null if not in ACTIVE state
-				//
-				// Example: {"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60}
-				NextStage *struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"nextStage"`
-
-				// QueuedDeploymentId The ID of a deployment queued for the next rolling release
-				//
-				// Example: dpl_ghi789
-				QueuedDeploymentId *string `json:"queuedDeploymentId"`
-
-				// Stages All stages configured for this rolling release
-				//
-				// Example: [{"duration":null,"index":0,"isFinalStage":false,"requireApproval":true,"targetPercentage":5},{"duration":null,"index":1,"isFinalStage":false,"requireApproval":true,"targetPercentage":25},{"duration":null,"index":2,"isFinalStage":false,"requireApproval":true,"targetPercentage":60},{"duration":null,"index":3,"isFinalStage":true,"requireApproval":false,"targetPercentage":100}]
-				Stages []struct {
-					// Duration Duration in seconds for automatic advancement, null for manual stages or the final stage
-					Duration *float32 `json:"duration"`
-
-					// Index The zero-based index of the stage
-					//
-					// Example: 0
-					Index float32 `json:"index"`
-
-					// IsFinalStage Whether or not this stage is the final stage (targetPercentage === 100)
-					//
-					// Example: false
-					IsFinalStage StartRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage `json:"isFinalStage"`
-
-					// LinearShift Whether to linearly shift traffic over the duration of this stage
-					//
-					// Example: false
-					LinearShift *StartRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
-
-					// RequireApproval Whether or not this stage requires manual approval to proceed
-					RequireApproval StartRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval `json:"requireApproval"`
-
-					// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
-					//
-					// Example: 25
-					TargetPercentage float32 `json:"targetPercentage"`
-				} `json:"stages"`
-
-				// StartedAt Unix timestamp in milliseconds when the rolling release started
-				//
-				// Example: 1716210500000
-				StartedAt float32 `json:"startedAt"`
-
-				// State The current state of the rolling release
-				//
-				// Example: ACTIVE
-				State StartRollingRelease200JSONResponseBodyRollingReleaseState `json:"state"`
-
-				// Substate When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-				Substate *StartRollingRelease200JSONResponseBodyRollingReleaseSubstate `json:"substate"`
-
-				// UpdatedAt Unix timestamp in milliseconds when the rolling release was last updated
-				//
-				// Example: 1716210600000
-				UpdatedAt float32 `json:"updatedAt"`
-			} `json:"rollingRelease"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 422:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateStaticIpsResponse parses an HTTP response from a UpdateStaticIpsWithResponse call
-func ParseUpdateStaticIpsResponse(rsp *http.Response) (*UpdateStaticIpsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateStaticIpsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			Aws *struct {
-				SecurityGroupId *string  `json:"securityGroupId,omitempty"`
-				SubnetIds       []string `json:"subnetIds"`
-			} `json:"aws,omitempty"`
-			BuildsEnabled          UpdateStaticIps200JSONResponseBodyBuildsEnabled `json:"buildsEnabled"`
-			ConnectConfigurationId string                                          `json:"connectConfigurationId"`
-			CreatedAt              float32                                         `json:"createdAt"`
-			Dc                     *string                                         `json:"dc,omitempty"`
-			EnvId                  UpdateStaticIps200JSONResponseBody_EnvId        `json:"envId"`
-			Passive                UpdateStaticIps200JSONResponseBodyPassive       `json:"passive"`
-			UpdatedAt              float32                                         `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectTokenResponse parses an HTTP response from a GetProjectTokenWithResponse call
-func ParseGetProjectTokenResponse(rsp *http.Response) (*GetProjectTokenResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectTokenResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Token string `json:"token"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetFlagsProjectConnectionsResponse parses an HTTP response from a GetFlagsProjectConnectionsWithResponse call
-func ParseGetFlagsProjectConnectionsResponse(rsp *http.Response) (*GetFlagsProjectConnectionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetFlagsProjectConnectionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetFlagsProjectConnections200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateFlagsProjectConnectionResponse parses an HTTP response from a CreateFlagsProjectConnectionWithResponse call
-func ParseCreateFlagsProjectConnectionResponse(rsp *http.Response) (*CreateFlagsProjectConnectionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateFlagsProjectConnectionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ConsumerProjectId   string  `json:"consumerProjectId"`
-			ConsumerProjectName string  `json:"consumerProjectName"`
-			CreatedAt           float32 `json:"createdAt"`
-			CreatedBy           string  `json:"createdBy"`
-			SourceProjectId     string  `json:"sourceProjectId"`
-			SourceProjectName   string  `json:"sourceProjectName"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteFlagsProjectConnectionResponse parses an HTTP response from a DeleteFlagsProjectConnectionWithResponse call
-func ParseDeleteFlagsProjectConnectionResponse(rsp *http.Response) (*DeleteFlagsProjectConnectionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteFlagsProjectConnectionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseListFlagsResponse parses an HTTP response from a ListFlagsWithResponse call
-func ParseListFlagsResponse(rsp *http.Response) (*ListFlagsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListFlagsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data       []Flag `json:"data"`
-			Pagination struct {
-				Next *string `json:"next"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateFlagResponse parses an HTTP response from a CreateFlagWithResponse call
-func ParseCreateFlagResponse(rsp *http.Response) (*CreateFlagResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateFlagResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			CreatedAt    float32 `json:"createdAt"`
-			CreatedBy    string  `json:"createdBy"`
-			Description  *string `json:"description,omitempty"`
-			Environments map[string]struct {
-				Active        CreateFlag201JSONResponseBodyEnvironmentsActive        `json:"active"`
-				Fallthrough   CreateFlag201JSONResponseBody_Environments_Fallthrough `json:"fallthrough"`
-				PausedOutcome struct {
-					Type      CreateFlag201JSONResponseBodyEnvironmentsPausedOutcomeType `json:"type"`
-					VariantId string                                                     `json:"variantId"`
-				} `json:"pausedOutcome"`
-				Reuse *struct {
-					Active      CreateFlag201JSONResponseBodyEnvironmentsReuseActive `json:"active"`
-					Environment string                                               `json:"environment"`
-				} `json:"reuse,omitempty"`
-				Revision *float32 `json:"revision,omitempty"`
-				Rules    []struct {
-					Conditions []struct {
-						Cmp        CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
-						CmpOptions *struct {
-							IgnoreCase *CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-						} `json:"cmpOptions,omitempty"`
-						Lhs CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
-						Rhs *CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-					} `json:"conditions"`
-					Id      string                                                   `json:"id"`
-					Outcome CreateFlag201JSONResponseBody_Environments_Rules_Outcome `json:"outcome"`
-				} `json:"rules"`
-				Targets *map[string]map[string]map[string][]struct {
-					Note  *string `json:"note,omitempty"`
-					Value string  `json:"value"`
-				} `json:"targets,omitempty"`
-			} `json:"environments"`
-			Id               string                                         `json:"id"`
-			Kind             CreateFlag201JSONResponseBodyKind              `json:"kind"`
-			MaintainerIds    *[]string                                      `json:"maintainerIds,omitempty"`
-			OwnerId          string                                         `json:"ownerId"`
-			Permanent        *CreateFlag201JSONResponseBodyPermanent        `json:"permanent,omitempty"`
-			ProjectId        string                                         `json:"projectId"`
-			Revision         float32                                        `json:"revision"`
-			Seed             float32                                        `json:"seed"`
-			SeenInProduction *CreateFlag201JSONResponseBodySeenInProduction `json:"seenInProduction,omitempty"`
-			Slug             string                                         `json:"slug"`
-			State            CreateFlag201JSONResponseBodyState             `json:"state"`
-			Tags             *[]string                                      `json:"tags,omitempty"`
-			TypeName         CreateFlag201JSONResponseBodyTypeName          `json:"typeName"`
-			UpdatedAt        float32                                        `json:"updatedAt"`
-			UpdatedBy        *string                                        `json:"updatedBy,omitempty"`
-			Variants         []struct {
-				Description *string                                       `json:"description,omitempty"`
-				Id          string                                        `json:"id"`
-				Label       *string                                       `json:"label,omitempty"`
-				Value       *CreateFlag201JSONResponseBody_Variants_Value `json:"value"`
-			} `json:"variants"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteFlagResponse parses an HTTP response from a DeleteFlagWithResponse call
-func ParseDeleteFlagResponse(rsp *http.Response) (*DeleteFlagResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteFlagResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseGetFlagResponse parses an HTTP response from a GetFlagWithResponse call
-func ParseGetFlagResponse(rsp *http.Response) (*GetFlagResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetFlagResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Flag
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 304:
-		break // No content-type
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateFlagResponse parses an HTTP response from a UpdateFlagWithResponse call
-func ParseUpdateFlagResponse(rsp *http.Response) (*UpdateFlagResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateFlagResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			CreatedAt    float32 `json:"createdAt"`
-			CreatedBy    string  `json:"createdBy"`
-			Description  *string `json:"description,omitempty"`
-			Environments map[string]struct {
-				Active        UpdateFlag200JSONResponseBodyEnvironmentsActive        `json:"active"`
-				Fallthrough   UpdateFlag200JSONResponseBody_Environments_Fallthrough `json:"fallthrough"`
-				PausedOutcome struct {
-					Type      UpdateFlag200JSONResponseBodyEnvironmentsPausedOutcomeType `json:"type"`
-					VariantId string                                                     `json:"variantId"`
-				} `json:"pausedOutcome"`
-				Reuse *struct {
-					Active      UpdateFlag200JSONResponseBodyEnvironmentsReuseActive `json:"active"`
-					Environment string                                               `json:"environment"`
-				} `json:"reuse,omitempty"`
-				Revision *float32 `json:"revision,omitempty"`
-				Rules    []struct {
-					Conditions []struct {
-						Cmp        UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
-						CmpOptions *struct {
-							IgnoreCase *UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-						} `json:"cmpOptions,omitempty"`
-						Lhs UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
-						Rhs *UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-					} `json:"conditions"`
-					Id      string                                                   `json:"id"`
-					Outcome UpdateFlag200JSONResponseBody_Environments_Rules_Outcome `json:"outcome"`
-				} `json:"rules"`
-				Targets *map[string]map[string]map[string][]struct {
-					Note  *string `json:"note,omitempty"`
-					Value string  `json:"value"`
-				} `json:"targets,omitempty"`
-			} `json:"environments"`
-			Id               string                                         `json:"id"`
-			Kind             UpdateFlag200JSONResponseBodyKind              `json:"kind"`
-			MaintainerIds    *[]string                                      `json:"maintainerIds,omitempty"`
-			OwnerId          string                                         `json:"ownerId"`
-			Permanent        *UpdateFlag200JSONResponseBodyPermanent        `json:"permanent,omitempty"`
-			ProjectId        string                                         `json:"projectId"`
-			Revision         float32                                        `json:"revision"`
-			Seed             float32                                        `json:"seed"`
-			SeenInProduction *UpdateFlag200JSONResponseBodySeenInProduction `json:"seenInProduction,omitempty"`
-			Slug             string                                         `json:"slug"`
-			State            UpdateFlag200JSONResponseBodyState             `json:"state"`
-			Tags             *[]string                                      `json:"tags,omitempty"`
-			TypeName         UpdateFlag200JSONResponseBodyTypeName          `json:"typeName"`
-			UpdatedAt        float32                                        `json:"updatedAt"`
-			UpdatedBy        *string                                        `json:"updatedBy,omitempty"`
-			Variants         []struct {
-				Description *string                                       `json:"description,omitempty"`
-				Id          string                                        `json:"id"`
-				Label       *string                                       `json:"label,omitempty"`
-				Value       *UpdateFlag200JSONResponseBody_Variants_Value `json:"value"`
-			} `json:"variants"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 304:
-		break // No content-type
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
 		break // No content-type
 
 	case rsp.StatusCode == 410:

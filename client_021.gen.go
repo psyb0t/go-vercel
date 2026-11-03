@@ -16,9 +16,4281 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// CreateKmsIssuerPolicy Create an issuer policy
+//
+// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
+func (c *Client) CreateKmsIssuerPolicy(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, body CreateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateKmsIssuerPolicyRequest(c.Server, issuerId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteKmsIssuerPolicy Delete an issuer policy
+//
+// Remove a policy from a KMS issuer.
+//
+// Corresponds with DELETE /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `DeleteKmsIssuerPolicy` operationId).
+func (c *Client) DeleteKmsIssuerPolicy(ctx context.Context, issuerId string, kind DeleteKmsIssuerPolicyParamsKind, policyKey string, params *DeleteKmsIssuerPolicyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteKmsIssuerPolicyRequest(c.Server, issuerId, kind, policyKey, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateKmsIssuerPolicyWithBody Update an issuer policy
+//
+// Update an existing KMS issuer policy's environments or token claims.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
+func (c *Client) UpdateKmsIssuerPolicyWithBody(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateKmsIssuerPolicyRequestWithBody(c.Server, issuerId, kind, policyKey, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateKmsIssuerPolicy Update an issuer policy
+//
+// Update an existing KMS issuer policy's environments or token claims.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} (the `UpdateKmsIssuerPolicy` operationId).
+func (c *Client) UpdateKmsIssuerPolicy(ctx context.Context, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, body UpdateKmsIssuerPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateKmsIssuerPolicyRequest(c.Server, issuerId, kind, policyKey, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SignKmsMessageWithBody Sign a message
+//
+// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
+func (c *Client) SignKmsMessageWithBody(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSignKmsMessageRequestWithBody(c.Server, issuerId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SignKmsMessage Sign a message
+//
+// Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/message (the `SignKmsMessage` operationId).
+func (c *Client) SignKmsMessage(ctx context.Context, issuerId string, body SignKmsMessageJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSignKmsMessageRequest(c.Server, issuerId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SignKmsTokenWithBody Sign a token
+//
+// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
+func (c *Client) SignKmsTokenWithBody(ctx context.Context, issuerId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSignKmsTokenRequestWithBody(c.Server, issuerId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SignKmsToken Sign a token
+//
+// Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/kms/issuers/{issuerId}/sign/token (the `SignKmsToken` operationId).
+func (c *Client) SignKmsToken(ctx context.Context, issuerId string, body SignKmsTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSignKmsTokenRequest(c.Server, issuerId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAllLogDrains Retrieves a list of all the Log Drains (deprecated)
+//
+// Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
+//
+// Corresponds with GET /v1/log-drains (the `GetAllLogDrains` operationId).
+func (c *Client) GetAllLogDrains(ctx context.Context, params *GetAllLogDrainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAllLogDrainsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConfigurableLogDrainWithBody Creates a Configurable Log Drain (deprecated)
+//
+// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
+func (c *Client) CreateConfigurableLogDrainWithBody(ctx context.Context, params *CreateConfigurableLogDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConfigurableLogDrainRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConfigurableLogDrain Creates a Configurable Log Drain (deprecated)
+//
+// Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/log-drains (the `CreateConfigurableLogDrain` operationId).
+func (c *Client) CreateConfigurableLogDrain(ctx context.Context, params *CreateConfigurableLogDrainParams, body CreateConfigurableLogDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConfigurableLogDrainRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteConfigurableLogDrain Deletes a Configurable Log Drain (deprecated)
+//
+// Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
+//
+// Corresponds with DELETE /v1/log-drains/{id} (the `DeleteConfigurableLogDrain` operationId).
+func (c *Client) DeleteConfigurableLogDrain(ctx context.Context, id string, params *DeleteConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteConfigurableLogDrainRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetConfigurableLogDrain Retrieves a Configurable Log Drain (deprecated)
+//
+// Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
+//
+// Corresponds with GET /v1/log-drains/{id} (the `GetConfigurableLogDrain` operationId).
+func (c *Client) GetConfigurableLogDrain(ctx context.Context, id string, params *GetConfigurableLogDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetConfigurableLogDrainRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateMicrofrontendsGroupWithApplicationsWithBody Create a microfrontends group with applications
+//
+// Creates a microfrontends group and attaches multiple projects in a single request.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
+func (c *Client) CreateMicrofrontendsGroupWithApplicationsWithBody(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateMicrofrontendsGroupWithApplicationsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateMicrofrontendsGroupWithApplications Create a microfrontends group with applications
+//
+// Creates a microfrontends group and attaches multiple projects in a single request.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/microfrontends/group (the `CreateMicrofrontendsGroupWithApplications` operationId).
+func (c *Client) CreateMicrofrontendsGroupWithApplications(ctx context.Context, params *CreateMicrofrontendsGroupWithApplicationsParams, body CreateMicrofrontendsGroupWithApplicationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateMicrofrontendsGroupWithApplicationsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMicrofrontendsGroups List microfrontends groups
+//
+// Get the microfrontends group IDs for a team.
+//
+// Corresponds with GET /v1/microfrontends/groups (the `GetMicrofrontendsGroups` operationId).
+func (c *Client) GetMicrofrontendsGroups(ctx context.Context, params *GetMicrofrontendsGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMicrofrontendsGroupsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMicrofrontendsInGroup List projects in a microfrontends group
+//
+// Get the microfrontends for a given group ID.
+//
+// Corresponds with GET /v1/microfrontends/groups/{groupId}/projects (the `GetMicrofrontendsInGroup` operationId).
+func (c *Client) GetMicrofrontendsInGroup(ctx context.Context, groupId string, params *GetMicrofrontendsInGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMicrofrontendsInGroupRequest(c.Server, groupId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMicrofrontendsConfigForProject Get microfrontends config for a project
+//
+// Get the microfrontends config for a project by ID or name.
+//
+// Corresponds with GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config (the `GetMicrofrontendsConfigForProject` operationId).
+func (c *Client) GetMicrofrontendsConfigForProject(ctx context.Context, projectIdOrName string, params *GetMicrofrontendsConfigForProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMicrofrontendsConfigForProjectRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMicrofrontendsConfig Get microfrontends config for a deployment
+//
+// Get the microfrontends config for a deployment.
+//
+// Corresponds with GET /v1/microfrontends/{deploymentId}/config (the `GetMicrofrontendsConfig` operationId).
+func (c *Client) GetMicrofrontendsConfig(ctx context.Context, deploymentId string, params *GetMicrofrontendsConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMicrofrontendsConfigRequest(c.Server, deploymentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListPrivateLinkEndpoints List PrivateLink endpoints
+//
+// Lists all PrivateLink endpoints for a project.
+//
+// Corresponds with GET /v1/networking/privatelink/endpoints (the `ListPrivateLinkEndpoints` operationId).
+func (c *Client) ListPrivateLinkEndpoints(ctx context.Context, params *ListPrivateLinkEndpointsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListPrivateLinkEndpointsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreatePrivateLinkEndpointWithBody Create a PrivateLink endpoint
+//
+// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
+func (c *Client) CreatePrivateLinkEndpointWithBody(ctx context.Context, params *CreatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreatePrivateLinkEndpointRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreatePrivateLinkEndpoint Create a PrivateLink endpoint
+//
+// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/networking/privatelink/endpoints (the `CreatePrivateLinkEndpoint` operationId).
+func (c *Client) CreatePrivateLinkEndpoint(ctx context.Context, params *CreatePrivateLinkEndpointParams, body CreatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreatePrivateLinkEndpointRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeletePrivateLinkEndpoint Delete a PrivateLink endpoint
+//
+// Deletes a PrivateLink endpoint. The endpoint is removed asynchronously. Repeating the request for an endpoint that is already being deleted retries its cleanup and also returns `204`. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Corresponds with DELETE /v1/networking/privatelink/endpoints/{endpointId} (the `DeletePrivateLinkEndpoint` operationId).
+func (c *Client) DeletePrivateLinkEndpoint(ctx context.Context, endpointId string, params *DeletePrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeletePrivateLinkEndpointRequest(c.Server, endpointId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ReadPrivateLinkEndpoint Read a PrivateLink endpoint
+//
+// Reads a single PrivateLink endpoint.
+//
+// Corresponds with GET /v1/networking/privatelink/endpoints/{endpointId} (the `ReadPrivateLinkEndpoint` operationId).
+func (c *Client) ReadPrivateLinkEndpoint(ctx context.Context, endpointId string, params *ReadPrivateLinkEndpointParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewReadPrivateLinkEndpointRequest(c.Server, endpointId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdatePrivateLinkEndpointWithBody Update a PrivateLink endpoint
+//
+// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
+func (c *Client) UpdatePrivateLinkEndpointWithBody(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdatePrivateLinkEndpointRequestWithBody(c.Server, endpointId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdatePrivateLinkEndpoint Update a PrivateLink endpoint
+//
+// Updates a PrivateLink endpoint (name, privateDns). Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/networking/privatelink/endpoints/{endpointId} (the `UpdatePrivateLinkEndpoint` operationId).
+func (c *Client) UpdatePrivateLinkEndpoint(ctx context.Context, endpointId string, params *UpdatePrivateLinkEndpointParams, body UpdatePrivateLinkEndpointJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdatePrivateLinkEndpointRequest(c.Server, endpointId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetObservabilityConfigurationProjects Lists disabled Observability Plus projects
+//
+// Lists the projects that are currently configured as disabled for Observability Plus on a team.
+//
+// Corresponds with GET /v1/observability/manage/configuration/projects (the `GetObservabilityConfigurationProjects` operationId).
+func (c *Client) GetObservabilityConfigurationProjects(ctx context.Context, params *GetObservabilityConfigurationProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetObservabilityConfigurationProjectsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateObservabilityConfigurationProjectWithBody Updates a disabled Observability Plus project setting
+//
+// Updates whether Observability Plus is disabled for a single project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
+func (c *Client) UpdateObservabilityConfigurationProjectWithBody(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateObservabilityConfigurationProjectRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateObservabilityConfigurationProject Updates a disabled Observability Plus project setting
+//
+// Updates whether Observability Plus is disabled for a single project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/observability/manage/configuration/projects/{projectIdOrName} (the `UpdateObservabilityConfigurationProject` operationId).
+func (c *Client) UpdateObservabilityConfigurationProject(ctx context.Context, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, body UpdateObservabilityConfigurationProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateObservabilityConfigurationProjectRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListOrganizations List Organizations
+//
+// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Corresponds with GET /v1/organizations (the `ListOrganizations` operationId).
+func (c *Client) ListOrganizations(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListOrganizationsRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateOrganizationWithBody Create an Organization
+//
+// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
+func (c *Client) CreateOrganizationWithBody(ctx context.Context, params *CreateOrganizationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateOrganizationRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateOrganization Create an Organization
+//
+// Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/organizations (the `CreateOrganization` operationId).
+func (c *Client) CreateOrganization(ctx context.Context, params *CreateOrganizationParams, body CreateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateOrganizationRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetOrganization Get an Organization
+//
+// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Corresponds with GET /v1/organizations/{organizationId} (the `GetOrganization` operationId).
+func (c *Client) GetOrganization(ctx context.Context, organizationId string, params *GetOrganizationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetOrganizationRequest(c.Server, organizationId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateOrganizationWithBody Update an Organization
+//
+// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
+func (c *Client) UpdateOrganizationWithBody(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateOrganizationRequestWithBody(c.Server, organizationId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateOrganization Update an Organization
+//
+// Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
+func (c *Client) UpdateOrganization(ctx context.Context, organizationId string, body UpdateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateOrganizationRequest(c.Server, organizationId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListOrganizationTeams List Organization Teams
+//
+// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Corresponds with GET /v1/organizations/{organizationId}/teams (the `ListOrganizationTeams` operationId).
+func (c *Client) ListOrganizationTeams(ctx context.Context, organizationId string, params *ListOrganizationTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListOrganizationTeamsRequest(c.Server, organizationId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddOrganizationTeamWithBody Create or Add Team to Organization
+//
+// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
+func (c *Client) AddOrganizationTeamWithBody(ctx context.Context, organizationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddOrganizationTeamRequestWithBody(c.Server, organizationId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddOrganizationTeam Create or Add Team to Organization
+//
+// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/organizations/{organizationId}/teams (the `AddOrganizationTeam` operationId).
+func (c *Client) AddOrganizationTeam(ctx context.Context, organizationId string, body AddOrganizationTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddOrganizationTeamRequest(c.Server, organizationId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveOrganizationTeam Delete Team from Organization
+//
+// Delete a team from an organization. This endpoint is in private beta. Contact your Vercel account team for access.
+//
+// Corresponds with DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} (the `RemoveOrganizationTeam` operationId).
+func (c *Client) RemoveOrganizationTeam(ctx context.Context, organizationId string, targetTeamId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveOrganizationTeamRequest(c.Server, organizationId, targetTeamId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectTrace Get a project trace by request ID
+//
+// Returns the OTEL trace for a given Vercel CLI request.
+//
+// Corresponds with GET /v1/projects/traces (the `GetProjectTrace` operationId).
+func (c *Client) GetProjectTrace(ctx context.Context, params *GetProjectTraceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectTraceRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateTraceSessionWithBody Create a trace session token for a deployment
+//
+// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
+func (c *Client) CreateTraceSessionWithBody(ctx context.Context, params *CreateTraceSessionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateTraceSessionRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateTraceSession Create a trace session token for a deployment
+//
+// Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/traces/session (the `CreateTraceSession` operationId).
+func (c *Client) CreateTraceSession(ctx context.Context, params *CreateTraceSessionParams, body CreateTraceSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateTraceSessionRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteProjectAvatar Delete a project avatar
+//
+// Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so the next production deploy can run auto-detection again. Does not delete the stored image.
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/avatar (the `DeleteProjectAvatar` operationId).
+func (c *Client) DeleteProjectAvatar(ctx context.Context, idOrName string, params *DeleteProjectAvatarParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteProjectAvatarRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UploadProjectAvatarWithBody Upload a project avatar
+//
+// Upload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared `@api/project-avatar-upload` helper so it can be reused by background workers.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/avatar (the `UploadProjectAvatar` operationId).
+func (c *Client) UploadProjectAvatarWithBody(ctx context.Context, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUploadProjectAvatarRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectBoxes Get project daemons
+//
+// List the daemons of a project.
+//
+// Corresponds with GET /v1/projects/{idOrName}/daemons (the `GetProjectBoxes` operationId).
+func (c *Client) GetProjectBoxes(ctx context.Context, idOrName string, params *GetProjectBoxesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectBoxesRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutProjectDaemonInstancesWithBody Override a project daemon's instance counts
+//
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *Client) PutProjectDaemonInstancesWithBody(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutProjectDaemonInstancesRequestWithBody(c.Server, idOrName, daemonName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutProjectDaemonInstances Override a project daemon's instance counts
+//
+// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances (the `PutProjectDaemonInstances` operationId).
+func (c *Client) PutProjectDaemonInstances(ctx context.Context, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutProjectDaemonInstancesRequest(c.Server, idOrName, daemonName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RestartProjectDaemonInstance Force restart a project daemon instance
+//
+// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
+//
+// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
+func (c *Client) RestartProjectDaemonInstance(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestartProjectDaemonInstanceRequest(c.Server, idOrName, daemonName, instanceId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// MoveProjectDomainWithBody Move a project domain
+//
+// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
+func (c *Client) MoveProjectDomainWithBody(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewMoveProjectDomainRequestWithBody(c.Server, idOrName, domain, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// MoveProjectDomain Move a project domain
+//
+// Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/domains/{domain}/move (the `MoveProjectDomain` operationId).
+func (c *Client) MoveProjectDomain(ctx context.Context, idOrName string, domain string, params *MoveProjectDomainParams, body MoveProjectDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewMoveProjectDomainRequest(c.Server, idOrName, domain, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BatchRemoveProjectEnvWithBody Batch remove environment variables
+//
+// Delete multiple environment variables for a given project in a single batch operation.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
+func (c *Client) BatchRemoveProjectEnvWithBody(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBatchRemoveProjectEnvRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BatchRemoveProjectEnv Batch remove environment variables
+//
+// Delete multiple environment variables for a given project in a single batch operation.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/env (the `BatchRemoveProjectEnv` operationId).
+func (c *Client) BatchRemoveProjectEnv(ctx context.Context, idOrName string, params *BatchRemoveProjectEnvParams, body BatchRemoveProjectEnvJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBatchRemoveProjectEnvRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectEnv Retrieve the decrypted value of an environment variable of a project by id
+//
+// Retrieve the environment variable for a given project.
+//
+// Corresponds with GET /v1/projects/{idOrName}/env/{id} (the `GetProjectEnv` operationId).
+func (c *Client) GetProjectEnv(ctx context.Context, idOrName string, id string, params *GetProjectEnvParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectEnvRequest(c.Server, idOrName, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectMembers List project members
+//
+// Lists all members of a project.
+//
+// Corresponds with GET /v1/projects/{idOrName}/members (the `GetProjectMembers` operationId).
+func (c *Client) GetProjectMembers(ctx context.Context, idOrName string, params *GetProjectMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectMembersRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddProjectMemberWithBody Adds a new member to a project.
+//
+// Adds a new member to the project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
+func (c *Client) AddProjectMemberWithBody(ctx context.Context, idOrName string, params *AddProjectMemberParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddProjectMemberRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddProjectMember Adds a new member to a project.
+//
+// Adds a new member to the project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/members (the `AddProjectMember` operationId).
+func (c *Client) AddProjectMember(ctx context.Context, idOrName string, params *AddProjectMemberParams, body AddProjectMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddProjectMemberRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveProjectMember Remove a Project Member
+//
+// Remove a member from a specific project.
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/members/{uid} (the `RemoveProjectMember` operationId).
+func (c *Client) RemoveProjectMember(ctx context.Context, idOrName string, uid string, params *RemoveProjectMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveProjectMemberRequest(c.Server, idOrName, uid, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateProjectProtectionBypassWithBody Update Protection Bypass for Automation
+//
+// Update the deployment protection automation bypass for a project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
+func (c *Client) UpdateProjectProtectionBypassWithBody(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateProjectProtectionBypassRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateProjectProtectionBypass Update Protection Bypass for Automation
+//
+// Update the deployment protection automation bypass for a project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/protection-bypass (the `UpdateProjectProtectionBypass` operationId).
+func (c *Client) UpdateProjectProtectionBypass(ctx context.Context, idOrName string, params *UpdateProjectProtectionBypassParams, body UpdateProjectProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateProjectProtectionBypassRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRollingRelease Get the active rolling release information for a project
+//
+// Return the Rolling Release for a project, regardless of whether the rollout is active, aborted, or completed. If the feature is enabled but no deployment has occurred yet, null will be returned.
+//
+// Corresponds with GET /v1/projects/{idOrName}/rolling-release (the `GetRollingRelease` operationId).
+func (c *Client) GetRollingRelease(ctx context.Context, idOrName string, params *GetRollingReleaseParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRollingReleaseRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ApproveRollingReleaseStageWithBody Update the active rolling release to the next stage for a project
+//
+// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
+func (c *Client) ApproveRollingReleaseStageWithBody(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewApproveRollingReleaseStageRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ApproveRollingReleaseStage Update the active rolling release to the next stage for a project
+//
+// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/approve-stage (the `ApproveRollingReleaseStage` operationId).
+func (c *Client) ApproveRollingReleaseStage(ctx context.Context, idOrName string, params *ApproveRollingReleaseStageParams, body ApproveRollingReleaseStageJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewApproveRollingReleaseStageRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRollingReleaseBillingStatus Get rolling release billing status
+//
+// Get the Rolling Releases billing status for a project. The team level billing status is used to determine if the project can be configured for rolling releases.
+//
+// Corresponds with GET /v1/projects/{idOrName}/rolling-release/billing (the `GetRollingReleaseBillingStatus` operationId).
+func (c *Client) GetRollingReleaseBillingStatus(ctx context.Context, idOrName string, params *GetRollingReleaseBillingStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRollingReleaseBillingStatusRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CompleteRollingReleaseWithBody Complete the rolling release for the project
+//
+// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
+func (c *Client) CompleteRollingReleaseWithBody(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCompleteRollingReleaseRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CompleteRollingRelease Complete the rolling release for the project
+//
+// Force-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/complete (the `CompleteRollingRelease` operationId).
+func (c *Client) CompleteRollingRelease(ctx context.Context, idOrName string, params *CompleteRollingReleaseParams, body CompleteRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCompleteRollingReleaseRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteRollingReleaseConfig Delete rolling release configuration
+//
+// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that's already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
+//
+// Corresponds with DELETE /v1/projects/{idOrName}/rolling-release/config (the `DeleteRollingReleaseConfig` operationId).
+func (c *Client) DeleteRollingReleaseConfig(ctx context.Context, idOrName string, params *DeleteRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteRollingReleaseConfigRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRollingReleaseConfig Get rolling release configuration
+//
+// Get the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.
+//
+// Corresponds with GET /v1/projects/{idOrName}/rolling-release/config (the `GetRollingReleaseConfig` operationId).
+func (c *Client) GetRollingReleaseConfig(ctx context.Context, idOrName string, params *GetRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRollingReleaseConfigRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateRollingReleaseConfig Update the rolling release settings for the project
+//
+// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: "abort" to roll back (default), or "complete" to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that's already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn't configured already.
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/rolling-release/config (the `UpdateRollingReleaseConfig` operationId).
+func (c *Client) UpdateRollingReleaseConfig(ctx context.Context, idOrName string, params *UpdateRollingReleaseConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateRollingReleaseConfigRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StartRollingReleaseWithBody Start a rolling release for the project
+//
+// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
+func (c *Client) StartRollingReleaseWithBody(ctx context.Context, idOrName string, params *StartRollingReleaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStartRollingReleaseRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StartRollingRelease Start a rolling release for the project
+//
+// Start a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/rolling-release/start (the `StartRollingRelease` operationId).
+func (c *Client) StartRollingRelease(ctx context.Context, idOrName string, params *StartRollingReleaseParams, body StartRollingReleaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStartRollingReleaseRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateStaticIpsWithBody Configures Static IPs for a project
+//
+// Allows configuring Static IPs for a project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
+func (c *Client) UpdateStaticIpsWithBody(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateStaticIpsRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateStaticIps Configures Static IPs for a project
+//
+// Allows configuring Static IPs for a project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{idOrName}/shared-connect-links (the `UpdateStaticIps` operationId).
+func (c *Client) UpdateStaticIps(ctx context.Context, idOrName string, params *UpdateStaticIpsParams, body UpdateStaticIpsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateStaticIpsRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectTokenWithBody Generate a project OIDC token
+//
+// Generates an OIDC token for the project and returns it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
+func (c *Client) GetProjectTokenWithBody(ctx context.Context, idOrName string, params *GetProjectTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectTokenRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectToken Generate a project OIDC token
+//
+// Generates an OIDC token for the project and returns it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{idOrName}/token (the `GetProjectToken` operationId).
+func (c *Client) GetProjectToken(ctx context.Context, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectTokenRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFlagsProjectConnections List flags project connections
+//
+// Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/connections (the `GetFlagsProjectConnections` operationId).
+func (c *Client) GetFlagsProjectConnections(ctx context.Context, projectIdOrName string, params *GetFlagsProjectConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFlagsProjectConnectionsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagsProjectConnectionWithBody Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *Client) CreateFlagsProjectConnectionWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagsProjectConnectionRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagsProjectConnection Connect a project to the flags of this project
+//
+// Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/connections (the `CreateFlagsProjectConnection` operationId).
+func (c *Client) CreateFlagsProjectConnection(ctx context.Context, projectIdOrName string, params *CreateFlagsProjectConnectionParams, body CreateFlagsProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagsProjectConnectionRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteFlagsProjectConnection Disconnect a project from the flags of this project
+//
+// Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} (the `DeleteFlagsProjectConnection` operationId).
+func (c *Client) DeleteFlagsProjectConnection(ctx context.Context, projectIdOrName string, consumerProjectId string, params *DeleteFlagsProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteFlagsProjectConnectionRequest(c.Server, projectIdOrName, consumerProjectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlags List flags
+//
+// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags (the `ListFlags` operationId).
+func (c *Client) ListFlags(ctx context.Context, projectIdOrName string, params *ListFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagWithBody Create a flag
+//
+// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
+func (c *Client) CreateFlagWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlag Create a flag
+//
+// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/flags (the `CreateFlag` operationId).
+func (c *Client) CreateFlag(ctx context.Context, projectIdOrName string, params *CreateFlagParams, body CreateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteFlag Delete a flag
+//
+// Permanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `DeleteFlag` operationId).
+func (c *Client) DeleteFlag(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *DeleteFlagParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteFlagRequest(c.Server, projectIdOrName, flagIdOrSlug, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFlag Get a flag
+//
+// Retrieve a specific feature flag by its ID or slug.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `GetFlag` operationId).
+func (c *Client) GetFlag(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *GetFlagParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFlagRequest(c.Server, projectIdOrName, flagIdOrSlug, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFlagWithBody Update a flag
+//
+// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
+func (c *Client) UpdateFlagWithBody(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFlagRequestWithBody(c.Server, projectIdOrName, flagIdOrSlug, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFlag Update a flag
+//
+// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} (the `UpdateFlag` operationId).
+func (c *Client) UpdateFlag(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *UpdateFlagParams, body UpdateFlagJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFlagRequest(c.Server, projectIdOrName, flagIdOrSlug, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlagVersions List flag versions
+//
+// Lists flag versions for a given flag.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions (the `ListFlagVersions` operationId).
+func (c *Client) ListFlagVersions(ctx context.Context, projectIdOrName string, flagIdOrSlug string, params *ListFlagVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagVersionsRequest(c.Server, projectIdOrName, flagIdOrSlug, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlagLabels List attribute labels
+//
+// List labels for one entity attribute. Search can return a short or empty page with a continuation cursor; continue until pagination.next is null.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels (the `ListFlagLabels` operationId).
+func (c *Client) ListFlagLabels(ctx context.Context, projectIdOrName string, params *ListFlagLabelsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagLabelsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlagLabelCounts List attribute label counts
+//
+// List label counts for configured entity attributes, including empty ones.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/labels/counts (the `ListFlagLabelCounts` operationId).
+func (c *Client) ListFlagLabelCounts(ctx context.Context, projectIdOrName string, params *ListFlagLabelCountsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagLabelCountsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// LookupFlagLabelsWithBody Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *Client) LookupFlagLabelsWithBody(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewLookupFlagLabelsRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// LookupFlagLabels Look up attribute labels
+//
+// Look up at most 100 labels by entity kind, attribute key, and value. Duplicate keys are returned once; absent values are listed in missing.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
+func (c *Client) LookupFlagLabels(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewLookupFlagLabelsRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetSdkKeys Get all SDK keys
+//
+// Gets all SDK keys for a project.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `GetSdkKeys` operationId).
+func (c *Client) GetSdkKeys(ctx context.Context, projectIdOrName string, params *GetSdkKeysParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSdkKeysRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateSdkKeyWithBody Create an SDK key
+//
+// Creates an SDK key.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
+func (c *Client) CreateSdkKeyWithBody(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateSdkKeyRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateSdkKey Create an SDK key
+//
+// Creates an SDK key.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys (the `CreateSdkKey` operationId).
+func (c *Client) CreateSdkKey(ctx context.Context, projectIdOrName string, params *CreateSdkKeyParams, body CreateSdkKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateSdkKeyRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteSdkKey Delete an SDK key
+//
+// Deletes an SDK key.
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} (the `DeleteSdkKey` operationId).
+func (c *Client) DeleteSdkKey(ctx context.Context, projectIdOrName string, hashKey string, params *DeleteSdkKeyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteSdkKeyRequest(c.Server, projectIdOrName, hashKey, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFlagSegments List segments
+//
+// List all feature flag segments for a project.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments (the `ListFlagSegments` operationId).
+func (c *Client) ListFlagSegments(ctx context.Context, projectIdOrName string, params *ListFlagSegmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFlagSegmentsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagSegmentWithBody Create a segment
+//
+// Create a new feature flag segment.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
+func (c *Client) CreateFlagSegmentWithBody(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagSegmentRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFlagSegment Create a segment
+//
+// Create a new feature flag segment.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{projectIdOrName}/feature-flags/segments (the `CreateFlagSegment` operationId).
+func (c *Client) CreateFlagSegment(ctx context.Context, projectIdOrName string, params *CreateFlagSegmentParams, body CreateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFlagSegmentRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteFlagSegment Delete a segment
+//
+// Delete a feature flag segment.
+//
+// Corresponds with DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `DeleteFlagSegment` operationId).
+func (c *Client) DeleteFlagSegment(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *DeleteFlagSegmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteFlagSegmentRequest(c.Server, projectIdOrName, segmentIdOrSlug, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFlagSegment Get a segment
+//
+// Retrieve a feature flag segment by ID or slug.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `GetFlagSegment` operationId).
+func (c *Client) GetFlagSegment(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *GetFlagSegmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFlagSegmentRequest(c.Server, projectIdOrName, segmentIdOrSlug, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFlagSegmentWithBody Update a segment
+//
+// Update an existing feature flag segment.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
+func (c *Client) UpdateFlagSegmentWithBody(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFlagSegmentRequestWithBody(c.Server, projectIdOrName, segmentIdOrSlug, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFlagSegment Update a segment
+//
+// Update an existing feature flag segment.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} (the `UpdateFlagSegment` operationId).
+func (c *Client) UpdateFlagSegment(ctx context.Context, projectIdOrName string, segmentIdOrSlug string, params *UpdateFlagSegmentParams, body UpdateFlagSegmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFlagSegmentRequest(c.Server, projectIdOrName, segmentIdOrSlug, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFlagSettings Get project flag settings
+//
+// Retrieve feature flag settings for a project.
+//
+// Corresponds with GET /v1/projects/{projectIdOrName}/feature-flags/settings (the `GetFlagSettings` operationId).
+func (c *Client) GetFlagSettings(ctx context.Context, projectIdOrName string, params *GetFlagSettingsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFlagSettingsRequest(c.Server, projectIdOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFlagSettingsWithBody Update project flag settings
+//
+// Update feature flag settings for a project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
+func (c *Client) UpdateFlagSettingsWithBody(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFlagSettingsRequestWithBody(c.Server, projectIdOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFlagSettings Update project flag settings
+//
+// Update feature flag settings for a project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{projectIdOrName}/feature-flags/settings (the `UpdateFlagSettings` operationId).
+func (c *Client) UpdateFlagSettings(ctx context.Context, projectIdOrName string, params *UpdateFlagSettingsParams, body UpdateFlagSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFlagSettingsRequest(c.Server, projectIdOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRuntimeLogs Get logs for a deployment
+//
+// Returns a stream of logs for a given deployment.
+//
+// Corresponds with GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs (the `GetRuntimeLogs` operationId).
+func (c *Client) GetRuntimeLogs(ctx context.Context, projectId string, deploymentId string, params *GetRuntimeLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRuntimeLogsRequest(c.Server, projectId, deploymentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateMicrofrontendsWithBody Update the microfrontends settings
+//
+// Update the microfrontends settings for a project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
+func (c *Client) UpdateMicrofrontendsWithBody(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateMicrofrontendsRequestWithBody(c.Server, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateMicrofrontends Update the microfrontends settings
+//
+// Update the microfrontends settings for a project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{projectId}/microfrontends (the `UpdateMicrofrontends` operationId).
+func (c *Client) UpdateMicrofrontends(ctx context.Context, projectId string, params *UpdateMicrofrontendsParams, body UpdateMicrofrontendsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateMicrofrontendsRequest(c.Server, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PauseProject Pause a project
+//
+// Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
+//
+// Corresponds with POST /v1/projects/{projectId}/pause (the `PauseProject` operationId).
+func (c *Client) PauseProject(ctx context.Context, projectId string, params *PauseProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPauseProjectRequest(c.Server, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListPromoteAliases Gets a list of aliases with status for the current promote
+//
+// Get a list of aliases related to the last promote request with their mapping status.
+//
+// Corresponds with GET /v1/projects/{projectId}/promote/aliases (the `ListPromoteAliases` operationId).
+func (c *Client) ListPromoteAliases(ctx context.Context, projectId string, params *ListPromoteAliasesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListPromoteAliasesRequest(c.Server, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RequestRollback Point production traffic to a previous production deployment by ID
+//
+// Allows users to rollback to a deployment.
+//
+// Corresponds with POST /v1/projects/{projectId}/rollback/{deploymentId} (the `RequestRollback` operationId).
+func (c *Client) RequestRollback(ctx context.Context, projectId string, deploymentId string, params *RequestRollbackParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRequestRollbackRequest(c.Server, projectId, deploymentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBody Updates the description for a rollback
+//
+// Updates the reason for a rollback, without changing the rollback status itself.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
+func (c *Client) UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionWithBody(ctx context.Context, projectId string, deploymentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequestWithBody(c.Server, projectId, deploymentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription Updates the description for a rollback
+//
+// Updates the reason for a rollback, without changing the rollback status itself.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description (the `UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription` operationId).
+func (c *Client) UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription(ctx context.Context, projectId string, deploymentId string, body UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest(c.Server, projectId, deploymentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteRoutesWithBody Delete routing rules
+//
+// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
+func (c *Client) DeleteRoutesWithBody(ctx context.Context, projectId string, params *DeleteRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteRoutesRequestWithBody(c.Server, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteRoutes Delete routing rules
+//
+// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/projects/{projectId}/routes (the `DeleteRoutes` operationId).
+func (c *Client) DeleteRoutes(ctx context.Context, projectId string, params *DeleteRoutesParams, body DeleteRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteRoutesRequest(c.Server, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRoutes Get project routing rules
+//
+// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
+//
+// Corresponds with GET /v1/projects/{projectId}/routes (the `GetRoutes` operationId).
+func (c *Client) GetRoutes(ctx context.Context, projectId string, params *GetRoutesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRoutesRequest(c.Server, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddRouteWithBody Add a routing rule
+//
+// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
+func (c *Client) AddRouteWithBody(ctx context.Context, projectId string, params *AddRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddRouteRequestWithBody(c.Server, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddRoute Add a routing rule
+//
+// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{projectId}/routes (the `AddRoute` operationId).
+func (c *Client) AddRoute(ctx context.Context, projectId string, params *AddRouteParams, body AddRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddRouteRequest(c.Server, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StageRoutesWithBody Stage routing rules
+//
+// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
+func (c *Client) StageRoutesWithBody(ctx context.Context, projectId string, params *StageRoutesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStageRoutesRequestWithBody(c.Server, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StageRoutes Stage routing rules
+//
+// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/projects/{projectId}/routes (the `StageRoutes` operationId).
+func (c *Client) StageRoutes(ctx context.Context, projectId string, params *StageRoutesParams, body StageRoutesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStageRoutesRequest(c.Server, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateRouteWithBody Generate a routing rule from natural language
+//
+// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
+func (c *Client) GenerateRouteWithBody(ctx context.Context, projectId string, params *GenerateRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateRouteRequestWithBody(c.Server, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateRoute Generate a routing rule from natural language
+//
+// Generate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/generate (the `GenerateRoute` operationId).
+func (c *Client) GenerateRoute(ctx context.Context, projectId string, params *GenerateRouteParams, body GenerateRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateRouteRequest(c.Server, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRouteVersions Get routing rule version history
+//
+// Get the version history for a project's routing rules. Returns the staging version (if one exists) followed by production versions, most recent first. The staging version has `isStaging: true` and the current production version has `isLive: true`.
+//
+// Corresponds with GET /v1/projects/{projectId}/routes/versions (the `GetRouteVersions` operationId).
+func (c *Client) GetRouteVersions(ctx context.Context, projectId string, params *GetRouteVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRouteVersionsRequest(c.Server, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateRouteVersionsWithBody Promote, restore, or discard a routing rule version
+//
+// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
+func (c *Client) UpdateRouteVersionsWithBody(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateRouteVersionsRequestWithBody(c.Server, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateRouteVersions Promote, restore, or discard a routing rule version
+//
+// Promote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/projects/{projectId}/routes/versions (the `UpdateRouteVersions` operationId).
+func (c *Client) UpdateRouteVersions(ctx context.Context, projectId string, params *UpdateRouteVersionsParams, body UpdateRouteVersionsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateRouteVersionsRequest(c.Server, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EditRouteWithBody Edit a routing rule
+//
+// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
+func (c *Client) EditRouteWithBody(ctx context.Context, projectId string, routeId string, params *EditRouteParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEditRouteRequestWithBody(c.Server, projectId, routeId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EditRoute Edit a routing rule
+//
+// Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/projects/{projectId}/routes/{routeId} (the `EditRoute` operationId).
+func (c *Client) EditRoute(ctx context.Context, projectId string, routeId string, params *EditRouteParams, body EditRouteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEditRouteRequest(c.Server, projectId, routeId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UnpauseProject Unpause a project
+//
+// Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
+//
+// Corresponds with POST /v1/projects/{projectId}/unpause (the `UnpauseProject` operationId).
+func (c *Client) UnpauseProject(ctx context.Context, projectId string, params *UnpauseProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnpauseProjectRequest(c.Server, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AggregateEvents Aggregates custom events
+//
+// Counts custom events on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
+//
+// Corresponds with GET /v1/query/web-analytics/events/aggregate (the `AggregateEvents` operationId).
+func (c *Client) AggregateEvents(ctx context.Context, params *AggregateEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAggregateEventsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CountEvents Counts custom events
+//
+// Counts the number of custom events on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
+//
+// Corresponds with GET /v1/query/web-analytics/events/count (the `CountEvents` operationId).
+func (c *Client) CountEvents(ctx context.Context, params *CountEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCountEventsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AggregatePageviews Aggregates page views
+//
+// Counts pageviews on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
+//
+// Corresponds with GET /v1/query/web-analytics/visits/aggregate (the `AggregatePageviews` operationId).
+func (c *Client) AggregatePageviews(ctx context.Context, params *AggregatePageviewsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAggregatePageviewsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CountPageviews Counts page views
+//
+// Counts the number of page views on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
+//
+// Corresponds with GET /v1/query/web-analytics/visits/count (the `CountPageviews` operationId).
+func (c *Client) CountPageviews(ctx context.Context, params *CountPageviewsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCountPageviewsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBulkAvailabilityWithBody Get availability for multiple domains
+//
+// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
+func (c *Client) GetBulkAvailabilityWithBody(ctx context.Context, params *GetBulkAvailabilityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBulkAvailabilityRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBulkAvailability Get availability for multiple domains
+//
+// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/availability (the `GetBulkAvailability` operationId).
+func (c *Client) GetBulkAvailability(ctx context.Context, params *GetBulkAvailabilityParams, body GetBulkAvailabilityJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBulkAvailabilityRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BuyDomainsWithBody Buy multiple domains
+//
+// Buy multiple domains at once.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
+func (c *Client) BuyDomainsWithBody(ctx context.Context, params *BuyDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBuyDomainsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BuyDomains Buy multiple domains
+//
+// Buy multiple domains at once.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/buy (the `BuyDomains` operationId).
+func (c *Client) BuyDomains(ctx context.Context, params *BuyDomainsParams, body BuyDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBuyDomainsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBulkPriceWithBody Get price data for multiple domains
+//
+// Get price data for multiple domains in a single request.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
+func (c *Client) GetBulkPriceWithBody(ctx context.Context, params *GetBulkPriceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBulkPriceRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBulkPrice Get price data for multiple domains
+//
+// Get price data for multiple domains in a single request.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/price (the `GetBulkPrice` operationId).
+func (c *Client) GetBulkPrice(ctx context.Context, params *GetBulkPriceParams, body GetBulkPriceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBulkPriceRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SearchDomainsWithBody Get Domain Availability and Pricing
+//
+// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
+func (c *Client) SearchDomainsWithBody(ctx context.Context, params *SearchDomainsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSearchDomainsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SearchDomains Get Domain Availability and Pricing
+//
+// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/search (the `SearchDomains` operationId).
+func (c *Client) SearchDomains(ctx context.Context, params *SearchDomainsParams, body SearchDomainsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSearchDomainsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDomainAuthCode Get the auth code for a domain
+//
+// Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/auth-code (the `GetDomainAuthCode` operationId).
+func (c *Client) GetDomainAuthCode(ctx context.Context, domain DomainName, params *GetDomainAuthCodeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainAuthCodeRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateDomainAutoRenewWithBody Update auto-renew for a domain
+//
+// Update the auto-renew setting for a domain.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
+func (c *Client) UpdateDomainAutoRenewWithBody(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDomainAutoRenewRequestWithBody(c.Server, domain, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateDomainAutoRenew Update auto-renew for a domain
+//
+// Update the auto-renew setting for a domain.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/auto-renew (the `UpdateDomainAutoRenew` operationId).
+func (c *Client) UpdateDomainAutoRenew(ctx context.Context, domain DomainName, params *UpdateDomainAutoRenewParams, body UpdateDomainAutoRenewJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDomainAutoRenewRequest(c.Server, domain, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDomainAvailability Get availability for a domain
+//
+// Get availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/availability (the `GetDomainAvailability` operationId).
+func (c *Client) GetDomainAvailability(ctx context.Context, domain DomainName, params *GetDomainAvailabilityParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainAvailabilityRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BuySingleDomainWithBody Buy a domain
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
+func (c *Client) BuySingleDomainWithBody(ctx context.Context, domain DomainName, params *BuySingleDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBuySingleDomainRequestWithBody(c.Server, domain, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BuySingleDomain Buy a domain
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/buy (the `BuySingleDomain` operationId).
+func (c *Client) BuySingleDomain(ctx context.Context, domain DomainName, params *BuySingleDomainParams, body BuySingleDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBuySingleDomainRequest(c.Server, domain, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetContactInfoSchema Get contact info schema
+//
+// Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/contact-info/schema (the `GetContactInfoSchema` operationId).
+func (c *Client) GetContactInfoSchema(ctx context.Context, domain DomainName, params *GetContactInfoSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetContactInfoSchemaRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDomainContactVerification Get contact verification status for a domain
+//
+// Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/contact-verification (the `GetDomainContactVerification` operationId).
+func (c *Client) GetDomainContactVerification(ctx context.Context, domain DomainName, params *GetDomainContactVerificationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainContactVerificationRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateDomainNameserversWithBody Update nameservers for a domain
+//
+// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
+func (c *Client) UpdateDomainNameserversWithBody(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDomainNameserversRequestWithBody(c.Server, domain, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateDomainNameservers Update nameservers for a domain
+//
+// Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/registrar/domains/{domain}/nameservers (the `UpdateDomainNameservers` operationId).
+func (c *Client) UpdateDomainNameservers(ctx context.Context, domain DomainName, params *UpdateDomainNameserversParams, body UpdateDomainNameserversJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDomainNameserversRequest(c.Server, domain, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDomainPrice Get price data for a domain
+//
+// Get price data for a specific domain.
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/price (the `GetDomainPrice` operationId).
+func (c *Client) GetDomainPrice(ctx context.Context, domain DomainName, params *GetDomainPriceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainPriceRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RenewDomainWithBody Renew a domain
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
+func (c *Client) RenewDomainWithBody(ctx context.Context, domain DomainName, params *RenewDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRenewDomainRequestWithBody(c.Server, domain, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RenewDomain Renew a domain
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/renew (the `RenewDomain` operationId).
+func (c *Client) RenewDomain(ctx context.Context, domain DomainName, params *RenewDomainParams, body RenewDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRenewDomainRequest(c.Server, domain, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDomainTransferIn Get a domain's transfer status
+//
+// Get the transfer status for a domain.
+//
+// Corresponds with GET /v1/registrar/domains/{domain}/transfer (the `GetDomainTransferIn` operationId).
+func (c *Client) GetDomainTransferIn(ctx context.Context, domain DomainName, params *GetDomainTransferInParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainTransferInRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// TransferInDomainWithBody Transfer-in a domain
+//
+// Transfer a domain in from another registrar.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
+func (c *Client) TransferInDomainWithBody(ctx context.Context, domain DomainName, params *TransferInDomainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTransferInDomainRequestWithBody(c.Server, domain, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// TransferInDomain Transfer-in a domain
+//
+// Transfer a domain in from another registrar.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/registrar/domains/{domain}/transfer (the `TransferInDomain` operationId).
+func (c *Client) TransferInDomain(ctx context.Context, domain DomainName, params *TransferInDomainParams, body TransferInDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTransferInDomainRequest(c.Server, domain, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetOrder Get a domain order
+//
+// Get information about a domain order by its ID.
+//
+// Corresponds with GET /v1/registrar/orders/{orderId} (the `GetOrder` operationId).
+func (c *Client) GetOrder(ctx context.Context, orderId OrderId, params *GetOrderParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetOrderRequest(c.Server, orderId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetSupportedTlds Get supported TLDs
+//
+// Get a list of TLDs supported by Vercel.
+//
+// Corresponds with GET /v1/registrar/tlds/supported (the `GetSupportedTlds` operationId).
+func (c *Client) GetSupportedTlds(ctx context.Context, params *GetSupportedTldsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSupportedTldsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetTld Get TLD
+//
+// Get the metadata for a specific TLD.
+//
+// Corresponds with GET /v1/registrar/tlds/{tld} (the `GetTld` operationId).
+func (c *Client) GetTld(ctx context.Context, tld TldName, params *GetTldParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetTldRequest(c.Server, tld, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetTldPrice Get TLD price data
+//
+// Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.
+//
+// Corresponds with GET /v1/registrar/tlds/{tld}/price (the `GetTldPrice` operationId).
+func (c *Client) GetTldPrice(ctx context.Context, tld TldName, params *GetTldPriceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetTldPriceRequest(c.Server, tld, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAttackChallengeModeWithBody Update Attack Challenge mode
+//
+// Update the setting for determining if the project has Attack Challenge mode enabled.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
+func (c *Client) UpdateAttackChallengeModeWithBody(ctx context.Context, params *UpdateAttackChallengeModeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAttackChallengeModeRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAttackChallengeMode Update Attack Challenge mode
+//
+// Update the setting for determining if the project has Attack Challenge mode enabled.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/security/attack-mode (the `UpdateAttackChallengeMode` operationId).
+func (c *Client) UpdateAttackChallengeMode(ctx context.Context, params *UpdateAttackChallengeModeParams, body UpdateAttackChallengeModeJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAttackChallengeModeRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetActiveAttackStatus Read active attack data
+//
+// Retrieve active attack data within the last N days (default: 1 day)
+//
+// Corresponds with GET /v1/security/firewall/attack-status (the `GetActiveAttackStatus` operationId).
+func (c *Client) GetActiveAttackStatus(ctx context.Context, params *GetActiveAttackStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetActiveAttackStatusRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveBypassIpWithBody Remove System Bypass Rule
+//
+// Remove system bypass rules.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
+func (c *Client) RemoveBypassIpWithBody(ctx context.Context, params *RemoveBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveBypassIpRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveBypassIp Remove System Bypass Rule
+//
+// Remove system bypass rules.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/security/firewall/bypass (the `RemoveBypassIp` operationId).
+func (c *Client) RemoveBypassIp(ctx context.Context, params *RemoveBypassIpParams, body RemoveBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveBypassIpRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBypassIp Read System Bypass
+//
+// Retrieve the system bypass rules configured for the specified project.
+//
+// Corresponds with GET /v1/security/firewall/bypass (the `GetBypassIp` operationId).
+func (c *Client) GetBypassIp(ctx context.Context, params *GetBypassIpParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBypassIpRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddBypassIpWithBody Create System Bypass Rule
+//
+// Create new system bypass rules.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
+func (c *Client) AddBypassIpWithBody(ctx context.Context, params *AddBypassIpParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddBypassIpRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddBypassIp Create System Bypass Rule
+//
+// Create new system bypass rules.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/security/firewall/bypass (the `AddBypassIp` operationId).
+func (c *Client) AddBypassIp(ctx context.Context, params *AddBypassIpParams, body AddBypassIpJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddBypassIpRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteConditionalBypass Delete conditional firewall bypass
+//
+// Delete a conditional firewall bypass rule from a project domain.
+//
+// Corresponds with DELETE /v1/security/firewall/bypass/rules (the `DeleteConditionalBypass` operationId).
+func (c *Client) DeleteConditionalBypass(ctx context.Context, params *DeleteConditionalBypassParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteConditionalBypassRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetConditionalBypass Get conditional firewall bypasses
+//
+// Retrieve conditional firewall bypass rules for a project.
+//
+// Corresponds with GET /v1/security/firewall/bypass/rules (the `GetConditionalBypass` operationId).
+func (c *Client) GetConditionalBypass(ctx context.Context, params *GetConditionalBypassParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetConditionalBypassRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConditionalBypassWithBody Create conditional firewall bypass
+//
+// Create a conditional firewall bypass rule for a project domain.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
+func (c *Client) CreateConditionalBypassWithBody(ctx context.Context, params *CreateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConditionalBypassRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConditionalBypass Create conditional firewall bypass
+//
+// Create a conditional firewall bypass rule for a project domain.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/security/firewall/bypass/rules (the `CreateConditionalBypass` operationId).
+func (c *Client) CreateConditionalBypass(ctx context.Context, params *CreateConditionalBypassParams, body CreateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConditionalBypassRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateConditionalBypassWithBody Update conditional firewall bypass
+//
+// Update a conditional firewall bypass rule for a project domain. Replaces conditions and the note for the domain's existing rule. Omitting `note` clears it. The rule ID, domain, creator, and creation time are preserved. Missing or deleted rules are not created.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/security/firewall/bypass/rules (the `UpdateConditionalBypass` operationId).
+func (c *Client) UpdateConditionalBypassWithBody(ctx context.Context, params *UpdateConditionalBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateConditionalBypassRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateConditionalBypass Update conditional firewall bypass
+//
+// Update a conditional firewall bypass rule for a project domain. Replaces conditions and the note for the domain's existing rule. Omitting `note` clears it. The rule ID, domain, creator, and creation time are preserved. Missing or deleted rules are not created.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/security/firewall/bypass/rules (the `UpdateConditionalBypass` operationId).
+func (c *Client) UpdateConditionalBypass(ctx context.Context, params *UpdateConditionalBypassParams, body UpdateConditionalBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateConditionalBypassRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetSecurityFirewallConfig Returns activated WAF config
+//
+// Lists WAF configs for a project.
+//
+// Corresponds with GET /v1/security/firewall/config (the `GetSecurityFirewallConfig` operationId).
+func (c *Client) GetSecurityFirewallConfig(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSecurityFirewallConfigRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFirewallConfigWithBody Update Firewall Configuration
+//
+// Process updates to modify the existing firewall config for a project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
+func (c *Client) UpdateFirewallConfigWithBody(ctx context.Context, params *UpdateFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFirewallConfigRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFirewallConfig Update Firewall Configuration
+//
+// Process updates to modify the existing firewall config for a project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/security/firewall/config (the `UpdateFirewallConfig` operationId).
+func (c *Client) UpdateFirewallConfig(ctx context.Context, params *UpdateFirewallConfigParams, body UpdateFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFirewallConfigRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutFirewallConfigWithBody Put Firewall Configuration
+//
+// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
+func (c *Client) PutFirewallConfigWithBody(ctx context.Context, params *PutFirewallConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutFirewallConfigRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutFirewallConfig Put Firewall Configuration
+//
+// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/security/firewall/config (the `PutFirewallConfig` operationId).
+func (c *Client) PutFirewallConfig(ctx context.Context, params *PutFirewallConfigParams, body PutFirewallConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutFirewallConfigRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateFirewallRule Generate a firewall rule from natural language
+//
+// Generate a firewall rule from a natural language description.
+//
+// Corresponds with POST /v1/security/firewall/config/generate-rule (the `GenerateFirewallRule` operationId).
+func (c *Client) GenerateFirewallRule(ctx context.Context, params *GenerateFirewallRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateFirewallRuleRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteSecurityFirewallConfigByConfigVersion Returns activated WAF config
+//
+// Promotes a draft WAF config to an active config.
+//
+// Corresponds with DELETE /v1/security/firewall/config/{configVersion} (the `DeleteSecurityFirewallConfigByConfigVersion` operationId).
+func (c *Client) DeleteSecurityFirewallConfigByConfigVersion(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteSecurityFirewallConfigByConfigVersionRequest(c.Server, configVersion)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFirewallConfig Read Firewall Configuration
+//
+// Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
+//
+// Corresponds with GET /v1/security/firewall/config/{configVersion} (the `GetFirewallConfig` operationId).
+func (c *Client) GetFirewallConfig(ctx context.Context, configVersion string, params *GetFirewallConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFirewallConfigRequest(c.Server, configVersion, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateSecurityFirewallConfigByConfigVersionActivate Returns activated WAF config
+//
+// Promotes a draft WAF config to an active config.
+//
+// Corresponds with POST /v1/security/firewall/config/{configVersion}/activate (the `CreateSecurityFirewallConfigByConfigVersionActivate` operationId).
+func (c *Client) CreateSecurityFirewallConfigByConfigVersionActivate(ctx context.Context, configVersion string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateSecurityFirewallConfigByConfigVersionActivateRequest(c.Server, configVersion)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetSecurityFirewallEvents Read Firewall Actions by Project
+//
+// Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
+//
+// Corresponds with GET /v1/security/firewall/events (the `GetSecurityFirewallEvents` operationId).
+func (c *Client) GetSecurityFirewallEvents(ctx context.Context, params *GetSecurityFirewallEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSecurityFirewallEventsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetSecurityFirewallEventsSummary Read Firewall Actions Summary by Project
+//
+// Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.
+//
+// Corresponds with GET /v1/security/firewall/events/summary (the `GetSecurityFirewallEventsSummary` operationId).
+func (c *Client) GetSecurityFirewallEventsSummary(ctx context.Context, params *GetSecurityFirewallEventsSummaryParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSecurityFirewallEventsSummaryRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateIntegrationStoreDirectWithBody Create integration store (free and paid plans)
+//
+// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
+func (c *Client) CreateIntegrationStoreDirectWithBody(ctx context.Context, params *CreateIntegrationStoreDirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateIntegrationStoreDirectRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateIntegrationStoreDirect Create integration store (free and paid plans)
+//
+// Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/storage/stores/integration/direct (the `CreateIntegrationStoreDirect` operationId).
+func (c *Client) CreateIntegrationStoreDirect(ctx context.Context, params *CreateIntegrationStoreDirectParams, body CreateIntegrationStoreDirectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateIntegrationStoreDirectRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateTeamWithBody Create a Team
+//
+// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
+func (c *Client) CreateTeamWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateTeamRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateTeam Create a Team
+//
+// Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
+func (c *Client) CreateTeam(ctx context.Context, body CreateTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateTeamRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteTeamWithBody Delete a Team
+//
+// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
+func (c *Client) DeleteTeamWithBody(ctx context.Context, teamId string, params *DeleteTeamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteTeamRequestWithBody(c.Server, teamId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteTeam Delete a Team
+//
+// Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/teams/{teamId} (the `DeleteTeam` operationId).
+func (c *Client) DeleteTeam(ctx context.Context, teamId string, params *DeleteTeamParams, body DeleteTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteTeamRequest(c.Server, teamId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostTeamDsyncRolesWithBody Update Team Directory Sync Role Mappings
+//
+// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
+func (c *Client) PostTeamDsyncRolesWithBody(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostTeamDsyncRolesRequestWithBody(c.Server, teamId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostTeamDsyncRoles Update Team Directory Sync Role Mappings
+//
+// Update the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/teams/{teamId}/dsync-roles (the `PostTeamDsyncRoles` operationId).
+func (c *Client) PostTeamDsyncRoles(ctx context.Context, teamId string, params *PostTeamDsyncRolesParams, body PostTeamDsyncRolesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostTeamDsyncRolesRequest(c.Server, teamId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListTeamFlags List all flags for a team
+//
+// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
+//
+// Corresponds with GET /v1/teams/{teamId}/feature-flags/flags (the `ListTeamFlags` operationId).
+func (c *Client) ListTeamFlags(ctx context.Context, teamId string, params *ListTeamFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListTeamFlagsRequest(c.Server, teamId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListTeamFlagSettings List team project flag settings
+//
+// Retrieve feature flag settings for projects in a team.
+//
+// Corresponds with GET /v1/teams/{teamId}/feature-flags/settings (the `ListTeamFlagSettings` operationId).
+func (c *Client) ListTeamFlagSettings(ctx context.Context, teamId string, params *ListTeamFlagSettingsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListTeamFlagSettingsRequest(c.Server, teamId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteTeamInviteCode Delete a Team invite code
+//
+// Delete an active Team invite code.
+//
+// Corresponds with DELETE /v1/teams/{teamId}/invites/{inviteId} (the `DeleteTeamInviteCode` operationId).
+func (c *Client) DeleteTeamInviteCode(ctx context.Context, teamId string, inviteId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteTeamInviteCodeRequest(c.Server, teamId, inviteId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// JoinTeamWithBody Join a team
+//
+// Join a team with a provided invite code or team ID.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
+func (c *Client) JoinTeamWithBody(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewJoinTeamRequestWithBody(c.Server, teamId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// JoinTeam Join a team
+//
+// Join a team with a provided invite code or team ID.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/teams/{teamId}/members/teams/join (the `JoinTeam` operationId).
+func (c *Client) JoinTeam(ctx context.Context, teamId string, body JoinTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewJoinTeamRequest(c.Server, teamId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveTeamMember Remove a Team Member
+//
+// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
+//
+// Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
+func (c *Client) RemoveTeamMember(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveTeamMemberRequest(c.Server, teamId, uid, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateTeamMemberWithBody Update a Team Member
+//
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
+func (c *Client) UpdateTeamMemberWithBody(ctx context.Context, teamId string, uid string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateTeamMemberRequestWithBody(c.Server, teamId, uid, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateTeamMember Update a Team Member
+//
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/teams/{teamId}/members/{uid} (the `UpdateTeamMember` operationId).
+func (c *Client) UpdateTeamMember(ctx context.Context, teamId string, uid string, body UpdateTeamMemberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateTeamMemberRequest(c.Server, teamId, uid, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteMicrofrontendsGroup Delete a microfrontends group
+//
+// Deletes a microfrontends group from the team associated with the group ID.
+//
+// Corresponds with DELETE /v1/teams/{teamId}/microfrontends/{groupId} (the `DeleteMicrofrontendsGroup` operationId).
+func (c *Client) DeleteMicrofrontendsGroup(ctx context.Context, teamId string, groupId string, params *DeleteMicrofrontendsGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteMicrofrontendsGroupRequest(c.Server, teamId, groupId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateMicrofrontendsGroupWithBody Update a microfrontends group
+//
+// Updates a microfrontends group's settings.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
+func (c *Client) UpdateMicrofrontendsGroupWithBody(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateMicrofrontendsGroupRequestWithBody(c.Server, teamId, groupId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateMicrofrontendsGroup Update a microfrontends group
+//
+// Updates a microfrontends group's settings.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/teams/{teamId}/microfrontends/{groupId} (the `UpdateMicrofrontendsGroup` operationId).
+func (c *Client) UpdateMicrofrontendsGroup(ctx context.Context, teamId string, groupId string, params *UpdateMicrofrontendsGroupParams, body UpdateMicrofrontendsGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateMicrofrontendsGroupRequest(c.Server, teamId, groupId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RequestAccessToTeamWithBody Request access to a team
+//
+// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
+func (c *Client) RequestAccessToTeamWithBody(ctx context.Context, teamId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRequestAccessToTeamRequestWithBody(c.Server, teamId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RequestAccessToTeam Request access to a team
+//
+// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/teams/{teamId}/request (the `RequestAccessToTeam` operationId).
+func (c *Client) RequestAccessToTeam(ctx context.Context, teamId string, body RequestAccessToTeamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRequestAccessToTeamRequest(c.Server, teamId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetTeamAccessRequest Get access request status
+//
+// Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
+//
+// Corresponds with GET /v1/teams/{teamId}/request/{userId} (the `GetTeamAccessRequest` operationId).
+func (c *Client) GetTeamAccessRequest(ctx context.Context, teamId string, userId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetTeamAccessRequestRequest(c.Server, teamId, userId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RequestDeleteWithBody Delete User Account
+//
+// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
+func (c *Client) RequestDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRequestDeleteRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RequestDelete Delete User Account
+//
+// Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/user (the `RequestDelete` operationId).
+func (c *Client) RequestDelete(ctx context.Context, body RequestDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRequestDeleteRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListRepositories List repositories
+//
+// List container registry repositories for a project.
+//
+// Corresponds with GET /v1/vcr/repository (the `ListRepositories` operationId).
+func (c *Client) ListRepositories(ctx context.Context, params *ListRepositoriesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRepositoriesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateRepositoryWithBody Create a repository
+//
+// Create a container registry repository for a project.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
+func (c *Client) CreateRepositoryWithBody(ctx context.Context, params *CreateRepositoryParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateRepositoryRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateRepository Create a repository
+//
+// Create a container registry repository for a project.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/vcr/repository (the `CreateRepository` operationId).
+func (c *Client) CreateRepository(ctx context.Context, params *CreateRepositoryParams, body CreateRepositoryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateRepositoryRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteRepository Delete a repository
+//
+// Schedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName} (the `DeleteRepository` operationId).
+func (c *Client) DeleteRepository(ctx context.Context, idOrName string, params *DeleteRepositoryParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteRepositoryRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRepository Get a repository
+//
+// Fetch a container registry repository for a project by ID or name.
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName} (the `GetRepository` operationId).
+func (c *Client) GetRepository(ctx context.Context, idOrName string, params *GetRepositoryParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRepositoryRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListRepositoryImages List repository images
+//
+// List images for a container registry repository, including their tags.
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/images (the `ListRepositoryImages` operationId).
+func (c *Client) ListRepositoryImages(ctx context.Context, idOrName string, params *ListRepositoryImagesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRepositoryImagesRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRepositoryImage Get a repository image
+//
+// Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} (the `GetRepositoryImage` operationId).
+func (c *Client) GetRepositoryImage(ctx context.Context, idOrName string, imageIdOrDigest string, params *GetRepositoryImageParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRepositoryImageRequest(c.Server, idOrName, imageIdOrDigest, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteRepositoryImage Delete a repository image
+//
+// Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/images/{imageId} (the `DeleteRepositoryImage` operationId).
+func (c *Client) DeleteRepositoryImage(ctx context.Context, idOrName string, imageId string, params *DeleteRepositoryImageParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteRepositoryImageRequest(c.Server, idOrName, imageId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveRepositoryPermissionWithBody Remove a repository permission
+//
+// Revoke a team's access to a VCR repository.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
+func (c *Client) RemoveRepositoryPermissionWithBody(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveRepositoryPermissionRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RemoveRepositoryPermission Remove a repository permission
+//
+// Revoke a team's access to a VCR repository.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions (the `RemoveRepositoryPermission` operationId).
+func (c *Client) RemoveRepositoryPermission(ctx context.Context, idOrName string, params *RemoveRepositoryPermissionParams, body RemoveRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRemoveRepositoryPermissionRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListRepositoryPermissions List repository permissions
+//
+// List the teams a VCR repository is shared with.
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/permissions (the `ListRepositoryPermissions` operationId).
+func (c *Client) ListRepositoryPermissions(ctx context.Context, idOrName string, params *ListRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRepositoryPermissionsRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddRepositoryPermissionWithBody Add a repository permission
+//
+// Grant a team access to a VCR repository. Sharing applies to the whole repository.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
+func (c *Client) AddRepositoryPermissionWithBody(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddRepositoryPermissionRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AddRepositoryPermission Add a repository permission
+//
+// Grant a team access to a VCR repository. Sharing applies to the whole repository.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/vcr/repository/{idOrName}/permissions (the `AddRepositoryPermission` operationId).
+func (c *Client) AddRepositoryPermission(ctx context.Context, idOrName string, params *AddRepositoryPermissionParams, body AddRepositoryPermissionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddRepositoryPermissionRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ClearRepositoryPermissions Clear all repository permissions
+//
+// Revoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.
+//
+// Corresponds with DELETE /v1/vcr/repository/{idOrName}/permissions/all (the `ClearRepositoryPermissions` operationId).
+func (c *Client) ClearRepositoryPermissions(ctx context.Context, idOrName string, params *ClearRepositoryPermissionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewClearRepositoryPermissionsRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListRepositoryTags List repository tags
+//
+// List a repository's tags.
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/tags (the `ListRepositoryTags` operationId).
+func (c *Client) ListRepositoryTags(ctx context.Context, idOrName string, params *ListRepositoryTagsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRepositoryTagsRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRepositoryTag Get a repository tag
+//
+// Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.
+//
+// Corresponds with GET /v1/vcr/repository/{idOrName}/tags/{tag} (the `GetRepositoryTag` operationId).
+func (c *Client) GetRepositoryTag(ctx context.Context, idOrName string, tag string, params *GetRepositoryTagParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRepositoryTagRequest(c.Server, idOrName, tag, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListVercelCiInvocationAttempts List all attempts for an invocation
+//
+// List Invocation Attempts.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts (the `ListVercelCiInvocationAttempts` operationId).
+func (c *Client) ListVercelCiInvocationAttempts(ctx context.Context, invocationId string, params *ListVercelCiInvocationAttemptsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListVercelCiInvocationAttemptsRequest(c.Server, invocationId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVercelCiInvocation Get a specific invocation attempt
+//
+// Get Invocation.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt} (the `GetVercelCiInvocation` operationId).
+func (c *Client) GetVercelCiInvocation(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVercelCiInvocationRequest(c.Server, invocationId, attempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListVercelCiJobDefinitions List job definitions for an invocation attempt
+//
+// List Job Definitions.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions (the `ListVercelCiJobDefinitions` operationId).
+func (c *Client) ListVercelCiJobDefinitions(ctx context.Context, invocationId string, attempt string, params *ListVercelCiJobDefinitionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListVercelCiJobDefinitionsRequest(c.Server, invocationId, attempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVercelCiJobDefinition Get a specific job definition
+//
+// Get Job Definition.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId} (the `GetVercelCiJobDefinition` operationId).
+func (c *Client) GetVercelCiJobDefinition(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *GetVercelCiJobDefinitionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVercelCiJobDefinitionRequest(c.Server, invocationId, attempt, jobDefinitionId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListVercelCiJobRuns List all runs for a job definition
+//
+// List Job Runs.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs (the `ListVercelCiJobRuns` operationId).
+func (c *Client) ListVercelCiJobRuns(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, params *ListVercelCiJobRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListVercelCiJobRunsRequest(c.Server, invocationId, attempt, jobDefinitionId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVercelCiJobRun Get a specific job run attempt
+//
+// Get Job Run.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt} (the `GetVercelCiJobRun` operationId).
+func (c *Client) GetVercelCiJobRun(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVercelCiJobRunRequest(c.Server, invocationId, attempt, jobDefinitionId, runAttempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVercelCiJobRunLogs Get log lines for a specific job run attempt
+//
+// Get Job Run Logs.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs (the `GetVercelCiJobRunLogs` operationId).
+func (c *Client) GetVercelCiJobRunLogs(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *GetVercelCiJobRunLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVercelCiJobRunLogsRequest(c.Server, invocationId, attempt, jobDefinitionId, runAttempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListVercelCiTaskDefinitions List all task definitions for a job run
+//
+// List Task Definitions.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions (the `ListVercelCiTaskDefinitions` operationId).
+func (c *Client) ListVercelCiTaskDefinitions(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskDefinitionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListVercelCiTaskDefinitionsRequest(c.Server, invocationId, attempt, jobDefinitionId, runAttempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVercelCiTaskRunLogs Get log lines for a specific task run attempt
+//
+// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs (the `GetVercelCiTaskRunLogs` operationId).
+func (c *Client) GetVercelCiTaskRunLogs(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, taskDefinitionId string, taskRunAttempt string, params *GetVercelCiTaskRunLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVercelCiTaskRunLogsRequest(c.Server, invocationId, attempt, jobDefinitionId, runAttempt, taskDefinitionId, taskRunAttempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListVercelCiTaskRuns List task runs for a job run
+//
+// List Task Runs.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs (the `ListVercelCiTaskRuns` operationId).
+func (c *Client) ListVercelCiTaskRuns(ctx context.Context, invocationId string, attempt string, jobDefinitionId string, runAttempt string, params *ListVercelCiTaskRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListVercelCiTaskRunsRequest(c.Server, invocationId, attempt, jobDefinitionId, runAttempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVercelCiInvocationLogs Get log lines for an invocation attempt
+//
+// Get Invocation Logs.
+//
+// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs (the `GetVercelCiInvocationLogs` operationId).
+func (c *Client) GetVercelCiInvocationLogs(ctx context.Context, invocationId string, attempt string, params *GetVercelCiInvocationLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVercelCiInvocationLogsRequest(c.Server, invocationId, attempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RetryVercelCiInvocation Retry a terminal Vercel CI invocation attempt
+//
+// Retry Invocation.
+//
+// Corresponds with POST /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/retry (the `RetryVercelCiInvocation` operationId).
+func (c *Client) RetryVercelCiInvocation(ctx context.Context, invocationId string, attempt string, params *RetryVercelCiInvocationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRetryVercelCiInvocationRequest(c.Server, invocationId, attempt, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetVercelCiTaskLogs Get log lines for the tasks of an invocation attempt
 //
-// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
+// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.
 //
 // Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs (the `GetVercelCiTaskLogs` operationId).
 func (c *Client) GetVercelCiTaskLogs(ctx context.Context, invocationId string, attempt string, params *GetVercelCiTaskLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -15792,4250 +20064,6 @@ func NewActivateKmsSigningKeyRequestWithBody(server string, issuerId string, key
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRevokeKmsSigningKeyRequest constructs an http.Request for the RevokeKmsSigningKey method
-func NewRevokeKmsSigningKeyRequest(server string, issuerId string, keyId string, params *RevokeKmsSigningKeyParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "issuerId", issuerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "keyId", keyId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/kms/issuers/%s/keys/%s/revoke", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateKmsIssuerPolicyRequest calls the generic CreateKmsIssuerPolicy builder with application/json body
-func NewCreateKmsIssuerPolicyRequest(server string, issuerId string, params *CreateKmsIssuerPolicyParams, body CreateKmsIssuerPolicyJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateKmsIssuerPolicyRequestWithBody(server, issuerId, params, "application/json", bodyReader)
-}
-
-// NewCreateKmsIssuerPolicyRequestWithBody constructs an http.Request for the CreateKmsIssuerPolicy method, with any body, and a specified content type
-func NewCreateKmsIssuerPolicyRequestWithBody(server string, issuerId string, params *CreateKmsIssuerPolicyParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "issuerId", issuerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/kms/issuers/%s/policies", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteKmsIssuerPolicyRequest constructs an http.Request for the DeleteKmsIssuerPolicy method
-func NewDeleteKmsIssuerPolicyRequest(server string, issuerId string, kind DeleteKmsIssuerPolicyParamsKind, policyKey string, params *DeleteKmsIssuerPolicyParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "issuerId", issuerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "kind", kind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "policyKey", policyKey, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/kms/issuers/%s/policies/%s/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateKmsIssuerPolicyRequest calls the generic UpdateKmsIssuerPolicy builder with application/json body
-func NewUpdateKmsIssuerPolicyRequest(server string, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, body UpdateKmsIssuerPolicyJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateKmsIssuerPolicyRequestWithBody(server, issuerId, kind, policyKey, params, "application/json", bodyReader)
-}
-
-// NewUpdateKmsIssuerPolicyRequestWithBody constructs an http.Request for the UpdateKmsIssuerPolicy method, with any body, and a specified content type
-func NewUpdateKmsIssuerPolicyRequestWithBody(server string, issuerId string, kind UpdateKmsIssuerPolicyParamsKind, policyKey string, params *UpdateKmsIssuerPolicyParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "issuerId", issuerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "kind", kind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "policyKey", policyKey, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/kms/issuers/%s/policies/%s/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewSignKmsMessageRequest calls the generic SignKmsMessage builder with application/json body
-func NewSignKmsMessageRequest(server string, issuerId string, body SignKmsMessageJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewSignKmsMessageRequestWithBody(server, issuerId, "application/json", bodyReader)
-}
-
-// NewSignKmsMessageRequestWithBody constructs an http.Request for the SignKmsMessage method, with any body, and a specified content type
-func NewSignKmsMessageRequestWithBody(server string, issuerId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "issuerId", issuerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/kms/issuers/%s/sign/message", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewSignKmsTokenRequest calls the generic SignKmsToken builder with application/json body
-func NewSignKmsTokenRequest(server string, issuerId string, body SignKmsTokenJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewSignKmsTokenRequestWithBody(server, issuerId, "application/json", bodyReader)
-}
-
-// NewSignKmsTokenRequestWithBody constructs an http.Request for the SignKmsToken method, with any body, and a specified content type
-func NewSignKmsTokenRequestWithBody(server string, issuerId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "issuerId", issuerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/kms/issuers/%s/sign/token", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetAllLogDrainsRequest constructs an http.Request for the GetAllLogDrains method
-func NewGetAllLogDrainsRequest(server string, params *GetAllLogDrainsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/log-drains")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ProjectId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.ProjectIdOrName != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIdOrName", *params.ProjectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.IncludeMetadata != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeMetadata", *params.IncludeMetadata, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.IncludeDeliveryStats != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeDeliveryStats", *params.IncludeDeliveryStats, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateConfigurableLogDrainRequest calls the generic CreateConfigurableLogDrain builder with application/json body
-func NewCreateConfigurableLogDrainRequest(server string, params *CreateConfigurableLogDrainParams, body CreateConfigurableLogDrainJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateConfigurableLogDrainRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateConfigurableLogDrainRequestWithBody constructs an http.Request for the CreateConfigurableLogDrain method, with any body, and a specified content type
-func NewCreateConfigurableLogDrainRequestWithBody(server string, params *CreateConfigurableLogDrainParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/log-drains")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteConfigurableLogDrainRequest constructs an http.Request for the DeleteConfigurableLogDrain method
-func NewDeleteConfigurableLogDrainRequest(server string, id string, params *DeleteConfigurableLogDrainParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/log-drains/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetConfigurableLogDrainRequest constructs an http.Request for the GetConfigurableLogDrain method
-func NewGetConfigurableLogDrainRequest(server string, id string, params *GetConfigurableLogDrainParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/log-drains/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateMicrofrontendsGroupWithApplicationsRequest calls the generic CreateMicrofrontendsGroupWithApplications builder with application/json body
-func NewCreateMicrofrontendsGroupWithApplicationsRequest(server string, params *CreateMicrofrontendsGroupWithApplicationsParams, body CreateMicrofrontendsGroupWithApplicationsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateMicrofrontendsGroupWithApplicationsRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateMicrofrontendsGroupWithApplicationsRequestWithBody constructs an http.Request for the CreateMicrofrontendsGroupWithApplications method, with any body, and a specified content type
-func NewCreateMicrofrontendsGroupWithApplicationsRequestWithBody(server string, params *CreateMicrofrontendsGroupWithApplicationsParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/microfrontends/group")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetMicrofrontendsGroupsRequest constructs an http.Request for the GetMicrofrontendsGroups method
-func NewGetMicrofrontendsGroupsRequest(server string, params *GetMicrofrontendsGroupsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/microfrontends/groups")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetMicrofrontendsInGroupRequest constructs an http.Request for the GetMicrofrontendsInGroup method
-func NewGetMicrofrontendsInGroupRequest(server string, groupId string, params *GetMicrofrontendsInGroupParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "groupId", groupId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/microfrontends/groups/%s/projects", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetMicrofrontendsConfigForProjectRequest constructs an http.Request for the GetMicrofrontendsConfigForProject method
-func NewGetMicrofrontendsConfigForProjectRequest(server string, projectIdOrName string, params *GetMicrofrontendsConfigForProjectParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectIdOrName", projectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/microfrontends/projects/%s/production-mfe-config", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetMicrofrontendsConfigRequest constructs an http.Request for the GetMicrofrontendsConfig method
-func NewGetMicrofrontendsConfigRequest(server string, deploymentId string, params *GetMicrofrontendsConfigParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/microfrontends/%s/config", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListPrivateLinkEndpointsRequest constructs an http.Request for the ListPrivateLinkEndpoints method
-func NewListPrivateLinkEndpointsRequest(server string, params *ListPrivateLinkEndpointsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/networking/privatelink/endpoints")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreatePrivateLinkEndpointRequest calls the generic CreatePrivateLinkEndpoint builder with application/json body
-func NewCreatePrivateLinkEndpointRequest(server string, params *CreatePrivateLinkEndpointParams, body CreatePrivateLinkEndpointJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreatePrivateLinkEndpointRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreatePrivateLinkEndpointRequestWithBody constructs an http.Request for the CreatePrivateLinkEndpoint method, with any body, and a specified content type
-func NewCreatePrivateLinkEndpointRequestWithBody(server string, params *CreatePrivateLinkEndpointParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/networking/privatelink/endpoints")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeletePrivateLinkEndpointRequest constructs an http.Request for the DeletePrivateLinkEndpoint method
-func NewDeletePrivateLinkEndpointRequest(server string, endpointId string, params *DeletePrivateLinkEndpointParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "endpointId", endpointId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/networking/privatelink/endpoints/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewReadPrivateLinkEndpointRequest constructs an http.Request for the ReadPrivateLinkEndpoint method
-func NewReadPrivateLinkEndpointRequest(server string, endpointId string, params *ReadPrivateLinkEndpointParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "endpointId", endpointId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/networking/privatelink/endpoints/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdatePrivateLinkEndpointRequest calls the generic UpdatePrivateLinkEndpoint builder with application/json body
-func NewUpdatePrivateLinkEndpointRequest(server string, endpointId string, params *UpdatePrivateLinkEndpointParams, body UpdatePrivateLinkEndpointJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdatePrivateLinkEndpointRequestWithBody(server, endpointId, params, "application/json", bodyReader)
-}
-
-// NewUpdatePrivateLinkEndpointRequestWithBody constructs an http.Request for the UpdatePrivateLinkEndpoint method, with any body, and a specified content type
-func NewUpdatePrivateLinkEndpointRequestWithBody(server string, endpointId string, params *UpdatePrivateLinkEndpointParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "endpointId", endpointId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/networking/privatelink/endpoints/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetObservabilityConfigurationProjectsRequest constructs an http.Request for the GetObservabilityConfigurationProjects method
-func NewGetObservabilityConfigurationProjectsRequest(server string, params *GetObservabilityConfigurationProjectsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/observability/manage/configuration/projects")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateObservabilityConfigurationProjectRequest calls the generic UpdateObservabilityConfigurationProject builder with application/json body
-func NewUpdateObservabilityConfigurationProjectRequest(server string, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, body UpdateObservabilityConfigurationProjectJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateObservabilityConfigurationProjectRequestWithBody(server, projectIdOrName, params, "application/json", bodyReader)
-}
-
-// NewUpdateObservabilityConfigurationProjectRequestWithBody constructs an http.Request for the UpdateObservabilityConfigurationProject method, with any body, and a specified content type
-func NewUpdateObservabilityConfigurationProjectRequestWithBody(server string, projectIdOrName string, params *UpdateObservabilityConfigurationProjectParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectIdOrName", projectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/observability/manage/configuration/projects/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewListOrganizationsRequest constructs an http.Request for the ListOrganizations method
-func NewListOrganizationsRequest(server string) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateOrganizationRequest calls the generic CreateOrganization builder with application/json body
-func NewCreateOrganizationRequest(server string, params *CreateOrganizationParams, body CreateOrganizationJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateOrganizationRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateOrganizationRequestWithBody constructs an http.Request for the CreateOrganization method, with any body, and a specified content type
-func NewCreateOrganizationRequestWithBody(server string, params *CreateOrganizationParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetOrganizationRequest constructs an http.Request for the GetOrganization method
-func NewGetOrganizationRequest(server string, organizationId string, params *GetOrganizationParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "organizationId", organizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateOrganizationRequest calls the generic UpdateOrganization builder with application/json body
-func NewUpdateOrganizationRequest(server string, organizationId string, body UpdateOrganizationJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateOrganizationRequestWithBody(server, organizationId, "application/json", bodyReader)
-}
-
-// NewUpdateOrganizationRequestWithBody constructs an http.Request for the UpdateOrganization method, with any body, and a specified content type
-func NewUpdateOrganizationRequestWithBody(server string, organizationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "organizationId", organizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewListOrganizationTeamsRequest constructs an http.Request for the ListOrganizationTeams method
-func NewListOrganizationTeamsRequest(server string, organizationId string, params *ListOrganizationTeamsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "organizationId", organizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations/%s/teams", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.Cursor != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.IncludeMemberCount != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeMemberCount", *params.IncludeMemberCount, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewAddOrganizationTeamRequest calls the generic AddOrganizationTeam builder with application/json body
-func NewAddOrganizationTeamRequest(server string, organizationId string, body AddOrganizationTeamJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewAddOrganizationTeamRequestWithBody(server, organizationId, "application/json", bodyReader)
-}
-
-// NewAddOrganizationTeamRequestWithBody constructs an http.Request for the AddOrganizationTeam method, with any body, and a specified content type
-func NewAddOrganizationTeamRequestWithBody(server string, organizationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "organizationId", organizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations/%s/teams", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRemoveOrganizationTeamRequest constructs an http.Request for the RemoveOrganizationTeam method
-func NewRemoveOrganizationTeamRequest(server string, organizationId string, targetTeamId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "organizationId", organizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "targetTeamId", targetTeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/organizations/%s/teams/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetProjectTraceRequest constructs an http.Request for the GetProjectTrace method
-func NewGetProjectTraceRequest(server string, params *GetProjectTraceParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/traces")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "requestId", params.RequestId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateTraceSessionRequest calls the generic CreateTraceSession builder with application/json body
-func NewCreateTraceSessionRequest(server string, params *CreateTraceSessionParams, body CreateTraceSessionJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateTraceSessionRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateTraceSessionRequestWithBody constructs an http.Request for the CreateTraceSession method, with any body, and a specified content type
-func NewCreateTraceSessionRequestWithBody(server string, params *CreateTraceSessionParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/traces/session")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteProjectAvatarRequest constructs an http.Request for the DeleteProjectAvatar method
-func NewDeleteProjectAvatarRequest(server string, idOrName string, params *DeleteProjectAvatarParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/avatar", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUploadProjectAvatarRequestWithBody constructs an http.Request for the UploadProjectAvatar method, with any body, and a specified content type
-func NewUploadProjectAvatarRequestWithBody(server string, idOrName string, params *UploadProjectAvatarParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/avatar", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetProjectBoxesRequest constructs an http.Request for the GetProjectBoxes method
-func NewGetProjectBoxesRequest(server string, idOrName string, params *GetProjectBoxesParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/daemons", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Cursor != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.ScopeType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "scopeType", *params.ScopeType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.ScopeValue != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "scopeValue", *params.ScopeValue, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPutProjectDaemonInstancesRequest calls the generic PutProjectDaemonInstances builder with application/json body
-func NewPutProjectDaemonInstancesRequest(server string, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, body PutProjectDaemonInstancesJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPutProjectDaemonInstancesRequestWithBody(server, idOrName, daemonName, params, "application/json", bodyReader)
-}
-
-// NewPutProjectDaemonInstancesRequestWithBody constructs an http.Request for the PutProjectDaemonInstances method, with any body, and a specified content type
-func NewPutProjectDaemonInstancesRequestWithBody(server string, idOrName string, daemonName string, params *PutProjectDaemonInstancesParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "daemonName", daemonName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/daemons/%s/instances", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.Target != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "target", *params.Target, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRestartProjectDaemonInstanceRequest constructs an http.Request for the RestartProjectDaemonInstance method
-func NewRestartProjectDaemonInstanceRequest(server string, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "daemonName", daemonName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "instanceId", instanceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/daemons/%s/instances/%s/restart", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewMoveProjectDomainRequest calls the generic MoveProjectDomain builder with application/json body
-func NewMoveProjectDomainRequest(server string, idOrName string, domain string, params *MoveProjectDomainParams, body MoveProjectDomainJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewMoveProjectDomainRequestWithBody(server, idOrName, domain, params, "application/json", bodyReader)
-}
-
-// NewMoveProjectDomainRequestWithBody constructs an http.Request for the MoveProjectDomain method, with any body, and a specified content type
-func NewMoveProjectDomainRequestWithBody(server string, idOrName string, domain string, params *MoveProjectDomainParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/domains/%s/move", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBatchRemoveProjectEnvRequest calls the generic BatchRemoveProjectEnv builder with application/json body
-func NewBatchRemoveProjectEnvRequest(server string, idOrName string, params *BatchRemoveProjectEnvParams, body BatchRemoveProjectEnvJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBatchRemoveProjectEnvRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewBatchRemoveProjectEnvRequestWithBody constructs an http.Request for the BatchRemoveProjectEnv method, with any body, and a specified content type
-func NewBatchRemoveProjectEnvRequestWithBody(server string, idOrName string, params *BatchRemoveProjectEnvParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/env", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetProjectEnvRequest constructs an http.Request for the GetProjectEnv method
-func NewGetProjectEnvRequest(server string, idOrName string, id string, params *GetProjectEnvParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/env/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetProjectMembersRequest constructs an http.Request for the GetProjectMembers method
-func NewGetProjectMembersRequest(server string, idOrName string, params *GetProjectMembersParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/members", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Since != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Until != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Search != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", *params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewAddProjectMemberRequest calls the generic AddProjectMember builder with application/json body
-func NewAddProjectMemberRequest(server string, idOrName string, params *AddProjectMemberParams, body AddProjectMemberJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewAddProjectMemberRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewAddProjectMemberRequestWithBody constructs an http.Request for the AddProjectMember method, with any body, and a specified content type
-func NewAddProjectMemberRequestWithBody(server string, idOrName string, params *AddProjectMemberParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/members", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRemoveProjectMemberRequest constructs an http.Request for the RemoveProjectMember method
-func NewRemoveProjectMemberRequest(server string, idOrName string, uid string, params *RemoveProjectMemberParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "uid", uid, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/members/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateProjectProtectionBypassRequest calls the generic UpdateProjectProtectionBypass builder with application/json body
-func NewUpdateProjectProtectionBypassRequest(server string, idOrName string, params *UpdateProjectProtectionBypassParams, body UpdateProjectProtectionBypassJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateProjectProtectionBypassRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewUpdateProjectProtectionBypassRequestWithBody constructs an http.Request for the UpdateProjectProtectionBypass method, with any body, and a specified content type
-func NewUpdateProjectProtectionBypassRequestWithBody(server string, idOrName string, params *UpdateProjectProtectionBypassParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/protection-bypass", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetRollingReleaseRequest constructs an http.Request for the GetRollingRelease method
-func NewGetRollingReleaseRequest(server string, idOrName string, params *GetRollingReleaseParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.State != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "state", *params.State, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewApproveRollingReleaseStageRequest calls the generic ApproveRollingReleaseStage builder with application/json body
-func NewApproveRollingReleaseStageRequest(server string, idOrName string, params *ApproveRollingReleaseStageParams, body ApproveRollingReleaseStageJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewApproveRollingReleaseStageRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewApproveRollingReleaseStageRequestWithBody constructs an http.Request for the ApproveRollingReleaseStage method, with any body, and a specified content type
-func NewApproveRollingReleaseStageRequestWithBody(server string, idOrName string, params *ApproveRollingReleaseStageParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/approve-stage", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetRollingReleaseBillingStatusRequest constructs an http.Request for the GetRollingReleaseBillingStatus method
-func NewGetRollingReleaseBillingStatusRequest(server string, idOrName string, params *GetRollingReleaseBillingStatusParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/billing", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCompleteRollingReleaseRequest calls the generic CompleteRollingRelease builder with application/json body
-func NewCompleteRollingReleaseRequest(server string, idOrName string, params *CompleteRollingReleaseParams, body CompleteRollingReleaseJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCompleteRollingReleaseRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewCompleteRollingReleaseRequestWithBody constructs an http.Request for the CompleteRollingRelease method, with any body, and a specified content type
-func NewCompleteRollingReleaseRequestWithBody(server string, idOrName string, params *CompleteRollingReleaseParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/complete", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteRollingReleaseConfigRequest constructs an http.Request for the DeleteRollingReleaseConfig method
-func NewDeleteRollingReleaseConfigRequest(server string, idOrName string, params *DeleteRollingReleaseConfigParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/config", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetRollingReleaseConfigRequest constructs an http.Request for the GetRollingReleaseConfig method
-func NewGetRollingReleaseConfigRequest(server string, idOrName string, params *GetRollingReleaseConfigParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/config", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateRollingReleaseConfigRequest constructs an http.Request for the UpdateRollingReleaseConfig method
-func NewUpdateRollingReleaseConfigRequest(server string, idOrName string, params *UpdateRollingReleaseConfigParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/config", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewStartRollingReleaseRequest calls the generic StartRollingRelease builder with application/json body
-func NewStartRollingReleaseRequest(server string, idOrName string, params *StartRollingReleaseParams, body StartRollingReleaseJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewStartRollingReleaseRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewStartRollingReleaseRequestWithBody constructs an http.Request for the StartRollingRelease method, with any body, and a specified content type
-func NewStartRollingReleaseRequestWithBody(server string, idOrName string, params *StartRollingReleaseParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/rolling-release/start", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewUpdateStaticIpsRequest calls the generic UpdateStaticIps builder with application/json body
-func NewUpdateStaticIpsRequest(server string, idOrName string, params *UpdateStaticIpsParams, body UpdateStaticIpsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateStaticIpsRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewUpdateStaticIpsRequestWithBody constructs an http.Request for the UpdateStaticIps method, with any body, and a specified content type
-func NewUpdateStaticIpsRequestWithBody(server string, idOrName string, params *UpdateStaticIpsParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/shared-connect-links", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetProjectTokenRequest calls the generic GetProjectToken builder with application/json body
-func NewGetProjectTokenRequest(server string, idOrName string, params *GetProjectTokenParams, body GetProjectTokenJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewGetProjectTokenRequestWithBody(server, idOrName, params, "application/json", bodyReader)
-}
-
-// NewGetProjectTokenRequestWithBody constructs an http.Request for the GetProjectToken method, with any body, and a specified content type
-func NewGetProjectTokenRequestWithBody(server string, idOrName string, params *GetProjectTokenParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrName", idOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/token", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetFlagsProjectConnectionsRequest constructs an http.Request for the GetFlagsProjectConnections method
-func NewGetFlagsProjectConnectionsRequest(server string, projectIdOrName string, params *GetFlagsProjectConnectionsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectIdOrName", projectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/projects/%s/feature-flags/connections", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.Role != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "role", *params.Role, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
 
 	return req, nil
 }

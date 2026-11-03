@@ -17,6 +17,4192 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewGetSessionCommandLogsRequest constructs an http.Request for the GetSessionCommandLogs method
+func NewGetSessionCommandLogsRequest(server string, sessionId string, cmdId string, params *GetSessionCommandLogsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "cmdId", cmdId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/cmd/%s/logs", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewWriteSessionCommandStdinRequest calls the generic WriteSessionCommandStdin builder with application/json body
+func NewWriteSessionCommandStdinRequest(server string, sessionId string, cmdId string, params *WriteSessionCommandStdinParams, body WriteSessionCommandStdinJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewWriteSessionCommandStdinRequestWithBody(server, sessionId, cmdId, params, "application/json", bodyReader)
+}
+
+// NewWriteSessionCommandStdinRequestWithBody constructs an http.Request for the WriteSessionCommandStdin method, with any body, and a specified content type
+func NewWriteSessionCommandStdinRequestWithBody(server string, sessionId string, cmdId string, params *WriteSessionCommandStdinParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "cmdId", cmdId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/cmd/%s/stdin", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewExtendSessionTimeoutRequest calls the generic ExtendSessionTimeout builder with application/json body
+func NewExtendSessionTimeoutRequest(server string, sessionId string, params *ExtendSessionTimeoutParams, body ExtendSessionTimeoutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewExtendSessionTimeoutRequestWithBody(server, sessionId, params, "application/json", bodyReader)
+}
+
+// NewExtendSessionTimeoutRequestWithBody constructs an http.Request for the ExtendSessionTimeout method, with any body, and a specified content type
+func NewExtendSessionTimeoutRequestWithBody(server string, sessionId string, params *ExtendSessionTimeoutParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/extend-timeout", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateSessionDirectoryRequest calls the generic CreateSessionDirectory builder with application/json body
+func NewCreateSessionDirectoryRequest(server string, sessionId string, params *CreateSessionDirectoryParams, body CreateSessionDirectoryJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSessionDirectoryRequestWithBody(server, sessionId, params, "application/json", bodyReader)
+}
+
+// NewCreateSessionDirectoryRequestWithBody constructs an http.Request for the CreateSessionDirectory method, with any body, and a specified content type
+func NewCreateSessionDirectoryRequestWithBody(server string, sessionId string, params *CreateSessionDirectoryParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/fs/mkdir", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewReadSessionFileRequest calls the generic ReadSessionFile builder with application/json body
+func NewReadSessionFileRequest(server string, sessionId string, params *ReadSessionFileParams, body ReadSessionFileJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewReadSessionFileRequestWithBody(server, sessionId, params, "application/json", bodyReader)
+}
+
+// NewReadSessionFileRequestWithBody constructs an http.Request for the ReadSessionFile method, with any body, and a specified content type
+func NewReadSessionFileRequestWithBody(server string, sessionId string, params *ReadSessionFileParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/fs/read", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewWriteSessionFilesRequest constructs an http.Request for the WriteSessionFiles method
+func NewWriteSessionFilesRequest(server string, sessionId string, params *WriteSessionFilesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/fs/write", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.XCwd != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "x-cwd", *params.XCwd, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("x-cwd", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewUpdateSessionNetworkPolicyRequest calls the generic UpdateSessionNetworkPolicy builder with application/json body
+func NewUpdateSessionNetworkPolicyRequest(server string, sessionId string, params *UpdateSessionNetworkPolicyParams, body UpdateSessionNetworkPolicyJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateSessionNetworkPolicyRequestWithBody(server, sessionId, params, "application/json", bodyReader)
+}
+
+// NewUpdateSessionNetworkPolicyRequestWithBody constructs an http.Request for the UpdateSessionNetworkPolicy method, with any body, and a specified content type
+func NewUpdateSessionNetworkPolicyRequestWithBody(server string, sessionId string, params *UpdateSessionNetworkPolicyParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/network-policy", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateSandboxesSessionsBySessionIdSnapshotV2Request calls the generic CreateSandboxesSessionsBySessionIdSnapshotV2 builder with application/json body
+func NewCreateSandboxesSessionsBySessionIdSnapshotV2Request(server string, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV2Params, body CreateSandboxesSessionsBySessionIdSnapshotV2JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSandboxesSessionsBySessionIdSnapshotV2RequestWithBody(server, sessionId, params, "application/json", bodyReader)
+}
+
+// NewCreateSandboxesSessionsBySessionIdSnapshotV2RequestWithBody constructs an http.Request for the CreateSandboxesSessionsBySessionIdSnapshotV2 method, with any body, and a specified content type
+func NewCreateSandboxesSessionsBySessionIdSnapshotV2RequestWithBody(server string, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV2Params, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/snapshot", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewStopSessionRequest constructs an http.Request for the StopSession method
+func NewStopSessionRequest(server string, sessionId string, params *StopSessionParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/sessions/%s/stop", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListSessionSnapshotsRequest constructs an http.Request for the ListSessionSnapshots method
+func NewListSessionSnapshotsRequest(server string, params *ListSessionSnapshotsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/snapshots")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Project != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "project", *params.Project, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Name != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "name", *params.Name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.SortOrder != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sortOrder", *params.SortOrder, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteSessionSnapshotRequest constructs an http.Request for the DeleteSessionSnapshot method
+func NewDeleteSessionSnapshotRequest(server string, snapshotId string, params *DeleteSessionSnapshotParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "snapshotId", snapshotId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/snapshots/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetSessionSnapshotRequest constructs an http.Request for the GetSessionSnapshot method
+func NewGetSessionSnapshotRequest(server string, snapshotId string, params *GetSessionSnapshotParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "snapshotId", snapshotId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/snapshots/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteSandboxRequest constructs an http.Request for the DeleteSandbox method
+func NewDeleteSandboxRequest(server string, name string, params *DeleteSandboxParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.DeleteOrphanSnapshots != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "deleteOrphanSnapshots", *params.DeleteOrphanSnapshots, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetNamedSandboxRequest constructs an http.Request for the GetNamedSandbox method
+func NewGetNamedSandboxRequest(server string, name string, params *GetNamedSandboxParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Resume != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "resume", *params.Resume, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateSandboxRequest calls the generic UpdateSandbox builder with application/json body
+func NewUpdateSandboxRequest(server string, name string, params *UpdateSandboxParams, body UpdateSandboxJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateSandboxRequestWithBody(server, name, params, "application/json", bodyReader)
+}
+
+// NewUpdateSandboxRequestWithBody constructs an http.Request for the UpdateSandbox method, with any body, and a specified content type
+func NewUpdateSandboxRequestWithBody(server string, name string, params *UpdateSandboxParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Resume != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "resume", *params.Resume, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateSandboxesByNameForkV2Request calls the generic CreateSandboxesByNameForkV2 builder with application/json body
+func NewCreateSandboxesByNameForkV2Request(server string, name string, params *CreateSandboxesByNameForkV2Params, body CreateSandboxesByNameForkV2JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSandboxesByNameForkV2RequestWithBody(server, name, params, "application/json", bodyReader)
+}
+
+// NewCreateSandboxesByNameForkV2RequestWithBody constructs an http.Request for the CreateSandboxesByNameForkV2 method, with any body, and a specified content type
+func NewCreateSandboxesByNameForkV2RequestWithBody(server string, name string, params *CreateSandboxesByNameForkV2Params, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/sandboxes/%s/fork", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetTeamsRequest constructs an http.Request for the GetTeams method
+func NewGetTeamsRequest(server string, params *GetTeamsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/teams")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetTeamRequest constructs an http.Request for the GetTeam method
+func NewGetTeamRequest(server string, teamId string, params *GetTeamParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamId", teamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/teams/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchTeamRequest calls the generic PatchTeam builder with application/json body
+func NewPatchTeamRequest(server string, teamId string, params *PatchTeamParams, body PatchTeamJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchTeamRequestWithBody(server, teamId, params, "application/json", bodyReader)
+}
+
+// NewPatchTeamRequestWithBody constructs an http.Request for the PatchTeam method, with any body, and a specified content type
+func NewPatchTeamRequestWithBody(server string, teamId string, params *PatchTeamParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamId", teamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/teams/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListTeamFlagsV2Request constructs an http.Request for the ListTeamFlagsV2 method
+func NewListTeamFlagsV2Request(server string, teamId string, params *ListTeamFlagsV2Params) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamId", teamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/teams/%s/feature-flags/flags", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.State != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "state", *params.State, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", *params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Kind != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "kind", *params.Kind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Tags != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "tags", *params.Tags, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.CreatedBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "createdBy", *params.CreatedBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.MaintainerIds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "maintainerIds", *params.MaintainerIds, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.IncludeMarketplaceFlags != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeMarketplaceFlags", *params.IncludeMarketplaceFlags, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewInviteUserToTeamRequest calls the generic InviteUserToTeam builder with application/json body
+func NewInviteUserToTeamRequest(server string, teamId string, params *InviteUserToTeamParams, body InviteUserToTeamJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewInviteUserToTeamRequestWithBody(server, teamId, params, "application/json", bodyReader)
+}
+
+// NewInviteUserToTeamRequestWithBody constructs an http.Request for the InviteUserToTeam method, with any body, and a specified content type
+func NewInviteUserToTeamRequestWithBody(server string, teamId string, params *InviteUserToTeamParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamId", teamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/teams/%s/members", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetAuthUserRequest constructs an http.Request for the GetAuthUser method
+func NewGetAuthUserRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/user")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListVercelCiBranchesRequest constructs an http.Request for the ListVercelCiBranches method
+func NewListVercelCiBranchesRequest(server string, params *ListVercelCiBranchesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/vercel-ci/branches")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Query != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "query", *params.Query, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListVercelCiInvocationsRequest constructs an http.Request for the ListVercelCiInvocations method
+func NewListVercelCiInvocationsRequest(server string, params *ListVercelCiInvocationsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/vercel-ci/invocations")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Provider != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "provider", *params.Provider, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Repository != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "repository", *params.Repository, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.BranchName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "branchName", *params.BranchName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Snapshot != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "snapshot", *params.Snapshot, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "status", *params.Status, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Conclusion != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "conclusion", *params.Conclusion, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Source != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "source", *params.Source, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.AuthorGitHubId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "authorGitHubId", *params.AuthorGitHubId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Author != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "author", *params.Author, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.CreatedAfter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "createdAfter", *params.CreatedAfter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.CreatedBefore != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "createdBefore", *params.CreatedBefore, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsRequest constructs an http.Request for the CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads method
+func NewCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsRequest(server string, teamSlug string, projectSlug string, repositoryName string, params *CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/uploads/", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Mount != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "mount", *params.Mount, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.From != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "from", *params.From, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest constructs an http.Request for the DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid method
+func NewDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(server string, teamSlug string, projectSlug string, repositoryName string, uuid string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "uuid", uuid, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/uploads/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest constructs an http.Request for the GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid method
+func NewGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(server string, teamSlug string, projectSlug string, repositoryName string, uuid string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "uuid", uuid, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/uploads/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest constructs an http.Request for the UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid method
+func NewUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(server string, teamSlug string, projectSlug string, repositoryName string, uuid string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "uuid", uuid, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/uploads/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest constructs an http.Request for the ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid method
+func NewReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidRequest(server string, teamSlug string, projectSlug string, repositoryName string, uuid string, params *ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "uuid", uuid, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/uploads/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "digest", params.Digest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest constructs an http.Request for the DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest method
+func NewDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest(server string, teamSlug string, projectSlug string, repositoryName string, digest string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "digest", digest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest constructs an http.Request for the GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest method
+func NewGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest(server string, teamSlug string, projectSlug string, repositoryName string, digest string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "digest", digest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest constructs an http.Request for the HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest method
+func NewHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestRequest(server string, teamSlug string, projectSlug string, repositoryName string, digest string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "digest", digest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/blobs/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodHead, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest constructs an http.Request for the DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference method
+func NewDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(server string, teamSlug string, projectSlug string, repositoryName string, reference string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "reference", reference, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/manifests/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest constructs an http.Request for the GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReference method
+func NewGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(server string, teamSlug string, projectSlug string, repositoryName string, reference string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "reference", reference, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/manifests/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest constructs an http.Request for the HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference method
+func NewHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(server string, teamSlug string, projectSlug string, repositoryName string, reference string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "reference", reference, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/manifests/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodHead, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest constructs an http.Request for the ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference method
+func NewReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceRequest(server string, teamSlug string, projectSlug string, repositoryName string, reference string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "reference", reference, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/manifests/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetByTeamSlugByProjectSlugByRepositoryNameTagsListRequest constructs an http.Request for the GetByTeamSlugByProjectSlugByRepositoryNameTagsList method
+func NewGetByTeamSlugByProjectSlugByRepositoryNameTagsListRequest(server string, teamSlug string, projectSlug string, repositoryName string, params *GetByTeamSlugByProjectSlugByRepositoryNameTagsListParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamSlug", teamSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "projectSlug", projectSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "repositoryName", repositoryName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/%s/tags/list", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.N != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "n", *params.N, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Last != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "last", *params.Last, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDeploymentEventsRequest constructs an http.Request for the GetDeploymentEvents method
+func NewGetDeploymentEventsRequest(server string, idOrUrl string, params *GetDeploymentEventsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "idOrUrl", idOrUrl, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/deployments/%s/events", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Direction != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "direction", *params.Direction, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Follow != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "follow", *params.Follow, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Name != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "name", *params.Name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.StatusCode != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "statusCode", *params.StatusCode, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Delimiter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "delimiter", *params.Delimiter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Builds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "builds", *params.Builds, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchDomainRequest calls the generic PatchDomain builder with application/json body
+func NewPatchDomainRequest(server string, domain string, params *PatchDomainParams, body PatchDomainJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchDomainRequestWithBody(server, domain, params, "application/json", bodyReader)
+}
+
+// NewPatchDomainRequestWithBody constructs an http.Request for the PatchDomain method, with any body, and a specified content type
+func NewPatchDomainRequestWithBody(server string, domain string, params *PatchDomainParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "domain", domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/domains/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListUserEventsRequest constructs an http.Request for the ListUserEvents method
+func NewListUserEventsRequest(server string, params *ListUserEventsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/events")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Types != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "types", *params.Types, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.UserId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "userId", *params.UserId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PrincipalId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "principalId", *params.PrincipalId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ProjectIds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIds", *params.ProjectIds, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.EntityId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "entityId", *params.EntityId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.WithPayload != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "withPayload", *params.WithPayload, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateSandboxesV3Request calls the generic CreateSandboxesV3 builder with application/json body
+func NewCreateSandboxesV3Request(server string, params *CreateSandboxesV3Params, body CreateSandboxesV3JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSandboxesV3RequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateSandboxesV3RequestWithBody constructs an http.Request for the CreateSandboxesV3 method, with any body, and a specified content type
+func NewCreateSandboxesV3RequestWithBody(server string, params *CreateSandboxesV3Params, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/sandboxes")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateSandboxesSessionsBySessionIdSnapshotV3Request calls the generic CreateSandboxesSessionsBySessionIdSnapshotV3 builder with application/json body
+func NewCreateSandboxesSessionsBySessionIdSnapshotV3Request(server string, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, body CreateSandboxesSessionsBySessionIdSnapshotV3JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSandboxesSessionsBySessionIdSnapshotV3RequestWithBody(server, sessionId, params, "application/json", bodyReader)
+}
+
+// NewCreateSandboxesSessionsBySessionIdSnapshotV3RequestWithBody constructs an http.Request for the CreateSandboxesSessionsBySessionIdSnapshotV3 method, with any body, and a specified content type
+func NewCreateSandboxesSessionsBySessionIdSnapshotV3RequestWithBody(server string, sessionId string, params *CreateSandboxesSessionsBySessionIdSnapshotV3Params, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sessionId", sessionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/sandboxes/sessions/%s/snapshot", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateSandboxesByNameForkV3Request calls the generic CreateSandboxesByNameForkV3 builder with application/json body
+func NewCreateSandboxesByNameForkV3Request(server string, name string, params *CreateSandboxesByNameForkV3Params, body CreateSandboxesByNameForkV3JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateSandboxesByNameForkV3RequestWithBody(server, name, params, "application/json", bodyReader)
+}
+
+// NewCreateSandboxesByNameForkV3RequestWithBody constructs an http.Request for the CreateSandboxesByNameForkV3 method, with any body, and a specified content type
+func NewCreateSandboxesByNameForkV3RequestWithBody(server string, name string, params *CreateSandboxesByNameForkV3Params, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/sandboxes/%s/fork", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetTeamMembersRequest constructs an http.Request for the GetTeamMembers method
+func NewGetTeamMembersRequest(server string, teamId string, params *GetTeamMembersParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "teamId", teamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/teams/%s/members", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", *params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Role != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "role", *params.Role, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ExcludeProject != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "excludeProject", *params.ExcludeProject, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.EligibleMembersForProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "eligibleMembersForProjectId", *params.EligibleMembersForProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateAuthTokenRequest calls the generic CreateAuthToken builder with application/json body
+func NewCreateAuthTokenRequest(server string, params *CreateAuthTokenParams, body CreateAuthTokenJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAuthTokenRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateAuthTokenRequestWithBody constructs an http.Request for the CreateAuthToken method, with any body, and a specified content type
+func NewCreateAuthTokenRequestWithBody(server string, params *CreateAuthTokenParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/user/tokens")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteAuthTokenRequest constructs an http.Request for the DeleteAuthToken method
+func NewDeleteAuthTokenRequest(server string, tokenId string, params *DeleteAuthTokenParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "tokenId", tokenId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v3/user/tokens/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Reason != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "reason", *params.Reason, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.LogoutSource != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "logoutSource", *params.LogoutSource, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAliasesRequest constructs an http.Request for the ListAliases method
+func NewListAliasesRequest(server string, params *ListAliasesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v4/aliases")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Domain != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "domain", *params.Domain, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.From != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "from", *params.From, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Since != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "since", *params.Since, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Until != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "until", *params.Until, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.RollbackDeploymentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "rollbackDeploymentId", *params.RollbackDeploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetAliasRequest constructs an http.Request for the GetAlias method
 func NewGetAliasRequest(server string, idOrAlias string, params *GetAliasParams) (*http.Request, error) {
 	var err error
@@ -7975,7 +12161,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetVercelCiTaskRunLogsWithResponse Get log lines for a specific task run attempt
 	//
-	// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
+	// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -8011,7 +12197,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetVercelCiTaskLogsWithResponse Get log lines for the tasks of an invocation attempt
 	//
-	// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
+	// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -15878,4180 +20064,4 @@ func (r ListSharedEnvVariableResponse) GetJSON200() *struct {
 	Pagination Pagination `json:"pagination"`
 } {
 	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListSharedEnvVariableResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListSharedEnvVariableResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListSharedEnvVariableResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListSharedEnvVariableResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateSharedEnvVariableResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Failed []struct {
-			Error struct {
-				Action    *string                                                         `json:"action,omitempty"`
-				Code      string                                                          `json:"code"`
-				EnvVarId  *string                                                         `json:"envVarId,omitempty"`
-				EnvVarKey *string                                                         `json:"envVarKey,omitempty"`
-				GitBranch *string                                                         `json:"gitBranch,omitempty"`
-				Key       *string                                                         `json:"key,omitempty"`
-				Link      *string                                                         `json:"link,omitempty"`
-				Message   string                                                          `json:"message"`
-				Project   *string                                                         `json:"project,omitempty"`
-				Target    *UpdateSharedEnvVariable200JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
-				Value     *UpdateSharedEnvVariable200JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
-			} `json:"error"`
-		} `json:"failed"`
-		Updated []struct {
-			// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-			ApplyToAllCustomEnvironments *UpdateSharedEnvVariable200JSONResponseBodyUpdatedApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
-
-			// Comment A user provided comment that describes what this Shared Env Var is for.
-			Comment *string `json:"comment,omitempty"`
-
-			// Created The date when the Shared Env Var was created.
-			//
-			// Example: 2021-02-10T13:11:49.180Z
-			Created *time.Time `json:"created,omitempty"`
-
-			// CreatedAt Timestamp for when the Shared Env Var was created.
-			//
-			// Example: 1609492210000
-			CreatedAt *float32 `json:"createdAt,omitempty"`
-
-			// CreatedBy The unique identifier of the user who created the Shared Env Var.
-			//
-			// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-			CreatedBy *string `json:"createdBy,omitempty"`
-
-			// CustomEnvironmentIds The custom environment IDs that this Shared Env Var is scoped to.
-			CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
-
-			// Decrypted whether or not this env variable is decrypted
-			Decrypted *UpdateSharedEnvVariable200JSONResponseBodyUpdatedDecrypted `json:"decrypted,omitempty"`
-
-			// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
-			//
-			// Example: 1609492210000
-			DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-			// DeletedBy The unique identifier of the user who deleted the Shared Env Var.
-			//
-			// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-			DeletedBy *string `json:"deletedBy,omitempty"`
-
-			// Id The unique identifier of the Shared Env Var.
-			//
-			// Example: env_XCG7t7AIHuO2SBA8667zNUiM
-			Id *string `json:"id,omitempty"`
-
-			// Key The name of the Shared Env Var.
-			//
-			// Example: my-api-key
-			Key *string `json:"key,omitempty"`
-
-			// LastEditedByDisplayName The last editor full name or username.
-			LastEditedByDisplayName *string                                                                   `json:"lastEditedByDisplayName,omitempty"`
-			LastEditedByPrincipal   *UpdateSharedEnvVariable200JSONResponseBody_Updated_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
-
-			// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
-			//
-			// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-			OwnerId *string `json:"ownerId,omitempty"`
-
-			// ProjectId The unique identifiers of the projects which the Shared Env Var is linked to.
-			//
-			// Example: ["prj_2WjyKQmM8ZnGcJsPWMrHRHrE","prj_2WjyKQmM8ZnGcJsPWMrasEFg"]
-			ProjectId *[]string `json:"projectId,omitempty"`
-
-			// Target environments this env variable targets
-			//
-			// Example: production
-			Target *[]UpdateSharedEnvVariable200JSONResponseBodyUpdatedTarget `json:"target,omitempty"`
-
-			// Type The type of this cosmos doc instance, if blank, assume secret.
-			//
-			// Example: encrypted
-			Type *UpdateSharedEnvVariable200JSONResponseBodyUpdatedType `json:"type,omitempty"`
-
-			// UpdatedAt Timestamp for when the Shared Env Var was last updated.
-			//
-			// Example: 1609492210000
-			UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-			// UpdatedBy The unique identifier of the user who last updated the Shared Env Var.
-			//
-			// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-			UpdatedBy *string `json:"updatedBy,omitempty"`
-
-			// Value The value of the Shared Env Var.
-			Value *string `json:"value,omitempty"`
-		} `json:"updated"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateSharedEnvVariableResponse) GetJSON200() *struct {
-	Failed []struct {
-		Error struct {
-			Action    *string                                                         `json:"action,omitempty"`
-			Code      string                                                          `json:"code"`
-			EnvVarId  *string                                                         `json:"envVarId,omitempty"`
-			EnvVarKey *string                                                         `json:"envVarKey,omitempty"`
-			GitBranch *string                                                         `json:"gitBranch,omitempty"`
-			Key       *string                                                         `json:"key,omitempty"`
-			Link      *string                                                         `json:"link,omitempty"`
-			Message   string                                                          `json:"message"`
-			Project   *string                                                         `json:"project,omitempty"`
-			Target    *UpdateSharedEnvVariable200JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
-			Value     *UpdateSharedEnvVariable200JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
-		} `json:"error"`
-	} `json:"failed"`
-	Updated []struct {
-		// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-		ApplyToAllCustomEnvironments *UpdateSharedEnvVariable200JSONResponseBodyUpdatedApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
-
-		// Comment A user provided comment that describes what this Shared Env Var is for.
-		Comment *string `json:"comment,omitempty"`
-
-		// Created The date when the Shared Env Var was created.
-		//
-		// Example: 2021-02-10T13:11:49.180Z
-		Created *time.Time `json:"created,omitempty"`
-
-		// CreatedAt Timestamp for when the Shared Env Var was created.
-		//
-		// Example: 1609492210000
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-
-		// CreatedBy The unique identifier of the user who created the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		CreatedBy *string `json:"createdBy,omitempty"`
-
-		// CustomEnvironmentIds The custom environment IDs that this Shared Env Var is scoped to.
-		CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
-
-		// Decrypted whether or not this env variable is decrypted
-		Decrypted *UpdateSharedEnvVariable200JSONResponseBodyUpdatedDecrypted `json:"decrypted,omitempty"`
-
-		// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
-		//
-		// Example: 1609492210000
-		DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-		// DeletedBy The unique identifier of the user who deleted the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		DeletedBy *string `json:"deletedBy,omitempty"`
-
-		// Id The unique identifier of the Shared Env Var.
-		//
-		// Example: env_XCG7t7AIHuO2SBA8667zNUiM
-		Id *string `json:"id,omitempty"`
-
-		// Key The name of the Shared Env Var.
-		//
-		// Example: my-api-key
-		Key *string `json:"key,omitempty"`
-
-		// LastEditedByDisplayName The last editor full name or username.
-		LastEditedByDisplayName *string                                                                   `json:"lastEditedByDisplayName,omitempty"`
-		LastEditedByPrincipal   *UpdateSharedEnvVariable200JSONResponseBody_Updated_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
-
-		// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
-		//
-		// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-		OwnerId *string `json:"ownerId,omitempty"`
-
-		// ProjectId The unique identifiers of the projects which the Shared Env Var is linked to.
-		//
-		// Example: ["prj_2WjyKQmM8ZnGcJsPWMrHRHrE","prj_2WjyKQmM8ZnGcJsPWMrasEFg"]
-		ProjectId *[]string `json:"projectId,omitempty"`
-
-		// Target environments this env variable targets
-		//
-		// Example: production
-		Target *[]UpdateSharedEnvVariable200JSONResponseBodyUpdatedTarget `json:"target,omitempty"`
-
-		// Type The type of this cosmos doc instance, if blank, assume secret.
-		//
-		// Example: encrypted
-		Type *UpdateSharedEnvVariable200JSONResponseBodyUpdatedType `json:"type,omitempty"`
-
-		// UpdatedAt Timestamp for when the Shared Env Var was last updated.
-		//
-		// Example: 1609492210000
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-		// UpdatedBy The unique identifier of the user who last updated the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		UpdatedBy *string `json:"updatedBy,omitempty"`
-
-		// Value The value of the Shared Env Var.
-		Value *string `json:"value,omitempty"`
-	} `json:"updated"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateSharedEnvVariableResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateSharedEnvVariableResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateSharedEnvVariableResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateSharedEnvVariableResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateSharedEnvVariableResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		Created []struct {
-			// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-			ApplyToAllCustomEnvironments *CreateSharedEnvVariable201JSONResponseBodyCreatedApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
-
-			// Comment A user provided comment that describes what this Shared Env Var is for.
-			Comment *string `json:"comment,omitempty"`
-
-			// Created The date when the Shared Env Var was created.
-			//
-			// Example: 2021-02-10T13:11:49.180Z
-			Created *time.Time `json:"created,omitempty"`
-
-			// CreatedAt Timestamp for when the Shared Env Var was created.
-			//
-			// Example: 1609492210000
-			CreatedAt *float32 `json:"createdAt,omitempty"`
-
-			// CreatedBy The unique identifier of the user who created the Shared Env Var.
-			//
-			// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-			CreatedBy *string `json:"createdBy,omitempty"`
-
-			// CustomEnvironmentIds The custom environment IDs that this Shared Env Var is scoped to.
-			CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
-
-			// Decrypted whether or not this env variable is decrypted
-			Decrypted *CreateSharedEnvVariable201JSONResponseBodyCreatedDecrypted `json:"decrypted,omitempty"`
-
-			// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
-			//
-			// Example: 1609492210000
-			DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-			// DeletedBy The unique identifier of the user who deleted the Shared Env Var.
-			//
-			// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-			DeletedBy *string `json:"deletedBy,omitempty"`
-
-			// Id The unique identifier of the Shared Env Var.
-			//
-			// Example: env_XCG7t7AIHuO2SBA8667zNUiM
-			Id *string `json:"id,omitempty"`
-
-			// Key The name of the Shared Env Var.
-			//
-			// Example: my-api-key
-			Key *string `json:"key,omitempty"`
-
-			// LastEditedByDisplayName The last editor full name or username.
-			LastEditedByDisplayName *string                                                                   `json:"lastEditedByDisplayName,omitempty"`
-			LastEditedByPrincipal   *CreateSharedEnvVariable201JSONResponseBody_Created_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
-
-			// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
-			//
-			// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-			OwnerId *string `json:"ownerId,omitempty"`
-
-			// ProjectId The unique identifiers of the projects which the Shared Env Var is linked to.
-			//
-			// Example: ["prj_2WjyKQmM8ZnGcJsPWMrHRHrE","prj_2WjyKQmM8ZnGcJsPWMrasEFg"]
-			ProjectId *[]string `json:"projectId,omitempty"`
-
-			// Target environments this env variable targets
-			//
-			// Example: production
-			Target *[]CreateSharedEnvVariable201JSONResponseBodyCreatedTarget `json:"target,omitempty"`
-
-			// Type The type of this cosmos doc instance, if blank, assume secret.
-			//
-			// Example: encrypted
-			Type *CreateSharedEnvVariable201JSONResponseBodyCreatedType `json:"type,omitempty"`
-
-			// UpdatedAt Timestamp for when the Shared Env Var was last updated.
-			//
-			// Example: 1609492210000
-			UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-			// UpdatedBy The unique identifier of the user who last updated the Shared Env Var.
-			//
-			// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-			UpdatedBy *string `json:"updatedBy,omitempty"`
-
-			// Value The value of the Shared Env Var.
-			Value *string `json:"value,omitempty"`
-		} `json:"created"`
-		Failed []struct {
-			Error struct {
-				Action    *string                                                         `json:"action,omitempty"`
-				Code      string                                                          `json:"code"`
-				EnvVarId  *string                                                         `json:"envVarId,omitempty"`
-				EnvVarKey *string                                                         `json:"envVarKey,omitempty"`
-				GitBranch *string                                                         `json:"gitBranch,omitempty"`
-				Key       *string                                                         `json:"key,omitempty"`
-				Link      *string                                                         `json:"link,omitempty"`
-				Message   string                                                          `json:"message"`
-				Project   *string                                                         `json:"project,omitempty"`
-				Target    *CreateSharedEnvVariable201JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
-				Value     *CreateSharedEnvVariable201JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
-			} `json:"error"`
-		} `json:"failed"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateSharedEnvVariableResponse) GetJSON201() *struct {
-	Created []struct {
-		// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-		ApplyToAllCustomEnvironments *CreateSharedEnvVariable201JSONResponseBodyCreatedApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
-
-		// Comment A user provided comment that describes what this Shared Env Var is for.
-		Comment *string `json:"comment,omitempty"`
-
-		// Created The date when the Shared Env Var was created.
-		//
-		// Example: 2021-02-10T13:11:49.180Z
-		Created *time.Time `json:"created,omitempty"`
-
-		// CreatedAt Timestamp for when the Shared Env Var was created.
-		//
-		// Example: 1609492210000
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-
-		// CreatedBy The unique identifier of the user who created the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		CreatedBy *string `json:"createdBy,omitempty"`
-
-		// CustomEnvironmentIds The custom environment IDs that this Shared Env Var is scoped to.
-		CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
-
-		// Decrypted whether or not this env variable is decrypted
-		Decrypted *CreateSharedEnvVariable201JSONResponseBodyCreatedDecrypted `json:"decrypted,omitempty"`
-
-		// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
-		//
-		// Example: 1609492210000
-		DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-		// DeletedBy The unique identifier of the user who deleted the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		DeletedBy *string `json:"deletedBy,omitempty"`
-
-		// Id The unique identifier of the Shared Env Var.
-		//
-		// Example: env_XCG7t7AIHuO2SBA8667zNUiM
-		Id *string `json:"id,omitempty"`
-
-		// Key The name of the Shared Env Var.
-		//
-		// Example: my-api-key
-		Key *string `json:"key,omitempty"`
-
-		// LastEditedByDisplayName The last editor full name or username.
-		LastEditedByDisplayName *string                                                                   `json:"lastEditedByDisplayName,omitempty"`
-		LastEditedByPrincipal   *CreateSharedEnvVariable201JSONResponseBody_Created_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
-
-		// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
-		//
-		// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-		OwnerId *string `json:"ownerId,omitempty"`
-
-		// ProjectId The unique identifiers of the projects which the Shared Env Var is linked to.
-		//
-		// Example: ["prj_2WjyKQmM8ZnGcJsPWMrHRHrE","prj_2WjyKQmM8ZnGcJsPWMrasEFg"]
-		ProjectId *[]string `json:"projectId,omitempty"`
-
-		// Target environments this env variable targets
-		//
-		// Example: production
-		Target *[]CreateSharedEnvVariable201JSONResponseBodyCreatedTarget `json:"target,omitempty"`
-
-		// Type The type of this cosmos doc instance, if blank, assume secret.
-		//
-		// Example: encrypted
-		Type *CreateSharedEnvVariable201JSONResponseBodyCreatedType `json:"type,omitempty"`
-
-		// UpdatedAt Timestamp for when the Shared Env Var was last updated.
-		//
-		// Example: 1609492210000
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-		// UpdatedBy The unique identifier of the user who last updated the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		UpdatedBy *string `json:"updatedBy,omitempty"`
-
-		// Value The value of the Shared Env Var.
-		Value *string `json:"value,omitempty"`
-	} `json:"created"`
-	Failed []struct {
-		Error struct {
-			Action    *string                                                         `json:"action,omitempty"`
-			Code      string                                                          `json:"code"`
-			EnvVarId  *string                                                         `json:"envVarId,omitempty"`
-			EnvVarKey *string                                                         `json:"envVarKey,omitempty"`
-			GitBranch *string                                                         `json:"gitBranch,omitempty"`
-			Key       *string                                                         `json:"key,omitempty"`
-			Link      *string                                                         `json:"link,omitempty"`
-			Message   string                                                          `json:"message"`
-			Project   *string                                                         `json:"project,omitempty"`
-			Target    *CreateSharedEnvVariable201JSONResponseBody_Failed_Error_Target `json:"target,omitempty"`
-			Value     *CreateSharedEnvVariable201JSONResponseBody_Failed_Error_Value  `json:"value,omitempty"`
-		} `json:"error"`
-	} `json:"failed"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateSharedEnvVariableResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateSharedEnvVariableResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateSharedEnvVariableResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateSharedEnvVariableResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetSharedEnvVarResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-		ApplyToAllCustomEnvironments *GetSharedEnvVar200JSONResponseBodyApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
-
-		// Comment A user provided comment that describes what this Shared Env Var is for.
-		Comment *string `json:"comment,omitempty"`
-
-		// Created The date when the Shared Env Var was created.
-		//
-		// Example: 2021-02-10T13:11:49.180Z
-		Created *time.Time `json:"created,omitempty"`
-
-		// CreatedAt Timestamp for when the Shared Env Var was created.
-		//
-		// Example: 1609492210000
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-
-		// CreatedBy The unique identifier of the user who created the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		CreatedBy *string `json:"createdBy,omitempty"`
-
-		// CustomEnvironmentIds The custom environment IDs that this Shared Env Var is scoped to.
-		CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
-
-		// Decrypted whether or not this env variable is decrypted
-		Decrypted *GetSharedEnvVar200JSONResponseBodyDecrypted `json:"decrypted,omitempty"`
-
-		// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
-		//
-		// Example: 1609492210000
-		DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-		// DeletedBy The unique identifier of the user who deleted the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		DeletedBy *string `json:"deletedBy,omitempty"`
-
-		// Id The unique identifier of the Shared Env Var.
-		//
-		// Example: env_XCG7t7AIHuO2SBA8667zNUiM
-		Id *string `json:"id,omitempty"`
-
-		// Key The name of the Shared Env Var.
-		//
-		// Example: my-api-key
-		Key *string `json:"key,omitempty"`
-
-		// LastEditedByDisplayName The last editor full name or username.
-		LastEditedByDisplayName *string                                                   `json:"lastEditedByDisplayName,omitempty"`
-		LastEditedByPrincipal   *GetSharedEnvVar200JSONResponseBody_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
-
-		// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
-		//
-		// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-		OwnerId *string `json:"ownerId,omitempty"`
-
-		// ProjectId The unique identifiers of the projects which the Shared Env Var is linked to.
-		//
-		// Example: ["prj_2WjyKQmM8ZnGcJsPWMrHRHrE","prj_2WjyKQmM8ZnGcJsPWMrasEFg"]
-		ProjectId *[]string `json:"projectId,omitempty"`
-
-		// Target environments this env variable targets
-		//
-		// Example: production
-		Target *[]GetSharedEnvVar200JSONResponseBodyTarget `json:"target,omitempty"`
-
-		// Type The type of this cosmos doc instance, if blank, assume secret.
-		//
-		// Example: encrypted
-		Type *GetSharedEnvVar200JSONResponseBodyType `json:"type,omitempty"`
-
-		// UpdatedAt Timestamp for when the Shared Env Var was last updated.
-		//
-		// Example: 1609492210000
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-		// UpdatedBy The unique identifier of the user who last updated the Shared Env Var.
-		//
-		// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-		UpdatedBy *string `json:"updatedBy,omitempty"`
-
-		// Value The value of the Shared Env Var.
-		Value *string `json:"value,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetSharedEnvVarResponse) GetJSON200() *struct {
-	// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-	ApplyToAllCustomEnvironments *GetSharedEnvVar200JSONResponseBodyApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
-
-	// Comment A user provided comment that describes what this Shared Env Var is for.
-	Comment *string `json:"comment,omitempty"`
-
-	// Created The date when the Shared Env Var was created.
-	//
-	// Example: 2021-02-10T13:11:49.180Z
-	Created *time.Time `json:"created,omitempty"`
-
-	// CreatedAt Timestamp for when the Shared Env Var was created.
-	//
-	// Example: 1609492210000
-	CreatedAt *float32 `json:"createdAt,omitempty"`
-
-	// CreatedBy The unique identifier of the user who created the Shared Env Var.
-	//
-	// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-	CreatedBy *string `json:"createdBy,omitempty"`
-
-	// CustomEnvironmentIds The custom environment IDs that this Shared Env Var is scoped to.
-	CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
-
-	// Decrypted whether or not this env variable is decrypted
-	Decrypted *GetSharedEnvVar200JSONResponseBodyDecrypted `json:"decrypted,omitempty"`
-
-	// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
-	//
-	// Example: 1609492210000
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-	// DeletedBy The unique identifier of the user who deleted the Shared Env Var.
-	//
-	// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-	DeletedBy *string `json:"deletedBy,omitempty"`
-
-	// Id The unique identifier of the Shared Env Var.
-	//
-	// Example: env_XCG7t7AIHuO2SBA8667zNUiM
-	Id *string `json:"id,omitempty"`
-
-	// Key The name of the Shared Env Var.
-	//
-	// Example: my-api-key
-	Key *string `json:"key,omitempty"`
-
-	// LastEditedByDisplayName The last editor full name or username.
-	LastEditedByDisplayName *string                                                   `json:"lastEditedByDisplayName,omitempty"`
-	LastEditedByPrincipal   *GetSharedEnvVar200JSONResponseBody_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
-
-	// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
-	//
-	// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-	OwnerId *string `json:"ownerId,omitempty"`
-
-	// ProjectId The unique identifiers of the projects which the Shared Env Var is linked to.
-	//
-	// Example: ["prj_2WjyKQmM8ZnGcJsPWMrHRHrE","prj_2WjyKQmM8ZnGcJsPWMrasEFg"]
-	ProjectId *[]string `json:"projectId,omitempty"`
-
-	// Target environments this env variable targets
-	//
-	// Example: production
-	Target *[]GetSharedEnvVar200JSONResponseBodyTarget `json:"target,omitempty"`
-
-	// Type The type of this cosmos doc instance, if blank, assume secret.
-	//
-	// Example: encrypted
-	Type *GetSharedEnvVar200JSONResponseBodyType `json:"type,omitempty"`
-
-	// UpdatedAt Timestamp for when the Shared Env Var was last updated.
-	//
-	// Example: 1609492210000
-	UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-	// UpdatedBy The unique identifier of the user who last updated the Shared Env Var.
-	//
-	// Example: 2qDDuGFTWXBLDNnqZfWPDp1A
-	UpdatedBy *string `json:"updatedBy,omitempty"`
-
-	// Value The value of the Shared Env Var.
-	Value *string `json:"value,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetSharedEnvVarResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetSharedEnvVarResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetSharedEnvVarResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetSharedEnvVarResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UnlinkSharedEnvVariableResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Id string `json:"id"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UnlinkSharedEnvVariableResponse) GetJSON200() *struct {
-	Id string `json:"id"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UnlinkSharedEnvVariableResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UnlinkSharedEnvVariableResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UnlinkSharedEnvVariableResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UnlinkSharedEnvVariableResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListEventTypesResponse2 struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ListEventTypesResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListEventTypesResponse2) GetJSON200() *ListEventTypesResponse {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListEventTypesResponse2) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListEventTypesResponse2) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListEventTypesResponse2) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListEventTypesResponse2) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]struct {
-		CreatedAt float32 `json:"createdAt"`
-
-		// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-		CreatedBy   *string `json:"createdBy,omitempty"`
-		Digest      string  `json:"digest"`
-		Id          string  `json:"id"`
-		ItemCount   float32 `json:"itemCount"`
-		OwnerId     string  `json:"ownerId"`
-		SizeInBytes float32 `json:"sizeInBytes"`
-
-		// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-		Slug      string  `json:"slug"`
-		UpdatedAt float32 `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigsResponse) GetJSON200() *[]struct {
-	CreatedAt float32 `json:"createdAt"`
-
-	// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-	CreatedBy   *string `json:"createdBy,omitempty"`
-	Digest      string  `json:"digest"`
-	Id          string  `json:"id"`
-	ItemCount   float32 `json:"itemCount"`
-	OwnerId     string  `json:"ownerId"`
-	SizeInBytes float32 `json:"sizeInBytes"`
-
-	// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-	Slug      string  `json:"slug"`
-	UpdatedAt float32 `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateEdgeConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		CreatedAt float32 `json:"createdAt"`
-
-		// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-		CreatedBy   *string `json:"createdBy,omitempty"`
-		Digest      string  `json:"digest"`
-		Id          string  `json:"id"`
-		ItemCount   float32 `json:"itemCount"`
-		OwnerId     string  `json:"ownerId"`
-		SizeInBytes float32 `json:"sizeInBytes"`
-
-		// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-		Slug      string  `json:"slug"`
-		UpdatedAt float32 `json:"updatedAt"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateEdgeConfigResponse) GetJSON201() *struct {
-	CreatedAt float32 `json:"createdAt"`
-
-	// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-	CreatedBy   *string `json:"createdBy,omitempty"`
-	Digest      string  `json:"digest"`
-	Id          string  `json:"id"`
-	ItemCount   float32 `json:"itemCount"`
-	OwnerId     string  `json:"ownerId"`
-	SizeInBytes float32 `json:"sizeInBytes"`
-
-	// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-	Slug      string  `json:"slug"`
-	UpdatedAt float32 `json:"updatedAt"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateEdgeConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateEdgeConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateEdgeConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateEdgeConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteEdgeConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteEdgeConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteEdgeConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteEdgeConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteEdgeConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		CreatedAt float32 `json:"createdAt"`
-
-		// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-		CreatedBy   *string `json:"createdBy,omitempty"`
-		Digest      string  `json:"digest"`
-		Id          string  `json:"id"`
-		ItemCount   float32 `json:"itemCount"`
-		OwnerId     string  `json:"ownerId"`
-		SizeInBytes float32 `json:"sizeInBytes"`
-
-		// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-		Slug      string  `json:"slug"`
-		UpdatedAt float32 `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigResponse) GetJSON200() *struct {
-	CreatedAt float32 `json:"createdAt"`
-
-	// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-	CreatedBy   *string `json:"createdBy,omitempty"`
-	Digest      string  `json:"digest"`
-	Id          string  `json:"id"`
-	ItemCount   float32 `json:"itemCount"`
-	OwnerId     string  `json:"ownerId"`
-	SizeInBytes float32 `json:"sizeInBytes"`
-
-	// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-	Slug      string  `json:"slug"`
-	UpdatedAt float32 `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateEdgeConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		CreatedAt float32 `json:"createdAt"`
-
-		// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-		CreatedBy   *string `json:"createdBy,omitempty"`
-		Digest      string  `json:"digest"`
-		Id          string  `json:"id"`
-		ItemCount   float32 `json:"itemCount"`
-		OwnerId     string  `json:"ownerId"`
-		SizeInBytes float32 `json:"sizeInBytes"`
-
-		// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-		Slug      string  `json:"slug"`
-		UpdatedAt float32 `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateEdgeConfigResponse) GetJSON200() *struct {
-	CreatedAt float32 `json:"createdAt"`
-
-	// CreatedBy The ID of the user who created the Global Config, optional because it is not always set.
-	CreatedBy   *string `json:"createdBy,omitempty"`
-	Digest      string  `json:"digest"`
-	Id          string  `json:"id"`
-	ItemCount   float32 `json:"itemCount"`
-	OwnerId     string  `json:"ownerId"`
-	SizeInBytes float32 `json:"sizeInBytes"`
-
-	// Slug Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-	Slug      string  `json:"slug"`
-	UpdatedAt float32 `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateEdgeConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateEdgeConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateEdgeConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateEdgeConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigBackupsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Backups []struct {
-			Id           string  `json:"id"`
-			LastModified float32 `json:"lastModified"`
-			Metadata     *struct {
-				ItemsBytes *float32 `json:"itemsBytes,omitempty"`
-				ItemsCount *float32 `json:"itemsCount,omitempty"`
-				UpdatedAt  *string  `json:"updatedAt,omitempty"`
-				UpdatedBy  *string  `json:"updatedBy,omitempty"`
-			} `json:"metadata,omitempty"`
-		} `json:"backups"`
-		Pagination struct {
-			HasNext GetEdgeConfigBackups200JSONResponseBodyPaginationHasNext `json:"hasNext"`
-			Next    *string                                                  `json:"next,omitempty"`
-		} `json:"pagination"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigBackupsResponse) GetJSON200() *struct {
-	Backups []struct {
-		Id           string  `json:"id"`
-		LastModified float32 `json:"lastModified"`
-		Metadata     *struct {
-			ItemsBytes *float32 `json:"itemsBytes,omitempty"`
-			ItemsCount *float32 `json:"itemsCount,omitempty"`
-			UpdatedAt  *string  `json:"updatedAt,omitempty"`
-			UpdatedBy  *string  `json:"updatedBy,omitempty"`
-		} `json:"metadata,omitempty"`
-	} `json:"backups"`
-	Pagination struct {
-		HasNext GetEdgeConfigBackups200JSONResponseBodyPaginationHasNext `json:"hasNext"`
-		Next    *string                                                  `json:"next,omitempty"`
-	} `json:"pagination"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigBackupsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigBackupsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigBackupsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigBackupsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigBackupResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetEdgeConfigBackup200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigBackupResponse) GetJSON200() *GetEdgeConfigBackup200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigBackupResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigBackupResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigBackupResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigBackupResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type RestoreEdgeConfigBackupResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Digest         string                                           `json:"digest"`
-		PreviousDigest string                                           `json:"previousDigest"`
-		RestoredFrom   string                                           `json:"restoredFrom"`
-		Status         RestoreEdgeConfigBackup200JSONResponseBodyStatus `json:"status"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r RestoreEdgeConfigBackupResponse) GetJSON200() *struct {
-	Digest         string                                           `json:"digest"`
-	PreviousDigest string                                           `json:"previousDigest"`
-	RestoredFrom   string                                           `json:"restoredFrom"`
-	Status         RestoreEdgeConfigBackup200JSONResponseBodyStatus `json:"status"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r RestoreEdgeConfigBackupResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r RestoreEdgeConfigBackupResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r RestoreEdgeConfigBackupResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r RestoreEdgeConfigBackupResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigItemResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GlobalConfigItem
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigItemResponse) GetJSON200() *GlobalConfigItem {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigItemResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigItemResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigItemResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigItemResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigItemsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]GlobalConfigItem
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigItemsResponse) GetJSON200() *[]GlobalConfigItem {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigItemsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigItemsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigItemsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigItemsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PatchEdgeConfigItemsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Status string `json:"status"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PatchEdgeConfigItemsResponse) GetJSON200() *struct {
-	Status string `json:"status"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r PatchEdgeConfigItemsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PatchEdgeConfigItemsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PatchEdgeConfigItemsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PatchEdgeConfigItemsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteEdgeConfigSchemaResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteEdgeConfigSchemaResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteEdgeConfigSchemaResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteEdgeConfigSchemaResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteEdgeConfigSchemaResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigSchemaResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *map[string]interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigSchemaResponse) GetJSON200() *map[string]interface{} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigSchemaResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigSchemaResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigSchemaResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigSchemaResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PatchEdgeConfigSchemaResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *map[string]interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PatchEdgeConfigSchemaResponse) GetJSON200() *map[string]interface{} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r PatchEdgeConfigSchemaResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PatchEdgeConfigSchemaResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PatchEdgeConfigSchemaResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PatchEdgeConfigSchemaResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateEdgeConfigTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		Id    string `json:"id"`
-		Token string `json:"token"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateEdgeConfigTokenResponse) GetJSON201() *struct {
-	Id    string `json:"id"`
-	Token string `json:"token"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateEdgeConfigTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateEdgeConfigTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateEdgeConfigTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateEdgeConfigTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GlobalConfigToken
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigTokenResponse) GetJSON200() *GlobalConfigToken {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteEdgeConfigTokensResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteEdgeConfigTokensResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteEdgeConfigTokensResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteEdgeConfigTokensResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteEdgeConfigTokensResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetEdgeConfigTokensResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]GlobalConfigToken
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetEdgeConfigTokensResponse) GetJSON200() *[]GlobalConfigToken {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetEdgeConfigTokensResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetEdgeConfigTokensResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetEdgeConfigTokensResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetEdgeConfigTokensResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateInstallationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateInstallationResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateInstallationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateInstallationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateInstallationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAccountInfoResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Contact The best contact for the integration, which can change as team members and their roles change.
-		Contact *struct {
-			Email string  `json:"email"`
-			Name  *string `json:"name,omitempty"`
-		} `json:"contact"`
-
-		// Name The name of the team the installation is tied to.
-		Name *string `json:"name,omitempty"`
-
-		// Url A URL linking to the installation in the Vercel Dashboard.
-		Url string `json:"url"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAccountInfoResponse) GetJSON200() *struct {
-	// Contact The best contact for the integration, which can change as team members and their roles change.
-	Contact *struct {
-		Email string  `json:"email"`
-		Name  *string `json:"name,omitempty"`
-	} `json:"contact"`
-
-	// Name The name of the team the installation is tied to.
-	Name *string `json:"name,omitempty"`
-
-	// Url A URL linking to the installation in the Vercel Dashboard.
-	Url string `json:"url"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAccountInfoResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAccountInfoResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAccountInfoResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAccountInfoResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type SubmitBillingDataResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r SubmitBillingDataResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r SubmitBillingDataResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r SubmitBillingDataResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r SubmitBillingDataResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type SubmitPrepaymentBalancesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r SubmitPrepaymentBalancesResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r SubmitPrepaymentBalancesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r SubmitPrepaymentBalancesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r SubmitPrepaymentBalancesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type FinalizeInstallationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r FinalizeInstallationResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r FinalizeInstallationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r FinalizeInstallationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r FinalizeInstallationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type SubmitInvoiceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		InvoiceId        *string                               `json:"invoiceId,omitempty"`
-		Test             *SubmitInvoice200JSONResponseBodyTest `json:"test,omitempty"`
-		ValidationErrors *[]string                             `json:"validationErrors,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r SubmitInvoiceResponse) GetJSON200() *struct {
-	InvoiceId        *string                               `json:"invoiceId,omitempty"`
-	Test             *SubmitInvoice200JSONResponseBodyTest `json:"test,omitempty"`
-	ValidationErrors *[]string                             `json:"validationErrors,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r SubmitInvoiceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r SubmitInvoiceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r SubmitInvoiceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r SubmitInvoiceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetInvoiceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Created System creation date. ISO 8601 timestamp.
-		Created string `json:"created"`
-
-		// Discounts Invoice discounts.
-		Discounts *[]struct {
-			// Amount Discount amount. A dollar-based decimal string.
-			Amount string `json:"amount"`
-
-			// BillingPlanId Partner's billing plan ID.
-			BillingPlanId string `json:"billingPlanId"`
-
-			// Details Additional discount details.
-			Details *string `json:"details,omitempty"`
-
-			// End Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-			End *string `json:"end,omitempty"`
-
-			// Name Discount name.
-			Name string `json:"name"`
-
-			// ResourceId Partner's resource ID. If not specified, indicates installation-wide discount.
-			ResourceId *string `json:"resourceId,omitempty"`
-
-			// Start Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-			Start *string `json:"start,omitempty"`
-		} `json:"discounts,omitempty"`
-
-		// ExternalId Partner-supplied Invoice ID, if applicable.
-		ExternalId *string `json:"externalId,omitempty"`
-
-		// InvoiceDate Invoice date. ISO 8601 timestamp.
-		InvoiceDate string `json:"invoiceDate"`
-
-		// InvoiceId Vercel Marketplace Invoice ID.
-		InvoiceId string `json:"invoiceId"`
-
-		// InvoiceNumber User-readable invoice number.
-		InvoiceNumber *string `json:"invoiceNumber,omitempty"`
-
-		// Items Invoice items.
-		Items []struct {
-			// BillingPlanId Partner's billing plan ID.
-			BillingPlanId string `json:"billingPlanId"`
-
-			// Details Additional item details.
-			Details *string `json:"details,omitempty"`
-
-			// End Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-			End *string `json:"end,omitempty"`
-
-			// Name Invoice item name.
-			Name string `json:"name"`
-
-			// Price Item price. A dollar-based decimal string.
-			Price string `json:"price"`
-
-			// Quantity Item quantity.
-			Quantity float32 `json:"quantity"`
-
-			// ResourceId Partner's resource ID. If not specified, indicates installation-wide item.
-			ResourceId *string `json:"resourceId,omitempty"`
-
-			// Start Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-			Start *string `json:"start,omitempty"`
-
-			// Total Item total. A dollar-based decimal string.
-			Total string `json:"total"`
-
-			// Units Units for item's quantity.
-			Units string `json:"units"`
-		} `json:"items"`
-
-		// Memo Additional memo for the invoice.
-		Memo *string `json:"memo,omitempty"`
-
-		// OutstandingTotal Amount still owed on the invoice, per the payment processor. Can be positive even for states "refunded" or "refund_requested", since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.
-		OutstandingTotal *string `json:"outstandingTotal,omitempty"`
-
-		// PaidAt Moment the invoice was paid. ISO 8601 timestamp.
-		PaidAt *string `json:"paidAt,omitempty"`
-
-		// PaidTotal Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.
-		PaidTotal *string `json:"paidTotal,omitempty"`
-
-		// PendingRefundTotal Requested refund amount not yet applied by the payment processor: "refundTotal" minus "refundedTotal". A dollar-based decimal string. Only present when a refund was requested or applied.
-		PendingRefundTotal *string `json:"pendingRefundTotal,omitempty"`
-
-		// Period Subscription period for this billing cycle. ISO 8601 timestamps.
-		Period struct {
-			End   string `json:"end"`
-			Start string `json:"start"`
-		} `json:"period"`
-
-		// RefundReason The reason for refund. Only present when a refund has been requested.
-		RefundReason *string `json:"refundReason,omitempty"`
-
-		// RefundTotal Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.
-		RefundTotal *string `json:"refundTotal,omitempty"`
-
-		// RefundedAt Most recent moment the invoice was refunded. ISO 8601 timestamp.
-		RefundedAt *string `json:"refundedAt,omitempty"`
-
-		// RefundedTotal Total refund amount applied by the payment processor, on the same pre-tax basis as "refundTotal". Counts both money returned and debt cancelled on unpaid invoices. May be lower than "refundTotal", which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.
-		RefundedTotal *string `json:"refundedTotal,omitempty"`
-
-		// State Invoice state. Reports the payment state of the invoice; refund progress is reported separately via "refundedTotal" and "pendingRefundTotal". The states "refunded" and "refund_requested" only appear when the payment state cannot be determined.
-		State GetInvoice200JSONResponseBodyState `json:"state"`
-
-		// Test Whether the invoice is in the testmode (no real transaction created).
-		Test *GetInvoice200JSONResponseBodyTest `json:"test,omitempty"`
-
-		// Total Invoice total amount. A dollar-based decimal string.
-		Total string `json:"total"`
-
-		// Updated System update date. ISO 8601 timestamp.
-		Updated string `json:"updated"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetInvoiceResponse) GetJSON200() *struct {
-	// Created System creation date. ISO 8601 timestamp.
-	Created string `json:"created"`
-
-	// Discounts Invoice discounts.
-	Discounts *[]struct {
-		// Amount Discount amount. A dollar-based decimal string.
-		Amount string `json:"amount"`
-
-		// BillingPlanId Partner's billing plan ID.
-		BillingPlanId string `json:"billingPlanId"`
-
-		// Details Additional discount details.
-		Details *string `json:"details,omitempty"`
-
-		// End Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-		End *string `json:"end,omitempty"`
-
-		// Name Discount name.
-		Name string `json:"name"`
-
-		// ResourceId Partner's resource ID. If not specified, indicates installation-wide discount.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Start Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-		Start *string `json:"start,omitempty"`
-	} `json:"discounts,omitempty"`
-
-	// ExternalId Partner-supplied Invoice ID, if applicable.
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// InvoiceDate Invoice date. ISO 8601 timestamp.
-	InvoiceDate string `json:"invoiceDate"`
-
-	// InvoiceId Vercel Marketplace Invoice ID.
-	InvoiceId string `json:"invoiceId"`
-
-	// InvoiceNumber User-readable invoice number.
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
-
-	// Items Invoice items.
-	Items []struct {
-		// BillingPlanId Partner's billing plan ID.
-		BillingPlanId string `json:"billingPlanId"`
-
-		// Details Additional item details.
-		Details *string `json:"details,omitempty"`
-
-		// End Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-		End *string `json:"end,omitempty"`
-
-		// Name Invoice item name.
-		Name string `json:"name"`
-
-		// Price Item price. A dollar-based decimal string.
-		Price string `json:"price"`
-
-		// Quantity Item quantity.
-		Quantity float32 `json:"quantity"`
-
-		// ResourceId Partner's resource ID. If not specified, indicates installation-wide item.
-		ResourceId *string `json:"resourceId,omitempty"`
-
-		// Start Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-		Start *string `json:"start,omitempty"`
-
-		// Total Item total. A dollar-based decimal string.
-		Total string `json:"total"`
-
-		// Units Units for item's quantity.
-		Units string `json:"units"`
-	} `json:"items"`
-
-	// Memo Additional memo for the invoice.
-	Memo *string `json:"memo,omitempty"`
-
-	// OutstandingTotal Amount still owed on the invoice, per the payment processor. Can be positive even for states "refunded" or "refund_requested", since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.
-	OutstandingTotal *string `json:"outstandingTotal,omitempty"`
-
-	// PaidAt Moment the invoice was paid. ISO 8601 timestamp.
-	PaidAt *string `json:"paidAt,omitempty"`
-
-	// PaidTotal Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.
-	PaidTotal *string `json:"paidTotal,omitempty"`
-
-	// PendingRefundTotal Requested refund amount not yet applied by the payment processor: "refundTotal" minus "refundedTotal". A dollar-based decimal string. Only present when a refund was requested or applied.
-	PendingRefundTotal *string `json:"pendingRefundTotal,omitempty"`
-
-	// Period Subscription period for this billing cycle. ISO 8601 timestamps.
-	Period struct {
-		End   string `json:"end"`
-		Start string `json:"start"`
-	} `json:"period"`
-
-	// RefundReason The reason for refund. Only present when a refund has been requested.
-	RefundReason *string `json:"refundReason,omitempty"`
-
-	// RefundTotal Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.
-	RefundTotal *string `json:"refundTotal,omitempty"`
-
-	// RefundedAt Most recent moment the invoice was refunded. ISO 8601 timestamp.
-	RefundedAt *string `json:"refundedAt,omitempty"`
-
-	// RefundedTotal Total refund amount applied by the payment processor, on the same pre-tax basis as "refundTotal". Counts both money returned and debt cancelled on unpaid invoices. May be lower than "refundTotal", which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.
-	RefundedTotal *string `json:"refundedTotal,omitempty"`
-
-	// State Invoice state. Reports the payment state of the invoice; refund progress is reported separately via "refundedTotal" and "pendingRefundTotal". The states "refunded" and "refund_requested" only appear when the payment state cannot be determined.
-	State GetInvoice200JSONResponseBodyState `json:"state"`
-
-	// Test Whether the invoice is in the testmode (no real transaction created).
-	Test *GetInvoice200JSONResponseBodyTest `json:"test,omitempty"`
-
-	// Total Invoice total amount. A dollar-based decimal string.
-	Total string `json:"total"`
-
-	// Updated System update date. ISO 8601 timestamp.
-	Updated string `json:"updated"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetInvoiceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetInvoiceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetInvoiceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetInvoiceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateInvoiceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateInvoiceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateInvoiceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateInvoiceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateInvoiceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type RevokeInstallationCredentialResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AlreadyRevoked RevokeInstallationCredential200JSONResponseBodyAlreadyRevoked `json:"already_revoked"`
-		Revoked        RevokeInstallationCredential200JSONResponseBodyRevoked        `json:"revoked"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r RevokeInstallationCredentialResponse) GetJSON200() *struct {
-	AlreadyRevoked RevokeInstallationCredential200JSONResponseBodyAlreadyRevoked `json:"already_revoked"`
-	Revoked        RevokeInstallationCredential200JSONResponseBodyRevoked        `json:"revoked"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r RevokeInstallationCredentialResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r RevokeInstallationCredentialResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r RevokeInstallationCredentialResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r RevokeInstallationCredentialResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type RotateInstallationCredentialResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AccessToken string                                                   `json:"access_token"`
-		ExpiresIn   float32                                                  `json:"expires_in"`
-		Scope       string                                                   `json:"scope"`
-		TokenType   RotateInstallationCredential200JSONResponseBodyTokenType `json:"token_type"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r RotateInstallationCredentialResponse) GetJSON200() *struct {
-	AccessToken string                                                   `json:"access_token"`
-	ExpiresIn   float32                                                  `json:"expires_in"`
-	Scope       string                                                   `json:"scope"`
-	TokenType   RotateInstallationCredential200JSONResponseBodyTokenType `json:"token_type"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r RotateInstallationCredentialResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r RotateInstallationCredentialResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r RotateInstallationCredentialResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r RotateInstallationCredentialResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateEventResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateEventResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateEventResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateEventResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateEventResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetMemberResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		GlobalUserId *string `json:"globalUserId,omitempty"`
-		Id           string  `json:"id"`
-
-		// Role "The `ADMIN` role, by default, is provided to users capable of installing integrations, while the `USER` role can be granted to Vercel users with the Vercel `Billing` or Vercel `Viewer` role, which are considered to be Read-Only roles."
-		Role      GetMember200JSONResponseBodyRole `json:"role"`
-		UserEmail *string                          `json:"userEmail,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetMemberResponse) GetJSON200() *struct {
-	GlobalUserId *string `json:"globalUserId,omitempty"`
-	Id           string  `json:"id"`
-
-	// Role "The `ADMIN` role, by default, is provided to users capable of installing integrations, while the `USER` role can be granted to Vercel users with the Vercel `Billing` or Vercel `Viewer` role, which are considered to be Read-Only roles."
-	Role      GetMember200JSONResponseBodyRole `json:"role"`
-	UserEmail *string                          `json:"userEmail,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetMemberResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetMemberResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetMemberResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetMemberResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateResourceSecretsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateResourceSecretsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateResourceSecretsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateResourceSecretsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateResourceSecretsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetIntegrationResourcesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Resources []struct {
-			// BillingPlanId The ID of the billing plan the resource is subscribed to, if applicable
-			BillingPlanId *string `json:"billingPlanId,omitempty"`
-
-			// InternalId The ID assigned by Vercel for the given resource
-			InternalId string `json:"internalId"`
-
-			// Metadata The configured metadata for the resource as defined by its product's Metadata Schema
-			Metadata *map[string]GetIntegrationResources200JSONResponseBody_Resources_Metadata_AdditionalProperties `json:"metadata,omitempty"`
-
-			// Name The name of the resource as it is recorded in Vercel
-			Name string `json:"name"`
-
-			// Notification The notification, if set, displayed to the user when viewing the resource in Vercel
-			Notification *struct {
-				Href    *string                                                              `json:"href,omitempty"`
-				Level   GetIntegrationResources200JSONResponseBodyResourcesNotificationLevel `json:"level"`
-				Message *string                                                              `json:"message,omitempty"`
-				Title   string                                                               `json:"title"`
-			} `json:"notification,omitempty"`
-
-			// PartnerId The ID provided by the partner for the given resource
-			PartnerId string `json:"partnerId"`
-
-			// ProductId The ID of the product the resource is derived from
-			ProductId string `json:"productId"`
-
-			// ProtocolSettings Any settings provided for the resource to support its product's protocols
-			ProtocolSettings *struct {
-				Authentication *struct {
-					AppUrls *[]struct {
-						Target GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsAuthenticationAppUrlsTarget `json:"target"`
-						Url    string                                                                                         `json:"url"`
-					} `json:"appUrls,omitempty"`
-				} `json:"authentication,omitempty"`
-				Experimentation *struct {
-					EdgeConfigId               *string                                                                                                       `json:"edgeConfigId,omitempty"`
-					EdgeConfigSyncingEnabled   *GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationEdgeConfigSyncingEnabled   `json:"edgeConfigSyncingEnabled,omitempty"`
-					EdgeConfigTokenId          *string                                                                                                       `json:"edgeConfigTokenId,omitempty"`
-					GlobalConfigId             *string                                                                                                       `json:"globalConfigId,omitempty"`
-					GlobalConfigSyncingEnabled *GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationGlobalConfigSyncingEnabled `json:"globalConfigSyncingEnabled,omitempty"`
-				} `json:"experimentation,omitempty"`
-			} `json:"protocolSettings,omitempty"`
-
-			// Status The current status of the resource
-			Status *GetIntegrationResources200JSONResponseBodyResourcesStatus `json:"status,omitempty"`
-		} `json:"resources"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetIntegrationResourcesResponse) GetJSON200() *struct {
-	Resources []struct {
-		// BillingPlanId The ID of the billing plan the resource is subscribed to, if applicable
-		BillingPlanId *string `json:"billingPlanId,omitempty"`
-
-		// InternalId The ID assigned by Vercel for the given resource
-		InternalId string `json:"internalId"`
-
-		// Metadata The configured metadata for the resource as defined by its product's Metadata Schema
-		Metadata *map[string]GetIntegrationResources200JSONResponseBody_Resources_Metadata_AdditionalProperties `json:"metadata,omitempty"`
-
-		// Name The name of the resource as it is recorded in Vercel
-		Name string `json:"name"`
-
-		// Notification The notification, if set, displayed to the user when viewing the resource in Vercel
-		Notification *struct {
-			Href    *string                                                              `json:"href,omitempty"`
-			Level   GetIntegrationResources200JSONResponseBodyResourcesNotificationLevel `json:"level"`
-			Message *string                                                              `json:"message,omitempty"`
-			Title   string                                                               `json:"title"`
-		} `json:"notification,omitempty"`
-
-		// PartnerId The ID provided by the partner for the given resource
-		PartnerId string `json:"partnerId"`
-
-		// ProductId The ID of the product the resource is derived from
-		ProductId string `json:"productId"`
-
-		// ProtocolSettings Any settings provided for the resource to support its product's protocols
-		ProtocolSettings *struct {
-			Authentication *struct {
-				AppUrls *[]struct {
-					Target GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsAuthenticationAppUrlsTarget `json:"target"`
-					Url    string                                                                                         `json:"url"`
-				} `json:"appUrls,omitempty"`
-			} `json:"authentication,omitempty"`
-			Experimentation *struct {
-				EdgeConfigId               *string                                                                                                       `json:"edgeConfigId,omitempty"`
-				EdgeConfigSyncingEnabled   *GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationEdgeConfigSyncingEnabled   `json:"edgeConfigSyncingEnabled,omitempty"`
-				EdgeConfigTokenId          *string                                                                                                       `json:"edgeConfigTokenId,omitempty"`
-				GlobalConfigId             *string                                                                                                       `json:"globalConfigId,omitempty"`
-				GlobalConfigSyncingEnabled *GetIntegrationResources200JSONResponseBodyResourcesProtocolSettingsExperimentationGlobalConfigSyncingEnabled `json:"globalConfigSyncingEnabled,omitempty"`
-			} `json:"experimentation,omitempty"`
-		} `json:"protocolSettings,omitempty"`
-
-		// Status The current status of the resource
-		Status *GetIntegrationResources200JSONResponseBodyResourcesStatus `json:"status,omitempty"`
-	} `json:"resources"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetIntegrationResourcesResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetIntegrationResourcesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetIntegrationResourcesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetIntegrationResourcesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteIntegrationResourceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteIntegrationResourceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteIntegrationResourceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteIntegrationResourceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteIntegrationResourceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetIntegrationResourceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// BillingPlanId The ID of the billing plan the resource is subscribed to, if applicable
-		BillingPlanId *string `json:"billingPlanId,omitempty"`
-
-		// CustomClaims The roles and claim rules Vercel resolves into the resource tokens it mints for this resource
-		CustomClaims *struct {
-			ClaimRules *[]struct {
-				Claims map[string]*GetIntegrationResource200JSONResponseBody_CustomClaims_ClaimRules_Claims_AdditionalProperties `json:"claims"`
-				When   *struct {
-					Environment *[]string `json:"environment,omitempty"`
-					Role        *[]string `json:"role,omitempty"`
-				} `json:"when,omitempty"`
-			} `json:"claimRules,omitempty"`
-			DefaultRole *string   `json:"defaultRole,omitempty"`
-			Roles       *[]string `json:"roles,omitempty"`
-		} `json:"customClaims,omitempty"`
-
-		// Id The ID provided by the 3rd party provider for the given resource
-		Id string `json:"id"`
-
-		// InternalId The ID assigned by Vercel for the given resource
-		InternalId string `json:"internalId"`
-
-		// Metadata The configured metadata for the resource as defined by its product's Metadata Schema
-		Metadata *map[string]GetIntegrationResource200JSONResponseBody_Metadata_AdditionalProperties `json:"metadata,omitempty"`
-
-		// Name The name of the resource as it is recorded in Vercel
-		Name string `json:"name"`
-
-		// Notification The notification, if set, displayed to the user when viewing the resource in Vercel
-		Notification *struct {
-			Href    *string                                                    `json:"href,omitempty"`
-			Level   GetIntegrationResource200JSONResponseBodyNotificationLevel `json:"level"`
-			Message *string                                                    `json:"message,omitempty"`
-			Title   string                                                     `json:"title"`
-		} `json:"notification,omitempty"`
-
-		// ProductId The ID of the product the resource is derived from
-		ProductId string `json:"productId"`
-
-		// ProtocolSettings Any settings provided for the resource to support its product's protocols
-		ProtocolSettings *struct {
-			Authentication *struct {
-				AppUrls *[]struct {
-					Target GetIntegrationResource200JSONResponseBodyProtocolSettingsAuthenticationAppUrlsTarget `json:"target"`
-					Url    string                                                                               `json:"url"`
-				} `json:"appUrls,omitempty"`
-			} `json:"authentication,omitempty"`
-			Experimentation *struct {
-				EdgeConfigId   *string `json:"edgeConfigId,omitempty"`
-				GlobalConfigId *string `json:"globalConfigId,omitempty"`
-			} `json:"experimentation,omitempty"`
-		} `json:"protocolSettings,omitempty"`
-
-		// Status The current status of the resource
-		Status *GetIntegrationResource200JSONResponseBodyStatus `json:"status,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetIntegrationResourceResponse) GetJSON200() *struct {
-	// BillingPlanId The ID of the billing plan the resource is subscribed to, if applicable
-	BillingPlanId *string `json:"billingPlanId,omitempty"`
-
-	// CustomClaims The roles and claim rules Vercel resolves into the resource tokens it mints for this resource
-	CustomClaims *struct {
-		ClaimRules *[]struct {
-			Claims map[string]*GetIntegrationResource200JSONResponseBody_CustomClaims_ClaimRules_Claims_AdditionalProperties `json:"claims"`
-			When   *struct {
-				Environment *[]string `json:"environment,omitempty"`
-				Role        *[]string `json:"role,omitempty"`
-			} `json:"when,omitempty"`
-		} `json:"claimRules,omitempty"`
-		DefaultRole *string   `json:"defaultRole,omitempty"`
-		Roles       *[]string `json:"roles,omitempty"`
-	} `json:"customClaims,omitempty"`
-
-	// Id The ID provided by the 3rd party provider for the given resource
-	Id string `json:"id"`
-
-	// InternalId The ID assigned by Vercel for the given resource
-	InternalId string `json:"internalId"`
-
-	// Metadata The configured metadata for the resource as defined by its product's Metadata Schema
-	Metadata *map[string]GetIntegrationResource200JSONResponseBody_Metadata_AdditionalProperties `json:"metadata,omitempty"`
-
-	// Name The name of the resource as it is recorded in Vercel
-	Name string `json:"name"`
-
-	// Notification The notification, if set, displayed to the user when viewing the resource in Vercel
-	Notification *struct {
-		Href    *string                                                    `json:"href,omitempty"`
-		Level   GetIntegrationResource200JSONResponseBodyNotificationLevel `json:"level"`
-		Message *string                                                    `json:"message,omitempty"`
-		Title   string                                                     `json:"title"`
-	} `json:"notification,omitempty"`
-
-	// ProductId The ID of the product the resource is derived from
-	ProductId string `json:"productId"`
-
-	// ProtocolSettings Any settings provided for the resource to support its product's protocols
-	ProtocolSettings *struct {
-		Authentication *struct {
-			AppUrls *[]struct {
-				Target GetIntegrationResource200JSONResponseBodyProtocolSettingsAuthenticationAppUrlsTarget `json:"target"`
-				Url    string                                                                               `json:"url"`
-			} `json:"appUrls,omitempty"`
-		} `json:"authentication,omitempty"`
-		Experimentation *struct {
-			EdgeConfigId   *string `json:"edgeConfigId,omitempty"`
-			GlobalConfigId *string `json:"globalConfigId,omitempty"`
-		} `json:"experimentation,omitempty"`
-	} `json:"protocolSettings,omitempty"`
-
-	// Status The current status of the resource
-	Status *GetIntegrationResource200JSONResponseBodyStatus `json:"status,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetIntegrationResourceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetIntegrationResourceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetIntegrationResourceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetIntegrationResourceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateResourceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Name string `json:"name"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateResourceResponse) GetJSON200() *struct {
-	Name string `json:"name"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateResourceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateResourceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateResourceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateResourceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ImportResourceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Name string `json:"name"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ImportResourceResponse) GetJSON200() *struct {
-	Name string `json:"name"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ImportResourceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ImportResourceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ImportResourceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ImportResourceResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Digest    string                                                                                                                  `json:"digest"`
-		Items     map[string]*GlobalConfigItemValue                                                                                       `json:"items"`
-		Purpose   *GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose `json:"purpose,omitempty"`
-		UpdatedAt float32                                                                                                                 `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) GetJSON200() *struct {
-	Digest    string                                                                                                                  `json:"digest"`
-	Items     map[string]*GlobalConfigItemValue                                                                                       `json:"items"`
-	Purpose   *GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose `json:"purpose,omitempty"`
-	UpdatedAt float32                                                                                                                 `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Digest    string                                                                                                                   `json:"digest"`
-		Items     map[string]*GlobalConfigItemValue                                                                                        `json:"items"`
-		Purpose   *HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose `json:"purpose,omitempty"`
-		UpdatedAt float32                                                                                                                  `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) GetJSON200() *struct {
-	Digest    string                                                                                                                   `json:"digest"`
-	Items     map[string]*GlobalConfigItemValue                                                                                        `json:"items"`
-	Purpose   *HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose `json:"purpose,omitempty"`
-	UpdatedAt float32                                                                                                                  `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Digest    string                                                                                                                      `json:"digest"`
-		Items     map[string]*GlobalConfigItemValue                                                                                           `json:"items"`
-		Purpose   *ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose `json:"purpose,omitempty"`
-		UpdatedAt float32                                                                                                                     `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) GetJSON200() *struct {
-	Digest    string                                                                                                                      `json:"digest"`
-	Items     map[string]*GlobalConfigItemValue                                                                                           `json:"items"`
-	Purpose   *ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200JSONResponseBodyPurpose `json:"purpose,omitempty"`
-	UpdatedAt float32                                                                                                                     `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateResourceSecretsByIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateResourceSecretsByIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateResourceSecretsByIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateResourceSecretsByIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateResourceSecretsByIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteConfigurationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteConfigurationResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteConfigurationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteConfigurationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteConfigurationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConfigurationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetConfiguration200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConfigurationResponse) GetJSON200() *GetConfiguration200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConfigurationResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConfigurationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConfigurationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConfigurationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConfigurationProductsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Configuration struct {
-			Id string `json:"id"`
-		} `json:"configuration"`
-		Integration struct {
-			Id   string `json:"id"`
-			Name string `json:"name"`
-			Slug string `json:"slug"`
-		} `json:"integration"`
-		Products []struct {
-			Id             string `json:"id"`
-			MetadataSchema struct {
-				Properties map[string]GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_AdditionalProperties `json:"properties"`
-				Required   *[]string                                                                                                      `json:"required,omitempty"`
-				Type       GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaType                                          `json:"type"`
-				UiOrder    *[]string                                                                                                      `json:"ui:order,omitempty"`
-			} `json:"metadataSchema"`
-			Name            string                                                              `json:"name"`
-			PrimaryProtocol *GetConfigurationProducts200JSONResponseBodyProductsPrimaryProtocol `json:"primaryProtocol,omitempty"`
-			Protocols       struct {
-				Ai *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsAiStatus `json:"status"`
-				} `json:"ai,omitempty"`
-				Authentication *struct {
-					// AppUrlRegistrationSupport The partner accepts Vercel-managed app URLs via `protocolSettings.authentication.appUrls` on provision-resource and update-resource, and reconciles them into its trusted-origin / redirect-URL allowlist. When absent, consumers surface the URL for a one-time manual registration instead.
-					AppUrlRegistrationSupport *GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationAppUrlRegistrationSupport `json:"appUrlRegistrationSupport,omitempty"`
-					Status                    GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationStatus                     `json:"status"`
-				} `json:"authentication,omitempty"`
-				Checks *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsChecksStatus `json:"status"`
-				} `json:"checks,omitempty"`
-				Experimentation *struct {
-					EdgeConfigSyncingSupport *GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationEdgeConfigSyncingSupport `json:"edgeConfigSyncingSupport,omitempty"`
-					Status                   GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationStatus                    `json:"status"`
-				} `json:"experimentation,omitempty"`
-				LogDrain *struct {
-					Endpoint string                                                                     `json:"endpoint"`
-					Format   GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainFormat `json:"format"`
-					Headers  *map[string]string                                                         `json:"headers,omitempty"`
-					Status   GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainStatus `json:"status"`
-				} `json:"logDrain,omitempty"`
-				Messaging *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsMessagingStatus `json:"status"`
-				} `json:"messaging,omitempty"`
-				Observability *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsObservabilityStatus `json:"status"`
-				} `json:"observability,omitempty"`
-				Other *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsOtherStatus `json:"status"`
-				} `json:"other,omitempty"`
-				Storage *struct {
-					Repl *struct {
-						Enabled              GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplEnabled              `json:"enabled"`
-						SupportsReadOnlyMode GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplSupportsReadOnlyMode `json:"supportsReadOnlyMode"`
-						WelcomeMessage       *string                                                                                     `json:"welcomeMessage,omitempty"`
-					} `json:"repl,omitempty"`
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageStatus `json:"status"`
-				} `json:"storage,omitempty"`
-				TraceDrain *struct {
-					Endpoint string                                                                       `json:"endpoint"`
-					Format   GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainFormat `json:"format"`
-					Headers  *map[string]string                                                           `json:"headers,omitempty"`
-					Status   GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainStatus `json:"status"`
-				} `json:"traceDrain,omitempty"`
-				Video *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsVideoStatus `json:"status"`
-				} `json:"video,omitempty"`
-				Workflow *struct {
-					Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsWorkflowStatus `json:"status"`
-				} `json:"workflow,omitempty"`
-			} `json:"protocols"`
-			Slug string `json:"slug"`
-		} `json:"products"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConfigurationProductsResponse) GetJSON200() *struct {
-	Configuration struct {
-		Id string `json:"id"`
-	} `json:"configuration"`
-	Integration struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-		Slug string `json:"slug"`
-	} `json:"integration"`
-	Products []struct {
-		Id             string `json:"id"`
-		MetadataSchema struct {
-			Properties map[string]GetConfigurationProducts200JSONResponseBody_Products_MetadataSchema_Properties_AdditionalProperties `json:"properties"`
-			Required   *[]string                                                                                                      `json:"required,omitempty"`
-			Type       GetConfigurationProducts200JSONResponseBodyProductsMetadataSchemaType                                          `json:"type"`
-			UiOrder    *[]string                                                                                                      `json:"ui:order,omitempty"`
-		} `json:"metadataSchema"`
-		Name            string                                                              `json:"name"`
-		PrimaryProtocol *GetConfigurationProducts200JSONResponseBodyProductsPrimaryProtocol `json:"primaryProtocol,omitempty"`
-		Protocols       struct {
-			Ai *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsAiStatus `json:"status"`
-			} `json:"ai,omitempty"`
-			Authentication *struct {
-				// AppUrlRegistrationSupport The partner accepts Vercel-managed app URLs via `protocolSettings.authentication.appUrls` on provision-resource and update-resource, and reconciles them into its trusted-origin / redirect-URL allowlist. When absent, consumers surface the URL for a one-time manual registration instead.
-				AppUrlRegistrationSupport *GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationAppUrlRegistrationSupport `json:"appUrlRegistrationSupport,omitempty"`
-				Status                    GetConfigurationProducts200JSONResponseBodyProductsProtocolsAuthenticationStatus                     `json:"status"`
-			} `json:"authentication,omitempty"`
-			Checks *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsChecksStatus `json:"status"`
-			} `json:"checks,omitempty"`
-			Experimentation *struct {
-				EdgeConfigSyncingSupport *GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationEdgeConfigSyncingSupport `json:"edgeConfigSyncingSupport,omitempty"`
-				Status                   GetConfigurationProducts200JSONResponseBodyProductsProtocolsExperimentationStatus                    `json:"status"`
-			} `json:"experimentation,omitempty"`
-			LogDrain *struct {
-				Endpoint string                                                                     `json:"endpoint"`
-				Format   GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainFormat `json:"format"`
-				Headers  *map[string]string                                                         `json:"headers,omitempty"`
-				Status   GetConfigurationProducts200JSONResponseBodyProductsProtocolsLogDrainStatus `json:"status"`
-			} `json:"logDrain,omitempty"`
-			Messaging *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsMessagingStatus `json:"status"`
-			} `json:"messaging,omitempty"`
-			Observability *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsObservabilityStatus `json:"status"`
-			} `json:"observability,omitempty"`
-			Other *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsOtherStatus `json:"status"`
-			} `json:"other,omitempty"`
-			Storage *struct {
-				Repl *struct {
-					Enabled              GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplEnabled              `json:"enabled"`
-					SupportsReadOnlyMode GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageReplSupportsReadOnlyMode `json:"supportsReadOnlyMode"`
-					WelcomeMessage       *string                                                                                     `json:"welcomeMessage,omitempty"`
-				} `json:"repl,omitempty"`
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsStorageStatus `json:"status"`
-			} `json:"storage,omitempty"`
-			TraceDrain *struct {
-				Endpoint string                                                                       `json:"endpoint"`
-				Format   GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainFormat `json:"format"`
-				Headers  *map[string]string                                                           `json:"headers,omitempty"`
-				Status   GetConfigurationProducts200JSONResponseBodyProductsProtocolsTraceDrainStatus `json:"status"`
-			} `json:"traceDrain,omitempty"`
-			Video *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsVideoStatus `json:"status"`
-			} `json:"video,omitempty"`
-			Workflow *struct {
-				Status GetConfigurationProducts200JSONResponseBodyProductsProtocolsWorkflowStatus `json:"status"`
-			} `json:"workflow,omitempty"`
-		} `json:"protocols"`
-		Slug string `json:"slug"`
-	} `json:"products"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConfigurationProductsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConfigurationProductsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConfigurationProductsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConfigurationProductsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetConfigurationsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetConfigurations200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetConfigurationsResponse) GetJSON200() *GetConfigurations200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetConfigurationsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetConfigurationsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetConfigurationsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetConfigurationsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GitNamespacesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]struct {
-		Id                 GitNamespaces200JSONResponseBody_Id                 `json:"id"`
-		InstallationId     *float32                                            `json:"installationId,omitempty"`
-		IsAccessRestricted *GitNamespaces200JSONResponseBodyIsAccessRestricted `json:"isAccessRestricted,omitempty"`
-		Name               *string                                             `json:"name,omitempty"`
-		OwnerType          string                                              `json:"ownerType"`
-		Provider           string                                              `json:"provider"`
-		RequireReauth      *GitNamespaces200JSONResponseBodyRequireReauth      `json:"requireReauth,omitempty"`
-		Slug               string                                              `json:"slug"`
-		Viewer             *struct {
-			CanCreateApp *GitNamespaces200JSONResponseBodyViewerCanCreateApp `json:"canCreateApp,omitempty"`
-			Role         *GitNamespaces200JSONResponseBody_Viewer_Role       `json:"role,omitempty"`
-		} `json:"viewer,omitempty"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GitNamespacesResponse) GetJSON200() *[]struct {
-	Id                 GitNamespaces200JSONResponseBody_Id                 `json:"id"`
-	InstallationId     *float32                                            `json:"installationId,omitempty"`
-	IsAccessRestricted *GitNamespaces200JSONResponseBodyIsAccessRestricted `json:"isAccessRestricted,omitempty"`
-	Name               *string                                             `json:"name,omitempty"`
-	OwnerType          string                                              `json:"ownerType"`
-	Provider           string                                              `json:"provider"`
-	RequireReauth      *GitNamespaces200JSONResponseBodyRequireReauth      `json:"requireReauth,omitempty"`
-	Slug               string                                              `json:"slug"`
-	Viewer             *struct {
-		CanCreateApp *GitNamespaces200JSONResponseBodyViewerCanCreateApp `json:"canCreateApp,omitempty"`
-		Role         *GitNamespaces200JSONResponseBody_Viewer_Role       `json:"role,omitempty"`
-	} `json:"viewer,omitempty"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GitNamespacesResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GitNamespacesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GitNamespacesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GitNamespacesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ConnectIntegrationResourceToProjectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r ConnectIntegrationResourceToProjectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ConnectIntegrationResourceToProjectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ConnectIntegrationResourceToProjectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ConnectIntegrationResourceToProjectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetBillingPlansResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Plans []struct {
-			Cost        *string `json:"cost,omitempty"`
-			Description string  `json:"description"`
-			Details     *[]struct {
-				Label string  `json:"label"`
-				Value *string `json:"value,omitempty"`
-			} `json:"details,omitempty"`
-			Disabled           *GetBillingPlans200JSONResponseBodyPlansDisabled `json:"disabled,omitempty"`
-			EffectiveDate      *string                                          `json:"effectiveDate,omitempty"`
-			HighlightedDetails *[]struct {
-				Label string  `json:"label"`
-				Value *string `json:"value,omitempty"`
-			} `json:"highlightedDetails,omitempty"`
-			Id                                 string                                                       `json:"id"`
-			InitialCharge                      *string                                                      `json:"initialCharge,omitempty"`
-			MaximumAmount                      *string                                                      `json:"maximumAmount,omitempty"`
-			MaximumAmountAutoPurchasePerPeriod *string                                                      `json:"maximumAmountAutoPurchasePerPeriod,omitempty"`
-			MinimumAmount                      *string                                                      `json:"minimumAmount,omitempty"`
-			Name                               string                                                       `json:"name"`
-			PaymentMethodRequired              GetBillingPlans200JSONResponseBodyPlansPaymentMethodRequired `json:"paymentMethodRequired"`
-			PreauthorizationAmount             *float32                                                     `json:"preauthorizationAmount,omitempty"`
-			Quote                              *[]struct {
-				Amount string `json:"amount"`
-				Line   string `json:"line"`
-			} `json:"quote,omitempty"`
-			Scope GetBillingPlans200JSONResponseBodyPlansScope `json:"scope"`
-			Type  GetBillingPlans200JSONResponseBodyPlansType  `json:"type"`
-		} `json:"plans"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetBillingPlansResponse) GetJSON200() *struct {
-	Plans []struct {
-		Cost        *string `json:"cost,omitempty"`
-		Description string  `json:"description"`
-		Details     *[]struct {
-			Label string  `json:"label"`
-			Value *string `json:"value,omitempty"`
-		} `json:"details,omitempty"`
-		Disabled           *GetBillingPlans200JSONResponseBodyPlansDisabled `json:"disabled,omitempty"`
-		EffectiveDate      *string                                          `json:"effectiveDate,omitempty"`
-		HighlightedDetails *[]struct {
-			Label string  `json:"label"`
-			Value *string `json:"value,omitempty"`
-		} `json:"highlightedDetails,omitempty"`
-		Id                                 string                                                       `json:"id"`
-		InitialCharge                      *string                                                      `json:"initialCharge,omitempty"`
-		MaximumAmount                      *string                                                      `json:"maximumAmount,omitempty"`
-		MaximumAmountAutoPurchasePerPeriod *string                                                      `json:"maximumAmountAutoPurchasePerPeriod,omitempty"`
-		MinimumAmount                      *string                                                      `json:"minimumAmount,omitempty"`
-		Name                               string                                                       `json:"name"`
-		PaymentMethodRequired              GetBillingPlans200JSONResponseBodyPlansPaymentMethodRequired `json:"paymentMethodRequired"`
-		PreauthorizationAmount             *float32                                                     `json:"preauthorizationAmount,omitempty"`
-		Quote                              *[]struct {
-			Amount string `json:"amount"`
-			Line   string `json:"line"`
-		} `json:"quote,omitempty"`
-		Scope GetBillingPlans200JSONResponseBodyPlansScope `json:"scope"`
-		Type  GetBillingPlans200JSONResponseBodyPlansType  `json:"type"`
-	} `json:"plans"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetBillingPlansResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetBillingPlansResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetBillingPlansResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetBillingPlansResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteIntegrationLogDrainResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteIntegrationLogDrainResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteIntegrationLogDrainResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteIntegrationLogDrainResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteIntegrationLogDrainResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type SearchRepoResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *SearchRepo200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r SearchRepoResponse) GetJSON200() *SearchRepo200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r SearchRepoResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r SearchRepoResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r SearchRepoResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r SearchRepoResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ExchangeSsoTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *ExchangeSsoToken200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ExchangeSsoTokenResponse) GetJSON200() *ExchangeSsoToken200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ExchangeSsoTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ExchangeSsoTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ExchangeSsoTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ExchangeSsoTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListKmsIssuersResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Issuers []struct {
-			Algorithm       ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
-			ClaimsSchema    *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
-			CreatedAt       string                                                    `json:"createdAt"`
-			DiscoveryLayout ListKmsIssuers200JSONResponseBodyIssuersDiscoveryLayout   `json:"discoveryLayout"`
-			Id              string                                                    `json:"id"`
-			ManagedBy       *string                                                   `json:"managedBy,omitempty"`
-			Name            string                                                    `json:"name"`
-			Origin          ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
-			OwnerId         string                                                    `json:"ownerId"`
-			Policies        []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
-			SigningKeys     []struct {
-				ActivateAt *string `json:"activateAt,omitempty"`
-
-				// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-				ActivatedAt *string `json:"activatedAt,omitempty"`
-				Algorithm   string  `json:"algorithm"`
-
-				// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-				CertificatePem *string `json:"certificatePem,omitempty"`
-				CreatedAt      string  `json:"createdAt"`
-
-				// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-				ImportKeyId *string `json:"importKeyId,omitempty"`
-				IssuerId    string  `json:"issuerId"`
-
-				// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-				KeyId     string `json:"keyId"`
-				PublicKey *struct {
-					Alg    *string   `json:"alg,omitempty"`
-					KeyOps *[]string `json:"key_ops,omitempty"`
-					Kid    *string   `json:"kid,omitempty"`
-					Kty    *string   `json:"kty,omitempty"`
-					Use    *string   `json:"use,omitempty"`
-
-					// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-					X5c *[]string `json:"x5c,omitempty"`
-
-					// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-					X5tS256 *string `json:"x5t#S256,omitempty"`
-				} `json:"publicKey,omitempty"`
-				PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-				// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-				PublicKeyPem *string                                                   `json:"publicKeyPem,omitempty"`
-				RevokeAt     *string                                                   `json:"revokeAt,omitempty"`
-				Status       ListKmsIssuers200JSONResponseBodyIssuersSigningKeysStatus `json:"status"`
-				UpdatedAt    string                                                    `json:"updatedAt"`
-			} `json:"signingKeys"`
-			UpdatedAt string `json:"updatedAt"`
-		} `json:"issuers"`
-		Pagination struct {
-			Count float32 `json:"count"`
-			Next  *string `json:"next"`
-		} `json:"pagination"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListKmsIssuersResponse) GetJSON200() *struct {
-	Issuers []struct {
-		Algorithm       ListKmsIssuers200JSONResponseBodyIssuersAlgorithm         `json:"algorithm"`
-		ClaimsSchema    *map[string]interface{}                                   `json:"claimsSchema,omitempty"`
-		CreatedAt       string                                                    `json:"createdAt"`
-		DiscoveryLayout ListKmsIssuers200JSONResponseBodyIssuersDiscoveryLayout   `json:"discoveryLayout"`
-		Id              string                                                    `json:"id"`
-		ManagedBy       *string                                                   `json:"managedBy,omitempty"`
-		Name            string                                                    `json:"name"`
-		Origin          ListKmsIssuers200JSONResponseBodyIssuersOrigin            `json:"origin"`
-		OwnerId         string                                                    `json:"ownerId"`
-		Policies        []ListKmsIssuers200JSONResponseBody_Issuers_Policies_Item `json:"policies"`
-		SigningKeys     []struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                                   `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                                   `json:"revokeAt,omitempty"`
-			Status       ListKmsIssuers200JSONResponseBodyIssuersSigningKeysStatus `json:"status"`
-			UpdatedAt    string                                                    `json:"updatedAt"`
-		} `json:"signingKeys"`
-		UpdatedAt string `json:"updatedAt"`
-	} `json:"issuers"`
-	Pagination struct {
-		Count float32 `json:"count"`
-		Next  *string `json:"next"`
-	} `json:"pagination"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListKmsIssuersResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListKmsIssuersResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListKmsIssuersResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListKmsIssuersResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateKmsIssuerResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		Algorithm       CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-		CreatedAt       string                                             `json:"createdAt"`
-		DiscoveryLayout CreateKmsIssuer201JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-		Id              string                                             `json:"id"`
-		ManagedBy       *string                                            `json:"managedBy,omitempty"`
-		Name            string                                             `json:"name"`
-		Origin          CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId         string                                             `json:"ownerId"`
-		Policies        []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys     []struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                             `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                             `json:"revokeAt,omitempty"`
-			Status       CreateKmsIssuer201JSONResponseBodySigningKeysStatus `json:"status"`
-			UpdatedAt    string                                              `json:"updatedAt"`
-		} `json:"signingKeys"`
-		UpdatedAt string `json:"updatedAt"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateKmsIssuerResponse) GetJSON201() *struct {
-	Algorithm       CreateKmsIssuer201JSONResponseBodyAlgorithm        `json:"algorithm"`
-	ClaimsSchema    *map[string]interface{}                            `json:"claimsSchema,omitempty"`
-	CreatedAt       string                                             `json:"createdAt"`
-	DiscoveryLayout CreateKmsIssuer201JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-	Id              string                                             `json:"id"`
-	ManagedBy       *string                                            `json:"managedBy,omitempty"`
-	Name            string                                             `json:"name"`
-	Origin          CreateKmsIssuer201JSONResponseBodyOrigin           `json:"origin"`
-	OwnerId         string                                             `json:"ownerId"`
-	Policies        []CreateKmsIssuer201JSONResponseBody_Policies_Item `json:"policies"`
-	SigningKeys     []struct {
-		ActivateAt *string `json:"activateAt,omitempty"`
-
-		// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-		ActivatedAt *string `json:"activatedAt,omitempty"`
-		Algorithm   string  `json:"algorithm"`
-
-		// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-		CertificatePem *string `json:"certificatePem,omitempty"`
-		CreatedAt      string  `json:"createdAt"`
-
-		// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-		ImportKeyId *string `json:"importKeyId,omitempty"`
-		IssuerId    string  `json:"issuerId"`
-
-		// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-		KeyId     string `json:"keyId"`
-		PublicKey *struct {
-			Alg    *string   `json:"alg,omitempty"`
-			KeyOps *[]string `json:"key_ops,omitempty"`
-			Kid    *string   `json:"kid,omitempty"`
-			Kty    *string   `json:"kty,omitempty"`
-			Use    *string   `json:"use,omitempty"`
-
-			// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-			X5c *[]string `json:"x5c,omitempty"`
-
-			// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-			X5tS256 *string `json:"x5t#S256,omitempty"`
-		} `json:"publicKey,omitempty"`
-		PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-		// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-		PublicKeyPem *string                                             `json:"publicKeyPem,omitempty"`
-		RevokeAt     *string                                             `json:"revokeAt,omitempty"`
-		Status       CreateKmsIssuer201JSONResponseBodySigningKeysStatus `json:"status"`
-		UpdatedAt    string                                              `json:"updatedAt"`
-	} `json:"signingKeys"`
-	UpdatedAt string `json:"updatedAt"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateKmsIssuerResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateKmsIssuerResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateKmsIssuerResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateKmsIssuerResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteKmsIssuerResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteKmsIssuerResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteKmsIssuerResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteKmsIssuerResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteKmsIssuerResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetKmsIssuerResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Algorithm       GetKmsIssuer200JSONResponseBodyAlgorithm        `json:"algorithm"`
-		ClaimsSchema    *map[string]interface{}                         `json:"claimsSchema,omitempty"`
-		CreatedAt       string                                          `json:"createdAt"`
-		DiscoveryLayout GetKmsIssuer200JSONResponseBodyDiscoveryLayout  `json:"discoveryLayout"`
-		Id              string                                          `json:"id"`
-		ManagedBy       *string                                         `json:"managedBy,omitempty"`
-		Name            string                                          `json:"name"`
-		Origin          GetKmsIssuer200JSONResponseBodyOrigin           `json:"origin"`
-		OwnerId         string                                          `json:"ownerId"`
-		Policies        []GetKmsIssuer200JSONResponseBody_Policies_Item `json:"policies"`
-		SigningKeys     []struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                          `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                          `json:"revokeAt,omitempty"`
-			Status       GetKmsIssuer200JSONResponseBodySigningKeysStatus `json:"status"`
-			UpdatedAt    string                                           `json:"updatedAt"`
-		} `json:"signingKeys"`
-		UpdatedAt string `json:"updatedAt"`
-	}
 }

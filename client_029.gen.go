@@ -8,7 +8,4151 @@ import (
 	"io"
 	"net/http"
 	"strings"
+	"time"
+
+	openapi_types "github.com/oapi-codegen/runtime/types"
 )
+
+// ParseExtendSessionTimeoutResponse parses an HTTP response from a ExtendSessionTimeoutWithResponse call
+func ParseExtendSessionTimeoutResponse(rsp *http.Response) (*ExtendSessionTimeoutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ExtendSessionTimeoutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSessionDirectoryResponse parses an HTTP response from a CreateSessionDirectoryWithResponse call
+func ParseCreateSessionDirectoryResponse(rsp *http.Response) (*CreateSessionDirectoryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSessionDirectoryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReadSessionFileResponse parses an HTTP response from a ReadSessionFileWithResponse call
+func ParseReadSessionFileResponse(rsp *http.Response) (*ReadSessionFileResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReadSessionFileResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseWriteSessionFilesResponse parses an HTTP response from a WriteSessionFilesWithResponse call
+func ParseWriteSessionFilesResponse(rsp *http.Response) (*WriteSessionFilesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &WriteSessionFilesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateSessionNetworkPolicyResponse parses an HTTP response from a UpdateSessionNetworkPolicyWithResponse call
+func ParseUpdateSessionNetworkPolicyResponse(rsp *http.Response) (*UpdateSessionNetworkPolicyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateSessionNetworkPolicyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesSessionsBySessionIdSnapshotV2Response parses an HTTP response from a CreateSandboxesSessionsBySessionIdSnapshotV2WithResponse call
+func ParseCreateSandboxesSessionsBySessionIdSnapshotV2Response(rsp *http.Response) (*CreateSandboxesSessionsBySessionIdSnapshotV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesSessionsBySessionIdSnapshotV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseStopSessionResponse parses an HTTP response from a StopSessionWithResponse call
+func ParseStopSessionResponse(rsp *http.Response) (*StopSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StopSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest StopSession200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListSessionSnapshotsResponse parses an HTTP response from a ListSessionSnapshotsWithResponse call
+func ParseListSessionSnapshotsResponse(rsp *http.Response) (*ListSessionSnapshotsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListSessionSnapshotsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListSessionSnapshots200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteSessionSnapshotResponse parses an HTTP response from a DeleteSessionSnapshotWithResponse call
+func ParseDeleteSessionSnapshotResponse(rsp *http.Response) (*DeleteSessionSnapshotResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteSessionSnapshotResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSessionSnapshotResponse parses an HTTP response from a GetSessionSnapshotWithResponse call
+func ParseGetSessionSnapshotResponse(rsp *http.Response) (*GetSessionSnapshotResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSessionSnapshotResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteSandboxResponse parses an HTTP response from a DeleteSandboxWithResponse call
+func ParseDeleteSandboxResponse(rsp *http.Response) (*DeleteSandboxResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteSandboxResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetNamedSandboxResponse parses an HTTP response from a GetNamedSandboxWithResponse call
+func ParseGetNamedSandboxResponse(rsp *http.Response) (*GetNamedSandboxResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetNamedSandboxResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Resumed GetNamedSandbox200JSONResponseBodyResumed `json:"resumed"`
+			Routes  []SandboxPublicRoute                      `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateSandboxResponse parses an HTTP response from a UpdateSandboxWithResponse call
+func ParseUpdateSandboxResponse(rsp *http.Response) (*UpdateSandboxResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateSandboxResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UpdateSandbox200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesByNameForkV2Response parses an HTTP response from a CreateSandboxesByNameForkV2WithResponse call
+func ParseCreateSandboxesByNameForkV2Response(rsp *http.Response) (*CreateSandboxesByNameForkV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesByNameForkV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamsResponse parses an HTTP response from a GetTeamsWithResponse call
+func ParseGetTeamsResponse(rsp *http.Response) (*GetTeamsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination                               `json:"pagination"`
+			Teams      []GetTeams200JSONResponseBody_Teams_Item `json:"teams"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamResponse parses an HTTP response from a GetTeamWithResponse call
+func ParseGetTeamResponse(rsp *http.Response) (*GetTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Team
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchTeamResponse parses an HTTP response from a PatchTeamWithResponse call
+func ParsePatchTeamResponse(rsp *http.Response) (*PatchTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Team
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 428:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListTeamFlagsV2Response parses an HTTP response from a ListTeamFlagsV2WithResponse call
+func ParseListTeamFlagsV2Response(rsp *http.Response) (*ListTeamFlagsV2Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListTeamFlagsV2Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data       []ListTeamFlagsV2200JSONResponseBody_Data_Item `json:"data"`
+			Pagination struct {
+				Next *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseInviteUserToTeamResponse parses an HTTP response from a InviteUserToTeamWithResponse call
+func ParseInviteUserToTeamResponse(rsp *http.Response) (*InviteUserToTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &InviteUserToTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest InvitedTeamMember
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAuthUserResponse parses an HTTP response from a GetAuthUserWithResponse call
+func ParseGetAuthUserResponse(rsp *http.Response) (*GetAuthUserResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAuthUserResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			User GetAuthUser200JSONResponseBody_User `json:"user"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 302:
+		break // No content-type
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiBranchesResponse parses an HTTP response from a ListVercelCiBranchesWithResponse call
+func ParseListVercelCiBranchesResponse(rsp *http.Response) (*ListVercelCiBranchesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiBranchesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Branches []struct {
+				Count float32 `json:"count"`
+				Name  string  `json:"name"`
+			} `json:"branches"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListVercelCiInvocationsResponse parses an HTTP response from a ListVercelCiInvocationsWithResponse call
+func ParseListVercelCiInvocationsResponse(rsp *http.Response) (*ListVercelCiInvocationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListVercelCiInvocationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Invocations []struct {
+				Attempt             float32 `json:"attempt"`
+				BootstrappingFailed *struct {
+					Reason string `json:"reason"`
+				} `json:"bootstrappingFailed,omitempty"`
+				BootstrappingStarted *struct {
+					StartedAt float32 `json:"startedAt"`
+				} `json:"bootstrappingStarted,omitempty"`
+				CommitSha string `json:"commitSha"`
+				Completed *struct {
+					CompletedAt float32                                                                      `json:"completedAt"`
+					Conclusion  *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion `json:"conclusion,omitempty"`
+				} `json:"completed,omitempty"`
+				CreatedAt             float32 `json:"createdAt"`
+				InvocationId          string  `json:"invocationId"`
+				JobDefinitionsCreated *struct {
+					Names       []string                                                                             `json:"names"`
+					ScheduledAt *float32                                                                             `json:"scheduledAt,omitempty"`
+					Source      *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source `json:"source,omitempty"`
+				} `json:"jobDefinitionsCreated,omitempty"`
+				Ref           string `json:"ref"`
+				RepositoryKey string `json:"repositoryKey"`
+
+				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
+				RunConclusion *struct {
+					Result ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result `json:"result"`
+				} `json:"runConclusion,omitempty"`
+				SandboxNamed *struct {
+					ReadyAt          *float32 `json:"readyAt,omitempty"`
+					SandboxName      string   `json:"sandboxName"`
+					WorkingDirectory string   `json:"workingDirectory"`
+				} `json:"sandboxNamed,omitempty"`
+				SandboxSnapshotted *struct {
+					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
+					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
+					WorkingDirectory  string   `json:"workingDirectory"`
+				} `json:"sandboxSnapshotted,omitempty"`
+
+				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
+				SetupConclusion *struct {
+					Result ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result `json:"result"`
+				} `json:"setupConclusion,omitempty"`
+				Skipped *struct {
+					Reason string `json:"reason"`
+				} `json:"skipped,omitempty"`
+				Source ListVercelCiInvocations200JSONResponseBody_Invocations_Source `json:"source"`
+				Status ListVercelCiInvocations200JSONResponseBody_Invocations_Status `json:"status"`
+				TeamId string                                                        `json:"teamId"`
+			} `json:"invocations"`
+			Pagination struct {
+				NextCursor *string `json:"nextCursor,omitempty"`
+			} `json:"pagination"`
+			Repositories map[string]interface{} `json:"repositories"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest struct {
+			Error struct {
+				Code    string  `json:"code"`
+				Limit   float32 `json:"limit"`
+				Message string  `json:"message"`
+				Name    string  `json:"name"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest struct {
+			Error struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"error"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse parses an HTTP response from a CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithResponse call
+func ParseCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse(rsp *http.Response) (*CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON204 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse parses an HTTP response from a ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithResponse call
+func ParseReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse(rsp *http.Response) (*ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 408:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse parses an HTTP response from a DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse call
+func ParseDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse(rsp *http.Response) (*DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse parses an HTTP response from a HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithResponse call
+func ParseHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse(rsp *http.Response) (*HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse parses an HTTP response from a ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithResponse call
+func ParseReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse(rsp *http.Response) (*ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse parses an HTTP response from a GetByTeamSlugByProjectSlugByRepositoryNameTagsListWithResponse call
+func ParseGetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(rsp *http.Response) (*GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Name string   `json:"name"`
+			Tags []string `json:"tags"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDeploymentEventsResponse parses an HTTP response from a GetDeploymentEventsWithResponse call
+func ParseGetDeploymentEventsResponse(rsp *http.Response) (*GetDeploymentEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDeploymentEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.Header.Get("Content-Type") == "application/json" && rsp.StatusCode == 200:
+		var dest []*GetDeploymentEvents200JSONResponseBody_Item
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.Header.Get("Content-Type") == "application/stream+json" && rsp.StatusCode == 200:
+		var dest GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationstreamJSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchDomainResponse parses an HTTP response from a PatchDomainWithResponse call
+func ParsePatchDomainResponse(rsp *http.Response) (*PatchDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PatchDomain200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListUserEventsResponse parses an HTTP response from a ListUserEventsWithResponse call
+func ParseListUserEventsResponse(rsp *http.Response) (*ListUserEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListUserEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Events Array of events generated by the User.
+			Events []UserEvent `json:"events"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesV3Response parses an HTTP response from a CreateSandboxesV3WithResponse call
+func ParseCreateSandboxesV3Response(rsp *http.Response) (*CreateSandboxesV3Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesV3Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesSessionsBySessionIdSnapshotV3Response parses an HTTP response from a CreateSandboxesSessionsBySessionIdSnapshotV3WithResponse call
+func ParseCreateSandboxesSessionsBySessionIdSnapshotV3Response(rsp *http.Response) (*CreateSandboxesSessionsBySessionIdSnapshotV3Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesSessionsBySessionIdSnapshotV3Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+
+			// Snapshot This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+			Snapshot Snapshot `json:"snapshot"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesByNameForkV3Response parses an HTTP response from a CreateSandboxesByNameForkV3WithResponse call
+func ParseCreateSandboxesByNameForkV3Response(rsp *http.Response) (*CreateSandboxesByNameForkV3Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesByNameForkV3Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetTeamMembersResponse parses an HTTP response from a GetTeamMembersWithResponse call
+func ParseGetTeamMembersResponse(rsp *http.Response) (*GetTeamMembersResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetTeamMembersResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			EmailInviteCodes *[]struct {
+				AccessGroups    *[]string                                                             `json:"accessGroups,omitempty"`
+				CreatedAt       *float32                                                              `json:"createdAt,omitempty"`
+				Email           *string                                                               `json:"email,omitempty"`
+				Entitlements    *[]string                                                             `json:"entitlements,omitempty"`
+				Expired         *GetTeamMembers200JSONResponseBodyEmailInviteCodesExpired             `json:"expired,omitempty"`
+				Id              string                                                                `json:"id"`
+				IsDSyncUser     GetTeamMembers200JSONResponseBodyEmailInviteCodesIsDSyncUser          `json:"isDSyncUser"`
+				Projects        *map[string]GetTeamMembers200JSONResponseBodyEmailInviteCodesProjects `json:"projects,omitempty"`
+				Role            *GetTeamMembers200JSONResponseBodyEmailInviteCodesRole                `json:"role,omitempty"`
+				TeamPermissions *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamPermissions   `json:"teamPermissions,omitempty"`
+				TeamRoles       *[]GetTeamMembers200JSONResponseBodyEmailInviteCodesTeamRoles         `json:"teamRoles,omitempty"`
+			} `json:"emailInviteCodes,omitempty"`
+			Members []struct {
+				// AccessRequestedAt Timestamp in milliseconds for when this team member was accepted by an owner.
+				//
+				// Example: 1588820733602
+				AccessRequestedAt *float32 `json:"accessRequestedAt,omitempty"`
+
+				// Avatar ID of the file for the Avatar of this member.
+				//
+				// Example: 123a6c5209bc3778245d011443644c8d27dc2c50
+				Avatar *string `json:"avatar,omitempty"`
+
+				// Bitbucket Information about the Bitbucket account of this user.
+				Bitbucket *struct {
+					Login *string `json:"login,omitempty"`
+				} `json:"bitbucket,omitempty"`
+
+				// Confirmed Boolean that indicates if this member was confirmed by an owner.
+				//
+				// Example: true
+				Confirmed GetTeamMembers200JSONResponseBodyMembersConfirmed `json:"confirmed"`
+
+				// CreatedAt Timestamp in milliseconds when this member was added.
+				//
+				// Example: 1588720733602
+				CreatedAt float32 `json:"createdAt"`
+
+				// Email The email of this member.
+				//
+				// Example: jane.doe@example.com
+				Email string `json:"email"`
+
+				// Github Information about the GitHub account for this user.
+				Github *struct {
+					Login *string `json:"login,omitempty"`
+				} `json:"github,omitempty"`
+
+				// Gitlab Information about the GitLab account of this user.
+				Gitlab *struct {
+					Login *string `json:"login,omitempty"`
+				} `json:"gitlab,omitempty"`
+
+				// IsEnterpriseManaged Indicates whether the user is managed by an enterprise.
+				IsEnterpriseManaged *GetTeamMembers200JSONResponseBodyMembersIsEnterpriseManaged `json:"isEnterpriseManaged,omitempty"`
+
+				// JoinedFrom Map with information about the members origin if they joined by requesting access.
+				JoinedFrom *struct {
+					CommitId         *string                                                         `json:"commitId,omitempty"`
+					DsyncConnectedAt *float32                                                        `json:"dsyncConnectedAt,omitempty"`
+					DsyncUserId      *string                                                         `json:"dsyncUserId,omitempty"`
+					GitUserId        *GetTeamMembers200JSONResponseBody_Members_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
+					GitUserLogin     *string                                                         `json:"gitUserLogin,omitempty"`
+					IdpUserId        *string                                                         `json:"idpUserId,omitempty"`
+					Origin           GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin        `json:"origin"`
+					RepoId           *string                                                         `json:"repoId,omitempty"`
+					RepoPath         *string                                                         `json:"repoPath,omitempty"`
+					SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
+					SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
+				} `json:"joinedFrom,omitempty"`
+
+				// Name The name of this user.
+				//
+				// Example: Jane Doe
+				Name *string `json:"name,omitempty"`
+
+				// Projects Array of project memberships
+				Projects *[]struct {
+					Id   string                                                `json:"id"`
+					Name string                                                `json:"name"`
+					Role *GetTeamMembers200JSONResponseBodyMembersProjectsRole `json:"role,omitempty"`
+				} `json:"projects,omitempty"`
+
+				// Role Role of this user in the team.
+				//
+				// Example: OWNER
+				Role GetTeamMembers200JSONResponseBodyMembersRole `json:"role"`
+
+				// Uid The ID of this user.
+				//
+				// Example: zTuNVUXEAvvnNN3IaqinkyMw
+				Uid string `json:"uid"`
+
+				// Username The unique username of this user.
+				//
+				// Example: jane-doe
+				Username string `json:"username"`
+			} `json:"members"`
+			Pagination struct {
+				// Count Amount of items in the current page.
+				//
+				// Example: 20
+				Count   float32                                            `json:"count"`
+				HasNext GetTeamMembers200JSONResponseBodyPaginationHasNext `json:"hasNext"`
+
+				// Next Timestamp that must be used to request the next page.
+				//
+				// Example: 1540095775951
+				Next *float32 `json:"next"`
+
+				// Prev Timestamp that must be used to request the previous page.
+				//
+				// Example: 1540095775951
+				Prev *float32 `json:"prev"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAuthTokenResponse parses an HTTP response from a CreateAuthTokenWithResponse call
+func ParseCreateAuthTokenResponse(rsp *http.Response) (*CreateAuthTokenResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAuthTokenResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// BearerToken The authentication token's actual value. This token is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
+			//
+			// Example: uRKJSTt0L4RaSkiMj41QTkxM
+			BearerToken string `json:"bearerToken"`
+
+			// Token Authentication token metadata.
+			Token AuthToken `json:"token"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAuthTokenResponse parses an HTTP response from a DeleteAuthTokenWithResponse call
+func ParseDeleteAuthTokenResponse(rsp *http.Response) (*DeleteAuthTokenResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAuthTokenResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// TokenId The unique identifier of the token that was deleted.
+			//
+			// Example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
+			TokenId string `json:"tokenId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListAliasesResponse parses an HTTP response from a ListAliasesWithResponse call
+func ParseListAliasesResponse(rsp *http.Response) (*ListAliasesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAliasesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Aliases []struct {
+				// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
+				//
+				// Example: my-alias.vercel.app
+				Alias string `json:"alias"`
+
+				// Created The date when the alias was created
+				//
+				// Example: 2017-04-26T23:00:34.232Z
+				Created time.Time `json:"created"`
+
+				// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
+				//
+				// Example: 1540095775941
+				CreatedAt *float32 `json:"createdAt,omitempty"`
+
+				// Creator Information of the user who created the alias
+				Creator *struct {
+					// Email Email of the user who created the alias
+					//
+					// Example: john-doe@gmail.com
+					Email *string `json:"email,omitempty"`
+
+					// Uid ID of the user who created the alias
+					//
+					// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
+					Uid string `json:"uid"`
+
+					// Username Username of the user who created the alias
+					//
+					// Example: john-doe
+					Username *string `json:"username,omitempty"`
+				} `json:"creator,omitempty"`
+
+				// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
+				//
+				// Example: 1540095775941
+				DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+				// Deployment A map with the deployment ID, URL and metadata
+				Deployment *struct {
+					// Id The deployment unique identifier
+					//
+					// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
+					Id string `json:"id"`
+
+					// Meta The deployment metadata
+					//
+					// Example: {}
+					Meta *string `json:"meta,omitempty"`
+
+					// Url The deployment unique URL
+					//
+					// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+					Url *string `json:"url,omitempty"`
+				} `json:"deployment,omitempty"`
+
+				// DeploymentId The deployment ID
+				//
+				// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
+				DeploymentId *string `json:"deploymentId"`
+
+				// Microfrontends The microfrontends for the alias including the routing configuration
+				Microfrontends *struct {
+					Applications ListAliases200JSONResponseBody_Aliases_Microfrontends_Applications `json:"applications"`
+					DefaultApp   struct {
+						ProjectId string `json:"projectId"`
+					} `json:"defaultApp"`
+				} `json:"microfrontends,omitempty"`
+
+				// ProjectId The unique identifier of the project
+				//
+				// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
+				ProjectId *string `json:"projectId"`
+
+				// ProtectionBypass The protection bypass for the alias
+				ProtectionBypass *map[string]ListAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+
+				// Redirect Target destination domain for redirect when the alias is a redirect
+				Redirect *string `json:"redirect,omitempty"`
+
+				// RedirectStatusCode Status code to be used on redirect
+				RedirectStatusCode *ListAliases200JSONResponseBodyAliasesRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+
+				// Uid The unique identifier of the alias
+				Uid string `json:"uid"`
+
+				// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
+				//
+				// Example: 1540095775941
+				UpdatedAt *float32 `json:"updatedAt,omitempty"`
+			} `json:"aliases"`
+
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAliasResponse parses an HTTP response from a GetAliasWithResponse call
+func ParseGetAliasResponse(rsp *http.Response) (*GetAliasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAliasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Alias The alias name, it could be a `.vercel.app` subdomain or a custom domain
+			//
+			// Example: my-alias.vercel.app
+			Alias string `json:"alias"`
+
+			// Created The date when the alias was created
+			//
+			// Example: 2017-04-26T23:00:34.232Z
+			Created time.Time `json:"created"`
+
+			// CreatedAt The date when the alias was created in milliseconds since the UNIX epoch
+			//
+			// Example: 1540095775941
+			CreatedAt *float32 `json:"createdAt,omitempty"`
+
+			// Creator Information of the user who created the alias
+			Creator *struct {
+				// Email Email of the user who created the alias
+				//
+				// Example: john-doe@gmail.com
+				Email *string `json:"email,omitempty"`
+
+				// Uid ID of the user who created the alias
+				//
+				// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
+				Uid string `json:"uid"`
+
+				// Username Username of the user who created the alias
+				//
+				// Example: john-doe
+				Username *string `json:"username,omitempty"`
+			} `json:"creator,omitempty"`
+
+			// DeletedAt The date when the alias was deleted in milliseconds since the UNIX epoch
+			//
+			// Example: 1540095775941
+			DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+			// Deployment A map with the deployment ID, URL and metadata
+			Deployment *struct {
+				// Id The deployment unique identifier
+				//
+				// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
+				Id string `json:"id"`
+
+				// Meta The deployment metadata
+				//
+				// Example: {}
+				Meta *string `json:"meta,omitempty"`
+
+				// Url The deployment unique URL
+				//
+				// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+				Url *string `json:"url,omitempty"`
+			} `json:"deployment,omitempty"`
+
+			// DeploymentId The deployment ID
+			//
+			// Example: dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx
+			DeploymentId *string `json:"deploymentId"`
+
+			// Microfrontends The microfrontends for the alias including the routing configuration
+			Microfrontends *struct {
+				Applications GetAlias200JSONResponseBody_Microfrontends_Applications `json:"applications"`
+				DefaultApp   struct {
+					ProjectId string `json:"projectId"`
+				} `json:"defaultApp"`
+			} `json:"microfrontends,omitempty"`
+
+			// ProjectId The unique identifier of the project
+			//
+			// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
+			ProjectId *string `json:"projectId"`
+
+			// ProtectionBypass The protection bypass for the alias
+			ProtectionBypass *map[string]GetAlias200JSONResponseBody_ProtectionBypass_AdditionalProperties `json:"protectionBypass,omitempty"`
+
+			// Redirect Target destination domain for redirect when the alias is a redirect
+			Redirect *string `json:"redirect,omitempty"`
+
+			// RedirectStatusCode Status code to be used on redirect
+			RedirectStatusCode *GetAlias200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+
+			// Uid The unique identifier of the alias
+			Uid string `json:"uid"`
+
+			// UpdatedAt The date when the alias was updated in milliseconds since the UNIX epoch
+			//
+			// Example: 1540095775941
+			UpdatedAt *float32 `json:"updatedAt,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateSandboxesV4Response parses an HTTP response from a CreateSandboxesV4WithResponse call
+func ParseCreateSandboxesV4Response(rsp *http.Response) (*CreateSandboxesV4Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateSandboxesV4Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Routes []SandboxPublicRoute `json:"routes"`
+
+			// Sandbox This object contains information related to a Vercel NamedSandbox.
+			Sandbox NamedSandbox `json:"sandbox"`
+
+			// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+			Session Session `json:"session"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 502:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainsResponse parses an HTTP response from a GetDomainsWithResponse call
+func ParseGetDomainsResponse(rsp *http.Response) (*GetDomainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Domains []struct {
+				// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
+				//
+				// Example: 1613602938882
+				BoughtAt *float32 `json:"boughtAt"`
+
+				// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
+				//
+				// Example: 1613602938882
+				CreatedAt float32 `json:"createdAt"`
+
+				// Creator An object containing information of the domain creator, including the user's id, username, and email.
+				//
+				// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
+				Creator struct {
+					CustomerId       *string                                                      `json:"customerId,omitempty"`
+					Email            string                                                       `json:"email"`
+					Id               string                                                       `json:"id"`
+					IsDomainReseller *GetDomains200JSONResponseBodyDomainsCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
+					Username         string                                                       `json:"username"`
+				} `json:"creator"`
+
+				// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				CustomNameservers *[]string `json:"customNameservers,omitempty"`
+
+				// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
+				//
+				// Example: auto
+				EchMode GetDomains200JSONResponseBodyDomainsEchMode `json:"echMode"`
+
+				// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
+				ExpiresAt *float32 `json:"expiresAt"`
+
+				// Id The unique identifier of the domain.
+				//
+				// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+				Id string `json:"id"`
+
+				// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
+				//
+				// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
+				IntendedNameservers []string `json:"intendedNameservers"`
+
+				// Name The domain name.
+				//
+				// Example: example.com
+				Name string `json:"name"`
+
+				// Nameservers A list of the current nameservers of the domain.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				Nameservers []string `json:"nameservers"`
+
+				// Renew Indicates whether the domain is set to automatically renew.
+				//
+				// Example: true
+				Renew *GetDomains200JSONResponseBodyDomainsRenew `json:"renew,omitempty"`
+
+				// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
+				//
+				// Example: zeit.world
+				ServiceType GetDomains200JSONResponseBodyDomainsServiceType `json:"serviceType"`
+				TeamId      *string                                         `json:"teamId"`
+
+				// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
+				//
+				// Example: 1613602938882
+				TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
+
+				// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
+				//
+				// Example: 1613602938882
+				TransferredAt *float32 `json:"transferredAt,omitempty"`
+				UserId        string   `json:"userId"`
+
+				// Verified If the domain has the ownership verified.
+				//
+				// Example: true
+				Verified GetDomains200JSONResponseBodyDomainsVerified `json:"verified"`
+			} `json:"domains"`
+
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainResponse parses an HTTP response from a GetDomainWithResponse call
+func ParseGetDomainResponse(rsp *http.Response) (*GetDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Domain struct {
+				// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
+				//
+				// Example: 1613602938882
+				BoughtAt *float32 `json:"boughtAt"`
+
+				// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
+				//
+				// Example: 1613602938882
+				CreatedAt float32 `json:"createdAt"`
+
+				// Creator An object containing information of the domain creator, including the user's id, username, and email.
+				//
+				// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
+				Creator struct {
+					CustomerId       *string                                                    `json:"customerId,omitempty"`
+					Email            string                                                     `json:"email"`
+					Id               string                                                     `json:"id"`
+					IsDomainReseller *GetDomain200JSONResponseBodyDomainCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
+					Username         string                                                     `json:"username"`
+				} `json:"creator"`
+
+				// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				CustomNameservers *[]string `json:"customNameservers,omitempty"`
+
+				// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
+				//
+				// Example: auto
+				EchMode GetDomain200JSONResponseBodyDomainEchMode `json:"echMode"`
+
+				// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
+				ExpiresAt *float32 `json:"expiresAt"`
+
+				// Id The unique identifier of the domain.
+				//
+				// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+				Id string `json:"id"`
+
+				// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
+				//
+				// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
+				IntendedNameservers []string `json:"intendedNameservers"`
+
+				// Name The domain name.
+				//
+				// Example: example.com
+				Name string `json:"name"`
+
+				// Nameservers A list of the current nameservers of the domain.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				Nameservers []string `json:"nameservers"`
+
+				// Renew Indicates whether the domain is set to automatically renew.
+				//
+				// Example: true
+				Renew *GetDomain200JSONResponseBodyDomainRenew `json:"renew,omitempty"`
+
+				// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
+				//
+				// Example: zeit.world
+				ServiceType GetDomain200JSONResponseBodyDomainServiceType `json:"serviceType"`
+				Suffix      GetDomain200JSONResponseBodyDomainSuffix      `json:"suffix"`
+				TeamId      *string                                       `json:"teamId"`
+
+				// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
+				//
+				// Example: 1613602938882
+				TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
+
+				// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
+				//
+				// Example: 1613602938882
+				TransferredAt *float32 `json:"transferredAt,omitempty"`
+				UserId        string   `json:"userId"`
+
+				// Verified If the domain has the ownership verified.
+				//
+				// Example: true
+				Verified GetDomain200JSONResponseBodyDomainVerified `json:"verified"`
+			} `json:"domain"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetRecordsResponse parses an HTTP response from a GetRecordsWithResponse call
+func ParseGetRecordsResponse(rsp *http.Response) (*GetRecordsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetRecordsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetRecords200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAuthTokenResponse parses an HTTP response from a GetAuthTokenWithResponse call
+func ParseGetAuthTokenResponse(rsp *http.Response) (*GetAuthTokenResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAuthTokenResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Token Authentication token metadata.
+			Token AuthToken `json:"token"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListDeploymentFilesResponse parses an HTTP response from a ListDeploymentFilesWithResponse call
+func ParseListDeploymentFilesResponse(rsp *http.Response) (*ListDeploymentFilesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDeploymentFilesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []FileTree
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteDomainResponse parses an HTTP response from a DeleteDomainWithResponse call
+func ParseDeleteDomainResponse(rsp *http.Response) (*DeleteDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Uid string `json:"uid"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDomainConfigResponse parses an HTTP response from a GetDomainConfigWithResponse call
+func ParseGetDomainConfigResponse(rsp *http.Response) (*GetDomainConfigResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDomainConfigResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// AcceptedChallenges Which challenge types the domain can use for issuing certs.
+			AcceptedChallenges []GetDomainConfig200JSONResponseBodyAcceptedChallenges `json:"acceptedChallenges"`
+
+			// ConfiguredBy How we see the domain's configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain's A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.
+			ConfiguredBy *GetDomainConfig200JSONResponseBodyConfiguredBy `json:"configuredBy"`
+
+			// Misconfigured Whether or not the domain is configured AND we can automatically generate a TLS certificate.
+			Misconfigured GetDomainConfig200JSONResponseBodyMisconfigured `json:"misconfigured"`
+
+			// RecommendedCNAME Recommended CNAMEs for the domain. rank=1 is the preferred value to use.
+			RecommendedCNAME []struct {
+				Rank  float32 `json:"rank"`
+				Value string  `json:"value"`
+			} `json:"recommendedCNAME"`
+
+			// RecommendedIPv4 Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.
+			RecommendedIPv4 []struct {
+				Rank  float32  `json:"rank"`
+				Value []string `json:"value"`
+			} `json:"recommendedIPv4"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListAuthTokensResponse parses an HTTP response from a ListAuthTokensWithResponse call
+func ParseListAuthTokensResponse(rsp *http.Response) (*ListAuthTokensResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAuthTokensResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListAuthTokens200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDeploymentsResponse parses an HTTP response from a GetDeploymentsWithResponse call
+func ParseGetDeploymentsResponse(rsp *http.Response) (*GetDeploymentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDeploymentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Deployments []struct {
+				AliasAssigned *GetDeployments200JSONResponseBody_Deployments_AliasAssigned `json:"aliasAssigned,omitempty"`
+
+				// AliasError An error object in case aliasing of the deployment failed.
+				AliasError *struct {
+					Code    string `json:"code"`
+					Message string `json:"message"`
+				} `json:"aliasError,omitempty"`
+
+				// Attribution Commit attribution metadata
+				Attribution *struct {
+					// CommitMeta Commit metadata from the git commit author
+					CommitMeta *struct {
+						// Email Email from git commit author
+						Email *string `json:"email,omitempty"`
+
+						// IsVerified Whether the commit was signed/verified (GitHub only, others return undefined)
+						IsVerified *GetDeployments200JSONResponseBodyDeploymentsAttributionCommitMetaIsVerified `json:"isVerified,omitempty"`
+
+						// Name Name from git commit author
+						Name *string `json:"name,omitempty"`
+					} `json:"commitMeta,omitempty"`
+
+					// GitUser Git provider user associated with the commit author email (only set if resolved)
+					GitUser *struct {
+						Id GetDeployments200JSONResponseBody_Deployments_Attribution_GitUser_Id `json:"id"`
+
+						// Login Git provider username/login
+						Login string `json:"login"`
+
+						// Provider The git provider (github, gitlab, bitbucket)
+						Provider *string `json:"provider,omitempty"`
+
+						// Type User type
+						Type *string `json:"type,omitempty"`
+					} `json:"gitUser,omitempty"`
+
+					// VercelUser Vercel user linked to the git provider account (only set if resolved)
+					VercelUser *struct {
+						// Id Vercel user ID
+						Id string `json:"id"`
+
+						// TeamRoles Team roles at time of deployment
+						TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+						// Username Vercel username
+						Username string `json:"username"`
+					} `json:"vercelUser,omitempty"`
+				} `json:"attribution,omitempty"`
+
+				// BuildingAt Timestamp of when the deployment started building at.
+				//
+				// Example: 1609492210000
+				BuildingAt *float32 `json:"buildingAt,omitempty"`
+
+				// Checks Detailed information about v2 deployment checks. Includes information about blocked workflows in the deployment lifecycle.
+				Checks *struct {
+					DeploymentAlias struct {
+						CompletedAt *float32                                                               `json:"completedAt,omitempty"`
+						StartedAt   float32                                                                `json:"startedAt"`
+						State       GetDeployments200JSONResponseBodyDeploymentsChecksDeploymentAliasState `json:"state"`
+					} `json:"deployment-alias"`
+				} `json:"checks,omitempty"`
+
+				// ChecksConclusion Conclusion for checks
+				ChecksConclusion *GetDeployments200JSONResponseBodyDeploymentsChecksConclusion `json:"checksConclusion,omitempty"`
+
+				// ChecksState State of all registered checks
+				ChecksState *GetDeployments200JSONResponseBodyDeploymentsChecksState `json:"checksState,omitempty"`
+
+				// ConnectBuildsEnabled The flag saying if Secure Compute network is used for builds
+				ConnectBuildsEnabled *GetDeployments200JSONResponseBodyDeploymentsConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+
+				// ConnectConfigurationId The ID of Secure Compute network used for this deployment
+				ConnectConfigurationId *string `json:"connectConfigurationId,omitempty"`
+
+				// Created Timestamp of when the deployment got created.
+				//
+				// Example: 1609492210000
+				Created   float32 `json:"created"`
+				CreatedAt float32 `json:"createdAt"`
+
+				// Creator Metadata information of the deployment creator.
+				Creator struct {
+					// Email The email address of the user.
+					//
+					// Example: example@example.com
+					Email *string `json:"email,omitempty"`
+
+					// GithubLogin The GitHub login of the user.
+					//
+					// Example: johndoe
+					GithubLogin *string `json:"githubLogin,omitempty"`
+
+					// GitlabLogin The GitLab login of the user.
+					//
+					// Example: johndoe
+					GitlabLogin *string `json:"gitlabLogin,omitempty"`
+
+					// Type Principal type of the deployment creator. Defaults to `"user"` if absent (legacy deployments created before principal attribution was recorded).
+					Type *GetDeployments200JSONResponseBodyDeploymentsCreatorType `json:"type,omitempty"`
+
+					// Uid Stable creator id across principal types. This may be a user ID, an app ID, an integration configuration ID, or `system`.
+					//
+					// Example: eLrCnEgbKhsHyfbiNR7E8496
+					Uid string `json:"uid"`
+
+					// Username The username of the user.
+					//
+					// Example: johndoe
+					Username *string `json:"username,omitempty"`
+				} `json:"creator"`
+
+				// CustomEnvironment The custom environment used for this deployment, if any
+				CustomEnvironment *struct {
+					Id   string  `json:"id"`
+					Slug *string `json:"slug,omitempty"`
+				} `json:"customEnvironment,omitempty"`
+
+				// DefaultRoute The default route that should be used for screenshots and links if configured with microfrontends.
+				//
+				// Example: /docs
+				DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+				// Deleted Timestamp of when the deployment got deleted.
+				//
+				// Example: 1609492210000
+				Deleted *float32 `json:"deleted,omitempty"`
+
+				// ErrorCode Error code when the deployment is in an error state.
+				//
+				// Example: BUILD_FAILED
+				ErrorCode *string `json:"errorCode,omitempty"`
+
+				// ErrorMessage Error message when the deployment is in an canceled or error state.
+				//
+				// Example: The Deployment has been canceled because this project was not affected
+				ErrorMessage *string `json:"errorMessage,omitempty"`
+
+				// Expiration The expiration configured by the project retention policy
+				Expiration *float32 `json:"expiration,omitempty"`
+
+				// InspectorUrl Vercel URL to inspect the deployment.
+				//
+				// Example: https://vercel.com/acme/nextjs/J1hXN00qjUeoYfpEEf7dnDtpSiVq
+				InspectorUrl *string `json:"inspectorUrl"`
+
+				// IsRollbackCandidate Deployment can be used for instant rollback
+				IsRollbackCandidate *GetDeployments200JSONResponseBodyDeploymentsIsRollbackCandidate `json:"isRollbackCandidate,omitempty"`
+				ManualProvisioning  *struct {
+					// CompletedAt Timestamp when manual provisioning completed
+					CompletedAt *float32 `json:"completedAt,omitempty"`
+
+					// State Current provisioning state
+					State GetDeployments200JSONResponseBodyDeploymentsManualProvisioningState `json:"state"`
+				} `json:"manualProvisioning,omitempty"`
+
+				// Meta Metadata information from the Git provider.
+				Meta *map[string]string `json:"meta,omitempty"`
+
+				// Name The name of the deployment.
+				//
+				// Example: docs
+				Name string `json:"name"`
+
+				// OomReport Indicates if the deployment encountered an out-of-memory error.
+				//
+				// Example: out-of-memory
+				OomReport *GetDeployments200JSONResponseBodyDeploymentsOomReport `json:"oomReport,omitempty"`
+
+				// PassiveConnectConfigurationId The ID of Secure Compute network used for this deployment's passive functions
+				PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
+
+				// Platform Metadata about the source platform that triggered the deployment.
+				Platform *struct {
+					// Creator The user on the external platform who triggered the deployment.
+					Creator struct {
+						// Avatar URL of the platform user's avatar image.
+						Avatar *string `json:"avatar,omitempty"`
+
+						// Name Display name of the platform user.
+						Name string `json:"name"`
+					} `json:"creator"`
+
+					// Meta Arbitrary key-value metadata provided by the platform.
+					Meta *map[string]string `json:"meta,omitempty"`
+
+					// Origin Reference back to the entity on the platform that initiated the deployment.
+					Origin struct {
+						// Type Whether the value is an opaque identifier or a URL.
+						Type GetDeployments200JSONResponseBodyDeploymentsPlatformOriginType `json:"type"`
+
+						// Value The identifier or URL pointing to the originating entity.
+						Value string `json:"value"`
+					} `json:"origin"`
+
+					// Source The external platform that created the deployment (e.g. its display name).
+					Source struct {
+						// Name Display name of the platform.
+						Name string `json:"name"`
+					} `json:"source"`
+				} `json:"platform,omitempty"`
+				Prebuilt *GetDeployments200JSONResponseBodyDeploymentsPrebuilt `json:"prebuilt,omitempty"`
+
+				// ProjectId The project ID of the deployment
+				ProjectId string `json:"projectId"`
+
+				// ProjectSettings The project settings which was used for this deployment
+				ProjectSettings *struct {
+					BuildCommand                  *string                                                                                   `json:"buildCommand,omitempty"`
+					CommandForIgnoringBuildStep   *string                                                                                   `json:"commandForIgnoringBuildStep,omitempty"`
+					CreatedAt                     *float32                                                                                  `json:"createdAt,omitempty"`
+					CustomerSupportCodeVisibility *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsCustomerSupportCodeVisibility `json:"customerSupportCodeVisibility,omitempty"`
+					DevCommand                    *string                                                                                   `json:"devCommand,omitempty"`
+					Framework                     *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsFramework                     `json:"framework,omitempty"`
+
+					// GitComments Since June '23
+					GitComments *struct {
+						// OnCommit Whether the Vercel bot should comment on commits
+						OnCommit GetDeployments200JSONResponseBodyDeploymentsProjectSettingsGitCommentsOnCommit `json:"onCommit"`
+
+						// OnPullRequest Whether the Vercel bot should comment on PRs
+						OnPullRequest GetDeployments200JSONResponseBodyDeploymentsProjectSettingsGitCommentsOnPullRequest `json:"onPullRequest"`
+					} `json:"gitComments,omitempty"`
+					GitForkProtection               *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsGitForkProtection               `json:"gitForkProtection,omitempty"`
+					GitLFS                          *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsGitLFS                          `json:"gitLFS,omitempty"`
+					InstallCommand                  *string                                                                                     `json:"installCommand,omitempty"`
+					NodeVersion                     *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsNodeVersion                     `json:"nodeVersion,omitempty"`
+					OutputDirectory                 *string                                                                                     `json:"outputDirectory,omitempty"`
+					RootDirectory                   *string                                                                                     `json:"rootDirectory,omitempty"`
+					SkipGitConnectDuringLink        *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsSkipGitConnectDuringLink        `json:"skipGitConnectDuringLink,omitempty"`
+					SourceFilesOutsideRootDirectory *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsSourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory,omitempty"`
+					SpeedInsights                   *struct {
+						CanceledAt *float32 `json:"canceledAt,omitempty"`
+
+						// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+						DataReceivedAt *float32                                                                         `json:"dataReceivedAt,omitempty"`
+						DisabledAt     *float32                                                                         `json:"disabledAt,omitempty"`
+						EnabledAt      *float32                                                                         `json:"enabledAt,omitempty"`
+						HasData        *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsSpeedInsightsHasData `json:"hasData,omitempty"`
+						Id             string                                                                           `json:"id"`
+						PaidAt         *float32                                                                         `json:"paidAt,omitempty"`
+					} `json:"speedInsights,omitempty"`
+
+					// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+					VercelFlags *struct {
+						EnabledAt *float32 `json:"enabledAt,omitempty"`
+					} `json:"vercelFlags,omitempty"`
+					WebAnalytics *struct {
+						CanceledAt *float32                                                                        `json:"canceledAt,omitempty"`
+						DisabledAt *float32                                                                        `json:"disabledAt,omitempty"`
+						EnabledAt  *float32                                                                        `json:"enabledAt,omitempty"`
+						HasData    *GetDeployments200JSONResponseBodyDeploymentsProjectSettingsWebAnalyticsHasData `json:"hasData,omitempty"`
+						Id         string                                                                          `json:"id"`
+					} `json:"webAnalytics,omitempty"`
+				} `json:"projectSettings,omitempty"`
+
+				// ProposedExpiration The expiration proposed to replace the existing expiration
+				ProposedExpiration *float32 `json:"proposedExpiration,omitempty"`
+
+				// Ready Timestamp of when the deployment got ready.
+				//
+				// Example: 1609492210000
+				Ready      *float32                                               `json:"ready,omitempty"`
+				ReadyState GetDeployments200JSONResponseBodyDeploymentsReadyState `json:"readyState"`
+
+				// ReadySubstate Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic
+				ReadySubstate *GetDeployments200JSONResponseBodyDeploymentsReadySubstate `json:"readySubstate,omitempty"`
+
+				// SeatBlock NSNB Blocked metadata
+				SeatBlock *struct {
+					// BlockCode The NSNB decision code for the seat block. TODO: We should consolidate block types.
+					BlockCode GetDeployments200JSONResponseBodyDeploymentsSeatBlockBlockCode `json:"blockCode"`
+
+					// GitProvider The git provider type associated with gitUserId.
+					GitProvider *GetDeployments200JSONResponseBodyDeploymentsSeatBlockGitProvider  `json:"gitProvider,omitempty"`
+					GitUserId   *GetDeployments200JSONResponseBody_Deployments_SeatBlock_GitUserId `json:"gitUserId,omitempty"`
+
+					// IsVerified Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
+					IsVerified *GetDeployments200JSONResponseBodyDeploymentsSeatBlockIsVerified `json:"isVerified,omitempty"`
+
+					// UserId The blocked vercel user ID.
+					UserId *string `json:"userId,omitempty"`
+				} `json:"seatBlock,omitempty"`
+
+				// SoftDeletedByRetention Optional flag to indicate if the deployment was soft deleted by retention policy.
+				//
+				// Example: true
+				SoftDeletedByRetention *GetDeployments200JSONResponseBodyDeploymentsSoftDeletedByRetention `json:"softDeletedByRetention,omitempty"`
+
+				// Source The source of the deployment.
+				//
+				// Example: cli
+				Source *GetDeployments200JSONResponseBodyDeploymentsSource `json:"source,omitempty"`
+
+				// State In which state is the deployment.
+				//
+				// Example: READY
+				State *GetDeployments200JSONResponseBodyDeploymentsState `json:"state,omitempty"`
+
+				// Target On which environment has the deployment been deployed to.
+				//
+				// Example: production
+				Target *GetDeployments200JSONResponseBodyDeploymentsTarget `json:"target,omitempty"`
+
+				// Type The type of the deployment.
+				//
+				// Example: LAMBDAS
+				Type GetDeployments200JSONResponseBodyDeploymentsType `json:"type"`
+
+				// Uid The unique identifier of the deployment.
+				//
+				// Example: dpl_2euZBFqxYdDMDG1jTrHFnNZ2eUVa
+				Uid string `json:"uid"`
+
+				// Undeleted Timestamp of when the deployment was undeleted.
+				//
+				// Example: 1609492210000
+				Undeleted *float32 `json:"undeleted,omitempty"`
+
+				// Url The URL of the deployment.
+				//
+				// Example: docs-9jaeg38me.vercel.app
+				Url string `json:"url"`
+			} `json:"deployments"`
+
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateOrTransferDomainResponse parses an HTTP response from a CreateOrTransferDomainWithResponse call
+func ParseCreateOrTransferDomainResponse(rsp *http.Response) (*CreateOrTransferDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateOrTransferDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Domain struct {
+				// BoughtAt If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
+				//
+				// Example: 1613602938882
+				BoughtAt *float32 `json:"boughtAt"`
+
+				// CreatedAt Timestamp in milliseconds when the domain was created in the registry.
+				//
+				// Example: 1613602938882
+				CreatedAt float32 `json:"createdAt"`
+
+				// Creator An object containing information of the domain creator, including the user's id, username, and email.
+				//
+				// Example: {"email":"demo@example.com","id":"ZspSRT4ljIEEmMHgoDwKWDei","username":"vercel_user"}
+				Creator struct {
+					CustomerId       *string                                                                 `json:"customerId,omitempty"`
+					Email            string                                                                  `json:"email"`
+					Id               string                                                                  `json:"id"`
+					IsDomainReseller *CreateOrTransferDomain200JSONResponseBodyDomainCreatorIsDomainReseller `json:"isDomainReseller,omitempty"`
+					Username         string                                                                  `json:"username"`
+				} `json:"creator"`
+
+				// CustomNameservers A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				CustomNameservers *[]string `json:"customNameservers,omitempty"`
+
+				// EchMode Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
+				//
+				// Example: auto
+				EchMode CreateOrTransferDomain200JSONResponseBodyDomainEchMode `json:"echMode"`
+
+				// ExpiresAt Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
+				ExpiresAt *float32 `json:"expiresAt"`
+
+				// Id The unique identifier of the domain.
+				//
+				// Example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+				Id string `json:"id"`
+
+				// IntendedNameservers A list of the intended nameservers for the domain to point to Vercel DNS.
+				//
+				// Example: ["ns1.vercel-dns.com","ns2.vercel-dns.com"]
+				IntendedNameservers []string `json:"intendedNameservers"`
+
+				// Name The domain name.
+				//
+				// Example: example.com
+				Name string `json:"name"`
+
+				// Nameservers A list of the current nameservers of the domain.
+				//
+				// Example: ["ns1.nameserver.net","ns2.nameserver.net"]
+				Nameservers []string `json:"nameservers"`
+
+				// Renew Indicates whether the domain is set to automatically renew.
+				//
+				// Example: true
+				Renew *CreateOrTransferDomain200JSONResponseBodyDomainRenew `json:"renew,omitempty"`
+
+				// ServiceType The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
+				//
+				// Example: zeit.world
+				ServiceType CreateOrTransferDomain200JSONResponseBodyDomainServiceType `json:"serviceType"`
+				TeamId      *string                                                    `json:"teamId"`
+
+				// TransferStartedAt If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
+				//
+				// Example: 1613602938882
+				TransferStartedAt *float32 `json:"transferStartedAt,omitempty"`
+
+				// TransferredAt Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
+				//
+				// Example: 1613602938882
+				TransferredAt *float32 `json:"transferredAt,omitempty"`
+				UserId        string   `json:"userId"`
+
+				// Verified If the domain has the ownership verified.
+				//
+				// Example: true
+				Verified CreateOrTransferDomain200JSONResponseBodyDomainVerified `json:"verified"`
+			} `json:"domain"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAllArtifactsResponse parses an HTTP response from a DeleteAllArtifactsWithResponse call
+func ParseDeleteAllArtifactsResponse(rsp *http.Response) (*DeleteAllArtifactsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAllArtifactsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			DeletedCount float32 `json:"deletedCount"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseArtifactQueryResponse parses an HTTP response from a ArtifactQueryWithResponse call
+func ParseArtifactQueryResponse(rsp *http.Response) (*ArtifactQueryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ArtifactQueryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]*ArtifactQuery200JSONResponseBody_AdditionalProperties
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRecordEventsResponse parses an HTTP response from a RecordEventsWithResponse call
+func ParseRecordEventsResponse(rsp *http.Response) (*RecordEventsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RecordEventsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseStatusResponse parses an HTTP response from a StatusWithResponse call
+func ParseStatusResponse(rsp *http.Response) (*StatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Status200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDownloadArtifactResponse parses an HTTP response from a DownloadArtifactWithResponse call
+func ParseDownloadArtifactResponse(rsp *http.Response) (*DownloadArtifactResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DownloadArtifactResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest openapi_types.File
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseArtifactExistsResponse parses an HTTP response from a ArtifactExistsWithResponse call
+func ParseArtifactExistsResponse(rsp *http.Response) (*ArtifactExistsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ArtifactExistsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseUploadArtifactResponse parses an HTTP response from a UploadArtifactWithResponse call
+func ParseUploadArtifactResponse(rsp *http.Response) (*UploadArtifactResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UploadArtifactResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			Urls []string `json:"urls"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetCertsResponse parses an HTTP response from a GetCertsWithResponse call
+func ParseGetCertsResponse(rsp *http.Response) (*GetCertsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCertsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Certs []struct {
+				AutoRenew GetCerts200JSONResponseBodyCertsAutoRenew `json:"autoRenew"`
+				Cns       []string                                  `json:"cns"`
+				CreatedAt float32                                   `json:"createdAt"`
+				ExpiresAt float32                                   `json:"expiresAt"`
+				Id        string                                    `json:"id"`
+			} `json:"certs"`
+
+			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+			Pagination Pagination `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseIssueCertResponse parses an HTTP response from a IssueCertWithResponse call
+func ParseIssueCertResponse(rsp *http.Response) (*IssueCertResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IssueCertResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AutoRenew IssueCert200JSONResponseBodyAutoRenew `json:"autoRenew"`
+			Cns       []string                              `json:"cns"`
+			CreatedAt float32                               `json:"createdAt"`
+			ExpiresAt float32                               `json:"expiresAt"`
+			Id        string                                `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 449:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUploadCertResponse parses an HTTP response from a UploadCertWithResponse call
+func ParseUploadCertResponse(rsp *http.Response) (*UploadCertResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UploadCertResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AutoRenew UploadCert200JSONResponseBodyAutoRenew `json:"autoRenew"`
+			Cns       []string                               `json:"cns"`
+			CreatedAt float32                                `json:"createdAt"`
+			ExpiresAt float32                                `json:"expiresAt"`
+			Id        string                                 `json:"id"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveCertResponse parses an HTTP response from a RemoveCertWithResponse call
+func ParseRemoveCertResponse(rsp *http.Response) (*RemoveCertResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveCertResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
 
 // ParseGetCertByIdResponse parses an HTTP response from a GetCertByIdWithResponse call
 func ParseGetCertByIdResponse(rsp *http.Response) (*GetCertByIdResponse, error) {
@@ -1360,6 +5504,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
 
+				// PrivateNpmUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PrivateNpmUsage *[]ACLAction `json:"privateNpmUsage,omitempty"`
+
 				// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
 
@@ -1725,13 +5872,14 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				CreatedAt float32 `json:"createdAt"`
 
 				// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
-				Description string `json:"description"`
+				Description string                                                       `json:"description"`
+				Principal   *GetProject200JSONResponseBody_RollbackDescription_Principal `json:"principal,omitempty"`
 
-				// UserId The user who rolled back the project.
-				UserId string `json:"userId"`
+				// UserId The ID of the user who rolled back the project, when the principal was a user.
+				UserId *string `json:"userId,omitempty"`
 
-				// Username The username of the user who rolled back the project.
-				Username string `json:"username"`
+				// Username The username of the user who rolled back the project, when the principal was a user.
+				Username *string `json:"username,omitempty"`
 			} `json:"rollbackDescription,omitempty"`
 
 			// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out
@@ -3176,6 +7324,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				// PrivateLinkEndpoint Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PrivateLinkEndpoint *[]ACLAction `json:"privateLinkEndpoint,omitempty"`
 
+				// PrivateNpmUsage Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PrivateNpmUsage *[]ACLAction `json:"privateNpmUsage,omitempty"`
+
 				// ProTrialOnboarding Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				ProTrialOnboarding *[]ACLAction `json:"proTrialOnboarding,omitempty"`
 
@@ -3541,13 +7692,14 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				CreatedAt float32 `json:"createdAt"`
 
 				// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
-				Description string `json:"description"`
+				Description string                                                          `json:"description"`
+				Principal   *UpdateProject200JSONResponseBody_RollbackDescription_Principal `json:"principal,omitempty"`
 
-				// UserId The user who rolled back the project.
-				UserId string `json:"userId"`
+				// UserId The ID of the user who rolled back the project, when the principal was a user.
+				UserId *string `json:"userId,omitempty"`
 
-				// Username The username of the user who rolled back the project.
-				Username string `json:"username"`
+				// Username The username of the user who rolled back the project, when the principal was a user.
+				Username *string `json:"username,omitempty"`
 			} `json:"rollbackDescription,omitempty"`
 
 			// RollingRelease Project-level rolling release configuration that defines how deployments should be gradually rolled out

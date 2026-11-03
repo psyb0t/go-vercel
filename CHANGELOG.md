@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.18.0, 2026-11-03
+
+- Removed and reshaped many `UserEventPayload` types. `UserEventPayload122` is removed, along with `UserEvent_Payload.FromUserEventPayload122` and `MergeUserEventPayload122`. `Set` and `UnmarshalJSON` are removed from `UserEventPayload114` and `UserEventPayload256`, and `UserEventPayload114` also loses `AdditionalProperties`, `Get`, `MarshalJSON` and `MetricName`.
+- Removed fields and enum types from `UserEventPayload102` through `UserEventPayload125` and neighbouring payloads, for example `UserEventPayload102.BuildsEnabled`, `UserEventPayload112.ClientId`, `UserEventPayload118.PasswordProtection`, `UserEventPayload119.SsoProtection` and `UserEventPayload124.DeploymentId`, with their `...True`, `...False` and other constants. `UserEventPayload113` and `UserEventPayload124` are no longer comparable. `UserEventPayload100.Configuration.Name` changes from `string` to `*string`.
+- Changed the type of `UserEvent_Payload_183_ConfigVersion` from a union struct to `float32`.
+- Changed the anonymous struct in `JSON200` and `GetJSON200` of `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UpdateMicrofrontendsResponse`, `DeleteProjectAvatarResponse`, `UploadProjectAvatarResponse`, `GetMicrofrontendsInGroupResponse` and `CreateIntegrationStoreDirectResponse`, and `GetProjects200JSONResponseBody2.Projects`. Code that names these struct types must change.
+- Added the `integration-tokens-grant` policy variant for KMS issuers: types such as `CreateKmsIssuerJSONBodyPolicy2` and `CreateKmsIssuerPolicy201JSONResponseBody2`, with `From...`, `Merge...` and `As...` methods on the matching policy union types.
+- Added credential type types for integration stores, such as `CreateIntegrationStoreDirect200JSONResponseBodyStoreCredentialTypes` with `Oidc` and `Static` variants and transition types.
+- Added `DefaultForNextjsTracing` to the drain and log drain source types, and `CreateProject200JSONResponseBodyRollbackDescriptionPrincipal0` types.
+- Added many new `UserEventPayload` types and fields. Most of the rest of the diff reorders and renumbers generated code across the `client_*.gen.go` files.
+- Generated from spec version 0.0.1.
+
 ## v0.17.0, 2026-11-02
 
 - Added the flags project connection endpoints: `CreateFlagsProjectConnection` and `CreateFlagsProjectConnectionWithBody`, `DeleteFlagsProjectConnection` and `GetFlagsProjectConnections` on `Client` and `ClientInterface`, and `CreateFlagsProjectConnectionWithResponse`, `CreateFlagsProjectConnectionWithBodyWithResponse`, `DeleteFlagsProjectConnectionWithResponse` and `GetFlagsProjectConnectionsWithResponse` on `ClientWithResponses` and `ClientWithResponsesInterface`. Custom implementations of the two interfaces must add the new methods.
