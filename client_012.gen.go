@@ -7,6 +7,334 @@ import (
 	"encoding/json"
 )
 
+// GetProjects200JSONResponseBody2ProjectsLink0Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink0Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink0Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink0Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink1 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string   `json:"gitCredentialId"`
+	Org              string   `json:"org"`
+	ProductionBranch string   `json:"productionBranch"`
+	Repo             *string  `json:"repo,omitempty"`
+	RepoId           *float32 `json:"repoId,omitempty"`
+
+	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+	RepoOwnerId *float32                                                `json:"repoOwnerId,omitempty"`
+	Sourceless  *GetProjects200JSONResponseBody2ProjectsLink1Sourceless `json:"sourceless,omitempty"`
+	Type        GetProjects200JSONResponseBody2ProjectsLink1Type        `json:"type"`
+	UpdatedAt   *float32                                                `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink1Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink1Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink1Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink1Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink2 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string   `json:"gitCredentialId"`
+	Host             string   `json:"host"`
+	Org              string   `json:"org"`
+	ProductionBranch string   `json:"productionBranch"`
+	Repo             *string  `json:"repo,omitempty"`
+	RepoId           *float32 `json:"repoId,omitempty"`
+
+	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+	RepoOwnerId *float32                                                `json:"repoOwnerId,omitempty"`
+	Sourceless  *GetProjects200JSONResponseBody2ProjectsLink2Sourceless `json:"sourceless,omitempty"`
+	Type        GetProjects200JSONResponseBody2ProjectsLink2Type        `json:"type"`
+	UpdatedAt   *float32                                                `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink2Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink2Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink2Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink2Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink3 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink3 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId          string `json:"gitCredentialId"`
+	ProductionBranch         string `json:"productionBranch"`
+	ProjectId                string `json:"projectId"`
+	ProjectName              string `json:"projectName"`
+	ProjectNameWithNamespace string `json:"projectNameWithNamespace"`
+	ProjectNamespace         string `json:"projectNamespace"`
+
+	// ProjectOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+	ProjectOwnerId *float32                                                `json:"projectOwnerId,omitempty"`
+	ProjectUrl     string                                                  `json:"projectUrl"`
+	Sourceless     *GetProjects200JSONResponseBody2ProjectsLink3Sourceless `json:"sourceless,omitempty"`
+	Type           GetProjects200JSONResponseBody2ProjectsLink3Type        `json:"type"`
+	UpdatedAt      *float32                                                `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink3Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink3Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink3Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink3Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink4 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink4 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                                  `json:"gitCredentialId"`
+	Name             string                                                  `json:"name"`
+	Owner            string                                                  `json:"owner"`
+	ProductionBranch string                                                  `json:"productionBranch"`
+	Slug             string                                                  `json:"slug"`
+	Sourceless       *GetProjects200JSONResponseBody2ProjectsLink4Sourceless `json:"sourceless,omitempty"`
+	Type             GetProjects200JSONResponseBody2ProjectsLink4Type        `json:"type"`
+	UpdatedAt        *float32                                                `json:"updatedAt,omitempty"`
+	Uuid             string                                                  `json:"uuid"`
+	WorkspaceUuid    string                                                  `json:"workspaceUuid"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink4Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink4Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink4Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink4Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink5 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink5 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                                  `json:"gitCredentialId"`
+	Org              string                                                  `json:"org"`
+	ProductionBranch string                                                  `json:"productionBranch"`
+	Repo             string                                                  `json:"repo"`
+	RepoId           string                                                  `json:"repoId"`
+	Sourceless       *GetProjects200JSONResponseBody2ProjectsLink5Sourceless `json:"sourceless,omitempty"`
+	Type             GetProjects200JSONResponseBody2ProjectsLink5Type        `json:"type"`
+	UpdatedAt        *float32                                                `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink5Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink5Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink5Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink5Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink6 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink6 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                                  `json:"gitCredentialId"`
+	Org              string                                                  `json:"org"`
+	ProductionBranch string                                                  `json:"productionBranch"`
+	Repo             string                                                  `json:"repo"`
+	RepoId           string                                                  `json:"repoId"`
+	Sourceless       *GetProjects200JSONResponseBody2ProjectsLink6Sourceless `json:"sourceless,omitempty"`
+	Type             GetProjects200JSONResponseBody2ProjectsLink6Type        `json:"type"`
+	UpdatedAt        *float32                                                `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink6Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink6Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink6Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink6Type string
+
+// GetProjects200JSONResponseBody2ProjectsLink7 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink7 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId string `json:"gitCredentialId"`
+
+	// Owner Owner (namespace) slug, e.g. `acme`.
+	Owner string `json:"owner"`
+
+	// OwnerId Origin namespace id (`ns_…`) of the owner.
+	OwnerId          string `json:"ownerId"`
+	ProductionBranch string `json:"productionBranch"`
+	Repo             string `json:"repo"`
+
+	// RepoId Origin repository id.
+	RepoId     string                                                  `json:"repoId"`
+	Sourceless *GetProjects200JSONResponseBody2ProjectsLink7Sourceless `json:"sourceless,omitempty"`
+	Type       GetProjects200JSONResponseBody2ProjectsLink7Type        `json:"type"`
+	UpdatedAt  *float32                                                `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsLink7Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink7Sourceless bool
+
+// GetProjects200JSONResponseBody2ProjectsLink7Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink7Type string
+
+// GetProjects200JSONResponseBody_2_Projects_Link defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_Link struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsLive defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLive bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends0 struct {
+	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// Enabled Whether microfrontends are enabled for this project.
+	Enabled GetProjects200JSONResponseBody2ProjectsMicrofrontends0Enabled `json:"enabled"`
+
+	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+	FreeProjectForLegacyLimits *GetProjects200JSONResponseBody2ProjectsMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+
+	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+	GroupIds     []string                                                           `json:"groupIds"`
+	IsDefaultApp GetProjects200JSONResponseBody2ProjectsMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
+
+	// UpdatedAt Timestamp when the microfrontends settings were last updated.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends0Enabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends0Enabled bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends0FreeProjectForLegacyLimits defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends0FreeProjectForLegacyLimits bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends0IsDefaultApp defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends0IsDefaultApp bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends1 struct {
+	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+	DoNotRouteWithMicrofrontendsRouting *GetProjects200JSONResponseBody2ProjectsMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
+
+	// Enabled Whether microfrontends are enabled for this project.
+	Enabled GetProjects200JSONResponseBody2ProjectsMicrofrontends1Enabled `json:"enabled"`
+
+	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+	FreeProjectForLegacyLimits *GetProjects200JSONResponseBody2ProjectsMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+
+	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+	GroupIds     []string                                                            `json:"groupIds"`
+	IsDefaultApp *GetProjects200JSONResponseBody2ProjectsMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
+
+	// RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
+	RouteObservabilityToThisProject *GetProjects200JSONResponseBody2ProjectsMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
+
+	// UpdatedAt Timestamp when the microfrontends settings were last updated.
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends1Enabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends1Enabled bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends1FreeProjectForLegacyLimits defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends1FreeProjectForLegacyLimits bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends1IsDefaultApp defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends1IsDefaultApp bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends1RouteObservabilityToThisProject defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends1RouteObservabilityToThisProject bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends2 struct {
+	Enabled                    GetProjects200JSONResponseBody2ProjectsMicrofrontends2Enabled                     `json:"enabled"`
+	FreeProjectForLegacyLimits *GetProjects200JSONResponseBody2ProjectsMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	GroupIds                   []interface{}                                                                     `json:"groupIds"`
+	UpdatedAt                  float32                                                                           `json:"updatedAt"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends2Enabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends2Enabled bool
+
+// GetProjects200JSONResponseBody2ProjectsMicrofrontends2FreeProjectForLegacyLimits defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsMicrofrontends2FreeProjectForLegacyLimits bool
+
+// GetProjects200JSONResponseBody_2_Projects_Microfrontends defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_Microfrontends struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsNodeVersion defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsNodeVersion string
+
+// GetProjects200JSONResponseBody2ProjectsOidcTokenConfigEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsOidcTokenConfigEnabled bool
+
+// GetProjects200JSONResponseBody2ProjectsOidcTokenConfigIssuerMode defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsOidcTokenConfigIssuerMode string
+
+// GetProjects200JSONResponseBody2ProjectsPassportDeploymentType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsPassportDeploymentType string
+
+// GetProjects200JSONResponseBody2ProjectsPasswordProtectionDeploymentType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsPasswordProtectionDeploymentType string
+
+// GetProjects200JSONResponseBody2ProjectsPaused defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsPaused bool
+
+// GetProjects200JSONResponseBody2ProjectsProductionDeploymentsFastLane defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsProductionDeploymentsFastLane bool
+
+// GetProjects200JSONResponseBody2ProjectsProtectedSourcemaps defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsProtectedSourcemaps bool
+
 // GetProjects200JSONResponseBody2ProjectsProtectionBypass0 defines parameters for GetProjects.
 type GetProjects200JSONResponseBody2ProjectsProtectionBypass0 struct {
 	ConfigurationId string                                                        `json:"configurationId"`
@@ -19686,445 +20014,4 @@ type CreateSandboxesByNameForkV2Params struct {
 
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateSandboxesByNameForkV2JSONBodyFailoverRegions defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyFailoverRegions string
-
-// CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0 = interface{}
-
-// CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1 = int
-
-// CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration struct {
-	union json.RawMessage
-}
-
-// CreateSandboxesByNameForkV2JSONBodyMountsMode defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyMountsMode string
-
-// CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0 struct {
-	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
-	//
-	// Example: ["35.192.0.0/12","104.16.0.0/12"]
-	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
-
-	// AllowedDomains List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
-	//
-	// Example: ["api.github.com","*.npmjs.org"]
-	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
-
-	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-	//
-	// Example: ["35.192.0.0/12"]
-	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
-
-	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
-	InjectionRules *[]struct {
-		// Domain The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
-		Domain string `json:"domain"`
-
-		// Headers HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
-		Headers map[string]string `json:"headers"`
-
-		// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-		Match *struct {
-			// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-			Headers *[]struct {
-				// Key Matcher for the entry key (header name or query key).
-				Key *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"key,omitempty"`
-
-				// Value Matcher for the entry value.
-				Value *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"value,omitempty"`
-			} `json:"headers,omitempty"`
-
-			// Method HTTP methods to match. Any single match succeeds (OR semantics).
-			Method *[]string `json:"method,omitempty"`
-
-			// Path Match on the request path. Comparison is case-sensitive.
-			Path *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"path,omitempty"`
-
-			// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-			QueryString *[]struct {
-				// Key Matcher for the entry key (header name or query key).
-				Key *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"key,omitempty"`
-
-				// Value Matcher for the entry value.
-				Value *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"value,omitempty"`
-			} `json:"queryString,omitempty"`
-		} `json:"match,omitempty"`
-	} `json:"injectionRules,omitempty"`
-
-	// Mode The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
-	//
-	// Example: custom
-	Mode CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode `json:"mode"`
-}
-
-// CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0Mode string
-
-// CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1 struct {
-	Allow   *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow `json:"allow,omitempty"`
-	Subnets *struct {
-		Allow *[]string `json:"allow,omitempty"`
-		Deny  *[]string `json:"deny,omitempty"`
-	} `json:"subnets,omitempty"`
-}
-
-// CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0 = []string
-
-// CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1 map[string][]struct {
-	// ForwardURL HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment.
-	ForwardURL *string `json:"forwardURL,omitempty"`
-
-	// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-	Match *struct {
-		// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-		Headers *[]struct {
-			// Key Matcher for the entry key (header name or query key).
-			Key *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"key,omitempty"`
-
-			// Value Matcher for the entry value.
-			Value *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"value,omitempty"`
-		} `json:"headers,omitempty"`
-
-		// Method HTTP methods to match. Any single match succeeds (OR semantics).
-		Method *[]string `json:"method,omitempty"`
-
-		// Path Match on the request path. Comparison is case-sensitive.
-		Path *struct {
-			// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-			Exact *string `json:"exact,omitempty"`
-
-			// StartsWith Match values that start with the given prefix.
-			StartsWith *string `json:"startsWith,omitempty"`
-		} `json:"path,omitempty"`
-
-		// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-		QueryString *[]struct {
-			// Key Matcher for the entry key (header name or query key).
-			Key *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"key,omitempty"`
-
-			// Value Matcher for the entry value.
-			Value *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"value,omitempty"`
-		} `json:"queryString,omitempty"`
-	} `json:"match,omitempty"`
-
-	// Response Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
-	Response *struct {
-		// Body UTF-8 response body. Requires `contentType`.
-		Body *string `json:"body,omitempty"`
-
-		// ContentType Value of the `Content-Type` response header. Required when `body` is set.
-		ContentType *string `json:"contentType,omitempty"`
-
-		// Headers HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set.
-		Headers *map[string]string `json:"headers,omitempty"`
-
-		// StatusCode HTTP status code returned to the sandbox.
-		StatusCode int `json:"statusCode"`
-	} `json:"response,omitempty"`
-	Transform *[]struct {
-		Headers *map[string]string `json:"headers,omitempty"`
-	} `json:"transform,omitempty"`
-}
-
-// CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow struct {
-	union json.RawMessage
-}
-
-// CreateSandboxesByNameForkV2JSONBody_NetworkPolicy defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBody_NetworkPolicy struct {
-	union json.RawMessage
-}
-
-// CreateSandboxesByNameForkV2JSONBodyRegion defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodyRegion string
-
-// CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0 = interface{}
-
-// CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1 defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1 = int
-
-// CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration struct {
-	union json.RawMessage
-}
-
-// GetTeamsParams defines parameters for GetTeams.
-type GetTeamsParams struct {
-	// Limit Maximum number of Teams which may be returned.
-	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Since Timestamp (in milliseconds) to only include Teams created since then.
-	Since *float32 `form:"since,omitempty" json:"since,omitempty"`
-
-	// Until Timestamp (in milliseconds) to only include Teams created until then.
-	Until *float32 `form:"until,omitempty" json:"until,omitempty"`
-}
-
-// GetTeams200JSONResponseBody_Teams_Item defines parameters for GetTeams.
-type GetTeams200JSONResponseBody_Teams_Item struct {
-	union json.RawMessage
-}
-
-// GetTeamParams defines parameters for GetTeam.
-type GetTeamParams struct {
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// PatchTeamJSONBody defines parameters for PatchTeam.
-type PatchTeamJSONBody struct {
-	// Avatar The hash value of an uploaded image, or `null` to clear the avatar.
-	Avatar *string `json:"avatar,omitempty"`
-
-	// DefaultDeploymentProtection Default deployment protection settings for new projects.
-	DefaultDeploymentProtection *struct {
-		// PasswordProtection Allows to protect project deployments with a password
-		PasswordProtection *struct {
-			// DeploymentType Specify if the password will apply to every Deployment Target or just Preview
-			DeploymentType PatchTeamJSONBodyDefaultDeploymentProtectionPasswordProtectionDeploymentType `json:"deploymentType"`
-
-			// Password The password that will be used to protect Project Deployments
-			Password *string `json:"password,omitempty"`
-		} `json:"passwordProtection,omitempty"`
-
-		// SsoProtection Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team
-		SsoProtection *struct {
-			// DeploymentType Specify if the Vercel Authentication (SSO Protection) will apply to every Deployment Target or just Preview
-			DeploymentType PatchTeamJSONBodyDefaultDeploymentProtectionSsoProtectionDeploymentType `json:"deploymentType"`
-		} `json:"ssoProtection,omitempty"`
-	} `json:"defaultDeploymentProtection,omitempty"`
-	DefaultExpirationSettings *struct {
-		// AcknowledgeStorageBilling Required with keepCurrentRetention for unmetered Pro teams; acknowledges that keeping current retention will incur storage billing on a later date.
-		AcknowledgeStorageBilling *bool `json:"acknowledgeStorageBilling,omitempty"`
-
-		// Expiration The time period to keep non-production deployments for
-		//
-		// Example: 1y
-		Expiration *PatchTeamJSONBodyDefaultExpirationSettingsExpiration `json:"expiration,omitempty"`
-
-		// ExpirationCanceled The time period to keep canceled deployments for
-		//
-		// Example: 1y
-		ExpirationCanceled *PatchTeamJSONBodyDefaultExpirationSettingsExpirationCanceled `json:"expirationCanceled,omitempty"`
-
-		// ExpirationErrored The time period to keep errored deployments for
-		//
-		// Example: 1y
-		ExpirationErrored *PatchTeamJSONBodyDefaultExpirationSettingsExpirationErrored `json:"expirationErrored,omitempty"`
-
-		// ExpirationProduction The time period to keep production deployments for
-		//
-		// Example: 1y
-		ExpirationProduction *PatchTeamJSONBodyDefaultExpirationSettingsExpirationProduction `json:"expirationProduction,omitempty"`
-
-		// KeepCurrentRetention When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does not change expiration settings. Unmetered teams also require acknowledgeStorageBilling.
-		KeepCurrentRetention *bool `json:"keepCurrentRetention,omitempty"`
-	} `json:"defaultExpirationSettings,omitempty"`
-
-	// DefaultPassport Default Passport configuration for new projects.
-	DefaultPassport *struct {
-		ConnectorId    string                                          `json:"connectorId"`
-		DeploymentType *PatchTeamJSONBodyDefaultPassportDeploymentType `json:"deploymentType,omitempty"`
-	} `json:"defaultPassport,omitempty"`
-	DefaultProjectJobs *PatchTeamJSONBody_DefaultProjectJobs `json:"defaultProjectJobs,omitempty"`
-	DeploymentPolicy   *PatchTeamJSONBody_DeploymentPolicy   `json:"deploymentPolicy,omitempty"`
-
-	// Description A short text that describes the team.
-	//
-	// Example: Our mission is to make cloud computing accessible to everyone
-	Description *string `json:"description,omitempty"`
-
-	// DisableRepositoryDispatchEvents Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting.
-	//
-	// Example: false
-	DisableRepositoryDispatchEvents *bool `json:"disableRepositoryDispatchEvents,omitempty"`
-
-	// DisjunctiveProductionSecretPolicy Require production secrets to be in their own environment group: one of on, off or default.
-	//
-	// Example: on
-	DisjunctiveProductionSecretPolicy *string `json:"disjunctiveProductionSecretPolicy,omitempty"`
-
-	// DpAccessRequestsMode Controls who can request access to protected deployments.
-	//
-	// Example: none
-	DpAccessRequestsMode *PatchTeamJSONBodyDpAccessRequestsMode `json:"dpAccessRequestsMode,omitempty"`
-
-	// EmailDomain Example: example.com
-	EmailDomain *string `json:"emailDomain,omitempty"`
-
-	// EnablePreviewFeedback Enable preview toolbar: one of on, off or default.
-	//
-	// Example: on
-	EnablePreviewFeedback *string `json:"enablePreviewFeedback,omitempty"`
-
-	// EnableProductionFeedback Enable production toolbar: one of on, off or default.
-	//
-	// Example: on
-	EnableProductionFeedback *string `json:"enableProductionFeedback,omitempty"`
-
-	// HideIpAddresses Display or hide IP addresses in Monitoring queries.
-	//
-	// Example: false
-	HideIpAddresses *bool `json:"hideIpAddresses,omitempty"`
-
-	// HideIpAddressesInLogDrains Display or hide IP addresses in Log Drains.
-	//
-	// Example: false
-	HideIpAddressesInLogDrains *bool `json:"hideIpAddressesInLogDrains,omitempty"`
-
-	// Name The name of the team.
-	//
-	// Example: My Team
-	Name       *string                       `json:"name,omitempty"`
-	NsnbConfig *PatchTeamJSONBody_NsnbConfig `json:"nsnbConfig,omitempty"`
-
-	// PreviewDeploymentSuffix Suffix that will be used for all preview deployments.
-	//
-	// Example: example.dev
-	PreviewDeploymentSuffix *string `json:"previewDeploymentSuffix,omitempty"`
-
-	// RegenerateInviteCode Create a new invite code and replace the current one.
-	//
-	// Example: true
-	RegenerateInviteCode *bool `json:"regenerateInviteCode,omitempty"`
-
-	// RemoteCaching Whether or not remote caching is enabled for the team
-	RemoteCaching *struct {
-		// Enabled Enable or disable remote caching for the team.
-		//
-		// Example: true
-		Enabled *bool `json:"enabled,omitempty"`
-	} `json:"remoteCaching,omitempty"`
-
-	// RequireVerifiedCommits When enabled, all projects in the team require commits to be signed and verified by the git provider before deployments will be created.
-	//
-	// Example: true
-	RequireVerifiedCommits *bool `json:"requireVerifiedCommits,omitempty"`
-
-	// ResourceConfig Resource configuration for the team.
-	ResourceConfig *struct {
-		// BuildMachine Build machine configuration.
-		BuildMachine *struct {
-			// Default Default build machine type for new builds: standard, enhanced, turbo, or elastic.
-			//
-			// Example: standard
-			Default *PatchTeamJSONBodyResourceConfigBuildMachineDefault `json:"default,omitempty"`
-		} `json:"buildMachine,omitempty"`
-	} `json:"resourceConfig,omitempty"`
-	Saml *struct {
-		// Enforced Require that members of the team use SAML Single Sign-On.
-		//
-		// Example: true
-		Enforced *bool `json:"enforced,omitempty"`
-
-		// Roles Directory groups to role or access group mappings.
-		Roles *map[string]PatchTeamJSONBody_Saml_Roles_AdditionalProperties `json:"roles,omitempty"`
-	} `json:"saml,omitempty"`
-
-	// SensitiveEnvironmentVariablePolicy Sensitive environment variable policy: one of on, off or default.
-	//
-	// Example: on
-	SensitiveEnvironmentVariablePolicy *string `json:"sensitiveEnvironmentVariablePolicy,omitempty"`
-
-	// Slug A new slug for the team.
-	//
-	// Example: my-team
-	Slug *string `json:"slug,omitempty"`
-
-	// StrictConnectors When enabled, creating and managing connectors requires Owner role.
-	StrictConnectors *struct {
-		// Enabled Enable or disable requiring Owner role to manage connectors.
-		//
-		// Example: true
-		Enabled bool `json:"enabled"`
-	} `json:"strictConnectors,omitempty"`
-
-	// StrictDeploymentProtectionSettings When enabled, deployment protection settings require stricter permissions (owner-only).
-	StrictDeploymentProtectionSettings *struct {
-		// Enabled Enable or disable strict deployment protection settings.
-		//
-		// Example: true
-		Enabled bool `json:"enabled"`
-	} `json:"strictDeploymentProtectionSettings,omitempty"`
-
-	// StrictPasswordProtectionSettings When enabled, adding, changing, or removing project password protection requires Owner role.
-	StrictPasswordProtectionSettings *struct {
-		// Enabled Enable or disable requiring Owner role to change project password protection.
-		//
-		// Example: true
-		Enabled bool `json:"enabled"`
-	} `json:"strictPasswordProtectionSettings,omitempty"`
-
-	// StrictShareableLinks When enabled, creating shareable links requires Owner role.
-	StrictShareableLinks *struct {
-		// Enabled Enable or disable requiring Owner role to create shareable links.
-		//
-		// Example: true
-		Enabled bool `json:"enabled"`
-	} `json:"strictShareableLinks,omitempty"`
 }

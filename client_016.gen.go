@@ -10,6 +10,508 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsUploadProjectAvatar200JSONResponseBodyEnvContentHint14 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint as a UploadProjectAvatar200JSONResponseBodyEnvContentHint14
+func (t UploadProjectAvatar200JSONResponseBody_Env_ContentHint) AsUploadProjectAvatar200JSONResponseBodyEnvContentHint14() (UploadProjectAvatar200JSONResponseBodyEnvContentHint14, error) {
+	var body UploadProjectAvatar200JSONResponseBodyEnvContentHint14
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyEnvContentHint14 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint as the provided UploadProjectAvatar200JSONResponseBodyEnvContentHint14
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) FromUploadProjectAvatar200JSONResponseBodyEnvContentHint14(v UploadProjectAvatar200JSONResponseBodyEnvContentHint14) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyEnvContentHint14 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint, using the provided UploadProjectAvatar200JSONResponseBodyEnvContentHint14
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) MergeUploadProjectAvatar200JSONResponseBodyEnvContentHint14(v UploadProjectAvatar200JSONResponseBodyEnvContentHint14) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyEnvContentHint15 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint as a UploadProjectAvatar200JSONResponseBodyEnvContentHint15
+func (t UploadProjectAvatar200JSONResponseBody_Env_ContentHint) AsUploadProjectAvatar200JSONResponseBodyEnvContentHint15() (UploadProjectAvatar200JSONResponseBodyEnvContentHint15, error) {
+	var body UploadProjectAvatar200JSONResponseBodyEnvContentHint15
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyEnvContentHint15 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint as the provided UploadProjectAvatar200JSONResponseBodyEnvContentHint15
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) FromUploadProjectAvatar200JSONResponseBodyEnvContentHint15(v UploadProjectAvatar200JSONResponseBodyEnvContentHint15) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyEnvContentHint15 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint, using the provided UploadProjectAvatar200JSONResponseBodyEnvContentHint15
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) MergeUploadProjectAvatar200JSONResponseBodyEnvContentHint15(v UploadProjectAvatar200JSONResponseBodyEnvContentHint15) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyEnvContentHint16 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint as a UploadProjectAvatar200JSONResponseBodyEnvContentHint16
+func (t UploadProjectAvatar200JSONResponseBody_Env_ContentHint) AsUploadProjectAvatar200JSONResponseBodyEnvContentHint16() (UploadProjectAvatar200JSONResponseBodyEnvContentHint16, error) {
+	var body UploadProjectAvatar200JSONResponseBodyEnvContentHint16
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyEnvContentHint16 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint as the provided UploadProjectAvatar200JSONResponseBodyEnvContentHint16
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) FromUploadProjectAvatar200JSONResponseBodyEnvContentHint16(v UploadProjectAvatar200JSONResponseBodyEnvContentHint16) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyEnvContentHint16 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Env_ContentHint, using the provided UploadProjectAvatar200JSONResponseBodyEnvContentHint16
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) MergeUploadProjectAvatar200JSONResponseBodyEnvContentHint16(v UploadProjectAvatar200JSONResponseBodyEnvContentHint16) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UploadProjectAvatar200JSONResponseBody_Env_ContentHint) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_Env_ContentHint) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyEnvTarget0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Env_Target as a UploadProjectAvatar200JSONResponseBodyEnvTarget0
+func (t UploadProjectAvatar200JSONResponseBody_Env_Target) AsUploadProjectAvatar200JSONResponseBodyEnvTarget0() (UploadProjectAvatar200JSONResponseBodyEnvTarget0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyEnvTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyEnvTarget0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Env_Target as the provided UploadProjectAvatar200JSONResponseBodyEnvTarget0
+func (t *UploadProjectAvatar200JSONResponseBody_Env_Target) FromUploadProjectAvatar200JSONResponseBodyEnvTarget0(v UploadProjectAvatar200JSONResponseBodyEnvTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyEnvTarget0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Env_Target, using the provided UploadProjectAvatar200JSONResponseBodyEnvTarget0
+func (t *UploadProjectAvatar200JSONResponseBody_Env_Target) MergeUploadProjectAvatar200JSONResponseBodyEnvTarget0(v UploadProjectAvatar200JSONResponseBodyEnvTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyEnvTarget1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Env_Target as a UploadProjectAvatar200JSONResponseBodyEnvTarget1
+func (t UploadProjectAvatar200JSONResponseBody_Env_Target) AsUploadProjectAvatar200JSONResponseBodyEnvTarget1() (UploadProjectAvatar200JSONResponseBodyEnvTarget1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyEnvTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyEnvTarget1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Env_Target as the provided UploadProjectAvatar200JSONResponseBodyEnvTarget1
+func (t *UploadProjectAvatar200JSONResponseBody_Env_Target) FromUploadProjectAvatar200JSONResponseBodyEnvTarget1(v UploadProjectAvatar200JSONResponseBodyEnvTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyEnvTarget1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Env_Target, using the provided UploadProjectAvatar200JSONResponseBodyEnvTarget1
+func (t *UploadProjectAvatar200JSONResponseBody_Env_Target) MergeUploadProjectAvatar200JSONResponseBodyEnvTarget1(v UploadProjectAvatar200JSONResponseBodyEnvTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UploadProjectAvatar200JSONResponseBody_Env_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_Env_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyExpiration0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Expiration as a UploadProjectAvatar200JSONResponseBodyExpiration0
+func (t UploadProjectAvatar200JSONResponseBody_Expiration) AsUploadProjectAvatar200JSONResponseBodyExpiration0() (UploadProjectAvatar200JSONResponseBodyExpiration0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyExpiration0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Expiration as the provided UploadProjectAvatar200JSONResponseBodyExpiration0
+func (t *UploadProjectAvatar200JSONResponseBody_Expiration) FromUploadProjectAvatar200JSONResponseBodyExpiration0(v UploadProjectAvatar200JSONResponseBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyExpiration0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Expiration, using the provided UploadProjectAvatar200JSONResponseBodyExpiration0
+func (t *UploadProjectAvatar200JSONResponseBody_Expiration) MergeUploadProjectAvatar200JSONResponseBodyExpiration0(v UploadProjectAvatar200JSONResponseBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyExpiration1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Expiration as a UploadProjectAvatar200JSONResponseBodyExpiration1
+func (t UploadProjectAvatar200JSONResponseBody_Expiration) AsUploadProjectAvatar200JSONResponseBodyExpiration1() (UploadProjectAvatar200JSONResponseBodyExpiration1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyExpiration1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Expiration as the provided UploadProjectAvatar200JSONResponseBodyExpiration1
+func (t *UploadProjectAvatar200JSONResponseBody_Expiration) FromUploadProjectAvatar200JSONResponseBodyExpiration1(v UploadProjectAvatar200JSONResponseBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyExpiration1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Expiration, using the provided UploadProjectAvatar200JSONResponseBodyExpiration1
+func (t *UploadProjectAvatar200JSONResponseBody_Expiration) MergeUploadProjectAvatar200JSONResponseBodyExpiration1(v UploadProjectAvatar200JSONResponseBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UploadProjectAvatar200JSONResponseBody_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item as a UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0
+func (t UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) AsUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0() (UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item as the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) FromUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0(v UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item, using the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0(v UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item as a UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1
+func (t UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) AsUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1() (UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item as the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) FromUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1(v UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item, using the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1(v UploadProjectAvatar200JSONResponseBodyInternalRoutes1Has1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_1_Has_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyInternalRoutes0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item as a UploadProjectAvatar200JSONResponseBodyInternalRoutes0
+func (t UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) AsUploadProjectAvatar200JSONResponseBodyInternalRoutes0() (UploadProjectAvatar200JSONResponseBodyInternalRoutes0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyInternalRoutes0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyInternalRoutes0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item as the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes0
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) FromUploadProjectAvatar200JSONResponseBodyInternalRoutes0(v UploadProjectAvatar200JSONResponseBodyInternalRoutes0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item, using the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes0
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes0(v UploadProjectAvatar200JSONResponseBodyInternalRoutes0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyInternalRoutes1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item as a UploadProjectAvatar200JSONResponseBodyInternalRoutes1
+func (t UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) AsUploadProjectAvatar200JSONResponseBodyInternalRoutes1() (UploadProjectAvatar200JSONResponseBodyInternalRoutes1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyInternalRoutes1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyInternalRoutes1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item as the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes1
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) FromUploadProjectAvatar200JSONResponseBodyInternalRoutes1(v UploadProjectAvatar200JSONResponseBodyInternalRoutes1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item, using the provided UploadProjectAvatar200JSONResponseBodyInternalRoutes1
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) MergeUploadProjectAvatar200JSONResponseBodyInternalRoutes1(v UploadProjectAvatar200JSONResponseBodyInternalRoutes1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_InternalRoutes_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned as a UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) AsUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0() (UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned as the provided UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) FromUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0(v UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned, using the provided UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0
+func (t *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) MergeUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0(v UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned as a UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) AsUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1() (UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned as the provided UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) FromUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1(v UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned, using the provided UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1
+func (t *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) MergeUploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1(v UploadProjectAvatar200JSONResponseBodyLatestDeploymentsAliasAssigned1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_LatestDeployments_AliasAssigned) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyLink0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Link as a UploadProjectAvatar200JSONResponseBodyLink0
+func (t UploadProjectAvatar200JSONResponseBody_Link) AsUploadProjectAvatar200JSONResponseBodyLink0() (UploadProjectAvatar200JSONResponseBodyLink0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyLink0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyLink0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Link as the provided UploadProjectAvatar200JSONResponseBodyLink0
+func (t *UploadProjectAvatar200JSONResponseBody_Link) FromUploadProjectAvatar200JSONResponseBodyLink0(v UploadProjectAvatar200JSONResponseBodyLink0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyLink0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Link, using the provided UploadProjectAvatar200JSONResponseBodyLink0
+func (t *UploadProjectAvatar200JSONResponseBody_Link) MergeUploadProjectAvatar200JSONResponseBodyLink0(v UploadProjectAvatar200JSONResponseBodyLink0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyLink1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Link as a UploadProjectAvatar200JSONResponseBodyLink1
+func (t UploadProjectAvatar200JSONResponseBody_Link) AsUploadProjectAvatar200JSONResponseBodyLink1() (UploadProjectAvatar200JSONResponseBodyLink1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyLink1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyLink1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Link as the provided UploadProjectAvatar200JSONResponseBodyLink1
+func (t *UploadProjectAvatar200JSONResponseBody_Link) FromUploadProjectAvatar200JSONResponseBodyLink1(v UploadProjectAvatar200JSONResponseBodyLink1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyLink1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Link, using the provided UploadProjectAvatar200JSONResponseBodyLink1
+func (t *UploadProjectAvatar200JSONResponseBody_Link) MergeUploadProjectAvatar200JSONResponseBodyLink1(v UploadProjectAvatar200JSONResponseBodyLink1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyLink2 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Link as a UploadProjectAvatar200JSONResponseBodyLink2
+func (t UploadProjectAvatar200JSONResponseBody_Link) AsUploadProjectAvatar200JSONResponseBodyLink2() (UploadProjectAvatar200JSONResponseBodyLink2, error) {
+	var body UploadProjectAvatar200JSONResponseBodyLink2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyLink2 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Link as the provided UploadProjectAvatar200JSONResponseBodyLink2
+func (t *UploadProjectAvatar200JSONResponseBody_Link) FromUploadProjectAvatar200JSONResponseBodyLink2(v UploadProjectAvatar200JSONResponseBodyLink2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyLink2 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Link, using the provided UploadProjectAvatar200JSONResponseBodyLink2
+func (t *UploadProjectAvatar200JSONResponseBody_Link) MergeUploadProjectAvatar200JSONResponseBodyLink2(v UploadProjectAvatar200JSONResponseBodyLink2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyLink3 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Link as a UploadProjectAvatar200JSONResponseBodyLink3
+func (t UploadProjectAvatar200JSONResponseBody_Link) AsUploadProjectAvatar200JSONResponseBodyLink3() (UploadProjectAvatar200JSONResponseBodyLink3, error) {
+	var body UploadProjectAvatar200JSONResponseBodyLink3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyLink3 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Link as the provided UploadProjectAvatar200JSONResponseBodyLink3
+func (t *UploadProjectAvatar200JSONResponseBody_Link) FromUploadProjectAvatar200JSONResponseBodyLink3(v UploadProjectAvatar200JSONResponseBodyLink3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyLink3 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Link, using the provided UploadProjectAvatar200JSONResponseBodyLink3
+func (t *UploadProjectAvatar200JSONResponseBody_Link) MergeUploadProjectAvatar200JSONResponseBodyLink3(v UploadProjectAvatar200JSONResponseBodyLink3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsUploadProjectAvatar200JSONResponseBodyLink4 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Link as a UploadProjectAvatar200JSONResponseBodyLink4
 func (t UploadProjectAvatar200JSONResponseBody_Link) AsUploadProjectAvatar200JSONResponseBodyLink4() (UploadProjectAvatar200JSONResponseBodyLink4, error) {
 	var body UploadProjectAvatar200JSONResponseBodyLink4
@@ -19511,505 +20013,4 @@ func (t GetOrder200JSONResponseBodyDomains2Error0) AsGetOrder200JSONResponseBody
 	var body GetOrder200JSONResponseBodyDomains2Error04
 	err := json.Unmarshal(t.union, &body)
 	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error04 overwrites any union data inside the GetOrder200JSONResponseBodyDomains2Error0 as the provided GetOrder200JSONResponseBodyDomains2Error04
-func (t *GetOrder200JSONResponseBodyDomains2Error0) FromGetOrder200JSONResponseBodyDomains2Error04(v GetOrder200JSONResponseBodyDomains2Error04) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error04 performs a merge with any union data inside the GetOrder200JSONResponseBodyDomains2Error0, using the provided GetOrder200JSONResponseBodyDomains2Error04
-func (t *GetOrder200JSONResponseBodyDomains2Error0) MergeGetOrder200JSONResponseBodyDomains2Error04(v GetOrder200JSONResponseBodyDomains2Error04) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error05 returns the union data inside the GetOrder200JSONResponseBodyDomains2Error0 as a GetOrder200JSONResponseBodyDomains2Error05
-func (t GetOrder200JSONResponseBodyDomains2Error0) AsGetOrder200JSONResponseBodyDomains2Error05() (GetOrder200JSONResponseBodyDomains2Error05, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error05
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error05 overwrites any union data inside the GetOrder200JSONResponseBodyDomains2Error0 as the provided GetOrder200JSONResponseBodyDomains2Error05
-func (t *GetOrder200JSONResponseBodyDomains2Error0) FromGetOrder200JSONResponseBodyDomains2Error05(v GetOrder200JSONResponseBodyDomains2Error05) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error05 performs a merge with any union data inside the GetOrder200JSONResponseBodyDomains2Error0, using the provided GetOrder200JSONResponseBodyDomains2Error05
-func (t *GetOrder200JSONResponseBodyDomains2Error0) MergeGetOrder200JSONResponseBodyDomains2Error05(v GetOrder200JSONResponseBodyDomains2Error05) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error06 returns the union data inside the GetOrder200JSONResponseBodyDomains2Error0 as a GetOrder200JSONResponseBodyDomains2Error06
-func (t GetOrder200JSONResponseBodyDomains2Error0) AsGetOrder200JSONResponseBodyDomains2Error06() (GetOrder200JSONResponseBodyDomains2Error06, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error06
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error06 overwrites any union data inside the GetOrder200JSONResponseBodyDomains2Error0 as the provided GetOrder200JSONResponseBodyDomains2Error06
-func (t *GetOrder200JSONResponseBodyDomains2Error0) FromGetOrder200JSONResponseBodyDomains2Error06(v GetOrder200JSONResponseBodyDomains2Error06) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error06 performs a merge with any union data inside the GetOrder200JSONResponseBodyDomains2Error0, using the provided GetOrder200JSONResponseBodyDomains2Error06
-func (t *GetOrder200JSONResponseBodyDomains2Error0) MergeGetOrder200JSONResponseBodyDomains2Error06(v GetOrder200JSONResponseBodyDomains2Error06) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error07 returns the union data inside the GetOrder200JSONResponseBodyDomains2Error0 as a GetOrder200JSONResponseBodyDomains2Error07
-func (t GetOrder200JSONResponseBodyDomains2Error0) AsGetOrder200JSONResponseBodyDomains2Error07() (GetOrder200JSONResponseBodyDomains2Error07, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error07
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error07 overwrites any union data inside the GetOrder200JSONResponseBodyDomains2Error0 as the provided GetOrder200JSONResponseBodyDomains2Error07
-func (t *GetOrder200JSONResponseBodyDomains2Error0) FromGetOrder200JSONResponseBodyDomains2Error07(v GetOrder200JSONResponseBodyDomains2Error07) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error07 performs a merge with any union data inside the GetOrder200JSONResponseBodyDomains2Error0, using the provided GetOrder200JSONResponseBodyDomains2Error07
-func (t *GetOrder200JSONResponseBodyDomains2Error0) MergeGetOrder200JSONResponseBodyDomains2Error07(v GetOrder200JSONResponseBodyDomains2Error07) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error08 returns the union data inside the GetOrder200JSONResponseBodyDomains2Error0 as a GetOrder200JSONResponseBodyDomains2Error08
-func (t GetOrder200JSONResponseBodyDomains2Error0) AsGetOrder200JSONResponseBodyDomains2Error08() (GetOrder200JSONResponseBodyDomains2Error08, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error08
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error08 overwrites any union data inside the GetOrder200JSONResponseBodyDomains2Error0 as the provided GetOrder200JSONResponseBodyDomains2Error08
-func (t *GetOrder200JSONResponseBodyDomains2Error0) FromGetOrder200JSONResponseBodyDomains2Error08(v GetOrder200JSONResponseBodyDomains2Error08) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error08 performs a merge with any union data inside the GetOrder200JSONResponseBodyDomains2Error0, using the provided GetOrder200JSONResponseBodyDomains2Error08
-func (t *GetOrder200JSONResponseBodyDomains2Error0) MergeGetOrder200JSONResponseBodyDomains2Error08(v GetOrder200JSONResponseBodyDomains2Error08) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error09 returns the union data inside the GetOrder200JSONResponseBodyDomains2Error0 as a GetOrder200JSONResponseBodyDomains2Error09
-func (t GetOrder200JSONResponseBodyDomains2Error0) AsGetOrder200JSONResponseBodyDomains2Error09() (GetOrder200JSONResponseBodyDomains2Error09, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error09
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error09 overwrites any union data inside the GetOrder200JSONResponseBodyDomains2Error0 as the provided GetOrder200JSONResponseBodyDomains2Error09
-func (t *GetOrder200JSONResponseBodyDomains2Error0) FromGetOrder200JSONResponseBodyDomains2Error09(v GetOrder200JSONResponseBodyDomains2Error09) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error09 performs a merge with any union data inside the GetOrder200JSONResponseBodyDomains2Error0, using the provided GetOrder200JSONResponseBodyDomains2Error09
-func (t *GetOrder200JSONResponseBodyDomains2Error0) MergeGetOrder200JSONResponseBodyDomains2Error09(v GetOrder200JSONResponseBodyDomains2Error09) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetOrder200JSONResponseBodyDomains2Error0) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetOrder200JSONResponseBodyDomains2Error0) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error0 returns the union data inside the GetOrder200JSONResponseBody_Domains_2_Error as a GetOrder200JSONResponseBodyDomains2Error0
-func (t GetOrder200JSONResponseBody_Domains_2_Error) AsGetOrder200JSONResponseBodyDomains2Error0() (GetOrder200JSONResponseBodyDomains2Error0, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error0 overwrites any union data inside the GetOrder200JSONResponseBody_Domains_2_Error as the provided GetOrder200JSONResponseBodyDomains2Error0
-func (t *GetOrder200JSONResponseBody_Domains_2_Error) FromGetOrder200JSONResponseBodyDomains2Error0(v GetOrder200JSONResponseBodyDomains2Error0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error0 performs a merge with any union data inside the GetOrder200JSONResponseBody_Domains_2_Error, using the provided GetOrder200JSONResponseBodyDomains2Error0
-func (t *GetOrder200JSONResponseBody_Domains_2_Error) MergeGetOrder200JSONResponseBodyDomains2Error0(v GetOrder200JSONResponseBodyDomains2Error0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2Error1 returns the union data inside the GetOrder200JSONResponseBody_Domains_2_Error as a GetOrder200JSONResponseBodyDomains2Error1
-func (t GetOrder200JSONResponseBody_Domains_2_Error) AsGetOrder200JSONResponseBodyDomains2Error1() (GetOrder200JSONResponseBodyDomains2Error1, error) {
-	var body GetOrder200JSONResponseBodyDomains2Error1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2Error1 overwrites any union data inside the GetOrder200JSONResponseBody_Domains_2_Error as the provided GetOrder200JSONResponseBodyDomains2Error1
-func (t *GetOrder200JSONResponseBody_Domains_2_Error) FromGetOrder200JSONResponseBodyDomains2Error1(v GetOrder200JSONResponseBodyDomains2Error1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2Error1 performs a merge with any union data inside the GetOrder200JSONResponseBody_Domains_2_Error, using the provided GetOrder200JSONResponseBodyDomains2Error1
-func (t *GetOrder200JSONResponseBody_Domains_2_Error) MergeGetOrder200JSONResponseBodyDomains2Error1(v GetOrder200JSONResponseBodyDomains2Error1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetOrder200JSONResponseBody_Domains_2_Error) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetOrder200JSONResponseBody_Domains_2_Error) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains0 returns the union data inside the GetOrder200JSONResponseBody_Domains_Item as a GetOrder200JSONResponseBodyDomains0
-func (t GetOrder200JSONResponseBody_Domains_Item) AsGetOrder200JSONResponseBodyDomains0() (GetOrder200JSONResponseBodyDomains0, error) {
-	var body GetOrder200JSONResponseBodyDomains0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains0 overwrites any union data inside the GetOrder200JSONResponseBody_Domains_Item as the provided GetOrder200JSONResponseBodyDomains0
-func (t *GetOrder200JSONResponseBody_Domains_Item) FromGetOrder200JSONResponseBodyDomains0(v GetOrder200JSONResponseBodyDomains0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains0 performs a merge with any union data inside the GetOrder200JSONResponseBody_Domains_Item, using the provided GetOrder200JSONResponseBodyDomains0
-func (t *GetOrder200JSONResponseBody_Domains_Item) MergeGetOrder200JSONResponseBodyDomains0(v GetOrder200JSONResponseBodyDomains0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains1 returns the union data inside the GetOrder200JSONResponseBody_Domains_Item as a GetOrder200JSONResponseBodyDomains1
-func (t GetOrder200JSONResponseBody_Domains_Item) AsGetOrder200JSONResponseBodyDomains1() (GetOrder200JSONResponseBodyDomains1, error) {
-	var body GetOrder200JSONResponseBodyDomains1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains1 overwrites any union data inside the GetOrder200JSONResponseBody_Domains_Item as the provided GetOrder200JSONResponseBodyDomains1
-func (t *GetOrder200JSONResponseBody_Domains_Item) FromGetOrder200JSONResponseBodyDomains1(v GetOrder200JSONResponseBodyDomains1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains1 performs a merge with any union data inside the GetOrder200JSONResponseBody_Domains_Item, using the provided GetOrder200JSONResponseBodyDomains1
-func (t *GetOrder200JSONResponseBody_Domains_Item) MergeGetOrder200JSONResponseBodyDomains1(v GetOrder200JSONResponseBodyDomains1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyDomains2 returns the union data inside the GetOrder200JSONResponseBody_Domains_Item as a GetOrder200JSONResponseBodyDomains2
-func (t GetOrder200JSONResponseBody_Domains_Item) AsGetOrder200JSONResponseBodyDomains2() (GetOrder200JSONResponseBodyDomains2, error) {
-	var body GetOrder200JSONResponseBodyDomains2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyDomains2 overwrites any union data inside the GetOrder200JSONResponseBody_Domains_Item as the provided GetOrder200JSONResponseBodyDomains2
-func (t *GetOrder200JSONResponseBody_Domains_Item) FromGetOrder200JSONResponseBodyDomains2(v GetOrder200JSONResponseBodyDomains2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyDomains2 performs a merge with any union data inside the GetOrder200JSONResponseBody_Domains_Item, using the provided GetOrder200JSONResponseBodyDomains2
-func (t *GetOrder200JSONResponseBody_Domains_Item) MergeGetOrder200JSONResponseBodyDomains2(v GetOrder200JSONResponseBodyDomains2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetOrder200JSONResponseBody_Domains_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetOrder200JSONResponseBody_Domains_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError00 returns the union data inside the GetOrder200JSONResponseBodyError0 as a GetOrder200JSONResponseBodyError00
-func (t GetOrder200JSONResponseBodyError0) AsGetOrder200JSONResponseBodyError00() (GetOrder200JSONResponseBodyError00, error) {
-	var body GetOrder200JSONResponseBodyError00
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError00 overwrites any union data inside the GetOrder200JSONResponseBodyError0 as the provided GetOrder200JSONResponseBodyError00
-func (t *GetOrder200JSONResponseBodyError0) FromGetOrder200JSONResponseBodyError00(v GetOrder200JSONResponseBodyError00) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError00 performs a merge with any union data inside the GetOrder200JSONResponseBodyError0, using the provided GetOrder200JSONResponseBodyError00
-func (t *GetOrder200JSONResponseBodyError0) MergeGetOrder200JSONResponseBodyError00(v GetOrder200JSONResponseBodyError00) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError01 returns the union data inside the GetOrder200JSONResponseBodyError0 as a GetOrder200JSONResponseBodyError01
-func (t GetOrder200JSONResponseBodyError0) AsGetOrder200JSONResponseBodyError01() (GetOrder200JSONResponseBodyError01, error) {
-	var body GetOrder200JSONResponseBodyError01
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError01 overwrites any union data inside the GetOrder200JSONResponseBodyError0 as the provided GetOrder200JSONResponseBodyError01
-func (t *GetOrder200JSONResponseBodyError0) FromGetOrder200JSONResponseBodyError01(v GetOrder200JSONResponseBodyError01) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError01 performs a merge with any union data inside the GetOrder200JSONResponseBodyError0, using the provided GetOrder200JSONResponseBodyError01
-func (t *GetOrder200JSONResponseBodyError0) MergeGetOrder200JSONResponseBodyError01(v GetOrder200JSONResponseBodyError01) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError02 returns the union data inside the GetOrder200JSONResponseBodyError0 as a GetOrder200JSONResponseBodyError02
-func (t GetOrder200JSONResponseBodyError0) AsGetOrder200JSONResponseBodyError02() (GetOrder200JSONResponseBodyError02, error) {
-	var body GetOrder200JSONResponseBodyError02
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError02 overwrites any union data inside the GetOrder200JSONResponseBodyError0 as the provided GetOrder200JSONResponseBodyError02
-func (t *GetOrder200JSONResponseBodyError0) FromGetOrder200JSONResponseBodyError02(v GetOrder200JSONResponseBodyError02) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError02 performs a merge with any union data inside the GetOrder200JSONResponseBodyError0, using the provided GetOrder200JSONResponseBodyError02
-func (t *GetOrder200JSONResponseBodyError0) MergeGetOrder200JSONResponseBodyError02(v GetOrder200JSONResponseBodyError02) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError03 returns the union data inside the GetOrder200JSONResponseBodyError0 as a GetOrder200JSONResponseBodyError03
-func (t GetOrder200JSONResponseBodyError0) AsGetOrder200JSONResponseBodyError03() (GetOrder200JSONResponseBodyError03, error) {
-	var body GetOrder200JSONResponseBodyError03
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError03 overwrites any union data inside the GetOrder200JSONResponseBodyError0 as the provided GetOrder200JSONResponseBodyError03
-func (t *GetOrder200JSONResponseBodyError0) FromGetOrder200JSONResponseBodyError03(v GetOrder200JSONResponseBodyError03) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError03 performs a merge with any union data inside the GetOrder200JSONResponseBodyError0, using the provided GetOrder200JSONResponseBodyError03
-func (t *GetOrder200JSONResponseBodyError0) MergeGetOrder200JSONResponseBodyError03(v GetOrder200JSONResponseBodyError03) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError04 returns the union data inside the GetOrder200JSONResponseBodyError0 as a GetOrder200JSONResponseBodyError04
-func (t GetOrder200JSONResponseBodyError0) AsGetOrder200JSONResponseBodyError04() (GetOrder200JSONResponseBodyError04, error) {
-	var body GetOrder200JSONResponseBodyError04
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError04 overwrites any union data inside the GetOrder200JSONResponseBodyError0 as the provided GetOrder200JSONResponseBodyError04
-func (t *GetOrder200JSONResponseBodyError0) FromGetOrder200JSONResponseBodyError04(v GetOrder200JSONResponseBodyError04) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError04 performs a merge with any union data inside the GetOrder200JSONResponseBodyError0, using the provided GetOrder200JSONResponseBodyError04
-func (t *GetOrder200JSONResponseBodyError0) MergeGetOrder200JSONResponseBodyError04(v GetOrder200JSONResponseBodyError04) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError05 returns the union data inside the GetOrder200JSONResponseBodyError0 as a GetOrder200JSONResponseBodyError05
-func (t GetOrder200JSONResponseBodyError0) AsGetOrder200JSONResponseBodyError05() (GetOrder200JSONResponseBodyError05, error) {
-	var body GetOrder200JSONResponseBodyError05
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError05 overwrites any union data inside the GetOrder200JSONResponseBodyError0 as the provided GetOrder200JSONResponseBodyError05
-func (t *GetOrder200JSONResponseBodyError0) FromGetOrder200JSONResponseBodyError05(v GetOrder200JSONResponseBodyError05) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError05 performs a merge with any union data inside the GetOrder200JSONResponseBodyError0, using the provided GetOrder200JSONResponseBodyError05
-func (t *GetOrder200JSONResponseBodyError0) MergeGetOrder200JSONResponseBodyError05(v GetOrder200JSONResponseBodyError05) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetOrder200JSONResponseBodyError0) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetOrder200JSONResponseBodyError0) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetOrder200JSONResponseBodyError0 returns the union data inside the GetOrder200JSONResponseBody_Error as a GetOrder200JSONResponseBodyError0
-func (t GetOrder200JSONResponseBody_Error) AsGetOrder200JSONResponseBodyError0() (GetOrder200JSONResponseBodyError0, error) {
-	var body GetOrder200JSONResponseBodyError0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetOrder200JSONResponseBodyError0 overwrites any union data inside the GetOrder200JSONResponseBody_Error as the provided GetOrder200JSONResponseBodyError0
-func (t *GetOrder200JSONResponseBody_Error) FromGetOrder200JSONResponseBodyError0(v GetOrder200JSONResponseBodyError0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetOrder200JSONResponseBodyError0 performs a merge with any union data inside the GetOrder200JSONResponseBody_Error, using the provided GetOrder200JSONResponseBodyError0
-func (t *GetOrder200JSONResponseBody_Error) MergeGetOrder200JSONResponseBodyError0(v GetOrder200JSONResponseBodyError0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
 }

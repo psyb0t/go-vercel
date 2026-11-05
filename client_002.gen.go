@@ -6485,13 +6485,13 @@ func (e UserEventPrincipal1Type) Valid() bool {
 
 // Defines values for UserEventPrincipal2Type.
 const (
-	UserEventPrincipal2TypeExternal UserEventPrincipal2Type = "external"
+	UserEventPrincipal2TypeIntegration UserEventPrincipal2Type = "integration"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPrincipal2Type enum.
 func (e UserEventPrincipal2Type) Valid() bool {
 	switch e {
-	case UserEventPrincipal2TypeExternal:
+	case UserEventPrincipal2TypeIntegration:
 		return true
 	default:
 		return false
@@ -6500,13 +6500,28 @@ func (e UserEventPrincipal2Type) Valid() bool {
 
 // Defines values for UserEventPrincipal3Type.
 const (
-	UserEventPrincipal3TypeSystem UserEventPrincipal3Type = "system"
+	UserEventPrincipal3TypeExternal UserEventPrincipal3Type = "external"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPrincipal3Type enum.
 func (e UserEventPrincipal3Type) Valid() bool {
 	switch e {
-	case UserEventPrincipal3TypeSystem:
+	case UserEventPrincipal3TypeExternal:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPrincipal4Type.
+const (
+	UserEventPrincipal4TypeSystem UserEventPrincipal4Type = "system"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPrincipal4Type enum.
+func (e UserEventPrincipal4Type) Valid() bool {
+	switch e {
+	case UserEventPrincipal4TypeSystem:
 		return true
 	default:
 		return false
@@ -8831,13 +8846,13 @@ func (e UserEventVia1Type) Valid() bool {
 
 // Defines values for UserEventVia2Type.
 const (
-	UserEventVia2TypeExternal UserEventVia2Type = "external"
+	UserEventVia2TypeIntegration UserEventVia2Type = "integration"
 )
 
 // Valid indicates whether the value is a known member of the UserEventVia2Type enum.
 func (e UserEventVia2Type) Valid() bool {
 	switch e {
-	case UserEventVia2TypeExternal:
+	case UserEventVia2TypeIntegration:
 		return true
 	default:
 		return false
@@ -8846,13 +8861,28 @@ func (e UserEventVia2Type) Valid() bool {
 
 // Defines values for UserEventVia3Type.
 const (
-	UserEventVia3TypeSystem UserEventVia3Type = "system"
+	UserEventVia3TypeExternal UserEventVia3Type = "external"
 )
 
 // Valid indicates whether the value is a known member of the UserEventVia3Type enum.
 func (e UserEventVia3Type) Valid() bool {
 	switch e {
-	case UserEventVia3TypeSystem:
+	case UserEventVia3TypeExternal:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventVia4Type.
+const (
+	UserEventVia4TypeSystem UserEventVia4Type = "system"
+)
+
+// Valid indicates whether the value is a known member of the UserEventVia4Type enum.
+func (e UserEventVia4Type) Valid() bool {
+	switch e {
+	case UserEventVia4TypeSystem:
 		return true
 	default:
 		return false
@@ -19979,36 +20009,3 @@ func (e GetConfiguration200JSONResponseBody0NotificationLevel) Valid() bool {
 		return false
 	}
 }
-
-// Defines values for GetConfiguration200JSONResponseBody0ProjectSelection.
-const (
-	GetConfiguration200JSONResponseBody0ProjectSelectionAll      GetConfiguration200JSONResponseBody0ProjectSelection = "all"
-	GetConfiguration200JSONResponseBody0ProjectSelectionSelected GetConfiguration200JSONResponseBody0ProjectSelection = "selected"
-)
-
-// Valid indicates whether the value is a known member of the GetConfiguration200JSONResponseBody0ProjectSelection enum.
-func (e GetConfiguration200JSONResponseBody0ProjectSelection) Valid() bool {
-	switch e {
-	case GetConfiguration200JSONResponseBody0ProjectSelectionAll:
-		return true
-	case GetConfiguration200JSONResponseBody0ProjectSelectionSelected:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetConfiguration200JSONResponseBody0Source.
-const (
-	GetConfiguration200JSONResponseBody0SourceBackoffice                             GetConfiguration200JSONResponseBody0Source = "backoffice"
-	GetConfiguration200JSONResponseBody0SourceCli                                    GetConfiguration200JSONResponseBody0Source = "cli"
-	GetConfiguration200JSONResponseBody0SourceDeployButton                           GetConfiguration200JSONResponseBody0Source = "deploy-button"
-	GetConfiguration200JSONResponseBody0SourceExternal                               GetConfiguration200JSONResponseBody0Source = "external"
-	GetConfiguration200JSONResponseBody0SourceImportRecommendedIntegrations          GetConfiguration200JSONResponseBody0Source = "import-recommended-integrations"
-	GetConfiguration200JSONResponseBody0SourceMarketplace                            GetConfiguration200JSONResponseBody0Source = "marketplace"
-	GetConfiguration200JSONResponseBody0SourceOauth                                  GetConfiguration200JSONResponseBody0Source = "oauth"
-	GetConfiguration200JSONResponseBody0SourceOrganization                           GetConfiguration200JSONResponseBody0Source = "organization"
-	GetConfiguration200JSONResponseBody0SourceProjectOverviewRecommendedIntegrations GetConfiguration200JSONResponseBody0Source = "project-overview-recommended-integrations"
-	GetConfiguration200JSONResponseBody0SourceResourceClaims                         GetConfiguration200JSONResponseBody0Source = "resource-claims"
-	GetConfiguration200JSONResponseBody0SourceV0                                     GetConfiguration200JSONResponseBody0Source = "v0"
-)

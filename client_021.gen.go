@@ -16,6 +16,637 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// InvalidateByTagsWithBody Invalidate by tag
+//
+// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
+func (c *Client) InvalidateByTagsWithBody(ctx context.Context, params *InvalidateByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInvalidateByTagsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// InvalidateByTags Invalidate by tag
+//
+// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
+func (c *Client) InvalidateByTags(ctx context.Context, params *InvalidateByTagsParams, body InvalidateByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInvalidateByTagsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteSharedEnvVariableWithBody Delete one or more Env Var
+//
+// Deletes one or many Shared Environment Variables for a given team.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
+func (c *Client) DeleteSharedEnvVariableWithBody(ctx context.Context, params *DeleteSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteSharedEnvVariableRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteSharedEnvVariable Delete one or more Env Var
+//
+// Deletes one or many Shared Environment Variables for a given team.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
+func (c *Client) DeleteSharedEnvVariable(ctx context.Context, params *DeleteSharedEnvVariableParams, body DeleteSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteSharedEnvVariableRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListSharedEnvVariable Lists all Shared Environment Variables for a team
+//
+// Lists all Shared Environment Variables for a team, taking into account optional filters.
+//
+// Corresponds with GET /v1/env (the `ListSharedEnvVariable` operationId).
+func (c *Client) ListSharedEnvVariable(ctx context.Context, params *ListSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListSharedEnvVariableRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateSharedEnvVariableWithBody Updates one or more shared environment variables
+//
+// Updates a given Shared Environment Variable for a Team.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
+func (c *Client) UpdateSharedEnvVariableWithBody(ctx context.Context, params *UpdateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateSharedEnvVariableRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateSharedEnvVariable Updates one or more shared environment variables
+//
+// Updates a given Shared Environment Variable for a Team.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
+func (c *Client) UpdateSharedEnvVariable(ctx context.Context, params *UpdateSharedEnvVariableParams, body UpdateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateSharedEnvVariableRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateSharedEnvVariableWithBody Create one or more shared environment variables
+//
+// Creates shared environment variable(s) for a team.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
+func (c *Client) CreateSharedEnvVariableWithBody(ctx context.Context, params *CreateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateSharedEnvVariableRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateSharedEnvVariable Create one or more shared environment variables
+//
+// Creates shared environment variable(s) for a team.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
+func (c *Client) CreateSharedEnvVariable(ctx context.Context, params *CreateSharedEnvVariableParams, body CreateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateSharedEnvVariableRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetSharedEnvVar Retrieve the decrypted value of a Shared Environment Variable by id.
+//
+// Corresponds with GET /v1/env/{id} (the `GetSharedEnvVar` operationId).
+func (c *Client) GetSharedEnvVar(ctx context.Context, id string, params *GetSharedEnvVarParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSharedEnvVarRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UnlinkSharedEnvVariable Disconnects a shared environment variable for a given project
+//
+// Corresponds with PATCH /v1/env/{id}/unlink/{projectId} (the `UnlinkSharedEnvVariable` operationId).
+func (c *Client) UnlinkSharedEnvVariable(ctx context.Context, id string, projectId string, params *UnlinkSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnlinkSharedEnvVariableRequest(c.Server, id, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListEventTypes List Event Types
+//
+// Returns the list of user-facing event types with descriptions.
+//
+// Corresponds with GET /v1/events/types (the `ListEventTypes` operationId).
+func (c *Client) ListEventTypes(ctx context.Context, params *ListEventTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListEventTypesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigs Get Global Configs
+//
+// Returns all Global Configs.
+//
+// Corresponds with GET /v1/global-config (the `GetEdgeConfigs` operationId).
+func (c *Client) GetEdgeConfigs(ctx context.Context, params *GetEdgeConfigsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateEdgeConfigWithBody Create a Global Config
+//
+// Creates a Global Config.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
+func (c *Client) CreateEdgeConfigWithBody(ctx context.Context, params *CreateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateEdgeConfigRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateEdgeConfig Create a Global Config
+//
+// Creates a Global Config.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
+func (c *Client) CreateEdgeConfig(ctx context.Context, params *CreateEdgeConfigParams, body CreateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateEdgeConfigRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteEdgeConfig Delete a Global Config
+//
+// Delete a Global Config by id.
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId} (the `DeleteEdgeConfig` operationId).
+func (c *Client) DeleteEdgeConfig(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteEdgeConfigRequest(c.Server, edgeConfigId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfig Get a Global Config
+//
+// Returns a Global Config.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId} (the `GetEdgeConfig` operationId).
+func (c *Client) GetEdgeConfig(ctx context.Context, edgeConfigId string, params *GetEdgeConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigRequest(c.Server, edgeConfigId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateEdgeConfigWithBody Update a Global Config
+//
+// Updates a Global Config.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
+func (c *Client) UpdateEdgeConfigWithBody(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateEdgeConfigRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateEdgeConfig Update a Global Config
+//
+// Updates a Global Config.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
+func (c *Client) UpdateEdgeConfig(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, body UpdateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateEdgeConfigRequest(c.Server, edgeConfigId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigBackups Get Global Config backups
+//
+// Returns backups of a Global Config.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/backups (the `GetEdgeConfigBackups` operationId).
+func (c *Client) GetEdgeConfigBackups(ctx context.Context, edgeConfigId string, params *GetEdgeConfigBackupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigBackupsRequest(c.Server, edgeConfigId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigBackup Get Global Config backup
+//
+// Retrieves a specific version of a Global Config from backup storage. The `user` field is only included when the caller can list team members.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} (the `GetEdgeConfigBackup` operationId).
+func (c *Client) GetEdgeConfigBackup(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *GetEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigBackupRequest(c.Server, edgeConfigId, edgeConfigBackupVersionId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RestoreEdgeConfigBackup Restore Global Config backup
+//
+// Restores a Global Config backup.
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore (the `RestoreEdgeConfigBackup` operationId).
+func (c *Client) RestoreEdgeConfigBackup(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *RestoreEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestoreEdgeConfigBackupRequest(c.Server, edgeConfigId, edgeConfigBackupVersionId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigItem Get a Global Config item
+//
+// Returns a specific Global Config Item.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} (the `GetEdgeConfigItem` operationId).
+func (c *Client) GetEdgeConfigItem(ctx context.Context, edgeConfigId string, edgeConfigItemKey string, params *GetEdgeConfigItemParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigItemRequest(c.Server, edgeConfigId, edgeConfigItemKey, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigItems Get Global Config items
+//
+// Returns all items of a Global Config.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/items (the `GetEdgeConfigItems` operationId).
+func (c *Client) GetEdgeConfigItems(ctx context.Context, edgeConfigId string, params *GetEdgeConfigItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigItemsRequest(c.Server, edgeConfigId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchEdgeConfigItemsWithBody Update Global Config items in batch
+//
+// Update multiple Global Config Items in batch.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
+func (c *Client) PatchEdgeConfigItemsWithBody(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchEdgeConfigItemsRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchEdgeConfigItems Update Global Config items in batch
+//
+// Update multiple Global Config Items in batch.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
+func (c *Client) PatchEdgeConfigItems(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchEdgeConfigItemsRequest(c.Server, edgeConfigId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteEdgeConfigSchema Delete a Global Config's schema
+//
+// Deletes the schema of existing Global Config.
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId}/schema (the `DeleteEdgeConfigSchema` operationId).
+func (c *Client) DeleteEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteEdgeConfigSchemaRequest(c.Server, edgeConfigId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigSchema Get Global Config schema
+//
+// Returns the schema of a Global Config.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/schema (the `GetEdgeConfigSchema` operationId).
+func (c *Client) GetEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *GetEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigSchemaRequest(c.Server, edgeConfigId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchEdgeConfigSchemaWithBody Update Global Config schema
+//
+// Update a Global Config's schema.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
+func (c *Client) PatchEdgeConfigSchemaWithBody(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchEdgeConfigSchemaRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchEdgeConfigSchema Update Global Config schema
+//
+// Update a Global Config's schema.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
+func (c *Client) PatchEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchEdgeConfigSchemaRequest(c.Server, edgeConfigId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateEdgeConfigTokenWithBody Create a Global Config token
+//
+// Adds a token to an existing Global Config.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
+func (c *Client) CreateEdgeConfigTokenWithBody(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateEdgeConfigTokenRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateEdgeConfigToken Create a Global Config token
+//
+// Adds a token to an existing Global Config.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
+func (c *Client) CreateEdgeConfigToken(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateEdgeConfigTokenRequest(c.Server, edgeConfigId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetEdgeConfigToken Get Global Config token meta data
+//
+// Return meta data about a Global Config token.
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
+func (c *Client) GetEdgeConfigToken(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEdgeConfigTokenRequest(c.Server, edgeConfigId, token, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteEdgeConfigTokensWithBody Delete one or more Global Config tokens
+//
+// Deletes one or more tokens of an existing Global Config.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
+func (c *Client) DeleteEdgeConfigTokensWithBody(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteEdgeConfigTokensRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteEdgeConfigTokens Delete one or more Global Config tokens
+//
+// Deletes one or more tokens of an existing Global Config.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
+func (c *Client) DeleteEdgeConfigTokens(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteEdgeConfigTokensRequest(c.Server, edgeConfigId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetEdgeConfigTokens Get all tokens of a Global Config
 //
 // Returns all tokens of a Global Config.
@@ -13038,6 +13669,18 @@ func NewListBillingChargesRequest(server string, params *ListBillingChargesParam
 			}
 		}
 
+		if params.OrgId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "orgId", *params.OrgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.TeamId != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -19368,654 +20011,6 @@ func NewDeleteIntegrationResourceRequest(server string, integrationConfiguration
 	}
 
 	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetIntegrationResourceRequest constructs an http.Request for the GetIntegrationResource method
-func NewGetIntegrationResourceRequest(server string, integrationConfigurationId string, resourceId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateResourceRequest calls the generic UpdateResource builder with application/json body
-func NewUpdateResourceRequest(server string, integrationConfigurationId string, resourceId string, body UpdateResourceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateResourceRequestWithBody(server, integrationConfigurationId, resourceId, "application/json", bodyReader)
-}
-
-// NewUpdateResourceRequestWithBody constructs an http.Request for the UpdateResource method, with any body, and a specified content type
-func NewUpdateResourceRequestWithBody(server string, integrationConfigurationId string, resourceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewImportResourceRequest calls the generic ImportResource builder with application/json body
-func NewImportResourceRequest(server string, integrationConfigurationId string, resourceId string, body ImportResourceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewImportResourceRequestWithBody(server, integrationConfigurationId, resourceId, "application/json", bodyReader)
-}
-
-// NewImportResourceRequestWithBody constructs an http.Request for the ImportResource method, with any body, and a specified content type
-func NewImportResourceRequestWithBody(server string, integrationConfigurationId string, resourceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest constructs an http.Request for the GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig method
-func NewGetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest(server string, integrationConfigurationId string, resourceId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/experimentation/global-config", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewHeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest constructs an http.Request for the HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig method
-func NewHeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest(server string, integrationConfigurationId string, resourceId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/experimentation/global-config", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodHead, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest calls the generic ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig builder with application/json body
-func NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest(server string, integrationConfigurationId string, resourceId string, body ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestWithBody(server, integrationConfigurationId, resourceId, "application/json", bodyReader)
-}
-
-// NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestWithBody constructs an http.Request for the ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig method, with any body, and a specified content type
-func NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestWithBody(server string, integrationConfigurationId string, resourceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/experimentation/global-config", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest calls the generic CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems builder with application/json body
-func NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest(server string, integrationConfigurationId string, resourceId string, body CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequestWithBody(server, integrationConfigurationId, resourceId, "application/json", bodyReader)
-}
-
-// NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequestWithBody constructs an http.Request for the CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems method, with any body, and a specified content type
-func NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequestWithBody(server string, integrationConfigurationId string, resourceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/experimentation/items", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest constructs an http.Request for the DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId method
-func NewDeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(server string, integrationConfigurationId string, resourceId string, itemId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "itemId", itemId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/experimentation/items/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest calls the generic UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId builder with application/json body
-func NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(server string, integrationConfigurationId string, resourceId string, itemId string, body UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequestWithBody(server, integrationConfigurationId, resourceId, itemId, "application/json", bodyReader)
-}
-
-// NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequestWithBody constructs an http.Request for the UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId method, with any body, and a specified content type
-func NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequestWithBody(server string, integrationConfigurationId string, resourceId string, itemId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "itemId", itemId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/experimentation/items/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewUpdateResourceSecretsByIdRequest calls the generic UpdateResourceSecretsById builder with application/json body
-func NewUpdateResourceSecretsByIdRequest(server string, integrationConfigurationId string, resourceId string, body UpdateResourceSecretsByIdJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateResourceSecretsByIdRequestWithBody(server, integrationConfigurationId, resourceId, "application/json", bodyReader)
-}
-
-// NewUpdateResourceSecretsByIdRequestWithBody constructs an http.Request for the UpdateResourceSecretsById method, with any body, and a specified content type
-func NewUpdateResourceSecretsByIdRequestWithBody(server string, integrationConfigurationId string, resourceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s/secrets", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteConfigurationRequest constructs an http.Request for the DeleteConfiguration method
-func NewDeleteConfigurationRequest(server string, id string, params *DeleteConfigurationParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/integrations/configuration/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetConfigurationRequest constructs an http.Request for the GetConfiguration method
-func NewGetConfigurationRequest(server string, id string, params *GetConfigurationParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/integrations/configuration/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}

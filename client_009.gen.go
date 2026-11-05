@@ -10,6 +10,194 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// Defines values for UpdateProject200JSONResponseBodyTargetsAliasAssigned1.
+const (
+	UpdateProject200JSONResponseBodyTargetsAliasAssigned1False UpdateProject200JSONResponseBodyTargetsAliasAssigned1 = false
+	UpdateProject200JSONResponseBodyTargetsAliasAssigned1True  UpdateProject200JSONResponseBodyTargetsAliasAssigned1 = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsAliasAssigned1 enum.
+func (e UpdateProject200JSONResponseBodyTargetsAliasAssigned1) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsAliasAssigned1False:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsAliasAssigned1True:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsBranchMatcherType.
+const (
+	UpdateProject200JSONResponseBodyTargetsBranchMatcherTypeEndsWith   UpdateProject200JSONResponseBodyTargetsBranchMatcherType = "endsWith"
+	UpdateProject200JSONResponseBodyTargetsBranchMatcherTypeEquals     UpdateProject200JSONResponseBodyTargetsBranchMatcherType = "equals"
+	UpdateProject200JSONResponseBodyTargetsBranchMatcherTypeStartsWith UpdateProject200JSONResponseBodyTargetsBranchMatcherType = "startsWith"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsBranchMatcherType enum.
+func (e UpdateProject200JSONResponseBodyTargetsBranchMatcherType) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsBranchMatcherTypeEndsWith:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsBranchMatcherTypeEquals:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsBranchMatcherTypeStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsChecksConclusion.
+const (
+	UpdateProject200JSONResponseBodyTargetsChecksConclusionCanceled  UpdateProject200JSONResponseBodyTargetsChecksConclusion = "canceled"
+	UpdateProject200JSONResponseBodyTargetsChecksConclusionFailed    UpdateProject200JSONResponseBodyTargetsChecksConclusion = "failed"
+	UpdateProject200JSONResponseBodyTargetsChecksConclusionSkipped   UpdateProject200JSONResponseBodyTargetsChecksConclusion = "skipped"
+	UpdateProject200JSONResponseBodyTargetsChecksConclusionSucceeded UpdateProject200JSONResponseBodyTargetsChecksConclusion = "succeeded"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsChecksConclusion enum.
+func (e UpdateProject200JSONResponseBodyTargetsChecksConclusion) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsChecksConclusionCanceled:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsChecksConclusionFailed:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsChecksConclusionSkipped:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsChecksConclusionSucceeded:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsChecksState.
+const (
+	UpdateProject200JSONResponseBodyTargetsChecksStateCompleted  UpdateProject200JSONResponseBodyTargetsChecksState = "completed"
+	UpdateProject200JSONResponseBodyTargetsChecksStateRegistered UpdateProject200JSONResponseBodyTargetsChecksState = "registered"
+	UpdateProject200JSONResponseBodyTargetsChecksStateRunning    UpdateProject200JSONResponseBodyTargetsChecksState = "running"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsChecksState enum.
+func (e UpdateProject200JSONResponseBodyTargetsChecksState) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsChecksStateCompleted:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsChecksStateRegistered:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsChecksStateRunning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabled.
+const (
+	UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabledFalse UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabled = false
+	UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabledTrue  UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabled = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabled enum.
+func (e UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabledFalse:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsConnectBuildsEnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsForced.
+const (
+	UpdateProject200JSONResponseBodyTargetsForcedFalse UpdateProject200JSONResponseBodyTargetsForced = false
+	UpdateProject200JSONResponseBodyTargetsForcedTrue  UpdateProject200JSONResponseBodyTargetsForced = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsForced enum.
+func (e UpdateProject200JSONResponseBodyTargetsForced) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsForcedFalse:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsForcedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsPlan.
+const (
+	UpdateProject200JSONResponseBodyTargetsPlanEnterprise UpdateProject200JSONResponseBodyTargetsPlan = "enterprise"
+	UpdateProject200JSONResponseBodyTargetsPlanHobby      UpdateProject200JSONResponseBodyTargetsPlan = "hobby"
+	UpdateProject200JSONResponseBodyTargetsPlanPro        UpdateProject200JSONResponseBodyTargetsPlan = "pro"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsPlan enum.
+func (e UpdateProject200JSONResponseBodyTargetsPlan) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsPlanEnterprise:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsPlanHobby:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsPlanPro:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabled.
+const (
+	UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabledFalse UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabled = false
+	UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabledTrue  UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabled = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabled enum.
+func (e UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabledFalse:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsPreviewCommentsEnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsPrivate.
+const (
+	UpdateProject200JSONResponseBodyTargetsPrivateFalse UpdateProject200JSONResponseBodyTargetsPrivate = false
+	UpdateProject200JSONResponseBodyTargetsPrivateTrue  UpdateProject200JSONResponseBodyTargetsPrivate = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsPrivate enum.
+func (e UpdateProject200JSONResponseBodyTargetsPrivate) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyTargetsPrivateFalse:
+		return true
+	case UpdateProject200JSONResponseBodyTargetsPrivateTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyTargetsReadyState.
+const (
+	UpdateProject200JSONResponseBodyTargetsReadyStateBLOCKED      UpdateProject200JSONResponseBodyTargetsReadyState = "BLOCKED"
+	UpdateProject200JSONResponseBodyTargetsReadyStateBUILDING     UpdateProject200JSONResponseBodyTargetsReadyState = "BUILDING"
+	UpdateProject200JSONResponseBodyTargetsReadyStateCANCELED     UpdateProject200JSONResponseBodyTargetsReadyState = "CANCELED"
+	UpdateProject200JSONResponseBodyTargetsReadyStateERROR        UpdateProject200JSONResponseBodyTargetsReadyState = "ERROR"
+	UpdateProject200JSONResponseBodyTargetsReadyStateINITIALIZING UpdateProject200JSONResponseBodyTargetsReadyState = "INITIALIZING"
+	UpdateProject200JSONResponseBodyTargetsReadyStateQUEUED       UpdateProject200JSONResponseBodyTargetsReadyState = "QUEUED"
+	UpdateProject200JSONResponseBodyTargetsReadyStateREADY        UpdateProject200JSONResponseBodyTargetsReadyState = "READY"
+)
+
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTargetsReadyState enum.
 func (e UpdateProject200JSONResponseBodyTargetsReadyState) Valid() bool {
 	switch e {
@@ -18098,10 +18286,13 @@ type UserEventPrincipal1Type string
 
 // UserEventPrincipal2 Metadata for {@link principalId}.
 type UserEventPrincipal2 struct {
-	Email *string                 `json:"email,omitempty"`
-	Id    string                  `json:"id"`
-	Name  string                  `json:"name"`
-	Type  UserEventPrincipal2Type `json:"type"`
+	Avatar *string `json:"avatar,omitempty"`
+
+	// Id The OAuth2 integration ID.
+	Id   string                  `json:"id"`
+	Name string                  `json:"name"`
+	Slug *string                 `json:"slug,omitempty"`
+	Type UserEventPrincipal2Type `json:"type"`
 }
 
 // UserEventPrincipal2Type defines model for UserEvent.Principal.2.Type.
@@ -18109,11 +18300,22 @@ type UserEventPrincipal2Type string
 
 // UserEventPrincipal3 Metadata for {@link principalId}.
 type UserEventPrincipal3 struct {
-	Type UserEventPrincipal3Type `json:"type"`
+	Email *string                 `json:"email,omitempty"`
+	Id    string                  `json:"id"`
+	Name  string                  `json:"name"`
+	Type  UserEventPrincipal3Type `json:"type"`
 }
 
 // UserEventPrincipal3Type defines model for UserEvent.Principal.3.Type.
 type UserEventPrincipal3Type string
+
+// UserEventPrincipal4 Metadata for {@link principalId}.
+type UserEventPrincipal4 struct {
+	Type UserEventPrincipal4Type `json:"type"`
+}
+
+// UserEventPrincipal4Type defines model for UserEvent.Principal.4.Type.
+type UserEventPrincipal4Type string
 
 // UserEvent_Principal defines model for UserEvent.Principal.
 type UserEvent_Principal struct {
@@ -18154,10 +18356,13 @@ type UserEventVia1Type string
 
 // UserEventVia2 Metadata for {@link viaIds}.
 type UserEventVia2 struct {
-	Email *string           `json:"email,omitempty"`
-	Id    string            `json:"id"`
-	Name  string            `json:"name"`
-	Type  UserEventVia2Type `json:"type"`
+	Avatar *string `json:"avatar,omitempty"`
+
+	// Id The OAuth2 integration ID.
+	Id   string            `json:"id"`
+	Name string            `json:"name"`
+	Slug *string           `json:"slug,omitempty"`
+	Type UserEventVia2Type `json:"type"`
 }
 
 // UserEventVia2Type defines model for UserEvent.Via.2.Type.
@@ -18165,11 +18370,22 @@ type UserEventVia2Type string
 
 // UserEventVia3 Metadata for {@link viaIds}.
 type UserEventVia3 struct {
-	Type UserEventVia3Type `json:"type"`
+	Email *string           `json:"email,omitempty"`
+	Id    string            `json:"id"`
+	Name  string            `json:"name"`
+	Type  UserEventVia3Type `json:"type"`
 }
 
 // UserEventVia3Type defines model for UserEvent.Via.3.Type.
 type UserEventVia3Type string
+
+// UserEventVia4 Metadata for {@link viaIds}.
+type UserEventVia4 struct {
+	Type UserEventVia4Type `json:"type"`
+}
+
+// UserEventVia4Type defines model for UserEvent.Via.4.Type.
+type UserEventVia4Type string
 
 // UserEvent_Via_Item defines model for UserEvent.via.Item.
 type UserEvent_Via_Item struct {
@@ -18514,7 +18730,7 @@ type ArchiveAiGatewayBudgetParams struct {
 	// UserId Required when scopeType is \"user\".
 	UserId *string `form:"userId,omitempty" json:"userId,omitempty"`
 
-	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.
 	Justification *string `form:"justification,omitempty" json:"justification,omitempty"`
 
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -18534,7 +18750,7 @@ type UpsertAiGatewayBudgetJSONBody struct {
 	// IncludeByokInQuota Whether BYOK usage counts toward this budget.
 	IncludeByokInQuota *bool `json:"includeByokInQuota,omitempty"`
 
-	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.
 	Justification *string `json:"justification,omitempty"`
 
 	// LimitAmount Budget limit in dollars.
@@ -18572,7 +18788,7 @@ type ArchiveAiGatewayBudgetDefaultParams struct {
 	// ScopeType The budget default scope to delete.
 	ScopeType ArchiveAiGatewayBudgetDefaultParamsScopeType `form:"scopeType" json:"scopeType"`
 
-	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains. Only recorded when scopeType is set.
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook. Only recorded when scopeType is set.
 	Justification *string `form:"justification,omitempty" json:"justification,omitempty"`
 
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -18589,7 +18805,7 @@ type ArchiveAiGatewayBudgetDefaultParamsScopeType string
 type UpsertAiGatewayBudgetDefaultJSONBody struct {
 	AlertThresholds *[]UpsertAiGatewayBudgetDefaultJSONBodyAlertThresholds `json:"alertThresholds,omitempty"`
 
-	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.
 	Justification *string `json:"justification,omitempty"`
 
 	// LimitAmount Default budget limit in dollars.
@@ -19807,278 +20023,4 @@ type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2 struct {
 		PendingSubscriptionChangeId string `json:"pendingSubscriptionChangeId"`
 	} `json:"output"`
 	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2Type `json:"type"`
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate bool
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate0 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate0 = map[string]interface{}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate1 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate1 string
-
-// BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_2_Options_EffectiveDate defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_2_Options_EffectiveDate struct {
-	union json.RawMessage
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2Type defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2Type string
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3 struct {
-	Options struct {
-		// Add The price intervals to add to the subscription
-		Add *[]interface{} `json:"add,omitempty"`
-
-		// AddAdjustments The adjustment intervals to add to the subscription
-		AddAdjustments *[]interface{} `json:"addAdjustments,omitempty"`
-
-		// AllowInvoiceCreditOrVoid Whether to allow invoice credit or void
-		AllowInvoiceCreditOrVoid *BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3OptionsAllowInvoiceCreditOrVoid `json:"allowInvoiceCreditOrVoid,omitempty"`
-
-		// Edit The price intervals to edit on the subscription
-		Edit *[]interface{} `json:"edit,omitempty"`
-
-		// EditAdjustments The adjustment intervals to edit on the subscription
-		EditAdjustments *[]interface{} `json:"editAdjustments,omitempty"`
-
-		// OrbSubscriptionId The ID of the Orb subscription to modify price intervals for
-		OrbSubscriptionId string `json:"orbSubscriptionId"`
-	} `json:"options"`
-	Output struct {
-		// PendingSubscriptionChangeId The ID of the pending subscription change
-		PendingSubscriptionChangeId string `json:"pendingSubscriptionChangeId"`
-	} `json:"output"`
-	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3Type `json:"type"`
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3OptionsAllowInvoiceCreditOrVoid defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3OptionsAllowInvoiceCreditOrVoid bool
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3Type defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3Type string
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4 struct {
-	Options struct {
-		// AddPrices The prices to add to the subscription
-		AddPrices *[]BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_AddPrices_Item `json:"addPrices,omitempty"`
-
-		// AlignBillingWithSubscriptionStartDate Whether to align the subscription start date with the billing subscription start date
-		AlignBillingWithSubscriptionStartDate *BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAlignBillingWithSubscriptionStartDate `json:"alignBillingWithSubscriptionStartDate,omitempty"`
-
-		// CouponRedemptionCode The coupon redemption code to apply to the subscription
-		CouponRedemptionCode *string `json:"couponRedemptionCode,omitempty"`
-
-		// ExternalPlanId The external plan ID of the Orb plan to subscribe to
-		ExternalPlanId string `json:"externalPlanId"`
-
-		// InitialPhaseOrder The initial phase order to use for the subscription
-		InitialPhaseOrder *float32 `json:"initialPhaseOrder,omitempty"`
-
-		// Metadata Optional metadata to associate with the subscription
-		Metadata *map[string]*string `json:"metadata,omitempty"`
-
-		// RemovePrices The prices to remove in the subscription
-		RemovePrices *[]struct {
-			// PriceId The ID of the price to remove
-			PriceId string `json:"priceId"`
-		} `json:"removePrices,omitempty"`
-
-		// ReplacePrices The prices to replace in the subscription
-		ReplacePrices *[]struct {
-			// FixedPriceQuantity The quantity for the fixed price
-			FixedPriceQuantity float32 `json:"fixedPriceQuantity"`
-
-			// ReplacesPriceId The ID of the price to replace
-			ReplacesPriceId string `json:"replacesPriceId"`
-		} `json:"replacePrices,omitempty"`
-
-		// StartDate The start date of the subscription
-		StartDate *string `json:"startDate,omitempty"`
-	} `json:"options"`
-	Output struct {
-		// PendingSubscriptionChangeId The ID of the pending subscription change
-		PendingSubscriptionChangeId string `json:"pendingSubscriptionChangeId"`
-	} `json:"output"`
-	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4Type `json:"type"`
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices0 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices0 struct {
-	// PriceId The ID of the price to add
-	PriceId string `json:"priceId"`
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices1 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices1 = map[string]interface{}
-
-// BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_AddPrices_Item defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_AddPrices_Item struct {
-	union json.RawMessage
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAlignBillingWithSubscriptionStartDate defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAlignBillingWithSubscriptionStartDate bool
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4Type defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4Type string
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5 struct {
-	Options struct {
-		// LineItems The line items that make up the Purchase Intent.
-		LineItems *[]struct {
-			// Description The description of the line item
-			Description string `json:"description"`
-
-			// Id The ID of the line item
-			Id string `json:"id"`
-
-			// Metadata Optional metadata for the line item
-			Metadata *map[string]string `json:"metadata,omitempty"`
-
-			// Name The name of the line item
-			Name string `json:"name"`
-
-			// ProductAlias The alias of the product being purchased
-			ProductAlias *string `json:"productAlias,omitempty"`
-
-			// ProductId The ID of the product being purchased
-			ProductId string `json:"productId"`
-
-			// Quantity The quantity of the line item
-			Quantity string `json:"quantity"`
-
-			// Refund The amount of the line item that has been refunded
-			Refund *string `json:"refund,omitempty"`
-
-			// UnitAmount The unit amount of the line item
-			UnitAmount string `json:"unitAmount"`
-		} `json:"lineItems,omitempty"`
-
-		// OrbCustomerId The ID of the Orb customer to create
-		OrbCustomerId string `json:"orbCustomerId"`
-
-		// OrbExternalCustomerId The external ID of the Orb customer to create
-		OrbExternalCustomerId string `json:"orbExternalCustomerId"`
-
-		// OrbExternalPlanId The external ID of the Orb plan to create
-		OrbExternalPlanId string `json:"orbExternalPlanId"`
-
-		// OrbPendingSubscriptionChangeId The ID of the pending subscription change
-		OrbPendingSubscriptionChangeId *string `json:"orbPendingSubscriptionChangeId,omitempty"`
-
-		// OrbPlanId The ID of the Orb plan to create
-		OrbPlanId string `json:"orbPlanId"`
-
-		// OrbSubscriptionId The ID of the Orb subscription to create
-		OrbSubscriptionId string `json:"orbSubscriptionId"`
-	} `json:"options"`
-	Output struct {
-		// PendingSubscriptionChangeId The ID of the pending subscription change
-		PendingSubscriptionChangeId *string `json:"pendingSubscriptionChangeId,omitempty"`
-	} `json:"output"`
-	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type `json:"type"`
-}
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type string
-
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
-	// Options Purchase configuration specific options
-	Options struct {
-		// FromPlan The current plan being replaced by this purchase
-		FromPlan *struct {
-			// AdditionalSubscriptions Additional source subscriptions replaced by this purchase
-			AdditionalSubscriptions *[]struct {
-				// CurrentCycleEndDate The end of the additional source subscription billing cycle
-				CurrentCycleEndDate string `json:"currentCycleEndDate"`
-
-				// OrbSubscriptionId The additional source Orb subscription ID
-				OrbSubscriptionId string `json:"orbSubscriptionId"`
-
-				// PlanId The ID of the plan assigned to the additional source subscription
-				PlanId string `json:"planId"`
-			} `json:"additionalSubscriptions,omitempty"`
-
-			// CurrentCycleEndDate The end of the current plan billing cycle
-			CurrentCycleEndDate string `json:"currentCycleEndDate"`
-
-			// OrbSubscriptionId The Orb subscription ID currently active for the owner on the source plan
-			OrbSubscriptionId string `json:"orbSubscriptionId"`
-
-			// PlanId The ID of the plan currently assigned
-			PlanId string `json:"planId"`
-
-			// PlanItemPrices The current plan item price overrides
-			PlanItemPrices *[]struct {
-				// PlanItemId The ID of the plan item to set the price for
-				PlanItemId string `json:"planItemId"`
-
-				// Price The absolute price that replaces the plan item price, after any rate variant
-				Price struct {
-					Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel `json:"model"`
-
-					// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
-					UnitAmount string `json:"unitAmount"`
-				} `json:"price"`
-			} `json:"planItemPrices,omitempty"`
-
-			// PlanItemQuantities The current plan item quantities
-			PlanItemQuantities *[]struct {
-				// PlanItemId The ID of the current plan item to set the quantity for
-				PlanItemId string `json:"planItemId"`
-
-				// Quantity The nonnegative integer quantity for the current plan item
-				Quantity float32 `json:"quantity"`
-
-				// ResourceIds The resource IDs associated with the current plan item quantity
-				ResourceIds *[]string `json:"resourceIds,omitempty"`
-			} `json:"planItemQuantities,omitempty"`
-
-			// RateVariantKey The rate variant currently assigned
-			RateVariantKey *string `json:"rateVariantKey,omitempty"`
-		} `json:"fromPlan,omitempty"`
-
-		// PlanId The ID of the plan to subscribe to
-		PlanId string `json:"planId"`
-
-		// PlanItemPrices The plan item prices to set for the subscription, independent of quantities
-		PlanItemPrices *[]struct {
-			// PlanItemId The ID of the plan item to set the price for
-			PlanItemId string `json:"planItemId"`
-
-			// Price The absolute price that replaces the plan item price, after any rate variant
-			Price struct {
-				Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel `json:"model"`
-
-				// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
-				UnitAmount string `json:"unitAmount"`
-			} `json:"price"`
-		} `json:"planItemPrices,omitempty"`
-
-		// PlanItemQuantities The plan item quantities to set for the subscription
-		PlanItemQuantities *[]struct {
-			// PlanItemId The ID of the plan item to set the quantity for
-			PlanItemId string `json:"planItemId"`
-
-			// Quantity The nonnegative integer quantity for the plan item
-			Quantity float32 `json:"quantity"`
-
-			// ResourceIds The resource IDs to associate with the plan item quantity
-			ResourceIds *[]string `json:"resourceIds,omitempty"`
-		} `json:"planItemQuantities,omitempty"`
-
-		// RateVariantKey The rate variant key to apply to the subscription
-		RateVariantKey *string `json:"rateVariantKey,omitempty"`
-	} `json:"options"`
-	Output struct {
-		// PlanChangeId The committed Plan revision used to calculate the purchase price
-		PlanChangeId *string `json:"planChangeId,omitempty"`
-	} `json:"output"`
-	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type `json:"type"`
 }

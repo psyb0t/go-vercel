@@ -14,6 +14,630 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source as a ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) AsListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1() (ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) FromListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source as a ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) AsListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2() (ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) FromListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result as a ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) AsListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0() (ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) FromListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0(v ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) MergeListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0(v ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result as a ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) AsListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1() (ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) FromListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1(v ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) MergeListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1(v ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result as a ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) AsListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2() (ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) FromListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2(v ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) MergeListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2(v ListVercelCiInvocations200JSONResponseBodyInvocationsRunConclusionResult2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_RunConclusion_Result) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result as a ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) AsListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0() (ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) FromListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0(v ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) MergeListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0(v ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result as a ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) AsListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1() (ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) FromListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1(v ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) MergeListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1(v ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result as a ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) AsListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2() (ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) FromListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2(v ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) MergeListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2(v ListVercelCiInvocations200JSONResponseBodyInvocationsSetupConclusionResult2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_SetupConclusion_Result) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsSource0 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Source as a ListVercelCiInvocations200JSONResponseBodyInvocationsSource0
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Source) AsListVercelCiInvocations200JSONResponseBodyInvocationsSource0() (ListVercelCiInvocations200JSONResponseBodyInvocationsSource0, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsSource0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsSource0 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Source as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSource0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Source) FromListVercelCiInvocations200JSONResponseBodyInvocationsSource0(v ListVercelCiInvocations200JSONResponseBodyInvocationsSource0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsSource0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Source, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSource0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Source) MergeListVercelCiInvocations200JSONResponseBodyInvocationsSource0(v ListVercelCiInvocations200JSONResponseBodyInvocationsSource0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsSource1 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Source as a ListVercelCiInvocations200JSONResponseBodyInvocationsSource1
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Source) AsListVercelCiInvocations200JSONResponseBodyInvocationsSource1() (ListVercelCiInvocations200JSONResponseBodyInvocationsSource1, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsSource1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsSource1 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Source as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSource1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Source) FromListVercelCiInvocations200JSONResponseBodyInvocationsSource1(v ListVercelCiInvocations200JSONResponseBodyInvocationsSource1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsSource1 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Source, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsSource1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Source) MergeListVercelCiInvocations200JSONResponseBodyInvocationsSource1(v ListVercelCiInvocations200JSONResponseBodyInvocationsSource1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Source) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Source) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus0 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus0() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus0 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus0(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus0(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus1 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus1() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus1 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus1(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus1 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus1(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus2 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus2() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus2 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus2(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus2 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus2(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus3 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus3() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus3 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus3(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus3 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus3(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus4 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus4() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus4 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus4(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus4 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus4(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus5 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus5() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus5 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus5(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus5 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus5(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus6 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus6() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus6 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus6(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus6 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus6(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus7 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus7() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus7 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus7(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus7 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus7(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus7) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus8 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus8() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus8 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus8(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus8 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus8(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus8) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus9 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus9() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus9 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus9(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus9 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus9(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus9) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus10 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus10() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus10 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus10(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus10 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus10(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus11() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus11(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus11(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -12214,7 +12838,7 @@ type ClientInterface interface {
 
 	// ListBillingCharges List FOCUS billing charges
 	//
-	// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
+	// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. `SubAccountId` and `SubAccountName` are the team. With `orgId` instead of a team, returns a row per team and product in an organization with Enterprise teams, plus Organization (unallocated) rows for spend no single team used; this requires the OrgAdmin or OrgViewer role. A team in such an organization, including the one that holds its subscription, gets only its own rows. Those rows are not split by region or project, and `x_CostAttribution` marks how cost was split between teams. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
 	//
 	// Corresponds with GET /v1/billing/charges (the `ListBillingCharges` operationId).
 	ListBillingCharges(ctx context.Context, params *ListBillingChargesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -18196,7 +18820,7 @@ func (c *Client) BuyCredits(ctx context.Context, params *BuyCreditsParams, body 
 
 // ListBillingCharges List FOCUS billing charges
 //
-// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
+// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. `SubAccountId` and `SubAccountName` are the team. With `orgId` instead of a team, returns a row per team and product in an organization with Enterprise teams, plus Organization (unallocated) rows for spend no single team used; this requires the OrgAdmin or OrgViewer role. A team in such an organization, including the one that holds its subscription, gets only its own rows. Those rows are not split by region or project, and `x_CostAttribution` marks how cost was split between teams. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
 //
 // Corresponds with GET /v1/billing/charges (the `ListBillingCharges` operationId).
 func (c *Client) ListBillingCharges(ctx context.Context, params *ListBillingChargesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -19386,637 +20010,6 @@ func (c *Client) InvalidateBySrcImagesWithBody(ctx context.Context, params *Inva
 // Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
 func (c *Client) InvalidateBySrcImages(ctx context.Context, params *InvalidateBySrcImagesParams, body InvalidateBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewInvalidateBySrcImagesRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// InvalidateByTagsWithBody Invalidate by tag
-//
-// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
-func (c *Client) InvalidateByTagsWithBody(ctx context.Context, params *InvalidateByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInvalidateByTagsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// InvalidateByTags Invalidate by tag
-//
-// Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/edge-cache/invalidate-by-tags (the `InvalidateByTags` operationId).
-func (c *Client) InvalidateByTags(ctx context.Context, params *InvalidateByTagsParams, body InvalidateByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInvalidateByTagsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteSharedEnvVariableWithBody Delete one or more Env Var
-//
-// Deletes one or many Shared Environment Variables for a given team.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
-func (c *Client) DeleteSharedEnvVariableWithBody(ctx context.Context, params *DeleteSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteSharedEnvVariableRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteSharedEnvVariable Delete one or more Env Var
-//
-// Deletes one or many Shared Environment Variables for a given team.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with DELETE /v1/env (the `DeleteSharedEnvVariable` operationId).
-func (c *Client) DeleteSharedEnvVariable(ctx context.Context, params *DeleteSharedEnvVariableParams, body DeleteSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteSharedEnvVariableRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListSharedEnvVariable Lists all Shared Environment Variables for a team
-//
-// Lists all Shared Environment Variables for a team, taking into account optional filters.
-//
-// Corresponds with GET /v1/env (the `ListSharedEnvVariable` operationId).
-func (c *Client) ListSharedEnvVariable(ctx context.Context, params *ListSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListSharedEnvVariableRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateSharedEnvVariableWithBody Updates one or more shared environment variables
-//
-// Updates a given Shared Environment Variable for a Team.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
-func (c *Client) UpdateSharedEnvVariableWithBody(ctx context.Context, params *UpdateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateSharedEnvVariableRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateSharedEnvVariable Updates one or more shared environment variables
-//
-// Updates a given Shared Environment Variable for a Team.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/env (the `UpdateSharedEnvVariable` operationId).
-func (c *Client) UpdateSharedEnvVariable(ctx context.Context, params *UpdateSharedEnvVariableParams, body UpdateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateSharedEnvVariableRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSharedEnvVariableWithBody Create one or more shared environment variables
-//
-// Creates shared environment variable(s) for a team.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
-func (c *Client) CreateSharedEnvVariableWithBody(ctx context.Context, params *CreateSharedEnvVariableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSharedEnvVariableRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSharedEnvVariable Create one or more shared environment variables
-//
-// Creates shared environment variable(s) for a team.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/env (the `CreateSharedEnvVariable` operationId).
-func (c *Client) CreateSharedEnvVariable(ctx context.Context, params *CreateSharedEnvVariableParams, body CreateSharedEnvVariableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSharedEnvVariableRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetSharedEnvVar Retrieve the decrypted value of a Shared Environment Variable by id.
-//
-// Corresponds with GET /v1/env/{id} (the `GetSharedEnvVar` operationId).
-func (c *Client) GetSharedEnvVar(ctx context.Context, id string, params *GetSharedEnvVarParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetSharedEnvVarRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UnlinkSharedEnvVariable Disconnects a shared environment variable for a given project
-//
-// Corresponds with PATCH /v1/env/{id}/unlink/{projectId} (the `UnlinkSharedEnvVariable` operationId).
-func (c *Client) UnlinkSharedEnvVariable(ctx context.Context, id string, projectId string, params *UnlinkSharedEnvVariableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUnlinkSharedEnvVariableRequest(c.Server, id, projectId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListEventTypes List Event Types
-//
-// Returns the list of user-facing event types with descriptions.
-//
-// Corresponds with GET /v1/events/types (the `ListEventTypes` operationId).
-func (c *Client) ListEventTypes(ctx context.Context, params *ListEventTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListEventTypesRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigs Get Global Configs
-//
-// Returns all Global Configs.
-//
-// Corresponds with GET /v1/global-config (the `GetEdgeConfigs` operationId).
-func (c *Client) GetEdgeConfigs(ctx context.Context, params *GetEdgeConfigsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateEdgeConfigWithBody Create a Global Config
-//
-// Creates a Global Config.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
-func (c *Client) CreateEdgeConfigWithBody(ctx context.Context, params *CreateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateEdgeConfigRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateEdgeConfig Create a Global Config
-//
-// Creates a Global Config.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/global-config (the `CreateEdgeConfig` operationId).
-func (c *Client) CreateEdgeConfig(ctx context.Context, params *CreateEdgeConfigParams, body CreateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateEdgeConfigRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteEdgeConfig Delete a Global Config
-//
-// Delete a Global Config by id.
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId} (the `DeleteEdgeConfig` operationId).
-func (c *Client) DeleteEdgeConfig(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteEdgeConfigRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfig Get a Global Config
-//
-// Returns a Global Config.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId} (the `GetEdgeConfig` operationId).
-func (c *Client) GetEdgeConfig(ctx context.Context, edgeConfigId string, params *GetEdgeConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateEdgeConfigWithBody Update a Global Config
-//
-// Updates a Global Config.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
-func (c *Client) UpdateEdgeConfigWithBody(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateEdgeConfigRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateEdgeConfig Update a Global Config
-//
-// Updates a Global Config.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v1/global-config/{edgeConfigId} (the `UpdateEdgeConfig` operationId).
-func (c *Client) UpdateEdgeConfig(ctx context.Context, edgeConfigId string, params *UpdateEdgeConfigParams, body UpdateEdgeConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateEdgeConfigRequest(c.Server, edgeConfigId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigBackups Get Global Config backups
-//
-// Returns backups of a Global Config.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/backups (the `GetEdgeConfigBackups` operationId).
-func (c *Client) GetEdgeConfigBackups(ctx context.Context, edgeConfigId string, params *GetEdgeConfigBackupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigBackupsRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigBackup Get Global Config backup
-//
-// Retrieves a specific version of a Global Config from backup storage. The `user` field is only included when the caller can list team members.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} (the `GetEdgeConfigBackup` operationId).
-func (c *Client) GetEdgeConfigBackup(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *GetEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigBackupRequest(c.Server, edgeConfigId, edgeConfigBackupVersionId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RestoreEdgeConfigBackup Restore Global Config backup
-//
-// Restores a Global Config backup.
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore (the `RestoreEdgeConfigBackup` operationId).
-func (c *Client) RestoreEdgeConfigBackup(ctx context.Context, edgeConfigId string, edgeConfigBackupVersionId string, params *RestoreEdgeConfigBackupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRestoreEdgeConfigBackupRequest(c.Server, edgeConfigId, edgeConfigBackupVersionId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigItem Get a Global Config item
-//
-// Returns a specific Global Config Item.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} (the `GetEdgeConfigItem` operationId).
-func (c *Client) GetEdgeConfigItem(ctx context.Context, edgeConfigId string, edgeConfigItemKey string, params *GetEdgeConfigItemParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigItemRequest(c.Server, edgeConfigId, edgeConfigItemKey, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigItems Get Global Config items
-//
-// Returns all items of a Global Config.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/items (the `GetEdgeConfigItems` operationId).
-func (c *Client) GetEdgeConfigItems(ctx context.Context, edgeConfigId string, params *GetEdgeConfigItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigItemsRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchEdgeConfigItemsWithBody Update Global Config items in batch
-//
-// Update multiple Global Config Items in batch.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-func (c *Client) PatchEdgeConfigItemsWithBody(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchEdgeConfigItemsRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchEdgeConfigItems Update Global Config items in batch
-//
-// Update multiple Global Config Items in batch.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-func (c *Client) PatchEdgeConfigItems(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchEdgeConfigItemsRequest(c.Server, edgeConfigId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteEdgeConfigSchema Delete a Global Config's schema
-//
-// Deletes the schema of existing Global Config.
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId}/schema (the `DeleteEdgeConfigSchema` operationId).
-func (c *Client) DeleteEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteEdgeConfigSchemaRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigSchema Get Global Config schema
-//
-// Returns the schema of a Global Config.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/schema (the `GetEdgeConfigSchema` operationId).
-func (c *Client) GetEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *GetEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigSchemaRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchEdgeConfigSchemaWithBody Update Global Config schema
-//
-// Update a Global Config's schema.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-func (c *Client) PatchEdgeConfigSchemaWithBody(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchEdgeConfigSchemaRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchEdgeConfigSchema Update Global Config schema
-//
-// Update a Global Config's schema.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-func (c *Client) PatchEdgeConfigSchema(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchEdgeConfigSchemaRequest(c.Server, edgeConfigId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateEdgeConfigTokenWithBody Create a Global Config token
-//
-// Adds a token to an existing Global Config.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-func (c *Client) CreateEdgeConfigTokenWithBody(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateEdgeConfigTokenRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateEdgeConfigToken Create a Global Config token
-//
-// Adds a token to an existing Global Config.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-func (c *Client) CreateEdgeConfigToken(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateEdgeConfigTokenRequest(c.Server, edgeConfigId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigToken Get Global Config token meta data
-//
-// Return meta data about a Global Config token.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
-func (c *Client) GetEdgeConfigToken(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigTokenRequest(c.Server, edgeConfigId, token, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteEdgeConfigTokensWithBody Delete one or more Global Config tokens
-//
-// Deletes one or more tokens of an existing Global Config.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-func (c *Client) DeleteEdgeConfigTokensWithBody(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteEdgeConfigTokensRequestWithBody(c.Server, edgeConfigId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteEdgeConfigTokens Delete one or more Global Config tokens
-//
-// Deletes one or more tokens of an existing Global Config.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-func (c *Client) DeleteEdgeConfigTokens(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteEdgeConfigTokensRequest(c.Server, edgeConfigId, params, body)
 	if err != nil {
 		return nil, err
 	}

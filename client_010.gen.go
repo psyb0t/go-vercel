@@ -10,6 +10,280 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate bool
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate0 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate0 = map[string]interface{}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate1 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsEffectiveDate1 string
+
+// BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_2_Options_EffectiveDate defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_2_Options_EffectiveDate struct {
+	union json.RawMessage
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2Type defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2Type string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3 struct {
+	Options struct {
+		// Add The price intervals to add to the subscription
+		Add *[]interface{} `json:"add,omitempty"`
+
+		// AddAdjustments The adjustment intervals to add to the subscription
+		AddAdjustments *[]interface{} `json:"addAdjustments,omitempty"`
+
+		// AllowInvoiceCreditOrVoid Whether to allow invoice credit or void
+		AllowInvoiceCreditOrVoid *BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3OptionsAllowInvoiceCreditOrVoid `json:"allowInvoiceCreditOrVoid,omitempty"`
+
+		// Edit The price intervals to edit on the subscription
+		Edit *[]interface{} `json:"edit,omitempty"`
+
+		// EditAdjustments The adjustment intervals to edit on the subscription
+		EditAdjustments *[]interface{} `json:"editAdjustments,omitempty"`
+
+		// OrbSubscriptionId The ID of the Orb subscription to modify price intervals for
+		OrbSubscriptionId string `json:"orbSubscriptionId"`
+	} `json:"options"`
+	Output struct {
+		// PendingSubscriptionChangeId The ID of the pending subscription change
+		PendingSubscriptionChangeId string `json:"pendingSubscriptionChangeId"`
+	} `json:"output"`
+	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3Type `json:"type"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3OptionsAllowInvoiceCreditOrVoid defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3OptionsAllowInvoiceCreditOrVoid bool
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3Type defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration3Type string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4 struct {
+	Options struct {
+		// AddPrices The prices to add to the subscription
+		AddPrices *[]BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_AddPrices_Item `json:"addPrices,omitempty"`
+
+		// AlignBillingWithSubscriptionStartDate Whether to align the subscription start date with the billing subscription start date
+		AlignBillingWithSubscriptionStartDate *BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAlignBillingWithSubscriptionStartDate `json:"alignBillingWithSubscriptionStartDate,omitempty"`
+
+		// CouponRedemptionCode The coupon redemption code to apply to the subscription
+		CouponRedemptionCode *string `json:"couponRedemptionCode,omitempty"`
+
+		// ExternalPlanId The external plan ID of the Orb plan to subscribe to
+		ExternalPlanId string `json:"externalPlanId"`
+
+		// InitialPhaseOrder The initial phase order to use for the subscription
+		InitialPhaseOrder *float32 `json:"initialPhaseOrder,omitempty"`
+
+		// Metadata Optional metadata to associate with the subscription
+		Metadata *map[string]*string `json:"metadata,omitempty"`
+
+		// RemovePrices The prices to remove in the subscription
+		RemovePrices *[]struct {
+			// PriceId The ID of the price to remove
+			PriceId string `json:"priceId"`
+		} `json:"removePrices,omitempty"`
+
+		// ReplacePrices The prices to replace in the subscription
+		ReplacePrices *[]struct {
+			// FixedPriceQuantity The quantity for the fixed price
+			FixedPriceQuantity float32 `json:"fixedPriceQuantity"`
+
+			// ReplacesPriceId The ID of the price to replace
+			ReplacesPriceId string `json:"replacesPriceId"`
+		} `json:"replacePrices,omitempty"`
+
+		// StartDate The start date of the subscription
+		StartDate *string `json:"startDate,omitempty"`
+	} `json:"options"`
+	Output struct {
+		// PendingSubscriptionChangeId The ID of the pending subscription change
+		PendingSubscriptionChangeId string `json:"pendingSubscriptionChangeId"`
+	} `json:"output"`
+	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4Type `json:"type"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices0 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices0 struct {
+	// PriceId The ID of the price to add
+	PriceId string `json:"priceId"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices1 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAddPrices1 = map[string]interface{}
+
+// BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_AddPrices_Item defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_AddPrices_Item struct {
+	union json.RawMessage
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAlignBillingWithSubscriptionStartDate defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4OptionsAlignBillingWithSubscriptionStartDate bool
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4Type defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration4Type string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5 struct {
+	Options struct {
+		// LineItems The line items that make up the Purchase Intent.
+		LineItems *[]struct {
+			// Description The description of the line item
+			Description string `json:"description"`
+
+			// Id The ID of the line item
+			Id string `json:"id"`
+
+			// Metadata Optional metadata for the line item
+			Metadata *map[string]string `json:"metadata,omitempty"`
+
+			// Name The name of the line item
+			Name string `json:"name"`
+
+			// ProductAlias The alias of the product being purchased
+			ProductAlias *string `json:"productAlias,omitempty"`
+
+			// ProductId The ID of the product being purchased
+			ProductId string `json:"productId"`
+
+			// Quantity The quantity of the line item
+			Quantity string `json:"quantity"`
+
+			// Refund The amount of the line item that has been refunded
+			Refund *string `json:"refund,omitempty"`
+
+			// UnitAmount The unit amount of the line item
+			UnitAmount string `json:"unitAmount"`
+		} `json:"lineItems,omitempty"`
+
+		// OrbCustomerId The ID of the Orb customer to create
+		OrbCustomerId string `json:"orbCustomerId"`
+
+		// OrbExternalCustomerId The external ID of the Orb customer to create
+		OrbExternalCustomerId string `json:"orbExternalCustomerId"`
+
+		// OrbExternalPlanId The external ID of the Orb plan to create
+		OrbExternalPlanId string `json:"orbExternalPlanId"`
+
+		// OrbPendingSubscriptionChangeId The ID of the pending subscription change
+		OrbPendingSubscriptionChangeId *string `json:"orbPendingSubscriptionChangeId,omitempty"`
+
+		// OrbPlanId The ID of the Orb plan to create
+		OrbPlanId string `json:"orbPlanId"`
+
+		// OrbSubscriptionId The ID of the Orb subscription to create
+		OrbSubscriptionId string `json:"orbSubscriptionId"`
+	} `json:"options"`
+	Output struct {
+		// PendingSubscriptionChangeId The ID of the pending subscription change
+		PendingSubscriptionChangeId *string `json:"pendingSubscriptionChangeId,omitempty"`
+	} `json:"output"`
+	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type `json:"type"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
+	// Options Purchase configuration specific options
+	Options struct {
+		// FromPlan The current plan being replaced by this purchase
+		FromPlan *struct {
+			// AdditionalSubscriptions Additional source subscriptions replaced by this purchase
+			AdditionalSubscriptions *[]struct {
+				// CurrentCycleEndDate The end of the additional source subscription billing cycle
+				CurrentCycleEndDate string `json:"currentCycleEndDate"`
+
+				// OrbSubscriptionId The additional source Orb subscription ID
+				OrbSubscriptionId string `json:"orbSubscriptionId"`
+
+				// PlanId The ID of the plan assigned to the additional source subscription
+				PlanId string `json:"planId"`
+			} `json:"additionalSubscriptions,omitempty"`
+
+			// CurrentCycleEndDate The end of the current plan billing cycle
+			CurrentCycleEndDate string `json:"currentCycleEndDate"`
+
+			// OrbSubscriptionId The Orb subscription ID currently active for the owner on the source plan
+			OrbSubscriptionId string `json:"orbSubscriptionId"`
+
+			// PlanId The ID of the plan currently assigned
+			PlanId string `json:"planId"`
+
+			// PlanItemPrices The current plan item price overrides
+			PlanItemPrices *[]struct {
+				// PlanItemId The ID of the plan item to set the price for
+				PlanItemId string `json:"planItemId"`
+
+				// Price The absolute price that replaces the plan item price, after any rate variant
+				Price struct {
+					Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel `json:"model"`
+
+					// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
+					UnitAmount string `json:"unitAmount"`
+				} `json:"price"`
+			} `json:"planItemPrices,omitempty"`
+
+			// PlanItemQuantities The current plan item quantities
+			PlanItemQuantities *[]struct {
+				// PlanItemId The ID of the current plan item to set the quantity for
+				PlanItemId string `json:"planItemId"`
+
+				// Quantity The nonnegative integer quantity for the current plan item
+				Quantity float32 `json:"quantity"`
+
+				// ResourceIds The resource IDs associated with the current plan item quantity
+				ResourceIds *[]string `json:"resourceIds,omitempty"`
+			} `json:"planItemQuantities,omitempty"`
+
+			// RateVariantKey The rate variant currently assigned
+			RateVariantKey *string `json:"rateVariantKey,omitempty"`
+		} `json:"fromPlan,omitempty"`
+
+		// PlanId The ID of the plan to subscribe to
+		PlanId string `json:"planId"`
+
+		// PlanItemPrices The plan item prices to set for the subscription, independent of quantities
+		PlanItemPrices *[]struct {
+			// PlanItemId The ID of the plan item to set the price for
+			PlanItemId string `json:"planItemId"`
+
+			// Price The absolute price that replaces the plan item price, after any rate variant
+			Price struct {
+				Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel `json:"model"`
+
+				// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
+				UnitAmount string `json:"unitAmount"`
+			} `json:"price"`
+		} `json:"planItemPrices,omitempty"`
+
+		// PlanItemQuantities The plan item quantities to set for the subscription
+		PlanItemQuantities *[]struct {
+			// PlanItemId The ID of the plan item to set the quantity for
+			PlanItemId string `json:"planItemId"`
+
+			// Quantity The nonnegative integer quantity for the plan item
+			Quantity float32 `json:"quantity"`
+
+			// ResourceIds The resource IDs to associate with the plan item quantity
+			ResourceIds *[]string `json:"resourceIds,omitempty"`
+		} `json:"planItemQuantities,omitempty"`
+
+		// RateVariantKey The rate variant key to apply to the subscription
+		RateVariantKey *string `json:"rateVariantKey,omitempty"`
+	} `json:"options"`
+	Output struct {
+		// PlanChangeId The committed Plan revision used to calculate the purchase price
+		PlanChangeId *string `json:"planChangeId,omitempty"`
+	} `json:"output"`
+	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type `json:"type"`
+}
+
 // BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel defines parameters for BuyCredits.
 type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel string
 
@@ -522,6 +796,9 @@ type ListBillingChargesParams struct {
 
 	// To Exclusive end of the date range as an ISO 8601 date-time string in UTC.
 	To string `form:"to" json:"to"`
+
+	// OrgId The Organization identifier. Returns charges for every team in the organization, split by team, instead of a single team. Cannot be combined with `teamId` or `slug`. Requires the OrgAdmin or OrgViewer role.
+	OrgId *string `form:"orgId,omitempty" json:"orgId,omitempty"`
 
 	// TeamId The Team identifier to perform the request on behalf of.
 	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
@@ -19732,282 +20009,3 @@ type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0 = string
 
 // UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 defines parameters for UpdateMicrofrontends.
 type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 = float32
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2 struct {
-	CurrentValue  UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue  `json:"currentValue"`
-	PreviousValue UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue `json:"previousValue"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue0 = string
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue1 = float32
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2CurrentValue2 bool
-
-// UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_CurrentValue struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue0 = string
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue1 = float32
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue2PreviousValue2 bool
-
-// UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value_2_PreviousValue struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue3 bool
-
-// UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DismissedToasts_Value struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnableAffectedProjectsDeployments defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnableAffectedProjectsDeployments bool
-
-// UpdateMicrofrontends200JSONResponseBodyEnableExternalRewriteCaching defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnableExternalRewriteCaching bool
-
-// UpdateMicrofrontends200JSONResponseBodyEnablePreviewFeedback defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnablePreviewFeedback bool
-
-// UpdateMicrofrontends200JSONResponseBodyEnableProductionFeedback defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnableProductionFeedback bool
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint0 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint0Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint0Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint0Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint1 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint1Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint1Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint1Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint2 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint2 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint2Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint2Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint2Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint3 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint3 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint3Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint3Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint3Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint4 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint4 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint4Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint4Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint4Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint5 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint5 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint5Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint5Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint5Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint6 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint6 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint6Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint6Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint6Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint7 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint7 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint7Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint7Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint7Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint8 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint8 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint8Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint8Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint8Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint9 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint9 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint9Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint9Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint9Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint10 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint10 struct {
-	StoreId string                                                      `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint10Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint10Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint10Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint11 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint11 struct {
-	StoreId string                                                      `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint11Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint11Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint11Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint12 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint12 struct {
-	StoreId string                                                      `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint12Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint12Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint12Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint13 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint13 struct {
-	StoreId string                                                      `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint13Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint13Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint13Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint14 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint14 struct {
-	StoreId string                                                      `json:"storeId"`
-	Type    UpdateMicrofrontends200JSONResponseBodyEnvContentHint14Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint14Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint14Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint15 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint15 struct {
-	IntegrationConfigurationId string                                                      `json:"integrationConfigurationId"`
-	IntegrationId              string                                                      `json:"integrationId"`
-	IntegrationProductId       string                                                      `json:"integrationProductId"`
-	StoreId                    string                                                      `json:"storeId"`
-	Type                       UpdateMicrofrontends200JSONResponseBodyEnvContentHint15Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint15Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint15Type string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint16 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint16 struct {
-	ProjectId string                                                      `json:"projectId"`
-	Type      UpdateMicrofrontends200JSONResponseBodyEnvContentHint16Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvContentHint16Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvContentHint16Type string
-
-// UpdateMicrofrontends200JSONResponseBody_Env_ContentHint defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_Env_ContentHint struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvDecrypted defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvDecrypted bool
-
-// UpdateMicrofrontends200JSONResponseBodyEnvInternalContentHintType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvInternalContentHintType string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvTarget0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvTarget0 = []string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvTarget1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvTarget1 string
-
-// UpdateMicrofrontends200JSONResponseBody_Env_Target defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_Env_Target struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyEnvType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvType string
-
-// UpdateMicrofrontends200JSONResponseBodyEnvVisibility defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyEnvVisibility string
-
-// UpdateMicrofrontends200JSONResponseBodyExpiration0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyExpiration0 struct {
-	// ExpiresAt Unix ms timestamp when the project is scheduled to expire.
-	ExpiresAt float32 `json:"expiresAt"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyExpiration1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyExpiration1 struct {
-	// LockedAt Unix ms timestamp when the project was locked.
-	LockedAt float32 `json:"lockedAt"`
-
-	// LockedBy ID of the user, app, or integration that locked the project, or `system`.
-	LockedBy string `json:"lockedBy"`
-}
-
-// UpdateMicrofrontends200JSONResponseBody_Expiration defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_Expiration struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyFeaturesWebAnalytics defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyFeaturesWebAnalytics bool
-
-// UpdateMicrofrontends200JSONResponseBodyFramework defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyFramework string
-
-// UpdateMicrofrontends200JSONResponseBodyGitCommentsOnCommit defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyGitCommentsOnCommit bool
-
-// UpdateMicrofrontends200JSONResponseBodyGitCommentsOnPullRequest defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyGitCommentsOnPullRequest bool
-
-// UpdateMicrofrontends200JSONResponseBodyGitForkProtection defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyGitForkProtection bool
-
-// UpdateMicrofrontends200JSONResponseBodyGitLFS defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyGitLFS bool
-
-// UpdateMicrofrontends200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusEnabled bool

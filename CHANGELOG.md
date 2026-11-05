@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.20.0, 2026-11-05
+
+- Breaking: `UserEventPrincipal2.Email` and `UserEventVia2.Email` are removed, along with the constants `UserEventPrincipal2TypeExternal`, `UserEventPrincipal3TypeSystem`, `UserEventVia2TypeExternal` and `UserEventVia3TypeSystem`. The external variant moved to `UserEventPrincipal3` and `UserEventVia3`, which gain `Email`, `Id`, `Name` and `UserEventPrincipal3TypeExternal`, `UserEventVia3TypeExternal`.
+- `UserEventPrincipal2` and `UserEventVia2` now describe integrations: new `Avatar`, `Slug`, `UserEventPrincipal2TypeIntegration` and `UserEventVia2TypeIntegration`.
+- Added `UserEventPrincipal4` and `UserEventVia4` for the system variant, with `UserEventPrincipal4TypeSystem`, `UserEventVia4TypeSystem`, `UserEvent_Principal.AsUserEventPrincipal4`, `FromUserEventPrincipal4`, `MergeUserEventPrincipal4` and the matching `UserEvent_Via_Item` methods.
+- Breaking: the `GetProjects200JSONResponseBody0` and `GetProjects200JSONResponseBody1.Projects` element types changed, so `GetProjects200JSONResponseBody.AsGetProjects200JSONResponseBody0`, `FromGetProjects200JSONResponseBody0` and `MergeGetProjects200JSONResponseBody0` use a new struct shape.
+- Added `...ResponseHeader` condition type constants to the firewall config response and request bodies (`GetFirewallConfig200JSONResponseBody`, `PutFirewallConfig200JSONResponseBody`, `UpdateFirewallConfigJSONBody0Value` and similar).
+- Added `ResponseMissing` firewall route types and values to the `GetProjects` responses, for example `GetProjects200JSONResponseBody0SecurityFirewallRoutesResponseMissingType`.
+- Added `AiGatewayBudgetUpdated` webhook event types, for example `CreateWebhookJSONBodyEventsAiGatewayBudgetUpdated`.
+- Added `ListBillingChargesParams.OrgId`.
+
 ## v0.19.0, 2026-11-05
 
 - Development image package installation uses HTTPS and bounded retries for signed snapshot indexes and package downloads.
