@@ -10940,25 +10940,26 @@ func ParseCreateIntegrationStoreDirectResponse(rsp *http.Response) (*CreateInteg
 					Id          *string `json:"id,omitempty"`
 					Integration struct {
 						Capabilities *struct {
-							Billable                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable                `json:"billable,omitempty"`
-							Checks                  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks                  `json:"checks,omitempty"`
-							ConnectedImportResource *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource `json:"connectedImportResource,omitempty"`
-							ConnectedProvisioning   *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning   `json:"connectedProvisioning,omitempty"`
-							FlexCommitEligible      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible      `json:"flexCommitEligible,omitempty"`
-							ImportResource          *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource          `json:"importResource,omitempty"`
-							MaxAllowedTeams         *float32                                                                                                   `json:"maxAllowedTeams,omitempty"`
-							Mcp                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp                     `json:"mcp,omitempty"`
-							McpConfiguration        *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration        `json:"mcpConfiguration,omitempty"`
-							McpReadonly             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly             `json:"mcpReadonly,omitempty"`
-							NativeImportResource    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource    `json:"nativeImportResource,omitempty"`
-							Provisioning            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning            `json:"provisioning,omitempty"`
-							RequiresBrowserInstall  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall  `json:"requiresBrowserInstall,omitempty"`
-							SecretRotation          *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation     `json:"secretRotation,omitempty"`
-							Sso                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso                     `json:"sso,omitempty"`
-							TemplateCloneOnly       *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly       `json:"templateCloneOnly,omitempty"`
-							Transferable            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable            `json:"transferable,omitempty"`
-							UpdateConfiguration     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration     `json:"updateConfiguration,omitempty"`
-							V0Flavors               *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors               `json:"v0Flavors,omitempty"`
+							Billable                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable                  `json:"billable,omitempty"`
+							Checks                  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks                    `json:"checks,omitempty"`
+							ConnectedImportResource *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource   `json:"connectedImportResource,omitempty"`
+							ConnectedProvisioning   *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning     `json:"connectedProvisioning,omitempty"`
+							CredentialTypesCreate   *[][]CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesCredentialTypesCreate `json:"credentialTypesCreate,omitempty"`
+							FlexCommitEligible      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible        `json:"flexCommitEligible,omitempty"`
+							ImportResource          *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource            `json:"importResource,omitempty"`
+							MaxAllowedTeams         *float32                                                                                                     `json:"maxAllowedTeams,omitempty"`
+							Mcp                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp                       `json:"mcp,omitempty"`
+							McpConfiguration        *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration          `json:"mcpConfiguration,omitempty"`
+							McpReadonly             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly               `json:"mcpReadonly,omitempty"`
+							NativeImportResource    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource      `json:"nativeImportResource,omitempty"`
+							Provisioning            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning              `json:"provisioning,omitempty"`
+							RequiresBrowserInstall  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall    `json:"requiresBrowserInstall,omitempty"`
+							SecretRotation          *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation       `json:"secretRotation,omitempty"`
+							Sso                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso                       `json:"sso,omitempty"`
+							TemplateCloneOnly       *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly         `json:"templateCloneOnly,omitempty"`
+							Transferable            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable              `json:"transferable,omitempty"`
+							UpdateConfiguration     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration       `json:"updateConfiguration,omitempty"`
+							V0Flavors               *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors                 `json:"v0Flavors,omitempty"`
 						} `json:"capabilities,omitempty"`
 						Flags                            *[]string                                                                                               `json:"flags,omitempty"`
 						Icon                             string                                                                                                  `json:"icon"`

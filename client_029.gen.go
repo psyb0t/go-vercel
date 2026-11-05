@@ -283,6 +283,9 @@ func ParseCreateSandboxesSessionsBySessionIdSnapshotV2Response(rsp *http.Respons
 	case rsp.StatusCode == 500:
 		break // No content-type
 
+	case rsp.StatusCode == 504:
+		break // No content-type
+
 	}
 
 	return response, nil
@@ -2012,6 +2015,9 @@ func ParseCreateSandboxesSessionsBySessionIdSnapshotV3Response(rsp *http.Respons
 		break // No content-type
 
 	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 504:
 		break // No content-type
 
 	}
@@ -8057,6 +8063,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 500:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
 		break // No content-type
 
 	}

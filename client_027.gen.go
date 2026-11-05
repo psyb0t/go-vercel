@@ -12,6 +12,533 @@ import (
 	"time"
 )
 
+// GetEdgeConfigItemWithResponse Get a Global Config item
+//
+// Returns a specific Global Config Item.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} (the `GetEdgeConfigItem` operationId).
+func (c *ClientWithResponses) GetEdgeConfigItemWithResponse(ctx context.Context, edgeConfigId string, edgeConfigItemKey string, params *GetEdgeConfigItemParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigItemResponse, error) {
+	rsp, err := c.GetEdgeConfigItem(ctx, edgeConfigId, edgeConfigItemKey, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEdgeConfigItemResponse(rsp)
+}
+
+// GetEdgeConfigItemsWithResponse Get Global Config items
+//
+// Returns all items of a Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/items (the `GetEdgeConfigItems` operationId).
+func (c *ClientWithResponses) GetEdgeConfigItemsWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigItemsParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigItemsResponse, error) {
+	rsp, err := c.GetEdgeConfigItems(ctx, edgeConfigId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEdgeConfigItemsResponse(rsp)
+}
+
+// PatchEdgeConfigItemsWithBodyWithResponse Update Global Config items in batch
+//
+// Update multiple Global Config Items in batch.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
+func (c *ClientWithResponses) PatchEdgeConfigItemsWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEdgeConfigItemsResponse, error) {
+	rsp, err := c.PatchEdgeConfigItemsWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchEdgeConfigItemsResponse(rsp)
+}
+
+// PatchEdgeConfigItemsWithResponse Update Global Config items in batch
+//
+// Update multiple Global Config Items in batch.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
+func (c *ClientWithResponses) PatchEdgeConfigItemsWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEdgeConfigItemsResponse, error) {
+	rsp, err := c.PatchEdgeConfigItems(ctx, edgeConfigId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchEdgeConfigItemsResponse(rsp)
+}
+
+// DeleteEdgeConfigSchemaWithResponse Delete a Global Config's schema
+//
+// Deletes the schema of existing Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId}/schema (the `DeleteEdgeConfigSchema` operationId).
+func (c *ClientWithResponses) DeleteEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigSchemaResponse, error) {
+	rsp, err := c.DeleteEdgeConfigSchema(ctx, edgeConfigId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteEdgeConfigSchemaResponse(rsp)
+}
+
+// GetEdgeConfigSchemaWithResponse Get Global Config schema
+//
+// Returns the schema of a Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/schema (the `GetEdgeConfigSchema` operationId).
+func (c *ClientWithResponses) GetEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigSchemaResponse, error) {
+	rsp, err := c.GetEdgeConfigSchema(ctx, edgeConfigId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEdgeConfigSchemaResponse(rsp)
+}
+
+// PatchEdgeConfigSchemaWithBodyWithResponse Update Global Config schema
+//
+// Update a Global Config's schema.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
+func (c *ClientWithResponses) PatchEdgeConfigSchemaWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEdgeConfigSchemaResponse, error) {
+	rsp, err := c.PatchEdgeConfigSchemaWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchEdgeConfigSchemaResponse(rsp)
+}
+
+// PatchEdgeConfigSchemaWithResponse Update Global Config schema
+//
+// Update a Global Config's schema.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
+func (c *ClientWithResponses) PatchEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEdgeConfigSchemaResponse, error) {
+	rsp, err := c.PatchEdgeConfigSchema(ctx, edgeConfigId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchEdgeConfigSchemaResponse(rsp)
+}
+
+// CreateEdgeConfigTokenWithBodyWithResponse Create a Global Config token
+//
+// Adds a token to an existing Global Config.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
+func (c *ClientWithResponses) CreateEdgeConfigTokenWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error) {
+	rsp, err := c.CreateEdgeConfigTokenWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateEdgeConfigTokenResponse(rsp)
+}
+
+// CreateEdgeConfigTokenWithResponse Create a Global Config token
+//
+// Adds a token to an existing Global Config.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
+func (c *ClientWithResponses) CreateEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error) {
+	rsp, err := c.CreateEdgeConfigToken(ctx, edgeConfigId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateEdgeConfigTokenResponse(rsp)
+}
+
+// GetEdgeConfigTokenWithResponse Get Global Config token meta data
+//
+// Return meta data about a Global Config token.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
+func (c *ClientWithResponses) GetEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokenResponse, error) {
+	rsp, err := c.GetEdgeConfigToken(ctx, edgeConfigId, token, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEdgeConfigTokenResponse(rsp)
+}
+
+// DeleteEdgeConfigTokensWithBodyWithResponse Delete one or more Global Config tokens
+//
+// Deletes one or more tokens of an existing Global Config.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
+func (c *ClientWithResponses) DeleteEdgeConfigTokensWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigTokensResponse, error) {
+	rsp, err := c.DeleteEdgeConfigTokensWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteEdgeConfigTokensResponse(rsp)
+}
+
+// DeleteEdgeConfigTokensWithResponse Delete one or more Global Config tokens
+//
+// Deletes one or more tokens of an existing Global Config.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
+func (c *ClientWithResponses) DeleteEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigTokensResponse, error) {
+	rsp, err := c.DeleteEdgeConfigTokens(ctx, edgeConfigId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteEdgeConfigTokensResponse(rsp)
+}
+
+// GetEdgeConfigTokensWithResponse Get all tokens of a Global Config
+//
+// Returns all tokens of a Global Config.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
+func (c *ClientWithResponses) GetEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokensResponse, error) {
+	rsp, err := c.GetEdgeConfigTokens(ctx, edgeConfigId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEdgeConfigTokensResponse(rsp)
+}
+
+// UpdateInstallationWithBodyWithResponse Update Installation
+//
+// This endpoint updates an integration installation.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
+func (c *ClientWithResponses) UpdateInstallationWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error) {
+	rsp, err := c.UpdateInstallationWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInstallationResponse(rsp)
+}
+
+// UpdateInstallationWithResponse Update Installation
+//
+// This endpoint updates an integration installation.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
+func (c *ClientWithResponses) UpdateInstallationWithResponse(ctx context.Context, integrationConfigurationId string, body UpdateInstallationJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error) {
+	rsp, err := c.UpdateInstallation(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInstallationResponse(rsp)
+}
+
+// GetAccountInfoWithResponse Get Account Information
+//
+// Fetches the best account or user’s contact info.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/installations/{integrationConfigurationId}/account (the `GetAccountInfo` operationId).
+func (c *ClientWithResponses) GetAccountInfoWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*GetAccountInfoResponse, error) {
+	rsp, err := c.GetAccountInfo(ctx, integrationConfigurationId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAccountInfoResponse(rsp)
+}
+
+// SubmitBillingDataWithBodyWithResponse Submit Billing Data
+//
+// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
+func (c *ClientWithResponses) SubmitBillingDataWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitBillingDataResponse, error) {
+	rsp, err := c.SubmitBillingDataWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSubmitBillingDataResponse(rsp)
+}
+
+// SubmitBillingDataWithResponse Submit Billing Data
+//
+// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
+func (c *ClientWithResponses) SubmitBillingDataWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitBillingDataJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitBillingDataResponse, error) {
+	rsp, err := c.SubmitBillingData(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSubmitBillingDataResponse(rsp)
+}
+
+// SubmitPrepaymentBalancesWithBodyWithResponse Submit Prepayment Balances
+//
+// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
+func (c *ClientWithResponses) SubmitPrepaymentBalancesWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitPrepaymentBalancesResponse, error) {
+	rsp, err := c.SubmitPrepaymentBalancesWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSubmitPrepaymentBalancesResponse(rsp)
+}
+
+// SubmitPrepaymentBalancesWithResponse Submit Prepayment Balances
+//
+// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
+func (c *ClientWithResponses) SubmitPrepaymentBalancesWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitPrepaymentBalancesJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitPrepaymentBalancesResponse, error) {
+	rsp, err := c.SubmitPrepaymentBalances(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSubmitPrepaymentBalancesResponse(rsp)
+}
+
+// FinalizeInstallationWithResponse Finalize Installation
+//
+// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
+func (c *ClientWithResponses) FinalizeInstallationWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*FinalizeInstallationResponse, error) {
+	rsp, err := c.FinalizeInstallation(ctx, integrationConfigurationId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinalizeInstallationResponse(rsp)
+}
+
+// SubmitInvoiceWithBodyWithResponse Submit Invoice
+//
+// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
+func (c *ClientWithResponses) SubmitInvoiceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitInvoiceResponse, error) {
+	rsp, err := c.SubmitInvoiceWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSubmitInvoiceResponse(rsp)
+}
+
+// SubmitInvoiceWithResponse Submit Invoice
+//
+// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
+func (c *ClientWithResponses) SubmitInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitInvoiceResponse, error) {
+	rsp, err := c.SubmitInvoice(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSubmitInvoiceResponse(rsp)
+}
+
+// GetInvoiceWithResponse Get Invoice
+//
+// Get Invoice details and status for a given invoice ID.<br/> <br/> See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} (the `GetInvoice` operationId).
+func (c *ClientWithResponses) GetInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, reqEditors ...RequestEditorFn) (*GetInvoiceResponse, error) {
+	rsp, err := c.GetInvoice(ctx, integrationConfigurationId, invoiceId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetInvoiceResponse(rsp)
+}
+
+// UpdateInvoiceWithBodyWithResponse Invoice Actions
+//
+// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
+func (c *ClientWithResponses) UpdateInvoiceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInvoiceResponse, error) {
+	rsp, err := c.UpdateInvoiceWithBody(ctx, integrationConfigurationId, invoiceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInvoiceResponse(rsp)
+}
+
+// UpdateInvoiceWithResponse Invoice Actions
+//
+// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
+func (c *ClientWithResponses) UpdateInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, body UpdateInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInvoiceResponse, error) {
+	rsp, err := c.UpdateInvoice(ctx, integrationConfigurationId, invoiceId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateInvoiceResponse(rsp)
+}
+
+// RevokeInstallationCredentialWithBodyWithResponse Revoke Installation Credential
+//
+// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
+func (c *ClientWithResponses) RevokeInstallationCredentialWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RevokeInstallationCredentialResponse, error) {
+	rsp, err := c.RevokeInstallationCredentialWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRevokeInstallationCredentialResponse(rsp)
+}
+
+// RevokeInstallationCredentialWithResponse Revoke Installation Credential
+//
+// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
+func (c *ClientWithResponses) RevokeInstallationCredentialWithResponse(ctx context.Context, integrationConfigurationId string, body RevokeInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*RevokeInstallationCredentialResponse, error) {
+	rsp, err := c.RevokeInstallationCredential(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRevokeInstallationCredentialResponse(rsp)
+}
+
+// RotateInstallationCredentialWithBodyWithResponse Rotate Installation Credential
+//
+// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
+func (c *ClientWithResponses) RotateInstallationCredentialWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateInstallationCredentialResponse, error) {
+	rsp, err := c.RotateInstallationCredentialWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRotateInstallationCredentialResponse(rsp)
+}
+
+// RotateInstallationCredentialWithResponse Rotate Installation Credential
+//
+// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
+func (c *ClientWithResponses) RotateInstallationCredentialWithResponse(ctx context.Context, integrationConfigurationId string, body RotateInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateInstallationCredentialResponse, error) {
+	rsp, err := c.RotateInstallationCredential(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRotateInstallationCredentialResponse(rsp)
+}
+
+// CreateEventWithBodyWithResponse Create Event
+//
+// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
+func (c *ClientWithResponses) CreateEventWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEventResponse, error) {
+	rsp, err := c.CreateEventWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateEventResponse(rsp)
+}
+
+// CreateEventWithResponse Create Event
+//
+// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
+func (c *ClientWithResponses) CreateEventWithResponse(ctx context.Context, integrationConfigurationId string, body CreateEventJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEventResponse, error) {
+	rsp, err := c.CreateEvent(ctx, integrationConfigurationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateEventResponse(rsp)
+}
+
+// GetMemberWithResponse Get Member Information
+//
+// Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/installations/{integrationConfigurationId}/member/{memberId} (the `GetMember` operationId).
+func (c *ClientWithResponses) GetMemberWithResponse(ctx context.Context, integrationConfigurationId string, memberId string, reqEditors ...RequestEditorFn) (*GetMemberResponse, error) {
+	rsp, err := c.GetMember(ctx, integrationConfigurationId, memberId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMemberResponse(rsp)
+}
+
+// UpdateResourceSecretsWithBodyWithResponse Deprecated: true. Update Resource Secrets (Deprecated)
+//
+// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *ClientWithResponses) UpdateResourceSecretsWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsResponse, error) {
+	rsp, err := c.UpdateResourceSecretsWithBody(ctx, integrationConfigurationId, integrationProductIdOrSlug, resourceId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateResourceSecretsResponse(rsp)
+}
+
 // UpdateResourceSecretsWithResponse Deprecated: true. Update Resource Secrets (Deprecated)
 //
 // This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>

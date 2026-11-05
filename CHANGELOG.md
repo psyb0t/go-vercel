@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.19.0, 2026-11-05
+
+- Development image package installation uses HTTPS and bounded retries for signed snapshot indexes and package downloads.
+- Breaking: regenerated Vercel specification 0.0.1. Numbered UserEventPayload types and their union helpers changed with the upstream event list. Consumers using these variants must select the current generated types rather than relying on earlier numeric suffixes.
+- Added AI Gateway rule models and deployment route fallback fields.
+
 ## v0.18.0, 2026-11-03
 
 - Removed and reshaped many `UserEventPayload` types. `UserEventPayload122` is removed, along with `UserEvent_Payload.FromUserEventPayload122` and `MergeUserEventPayload122`. `Set` and `UnmarshalJSON` are removed from `UserEventPayload114` and `UserEventPayload256`, and `UserEventPayload114` also loses `AdditionalProperties`, `Get`, `MarshalJSON` and `MetricName`.

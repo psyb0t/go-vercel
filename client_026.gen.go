@@ -13,6 +13,534 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetBody returns the raw response body bytes
+func (r CreateProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CancelDeploymentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Alias A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
+		//
+		// Example: []
+		Alias *[]string `json:"alias,omitempty"`
+
+		// AliasAssigned A boolean that will be true when the aliases from the alias property were assigned successfully
+		//
+		// Example: true
+		AliasAssigned   CancelDeployment200JSONResponseBodyAliasAssigned     `json:"aliasAssigned"`
+		AliasAssignedAt *CancelDeployment200JSONResponseBody_AliasAssignedAt `json:"aliasAssignedAt,omitempty"`
+
+		// AliasError An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+		AliasError *struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"aliasError,omitempty"`
+		AliasFinal   *string `json:"aliasFinal,omitempty"`
+		AliasWarning *struct {
+			Action  *string `json:"action,omitempty"`
+			Code    string  `json:"code"`
+			Link    *string `json:"link,omitempty"`
+			Message string  `json:"message"`
+		} `json:"aliasWarning,omitempty"`
+		AlwaysRefuseToBuild *CancelDeployment200JSONResponseBodyAlwaysRefuseToBuild `json:"alwaysRefuseToBuild,omitempty"`
+		Atproto             *CancelDeployment200JSONResponseBody_Atproto            `json:"atproto,omitempty"`
+
+		// Attribution Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
+		Attribution *struct {
+			// CommitMeta Commit metadata from the git commit author
+			CommitMeta *struct {
+				// Email Email from git commit author
+				Email *string `json:"email,omitempty"`
+
+				// IsVerified Whether the commit was signed/verified (GitHub only, others return undefined)
+				IsVerified *CancelDeployment200JSONResponseBodyAttributionCommitMetaIsVerified `json:"isVerified,omitempty"`
+
+				// Name Name from git commit author
+				Name *string `json:"name,omitempty"`
+			} `json:"commitMeta,omitempty"`
+
+			// GitUser Git provider user associated with the commit author email (only set if resolved)
+			GitUser *struct {
+				Id CancelDeployment200JSONResponseBody_Attribution_GitUser_Id `json:"id"`
+
+				// Login Git provider username/login
+				Login string `json:"login"`
+
+				// Provider The git provider (github, gitlab, bitbucket)
+				Provider *string `json:"provider,omitempty"`
+
+				// Type User type
+				Type *string `json:"type,omitempty"`
+			} `json:"gitUser,omitempty"`
+
+			// VercelUser Vercel user linked to the git provider account (only set if resolved)
+			VercelUser *struct {
+				// Id Vercel user ID
+				Id string `json:"id"`
+
+				// TeamRoles Team roles at time of deployment
+				TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+				// Username Vercel username
+				Username string `json:"username"`
+			} `json:"vercelUser,omitempty"`
+		} `json:"attribution,omitempty"`
+
+		// AutoAssignCustomDomains applies to custom domains only, defaults to `true`
+		AutoAssignCustomDomains *CancelDeployment200JSONResponseBodyAutoAssignCustomDomains `json:"autoAssignCustomDomains,omitempty"`
+		AutomaticAliases        *[]string                                                   `json:"automaticAliases,omitempty"`
+		BootedAt                float32                                                     `json:"bootedAt"`
+		Build                   struct {
+			Env []string `json:"env"`
+		} `json:"build"`
+		BuildArtifactUrls *[]string `json:"buildArtifactUrls,omitempty"`
+
+		// BuildContainerFinishedAt Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
+		BuildContainerFinishedAt *float32                                        `json:"buildContainerFinishedAt,omitempty"`
+		BuildErrorAt             *float32                                        `json:"buildErrorAt,omitempty"`
+		BuildSkipped             CancelDeployment200JSONResponseBodyBuildSkipped `json:"buildSkipped"`
+		BuildingAt               float32                                         `json:"buildingAt"`
+		Builds                   *[]struct {
+			Config *map[string]interface{} `json:"config,omitempty"`
+			Src    *string                 `json:"src,omitempty"`
+			Use    string                  `json:"use"`
+		} `json:"builds,omitempty"`
+		CanceledAt *float32 `json:"canceledAt,omitempty"`
+		Checks     *struct {
+			DeploymentAlias struct {
+				CompletedAt *float32                                                      `json:"completedAt,omitempty"`
+				StartedAt   float32                                                       `json:"startedAt"`
+				State       CancelDeployment200JSONResponseBodyChecksDeploymentAliasState `json:"state"`
+			} `json:"deployment-alias"`
+		} `json:"checks,omitempty"`
+		ChecksConclusion *CancelDeployment200JSONResponseBodyChecksConclusion `json:"checksConclusion,omitempty"`
+		ChecksState      *CancelDeployment200JSONResponseBodyChecksState      `json:"checksState,omitempty"`
+
+		// Config Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
+		Config *struct {
+			FunctionMemoryType CancelDeployment200JSONResponseBodyConfigFunctionMemoryType `json:"functionMemoryType"`
+			FunctionTimeout    *float32                                                    `json:"functionTimeout"`
+			FunctionType       CancelDeployment200JSONResponseBodyConfigFunctionType       `json:"functionType"`
+			IsUsingActiveCPU   *CancelDeployment200JSONResponseBodyConfigIsUsingActiveCPU  `json:"isUsingActiveCPU,omitempty"`
+
+			// ResourceConfig Build resource configuration snapshot for this deployment.
+			ResourceConfig *struct {
+				BuildMachine *struct {
+					// PurchaseType Machine type that was used for the build.
+					PurchaseType *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildMachinePurchaseType `json:"purchaseType,omitempty"`
+				} `json:"buildMachine,omitempty"`
+
+				// BuildQueue Build resource configuration snapshot for this deployment.
+				BuildQueue *struct {
+					// Configuration Build resource configuration snapshot for this deployment.
+					Configuration *CancelDeployment200JSONResponseBodyConfigResourceConfigBuildQueueConfiguration `json:"configuration,omitempty"`
+				} `json:"buildQueue,omitempty"`
+
+				// ElasticConcurrency When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues
+				ElasticConcurrency *CancelDeployment200JSONResponseBodyConfigResourceConfigElasticConcurrency `json:"elasticConcurrency,omitempty"`
+			} `json:"resourceConfig,omitempty"`
+			SecureComputeFallbackRegion *string  `json:"secureComputeFallbackRegion"`
+			SecureComputePrimaryRegion  *string  `json:"secureComputePrimaryRegion"`
+			Version                     *float32 `json:"version,omitempty"`
+		} `json:"config,omitempty"`
+		ConnectBuildsEnabled   *CancelDeployment200JSONResponseBodyConnectBuildsEnabled `json:"connectBuildsEnabled,omitempty"`
+		ConnectConfigurationId *string                                                  `json:"connectConfigurationId,omitempty"`
+
+		// CreatedAt A number containing the date when the deployment was created in milliseconds
+		//
+		// Example: 1540257589405
+		CreatedAt float32 `json:"createdAt"`
+		CreatedIn string  `json:"createdIn"`
+
+		// Creator Information about the deployment creator
+		Creator struct {
+			// Avatar The avatar of the user that created the deployment
+			Avatar *string `json:"avatar,omitempty"`
+
+			// Type Principal type of the deployment creator.
+			Type *CancelDeployment200JSONResponseBodyCreatorType `json:"type,omitempty"`
+
+			// Uid Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
+			//
+			// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
+			Uid string `json:"uid"`
+
+			// Username The username of the user that created the deployment
+			//
+			// Example: john-doe
+			Username *string `json:"username,omitempty"`
+		} `json:"creator"`
+		Crons *[]struct {
+			Path     string `json:"path"`
+			Schedule string `json:"schedule"`
+		} `json:"crons,omitempty"`
+		CustomEnvironment *CancelDeployment200JSONResponseBody_CustomEnvironment `json:"customEnvironment,omitempty"`
+
+		// DefaultRoute Computed field that is only available for deployments with a microfrontend configuration.
+		DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+		// DeletedAt A number containing the date when the deployment was deleted at milliseconds
+		//
+		// Example: 1540257589405
+		DeletedAt *float32 `json:"deletedAt,omitempty"`
+		Duration  struct {
+			// EndTime Unix timestamp in milliseconds when the build container exited.
+			EndTime *float32 `json:"endTime,omitempty"`
+
+			// EndTimeCapped Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
+			EndTimeCapped *float32 `json:"endTimeCapped,omitempty"`
+
+			// StartTime Unix timestamp in milliseconds when the deployment entered BUILDING.
+			StartTime *float32 `json:"startTime,omitempty"`
+
+			// TimeForBilling Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
+			TimeForBilling *float32 `json:"timeForBilling,omitempty"`
+
+			// TimeToContainerExit Milliseconds from entering BUILDING until the build container exited, without the billing cap.
+			TimeToContainerExit *float32 `json:"timeToContainerExit,omitempty"`
+
+			// TimeToContainerExitCapped Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
+			TimeToContainerExitCapped *float32 `json:"timeToContainerExitCapped,omitempty"`
+
+			// TimeToReady Milliseconds from entering BUILDING until the deployment reached its current ready state.
+			TimeToReady *float32 `json:"timeToReady,omitempty"`
+		} `json:"duration"`
+		Env          []string                                   `json:"env"`
+		ErrorCode    *string                                    `json:"errorCode,omitempty"`
+		ErrorLink    *string                                    `json:"errorLink,omitempty"`
+		ErrorMessage *string                                    `json:"errorMessage,omitempty"`
+		ErrorStep    *string                                    `json:"errorStep,omitempty"`
+		Flags        *CancelDeployment200JSONResponseBody_Flags `json:"flags,omitempty"`
+		Functions    *map[string]struct {
+			Affinity *struct {
+				Mode CancelDeployment200JSONResponseBodyFunctionsAffinityMode `json:"mode"`
+			} `json:"affinity,omitempty"`
+			Architecture            *CancelDeployment200JSONResponseBodyFunctionsArchitecture                  `json:"architecture,omitempty"`
+			ExcludeFiles            *string                                                                    `json:"excludeFiles,omitempty"`
+			ExperimentalTriggers    *[]CancelDeployment200JSONResponseBody_Functions_ExperimentalTriggers_Item `json:"experimentalTriggers,omitempty"`
+			FunctionFailoverRegions *[]string                                                                  `json:"functionFailoverRegions,omitempty"`
+			IncludeFiles            *string                                                                    `json:"includeFiles,omitempty"`
+
+			// InstallCommand Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`.
+			InstallCommand       *string                                                           `json:"installCommand,omitempty"`
+			MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
+			MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
+			Memory               *float32                                                          `json:"memory,omitempty"`
+			Regions              *[]string                                                         `json:"regions,omitempty"`
+			Runtime              *string                                                           `json:"runtime,omitempty"`
+			SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
+		} `json:"functions,omitempty"`
+		GitRepo   *CancelDeployment200JSONResponseBody_GitRepo   `json:"gitRepo,omitempty"`
+		GitSource *CancelDeployment200JSONResponseBody_GitSource `json:"gitSource,omitempty"`
+
+		// Id A string holding the unique ID of the deployment
+		//
+		// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+		Id     string `json:"id"`
+		Images *struct {
+			ContentDispositionType *CancelDeployment200JSONResponseBodyImagesContentDispositionType `json:"contentDispositionType,omitempty"`
+			ContentSecurityPolicy  *string                                                          `json:"contentSecurityPolicy,omitempty"`
+			DangerouslyAllowSVG    *CancelDeployment200JSONResponseBodyImagesDangerouslyAllowSVG    `json:"dangerouslyAllowSVG,omitempty"`
+			Domains                *[]string                                                        `json:"domains,omitempty"`
+			Formats                *[]CancelDeployment200JSONResponseBodyImagesFormats              `json:"formats,omitempty"`
+			LocalPatterns          *[]struct {
+				// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
+				Pathname *string `json:"pathname,omitempty"`
+
+				// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
+				Search *string `json:"search,omitempty"`
+			} `json:"localPatterns,omitempty"`
+			MinimumCacheTTL *float32   `json:"minimumCacheTTL,omitempty"`
+			Qualities       *[]float32 `json:"qualities,omitempty"`
+			RemotePatterns  *[]struct {
+				// Hostname Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any number of subdomains.
+				Hostname string `json:"hostname"`
+
+				// Pathname Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
+				Pathname *string `json:"pathname,omitempty"`
+
+				// Port Can be literal port such as `8080` or empty string meaning no port.
+				Port *string `json:"port,omitempty"`
+
+				// Protocol Must be `http` or `https`.
+				Protocol *CancelDeployment200JSONResponseBodyImagesRemotePatternsProtocol `json:"protocol,omitempty"`
+
+				// Search Can be literal query string such as `?v=1` or empty string meaning no query string.
+				Search *string `json:"search,omitempty"`
+			} `json:"remotePatterns,omitempty"`
+			Sizes *[]float32 `json:"sizes,omitempty"`
+		} `json:"images,omitempty"`
+		InitReadyAt  *float32 `json:"initReadyAt,omitempty"`
+		InspectorUrl *string  `json:"inspectorUrl"`
+		Integrations *struct {
+			ClaimedAt   *float32                                              `json:"claimedAt,omitempty"`
+			CompletedAt *float32                                              `json:"completedAt,omitempty"`
+			SkippedAt   *float32                                              `json:"skippedAt,omitempty"`
+			SkippedBy   *string                                               `json:"skippedBy,omitempty"`
+			StartedAt   float32                                               `json:"startedAt"`
+			Status      CancelDeployment200JSONResponseBodyIntegrationsStatus `json:"status"`
+		} `json:"integrations,omitempty"`
+		IsFirstBranchDeployment   *CancelDeployment200JSONResponseBodyIsFirstBranchDeployment  `json:"isFirstBranchDeployment,omitempty"`
+		IsInConcurrentBuildsQueue CancelDeployment200JSONResponseBodyIsInConcurrentBuildsQueue `json:"isInConcurrentBuildsQueue"`
+		IsInSystemBuildsQueue     CancelDeployment200JSONResponseBodyIsInSystemBuildsQueue     `json:"isInSystemBuildsQueue"`
+
+		// IsInstantStatic Whether this deployment completed through the instant static fast path.
+		IsInstantStatic *CancelDeployment200JSONResponseBodyIsInstantStatic `json:"isInstantStatic,omitempty"`
+		Lambdas         *[]struct {
+			CreatedAt  *float32 `json:"createdAt,omitempty"`
+			Entrypoint *string  `json:"entrypoint,omitempty"`
+			Id         string   `json:"id"`
+			Output     []struct {
+				FunctionName string `json:"functionName"`
+				Path         string `json:"path"`
+			} `json:"output"`
+			ReadyState   *CancelDeployment200JSONResponseBodyLambdasReadyState `json:"readyState,omitempty"`
+			ReadyStateAt *float32                                              `json:"readyStateAt,omitempty"`
+		} `json:"lambdas,omitempty"`
+
+		// ManualProvisioning Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+		ManualProvisioning *struct {
+			// CompletedAt Timestamp when manual provisioning completed
+			CompletedAt *float32 `json:"completedAt,omitempty"`
+
+			// State Current provisioning state
+			State CancelDeployment200JSONResponseBodyManualProvisioningState `json:"state"`
+		} `json:"manualProvisioning,omitempty"`
+		Meta            map[string]string                                   `json:"meta"`
+		Microfrontends  *CancelDeployment200JSONResponseBody_Microfrontends `json:"microfrontends,omitempty"`
+		MonorepoManager *string                                             `json:"monorepoManager,omitempty"`
+
+		// Name The name of the project associated with the deployment at the time that the deployment was created
+		//
+		// Example: my-project
+		Name string `json:"name"`
+
+		// NodeVersion If set it overrides the `projectSettings.nodeVersion` for this deployment.
+		NodeVersion     *CancelDeployment200JSONResponseBodyNodeVersion `json:"nodeVersion,omitempty"`
+		OidcTokenClaims *struct {
+			Aud                 string    `json:"aud"`
+			CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+			DeploymentId        *string   `json:"deployment_id,omitempty"`
+			Environment         string    `json:"environment"`
+			Iss                 string    `json:"iss"`
+			MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+			Owner               string    `json:"owner"`
+			OwnerId             string    `json:"owner_id"`
+			Plan                *string   `json:"plan,omitempty"`
+			Project             string    `json:"project"`
+			ProjectId           string    `json:"project_id"`
+			Scope               string    `json:"scope"`
+			Sub                 string    `json:"sub"`
+		} `json:"oidcTokenClaims,omitempty"`
+		OomReport         *CancelDeployment200JSONResponseBodyOomReport `json:"oomReport,omitempty"`
+		OriginCacheRegion *string                                       `json:"originCacheRegion,omitempty"`
+		OwnerId           string                                        `json:"ownerId"`
+
+		// PassiveConnectConfigurationId Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)
+		PassiveConnectConfigurationId *string `json:"passiveConnectConfigurationId,omitempty"`
+
+		// PassiveRegions Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
+		PassiveRegions *[]string                               `json:"passiveRegions,omitempty"`
+		Plan           CancelDeployment200JSONResponseBodyPlan `json:"plan"`
+
+		// Platform Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
+		Platform *struct {
+			// Creator The user on the external platform who triggered the deployment.
+			Creator struct {
+				// Avatar URL of the platform user's avatar image.
+				Avatar *string `json:"avatar,omitempty"`
+
+				// Name Display name of the platform user.
+				Name string `json:"name"`
+			} `json:"creator"`
+
+			// Meta Arbitrary key-value metadata provided by the platform.
+			Meta *map[string]string `json:"meta,omitempty"`
+
+			// Origin Reference back to the entity on the platform that initiated the deployment.
+			Origin struct {
+				// Type Whether the value is an opaque identifier or a URL.
+				Type CancelDeployment200JSONResponseBodyPlatformOriginType `json:"type"`
+
+				// Value The identifier or URL pointing to the originating entity.
+				Value string `json:"value"`
+			} `json:"origin"`
+
+			// Source The external platform that created the deployment (e.g. its display name).
+			Source struct {
+				// Name Display name of the platform.
+				Name string `json:"name"`
+			} `json:"source"`
+		} `json:"platform,omitempty"`
+		Prebuilt *CancelDeployment200JSONResponseBodyPrebuilt `json:"prebuilt,omitempty"`
+
+		// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+		//
+		// Example: false
+		PreviewCommentsEnabled *CancelDeployment200JSONResponseBodyPreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+
+		// Project The public project information associated with the deployment.
+		Project *struct {
+			Framework *string `json:"framework,omitempty"`
+			Id        string  `json:"id"`
+			Name      string  `json:"name"`
+		} `json:"project,omitempty"`
+		ProjectId       string `json:"projectId"`
+		ProjectSettings struct {
+			BuildCommand                *string                                                        `json:"buildCommand,omitempty"`
+			CommandForIgnoringBuildStep *string                                                        `json:"commandForIgnoringBuildStep,omitempty"`
+			DevCommand                  *string                                                        `json:"devCommand,omitempty"`
+			Framework                   *CancelDeployment200JSONResponseBodyProjectSettingsFramework   `json:"framework,omitempty"`
+			InstallCommand              *string                                                        `json:"installCommand,omitempty"`
+			NodeVersion                 *CancelDeployment200JSONResponseBodyProjectSettingsNodeVersion `json:"nodeVersion,omitempty"`
+			OutputDirectory             *string                                                        `json:"outputDirectory,omitempty"`
+			SpeedInsights               *struct {
+				CanceledAt *float32 `json:"canceledAt,omitempty"`
+
+				// DataReceivedAt When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+				DataReceivedAt *float32                                                                `json:"dataReceivedAt,omitempty"`
+				DisabledAt     *float32                                                                `json:"disabledAt,omitempty"`
+				EnabledAt      *float32                                                                `json:"enabledAt,omitempty"`
+				HasData        *CancelDeployment200JSONResponseBodyProjectSettingsSpeedInsightsHasData `json:"hasData,omitempty"`
+				Id             string                                                                  `json:"id"`
+				PaidAt         *float32                                                                `json:"paidAt,omitempty"`
+			} `json:"speedInsights,omitempty"`
+
+			// VercelFlags Vercel Flags activation metadata copied from the project at deployment creation.
+			VercelFlags *struct {
+				EnabledAt *float32 `json:"enabledAt,omitempty"`
+			} `json:"vercelFlags,omitempty"`
+			WebAnalytics *struct {
+				CanceledAt *float32                                                               `json:"canceledAt,omitempty"`
+				DisabledAt *float32                                                               `json:"disabledAt,omitempty"`
+				EnabledAt  *float32                                                               `json:"enabledAt,omitempty"`
+				HasData    *CancelDeployment200JSONResponseBodyProjectSettingsWebAnalyticsHasData `json:"hasData,omitempty"`
+				Id         string                                                                 `json:"id"`
+			} `json:"webAnalytics,omitempty"`
+		} `json:"projectSettings"`
+
+		// Public A boolean representing if the deployment is public or not. By default this is `false`
+		//
+		// Example: false
+		Public CancelDeployment200JSONResponseBodyPublic `json:"public"`
+		Ready  *float32                                  `json:"ready,omitempty"`
+
+		// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+		//
+		// Example: READY
+		ReadyState       CancelDeployment200JSONResponseBodyReadyState `json:"readyState"`
+		ReadyStateReason *string                                       `json:"readyStateReason,omitempty"`
+
+		// ReadySubstate Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
+		ReadySubstate *CancelDeployment200JSONResponseBodyReadySubstate `json:"readySubstate,omitempty"`
+
+		// Regions The regions the deployment exists in
+		//
+		// Example: ["sfo1"]
+		Regions        []string `json:"regions"`
+		ResourceConfig *struct {
+			BuildMachine *CancelDeployment200JSONResponseBody_ResourceConfig_BuildMachine `json:"buildMachine,omitempty"`
+		} `json:"resourceConfig,omitempty"`
+		Routes *[]CancelDeployment200JSONResponseBody_Routes_Item `json:"routes"`
+
+		// SeatBlock NSNB Blocked metadata
+		SeatBlock *struct {
+			// BlockCode The NSNB decision code for the seat block. TODO: We should consolidate block types.
+			BlockCode CancelDeployment200JSONResponseBodySeatBlockBlockCode `json:"blockCode"`
+
+			// GitProvider The git provider type associated with gitUserId.
+			GitProvider *CancelDeployment200JSONResponseBodySeatBlockGitProvider `json:"gitProvider,omitempty"`
+			GitUserId   *CancelDeployment200JSONResponseBody_SeatBlock_GitUserId `json:"gitUserId,omitempty"`
+
+			// IsVerified Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
+			IsVerified *CancelDeployment200JSONResponseBodySeatBlockIsVerified `json:"isVerified,omitempty"`
+
+			// UserId The blocked vercel user ID.
+			UserId *string `json:"userId,omitempty"`
+		} `json:"seatBlock,omitempty"`
+
+		// Services Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
+		Services *[]CancelDeployment200JSONResponseBody_Services_Item `json:"services,omitempty"`
+
+		// SoftDeletedByRetention flag to indicate if the deployment was deleted by retention policy
+		//
+		// Example: true
+		SoftDeletedByRetention *CancelDeployment200JSONResponseBodySoftDeletedByRetention `json:"softDeletedByRetention,omitempty"`
+
+		// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+		//
+		// Example: cli
+		Source *CancelDeployment200JSONResponseBodySource `json:"source,omitempty"`
+		Status CancelDeployment200JSONResponseBodyStatus  `json:"status"`
+
+		// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+		Target *CancelDeployment200JSONResponseBodyTarget `json:"target,omitempty"`
+
+		// Team The team that owns the deployment if any
+		Team *struct {
+			Avatar *string `json:"avatar,omitempty"`
+			Id     string  `json:"id"`
+			Name   string  `json:"name"`
+			Slug   string  `json:"slug"`
+		} `json:"team,omitempty"`
+		TtyBuildLogs *CancelDeployment200JSONResponseBodyTtyBuildLogs `json:"ttyBuildLogs,omitempty"`
+		Type         CancelDeployment200JSONResponseBodyType          `json:"type"`
+
+		// UndeletedAt A number containing the date when the deployment was undeleted at milliseconds
+		//
+		// Example: 1540257589405
+		UndeletedAt *float32 `json:"undeletedAt,omitempty"`
+
+		// Url A string with the unique URL of the deployment
+		//
+		// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+		Url string `json:"url"`
+
+		// UserAliases An array of domains that were provided by the user when creating the Deployment.
+		//
+		// Example: ["sub1.example.com","sub2.example.com"]
+		UserAliases *[]string `json:"userAliases,omitempty"`
+
+		// UserConfiguredDeploymentId Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
+		//
+		// Example: abc123
+		UserConfiguredDeploymentId *string `json:"userConfiguredDeploymentId,omitempty"`
+
+		// Version The platform version that was used to create the deployment.
+		//
+		// Example: 2
+		Version CancelDeployment200JSONResponseBodyVersion `json:"version"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CancelDeploymentResponse) GetJSON200() *struct {
 	// Alias A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
@@ -19484,531 +20012,4 @@ func (c *ClientWithResponses) RestoreEdgeConfigBackupWithResponse(ctx context.Co
 		return nil, err
 	}
 	return ParseRestoreEdgeConfigBackupResponse(rsp)
-}
-
-// GetEdgeConfigItemWithResponse Get a Global Config item
-//
-// Returns a specific Global Config Item.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} (the `GetEdgeConfigItem` operationId).
-func (c *ClientWithResponses) GetEdgeConfigItemWithResponse(ctx context.Context, edgeConfigId string, edgeConfigItemKey string, params *GetEdgeConfigItemParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigItemResponse, error) {
-	rsp, err := c.GetEdgeConfigItem(ctx, edgeConfigId, edgeConfigItemKey, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetEdgeConfigItemResponse(rsp)
-}
-
-// GetEdgeConfigItemsWithResponse Get Global Config items
-//
-// Returns all items of a Global Config.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/items (the `GetEdgeConfigItems` operationId).
-func (c *ClientWithResponses) GetEdgeConfigItemsWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigItemsParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigItemsResponse, error) {
-	rsp, err := c.GetEdgeConfigItems(ctx, edgeConfigId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetEdgeConfigItemsResponse(rsp)
-}
-
-// PatchEdgeConfigItemsWithBodyWithResponse Update Global Config items in batch
-//
-// Update multiple Global Config Items in batch.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-func (c *ClientWithResponses) PatchEdgeConfigItemsWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEdgeConfigItemsResponse, error) {
-	rsp, err := c.PatchEdgeConfigItemsWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchEdgeConfigItemsResponse(rsp)
-}
-
-// PatchEdgeConfigItemsWithResponse Update Global Config items in batch
-//
-// Update multiple Global Config Items in batch.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/global-config/{edgeConfigId}/items (the `PatchEdgeConfigItems` operationId).
-func (c *ClientWithResponses) PatchEdgeConfigItemsWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigItemsParams, body PatchEdgeConfigItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEdgeConfigItemsResponse, error) {
-	rsp, err := c.PatchEdgeConfigItems(ctx, edgeConfigId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchEdgeConfigItemsResponse(rsp)
-}
-
-// DeleteEdgeConfigSchemaWithResponse Delete a Global Config's schema
-//
-// Deletes the schema of existing Global Config.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId}/schema (the `DeleteEdgeConfigSchema` operationId).
-func (c *ClientWithResponses) DeleteEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigSchemaResponse, error) {
-	rsp, err := c.DeleteEdgeConfigSchema(ctx, edgeConfigId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteEdgeConfigSchemaResponse(rsp)
-}
-
-// GetEdgeConfigSchemaWithResponse Get Global Config schema
-//
-// Returns the schema of a Global Config.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/schema (the `GetEdgeConfigSchema` operationId).
-func (c *ClientWithResponses) GetEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigSchemaParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigSchemaResponse, error) {
-	rsp, err := c.GetEdgeConfigSchema(ctx, edgeConfigId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetEdgeConfigSchemaResponse(rsp)
-}
-
-// PatchEdgeConfigSchemaWithBodyWithResponse Update Global Config schema
-//
-// Update a Global Config's schema.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-func (c *ClientWithResponses) PatchEdgeConfigSchemaWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEdgeConfigSchemaResponse, error) {
-	rsp, err := c.PatchEdgeConfigSchemaWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchEdgeConfigSchemaResponse(rsp)
-}
-
-// PatchEdgeConfigSchemaWithResponse Update Global Config schema
-//
-// Update a Global Config's schema.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/schema (the `PatchEdgeConfigSchema` operationId).
-func (c *ClientWithResponses) PatchEdgeConfigSchemaWithResponse(ctx context.Context, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEdgeConfigSchemaResponse, error) {
-	rsp, err := c.PatchEdgeConfigSchema(ctx, edgeConfigId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchEdgeConfigSchemaResponse(rsp)
-}
-
-// CreateEdgeConfigTokenWithBodyWithResponse Create a Global Config token
-//
-// Adds a token to an existing Global Config.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-func (c *ClientWithResponses) CreateEdgeConfigTokenWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error) {
-	rsp, err := c.CreateEdgeConfigTokenWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateEdgeConfigTokenResponse(rsp)
-}
-
-// CreateEdgeConfigTokenWithResponse Create a Global Config token
-//
-// Adds a token to an existing Global Config.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
-func (c *ClientWithResponses) CreateEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error) {
-	rsp, err := c.CreateEdgeConfigToken(ctx, edgeConfigId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateEdgeConfigTokenResponse(rsp)
-}
-
-// GetEdgeConfigTokenWithResponse Get Global Config token meta data
-//
-// Return meta data about a Global Config token.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
-func (c *ClientWithResponses) GetEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokenResponse, error) {
-	rsp, err := c.GetEdgeConfigToken(ctx, edgeConfigId, token, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetEdgeConfigTokenResponse(rsp)
-}
-
-// DeleteEdgeConfigTokensWithBodyWithResponse Delete one or more Global Config tokens
-//
-// Deletes one or more tokens of an existing Global Config.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-func (c *ClientWithResponses) DeleteEdgeConfigTokensWithBodyWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigTokensResponse, error) {
-	rsp, err := c.DeleteEdgeConfigTokensWithBody(ctx, edgeConfigId, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteEdgeConfigTokensResponse(rsp)
-}
-
-// DeleteEdgeConfigTokensWithResponse Delete one or more Global Config tokens
-//
-// Deletes one or more tokens of an existing Global Config.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
-func (c *ClientWithResponses) DeleteEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*DeleteEdgeConfigTokensResponse, error) {
-	rsp, err := c.DeleteEdgeConfigTokens(ctx, edgeConfigId, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteEdgeConfigTokensResponse(rsp)
-}
-
-// GetEdgeConfigTokensWithResponse Get all tokens of a Global Config
-//
-// Returns all tokens of a Global Config.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
-func (c *ClientWithResponses) GetEdgeConfigTokensWithResponse(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokensResponse, error) {
-	rsp, err := c.GetEdgeConfigTokens(ctx, edgeConfigId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetEdgeConfigTokensResponse(rsp)
-}
-
-// UpdateInstallationWithBodyWithResponse Update Installation
-//
-// This endpoint updates an integration installation.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-func (c *ClientWithResponses) UpdateInstallationWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error) {
-	rsp, err := c.UpdateInstallationWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateInstallationResponse(rsp)
-}
-
-// UpdateInstallationWithResponse Update Installation
-//
-// This endpoint updates an integration installation.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-func (c *ClientWithResponses) UpdateInstallationWithResponse(ctx context.Context, integrationConfigurationId string, body UpdateInstallationJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInstallationResponse, error) {
-	rsp, err := c.UpdateInstallation(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateInstallationResponse(rsp)
-}
-
-// GetAccountInfoWithResponse Get Account Information
-//
-// Fetches the best account or user’s contact info.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/account (the `GetAccountInfo` operationId).
-func (c *ClientWithResponses) GetAccountInfoWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*GetAccountInfoResponse, error) {
-	rsp, err := c.GetAccountInfo(ctx, integrationConfigurationId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetAccountInfoResponse(rsp)
-}
-
-// SubmitBillingDataWithBodyWithResponse Submit Billing Data
-//
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-func (c *ClientWithResponses) SubmitBillingDataWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitBillingDataResponse, error) {
-	rsp, err := c.SubmitBillingDataWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseSubmitBillingDataResponse(rsp)
-}
-
-// SubmitBillingDataWithResponse Submit Billing Data
-//
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-func (c *ClientWithResponses) SubmitBillingDataWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitBillingDataJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitBillingDataResponse, error) {
-	rsp, err := c.SubmitBillingData(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseSubmitBillingDataResponse(rsp)
-}
-
-// SubmitPrepaymentBalancesWithBodyWithResponse Submit Prepayment Balances
-//
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-func (c *ClientWithResponses) SubmitPrepaymentBalancesWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitPrepaymentBalancesResponse, error) {
-	rsp, err := c.SubmitPrepaymentBalancesWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseSubmitPrepaymentBalancesResponse(rsp)
-}
-
-// SubmitPrepaymentBalancesWithResponse Submit Prepayment Balances
-//
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-func (c *ClientWithResponses) SubmitPrepaymentBalancesWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitPrepaymentBalancesJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitPrepaymentBalancesResponse, error) {
-	rsp, err := c.SubmitPrepaymentBalances(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseSubmitPrepaymentBalancesResponse(rsp)
-}
-
-// FinalizeInstallationWithResponse Finalize Installation
-//
-// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
-func (c *ClientWithResponses) FinalizeInstallationWithResponse(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*FinalizeInstallationResponse, error) {
-	rsp, err := c.FinalizeInstallation(ctx, integrationConfigurationId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseFinalizeInstallationResponse(rsp)
-}
-
-// SubmitInvoiceWithBodyWithResponse Submit Invoice
-//
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-func (c *ClientWithResponses) SubmitInvoiceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SubmitInvoiceResponse, error) {
-	rsp, err := c.SubmitInvoiceWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseSubmitInvoiceResponse(rsp)
-}
-
-// SubmitInvoiceWithResponse Submit Invoice
-//
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-func (c *ClientWithResponses) SubmitInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, body SubmitInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*SubmitInvoiceResponse, error) {
-	rsp, err := c.SubmitInvoice(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseSubmitInvoiceResponse(rsp)
-}
-
-// GetInvoiceWithResponse Get Invoice
-//
-// Get Invoice details and status for a given invoice ID.<br/> <br/> See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} (the `GetInvoice` operationId).
-func (c *ClientWithResponses) GetInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, reqEditors ...RequestEditorFn) (*GetInvoiceResponse, error) {
-	rsp, err := c.GetInvoice(ctx, integrationConfigurationId, invoiceId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetInvoiceResponse(rsp)
-}
-
-// UpdateInvoiceWithBodyWithResponse Invoice Actions
-//
-// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-func (c *ClientWithResponses) UpdateInvoiceWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateInvoiceResponse, error) {
-	rsp, err := c.UpdateInvoiceWithBody(ctx, integrationConfigurationId, invoiceId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateInvoiceResponse(rsp)
-}
-
-// UpdateInvoiceWithResponse Invoice Actions
-//
-// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-func (c *ClientWithResponses) UpdateInvoiceWithResponse(ctx context.Context, integrationConfigurationId string, invoiceId string, body UpdateInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateInvoiceResponse, error) {
-	rsp, err := c.UpdateInvoice(ctx, integrationConfigurationId, invoiceId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateInvoiceResponse(rsp)
-}
-
-// RevokeInstallationCredentialWithBodyWithResponse Revoke Installation Credential
-//
-// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-func (c *ClientWithResponses) RevokeInstallationCredentialWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RevokeInstallationCredentialResponse, error) {
-	rsp, err := c.RevokeInstallationCredentialWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRevokeInstallationCredentialResponse(rsp)
-}
-
-// RevokeInstallationCredentialWithResponse Revoke Installation Credential
-//
-// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-func (c *ClientWithResponses) RevokeInstallationCredentialWithResponse(ctx context.Context, integrationConfigurationId string, body RevokeInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*RevokeInstallationCredentialResponse, error) {
-	rsp, err := c.RevokeInstallationCredential(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRevokeInstallationCredentialResponse(rsp)
-}
-
-// RotateInstallationCredentialWithBodyWithResponse Rotate Installation Credential
-//
-// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-func (c *ClientWithResponses) RotateInstallationCredentialWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateInstallationCredentialResponse, error) {
-	rsp, err := c.RotateInstallationCredentialWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRotateInstallationCredentialResponse(rsp)
-}
-
-// RotateInstallationCredentialWithResponse Rotate Installation Credential
-//
-// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-func (c *ClientWithResponses) RotateInstallationCredentialWithResponse(ctx context.Context, integrationConfigurationId string, body RotateInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateInstallationCredentialResponse, error) {
-	rsp, err := c.RotateInstallationCredential(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRotateInstallationCredentialResponse(rsp)
-}
-
-// CreateEventWithBodyWithResponse Create Event
-//
-// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-func (c *ClientWithResponses) CreateEventWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEventResponse, error) {
-	rsp, err := c.CreateEventWithBody(ctx, integrationConfigurationId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateEventResponse(rsp)
-}
-
-// CreateEventWithResponse Create Event
-//
-// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-func (c *ClientWithResponses) CreateEventWithResponse(ctx context.Context, integrationConfigurationId string, body CreateEventJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEventResponse, error) {
-	rsp, err := c.CreateEvent(ctx, integrationConfigurationId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateEventResponse(rsp)
-}
-
-// GetMemberWithResponse Get Member Information
-//
-// Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/member/{memberId} (the `GetMember` operationId).
-func (c *ClientWithResponses) GetMemberWithResponse(ctx context.Context, integrationConfigurationId string, memberId string, reqEditors ...RequestEditorFn) (*GetMemberResponse, error) {
-	rsp, err := c.GetMember(ctx, integrationConfigurationId, memberId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetMemberResponse(rsp)
-}
-
-// UpdateResourceSecretsWithBodyWithResponse Deprecated: true. Update Resource Secrets (Deprecated)
-//
-// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-//
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *ClientWithResponses) UpdateResourceSecretsWithBodyWithResponse(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateResourceSecretsResponse, error) {
-	rsp, err := c.UpdateResourceSecretsWithBody(ctx, integrationConfigurationId, integrationProductIdOrSlug, resourceId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateResourceSecretsResponse(rsp)
 }

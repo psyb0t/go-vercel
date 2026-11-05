@@ -14,6 +14,1216 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeploymentEvents200JSONResponseBody20 returns the union data inside the GetDeploymentEvents200JSONResponseBody2 as a GetDeploymentEvents200JSONResponseBody20
+func (t GetDeploymentEvents200JSONResponseBody2) AsGetDeploymentEvents200JSONResponseBody20() (GetDeploymentEvents200JSONResponseBody20, error) {
+	var body GetDeploymentEvents200JSONResponseBody20
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200JSONResponseBody20 overwrites any union data inside the GetDeploymentEvents200JSONResponseBody2 as the provided GetDeploymentEvents200JSONResponseBody20
+func (t *GetDeploymentEvents200JSONResponseBody2) FromGetDeploymentEvents200JSONResponseBody20(v GetDeploymentEvents200JSONResponseBody20) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200JSONResponseBody20 performs a merge with any union data inside the GetDeploymentEvents200JSONResponseBody2, using the provided GetDeploymentEvents200JSONResponseBody20
+func (t *GetDeploymentEvents200JSONResponseBody2) MergeGetDeploymentEvents200JSONResponseBody20(v GetDeploymentEvents200JSONResponseBody20) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200JSONResponseBody21 returns the union data inside the GetDeploymentEvents200JSONResponseBody2 as a GetDeploymentEvents200JSONResponseBody21
+func (t GetDeploymentEvents200JSONResponseBody2) AsGetDeploymentEvents200JSONResponseBody21() (GetDeploymentEvents200JSONResponseBody21, error) {
+	var body GetDeploymentEvents200JSONResponseBody21
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200JSONResponseBody21 overwrites any union data inside the GetDeploymentEvents200JSONResponseBody2 as the provided GetDeploymentEvents200JSONResponseBody21
+func (t *GetDeploymentEvents200JSONResponseBody2) FromGetDeploymentEvents200JSONResponseBody21(v GetDeploymentEvents200JSONResponseBody21) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200JSONResponseBody21 performs a merge with any union data inside the GetDeploymentEvents200JSONResponseBody2, using the provided GetDeploymentEvents200JSONResponseBody21
+func (t *GetDeploymentEvents200JSONResponseBody2) MergeGetDeploymentEvents200JSONResponseBody21(v GetDeploymentEvents200JSONResponseBody21) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200JSONResponseBody22 returns the union data inside the GetDeploymentEvents200JSONResponseBody2 as a GetDeploymentEvents200JSONResponseBody22
+func (t GetDeploymentEvents200JSONResponseBody2) AsGetDeploymentEvents200JSONResponseBody22() (GetDeploymentEvents200JSONResponseBody22, error) {
+	var body GetDeploymentEvents200JSONResponseBody22
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200JSONResponseBody22 overwrites any union data inside the GetDeploymentEvents200JSONResponseBody2 as the provided GetDeploymentEvents200JSONResponseBody22
+func (t *GetDeploymentEvents200JSONResponseBody2) FromGetDeploymentEvents200JSONResponseBody22(v GetDeploymentEvents200JSONResponseBody22) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200JSONResponseBody22 performs a merge with any union data inside the GetDeploymentEvents200JSONResponseBody2, using the provided GetDeploymentEvents200JSONResponseBody22
+func (t *GetDeploymentEvents200JSONResponseBody2) MergeGetDeploymentEvents200JSONResponseBody22(v GetDeploymentEvents200JSONResponseBody22) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeploymentEvents200JSONResponseBody2) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeploymentEvents200JSONResponseBody2) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeploymentEvents200JSONResponseBody0 returns the union data inside the GetDeploymentEvents200JSONResponseBody_Item as a GetDeploymentEvents200JSONResponseBody0
+func (t GetDeploymentEvents200JSONResponseBody_Item) AsGetDeploymentEvents200JSONResponseBody0() (GetDeploymentEvents200JSONResponseBody0, error) {
+	var body GetDeploymentEvents200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200JSONResponseBody0 overwrites any union data inside the GetDeploymentEvents200JSONResponseBody_Item as the provided GetDeploymentEvents200JSONResponseBody0
+func (t *GetDeploymentEvents200JSONResponseBody_Item) FromGetDeploymentEvents200JSONResponseBody0(v GetDeploymentEvents200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200JSONResponseBody0 performs a merge with any union data inside the GetDeploymentEvents200JSONResponseBody_Item, using the provided GetDeploymentEvents200JSONResponseBody0
+func (t *GetDeploymentEvents200JSONResponseBody_Item) MergeGetDeploymentEvents200JSONResponseBody0(v GetDeploymentEvents200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200JSONResponseBody1 returns the union data inside the GetDeploymentEvents200JSONResponseBody_Item as a GetDeploymentEvents200JSONResponseBody1
+func (t GetDeploymentEvents200JSONResponseBody_Item) AsGetDeploymentEvents200JSONResponseBody1() (GetDeploymentEvents200JSONResponseBody1, error) {
+	var body GetDeploymentEvents200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200JSONResponseBody1 overwrites any union data inside the GetDeploymentEvents200JSONResponseBody_Item as the provided GetDeploymentEvents200JSONResponseBody1
+func (t *GetDeploymentEvents200JSONResponseBody_Item) FromGetDeploymentEvents200JSONResponseBody1(v GetDeploymentEvents200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200JSONResponseBody1 performs a merge with any union data inside the GetDeploymentEvents200JSONResponseBody_Item, using the provided GetDeploymentEvents200JSONResponseBody1
+func (t *GetDeploymentEvents200JSONResponseBody_Item) MergeGetDeploymentEvents200JSONResponseBody1(v GetDeploymentEvents200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200JSONResponseBody2 returns the union data inside the GetDeploymentEvents200JSONResponseBody_Item as a GetDeploymentEvents200JSONResponseBody2
+func (t GetDeploymentEvents200JSONResponseBody_Item) AsGetDeploymentEvents200JSONResponseBody2() (GetDeploymentEvents200JSONResponseBody2, error) {
+	var body GetDeploymentEvents200JSONResponseBody2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200JSONResponseBody2 overwrites any union data inside the GetDeploymentEvents200JSONResponseBody_Item as the provided GetDeploymentEvents200JSONResponseBody2
+func (t *GetDeploymentEvents200JSONResponseBody_Item) FromGetDeploymentEvents200JSONResponseBody2(v GetDeploymentEvents200JSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200JSONResponseBody2 performs a merge with any union data inside the GetDeploymentEvents200JSONResponseBody_Item, using the provided GetDeploymentEvents200JSONResponseBody2
+func (t *GetDeploymentEvents200JSONResponseBody_Item) MergeGetDeploymentEvents200JSONResponseBody2(v GetDeploymentEvents200JSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeploymentEvents200JSONResponseBody_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeploymentEvents200JSONResponseBody_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20 returns the union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 as a GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20() (GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20, error) {
+	var body GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20 overwrites any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 as the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20 performs a merge with any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2, using the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody20) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21 returns the union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 as a GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21() (GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21, error) {
+	var body GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21 overwrites any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 as the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21 performs a merge with any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2, using the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody21) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22 returns the union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 as a GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22() (GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22, error) {
+	var body GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22 overwrites any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 as the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22 performs a merge with any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2, using the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody22) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0 returns the union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody as a GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0() (GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0, error) {
+	var body GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0 overwrites any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody as the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0 performs a merge with any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody, using the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1 returns the union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody as a GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1() (GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1, error) {
+	var body GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1 overwrites any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody as the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1 performs a merge with any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody, using the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 returns the union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody as a GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) AsGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2() (GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2, error) {
+	var body GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 overwrites any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody as the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) FromGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2 performs a merge with any union data inside the GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody, using the provided GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) MergeGetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2(v GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchDomainJSONBody0 returns the union data inside the PatchDomainJSONBody as a PatchDomainJSONBody0
+func (t PatchDomainJSONBody) AsPatchDomainJSONBody0() (PatchDomainJSONBody0, error) {
+	var body PatchDomainJSONBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchDomainJSONBody0 overwrites any union data inside the PatchDomainJSONBody as the provided PatchDomainJSONBody0
+func (t *PatchDomainJSONBody) FromPatchDomainJSONBody0(v PatchDomainJSONBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchDomainJSONBody0 performs a merge with any union data inside the PatchDomainJSONBody, using the provided PatchDomainJSONBody0
+func (t *PatchDomainJSONBody) MergePatchDomainJSONBody0(v PatchDomainJSONBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchDomainJSONBody1 returns the union data inside the PatchDomainJSONBody as a PatchDomainJSONBody1
+func (t PatchDomainJSONBody) AsPatchDomainJSONBody1() (PatchDomainJSONBody1, error) {
+	var body PatchDomainJSONBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchDomainJSONBody1 overwrites any union data inside the PatchDomainJSONBody as the provided PatchDomainJSONBody1
+func (t *PatchDomainJSONBody) FromPatchDomainJSONBody1(v PatchDomainJSONBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchDomainJSONBody1 performs a merge with any union data inside the PatchDomainJSONBody, using the provided PatchDomainJSONBody1
+func (t *PatchDomainJSONBody) MergePatchDomainJSONBody1(v PatchDomainJSONBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchDomainJSONBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchDomainJSONBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchDomain200JSONResponseBody0 returns the union data inside the PatchDomain200JSONResponseBody as a PatchDomain200JSONResponseBody0
+func (t PatchDomain200JSONResponseBody) AsPatchDomain200JSONResponseBody0() (PatchDomain200JSONResponseBody0, error) {
+	var body PatchDomain200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchDomain200JSONResponseBody0 overwrites any union data inside the PatchDomain200JSONResponseBody as the provided PatchDomain200JSONResponseBody0
+func (t *PatchDomain200JSONResponseBody) FromPatchDomain200JSONResponseBody0(v PatchDomain200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchDomain200JSONResponseBody0 performs a merge with any union data inside the PatchDomain200JSONResponseBody, using the provided PatchDomain200JSONResponseBody0
+func (t *PatchDomain200JSONResponseBody) MergePatchDomain200JSONResponseBody0(v PatchDomain200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchDomain200JSONResponseBody1 returns the union data inside the PatchDomain200JSONResponseBody as a PatchDomain200JSONResponseBody1
+func (t PatchDomain200JSONResponseBody) AsPatchDomain200JSONResponseBody1() (PatchDomain200JSONResponseBody1, error) {
+	var body PatchDomain200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchDomain200JSONResponseBody1 overwrites any union data inside the PatchDomain200JSONResponseBody as the provided PatchDomain200JSONResponseBody1
+func (t *PatchDomain200JSONResponseBody) FromPatchDomain200JSONResponseBody1(v PatchDomain200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchDomain200JSONResponseBody1 performs a merge with any union data inside the PatchDomain200JSONResponseBody, using the provided PatchDomain200JSONResponseBody1
+func (t *PatchDomain200JSONResponseBody) MergePatchDomain200JSONResponseBody1(v PatchDomain200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchDomain200JSONResponseBody2 returns the union data inside the PatchDomain200JSONResponseBody as a PatchDomain200JSONResponseBody2
+func (t PatchDomain200JSONResponseBody) AsPatchDomain200JSONResponseBody2() (PatchDomain200JSONResponseBody2, error) {
+	var body PatchDomain200JSONResponseBody2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchDomain200JSONResponseBody2 overwrites any union data inside the PatchDomain200JSONResponseBody as the provided PatchDomain200JSONResponseBody2
+func (t *PatchDomain200JSONResponseBody) FromPatchDomain200JSONResponseBody2(v PatchDomain200JSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchDomain200JSONResponseBody2 performs a merge with any union data inside the PatchDomain200JSONResponseBody, using the provided PatchDomain200JSONResponseBody2
+func (t *PatchDomain200JSONResponseBody) MergePatchDomain200JSONResponseBody2(v PatchDomain200JSONResponseBody2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchDomain200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchDomain200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0 returns the union data inside the CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration as a CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0
+func (t CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) AsCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0() (CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0, error) {
+	var body CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0 overwrites any union data inside the CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration as the provided CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0
+func (t *CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) FromCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0(v CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0 performs a merge with any union data inside the CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration, using the provided CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0
+func (t *CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) MergeCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0(v CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1 returns the union data inside the CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration as a CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1
+func (t CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) AsCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1() (CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1, error) {
+	var body CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1 overwrites any union data inside the CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration as the provided CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1
+func (t *CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) FromCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1(v CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1 performs a merge with any union data inside the CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration, using the provided CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1
+func (t *CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) MergeCreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1(v CreateSandboxesV3JSONBodyKeepLastSnapshotsExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesV3JSONBody_KeepLastSnapshots_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodyNetworkPolicy1Allow0 returns the union data inside the CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow as a CreateSandboxesV3JSONBodyNetworkPolicy1Allow0
+func (t CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) AsCreateSandboxesV3JSONBodyNetworkPolicy1Allow0() (CreateSandboxesV3JSONBodyNetworkPolicy1Allow0, error) {
+	var body CreateSandboxesV3JSONBodyNetworkPolicy1Allow0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodyNetworkPolicy1Allow0 overwrites any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow as the provided CreateSandboxesV3JSONBodyNetworkPolicy1Allow0
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) FromCreateSandboxesV3JSONBodyNetworkPolicy1Allow0(v CreateSandboxesV3JSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodyNetworkPolicy1Allow0 performs a merge with any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow, using the provided CreateSandboxesV3JSONBodyNetworkPolicy1Allow0
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) MergeCreateSandboxesV3JSONBodyNetworkPolicy1Allow0(v CreateSandboxesV3JSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodyNetworkPolicy1Allow1 returns the union data inside the CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow as a CreateSandboxesV3JSONBodyNetworkPolicy1Allow1
+func (t CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) AsCreateSandboxesV3JSONBodyNetworkPolicy1Allow1() (CreateSandboxesV3JSONBodyNetworkPolicy1Allow1, error) {
+	var body CreateSandboxesV3JSONBodyNetworkPolicy1Allow1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodyNetworkPolicy1Allow1 overwrites any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow as the provided CreateSandboxesV3JSONBodyNetworkPolicy1Allow1
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) FromCreateSandboxesV3JSONBodyNetworkPolicy1Allow1(v CreateSandboxesV3JSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodyNetworkPolicy1Allow1 performs a merge with any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow, using the provided CreateSandboxesV3JSONBodyNetworkPolicy1Allow1
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) MergeCreateSandboxesV3JSONBodyNetworkPolicy1Allow1(v CreateSandboxesV3JSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy_1_Allow) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodyNetworkPolicy0 returns the union data inside the CreateSandboxesV3JSONBody_NetworkPolicy as a CreateSandboxesV3JSONBodyNetworkPolicy0
+func (t CreateSandboxesV3JSONBody_NetworkPolicy) AsCreateSandboxesV3JSONBodyNetworkPolicy0() (CreateSandboxesV3JSONBodyNetworkPolicy0, error) {
+	var body CreateSandboxesV3JSONBodyNetworkPolicy0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodyNetworkPolicy0 overwrites any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy as the provided CreateSandboxesV3JSONBodyNetworkPolicy0
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy) FromCreateSandboxesV3JSONBodyNetworkPolicy0(v CreateSandboxesV3JSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodyNetworkPolicy0 performs a merge with any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy, using the provided CreateSandboxesV3JSONBodyNetworkPolicy0
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy) MergeCreateSandboxesV3JSONBodyNetworkPolicy0(v CreateSandboxesV3JSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodyNetworkPolicy1 returns the union data inside the CreateSandboxesV3JSONBody_NetworkPolicy as a CreateSandboxesV3JSONBodyNetworkPolicy1
+func (t CreateSandboxesV3JSONBody_NetworkPolicy) AsCreateSandboxesV3JSONBodyNetworkPolicy1() (CreateSandboxesV3JSONBodyNetworkPolicy1, error) {
+	var body CreateSandboxesV3JSONBodyNetworkPolicy1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodyNetworkPolicy1 overwrites any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy as the provided CreateSandboxesV3JSONBodyNetworkPolicy1
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy) FromCreateSandboxesV3JSONBodyNetworkPolicy1(v CreateSandboxesV3JSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodyNetworkPolicy1 performs a merge with any union data inside the CreateSandboxesV3JSONBody_NetworkPolicy, using the provided CreateSandboxesV3JSONBodyNetworkPolicy1
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy) MergeCreateSandboxesV3JSONBodyNetworkPolicy1(v CreateSandboxesV3JSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesV3JSONBody_NetworkPolicy) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesV3JSONBody_NetworkPolicy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodySnapshotExpiration0 returns the union data inside the CreateSandboxesV3JSONBody_SnapshotExpiration as a CreateSandboxesV3JSONBodySnapshotExpiration0
+func (t CreateSandboxesV3JSONBody_SnapshotExpiration) AsCreateSandboxesV3JSONBodySnapshotExpiration0() (CreateSandboxesV3JSONBodySnapshotExpiration0, error) {
+	var body CreateSandboxesV3JSONBodySnapshotExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodySnapshotExpiration0 overwrites any union data inside the CreateSandboxesV3JSONBody_SnapshotExpiration as the provided CreateSandboxesV3JSONBodySnapshotExpiration0
+func (t *CreateSandboxesV3JSONBody_SnapshotExpiration) FromCreateSandboxesV3JSONBodySnapshotExpiration0(v CreateSandboxesV3JSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodySnapshotExpiration0 performs a merge with any union data inside the CreateSandboxesV3JSONBody_SnapshotExpiration, using the provided CreateSandboxesV3JSONBodySnapshotExpiration0
+func (t *CreateSandboxesV3JSONBody_SnapshotExpiration) MergeCreateSandboxesV3JSONBodySnapshotExpiration0(v CreateSandboxesV3JSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodySnapshotExpiration1 returns the union data inside the CreateSandboxesV3JSONBody_SnapshotExpiration as a CreateSandboxesV3JSONBodySnapshotExpiration1
+func (t CreateSandboxesV3JSONBody_SnapshotExpiration) AsCreateSandboxesV3JSONBodySnapshotExpiration1() (CreateSandboxesV3JSONBodySnapshotExpiration1, error) {
+	var body CreateSandboxesV3JSONBodySnapshotExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodySnapshotExpiration1 overwrites any union data inside the CreateSandboxesV3JSONBody_SnapshotExpiration as the provided CreateSandboxesV3JSONBodySnapshotExpiration1
+func (t *CreateSandboxesV3JSONBody_SnapshotExpiration) FromCreateSandboxesV3JSONBodySnapshotExpiration1(v CreateSandboxesV3JSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodySnapshotExpiration1 performs a merge with any union data inside the CreateSandboxesV3JSONBody_SnapshotExpiration, using the provided CreateSandboxesV3JSONBodySnapshotExpiration1
+func (t *CreateSandboxesV3JSONBody_SnapshotExpiration) MergeCreateSandboxesV3JSONBodySnapshotExpiration1(v CreateSandboxesV3JSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesV3JSONBody_SnapshotExpiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesV3JSONBody_SnapshotExpiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodySource0 returns the union data inside the CreateSandboxesV3JSONBody_Source as a CreateSandboxesV3JSONBodySource0
+func (t CreateSandboxesV3JSONBody_Source) AsCreateSandboxesV3JSONBodySource0() (CreateSandboxesV3JSONBodySource0, error) {
+	var body CreateSandboxesV3JSONBodySource0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodySource0 overwrites any union data inside the CreateSandboxesV3JSONBody_Source as the provided CreateSandboxesV3JSONBodySource0
+func (t *CreateSandboxesV3JSONBody_Source) FromCreateSandboxesV3JSONBodySource0(v CreateSandboxesV3JSONBodySource0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodySource0 performs a merge with any union data inside the CreateSandboxesV3JSONBody_Source, using the provided CreateSandboxesV3JSONBodySource0
+func (t *CreateSandboxesV3JSONBody_Source) MergeCreateSandboxesV3JSONBodySource0(v CreateSandboxesV3JSONBodySource0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodySource1 returns the union data inside the CreateSandboxesV3JSONBody_Source as a CreateSandboxesV3JSONBodySource1
+func (t CreateSandboxesV3JSONBody_Source) AsCreateSandboxesV3JSONBodySource1() (CreateSandboxesV3JSONBodySource1, error) {
+	var body CreateSandboxesV3JSONBodySource1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodySource1 overwrites any union data inside the CreateSandboxesV3JSONBody_Source as the provided CreateSandboxesV3JSONBodySource1
+func (t *CreateSandboxesV3JSONBody_Source) FromCreateSandboxesV3JSONBodySource1(v CreateSandboxesV3JSONBodySource1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodySource1 performs a merge with any union data inside the CreateSandboxesV3JSONBody_Source, using the provided CreateSandboxesV3JSONBodySource1
+func (t *CreateSandboxesV3JSONBody_Source) MergeCreateSandboxesV3JSONBodySource1(v CreateSandboxesV3JSONBodySource1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesV3JSONBodySource2 returns the union data inside the CreateSandboxesV3JSONBody_Source as a CreateSandboxesV3JSONBodySource2
+func (t CreateSandboxesV3JSONBody_Source) AsCreateSandboxesV3JSONBodySource2() (CreateSandboxesV3JSONBodySource2, error) {
+	var body CreateSandboxesV3JSONBodySource2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesV3JSONBodySource2 overwrites any union data inside the CreateSandboxesV3JSONBody_Source as the provided CreateSandboxesV3JSONBodySource2
+func (t *CreateSandboxesV3JSONBody_Source) FromCreateSandboxesV3JSONBodySource2(v CreateSandboxesV3JSONBodySource2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesV3JSONBodySource2 performs a merge with any union data inside the CreateSandboxesV3JSONBody_Source, using the provided CreateSandboxesV3JSONBodySource2
+func (t *CreateSandboxesV3JSONBody_Source) MergeCreateSandboxesV3JSONBodySource2(v CreateSandboxesV3JSONBodySource2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesV3JSONBody_Source) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesV3JSONBody_Source) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0 returns the union data inside the CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration as a CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0
+func (t CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) AsCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0() (CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0, error) {
+	var body CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0 overwrites any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration as the provided CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) FromCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0(v CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0 performs a merge with any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration, using the provided CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) MergeCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0(v CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1 returns the union data inside the CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration as a CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1
+func (t CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) AsCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1() (CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1, error) {
+	var body CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1 overwrites any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration as the provided CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) FromCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1(v CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1 performs a merge with any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration, using the provided CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) MergeCreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1(v CreateSandboxesSessionsBySessionIdSnapshotV3JSONBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV3JSONBody_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration as a CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0
+func (t CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0() (CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration as the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration, using the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration as a CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1
+func (t CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1() (CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration as the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration, using the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1Expiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots_1_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots as a CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0
+func (t CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0() (CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots as the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots, using the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots as a CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1
+func (t CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) AsCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1() (CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots as the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) FromCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots, using the provided CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) MergeCreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1(v CreateSandboxesByNameForkV3JSONBodyKeepLastSnapshots1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV3JSONBody_KeepLastSnapshots) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow as a CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0
+func (t CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0() (CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow as the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow, using the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow as a CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1
+func (t CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1() (CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow as the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow, using the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy_1_Allow) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy0 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy as a CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0
+func (t CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy0() (CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy0 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy as the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy0(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy0 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy, using the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy0(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy as a CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1
+func (t CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) AsCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1() (CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1, error) {
+	var body CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy as the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) FromCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_NetworkPolicy, using the provided CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) MergeCreateSandboxesByNameForkV3JSONBodyNetworkPolicy1(v CreateSandboxesByNameForkV3JSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV3JSONBody_NetworkPolicy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodySnapshotExpiration0 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration as a CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0
+func (t CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) AsCreateSandboxesByNameForkV3JSONBodySnapshotExpiration0() (CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0, error) {
+	var body CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodySnapshotExpiration0 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration as the provided CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0
+func (t *CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) FromCreateSandboxesByNameForkV3JSONBodySnapshotExpiration0(v CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodySnapshotExpiration0 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration, using the provided CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0
+func (t *CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) MergeCreateSandboxesByNameForkV3JSONBodySnapshotExpiration0(v CreateSandboxesByNameForkV3JSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV3JSONBodySnapshotExpiration1 returns the union data inside the CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration as a CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1
+func (t CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) AsCreateSandboxesByNameForkV3JSONBodySnapshotExpiration1() (CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1, error) {
+	var body CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV3JSONBodySnapshotExpiration1 overwrites any union data inside the CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration as the provided CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1
+func (t *CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) FromCreateSandboxesByNameForkV3JSONBodySnapshotExpiration1(v CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV3JSONBodySnapshotExpiration1 performs a merge with any union data inside the CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration, using the provided CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1
+func (t *CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) MergeCreateSandboxesByNameForkV3JSONBodySnapshotExpiration1(v CreateSandboxesByNameForkV3JSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t CreateSandboxesByNameForkV3JSONBody_SnapshotExpiration) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -18807,1206 +20017,6 @@ func (c *Client) DeleteEdgeConfigTokensWithBody(ctx context.Context, edgeConfigI
 // Corresponds with DELETE /v1/global-config/{edgeConfigId}/tokens (the `DeleteEdgeConfigTokens` operationId).
 func (c *Client) DeleteEdgeConfigTokens(ctx context.Context, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDeleteEdgeConfigTokensRequest(c.Server, edgeConfigId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetEdgeConfigTokens Get all tokens of a Global Config
-//
-// Returns all tokens of a Global Config.
-//
-// Corresponds with GET /v1/global-config/{edgeConfigId}/tokens (the `GetEdgeConfigTokens` operationId).
-func (c *Client) GetEdgeConfigTokens(ctx context.Context, edgeConfigId string, params *GetEdgeConfigTokensParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEdgeConfigTokensRequest(c.Server, edgeConfigId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateInstallationWithBody Update Installation
-//
-// This endpoint updates an integration installation.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-func (c *Client) UpdateInstallationWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateInstallationRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateInstallation Update Installation
-//
-// This endpoint updates an integration installation.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId} (the `UpdateInstallation` operationId).
-func (c *Client) UpdateInstallation(ctx context.Context, integrationConfigurationId string, body UpdateInstallationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateInstallationRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAccountInfo Get Account Information
-//
-// Fetches the best account or user’s contact info.
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/account (the `GetAccountInfo` operationId).
-func (c *Client) GetAccountInfo(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAccountInfoRequest(c.Server, integrationConfigurationId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SubmitBillingDataWithBody Submit Billing Data
-//
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-func (c *Client) SubmitBillingDataWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSubmitBillingDataRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SubmitBillingData Submit Billing Data
-//
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing (the `SubmitBillingData` operationId).
-func (c *Client) SubmitBillingData(ctx context.Context, integrationConfigurationId string, body SubmitBillingDataJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSubmitBillingDataRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SubmitPrepaymentBalancesWithBody Submit Prepayment Balances
-//
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-func (c *Client) SubmitPrepaymentBalancesWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSubmitPrepaymentBalancesRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SubmitPrepaymentBalances Submit Prepayment Balances
-//
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/balance (the `SubmitPrepaymentBalances` operationId).
-func (c *Client) SubmitPrepaymentBalances(ctx context.Context, integrationConfigurationId string, body SubmitPrepaymentBalancesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSubmitPrepaymentBalancesRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// FinalizeInstallation Finalize Installation
-//
-// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
-func (c *Client) FinalizeInstallation(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewFinalizeInstallationRequest(c.Server, integrationConfigurationId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SubmitInvoiceWithBody Submit Invoice
-//
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-func (c *Client) SubmitInvoiceWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSubmitInvoiceRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SubmitInvoice Submit Invoice
-//
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices (the `SubmitInvoice` operationId).
-func (c *Client) SubmitInvoice(ctx context.Context, integrationConfigurationId string, body SubmitInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSubmitInvoiceRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetInvoice Get Invoice
-//
-// Get Invoice details and status for a given invoice ID.<br/> <br/> See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} (the `GetInvoice` operationId).
-func (c *Client) GetInvoice(ctx context.Context, integrationConfigurationId string, invoiceId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetInvoiceRequest(c.Server, integrationConfigurationId, invoiceId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateInvoiceWithBody Invoice Actions
-//
-// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-func (c *Client) UpdateInvoiceWithBody(ctx context.Context, integrationConfigurationId string, invoiceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateInvoiceRequestWithBody(c.Server, integrationConfigurationId, invoiceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateInvoice Invoice Actions
-//
-// This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions (the `UpdateInvoice` operationId).
-func (c *Client) UpdateInvoice(ctx context.Context, integrationConfigurationId string, invoiceId string, body UpdateInvoiceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateInvoiceRequest(c.Server, integrationConfigurationId, invoiceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RevokeInstallationCredentialWithBody Revoke Installation Credential
-//
-// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-func (c *Client) RevokeInstallationCredentialWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRevokeInstallationCredentialRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RevokeInstallationCredential Revoke Installation Credential
-//
-// Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/revoke (the `RevokeInstallationCredential` operationId).
-func (c *Client) RevokeInstallationCredential(ctx context.Context, integrationConfigurationId string, body RevokeInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRevokeInstallationCredentialRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RotateInstallationCredentialWithBody Rotate Installation Credential
-//
-// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-func (c *Client) RotateInstallationCredentialWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRotateInstallationCredentialRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RotateInstallationCredential Rotate Installation Credential
-//
-// Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/credentials/rotate (the `RotateInstallationCredential` operationId).
-func (c *Client) RotateInstallationCredential(ctx context.Context, integrationConfigurationId string, body RotateInstallationCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRotateInstallationCredentialRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateEventWithBody Create Event
-//
-// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-func (c *Client) CreateEventWithBody(ctx context.Context, integrationConfigurationId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateEventRequestWithBody(c.Server, integrationConfigurationId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateEvent Create Event
-//
-// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/events (the `CreateEvent` operationId).
-func (c *Client) CreateEvent(ctx context.Context, integrationConfigurationId string, body CreateEventJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateEventRequest(c.Server, integrationConfigurationId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetMember Get Member Information
-//
-// Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/member/{memberId} (the `GetMember` operationId).
-func (c *Client) GetMember(ctx context.Context, integrationConfigurationId string, memberId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMemberRequest(c.Server, integrationConfigurationId, memberId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateResourceSecretsWithBody Deprecated: true. Update Resource Secrets (Deprecated)
-//
-// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) UpdateResourceSecretsWithBody(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateResourceSecretsRequestWithBody(c.Server, integrationConfigurationId, integrationProductIdOrSlug, resourceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateResourceSecrets Deprecated: true. Update Resource Secrets (Deprecated)
-//
-// This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets (the `UpdateResourceSecrets` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) UpdateResourceSecrets(ctx context.Context, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, body UpdateResourceSecretsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateResourceSecretsRequest(c.Server, integrationConfigurationId, integrationProductIdOrSlug, resourceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetIntegrationResources Get Integration Resources
-//
-// Get all resources for a given installation ID.
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources (the `GetIntegrationResources` operationId).
-func (c *Client) GetIntegrationResources(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetIntegrationResourcesRequest(c.Server, integrationConfigurationId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteIntegrationResource Delete Integration Resource
-//
-// Delete a resource owned by the selected installation ID.
-//
-// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `DeleteIntegrationResource` operationId).
-func (c *Client) DeleteIntegrationResource(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteIntegrationResourceRequest(c.Server, integrationConfigurationId, resourceId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetIntegrationResource Get Integration Resource
-//
-// Get a resource by its partner ID.
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `GetIntegrationResource` operationId).
-func (c *Client) GetIntegrationResource(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetIntegrationResourceRequest(c.Server, integrationConfigurationId, resourceId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateResourceWithBody Update Resource
-//
-// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
-func (c *Client) UpdateResourceWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateResourceRequestWithBody(c.Server, integrationConfigurationId, resourceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateResource Update Resource
-//
-// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `UpdateResource` operationId).
-func (c *Client) UpdateResource(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateResourceRequest(c.Server, integrationConfigurationId, resourceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ImportResourceWithBody Import Resource
-//
-// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
-func (c *Client) ImportResourceWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewImportResourceRequestWithBody(c.Server, integrationConfigurationId, resourceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ImportResource Import Resource
-//
-// This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} (the `ImportResource` operationId).
-func (c *Client) ImportResource(ctx context.Context, integrationConfigurationId string, resourceId string, body ImportResourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewImportResourceRequest(c.Server, integrationConfigurationId, resourceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig Get the data of a user-provided Global Config
-//
-// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-//
-// Corresponds with GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-func (c *Client) GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest(c.Server, integrationConfigurationId, resourceId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig Get the data of a user-provided Global Config
-//
-// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-//
-// Corresponds with HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-func (c *Client) HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx context.Context, integrationConfigurationId string, resourceId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewHeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest(c.Server, integrationConfigurationId, resourceId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBody Push data into a user-provided Global Config
-//
-// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-func (c *Client) ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestWithBody(c.Server, integrationConfigurationId, resourceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig Push data into a user-provided Global Config
-//
-// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config (the `ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig` operationId).
-func (c *Client) ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(ctx context.Context, integrationConfigurationId string, resourceId string, body ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequest(c.Server, integrationConfigurationId, resourceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBody Create one or multiple experimentation items
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
-func (c *Client) CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequestWithBody(c.Server, integrationConfigurationId, resourceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems Create one or multiple experimentation items
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items (the `CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems` operationId).
-func (c *Client) CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(ctx context.Context, integrationConfigurationId string, resourceId string, body CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest(c.Server, integrationConfigurationId, resourceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId Delete an existing experimentation item
-//
-// Corresponds with DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-func (c *Client) DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(c.Server, integrationConfigurationId, resourceId, itemId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBody Patch an existing experimentation item
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-func (c *Client) UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequestWithBody(c.Server, integrationConfigurationId, resourceId, itemId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId Patch an existing experimentation item
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId} (the `UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId` operationId).
-func (c *Client) UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(ctx context.Context, integrationConfigurationId string, resourceId string, itemId string, body UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(c.Server, integrationConfigurationId, resourceId, itemId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateResourceSecretsByIdWithBody Update Resource Secrets
-//
-// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
-func (c *Client) UpdateResourceSecretsByIdWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateResourceSecretsByIdRequestWithBody(c.Server, integrationConfigurationId, resourceId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateResourceSecretsById Update Resource Secrets
-//
-// This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets (the `UpdateResourceSecretsById` operationId).
-func (c *Client) UpdateResourceSecretsById(ctx context.Context, integrationConfigurationId string, resourceId string, body UpdateResourceSecretsByIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateResourceSecretsByIdRequest(c.Server, integrationConfigurationId, resourceId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteConfiguration Delete an integration configuration
-//
-// Allows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables.
-//
-// Corresponds with DELETE /v1/integrations/configuration/{id} (the `DeleteConfiguration` operationId).
-func (c *Client) DeleteConfiguration(ctx context.Context, id string, params *DeleteConfigurationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteConfigurationRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConfiguration Retrieve an integration configuration
-//
-// Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
-//
-// Corresponds with GET /v1/integrations/configuration/{id} (the `GetConfiguration` operationId).
-func (c *Client) GetConfiguration(ctx context.Context, id string, params *GetConfigurationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConfigurationRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConfigurationProducts List products for integration configuration
-//
-// Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
-//
-// Corresponds with GET /v1/integrations/configuration/{id}/products (the `GetConfigurationProducts` operationId).
-func (c *Client) GetConfigurationProducts(ctx context.Context, id string, params *GetConfigurationProductsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConfigurationProductsRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConfigurations Get configurations for the authenticated user or team
-//
-// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
-//
-// Corresponds with GET /v1/integrations/configurations (the `GetConfigurations` operationId).
-func (c *Client) GetConfigurations(ctx context.Context, params *GetConfigurationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConfigurationsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GitNamespaces List git namespaces by provider
-//
-// Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
-//
-// Corresponds with GET /v1/integrations/git-namespaces (the `GitNamespaces` operationId).
-func (c *Client) GitNamespaces(ctx context.Context, params *GitNamespacesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGitNamespacesRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ConnectIntegrationResourceToProjectWithBody Connect integration resource to project
-//
-// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
-func (c *Client) ConnectIntegrationResourceToProjectWithBody(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewConnectIntegrationResourceToProjectRequestWithBody(c.Server, integrationConfigurationId, resourceId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ConnectIntegrationResourceToProject Connect integration resource to project
-//
-// Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections (the `ConnectIntegrationResourceToProject` operationId).
-func (c *Client) ConnectIntegrationResourceToProject(ctx context.Context, integrationConfigurationId string, resourceId string, params *ConnectIntegrationResourceToProjectParams, body ConnectIntegrationResourceToProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewConnectIntegrationResourceToProjectRequest(c.Server, integrationConfigurationId, resourceId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetBillingPlans List integration billing plans
-//
-// Get a list of billing plans for an integration and product.
-//
-// Corresponds with GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans (the `GetBillingPlans` operationId).
-func (c *Client) GetBillingPlans(ctx context.Context, integrationIdOrSlug string, productIdOrSlug string, params *GetBillingPlansParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBillingPlansRequest(c.Server, integrationIdOrSlug, productIdOrSlug, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteIntegrationLogDrain Deletes the Integration log drain with the provided `id` (deprecated)
-//
-// Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
-//
-// Corresponds with DELETE /v1/integrations/log-drains/{id} (the `DeleteIntegrationLogDrain` operationId).
-func (c *Client) DeleteIntegrationLogDrain(ctx context.Context, id string, params *DeleteIntegrationLogDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteIntegrationLogDrainRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// SearchRepo List git repositories linked to namespace by provider
-//
-// Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
-//
-// Corresponds with GET /v1/integrations/search-repo (the `SearchRepo` operationId).
-func (c *Client) SearchRepo(ctx context.Context, params *SearchRepoParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSearchRepoRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ExchangeSsoTokenWithBody SSO Token Exchange
-//
-// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
-func (c *Client) ExchangeSsoTokenWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewExchangeSsoTokenRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ExchangeSsoToken SSO Token Exchange
-//
-// During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/integrations/sso/token (the `ExchangeSsoToken` operationId).
-func (c *Client) ExchangeSsoToken(ctx context.Context, body ExchangeSsoTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewExchangeSsoTokenRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListKmsIssuers List issuers
-//
-// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
-//
-// Corresponds with GET /v1/kms/issuers (the `ListKmsIssuers` operationId).
-func (c *Client) ListKmsIssuers(ctx context.Context, params *ListKmsIssuersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListKmsIssuersRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateKmsIssuerWithBody Create an issuer
-//
-// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
-func (c *Client) CreateKmsIssuerWithBody(ctx context.Context, params *CreateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateKmsIssuerRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateKmsIssuer Create an issuer
-//
-// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/kms/issuers (the `CreateKmsIssuer` operationId).
-func (c *Client) CreateKmsIssuer(ctx context.Context, params *CreateKmsIssuerParams, body CreateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateKmsIssuerRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteKmsIssuer Delete an issuer
-//
-// Delete a KMS issuer and its signing keys.
-//
-// Corresponds with DELETE /v1/kms/issuers/{issuerId} (the `DeleteKmsIssuer` operationId).
-func (c *Client) DeleteKmsIssuer(ctx context.Context, issuerId string, params *DeleteKmsIssuerParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteKmsIssuerRequest(c.Server, issuerId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetKmsIssuer Get an issuer
-//
-// Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
-//
-// Corresponds with GET /v1/kms/issuers/{issuerId} (the `GetKmsIssuer` operationId).
-func (c *Client) GetKmsIssuer(ctx context.Context, issuerId string, params *GetKmsIssuerParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKmsIssuerRequest(c.Server, issuerId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateKmsIssuerWithBody Update an issuer
-//
-// Update a KMS issuer's name or claims schema.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
-func (c *Client) UpdateKmsIssuerWithBody(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateKmsIssuerRequestWithBody(c.Server, issuerId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateKmsIssuer Update an issuer
-//
-// Update a KMS issuer's name or claims schema.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/kms/issuers/{issuerId} (the `UpdateKmsIssuer` operationId).
-func (c *Client) UpdateKmsIssuer(ctx context.Context, issuerId string, params *UpdateKmsIssuerParams, body UpdateKmsIssuerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateKmsIssuerRequest(c.Server, issuerId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateKmsSigningKeyWithBody Create a signing key
-//
-// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
-func (c *Client) CreateKmsSigningKeyWithBody(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateKmsSigningKeyRequestWithBody(c.Server, issuerId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateKmsSigningKey Create a signing key
-//
-// Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/kms/issuers/{issuerId}/keys (the `CreateKmsSigningKey` operationId).
-func (c *Client) CreateKmsSigningKey(ctx context.Context, issuerId string, params *CreateKmsSigningKeyParams, body CreateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateKmsSigningKeyRequest(c.Server, issuerId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ActivateKmsSigningKeyWithBody Activate a signing key
-//
-// Activate a pending signing key so the issuer starts signing with it.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
-func (c *Client) ActivateKmsSigningKeyWithBody(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewActivateKmsSigningKeyRequestWithBody(c.Server, issuerId, keyId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ActivateKmsSigningKey Activate a signing key
-//
-// Activate a pending signing key so the issuer starts signing with it.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate (the `ActivateKmsSigningKey` operationId).
-func (c *Client) ActivateKmsSigningKey(ctx context.Context, issuerId string, keyId string, params *ActivateKmsSigningKeyParams, body ActivateKmsSigningKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewActivateKmsSigningKeyRequest(c.Server, issuerId, keyId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RevokeKmsSigningKey Revoke a signing key
-//
-// Immediately revoke a signing key that is already scheduled for revocation.
-//
-// Corresponds with POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke (the `RevokeKmsSigningKey` operationId).
-func (c *Client) RevokeKmsSigningKey(ctx context.Context, issuerId string, keyId string, params *RevokeKmsSigningKeyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRevokeKmsSigningKeyRequest(c.Server, issuerId, keyId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateKmsIssuerPolicyWithBody Create an issuer policy
-//
-// Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/kms/issuers/{issuerId}/policies (the `CreateKmsIssuerPolicy` operationId).
-func (c *Client) CreateKmsIssuerPolicyWithBody(ctx context.Context, issuerId string, params *CreateKmsIssuerPolicyParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateKmsIssuerPolicyRequestWithBody(c.Server, issuerId, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
