@@ -16,6 +16,511 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// CreateCheckWithBody Creates a new Check
+//
+// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) CreateCheckWithBody(ctx context.Context, deploymentId string, params *CreateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateCheckRequestWithBody(c.Server, deploymentId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateCheck Creates a new Check
+//
+// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) CreateCheck(ctx context.Context, deploymentId string, params *CreateCheckParams, body CreateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateCheckRequest(c.Server, deploymentId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetCheck Get a single check
+//
+// Return a detailed response for a single check.
+//
+// Corresponds with GET /v1/deployments/{deploymentId}/checks/{checkId} (the `GetCheck` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) GetCheck(ctx context.Context, deploymentId string, checkId string, params *GetCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetCheckRequest(c.Server, deploymentId, checkId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateCheckWithBody Update a check
+//
+// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) UpdateCheckWithBody(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateCheckRequestWithBody(c.Server, deploymentId, checkId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateCheck Update a check
+//
+// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) UpdateCheck(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, body UpdateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateCheckRequest(c.Server, deploymentId, checkId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RerequestCheck Rerequest a check
+//
+// Rerequest a selected check that has failed.
+//
+// Corresponds with POST /v1/deployments/{deploymentId}/checks/{checkId}/rerequest (the `RerequestCheck` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) RerequestCheck(ctx context.Context, deploymentId string, checkId string, params *RerequestCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRerequestCheckRequest(c.Server, deploymentId, checkId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDeploymentFeatureFlags Retrieve the feature flags of a deployment
+//
+// Retrieve the feature flags of a deployment.
+//
+// Corresponds with GET /v1/deployments/{deploymentId}/feature-flags (the `GetDeploymentFeatureFlags` operationId).
+func (c *Client) GetDeploymentFeatureFlags(ctx context.Context, deploymentId string, params *GetDeploymentFeatureFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDeploymentFeatureFlagsRequest(c.Server, deploymentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateIntegrationDeploymentActionWithBody Update deployment integration action
+//
+// Updates the deployment integration action for the specified integration installation.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
+func (c *Client) UpdateIntegrationDeploymentActionWithBody(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateIntegrationDeploymentActionRequestWithBody(c.Server, deploymentId, integrationConfigurationId, resourceId, action, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateIntegrationDeploymentAction Update deployment integration action
+//
+// Updates the deployment integration action for the specified integration installation.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
+func (c *Client) UpdateIntegrationDeploymentAction(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, body UpdateIntegrationDeploymentActionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateIntegrationDeploymentActionRequest(c.Server, deploymentId, integrationConfigurationId, resourceId, action, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateRecordWithBody Update an existing DNS record
+//
+// Updates an existing DNS record for a domain name.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
+func (c *Client) UpdateRecordWithBody(ctx context.Context, recordId string, params *UpdateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateRecordRequestWithBody(c.Server, recordId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateRecord Update an existing DNS record
+//
+// Updates an existing DNS record for a domain name.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
+func (c *Client) UpdateRecord(ctx context.Context, recordId string, params *UpdateRecordParams, body UpdateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateRecordRequest(c.Server, recordId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDomainProjectDomains List Project Domains by Apex Domain
+//
+// List all project domains associated with an apex domain owned by the authenticated account.
+//
+// Corresponds with GET /v1/domains/{domain}/project-domains (the `GetDomainProjectDomains` operationId).
+func (c *Client) GetDomainProjectDomains(ctx context.Context, domain string, params *GetDomainProjectDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainProjectDomainsRequest(c.Server, domain, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDrains Retrieve a list of all Drains
+//
+// Allows to retrieve the list of Drains of the authenticated team.
+//
+// Corresponds with GET /v1/drains (the `GetDrains` operationId).
+func (c *Client) GetDrains(ctx context.Context, params *GetDrainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDrainsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateDrainWithBody Create a new Drain
+//
+// Create a new Drain with the provided configuration.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
+func (c *Client) CreateDrainWithBody(ctx context.Context, params *CreateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateDrainRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateDrain Create a new Drain
+//
+// Create a new Drain with the provided configuration.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
+func (c *Client) CreateDrain(ctx context.Context, params *CreateDrainParams, body CreateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateDrainRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// TestDrainWithBody Validate Drain delivery configuration
+//
+// Validate the delivery configuration of a Drain using sample events.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
+func (c *Client) TestDrainWithBody(ctx context.Context, params *TestDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTestDrainRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// TestDrain Validate Drain delivery configuration
+//
+// Validate the delivery configuration of a Drain using sample events.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
+func (c *Client) TestDrain(ctx context.Context, params *TestDrainParams, body TestDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTestDrainRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteDrain Delete a drain
+//
+// Delete a specific Drain by passing the drain id in the URL.
+//
+// Corresponds with DELETE /v1/drains/{id} (the `DeleteDrain` operationId).
+func (c *Client) DeleteDrain(ctx context.Context, id string, params *DeleteDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteDrainRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetDrain Find a Drain by id
+//
+// Get the information for a specific Drain by passing the drain id in the URL.
+//
+// Corresponds with GET /v1/drains/{id} (the `GetDrain` operationId).
+func (c *Client) GetDrain(ctx context.Context, id string, params *GetDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDrainRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateDrainWithBody Update an existing Drain
+//
+// Update the configuration of an existing drain.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
+func (c *Client) UpdateDrainWithBody(ctx context.Context, id string, params *UpdateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDrainRequestWithBody(c.Server, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateDrain Update an existing Drain
+//
+// Update the configuration of an existing drain.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
+func (c *Client) UpdateDrain(ctx context.Context, id string, params *UpdateDrainParams, body UpdateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDrainRequest(c.Server, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DangerouslyDeleteBySrcImagesWithBody Dangerously delete by source image
+//
+// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
+func (c *Client) DangerouslyDeleteBySrcImagesWithBody(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDangerouslyDeleteBySrcImagesRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DangerouslyDeleteBySrcImages Dangerously delete by source image
+//
+// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
+func (c *Client) DangerouslyDeleteBySrcImages(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, body DangerouslyDeleteBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDangerouslyDeleteBySrcImagesRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DangerouslyDeleteByTagsWithBody Dangerously delete by tag
+//
+// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
+func (c *Client) DangerouslyDeleteByTagsWithBody(ctx context.Context, params *DangerouslyDeleteByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDangerouslyDeleteByTagsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DangerouslyDeleteByTags Dangerously delete by tag
+//
+// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
+func (c *Client) DangerouslyDeleteByTags(ctx context.Context, params *DangerouslyDeleteByTagsParams, body DangerouslyDeleteByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDangerouslyDeleteByTagsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// InvalidateBySrcImagesWithBody Invalidate by source image
+//
+// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
+func (c *Client) InvalidateBySrcImagesWithBody(ctx context.Context, params *InvalidateBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInvalidateBySrcImagesRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// InvalidateBySrcImages Invalidate by source image
+//
+// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
+func (c *Client) InvalidateBySrcImages(ctx context.Context, params *InvalidateBySrcImagesParams, body InvalidateBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInvalidateBySrcImagesRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // InvalidateByTagsWithBody Invalidate by tag
 //
 // Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
@@ -19520,500 +20025,6 @@ func NewSubmitPrepaymentBalancesRequestWithBody(server string, integrationConfig
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewFinalizeInstallationRequest constructs an http.Request for the FinalizeInstallation method
-func NewFinalizeInstallationRequest(server string, integrationConfigurationId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/billing/finalize", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewSubmitInvoiceRequest calls the generic SubmitInvoice builder with application/json body
-func NewSubmitInvoiceRequest(server string, integrationConfigurationId string, body SubmitInvoiceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewSubmitInvoiceRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewSubmitInvoiceRequestWithBody constructs an http.Request for the SubmitInvoice method, with any body, and a specified content type
-func NewSubmitInvoiceRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/billing/invoices", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetInvoiceRequest constructs an http.Request for the GetInvoice method
-func NewGetInvoiceRequest(server string, integrationConfigurationId string, invoiceId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "invoiceId", invoiceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/billing/invoices/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateInvoiceRequest calls the generic UpdateInvoice builder with application/json body
-func NewUpdateInvoiceRequest(server string, integrationConfigurationId string, invoiceId string, body UpdateInvoiceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateInvoiceRequestWithBody(server, integrationConfigurationId, invoiceId, "application/json", bodyReader)
-}
-
-// NewUpdateInvoiceRequestWithBody constructs an http.Request for the UpdateInvoice method, with any body, and a specified content type
-func NewUpdateInvoiceRequestWithBody(server string, integrationConfigurationId string, invoiceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "invoiceId", invoiceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/billing/invoices/%s/actions", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRevokeInstallationCredentialRequest calls the generic RevokeInstallationCredential builder with application/json body
-func NewRevokeInstallationCredentialRequest(server string, integrationConfigurationId string, body RevokeInstallationCredentialJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewRevokeInstallationCredentialRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewRevokeInstallationCredentialRequestWithBody constructs an http.Request for the RevokeInstallationCredential method, with any body, and a specified content type
-func NewRevokeInstallationCredentialRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/credentials/revoke", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRotateInstallationCredentialRequest calls the generic RotateInstallationCredential builder with application/json body
-func NewRotateInstallationCredentialRequest(server string, integrationConfigurationId string, body RotateInstallationCredentialJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewRotateInstallationCredentialRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewRotateInstallationCredentialRequestWithBody constructs an http.Request for the RotateInstallationCredential method, with any body, and a specified content type
-func NewRotateInstallationCredentialRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/credentials/rotate", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCreateEventRequest calls the generic CreateEvent builder with application/json body
-func NewCreateEventRequest(server string, integrationConfigurationId string, body CreateEventJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateEventRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewCreateEventRequestWithBody constructs an http.Request for the CreateEvent method, with any body, and a specified content type
-func NewCreateEventRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/events", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetMemberRequest constructs an http.Request for the GetMember method
-func NewGetMemberRequest(server string, integrationConfigurationId string, memberId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "memberId", memberId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/member/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateResourceSecretsRequest calls the generic UpdateResourceSecrets builder with application/json body
-func NewUpdateResourceSecretsRequest(server string, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, body UpdateResourceSecretsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateResourceSecretsRequestWithBody(server, integrationConfigurationId, integrationProductIdOrSlug, resourceId, "application/json", bodyReader)
-}
-
-// NewUpdateResourceSecretsRequestWithBody constructs an http.Request for the UpdateResourceSecrets method, with any body, and a specified content type
-func NewUpdateResourceSecretsRequestWithBody(server string, integrationConfigurationId string, integrationProductIdOrSlug string, resourceId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "integrationProductIdOrSlug", integrationProductIdOrSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/products/%s/resources/%s/secrets", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetIntegrationResourcesRequest constructs an http.Request for the GetIntegrationResources method
-func NewGetIntegrationResourcesRequest(server string, integrationConfigurationId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDeleteIntegrationResourceRequest constructs an http.Request for the DeleteIntegrationResource method
-func NewDeleteIntegrationResourceRequest(server string, integrationConfigurationId string, resourceId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "resourceId", resourceId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/resources/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
 
 	return req, nil
 }

@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.21.0, 2026-11-06
+
+- Breaking: removed `UserEvent_Payload.AsUserEventPayload125`, `FromUserEventPayload125` and `MergeUserEventPayload125`. `Set` and `UnmarshalJSON` are removed from `UserEventPayload113` and `UserEventPayload257`.
+- Breaking: reshaped many `UserEventPayload` types again. Fields and their enum types and constants are removed, for example `UserEventPayload10.ChannelId`, `UserEventPayload100.BuildsEnabled`, `UserEventPayload111.ProjectId`, `UserEventPayload117.PasswordProtection` and `UserEventPayload118.SsoProtection`. `UserEventPayload113` loses `AdditionalProperties`, `Get`, `MarshalJSON` and `MetricName`. `UserEventPayload101` and `UserEventPayload116` are no longer comparable.
+- Breaking: changed the anonymous struct in `JSON200` and `GetJSON200` of `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UpdateMicrofrontendsResponse`, `DeleteProjectAvatarResponse`, `UploadProjectAvatarResponse`, `GetMicrofrontendsInGroupResponse` and `GetProjectBoxesResponse`, and in `GetProjects200JSONResponseBody2.Projects`. Code that names these struct types must change.
+- Added `crashLooping` types and constants for project boxes, for example `GetProjectBoxes200JSONResponseBodyDaemonsStatusCrashLooping` and `GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLoopingTrue`.
+- Added the event types `ListEventTypeNameScheduleCreated`, `ListEventTypeNameScheduleDeleted`, `ListEventTypeNameScheduleDisabled`, `ListEventTypeNameScheduleEnabled`, `ListEventTypeNameScheduleInvoked`, `ListEventTypeNameScheduleUpdated`, `ListEventTypeNameAiAgentUsageBilling` and `ListEventTypeNameProjectGitCredentialTokenMinted`, with their `ListEventTypeReplacedBy...` and `UserEventType...` counterparts.
+- Added new `UserEventPayload` helper types such as `UserEvent_Payload_127_Job`, `UserEvent_Payload_219_Factors` and `UserEvent_Payload_345_RollbackDescription_Principal`.
+- The rest of the diff reorders generated code across the `client_*.gen.go` files and adds `client_025.gen.go` content.
+- Generated from spec version 0.0.1.
+
 ## v0.20.0, 2026-11-05
 
 - Breaking: `UserEventPrincipal2.Email` and `UserEventVia2.Email` are removed, along with the constants `UserEventPrincipal2TypeExternal`, `UserEventPrincipal3TypeSystem`, `UserEventVia2TypeExternal` and `UserEventVia3TypeSystem`. The external variant moved to `UserEventPrincipal3` and `UserEventVia3`, which gain `Email`, `Id`, `Name` and `UserEventPrincipal3TypeExternal`, `UserEventVia3TypeExternal`.

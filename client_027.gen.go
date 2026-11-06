@@ -12,6 +12,18 @@ import (
 	"time"
 )
 
+// CreateApiKeysWithBodyWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request,
+// with any type of body and a specified content type.
+//
+// Returns a wrapper object for the known response body format(s).
+func (c *ClientWithResponses) CreateApiKeysWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error) {
+	rsp, err := c.CreateApiKeysWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateApiKeysResponse(rsp)
+}
+
 // CreateApiKeysWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request.
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 func (c *ClientWithResponses) CreateApiKeysWithResponse(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error) {
@@ -19247,6 +19259,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 
 					// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					Drain *[]ACLAction `json:"drain,omitempty"`
+
+					// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					Drive *[]ACLAction `json:"drive,omitempty"`
 
 					// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`

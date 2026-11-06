@@ -14,6 +14,516 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as a PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1() (PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item, using the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0GitSources0 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources as a PatchTeamJSONBodyDeploymentPolicy0GitSources0
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources) AsPatchTeamJSONBodyDeploymentPolicy0GitSources0() (PatchTeamJSONBodyDeploymentPolicy0GitSources0, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0GitSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0GitSources0 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources as the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources) FromPatchTeamJSONBodyDeploymentPolicy0GitSources0(v PatchTeamJSONBodyDeploymentPolicy0GitSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0GitSources0 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources, using the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources) MergePatchTeamJSONBodyDeploymentPolicy0GitSources0(v PatchTeamJSONBodyDeploymentPolicy0GitSources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0GitSources1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources as a PatchTeamJSONBodyDeploymentPolicy0GitSources1
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources) AsPatchTeamJSONBodyDeploymentPolicy0GitSources1() (PatchTeamJSONBodyDeploymentPolicy0GitSources1, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0GitSources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0GitSources1 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources as the provided PatchTeamJSONBodyDeploymentPolicy0GitSources1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources) FromPatchTeamJSONBodyDeploymentPolicy0GitSources1(v PatchTeamJSONBodyDeploymentPolicy0GitSources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0GitSources1 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources, using the provided PatchTeamJSONBodyDeploymentPolicy0GitSources1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources) MergePatchTeamJSONBodyDeploymentPolicy0GitSources1(v PatchTeamJSONBodyDeploymentPolicy0GitSources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy as a PatchTeamJSONBodyDeploymentPolicy0
+func (t PatchTeamJSONBody_DeploymentPolicy) AsPatchTeamJSONBodyDeploymentPolicy0() (PatchTeamJSONBodyDeploymentPolicy0, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy as the provided PatchTeamJSONBodyDeploymentPolicy0
+func (t *PatchTeamJSONBody_DeploymentPolicy) FromPatchTeamJSONBodyDeploymentPolicy0(v PatchTeamJSONBodyDeploymentPolicy0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy, using the provided PatchTeamJSONBodyDeploymentPolicy0
+func (t *PatchTeamJSONBody_DeploymentPolicy) MergePatchTeamJSONBodyDeploymentPolicy0(v PatchTeamJSONBodyDeploymentPolicy0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy as a PatchTeamJSONBodyDeploymentPolicy1
+func (t PatchTeamJSONBody_DeploymentPolicy) AsPatchTeamJSONBodyDeploymentPolicy1() (PatchTeamJSONBodyDeploymentPolicy1, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy1 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy as the provided PatchTeamJSONBodyDeploymentPolicy1
+func (t *PatchTeamJSONBody_DeploymentPolicy) FromPatchTeamJSONBodyDeploymentPolicy1(v PatchTeamJSONBodyDeploymentPolicy1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy1 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy, using the provided PatchTeamJSONBodyDeploymentPolicy1
+func (t *PatchTeamJSONBody_DeploymentPolicy) MergePatchTeamJSONBodyDeploymentPolicy1(v PatchTeamJSONBodyDeploymentPolicy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DeploymentPolicy) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DeploymentPolicy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyNsnbConfig0 returns the union data inside the PatchTeamJSONBody_NsnbConfig as a PatchTeamJSONBodyNsnbConfig0
+func (t PatchTeamJSONBody_NsnbConfig) AsPatchTeamJSONBodyNsnbConfig0() (PatchTeamJSONBodyNsnbConfig0, error) {
+	var body PatchTeamJSONBodyNsnbConfig0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyNsnbConfig0 overwrites any union data inside the PatchTeamJSONBody_NsnbConfig as the provided PatchTeamJSONBodyNsnbConfig0
+func (t *PatchTeamJSONBody_NsnbConfig) FromPatchTeamJSONBodyNsnbConfig0(v PatchTeamJSONBodyNsnbConfig0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyNsnbConfig0 performs a merge with any union data inside the PatchTeamJSONBody_NsnbConfig, using the provided PatchTeamJSONBodyNsnbConfig0
+func (t *PatchTeamJSONBody_NsnbConfig) MergePatchTeamJSONBodyNsnbConfig0(v PatchTeamJSONBodyNsnbConfig0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyNsnbConfig1 returns the union data inside the PatchTeamJSONBody_NsnbConfig as a PatchTeamJSONBodyNsnbConfig1
+func (t PatchTeamJSONBody_NsnbConfig) AsPatchTeamJSONBodyNsnbConfig1() (PatchTeamJSONBodyNsnbConfig1, error) {
+	var body PatchTeamJSONBodyNsnbConfig1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyNsnbConfig1 overwrites any union data inside the PatchTeamJSONBody_NsnbConfig as the provided PatchTeamJSONBodyNsnbConfig1
+func (t *PatchTeamJSONBody_NsnbConfig) FromPatchTeamJSONBodyNsnbConfig1(v PatchTeamJSONBodyNsnbConfig1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyNsnbConfig1 performs a merge with any union data inside the PatchTeamJSONBody_NsnbConfig, using the provided PatchTeamJSONBodyNsnbConfig1
+func (t *PatchTeamJSONBody_NsnbConfig) MergePatchTeamJSONBodyNsnbConfig1(v PatchTeamJSONBodyNsnbConfig1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_NsnbConfig) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_NsnbConfig) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodySamlRoles0 returns the union data inside the PatchTeamJSONBody_Saml_Roles_AdditionalProperties as a PatchTeamJSONBodySamlRoles0
+func (t PatchTeamJSONBody_Saml_Roles_AdditionalProperties) AsPatchTeamJSONBodySamlRoles0() (PatchTeamJSONBodySamlRoles0, error) {
+	var body PatchTeamJSONBodySamlRoles0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodySamlRoles0 overwrites any union data inside the PatchTeamJSONBody_Saml_Roles_AdditionalProperties as the provided PatchTeamJSONBodySamlRoles0
+func (t *PatchTeamJSONBody_Saml_Roles_AdditionalProperties) FromPatchTeamJSONBodySamlRoles0(v PatchTeamJSONBodySamlRoles0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodySamlRoles0 performs a merge with any union data inside the PatchTeamJSONBody_Saml_Roles_AdditionalProperties, using the provided PatchTeamJSONBodySamlRoles0
+func (t *PatchTeamJSONBody_Saml_Roles_AdditionalProperties) MergePatchTeamJSONBodySamlRoles0(v PatchTeamJSONBodySamlRoles0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodySamlRoles1 returns the union data inside the PatchTeamJSONBody_Saml_Roles_AdditionalProperties as a PatchTeamJSONBodySamlRoles1
+func (t PatchTeamJSONBody_Saml_Roles_AdditionalProperties) AsPatchTeamJSONBodySamlRoles1() (PatchTeamJSONBodySamlRoles1, error) {
+	var body PatchTeamJSONBodySamlRoles1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodySamlRoles1 overwrites any union data inside the PatchTeamJSONBody_Saml_Roles_AdditionalProperties as the provided PatchTeamJSONBodySamlRoles1
+func (t *PatchTeamJSONBody_Saml_Roles_AdditionalProperties) FromPatchTeamJSONBodySamlRoles1(v PatchTeamJSONBodySamlRoles1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodySamlRoles1 performs a merge with any union data inside the PatchTeamJSONBody_Saml_Roles_AdditionalProperties, using the provided PatchTeamJSONBodySamlRoles1
+func (t *PatchTeamJSONBody_Saml_Roles_AdditionalProperties) MergePatchTeamJSONBodySamlRoles1(v PatchTeamJSONBodySamlRoles1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_Saml_Roles_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_Saml_Roles_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsFlag returns the union data inside the ListTeamFlagsV2200JSONResponseBody_Data_Item as a Flag
+func (t ListTeamFlagsV2200JSONResponseBody_Data_Item) AsFlag() (Flag, error) {
+	var body Flag
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromFlag overwrites any union data inside the ListTeamFlagsV2200JSONResponseBody_Data_Item as the provided Flag
+func (t *ListTeamFlagsV2200JSONResponseBody_Data_Item) FromFlag(v Flag) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeFlag performs a merge with any union data inside the ListTeamFlagsV2200JSONResponseBody_Data_Item, using the provided Flag
+func (t *ListTeamFlagsV2200JSONResponseBody_Data_Item) MergeFlag(v Flag) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsMarketplaceFlag returns the union data inside the ListTeamFlagsV2200JSONResponseBody_Data_Item as a MarketplaceFlag
+func (t ListTeamFlagsV2200JSONResponseBody_Data_Item) AsMarketplaceFlag() (MarketplaceFlag, error) {
+	var body MarketplaceFlag
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMarketplaceFlag overwrites any union data inside the ListTeamFlagsV2200JSONResponseBody_Data_Item as the provided MarketplaceFlag
+func (t *ListTeamFlagsV2200JSONResponseBody_Data_Item) FromMarketplaceFlag(v MarketplaceFlag) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMarketplaceFlag performs a merge with any union data inside the ListTeamFlagsV2200JSONResponseBody_Data_Item, using the provided MarketplaceFlag
+func (t *ListTeamFlagsV2200JSONResponseBody_Data_Item) MergeMarketplaceFlag(v MarketplaceFlag) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListTeamFlagsV2200JSONResponseBody_Data_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListTeamFlagsV2200JSONResponseBody_Data_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAuthUser returns the union data inside the GetAuthUser200JSONResponseBody_User as a AuthUser
+func (t GetAuthUser200JSONResponseBody_User) AsAuthUser() (AuthUser, error) {
+	var body AuthUser
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAuthUser overwrites any union data inside the GetAuthUser200JSONResponseBody_User as the provided AuthUser
+func (t *GetAuthUser200JSONResponseBody_User) FromAuthUser(v AuthUser) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAuthUser performs a merge with any union data inside the GetAuthUser200JSONResponseBody_User, using the provided AuthUser
+func (t *GetAuthUser200JSONResponseBody_User) MergeAuthUser(v AuthUser) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAuthUserLimited returns the union data inside the GetAuthUser200JSONResponseBody_User as a AuthUserLimited
+func (t GetAuthUser200JSONResponseBody_User) AsAuthUserLimited() (AuthUserLimited, error) {
+	var body AuthUserLimited
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAuthUserLimited overwrites any union data inside the GetAuthUser200JSONResponseBody_User as the provided AuthUserLimited
+func (t *GetAuthUser200JSONResponseBody_User) FromAuthUserLimited(v AuthUserLimited) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAuthUserLimited performs a merge with any union data inside the GetAuthUser200JSONResponseBody_User, using the provided AuthUserLimited
+func (t *GetAuthUser200JSONResponseBody_User) MergeAuthUserLimited(v AuthUserLimited) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetAuthUser200JSONResponseBody_User) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetAuthUser200JSONResponseBody_User) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion as a ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) AsListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0() (ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) FromListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0(v ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) MergeListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0(v ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion as a ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) AsListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1() (ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) FromListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1(v ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) MergeListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1(v ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion as a ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) AsListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2() (ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) FromListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2(v ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) MergeListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2(v ListVercelCiInvocations200JSONResponseBodyInvocationsCompletedConclusion2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Completed_Conclusion) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source as a ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) AsListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0() (ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) FromListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
 // MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0
 func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_JobDefinitionsCreated_Source) MergeListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0(v ListVercelCiInvocations200JSONResponseBodyInvocationsJobDefinitionsCreatedSource0) error {
 	b, err := json.Marshal(v)
@@ -19505,511 +20015,6 @@ func (c *Client) GetConnectorToken(ctx context.Context, connector string, body G
 // Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *Client) GetAllChecks(ctx context.Context, deploymentId string, params *GetAllChecksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetAllChecksRequest(c.Server, deploymentId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateCheckWithBody Creates a new Check
-//
-// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) CreateCheckWithBody(ctx context.Context, deploymentId string, params *CreateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateCheckRequestWithBody(c.Server, deploymentId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateCheck Creates a new Check
-//
-// Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/deployments/{deploymentId}/checks (the `CreateCheck` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) CreateCheck(ctx context.Context, deploymentId string, params *CreateCheckParams, body CreateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateCheckRequest(c.Server, deploymentId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetCheck Get a single check
-//
-// Return a detailed response for a single check.
-//
-// Corresponds with GET /v1/deployments/{deploymentId}/checks/{checkId} (the `GetCheck` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) GetCheck(ctx context.Context, deploymentId string, checkId string, params *GetCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetCheckRequest(c.Server, deploymentId, checkId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateCheckWithBody Update a check
-//
-// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) UpdateCheckWithBody(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateCheckRequestWithBody(c.Server, deploymentId, checkId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateCheck Update a check
-//
-// Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/deployments/{deploymentId}/checks/{checkId} (the `UpdateCheck` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) UpdateCheck(ctx context.Context, deploymentId string, checkId string, params *UpdateCheckParams, body UpdateCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateCheckRequest(c.Server, deploymentId, checkId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RerequestCheck Rerequest a check
-//
-// Rerequest a selected check that has failed.
-//
-// Corresponds with POST /v1/deployments/{deploymentId}/checks/{checkId}/rerequest (the `RerequestCheck` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) RerequestCheck(ctx context.Context, deploymentId string, checkId string, params *RerequestCheckParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRerequestCheckRequest(c.Server, deploymentId, checkId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDeploymentFeatureFlags Retrieve the feature flags of a deployment
-//
-// Retrieve the feature flags of a deployment.
-//
-// Corresponds with GET /v1/deployments/{deploymentId}/feature-flags (the `GetDeploymentFeatureFlags` operationId).
-func (c *Client) GetDeploymentFeatureFlags(ctx context.Context, deploymentId string, params *GetDeploymentFeatureFlagsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDeploymentFeatureFlagsRequest(c.Server, deploymentId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateIntegrationDeploymentActionWithBody Update deployment integration action
-//
-// Updates the deployment integration action for the specified integration installation.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
-func (c *Client) UpdateIntegrationDeploymentActionWithBody(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateIntegrationDeploymentActionRequestWithBody(c.Server, deploymentId, integrationConfigurationId, resourceId, action, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateIntegrationDeploymentAction Update deployment integration action
-//
-// Updates the deployment integration action for the specified integration installation.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} (the `UpdateIntegrationDeploymentAction` operationId).
-func (c *Client) UpdateIntegrationDeploymentAction(ctx context.Context, deploymentId string, integrationConfigurationId string, resourceId string, action string, body UpdateIntegrationDeploymentActionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateIntegrationDeploymentActionRequest(c.Server, deploymentId, integrationConfigurationId, resourceId, action, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateRecordWithBody Update an existing DNS record
-//
-// Updates an existing DNS record for a domain name.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
-func (c *Client) UpdateRecordWithBody(ctx context.Context, recordId string, params *UpdateRecordParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateRecordRequestWithBody(c.Server, recordId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateRecord Update an existing DNS record
-//
-// Updates an existing DNS record for a domain name.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/domains/records/{recordId} (the `UpdateRecord` operationId).
-func (c *Client) UpdateRecord(ctx context.Context, recordId string, params *UpdateRecordParams, body UpdateRecordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateRecordRequest(c.Server, recordId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDomainProjectDomains List Project Domains by Apex Domain
-//
-// List all project domains associated with an apex domain owned by the authenticated account.
-//
-// Corresponds with GET /v1/domains/{domain}/project-domains (the `GetDomainProjectDomains` operationId).
-func (c *Client) GetDomainProjectDomains(ctx context.Context, domain string, params *GetDomainProjectDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainProjectDomainsRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDrains Retrieve a list of all Drains
-//
-// Allows to retrieve the list of Drains of the authenticated team.
-//
-// Corresponds with GET /v1/drains (the `GetDrains` operationId).
-func (c *Client) GetDrains(ctx context.Context, params *GetDrainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDrainsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateDrainWithBody Create a new Drain
-//
-// Create a new Drain with the provided configuration.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
-func (c *Client) CreateDrainWithBody(ctx context.Context, params *CreateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateDrainRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateDrain Create a new Drain
-//
-// Create a new Drain with the provided configuration.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/drains (the `CreateDrain` operationId).
-func (c *Client) CreateDrain(ctx context.Context, params *CreateDrainParams, body CreateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateDrainRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// TestDrainWithBody Validate Drain delivery configuration
-//
-// Validate the delivery configuration of a Drain using sample events.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
-func (c *Client) TestDrainWithBody(ctx context.Context, params *TestDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewTestDrainRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// TestDrain Validate Drain delivery configuration
-//
-// Validate the delivery configuration of a Drain using sample events.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/drains/test (the `TestDrain` operationId).
-func (c *Client) TestDrain(ctx context.Context, params *TestDrainParams, body TestDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewTestDrainRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteDrain Delete a drain
-//
-// Delete a specific Drain by passing the drain id in the URL.
-//
-// Corresponds with DELETE /v1/drains/{id} (the `DeleteDrain` operationId).
-func (c *Client) DeleteDrain(ctx context.Context, id string, params *DeleteDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteDrainRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDrain Find a Drain by id
-//
-// Get the information for a specific Drain by passing the drain id in the URL.
-//
-// Corresponds with GET /v1/drains/{id} (the `GetDrain` operationId).
-func (c *Client) GetDrain(ctx context.Context, id string, params *GetDrainParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDrainRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateDrainWithBody Update an existing Drain
-//
-// Update the configuration of an existing drain.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
-func (c *Client) UpdateDrainWithBody(ctx context.Context, id string, params *UpdateDrainParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateDrainRequestWithBody(c.Server, id, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateDrain Update an existing Drain
-//
-// Update the configuration of an existing drain.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
-func (c *Client) UpdateDrain(ctx context.Context, id string, params *UpdateDrainParams, body UpdateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateDrainRequest(c.Server, id, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DangerouslyDeleteBySrcImagesWithBody Dangerously delete by source image
-//
-// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
-func (c *Client) DangerouslyDeleteBySrcImagesWithBody(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDangerouslyDeleteBySrcImagesRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DangerouslyDeleteBySrcImages Dangerously delete by source image
-//
-// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/edge-cache/dangerously-delete-by-src-images (the `DangerouslyDeleteBySrcImages` operationId).
-func (c *Client) DangerouslyDeleteBySrcImages(ctx context.Context, params *DangerouslyDeleteBySrcImagesParams, body DangerouslyDeleteBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDangerouslyDeleteBySrcImagesRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DangerouslyDeleteByTagsWithBody Dangerously delete by tag
-//
-// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
-func (c *Client) DangerouslyDeleteByTagsWithBody(ctx context.Context, params *DangerouslyDeleteByTagsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDangerouslyDeleteByTagsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DangerouslyDeleteByTags Dangerously delete by tag
-//
-// Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/edge-cache/dangerously-delete-by-tags (the `DangerouslyDeleteByTags` operationId).
-func (c *Client) DangerouslyDeleteByTags(ctx context.Context, params *DangerouslyDeleteByTagsParams, body DangerouslyDeleteByTagsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDangerouslyDeleteByTagsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// InvalidateBySrcImagesWithBody Invalidate by source image
-//
-// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
-func (c *Client) InvalidateBySrcImagesWithBody(ctx context.Context, params *InvalidateBySrcImagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInvalidateBySrcImagesRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// InvalidateBySrcImages Invalidate by source image
-//
-// Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/edge-cache/invalidate-by-src-images (the `InvalidateBySrcImages` operationId).
-func (c *Client) InvalidateBySrcImages(ctx context.Context, params *InvalidateBySrcImagesParams, body InvalidateBySrcImagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInvalidateBySrcImagesRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}

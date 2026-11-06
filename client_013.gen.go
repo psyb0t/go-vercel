@@ -12,6 +12,408 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UpdateSandboxParams defines parameters for UpdateSandbox.
+type UpdateSandboxParams struct {
+	// ProjectId The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// Resume Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Defaults to false.
+	Resume *bool `form:"resume,omitempty" json:"resume,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateSandboxJSONBodyFailoverRegions defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyFailoverRegions string
+
+// UpdateSandboxJSONBodyKeepLastSnapshots0 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyKeepLastSnapshots0 = string
+
+// UpdateSandboxJSONBodyKeepLastSnapshots1 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyKeepLastSnapshots1 struct {
+	// Count Number of most recent snapshots to keep.
+	Count int `json:"count"`
+
+	// DeleteEvicted Whether to immediately delete evicted snapshots. Defaults to true.
+	DeleteEvicted *bool `json:"deleteEvicted,omitempty"`
+
+	// Expiration Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
+	Expiration *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration `json:"expiration,omitempty"`
+}
+
+// UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 = interface{}
+
+// UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 = int
+
+// UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration struct {
+	union json.RawMessage
+}
+
+// UpdateSandboxJSONBody_KeepLastSnapshots defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBody_KeepLastSnapshots struct {
+	union json.RawMessage
+}
+
+// UpdateSandboxJSONBodyMountsMode defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyMountsMode string
+
+// UpdateSandboxJSONBodyNetworkId0 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkId0 = string
+
+// UpdateSandboxJSONBodyNetworkId1 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkId1 = string
+
+// UpdateSandboxJSONBody_NetworkId defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBody_NetworkId struct {
+	union json.RawMessage
+}
+
+// UpdateSandboxJSONBodyNetworkPolicy0 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkPolicy0 struct {
+	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
+	//
+	// Example: ["35.192.0.0/12","104.16.0.0/12"]
+	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
+
+	// AllowedDomains List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+	//
+	// Example: ["api.github.com","*.npmjs.org"]
+	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
+
+	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+	//
+	// Example: ["35.192.0.0/12"]
+	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
+
+	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
+	InjectionRules *[]struct {
+		// Domain The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
+		Domain string `json:"domain"`
+
+		// Headers HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
+		Headers map[string]string `json:"headers"`
+
+		// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+		Match *struct {
+			// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+			Headers *[]struct {
+				// Key Matcher for the entry key (header name or query key).
+				Key *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"key,omitempty"`
+
+				// Value Matcher for the entry value.
+				Value *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"value,omitempty"`
+			} `json:"headers,omitempty"`
+
+			// Method HTTP methods to match. Any single match succeeds (OR semantics).
+			Method *[]string `json:"method,omitempty"`
+
+			// Path Match on the request path. Comparison is case-sensitive.
+			Path *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"path,omitempty"`
+
+			// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+			QueryString *[]struct {
+				// Key Matcher for the entry key (header name or query key).
+				Key *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"key,omitempty"`
+
+				// Value Matcher for the entry value.
+				Value *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"value,omitempty"`
+			} `json:"queryString,omitempty"`
+		} `json:"match,omitempty"`
+	} `json:"injectionRules,omitempty"`
+
+	// Mode The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
+	//
+	// Example: custom
+	Mode UpdateSandboxJSONBodyNetworkPolicy0Mode `json:"mode"`
+}
+
+// UpdateSandboxJSONBodyNetworkPolicy0Mode defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkPolicy0Mode string
+
+// UpdateSandboxJSONBodyNetworkPolicy1 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkPolicy1 struct {
+	Allow   *UpdateSandboxJSONBody_NetworkPolicy_1_Allow `json:"allow,omitempty"`
+	Subnets *struct {
+		Allow *[]string `json:"allow,omitempty"`
+		Deny  *[]string `json:"deny,omitempty"`
+	} `json:"subnets,omitempty"`
+}
+
+// UpdateSandboxJSONBodyNetworkPolicy1Allow0 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkPolicy1Allow0 = []string
+
+// UpdateSandboxJSONBodyNetworkPolicy1Allow1 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyNetworkPolicy1Allow1 map[string][]struct {
+	// ForwardURL HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment.
+	ForwardURL *string `json:"forwardURL,omitempty"`
+
+	// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+	Match *struct {
+		// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+		Headers *[]struct {
+			// Key Matcher for the entry key (header name or query key).
+			Key *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"key,omitempty"`
+
+			// Value Matcher for the entry value.
+			Value *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"value,omitempty"`
+		} `json:"headers,omitempty"`
+
+		// Method HTTP methods to match. Any single match succeeds (OR semantics).
+		Method *[]string `json:"method,omitempty"`
+
+		// Path Match on the request path. Comparison is case-sensitive.
+		Path *struct {
+			// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+			Exact *string `json:"exact,omitempty"`
+
+			// StartsWith Match values that start with the given prefix.
+			StartsWith *string `json:"startsWith,omitempty"`
+		} `json:"path,omitempty"`
+
+		// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+		QueryString *[]struct {
+			// Key Matcher for the entry key (header name or query key).
+			Key *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"key,omitempty"`
+
+			// Value Matcher for the entry value.
+			Value *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"value,omitempty"`
+		} `json:"queryString,omitempty"`
+	} `json:"match,omitempty"`
+
+	// Response Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
+	Response *struct {
+		// Body UTF-8 response body. Requires `contentType`.
+		Body *string `json:"body,omitempty"`
+
+		// ContentType Value of the `Content-Type` response header. Required when `body` is set.
+		ContentType *string `json:"contentType,omitempty"`
+
+		// Headers HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set.
+		Headers *map[string]string `json:"headers,omitempty"`
+
+		// StatusCode HTTP status code returned to the sandbox.
+		StatusCode int `json:"statusCode"`
+	} `json:"response,omitempty"`
+	Transform *[]struct {
+		Headers *map[string]string `json:"headers,omitempty"`
+	} `json:"transform,omitempty"`
+}
+
+// UpdateSandboxJSONBody_NetworkPolicy_1_Allow defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBody_NetworkPolicy_1_Allow struct {
+	union json.RawMessage
+}
+
+// UpdateSandboxJSONBody_NetworkPolicy defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBody_NetworkPolicy struct {
+	union json.RawMessage
+}
+
+// UpdateSandboxJSONBodyRegion defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyRegion string
+
+// UpdateSandboxJSONBodyRuntime defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodyRuntime string
+
+// UpdateSandboxJSONBodySnapshotExpiration0 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodySnapshotExpiration0 = interface{}
+
+// UpdateSandboxJSONBodySnapshotExpiration1 defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBodySnapshotExpiration1 = int
+
+// UpdateSandboxJSONBody_SnapshotExpiration defines parameters for UpdateSandbox.
+type UpdateSandboxJSONBody_SnapshotExpiration struct {
+	union json.RawMessage
+}
+
+// UpdateSandbox200JSONResponseBody0 defines parameters for UpdateSandbox.
+type UpdateSandbox200JSONResponseBody0 struct {
+	Routes []SandboxPublicRoute `json:"routes"`
+
+	// Sandbox This object contains information related to a Vercel NamedSandbox.
+	Sandbox NamedSandbox `json:"sandbox"`
+}
+
+// UpdateSandbox200JSONResponseBody1 defines parameters for UpdateSandbox.
+type UpdateSandbox200JSONResponseBody1 struct {
+	Resumed UpdateSandbox200JSONResponseBody1Resumed `json:"resumed"`
+	Routes  []SandboxPublicRoute                     `json:"routes"`
+
+	// Sandbox This object contains information related to a Vercel NamedSandbox.
+	Sandbox NamedSandbox `json:"sandbox"`
+
+	// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+	Session Session `json:"session"`
+}
+
+// UpdateSandbox200JSONResponseBody1Resumed defines parameters for UpdateSandbox.
+type UpdateSandbox200JSONResponseBody1Resumed bool
+
+// UpdateSandbox200JSONResponseBody defines parameters for UpdateSandbox.
+type UpdateSandbox200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// CreateSandboxesByNameForkV2JSONBody defines parameters for CreateSandboxesByNameForkV2.
+type CreateSandboxesByNameForkV2JSONBody struct {
+	// Env Default environment variables for the sandbox. These are inherited by all commands unless overridden.
+	//
+	// Example: {"HELLO":"world","NODE_ENV":"production"}
+	Env *map[string]string `json:"env,omitempty"`
+
+	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
+	//
+	// Example: ["sfo1","cle1"]
+	FailoverRegions *[]CreateSandboxesByNameForkV2JSONBodyFailoverRegions `json:"failoverRegions,omitempty"`
+
+	// Image Image to use for the sandbox.
+	Image *string `json:"image,omitempty"`
+
+	// KeepLastSnapshots Protect the N most recent snapshots with different expiration/deletion behavior.
+	KeepLastSnapshots *struct {
+		// Count Number of most recent snapshots to keep.
+		Count int `json:"count"`
+
+		// DeleteEvicted Whether to immediately delete evicted snapshots. Defaults to true.
+		DeleteEvicted *bool `json:"deleteEvicted,omitempty"`
+
+		// Expiration Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
+		Expiration *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration `json:"expiration,omitempty"`
+	} `json:"keepLastSnapshots,omitempty"`
+
+	// Mounts List of drives to mount to the sandbox at the provided path.
+	Mounts *map[string]struct {
+		// Drive Name of the drive to mount. The drive must already exist.
+		Drive string `json:"drive"`
+
+		// Mode Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
+		Mode *CreateSandboxesByNameForkV2JSONBodyMountsMode `json:"mode,omitempty"`
+	} `json:"mounts,omitempty"`
+
+	// Name Name for the forked sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores). A random name is generated when omitted.
+	//
+	// Example: my-sandbox-fork
+	Name *string `json:"name,omitempty"`
+
+	// NetworkId The Connect network id for the target Secure Compute private network.
+	NetworkId     *string                                            `json:"networkId,omitempty"`
+	NetworkPolicy *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy `json:"networkPolicy,omitempty"`
+
+	// Persistent Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to the source sandbox setting.
+	Persistent *bool `json:"persistent,omitempty"`
+
+	// Ports List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.
+	//
+	// Example: [3000,4000]
+	Ports *[]int `json:"ports,omitempty"`
+
+	// Region The Vercel region in which to create the sandbox.
+	//
+	// Example: iad1
+	Region *CreateSandboxesByNameForkV2JSONBodyRegion `json:"region,omitempty"`
+
+	// Resources Resources to define the VM
+	Resources *struct {
+		// Memory The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+		//
+		// Example: 4096
+		Memory *int `json:"memory,omitempty"`
+
+		// Vcpus The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
+		//
+		// Example: 2
+		Vcpus *int `json:"vcpus,omitempty"`
+	} `json:"resources,omitempty"`
+
+	// SnapshotExpiration Default snapshot expiration time in milliseconds. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.
+	//
+	// Example: 604800000
+	SnapshotExpiration *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration `json:"snapshotExpiration,omitempty"`
+
+	// Tags Key-value tags to associate with the sandbox. Maximum 5 tags.
+	//
+	// Example: {"env":"staging","team":"platform"}
+	Tags *map[string]string `json:"tags,omitempty"`
+
+	// Timeout Maximum duration in milliseconds that the sandbox can run before being automatically stopped.
+	//
+	// Example: 300000
+	Timeout *int `json:"timeout,omitempty"`
+}
+
+// CreateSandboxesByNameForkV2Params defines parameters for CreateSandboxesByNameForkV2.
+type CreateSandboxesByNameForkV2Params struct {
+	// ProjectId The ID of the project the source sandbox belongs to. Required unless authenticating with an OIDC token.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // CreateSandboxesByNameForkV2JSONBodyFailoverRegions defines parameters for CreateSandboxesByNameForkV2.
 type CreateSandboxesByNameForkV2JSONBodyFailoverRegions string
 
@@ -12196,25 +12598,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload113. Returns the specified
+// Getter for additional properties for UserEventPayload116. Returns the specified
 // element and whether it was found
-func (a UserEventPayload113) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload116) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload113
-func (a *UserEventPayload113) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload116
+func (a *UserEventPayload116) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload113 to handle AdditionalProperties
-func (a *UserEventPayload113) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload116 to handle AdditionalProperties
+func (a *UserEventPayload116) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -12243,8 +12645,8 @@ func (a *UserEventPayload113) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload113 to handle AdditionalProperties
-func (a UserEventPayload113) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload116 to handle AdditionalProperties
+func (a UserEventPayload116) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -12262,25 +12664,25 @@ func (a UserEventPayload113) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload257. Returns the specified
+// Getter for additional properties for UserEventPayload260. Returns the specified
 // element and whether it was found
-func (a UserEventPayload257) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload260) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload257
-func (a *UserEventPayload257) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload260
+func (a *UserEventPayload260) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload257 to handle AdditionalProperties
-func (a *UserEventPayload257) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload260 to handle AdditionalProperties
+func (a *UserEventPayload260) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -12333,8 +12735,8 @@ func (a *UserEventPayload257) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload257 to handle AdditionalProperties
-func (a UserEventPayload257) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload260 to handle AdditionalProperties
+func (a UserEventPayload260) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -19619,399 +20021,4 @@ func (t *Team_DisableHardAutoBlocks) MergeTeamDisableHardAutoBlocks1(v TeamDisab
 	merged, err := runtime.JSONMerge(t.union, b)
 	t.union = merged
 	return err
-}
-
-func (t Team_DisableHardAutoBlocks) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Team_DisableHardAutoBlocks) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsTeamMembershipJoinedFromGitUserId0 returns the union data inside the Team_Membership_JoinedFrom_GitUserId as a TeamMembershipJoinedFromGitUserId0
-func (t Team_Membership_JoinedFrom_GitUserId) AsTeamMembershipJoinedFromGitUserId0() (TeamMembershipJoinedFromGitUserId0, error) {
-	var body TeamMembershipJoinedFromGitUserId0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamMembershipJoinedFromGitUserId0 overwrites any union data inside the Team_Membership_JoinedFrom_GitUserId as the provided TeamMembershipJoinedFromGitUserId0
-func (t *Team_Membership_JoinedFrom_GitUserId) FromTeamMembershipJoinedFromGitUserId0(v TeamMembershipJoinedFromGitUserId0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamMembershipJoinedFromGitUserId0 performs a merge with any union data inside the Team_Membership_JoinedFrom_GitUserId, using the provided TeamMembershipJoinedFromGitUserId0
-func (t *Team_Membership_JoinedFrom_GitUserId) MergeTeamMembershipJoinedFromGitUserId0(v TeamMembershipJoinedFromGitUserId0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsTeamMembershipJoinedFromGitUserId1 returns the union data inside the Team_Membership_JoinedFrom_GitUserId as a TeamMembershipJoinedFromGitUserId1
-func (t Team_Membership_JoinedFrom_GitUserId) AsTeamMembershipJoinedFromGitUserId1() (TeamMembershipJoinedFromGitUserId1, error) {
-	var body TeamMembershipJoinedFromGitUserId1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamMembershipJoinedFromGitUserId1 overwrites any union data inside the Team_Membership_JoinedFrom_GitUserId as the provided TeamMembershipJoinedFromGitUserId1
-func (t *Team_Membership_JoinedFrom_GitUserId) FromTeamMembershipJoinedFromGitUserId1(v TeamMembershipJoinedFromGitUserId1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamMembershipJoinedFromGitUserId1 performs a merge with any union data inside the Team_Membership_JoinedFrom_GitUserId, using the provided TeamMembershipJoinedFromGitUserId1
-func (t *Team_Membership_JoinedFrom_GitUserId) MergeTeamMembershipJoinedFromGitUserId1(v TeamMembershipJoinedFromGitUserId1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Team_Membership_JoinedFrom_GitUserId) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Team_Membership_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsTeamSamlRoles0 returns the union data inside the Team_Saml_Roles_AdditionalProperties as a TeamSamlRoles0
-func (t Team_Saml_Roles_AdditionalProperties) AsTeamSamlRoles0() (TeamSamlRoles0, error) {
-	var body TeamSamlRoles0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamSamlRoles0 overwrites any union data inside the Team_Saml_Roles_AdditionalProperties as the provided TeamSamlRoles0
-func (t *Team_Saml_Roles_AdditionalProperties) FromTeamSamlRoles0(v TeamSamlRoles0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamSamlRoles0 performs a merge with any union data inside the Team_Saml_Roles_AdditionalProperties, using the provided TeamSamlRoles0
-func (t *Team_Saml_Roles_AdditionalProperties) MergeTeamSamlRoles0(v TeamSamlRoles0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsTeamSamlRoles1 returns the union data inside the Team_Saml_Roles_AdditionalProperties as a TeamSamlRoles1
-func (t Team_Saml_Roles_AdditionalProperties) AsTeamSamlRoles1() (TeamSamlRoles1, error) {
-	var body TeamSamlRoles1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamSamlRoles1 overwrites any union data inside the Team_Saml_Roles_AdditionalProperties as the provided TeamSamlRoles1
-func (t *Team_Saml_Roles_AdditionalProperties) FromTeamSamlRoles1(v TeamSamlRoles1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamSamlRoles1 performs a merge with any union data inside the Team_Saml_Roles_AdditionalProperties, using the provided TeamSamlRoles1
-func (t *Team_Saml_Roles_AdditionalProperties) MergeTeamSamlRoles1(v TeamSamlRoles1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsTeamSamlRoles2 returns the union data inside the Team_Saml_Roles_AdditionalProperties as a TeamSamlRoles2
-func (t Team_Saml_Roles_AdditionalProperties) AsTeamSamlRoles2() (TeamSamlRoles2, error) {
-	var body TeamSamlRoles2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamSamlRoles2 overwrites any union data inside the Team_Saml_Roles_AdditionalProperties as the provided TeamSamlRoles2
-func (t *Team_Saml_Roles_AdditionalProperties) FromTeamSamlRoles2(v TeamSamlRoles2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamSamlRoles2 performs a merge with any union data inside the Team_Saml_Roles_AdditionalProperties, using the provided TeamSamlRoles2
-func (t *Team_Saml_Roles_AdditionalProperties) MergeTeamSamlRoles2(v TeamSamlRoles2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Team_Saml_Roles_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Team_Saml_Roles_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsTeamLimitedMembershipJoinedFromGitUserId0 returns the union data inside the TeamLimited_Membership_JoinedFrom_GitUserId as a TeamLimitedMembershipJoinedFromGitUserId0
-func (t TeamLimited_Membership_JoinedFrom_GitUserId) AsTeamLimitedMembershipJoinedFromGitUserId0() (TeamLimitedMembershipJoinedFromGitUserId0, error) {
-	var body TeamLimitedMembershipJoinedFromGitUserId0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamLimitedMembershipJoinedFromGitUserId0 overwrites any union data inside the TeamLimited_Membership_JoinedFrom_GitUserId as the provided TeamLimitedMembershipJoinedFromGitUserId0
-func (t *TeamLimited_Membership_JoinedFrom_GitUserId) FromTeamLimitedMembershipJoinedFromGitUserId0(v TeamLimitedMembershipJoinedFromGitUserId0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamLimitedMembershipJoinedFromGitUserId0 performs a merge with any union data inside the TeamLimited_Membership_JoinedFrom_GitUserId, using the provided TeamLimitedMembershipJoinedFromGitUserId0
-func (t *TeamLimited_Membership_JoinedFrom_GitUserId) MergeTeamLimitedMembershipJoinedFromGitUserId0(v TeamLimitedMembershipJoinedFromGitUserId0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsTeamLimitedMembershipJoinedFromGitUserId1 returns the union data inside the TeamLimited_Membership_JoinedFrom_GitUserId as a TeamLimitedMembershipJoinedFromGitUserId1
-func (t TeamLimited_Membership_JoinedFrom_GitUserId) AsTeamLimitedMembershipJoinedFromGitUserId1() (TeamLimitedMembershipJoinedFromGitUserId1, error) {
-	var body TeamLimitedMembershipJoinedFromGitUserId1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromTeamLimitedMembershipJoinedFromGitUserId1 overwrites any union data inside the TeamLimited_Membership_JoinedFrom_GitUserId as the provided TeamLimitedMembershipJoinedFromGitUserId1
-func (t *TeamLimited_Membership_JoinedFrom_GitUserId) FromTeamLimitedMembershipJoinedFromGitUserId1(v TeamLimitedMembershipJoinedFromGitUserId1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeTeamLimitedMembershipJoinedFromGitUserId1 performs a merge with any union data inside the TeamLimited_Membership_JoinedFrom_GitUserId, using the provided TeamLimitedMembershipJoinedFromGitUserId1
-func (t *TeamLimited_Membership_JoinedFrom_GitUserId) MergeTeamLimitedMembershipJoinedFromGitUserId1(v TeamLimitedMembershipJoinedFromGitUserId1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t TeamLimited_Membership_JoinedFrom_GitUserId) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *TeamLimited_Membership_JoinedFrom_GitUserId) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUserEventPayload83Data0 returns the union data inside the UserEvent_Payload_83_Data as a UserEventPayload83Data0
-func (t UserEvent_Payload_83_Data) AsUserEventPayload83Data0() (UserEventPayload83Data0, error) {
-	var body UserEventPayload83Data0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload83Data0 overwrites any union data inside the UserEvent_Payload_83_Data as the provided UserEventPayload83Data0
-func (t *UserEvent_Payload_83_Data) FromUserEventPayload83Data0(v UserEventPayload83Data0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload83Data0 performs a merge with any union data inside the UserEvent_Payload_83_Data, using the provided UserEventPayload83Data0
-func (t *UserEvent_Payload_83_Data) MergeUserEventPayload83Data0(v UserEventPayload83Data0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload83Data1 returns the union data inside the UserEvent_Payload_83_Data as a UserEventPayload83Data1
-func (t UserEvent_Payload_83_Data) AsUserEventPayload83Data1() (UserEventPayload83Data1, error) {
-	var body UserEventPayload83Data1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload83Data1 overwrites any union data inside the UserEvent_Payload_83_Data as the provided UserEventPayload83Data1
-func (t *UserEvent_Payload_83_Data) FromUserEventPayload83Data1(v UserEventPayload83Data1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload83Data1 performs a merge with any union data inside the UserEvent_Payload_83_Data, using the provided UserEventPayload83Data1
-func (t *UserEvent_Payload_83_Data) MergeUserEventPayload83Data1(v UserEventPayload83Data1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UserEvent_Payload_83_Data) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *UserEvent_Payload_83_Data) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUserEventPayload124Job0 returns the union data inside the UserEvent_Payload_124_Job as a UserEventPayload124Job0
-func (t UserEvent_Payload_124_Job) AsUserEventPayload124Job0() (UserEventPayload124Job0, error) {
-	var body UserEventPayload124Job0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload124Job0 overwrites any union data inside the UserEvent_Payload_124_Job as the provided UserEventPayload124Job0
-func (t *UserEvent_Payload_124_Job) FromUserEventPayload124Job0(v UserEventPayload124Job0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload124Job0 performs a merge with any union data inside the UserEvent_Payload_124_Job, using the provided UserEventPayload124Job0
-func (t *UserEvent_Payload_124_Job) MergeUserEventPayload124Job0(v UserEventPayload124Job0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload124Job1 returns the union data inside the UserEvent_Payload_124_Job as a UserEventPayload124Job1
-func (t UserEvent_Payload_124_Job) AsUserEventPayload124Job1() (UserEventPayload124Job1, error) {
-	var body UserEventPayload124Job1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload124Job1 overwrites any union data inside the UserEvent_Payload_124_Job as the provided UserEventPayload124Job1
-func (t *UserEvent_Payload_124_Job) FromUserEventPayload124Job1(v UserEventPayload124Job1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload124Job1 performs a merge with any union data inside the UserEvent_Payload_124_Job, using the provided UserEventPayload124Job1
-func (t *UserEvent_Payload_124_Job) MergeUserEventPayload124Job1(v UserEventPayload124Job1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload124Job2 returns the union data inside the UserEvent_Payload_124_Job as a UserEventPayload124Job2
-func (t UserEvent_Payload_124_Job) AsUserEventPayload124Job2() (UserEventPayload124Job2, error) {
-	var body UserEventPayload124Job2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload124Job2 overwrites any union data inside the UserEvent_Payload_124_Job as the provided UserEventPayload124Job2
-func (t *UserEvent_Payload_124_Job) FromUserEventPayload124Job2(v UserEventPayload124Job2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload124Job2 performs a merge with any union data inside the UserEvent_Payload_124_Job, using the provided UserEventPayload124Job2
-func (t *UserEvent_Payload_124_Job) MergeUserEventPayload124Job2(v UserEventPayload124Job2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload124Job3 returns the union data inside the UserEvent_Payload_124_Job as a UserEventPayload124Job3
-func (t UserEvent_Payload_124_Job) AsUserEventPayload124Job3() (UserEventPayload124Job3, error) {
-	var body UserEventPayload124Job3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload124Job3 overwrites any union data inside the UserEvent_Payload_124_Job as the provided UserEventPayload124Job3
-func (t *UserEvent_Payload_124_Job) FromUserEventPayload124Job3(v UserEventPayload124Job3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload124Job3 performs a merge with any union data inside the UserEvent_Payload_124_Job, using the provided UserEventPayload124Job3
-func (t *UserEvent_Payload_124_Job) MergeUserEventPayload124Job3(v UserEventPayload124Job3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload124Job4 returns the union data inside the UserEvent_Payload_124_Job as a UserEventPayload124Job4
-func (t UserEvent_Payload_124_Job) AsUserEventPayload124Job4() (UserEventPayload124Job4, error) {
-	var body UserEventPayload124Job4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
 }

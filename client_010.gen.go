@@ -10,6 +10,449 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateAccessGroupParams defines parameters for CreateAccessGroup.
+type CreateAccessGroupParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAccessGroupJSONBodyProjectsRole defines parameters for CreateAccessGroup.
+type CreateAccessGroupJSONBodyProjectsRole string
+
+// CreateAccessGroup200JSONResponseBodyEntitlements defines parameters for CreateAccessGroup.
+type CreateAccessGroup200JSONResponseBodyEntitlements string
+
+// CreateAccessGroupProjectJSONBody defines parameters for CreateAccessGroupProject.
+type CreateAccessGroupProjectJSONBody struct {
+	// ProjectId The ID of the project.
+	//
+	// Example: prj_ndlgr43fadlPyCtREAqxxdyFK
+	ProjectId string `json:"projectId"`
+
+	// Role The project role that will be added to this Access Group.
+	//
+	// Example: ADMIN
+	Role CreateAccessGroupProjectJSONBodyRole `json:"role"`
+}
+
+// CreateAccessGroupProjectParams defines parameters for CreateAccessGroupProject.
+type CreateAccessGroupProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAccessGroupProjectJSONBodyRole defines parameters for CreateAccessGroupProject.
+type CreateAccessGroupProjectJSONBodyRole string
+
+// CreateAccessGroupProject200JSONResponseBodyRole defines parameters for CreateAccessGroupProject.
+type CreateAccessGroupProject200JSONResponseBodyRole string
+
+// DeleteAccessGroupProjectParams defines parameters for DeleteAccessGroupProject.
+type DeleteAccessGroupProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ReadAccessGroupProjectParams defines parameters for ReadAccessGroupProject.
+type ReadAccessGroupProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ReadAccessGroupProject200JSONResponseBodyRole defines parameters for ReadAccessGroupProject.
+type ReadAccessGroupProject200JSONResponseBodyRole string
+
+// UpdateAccessGroupProjectJSONBody defines parameters for UpdateAccessGroupProject.
+type UpdateAccessGroupProjectJSONBody struct {
+	// Role The project role that will be added to this Access Group.
+	//
+	// Example: ADMIN
+	Role UpdateAccessGroupProjectJSONBodyRole `json:"role"`
+}
+
+// UpdateAccessGroupProjectParams defines parameters for UpdateAccessGroupProject.
+type UpdateAccessGroupProjectParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateAccessGroupProjectJSONBodyRole defines parameters for UpdateAccessGroupProject.
+type UpdateAccessGroupProjectJSONBodyRole string
+
+// UpdateAccessGroupProject200JSONResponseBodyRole defines parameters for UpdateAccessGroupProject.
+type UpdateAccessGroupProject200JSONResponseBodyRole string
+
+// DeleteAccessGroupParams defines parameters for DeleteAccessGroup.
+type DeleteAccessGroupParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ReadAccessGroupParams defines parameters for ReadAccessGroup.
+type ReadAccessGroupParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ReadAccessGroup200JSONResponseBodyEntitlements defines parameters for ReadAccessGroup.
+type ReadAccessGroup200JSONResponseBodyEntitlements string
+
+// ReadAccessGroup200JSONResponseBodyIsDsyncManaged defines parameters for ReadAccessGroup.
+type ReadAccessGroup200JSONResponseBodyIsDsyncManaged bool
+
+// ReadAccessGroup200JSONResponseBodyTeamPermissions defines parameters for ReadAccessGroup.
+type ReadAccessGroup200JSONResponseBodyTeamPermissions string
+
+// UpdateAccessGroupJSONBody defines parameters for UpdateAccessGroup.
+type UpdateAccessGroupJSONBody struct {
+	// MembersToAdd List of members to add to the access group.
+	//
+	// Example: ["usr_1a2b3c4d5e6f7g8h9i0j","usr_2b3c4d5e6f7g8h9i0j1k"]
+	MembersToAdd *[]string `json:"membersToAdd,omitempty"`
+
+	// MembersToRemove List of members to remove from the access group.
+	//
+	// Example: ["usr_1a2b3c4d5e6f7g8h9i0j","usr_2b3c4d5e6f7g8h9i0j1k"]
+	MembersToRemove *[]string `json:"membersToRemove,omitempty"`
+
+	// Name The name of the access group
+	//
+	// Example: My access group
+	Name     *string `json:"name,omitempty"`
+	Projects *[]struct {
+		// ProjectId The ID of the project.
+		//
+		// Example: prj_ndlgr43fadlPyCtREAqxxdyFK
+		ProjectId string `json:"projectId"`
+
+		// Role The project role that will be added to this Access Group. "null" will remove this project level role.
+		//
+		// Example: ADMIN
+		Role *UpdateAccessGroupJSONBodyProjectsRole `json:"role"`
+	} `json:"projects,omitempty"`
+}
+
+// UpdateAccessGroupParams defines parameters for UpdateAccessGroup.
+type UpdateAccessGroupParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateAccessGroupJSONBodyProjectsRole defines parameters for UpdateAccessGroup.
+type UpdateAccessGroupJSONBodyProjectsRole string
+
+// UpdateAccessGroup200JSONResponseBodyEntitlements defines parameters for UpdateAccessGroup.
+type UpdateAccessGroup200JSONResponseBodyEntitlements string
+
+// ListAccessGroupMembersParams defines parameters for ListAccessGroupMembers.
+type ListAccessGroupMembersParams struct {
+	// Limit Limit how many access group members should be returned.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Next Continuation cursor to retrieve the next page of results.
+	Next *string `form:"next,omitempty" json:"next,omitempty"`
+
+	// Search Search project members by their name, username, and email.
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAccessGroupMembers200JSONResponseBodyMembersTeamRole defines parameters for ListAccessGroupMembers.
+type ListAccessGroupMembers200JSONResponseBodyMembersTeamRole string
+
+// ListAccessGroupProjectsParams defines parameters for ListAccessGroupProjects.
+type ListAccessGroupProjectsParams struct {
+	// Limit Limit how many access group projects should be returned.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Next Continuation cursor to retrieve the next page of results.
+	Next *string `form:"next,omitempty" json:"next,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAccessGroupProjects200JSONResponseBodyProjectsRole defines parameters for ListAccessGroupProjects.
+type ListAccessGroupProjects200JSONResponseBodyProjectsRole string
+
+// ListAiGatewayRoutersParams defines parameters for ListAiGatewayRouters.
+type ListAiGatewayRoutersParams struct {
+	// OwnerId The owner (team) ID to list routers for. Only trusted-origin callers use this. Public callers select their team with `teamId` or `slug`, and a supplied ownerId never overrides the authenticated team.
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// BuyCreditsJSONBody defines parameters for BuyCredits.
+type BuyCreditsJSONBody struct {
+	Item struct {
+		// Amount The amount of credits to purchase.
+		Amount int `json:"amount"`
+
+		// CreditType The type of credits to purchase.
+		CreditType BuyCreditsJSONBodyItemCreditType `json:"creditType"`
+
+		// Type The type of item to purchase.
+		Type BuyCreditsJSONBodyItemType `json:"type"`
+	} `json:"item"`
+}
+
+// BuyCreditsParams defines parameters for BuyCredits.
+type BuyCreditsParams struct {
+	// Source The source of the purchase request. Defaults to `api` if not specified.
+	Source *string `form:"source,omitempty" json:"source,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// BuyCreditsJSONBodyItemCreditType defines parameters for BuyCredits.
+type BuyCreditsJSONBodyItemCreditType string
+
+// BuyCreditsJSONBodyItemType defines parameters for BuyCredits.
+type BuyCreditsJSONBodyItemType string
+
+// BuyCredits200JSONResponseBody0 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody0 struct {
+	CheckoutSessionId  string `json:"checkoutSessionId"`
+	CheckoutSessionUrl string `json:"checkoutSessionUrl"`
+}
+
+// BuyCredits200JSONResponseBody1 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1 struct {
+	// PurchaseIntent The created purchase intent
+	PurchaseIntent struct {
+		Configuration BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration `json:"configuration"`
+
+		// CreatedAt The datetime when the Purchase Intent was created.
+		CreatedAt string `json:"createdAt"`
+
+		// Currency The currency for the purchase intent
+		Currency BuyCredits200JSONResponseBody1PurchaseIntentCurrency `json:"currency"`
+
+		// Dispute The dispute details, if any.
+		Dispute *struct {
+			// Amount The disputed amount.
+			Amount string `json:"amount"`
+
+			// CreatedAt When the dispute was first recorded.
+			CreatedAt string `json:"createdAt"`
+
+			// Currency The dispute currency.
+			Currency string `json:"currency"`
+
+			// Id The unique ID of the dispute entity.
+			Id string `json:"id"`
+
+			// ProviderId The external provider dispute ID (e.g. Stripe dispute ID).
+			ProviderId string `json:"providerId"`
+
+			// Reason The dispute reason.
+			Reason *string `json:"reason"`
+
+			// Status The dispute status.
+			Status string `json:"status"`
+
+			// UpdatedAt When the dispute was last updated.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"dispute,omitempty"`
+
+		// Id The unique ID of a Purchase Intent. Uses the format `pur_*`
+		Id string `json:"id"`
+
+		// LineItems The line items that make up the Purchase Intent.
+		LineItems *[]struct {
+			// Description The description of the line item
+			Description string `json:"description"`
+
+			// Id The ID of the line item
+			Id string `json:"id"`
+
+			// Metadata Optional metadata for the line item
+			Metadata *map[string]string `json:"metadata,omitempty"`
+
+			// Name The name of the line item
+			Name string `json:"name"`
+
+			// ProductAlias The alias of the product being purchased
+			ProductAlias *string `json:"productAlias,omitempty"`
+
+			// ProductId The ID of the product being purchased
+			ProductId string `json:"productId"`
+
+			// Quantity The quantity of the line item
+			Quantity string `json:"quantity"`
+
+			// Refund The amount of the line item that has been refunded
+			Refund *string `json:"refund,omitempty"`
+
+			// UnitAmount The unit amount of the line item
+			UnitAmount string `json:"unitAmount"`
+		} `json:"lineItems,omitempty"`
+
+		// Metadata Optional metadata associated with the purchase intent
+		Metadata *map[string]string `json:"metadata,omitempty"`
+
+		// OwnerId The ID of the owner of the Purchase Intent.
+		OwnerId  string `json:"ownerId"`
+		Provider struct {
+			// CurrencyConversionRate The currency conversion rate used by the provider
+			CurrencyConversionRate *string `json:"currencyConversionRate,omitempty"`
+
+			// ResourceId Provider resource id
+			ResourceId string `json:"resourceId"`
+
+			// StripeSharedPaymentTokenUsed Whether a Stripe Shared Payment Token was used for this purchase. Only applicable when type is stripe_invoice_immediate.
+			StripeSharedPaymentTokenUsed *BuyCredits200JSONResponseBody1PurchaseIntentProviderStripeSharedPaymentTokenUsed `json:"stripeSharedPaymentTokenUsed,omitempty"`
+
+			// Type The type of the purchase provider
+			Type BuyCredits200JSONResponseBody1PurchaseIntentProviderType `json:"type"`
+		} `json:"provider"`
+
+		// Refund The amount of the purchase intent that has been refunded
+		Refund *string `json:"refund,omitempty"`
+
+		// ReturnUrl The URL to redirect to after the purchase is complete
+		ReturnUrl *string `json:"returnUrl,omitempty"`
+
+		// Status The status of the Purchase Intent.
+		Status BuyCredits200JSONResponseBody1PurchaseIntentStatus `json:"status"`
+
+		// Subtotal The subtotal of the Purchase Intent.
+		Subtotal string `json:"subtotal"`
+
+		// Tax The tax due on the Purchase Intent.
+		Tax string `json:"tax"`
+
+		// Total The total balance due on the Purchase Intent.
+		Total string `json:"total"`
+
+		// UpdatedAt The datetime when the Purchase Intent was last updated.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"purchaseIntent"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0 struct {
+	// Options Purchase configuration specific options
+	Options struct {
+		// Amount The amount of currency to buy
+		Amount string `json:"amount"`
+
+		// Currency The currency being purchased
+		Currency BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0OptionsCurrency `json:"currency"`
+
+		// ExpirationDate The expiration date of the credits being purchased
+		ExpirationDate *string `json:"expirationDate,omitempty"`
+	} `json:"options"`
+	Output interface{}                                                    `json:"output"`
+	Type   BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0Type `json:"type"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0OptionsCurrency defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0OptionsCurrency string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0Type defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0Type string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1 struct {
+	Options struct {
+		Items []struct {
+			Name string `json:"name"`
+
+			// Subtotal The subtotal of the domain name purchase
+			Subtotal string                                                                     `json:"subtotal"`
+			Type     BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1OptionsItemsType `json:"type"`
+
+			// Years The number of years to purchase
+			Years float32 `json:"years"`
+		} `json:"items"`
+
+		// OrderId The order ID of the domain name purchase
+		OrderId string `json:"orderId"`
+	} `json:"options"`
+	Output interface{}                                                    `json:"output"`
+	Type   BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1Type `json:"type"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1OptionsItemsType defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1OptionsItemsType string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1Type defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration1Type string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2 struct {
+	Options struct {
+		// AlignBillingWithPlanChangeDate Whether or not to reset the billing cycle
+		AlignBillingWithPlanChangeDate *BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate `json:"alignBillingWithPlanChangeDate,omitempty"`
+
+		// CouponRedemptionCode The coupon redemption code to apply to the plan change
+		CouponRedemptionCode *string                                                                              `json:"couponRedemptionCode,omitempty"`
+		EffectiveDate        BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_2_Options_EffectiveDate `json:"effectiveDate"`
+
+		// ExternalPlanId The ID of the external plan to change to
+		ExternalPlanId *string `json:"externalPlanId,omitempty"`
+
+		// OrbSubscriptionId The ID of the Orb subscription to change
+		OrbSubscriptionId string `json:"orbSubscriptionId"`
+
+		// ReplacePrices The prices to replace in the subscription
+		ReplacePrices *[]struct {
+			// FixedPriceQuantity The quantity for the fixed price
+			FixedPriceQuantity float32 `json:"fixedPriceQuantity"`
+
+			// ReplacesPriceId The ID of the price to replace
+			ReplacesPriceId string `json:"replacesPriceId"`
+		} `json:"replacePrices,omitempty"`
+	} `json:"options"`
+	Output struct {
+		// PendingSubscriptionChangeId The ID of the pending subscription change
+		PendingSubscriptionChangeId string `json:"pendingSubscriptionChangeId"`
+	} `json:"output"`
+	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2Type `json:"type"`
+}
+
 // BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate defines parameters for BuyCredits.
 type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration2OptionsAlignBillingWithPlanChangeDate bool
 
@@ -15782,6 +16225,9 @@ type GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme s
 // GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive defines parameters for GetProjectBoxes.
 type GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive bool
 
+// GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping bool
+
 // GetProjectBoxes200JSONResponseBodyDaemonsScope0 defines parameters for GetProjectBoxes.
 type GetProjectBoxes200JSONResponseBodyDaemonsScope0 struct {
 	Type  GetProjectBoxes200JSONResponseBodyDaemonsScope0Type  `json:"type"`
@@ -19587,425 +20033,3 @@ type UpdateMicrofrontendsJSONBody struct {
 	// RouteObservabilityToThisProject Whether observability data should be routed to this project or a root project. Can only be set for child applications.
 	RouteObservabilityToThisProject *bool `json:"routeObservabilityToThisProject,omitempty"`
 }
-
-// UpdateMicrofrontendsParams defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontendsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyAliasConfiguredBy defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasConfiguredBy string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned0 = float32
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentAliasAssigned1 bool
-
-// UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_Alias_Deployment_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentBranchMatcherType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentBranchMatcherType string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentChecksConclusion defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentChecksConclusion string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentChecksState defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentChecksState string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentConnectBuildsEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentConnectBuildsEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentForced defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentForced bool
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentPlan defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentPlan string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentPreviewCommentsEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentPrivate defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentPrivate bool
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentReadyState defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentReadyState string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentReadySubstate defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentReadySubstate string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentType string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasDeploymentWithCache defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasDeploymentWithCache bool
-
-// UpdateMicrofrontends200JSONResponseBodyAliasEnvironment defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasEnvironment string
-
-// UpdateMicrofrontends200JSONResponseBodyAliasRedirectStatusCode defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasRedirectStatusCode float32
-
-// UpdateMicrofrontends200JSONResponseBodyAliasTarget defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAliasTarget string
-
-// UpdateMicrofrontends200JSONResponseBodyAppliedCve55182Migration defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAppliedCve55182Migration bool
-
-// UpdateMicrofrontends200JSONResponseBodyAutoAssignCustomDomains defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAutoAssignCustomDomains bool
-
-// UpdateMicrofrontends200JSONResponseBodyAutoExposeSystemEnvs defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyAutoExposeSystemEnvs bool
-
-// UpdateMicrofrontends200JSONResponseBodyBlobsIsDefaultApp defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyBlobsIsDefaultApp bool
-
-// UpdateMicrofrontends200JSONResponseBodyConnectBuildsEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyConnectBuildsEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsBuildsEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsBuildsEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId0 = string
-
-// UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsEnvId1 string
-
-// UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_ConnectConfigurations_EnvId struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsPassive defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyConnectConfigurationsPassive bool
-
-// UpdateMicrofrontends200JSONResponseBodyCreator0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator0 struct {
-	Type UpdateMicrofrontends200JSONResponseBodyCreator0Type `json:"type"`
-	User struct {
-		Id string `json:"id"`
-	} `json:"user"`
-	Via *UpdateMicrofrontends200JSONResponseBody_Creator_0_Via `json:"via"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator0Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator0Type string
-
-// UpdateMicrofrontends200JSONResponseBodyCreator0Via0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator0Via0 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type UpdateMicrofrontends200JSONResponseBodyCreator0Via0Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator0Via0Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator0Via0Type string
-
-// UpdateMicrofrontends200JSONResponseBodyCreator0Via1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator0Via1 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type UpdateMicrofrontends200JSONResponseBodyCreator0Via1Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator0Via1Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator0Via1Type string
-
-// UpdateMicrofrontends200JSONResponseBody_Creator_0_Via defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_Creator_0_Via struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator1 struct {
-	Project struct {
-		Id string `json:"id"`
-	} `json:"project"`
-	Type UpdateMicrofrontends200JSONResponseBodyCreator1Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator1Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator1Type string
-
-// UpdateMicrofrontends200JSONResponseBodyCreator2 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator2 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type UpdateMicrofrontends200JSONResponseBodyCreator2Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator2Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator2Type string
-
-// UpdateMicrofrontends200JSONResponseBodyCreator3 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator3 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type UpdateMicrofrontends200JSONResponseBodyCreator3Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator3Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator3Type string
-
-// UpdateMicrofrontends200JSONResponseBodyCreator4 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator4 struct {
-	Type UpdateMicrofrontends200JSONResponseBodyCreator4Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCreator4Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCreator4Type string
-
-// UpdateMicrofrontends200JSONResponseBody_Creator defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_Creator struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyCronsDefinitionsHostInferred defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCronsDefinitionsHostInferred bool
-
-// UpdateMicrofrontends200JSONResponseBodyCronsDefinitionsSource defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCronsDefinitionsSource string
-
-// UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsBranchMatcherType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsBranchMatcherType string
-
-// UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsDomainsRedirectStatusCode float32
-
-// UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsDomainsVerified defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsDomainsVerified bool
-
-// UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCustomEnvironmentsType string
-
-// UpdateMicrofrontends200JSONResponseBodyCustomerSupportCodeVisibility defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyCustomerSupportCodeVisibility bool
-
-// UpdateMicrofrontends200JSONResponseBodyDataCacheUnlimited defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDataCacheUnlimited bool
-
-// UpdateMicrofrontends200JSONResponseBodyDataCacheUserDisabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDataCacheUserDisabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineElasticTransitionDirection string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineSelection defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineSelection string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineType string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildQueueConfiguration string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0 struct {
-	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores  `json:"cores"`
-	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label  `json:"label"`
-	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory `json:"memory"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Cores float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Label string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine0Memory float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1 struct {
-	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores  `json:"cores"`
-	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label  `json:"label"`
-	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory `json:"memory"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Cores float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Label string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine1Memory float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2 struct {
-	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores  `json:"cores"`
-	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label  `json:"label"`
-	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory `json:"memory"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Cores float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Label string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine2Memory float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3 struct {
-	Cores  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores  `json:"cores"`
-	Label  UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label  `json:"label"`
-	Memory UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory `json:"memory"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Cores float32
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Label string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticBuildMachine3Memory float32
-
-// UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DefaultResourceConfig_ElasticBuildMachine struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigElasticConcurrencyEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigEnableFunctionsBeta bool
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFluid defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFluid bool
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFunctionDefaultMemoryType string
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigFunctionZeroConfigFailover bool
-
-// UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigIsNSNBDisabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0 struct {
-	Target UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Target `json:"target"`
-	Type   UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Type   `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Target defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Target string
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments0Type string
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1 struct {
-	EnvironmentId string                                                                                    `json:"environmentId"`
-	Type          UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesEnvironments1Type string
-
-// UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_DeploymentSources_Environments_Item struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyDeploymentSourcesSources string
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnabled defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnabled bool
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0 struct {
-	Target UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Target `json:"target"`
-	Type   UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Type   `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Target defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Target string
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments0Type string
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1 struct {
-	EnvironmentId string                                                                             `json:"environmentId"`
-	Type          UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1Type `json:"type"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1Type defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesEnvironments1Type string
-
-// UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Environments_Item struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0 struct {
-	Org      string                                                                            `json:"org"`
-	Provider UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0Provider `json:"provider"`
-	Repo     *string                                                                           `json:"repo,omitempty"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0Provider defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources0Provider string
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1 struct {
-	Namespace string                                                                            `json:"namespace"`
-	Project   *string                                                                           `json:"project,omitempty"`
-	Provider  UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1Provider `json:"provider"`
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1Provider defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDeploymentPolicyGitSourcesSources1Provider string
-
-// UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBody_DeploymentPolicy_GitSources_Sources_Item struct {
-	union json.RawMessage
-}
-
-// UpdateMicrofrontends200JSONResponseBodyDirectoryListing defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDirectoryListing bool
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsAction defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsAction string
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue0 = string
-
-// UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontends200JSONResponseBodyDismissedToastsValue1 = float32

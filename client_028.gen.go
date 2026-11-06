@@ -1702,6 +1702,9 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 				// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Drain *[]ACLAction `json:"drain,omitempty"`
 
+				// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Drive *[]ACLAction `json:"drive,omitempty"`
+
 				// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
 
@@ -3522,6 +3525,9 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 				// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Drain *[]ACLAction `json:"drain,omitempty"`
 
+				// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Drive *[]ACLAction `json:"drive,omitempty"`
+
 				// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
 
@@ -4605,9 +4611,16 @@ func ParseGetProjectBoxesResponse(rsp *http.Response) (*GetProjectBoxesResponse,
 						Image         *string                                                       `json:"image,omitempty"`
 						LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
 						MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
-						Region        string                                                        `json:"region"`
-						StartedAt     string                                                        `json:"startedAt"`
-						StoppedAt     *string                                                       `json:"stoppedAt,omitempty"`
+
+						// Process Quick restarts of the user container in a row. Absent when there are none.
+						Process *struct {
+							CrashLooping GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping `json:"crashLooping"`
+							LastExitCode *float32                                                                   `json:"lastExitCode,omitempty"`
+							Restarts     float32                                                                    `json:"restarts"`
+						} `json:"process,omitempty"`
+						Region    string  `json:"region"`
+						StartedAt string  `json:"startedAt"`
+						StoppedAt *string `json:"stoppedAt,omitempty"`
 					} `json:"items"`
 					Ready float32 `json:"ready"`
 					Total float32 `json:"total"`
@@ -8520,6 +8533,9 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 
 				// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Drain *[]ACLAction `json:"drain,omitempty"`
+
+				// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Drive *[]ACLAction `json:"drive,omitempty"`
 
 				// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
@@ -18588,6 +18604,9 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 
 				// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Drain *[]ACLAction `json:"drain,omitempty"`
+
+				// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Drive *[]ACLAction `json:"drive,omitempty"`
 
 				// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`

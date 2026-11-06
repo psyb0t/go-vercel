@@ -802,6 +802,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Drain *[]ACLAction `json:"drain,omitempty"`
 
+		// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Drive *[]ACLAction `json:"drive,omitempty"`
+
 		// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
 
@@ -11890,6 +11893,9 @@ type GetProjectResponse struct {
 			// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Drain *[]ACLAction `json:"drain,omitempty"`
 
+			// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			Drive *[]ACLAction `json:"drive,omitempty"`
+
 			// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
 
@@ -13683,6 +13689,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 
 		// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Drain *[]ACLAction `json:"drain,omitempty"`
+
+		// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Drive *[]ACLAction `json:"drive,omitempty"`
 
 		// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
@@ -15500,6 +15509,9 @@ type UpdateProjectResponse struct {
 			// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Drain *[]ACLAction `json:"drain,omitempty"`
 
+			// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			Drive *[]ACLAction `json:"drive,omitempty"`
+
 			// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
 
@@ -17282,6 +17294,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 
 		// Drain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Drain *[]ACLAction `json:"drain,omitempty"`
+
+		// Drive Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Drive *[]ACLAction `json:"drive,omitempty"`
 
 		// EdgeCacheNamespace Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		EdgeCacheNamespace *[]ACLAction `json:"edgeCacheNamespace,omitempty"`
@@ -20006,16 +20021,4 @@ func (c *ClientWithResponses) PatchUrlProtectionBypassWithResponse(ctx context.C
 		return nil, err
 	}
 	return ParsePatchUrlProtectionBypassResponse(rsp)
-}
-
-// CreateApiKeysWithBodyWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request,
-// with any type of body and a specified content type.
-//
-// Returns a wrapper object for the known response body format(s).
-func (c *ClientWithResponses) CreateApiKeysWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateApiKeysResponse, error) {
-	rsp, err := c.CreateApiKeysWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateApiKeysResponse(rsp)
 }

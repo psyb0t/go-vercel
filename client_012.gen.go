@@ -7,6 +7,446 @@ import (
 	"encoding/json"
 )
 
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue0 = string
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue1 = float32
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2 struct {
+	CurrentValue  GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value_2_CurrentValue  `json:"currentValue"`
+	PreviousValue GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value_2_PreviousValue `json:"previousValue"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2CurrentValue0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2CurrentValue0 = string
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2CurrentValue1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2CurrentValue1 = float32
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2CurrentValue2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2CurrentValue2 bool
+
+// GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value_2_CurrentValue defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value_2_CurrentValue struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2PreviousValue0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2PreviousValue0 = string
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2PreviousValue1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2PreviousValue1 = float32
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2PreviousValue2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue2PreviousValue2 bool
+
+// GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value_2_PreviousValue defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value_2_PreviousValue struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsDismissedToastsValue3 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsDismissedToastsValue3 bool
+
+// GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_DismissedToasts_Value struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnableAffectedProjectsDeployments defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnableAffectedProjectsDeployments bool
+
+// GetProjects200JSONResponseBody2ProjectsEnableExternalRewriteCaching defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnableExternalRewriteCaching bool
+
+// GetProjects200JSONResponseBody2ProjectsEnablePreviewFeedback defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnablePreviewFeedback bool
+
+// GetProjects200JSONResponseBody2ProjectsEnableProductionFeedback defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnableProductionFeedback bool
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint0 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint0Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint0Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint0Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint1 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint1Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint1Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint1Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint2 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint2Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint2Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint2Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint3 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint3 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint3Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint3Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint3Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint4 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint4 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint4Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint4Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint4Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint5 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint5 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint5Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint5Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint5Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint6 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint6 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint6Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint6Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint6Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint7 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint7 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint7Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint7Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint7Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint8 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint8 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint8Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint8Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint8Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint9 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint9 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint9Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint9Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint9Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint10 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint10 struct {
+	StoreId string                                                      `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint10Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint10Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint10Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint11 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint11 struct {
+	StoreId string                                                      `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint11Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint11Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint11Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint12 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint12 struct {
+	StoreId string                                                      `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint12Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint12Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint12Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint13 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint13 struct {
+	StoreId string                                                      `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint13Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint13Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint13Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint14 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint14 struct {
+	StoreId string                                                      `json:"storeId"`
+	Type    GetProjects200JSONResponseBody2ProjectsEnvContentHint14Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint14Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint14Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint15 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint15 struct {
+	IntegrationConfigurationId string                                                      `json:"integrationConfigurationId"`
+	IntegrationId              string                                                      `json:"integrationId"`
+	IntegrationProductId       string                                                      `json:"integrationProductId"`
+	StoreId                    string                                                      `json:"storeId"`
+	Type                       GetProjects200JSONResponseBody2ProjectsEnvContentHint15Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint15Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint15Type string
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint16 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint16 struct {
+	ProjectId string                                                      `json:"projectId"`
+	Type      GetProjects200JSONResponseBody2ProjectsEnvContentHint16Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvContentHint16Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvContentHint16Type string
+
+// GetProjects200JSONResponseBody_2_Projects_Env_ContentHint defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_Env_ContentHint struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvDecrypted defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvDecrypted bool
+
+// GetProjects200JSONResponseBody2ProjectsEnvInternalContentHintType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvInternalContentHintType string
+
+// GetProjects200JSONResponseBody2ProjectsEnvTarget0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvTarget0 = []string
+
+// GetProjects200JSONResponseBody2ProjectsEnvTarget1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvTarget1 string
+
+// GetProjects200JSONResponseBody_2_Projects_Env_Target defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_Env_Target struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsEnvType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvType string
+
+// GetProjects200JSONResponseBody2ProjectsEnvVisibility defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsEnvVisibility string
+
+// GetProjects200JSONResponseBody2ProjectsExpiration0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsExpiration0 struct {
+	// ExpiresAt Unix ms timestamp when the project is scheduled to expire.
+	ExpiresAt float32 `json:"expiresAt"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsExpiration1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsExpiration1 struct {
+	// LockedAt Unix ms timestamp when the project was locked.
+	LockedAt float32 `json:"lockedAt"`
+
+	// LockedBy ID of the user, app, or integration that locked the project, or `system`.
+	LockedBy string `json:"lockedBy"`
+}
+
+// GetProjects200JSONResponseBody_2_Projects_Expiration defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_Expiration struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsFeaturesWebAnalytics defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsFeaturesWebAnalytics bool
+
+// GetProjects200JSONResponseBody2ProjectsFramework defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsFramework string
+
+// GetProjects200JSONResponseBody2ProjectsGitCommentsOnCommit defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitCommentsOnCommit bool
+
+// GetProjects200JSONResponseBody2ProjectsGitCommentsOnPullRequest defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitCommentsOnPullRequest bool
+
+// GetProjects200JSONResponseBody2ProjectsGitForkProtection defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitForkProtection bool
+
+// GetProjects200JSONResponseBody2ProjectsGitLFS defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitLFS bool
+
+// GetProjects200JSONResponseBody2ProjectsGitProviderOptionsConsolidatedGitCommitStatusEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitProviderOptionsConsolidatedGitCommitStatusEnabled bool
+
+// GetProjects200JSONResponseBody2ProjectsGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures bool
+
+// GetProjects200JSONResponseBody2ProjectsGitProviderOptionsCreateDeployments defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitProviderOptionsCreateDeployments string
+
+// GetProjects200JSONResponseBody2ProjectsGitProviderOptionsDisableRepositoryDispatchEvents defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitProviderOptionsDisableRepositoryDispatchEvents bool
+
+// GetProjects200JSONResponseBody2ProjectsGitProviderOptionsGitCommitStatus defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitProviderOptionsGitCommitStatus bool
+
+// GetProjects200JSONResponseBody2ProjectsGitProviderOptionsRequireVerifiedCommits defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsGitProviderOptionsRequireVerifiedCommits bool
+
+// GetProjects200JSONResponseBody2ProjectsHasActiveBranches defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsHasActiveBranches bool
+
+// GetProjects200JSONResponseBody2ProjectsHasDeployments defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsHasDeployments bool
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes0 struct {
+	Expiry *float32 `json:"expiry,omitempty"`
+	Src    string   `json:"src"`
+	Status float32  `json:"status"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1 struct {
+	Has      []GetProjects200JSONResponseBody_2_Projects_InternalRoutes_1_Has_Item `json:"has"`
+	Mitigate struct {
+		Action GetProjects200JSONResponseBody2ProjectsInternalRoutes1MitigateAction `json:"action"`
+	} `json:"mitigate"`
+	Src *string `json:"src,omitempty"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0 struct {
+	Key   GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0Key  `json:"key"`
+	Type  GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0Type `json:"type"`
+	Value struct {
+		Eq string `json:"eq"`
+	} `json:"value"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0Key defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0Key string
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has0Type string
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has1 struct {
+	Type  GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has1Type `json:"type"`
+	Value struct {
+		Eq string `json:"eq"`
+	} `json:"value"`
+}
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has1Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1Has1Type string
+
+// GetProjects200JSONResponseBody_2_Projects_InternalRoutes_1_Has_Item defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_InternalRoutes_1_Has_Item struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsInternalRoutes1MitigateAction defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsInternalRoutes1MitigateAction string
+
+// GetProjects200JSONResponseBody_2_Projects_InternalRoutes_Item defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_InternalRoutes_Item struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsIpBucketsDefault defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsIpBucketsDefault bool
+
+// GetProjects200JSONResponseBody2ProjectsLastAliasRequestJobStatus defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLastAliasRequestJobStatus string
+
+// GetProjects200JSONResponseBody2ProjectsLastAliasRequestType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLastAliasRequestType string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsAliasAssigned0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsAliasAssigned0 = float32
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsAliasAssigned1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsAliasAssigned1 bool
+
+// GetProjects200JSONResponseBody_2_Projects_LatestDeployments_AliasAssigned defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_LatestDeployments_AliasAssigned struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsBranchMatcherType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsBranchMatcherType string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsChecksConclusion defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsChecksConclusion string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsChecksState defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsChecksState string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsConnectBuildsEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsConnectBuildsEnabled bool
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsForced defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsForced bool
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsPlan defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsPlan string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsPreviewCommentsEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsPreviewCommentsEnabled bool
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsPrivate defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsPrivate bool
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsReadyState defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsReadyState string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsReadySubstate defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsReadySubstate string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsType string
+
+// GetProjects200JSONResponseBody2ProjectsLatestDeploymentsWithCache defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLatestDeploymentsWithCache bool
+
+// GetProjects200JSONResponseBody2ProjectsLink0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsLink0 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string   `json:"gitCredentialId"`
+	Org              string   `json:"org"`
+	ProductionBranch string   `json:"productionBranch"`
+	Repo             *string  `json:"repo,omitempty"`
+	RepoId           *float32 `json:"repoId,omitempty"`
+
+	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+	RepoOwnerId *float32                                                `json:"repoOwnerId,omitempty"`
+	Sourceless  *GetProjects200JSONResponseBody2ProjectsLink0Sourceless `json:"sourceless,omitempty"`
+	Type        GetProjects200JSONResponseBody2ProjectsLink0Type        `json:"type"`
+	UpdatedAt   *float32                                                `json:"updatedAt,omitempty"`
+}
+
 // GetProjects200JSONResponseBody2ProjectsLink0Sourceless defines parameters for GetProjects.
 type GetProjects200JSONResponseBody2ProjectsLink0Sourceless bool
 
@@ -19612,406 +20052,4 @@ type UpdateSandboxJSONBody struct {
 	//
 	// Example: 300000
 	Timeout *int `json:"timeout,omitempty"`
-}
-
-// UpdateSandboxParams defines parameters for UpdateSandbox.
-type UpdateSandboxParams struct {
-	// ProjectId The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.
-	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
-
-	// Resume Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Defaults to false.
-	Resume *bool `form:"resume,omitempty" json:"resume,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateSandboxJSONBodyFailoverRegions defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyFailoverRegions string
-
-// UpdateSandboxJSONBodyKeepLastSnapshots0 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyKeepLastSnapshots0 = string
-
-// UpdateSandboxJSONBodyKeepLastSnapshots1 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyKeepLastSnapshots1 struct {
-	// Count Number of most recent snapshots to keep.
-	Count int `json:"count"`
-
-	// DeleteEvicted Whether to immediately delete evicted snapshots. Defaults to true.
-	DeleteEvicted *bool `json:"deleteEvicted,omitempty"`
-
-	// Expiration Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-	Expiration *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration `json:"expiration,omitempty"`
-}
-
-// UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 = interface{}
-
-// UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 = int
-
-// UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration struct {
-	union json.RawMessage
-}
-
-// UpdateSandboxJSONBody_KeepLastSnapshots defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBody_KeepLastSnapshots struct {
-	union json.RawMessage
-}
-
-// UpdateSandboxJSONBodyMountsMode defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyMountsMode string
-
-// UpdateSandboxJSONBodyNetworkId0 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkId0 = string
-
-// UpdateSandboxJSONBodyNetworkId1 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkId1 = string
-
-// UpdateSandboxJSONBody_NetworkId defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBody_NetworkId struct {
-	union json.RawMessage
-}
-
-// UpdateSandboxJSONBodyNetworkPolicy0 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkPolicy0 struct {
-	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
-	//
-	// Example: ["35.192.0.0/12","104.16.0.0/12"]
-	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
-
-	// AllowedDomains List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
-	//
-	// Example: ["api.github.com","*.npmjs.org"]
-	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
-
-	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-	//
-	// Example: ["35.192.0.0/12"]
-	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
-
-	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
-	InjectionRules *[]struct {
-		// Domain The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
-		Domain string `json:"domain"`
-
-		// Headers HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
-		Headers map[string]string `json:"headers"`
-
-		// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-		Match *struct {
-			// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-			Headers *[]struct {
-				// Key Matcher for the entry key (header name or query key).
-				Key *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"key,omitempty"`
-
-				// Value Matcher for the entry value.
-				Value *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"value,omitempty"`
-			} `json:"headers,omitempty"`
-
-			// Method HTTP methods to match. Any single match succeeds (OR semantics).
-			Method *[]string `json:"method,omitempty"`
-
-			// Path Match on the request path. Comparison is case-sensitive.
-			Path *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"path,omitempty"`
-
-			// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-			QueryString *[]struct {
-				// Key Matcher for the entry key (header name or query key).
-				Key *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"key,omitempty"`
-
-				// Value Matcher for the entry value.
-				Value *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"value,omitempty"`
-			} `json:"queryString,omitempty"`
-		} `json:"match,omitempty"`
-	} `json:"injectionRules,omitempty"`
-
-	// Mode The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
-	//
-	// Example: custom
-	Mode UpdateSandboxJSONBodyNetworkPolicy0Mode `json:"mode"`
-}
-
-// UpdateSandboxJSONBodyNetworkPolicy0Mode defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkPolicy0Mode string
-
-// UpdateSandboxJSONBodyNetworkPolicy1 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkPolicy1 struct {
-	Allow   *UpdateSandboxJSONBody_NetworkPolicy_1_Allow `json:"allow,omitempty"`
-	Subnets *struct {
-		Allow *[]string `json:"allow,omitempty"`
-		Deny  *[]string `json:"deny,omitempty"`
-	} `json:"subnets,omitempty"`
-}
-
-// UpdateSandboxJSONBodyNetworkPolicy1Allow0 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkPolicy1Allow0 = []string
-
-// UpdateSandboxJSONBodyNetworkPolicy1Allow1 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyNetworkPolicy1Allow1 map[string][]struct {
-	// ForwardURL HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment.
-	ForwardURL *string `json:"forwardURL,omitempty"`
-
-	// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-	Match *struct {
-		// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-		Headers *[]struct {
-			// Key Matcher for the entry key (header name or query key).
-			Key *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"key,omitempty"`
-
-			// Value Matcher for the entry value.
-			Value *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"value,omitempty"`
-		} `json:"headers,omitempty"`
-
-		// Method HTTP methods to match. Any single match succeeds (OR semantics).
-		Method *[]string `json:"method,omitempty"`
-
-		// Path Match on the request path. Comparison is case-sensitive.
-		Path *struct {
-			// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-			Exact *string `json:"exact,omitempty"`
-
-			// StartsWith Match values that start with the given prefix.
-			StartsWith *string `json:"startsWith,omitempty"`
-		} `json:"path,omitempty"`
-
-		// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-		QueryString *[]struct {
-			// Key Matcher for the entry key (header name or query key).
-			Key *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"key,omitempty"`
-
-			// Value Matcher for the entry value.
-			Value *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"value,omitempty"`
-		} `json:"queryString,omitempty"`
-	} `json:"match,omitempty"`
-
-	// Response Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
-	Response *struct {
-		// Body UTF-8 response body. Requires `contentType`.
-		Body *string `json:"body,omitempty"`
-
-		// ContentType Value of the `Content-Type` response header. Required when `body` is set.
-		ContentType *string `json:"contentType,omitempty"`
-
-		// Headers HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set.
-		Headers *map[string]string `json:"headers,omitempty"`
-
-		// StatusCode HTTP status code returned to the sandbox.
-		StatusCode int `json:"statusCode"`
-	} `json:"response,omitempty"`
-	Transform *[]struct {
-		Headers *map[string]string `json:"headers,omitempty"`
-	} `json:"transform,omitempty"`
-}
-
-// UpdateSandboxJSONBody_NetworkPolicy_1_Allow defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBody_NetworkPolicy_1_Allow struct {
-	union json.RawMessage
-}
-
-// UpdateSandboxJSONBody_NetworkPolicy defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBody_NetworkPolicy struct {
-	union json.RawMessage
-}
-
-// UpdateSandboxJSONBodyRegion defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyRegion string
-
-// UpdateSandboxJSONBodyRuntime defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodyRuntime string
-
-// UpdateSandboxJSONBodySnapshotExpiration0 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodySnapshotExpiration0 = interface{}
-
-// UpdateSandboxJSONBodySnapshotExpiration1 defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBodySnapshotExpiration1 = int
-
-// UpdateSandboxJSONBody_SnapshotExpiration defines parameters for UpdateSandbox.
-type UpdateSandboxJSONBody_SnapshotExpiration struct {
-	union json.RawMessage
-}
-
-// UpdateSandbox200JSONResponseBody0 defines parameters for UpdateSandbox.
-type UpdateSandbox200JSONResponseBody0 struct {
-	Routes []SandboxPublicRoute `json:"routes"`
-
-	// Sandbox This object contains information related to a Vercel NamedSandbox.
-	Sandbox NamedSandbox `json:"sandbox"`
-}
-
-// UpdateSandbox200JSONResponseBody1 defines parameters for UpdateSandbox.
-type UpdateSandbox200JSONResponseBody1 struct {
-	Resumed UpdateSandbox200JSONResponseBody1Resumed `json:"resumed"`
-	Routes  []SandboxPublicRoute                     `json:"routes"`
-
-	// Sandbox This object contains information related to a Vercel NamedSandbox.
-	Sandbox NamedSandbox `json:"sandbox"`
-
-	// Session This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-	Session Session `json:"session"`
-}
-
-// UpdateSandbox200JSONResponseBody1Resumed defines parameters for UpdateSandbox.
-type UpdateSandbox200JSONResponseBody1Resumed bool
-
-// UpdateSandbox200JSONResponseBody defines parameters for UpdateSandbox.
-type UpdateSandbox200JSONResponseBody struct {
-	union json.RawMessage
-}
-
-// CreateSandboxesByNameForkV2JSONBody defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2JSONBody struct {
-	// Env Default environment variables for the sandbox. These are inherited by all commands unless overridden.
-	//
-	// Example: {"HELLO":"world","NODE_ENV":"production"}
-	Env *map[string]string `json:"env,omitempty"`
-
-	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
-	//
-	// Example: ["sfo1","cle1"]
-	FailoverRegions *[]CreateSandboxesByNameForkV2JSONBodyFailoverRegions `json:"failoverRegions,omitempty"`
-
-	// Image Image to use for the sandbox.
-	Image *string `json:"image,omitempty"`
-
-	// KeepLastSnapshots Protect the N most recent snapshots with different expiration/deletion behavior.
-	KeepLastSnapshots *struct {
-		// Count Number of most recent snapshots to keep.
-		Count int `json:"count"`
-
-		// DeleteEvicted Whether to immediately delete evicted snapshots. Defaults to true.
-		DeleteEvicted *bool `json:"deleteEvicted,omitempty"`
-
-		// Expiration Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-		Expiration *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration `json:"expiration,omitempty"`
-	} `json:"keepLastSnapshots,omitempty"`
-
-	// Mounts List of drives to mount to the sandbox at the provided path.
-	Mounts *map[string]struct {
-		// Drive Name of the drive to mount. The drive must already exist.
-		Drive string `json:"drive"`
-
-		// Mode Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
-		Mode *CreateSandboxesByNameForkV2JSONBodyMountsMode `json:"mode,omitempty"`
-	} `json:"mounts,omitempty"`
-
-	// Name Name for the forked sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores). A random name is generated when omitted.
-	//
-	// Example: my-sandbox-fork
-	Name *string `json:"name,omitempty"`
-
-	// NetworkId The Connect network id for the target Secure Compute private network.
-	NetworkId     *string                                            `json:"networkId,omitempty"`
-	NetworkPolicy *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy `json:"networkPolicy,omitempty"`
-
-	// Persistent Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to the source sandbox setting.
-	Persistent *bool `json:"persistent,omitempty"`
-
-	// Ports List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.
-	//
-	// Example: [3000,4000]
-	Ports *[]int `json:"ports,omitempty"`
-
-	// Region The Vercel region in which to create the sandbox.
-	//
-	// Example: iad1
-	Region *CreateSandboxesByNameForkV2JSONBodyRegion `json:"region,omitempty"`
-
-	// Resources Resources to define the VM
-	Resources *struct {
-		// Memory The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-		//
-		// Example: 4096
-		Memory *int `json:"memory,omitempty"`
-
-		// Vcpus The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-		//
-		// Example: 2
-		Vcpus *int `json:"vcpus,omitempty"`
-	} `json:"resources,omitempty"`
-
-	// SnapshotExpiration Default snapshot expiration time in milliseconds. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.
-	//
-	// Example: 604800000
-	SnapshotExpiration *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration `json:"snapshotExpiration,omitempty"`
-
-	// Tags Key-value tags to associate with the sandbox. Maximum 5 tags.
-	//
-	// Example: {"env":"staging","team":"platform"}
-	Tags *map[string]string `json:"tags,omitempty"`
-
-	// Timeout Maximum duration in milliseconds that the sandbox can run before being automatically stopped.
-	//
-	// Example: 300000
-	Timeout *int `json:"timeout,omitempty"`
-}
-
-// CreateSandboxesByNameForkV2Params defines parameters for CreateSandboxesByNameForkV2.
-type CreateSandboxesByNameForkV2Params struct {
-	// ProjectId The ID of the project the source sandbox belongs to. Required unless authenticating with an OIDC token.
-	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
