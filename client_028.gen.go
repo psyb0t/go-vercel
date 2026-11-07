@@ -2503,10 +2503,11 @@ func ParseDeleteProjectAvatarResponse(rsp *http.Response) (*DeleteProjectAvatarR
 					BypassSystem   *DeleteProjectAvatar200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 					LogHeaders     *DeleteProjectAvatar200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 					RateLimit      *struct {
-						Algo   DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                            `json:"keys"`
-						Limit  float32                                                             `json:"limit"`
-						Window float32                                                             `json:"window"`
+						Action *DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+						Algo   DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+						Keys   []string                                                               `json:"keys"`
+						Limit  float32                                                                `json:"limit"`
+						Window float32                                                                `json:"window"`
 					} `json:"rateLimit,omitempty"`
 					Redirect *struct {
 						Location  string                                                                  `json:"location"`
@@ -4326,10 +4327,11 @@ func ParseUploadProjectAvatarResponse(rsp *http.Response) (*UploadProjectAvatarR
 					BypassSystem   *UploadProjectAvatar200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 					LogHeaders     *UploadProjectAvatar200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 					RateLimit      *struct {
-						Algo   UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                            `json:"keys"`
-						Limit  float32                                                             `json:"limit"`
-						Window float32                                                             `json:"window"`
+						Action *UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+						Algo   UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+						Keys   []string                                                               `json:"keys"`
+						Limit  float32                                                                `json:"limit"`
+						Window float32                                                                `json:"window"`
 					} `json:"rateLimit,omitempty"`
 					Redirect *struct {
 						Location  string                                                                  `json:"location"`
@@ -4810,6 +4812,9 @@ func ParseMoveProjectDomainResponse(rsp *http.Response) (*MoveProjectDomainRespo
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
 		break // No content-type
 
 	}
@@ -9335,10 +9340,11 @@ func ParseUpdateMicrofrontendsResponse(rsp *http.Response) (*UpdateMicrofrontend
 					BypassSystem   *UpdateMicrofrontends200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 					LogHeaders     *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 					RateLimit      *struct {
-						Algo   UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                             `json:"keys"`
-						Limit  float32                                                              `json:"limit"`
-						Window float32                                                              `json:"window"`
+						Action *UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+						Algo   UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+						Keys   []string                                                                `json:"keys"`
+						Limit  float32                                                                 `json:"limit"`
+						Window float32                                                                 `json:"window"`
 					} `json:"rateLimit,omitempty"`
 					Redirect *struct {
 						Location  string                                                                   `json:"location"`
@@ -17669,6 +17675,9 @@ func ParseAddProjectDomainResponse(rsp *http.Response) (*AddProjectDomainRespons
 	case rsp.StatusCode == 410:
 		break // No content-type
 
+	case rsp.StatusCode == 429:
+		break // No content-type
+
 	}
 
 	return response, nil
@@ -19406,10 +19415,11 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 					BypassSystem   *CreateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 					LogHeaders     *CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 					RateLimit      *struct {
-						Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                      `json:"keys"`
-						Limit  float32                                                       `json:"limit"`
-						Window float32                                                       `json:"window"`
+						Action *CreateProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+						Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+						Keys   []string                                                         `json:"keys"`
+						Limit  float32                                                          `json:"limit"`
+						Window float32                                                          `json:"window"`
 					} `json:"rateLimit,omitempty"`
 					Redirect *struct {
 						Location  string                                                            `json:"location"`

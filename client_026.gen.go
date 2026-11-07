@@ -1603,10 +1603,11 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 			BypassSystem   *CreateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 			LogHeaders     *CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 			RateLimit      *struct {
-				Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-				Keys   []string                                                      `json:"keys"`
-				Limit  float32                                                       `json:"limit"`
-				Window float32                                                       `json:"window"`
+				Action *CreateProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+				Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                         `json:"keys"`
+				Limit  float32                                                          `json:"limit"`
+				Window float32                                                          `json:"window"`
 			} `json:"rateLimit,omitempty"`
 			Redirect *struct {
 				Location  string                                                            `json:"location"`
@@ -12694,10 +12695,11 @@ type GetProjectResponse struct {
 				BypassSystem   *GetProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 				LogHeaders     *GetProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 				RateLimit      *struct {
-					Algo   GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-					Keys   []string                                                   `json:"keys"`
-					Limit  float32                                                    `json:"limit"`
-					Window float32                                                    `json:"window"`
+					Action *GetProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+					Algo   GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+					Keys   []string                                                      `json:"keys"`
+					Limit  float32                                                       `json:"limit"`
+					Window float32                                                       `json:"window"`
 				} `json:"rateLimit,omitempty"`
 				Redirect *struct {
 					Location  string                                                         `json:"location"`
@@ -14491,10 +14493,11 @@ func (r GetProjectResponse) GetJSON200() *struct {
 			BypassSystem   *GetProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 			LogHeaders     *GetProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 			RateLimit      *struct {
-				Algo   GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-				Keys   []string                                                   `json:"keys"`
-				Limit  float32                                                    `json:"limit"`
-				Window float32                                                    `json:"window"`
+				Action *GetProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+				Algo   GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                      `json:"keys"`
+				Limit  float32                                                       `json:"limit"`
+				Window float32                                                       `json:"window"`
 			} `json:"rateLimit,omitempty"`
 			Redirect *struct {
 				Location  string                                                         `json:"location"`
@@ -16310,10 +16313,11 @@ type UpdateProjectResponse struct {
 				BypassSystem   *UpdateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 				LogHeaders     *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 				RateLimit      *struct {
-					Algo   UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-					Keys   []string                                                      `json:"keys"`
-					Limit  float32                                                       `json:"limit"`
-					Window float32                                                       `json:"window"`
+					Action *UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+					Algo   UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+					Keys   []string                                                         `json:"keys"`
+					Limit  float32                                                          `json:"limit"`
+					Window float32                                                          `json:"window"`
 				} `json:"rateLimit,omitempty"`
 				Redirect *struct {
 					Location  string                                                            `json:"location"`
@@ -18096,10 +18100,11 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 			BypassSystem   *UpdateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 			LogHeaders     *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 			RateLimit      *struct {
-				Algo   UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-				Keys   []string                                                      `json:"keys"`
-				Limit  float32                                                       `json:"limit"`
-				Window float32                                                       `json:"window"`
+				Action *UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+				Algo   UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                         `json:"keys"`
+				Limit  float32                                                          `json:"limit"`
+				Window float32                                                          `json:"window"`
 			} `json:"rateLimit,omitempty"`
 			Redirect *struct {
 				Location  string                                                            `json:"location"`
@@ -20002,21 +20007,6 @@ func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigBySlugWithRespons
 // Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
 func (c *ClientWithResponses) PatchUrlProtectionBypassWithBodyWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error) {
 	rsp, err := c.PatchUrlProtectionBypassWithBody(ctx, id, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchUrlProtectionBypassResponse(rsp)
-}
-
-// PatchUrlProtectionBypassWithResponse Update the protection bypass for a URL
-//
-// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-func (c *ClientWithResponses) PatchUrlProtectionBypassWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, body PatchUrlProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error) {
-	rsp, err := c.PatchUrlProtectionBypass(ctx, id, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}

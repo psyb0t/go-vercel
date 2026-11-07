@@ -7,6 +7,362 @@ import (
 	"net/http"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectBoxesResponse) GetJSON200() *struct {
+	Daemons []struct {
+		Config struct {
+			Command             *[]string                                                              `json:"command,omitempty"`
+			ConfiguredInstances *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances `json:"configuredInstances,omitempty"`
+			Image               struct {
+				Requested string `json:"requested"`
+				Resolved  string `json:"resolved"`
+			} `json:"image"`
+			Instances     GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances `json:"instances"`
+			LivenessProbe *struct {
+				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
+				HttpGet          struct {
+					Host        *string `json:"host,omitempty"`
+					HttpHeaders *[]struct {
+						Name  string `json:"name"`
+						Value string `json:"value"`
+					} `json:"httpHeaders,omitempty"`
+					Path   string                                                                    `json:"path"`
+					Port   float32                                                                   `json:"port"`
+					Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
+				} `json:"httpGet"`
+				InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
+				PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
+				SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
+				TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
+			} `json:"livenessProbe,omitempty"`
+			Resources struct {
+				Requests struct {
+					Memory string `json:"memory"`
+				} `json:"requests"`
+			} `json:"resources"`
+			TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
+		} `json:"config"`
+		CreatedAt string `json:"createdAt"`
+
+		// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
+		DeploymentId *string `json:"deploymentId,omitempty"`
+		Instances    struct {
+			Desired float32 `json:"desired"`
+			Items   []struct {
+				Alive         *GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive `json:"alive,omitempty"`
+				Id            string                                                        `json:"id"`
+				Image         *string                                                       `json:"image,omitempty"`
+				LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
+				MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
+
+				// Process Quick restarts of the user container in a row. Absent when there are none.
+				Process *struct {
+					CrashLooping GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping `json:"crashLooping"`
+					LastExitCode *float32                                                                   `json:"lastExitCode,omitempty"`
+					Restarts     float32                                                                    `json:"restarts"`
+				} `json:"process,omitempty"`
+				Region    string  `json:"region"`
+				StartedAt string  `json:"startedAt"`
+				StoppedAt *string `json:"stoppedAt,omitempty"`
+			} `json:"items"`
+			Ready float32 `json:"ready"`
+			Total float32 `json:"total"`
+		} `json:"instances"`
+		Name      string                                           `json:"name"`
+		Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
+		Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
+		UpdatedAt string                                           `json:"updatedAt"`
+	} `json:"daemons"`
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next,omitempty"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectBoxesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectBoxesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectBoxesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectBoxesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutProjectDaemonInstancesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutProjectDaemonInstancesResponse) GetJSON200() *struct {
+	Ok PutProjectDaemonInstances200JSONResponseBodyOk `json:"ok"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r PutProjectDaemonInstancesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutProjectDaemonInstancesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutProjectDaemonInstancesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutProjectDaemonInstancesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RestartProjectDaemonInstanceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
+	}
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r RestartProjectDaemonInstanceResponse) GetJSON202() *struct {
+	Ok RestartProjectDaemonInstance202JSONResponseBodyOk `json:"ok"`
+} {
+	return r.JSON202
+}
+
+// GetBody returns the raw response body bytes
+func (r RestartProjectDaemonInstanceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RestartProjectDaemonInstanceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RestartProjectDaemonInstanceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RestartProjectDaemonInstanceResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type MoveProjectDomainResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		ApexName            string                                                  `json:"apexName"`
+		CreatedAt           *float32                                                `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                 `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                 `json:"gitBranch,omitempty"`
+		Name                string                                                  `json:"name"`
+		ProjectId           string                                                  `json:"projectId"`
+		Redirect            *string                                                 `json:"redirect,omitempty"`
+		RedirectStatusCode  *MoveProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified MoveProjectDomain200JSONResponseBodyVerified `json:"verified"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r MoveProjectDomainResponse) GetJSON200() *struct {
+	ApexName            string                                                  `json:"apexName"`
+	CreatedAt           *float32                                                `json:"createdAt,omitempty"`
+	CustomEnvironmentId *string                                                 `json:"customEnvironmentId,omitempty"`
+	GitBranch           *string                                                 `json:"gitBranch,omitempty"`
+	Name                string                                                  `json:"name"`
+	ProjectId           string                                                  `json:"projectId"`
+	Redirect            *string                                                 `json:"redirect,omitempty"`
+	RedirectStatusCode  *MoveProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+	UpdatedAt           *float32                                                `json:"updatedAt,omitempty"`
+
+	// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+	Verification *[]struct {
+		Domain string `json:"domain"`
+		Reason string `json:"reason"`
+		Type   string `json:"type"`
+		Value  string `json:"value"`
+	} `json:"verification,omitempty"`
+
+	// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+	Verified MoveProjectDomain200JSONResponseBodyVerified `json:"verified"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r MoveProjectDomainResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r MoveProjectDomainResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r MoveProjectDomainResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r MoveProjectDomainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BatchRemoveProjectEnvResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Deleted float32  `json:"deleted"`
+		Ids     []string `json:"ids"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r BatchRemoveProjectEnvResponse) GetJSON200() *struct {
+	Deleted float32  `json:"deleted"`
+	Ids     []string `json:"ids"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r BatchRemoveProjectEnvResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r BatchRemoveProjectEnvResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BatchRemoveProjectEnvResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BatchRemoveProjectEnvResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetProjectEnvResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetProjectEnv200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectEnvResponse) GetJSON200() *GetProjectEnv200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectEnvResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectEnvResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectEnvResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetProjectEnvResponse) ContentType() string {
 	if r.HTTPResponse != nil {
@@ -5673,10 +6029,11 @@ type UpdateMicrofrontendsResponse struct {
 				BypassSystem   *UpdateMicrofrontends200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 				LogHeaders     *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 				RateLimit      *struct {
-					Algo   UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-					Keys   []string                                                             `json:"keys"`
-					Limit  float32                                                              `json:"limit"`
-					Window float32                                                              `json:"window"`
+					Action *UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+					Algo   UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+					Keys   []string                                                                `json:"keys"`
+					Limit  float32                                                                 `json:"limit"`
+					Window float32                                                                 `json:"window"`
 				} `json:"rateLimit,omitempty"`
 				Redirect *struct {
 					Location  string                                                                   `json:"location"`
@@ -7459,10 +7816,11 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 			BypassSystem   *UpdateMicrofrontends200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 			LogHeaders     *UpdateMicrofrontends200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 			RateLimit      *struct {
-				Algo   UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-				Keys   []string                                                             `json:"keys"`
-				Limit  float32                                                              `json:"limit"`
-				Window float32                                                              `json:"window"`
+				Action *UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+				Algo   UpdateMicrofrontends200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+				Keys   []string                                                                `json:"keys"`
+				Limit  float32                                                                 `json:"limit"`
+				Window float32                                                                 `json:"window"`
 			} `json:"rateLimit,omitempty"`
 			Redirect *struct {
 				Location  string                                                                   `json:"location"`
@@ -20516,10 +20874,11 @@ type CreateProjectResponse struct {
 				BypassSystem   *CreateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 				LogHeaders     *CreateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 				RateLimit      *struct {
-					Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-					Keys   []string                                                      `json:"keys"`
-					Limit  float32                                                       `json:"limit"`
-					Window float32                                                       `json:"window"`
+					Action *CreateProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+					Algo   CreateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+					Keys   []string                                                         `json:"keys"`
+					Limit  float32                                                          `json:"limit"`
+					Window float32                                                          `json:"window"`
 				} `json:"rateLimit,omitempty"`
 				Redirect *struct {
 					Location  string                                                            `json:"location"`

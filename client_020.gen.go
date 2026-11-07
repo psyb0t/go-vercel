@@ -14,6 +14,397 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// FromCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration as the provided CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0
+func (t *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) FromCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0(v CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration, using the provided CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0
+func (t *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) MergeCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0(v CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodySnapshotExpiration1 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration as a CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1
+func (t CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) AsCreateSandboxesByNameForkV2JSONBodySnapshotExpiration1() (CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1, error) {
+	var body CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodySnapshotExpiration1 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration as the provided CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1
+func (t *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) FromCreateSandboxesByNameForkV2JSONBodySnapshotExpiration1(v CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodySnapshotExpiration1 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration, using the provided CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1
+func (t *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) MergeCreateSandboxesByNameForkV2JSONBodySnapshotExpiration1(v CreateSandboxesByNameForkV2JSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsTeam returns the union data inside the GetTeams200JSONResponseBody_Teams_Item as a Team
+func (t GetTeams200JSONResponseBody_Teams_Item) AsTeam() (Team, error) {
+	var body Team
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromTeam overwrites any union data inside the GetTeams200JSONResponseBody_Teams_Item as the provided Team
+func (t *GetTeams200JSONResponseBody_Teams_Item) FromTeam(v Team) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeTeam performs a merge with any union data inside the GetTeams200JSONResponseBody_Teams_Item, using the provided Team
+func (t *GetTeams200JSONResponseBody_Teams_Item) MergeTeam(v Team) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsTeamLimited returns the union data inside the GetTeams200JSONResponseBody_Teams_Item as a TeamLimited
+func (t GetTeams200JSONResponseBody_Teams_Item) AsTeamLimited() (TeamLimited, error) {
+	var body TeamLimited
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromTeamLimited overwrites any union data inside the GetTeams200JSONResponseBody_Teams_Item as the provided TeamLimited
+func (t *GetTeams200JSONResponseBody_Teams_Item) FromTeamLimited(v TeamLimited) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeTeamLimited performs a merge with any union data inside the GetTeams200JSONResponseBody_Teams_Item, using the provided TeamLimited
+func (t *GetTeams200JSONResponseBody_Teams_Item) MergeTeamLimited(v TeamLimited) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetTeams200JSONResponseBody_Teams_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetTeams200JSONResponseBody_Teams_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDefaultProjectJobs0 returns the union data inside the PatchTeamJSONBody_DefaultProjectJobs as a PatchTeamJSONBodyDefaultProjectJobs0
+func (t PatchTeamJSONBody_DefaultProjectJobs) AsPatchTeamJSONBodyDefaultProjectJobs0() (PatchTeamJSONBodyDefaultProjectJobs0, error) {
+	var body PatchTeamJSONBodyDefaultProjectJobs0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDefaultProjectJobs0 overwrites any union data inside the PatchTeamJSONBody_DefaultProjectJobs as the provided PatchTeamJSONBodyDefaultProjectJobs0
+func (t *PatchTeamJSONBody_DefaultProjectJobs) FromPatchTeamJSONBodyDefaultProjectJobs0(v PatchTeamJSONBodyDefaultProjectJobs0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDefaultProjectJobs0 performs a merge with any union data inside the PatchTeamJSONBody_DefaultProjectJobs, using the provided PatchTeamJSONBodyDefaultProjectJobs0
+func (t *PatchTeamJSONBody_DefaultProjectJobs) MergePatchTeamJSONBodyDefaultProjectJobs0(v PatchTeamJSONBodyDefaultProjectJobs0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyDefaultProjectJobs1 returns the union data inside the PatchTeamJSONBody_DefaultProjectJobs as a PatchTeamJSONBodyDefaultProjectJobs1
+func (t PatchTeamJSONBody_DefaultProjectJobs) AsPatchTeamJSONBodyDefaultProjectJobs1() (PatchTeamJSONBodyDefaultProjectJobs1, error) {
+	var body PatchTeamJSONBodyDefaultProjectJobs1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDefaultProjectJobs1 overwrites any union data inside the PatchTeamJSONBody_DefaultProjectJobs as the provided PatchTeamJSONBodyDefaultProjectJobs1
+func (t *PatchTeamJSONBody_DefaultProjectJobs) FromPatchTeamJSONBodyDefaultProjectJobs1(v PatchTeamJSONBodyDefaultProjectJobs1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDefaultProjectJobs1 performs a merge with any union data inside the PatchTeamJSONBody_DefaultProjectJobs, using the provided PatchTeamJSONBodyDefaultProjectJobs1
+func (t *PatchTeamJSONBody_DefaultProjectJobs) MergePatchTeamJSONBodyDefaultProjectJobs1(v PatchTeamJSONBodyDefaultProjectJobs1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DefaultProjectJobs) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DefaultProjectJobs) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as a PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+func (t PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0() (PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item, using the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as a PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+func (t PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1() (PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item as the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item, using the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0Environments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources_0_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources as a PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0
+func (t PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0() (PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources as the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources0(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources0 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources, using the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources0(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources as a PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1
+func (t PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) AsPatchTeamJSONBodyDeploymentPolicy0DeploymentSources1() (PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources1 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources as the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) FromPatchTeamJSONBodyDeploymentPolicy0DeploymentSources1(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources1 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources, using the provided PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) MergePatchTeamJSONBodyDeploymentPolicy0DeploymentSources1(v PatchTeamJSONBodyDeploymentPolicy0DeploymentSources1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_DeploymentSources) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as a PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0() (PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item, using the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as a PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1() (PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item as the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item, using the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Environments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as a PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0
+func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0() (PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0, error) {
+	var body PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0 overwrites any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) FromPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0 performs a merge with any union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item, using the provided PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0
+func (t *PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) MergePatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0(v PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1 returns the union data inside the PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item as a PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1
 func (t PatchTeamJSONBody_DeploymentPolicy_0_GitSources_0_Sources_Item) AsPatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1() (PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1, error) {
 	var body PatchTeamJSONBodyDeploymentPolicy0GitSources0Sources1
@@ -19614,407 +20005,6 @@ func (c *Client) CreateConnectorAuthorizationRequestWithBody(ctx context.Context
 // Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
 func (c *Client) CreateConnectorAuthorizationRequest(ctx context.Context, connector string, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateConnectorAuthorizationRequestRequest(c.Server, connector, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateConnectorWithBody Create a connector
-//
-// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
-func (c *Client) CreateConnectorWithBody(ctx context.Context, params *CreateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateConnectorRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateConnector Create a connector
-//
-// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
-func (c *Client) CreateConnector(ctx context.Context, params *CreateConnectorParams, body CreateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateConnectorRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteConnector Delete a connector
-//
-// Delete a connector, its project connections, and its installation records.
-//
-// Corresponds with DELETE /v1/connect/connectors/{connector} (the `DeleteConnector` operationId).
-func (c *Client) DeleteConnector(ctx context.Context, connector string, params *DeleteConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteConnectorRequest(c.Server, connector, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConnector Get a connector
-//
-// Get the connector by ID. Accepts a dashboard/team requester or a deployment's project OIDC token; project requesters may only read connectors linked to their project and environment.
-//
-// Corresponds with GET /v1/connect/connectors/{connector} (the `GetConnector` operationId).
-func (c *Client) GetConnector(ctx context.Context, connector string, params *GetConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConnectorRequest(c.Server, connector, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// EjectManagedConnector Eject a managed connector
-//
-// Disconnect a managed connector from its provider-side manager.
-//
-// Corresponds with POST /v1/connect/connectors/{connector}/managed/eject (the `EjectManagedConnector` operationId).
-func (c *Client) EjectManagedConnector(ctx context.Context, connector string, params *EjectManagedConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewEjectManagedConnectorRequest(c.Server, connector, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteConnectorProjectConnection Disconnect a connector from a project
-//
-// Disconnect a connector from a project.
-//
-// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId} (the `DeleteConnectorProjectConnection` operationId).
-func (c *Client) DeleteConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *DeleteConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteConnectorProjectConnectionRequest(c.Server, connector, projectId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConnectorProjectConnection Get a connector project connection
-//
-// Get the configuration that connects a connector to a project.
-//
-// Corresponds with GET /v1/connect/connectors/{connector}/projects/{projectId} (the `GetConnectorProjectConnection` operationId).
-func (c *Client) GetConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *GetConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConnectorProjectConnectionRequest(c.Server, connector, projectId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpsertConnectorProjectConnectionWithBody Create or update a connector project connection
-//
-// Connect a connector to a project, or replace the environments on an existing project connection.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
-func (c *Client) UpsertConnectorProjectConnectionWithBody(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpsertConnectorProjectConnectionRequestWithBody(c.Server, connector, projectId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpsertConnectorProjectConnection Create or update a connector project connection
-//
-// Connect a connector to a project, or replace the environments on an existing project connection.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
-func (c *Client) UpsertConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, body UpsertConnectorProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpsertConnectorProjectConnectionRequest(c.Server, connector, projectId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DisconnectConnectorProjectEnvironment Disconnect a connector from a project environment
-//
-// Remove a connector's access and event destinations for one project environment. Other environments, the connector, and its provider installations are preserved. Preview disconnect removes destinations for every preview branch in the project. Disconnecting the last environment also releases the project-local UID. Safe to retry.
-//
-// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment} (the `DisconnectConnectorProjectEnvironment` operationId).
-func (c *Client) DisconnectConnectorProjectEnvironment(ctx context.Context, connector string, projectId string, environment struct {
-	union json.RawMessage
-}, params *DisconnectConnectorProjectEnvironmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDisconnectConnectorProjectEnvironmentRequest(c.Server, connector, projectId, environment, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceConnectorTriggerDestinationsWithBody Update connector trigger destinations
-//
-// Replace the full set of destinations that receive trigger requests for a connector.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
-func (c *Client) ReplaceConnectorTriggerDestinationsWithBody(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceConnectorTriggerDestinationsRequestWithBody(c.Server, connector, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceConnectorTriggerDestinations Update connector trigger destinations
-//
-// Replace the full set of destinations that receive trigger requests for a connector.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
-func (c *Client) ReplaceConnectorTriggerDestinations(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, body ReplaceConnectorTriggerDestinationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceConnectorTriggerDestinationsRequest(c.Server, connector, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListNetworks List Secure Compute networks
-//
-// Allows to list Secure Compute networks.
-//
-// Corresponds with GET /v1/connect/networks (the `ListNetworks` operationId).
-func (c *Client) ListNetworks(ctx context.Context, params *ListNetworksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListNetworksRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateNetworkWithBody Create a Secure Compute network
-//
-// Allows to create a Secure Compute network.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
-func (c *Client) CreateNetworkWithBody(ctx context.Context, params *CreateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateNetworkRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateNetwork Create a Secure Compute network
-//
-// Allows to create a Secure Compute network.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
-func (c *Client) CreateNetwork(ctx context.Context, params *CreateNetworkParams, body CreateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateNetworkRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteNetwork Delete a Secure Compute network
-//
-// Allows to delete a Secure Compute network.
-//
-// Corresponds with DELETE /v1/connect/networks/{networkId} (the `DeleteNetwork` operationId).
-func (c *Client) DeleteNetwork(ctx context.Context, networkId string, params *DeleteNetworkParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteNetworkRequest(c.Server, networkId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReadNetwork Read a Secure Compute network
-//
-// Allows to read a Secure Compute network.
-//
-// Corresponds with GET /v1/connect/networks/{networkId} (the `ReadNetwork` operationId).
-func (c *Client) ReadNetwork(ctx context.Context, networkId string, params *ReadNetworkParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReadNetworkRequest(c.Server, networkId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateNetworkWithBody Update a Secure Compute network
-//
-// Allows to update a Secure Compute network.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
-func (c *Client) UpdateNetworkWithBody(ctx context.Context, networkId string, params *UpdateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateNetworkRequestWithBody(c.Server, networkId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateNetwork Update a Secure Compute network
-//
-// Allows to update a Secure Compute network.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
-func (c *Client) UpdateNetwork(ctx context.Context, networkId string, params *UpdateNetworkParams, body UpdateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateNetworkRequest(c.Server, networkId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConnectorTokenWithBody Get a Connect token
-//
-// Get an access token for a connector identified by the path parameter and scoped to the requester.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-func (c *Client) GetConnectorTokenWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConnectorTokenRequestWithBody(c.Server, connector, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetConnectorToken Get a Connect token
-//
-// Get an access token for a connector identified by the path parameter and scoped to the requester.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-func (c *Client) GetConnectorToken(ctx context.Context, connector string, body GetConnectorTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetConnectorTokenRequest(c.Server, connector, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAllChecks Retrieve a list of all checks
-//
-// List all of the checks created for a deployment.
-//
-// Corresponds with GET /v1/deployments/{deploymentId}/checks (the `GetAllChecks` operationId).
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) GetAllChecks(ctx context.Context, deploymentId string, params *GetAllChecksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAllChecksRequest(c.Server, deploymentId, params)
 	if err != nil {
 		return nil, err
 	}

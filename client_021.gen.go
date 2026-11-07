@@ -16,6 +16,407 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// CreateConnectorWithBody Create a connector
+//
+// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
+func (c *Client) CreateConnectorWithBody(ctx context.Context, params *CreateConnectorParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConnectorRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConnector Create a connector
+//
+// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/connect/connectors (the `CreateConnector` operationId).
+func (c *Client) CreateConnector(ctx context.Context, params *CreateConnectorParams, body CreateConnectorJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConnectorRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteConnector Delete a connector
+//
+// Delete a connector, its project connections, and its installation records.
+//
+// Corresponds with DELETE /v1/connect/connectors/{connector} (the `DeleteConnector` operationId).
+func (c *Client) DeleteConnector(ctx context.Context, connector string, params *DeleteConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteConnectorRequest(c.Server, connector, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetConnector Get a connector
+//
+// Get the connector by ID. Accepts a dashboard/team requester or a deployment's project OIDC token; project requesters may only read connectors linked to their project and environment.
+//
+// Corresponds with GET /v1/connect/connectors/{connector} (the `GetConnector` operationId).
+func (c *Client) GetConnector(ctx context.Context, connector string, params *GetConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetConnectorRequest(c.Server, connector, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EjectManagedConnector Eject a managed connector
+//
+// Disconnect a managed connector from its provider-side manager.
+//
+// Corresponds with POST /v1/connect/connectors/{connector}/managed/eject (the `EjectManagedConnector` operationId).
+func (c *Client) EjectManagedConnector(ctx context.Context, connector string, params *EjectManagedConnectorParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEjectManagedConnectorRequest(c.Server, connector, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteConnectorProjectConnection Disconnect a connector from a project
+//
+// Disconnect a connector from a project.
+//
+// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId} (the `DeleteConnectorProjectConnection` operationId).
+func (c *Client) DeleteConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *DeleteConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteConnectorProjectConnectionRequest(c.Server, connector, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetConnectorProjectConnection Get a connector project connection
+//
+// Get the configuration that connects a connector to a project.
+//
+// Corresponds with GET /v1/connect/connectors/{connector}/projects/{projectId} (the `GetConnectorProjectConnection` operationId).
+func (c *Client) GetConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *GetConnectorProjectConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetConnectorProjectConnectionRequest(c.Server, connector, projectId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpsertConnectorProjectConnectionWithBody Create or update a connector project connection
+//
+// Connect a connector to a project, or replace the environments on an existing project connection.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
+func (c *Client) UpsertConnectorProjectConnectionWithBody(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpsertConnectorProjectConnectionRequestWithBody(c.Server, connector, projectId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpsertConnectorProjectConnection Create or update a connector project connection
+//
+// Connect a connector to a project, or replace the environments on an existing project connection.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/connect/connectors/{connector}/projects/{projectId} (the `UpsertConnectorProjectConnection` operationId).
+func (c *Client) UpsertConnectorProjectConnection(ctx context.Context, connector string, projectId string, params *UpsertConnectorProjectConnectionParams, body UpsertConnectorProjectConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpsertConnectorProjectConnectionRequest(c.Server, connector, projectId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DisconnectConnectorProjectEnvironment Disconnect a connector from a project environment
+//
+// Remove a connector's access and event destinations for one project environment. Other environments, the connector, and its provider installations are preserved. Preview disconnect removes destinations for every preview branch in the project. Disconnecting the last environment also releases the project-local UID. Safe to retry.
+//
+// Corresponds with DELETE /v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment} (the `DisconnectConnectorProjectEnvironment` operationId).
+func (c *Client) DisconnectConnectorProjectEnvironment(ctx context.Context, connector string, projectId string, environment struct {
+	union json.RawMessage
+}, params *DisconnectConnectorProjectEnvironmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDisconnectConnectorProjectEnvironmentRequest(c.Server, connector, projectId, environment, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ReplaceConnectorTriggerDestinationsWithBody Update connector trigger destinations
+//
+// Replace the full set of destinations that receive trigger requests for a connector.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
+func (c *Client) ReplaceConnectorTriggerDestinationsWithBody(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewReplaceConnectorTriggerDestinationsRequestWithBody(c.Server, connector, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ReplaceConnectorTriggerDestinations Update connector trigger destinations
+//
+// Replace the full set of destinations that receive trigger requests for a connector.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/connect/connectors/{connector}/trigger-destinations (the `ReplaceConnectorTriggerDestinations` operationId).
+func (c *Client) ReplaceConnectorTriggerDestinations(ctx context.Context, connector string, params *ReplaceConnectorTriggerDestinationsParams, body ReplaceConnectorTriggerDestinationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewReplaceConnectorTriggerDestinationsRequest(c.Server, connector, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListNetworks List Secure Compute networks
+//
+// Allows to list Secure Compute networks.
+//
+// Corresponds with GET /v1/connect/networks (the `ListNetworks` operationId).
+func (c *Client) ListNetworks(ctx context.Context, params *ListNetworksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListNetworksRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateNetworkWithBody Create a Secure Compute network
+//
+// Allows to create a Secure Compute network.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
+func (c *Client) CreateNetworkWithBody(ctx context.Context, params *CreateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateNetworkRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateNetwork Create a Secure Compute network
+//
+// Allows to create a Secure Compute network.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/connect/networks (the `CreateNetwork` operationId).
+func (c *Client) CreateNetwork(ctx context.Context, params *CreateNetworkParams, body CreateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateNetworkRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteNetwork Delete a Secure Compute network
+//
+// Allows to delete a Secure Compute network.
+//
+// Corresponds with DELETE /v1/connect/networks/{networkId} (the `DeleteNetwork` operationId).
+func (c *Client) DeleteNetwork(ctx context.Context, networkId string, params *DeleteNetworkParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteNetworkRequest(c.Server, networkId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ReadNetwork Read a Secure Compute network
+//
+// Allows to read a Secure Compute network.
+//
+// Corresponds with GET /v1/connect/networks/{networkId} (the `ReadNetwork` operationId).
+func (c *Client) ReadNetwork(ctx context.Context, networkId string, params *ReadNetworkParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewReadNetworkRequest(c.Server, networkId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateNetworkWithBody Update a Secure Compute network
+//
+// Allows to update a Secure Compute network.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
+func (c *Client) UpdateNetworkWithBody(ctx context.Context, networkId string, params *UpdateNetworkParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateNetworkRequestWithBody(c.Server, networkId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateNetwork Update a Secure Compute network
+//
+// Allows to update a Secure Compute network.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/connect/networks/{networkId} (the `UpdateNetwork` operationId).
+func (c *Client) UpdateNetwork(ctx context.Context, networkId string, params *UpdateNetworkParams, body UpdateNetworkJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateNetworkRequest(c.Server, networkId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetConnectorTokenWithBody Get a Connect token
+//
+// Get an access token for a connector identified by the path parameter and scoped to the requester.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
+func (c *Client) GetConnectorTokenWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetConnectorTokenRequestWithBody(c.Server, connector, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetConnectorToken Get a Connect token
+//
+// Get an access token for a connector identified by the path parameter and scoped to the requester.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
+func (c *Client) GetConnectorToken(ctx context.Context, connector string, body GetConnectorTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetConnectorTokenRequest(c.Server, connector, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAllChecks Retrieve a list of all checks
+//
+// List all of the checks created for a deployment.
+//
+// Corresponds with GET /v1/deployments/{deploymentId}/checks (the `GetAllChecks` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *Client) GetAllChecks(ctx context.Context, deploymentId string, params *GetAllChecksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAllChecksRequest(c.Server, deploymentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // CreateCheckWithBody Creates a new Check
 //
 // Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
@@ -19603,420 +20004,6 @@ func NewCreateEdgeConfigTokenRequestWithBody(server string, edgeConfigId string,
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetEdgeConfigTokenRequest constructs an http.Request for the GetEdgeConfigToken method
-func NewGetEdgeConfigTokenRequest(server string, edgeConfigId string, token string, params *GetEdgeConfigTokenParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "token", token, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/token/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDeleteEdgeConfigTokensRequest calls the generic DeleteEdgeConfigTokens builder with application/json body
-func NewDeleteEdgeConfigTokensRequest(server string, edgeConfigId string, params *DeleteEdgeConfigTokensParams, body DeleteEdgeConfigTokensJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewDeleteEdgeConfigTokensRequestWithBody(server, edgeConfigId, params, "application/json", bodyReader)
-}
-
-// NewDeleteEdgeConfigTokensRequestWithBody constructs an http.Request for the DeleteEdgeConfigTokens method, with any body, and a specified content type
-func NewDeleteEdgeConfigTokensRequestWithBody(server string, edgeConfigId string, params *DeleteEdgeConfigTokensParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/tokens", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetEdgeConfigTokensRequest constructs an http.Request for the GetEdgeConfigTokens method
-func NewGetEdgeConfigTokensRequest(server string, edgeConfigId string, params *GetEdgeConfigTokensParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/tokens", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateInstallationRequest calls the generic UpdateInstallation builder with application/json body
-func NewUpdateInstallationRequest(server string, integrationConfigurationId string, body UpdateInstallationJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateInstallationRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewUpdateInstallationRequestWithBody constructs an http.Request for the UpdateInstallation method, with any body, and a specified content type
-func NewUpdateInstallationRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetAccountInfoRequest constructs an http.Request for the GetAccountInfo method
-func NewGetAccountInfoRequest(server string, integrationConfigurationId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/account", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewSubmitBillingDataRequest calls the generic SubmitBillingData builder with application/json body
-func NewSubmitBillingDataRequest(server string, integrationConfigurationId string, body SubmitBillingDataJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewSubmitBillingDataRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewSubmitBillingDataRequestWithBody constructs an http.Request for the SubmitBillingData method, with any body, and a specified content type
-func NewSubmitBillingDataRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/billing", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewSubmitPrepaymentBalancesRequest calls the generic SubmitPrepaymentBalances builder with application/json body
-func NewSubmitPrepaymentBalancesRequest(server string, integrationConfigurationId string, body SubmitPrepaymentBalancesJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewSubmitPrepaymentBalancesRequestWithBody(server, integrationConfigurationId, "application/json", bodyReader)
-}
-
-// NewSubmitPrepaymentBalancesRequestWithBody constructs an http.Request for the SubmitPrepaymentBalances method, with any body, and a specified content type
-func NewSubmitPrepaymentBalancesRequestWithBody(server string, integrationConfigurationId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "integrationConfigurationId", integrationConfigurationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/installations/%s/billing/balance", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)

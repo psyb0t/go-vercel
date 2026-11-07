@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.22.0, 2026-11-07
+
+- Breaking: removed `UserEvent_Payload.FromUserEventPayload126` and `MergeUserEventPayload126`. `Set` and `UnmarshalJSON` are removed from `UserEventPayload116` and `UserEventPayload260`.
+- Breaking: reshaped many `UserEventPayload` types again. Fields and their enum types and constants are removed, for example `UserEventPayload100.DocumentId`, `UserEventPayload103.BuildsEnabled`, `UserEventPayload114.ClientId` and `UserEventPayload120.PasswordProtection`. `UserEventPayload116` loses `AdditionalProperties`, `Get`, `MarshalJSON` and `MetricName`. `UserEventPayload102` and `UserEventPayload117` are no longer comparable.
+- Breaking: `UserEventPayload103.Configuration.Name` changed from `*string` to `string`.
+- Breaking: removed helper types such as `UserEvent_Payload_127_Job`, `UserEvent_Payload_219_Factors` and `UserEvent_Payload_345_RollbackDescription_Principal`.
+- Breaking: changed the anonymous struct in `JSON200` and `GetJSON200` of `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `UpdateMicrofrontendsResponse`, `DeleteProjectAvatarResponse` and `UploadProjectAvatarResponse`. The `GetProjects200JSONResponseBody0` element type and `GetProjects200JSONResponseBody1.Projects` and `GetProjects200JSONResponseBody2.Projects` changed too, so `AsGetProjects200JSONResponseBody0`, `FromGetProjects200JSONResponseBody0` and `MergeGetProjects200JSONResponseBody0` use a new struct shape.
+- Added fields and enum constants on other `UserEventPayload` types, for example `UserEventPayload100.GitOwnerName`, `UserEventPayload115.TokenCount`, `UserEventPayload138.Initiator`, `UserEventPayload201.Configurations` and `UserEventPayload388.Url`.
+- Generated from spec version 0.0.1.
+
 ## v0.21.0, 2026-11-06
 
 - Breaking: removed `UserEvent_Payload.AsUserEventPayload125`, `FromUserEventPayload125` and `MergeUserEventPayload125`. `Set` and `UnmarshalJSON` are removed from `UserEventPayload113` and `UserEventPayload257`.

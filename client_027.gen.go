@@ -12,6 +12,21 @@ import (
 	"time"
 )
 
+// PatchUrlProtectionBypassWithResponse Update the protection bypass for a URL
+//
+// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
+func (c *ClientWithResponses) PatchUrlProtectionBypassWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, body PatchUrlProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error) {
+	rsp, err := c.PatchUrlProtectionBypass(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchUrlProtectionBypassResponse(rsp)
+}
+
 // CreateApiKeysWithBodyWithResponse performs a POST /api-keys (the `CreateApiKeys` operationId) request,
 // with any type of body and a specified content type.
 //

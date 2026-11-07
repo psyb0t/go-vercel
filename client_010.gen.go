@@ -10,6 +10,319 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateApiKeysJSONBodyAiGatewayQuotaAlertThresholds defines parameters for CreateApiKeys.
+type CreateApiKeysJSONBodyAiGatewayQuotaAlertThresholds float32
+
+// CreateApiKeysJSONBodyAiGatewayQuotaRefreshPeriod defines parameters for CreateApiKeys.
+type CreateApiKeysJSONBodyAiGatewayQuotaRefreshPeriod string
+
+// UpdateApiKeyQuotaJSONBody defines parameters for UpdateApiKeyQuota.
+type UpdateApiKeyQuotaJSONBody struct {
+	// Active Whether the quota is currently active.
+	Active *bool `json:"active,omitempty"`
+
+	// AlertThresholds Spend percentages (a subset of [50, 75, 100]) at which to send a spend alert. Pass an empty array to disable alerts.
+	AlertThresholds *[]UpdateApiKeyQuotaJSONBodyAlertThresholds `json:"alertThresholds,omitempty"`
+
+	// Archived Set to true to archive (soft-delete) the quota. The api key itself is unaffected.
+	Archived *bool `json:"archived,omitempty"`
+
+	// IncludeByokInQuota Whether BYOK (Bring Your Own Key) usage counts against the quota.
+	IncludeByokInQuota *bool `json:"includeByokInQuota,omitempty"`
+
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.
+	Justification *string `json:"justification,omitempty"`
+
+	// LimitAmount The quota limit amount. Required if the quota does not yet exist.
+	LimitAmount *float32 `json:"limitAmount,omitempty"`
+
+	// RefreshPeriod How often the quota refreshes.
+	RefreshPeriod *UpdateApiKeyQuotaJSONBodyRefreshPeriod `json:"refreshPeriod,omitempty"`
+}
+
+// UpdateApiKeyQuotaJSONBodyAlertThresholds defines parameters for UpdateApiKeyQuota.
+type UpdateApiKeyQuotaJSONBodyAlertThresholds float32
+
+// UpdateApiKeyQuotaJSONBodyRefreshPeriod defines parameters for UpdateApiKeyQuota.
+type UpdateApiKeyQuotaJSONBodyRefreshPeriod string
+
+// GetDomainsRecordsByRecordId200JSONResponseBodyRecordType defines parameters for GetDomainsRecordsByRecordId.
+type GetDomainsRecordsByRecordId200JSONResponseBodyRecordType string
+
+// GetDomainsRecordsByRecordId200JSONResponseBodyType defines parameters for GetDomainsRecordsByRecordId.
+type GetDomainsRecordsByRecordId200JSONResponseBodyType string
+
+// AcceptProjectTransferRequestJSONBody defines parameters for AcceptProjectTransferRequest.
+type AcceptProjectTransferRequestJSONBody struct {
+	AcceptedPolicies *map[string]AcceptProjectTransferRequestJSONBody_AcceptedPolicies_AdditionalProperties `json:"acceptedPolicies,omitempty"`
+
+	// NewProjectName The desired name for the project
+	//
+	// Example: a-project-name
+	NewProjectName *string `json:"newProjectName,omitempty"`
+	PaidFeatures   *struct {
+		ConcurrentBuilds        *int  `json:"concurrentBuilds,omitempty"`
+		PasswordProtection      *bool `json:"passwordProtection,omitempty"`
+		PreviewDeploymentSuffix *bool `json:"previewDeploymentSuffix,omitempty"`
+	} `json:"paidFeatures,omitempty"`
+}
+
+// AcceptProjectTransferRequestParams defines parameters for AcceptProjectTransferRequest.
+type AcceptProjectTransferRequestParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// AcceptProjectTransferRequestJSONBody_AcceptedPolicies_AdditionalProperties defines parameters for AcceptProjectTransferRequest.
+type AcceptProjectTransferRequestJSONBody_AcceptedPolicies_AdditionalProperties struct {
+	Eula                 time.Time            `json:"eula"`
+	Privacy              time.Time            `json:"privacy"`
+	AdditionalProperties map[string]time.Time `json:"-"`
+}
+
+// AcceptProjectTransferRequest202JSONResponseBodyPartnerCallsResultStatus defines parameters for AcceptProjectTransferRequest.
+type AcceptProjectTransferRequest202JSONResponseBodyPartnerCallsResultStatus string
+
+// CreateProjectTransferRequestJSONBody defines parameters for CreateProjectTransferRequest.
+type CreateProjectTransferRequestJSONBody struct {
+	// CallbackSecret The secret to use to sign the webhook payload with HMAC-SHA256.
+	CallbackSecret *string `json:"callbackSecret,omitempty"`
+
+	// CallbackUrl The URL to send a webhook to when the transfer is accepted.
+	CallbackUrl *string `json:"callbackUrl,omitempty"`
+}
+
+// CreateProjectTransferRequestParams defines parameters for CreateProjectTransferRequest.
+type CreateProjectTransferRequestParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateSpeedInsightsToggleJSONBody defines parameters for CreateSpeedInsightsToggle.
+type CreateSpeedInsightsToggleJSONBody struct {
+	Value bool `json:"value"`
+}
+
+// CreateSpeedInsightsToggleParams defines parameters for CreateSpeedInsightsToggle.
+type CreateSpeedInsightsToggleParams struct {
+	ProjectId string `form:"projectId" json:"projectId"`
+}
+
+// CreateSpeedInsightsToggle200JSONResponseBodyValue defines parameters for CreateSpeedInsightsToggle.
+type CreateSpeedInsightsToggle200JSONResponseBodyValue bool
+
+// CreateStorageStoresBlobJSONBody defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlobJSONBody struct {
+	Access    *CreateStorageStoresBlobJSONBodyAccess `json:"access,omitempty"`
+	Name      string                                 `json:"name"`
+	ProjectId *string                                `json:"projectId,omitempty"`
+	Region    *CreateStorageStoresBlobJSONBodyRegion `json:"region,omitempty"`
+}
+
+// CreateStorageStoresBlobJSONBodyAccess defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlobJSONBodyAccess string
+
+// CreateStorageStoresBlobJSONBodyRegion defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlobJSONBodyRegion string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreAccess defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreAccess string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreIsTokenExpired defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreIsTokenExpired bool
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreKind defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreKind string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreProjectFilterGitProviders0 defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreProjectFilterGitProviders0 = []string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreProjectFilterGitProviders1 defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreProjectFilterGitProviders1 string
+
+// CreateStorageStoresBlob200JSONResponseBody_Store_ProjectFilter_Git_Providers defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBody_Store_ProjectFilter_Git_Providers struct {
+	union json.RawMessage
+}
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataDeploymentsRequired defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataDeploymentsRequired bool
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataFramework defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataFramework string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive bool
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataSecretsOutdated defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreProjectsMetadataSecretsOutdated bool
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreRegion defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreRegion string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreStatus defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreStatus string
+
+// CreateStorageStoresBlob200JSONResponseBodyStoreUsageQuotaExceeded defines parameters for CreateStorageStoresBlob.
+type CreateStorageStoresBlob200JSONResponseBodyStoreUsageQuotaExceeded bool
+
+// GetStorageStoresByIdParams defines parameters for GetStorageStoresById.
+type GetStorageStoresByIdParams struct {
+	SkipMetadata  *bool `form:"skip-metadata,omitempty" json:"skip-metadata,omitempty"`
+	IncludeGuides *bool `form:"include-guides,omitempty" json:"include-guides,omitempty"`
+}
+
+// GetStorageStoresById200JSONResponseBodyStoreProjectFilterGitProviders0 defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreProjectFilterGitProviders0 = []string
+
+// GetStorageStoresById200JSONResponseBodyStoreProjectFilterGitProviders1 defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreProjectFilterGitProviders1 string
+
+// GetStorageStoresById200JSONResponseBody_Store_ProjectFilter_Git_Providers defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBody_Store_ProjectFilter_Git_Providers struct {
+	union json.RawMessage
+}
+
+// GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataDeploymentsRequired defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataDeploymentsRequired bool
+
+// GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataFramework defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataFramework string
+
+// GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive bool
+
+// GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataSecretsOutdated defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreProjectsMetadataSecretsOutdated bool
+
+// GetStorageStoresById200JSONResponseBodyStoreStatus defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreStatus string
+
+// GetStorageStoresById200JSONResponseBodyStoreUsageQuotaExceeded defines parameters for GetStorageStoresById.
+type GetStorageStoresById200JSONResponseBodyStoreUsageQuotaExceeded bool
+
+// ListAccessGroupsParams defines parameters for ListAccessGroups.
+type ListAccessGroupsParams struct {
+	// ProjectId Filter access groups by project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// Search Search for access groups by name.
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// MembersLimit Number of members to include in the response.
+	MembersLimit *int `form:"membersLimit,omitempty" json:"membersLimit,omitempty"`
+
+	// ProjectsLimit Number of projects to include in the response.
+	ProjectsLimit *int `form:"projectsLimit,omitempty" json:"projectsLimit,omitempty"`
+
+	// Limit Limit how many access group should be returned.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Next Continuation cursor to retrieve the next page of results.
+	Next *string `form:"next,omitempty" json:"next,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAccessGroups200JSONResponseBody0 defines parameters for ListAccessGroups.
+type ListAccessGroups200JSONResponseBody0 = map[string]interface{}
+
+// ListAccessGroups200JSONResponseBody1 defines parameters for ListAccessGroups.
+type ListAccessGroups200JSONResponseBody1 struct {
+	AccessGroups []struct {
+		// AccessGroupId ID of the access group.
+		//
+		// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
+		AccessGroupId string `json:"accessGroupId"`
+
+		// CreatedAt Timestamp in milliseconds when the access group was created.
+		//
+		// Example: 1588720733602
+		CreatedAt      string                                                         `json:"createdAt"`
+		Entitlements   *[]string                                                      `json:"entitlements,omitempty"`
+		IsDsyncManaged ListAccessGroups200JSONResponseBody1AccessGroupsIsDsyncManaged `json:"isDsyncManaged"`
+		Members        *[]string                                                      `json:"members,omitempty"`
+
+		// MembersCount Number of members in the access group.
+		//
+		// Example: 5
+		MembersCount float32 `json:"membersCount"`
+
+		// Name The name of this access group.
+		//
+		// Example: my-access-group
+		Name     string    `json:"name"`
+		Projects *[]string `json:"projects,omitempty"`
+
+		// ProjectsCount Number of projects in the access group.
+		//
+		// Example: 2
+		ProjectsCount float32 `json:"projectsCount"`
+
+		// TeamId ID of the team that this access group belongs to.
+		//
+		// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
+		TeamId          string    `json:"teamId"`
+		TeamPermissions *[]string `json:"teamPermissions,omitempty"`
+
+		// TeamRoles Roles that the team has in the access group.
+		//
+		// Example: ["DEVELOPER","BILLING"]
+		TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+		// UpdatedAt Timestamp in milliseconds when the access group was last updated.
+		//
+		// Example: 1588720733602
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"accessGroups"`
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next"`
+	} `json:"pagination"`
+}
+
+// ListAccessGroups200JSONResponseBody1AccessGroupsIsDsyncManaged defines parameters for ListAccessGroups.
+type ListAccessGroups200JSONResponseBody1AccessGroupsIsDsyncManaged bool
+
+// ListAccessGroups200JSONResponseBody defines parameters for ListAccessGroups.
+type ListAccessGroups200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// CreateAccessGroupJSONBody defines parameters for CreateAccessGroup.
+type CreateAccessGroupJSONBody struct {
+	// MembersToAdd List of members to add to the access group.
+	//
+	// Example: ["usr_1a2b3c4d5e6f7g8h9i0j","usr_2b3c4d5e6f7g8h9i0j1k"]
+	MembersToAdd *[]string `json:"membersToAdd,omitempty"`
+
+	// Name The name of the access group
+	//
+	// Example: My access group
+	Name     string `json:"name"`
+	Projects *[]struct {
+		// ProjectId The ID of the project.
+		//
+		// Example: prj_ndlgr43fadlPyCtREAqxxdyFK
+		ProjectId string `json:"projectId"`
+
+		// Role The project role that will be added to this Access Group. "null" will remove this project level role.
+		//
+		// Example: ADMIN
+		Role *CreateAccessGroupJSONBodyProjectsRole `json:"role"`
+	} `json:"projects,omitempty"`
+}
+
 // CreateAccessGroupParams defines parameters for CreateAccessGroup.
 type CreateAccessGroupParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -14195,6 +14508,9 @@ type DeleteProjectAvatar200JSONResponseBody_Security_Rulesets_LogHeaders struct 
 	union json.RawMessage
 }
 
+// DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAction defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAction string
+
 // DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo string
 
@@ -15946,6 +16262,9 @@ type UploadProjectAvatar200JSONResponseBodySecurityRulesetsLogHeaders1 string
 type UploadProjectAvatar200JSONResponseBody_Security_Rulesets_LogHeaders struct {
 	union json.RawMessage
 }
+
+// UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAction defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAction string
 
 // UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodySecurityRulesetsRateLimitAlgo string
@@ -19691,345 +20010,4 @@ type UpdateFlagSegmentJSONBodyDataRulesConditionsLhs1 struct {
 	Attribute string      `json:"attribute"`
 	Kind      string      `json:"kind"`
 	Type      interface{} `json:"type"`
-}
-
-// UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0 struct {
-	Items []UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item `json:"items"`
-	Type  UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Type               `json:"type"`
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Items0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Items1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs0Type string
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs1 struct {
-	Flags   string      `json:"flags"`
-	Pattern string      `json:"pattern"`
-	Type    interface{} `json:"type"`
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs2 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs2 = string
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs3 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs3 = float32
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsRhs4 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsRhs4 = bool
-
-// UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesOutcome0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesOutcome0 struct {
-	Type interface{} `json:"type"`
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesOutcome1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesOutcome1 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-	PassPromille float32     `json:"passPromille"`
-	Type         interface{} `json:"type"`
-}
-
-// UpdateFlagSegmentJSONBody_Data_Rules_Outcome defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBody_Data_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegmentJSONBodyOperationsAction defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyOperationsAction string
-
-// UpdateFlagSegmentJSONBodyOperationsField defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyOperationsField string
-
-// UpdateFlagSegment200JSONResponseBody0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0 struct {
-	CreatedAt float32 `json:"createdAt"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	Data      struct {
-		Exclude *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"exclude,omitempty"`
-		Include *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"include,omitempty"`
-		Rules *[]struct {
-			Conditions []struct {
-				Cmp        UpdateFlagSegment200JSONResponseBody0DataRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *UpdateFlagSegment200JSONResponseBody0DataRulesConditionsCmpOptionsIgnoreCase `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                                                    `json:"id"`
-			Outcome UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Outcome `json:"outcome"`
-		} `json:"rules,omitempty"`
-	} `json:"data"`
-	Description    *string                                       `json:"description,omitempty"`
-	Hint           string                                        `json:"hint"`
-	Id             string                                        `json:"id"`
-	Label          string                                        `json:"label"`
-	ProjectId      string                                        `json:"projectId"`
-	Slug           string                                        `json:"slug"`
-	TypeName       UpdateFlagSegment200JSONResponseBody0TypeName `json:"typeName"`
-	UpdatedAt      float32                                       `json:"updatedAt"`
-	UsedByFlags    *[]string                                     `json:"usedByFlags,omitempty"`
-	UsedBySegments *[]string                                     `json:"usedBySegments,omitempty"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsCmp defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsCmp string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsCmpOptionsIgnoreCase defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsCmpOptionsIgnoreCase bool
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs0 struct {
-	Type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs0Type `json:"type"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs0Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs0Type string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs1 struct {
-	Attribute string                                                           `json:"attribute"`
-	Kind      string                                                           `json:"kind"`
-	Type      UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs1Type `json:"type"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs1Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsLhs1Type string
-
-// UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Lhs defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs0 = string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs1 = float32
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2 struct {
-	Items []UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Type                `json:"type"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Items0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Items1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Rhs_2_Items_Item defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs2Type string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs3 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs3 struct {
-	Flags   string                                                           `json:"flags"`
-	Pattern string                                                           `json:"pattern"`
-	Type    UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs3Type `json:"type"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs3Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs3Type string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs4 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesConditionsRhs4 bool
-
-// UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Rhs defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesOutcome0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesOutcome0 struct {
-	Type UpdateFlagSegment200JSONResponseBody0DataRulesOutcome0Type `json:"type"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesOutcome0Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesOutcome0Type string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1 struct {
-	Base struct {
-		Attribute string                                                         `json:"attribute"`
-		Kind      string                                                         `json:"kind"`
-		Type      UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	PassPromille float32                                                    `json:"passPromille"`
-	Type         UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1Type `json:"type"`
-}
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1BaseType defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1BaseType string
-
-// UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1Type defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0DataRulesOutcome1Type string
-
-// UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Outcome defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody_0_Data_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// UpdateFlagSegment200JSONResponseBody0TypeName defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody0TypeName string
-
-// UpdateFlagSegment200JSONResponseBody defines parameters for UpdateFlagSegment.
-type UpdateFlagSegment200JSONResponseBody struct {
-	union json.RawMessage
-}
-
-// GetFlagSettingsParams defines parameters for GetFlagSettings.
-type GetFlagSettingsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetFlagSettings200JSONResponseBodyEnabled defines parameters for GetFlagSettings.
-type GetFlagSettings200JSONResponseBodyEnabled bool
-
-// GetFlagSettings200JSONResponseBodyTypeName defines parameters for GetFlagSettings.
-type GetFlagSettings200JSONResponseBodyTypeName string
-
-// UpdateFlagSettingsJSONBody defines parameters for UpdateFlagSettings.
-type UpdateFlagSettingsJSONBody struct {
-	Enabled  *bool `json:"enabled,omitempty"`
-	Entities *[]struct {
-		Attributes []struct {
-			Key    string `json:"key"`
-			Labels *[]struct {
-				Label string `json:"label"`
-				Value string `json:"value"`
-			} `json:"labels,omitempty"`
-			Type string `json:"type"`
-		} `json:"attributes"`
-		Kind  string `json:"kind"`
-		Label string `json:"label"`
-	} `json:"entities,omitempty"`
-
-	// Environments The environments to sync
-	Environments *[]string `json:"environments,omitempty"`
-}
-
-// UpdateFlagSettingsParams defines parameters for UpdateFlagSettings.
-type UpdateFlagSettingsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateFlagSettings200JSONResponseBodyEnabled defines parameters for UpdateFlagSettings.
-type UpdateFlagSettings200JSONResponseBodyEnabled bool
-
-// UpdateFlagSettings200JSONResponseBodyTypeName defines parameters for UpdateFlagSettings.
-type UpdateFlagSettings200JSONResponseBodyTypeName string
-
-// UpdateFlagSettings201JSONResponseBodyEnabled defines parameters for UpdateFlagSettings.
-type UpdateFlagSettings201JSONResponseBodyEnabled bool
-
-// UpdateFlagSettings201JSONResponseBodyTypeName defines parameters for UpdateFlagSettings.
-type UpdateFlagSettings201JSONResponseBodyTypeName string
-
-// GetRuntimeLogsParams defines parameters for GetRuntimeLogs.
-type GetRuntimeLogsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetRuntimeLogs200ApplicationStreamPlusJSONResponseBodyLevel defines parameters for GetRuntimeLogs.
-type GetRuntimeLogs200ApplicationStreamPlusJSONResponseBodyLevel string
-
-// GetRuntimeLogs200ApplicationStreamPlusJSONResponseBodyMessageTruncated defines parameters for GetRuntimeLogs.
-type GetRuntimeLogs200ApplicationStreamPlusJSONResponseBodyMessageTruncated bool
-
-// GetRuntimeLogs200ApplicationStreamPlusJSONResponseBodySource defines parameters for GetRuntimeLogs.
-type GetRuntimeLogs200ApplicationStreamPlusJSONResponseBodySource string
-
-// UpdateMicrofrontendsJSONBody defines parameters for UpdateMicrofrontends.
-type UpdateMicrofrontendsJSONBody struct {
-	// DefaultRoute The default route used for screenshots and preview links for the project
-	//
-	// Example: /home
-	DefaultRoute *string `json:"defaultRoute,omitempty"`
-
-	// DoNotRouteWithMicrofrontendsRouting Whether domains in this project should route as a microfrontend. Can only be set for child applications.
-	DoNotRouteWithMicrofrontendsRouting *bool `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
-
-	// Enabled Enable or disable microfrontends for the project
-	//
-	// Example: true
-	Enabled *bool `json:"enabled,omitempty"`
-
-	// IsDefaultApp Whether the application is the default application for the microfrontends group
-	//
-	// Example: true
-	IsDefaultApp *bool `json:"isDefaultApp,omitempty"`
-
-	// MicrofrontendsGroupId The unique group identifier to add this microfrontend to
-	//
-	// Example: mfe_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-	MicrofrontendsGroupId *string `json:"microfrontendsGroupId,omitempty"`
-
-	// RouteObservabilityToThisProject Whether observability data should be routed to this project or a root project. Can only be set for child applications.
-	RouteObservabilityToThisProject *bool `json:"routeObservabilityToThisProject,omitempty"`
 }

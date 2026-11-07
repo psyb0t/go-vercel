@@ -8604,10 +8604,11 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 					BypassSystem   *GetProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 					LogHeaders     *GetProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 					RateLimit      *struct {
-						Algo   GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                   `json:"keys"`
-						Limit  float32                                                    `json:"limit"`
-						Window float32                                                    `json:"window"`
+						Action *GetProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+						Algo   GetProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+						Keys   []string                                                      `json:"keys"`
+						Limit  float32                                                       `json:"limit"`
+						Window float32                                                       `json:"window"`
 					} `json:"rateLimit,omitempty"`
 					Redirect *struct {
 						Location  string                                                         `json:"location"`
@@ -10427,10 +10428,11 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 					BypassSystem   *UpdateProject200JSONResponseBodySecurityRulesetsBypassSystem  `json:"bypassSystem,omitempty"`
 					LogHeaders     *UpdateProject200JSONResponseBody_Security_Rulesets_LogHeaders `json:"logHeaders,omitempty"`
 					RateLimit      *struct {
-						Algo   UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo `json:"algo"`
-						Keys   []string                                                      `json:"keys"`
-						Limit  float32                                                       `json:"limit"`
-						Window float32                                                       `json:"window"`
+						Action *UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAction `json:"action,omitempty"`
+						Algo   UpdateProject200JSONResponseBodySecurityRulesetsRateLimitAlgo    `json:"algo"`
+						Keys   []string                                                         `json:"keys"`
+						Limit  float32                                                          `json:"limit"`
+						Window float32                                                          `json:"window"`
 					} `json:"rateLimit,omitempty"`
 					Redirect *struct {
 						Location  string                                                            `json:"location"`
@@ -11361,6 +11363,9 @@ func ParseUpdateProjectDomainResponse(rsp *http.Response) (*UpdateProjectDomainR
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
 		break // No content-type
 
 	}
