@@ -13796,6 +13796,9 @@ type CreateIntegrationStoreDirectResponse struct {
 				Length               float32                                                                          `json:"length"`
 				Name                 string                                                                           `json:"name"`
 				NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
+
+				// TokenSetKey The token set key `name` is built from; absent for env vars that are not in the token set.
+				TokenSetKey *string `json:"tokenSetKey,omitempty"`
 			} `json:"secrets"`
 			SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
 			Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
@@ -14033,6 +14036,9 @@ func (r CreateIntegrationStoreDirectResponse) GetJSON200() *struct {
 			Length               float32                                                                          `json:"length"`
 			Name                 string                                                                           `json:"name"`
 			NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
+
+			// TokenSetKey The token set key `name` is built from; absent for env vars that are not in the token set.
+			TokenSetKey *string `json:"tokenSetKey,omitempty"`
 		} `json:"secrets"`
 		SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
 		Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`

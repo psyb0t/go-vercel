@@ -2,6 +2,11 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.23.0, 2026-11-08
+
+- Breaking: added the optional field `TokenSetKey` (`*string`) to the store secrets items in `CreateIntegrationStoreDirectResponse.JSON200`. It holds the token set key that `name` is built from and is absent for env vars outside the token set.
+- Because the response uses anonymous struct types, the types of `CreateIntegrationStoreDirectResponse.JSON200` and `GetJSON200` change. Code that spells out those struct types must be updated.
+
 ## v0.22.0, 2026-11-07
 
 - Breaking: removed `UserEvent_Payload.FromUserEventPayload126` and `MergeUserEventPayload126`. `Set` and `UnmarshalJSON` are removed from `UserEventPayload116` and `UserEventPayload260`.
