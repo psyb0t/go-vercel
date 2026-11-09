@@ -7,6 +7,77 @@ import (
 	"encoding/json"
 )
 
+// GetProjects200JSONResponseBody2Pagination0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2Pagination0 struct {
+	// Count Amount of items in the current page.
+	//
+	// Example: 20
+	Count float32 `json:"count"`
+
+	// Next Continuation token that must be used to request the next page. Base32 encoded for safe URL transmission.
+	//
+	// Example: JBSWY3DPEHPK3PXP
+	Next *string `json:"next"`
+}
+
+// GetProjects200JSONResponseBody_2_Pagination defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Pagination struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsAliasConfiguredBy defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasConfiguredBy string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned0 = float32
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned1 bool
+
+// GetProjects200JSONResponseBody_2_Projects_Alias_Deployment_AliasAssigned defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_2_Projects_Alias_Deployment_AliasAssigned struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentBranchMatcherType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentBranchMatcherType string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksConclusion defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksConclusion string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksState defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksState string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentConnectBuildsEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentConnectBuildsEnabled bool
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentForced defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentForced bool
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentPlan defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentPlan string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentPreviewCommentsEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentPreviewCommentsEnabled bool
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentPrivate defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentPrivate bool
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadyState defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadyState string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadySubstate defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadySubstate string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentType string
+
+// GetProjects200JSONResponseBody2ProjectsAliasDeploymentWithCache defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasDeploymentWithCache bool
+
+// GetProjects200JSONResponseBody2ProjectsAliasEnvironment defines parameters for GetProjects.
+type GetProjects200JSONResponseBody2ProjectsAliasEnvironment string
+
 // GetProjects200JSONResponseBody2ProjectsAliasRedirectStatusCode defines parameters for GetProjects.
 type GetProjects200JSONResponseBody2ProjectsAliasRedirectStatusCode float32
 
@@ -19850,7 +19921,7 @@ type RunSessionCommandParams struct {
 
 // GetSessionCommandParams defines parameters for GetSessionCommand.
 type GetSessionCommandParams struct {
-	// Wait If set to "true", the request will block until the command finishes execution. Useful for synchronously waiting for command completion.
+	// Wait If set to "true", the request will block until the command finishes execution and the response will include its exit code. Otherwise, `exitCode` is `null` unless a previous request waited for the command to finish.
 	Wait *GetSessionCommandParamsWait `form:"wait,omitempty" json:"wait,omitempty"`
 
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -19945,150 +20016,4 @@ type CreateSessionDirectoryJSONBody struct {
 
 	// Recursive If true, creates parent directories as needed (like `mkdir -p`). If false, fails if parent directories do not exist.
 	Recursive *bool `json:"recursive,omitempty"`
-}
-
-// CreateSessionDirectoryParams defines parameters for CreateSessionDirectory.
-type CreateSessionDirectoryParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ReadSessionFileJSONBody defines parameters for ReadSessionFile.
-type ReadSessionFileJSONBody struct {
-	// Cwd The base directory for resolving relative paths. If not specified, paths are resolved from the sandbox home directory.
-	//
-	// Example: /home/vercel-sandbox
-	Cwd *string `json:"cwd,omitempty"`
-
-	// Path The path of the file to read. Can be absolute or relative to the working directory.
-	//
-	// Example: dist/agent-output.md
-	Path string `json:"path"`
-}
-
-// ReadSessionFileParams defines parameters for ReadSessionFile.
-type ReadSessionFileParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// WriteSessionFilesParams defines parameters for WriteSessionFiles.
-type WriteSessionFilesParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-
-	// XCwd The target directory where the tarball contents will be extracted. If not specified, files are extracted to the sandbox home directory.
-	XCwd *string `json:"x-cwd,omitempty"`
-}
-
-// UpdateSessionNetworkPolicyJSONBody defines parameters for UpdateSessionNetworkPolicy.
-type UpdateSessionNetworkPolicyJSONBody struct {
-	union json.RawMessage
-}
-
-// UpdateSessionNetworkPolicyParams defines parameters for UpdateSessionNetworkPolicy.
-type UpdateSessionNetworkPolicyParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateSessionNetworkPolicyJSONBody0 defines parameters for UpdateSessionNetworkPolicy.
-type UpdateSessionNetworkPolicyJSONBody0 struct {
-	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
-	//
-	// Example: ["35.192.0.0/12","104.16.0.0/12"]
-	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
-
-	// AllowedDomains List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
-	//
-	// Example: ["api.github.com","*.npmjs.org"]
-	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
-
-	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-	//
-	// Example: ["35.192.0.0/12"]
-	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
-
-	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
-	InjectionRules *[]struct {
-		// Domain The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
-		Domain string `json:"domain"`
-
-		// Headers HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
-		Headers map[string]string `json:"headers"`
-
-		// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-		Match *struct {
-			// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-			Headers *[]struct {
-				// Key Matcher for the entry key (header name or query key).
-				Key *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"key,omitempty"`
-
-				// Value Matcher for the entry value.
-				Value *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"value,omitempty"`
-			} `json:"headers,omitempty"`
-
-			// Method HTTP methods to match. Any single match succeeds (OR semantics).
-			Method *[]string `json:"method,omitempty"`
-
-			// Path Match on the request path. Comparison is case-sensitive.
-			Path *struct {
-				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-				Exact *string `json:"exact,omitempty"`
-
-				// StartsWith Match values that start with the given prefix.
-				StartsWith *string `json:"startsWith,omitempty"`
-			} `json:"path,omitempty"`
-
-			// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-			QueryString *[]struct {
-				// Key Matcher for the entry key (header name or query key).
-				Key *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"key,omitempty"`
-
-				// Value Matcher for the entry value.
-				Value *struct {
-					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-					Exact *string `json:"exact,omitempty"`
-
-					// StartsWith Match values that start with the given prefix.
-					StartsWith *string `json:"startsWith,omitempty"`
-				} `json:"value,omitempty"`
-			} `json:"queryString,omitempty"`
-		} `json:"match,omitempty"`
-	} `json:"injectionRules,omitempty"`
-
-	// Mode The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
-	//
-	// Example: custom
-	Mode UpdateSessionNetworkPolicyJSONBody0Mode `json:"mode"`
 }

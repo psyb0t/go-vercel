@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.24.0, 2026-11-09
+
+- Breaking: removed `(*UserEventPayload262).Set` and `(*UserEventPayload262).UnmarshalJSON`. Added `(*UserEventPayload264).Set` and `(*UserEventPayload264).UnmarshalJSON`.
+- Breaking: reshaped many `UserEventPayload` types again. Fields and their enum types and constants are removed, for example `UserEventPayload160.SrcImages`, `UserEventPayload164.EdgeConfigDigest`, `UserEventPayload168.FromAccount`, `UserEventPayload175.ProjectId` and `UserEventPayload179.Value`. `UserEventPayload162`, `UserEventPayload163`, `UserEventPayload172` and others are no longer comparable.
+- Breaking: changed field types, for example `UserEventPayload167.EdgeConfigDigest` from `*string` to `string`, `UserEventPayload178.Key` from `string` to `*string`, and `UserEventPayload179.ProjectId` from `*[]string` to `*string`.
+- Breaking: removed helper types such as `UserEvent_Payload_175_Target`, `UserEvent_Payload_221_Factors` and `UserEvent_Payload_347_RollbackDescription_Principal`.
+- Added fields on other `UserEventPayload` types, for example `UserEventPayload160.DriveName`, `UserEventPayload161.SnapshotId` and `UserEventPayload164.ProjectName`.
+- Added the event types `ListEventTypeNameDriveCreated`, `ListEventTypeNameDriveDeleted`, `ListEventTypeNameDriveSnapshotCreated` and `ListEventTypeNameDriveSnapshotDeleted`, with their `ListEventTypeReplacedBy...` counterparts.
+- Added the `gzip` compression constants for log drain delivery, for example `CreateDrainJSONBodyDelivery2CompressionGzip` and `UpdateDrainJSONBodyDelivery2CompressionGzip`.
+- Added status variant 12 for Vercel CI invocations, for example `GetVercelCiInvocation200JSONResponseBodyInvocationStatus12` with its `As`, `From` and `Merge` methods, and `ListVercelCiInvocationsParamsStatusAwaitingApproval`.
+- Generated from spec version 0.0.1.
+
 ## v0.23.0, 2026-11-08
 
 - Breaking: added the optional field `TokenSetKey` (`*string`) to the store secrets items in `CreateIntegrationStoreDirectResponse.JSON200`. It holds the token set key that `name` is built from and is absent for env vars outside the token set.

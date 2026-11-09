@@ -16,6 +16,249 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// DeleteRedirects Delete project-level redirects.
+//
+// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
+func (c *Client) DeleteRedirects(ctx context.Context, params *DeleteRedirectsParams, body DeleteRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteRedirectsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetRedirects Gets project-level redirects.
+//
+// Get the version history for a project's bulk redirects.
+//
+// Corresponds with GET /v1/bulk-redirects (the `GetRedirects` operationId).
+func (c *Client) GetRedirects(ctx context.Context, params *GetRedirectsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetRedirectsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EditRedirectWithBody Edit a project-level redirect.
+//
+// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
+func (c *Client) EditRedirectWithBody(ctx context.Context, params *EditRedirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEditRedirectRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EditRedirect Edit a project-level redirect.
+//
+// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
+func (c *Client) EditRedirect(ctx context.Context, params *EditRedirectParams, body EditRedirectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEditRedirectRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StageRedirectsWithBody Stages new redirects for a project.
+//
+// Stages new redirects for a project and returns the new version.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
+func (c *Client) StageRedirectsWithBody(ctx context.Context, params *StageRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStageRedirectsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StageRedirects Stages new redirects for a project.
+//
+// Stages new redirects for a project and returns the new version.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
+func (c *Client) StageRedirects(ctx context.Context, params *StageRedirectsParams, body StageRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStageRedirectsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RestoreRedirectsWithBody Restore staged project-level redirects to their production version.
+//
+// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
+func (c *Client) RestoreRedirectsWithBody(ctx context.Context, params *RestoreRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestoreRedirectsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RestoreRedirects Restore staged project-level redirects to their production version.
+//
+// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
+func (c *Client) RestoreRedirects(ctx context.Context, params *RestoreRedirectsParams, body RestoreRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestoreRedirectsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVersions Get the version history for a project's redirects.
+//
+// Get the version history for a project's bulk redirects.
+//
+// Corresponds with GET /v1/bulk-redirects/versions (the `GetVersions` operationId).
+func (c *Client) GetVersions(ctx context.Context, params *GetVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVersionsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateVersionWithBody Promote a staging version to production or restore a previous production version.
+//
+// Update a version by promoting staging to production or restoring a previous production version.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
+func (c *Client) UpdateVersionWithBody(ctx context.Context, params *UpdateVersionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateVersionRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateVersion Promote a staging version to production or restore a previous production version.
+//
+// Update a version by promoting staging to production or restoring a previous production version.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
+func (c *Client) UpdateVersion(ctx context.Context, params *UpdateVersionParams, body UpdateVersionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateVersionRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConnectorAuthorizationRequestWithBody Create a Connect authorization request
+//
+// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
+func (c *Client) CreateConnectorAuthorizationRequestWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConnectorAuthorizationRequestRequestWithBody(c.Server, connector, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateConnectorAuthorizationRequest Create a Connect authorization request
+//
+// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
+func (c *Client) CreateConnectorAuthorizationRequest(ctx context.Context, connector string, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateConnectorAuthorizationRequestRequest(c.Server, connector, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // CreateConnectorWithBody Create a connector
 //
 // Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
@@ -6336,7 +6579,7 @@ func (c *Client) JoinTeam(ctx context.Context, teamId string, body JoinTeamJSONR
 
 // RemoveTeamMember Remove a Team Member
 //
-// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
+// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails. Removing or leaving is refused when it would leave the Team's organization without an organization admin.
 //
 // Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
 func (c *Client) RemoveTeamMember(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -6353,7 +6596,7 @@ func (c *Client) RemoveTeamMember(ctx context.Context, teamId string, uid string
 
 // UpdateTeamMemberWithBody Update a Team Member
 //
-// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 //
 // Takes any type of body and a specified content type.
 //
@@ -6372,7 +6615,7 @@ func (c *Client) UpdateTeamMemberWithBody(ctx context.Context, teamId string, ui
 
 // UpdateTeamMember Update a Team Member
 //
-// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -8485,7 +8728,7 @@ func (c *Client) RunSessionCommand(ctx context.Context, sessionId string, params
 
 // GetSessionCommand Get a command
 //
-// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
+// Retrieves the current status and details of a command executed in a session. Without `wait`, the stored command is returned as-is: its `exitCode` is `null` unless a previous request waited for the command to finish. Set `wait` to `true` to block until the command finishes and get its exit code.
 //
 // Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId} (the `GetSessionCommand` operationId).
 func (c *Client) GetSessionCommand(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -19828,190 +20071,6 @@ func NewGetEdgeConfigSchemaRequest(server string, edgeConfigId string, params *G
 	if err != nil {
 		return nil, err
 	}
-
-	return req, nil
-}
-
-// NewPatchEdgeConfigSchemaRequest calls the generic PatchEdgeConfigSchema builder with application/json body
-func NewPatchEdgeConfigSchemaRequest(server string, edgeConfigId string, params *PatchEdgeConfigSchemaParams, body PatchEdgeConfigSchemaJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPatchEdgeConfigSchemaRequestWithBody(server, edgeConfigId, params, "application/json", bodyReader)
-}
-
-// NewPatchEdgeConfigSchemaRequestWithBody constructs an http.Request for the PatchEdgeConfigSchema method, with any body, and a specified content type
-func NewPatchEdgeConfigSchemaRequestWithBody(server string, edgeConfigId string, params *PatchEdgeConfigSchemaParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/schema", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.DryRun != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "dryRun", *params.DryRun, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCreateEdgeConfigTokenRequest calls the generic CreateEdgeConfigToken builder with application/json body
-func NewCreateEdgeConfigTokenRequest(server string, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateEdgeConfigTokenRequestWithBody(server, edgeConfigId, params, "application/json", bodyReader)
-}
-
-// NewCreateEdgeConfigTokenRequestWithBody constructs an http.Request for the CreateEdgeConfigToken method, with any body, and a specified content type
-func NewCreateEdgeConfigTokenRequestWithBody(server string, edgeConfigId string, params *CreateEdgeConfigTokenParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "edgeConfigId", edgeConfigId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config/%s/token", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }

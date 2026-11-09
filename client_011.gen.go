@@ -8,6 +8,105 @@ import (
 	"time"
 )
 
+// CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegment201JSONResponseBodyTypeName defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyTypeName string
+
+// DeleteFlagSegmentParams defines parameters for DeleteFlagSegment.
+type DeleteFlagSegmentParams struct {
+	// WithMetadata Whether to include metadata
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetFlagSegmentParams defines parameters for GetFlagSegment.
+type GetFlagSegmentParams struct {
+	// WithMetadata Whether to include metadata
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateFlagSegmentJSONBody defines parameters for UpdateFlagSegment.
+type UpdateFlagSegmentJSONBody struct {
+	// Data The data of the segment
+	Data *struct {
+		Exclude *map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"exclude,omitempty"`
+		Include *map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"include,omitempty"`
+		Rules *[]struct {
+			Conditions []struct {
+				Cmp        UpdateFlagSegmentJSONBodyDataRulesConditionsCmp `json:"cmp"`
+				CmpOptions *struct {
+					IgnoreCase *bool `json:"ignoreCase,omitempty"`
+				} `json:"cmpOptions,omitempty"`
+				Lhs UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs  `json:"lhs"`
+				Rhs *UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
+			} `json:"conditions"`
+			Id      string                                       `json:"id"`
+			Outcome UpdateFlagSegmentJSONBody_Data_Rules_Outcome `json:"outcome"`
+		} `json:"rules,omitempty"`
+	} `json:"data,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Hint        *string `json:"hint,omitempty"`
+	Label       *string `json:"label,omitempty"`
+	Operations  *[]struct {
+		Action    UpdateFlagSegmentJSONBodyOperationsAction `json:"action"`
+		Attribute string                                    `json:"attribute"`
+		Entity    string                                    `json:"entity"`
+		Field     UpdateFlagSegmentJSONBodyOperationsField  `json:"field"`
+		Value     struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"value"`
+	} `json:"operations,omitempty"`
+}
+
+// UpdateFlagSegmentParams defines parameters for UpdateFlagSegment.
+type UpdateFlagSegmentParams struct {
+	// WithMetadata Whether to include metadata
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateFlagSegmentJSONBodyDataRulesConditionsCmp defines parameters for UpdateFlagSegment.
+type UpdateFlagSegmentJSONBodyDataRulesConditionsCmp string
+
+// UpdateFlagSegmentJSONBodyDataRulesConditionsLhs0 defines parameters for UpdateFlagSegment.
+type UpdateFlagSegmentJSONBodyDataRulesConditionsLhs0 struct {
+	Type interface{} `json:"type"`
+}
+
+// UpdateFlagSegmentJSONBodyDataRulesConditionsLhs1 defines parameters for UpdateFlagSegment.
+type UpdateFlagSegmentJSONBodyDataRulesConditionsLhs1 struct {
+	Attribute string      `json:"attribute"`
+	Kind      string      `json:"kind"`
+	Type      interface{} `json:"type"`
+}
+
 // UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs defines parameters for UpdateFlagSegment.
 type UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs struct {
 	union json.RawMessage
@@ -13168,6 +13267,9 @@ type ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus10 = string
 // ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus11 defines parameters for ListVercelCiInvocationAttempts.
 type ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus11 = string
 
+// ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 defines parameters for ListVercelCiInvocationAttempts.
+type ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 = string
+
 // ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status defines parameters for ListVercelCiInvocationAttempts.
 type ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status struct {
 	union json.RawMessage
@@ -13291,6 +13393,9 @@ type GetVercelCiInvocation200JSONResponseBodyInvocationStatus10 = string
 
 // GetVercelCiInvocation200JSONResponseBodyInvocationStatus11 defines parameters for GetVercelCiInvocation.
 type GetVercelCiInvocation200JSONResponseBodyInvocationStatus11 = string
+
+// GetVercelCiInvocation200JSONResponseBodyInvocationStatus12 defines parameters for GetVercelCiInvocation.
+type GetVercelCiInvocation200JSONResponseBodyInvocationStatus12 = string
 
 // GetVercelCiInvocation200JSONResponseBody_Invocation_Status defines parameters for GetVercelCiInvocation.
 type GetVercelCiInvocation200JSONResponseBody_Invocation_Status struct {
@@ -13726,6 +13831,9 @@ type GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus10 = string
 
 // GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus11 defines parameters for GetVercelCiInvocationTree.
 type GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus11 = string
+
+// GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus12 defines parameters for GetVercelCiInvocationTree.
+type GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus12 = string
 
 // GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status defines parameters for GetVercelCiInvocationTree.
 type GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status struct {
@@ -19936,74 +20044,3 @@ type GetProjects200JSONResponseBody2 struct {
 		} `json:"webAnalytics,omitempty"`
 	} `json:"projects"`
 }
-
-// GetProjects200JSONResponseBody2Pagination0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2Pagination0 struct {
-	// Count Amount of items in the current page.
-	//
-	// Example: 20
-	Count float32 `json:"count"`
-
-	// Next Continuation token that must be used to request the next page. Base32 encoded for safe URL transmission.
-	//
-	// Example: JBSWY3DPEHPK3PXP
-	Next *string `json:"next"`
-}
-
-// GetProjects200JSONResponseBody_2_Pagination defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_2_Pagination struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody2ProjectsAliasConfiguredBy defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasConfiguredBy string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned0 = float32
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentAliasAssigned1 bool
-
-// GetProjects200JSONResponseBody_2_Projects_Alias_Deployment_AliasAssigned defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_2_Projects_Alias_Deployment_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentBranchMatcherType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentBranchMatcherType string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksConclusion defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksConclusion string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksState defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentChecksState string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentConnectBuildsEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentConnectBuildsEnabled bool
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentForced defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentForced bool
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentPlan defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentPlan string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentPreviewCommentsEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentPreviewCommentsEnabled bool
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentPrivate defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentPrivate bool
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadyState defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadyState string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadySubstate defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentReadySubstate string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentType string
-
-// GetProjects200JSONResponseBody2ProjectsAliasDeploymentWithCache defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasDeploymentWithCache bool
-
-// GetProjects200JSONResponseBody2ProjectsAliasEnvironment defines parameters for GetProjects.
-type GetProjects200JSONResponseBody2ProjectsAliasEnvironment string

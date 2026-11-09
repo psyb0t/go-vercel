@@ -12,6 +12,152 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateSessionDirectoryParams defines parameters for CreateSessionDirectory.
+type CreateSessionDirectoryParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ReadSessionFileJSONBody defines parameters for ReadSessionFile.
+type ReadSessionFileJSONBody struct {
+	// Cwd The base directory for resolving relative paths. If not specified, paths are resolved from the sandbox home directory.
+	//
+	// Example: /home/vercel-sandbox
+	Cwd *string `json:"cwd,omitempty"`
+
+	// Path The path of the file to read. Can be absolute or relative to the working directory.
+	//
+	// Example: dist/agent-output.md
+	Path string `json:"path"`
+}
+
+// ReadSessionFileParams defines parameters for ReadSessionFile.
+type ReadSessionFileParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// WriteSessionFilesParams defines parameters for WriteSessionFiles.
+type WriteSessionFilesParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+
+	// XCwd The target directory where the tarball contents will be extracted. If not specified, files are extracted to the sandbox home directory.
+	XCwd *string `json:"x-cwd,omitempty"`
+}
+
+// UpdateSessionNetworkPolicyJSONBody defines parameters for UpdateSessionNetworkPolicy.
+type UpdateSessionNetworkPolicyJSONBody struct {
+	union json.RawMessage
+}
+
+// UpdateSessionNetworkPolicyParams defines parameters for UpdateSessionNetworkPolicy.
+type UpdateSessionNetworkPolicyParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateSessionNetworkPolicyJSONBody0 defines parameters for UpdateSessionNetworkPolicy.
+type UpdateSessionNetworkPolicyJSONBody0 struct {
+	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
+	//
+	// Example: ["35.192.0.0/12","104.16.0.0/12"]
+	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
+
+	// AllowedDomains List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+	//
+	// Example: ["api.github.com","*.npmjs.org"]
+	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
+
+	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+	//
+	// Example: ["35.192.0.0/12"]
+	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
+
+	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
+	InjectionRules *[]struct {
+		// Domain The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
+		Domain string `json:"domain"`
+
+		// Headers HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
+		Headers map[string]string `json:"headers"`
+
+		// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+		Match *struct {
+			// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+			Headers *[]struct {
+				// Key Matcher for the entry key (header name or query key).
+				Key *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"key,omitempty"`
+
+				// Value Matcher for the entry value.
+				Value *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"value,omitempty"`
+			} `json:"headers,omitempty"`
+
+			// Method HTTP methods to match. Any single match succeeds (OR semantics).
+			Method *[]string `json:"method,omitempty"`
+
+			// Path Match on the request path. Comparison is case-sensitive.
+			Path *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"path,omitempty"`
+
+			// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+			QueryString *[]struct {
+				// Key Matcher for the entry key (header name or query key).
+				Key *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"key,omitempty"`
+
+				// Value Matcher for the entry value.
+				Value *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"value,omitempty"`
+			} `json:"queryString,omitempty"`
+		} `json:"match,omitempty"`
+	} `json:"injectionRules,omitempty"`
+
+	// Mode The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
+	//
+	// Example: custom
+	Mode UpdateSessionNetworkPolicyJSONBody0Mode `json:"mode"`
+}
+
 // UpdateSessionNetworkPolicyJSONBody0Mode defines parameters for UpdateSessionNetworkPolicy.
 type UpdateSessionNetworkPolicyJSONBody0Mode string
 
@@ -1646,6 +1792,9 @@ type ListVercelCiInvocations200JSONResponseBodyInvocationsStatus10 = string
 
 // ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 defines parameters for ListVercelCiInvocations.
 type ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 = string
+
+// ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 defines parameters for ListVercelCiInvocations.
+type ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 = string
 
 // ListVercelCiInvocations200JSONResponseBody_Invocations_Status defines parameters for ListVercelCiInvocations.
 type ListVercelCiInvocations200JSONResponseBody_Invocations_Status struct {
@@ -13002,25 +13151,25 @@ func (a UserEventPayload117) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload262. Returns the specified
+// Getter for additional properties for UserEventPayload264. Returns the specified
 // element and whether it was found
-func (a UserEventPayload262) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload264) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload262
-func (a *UserEventPayload262) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload264
+func (a *UserEventPayload264) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload262 to handle AdditionalProperties
-func (a *UserEventPayload262) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload264 to handle AdditionalProperties
+func (a *UserEventPayload264) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -13073,8 +13222,8 @@ func (a *UserEventPayload262) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload262 to handle AdditionalProperties
-func (a UserEventPayload262) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload264 to handle AdditionalProperties
+func (a UserEventPayload264) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -19864,151 +20013,4 @@ func (t Segment_Data_Rules_Conditions_Rhs_2_Items_Item) AsSegmentDataRulesCondit
 	var body SegmentDataRulesConditionsRhs2Items0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
-}
-
-// FromSegmentDataRulesConditionsRhs2Items0 overwrites any union data inside the Segment_Data_Rules_Conditions_Rhs_2_Items_Item as the provided SegmentDataRulesConditionsRhs2Items0
-func (t *Segment_Data_Rules_Conditions_Rhs_2_Items_Item) FromSegmentDataRulesConditionsRhs2Items0(v SegmentDataRulesConditionsRhs2Items0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsRhs2Items0 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Rhs_2_Items_Item, using the provided SegmentDataRulesConditionsRhs2Items0
-func (t *Segment_Data_Rules_Conditions_Rhs_2_Items_Item) MergeSegmentDataRulesConditionsRhs2Items0(v SegmentDataRulesConditionsRhs2Items0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsSegmentDataRulesConditionsRhs2Items1 returns the union data inside the Segment_Data_Rules_Conditions_Rhs_2_Items_Item as a SegmentDataRulesConditionsRhs2Items1
-func (t Segment_Data_Rules_Conditions_Rhs_2_Items_Item) AsSegmentDataRulesConditionsRhs2Items1() (SegmentDataRulesConditionsRhs2Items1, error) {
-	var body SegmentDataRulesConditionsRhs2Items1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsRhs2Items1 overwrites any union data inside the Segment_Data_Rules_Conditions_Rhs_2_Items_Item as the provided SegmentDataRulesConditionsRhs2Items1
-func (t *Segment_Data_Rules_Conditions_Rhs_2_Items_Item) FromSegmentDataRulesConditionsRhs2Items1(v SegmentDataRulesConditionsRhs2Items1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsRhs2Items1 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Rhs_2_Items_Item, using the provided SegmentDataRulesConditionsRhs2Items1
-func (t *Segment_Data_Rules_Conditions_Rhs_2_Items_Item) MergeSegmentDataRulesConditionsRhs2Items1(v SegmentDataRulesConditionsRhs2Items1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Segment_Data_Rules_Conditions_Rhs_2_Items_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Segment_Data_Rules_Conditions_Rhs_2_Items_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsSegmentDataRulesConditionsRhs0 returns the union data inside the Segment_Data_Rules_Conditions_Rhs as a SegmentDataRulesConditionsRhs0
-func (t Segment_Data_Rules_Conditions_Rhs) AsSegmentDataRulesConditionsRhs0() (SegmentDataRulesConditionsRhs0, error) {
-	var body SegmentDataRulesConditionsRhs0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsRhs0 overwrites any union data inside the Segment_Data_Rules_Conditions_Rhs as the provided SegmentDataRulesConditionsRhs0
-func (t *Segment_Data_Rules_Conditions_Rhs) FromSegmentDataRulesConditionsRhs0(v SegmentDataRulesConditionsRhs0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsRhs0 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Rhs, using the provided SegmentDataRulesConditionsRhs0
-func (t *Segment_Data_Rules_Conditions_Rhs) MergeSegmentDataRulesConditionsRhs0(v SegmentDataRulesConditionsRhs0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsSegmentDataRulesConditionsRhs1 returns the union data inside the Segment_Data_Rules_Conditions_Rhs as a SegmentDataRulesConditionsRhs1
-func (t Segment_Data_Rules_Conditions_Rhs) AsSegmentDataRulesConditionsRhs1() (SegmentDataRulesConditionsRhs1, error) {
-	var body SegmentDataRulesConditionsRhs1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsRhs1 overwrites any union data inside the Segment_Data_Rules_Conditions_Rhs as the provided SegmentDataRulesConditionsRhs1
-func (t *Segment_Data_Rules_Conditions_Rhs) FromSegmentDataRulesConditionsRhs1(v SegmentDataRulesConditionsRhs1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsRhs1 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Rhs, using the provided SegmentDataRulesConditionsRhs1
-func (t *Segment_Data_Rules_Conditions_Rhs) MergeSegmentDataRulesConditionsRhs1(v SegmentDataRulesConditionsRhs1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsSegmentDataRulesConditionsRhs2 returns the union data inside the Segment_Data_Rules_Conditions_Rhs as a SegmentDataRulesConditionsRhs2
-func (t Segment_Data_Rules_Conditions_Rhs) AsSegmentDataRulesConditionsRhs2() (SegmentDataRulesConditionsRhs2, error) {
-	var body SegmentDataRulesConditionsRhs2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsRhs2 overwrites any union data inside the Segment_Data_Rules_Conditions_Rhs as the provided SegmentDataRulesConditionsRhs2
-func (t *Segment_Data_Rules_Conditions_Rhs) FromSegmentDataRulesConditionsRhs2(v SegmentDataRulesConditionsRhs2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsRhs2 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Rhs, using the provided SegmentDataRulesConditionsRhs2
-func (t *Segment_Data_Rules_Conditions_Rhs) MergeSegmentDataRulesConditionsRhs2(v SegmentDataRulesConditionsRhs2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsSegmentDataRulesConditionsRhs3 returns the union data inside the Segment_Data_Rules_Conditions_Rhs as a SegmentDataRulesConditionsRhs3
-func (t Segment_Data_Rules_Conditions_Rhs) AsSegmentDataRulesConditionsRhs3() (SegmentDataRulesConditionsRhs3, error) {
-	var body SegmentDataRulesConditionsRhs3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsRhs3 overwrites any union data inside the Segment_Data_Rules_Conditions_Rhs as the provided SegmentDataRulesConditionsRhs3
-func (t *Segment_Data_Rules_Conditions_Rhs) FromSegmentDataRulesConditionsRhs3(v SegmentDataRulesConditionsRhs3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
 }

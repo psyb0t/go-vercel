@@ -10,6 +10,148 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// MergeBadRequest performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided BadRequest
+func (t *TransferInDomain400JSONResponseBody) MergeBadRequest(v BadRequest) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDomainAlreadyOwned returns the union data inside the TransferInDomain400JSONResponseBody as a DomainAlreadyOwned
+func (t TransferInDomain400JSONResponseBody) AsDomainAlreadyOwned() (DomainAlreadyOwned, error) {
+	var body DomainAlreadyOwned
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDomainAlreadyOwned overwrites any union data inside the TransferInDomain400JSONResponseBody as the provided DomainAlreadyOwned
+func (t *TransferInDomain400JSONResponseBody) FromDomainAlreadyOwned(v DomainAlreadyOwned) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDomainAlreadyOwned performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided DomainAlreadyOwned
+func (t *TransferInDomain400JSONResponseBody) MergeDomainAlreadyOwned(v DomainAlreadyOwned) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDomainTooShort returns the union data inside the TransferInDomain400JSONResponseBody as a DomainTooShort
+func (t TransferInDomain400JSONResponseBody) AsDomainTooShort() (DomainTooShort, error) {
+	var body DomainTooShort
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDomainTooShort overwrites any union data inside the TransferInDomain400JSONResponseBody as the provided DomainTooShort
+func (t *TransferInDomain400JSONResponseBody) FromDomainTooShort(v DomainTooShort) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDomainTooShort performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided DomainTooShort
+func (t *TransferInDomain400JSONResponseBody) MergeDomainTooShort(v DomainTooShort) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDNSSECEnabled returns the union data inside the TransferInDomain400JSONResponseBody as a DNSSECEnabled
+func (t TransferInDomain400JSONResponseBody) AsDNSSECEnabled() (DNSSECEnabled, error) {
+	var body DNSSECEnabled
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDNSSECEnabled overwrites any union data inside the TransferInDomain400JSONResponseBody as the provided DNSSECEnabled
+func (t *TransferInDomain400JSONResponseBody) FromDNSSECEnabled(v DNSSECEnabled) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDNSSECEnabled performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided DNSSECEnabled
+func (t *TransferInDomain400JSONResponseBody) MergeDNSSECEnabled(v DNSSECEnabled) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsExpectedPriceMismatch returns the union data inside the TransferInDomain400JSONResponseBody as a ExpectedPriceMismatch
+func (t TransferInDomain400JSONResponseBody) AsExpectedPriceMismatch() (ExpectedPriceMismatch, error) {
+	var body ExpectedPriceMismatch
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromExpectedPriceMismatch overwrites any union data inside the TransferInDomain400JSONResponseBody as the provided ExpectedPriceMismatch
+func (t *TransferInDomain400JSONResponseBody) FromExpectedPriceMismatch(v ExpectedPriceMismatch) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeExpectedPriceMismatch performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided ExpectedPriceMismatch
+func (t *TransferInDomain400JSONResponseBody) MergeExpectedPriceMismatch(v ExpectedPriceMismatch) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDomainNotAvailable returns the union data inside the TransferInDomain400JSONResponseBody as a DomainNotAvailable
+func (t TransferInDomain400JSONResponseBody) AsDomainNotAvailable() (DomainNotAvailable, error) {
+	var body DomainNotAvailable
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDomainNotAvailable overwrites any union data inside the TransferInDomain400JSONResponseBody as the provided DomainNotAvailable
+func (t *TransferInDomain400JSONResponseBody) FromDomainNotAvailable(v DomainNotAvailable) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDomainNotAvailable performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided DomainNotAvailable
+func (t *TransferInDomain400JSONResponseBody) MergeDomainNotAvailable(v DomainNotAvailable) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsTldNotSupported returns the union data inside the TransferInDomain400JSONResponseBody as a TldNotSupported
 func (t TransferInDomain400JSONResponseBody) AsTldNotSupported() (TldNotSupported, error) {
 	var body TldNotSupported
@@ -18178,6 +18320,32 @@ func (t *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status) Merg
 	return err
 }
 
+// AsListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 returns the union data inside the ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status as a ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12
+func (t ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status) AsListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12() (ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12, error) {
+	var body ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 overwrites any union data inside the ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status as the provided ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12
+func (t *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status) FromListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12(v ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 performs a merge with any union data inside the ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status, using the provided ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12
+func (t *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status) MergeListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12(v ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -18904,6 +19072,32 @@ func (t *GetVercelCiInvocation200JSONResponseBody_Invocation_Status) FromGetVerc
 
 // MergeGetVercelCiInvocation200JSONResponseBodyInvocationStatus11 performs a merge with any union data inside the GetVercelCiInvocation200JSONResponseBody_Invocation_Status, using the provided GetVercelCiInvocation200JSONResponseBodyInvocationStatus11
 func (t *GetVercelCiInvocation200JSONResponseBody_Invocation_Status) MergeGetVercelCiInvocation200JSONResponseBodyInvocationStatus11(v GetVercelCiInvocation200JSONResponseBodyInvocationStatus11) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetVercelCiInvocation200JSONResponseBodyInvocationStatus12 returns the union data inside the GetVercelCiInvocation200JSONResponseBody_Invocation_Status as a GetVercelCiInvocation200JSONResponseBodyInvocationStatus12
+func (t GetVercelCiInvocation200JSONResponseBody_Invocation_Status) AsGetVercelCiInvocation200JSONResponseBodyInvocationStatus12() (GetVercelCiInvocation200JSONResponseBodyInvocationStatus12, error) {
+	var body GetVercelCiInvocation200JSONResponseBodyInvocationStatus12
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetVercelCiInvocation200JSONResponseBodyInvocationStatus12 overwrites any union data inside the GetVercelCiInvocation200JSONResponseBody_Invocation_Status as the provided GetVercelCiInvocation200JSONResponseBodyInvocationStatus12
+func (t *GetVercelCiInvocation200JSONResponseBody_Invocation_Status) FromGetVercelCiInvocation200JSONResponseBodyInvocationStatus12(v GetVercelCiInvocation200JSONResponseBodyInvocationStatus12) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetVercelCiInvocation200JSONResponseBodyInvocationStatus12 performs a merge with any union data inside the GetVercelCiInvocation200JSONResponseBody_Invocation_Status, using the provided GetVercelCiInvocation200JSONResponseBodyInvocationStatus12
+func (t *GetVercelCiInvocation200JSONResponseBody_Invocation_Status) MergeGetVercelCiInvocation200JSONResponseBodyInvocationStatus12(v GetVercelCiInvocation200JSONResponseBodyInvocationStatus12) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -19815,203 +20009,5 @@ func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Re
 func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2) error {
 	b, err := json.Marshal(v)
 	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result as a GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0() (GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result as a GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1() (GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result as a GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2() (GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSetupConclusionResult2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSource0 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source as a GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSource0() (GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSource0 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSource0(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSource0 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSource0(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSource0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSource1 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source as a GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationSource1() (GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSource1 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationSource1(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSource1 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationSource1(v GetVercelCiInvocationTree200JSONResponseBodyInvocationSource1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status as a GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0() (GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0(v GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0(v GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
 	return err
 }

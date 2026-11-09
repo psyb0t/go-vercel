@@ -16,6 +16,187 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewListProjectConnectorConnectionsRequest constructs an http.Request for the ListProjectConnectorConnections method
+func NewListProjectConnectorConnectionsRequest(server string, projectId string, params *ListProjectConnectorConnectionsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/connect/projects/%s/connectors", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListDeploymentCheckRunsRequest constructs an http.Request for the ListDeploymentCheckRuns method
+func NewListDeploymentCheckRunsRequest(server string, deploymentId string, params *ListDeploymentCheckRunsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/deployments/%s/check-runs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateDeploymentCheckRunRequest calls the generic CreateDeploymentCheckRun builder with application/json body
+func NewCreateDeploymentCheckRunRequest(server string, deploymentId string, params *CreateDeploymentCheckRunParams, body CreateDeploymentCheckRunJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateDeploymentCheckRunRequestWithBody(server, deploymentId, params, "application/json", bodyReader)
+}
+
 // NewCreateDeploymentCheckRunRequestWithBody constructs an http.Request for the CreateDeploymentCheckRun method, with any body, and a specified content type
 func NewCreateDeploymentCheckRunRequestWithBody(server string, deploymentId string, params *CreateDeploymentCheckRunParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
@@ -14733,7 +14914,7 @@ type ClientWithResponsesInterface interface {
 
 	// RemoveTeamMemberWithResponse Remove a Team Member
 	//
-	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
+	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails. Removing or leaving is refused when it would leave the Team's organization without an organization admin.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -14742,7 +14923,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateTeamMemberWithBodyWithResponse Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -14751,7 +14932,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateTeamMemberWithResponse Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -15802,7 +15983,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetSessionCommandWithResponse Get a command
 	//
-	// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
+	// Retrieves the current status and details of a command executed in a session. Without `wait`, the stored command is returned as-is: its `exitCode` is `null` unless a previous request waited for the command to finish. Set `wait` to `true` to block until the command finishes and get its exit code.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -19830,194 +20011,6 @@ func (r EditRedirectResponse) GetJSON200() *struct {
 
 		// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
 		IsStaging *EditRedirect200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-		// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-		Key          string  `json:"key"`
-		LastModified float32 `json:"lastModified"`
-
-		// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
-		Name *string `json:"name,omitempty"`
-
-		// RedirectCount The number of redirects in this version.
-		RedirectCount *float32 `json:"redirectCount,omitempty"`
-	} `json:"version"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r EditRedirectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r EditRedirectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r EditRedirectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r EditRedirectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type StageRedirectsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Alias   *string `json:"alias"`
-		Version struct {
-			// Alias The staging link for previewing redirects in this version.
-			Alias     *string `json:"alias,omitempty"`
-			CreatedBy string  `json:"createdBy"`
-
-			// Id The unique identifier for the version.
-			Id string `json:"id"`
-
-			// IsLive Whether this version is currently live in production.
-			IsLive *StageRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-			// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
-			IsStaging *StageRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-			// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-			Key          string  `json:"key"`
-			LastModified float32 `json:"lastModified"`
-
-			// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
-			Name *string `json:"name,omitempty"`
-
-			// RedirectCount The number of redirects in this version.
-			RedirectCount *float32 `json:"redirectCount,omitempty"`
-		} `json:"version"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r StageRedirectsResponse) GetJSON200() *struct {
-	Alias   *string `json:"alias"`
-	Version struct {
-		// Alias The staging link for previewing redirects in this version.
-		Alias     *string `json:"alias,omitempty"`
-		CreatedBy string  `json:"createdBy"`
-
-		// Id The unique identifier for the version.
-		Id string `json:"id"`
-
-		// IsLive Whether this version is currently live in production.
-		IsLive *StageRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-		// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
-		IsStaging *StageRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-		// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-		Key          string  `json:"key"`
-		LastModified float32 `json:"lastModified"`
-
-		// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
-		Name *string `json:"name,omitempty"`
-
-		// RedirectCount The number of redirects in this version.
-		RedirectCount *float32 `json:"redirectCount,omitempty"`
-	} `json:"version"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r StageRedirectsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r StageRedirectsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r StageRedirectsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r StageRedirectsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type RestoreRedirectsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		FailedToRestore []string `json:"failedToRestore"`
-		Restored        []string `json:"restored"`
-		Version         struct {
-			// Alias The staging link for previewing redirects in this version.
-			Alias     *string `json:"alias,omitempty"`
-			CreatedBy string  `json:"createdBy"`
-
-			// Id The unique identifier for the version.
-			Id string `json:"id"`
-
-			// IsLive Whether this version is currently live in production.
-			IsLive *RestoreRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-			// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
-			IsStaging *RestoreRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-			// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-			Key          string  `json:"key"`
-			LastModified float32 `json:"lastModified"`
-
-			// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
-			Name *string `json:"name,omitempty"`
-
-			// RedirectCount The number of redirects in this version.
-			RedirectCount *float32 `json:"redirectCount,omitempty"`
-		} `json:"version"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r RestoreRedirectsResponse) GetJSON200() *struct {
-	FailedToRestore []string `json:"failedToRestore"`
-	Restored        []string `json:"restored"`
-	Version         struct {
-		// Alias The staging link for previewing redirects in this version.
-		Alias     *string `json:"alias,omitempty"`
-		CreatedBy string  `json:"createdBy"`
-
-		// Id The unique identifier for the version.
-		Id string `json:"id"`
-
-		// IsLive Whether this version is currently live in production.
-		IsLive *RestoreRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-		// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
-		IsStaging *RestoreRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
 
 		// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
 		Key          string  `json:"key"`

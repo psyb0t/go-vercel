@@ -9,6 +9,194 @@ import (
 )
 
 // GetBody returns the raw response body bytes
+func (r EditRedirectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r EditRedirectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r EditRedirectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r EditRedirectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type StageRedirectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Alias   *string `json:"alias"`
+		Version struct {
+			// Alias The staging link for previewing redirects in this version.
+			Alias     *string `json:"alias,omitempty"`
+			CreatedBy string  `json:"createdBy"`
+
+			// Id The unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *StageRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
+			IsStaging *StageRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+			Key          string  `json:"key"`
+			LastModified float32 `json:"lastModified"`
+
+			// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
+			Name *string `json:"name,omitempty"`
+
+			// RedirectCount The number of redirects in this version.
+			RedirectCount *float32 `json:"redirectCount,omitempty"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r StageRedirectsResponse) GetJSON200() *struct {
+	Alias   *string `json:"alias"`
+	Version struct {
+		// Alias The staging link for previewing redirects in this version.
+		Alias     *string `json:"alias,omitempty"`
+		CreatedBy string  `json:"createdBy"`
+
+		// Id The unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *StageRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
+		IsStaging *StageRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+		Key          string  `json:"key"`
+		LastModified float32 `json:"lastModified"`
+
+		// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
+		Name *string `json:"name,omitempty"`
+
+		// RedirectCount The number of redirects in this version.
+		RedirectCount *float32 `json:"redirectCount,omitempty"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r StageRedirectsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r StageRedirectsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r StageRedirectsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r StageRedirectsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RestoreRedirectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		FailedToRestore []string `json:"failedToRestore"`
+		Restored        []string `json:"restored"`
+		Version         struct {
+			// Alias The staging link for previewing redirects in this version.
+			Alias     *string `json:"alias,omitempty"`
+			CreatedBy string  `json:"createdBy"`
+
+			// Id The unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *RestoreRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
+			IsStaging *RestoreRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+			Key          string  `json:"key"`
+			LastModified float32 `json:"lastModified"`
+
+			// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
+			Name *string `json:"name,omitempty"`
+
+			// RedirectCount The number of redirects in this version.
+			RedirectCount *float32 `json:"redirectCount,omitempty"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RestoreRedirectsResponse) GetJSON200() *struct {
+	FailedToRestore []string `json:"failedToRestore"`
+	Restored        []string `json:"restored"`
+	Version         struct {
+		// Alias The staging link for previewing redirects in this version.
+		Alias     *string `json:"alias,omitempty"`
+		CreatedBy string  `json:"createdBy"`
+
+		// Id The unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *RestoreRedirects200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
+		IsStaging *RestoreRedirects200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+		Key          string  `json:"key"`
+		LastModified float32 `json:"lastModified"`
+
+		// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
+		Name *string `json:"name,omitempty"`
+
+		// RedirectCount The number of redirects in this version.
+		RedirectCount *float32 `json:"redirectCount,omitempty"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
 func (r RestoreRedirectsResponse) GetBody() []byte {
 	return r.Body
 }
@@ -19949,109 +20137,4 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 	} `json:"webAnalytics,omitempty"`
 } {
 	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UploadProjectAvatarResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UploadProjectAvatarResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UploadProjectAvatarResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UploadProjectAvatarResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetProjectBoxesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Daemons []struct {
-			Config struct {
-				Command             *[]string                                                              `json:"command,omitempty"`
-				ConfiguredInstances *GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances `json:"configuredInstances,omitempty"`
-				Image               struct {
-					Requested string `json:"requested"`
-					Resolved  string `json:"resolved"`
-				} `json:"image"`
-				Instances     GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances `json:"instances"`
-				LivenessProbe *struct {
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-					HttpGet          struct {
-						Host        *string `json:"host,omitempty"`
-						HttpHeaders *[]struct {
-							Name  string `json:"name"`
-							Value string `json:"value"`
-						} `json:"httpHeaders,omitempty"`
-						Path   string                                                                    `json:"path"`
-						Port   float32                                                                   `json:"port"`
-						Scheme GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme `json:"scheme"`
-					} `json:"httpGet"`
-					InitialDelaySeconds *float32 `json:"initialDelaySeconds,omitempty"`
-					PeriodSeconds       *float32 `json:"periodSeconds,omitempty"`
-					SuccessThreshold    *float32 `json:"successThreshold,omitempty"`
-					TimeoutSeconds      *float32 `json:"timeoutSeconds,omitempty"`
-				} `json:"livenessProbe,omitempty"`
-				Resources struct {
-					Requests struct {
-						Memory string `json:"memory"`
-					} `json:"requests"`
-				} `json:"resources"`
-				TerminationGracePeriodSeconds *float32 `json:"terminationGracePeriodSeconds,omitempty"`
-			} `json:"config"`
-			CreatedAt string `json:"createdAt"`
-
-			// DeploymentId The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API.
-			DeploymentId *string `json:"deploymentId,omitempty"`
-			Instances    struct {
-				Desired float32 `json:"desired"`
-				Items   []struct {
-					Alive         *GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive `json:"alive,omitempty"`
-					Id            string                                                        `json:"id"`
-					Image         *string                                                       `json:"image,omitempty"`
-					LastCheckedAt *string                                                       `json:"lastCheckedAt,omitempty"`
-					MemoryMiB     *float32                                                      `json:"memoryMiB,omitempty"`
-
-					// Process Quick restarts of the user container in a row. Absent when there are none.
-					Process *struct {
-						CrashLooping GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping `json:"crashLooping"`
-						LastExitCode *float32                                                                   `json:"lastExitCode,omitempty"`
-						Restarts     float32                                                                    `json:"restarts"`
-					} `json:"process,omitempty"`
-					Region    string  `json:"region"`
-					StartedAt string  `json:"startedAt"`
-					StoppedAt *string `json:"stoppedAt,omitempty"`
-				} `json:"items"`
-				Ready float32 `json:"ready"`
-				Total float32 `json:"total"`
-			} `json:"instances"`
-			Name      string                                           `json:"name"`
-			Scope     GetProjectBoxes200JSONResponseBody_Daemons_Scope `json:"scope"`
-			Status    GetProjectBoxes200JSONResponseBodyDaemonsStatus  `json:"status"`
-			UpdatedAt string                                           `json:"updatedAt"`
-		} `json:"daemons"`
-		Pagination struct {
-			Count float32 `json:"count"`
-			Next  *string `json:"next,omitempty"`
-		} `json:"pagination"`
-	}
 }

@@ -5943,7 +5943,7 @@ func (c *ClientWithResponses) JoinTeamWithResponse(ctx context.Context, teamId s
 
 // RemoveTeamMemberWithResponse Remove a Team Member
 //
-// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
+// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails. Removing or leaving is refused when it would leave the Team's organization without an organization admin.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -5958,7 +5958,7 @@ func (c *ClientWithResponses) RemoveTeamMemberWithResponse(ctx context.Context, 
 
 // UpdateTeamMemberWithBodyWithResponse Update a Team Member
 //
-// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -5973,7 +5973,7 @@ func (c *ClientWithResponses) UpdateTeamMemberWithBodyWithResponse(ctx context.C
 
 // UpdateTeamMemberWithResponse Update a Team Member
 //
-// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -7738,7 +7738,7 @@ func (c *ClientWithResponses) RunSessionCommandWithResponse(ctx context.Context,
 
 // GetSessionCommandWithResponse Get a command
 //
-// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
+// Retrieves the current status and details of a command executed in a session. Without `wait`, the stored command is returned as-is: its `exitCode` is `null` unless a previous request waited for the command to finish. Set `wait` to `true` to block until the command finishes and get its exit code.
 //
 // Returns a wrapper object for the known response body format(s).
 //

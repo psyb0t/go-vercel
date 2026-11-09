@@ -10,6 +10,105 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// PatchUrlProtectionBypassJSONBody defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody struct {
+	union json.RawMessage
+}
+
+// PatchUrlProtectionBypassParams defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// PatchUrlProtectionBypassJSONBody0 defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody0 struct {
+	// Revoke Optional instructions for revoking and regenerating a shareable link
+	Revoke *struct {
+		// Regenerate Whether or not a new shareable link should be created after the provided secret is revoked
+		Regenerate bool `json:"regenerate"`
+
+		// Secret Sharebale link to revoked
+		Secret string `json:"secret"`
+	} `json:"revoke,omitempty"`
+
+	// Ttl Optional time the shareable link is valid for in seconds. If not provided, the shareable link will never expire.
+	Ttl *float32 `json:"ttl,omitempty"`
+}
+
+// PatchUrlProtectionBypassJSONBody1 defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody1 struct {
+	// Scope Instructions for creating a user scoped protection bypass
+	Scope PatchUrlProtectionBypassJSONBody_1_Scope `json:"scope"`
+}
+
+// PatchUrlProtectionBypassJSONBody1Scope0 defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody1Scope0 = interface{}
+
+// PatchUrlProtectionBypassJSONBody1Scope1 defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody1Scope1 = interface{}
+
+// PatchUrlProtectionBypassJSONBody_1_Scope defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody_1_Scope struct {
+	// Access Invitation status for the user scoped bypass.
+	Access interface{} `json:"access"`
+
+	// Email Specified email for the scoped bypass.
+	Email *openapi_types.Email `json:"email,omitempty"`
+
+	// UserId Specified user id for the scoped bypass.
+	UserId *string `json:"userId,omitempty"`
+	union  json.RawMessage
+}
+
+// PatchUrlProtectionBypassJSONBody2 defines parameters for PatchUrlProtectionBypass.
+type PatchUrlProtectionBypassJSONBody2 struct {
+	Override struct {
+		Action interface{} `json:"action"`
+		Scope  interface{} `json:"scope"`
+	} `json:"override"`
+}
+
+// CreateApiKeysJSONBody defines parameters for CreateApiKeys.
+type CreateApiKeysJSONBody struct {
+	// AiGatewayQuota Optional AI Gateway quota configuration for the API key.
+	AiGatewayQuota *struct {
+		// AlertThresholds Spend percentages (a subset of [50, 75, 100]) at which to send a spend alert.
+		AlertThresholds *[]CreateApiKeysJSONBodyAiGatewayQuotaAlertThresholds `json:"alertThresholds,omitempty"`
+
+		// IncludeByokInQuota Whether to include BYOK (Bring Your Own Key) usage in the quota.
+		IncludeByokInQuota *bool `json:"includeByokInQuota,omitempty"`
+
+		// LimitAmount The quota limit amount.
+		LimitAmount float32 `json:"limitAmount"`
+
+		// RefreshPeriod How often the quota refreshes.
+		RefreshPeriod *CreateApiKeysJSONBodyAiGatewayQuotaRefreshPeriod `json:"refreshPeriod,omitempty"`
+	} `json:"aiGatewayQuota,omitempty"`
+
+	// ExpiresAt The API key's expiration, expressed as a UNIX timestamp in milliseconds.
+	ExpiresAt *float32 `json:"expiresAt,omitempty"`
+
+	// Metadata Optional generic metadata for the API key. The accepted shape depends on the key's `purpose` and is validated on creation; for `ai-gateway` keys this accepts `environment`.
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+	// Name An optional name for the API key.
+	//
+	// Example: API Key for App 123
+	Name *string `json:"name,omitempty"`
+
+	// ProjectId An optional project to restrict the API key to.
+	//
+	// Example: prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// Purpose The API key's purpose, which restricts how it can be used.
+	Purpose string `json:"purpose"`
+}
+
 // CreateApiKeysJSONBodyAiGatewayQuotaAlertThresholds defines parameters for CreateApiKeys.
 type CreateApiKeysJSONBodyAiGatewayQuotaAlertThresholds float32
 
@@ -19912,102 +20011,3 @@ type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType string
 
 // CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type defines parameters for CreateFlagSegment.
 type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type string
-
-// CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegment201JSONResponseBodyTypeName defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyTypeName string
-
-// DeleteFlagSegmentParams defines parameters for DeleteFlagSegment.
-type DeleteFlagSegmentParams struct {
-	// WithMetadata Whether to include metadata
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetFlagSegmentParams defines parameters for GetFlagSegment.
-type GetFlagSegmentParams struct {
-	// WithMetadata Whether to include metadata
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateFlagSegmentJSONBody defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBody struct {
-	// Data The data of the segment
-	Data *struct {
-		Exclude *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"exclude,omitempty"`
-		Include *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"include,omitempty"`
-		Rules *[]struct {
-			Conditions []struct {
-				Cmp        UpdateFlagSegmentJSONBodyDataRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *bool `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *UpdateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                                       `json:"id"`
-			Outcome UpdateFlagSegmentJSONBody_Data_Rules_Outcome `json:"outcome"`
-		} `json:"rules,omitempty"`
-	} `json:"data,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Hint        *string `json:"hint,omitempty"`
-	Label       *string `json:"label,omitempty"`
-	Operations  *[]struct {
-		Action    UpdateFlagSegmentJSONBodyOperationsAction `json:"action"`
-		Attribute string                                    `json:"attribute"`
-		Entity    string                                    `json:"entity"`
-		Field     UpdateFlagSegmentJSONBodyOperationsField  `json:"field"`
-		Value     struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"value"`
-	} `json:"operations,omitempty"`
-}
-
-// UpdateFlagSegmentParams defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentParams struct {
-	// WithMetadata Whether to include metadata
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsCmp defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsCmp string
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsLhs0 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsLhs0 struct {
-	Type interface{} `json:"type"`
-}
-
-// UpdateFlagSegmentJSONBodyDataRulesConditionsLhs1 defines parameters for UpdateFlagSegment.
-type UpdateFlagSegmentJSONBodyDataRulesConditionsLhs1 struct {
-	Attribute string      `json:"attribute"`
-	Kind      string      `json:"kind"`
-	Type      interface{} `json:"type"`
-}

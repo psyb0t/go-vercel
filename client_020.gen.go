@@ -14,6 +14,235 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsUpdateSandbox200JSONResponseBody1 returns the union data inside the UpdateSandbox200JSONResponseBody as a UpdateSandbox200JSONResponseBody1
+func (t UpdateSandbox200JSONResponseBody) AsUpdateSandbox200JSONResponseBody1() (UpdateSandbox200JSONResponseBody1, error) {
+	var body UpdateSandbox200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandbox200JSONResponseBody1 overwrites any union data inside the UpdateSandbox200JSONResponseBody as the provided UpdateSandbox200JSONResponseBody1
+func (t *UpdateSandbox200JSONResponseBody) FromUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandbox200JSONResponseBody1 performs a merge with any union data inside the UpdateSandbox200JSONResponseBody, using the provided UpdateSandbox200JSONResponseBody1
+func (t *UpdateSandbox200JSONResponseBody) MergeUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandbox200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandbox200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration as a CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0
+func (t CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) AsCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0() (CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0, error) {
+	var body CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration as the provided CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0
+func (t *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) FromCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0(v CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration, using the provided CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0
+func (t *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) MergeCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0(v CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration as a CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1
+func (t CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) AsCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1() (CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1, error) {
+	var body CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration as the provided CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1
+func (t *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) FromCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1(v CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration, using the provided CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1
+func (t *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) MergeCreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1(v CreateSandboxesByNameForkV2JSONBodyKeepLastSnapshotsExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV2JSONBody_KeepLastSnapshots_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow as a CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0
+func (t CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0() (CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0, error) {
+	var body CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow as the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow, using the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow as a CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1
+func (t CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1() (CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1, error) {
+	var body CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow as the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow, using the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy_1_Allow) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy0 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy as a CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0
+func (t CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy0() (CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0, error) {
+	var body CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy0 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy as the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy0(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy0 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy, using the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy0(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy as a CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1
+func (t CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) AsCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1() (CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1, error) {
+	var body CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy as the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) FromCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1 performs a merge with any union data inside the CreateSandboxesByNameForkV2JSONBody_NetworkPolicy, using the provided CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) MergeCreateSandboxesByNameForkV2JSONBodyNetworkPolicy1(v CreateSandboxesByNameForkV2JSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesByNameForkV2JSONBody_NetworkPolicy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0 returns the union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration as a CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0
+func (t CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) AsCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0() (CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0, error) {
+	var body CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
 // FromCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0 overwrites any union data inside the CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration as the provided CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0
 func (t *CreateSandboxesByNameForkV2JSONBody_SnapshotExpiration) FromCreateSandboxesByNameForkV2JSONBodySnapshotExpiration0(v CreateSandboxesByNameForkV2JSONBodySnapshotExpiration0) error {
 	b, err := json.Marshal(v)
@@ -1529,6 +1758,32 @@ func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromList
 
 // MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11
 func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus11(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus12() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus12(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus12(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -16732,14 +16987,14 @@ type ClientInterface interface {
 
 	// RemoveTeamMember Remove a Team Member
 	//
-	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.
+	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails. Removing or leaving is refused when it would leave the Team's organization without an organization admin.
 	//
 	// Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
 	RemoveTeamMember(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateTeamMemberWithBody Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -16748,7 +17003,7 @@ type ClientInterface interface {
 
 	// UpdateTeamMember Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -17671,7 +17926,7 @@ type ClientInterface interface {
 
 	// GetSessionCommand Get a command
 	//
-	// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
+	// Retrieves the current status and details of a command executed in a session. Without `wait`, the stored command is returned as-is: its `exitCode` is `null` unless a previous request waited for the command to finish. Set `wait` to `true` to block until the command finishes and get its exit code.
 	//
 	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId} (the `GetSessionCommand` operationId).
 	GetSessionCommand(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19762,249 +20017,6 @@ func (c *Client) ListContractCommitments(ctx context.Context, params *ListContra
 // Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
 func (c *Client) DeleteRedirectsWithBody(ctx context.Context, params *DeleteRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDeleteRedirectsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteRedirects Delete project-level redirects.
-//
-// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
-func (c *Client) DeleteRedirects(ctx context.Context, params *DeleteRedirectsParams, body DeleteRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteRedirectsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetRedirects Gets project-level redirects.
-//
-// Get the version history for a project's bulk redirects.
-//
-// Corresponds with GET /v1/bulk-redirects (the `GetRedirects` operationId).
-func (c *Client) GetRedirects(ctx context.Context, params *GetRedirectsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetRedirectsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// EditRedirectWithBody Edit a project-level redirect.
-//
-// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
-func (c *Client) EditRedirectWithBody(ctx context.Context, params *EditRedirectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewEditRedirectRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// EditRedirect Edit a project-level redirect.
-//
-// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/bulk-redirects (the `EditRedirect` operationId).
-func (c *Client) EditRedirect(ctx context.Context, params *EditRedirectParams, body EditRedirectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewEditRedirectRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// StageRedirectsWithBody Stages new redirects for a project.
-//
-// Stages new redirects for a project and returns the new version.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
-func (c *Client) StageRedirectsWithBody(ctx context.Context, params *StageRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewStageRedirectsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// StageRedirects Stages new redirects for a project.
-//
-// Stages new redirects for a project and returns the new version.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /v1/bulk-redirects (the `StageRedirects` operationId).
-func (c *Client) StageRedirects(ctx context.Context, params *StageRedirectsParams, body StageRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewStageRedirectsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RestoreRedirectsWithBody Restore staged project-level redirects to their production version.
-//
-// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
-func (c *Client) RestoreRedirectsWithBody(ctx context.Context, params *RestoreRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRestoreRedirectsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RestoreRedirects Restore staged project-level redirects to their production version.
-//
-// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/bulk-redirects/restore (the `RestoreRedirects` operationId).
-func (c *Client) RestoreRedirects(ctx context.Context, params *RestoreRedirectsParams, body RestoreRedirectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRestoreRedirectsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetVersions Get the version history for a project's redirects.
-//
-// Get the version history for a project's bulk redirects.
-//
-// Corresponds with GET /v1/bulk-redirects/versions (the `GetVersions` operationId).
-func (c *Client) GetVersions(ctx context.Context, params *GetVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetVersionsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateVersionWithBody Promote a staging version to production or restore a previous production version.
-//
-// Update a version by promoting staging to production or restoring a previous production version.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
-func (c *Client) UpdateVersionWithBody(ctx context.Context, params *UpdateVersionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateVersionRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateVersion Promote a staging version to production or restore a previous production version.
-//
-// Update a version by promoting staging to production or restoring a previous production version.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/bulk-redirects/versions (the `UpdateVersion` operationId).
-func (c *Client) UpdateVersion(ctx context.Context, params *UpdateVersionParams, body UpdateVersionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateVersionRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateConnectorAuthorizationRequestWithBody Create a Connect authorization request
-//
-// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-func (c *Client) CreateConnectorAuthorizationRequestWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateConnectorAuthorizationRequestRequestWithBody(c.Server, connector, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateConnectorAuthorizationRequest Create a Connect authorization request
-//
-// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-func (c *Client) CreateConnectorAuthorizationRequest(ctx context.Context, connector string, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateConnectorAuthorizationRequestRequest(c.Server, connector, body)
 	if err != nil {
 		return nil, err
 	}
