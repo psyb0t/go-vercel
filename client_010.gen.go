@@ -10,6 +10,158 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// DeleteAiGatewayRuleParams defines parameters for DeleteAiGatewayRule.
+type DeleteAiGatewayRuleParams struct {
+	RuleId string `form:"ruleId" json:"ruleId"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayRulesParams defines parameters for ListAiGatewayRules.
+type ListAiGatewayRulesParams struct {
+	IncludeDisabled *ListAiGatewayRulesParamsIncludeDisabled `form:"includeDisabled,omitempty" json:"includeDisabled,omitempty"`
+
+	// Limit Maximum number of rules to return (capped at 200). Enables pagination.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Opaque cursor returned by a prior call as nextCursor.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayRulesParamsIncludeDisabled defines parameters for ListAiGatewayRules.
+type ListAiGatewayRulesParamsIncludeDisabled string
+
+// UpdateAiGatewayRuleParams defines parameters for UpdateAiGatewayRule.
+type UpdateAiGatewayRuleParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAiGatewayRuleParams defines parameters for CreateAiGatewayRule.
+type CreateAiGatewayRuleParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteAiGatewayVirtualModelConfigParams defines parameters for DeleteAiGatewayVirtualModelConfig.
+type DeleteAiGatewayVirtualModelConfigParams struct {
+	OwnerId          *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+	VirtualModelSlug string  `form:"virtualModelSlug" json:"virtualModelSlug"`
+	UpdatedBy        *string `form:"updatedBy,omitempty" json:"updatedBy,omitempty"`
+	ActingIp         *string `form:"actingIp,omitempty" json:"actingIp,omitempty"`
+	ActingUserAgent  *string `form:"actingUserAgent,omitempty" json:"actingUserAgent,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetAiGatewayVirtualModelConfigParams defines parameters for GetAiGatewayVirtualModelConfig.
+type GetAiGatewayVirtualModelConfigParams struct {
+	OwnerId          *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+	VirtualModelSlug *string `form:"virtualModelSlug,omitempty" json:"virtualModelSlug,omitempty"`
+	Limit            *int    `form:"limit,omitempty" json:"limit,omitempty"`
+	Cursor           *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetAiGatewayVirtualModelConfig200JSONResponseBody defines parameters for GetAiGatewayVirtualModelConfig.
+type GetAiGatewayVirtualModelConfig200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// UpdateAiGatewayVirtualModelConfigParams defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAiGatewayVirtualModelConfigParams defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayVirtualModelConfigsParams defines parameters for ListAiGatewayVirtualModelConfigs.
+type ListAiGatewayVirtualModelConfigsParams struct {
+	OwnerId         *string                                                `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+	Limit           *int                                                   `form:"limit,omitempty" json:"limit,omitempty"`
+	Cursor          *string                                                `form:"cursor,omitempty" json:"cursor,omitempty"`
+	IncludeArchived *ListAiGatewayVirtualModelConfigsParamsIncludeArchived `form:"includeArchived,omitempty" json:"includeArchived,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayVirtualModelConfigsParamsIncludeArchived defines parameters for ListAiGatewayVirtualModelConfigs.
+type ListAiGatewayVirtualModelConfigsParamsIncludeArchived string
+
+// DeleteAiGatewayVirtualModelConfigBySlugParams defines parameters for DeleteAiGatewayVirtualModelConfigBySlug.
+type DeleteAiGatewayVirtualModelConfigBySlugParams struct {
+	OwnerId         *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+	UpdatedBy       *string `form:"updatedBy,omitempty" json:"updatedBy,omitempty"`
+	ActingIp        *string `form:"actingIp,omitempty" json:"actingIp,omitempty"`
+	ActingUserAgent *string `form:"actingUserAgent,omitempty" json:"actingUserAgent,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetAiGatewayVirtualModelConfigBySlugParams defines parameters for GetAiGatewayVirtualModelConfigBySlug.
+type GetAiGatewayVirtualModelConfigBySlugParams struct {
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateAiGatewayVirtualModelConfigBySlugParams defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // PatchUrlProtectionBypassJSONBody defines parameters for PatchUrlProtectionBypass.
 type PatchUrlProtectionBypassJSONBody struct {
 	union json.RawMessage
@@ -3027,6 +3179,7 @@ type GetDrains200JSONResponseBodyDrains0Delivery3 struct {
 	Encoding             GetDrains200JSONResponseBodyDrains0Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                            `json:"endpoint"`
 	FileStructure        GetDrains200JSONResponseBodyDrains0Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                           `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *GetDrains200JSONResponseBodyDrains0Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                            `json:"region"`
 	RoleArn              string                                                            `json:"roleArn"`
@@ -3297,6 +3450,7 @@ type GetDrains200JSONResponseBodyDrains1Delivery3 struct {
 	Encoding             GetDrains200JSONResponseBodyDrains1Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                            `json:"endpoint"`
 	FileStructure        GetDrains200JSONResponseBodyDrains1Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                           `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *GetDrains200JSONResponseBodyDrains1Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                            `json:"region"`
 	RoleArn              string                                                            `json:"roleArn"`
@@ -3549,6 +3703,7 @@ type CreateDrainJSONBodyDelivery2 struct {
 	Encoding             CreateDrainJSONBodyDelivery2Encoding              `json:"encoding"`
 	Endpoint             string                                            `json:"endpoint"`
 	FileStructure        CreateDrainJSONBodyDelivery2FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                           `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *CreateDrainJSONBodyDelivery2ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                            `json:"region"`
 	RoleArn              string                                            `json:"roleArn"`
@@ -3777,6 +3932,7 @@ type CreateDrain200JSONResponseBody0Delivery3 struct {
 	Encoding             CreateDrain200JSONResponseBody0Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                        `json:"endpoint"`
 	FileStructure        CreateDrain200JSONResponseBody0Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                       `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *CreateDrain200JSONResponseBody0Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                        `json:"region"`
 	RoleArn              string                                                        `json:"roleArn"`
@@ -4047,6 +4203,7 @@ type CreateDrain200JSONResponseBody1Delivery3 struct {
 	Encoding             CreateDrain200JSONResponseBody1Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                        `json:"endpoint"`
 	FileStructure        CreateDrain200JSONResponseBody1Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                       `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *CreateDrain200JSONResponseBody1Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                        `json:"region"`
 	RoleArn              string                                                        `json:"roleArn"`
@@ -4277,6 +4434,7 @@ type TestDrainJSONBodyDelivery2 struct {
 	Encoding             TestDrainJSONBodyDelivery2Encoding              `json:"encoding"`
 	Endpoint             string                                          `json:"endpoint"`
 	FileStructure        TestDrainJSONBodyDelivery2FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                         `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *TestDrainJSONBodyDelivery2ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                          `json:"region"`
 	RoleArn              string                                          `json:"roleArn"`
@@ -4424,6 +4582,7 @@ type GetDrain200JSONResponseBodyDelivery3 struct {
 	Encoding             GetDrain200JSONResponseBodyDelivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                    `json:"endpoint"`
 	FileStructure        GetDrain200JSONResponseBodyDelivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                   `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *GetDrain200JSONResponseBodyDelivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                    `json:"region"`
 	RoleArn              string                                                    `json:"roleArn"`
@@ -4639,6 +4798,7 @@ type UpdateDrainJSONBodyDelivery2 struct {
 	Encoding             UpdateDrainJSONBodyDelivery2Encoding              `json:"encoding"`
 	Endpoint             string                                            `json:"endpoint"`
 	FileStructure        UpdateDrainJSONBodyDelivery2FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                           `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *UpdateDrainJSONBodyDelivery2ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                            `json:"region"`
 	RoleArn              string                                            `json:"roleArn"`
@@ -4884,6 +5044,7 @@ type UpdateDrain200JSONResponseBody0Delivery3 struct {
 	Encoding             UpdateDrain200JSONResponseBody0Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                        `json:"endpoint"`
 	FileStructure        UpdateDrain200JSONResponseBody0Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                       `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *UpdateDrain200JSONResponseBody0Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                        `json:"region"`
 	RoleArn              string                                                        `json:"roleArn"`
@@ -5154,6 +5315,7 @@ type UpdateDrain200JSONResponseBody1Delivery3 struct {
 	Encoding             UpdateDrain200JSONResponseBody1Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                        `json:"endpoint"`
 	FileStructure        UpdateDrain200JSONResponseBody1Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                       `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *UpdateDrain200JSONResponseBody1Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                        `json:"region"`
 	RoleArn              string                                                        `json:"roleArn"`
@@ -5321,6 +5483,111 @@ type UpdateDrain200JSONResponseBody1Status string
 // UpdateDrain200JSONResponseBody defines parameters for UpdateDrain.
 type UpdateDrain200JSONResponseBody struct {
 	union json.RawMessage
+}
+
+// ListDrivesV1Params defines parameters for ListDrivesV1.
+type ListDrivesV1Params struct {
+	// ProjectId The project ID or name associated with the drives. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// Limit Maximum number of drives to return in the response. Used for pagination.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Opaque pagination cursor from a previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// SortBy Field to sort drives by.
+	SortBy *ListDrivesV1ParamsSortBy `form:"sortBy,omitempty" json:"sortBy,omitempty"`
+
+	// NamePrefix Filter drives whose name starts with this prefix. Only valid when sortBy=name.
+	NamePrefix *string `form:"namePrefix,omitempty" json:"namePrefix,omitempty"`
+
+	// SortOrder Sort direction for results.
+	SortOrder *ListDrivesV1ParamsSortOrder `form:"sortOrder,omitempty" json:"sortOrder,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListDrivesV1ParamsSortBy defines parameters for ListDrivesV1.
+type ListDrivesV1ParamsSortBy string
+
+// ListDrivesV1ParamsSortOrder defines parameters for ListDrivesV1.
+type ListDrivesV1ParamsSortOrder string
+
+// GetDriveV1Params defines parameters for GetDriveV1.
+type GetDriveV1Params struct {
+	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteDriveV1Params defines parameters for DeleteDriveV1.
+type DeleteDriveV1Params struct {
+	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetOrCreateDriveV1JSONBody defines parameters for GetOrCreateDriveV1.
+type GetOrCreateDriveV1JSONBody struct {
+	// MaxSizeBytes Maximum drive size in bytes. Must be a multiple of 4096 bytes. Defaults to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help.
+	MaxSizeBytes *int `json:"maxSizeBytes,omitempty"`
+
+	// ProjectId The project ID or name to associate the drive with. Required unless using a Vercel OIDC token scoped to a project.
+	//
+	// Example: prj_abc123
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// Region Region where the drive is stored. Defaults to iad1.
+	//
+	// Example: iad1
+	Region *GetOrCreateDriveV1JSONBodyRegion `json:"region,omitempty"`
+}
+
+// GetOrCreateDriveV1Params defines parameters for GetOrCreateDriveV1.
+type GetOrCreateDriveV1Params struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetOrCreateDriveV1JSONBodyRegion defines parameters for GetOrCreateDriveV1.
+type GetOrCreateDriveV1JSONBodyRegion string
+
+// ForkDriveV1JSONBody defines parameters for ForkDriveV1.
+type ForkDriveV1JSONBody struct {
+	// Name Name for the forked drive. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).
+	//
+	// Example: workspace-fork
+	Name string `json:"name"`
+}
+
+// ForkDriveV1Params defines parameters for ForkDriveV1.
+type ForkDriveV1Params struct {
+	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
 
 // DangerouslyDeleteBySrcImagesJSONBody defines parameters for DangerouslyDeleteBySrcImages.
@@ -10348,6 +10615,7 @@ type GetAllLogDrains200JSONResponseBody1Drains0Delivery3 struct {
 	Encoding             GetAllLogDrains200JSONResponseBody1Drains0Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                                   `json:"endpoint"`
 	FileStructure        GetAllLogDrains200JSONResponseBody1Drains0Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                                  `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *GetAllLogDrains200JSONResponseBody1Drains0Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                                   `json:"region"`
 	RoleArn              string                                                                   `json:"roleArn"`
@@ -10618,6 +10886,7 @@ type GetAllLogDrains200JSONResponseBody1Drains1Delivery3 struct {
 	Encoding             GetAllLogDrains200JSONResponseBody1Drains1Delivery3Encoding              `json:"encoding"`
 	Endpoint             string                                                                   `json:"endpoint"`
 	FileStructure        GetAllLogDrains200JSONResponseBody1Drains1Delivery3FileStructure         `json:"fileStructure"`
+	KmsKeyId             *string                                                                  `json:"kmsKeyId,omitempty"`
 	ObjectAcl            *GetAllLogDrains200JSONResponseBody1Drains1Delivery3ObjectAcl            `json:"objectAcl,omitempty"`
 	Region               string                                                                   `json:"region"`
 	RoleArn              string                                                                   `json:"roleArn"`
@@ -19748,266 +20017,3 @@ type CreateSdkKeyParams struct {
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
-
-// CreateSdkKeyJSONBodySdkKeyType defines parameters for CreateSdkKey.
-type CreateSdkKeyJSONBodySdkKeyType string
-
-// DeleteSdkKeyParams defines parameters for DeleteSdkKey.
-type DeleteSdkKeyParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagSegmentsParams defines parameters for ListFlagSegments.
-type ListFlagSegmentsParams struct {
-	// WithMetadata Whether to include metadata
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateFlagSegmentJSONBody defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBody struct {
-	// CreatedBy The entity who created the segment
-	CreatedBy *string `json:"createdBy,omitempty"`
-
-	// Data The data of the segment
-	Data struct {
-		Exclude *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"exclude,omitempty"`
-		Include *map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"include,omitempty"`
-		Rules *[]struct {
-			Conditions []struct {
-				Cmp        CreateFlagSegmentJSONBodyDataRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *bool `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs CreateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                                       `json:"id"`
-			Outcome CreateFlagSegmentJSONBody_Data_Rules_Outcome `json:"outcome"`
-		} `json:"rules,omitempty"`
-	} `json:"data"`
-	Description *string `json:"description,omitempty"`
-	Hint        string  `json:"hint"`
-	Label       string  `json:"label"`
-	Slug        string  `json:"slug"`
-}
-
-// CreateFlagSegmentParams defines parameters for CreateFlagSegment.
-type CreateFlagSegmentParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsCmp defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsCmp string
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsLhs0 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsLhs0 struct {
-	Type interface{} `json:"type"`
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsLhs1 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsLhs1 struct {
-	Attribute string      `json:"attribute"`
-	Kind      string      `json:"kind"`
-	Type      interface{} `json:"type"`
-}
-
-// CreateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0 struct {
-	Items []CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item `json:"items"`
-	Type  CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Type               `json:"type"`
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items0 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items1 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Type defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Type string
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs1 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs1 struct {
-	Flags   string      `json:"flags"`
-	Pattern string      `json:"pattern"`
-	Type    interface{} `json:"type"`
-}
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs2 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs2 = string
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs3 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs3 = float32
-
-// CreateFlagSegmentJSONBodyDataRulesConditionsRhs4 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesConditionsRhs4 = bool
-
-// CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegmentJSONBodyDataRulesOutcome0 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesOutcome0 struct {
-	Type interface{} `json:"type"`
-}
-
-// CreateFlagSegmentJSONBodyDataRulesOutcome1 defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBodyDataRulesOutcome1 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-	PassPromille float32     `json:"passPromille"`
-	Type         interface{} `json:"type"`
-}
-
-// CreateFlagSegmentJSONBody_Data_Rules_Outcome defines parameters for CreateFlagSegment.
-type CreateFlagSegmentJSONBody_Data_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmp defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmp string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmpOptionsIgnoreCase defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmpOptionsIgnoreCase bool
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0 struct {
-	Type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0Type `json:"type"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0Type defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0Type string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1 struct {
-	Attribute string                                                          `json:"attribute"`
-	Kind      string                                                          `json:"kind"`
-	Type      CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1Type `json:"type"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1Type defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1Type string
-
-// CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Lhs defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs0 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs0 = string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs1 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs1 = float32
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2 struct {
-	Items []CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Type               `json:"type"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items0 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items1 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs_2_Items_Item defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Type defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Type string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3 struct {
-	Flags   string                                                          `json:"flags"`
-	Pattern string                                                          `json:"pattern"`
-	Type    CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3Type `json:"type"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3Type defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3Type string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs4 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs4 bool
-
-// CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesOutcome0 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesOutcome0 struct {
-	Type CreateFlagSegment201JSONResponseBodyDataRulesOutcome0Type `json:"type"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesOutcome0Type defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesOutcome0Type string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesOutcome1 defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1 struct {
-	Base struct {
-		Attribute string                                                        `json:"attribute"`
-		Kind      string                                                        `json:"kind"`
-		Type      CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	PassPromille float32                                                   `json:"passPromille"`
-	Type         CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type `json:"type"`
-}
-
-// CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType string
-
-// CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type defines parameters for CreateFlagSegment.
-type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type string

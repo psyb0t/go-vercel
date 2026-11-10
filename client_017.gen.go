@@ -10,18 +10,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// MergeBadRequest performs a merge with any union data inside the TransferInDomain400JSONResponseBody, using the provided BadRequest
-func (t *TransferInDomain400JSONResponseBody) MergeBadRequest(v BadRequest) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
 // AsDomainAlreadyOwned returns the union data inside the TransferInDomain400JSONResponseBody as a DomainAlreadyOwned
 func (t TransferInDomain400JSONResponseBody) AsDomainAlreadyOwned() (DomainAlreadyOwned, error) {
 	var body DomainAlreadyOwned
@@ -20009,5 +19997,17 @@ func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Re
 func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2) error {
 	b, err := json.Marshal(v)
 	t.union = b
+	return err
+}
+
+// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2
+func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
 	return err
 }

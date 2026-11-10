@@ -8,6 +8,793 @@ import (
 	"time"
 )
 
+type UpdateAccessGroupProjectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		AccessGroupId string                                          `json:"accessGroupId"`
+		CreatedAt     string                                          `json:"createdAt"`
+		ProjectId     string                                          `json:"projectId"`
+		Role          UpdateAccessGroupProject200JSONResponseBodyRole `json:"role"`
+		TeamId        string                                          `json:"teamId"`
+		UpdatedAt     string                                          `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateAccessGroupProjectResponse) GetJSON200() *struct {
+	AccessGroupId string                                          `json:"accessGroupId"`
+	CreatedAt     string                                          `json:"createdAt"`
+	ProjectId     string                                          `json:"projectId"`
+	Role          UpdateAccessGroupProject200JSONResponseBodyRole `json:"role"`
+	TeamId        string                                          `json:"teamId"`
+	UpdatedAt     string                                          `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateAccessGroupProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAccessGroupProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAccessGroupProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAccessGroupProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAccessGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteAccessGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAccessGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAccessGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAccessGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ReadAccessGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// AccessGroupId ID of the access group.
+		//
+		// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
+		AccessGroupId string `json:"accessGroupId"`
+
+		// CreatedAt Timestamp in milliseconds when the access group was created.
+		//
+		// Example: 1588720733602
+		CreatedAt      string                                            `json:"createdAt"`
+		Entitlements   *[]ReadAccessGroup200JSONResponseBodyEntitlements `json:"entitlements,omitempty"`
+		IsDsyncManaged ReadAccessGroup200JSONResponseBodyIsDsyncManaged  `json:"isDsyncManaged"`
+
+		// MembersCount Number of members in the access group.
+		//
+		// Example: 5
+		MembersCount float32 `json:"membersCount"`
+
+		// Name The name of this access group.
+		//
+		// Example: my-access-group
+		Name string `json:"name"`
+
+		// ProjectsCount Number of projects in the access group.
+		//
+		// Example: 2
+		ProjectsCount float32 `json:"projectsCount"`
+
+		// TeamId ID of the team that this access group belongs to.
+		//
+		// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
+		TeamId          string                                               `json:"teamId"`
+		TeamPermissions *[]ReadAccessGroup200JSONResponseBodyTeamPermissions `json:"teamPermissions,omitempty"`
+
+		// TeamRoles Roles that the team has in the access group.
+		//
+		// Example: ["DEVELOPER","BILLING"]
+		TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+		// UpdatedAt Timestamp in milliseconds when the access group was last updated.
+		//
+		// Example: 1588720733602
+		UpdatedAt string `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ReadAccessGroupResponse) GetJSON200() *struct {
+	// AccessGroupId ID of the access group.
+	//
+	// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
+	AccessGroupId string `json:"accessGroupId"`
+
+	// CreatedAt Timestamp in milliseconds when the access group was created.
+	//
+	// Example: 1588720733602
+	CreatedAt      string                                            `json:"createdAt"`
+	Entitlements   *[]ReadAccessGroup200JSONResponseBodyEntitlements `json:"entitlements,omitempty"`
+	IsDsyncManaged ReadAccessGroup200JSONResponseBodyIsDsyncManaged  `json:"isDsyncManaged"`
+
+	// MembersCount Number of members in the access group.
+	//
+	// Example: 5
+	MembersCount float32 `json:"membersCount"`
+
+	// Name The name of this access group.
+	//
+	// Example: my-access-group
+	Name string `json:"name"`
+
+	// ProjectsCount Number of projects in the access group.
+	//
+	// Example: 2
+	ProjectsCount float32 `json:"projectsCount"`
+
+	// TeamId ID of the team that this access group belongs to.
+	//
+	// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
+	TeamId          string                                               `json:"teamId"`
+	TeamPermissions *[]ReadAccessGroup200JSONResponseBodyTeamPermissions `json:"teamPermissions,omitempty"`
+
+	// TeamRoles Roles that the team has in the access group.
+	//
+	// Example: ["DEVELOPER","BILLING"]
+	TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+	// UpdatedAt Timestamp in milliseconds when the access group was last updated.
+	//
+	// Example: 1588720733602
+	UpdatedAt string `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ReadAccessGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ReadAccessGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ReadAccessGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ReadAccessGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAccessGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// AccessGroupId ID of the access group.
+		//
+		// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
+		AccessGroupId string `json:"accessGroupId"`
+
+		// CreatedAt Timestamp in milliseconds when the access group was created.
+		//
+		// Example: 1588720733602
+		CreatedAt    string                                             `json:"createdAt"`
+		Entitlements []UpdateAccessGroup200JSONResponseBodyEntitlements `json:"entitlements"`
+
+		// MembersCount Number of members in the access group.
+		//
+		// Example: 5
+		MembersCount float32 `json:"membersCount"`
+
+		// Name The name of this access group.
+		//
+		// Example: my-access-group
+		Name string `json:"name"`
+
+		// ProjectsCount Number of projects in the access group.
+		//
+		// Example: 2
+		ProjectsCount float32 `json:"projectsCount"`
+
+		// TeamId ID of the team that this access group belongs to.
+		//
+		// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
+		TeamId string `json:"teamId"`
+
+		// TeamPermissions Permissions that the team has in the access group.
+		//
+		// Example: ["CreateProject"]
+		TeamPermissions *[]string `json:"teamPermissions,omitempty"`
+
+		// TeamRoles Roles that the team has in the access group.
+		//
+		// Example: ["DEVELOPER","BILLING"]
+		TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+		// UpdatedAt Timestamp in milliseconds when the access group was last updated.
+		//
+		// Example: 1588720733602
+		UpdatedAt string `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateAccessGroupResponse) GetJSON200() *struct {
+	// AccessGroupId ID of the access group.
+	//
+	// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
+	AccessGroupId string `json:"accessGroupId"`
+
+	// CreatedAt Timestamp in milliseconds when the access group was created.
+	//
+	// Example: 1588720733602
+	CreatedAt    string                                             `json:"createdAt"`
+	Entitlements []UpdateAccessGroup200JSONResponseBodyEntitlements `json:"entitlements"`
+
+	// MembersCount Number of members in the access group.
+	//
+	// Example: 5
+	MembersCount float32 `json:"membersCount"`
+
+	// Name The name of this access group.
+	//
+	// Example: my-access-group
+	Name string `json:"name"`
+
+	// ProjectsCount Number of projects in the access group.
+	//
+	// Example: 2
+	ProjectsCount float32 `json:"projectsCount"`
+
+	// TeamId ID of the team that this access group belongs to.
+	//
+	// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
+	TeamId string `json:"teamId"`
+
+	// TeamPermissions Permissions that the team has in the access group.
+	//
+	// Example: ["CreateProject"]
+	TeamPermissions *[]string `json:"teamPermissions,omitempty"`
+
+	// TeamRoles Roles that the team has in the access group.
+	//
+	// Example: ["DEVELOPER","BILLING"]
+	TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+	// UpdatedAt Timestamp in milliseconds when the access group was last updated.
+	//
+	// Example: 1588720733602
+	UpdatedAt string `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateAccessGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAccessGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAccessGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAccessGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAccessGroupMembersResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Members []struct {
+			Avatar    *string                                                  `json:"avatar,omitempty"`
+			CreatedAt *string                                                  `json:"createdAt,omitempty"`
+			Email     string                                                   `json:"email"`
+			Name      *string                                                  `json:"name,omitempty"`
+			TeamRole  ListAccessGroupMembers200JSONResponseBodyMembersTeamRole `json:"teamRole"`
+			Uid       string                                                   `json:"uid"`
+			Username  string                                                   `json:"username"`
+		} `json:"members"`
+		Pagination struct {
+			Count float32 `json:"count"`
+			Next  *string `json:"next"`
+		} `json:"pagination"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAccessGroupMembersResponse) GetJSON200() *struct {
+	Members []struct {
+		Avatar    *string                                                  `json:"avatar,omitempty"`
+		CreatedAt *string                                                  `json:"createdAt,omitempty"`
+		Email     string                                                   `json:"email"`
+		Name      *string                                                  `json:"name,omitempty"`
+		TeamRole  ListAccessGroupMembers200JSONResponseBodyMembersTeamRole `json:"teamRole"`
+		Uid       string                                                   `json:"uid"`
+		Username  string                                                   `json:"username"`
+	} `json:"members"`
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAccessGroupMembersResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAccessGroupMembersResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAccessGroupMembersResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAccessGroupMembersResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAccessGroupProjectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Pagination struct {
+			Count float32 `json:"count"`
+			Next  *string `json:"next"`
+		} `json:"pagination"`
+		Projects []struct {
+			CreatedAt string `json:"createdAt"`
+			Project   struct {
+				Framework          *string `json:"framework,omitempty"`
+				LatestDeploymentId *string `json:"latestDeploymentId,omitempty"`
+				Name               *string `json:"name,omitempty"`
+			} `json:"project"`
+			ProjectId string                                                 `json:"projectId"`
+			Role      ListAccessGroupProjects200JSONResponseBodyProjectsRole `json:"role"`
+			UpdatedAt string                                                 `json:"updatedAt"`
+		} `json:"projects"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAccessGroupProjectsResponse) GetJSON200() *struct {
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next"`
+	} `json:"pagination"`
+	Projects []struct {
+		CreatedAt string `json:"createdAt"`
+		Project   struct {
+			Framework          *string `json:"framework,omitempty"`
+			LatestDeploymentId *string `json:"latestDeploymentId,omitempty"`
+			Name               *string `json:"name,omitempty"`
+		} `json:"project"`
+		ProjectId string                                                 `json:"projectId"`
+		Role      ListAccessGroupProjects200JSONResponseBodyProjectsRole `json:"role"`
+		UpdatedAt string                                                 `json:"updatedAt"`
+	} `json:"projects"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAccessGroupProjectsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAccessGroupProjectsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAccessGroupProjectsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAccessGroupProjectsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiGatewayRoutersResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayRouterList
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAiGatewayRoutersResponse) GetJSON200() *AiGatewayRouterList {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAiGatewayRoutersResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiGatewayRoutersResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiGatewayRoutersResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiGatewayRoutersResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BuyCreditsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *BuyCredits200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r BuyCreditsResponse) GetJSON200() *BuyCredits200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r BuyCreditsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r BuyCreditsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BuyCreditsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BuyCreditsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListBillingChargesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r ListBillingChargesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListBillingChargesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListBillingChargesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListBillingChargesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListContractCommitmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r ListContractCommitmentsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListContractCommitmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListContractCommitmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListContractCommitmentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteRedirectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *DeleteRedirects200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteRedirectsResponse) GetJSON200() *DeleteRedirects200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteRedirectsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteRedirectsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteRedirectsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteRedirectsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetRedirectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetRedirects200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetRedirectsResponse) GetJSON200() *GetRedirects200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetRedirectsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetRedirectsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetRedirectsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetRedirectsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type EditRedirectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Alias   *string `json:"alias"`
+		Version struct {
+			// Alias The staging link for previewing redirects in this version.
+			Alias     *string `json:"alias,omitempty"`
+			CreatedBy string  `json:"createdBy"`
+
+			// Id The unique identifier for the version.
+			Id string `json:"id"`
+
+			// IsLive Whether this version is currently live in production.
+			IsLive *EditRedirect200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+			// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
+			IsStaging *EditRedirect200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+			// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+			Key          string  `json:"key"`
+			LastModified float32 `json:"lastModified"`
+
+			// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
+			Name *string `json:"name,omitempty"`
+
+			// RedirectCount The number of redirects in this version.
+			RedirectCount *float32 `json:"redirectCount,omitempty"`
+		} `json:"version"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r EditRedirectResponse) GetJSON200() *struct {
+	Alias   *string `json:"alias"`
+	Version struct {
+		// Alias The staging link for previewing redirects in this version.
+		Alias     *string `json:"alias,omitempty"`
+		CreatedBy string  `json:"createdBy"`
+
+		// Id The unique identifier for the version.
+		Id string `json:"id"`
+
+		// IsLive Whether this version is currently live in production.
+		IsLive *EditRedirect200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+		// IsStaging Whether this version has not been promoted to production yet and is not serving end users.
+		IsStaging *EditRedirect200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+		// Key The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+		Key          string  `json:"key"`
+		LastModified float32 `json:"lastModified"`
+
+		// Name Optional name for the version. If not provided, defaults to an ISO timestamp string.
+		Name *string `json:"name,omitempty"`
+
+		// RedirectCount The number of redirects in this version.
+		RedirectCount *float32 `json:"redirectCount,omitempty"`
+	} `json:"version"`
+} {
+	return r.JSON200
+}
+
 // GetBody returns the raw response body bytes
 func (r EditRedirectResponse) GetBody() []byte {
 	return r.Body
@@ -2707,6 +3494,260 @@ func (r UpdateDrainResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateDrainResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListDrivesV1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Drives     []Drive `json:"drives"`
+		Pagination struct {
+			Count float32 `json:"count"`
+			Next  *string `json:"next"`
+		} `json:"pagination"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListDrivesV1Response) GetJSON200() *struct {
+	Drives     []Drive `json:"drives"`
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListDrivesV1Response) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDrivesV1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDrivesV1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListDrivesV1Response) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetDriveV1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetDriveV1Response) GetJSON200() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetDriveV1Response) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDriveV1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDriveV1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetDriveV1Response) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteDriveV1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteDriveV1Response) GetJSON200() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteDriveV1Response) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteDriveV1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteDriveV1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteDriveV1Response) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetOrCreateDriveV1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetOrCreateDriveV1Response) GetJSON200() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON200
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r GetOrCreateDriveV1Response) GetJSON201() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r GetOrCreateDriveV1Response) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetOrCreateDriveV1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetOrCreateDriveV1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetOrCreateDriveV1Response) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ForkDriveV1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r ForkDriveV1Response) GetJSON201() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r ForkDriveV1Response) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ForkDriveV1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ForkDriveV1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ForkDriveV1Response) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}

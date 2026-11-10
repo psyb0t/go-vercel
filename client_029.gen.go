@@ -6920,6 +6920,9 @@ func ParseClaimDomainOwnershipResponse(rsp *http.Response) (*ClaimDomainOwnershi
 	case rsp.StatusCode == 404:
 		break // No content-type
 
+	case rsp.StatusCode == 409:
+		break // No content-type
+
 	case rsp.StatusCode == 410:
 		break // No content-type
 
@@ -6944,8 +6947,9 @@ func ParseGetDomainVerificationRecordResponse(rsp *http.Response) (*GetDomainVer
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			TxtRecord          string `json:"txtRecord"`
-			VerificationDomain string `json:"verificationDomain"`
+			ExpiresAt          float32 `json:"expiresAt"`
+			TxtRecord          string  `json:"txtRecord"`
+			VerificationDomain string  `json:"verificationDomain"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6962,6 +6966,9 @@ func ParseGetDomainVerificationRecordResponse(rsp *http.Response) (*GetDomainVer
 		break // No content-type
 
 	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
 		break // No content-type
 
 	case rsp.StatusCode == 410:

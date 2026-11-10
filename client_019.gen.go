@@ -10,18 +10,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// MergeCancelDeployment200JSONResponseBodyServices1RewritesHas0 performs a merge with any union data inside the CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item, using the provided CancelDeployment200JSONResponseBodyServices1RewritesHas0
-func (t *CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item) MergeCancelDeployment200JSONResponseBodyServices1RewritesHas0(v CancelDeployment200JSONResponseBodyServices1RewritesHas0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
 // AsCancelDeployment200JSONResponseBodyServices1RewritesHas1 returns the union data inside the CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item as a CancelDeployment200JSONResponseBodyServices1RewritesHas1
 func (t CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item) AsCancelDeployment200JSONResponseBodyServices1RewritesHas1() (CancelDeployment200JSONResponseBodyServices1RewritesHas1, error) {
 	var body CancelDeployment200JSONResponseBodyServices1RewritesHas1
@@ -20008,5 +19996,19 @@ func (t *UpdateSandbox200JSONResponseBody) MergeUpdateSandbox200JSONResponseBody
 
 	merged, err := runtime.JSONMerge(t.union, b)
 	t.union = merged
+	return err
+}
+
+// AsUpdateSandbox200JSONResponseBody1 returns the union data inside the UpdateSandbox200JSONResponseBody as a UpdateSandbox200JSONResponseBody1
+func (t UpdateSandbox200JSONResponseBody) AsUpdateSandbox200JSONResponseBody1() (UpdateSandbox200JSONResponseBody1, error) {
+	var body UpdateSandbox200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandbox200JSONResponseBody1 overwrites any union data inside the UpdateSandbox200JSONResponseBody as the provided UpdateSandbox200JSONResponseBody1
+func (t *UpdateSandbox200JSONResponseBody) FromUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
 	return err
 }

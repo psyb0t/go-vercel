@@ -1400,6 +1400,111 @@ func (c *ClientWithResponses) UpdateDrainWithResponse(ctx context.Context, id st
 	return ParseUpdateDrainResponse(rsp)
 }
 
+// ListDrivesV1WithResponse List drives
+//
+// Retrieves a paginated list of drives belonging to a specific project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/drives (the `ListDrivesV1` operationId).
+func (c *ClientWithResponses) ListDrivesV1WithResponse(ctx context.Context, params *ListDrivesV1Params, reqEditors ...RequestEditorFn) (*ListDrivesV1Response, error) {
+	rsp, err := c.ListDrivesV1(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDrivesV1Response(rsp)
+}
+
+// GetDriveV1WithResponse Get a drive
+//
+// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/drives/{nameOrId} (the `GetDriveV1` operationId).
+func (c *ClientWithResponses) GetDriveV1WithResponse(ctx context.Context, nameOrId string, params *GetDriveV1Params, reqEditors ...RequestEditorFn) (*GetDriveV1Response, error) {
+	rsp, err := c.GetDriveV1(ctx, nameOrId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDriveV1Response(rsp)
+}
+
+// DeleteDriveV1WithResponse Delete a drive
+//
+// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/drives/{name} (the `DeleteDriveV1` operationId).
+func (c *ClientWithResponses) DeleteDriveV1WithResponse(ctx context.Context, name string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*DeleteDriveV1Response, error) {
+	rsp, err := c.DeleteDriveV1(ctx, name, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteDriveV1Response(rsp)
+}
+
+// GetOrCreateDriveV1WithBodyWithResponse Get or create a drive
+//
+// Gets an existing drive by project and name, or creates it when it does not exist.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/drives/{name} (the `GetOrCreateDriveV1` operationId).
+func (c *ClientWithResponses) GetOrCreateDriveV1WithBodyWithResponse(ctx context.Context, name string, params *GetOrCreateDriveV1Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetOrCreateDriveV1Response, error) {
+	rsp, err := c.GetOrCreateDriveV1WithBody(ctx, name, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOrCreateDriveV1Response(rsp)
+}
+
+// GetOrCreateDriveV1WithResponse Get or create a drive
+//
+// Gets an existing drive by project and name, or creates it when it does not exist.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/drives/{name} (the `GetOrCreateDriveV1` operationId).
+func (c *ClientWithResponses) GetOrCreateDriveV1WithResponse(ctx context.Context, name string, params *GetOrCreateDriveV1Params, body GetOrCreateDriveV1JSONRequestBody, reqEditors ...RequestEditorFn) (*GetOrCreateDriveV1Response, error) {
+	rsp, err := c.GetOrCreateDriveV1(ctx, name, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOrCreateDriveV1Response(rsp)
+}
+
+// ForkDriveV1WithBodyWithResponse Fork a drive
+//
+// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/drives/{name}/fork (the `ForkDriveV1` operationId).
+func (c *ClientWithResponses) ForkDriveV1WithBodyWithResponse(ctx context.Context, name string, params *ForkDriveV1Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForkDriveV1Response, error) {
+	rsp, err := c.ForkDriveV1WithBody(ctx, name, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseForkDriveV1Response(rsp)
+}
+
+// ForkDriveV1WithResponse Fork a drive
+//
+// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/drives/{name}/fork (the `ForkDriveV1` operationId).
+func (c *ClientWithResponses) ForkDriveV1WithResponse(ctx context.Context, name string, params *ForkDriveV1Params, body ForkDriveV1JSONRequestBody, reqEditors ...RequestEditorFn) (*ForkDriveV1Response, error) {
+	rsp, err := c.ForkDriveV1(ctx, name, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseForkDriveV1Response(rsp)
+}
+
 // DangerouslyDeleteBySrcImagesWithBodyWithResponse Dangerously delete by source image
 //
 // Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
@@ -7556,13 +7661,15 @@ func (c *ClientWithResponses) CreateSandboxesV2WithResponse(ctx context.Context,
 	return ParseCreateSandboxesV2Response(rsp)
 }
 
-// ListDrivesWithResponse List drives
+// ListDrivesWithResponse Deprecated: Use GET /v1/drives. Requires the read:drive app scope instead of read:sandbox, and drive:list instead of vercelRun:read. List drives
 //
 // Retrieves a paginated list of drives belonging to a specific project.
 //
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v2/sandboxes/drives (the `ListDrives` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) ListDrivesWithResponse(ctx context.Context, params *ListDrivesParams, reqEditors ...RequestEditorFn) (*ListDrivesResponse, error) {
 	rsp, err := c.ListDrives(ctx, params, reqEditors...)
 	if err != nil {
@@ -7571,13 +7678,15 @@ func (c *ClientWithResponses) ListDrivesWithResponse(ctx context.Context, params
 	return ParseListDrivesResponse(rsp)
 }
 
-// GetDriveWithResponse Get a drive
+// GetDriveWithResponse Deprecated: Use GET /v1/drives/:nameOrId. Requires the read:drive app scope instead of read:sandbox, and drive:read instead of vercelRun:read. Get a drive
 //
 // Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
 //
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v2/sandboxes/drives/{nameOrId} (the `GetDrive` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) GetDriveWithResponse(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*GetDriveResponse, error) {
 	rsp, err := c.GetDrive(ctx, nameOrId, params, reqEditors...)
 	if err != nil {
@@ -7586,13 +7695,16 @@ func (c *ClientWithResponses) GetDriveWithResponse(ctx context.Context, nameOrId
 	return ParseGetDriveResponse(rsp)
 }
 
-// DeleteDriveWithResponse Delete a drive
+// DeleteDriveWithResponse Deprecated: Use DELETE /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
+// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
 //
 // Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
 //
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) DeleteDriveWithResponse(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*DeleteDriveResponse, error) {
 	rsp, err := c.DeleteDrive(ctx, name, params, reqEditors...)
 	if err != nil {
@@ -7601,13 +7713,16 @@ func (c *ClientWithResponses) DeleteDriveWithResponse(ctx context.Context, name 
 	return ParseDeleteDriveResponse(rsp)
 }
 
-// GetOrCreateDriveWithBodyWithResponse Get or create a drive
+// GetOrCreateDriveWithBodyWithResponse Deprecated: Use POST /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:create instead of vercelRun:create.
+// Emits drive-created activity events instead of sandbox-drive-created. Get or create a drive
 //
 // Gets an existing drive by project and name, or creates it when it does not exist.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) GetOrCreateDriveWithBodyWithResponse(ctx context.Context, name string, params *GetOrCreateDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetOrCreateDriveResponse, error) {
 	rsp, err := c.GetOrCreateDriveWithBody(ctx, name, params, contentType, body, reqEditors...)
 	if err != nil {
@@ -7616,13 +7731,15 @@ func (c *ClientWithResponses) GetOrCreateDriveWithBodyWithResponse(ctx context.C
 	return ParseGetOrCreateDriveResponse(rsp)
 }
 
-// GetOrCreateDriveWithResponse Get or create a drive
+// GetOrCreateDriveWithResponse Deprecated: Use POST /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:create instead of vercelRun:create.
+// Emits drive-created activity events instead of sandbox-drive-created. Get or create a drive
 //
 // Gets an existing drive by project and name, or creates it when it does not exist.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) GetOrCreateDriveWithResponse(ctx context.Context, name string, params *GetOrCreateDriveParams, body GetOrCreateDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*GetOrCreateDriveResponse, error) {
 	rsp, err := c.GetOrCreateDrive(ctx, name, params, body, reqEditors...)
 	if err != nil {
@@ -7631,13 +7748,16 @@ func (c *ClientWithResponses) GetOrCreateDriveWithResponse(ctx context.Context, 
 	return ParseGetOrCreateDriveResponse(rsp)
 }
 
-// ForkDriveWithBodyWithResponse Fork a drive
+// ForkDriveWithBodyWithResponse Deprecated: Use POST /v1/drives/:name/fork. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:read and drive:create instead of vercelRun:read and vercelRun:create.
+// Emits drive-created activity events instead of sandbox-drive-created. Fork a drive
 //
 // Fork the provided drive into a new one with the provided name, inheriting the region and max size.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) ForkDriveWithBodyWithResponse(ctx context.Context, name string, params *ForkDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForkDriveResponse, error) {
 	rsp, err := c.ForkDriveWithBody(ctx, name, params, contentType, body, reqEditors...)
 	if err != nil {
@@ -7646,13 +7766,15 @@ func (c *ClientWithResponses) ForkDriveWithBodyWithResponse(ctx context.Context,
 	return ParseForkDriveResponse(rsp)
 }
 
-// ForkDriveWithResponse Fork a drive
+// ForkDriveWithResponse Deprecated: Use POST /v1/drives/:name/fork. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:read and drive:create instead of vercelRun:read and vercelRun:create.
+// Emits drive-created activity events instead of sandbox-drive-created. Fork a drive
 //
 // Fork the provided drive into a new one with the provided name, inheriting the region and max size.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) ForkDriveWithResponse(ctx context.Context, name string, params *ForkDriveParams, body ForkDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*ForkDriveResponse, error) {
 	rsp, err := c.ForkDrive(ctx, name, params, body, reqEditors...)
 	if err != nil {
@@ -9164,7 +9286,7 @@ func (c *ClientWithResponses) GetDeploymentFileContentsWithResponse(ctx context.
 
 // ClaimDomainOwnershipWithResponse Claim Domain Ownership
 //
-// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
+// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. Proof must be unexpired and issued for the domain's current ownership. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -9179,7 +9301,7 @@ func (c *ClientWithResponses) ClaimDomainOwnershipWithResponse(ctx context.Conte
 
 // GetDomainVerificationRecordWithResponse Get Domain Verification Record
 //
-// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.
+// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer. Records expire at the returned expiresAt (at most 24 hours) or when ownership changes.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -10979,6 +11101,9 @@ func ParseAcceptProjectTransferRequestResponse(rsp *http.Response) (*AcceptProje
 		break // No content-type
 
 	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
 		break // No content-type
 
 	case rsp.StatusCode == 410:
@@ -14338,6 +14463,275 @@ func ParseUpdateDrainResponse(rsp *http.Response) (*UpdateDrainResponse, error) 
 		break // No content-type
 
 	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseListDrivesV1Response parses an HTTP response from a ListDrivesV1WithResponse call
+func ParseListDrivesV1Response(rsp *http.Response) (*ListDrivesV1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDrivesV1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Drives     []Drive `json:"drives"`
+			Pagination struct {
+				Count float32 `json:"count"`
+				Next  *string `json:"next"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDriveV1Response parses an HTTP response from a GetDriveV1WithResponse call
+func ParseGetDriveV1Response(rsp *http.Response) (*GetDriveV1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDriveV1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteDriveV1Response parses an HTTP response from a DeleteDriveV1WithResponse call
+func ParseDeleteDriveV1Response(rsp *http.Response) (*DeleteDriveV1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteDriveV1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetOrCreateDriveV1Response parses an HTTP response from a GetOrCreateDriveV1WithResponse call
+func ParseGetOrCreateDriveV1Response(rsp *http.Response) (*GetOrCreateDriveV1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOrCreateDriveV1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseForkDriveV1Response parses an HTTP response from a ForkDriveV1WithResponse call
+func ParseForkDriveV1Response(rsp *http.Response) (*ForkDriveV1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ForkDriveV1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
 		break // No content-type
 
 	}

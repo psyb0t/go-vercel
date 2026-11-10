@@ -12,6 +12,31 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ExtendSessionTimeoutParams defines parameters for ExtendSessionTimeout.
+type ExtendSessionTimeoutParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateSessionDirectoryJSONBody defines parameters for CreateSessionDirectory.
+type CreateSessionDirectoryJSONBody struct {
+	// Cwd The base directory for resolving relative paths. If not specified, paths are resolved from the sandbox home directory.
+	//
+	// Example: /home/vercel-sandbox
+	Cwd *string `json:"cwd,omitempty"`
+
+	// Path The path of the directory to create. Can be absolute or relative to the working directory.
+	//
+	// Example: src/components
+	Path string `json:"path"`
+
+	// Recursive If true, creates parent directories as needed (like `mkdir -p`). If false, fails if parent directories do not exist.
+	Recursive *bool `json:"recursive,omitempty"`
+}
+
 // CreateSessionDirectoryParams defines parameters for CreateSessionDirectory.
 type CreateSessionDirectoryParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -10165,6 +10190,12 @@ type TestDrainJSONRequestBody TestDrainJSONBody
 // UpdateDrainJSONRequestBody defines body for UpdateDrain for application/json ContentType.
 type UpdateDrainJSONRequestBody UpdateDrainJSONBody
 
+// GetOrCreateDriveV1JSONRequestBody defines body for GetOrCreateDriveV1 for application/json ContentType.
+type GetOrCreateDriveV1JSONRequestBody GetOrCreateDriveV1JSONBody
+
+// ForkDriveV1JSONRequestBody defines body for ForkDriveV1 for application/json ContentType.
+type ForkDriveV1JSONRequestBody ForkDriveV1JSONBody
+
 // DangerouslyDeleteBySrcImagesJSONRequestBody defines body for DangerouslyDeleteBySrcImages for application/json ContentType.
 type DangerouslyDeleteBySrcImagesJSONRequestBody DangerouslyDeleteBySrcImagesJSONBody
 
@@ -10525,9 +10556,13 @@ type UpdateProjectCheckJSONRequestBody UpdateProjectCheckJSONBody
 type CreateSandboxesV2JSONRequestBody CreateSandboxesV2JSONBody
 
 // GetOrCreateDriveJSONRequestBody defines body for GetOrCreateDrive for application/json ContentType.
+//
+// Deprecated: this type has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 type GetOrCreateDriveJSONRequestBody GetOrCreateDriveJSONBody
 
 // ForkDriveJSONRequestBody defines body for ForkDrive for application/json ContentType.
+//
+// Deprecated: this type has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 type ForkDriveJSONRequestBody ForkDriveJSONBody
 
 // RunSessionCommandJSONRequestBody defines body for RunSessionCommand for application/json ContentType.
@@ -12459,14 +12494,6 @@ func (a *Team) UnmarshalJSON(b []byte) error {
 		delete(object, "description")
 	}
 
-	if raw, found := object["disableHardAutoBlocks"]; found {
-		err = json.Unmarshal(raw, &a.DisableHardAutoBlocks)
-		if err != nil {
-			return fmt.Errorf("error reading 'disableHardAutoBlocks': %w", err)
-		}
-		delete(object, "disableHardAutoBlocks")
-	}
-
 	if raw, found := object["disableRepositoryDispatchEvents"]; found {
 		err = json.Unmarshal(raw, &a.DisableRepositoryDispatchEvents)
 		if err != nil {
@@ -12848,13 +12875,6 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	object["description"], err = json.Marshal(a.Description)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'description': %w", err)
-	}
-
-	if a.DisableHardAutoBlocks != nil {
-		object["disableHardAutoBlocks"], err = json.Marshal(a.DisableHardAutoBlocks)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'disableHardAutoBlocks': %w", err)
-		}
 	}
 
 	if a.DisableRepositoryDispatchEvents != nil {
@@ -19996,21 +20016,4 @@ func (t *Segment_Data_Rules_Conditions_Lhs) MergeSegmentDataRulesConditionsLhs1(
 	merged, err := runtime.JSONMerge(t.union, b)
 	t.union = merged
 	return err
-}
-
-func (t Segment_Data_Rules_Conditions_Lhs) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Segment_Data_Rules_Conditions_Lhs) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsSegmentDataRulesConditionsRhs2Items0 returns the union data inside the Segment_Data_Rules_Conditions_Rhs_2_Items_Item as a SegmentDataRulesConditionsRhs2Items0
-func (t Segment_Data_Rules_Conditions_Rhs_2_Items_Item) AsSegmentDataRulesConditionsRhs2Items0() (SegmentDataRulesConditionsRhs2Items0, error) {
-	var body SegmentDataRulesConditionsRhs2Items0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
 }

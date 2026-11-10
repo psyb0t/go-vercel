@@ -8,6 +8,269 @@ import (
 	"time"
 )
 
+// CreateSdkKeyJSONBodySdkKeyType defines parameters for CreateSdkKey.
+type CreateSdkKeyJSONBodySdkKeyType string
+
+// DeleteSdkKeyParams defines parameters for DeleteSdkKey.
+type DeleteSdkKeyParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListFlagSegmentsParams defines parameters for ListFlagSegments.
+type ListFlagSegmentsParams struct {
+	// WithMetadata Whether to include metadata
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateFlagSegmentJSONBody defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBody struct {
+	// CreatedBy The entity who created the segment
+	CreatedBy *string `json:"createdBy,omitempty"`
+
+	// Data The data of the segment
+	Data struct {
+		Exclude *map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"exclude,omitempty"`
+		Include *map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"include,omitempty"`
+		Rules *[]struct {
+			Conditions []struct {
+				Cmp        CreateFlagSegmentJSONBodyDataRulesConditionsCmp `json:"cmp"`
+				CmpOptions *struct {
+					IgnoreCase *bool `json:"ignoreCase,omitempty"`
+				} `json:"cmpOptions,omitempty"`
+				Lhs CreateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs  `json:"lhs"`
+				Rhs *CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs `json:"rhs,omitempty"`
+			} `json:"conditions"`
+			Id      string                                       `json:"id"`
+			Outcome CreateFlagSegmentJSONBody_Data_Rules_Outcome `json:"outcome"`
+		} `json:"rules,omitempty"`
+	} `json:"data"`
+	Description *string `json:"description,omitempty"`
+	Hint        string  `json:"hint"`
+	Label       string  `json:"label"`
+	Slug        string  `json:"slug"`
+}
+
+// CreateFlagSegmentParams defines parameters for CreateFlagSegment.
+type CreateFlagSegmentParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsCmp defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsCmp string
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsLhs0 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsLhs0 struct {
+	Type interface{} `json:"type"`
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsLhs1 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsLhs1 struct {
+	Attribute string      `json:"attribute"`
+	Kind      string      `json:"kind"`
+	Type      interface{} `json:"type"`
+}
+
+// CreateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBody_Data_Rules_Conditions_Lhs struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0 struct {
+	Items []CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item `json:"items"`
+	Type  CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Type               `json:"type"`
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items0 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items0 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value float32 `json:"value"`
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items1 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Items1 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value string  `json:"value"`
+}
+
+// CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs_0_Items_Item struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Type defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs0Type string
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs1 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs1 struct {
+	Flags   string      `json:"flags"`
+	Pattern string      `json:"pattern"`
+	Type    interface{} `json:"type"`
+}
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs2 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs2 = string
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs3 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs3 = float32
+
+// CreateFlagSegmentJSONBodyDataRulesConditionsRhs4 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesConditionsRhs4 = bool
+
+// CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBody_Data_Rules_Conditions_Rhs struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegmentJSONBodyDataRulesOutcome0 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesOutcome0 struct {
+	Type interface{} `json:"type"`
+}
+
+// CreateFlagSegmentJSONBodyDataRulesOutcome1 defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBodyDataRulesOutcome1 struct {
+	Base struct {
+		Attribute string      `json:"attribute"`
+		Kind      string      `json:"kind"`
+		Type      interface{} `json:"type"`
+	} `json:"base"`
+	PassPromille float32     `json:"passPromille"`
+	Type         interface{} `json:"type"`
+}
+
+// CreateFlagSegmentJSONBody_Data_Rules_Outcome defines parameters for CreateFlagSegment.
+type CreateFlagSegmentJSONBody_Data_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmp defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmp string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmpOptionsIgnoreCase defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsCmpOptionsIgnoreCase bool
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0 struct {
+	Type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0Type `json:"type"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0Type defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs0Type string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1 struct {
+	Attribute string                                                          `json:"attribute"`
+	Kind      string                                                          `json:"kind"`
+	Type      CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1Type `json:"type"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1Type defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsLhs1Type string
+
+// CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Lhs defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Lhs struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs0 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs0 = string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs1 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs1 = float32
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2 struct {
+	Items []CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
+	Type  CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Type               `json:"type"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items0 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items0 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value float32 `json:"value"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items1 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Items1 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value string  `json:"value"`
+}
+
+// CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs_2_Items_Item defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs_2_Items_Item struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Type defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs2Type string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3 struct {
+	Flags   string                                                          `json:"flags"`
+	Pattern string                                                          `json:"pattern"`
+	Type    CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3Type `json:"type"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3Type defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs3Type string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs4 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesConditionsRhs4 bool
+
+// CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBody_Data_Rules_Conditions_Rhs struct {
+	union json.RawMessage
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesOutcome0 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesOutcome0 struct {
+	Type CreateFlagSegment201JSONResponseBodyDataRulesOutcome0Type `json:"type"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesOutcome0Type defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesOutcome0Type string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesOutcome1 defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1 struct {
+	Base struct {
+		Attribute string                                                        `json:"attribute"`
+		Kind      string                                                        `json:"kind"`
+		Type      CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType `json:"type"`
+	} `json:"base"`
+	PassPromille float32                                                   `json:"passPromille"`
+	Type         CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type `json:"type"`
+}
+
+// CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1BaseType string
+
+// CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type defines parameters for CreateFlagSegment.
+type CreateFlagSegment201JSONResponseBodyDataRulesOutcome1Type string
+
 // CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome defines parameters for CreateFlagSegment.
 type CreateFlagSegment201JSONResponseBody_Data_Rules_Outcome struct {
 	union json.RawMessage
@@ -10574,11 +10837,11 @@ type CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rule
 // GetSecurityFirewallEventsParams defines parameters for GetSecurityFirewallEvents.
 type GetSecurityFirewallEventsParams struct {
 	Sort           *GetSecurityFirewallEventsParamsSort         `form:"sort,omitempty" json:"sort,omitempty"`
-	Limit          *float32                                     `form:"limit,omitempty" json:"limit,omitempty"`
+	Limit          *int                                         `form:"limit,omitempty" json:"limit,omitempty"`
 	Cursor         *string                                      `form:"cursor,omitempty" json:"cursor,omitempty"`
 	ProjectId      string                                       `form:"projectId" json:"projectId"`
-	StartTimestamp *float32                                     `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
-	EndTimestamp   *float32                                     `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
+	StartTimestamp *int                                         `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
+	EndTimestamp   *int                                         `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
 	Hosts          *string                                      `form:"hosts,omitempty" json:"hosts,omitempty"`
 	Ip             *[]string                                    `form:"ip,omitempty" json:"ip,omitempty"`
 	IsActive       *bool                                        `form:"isActive,omitempty" json:"isActive,omitempty"`
@@ -10615,8 +10878,8 @@ type GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore bool
 // GetSecurityFirewallEventsSummaryParams defines parameters for GetSecurityFirewallEventsSummary.
 type GetSecurityFirewallEventsSummaryParams struct {
 	ProjectId      string                                              `form:"projectId" json:"projectId"`
-	StartTimestamp *float32                                            `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
-	EndTimestamp   *float32                                            `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
+	StartTimestamp *int                                                `form:"startTimestamp,omitempty" json:"startTimestamp,omitempty"`
+	EndTimestamp   *int                                                `form:"endTimestamp,omitempty" json:"endTimestamp,omitempty"`
 	Hosts          *string                                             `form:"hosts,omitempty" json:"hosts,omitempty"`
 	Ip             *[]string                                           `form:"ip,omitempty" json:"ip,omitempty"`
 	IsActive       *bool                                               `form:"isActive,omitempty" json:"isActive,omitempty"`

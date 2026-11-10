@@ -6404,8 +6404,11 @@ type CancelDeployment200JSONResponseBodyServices0 struct {
 					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
 					Type *CancelDeployment200JSONResponseBodyServices0BuilderConfigDaemonBindingsType `json:"type,omitempty"`
 				} `json:"bindings,omitempty"`
-				Command    *[]string `json:"command,omitempty"`
-				Entrypoint string    `json:"entrypoint"`
+
+				// BuildTarget Dockerfile stage from an `entrypoint` like `Dockerfile#worker`.
+				BuildTarget *string   `json:"buildTarget,omitempty"`
+				Command     *[]string `json:"command,omitempty"`
+				Entrypoint  string    `json:"entrypoint"`
 
 				// Instances Instance counts by region.
 				Instances *map[string]float32 `json:"instances,omitempty"`
@@ -6789,8 +6792,11 @@ type CancelDeployment200JSONResponseBodyServices1 struct {
 					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
 					Type *CancelDeployment200JSONResponseBodyServices1BuilderConfigDaemonBindingsType `json:"type,omitempty"`
 				} `json:"bindings,omitempty"`
-				Command    *[]string `json:"command,omitempty"`
-				Entrypoint string    `json:"entrypoint"`
+
+				// BuildTarget Dockerfile stage from an `entrypoint` like `Dockerfile#worker`.
+				BuildTarget *string   `json:"buildTarget,omitempty"`
+				Command     *[]string `json:"command,omitempty"`
+				Entrypoint  string    `json:"entrypoint"`
 
 				// Instances Instance counts by region.
 				Instances *map[string]float32 `json:"instances,omitempty"`
@@ -10549,8 +10555,11 @@ type CreateDeployment200JSONResponseBody1Services0 struct {
 					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
 					Type *CreateDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType `json:"type,omitempty"`
 				} `json:"bindings,omitempty"`
-				Command    *[]string `json:"command,omitempty"`
-				Entrypoint string    `json:"entrypoint"`
+
+				// BuildTarget Dockerfile stage from an `entrypoint` like `Dockerfile#worker`.
+				BuildTarget *string   `json:"buildTarget,omitempty"`
+				Command     *[]string `json:"command,omitempty"`
+				Entrypoint  string    `json:"entrypoint"`
 
 				// Instances Instance counts by region.
 				Instances *map[string]float32 `json:"instances,omitempty"`
@@ -10934,8 +10943,11 @@ type CreateDeployment200JSONResponseBody1Services1 struct {
 					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
 					Type *CreateDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType `json:"type,omitempty"`
 				} `json:"bindings,omitempty"`
-				Command    *[]string `json:"command,omitempty"`
-				Entrypoint string    `json:"entrypoint"`
+
+				// BuildTarget Dockerfile stage from an `entrypoint` like `Dockerfile#worker`.
+				BuildTarget *string   `json:"buildTarget,omitempty"`
+				Command     *[]string `json:"command,omitempty"`
+				Entrypoint  string    `json:"entrypoint"`
 
 				// Instances Instance counts by region.
 				Instances *map[string]float32 `json:"instances,omitempty"`
@@ -14292,8 +14304,11 @@ type GetDeployment200JSONResponseBody1Services0 struct {
 					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
 					Type *GetDeployment200JSONResponseBody1Services0BuilderConfigDaemonBindingsType `json:"type,omitempty"`
 				} `json:"bindings,omitempty"`
-				Command    *[]string `json:"command,omitempty"`
-				Entrypoint string    `json:"entrypoint"`
+
+				// BuildTarget Dockerfile stage from an `entrypoint` like `Dockerfile#worker`.
+				BuildTarget *string   `json:"buildTarget,omitempty"`
+				Command     *[]string `json:"command,omitempty"`
+				Entrypoint  string    `json:"entrypoint"`
 
 				// Instances Instance counts by region.
 				Instances *map[string]float32 `json:"instances,omitempty"`
@@ -14677,8 +14692,11 @@ type GetDeployment200JSONResponseBody1Services1 struct {
 					// Type If present, must be `"service"` for Service-to-Service HTTP bindings.
 					Type *GetDeployment200JSONResponseBody1Services1BuilderConfigDaemonBindingsType `json:"type,omitempty"`
 				} `json:"bindings,omitempty"`
-				Command    *[]string `json:"command,omitempty"`
-				Entrypoint string    `json:"entrypoint"`
+
+				// BuildTarget Dockerfile stage from an `entrypoint` like `Dockerfile#worker`.
+				BuildTarget *string   `json:"buildTarget,omitempty"`
+				Command     *[]string `json:"command,omitempty"`
+				Entrypoint  string    `json:"entrypoint"`
 
 				// Instances Instance counts by region.
 				Instances *map[string]float32 `json:"instances,omitempty"`
@@ -19991,29 +20009,4 @@ type ExtendSessionTimeoutJSONBody struct {
 	//
 	// Example: 300000
 	Duration float32 `json:"duration"`
-}
-
-// ExtendSessionTimeoutParams defines parameters for ExtendSessionTimeout.
-type ExtendSessionTimeoutParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateSessionDirectoryJSONBody defines parameters for CreateSessionDirectory.
-type CreateSessionDirectoryJSONBody struct {
-	// Cwd The base directory for resolving relative paths. If not specified, paths are resolved from the sandbox home directory.
-	//
-	// Example: /home/vercel-sandbox
-	Cwd *string `json:"cwd,omitempty"`
-
-	// Path The path of the directory to create. Can be absolute or relative to the working directory.
-	//
-	// Example: src/components
-	Path string `json:"path"`
-
-	// Recursive If true, creates parent directories as needed (like `mkdir -p`). If false, fails if parent directories do not exist.
-	Recursive *bool `json:"recursive,omitempty"`
 }

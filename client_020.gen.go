@@ -14,20 +14,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// AsUpdateSandbox200JSONResponseBody1 returns the union data inside the UpdateSandbox200JSONResponseBody as a UpdateSandbox200JSONResponseBody1
-func (t UpdateSandbox200JSONResponseBody) AsUpdateSandbox200JSONResponseBody1() (UpdateSandbox200JSONResponseBody1, error) {
-	var body UpdateSandbox200JSONResponseBody1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateSandbox200JSONResponseBody1 overwrites any union data inside the UpdateSandbox200JSONResponseBody as the provided UpdateSandbox200JSONResponseBody1
-func (t *UpdateSandbox200JSONResponseBody) FromUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
 // MergeUpdateSandbox200JSONResponseBody1 performs a merge with any union data inside the UpdateSandbox200JSONResponseBody, using the provided UpdateSandbox200JSONResponseBody1
 func (t *UpdateSandbox200JSONResponseBody) MergeUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
 	b, err := json.Marshal(v)
@@ -14497,6 +14483,63 @@ type ClientInterface interface {
 	// Corresponds with PATCH /v1/drains/{id} (the `UpdateDrain` operationId).
 	UpdateDrain(ctx context.Context, id string, params *UpdateDrainParams, body UpdateDrainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListDrivesV1 List drives
+	//
+	// Retrieves a paginated list of drives belonging to a specific project.
+	//
+	// Corresponds with GET /v1/drives (the `ListDrivesV1` operationId).
+	ListDrivesV1(ctx context.Context, params *ListDrivesV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetDriveV1 Get a drive
+	//
+	// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
+	//
+	// Corresponds with GET /v1/drives/{nameOrId} (the `GetDriveV1` operationId).
+	GetDriveV1(ctx context.Context, nameOrId string, params *GetDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteDriveV1 Delete a drive
+	//
+	// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+	//
+	// Corresponds with DELETE /v1/drives/{name} (the `DeleteDriveV1` operationId).
+	DeleteDriveV1(ctx context.Context, name string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetOrCreateDriveV1WithBody Get or create a drive
+	//
+	// Gets an existing drive by project and name, or creates it when it does not exist.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/drives/{name} (the `GetOrCreateDriveV1` operationId).
+	GetOrCreateDriveV1WithBody(ctx context.Context, name string, params *GetOrCreateDriveV1Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetOrCreateDriveV1 Get or create a drive
+	//
+	// Gets an existing drive by project and name, or creates it when it does not exist.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/drives/{name} (the `GetOrCreateDriveV1` operationId).
+	GetOrCreateDriveV1(ctx context.Context, name string, params *GetOrCreateDriveV1Params, body GetOrCreateDriveV1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ForkDriveV1WithBody Fork a drive
+	//
+	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/drives/{name}/fork (the `ForkDriveV1` operationId).
+	ForkDriveV1WithBody(ctx context.Context, name string, params *ForkDriveV1Params, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ForkDriveV1 Fork a drive
+	//
+	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/drives/{name}/fork (the `ForkDriveV1` operationId).
+	ForkDriveV1(ctx context.Context, name string, params *ForkDriveV1Params, body ForkDriveV1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DangerouslyDeleteBySrcImagesWithBody Dangerously delete by source image
 	//
 	// Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
@@ -17828,61 +17871,80 @@ type ClientInterface interface {
 	// Corresponds with POST /v2/sandboxes (the `CreateSandboxesV2` operationId).
 	CreateSandboxesV2(ctx context.Context, params *CreateSandboxesV2Params, body CreateSandboxesV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListDrives List drives
+	// ListDrives Deprecated: Use GET /v1/drives. Requires the read:drive app scope instead of read:sandbox, and drive:list instead of vercelRun:read. List drives
 	//
 	// Retrieves a paginated list of drives belonging to a specific project.
 	//
 	// Corresponds with GET /v2/sandboxes/drives (the `ListDrives` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	ListDrives(ctx context.Context, params *ListDrivesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetDrive Get a drive
+	// GetDrive Deprecated: Use GET /v1/drives/:nameOrId. Requires the read:drive app scope instead of read:sandbox, and drive:read instead of vercelRun:read. Get a drive
 	//
 	// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
 	//
 	// Corresponds with GET /v2/sandboxes/drives/{nameOrId} (the `GetDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	GetDrive(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DeleteDrive Delete a drive
+	// DeleteDrive Deprecated: Use DELETE /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
+	// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
 	//
 	// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
 	//
 	// Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	DeleteDrive(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetOrCreateDriveWithBody Get or create a drive
+	// GetOrCreateDriveWithBody Deprecated: Use POST /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:create instead of vercelRun:create.
+	// Emits drive-created activity events instead of sandbox-drive-created. Get or create a drive
 	//
 	// Gets an existing drive by project and name, or creates it when it does not exist.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	GetOrCreateDriveWithBody(ctx context.Context, name string, params *GetOrCreateDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetOrCreateDrive Get or create a drive
+	// GetOrCreateDrive Deprecated: Use POST /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:create instead of vercelRun:create.
+	// Emits drive-created activity events instead of sandbox-drive-created. Get or create a drive
 	//
 	// Gets an existing drive by project and name, or creates it when it does not exist.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /v2/sandboxes/drives/{name} (the `GetOrCreateDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	GetOrCreateDrive(ctx context.Context, name string, params *GetOrCreateDriveParams, body GetOrCreateDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ForkDriveWithBody Fork a drive
+	// ForkDriveWithBody Deprecated: Use POST /v1/drives/:name/fork. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:read and drive:create instead of vercelRun:read and vercelRun:create.
+	// Emits drive-created activity events instead of sandbox-drive-created. Fork a drive
 	//
 	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	ForkDriveWithBody(ctx context.Context, name string, params *ForkDriveParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ForkDrive Fork a drive
+	// ForkDrive Deprecated: Use POST /v1/drives/:name/fork. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:read and drive:create instead of vercelRun:read and vercelRun:create.
+	// Emits drive-created activity events instead of sandbox-drive-created. Fork a drive
 	//
 	// Fork the provided drive into a new one with the provided name, inheriting the region and max size.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /v2/sandboxes/drives/{name}/fork (the `ForkDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	ForkDrive(ctx context.Context, name string, params *ForkDriveParams, body ForkDriveJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListSessions List sessions
@@ -18674,14 +18736,14 @@ type ClientInterface interface {
 
 	// ClaimDomainOwnership Claim Domain Ownership
 	//
-	// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
+	// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. Proof must be unexpired and issued for the domain's current ownership. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.
 	//
 	// Corresponds with POST /v9/domains/{domain}/claim (the `ClaimDomainOwnership` operationId).
 	ClaimDomainOwnership(ctx context.Context, domain string, params *ClaimDomainOwnershipParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetDomainVerificationRecord Get Domain Verification Record
 	//
-	// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.
+	// Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer. Records expire at the returned expiresAt (at most 24 hours) or when ownership changes.
 	//
 	// Corresponds with GET /v9/domains/{domain}/verification (the `GetDomainVerificationRecord` operationId).
 	GetDomainVerificationRecord(ctx context.Context, domain string, params *GetDomainVerificationRecordParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19945,78 +20007,6 @@ func (c *Client) ListAiGatewayRouters(ctx context.Context, params *ListAiGateway
 // Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
 func (c *Client) BuyCreditsWithBody(ctx context.Context, params *BuyCreditsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewBuyCreditsRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// BuyCredits Purchase credits
-//
-// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
-func (c *Client) BuyCredits(ctx context.Context, params *BuyCreditsParams, body BuyCreditsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBuyCreditsRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListBillingCharges List FOCUS billing charges
-//
-// Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within a date range specified by `from` and `to` query parameters. Supports 1-day granularity with a maximum date range of 1 year. The response is streamed as newline-delimited JSON (JSONL) and can be optionally compressed with gzip if the `Accept-Encoding: gzip` header is provided. `SkuId` is the stable product ID. For unmapped items, it is derived from the item identifier. `SubAccountId` and `SubAccountName` are the team. With `orgId` instead of a team, returns a row per team and product in an organization with Enterprise teams, plus Organization (unallocated) rows for spend no single team used; this requires the OrgAdmin or OrgViewer role. A team in such an organization, including the one that holds its subscription, gets only its own rows. Those rows are not split by region or project, and `x_CostAttribution` marks how cost was split between teams. This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer roles for the supplied team.
-//
-// Corresponds with GET /v1/billing/charges (the `ListBillingCharges` operationId).
-func (c *Client) ListBillingCharges(ctx context.Context, params *ListBillingChargesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListBillingChargesRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListContractCommitments List FOCUS contract commitments
-//
-// Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for a specified Vercel team. The response is streamed as newline-delimited JSON (JSONL). This endpoint is only applicable to Enterprise Vercel customers. An empty response is returned for non-Enterprise (Pro/Flex) customers.
-//
-// Corresponds with GET /v1/billing/contract-commitments (the `ListContractCommitments` operationId).
-func (c *Client) ListContractCommitments(ctx context.Context, params *ListContractCommitmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListContractCommitmentsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteRedirectsWithBody Delete project-level redirects.
-//
-// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with DELETE /v1/bulk-redirects (the `DeleteRedirects` operationId).
-func (c *Client) DeleteRedirectsWithBody(ctx context.Context, params *DeleteRedirectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteRedirectsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}

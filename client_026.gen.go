@@ -11014,15 +11014,17 @@ type GetDomainVerificationRecordResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		TxtRecord          string `json:"txtRecord"`
-		VerificationDomain string `json:"verificationDomain"`
+		ExpiresAt          float32 `json:"expiresAt"`
+		TxtRecord          string  `json:"txtRecord"`
+		VerificationDomain string  `json:"verificationDomain"`
 	}
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetDomainVerificationRecordResponse) GetJSON200() *struct {
-	TxtRecord          string `json:"txtRecord"`
-	VerificationDomain string `json:"verificationDomain"`
+	ExpiresAt          float32 `json:"expiresAt"`
+	TxtRecord          string  `json:"txtRecord"`
+	VerificationDomain string  `json:"verificationDomain"`
 } {
 	return r.JSON200
 }

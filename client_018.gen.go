@@ -10,18 +10,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
 func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -20011,5 +19999,17 @@ func (t CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item) AsCanc
 func (t *CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item) FromCancelDeployment200JSONResponseBodyServices1RewritesHas0(v CancelDeployment200JSONResponseBodyServices1RewritesHas0) error {
 	b, err := json.Marshal(v)
 	t.union = b
+	return err
+}
+
+// MergeCancelDeployment200JSONResponseBodyServices1RewritesHas0 performs a merge with any union data inside the CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item, using the provided CancelDeployment200JSONResponseBodyServices1RewritesHas0
+func (t *CancelDeployment200JSONResponseBody_Services_1_Rewrites_Has_Item) MergeCancelDeployment200JSONResponseBodyServices1RewritesHas0(v CancelDeployment200JSONResponseBodyServices1RewritesHas0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
 	return err
 }

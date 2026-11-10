@@ -4677,6 +4677,7 @@ const (
 	ListEventTypeNameSandboxDriveDeleted                             ListEventTypeName = "sandbox-drive-deleted"
 	ListEventTypeNameSandboxDriveSnapshotCreated                     ListEventTypeName = "sandbox-drive-snapshot-created"
 	ListEventTypeNameSandboxDriveSnapshotDeleted                     ListEventTypeName = "sandbox-drive-snapshot-deleted"
+	ListEventTypeNameSandboxNpmCredentialsConfigured                 ListEventTypeName = "sandbox-npm-credentials-configured"
 	ListEventTypeNameSandboxSignedCommitIdentityConfigured           ListEventTypeName = "sandbox-signed-commit-identity-configured"
 	ListEventTypeNameSandboxSnapshotRegionsUpdated                   ListEventTypeName = "sandbox-snapshot-regions-updated"
 	ListEventTypeNameScale                                           ListEventTypeName = "scale"
@@ -6025,6 +6026,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameSandboxDriveSnapshotDeleted:
 		return true
+	case ListEventTypeNameSandboxNpmCredentialsConfigured:
+		return true
 	case ListEventTypeNameSandboxSignedCommitIdentityConfigured:
 		return true
 	case ListEventTypeNameSandboxSnapshotRegionsUpdated:
@@ -7005,6 +7008,7 @@ const (
 	ListEventTypeReplacedBySandboxDriveDeleted                             ListEventTypeReplacedBy = "sandbox-drive-deleted"
 	ListEventTypeReplacedBySandboxDriveSnapshotCreated                     ListEventTypeReplacedBy = "sandbox-drive-snapshot-created"
 	ListEventTypeReplacedBySandboxDriveSnapshotDeleted                     ListEventTypeReplacedBy = "sandbox-drive-snapshot-deleted"
+	ListEventTypeReplacedBySandboxNpmCredentialsConfigured                 ListEventTypeReplacedBy = "sandbox-npm-credentials-configured"
 	ListEventTypeReplacedBySandboxSignedCommitIdentityConfigured           ListEventTypeReplacedBy = "sandbox-signed-commit-identity-configured"
 	ListEventTypeReplacedBySandboxSnapshotRegionsUpdated                   ListEventTypeReplacedBy = "sandbox-snapshot-regions-updated"
 	ListEventTypeReplacedByScale                                           ListEventTypeReplacedBy = "scale"
@@ -8353,6 +8357,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedBySandboxDriveSnapshotDeleted:
 		return true
+	case ListEventTypeReplacedBySandboxNpmCredentialsConfigured:
+		return true
 	case ListEventTypeReplacedBySandboxSignedCommitIdentityConfigured:
 		return true
 	case ListEventTypeReplacedBySandboxSnapshotRegionsUpdated:
@@ -9096,6 +9102,24 @@ func (e NamedSandboxWorkloadType) Valid() bool {
 	case NamedSandboxWorkloadTypeSandbox:
 		return true
 	case NamedSandboxWorkloadTypeV0:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NetworkConnectionTestingAvailable.
+const (
+	NetworkConnectionTestingAvailableFalse NetworkConnectionTestingAvailable = false
+	NetworkConnectionTestingAvailableTrue  NetworkConnectionTestingAvailable = true
+)
+
+// Valid indicates whether the value is a known member of the NetworkConnectionTestingAvailable enum.
+func (e NetworkConnectionTestingAvailable) Valid() bool {
+	switch e {
+	case NetworkConnectionTestingAvailableFalse:
+		return true
+	case NetworkConnectionTestingAvailableTrue:
 		return true
 	default:
 		return false
@@ -10221,24 +10245,6 @@ func (e TeamDeploymentStorageRolloutMeterReason) Valid() bool {
 	case TeamDeploymentStorageRolloutMeterReasonMediumScheduled:
 		return true
 	case TeamDeploymentStorageRolloutMeterReasonRetentionOptOut:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for TeamDisableHardAutoBlocks1.
-const (
-	TeamDisableHardAutoBlocks1False TeamDisableHardAutoBlocks1 = false
-	TeamDisableHardAutoBlocks1True  TeamDisableHardAutoBlocks1 = true
-)
-
-// Valid indicates whether the value is a known member of the TeamDisableHardAutoBlocks1 enum.
-func (e TeamDisableHardAutoBlocks1) Valid() bool {
-	switch e {
-	case TeamDisableHardAutoBlocks1False:
-		return true
-	case TeamDisableHardAutoBlocks1True:
 		return true
 	default:
 		return false
@@ -19996,13 +20002,3 @@ func (e UserEventPayload268PreviousPassportDeploymentType) Valid() bool {
 const (
 	UserEventPayload268ScopeOrganization UserEventPayload268Scope = "organization"
 )
-
-// Valid indicates whether the value is a known member of the UserEventPayload268Scope enum.
-func (e UserEventPayload268Scope) Valid() bool {
-	switch e {
-	case UserEventPayload268ScopeOrganization:
-		return true
-	default:
-		return false
-	}
-}

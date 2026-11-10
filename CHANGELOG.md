@@ -2,6 +2,20 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.25.0, 2026-11-10
+
+- Breaking: removed `Team.DisableHardAutoBlocks` and its types `TeamDisableHardAutoBlocks0`, `TeamDisableHardAutoBlocks1`, `TeamDisableHardAutoBlocks1False`, `TeamDisableHardAutoBlocks1True` and `Team_DisableHardAutoBlocks`.
+- Breaking: changed `GetSecurityFirewallEventsParams.StartTimestamp`, `EndTimestamp` and `Limit` from `*float32` to `*int`. `GetSecurityFirewallEventsSummaryParams.StartTimestamp` and `EndTimestamp` changed the same way.
+- Breaking: changed the anonymous struct types of `GetDomainVerificationRecordResponse.JSON200` and `GetJSON200`, and of the `Builder` field on the `Services0` and `Services1` types of `CancelDeployment200JSONResponseBody`, `CreateDeployment200JSONResponseBody1` and `GetDeployment200JSONResponseBody1`.
+- Breaking: reshaped many `UserEventPayload` types again, now up to `UserEventPayload520`. Fields and their enum types and constants are removed, for example `UserEventPayload378.SnapshotId`, `UserEventPayload381.Verified`, `UserEventPayload386.ProjectId` and `UserEventPayload389.ViaGithub`. `UserEventPayload379` and `UserEventPayload385` are no longer comparable.
+- Breaking: changed field types, for example `UserEventPayload385.Uid` from `*string` to `string`, `UserEventPayload477.Reason` from `string` to `*string` and `UserEventPayload426Enabled` from `string` to `bool`.
+- Breaking: renamed helper types, for example `UserEvent_Payload_384_Name` to `UserEvent_Payload_385_Name`, and removed `UserEvent_Payload_455_Next_AdditionalProperties`.
+- Added the drive endpoints `ListDrivesV1`, `GetDriveV1`, `GetOrCreateDriveV1`, `ForkDriveV1` and `DeleteDriveV1` on `Client` and `ClientInterface`, with `WithBody` variants where the request has a body. `ClientWithResponses` and `ClientWithResponsesInterface` get the matching `...WithResponse` methods.
+- Added the types for those endpoints, for example `ListDrivesV1Params`, `ListDrivesV1ParamsSortBy`, `GetOrCreateDriveV1JSONBody`, `GetOrCreateDriveV1JSONBodyRegion`, `ForkDriveV1JSONRequestBody` and the `...Response` types.
+- Added the field `KmsKeyId` to `CreateDrainJSONBodyDelivery2`, `UpdateDrainJSONBodyDelivery2` and the `Delivery3` types in the drain response bodies, for example `GetDrain200JSONResponseBodyDelivery3.KmsKeyId`.
+- Added the event type `UserEventTypeSandboxNpmCredentialsConfigured` and `ListEventTypeNameSandboxNpmCredentialsConfigured`.
+- Generated from spec version 0.0.1.
+
 ## v0.24.0, 2026-11-09
 
 - Breaking: removed `(*UserEventPayload262).Set` and `(*UserEventPayload262).UnmarshalJSON`. Added `(*UserEventPayload264).Set` and `(*UserEventPayload264).UnmarshalJSON`.
