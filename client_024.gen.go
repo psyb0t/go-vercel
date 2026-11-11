@@ -8,6 +8,158 @@ import (
 	"time"
 )
 
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAccessGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAccessGroupProjectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		AccessGroupId string                                          `json:"accessGroupId"`
+		CreatedAt     string                                          `json:"createdAt"`
+		ProjectId     string                                          `json:"projectId"`
+		Role          CreateAccessGroupProject200JSONResponseBodyRole `json:"role"`
+		TeamId        string                                          `json:"teamId"`
+		UpdatedAt     string                                          `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CreateAccessGroupProjectResponse) GetJSON200() *struct {
+	AccessGroupId string                                          `json:"accessGroupId"`
+	CreatedAt     string                                          `json:"createdAt"`
+	ProjectId     string                                          `json:"projectId"`
+	Role          CreateAccessGroupProject200JSONResponseBodyRole `json:"role"`
+	TeamId        string                                          `json:"teamId"`
+	UpdatedAt     string                                          `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateAccessGroupProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAccessGroupProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAccessGroupProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAccessGroupProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAccessGroupProjectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteAccessGroupProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAccessGroupProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAccessGroupProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAccessGroupProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ReadAccessGroupProjectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		AccessGroupId string                                        `json:"accessGroupId"`
+		CreatedAt     string                                        `json:"createdAt"`
+		ProjectId     string                                        `json:"projectId"`
+		Role          ReadAccessGroupProject200JSONResponseBodyRole `json:"role"`
+		TeamId        string                                        `json:"teamId"`
+		UpdatedAt     string                                        `json:"updatedAt"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ReadAccessGroupProjectResponse) GetJSON200() *struct {
+	AccessGroupId string                                        `json:"accessGroupId"`
+	CreatedAt     string                                        `json:"createdAt"`
+	ProjectId     string                                        `json:"projectId"`
+	Role          ReadAccessGroupProject200JSONResponseBodyRole `json:"role"`
+	TeamId        string                                        `json:"teamId"`
+	UpdatedAt     string                                        `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ReadAccessGroupProjectResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ReadAccessGroupProjectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ReadAccessGroupProjectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ReadAccessGroupProjectResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type UpdateAccessGroupProjectResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -10224,6 +10376,9 @@ type GetMicrofrontendsInGroupResponse struct {
 				// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+				// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 				// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -10506,8 +10661,14 @@ type GetMicrofrontendsInGroupResponse struct {
 				// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Organization *[]ACLAction `json:"organization,omitempty"`
 
+				// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 				// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+				// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 				// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -12013,6 +12174,9 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -12295,8 +12459,14 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -14758,6 +14928,9 @@ type DeleteProjectAvatarResponse struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -15040,8 +15213,14 @@ type DeleteProjectAvatarResponse struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -16545,6 +16724,9 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+		// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -16827,8 +17009,14 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Organization *[]ACLAction `json:"organization,omitempty"`
 
+		// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -18365,6 +18553,9 @@ type UploadProjectAvatarResponse struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -18647,8 +18838,14 @@ type UploadProjectAvatarResponse struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -20152,6 +20349,9 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+		// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -20434,8 +20634,14 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Organization *[]ACLAction `json:"organization,omitempty"`
 
+		// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`

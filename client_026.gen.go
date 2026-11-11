@@ -772,6 +772,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+		// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -1054,8 +1057,14 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Organization *[]ACLAction `json:"organization,omitempty"`
 
+		// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -11866,6 +11875,9 @@ type GetProjectResponse struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -12148,8 +12160,14 @@ type GetProjectResponse struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -13664,6 +13682,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+		// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -13946,8 +13967,14 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Organization *[]ACLAction `json:"organization,omitempty"`
 
+		// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -15484,6 +15511,9 @@ type UpdateProjectResponse struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -15766,8 +15796,14 @@ type UpdateProjectResponse struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -17271,6 +17307,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+		// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -17553,8 +17592,14 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Organization *[]ACLAction `json:"organization,omitempty"`
 
+		// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -19968,49 +20013,4 @@ func (c *ClientWithResponses) DeleteAiGatewayVirtualModelConfigBySlugWithRespons
 		return nil, err
 	}
 	return ParseDeleteAiGatewayVirtualModelConfigBySlugResponse(rsp)
-}
-
-// GetAiGatewayVirtualModelConfigBySlugWithResponse Get virtual model config
-//
-// Get a virtual model config by path slug.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /ai-gateway/virtual-model-configs/{vmcSlug} (the `GetAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *ClientWithResponses) GetAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *GetAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigBySlugResponse, error) {
-	rsp, err := c.GetAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetAiGatewayVirtualModelConfigBySlugResponse(rsp)
-}
-
-// UpdateAiGatewayVirtualModelConfigBySlugWithResponse Update virtual model config
-//
-// Update a virtual model config by path slug.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error) {
-	rsp, err := c.UpdateAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateAiGatewayVirtualModelConfigBySlugResponse(rsp)
-}
-
-// PatchUrlProtectionBypassWithBodyWithResponse Update the protection bypass for a URL
-//
-// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-func (c *ClientWithResponses) PatchUrlProtectionBypassWithBodyWithResponse(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchUrlProtectionBypassResponse, error) {
-	rsp, err := c.PatchUrlProtectionBypassWithBody(ctx, id, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchUrlProtectionBypassResponse(rsp)
 }

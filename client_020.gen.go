@@ -14,6 +14,82 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsUpdateSandboxJSONBodySnapshotExpiration1 returns the union data inside the UpdateSandboxJSONBody_SnapshotExpiration as a UpdateSandboxJSONBodySnapshotExpiration1
+func (t UpdateSandboxJSONBody_SnapshotExpiration) AsUpdateSandboxJSONBodySnapshotExpiration1() (UpdateSandboxJSONBodySnapshotExpiration1, error) {
+	var body UpdateSandboxJSONBodySnapshotExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodySnapshotExpiration1 overwrites any union data inside the UpdateSandboxJSONBody_SnapshotExpiration as the provided UpdateSandboxJSONBodySnapshotExpiration1
+func (t *UpdateSandboxJSONBody_SnapshotExpiration) FromUpdateSandboxJSONBodySnapshotExpiration1(v UpdateSandboxJSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodySnapshotExpiration1 performs a merge with any union data inside the UpdateSandboxJSONBody_SnapshotExpiration, using the provided UpdateSandboxJSONBodySnapshotExpiration1
+func (t *UpdateSandboxJSONBody_SnapshotExpiration) MergeUpdateSandboxJSONBodySnapshotExpiration1(v UpdateSandboxJSONBodySnapshotExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandboxJSONBody_SnapshotExpiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandboxJSONBody_SnapshotExpiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandbox200JSONResponseBody0 returns the union data inside the UpdateSandbox200JSONResponseBody as a UpdateSandbox200JSONResponseBody0
+func (t UpdateSandbox200JSONResponseBody) AsUpdateSandbox200JSONResponseBody0() (UpdateSandbox200JSONResponseBody0, error) {
+	var body UpdateSandbox200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandbox200JSONResponseBody0 overwrites any union data inside the UpdateSandbox200JSONResponseBody as the provided UpdateSandbox200JSONResponseBody0
+func (t *UpdateSandbox200JSONResponseBody) FromUpdateSandbox200JSONResponseBody0(v UpdateSandbox200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandbox200JSONResponseBody0 performs a merge with any union data inside the UpdateSandbox200JSONResponseBody, using the provided UpdateSandbox200JSONResponseBody0
+func (t *UpdateSandbox200JSONResponseBody) MergeUpdateSandbox200JSONResponseBody0(v UpdateSandbox200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSandbox200JSONResponseBody1 returns the union data inside the UpdateSandbox200JSONResponseBody as a UpdateSandbox200JSONResponseBody1
+func (t UpdateSandbox200JSONResponseBody) AsUpdateSandbox200JSONResponseBody1() (UpdateSandbox200JSONResponseBody1, error) {
+	var body UpdateSandbox200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandbox200JSONResponseBody1 overwrites any union data inside the UpdateSandbox200JSONResponseBody as the provided UpdateSandbox200JSONResponseBody1
+func (t *UpdateSandbox200JSONResponseBody) FromUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
 // MergeUpdateSandbox200JSONResponseBody1 performs a merge with any union data inside the UpdateSandbox200JSONResponseBody, using the provided UpdateSandbox200JSONResponseBody1
 func (t *UpdateSandbox200JSONResponseBody) MergeUpdateSandbox200JSONResponseBody1(v UpdateSandbox200JSONResponseBody1) error {
 	b, err := json.Marshal(v)
@@ -13763,10 +13839,10 @@ type ClientInterface interface {
 	UpdateApiKeyQuota(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetDomainsRecordsByRecordId performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
-	GetDomainsRecordsByRecordId(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetDomainsRecordsByRecordId(ctx context.Context, recordId string, params *GetDomainsRecordsByRecordIdParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ReplaceDomainsByDomainRecords performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
-	ReplaceDomainsByDomainRecords(ctx context.Context, domain string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ReplaceDomainsByDomainRecords(ctx context.Context, domain string, params *ReplaceDomainsByDomainRecordsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// AcceptProjectTransferRequestWithBody Accept project transfer request
 	//
@@ -17080,7 +17156,7 @@ type ClientInterface interface {
 
 	// RequestAccessToTeamWithBody Request access to a team
 	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time. Organization-directory access must be granted through the directory administrator.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -17089,7 +17165,7 @@ type ClientInterface interface {
 
 	// RequestAccessToTeam Request access to a team
 	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time. Organization-directory access must be granted through the directory administrator.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -17098,7 +17174,7 @@ type ClientInterface interface {
 
 	// GetTeamAccessRequest Get access request status
 	//
-	// Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
+	// Check the status of a join request. It'll respond with a 404 if the request has been declined or enabled directory reads suppress access. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
 	//
 	// Corresponds with GET /v1/teams/{teamId}/request/{userId} (the `GetTeamAccessRequest` operationId).
 	GetTeamAccessRequest(ctx context.Context, teamId string, userId string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19521,8 +19597,8 @@ func (c *Client) UpdateApiKeyQuota(ctx context.Context, apiKeyID string, body Up
 }
 
 // GetDomainsRecordsByRecordId performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
-func (c *Client) GetDomainsRecordsByRecordId(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainsRecordsByRecordIdRequest(c.Server, recordId)
+func (c *Client) GetDomainsRecordsByRecordId(ctx context.Context, recordId string, params *GetDomainsRecordsByRecordIdParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDomainsRecordsByRecordIdRequest(c.Server, recordId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -19534,8 +19610,8 @@ func (c *Client) GetDomainsRecordsByRecordId(ctx context.Context, recordId strin
 }
 
 // ReplaceDomainsByDomainRecords performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
-func (c *Client) ReplaceDomainsByDomainRecords(ctx context.Context, domain string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceDomainsByDomainRecordsRequest(c.Server, domain)
+func (c *Client) ReplaceDomainsByDomainRecords(ctx context.Context, domain string, params *ReplaceDomainsByDomainRecordsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewReplaceDomainsByDomainRecordsRequest(c.Server, domain, params)
 	if err != nil {
 		return nil, err
 	}
@@ -19941,72 +20017,6 @@ func (c *Client) UpdateAccessGroupWithBody(ctx context.Context, idOrName string,
 // Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
 func (c *Client) UpdateAccessGroup(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, body UpdateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAccessGroupRequest(c.Server, idOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAccessGroupMembers List members of an access group
-//
-// Corresponds with GET /v1/access-groups/{idOrName}/members (the `ListAccessGroupMembers` operationId).
-func (c *Client) ListAccessGroupMembers(ctx context.Context, idOrName string, params *ListAccessGroupMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAccessGroupMembersRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAccessGroupProjects List projects of an access group
-//
-// Corresponds with GET /v1/access-groups/{idOrName}/projects (the `ListAccessGroupProjects` operationId).
-func (c *Client) ListAccessGroupProjects(ctx context.Context, idOrName string, params *ListAccessGroupProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAccessGroupProjectsRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAiGatewayRouters List AI Gateway routers
-//
-// List the authenticated team's active and archived custom routers.
-//
-// Corresponds with GET /v1/ai-gateway/routers (the `ListAiGatewayRouters` operationId).
-func (c *Client) ListAiGatewayRouters(ctx context.Context, params *ListAiGatewayRoutersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAiGatewayRoutersRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// BuyCreditsWithBody Purchase credits
-//
-// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/billing/buy (the `BuyCredits` operationId).
-func (c *Client) BuyCreditsWithBody(ctx context.Context, params *BuyCreditsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBuyCreditsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}

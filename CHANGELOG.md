@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.26.0, 2026-11-11
+
+- Breaking: added a `*GetDomainsRecordsByRecordIdParams` argument to `GetDomainsRecordsByRecordId` and `GetDomainsRecordsByRecordIdWithResponse` on `Client`, `ClientWithResponses` and both interfaces.
+- Breaking: added a `*ReplaceDomainsByDomainRecordsParams` argument to `ReplaceDomainsByDomainRecords` and `ReplaceDomainsByDomainRecordsWithResponse` on the same types.
+- Breaking: removed `(*UserEventPayload117).Set`, `(*UserEventPayload117).UnmarshalJSON`, `(*UserEventPayload264).Set`, `(*UserEventPayload264).UnmarshalJSON`, `(*UserEvent_Payload).FromUserEventPayload128` and `MergeUserEventPayload128`. Added the matching methods on `UserEventPayload119`, `UserEventPayload267` and `UserEventPayload126`.
+- Breaking: reshaped many `UserEventPayload` types again, now up to `UserEventPayload523`, with new `From` and `Merge` methods on `UserEvent_Payload` for `UserEventPayload521` to `UserEventPayload523`. Fields and types are added and removed, for example `UserEventPayload10.GrantId`, `UserEventPayload100.Cn` and `UserEventPayload102.Next`.
+- Breaking: changed the anonymous struct type of `AuthUser.AccountUpdateContext`, which gains an `OrphanSsoTeam` field, and of `CreateProjectResponse.GetJSON200` and other project response bodies.
+- Added the event types `ListEventTypeNameFlagsOverridesSigned`, `ListEventTypeNameAiGatewaySystemCredentialFallbackOptOutToggled` and the `ListEventTypeNameMessageboard...` grant and project constants, with their `ListEventTypeReplacedBy...` counterparts.
+- Raised the minimum Go version in `go.mod` to 1.26.11, which fixes the `net/http` vulnerability GO-2026-6859 reported by govulncheck. The development image and setup docs use the same version.
+- Generated from spec version 0.0.1.
+
 ## v0.25.0, 2026-11-10
 
 - Breaking: removed `Team.DisableHardAutoBlocks` and its types `TeamDisableHardAutoBlocks0`, `TeamDisableHardAutoBlocks1`, `TeamDisableHardAutoBlocks1False`, `TeamDisableHardAutoBlocks1True` and `Team_DisableHardAutoBlocks`.

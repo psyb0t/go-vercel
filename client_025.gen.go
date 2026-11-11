@@ -5303,6 +5303,9 @@ type UpdateMicrofrontendsResponse struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -5585,8 +5588,14 @@ type UpdateMicrofrontendsResponse struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -7090,6 +7099,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+		// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 		// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -7372,8 +7384,14 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Organization *[]ACLAction `json:"organization,omitempty"`
 
+		// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 		// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+		// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 		// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`
@@ -20154,6 +20172,9 @@ type CreateProjectResponse struct {
 			// DeploymentV0 Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			DeploymentV0 *[]ACLAction `json:"deploymentV0,omitempty"`
 
+			// DesktopDevice Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			DesktopDevice *[]ACLAction `json:"desktopDevice,omitempty"`
+
 			// Domain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Domain *[]ACLAction `json:"domain,omitempty"`
 
@@ -20436,8 +20457,14 @@ type CreateProjectResponse struct {
 			// Organization Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Organization *[]ACLAction `json:"organization,omitempty"`
 
+			// OrganizationAdmin Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationAdmin *[]ACLAction `json:"organizationAdmin,omitempty"`
+
 			// OrganizationDomain Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationDomain *[]ACLAction `json:"organizationDomain,omitempty"`
+
+			// OrganizationMember Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			OrganizationMember *[]ACLAction `json:"organizationMember,omitempty"`
 
 			// OrganizationTeam Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			OrganizationTeam *[]ACLAction `json:"organizationTeam,omitempty"`

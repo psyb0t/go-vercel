@@ -16,6 +16,158 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewCreateProjectRequest calls the generic CreateProject builder with application/json body
+func NewCreateProjectRequest(server string, params *CreateProjectParams, body CreateProjectJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateProjectRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateProjectRequestWithBody constructs an http.Request for the CreateProject method, with any body, and a specified content type
+func NewCreateProjectRequestWithBody(server string, params *CreateProjectParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v11/projects")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCancelDeploymentRequest constructs an http.Request for the CancelDeployment method
+func NewCancelDeploymentRequest(server string, id string, params *CancelDeploymentParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v12/deployments/%s/cancel", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCreateDeploymentRequest calls the generic CreateDeployment builder with application/json body
 func NewCreateDeploymentRequest(server string, params *CreateDeploymentParams, body CreateDeploymentJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -12108,12 +12260,12 @@ type ClientWithResponsesInterface interface {
 	// GetDomainsRecordsByRecordIdWithResponse performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
 	//
 	// Returns a wrapper object for the known response body format(s).
-	GetDomainsRecordsByRecordIdWithResponse(ctx context.Context, recordId string, reqEditors ...RequestEditorFn) (*GetDomainsRecordsByRecordIdResponse, error)
+	GetDomainsRecordsByRecordIdWithResponse(ctx context.Context, recordId string, params *GetDomainsRecordsByRecordIdParams, reqEditors ...RequestEditorFn) (*GetDomainsRecordsByRecordIdResponse, error)
 
 	// ReplaceDomainsByDomainRecordsWithResponse performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
 	//
 	// Returns a wrapper object for the known response body format(s).
-	ReplaceDomainsByDomainRecordsWithResponse(ctx context.Context, domain string, reqEditors ...RequestEditorFn) (*ReplaceDomainsByDomainRecordsResponse, error)
+	ReplaceDomainsByDomainRecordsWithResponse(ctx context.Context, domain string, params *ReplaceDomainsByDomainRecordsParams, reqEditors ...RequestEditorFn) (*ReplaceDomainsByDomainRecordsResponse, error)
 
 	// AcceptProjectTransferRequestWithBodyWithResponse Accept project transfer request
 	//
@@ -15731,7 +15883,7 @@ type ClientWithResponsesInterface interface {
 
 	// RequestAccessToTeamWithBodyWithResponse Request access to a team
 	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time. Organization-directory access must be granted through the directory administrator.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -15740,7 +15892,7 @@ type ClientWithResponsesInterface interface {
 
 	// RequestAccessToTeamWithResponse Request access to a team
 	//
-	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+	// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time. Organization-directory access must be granted through the directory administrator.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -15749,7 +15901,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetTeamAccessRequestWithResponse Get access request status
 	//
-	// Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
+	// Check the status of a join request. It'll respond with a 404 if the request has been declined or enabled directory reads suppress access. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -19867,156 +20019,4 @@ func (r CreateAccessGroupResponse) StatusCode() int {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAccessGroupResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateAccessGroupProjectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AccessGroupId string                                          `json:"accessGroupId"`
-		CreatedAt     string                                          `json:"createdAt"`
-		ProjectId     string                                          `json:"projectId"`
-		Role          CreateAccessGroupProject200JSONResponseBodyRole `json:"role"`
-		TeamId        string                                          `json:"teamId"`
-		UpdatedAt     string                                          `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateAccessGroupProjectResponse) GetJSON200() *struct {
-	AccessGroupId string                                          `json:"accessGroupId"`
-	CreatedAt     string                                          `json:"createdAt"`
-	ProjectId     string                                          `json:"projectId"`
-	Role          CreateAccessGroupProject200JSONResponseBodyRole `json:"role"`
-	TeamId        string                                          `json:"teamId"`
-	UpdatedAt     string                                          `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateAccessGroupProjectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAccessGroupProjectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAccessGroupProjectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAccessGroupProjectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAccessGroupProjectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteAccessGroupProjectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAccessGroupProjectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAccessGroupProjectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAccessGroupProjectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ReadAccessGroupProjectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		AccessGroupId string                                        `json:"accessGroupId"`
-		CreatedAt     string                                        `json:"createdAt"`
-		ProjectId     string                                        `json:"projectId"`
-		Role          ReadAccessGroupProject200JSONResponseBodyRole `json:"role"`
-		TeamId        string                                        `json:"teamId"`
-		UpdatedAt     string                                        `json:"updatedAt"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ReadAccessGroupProjectResponse) GetJSON200() *struct {
-	AccessGroupId string                                        `json:"accessGroupId"`
-	CreatedAt     string                                        `json:"createdAt"`
-	ProjectId     string                                        `json:"projectId"`
-	Role          ReadAccessGroupProject200JSONResponseBodyRole `json:"role"`
-	TeamId        string                                        `json:"teamId"`
-	UpdatedAt     string                                        `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ReadAccessGroupProjectResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ReadAccessGroupProjectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ReadAccessGroupProjectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ReadAccessGroupProjectResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
 }

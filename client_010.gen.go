@@ -10,6 +10,126 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateAiGatewayByokCredentialParams defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredentialParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAiGatewayByokCredential201JSONResponseBodyActive defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredential201JSONResponseBodyActive bool
+
+// CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention bool
+
+// ListAiGatewayByokCredentialsParams defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentialsParams struct {
+	// OwnerId The owner ID to list credentials for. Ignored for customer tokens, which always list their own team.
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// ProviderSlug Optional provider slug to filter credentials by
+	ProviderSlug *string `form:"providerSlug,omitempty" json:"providerSlug,omitempty"`
+
+	// IncludeDeleted Whether to include soft-deleted credentials
+	IncludeDeleted *ListAiGatewayByokCredentialsParamsIncludeDeleted `form:"includeDeleted,omitempty" json:"includeDeleted,omitempty"`
+
+	// Decrypt Not supported. Credential values are never returned.
+	Decrypt *ListAiGatewayByokCredentialsParamsDecrypt `form:"decrypt,omitempty" json:"decrypt,omitempty"`
+
+	// IncludeModelMappings Whether to include model mappings for each credential in the response
+	IncludeModelMappings *ListAiGatewayByokCredentialsParamsIncludeModelMappings `form:"includeModelMappings,omitempty" json:"includeModelMappings,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayByokCredentialsParamsIncludeDeleted defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentialsParamsIncludeDeleted string
+
+// ListAiGatewayByokCredentialsParamsDecrypt defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentialsParamsDecrypt string
+
+// ListAiGatewayByokCredentialsParamsIncludeModelMappings defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentialsParamsIncludeModelMappings string
+
+// ListAiGatewayByokCredentials200JSONResponseBodyCredentialsActive defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentials200JSONResponseBodyCredentialsActive bool
+
+// ListAiGatewayByokCredentials200JSONResponseBodyCredentialsDeleted defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentials200JSONResponseBodyCredentialsDeleted bool
+
+// ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention bool
+
+// DeleteAiGatewayByokCredentialParams defines parameters for DeleteAiGatewayByokCredential.
+type DeleteAiGatewayByokCredentialParams struct {
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// UserId The ID of the user performing this action, used for Activity-log attribution.
+	UserId *string `form:"userId,omitempty" json:"userId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetAiGatewayByokCredentialParams defines parameters for GetAiGatewayByokCredential.
+type GetAiGatewayByokCredentialParams struct {
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetAiGatewayByokCredential200JSONResponseBodyActive defines parameters for GetAiGatewayByokCredential.
+type GetAiGatewayByokCredential200JSONResponseBodyActive bool
+
+// GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention defines parameters for GetAiGatewayByokCredential.
+type GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention bool
+
+// UpdateAiGatewayByokCredentialJSONBody defines parameters for UpdateAiGatewayByokCredential.
+type UpdateAiGatewayByokCredentialJSONBody struct {
+	// Active Whether the credential should be active
+	Active *bool `json:"active,omitempty"`
+
+	// Name The new name for the credential
+	Name *string `json:"name,omitempty"`
+
+	// UserId The ID of the user performing this action, used for Activity-log attribution.
+	UserId *string `json:"userId,omitempty"`
+
+	// ZeroDataRetention Whether the customer attested this external credential has a zero data retention policy
+	ZeroDataRetention *bool `json:"zeroDataRetention,omitempty"`
+}
+
+// UpdateAiGatewayByokCredentialParams defines parameters for UpdateAiGatewayByokCredential.
+type UpdateAiGatewayByokCredentialParams struct {
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateAiGatewayByokCredential200JSONResponseBodyActive defines parameters for UpdateAiGatewayByokCredential.
+type UpdateAiGatewayByokCredential200JSONResponseBodyActive bool
+
+// UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention defines parameters for UpdateAiGatewayByokCredential.
+type UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention bool
+
 // DeleteAiGatewayRuleParams defines parameters for DeleteAiGatewayRule.
 type DeleteAiGatewayRuleParams struct {
 	RuleId string `form:"ruleId" json:"ruleId"`
@@ -297,11 +417,29 @@ type UpdateApiKeyQuotaJSONBodyAlertThresholds float32
 // UpdateApiKeyQuotaJSONBodyRefreshPeriod defines parameters for UpdateApiKeyQuota.
 type UpdateApiKeyQuotaJSONBodyRefreshPeriod string
 
+// GetDomainsRecordsByRecordIdParams defines parameters for GetDomainsRecordsByRecordId.
+type GetDomainsRecordsByRecordIdParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // GetDomainsRecordsByRecordId200JSONResponseBodyRecordType defines parameters for GetDomainsRecordsByRecordId.
 type GetDomainsRecordsByRecordId200JSONResponseBodyRecordType string
 
 // GetDomainsRecordsByRecordId200JSONResponseBodyType defines parameters for GetDomainsRecordsByRecordId.
 type GetDomainsRecordsByRecordId200JSONResponseBodyType string
+
+// ReplaceDomainsByDomainRecordsParams defines parameters for ReplaceDomainsByDomainRecords.
+type ReplaceDomainsByDomainRecordsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
 
 // AcceptProjectTransferRequestJSONBody defines parameters for AcceptProjectTransferRequest.
 type AcceptProjectTransferRequestJSONBody struct {
@@ -19873,147 +20011,3 @@ type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Bas
 
 // ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type defines parameters for ListFlagVersions.
 type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string                                                                           `json:"attribute"`
-		Kind      string                                                                           `json:"kind"`
-		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                                      `json:"startTimestamp"`
-	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type string
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataPermanent defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataPermanent bool
-
-// ListFlagVersions200JSONResponseBodyVersionsDataState defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataState string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 = string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 = float32
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 map[string]interface{}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 = []interface{}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 bool
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value struct {
-	union json.RawMessage
-}
-
-// ListFlagLabelsParams defines parameters for ListFlagLabels.
-type ListFlagLabelsParams struct {
-	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor The continuation cursor from the previous response.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// Search Case-insensitive substring search on the value and label.
-	Search       *string `form:"search,omitempty" json:"search,omitempty"`
-	EntityKind   string  `form:"entityKind" json:"entityKind"`
-	AttributeKey string  `form:"attributeKey" json:"attributeKey"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagLabelCountsParams defines parameters for ListFlagLabelCounts.
-type ListFlagLabelCountsParams struct {
-	EntityKind *string `form:"entityKind,omitempty" json:"entityKind,omitempty"`
-	Limit      *int    `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor The continuation cursor from the previous response.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// LookupFlagLabelsJSONBody defines parameters for LookupFlagLabels.
-type LookupFlagLabelsJSONBody struct {
-	Items []struct {
-		AttributeKey string `json:"attributeKey"`
-		EntityKind   string `json:"entityKind"`
-		Value        string `json:"value"`
-	} `json:"items"`
-}
-
-// LookupFlagLabelsParams defines parameters for LookupFlagLabels.
-type LookupFlagLabelsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetSdkKeysParams defines parameters for GetSdkKeys.
-type GetSdkKeysParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetSdkKeys200JSONResponseBodyDataType defines parameters for GetSdkKeys.
-type GetSdkKeys200JSONResponseBodyDataType string
-
-// CreateSdkKeyJSONBody defines parameters for CreateSdkKey.
-type CreateSdkKeyJSONBody struct {
-	Environment string                         `json:"environment"`
-	Label       *string                        `json:"label,omitempty"`
-	SdkKeyType  CreateSdkKeyJSONBodySdkKeyType `json:"sdkKeyType"`
-}
-
-// CreateSdkKeyParams defines parameters for CreateSdkKey.
-type CreateSdkKeyParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
