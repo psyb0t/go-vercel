@@ -4156,6 +4156,7 @@ const (
 	ListEventTypeNameAiGatewayHeadquartersUpdated                    ListEventTypeName = "ai-gateway-headquarters-updated"
 	ListEventTypeNameAiGatewayHipaaComplianceToggled                 ListEventTypeName = "ai-gateway-hipaa-compliance-toggled"
 	ListEventTypeNameAiGatewayInferenceRegionsUpdated                ListEventTypeName = "ai-gateway-inference-regions-updated"
+	ListEventTypeNameAiGatewayMemberBudgetChanges                    ListEventTypeName = "ai-gateway-member-budget-changes"
 	ListEventTypeNameAiGatewayModelAllowlistModelsUpdated            ListEventTypeName = "ai-gateway-model-allowlist-models-updated"
 	ListEventTypeNameAiGatewayModelAllowlistToggled                  ListEventTypeName = "ai-gateway-model-allowlist-toggled"
 	ListEventTypeNameAiGatewayModelCatalogAlertSettingsUpdated       ListEventTypeName = "ai-gateway-model-catalog-alert-settings-updated"
@@ -4992,6 +4993,8 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameAiGatewayHipaaComplianceToggled:
 		return true
 	case ListEventTypeNameAiGatewayInferenceRegionsUpdated:
+		return true
+	case ListEventTypeNameAiGatewayMemberBudgetChanges:
 		return true
 	case ListEventTypeNameAiGatewayModelAllowlistModelsUpdated:
 		return true
@@ -6514,6 +6517,7 @@ const (
 	ListEventTypeReplacedByAiGatewayHeadquartersUpdated                    ListEventTypeReplacedBy = "ai-gateway-headquarters-updated"
 	ListEventTypeReplacedByAiGatewayHipaaComplianceToggled                 ListEventTypeReplacedBy = "ai-gateway-hipaa-compliance-toggled"
 	ListEventTypeReplacedByAiGatewayInferenceRegionsUpdated                ListEventTypeReplacedBy = "ai-gateway-inference-regions-updated"
+	ListEventTypeReplacedByAiGatewayMemberBudgetChanges                    ListEventTypeReplacedBy = "ai-gateway-member-budget-changes"
 	ListEventTypeReplacedByAiGatewayModelAllowlistModelsUpdated            ListEventTypeReplacedBy = "ai-gateway-model-allowlist-models-updated"
 	ListEventTypeReplacedByAiGatewayModelAllowlistToggled                  ListEventTypeReplacedBy = "ai-gateway-model-allowlist-toggled"
 	ListEventTypeReplacedByAiGatewayModelCatalogAlertSettingsUpdated       ListEventTypeReplacedBy = "ai-gateway-model-catalog-alert-settings-updated"
@@ -7350,6 +7354,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByAiGatewayHipaaComplianceToggled:
 		return true
 	case ListEventTypeReplacedByAiGatewayInferenceRegionsUpdated:
+		return true
+	case ListEventTypeReplacedByAiGatewayMemberBudgetChanges:
 		return true
 	case ListEventTypeReplacedByAiGatewayModelAllowlistModelsUpdated:
 		return true
@@ -10305,6 +10311,27 @@ func (e TeamDeploymentStorageRolloutMeterReason) Valid() bool {
 	}
 }
 
+// Defines values for TeamDirectorySyncSource.
+const (
+	TeamDirectorySyncSourceNone         TeamDirectorySyncSource = "none"
+	TeamDirectorySyncSourceOrganization TeamDirectorySyncSource = "organization"
+	TeamDirectorySyncSourceTeam         TeamDirectorySyncSource = "team"
+)
+
+// Valid indicates whether the value is a known member of the TeamDirectorySyncSource enum.
+func (e TeamDirectorySyncSource) Valid() bool {
+	switch e {
+	case TeamDirectorySyncSourceNone:
+		return true
+	case TeamDirectorySyncSourceOrganization:
+		return true
+	case TeamDirectorySyncSourceTeam:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for TeamDisableRepositoryDispatchEvents.
 const (
 	TeamDisableRepositoryDispatchEventsFalse TeamDisableRepositoryDispatchEvents = false
@@ -11181,6 +11208,27 @@ func (e TeamStrictShareableLinksEnabled) Valid() bool {
 	case TeamStrictShareableLinksEnabledFalse:
 		return true
 	case TeamStrictShareableLinksEnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TeamLimitedDirectorySyncSource.
+const (
+	TeamLimitedDirectorySyncSourceNone         TeamLimitedDirectorySyncSource = "none"
+	TeamLimitedDirectorySyncSourceOrganization TeamLimitedDirectorySyncSource = "organization"
+	TeamLimitedDirectorySyncSourceTeam         TeamLimitedDirectorySyncSource = "team"
+)
+
+// Valid indicates whether the value is a known member of the TeamLimitedDirectorySyncSource enum.
+func (e TeamLimitedDirectorySyncSource) Valid() bool {
+	switch e {
+	case TeamLimitedDirectorySyncSourceNone:
+		return true
+	case TeamLimitedDirectorySyncSourceOrganization:
+		return true
+	case TeamLimitedDirectorySyncSourceTeam:
 		return true
 	default:
 		return false
@@ -12534,72 +12582,72 @@ func (e UserEventPayload35ScopeType) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload37ChangesActive.
+// Defines values for UserEventPayload36Enabled.
 const (
-	UserEventPayload37ChangesActiveFalse UserEventPayload37ChangesActive = false
-	UserEventPayload37ChangesActiveTrue  UserEventPayload37ChangesActive = true
+	UserEventPayload36EnabledFalse UserEventPayload36Enabled = false
+	UserEventPayload36EnabledTrue  UserEventPayload36Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload37ChangesActive enum.
-func (e UserEventPayload37ChangesActive) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload36Enabled enum.
+func (e UserEventPayload36Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload37ChangesActiveFalse:
+	case UserEventPayload36EnabledFalse:
 		return true
-	case UserEventPayload37ChangesActiveTrue:
+	case UserEventPayload36EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload37ChangesKeyReplaced.
+// Defines values for UserEventPayload38ChangesActive.
 const (
-	UserEventPayload37ChangesKeyReplacedFalse UserEventPayload37ChangesKeyReplaced = false
-	UserEventPayload37ChangesKeyReplacedTrue  UserEventPayload37ChangesKeyReplaced = true
+	UserEventPayload38ChangesActiveFalse UserEventPayload38ChangesActive = false
+	UserEventPayload38ChangesActiveTrue  UserEventPayload38ChangesActive = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload37ChangesKeyReplaced enum.
-func (e UserEventPayload37ChangesKeyReplaced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload38ChangesActive enum.
+func (e UserEventPayload38ChangesActive) Valid() bool {
 	switch e {
-	case UserEventPayload37ChangesKeyReplacedFalse:
+	case UserEventPayload38ChangesActiveFalse:
 		return true
-	case UserEventPayload37ChangesKeyReplacedTrue:
+	case UserEventPayload38ChangesActiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload37ChangesZeroDataRetention.
+// Defines values for UserEventPayload38ChangesKeyReplaced.
 const (
-	UserEventPayload37ChangesZeroDataRetentionFalse UserEventPayload37ChangesZeroDataRetention = false
-	UserEventPayload37ChangesZeroDataRetentionTrue  UserEventPayload37ChangesZeroDataRetention = true
+	UserEventPayload38ChangesKeyReplacedFalse UserEventPayload38ChangesKeyReplaced = false
+	UserEventPayload38ChangesKeyReplacedTrue  UserEventPayload38ChangesKeyReplaced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload37ChangesZeroDataRetention enum.
-func (e UserEventPayload37ChangesZeroDataRetention) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload38ChangesKeyReplaced enum.
+func (e UserEventPayload38ChangesKeyReplaced) Valid() bool {
 	switch e {
-	case UserEventPayload37ChangesZeroDataRetentionFalse:
+	case UserEventPayload38ChangesKeyReplacedFalse:
 		return true
-	case UserEventPayload37ChangesZeroDataRetentionTrue:
+	case UserEventPayload38ChangesKeyReplacedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload39Enabled.
+// Defines values for UserEventPayload38ChangesZeroDataRetention.
 const (
-	UserEventPayload39EnabledFalse UserEventPayload39Enabled = false
-	UserEventPayload39EnabledTrue  UserEventPayload39Enabled = true
+	UserEventPayload38ChangesZeroDataRetentionFalse UserEventPayload38ChangesZeroDataRetention = false
+	UserEventPayload38ChangesZeroDataRetentionTrue  UserEventPayload38ChangesZeroDataRetention = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload39Enabled enum.
-func (e UserEventPayload39Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload38ChangesZeroDataRetention enum.
+func (e UserEventPayload38ChangesZeroDataRetention) Valid() bool {
 	switch e {
-	case UserEventPayload39EnabledFalse:
+	case UserEventPayload38ChangesZeroDataRetentionFalse:
 		return true
-	case UserEventPayload39EnabledTrue:
+	case UserEventPayload38ChangesZeroDataRetentionTrue:
 		return true
 	default:
 		return false
@@ -19956,54 +20004,6 @@ func (e UserEventPayload269EmailVerified) Valid() bool {
 	case UserEventPayload269EmailVerifiedFalse:
 		return true
 	case UserEventPayload269EmailVerifiedTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload270NextPassportDeploymentType.
-const (
-	UserEventPayload270NextPassportDeploymentTypeAll                              UserEventPayload270NextPassportDeploymentType = "all"
-	UserEventPayload270NextPassportDeploymentTypeAllExceptCustomDomains           UserEventPayload270NextPassportDeploymentType = "all_except_custom_domains"
-	UserEventPayload270NextPassportDeploymentTypePreview                          UserEventPayload270NextPassportDeploymentType = "preview"
-	UserEventPayload270NextPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload270NextPassportDeploymentType = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload270NextPassportDeploymentType enum.
-func (e UserEventPayload270NextPassportDeploymentType) Valid() bool {
-	switch e {
-	case UserEventPayload270NextPassportDeploymentTypeAll:
-		return true
-	case UserEventPayload270NextPassportDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload270NextPassportDeploymentTypePreview:
-		return true
-	case UserEventPayload270NextPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload270PreviousPassportDeploymentType.
-const (
-	UserEventPayload270PreviousPassportDeploymentTypeAll                              UserEventPayload270PreviousPassportDeploymentType = "all"
-	UserEventPayload270PreviousPassportDeploymentTypeAllExceptCustomDomains           UserEventPayload270PreviousPassportDeploymentType = "all_except_custom_domains"
-	UserEventPayload270PreviousPassportDeploymentTypePreview                          UserEventPayload270PreviousPassportDeploymentType = "preview"
-	UserEventPayload270PreviousPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload270PreviousPassportDeploymentType = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload270PreviousPassportDeploymentType enum.
-func (e UserEventPayload270PreviousPassportDeploymentType) Valid() bool {
-	switch e {
-	case UserEventPayload270PreviousPassportDeploymentTypeAll:
-		return true
-	case UserEventPayload270PreviousPassportDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload270PreviousPassportDeploymentTypePreview:
-		return true
-	case UserEventPayload270PreviousPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false

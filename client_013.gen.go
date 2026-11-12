@@ -12494,6 +12494,22 @@ func (a *Team) UnmarshalJSON(b []byte) error {
 		delete(object, "description")
 	}
 
+	if raw, found := object["directorySyncSource"]; found {
+		err = json.Unmarshal(raw, &a.DirectorySyncSource)
+		if err != nil {
+			return fmt.Errorf("error reading 'directorySyncSource': %w", err)
+		}
+		delete(object, "directorySyncSource")
+	}
+
+	if raw, found := object["directorySyncType"]; found {
+		err = json.Unmarshal(raw, &a.DirectorySyncType)
+		if err != nil {
+			return fmt.Errorf("error reading 'directorySyncType': %w", err)
+		}
+		delete(object, "directorySyncType")
+	}
+
 	if raw, found := object["disableRepositoryDispatchEvents"]; found {
 		err = json.Unmarshal(raw, &a.DisableRepositoryDispatchEvents)
 		if err != nil {
@@ -12875,6 +12891,18 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	object["description"], err = json.Marshal(a.Description)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'description': %w", err)
+	}
+
+	object["directorySyncSource"], err = json.Marshal(a.DirectorySyncSource)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'directorySyncSource': %w", err)
+	}
+
+	if a.DirectorySyncType != nil {
+		object["directorySyncType"], err = json.Marshal(a.DirectorySyncType)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'directorySyncType': %w", err)
+		}
 	}
 
 	if a.DisableRepositoryDispatchEvents != nil {
@@ -19982,32 +20010,6 @@ func (t *Segment_Data_Rules_Conditions_Lhs) FromSegmentDataRulesConditionsLhs0(v
 
 // MergeSegmentDataRulesConditionsLhs0 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Lhs, using the provided SegmentDataRulesConditionsLhs0
 func (t *Segment_Data_Rules_Conditions_Lhs) MergeSegmentDataRulesConditionsLhs0(v SegmentDataRulesConditionsLhs0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsSegmentDataRulesConditionsLhs1 returns the union data inside the Segment_Data_Rules_Conditions_Lhs as a SegmentDataRulesConditionsLhs1
-func (t Segment_Data_Rules_Conditions_Lhs) AsSegmentDataRulesConditionsLhs1() (SegmentDataRulesConditionsLhs1, error) {
-	var body SegmentDataRulesConditionsLhs1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsLhs1 overwrites any union data inside the Segment_Data_Rules_Conditions_Lhs as the provided SegmentDataRulesConditionsLhs1
-func (t *Segment_Data_Rules_Conditions_Lhs) FromSegmentDataRulesConditionsLhs1(v SegmentDataRulesConditionsLhs1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsLhs1 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Lhs, using the provided SegmentDataRulesConditionsLhs1
-func (t *Segment_Data_Rules_Conditions_Lhs) MergeSegmentDataRulesConditionsLhs1(v SegmentDataRulesConditionsLhs1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err

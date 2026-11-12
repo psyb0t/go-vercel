@@ -14,6 +14,68 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsUpdateSandboxJSONBodyNetworkPolicy1 returns the union data inside the UpdateSandboxJSONBody_NetworkPolicy as a UpdateSandboxJSONBodyNetworkPolicy1
+func (t UpdateSandboxJSONBody_NetworkPolicy) AsUpdateSandboxJSONBodyNetworkPolicy1() (UpdateSandboxJSONBodyNetworkPolicy1, error) {
+	var body UpdateSandboxJSONBodyNetworkPolicy1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyNetworkPolicy1 overwrites any union data inside the UpdateSandboxJSONBody_NetworkPolicy as the provided UpdateSandboxJSONBodyNetworkPolicy1
+func (t *UpdateSandboxJSONBody_NetworkPolicy) FromUpdateSandboxJSONBodyNetworkPolicy1(v UpdateSandboxJSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyNetworkPolicy1 performs a merge with any union data inside the UpdateSandboxJSONBody_NetworkPolicy, using the provided UpdateSandboxJSONBodyNetworkPolicy1
+func (t *UpdateSandboxJSONBody_NetworkPolicy) MergeUpdateSandboxJSONBodyNetworkPolicy1(v UpdateSandboxJSONBodyNetworkPolicy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandboxJSONBody_NetworkPolicy) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandboxJSONBody_NetworkPolicy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandboxJSONBodySnapshotExpiration0 returns the union data inside the UpdateSandboxJSONBody_SnapshotExpiration as a UpdateSandboxJSONBodySnapshotExpiration0
+func (t UpdateSandboxJSONBody_SnapshotExpiration) AsUpdateSandboxJSONBodySnapshotExpiration0() (UpdateSandboxJSONBodySnapshotExpiration0, error) {
+	var body UpdateSandboxJSONBodySnapshotExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodySnapshotExpiration0 overwrites any union data inside the UpdateSandboxJSONBody_SnapshotExpiration as the provided UpdateSandboxJSONBodySnapshotExpiration0
+func (t *UpdateSandboxJSONBody_SnapshotExpiration) FromUpdateSandboxJSONBodySnapshotExpiration0(v UpdateSandboxJSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodySnapshotExpiration0 performs a merge with any union data inside the UpdateSandboxJSONBody_SnapshotExpiration, using the provided UpdateSandboxJSONBodySnapshotExpiration0
+func (t *UpdateSandboxJSONBody_SnapshotExpiration) MergeUpdateSandboxJSONBodySnapshotExpiration0(v UpdateSandboxJSONBodySnapshotExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsUpdateSandboxJSONBodySnapshotExpiration1 returns the union data inside the UpdateSandboxJSONBody_SnapshotExpiration as a UpdateSandboxJSONBodySnapshotExpiration1
 func (t UpdateSandboxJSONBody_SnapshotExpiration) AsUpdateSandboxJSONBodySnapshotExpiration1() (UpdateSandboxJSONBodySnapshotExpiration1, error) {
 	var body UpdateSandboxJSONBodySnapshotExpiration1
@@ -19945,78 +20007,6 @@ func (c *Client) UpdateAccessGroupProjectWithBody(ctx context.Context, accessGro
 // Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
 func (c *Client) UpdateAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, body UpdateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAccessGroupProjectRequest(c.Server, accessGroupIdOrName, projectId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAccessGroup Deletes an access group
-//
-// Allows to delete an access group.
-//
-// Corresponds with DELETE /v1/access-groups/{idOrName} (the `DeleteAccessGroup` operationId).
-func (c *Client) DeleteAccessGroup(ctx context.Context, idOrName string, params *DeleteAccessGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAccessGroupRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReadAccessGroup Reads an access group
-//
-// Allows to read an access group.
-//
-// Corresponds with GET /v1/access-groups/{idOrName} (the `ReadAccessGroup` operationId).
-func (c *Client) ReadAccessGroup(ctx context.Context, idOrName string, params *ReadAccessGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReadAccessGroupRequest(c.Server, idOrName, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAccessGroupWithBody Update an access group
-//
-// Allows to update an access group metadata.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
-func (c *Client) UpdateAccessGroupWithBody(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAccessGroupRequestWithBody(c.Server, idOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAccessGroup Update an access group
-//
-// Allows to update an access group metadata.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
-func (c *Client) UpdateAccessGroup(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, body UpdateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAccessGroupRequest(c.Server, idOrName, params, body)
 	if err != nil {
 		return nil, err
 	}

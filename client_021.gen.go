@@ -16,6 +16,78 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// DeleteAccessGroup Deletes an access group
+//
+// Allows to delete an access group.
+//
+// Corresponds with DELETE /v1/access-groups/{idOrName} (the `DeleteAccessGroup` operationId).
+func (c *Client) DeleteAccessGroup(ctx context.Context, idOrName string, params *DeleteAccessGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAccessGroupRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ReadAccessGroup Reads an access group
+//
+// Allows to read an access group.
+//
+// Corresponds with GET /v1/access-groups/{idOrName} (the `ReadAccessGroup` operationId).
+func (c *Client) ReadAccessGroup(ctx context.Context, idOrName string, params *ReadAccessGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewReadAccessGroupRequest(c.Server, idOrName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAccessGroupWithBody Update an access group
+//
+// Allows to update an access group metadata.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
+func (c *Client) UpdateAccessGroupWithBody(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAccessGroupRequestWithBody(c.Server, idOrName, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAccessGroup Update an access group
+//
+// Allows to update an access group metadata.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/access-groups/{idOrName} (the `UpdateAccessGroup` operationId).
+func (c *Client) UpdateAccessGroup(ctx context.Context, idOrName string, params *UpdateAccessGroupParams, body UpdateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAccessGroupRequest(c.Server, idOrName, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListAccessGroupMembers List members of an access group
 //
 // Corresponds with GET /v1/access-groups/{idOrName}/members (the `ListAccessGroupMembers` operationId).
@@ -19953,85 +20025,6 @@ func NewGetEdgeConfigsRequest(server string, params *GetEdgeConfigsParams) (*htt
 	if err != nil {
 		return nil, err
 	}
-
-	return req, nil
-}
-
-// NewCreateEdgeConfigRequest calls the generic CreateEdgeConfig builder with application/json body
-func NewCreateEdgeConfigRequest(server string, params *CreateEdgeConfigParams, body CreateEdgeConfigJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateEdgeConfigRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateEdgeConfigRequestWithBody constructs an http.Request for the CreateEdgeConfig method, with any body, and a specified content type
-func NewCreateEdgeConfigRequestWithBody(server string, params *CreateEdgeConfigParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/global-config")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }

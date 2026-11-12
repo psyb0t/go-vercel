@@ -10,6 +10,32 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsSegmentDataRulesConditionsLhs1 returns the union data inside the Segment_Data_Rules_Conditions_Lhs as a SegmentDataRulesConditionsLhs1
+func (t Segment_Data_Rules_Conditions_Lhs) AsSegmentDataRulesConditionsLhs1() (SegmentDataRulesConditionsLhs1, error) {
+	var body SegmentDataRulesConditionsLhs1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSegmentDataRulesConditionsLhs1 overwrites any union data inside the Segment_Data_Rules_Conditions_Lhs as the provided SegmentDataRulesConditionsLhs1
+func (t *Segment_Data_Rules_Conditions_Lhs) FromSegmentDataRulesConditionsLhs1(v SegmentDataRulesConditionsLhs1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSegmentDataRulesConditionsLhs1 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Lhs, using the provided SegmentDataRulesConditionsLhs1
+func (t *Segment_Data_Rules_Conditions_Lhs) MergeSegmentDataRulesConditionsLhs1(v SegmentDataRulesConditionsLhs1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t Segment_Data_Rules_Conditions_Lhs) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -17604,6 +17630,68 @@ func (t *BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_4_Options_
 	return err
 }
 
+// AsBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0 returns the union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options as a BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0
+func (t BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) AsBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0() (BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0, error) {
+	var body BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0 overwrites any union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options as the provided BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0
+func (t *BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) FromBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0(v BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0 performs a merge with any union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options, using the provided BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0
+func (t *BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) MergeBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0(v BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1 returns the union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options as a BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1
+func (t BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) AsBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1() (BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1, error) {
+	var body BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1 overwrites any union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options as the provided BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1
+func (t *BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) FromBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1(v BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1 performs a merge with any union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options, using the provided BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1
+func (t *BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) MergeBuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1(v BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsBuyCredits200JSONResponseBody1PurchaseIntentConfiguration0 returns the union data inside the BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration as a BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0
 func (t BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration) AsBuyCredits200JSONResponseBody1PurchaseIntentConfiguration0() (BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0, error) {
 	var body BuyCredits200JSONResponseBody1PurchaseIntentConfiguration0
@@ -19919,94 +20007,6 @@ func (t *CreateDrainJSONBody_Filter_Filter) MergeCreateDrainJSONBodyFilterFilter
 }
 
 func (t CreateDrainJSONBody_Filter_Filter) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *CreateDrainJSONBody_Filter_Filter) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsCreateDrainJSONBodySource00 returns the union data inside the CreateDrainJSONBodySource0 as a CreateDrainJSONBodySource00
-func (t CreateDrainJSONBodySource0) AsCreateDrainJSONBodySource00() (CreateDrainJSONBodySource00, error) {
-	var body CreateDrainJSONBodySource00
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateDrainJSONBodySource00 overwrites any union data inside the CreateDrainJSONBodySource0 as the provided CreateDrainJSONBodySource00
-func (t *CreateDrainJSONBodySource0) FromCreateDrainJSONBodySource00(v CreateDrainJSONBodySource00) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateDrainJSONBodySource00 performs a merge with any union data inside the CreateDrainJSONBodySource0, using the provided CreateDrainJSONBodySource00
-func (t *CreateDrainJSONBodySource0) MergeCreateDrainJSONBodySource00(v CreateDrainJSONBodySource00) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateDrainJSONBodySource01 returns the union data inside the CreateDrainJSONBodySource0 as a CreateDrainJSONBodySource01
-func (t CreateDrainJSONBodySource0) AsCreateDrainJSONBodySource01() (CreateDrainJSONBodySource01, error) {
-	var body CreateDrainJSONBodySource01
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateDrainJSONBodySource01 overwrites any union data inside the CreateDrainJSONBodySource0 as the provided CreateDrainJSONBodySource01
-func (t *CreateDrainJSONBodySource0) FromCreateDrainJSONBodySource01(v CreateDrainJSONBodySource01) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateDrainJSONBodySource01 performs a merge with any union data inside the CreateDrainJSONBodySource0, using the provided CreateDrainJSONBodySource01
-func (t *CreateDrainJSONBodySource0) MergeCreateDrainJSONBodySource01(v CreateDrainJSONBodySource01) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsCreateDrainJSONBodySource02 returns the union data inside the CreateDrainJSONBodySource0 as a CreateDrainJSONBodySource02
-func (t CreateDrainJSONBodySource0) AsCreateDrainJSONBodySource02() (CreateDrainJSONBodySource02, error) {
-	var body CreateDrainJSONBodySource02
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromCreateDrainJSONBodySource02 overwrites any union data inside the CreateDrainJSONBodySource0 as the provided CreateDrainJSONBodySource02
-func (t *CreateDrainJSONBodySource0) FromCreateDrainJSONBodySource02(v CreateDrainJSONBodySource02) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeCreateDrainJSONBodySource02 performs a merge with any union data inside the CreateDrainJSONBodySource0, using the provided CreateDrainJSONBodySource02
-func (t *CreateDrainJSONBodySource0) MergeCreateDrainJSONBodySource02(v CreateDrainJSONBodySource02) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t CreateDrainJSONBodySource0) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }

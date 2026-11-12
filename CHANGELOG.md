@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.27.0, 2026-11-12
+
+- Breaking: removed `GetConfiguration200JSONResponseBody2`, its enum types and constants (`DisabledReason`, `InstallationType`, `Source`, `Status`, `Type`), and the methods `AsGetConfiguration200JSONResponseBody2`, `FromGetConfiguration200JSONResponseBody2` and `MergeGetConfiguration200JSONResponseBody2` on `GetConfiguration200JSONResponseBody`.
+- Breaking: replaced the anonymous struct type of `BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6.Options` with the union type `BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options`, built from the new `...Options0` and `...Options1` types. The old `...OptionsFromPlanPlanItemPricesPriceModel` and `...OptionsPlanItemPricesPriceModel` types are removed, and `BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6` is no longer comparable.
+- Breaking: changed the anonymous struct types of `JSON200` and `GetJSON200` on `CreateProjectResponse`, `GetProjectResponse`, `UpdateProjectResponse`, `DeleteProjectAvatarResponse`, `UploadProjectAvatarResponse`, `UpdateMicrofrontendsResponse` and `GetMicrofrontendsInGroupResponse`, and of `GetProjects200JSONResponseBody2.Projects`.
+- Breaking: `ListPromoteAliases200JSONResponseBody1.Aliases[].Status` is now the enum `ListPromoteAliases200JSONResponseBody1AliasesStatus` (`Pending`, `Completed`, `Failed`) instead of `string`.
+- Breaking: reshaped `UserEventPayload36`, `UserEventPayload37`, `UserEventPayload38` and `UserEventPayload39`. `UserEventPayload36.Credential`, `UserEventPayload37.Changes`, `UserEventPayload38.Added`, `Changed` and `Removed`, and `UserEventPayload39.Enabled` are removed. `UserEventPayload36.Enabled`, `UserEventPayload38.Changes`, and `UserEventPayload39.Added`, `Changed`, `Credential` and `Removed` are added. `UserEventPayload39` is no longer comparable.
+- Added `Team.DirectorySyncSource`, `Team.DirectorySyncType` and the same fields on `TeamLimited`, with the enums `TeamDirectorySyncSource` and `TeamLimitedDirectorySyncSource` (`None`, `Organization`, `Team`).
+- Added the event types `ListEventTypeNameAiGatewayMemberBudgetChanges`, `ListEventTypeReplacedByAiGatewayMemberBudgetChanges` and `UserEventTypeAiGatewayMemberBudgetChanges`, plus `None` scope constants on `UserEventPayload414`.
+- Added the parameter types `CreateAiGatewayByokCredentialParams`, `ListAiGatewayByokCredentialsParams`, `ListFlagLabelsParams` and `ListFlagLabelCountsParams`, and new `Valid` methods on many generated enum types.
+- Generated from spec version 0.0.1.
+
 ## v0.26.0, 2026-11-11
 
 - Breaking: added a `*GetDomainsRecordsByRecordIdParams` argument to `GetDomainsRecordsByRecordId` and `GetDomainsRecordsByRecordIdWithResponse` on `Client`, `ClientWithResponses` and both interfaces.

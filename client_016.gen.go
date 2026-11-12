@@ -10,6 +10,68 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+func (t UploadProjectAvatar200JSONResponseBody_ConnectConfigurations_EnvId) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UploadProjectAvatar200JSONResponseBody_ConnectConfigurations_EnvId) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyCreator0Via0 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Creator_0_Via as a UploadProjectAvatar200JSONResponseBodyCreator0Via0
+func (t UploadProjectAvatar200JSONResponseBody_Creator_0_Via) AsUploadProjectAvatar200JSONResponseBodyCreator0Via0() (UploadProjectAvatar200JSONResponseBodyCreator0Via0, error) {
+	var body UploadProjectAvatar200JSONResponseBodyCreator0Via0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyCreator0Via0 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Creator_0_Via as the provided UploadProjectAvatar200JSONResponseBodyCreator0Via0
+func (t *UploadProjectAvatar200JSONResponseBody_Creator_0_Via) FromUploadProjectAvatar200JSONResponseBodyCreator0Via0(v UploadProjectAvatar200JSONResponseBodyCreator0Via0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyCreator0Via0 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Creator_0_Via, using the provided UploadProjectAvatar200JSONResponseBodyCreator0Via0
+func (t *UploadProjectAvatar200JSONResponseBody_Creator_0_Via) MergeUploadProjectAvatar200JSONResponseBodyCreator0Via0(v UploadProjectAvatar200JSONResponseBodyCreator0Via0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUploadProjectAvatar200JSONResponseBodyCreator0Via1 returns the union data inside the UploadProjectAvatar200JSONResponseBody_Creator_0_Via as a UploadProjectAvatar200JSONResponseBodyCreator0Via1
+func (t UploadProjectAvatar200JSONResponseBody_Creator_0_Via) AsUploadProjectAvatar200JSONResponseBodyCreator0Via1() (UploadProjectAvatar200JSONResponseBodyCreator0Via1, error) {
+	var body UploadProjectAvatar200JSONResponseBodyCreator0Via1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUploadProjectAvatar200JSONResponseBodyCreator0Via1 overwrites any union data inside the UploadProjectAvatar200JSONResponseBody_Creator_0_Via as the provided UploadProjectAvatar200JSONResponseBodyCreator0Via1
+func (t *UploadProjectAvatar200JSONResponseBody_Creator_0_Via) FromUploadProjectAvatar200JSONResponseBodyCreator0Via1(v UploadProjectAvatar200JSONResponseBodyCreator0Via1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUploadProjectAvatar200JSONResponseBodyCreator0Via1 performs a merge with any union data inside the UploadProjectAvatar200JSONResponseBody_Creator_0_Via, using the provided UploadProjectAvatar200JSONResponseBodyCreator0Via1
+func (t *UploadProjectAvatar200JSONResponseBody_Creator_0_Via) MergeUploadProjectAvatar200JSONResponseBodyCreator0Via1(v UploadProjectAvatar200JSONResponseBodyCreator0Via1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t UploadProjectAvatar200JSONResponseBody_Creator_0_Via) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -19949,68 +20011,6 @@ func (t RenewDomain403JSONResponseBody) AsForbidden() (Forbidden, error) {
 
 // FromForbidden overwrites any union data inside the RenewDomain403JSONResponseBody as the provided Forbidden
 func (t *RenewDomain403JSONResponseBody) FromForbidden(v Forbidden) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeForbidden performs a merge with any union data inside the RenewDomain403JSONResponseBody, using the provided Forbidden
-func (t *RenewDomain403JSONResponseBody) MergeForbidden(v Forbidden) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNotAuthorizedForScope returns the union data inside the RenewDomain403JSONResponseBody as a NotAuthorizedForScope
-func (t RenewDomain403JSONResponseBody) AsNotAuthorizedForScope() (NotAuthorizedForScope, error) {
-	var body NotAuthorizedForScope
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNotAuthorizedForScope overwrites any union data inside the RenewDomain403JSONResponseBody as the provided NotAuthorizedForScope
-func (t *RenewDomain403JSONResponseBody) FromNotAuthorizedForScope(v NotAuthorizedForScope) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNotAuthorizedForScope performs a merge with any union data inside the RenewDomain403JSONResponseBody, using the provided NotAuthorizedForScope
-func (t *RenewDomain403JSONResponseBody) MergeNotAuthorizedForScope(v NotAuthorizedForScope) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t RenewDomain403JSONResponseBody) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *RenewDomain403JSONResponseBody) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsForbidden returns the union data inside the GetDomainTransferIn403JSONResponseBody as a Forbidden
-func (t GetDomainTransferIn403JSONResponseBody) AsForbidden() (Forbidden, error) {
-	var body Forbidden
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromForbidden overwrites any union data inside the GetDomainTransferIn403JSONResponseBody as the provided Forbidden
-func (t *GetDomainTransferIn403JSONResponseBody) FromForbidden(v Forbidden) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err

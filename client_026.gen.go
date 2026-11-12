@@ -556,6 +556,9 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+		// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 		// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -11659,6 +11662,9 @@ type GetProjectResponse struct {
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -13465,6 +13471,9 @@ func (r GetProjectResponse) GetJSON200() *struct {
 
 		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+		// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 		// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
@@ -15295,6 +15304,9 @@ type UpdateProjectResponse struct {
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -17090,6 +17102,9 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 
 		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+		// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 		// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
@@ -19998,19 +20013,4 @@ func (c *ClientWithResponses) ListAiGatewayVirtualModelConfigsWithResponse(ctx c
 		return nil, err
 	}
 	return ParseListAiGatewayVirtualModelConfigsResponse(rsp)
-}
-
-// DeleteAiGatewayVirtualModelConfigBySlugWithResponse Delete virtual model config
-//
-// Delete a virtual model config by path slug (soft delete).
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /ai-gateway/virtual-model-configs/{vmcSlug} (the `DeleteAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *ClientWithResponses) DeleteAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *DeleteAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayVirtualModelConfigBySlugResponse, error) {
-	rsp, err := c.DeleteAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteAiGatewayVirtualModelConfigBySlugResponse(rsp)
 }

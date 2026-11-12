@@ -8,122 +8,6 @@ import (
 	"time"
 )
 
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string                                                                           `json:"attribute"`
-		Kind      string                                                                           `json:"kind"`
-		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                                      `json:"startTimestamp"`
-	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type string
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataPermanent defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataPermanent bool
-
-// ListFlagVersions200JSONResponseBodyVersionsDataState defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataState string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 = string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 = float32
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 map[string]interface{}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 = []interface{}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 bool
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value struct {
-	union json.RawMessage
-}
-
-// ListFlagLabelsParams defines parameters for ListFlagLabels.
-type ListFlagLabelsParams struct {
-	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor The continuation cursor from the previous response.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// Search Case-insensitive substring search on the value and label.
-	Search       *string `form:"search,omitempty" json:"search,omitempty"`
-	EntityKind   string  `form:"entityKind" json:"entityKind"`
-	AttributeKey string  `form:"attributeKey" json:"attributeKey"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagLabelCountsParams defines parameters for ListFlagLabelCounts.
-type ListFlagLabelCountsParams struct {
-	EntityKind *string `form:"entityKind,omitempty" json:"entityKind,omitempty"`
-	Limit      *int    `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor The continuation cursor from the previous response.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// LookupFlagLabelsJSONBody defines parameters for LookupFlagLabels.
-type LookupFlagLabelsJSONBody struct {
-	Items []struct {
-		AttributeKey string `json:"attributeKey"`
-		EntityKind   string `json:"entityKind"`
-		Value        string `json:"value"`
-	} `json:"items"`
-}
-
-// LookupFlagLabelsParams defines parameters for LookupFlagLabels.
-type LookupFlagLabelsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
 // GetSdkKeysParams defines parameters for GetSdkKeys.
 type GetSdkKeysParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -2646,14 +2530,22 @@ type ListPromoteAliases200JSONResponseBody0 = map[string]interface{}
 // ListPromoteAliases200JSONResponseBody1 defines parameters for ListPromoteAliases.
 type ListPromoteAliases200JSONResponseBody1 struct {
 	Aliases []struct {
-		Alias  string `json:"alias"`
-		Id     string `json:"id"`
-		Status string `json:"status"`
+		// Alias The alias hostname.
+		Alias string `json:"alias"`
+
+		// Id The alias ID.
+		Id string `json:"id"`
+
+		// Status Whether the alias has been mapped to the deployment targeted by the last request. `pending` is also returned when the project has no request of the requested type, so it does not by itself indicate a running job.
+		Status ListPromoteAliases200JSONResponseBody1AliasesStatus `json:"status"`
 	} `json:"aliases"`
 
 	// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
 	Pagination Pagination `json:"pagination"`
 }
+
+// ListPromoteAliases200JSONResponseBody1AliasesStatus defines parameters for ListPromoteAliases.
+type ListPromoteAliases200JSONResponseBody1AliasesStatus string
 
 // ListPromoteAliases200JSONResponseBody defines parameters for ListPromoteAliases.
 type ListPromoteAliases200JSONResponseBody struct {
@@ -19208,6 +19100,9 @@ type GetProjects200JSONResponseBody2 struct {
 
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`

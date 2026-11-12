@@ -10,6 +10,68 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// MergeForbidden performs a merge with any union data inside the RenewDomain403JSONResponseBody, using the provided Forbidden
+func (t *RenewDomain403JSONResponseBody) MergeForbidden(v Forbidden) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotAuthorizedForScope returns the union data inside the RenewDomain403JSONResponseBody as a NotAuthorizedForScope
+func (t RenewDomain403JSONResponseBody) AsNotAuthorizedForScope() (NotAuthorizedForScope, error) {
+	var body NotAuthorizedForScope
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotAuthorizedForScope overwrites any union data inside the RenewDomain403JSONResponseBody as the provided NotAuthorizedForScope
+func (t *RenewDomain403JSONResponseBody) FromNotAuthorizedForScope(v NotAuthorizedForScope) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotAuthorizedForScope performs a merge with any union data inside the RenewDomain403JSONResponseBody, using the provided NotAuthorizedForScope
+func (t *RenewDomain403JSONResponseBody) MergeNotAuthorizedForScope(v NotAuthorizedForScope) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t RenewDomain403JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *RenewDomain403JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsForbidden returns the union data inside the GetDomainTransferIn403JSONResponseBody as a Forbidden
+func (t GetDomainTransferIn403JSONResponseBody) AsForbidden() (Forbidden, error) {
+	var body Forbidden
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromForbidden overwrites any union data inside the GetDomainTransferIn403JSONResponseBody as the provided Forbidden
+func (t *GetDomainTransferIn403JSONResponseBody) FromForbidden(v Forbidden) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
 // MergeForbidden performs a merge with any union data inside the GetDomainTransferIn403JSONResponseBody, using the provided Forbidden
 func (t *GetDomainTransferIn403JSONResponseBody) MergeForbidden(v Forbidden) error {
 	b, err := json.Marshal(v)
@@ -19949,68 +20011,6 @@ func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsC
 // AsGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source as a GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1
 func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1() (GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1, error) {
 	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1(v GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1(v GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source as a GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2() (GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2 overwrites any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source as the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) FromGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2 performs a merge with any union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source, using the provided GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) MergeGetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2(v GetVercelCiInvocationTree200JSONResponseBodyInvocationJobDefinitionsCreatedSource2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult0 returns the union data inside the GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result as a GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult0
-func (t GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result) AsGetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult0() (GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult0, error) {
-	var body GetVercelCiInvocationTree200JSONResponseBodyInvocationRunConclusionResult0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }

@@ -12,6 +12,21 @@ import (
 	"time"
 )
 
+// DeleteAiGatewayVirtualModelConfigBySlugWithResponse Delete virtual model config
+//
+// Delete a virtual model config by path slug (soft delete).
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /ai-gateway/virtual-model-configs/{vmcSlug} (the `DeleteAiGatewayVirtualModelConfigBySlug` operationId).
+func (c *ClientWithResponses) DeleteAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *DeleteAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*DeleteAiGatewayVirtualModelConfigBySlugResponse, error) {
+	rsp, err := c.DeleteAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAiGatewayVirtualModelConfigBySlugResponse(rsp)
+}
+
 // GetAiGatewayVirtualModelConfigBySlugWithResponse Get virtual model config
 //
 // Get a virtual model config by path slug.
@@ -14401,12 +14416,12 @@ func ParseGetDrainResponse(rsp *http.Response) (*GetDrainResponse, error) {
 			CreatedAt float32                              `json:"createdAt"`
 			Delivery  GetDrain200JSONResponseBody_Delivery `json:"delivery"`
 
-			// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+			// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 			DeliveryStats *struct {
-				// Attempts All delivery attempts in the window.
+				// Attempts Finished deliveries in the window: delivered plus finally failed.
 				Attempts float32 `json:"attempts"`
 
-				// Failures Delivery attempts that did not succeed in the window.
+				// Failures Deliveries that finally failed in the window, after any automatic retries.
 				Failures float32                                        `json:"failures"`
 				State    GetDrain200JSONResponseBodyDeliveryStatsState  `json:"state"`
 				Window   GetDrain200JSONResponseBodyDeliveryStatsWindow `json:"window"`
@@ -19467,6 +19482,9 @@ func ParseGetMicrofrontendsInGroupResponse(rsp *http.Response) (*GetMicrofronten
 
 					// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+					// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+					AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 					// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 					AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`

@@ -16,6 +16,86 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewRequestPromoteRequest constructs an http.Request for the RequestPromote method
+func NewRequestPromoteRequest(server string, projectId string, deploymentId string, params *RequestPromoteParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "projectId", projectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "deploymentId", deploymentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v10/projects/%s/promote/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCreateProjectRequest calls the generic CreateProject builder with application/json body
 func NewCreateProjectRequest(server string, params *CreateProjectParams, body CreateProjectJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -19955,68 +20035,4 @@ type CreateAccessGroupResponse struct {
 		// Example: 1588720733602
 		UpdatedAt string `json:"updatedAt"`
 	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r CreateAccessGroupResponse) GetJSON200() *struct {
-	// AccessGroupId ID of the access group.
-	//
-	// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
-	AccessGroupId string `json:"accessGroupId"`
-
-	// CreatedAt Timestamp in milliseconds when the access group was created.
-	//
-	// Example: 1588720733602
-	CreatedAt    string                                             `json:"createdAt"`
-	Entitlements []CreateAccessGroup200JSONResponseBodyEntitlements `json:"entitlements"`
-	MembersCount float32                                            `json:"membersCount"`
-
-	// Name The name of this access group.
-	//
-	// Example: my-access-group
-	Name          string  `json:"name"`
-	ProjectsCount float32 `json:"projectsCount"`
-
-	// TeamId ID of the team that this access group belongs to.
-	//
-	// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
-	TeamId string `json:"teamId"`
-
-	// TeamPermissions Permissions that the team has in the access group.
-	//
-	// Example: ["CreateProject"]
-	TeamPermissions *[]string `json:"teamPermissions,omitempty"`
-
-	// TeamRoles Roles that the team has in the access group.
-	//
-	// Example: ["DEVELOPER","BILLING"]
-	TeamRoles *[]string `json:"teamRoles,omitempty"`
-
-	// UpdatedAt Timestamp in milliseconds when the access group was last updated.
-	//
-	// Example: 1588720733602
-	UpdatedAt string `json:"updatedAt"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateAccessGroupResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAccessGroupResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAccessGroupResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
 }

@@ -5087,6 +5087,9 @@ type UpdateMicrofrontendsResponse struct {
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -6882,6 +6885,9 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 
 		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+		// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 		// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
@@ -19955,6 +19961,9 @@ type CreateProjectResponse struct {
 
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`

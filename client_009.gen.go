@@ -8,52 +8,6 @@ import (
 	"time"
 )
 
-// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodySandboxRegion enum.
-func (e UpdateProject200JSONResponseBodySandboxRegion) Valid() bool {
-	switch e {
-	case UpdateProject200JSONResponseBodySandboxRegionArn1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionBom1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionCdg1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionCle1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionCpt1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionDub1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionFra1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionGru1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionHkg1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionHnd1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionIad1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionIcn1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionKix1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionLhr1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionPdx1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionSfo1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionSin1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionSyd1:
-		return true
-	case UpdateProject200JSONResponseBodySandboxRegionYul1:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for UpdateProject200JSONResponseBodySecurityAttackModeEnabled.
 const (
 	UpdateProject200JSONResponseBodySecurityAttackModeEnabledFalse UpdateProject200JSONResponseBodySecurityAttackModeEnabled = false
@@ -9152,6 +9106,12 @@ type Team struct {
 	// Example: Our mission is to make cloud computing accessible to everyone.
 	Description *string `json:"description"`
 
+	// DirectorySyncSource Directory Sync source, using existing local connection and organization authority rules.
+	DirectorySyncSource TeamDirectorySyncSource `json:"directorySyncSource"`
+
+	// DirectorySyncType Provider type of the directory selected by directorySyncSource.
+	DirectorySyncType *string `json:"directorySyncType,omitempty"`
+
 	// DisableRepositoryDispatchEvents Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.
 	DisableRepositoryDispatchEvents *TeamDisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents,omitempty"`
 
@@ -9535,6 +9495,9 @@ type TeamDeploymentStorageRolloutCohort string
 // TeamDeploymentStorageRolloutMeterReason defines model for Team.DeploymentStorageRollout.MeterReason.
 type TeamDeploymentStorageRolloutMeterReason string
 
+// TeamDirectorySyncSource Directory Sync source, using existing local connection and organization authority rules.
+type TeamDirectorySyncSource string
+
 // TeamDisableRepositoryDispatchEvents Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.
 type TeamDisableRepositoryDispatchEvents bool
 
@@ -9678,6 +9641,12 @@ type TeamLimited struct {
 	// Example: 1630748523395
 	CreatedAt float32 `json:"createdAt"`
 
+	// DirectorySyncSource Directory Sync source, using existing local connection and organization authority rules.
+	DirectorySyncSource TeamLimitedDirectorySyncSource `json:"directorySyncSource"`
+
+	// DirectorySyncType Provider type of the directory selected by directorySyncSource.
+	DirectorySyncType *string `json:"directorySyncType,omitempty"`
+
 	// Id The Team's unique identifier.
 	//
 	// Example: team_nllPyCtREAqxxdyFKbbMDlxd
@@ -9807,6 +9776,9 @@ type TeamLimited struct {
 	// Example: my-team
 	Slug string `json:"slug"`
 }
+
+// TeamLimitedDirectorySyncSource Directory Sync source, using existing local connection and organization authority rules.
+type TeamLimitedDirectorySyncSource string
 
 // TeamLimitedLimited Property indicating that this Team data contains only limited information, due to the authentication token missing privileges to read the full Team data or due to team having MFA enforced and the user not having MFA enabled. Re-login with the Team's configured SAML Single Sign-On provider in order to upgrade the authentication token with the necessary privileges.
 type TeamLimitedLimited bool
@@ -10572,6 +10544,14 @@ type UserEventPayload35ScopeType string
 
 // UserEventPayload36 The payload of the event, if requested.
 type UserEventPayload36 struct {
+	Enabled UserEventPayload36Enabled `json:"enabled"`
+}
+
+// UserEventPayload36Enabled defines model for UserEvent.Payload.36.Enabled.
+type UserEventPayload36Enabled bool
+
+// UserEventPayload37 The payload of the event, if requested.
+type UserEventPayload37 struct {
 	Credential struct {
 		Id           string `json:"id"`
 		Name         string `json:"name"`
@@ -10579,13 +10559,13 @@ type UserEventPayload36 struct {
 	} `json:"credential"`
 }
 
-// UserEventPayload37 The payload of the event, if requested.
-type UserEventPayload37 struct {
+// UserEventPayload38 The payload of the event, if requested.
+type UserEventPayload38 struct {
 	Changes *struct {
-		Active            *UserEventPayload37ChangesActive            `json:"active,omitempty"`
-		KeyReplaced       *UserEventPayload37ChangesKeyReplaced       `json:"keyReplaced,omitempty"`
+		Active            *UserEventPayload38ChangesActive            `json:"active,omitempty"`
+		KeyReplaced       *UserEventPayload38ChangesKeyReplaced       `json:"keyReplaced,omitempty"`
 		PreviousName      *string                                     `json:"previousName,omitempty"`
-		ZeroDataRetention *UserEventPayload37ChangesZeroDataRetention `json:"zeroDataRetention,omitempty"`
+		ZeroDataRetention *UserEventPayload38ChangesZeroDataRetention `json:"zeroDataRetention,omitempty"`
 	} `json:"changes,omitempty"`
 	Credential struct {
 		Id           string `json:"id"`
@@ -10594,17 +10574,17 @@ type UserEventPayload37 struct {
 	} `json:"credential"`
 }
 
-// UserEventPayload37ChangesActive defines model for UserEvent.Payload.37.Changes.Active.
-type UserEventPayload37ChangesActive bool
+// UserEventPayload38ChangesActive defines model for UserEvent.Payload.38.Changes.Active.
+type UserEventPayload38ChangesActive bool
 
-// UserEventPayload37ChangesKeyReplaced defines model for UserEvent.Payload.37.Changes.KeyReplaced.
-type UserEventPayload37ChangesKeyReplaced bool
+// UserEventPayload38ChangesKeyReplaced defines model for UserEvent.Payload.38.Changes.KeyReplaced.
+type UserEventPayload38ChangesKeyReplaced bool
 
-// UserEventPayload37ChangesZeroDataRetention defines model for UserEvent.Payload.37.Changes.ZeroDataRetention.
-type UserEventPayload37ChangesZeroDataRetention bool
+// UserEventPayload38ChangesZeroDataRetention defines model for UserEvent.Payload.38.Changes.ZeroDataRetention.
+type UserEventPayload38ChangesZeroDataRetention bool
 
-// UserEventPayload38 The payload of the event, if requested.
-type UserEventPayload38 struct {
+// UserEventPayload39 The payload of the event, if requested.
+type UserEventPayload39 struct {
 	Added      []string `json:"added"`
 	Changed    []string `json:"changed"`
 	Credential struct {
@@ -10614,14 +10594,6 @@ type UserEventPayload38 struct {
 	} `json:"credential"`
 	Removed []string `json:"removed"`
 }
-
-// UserEventPayload39 The payload of the event, if requested.
-type UserEventPayload39 struct {
-	Enabled UserEventPayload39Enabled `json:"enabled"`
-}
-
-// UserEventPayload39Enabled defines model for UserEvent.Payload.39.Enabled.
-type UserEventPayload39Enabled bool
 
 // UserEventPayload40 The payload of the event, if requested.
 type UserEventPayload40 struct {
@@ -20015,4 +19987,43 @@ type CreateAiGatewayByokCredentialJSONBody struct {
 
 	// ZeroDataRetention Whether the customer attested this external credential has a zero data retention policy
 	ZeroDataRetention *bool `json:"zeroDataRetention,omitempty"`
+}
+
+// CreateAiGatewayByokCredentialParams defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredentialParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAiGatewayByokCredential201JSONResponseBodyActive defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredential201JSONResponseBodyActive bool
+
+// CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention bool
+
+// ListAiGatewayByokCredentialsParams defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentialsParams struct {
+	// OwnerId The owner ID to list credentials for. Ignored for customer tokens, which always list their own team.
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// ProviderSlug Optional provider slug to filter credentials by
+	ProviderSlug *string `form:"providerSlug,omitempty" json:"providerSlug,omitempty"`
+
+	// IncludeDeleted Whether to include soft-deleted credentials
+	IncludeDeleted *ListAiGatewayByokCredentialsParamsIncludeDeleted `form:"includeDeleted,omitempty" json:"includeDeleted,omitempty"`
+
+	// Decrypt Not supported. Credential values are never returned.
+	Decrypt *ListAiGatewayByokCredentialsParamsDecrypt `form:"decrypt,omitempty" json:"decrypt,omitempty"`
+
+	// IncludeModelMappings Whether to include model mappings for each credential in the response
+	IncludeModelMappings *ListAiGatewayByokCredentialsParamsIncludeModelMappings `form:"includeModelMappings,omitempty" json:"includeModelMappings,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }

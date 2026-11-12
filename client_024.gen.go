@@ -8,6 +8,70 @@ import (
 	"time"
 )
 
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CreateAccessGroupResponse) GetJSON200() *struct {
+	// AccessGroupId ID of the access group.
+	//
+	// Example: ag_123a6c5209bc3778245d011443644c8d27dc2c50
+	AccessGroupId string `json:"accessGroupId"`
+
+	// CreatedAt Timestamp in milliseconds when the access group was created.
+	//
+	// Example: 1588720733602
+	CreatedAt    string                                             `json:"createdAt"`
+	Entitlements []CreateAccessGroup200JSONResponseBodyEntitlements `json:"entitlements"`
+	MembersCount float32                                            `json:"membersCount"`
+
+	// Name The name of this access group.
+	//
+	// Example: my-access-group
+	Name          string  `json:"name"`
+	ProjectsCount float32 `json:"projectsCount"`
+
+	// TeamId ID of the team that this access group belongs to.
+	//
+	// Example: team_123a6c5209bc3778245d011443644c8d27dc2c50
+	TeamId string `json:"teamId"`
+
+	// TeamPermissions Permissions that the team has in the access group.
+	//
+	// Example: ["CreateProject"]
+	TeamPermissions *[]string `json:"teamPermissions,omitempty"`
+
+	// TeamRoles Roles that the team has in the access group.
+	//
+	// Example: ["DEVELOPER","BILLING"]
+	TeamRoles *[]string `json:"teamRoles,omitempty"`
+
+	// UpdatedAt Timestamp in milliseconds when the access group was last updated.
+	//
+	// Example: 1588720733602
+	UpdatedAt string `json:"updatedAt"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateAccessGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAccessGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAccessGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateAccessGroupResponse) ContentType() string {
 	if r.HTTPResponse != nil {
@@ -3488,12 +3552,12 @@ type GetDrainResponse struct {
 		CreatedAt float32                              `json:"createdAt"`
 		Delivery  GetDrain200JSONResponseBody_Delivery `json:"delivery"`
 
-		// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+		// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 		DeliveryStats *struct {
-			// Attempts All delivery attempts in the window.
+			// Attempts Finished deliveries in the window: delivered plus finally failed.
 			Attempts float32 `json:"attempts"`
 
-			// Failures Delivery attempts that did not succeed in the window.
+			// Failures Deliveries that finally failed in the window, after any automatic retries.
 			Failures float32                                        `json:"failures"`
 			State    GetDrain200JSONResponseBodyDeliveryStatsState  `json:"state"`
 			Window   GetDrain200JSONResponseBodyDeliveryStatsWindow `json:"window"`
@@ -3537,12 +3601,12 @@ func (r GetDrainResponse) GetJSON200() *struct {
 	CreatedAt float32                              `json:"createdAt"`
 	Delivery  GetDrain200JSONResponseBody_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                        `json:"failures"`
 		State    GetDrain200JSONResponseBodyDeliveryStatsState  `json:"state"`
 		Window   GetDrain200JSONResponseBodyDeliveryStatsWindow `json:"window"`
@@ -10160,6 +10224,9 @@ type GetMicrofrontendsInGroupResponse struct {
 				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+				// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -11957,6 +12024,9 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
@@ -14712,6 +14782,9 @@ type DeleteProjectAvatarResponse struct {
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -16507,6 +16580,9 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 
 		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+		// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 		// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
@@ -18337,6 +18413,9 @@ type UploadProjectAvatarResponse struct {
 			// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+			// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 			// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -20132,6 +20211,9 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 
 		// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+		// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 		// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`

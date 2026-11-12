@@ -7564,6 +7564,9 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
 
+				// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
+
 				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`
 
@@ -9396,6 +9399,9 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 
 				// AiGatewayBudget Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayBudget *[]ACLAction `json:"aiGatewayBudget,omitempty"`
+
+				// AiGatewayBudgetOwnedBySelf Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				AiGatewayBudgetOwnedBySelf *[]ACLAction `json:"aiGatewayBudgetOwnedBySelf,omitempty"`
 
 				// AiGatewayByokCredentials Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				AiGatewayByokCredentials *[]ACLAction `json:"aiGatewayByokCredentials,omitempty"`

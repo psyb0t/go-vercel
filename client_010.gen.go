@@ -10,45 +10,6 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// CreateAiGatewayByokCredentialParams defines parameters for CreateAiGatewayByokCredential.
-type CreateAiGatewayByokCredentialParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateAiGatewayByokCredential201JSONResponseBodyActive defines parameters for CreateAiGatewayByokCredential.
-type CreateAiGatewayByokCredential201JSONResponseBodyActive bool
-
-// CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention defines parameters for CreateAiGatewayByokCredential.
-type CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention bool
-
-// ListAiGatewayByokCredentialsParams defines parameters for ListAiGatewayByokCredentials.
-type ListAiGatewayByokCredentialsParams struct {
-	// OwnerId The owner ID to list credentials for. Ignored for customer tokens, which always list their own team.
-	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
-
-	// ProviderSlug Optional provider slug to filter credentials by
-	ProviderSlug *string `form:"providerSlug,omitempty" json:"providerSlug,omitempty"`
-
-	// IncludeDeleted Whether to include soft-deleted credentials
-	IncludeDeleted *ListAiGatewayByokCredentialsParamsIncludeDeleted `form:"includeDeleted,omitempty" json:"includeDeleted,omitempty"`
-
-	// Decrypt Not supported. Credential values are never returned.
-	Decrypt *ListAiGatewayByokCredentialsParamsDecrypt `form:"decrypt,omitempty" json:"decrypt,omitempty"`
-
-	// IncludeModelMappings Whether to include model mappings for each credential in the response
-	IncludeModelMappings *ListAiGatewayByokCredentialsParamsIncludeModelMappings `form:"includeModelMappings,omitempty" json:"includeModelMappings,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
 // ListAiGatewayByokCredentialsParamsIncludeDeleted defines parameters for ListAiGatewayByokCredentials.
 type ListAiGatewayByokCredentialsParamsIncludeDeleted string
 
@@ -1335,105 +1296,143 @@ type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration5Type string
 
 // BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 defines parameters for BuyCredits.
 type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6 struct {
-	// Options Purchase configuration specific options
-	Options struct {
-		// FromPlan The current plan being replaced by this purchase
-		FromPlan *struct {
-			// AdditionalSubscriptions Additional source subscriptions replaced by this purchase
-			AdditionalSubscriptions *[]struct {
-				// CurrentCycleEndDate The end of the additional source subscription billing cycle
-				CurrentCycleEndDate string `json:"currentCycleEndDate"`
-
-				// OrbSubscriptionId The additional source Orb subscription ID
-				OrbSubscriptionId string `json:"orbSubscriptionId"`
-
-				// PlanId The ID of the plan assigned to the additional source subscription
-				PlanId string `json:"planId"`
-			} `json:"additionalSubscriptions,omitempty"`
-
-			// CurrentCycleEndDate The end of the current plan billing cycle
-			CurrentCycleEndDate string `json:"currentCycleEndDate"`
-
-			// OrbSubscriptionId The Orb subscription ID currently active for the owner on the source plan
-			OrbSubscriptionId string `json:"orbSubscriptionId"`
-
-			// PlanId The ID of the plan currently assigned
-			PlanId string `json:"planId"`
-
-			// PlanItemPrices The current plan item price overrides
-			PlanItemPrices *[]struct {
-				// PlanItemId The ID of the plan item to set the price for
-				PlanItemId string `json:"planItemId"`
-
-				// Price The absolute price that replaces the plan item price, after any rate variant
-				Price struct {
-					Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel `json:"model"`
-
-					// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
-					UnitAmount string `json:"unitAmount"`
-				} `json:"price"`
-			} `json:"planItemPrices,omitempty"`
-
-			// PlanItemQuantities The current plan item quantities
-			PlanItemQuantities *[]struct {
-				// PlanItemId The ID of the current plan item to set the quantity for
-				PlanItemId string `json:"planItemId"`
-
-				// Quantity The nonnegative integer quantity for the current plan item
-				Quantity float32 `json:"quantity"`
-
-				// ResourceIds The resource IDs associated with the current plan item quantity
-				ResourceIds *[]string `json:"resourceIds,omitempty"`
-			} `json:"planItemQuantities,omitempty"`
-
-			// RateVariantKey The rate variant currently assigned
-			RateVariantKey *string `json:"rateVariantKey,omitempty"`
-		} `json:"fromPlan,omitempty"`
-
-		// PlanId The ID of the plan to subscribe to
-		PlanId string `json:"planId"`
-
-		// PlanItemPrices The plan item prices to set for the subscription, independent of quantities
-		PlanItemPrices *[]struct {
-			// PlanItemId The ID of the plan item to set the price for
-			PlanItemId string `json:"planItemId"`
-
-			// Price The absolute price that replaces the plan item price, after any rate variant
-			Price struct {
-				Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel `json:"model"`
-
-				// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
-				UnitAmount string `json:"unitAmount"`
-			} `json:"price"`
-		} `json:"planItemPrices,omitempty"`
-
-		// PlanItemQuantities The plan item quantities to set for the subscription
-		PlanItemQuantities *[]struct {
-			// PlanItemId The ID of the plan item to set the quantity for
-			PlanItemId string `json:"planItemId"`
-
-			// Quantity The nonnegative integer quantity for the plan item
-			Quantity float32 `json:"quantity"`
-
-			// ResourceIds The resource IDs to associate with the plan item quantity
-			ResourceIds *[]string `json:"resourceIds,omitempty"`
-		} `json:"planItemQuantities,omitempty"`
-
-		// RateVariantKey The rate variant key to apply to the subscription
-		RateVariantKey *string `json:"rateVariantKey,omitempty"`
-	} `json:"options"`
-	Output struct {
+	Options BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options `json:"options"`
+	Output  struct {
 		// PlanChangeId The committed Plan revision used to calculate the purchase price
 		PlanChangeId *string `json:"planChangeId,omitempty"`
 	} `json:"output"`
 	Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type `json:"type"`
 }
 
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsFromPlanPlanItemPricesPriceModel string
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0 struct {
+	// FromPlan The current plan being replaced by this purchase
+	FromPlan *struct {
+		// AdditionalSubscriptions Additional source subscriptions replaced by this purchase
+		AdditionalSubscriptions *[]struct {
+			// CurrentCycleEndDate The end of the additional source subscription billing cycle
+			CurrentCycleEndDate string `json:"currentCycleEndDate"`
 
-// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel defines parameters for BuyCredits.
-type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6OptionsPlanItemPricesPriceModel string
+			// OrbSubscriptionId The additional source Orb subscription ID
+			OrbSubscriptionId string `json:"orbSubscriptionId"`
+
+			// PlanId The ID of the plan assigned to the additional source subscription
+			PlanId string `json:"planId"`
+		} `json:"additionalSubscriptions,omitempty"`
+
+		// CurrentCycleEndDate The end of the current plan billing cycle
+		CurrentCycleEndDate string `json:"currentCycleEndDate"`
+
+		// OrbSubscriptionId The Orb subscription ID currently active for the owner on the source plan
+		OrbSubscriptionId string `json:"orbSubscriptionId"`
+
+		// PlanId The ID of the plan currently assigned
+		PlanId string `json:"planId"`
+
+		// PlanItemPrices The current plan item price overrides
+		PlanItemPrices *[]struct {
+			// PlanItemId The ID of the plan item to set the price for
+			PlanItemId string `json:"planItemId"`
+
+			// Price The absolute price that replaces the plan item price, after any rate variant
+			Price struct {
+				Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0FromPlanPlanItemPricesPriceModel `json:"model"`
+
+				// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
+				UnitAmount string `json:"unitAmount"`
+			} `json:"price"`
+		} `json:"planItemPrices,omitempty"`
+
+		// PlanItemQuantities The current plan item quantities
+		PlanItemQuantities *[]struct {
+			// PlanItemId The ID of the current plan item to set the quantity for
+			PlanItemId string `json:"planItemId"`
+
+			// Quantity The nonnegative integer quantity for the current plan item
+			Quantity float32 `json:"quantity"`
+
+			// ResourceIds The resource IDs associated with the current plan item quantity
+			ResourceIds *[]string `json:"resourceIds,omitempty"`
+		} `json:"planItemQuantities,omitempty"`
+
+		// RateVariantKey The rate variant currently assigned
+		RateVariantKey *string `json:"rateVariantKey,omitempty"`
+	} `json:"fromPlan,omitempty"`
+
+	// PlanId The ID of the plan to subscribe to
+	PlanId string `json:"planId"`
+
+	// PlanItemPrices The plan item prices to set for the subscription, independent of quantities
+	PlanItemPrices *[]struct {
+		// PlanItemId The ID of the plan item to set the price for
+		PlanItemId string `json:"planItemId"`
+
+		// Price The absolute price that replaces the plan item price, after any rate variant
+		Price struct {
+			Model BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0PlanItemPricesPriceModel `json:"model"`
+
+			// UnitAmount The non-negative per-unit USD amount, with at most two decimal places
+			UnitAmount string `json:"unitAmount"`
+		} `json:"price"`
+	} `json:"planItemPrices,omitempty"`
+
+	// PlanItemQuantities The plan item quantities to set for the subscription
+	PlanItemQuantities *[]struct {
+		// PlanItemId The ID of the plan item to set the quantity for
+		PlanItemId string `json:"planItemId"`
+
+		// Quantity The nonnegative integer quantity for the plan item
+		Quantity float32 `json:"quantity"`
+
+		// ResourceIds The resource IDs to associate with the plan item quantity
+		ResourceIds *[]string `json:"resourceIds,omitempty"`
+	} `json:"planItemQuantities,omitempty"`
+
+	// RateVariantKey The rate variant key to apply to the subscription
+	RateVariantKey *string `json:"rateVariantKey,omitempty"`
+
+	// Transition Replacement billing-cycle policy. Defaults to restart_cycle.
+	Transition *struct {
+		Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0TransitionType `json:"type"`
+	} `json:"transition,omitempty"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0FromPlanPlanItemPricesPriceModel defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0FromPlanPlanItemPricesPriceModel string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0PlanItemPricesPriceModel defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0PlanItemPricesPriceModel string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0TransitionType defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options0TransitionType string
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1 defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1 struct {
+	FromPlan struct {
+		// OrbSubscriptionId The owned active source subscription recorded by Copper
+		OrbSubscriptionId string `json:"orbSubscriptionId"`
+	} `json:"fromPlan"`
+
+	// PlanId The destination plan
+	PlanId string `json:"planId"`
+
+	// PlanItemQuantities Destination-only licensed quantities; shared quantities come from Copper
+	PlanItemQuantities *[]struct {
+		PlanItemId string  `json:"planItemId"`
+		Quantity   float32 `json:"quantity"`
+	} `json:"planItemQuantities,omitempty"`
+	Transition struct {
+		Type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1TransitionType `json:"type"`
+	} `json:"transition"`
+}
+
+// BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1TransitionType defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Options1TransitionType string
+
+// BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options defines parameters for BuyCredits.
+type BuyCredits200JSONResponseBody_1_PurchaseIntent_Configuration_6_Options struct {
+	union json.RawMessage
+}
 
 // BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type defines parameters for BuyCredits.
 type BuyCredits200JSONResponseBody1PurchaseIntentConfiguration6Type string
@@ -3190,12 +3189,12 @@ type GetDrains200JSONResponseBodyDrains0 = []struct {
 	CreatedAt float32                                        `json:"createdAt"`
 	Delivery  GetDrains200JSONResponseBody_Drains_0_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                                `json:"failures"`
 		State    GetDrains200JSONResponseBodyDrains0DeliveryStatsState  `json:"state"`
 		Window   GetDrains200JSONResponseBodyDrains0DeliveryStatsWindow `json:"window"`
@@ -3457,12 +3456,12 @@ type GetDrains200JSONResponseBodyDrains1 = []struct {
 	CreatedAt float32                                        `json:"createdAt"`
 	Delivery  GetDrains200JSONResponseBody_Drains_1_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                                `json:"failures"`
 		State    GetDrains200JSONResponseBodyDrains1DeliveryStatsState  `json:"state"`
 		Window   GetDrains200JSONResponseBodyDrains1DeliveryStatsWindow `json:"window"`
@@ -3943,12 +3942,12 @@ type CreateDrain200JSONResponseBody0 struct {
 	CreatedAt float32                                   `json:"createdAt"`
 	Delivery  CreateDrain200JSONResponseBody_0_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                            `json:"failures"`
 		State    CreateDrain200JSONResponseBody0DeliveryStatsState  `json:"state"`
 		Window   CreateDrain200JSONResponseBody0DeliveryStatsWindow `json:"window"`
@@ -4210,12 +4209,12 @@ type CreateDrain200JSONResponseBody1 struct {
 	CreatedAt float32                                   `json:"createdAt"`
 	Delivery  CreateDrain200JSONResponseBody_1_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                            `json:"failures"`
 		State    CreateDrain200JSONResponseBody1DeliveryStatsState  `json:"state"`
 		Window   CreateDrain200JSONResponseBody1DeliveryStatsWindow `json:"window"`
@@ -5055,12 +5054,12 @@ type UpdateDrain200JSONResponseBody0 struct {
 	CreatedAt float32                                   `json:"createdAt"`
 	Delivery  UpdateDrain200JSONResponseBody_0_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                            `json:"failures"`
 		State    UpdateDrain200JSONResponseBody0DeliveryStatsState  `json:"state"`
 		Window   UpdateDrain200JSONResponseBody0DeliveryStatsWindow `json:"window"`
@@ -5322,12 +5321,12 @@ type UpdateDrain200JSONResponseBody1 struct {
 	CreatedAt float32                                   `json:"createdAt"`
 	Delivery  UpdateDrain200JSONResponseBody_1_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                            `json:"failures"`
 		State    UpdateDrain200JSONResponseBody1DeliveryStatsState  `json:"state"`
 		Window   UpdateDrain200JSONResponseBody1DeliveryStatsWindow `json:"window"`
@@ -7641,116 +7640,6 @@ type GetConfiguration200JSONResponseBody1Status string
 
 // GetConfiguration200JSONResponseBody1Type defines parameters for GetConfiguration.
 type GetConfiguration200JSONResponseBody1Type string
-
-// GetConfiguration200JSONResponseBody2 defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2 struct {
-	// AcceptedPoliciesInheritedFromInstallationId Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
-	AcceptedPoliciesInheritedFromInstallationId *string `json:"acceptedPoliciesInheritedFromInstallationId,omitempty"`
-
-	// CompletedAt A timestamp that tells you when the configuration was installed successfully
-	//
-	// Example: 1558531915505
-	CompletedAt *float32 `json:"completedAt,omitempty"`
-
-	// CreatedAt A timestamp that tells you when the configuration was created
-	//
-	// Example: 1558531915505
-	CreatedAt *float32 `json:"createdAt,omitempty"`
-
-	// CustomerDeleteRequestedAt Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
-	CustomerDeleteRequestedAt *float32 `json:"customerDeleteRequestedAt,omitempty"`
-
-	// DeleteRequestedAt A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
-	//
-	// Example: 1558531915505
-	DeleteRequestedAt *float32 `json:"deleteRequestedAt,omitempty"`
-
-	// DeletedAt A timestamp that tells you when the configuration was deleted.
-	//
-	// Example: 1558531915505
-	DeletedAt *float32 `json:"deletedAt,omitempty"`
-
-	// DisabledAt A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
-	//
-	// Example: 1558531915505
-	DisabledAt     *float32                                            `json:"disabledAt,omitempty"`
-	DisabledReason *GetConfiguration200JSONResponseBody2DisabledReason `json:"disabledReason,omitempty"`
-
-	// ExternalId An external identifier defined by the integration vendor.
-	ExternalId *string `json:"externalId,omitempty"`
-
-	// Id The unique identifier of the configuration
-	//
-	// Example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
-	Id *string `json:"id,omitempty"`
-
-	// InstallationType Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
-	InstallationType *GetConfiguration200JSONResponseBody2InstallationType `json:"installationType,omitempty"`
-
-	// IntegrationId The unique identifier of the app the configuration was created for
-	//
-	// Example: oac_xzpVzcUOgcB1nrVlirtKhbWV
-	IntegrationId *string `json:"integrationId,omitempty"`
-
-	// OwnerId The user or team ID that owns the configuration
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	OwnerId *string `json:"ownerId,omitempty"`
-
-	// Projects When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
-	//
-	// Example: ["prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"]
-	Projects *[]string `json:"projects,omitempty"`
-
-	// Scopes The resources that are allowed to be accessed by the configuration.
-	//
-	// Example: ["read:project","read-write:log-drain"]
-	Scopes *[]string `json:"scopes,omitempty"`
-
-	// Slug The slug of the integration the configuration is created for.
-	//
-	// Example: slack
-	Slug *string `json:"slug,omitempty"`
-
-	// Source Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
-	//
-	// Example: marketplace
-	Source *GetConfiguration200JSONResponseBody2Source `json:"source,omitempty"`
-
-	// Status The configuration status. Optional. If not defined, assume 'ready'.
-	Status *GetConfiguration200JSONResponseBody2Status `json:"status,omitempty"`
-
-	// TeamId When the configuration was created for a team, this will show the ID of the team.
-	//
-	// Example: team_nLlpyC6RE1qxydlFKbrxDlud
-	TeamId *string                                   `json:"teamId,omitempty"`
-	Type   *GetConfiguration200JSONResponseBody2Type `json:"type,omitempty"`
-
-	// UpdatedAt A timestamp that tells you when the configuration was updated.
-	//
-	// Example: 1558531915505
-	UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-	// UserId The ID of the user that created the configuration.
-	//
-	// Example: kr1PsOIzqEL5Xg6M4VZcZosf
-	UserId *string `json:"userId,omitempty"`
-}
-
-// GetConfiguration200JSONResponseBody2DisabledReason defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2DisabledReason string
-
-// GetConfiguration200JSONResponseBody2InstallationType defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2InstallationType string
-
-// GetConfiguration200JSONResponseBody2Source defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2Source string
-
-// GetConfiguration200JSONResponseBody2Status defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2Status string
-
-// GetConfiguration200JSONResponseBody2Type defines parameters for GetConfiguration.
-type GetConfiguration200JSONResponseBody2Type string
 
 // GetConfiguration200JSONResponseBody defines parameters for GetConfiguration.
 type GetConfiguration200JSONResponseBody struct {
@@ -10626,12 +10515,12 @@ type GetAllLogDrains200JSONResponseBody1Drains0 = []struct {
 	CreatedAt float32                                                `json:"createdAt"`
 	Delivery  GetAllLogDrains200JSONResponseBody_1_Drains_0_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                                       `json:"failures"`
 		State    GetAllLogDrains200JSONResponseBody1Drains0DeliveryStatsState  `json:"state"`
 		Window   GetAllLogDrains200JSONResponseBody1Drains0DeliveryStatsWindow `json:"window"`
@@ -10893,12 +10782,12 @@ type GetAllLogDrains200JSONResponseBody1Drains1 = []struct {
 	CreatedAt float32                                                `json:"createdAt"`
 	Delivery  GetAllLogDrains200JSONResponseBody_1_Drains_1_Delivery `json:"delivery"`
 
-	// DeliveryStats Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+	// DeliveryStats Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
 	DeliveryStats *struct {
-		// Attempts All delivery attempts in the window.
+		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Delivery attempts that did not succeed in the window.
+		// Failures Deliveries that finally failed in the window, after any automatic retries.
 		Failures float32                                                       `json:"failures"`
 		State    GetAllLogDrains200JSONResponseBody1Drains1DeliveryStatsState  `json:"state"`
 		Window   GetAllLogDrains200JSONResponseBody1Drains1DeliveryStatsWindow `json:"window"`
@@ -20011,3 +19900,119 @@ type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Bas
 
 // ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type defines parameters for ListFlagVersions.
 type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 struct {
+	Base struct {
+		Attribute string                                                                           `json:"attribute"`
+		Kind      string                                                                           `json:"kind"`
+		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId  string   `json:"defaultVariantId"`
+	FinalPromille     *float32 `json:"finalPromille,omitempty"`
+	RollFromVariantId string   `json:"rollFromVariantId"`
+	RollToVariantId   string   `json:"rollToVariantId"`
+	Slots             []struct {
+		DurationMs float32 `json:"durationMs"`
+		Promille   float32 `json:"promille"`
+	} `json:"slots"`
+	StartTimestamp float32                                                                      `json:"startTimestamp"`
+	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 struct {
+	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type string
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataPermanent defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataPermanent bool
+
+// ListFlagVersions200JSONResponseBodyVersionsDataState defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataState string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 = string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 = float32
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 map[string]interface{}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 = []interface{}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 bool
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value struct {
+	union json.RawMessage
+}
+
+// ListFlagLabelsParams defines parameters for ListFlagLabels.
+type ListFlagLabelsParams struct {
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor The continuation cursor from the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// Search Case-insensitive substring search on the value and label.
+	Search       *string `form:"search,omitempty" json:"search,omitempty"`
+	EntityKind   string  `form:"entityKind" json:"entityKind"`
+	AttributeKey string  `form:"attributeKey" json:"attributeKey"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListFlagLabelCountsParams defines parameters for ListFlagLabelCounts.
+type ListFlagLabelCountsParams struct {
+	EntityKind *string `form:"entityKind,omitempty" json:"entityKind,omitempty"`
+	Limit      *int    `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor The continuation cursor from the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// LookupFlagLabelsJSONBody defines parameters for LookupFlagLabels.
+type LookupFlagLabelsJSONBody struct {
+	Items []struct {
+		AttributeKey string `json:"attributeKey"`
+		EntityKind   string `json:"entityKind"`
+		Value        string `json:"value"`
+	} `json:"items"`
+}
+
+// LookupFlagLabelsParams defines parameters for LookupFlagLabels.
+type LookupFlagLabelsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
