@@ -14,6 +14,550 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// MergeUpdateSessionNetworkPolicyJSONBody1 performs a merge with any union data inside the UpdateSessionNetworkPolicyJSONBody, using the provided UpdateSessionNetworkPolicyJSONBody1
+func (t *UpdateSessionNetworkPolicyJSONBody) MergeUpdateSessionNetworkPolicyJSONBody1(v UpdateSessionNetworkPolicyJSONBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSessionNetworkPolicyJSONBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSessionNetworkPolicyJSONBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSessionNetworkPolicyJSONBody1Allow0 returns the union data inside the UpdateSessionNetworkPolicyJSONBody_1_Allow as a UpdateSessionNetworkPolicyJSONBody1Allow0
+func (t UpdateSessionNetworkPolicyJSONBody_1_Allow) AsUpdateSessionNetworkPolicyJSONBody1Allow0() (UpdateSessionNetworkPolicyJSONBody1Allow0, error) {
+	var body UpdateSessionNetworkPolicyJSONBody1Allow0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSessionNetworkPolicyJSONBody1Allow0 overwrites any union data inside the UpdateSessionNetworkPolicyJSONBody_1_Allow as the provided UpdateSessionNetworkPolicyJSONBody1Allow0
+func (t *UpdateSessionNetworkPolicyJSONBody_1_Allow) FromUpdateSessionNetworkPolicyJSONBody1Allow0(v UpdateSessionNetworkPolicyJSONBody1Allow0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSessionNetworkPolicyJSONBody1Allow0 performs a merge with any union data inside the UpdateSessionNetworkPolicyJSONBody_1_Allow, using the provided UpdateSessionNetworkPolicyJSONBody1Allow0
+func (t *UpdateSessionNetworkPolicyJSONBody_1_Allow) MergeUpdateSessionNetworkPolicyJSONBody1Allow0(v UpdateSessionNetworkPolicyJSONBody1Allow0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSessionNetworkPolicyJSONBody1Allow1 returns the union data inside the UpdateSessionNetworkPolicyJSONBody_1_Allow as a UpdateSessionNetworkPolicyJSONBody1Allow1
+func (t UpdateSessionNetworkPolicyJSONBody_1_Allow) AsUpdateSessionNetworkPolicyJSONBody1Allow1() (UpdateSessionNetworkPolicyJSONBody1Allow1, error) {
+	var body UpdateSessionNetworkPolicyJSONBody1Allow1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSessionNetworkPolicyJSONBody1Allow1 overwrites any union data inside the UpdateSessionNetworkPolicyJSONBody_1_Allow as the provided UpdateSessionNetworkPolicyJSONBody1Allow1
+func (t *UpdateSessionNetworkPolicyJSONBody_1_Allow) FromUpdateSessionNetworkPolicyJSONBody1Allow1(v UpdateSessionNetworkPolicyJSONBody1Allow1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSessionNetworkPolicyJSONBody1Allow1 performs a merge with any union data inside the UpdateSessionNetworkPolicyJSONBody_1_Allow, using the provided UpdateSessionNetworkPolicyJSONBody1Allow1
+func (t *UpdateSessionNetworkPolicyJSONBody_1_Allow) MergeUpdateSessionNetworkPolicyJSONBody1Allow1(v UpdateSessionNetworkPolicyJSONBody1Allow1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSessionNetworkPolicyJSONBody_1_Allow) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSessionNetworkPolicyJSONBody_1_Allow) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0 returns the union data inside the CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration as a CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0
+func (t CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) AsCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0() (CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0, error) {
+	var body CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0 overwrites any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration as the provided CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) FromCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0(v CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0 performs a merge with any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration, using the provided CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) MergeCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0(v CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1 returns the union data inside the CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration as a CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1
+func (t CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) AsCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1() (CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1, error) {
+	var body CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1 overwrites any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration as the provided CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) FromCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1(v CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1 performs a merge with any union data inside the CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration, using the provided CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) MergeCreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1(v CreateSandboxesSessionsBySessionIdSnapshotV2JSONBodyExpiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesSessionsBySessionIdSnapshotV2JSONBody_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsStopSession200JSONResponseBody0 returns the union data inside the StopSession200JSONResponseBody as a StopSession200JSONResponseBody0
+func (t StopSession200JSONResponseBody) AsStopSession200JSONResponseBody0() (StopSession200JSONResponseBody0, error) {
+	var body StopSession200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromStopSession200JSONResponseBody0 overwrites any union data inside the StopSession200JSONResponseBody as the provided StopSession200JSONResponseBody0
+func (t *StopSession200JSONResponseBody) FromStopSession200JSONResponseBody0(v StopSession200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeStopSession200JSONResponseBody0 performs a merge with any union data inside the StopSession200JSONResponseBody, using the provided StopSession200JSONResponseBody0
+func (t *StopSession200JSONResponseBody) MergeStopSession200JSONResponseBody0(v StopSession200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsStopSession200JSONResponseBody1 returns the union data inside the StopSession200JSONResponseBody as a StopSession200JSONResponseBody1
+func (t StopSession200JSONResponseBody) AsStopSession200JSONResponseBody1() (StopSession200JSONResponseBody1, error) {
+	var body StopSession200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromStopSession200JSONResponseBody1 overwrites any union data inside the StopSession200JSONResponseBody as the provided StopSession200JSONResponseBody1
+func (t *StopSession200JSONResponseBody) FromStopSession200JSONResponseBody1(v StopSession200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeStopSession200JSONResponseBody1 performs a merge with any union data inside the StopSession200JSONResponseBody, using the provided StopSession200JSONResponseBody1
+func (t *StopSession200JSONResponseBody) MergeStopSession200JSONResponseBody1(v StopSession200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t StopSession200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *StopSession200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListSessionSnapshots200JSONResponseBody0 returns the union data inside the ListSessionSnapshots200JSONResponseBody as a ListSessionSnapshots200JSONResponseBody0
+func (t ListSessionSnapshots200JSONResponseBody) AsListSessionSnapshots200JSONResponseBody0() (ListSessionSnapshots200JSONResponseBody0, error) {
+	var body ListSessionSnapshots200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListSessionSnapshots200JSONResponseBody0 overwrites any union data inside the ListSessionSnapshots200JSONResponseBody as the provided ListSessionSnapshots200JSONResponseBody0
+func (t *ListSessionSnapshots200JSONResponseBody) FromListSessionSnapshots200JSONResponseBody0(v ListSessionSnapshots200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListSessionSnapshots200JSONResponseBody0 performs a merge with any union data inside the ListSessionSnapshots200JSONResponseBody, using the provided ListSessionSnapshots200JSONResponseBody0
+func (t *ListSessionSnapshots200JSONResponseBody) MergeListSessionSnapshots200JSONResponseBody0(v ListSessionSnapshots200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListSessionSnapshots200JSONResponseBody1 returns the union data inside the ListSessionSnapshots200JSONResponseBody as a ListSessionSnapshots200JSONResponseBody1
+func (t ListSessionSnapshots200JSONResponseBody) AsListSessionSnapshots200JSONResponseBody1() (ListSessionSnapshots200JSONResponseBody1, error) {
+	var body ListSessionSnapshots200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListSessionSnapshots200JSONResponseBody1 overwrites any union data inside the ListSessionSnapshots200JSONResponseBody as the provided ListSessionSnapshots200JSONResponseBody1
+func (t *ListSessionSnapshots200JSONResponseBody) FromListSessionSnapshots200JSONResponseBody1(v ListSessionSnapshots200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListSessionSnapshots200JSONResponseBody1 performs a merge with any union data inside the ListSessionSnapshots200JSONResponseBody, using the provided ListSessionSnapshots200JSONResponseBody1
+func (t *ListSessionSnapshots200JSONResponseBody) MergeListSessionSnapshots200JSONResponseBody1(v ListSessionSnapshots200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListSessionSnapshots200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListSessionSnapshots200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 returns the union data inside the UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration as a UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0
+func (t UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) AsUpdateSandboxJSONBodyKeepLastSnapshots1Expiration0() (UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0, error) {
+	var body UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 overwrites any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration as the provided UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) FromUpdateSandboxJSONBodyKeepLastSnapshots1Expiration0(v UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyKeepLastSnapshots1Expiration0 performs a merge with any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration, using the provided UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) MergeUpdateSandboxJSONBodyKeepLastSnapshots1Expiration0(v UpdateSandboxJSONBodyKeepLastSnapshots1Expiration0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 returns the union data inside the UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration as a UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1
+func (t UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) AsUpdateSandboxJSONBodyKeepLastSnapshots1Expiration1() (UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1, error) {
+	var body UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 overwrites any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration as the provided UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) FromUpdateSandboxJSONBodyKeepLastSnapshots1Expiration1(v UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyKeepLastSnapshots1Expiration1 performs a merge with any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration, using the provided UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) MergeUpdateSandboxJSONBodyKeepLastSnapshots1Expiration1(v UpdateSandboxJSONBodyKeepLastSnapshots1Expiration1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots_1_Expiration) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandboxJSONBodyKeepLastSnapshots0 returns the union data inside the UpdateSandboxJSONBody_KeepLastSnapshots as a UpdateSandboxJSONBodyKeepLastSnapshots0
+func (t UpdateSandboxJSONBody_KeepLastSnapshots) AsUpdateSandboxJSONBodyKeepLastSnapshots0() (UpdateSandboxJSONBodyKeepLastSnapshots0, error) {
+	var body UpdateSandboxJSONBodyKeepLastSnapshots0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyKeepLastSnapshots0 overwrites any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots as the provided UpdateSandboxJSONBodyKeepLastSnapshots0
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots) FromUpdateSandboxJSONBodyKeepLastSnapshots0(v UpdateSandboxJSONBodyKeepLastSnapshots0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyKeepLastSnapshots0 performs a merge with any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots, using the provided UpdateSandboxJSONBodyKeepLastSnapshots0
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots) MergeUpdateSandboxJSONBodyKeepLastSnapshots0(v UpdateSandboxJSONBodyKeepLastSnapshots0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSandboxJSONBodyKeepLastSnapshots1 returns the union data inside the UpdateSandboxJSONBody_KeepLastSnapshots as a UpdateSandboxJSONBodyKeepLastSnapshots1
+func (t UpdateSandboxJSONBody_KeepLastSnapshots) AsUpdateSandboxJSONBodyKeepLastSnapshots1() (UpdateSandboxJSONBodyKeepLastSnapshots1, error) {
+	var body UpdateSandboxJSONBodyKeepLastSnapshots1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyKeepLastSnapshots1 overwrites any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots as the provided UpdateSandboxJSONBodyKeepLastSnapshots1
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots) FromUpdateSandboxJSONBodyKeepLastSnapshots1(v UpdateSandboxJSONBodyKeepLastSnapshots1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyKeepLastSnapshots1 performs a merge with any union data inside the UpdateSandboxJSONBody_KeepLastSnapshots, using the provided UpdateSandboxJSONBodyKeepLastSnapshots1
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots) MergeUpdateSandboxJSONBodyKeepLastSnapshots1(v UpdateSandboxJSONBodyKeepLastSnapshots1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandboxJSONBody_KeepLastSnapshots) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandboxJSONBody_KeepLastSnapshots) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandboxJSONBodyNetworkId0 returns the union data inside the UpdateSandboxJSONBody_NetworkId as a UpdateSandboxJSONBodyNetworkId0
+func (t UpdateSandboxJSONBody_NetworkId) AsUpdateSandboxJSONBodyNetworkId0() (UpdateSandboxJSONBodyNetworkId0, error) {
+	var body UpdateSandboxJSONBodyNetworkId0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyNetworkId0 overwrites any union data inside the UpdateSandboxJSONBody_NetworkId as the provided UpdateSandboxJSONBodyNetworkId0
+func (t *UpdateSandboxJSONBody_NetworkId) FromUpdateSandboxJSONBodyNetworkId0(v UpdateSandboxJSONBodyNetworkId0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyNetworkId0 performs a merge with any union data inside the UpdateSandboxJSONBody_NetworkId, using the provided UpdateSandboxJSONBodyNetworkId0
+func (t *UpdateSandboxJSONBody_NetworkId) MergeUpdateSandboxJSONBodyNetworkId0(v UpdateSandboxJSONBodyNetworkId0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSandboxJSONBodyNetworkId1 returns the union data inside the UpdateSandboxJSONBody_NetworkId as a UpdateSandboxJSONBodyNetworkId1
+func (t UpdateSandboxJSONBody_NetworkId) AsUpdateSandboxJSONBodyNetworkId1() (UpdateSandboxJSONBodyNetworkId1, error) {
+	var body UpdateSandboxJSONBodyNetworkId1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyNetworkId1 overwrites any union data inside the UpdateSandboxJSONBody_NetworkId as the provided UpdateSandboxJSONBodyNetworkId1
+func (t *UpdateSandboxJSONBody_NetworkId) FromUpdateSandboxJSONBodyNetworkId1(v UpdateSandboxJSONBodyNetworkId1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyNetworkId1 performs a merge with any union data inside the UpdateSandboxJSONBody_NetworkId, using the provided UpdateSandboxJSONBodyNetworkId1
+func (t *UpdateSandboxJSONBody_NetworkId) MergeUpdateSandboxJSONBodyNetworkId1(v UpdateSandboxJSONBodyNetworkId1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandboxJSONBody_NetworkId) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandboxJSONBody_NetworkId) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandboxJSONBodyNetworkPolicy1Allow0 returns the union data inside the UpdateSandboxJSONBody_NetworkPolicy_1_Allow as a UpdateSandboxJSONBodyNetworkPolicy1Allow0
+func (t UpdateSandboxJSONBody_NetworkPolicy_1_Allow) AsUpdateSandboxJSONBodyNetworkPolicy1Allow0() (UpdateSandboxJSONBodyNetworkPolicy1Allow0, error) {
+	var body UpdateSandboxJSONBodyNetworkPolicy1Allow0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyNetworkPolicy1Allow0 overwrites any union data inside the UpdateSandboxJSONBody_NetworkPolicy_1_Allow as the provided UpdateSandboxJSONBodyNetworkPolicy1Allow0
+func (t *UpdateSandboxJSONBody_NetworkPolicy_1_Allow) FromUpdateSandboxJSONBodyNetworkPolicy1Allow0(v UpdateSandboxJSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyNetworkPolicy1Allow0 performs a merge with any union data inside the UpdateSandboxJSONBody_NetworkPolicy_1_Allow, using the provided UpdateSandboxJSONBodyNetworkPolicy1Allow0
+func (t *UpdateSandboxJSONBody_NetworkPolicy_1_Allow) MergeUpdateSandboxJSONBodyNetworkPolicy1Allow0(v UpdateSandboxJSONBodyNetworkPolicy1Allow0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSandboxJSONBodyNetworkPolicy1Allow1 returns the union data inside the UpdateSandboxJSONBody_NetworkPolicy_1_Allow as a UpdateSandboxJSONBodyNetworkPolicy1Allow1
+func (t UpdateSandboxJSONBody_NetworkPolicy_1_Allow) AsUpdateSandboxJSONBodyNetworkPolicy1Allow1() (UpdateSandboxJSONBodyNetworkPolicy1Allow1, error) {
+	var body UpdateSandboxJSONBodyNetworkPolicy1Allow1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyNetworkPolicy1Allow1 overwrites any union data inside the UpdateSandboxJSONBody_NetworkPolicy_1_Allow as the provided UpdateSandboxJSONBodyNetworkPolicy1Allow1
+func (t *UpdateSandboxJSONBody_NetworkPolicy_1_Allow) FromUpdateSandboxJSONBodyNetworkPolicy1Allow1(v UpdateSandboxJSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyNetworkPolicy1Allow1 performs a merge with any union data inside the UpdateSandboxJSONBody_NetworkPolicy_1_Allow, using the provided UpdateSandboxJSONBodyNetworkPolicy1Allow1
+func (t *UpdateSandboxJSONBody_NetworkPolicy_1_Allow) MergeUpdateSandboxJSONBodyNetworkPolicy1Allow1(v UpdateSandboxJSONBodyNetworkPolicy1Allow1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateSandboxJSONBody_NetworkPolicy_1_Allow) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateSandboxJSONBody_NetworkPolicy_1_Allow) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSandboxJSONBodyNetworkPolicy0 returns the union data inside the UpdateSandboxJSONBody_NetworkPolicy as a UpdateSandboxJSONBodyNetworkPolicy0
+func (t UpdateSandboxJSONBody_NetworkPolicy) AsUpdateSandboxJSONBodyNetworkPolicy0() (UpdateSandboxJSONBodyNetworkPolicy0, error) {
+	var body UpdateSandboxJSONBodyNetworkPolicy0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSandboxJSONBodyNetworkPolicy0 overwrites any union data inside the UpdateSandboxJSONBody_NetworkPolicy as the provided UpdateSandboxJSONBodyNetworkPolicy0
+func (t *UpdateSandboxJSONBody_NetworkPolicy) FromUpdateSandboxJSONBodyNetworkPolicy0(v UpdateSandboxJSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSandboxJSONBodyNetworkPolicy0 performs a merge with any union data inside the UpdateSandboxJSONBody_NetworkPolicy, using the provided UpdateSandboxJSONBodyNetworkPolicy0
+func (t *UpdateSandboxJSONBody_NetworkPolicy) MergeUpdateSandboxJSONBodyNetworkPolicy0(v UpdateSandboxJSONBodyNetworkPolicy0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsUpdateSandboxJSONBodyNetworkPolicy1 returns the union data inside the UpdateSandboxJSONBody_NetworkPolicy as a UpdateSandboxJSONBodyNetworkPolicy1
 func (t UpdateSandboxJSONBody_NetworkPolicy) AsUpdateSandboxJSONBodyNetworkPolicy1() (UpdateSandboxJSONBodyNetworkPolicy1, error) {
 	var body UpdateSandboxJSONBodyNetworkPolicy1
@@ -1908,6 +2452,32 @@ func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromList
 
 // MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12
 func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus12(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus13 returns the union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as a ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13
+func (t ListVercelCiInvocations200JSONResponseBody_Invocations_Status) AsListVercelCiInvocations200JSONResponseBodyInvocationsStatus13() (ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13, error) {
+	var body ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus13 overwrites any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status as the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) FromListVercelCiInvocations200JSONResponseBodyInvocationsStatus13(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus13 performs a merge with any union data inside the ListVercelCiInvocations200JSONResponseBody_Invocations_Status, using the provided ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13
+func (t *ListVercelCiInvocations200JSONResponseBody_Invocations_Status) MergeListVercelCiInvocations200JSONResponseBodyInvocationsStatus13(v ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -14241,7 +14811,7 @@ type ClientInterface interface {
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-	CreateConnectorAuthorizationRequestWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateConnectorAuthorizationRequestWithBody(ctx context.Context, connector string, params *CreateConnectorAuthorizationRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateConnectorAuthorizationRequest Create a Connect authorization request
 	//
@@ -14250,7 +14820,7 @@ type ClientInterface interface {
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /v1/connect/authorize/{connector} (the `CreateConnectorAuthorizationRequest` operationId).
-	CreateConnectorAuthorizationRequest(ctx context.Context, connector string, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateConnectorAuthorizationRequest(ctx context.Context, connector string, params *CreateConnectorAuthorizationRequestParams, body CreateConnectorAuthorizationRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateConnectorWithBody Create a connector
 	//
@@ -14414,7 +14984,7 @@ type ClientInterface interface {
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-	GetConnectorTokenWithBody(ctx context.Context, connector string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetConnectorTokenWithBody(ctx context.Context, connector string, params *GetConnectorTokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetConnectorToken Get a Connect token
 	//
@@ -14423,7 +14993,7 @@ type ClientInterface interface {
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /v1/connect/token/{connector} (the `GetConnectorToken` operationId).
-	GetConnectorToken(ctx context.Context, connector string, body GetConnectorTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetConnectorToken(ctx context.Context, connector string, params *GetConnectorTokenParams, body GetConnectorTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAllChecks Retrieve a list of all checks
 	//
@@ -15844,7 +16414,7 @@ type ClientInterface interface {
 
 	// ListOrganizationTeams List Organization Teams
 	//
-	// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+	// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
 	//
 	// Corresponds with GET /v1/organizations/{organizationId}/teams (the `ListOrganizationTeams` operationId).
 	ListOrganizationTeams(ctx context.Context, organizationId string, params *ListOrganizationTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -15942,7 +16512,7 @@ type ClientInterface interface {
 
 	// RestartProjectDaemonInstance Force restart a project daemon instance
 	//
-	// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
+	// Force restart a running daemon instance in production, or in a custom environment when `customEnvironmentId` is given. The new container starts asynchronously after the restart is accepted.
 	//
 	// Corresponds with POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart (the `RestartProjectDaemonInstance` operationId).
 	RestartProjectDaemonInstance(ctx context.Context, idOrName string, daemonName string, instanceId string, params *RestartProjectDaemonInstanceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -17168,14 +17738,14 @@ type ClientInterface interface {
 
 	// RemoveTeamMember Remove a Team Member
 	//
-	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails. Removing or leaving is refused when it would leave the Team's organization without an organization admin.
+	// Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Organization-directory-managed access must be removed through the organization's identity provider; local removal returns `organization_directory_managed`. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails. Removing or leaving is refused when it would leave the Team's organization without an organization admin.
 	//
 	// Corresponds with DELETE /v1/teams/{teamId}/members/{uid} (the `RemoveTeamMember` operationId).
 	RemoveTeamMember(ctx context.Context, teamId string, uid string, params *RemoveTeamMemberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateTeamMemberWithBody Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -17184,7 +17754,7 @@ type ClientInterface interface {
 
 	// UpdateTeamMember Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -19442,571 +20012,6 @@ func (c *Client) DeleteAiGatewayVirtualModelConfig(ctx context.Context, params *
 // Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
 func (c *Client) GetAiGatewayVirtualModelConfig(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetAiGatewayVirtualModelConfigRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAiGatewayVirtualModelConfig Update virtual model config
-//
-// Update a virtual model config.
-//
-// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
-func (c *Client) UpdateAiGatewayVirtualModelConfig(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAiGatewayVirtualModelConfigRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAiGatewayVirtualModelConfig Create virtual model config
-//
-// Create a virtual model config (VMC).
-//
-// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
-func (c *Client) CreateAiGatewayVirtualModelConfig(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAiGatewayVirtualModelConfigRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAiGatewayVirtualModelConfigs List virtual model configs
-//
-// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
-//
-// Corresponds with GET /ai-gateway/virtual-model-configs/list (the `ListAiGatewayVirtualModelConfigs` operationId).
-func (c *Client) ListAiGatewayVirtualModelConfigs(ctx context.Context, params *ListAiGatewayVirtualModelConfigsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAiGatewayVirtualModelConfigsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAiGatewayVirtualModelConfigBySlug Delete virtual model config
-//
-// Delete a virtual model config by path slug (soft delete).
-//
-// Corresponds with DELETE /ai-gateway/virtual-model-configs/{vmcSlug} (the `DeleteAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *Client) DeleteAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *DeleteAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAiGatewayVirtualModelConfigBySlugRequest(c.Server, vmcSlug, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAiGatewayVirtualModelConfigBySlug Get virtual model config
-//
-// Get a virtual model config by path slug.
-//
-// Corresponds with GET /ai-gateway/virtual-model-configs/{vmcSlug} (the `GetAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *Client) GetAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *GetAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAiGatewayVirtualModelConfigBySlugRequest(c.Server, vmcSlug, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAiGatewayVirtualModelConfigBySlug Update virtual model config
-//
-// Update a virtual model config by path slug.
-//
-// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *Client) UpdateAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAiGatewayVirtualModelConfigBySlugRequest(c.Server, vmcSlug, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchUrlProtectionBypassWithBody Update the protection bypass for a URL
-//
-// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-func (c *Client) PatchUrlProtectionBypassWithBody(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchUrlProtectionBypassRequestWithBody(c.Server, id, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchUrlProtectionBypass Update the protection bypass for a URL
-//
-// Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /aliases/{id}/protection-bypass (the `PatchUrlProtectionBypass` operationId).
-func (c *Client) PatchUrlProtectionBypass(ctx context.Context, id string, params *PatchUrlProtectionBypassParams, body PatchUrlProtectionBypassJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchUrlProtectionBypassRequest(c.Server, id, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateApiKeysWithBody performs a POST /api-keys (the `CreateApiKeys` operationId) request,
-// with any type of body and a specified content type.
-func (c *Client) CreateApiKeysWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateApiKeysRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateApiKeys performs a POST /api-keys (the `CreateApiKeys` operationId) request.
-// Takes a body of the `application/json` content type.
-func (c *Client) CreateApiKeys(ctx context.Context, body CreateApiKeysJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateApiKeysRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateApiKeyQuotaWithBody Update an AI Gateway API key budget
-//
-// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
-func (c *Client) UpdateApiKeyQuotaWithBody(ctx context.Context, apiKeyID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateApiKeyQuotaRequestWithBody(c.Server, apiKeyID, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateApiKeyQuota Update an AI Gateway API key budget
-//
-// Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /api-keys/{apiKeyID}/quota (the `UpdateApiKeyQuota` operationId).
-func (c *Client) UpdateApiKeyQuota(ctx context.Context, apiKeyID string, body UpdateApiKeyQuotaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateApiKeyQuotaRequest(c.Server, apiKeyID, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetDomainsRecordsByRecordId performs a GET /domains/records/{recordId} (the `GetDomainsRecordsByRecordId` operationId) request.
-func (c *Client) GetDomainsRecordsByRecordId(ctx context.Context, recordId string, params *GetDomainsRecordsByRecordIdParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDomainsRecordsByRecordIdRequest(c.Server, recordId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReplaceDomainsByDomainRecords performs a PUT /domains/{domain}/records (the `ReplaceDomainsByDomainRecords` operationId) request.
-func (c *Client) ReplaceDomainsByDomainRecords(ctx context.Context, domain string, params *ReplaceDomainsByDomainRecordsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReplaceDomainsByDomainRecordsRequest(c.Server, domain, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// AcceptProjectTransferRequestWithBody Accept project transfer request
-//
-// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
-func (c *Client) AcceptProjectTransferRequestWithBody(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAcceptProjectTransferRequestRequestWithBody(c.Server, code, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// AcceptProjectTransferRequest Accept project transfer request
-//
-// Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PUT /projects/transfer-request/{code} (the `AcceptProjectTransferRequest` operationId).
-func (c *Client) AcceptProjectTransferRequest(ctx context.Context, code string, params *AcceptProjectTransferRequestParams, body AcceptProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAcceptProjectTransferRequestRequest(c.Server, code, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateProjectTransferRequestWithBody Create project transfer request
-//
-// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-func (c *Client) CreateProjectTransferRequestWithBody(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateProjectTransferRequestRequestWithBody(c.Server, idOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateProjectTransferRequest Create project transfer request
-//
-// Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /projects/{idOrName}/transfer-request (the `CreateProjectTransferRequest` operationId).
-func (c *Client) CreateProjectTransferRequest(ctx context.Context, idOrName string, params *CreateProjectTransferRequestParams, body CreateProjectTransferRequestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateProjectTransferRequestRequest(c.Server, idOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSpeedInsightsToggleWithBody performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request,
-// with any type of body and a specified content type.
-func (c *Client) CreateSpeedInsightsToggleWithBody(ctx context.Context, params *CreateSpeedInsightsToggleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSpeedInsightsToggleRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateSpeedInsightsToggle performs a POST /speed-insights/toggle (the `CreateSpeedInsightsToggle` operationId) request.
-// Takes a body of the `application/json` content type.
-func (c *Client) CreateSpeedInsightsToggle(ctx context.Context, params *CreateSpeedInsightsToggleParams, body CreateSpeedInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateSpeedInsightsToggleRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateStorageStoresBlobWithBody Create a Blob store
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-func (c *Client) CreateStorageStoresBlobWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateStorageStoresBlobRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateStorageStoresBlob Create a Blob store
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /storage/stores/blob (the `CreateStorageStoresBlob` operationId).
-func (c *Client) CreateStorageStoresBlob(ctx context.Context, body CreateStorageStoresBlobJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateStorageStoresBlobRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteStorageStoresBlobById Delete a Blob store
-//
-// Corresponds with DELETE /storage/stores/blob/{id} (the `DeleteStorageStoresBlobById` operationId).
-func (c *Client) DeleteStorageStoresBlobById(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteStorageStoresBlobByIdRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetStorageStoresById Get a store
-//
-// Corresponds with GET /storage/stores/{id} (the `GetStorageStoresById` operationId).
-func (c *Client) GetStorageStoresById(ctx context.Context, id string, params *GetStorageStoresByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetStorageStoresByIdRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAccessGroups List access groups for a team, project or member
-//
-// List access groups.
-//
-// Corresponds with GET /v1/access-groups (the `ListAccessGroups` operationId).
-func (c *Client) ListAccessGroups(ctx context.Context, params *ListAccessGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAccessGroupsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAccessGroupWithBody Creates an access group
-//
-// Allows to create an access group.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-func (c *Client) CreateAccessGroupWithBody(ctx context.Context, params *CreateAccessGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAccessGroupRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAccessGroup Creates an access group
-//
-// Allows to create an access group.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/access-groups (the `CreateAccessGroup` operationId).
-func (c *Client) CreateAccessGroup(ctx context.Context, params *CreateAccessGroupParams, body CreateAccessGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAccessGroupRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAccessGroupProjectWithBody Create an access group project
-//
-// Allows creation of an access group project.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/access-groups/{accessGroupIdOrName}/projects (the `CreateAccessGroupProject` operationId).
-func (c *Client) CreateAccessGroupProjectWithBody(ctx context.Context, accessGroupIdOrName string, params *CreateAccessGroupProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAccessGroupProjectRequestWithBody(c.Server, accessGroupIdOrName, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAccessGroupProject Create an access group project
-//
-// Allows creation of an access group project.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/access-groups/{accessGroupIdOrName}/projects (the `CreateAccessGroupProject` operationId).
-func (c *Client) CreateAccessGroupProject(ctx context.Context, accessGroupIdOrName string, params *CreateAccessGroupProjectParams, body CreateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAccessGroupProjectRequest(c.Server, accessGroupIdOrName, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAccessGroupProject Delete an access group project
-//
-// Allows deletion of an access group project.
-//
-// Corresponds with DELETE /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `DeleteAccessGroupProject` operationId).
-func (c *Client) DeleteAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *DeleteAccessGroupProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAccessGroupProjectRequest(c.Server, accessGroupIdOrName, projectId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ReadAccessGroupProject Reads an access group project
-//
-// Allows reading an access group project.
-//
-// Corresponds with GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `ReadAccessGroupProject` operationId).
-func (c *Client) ReadAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *ReadAccessGroupProjectParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewReadAccessGroupProjectRequest(c.Server, accessGroupIdOrName, projectId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAccessGroupProjectWithBody Update an access group project
-//
-// Allows update of an access group project.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
-func (c *Client) UpdateAccessGroupProjectWithBody(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAccessGroupProjectRequestWithBody(c.Server, accessGroupIdOrName, projectId, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAccessGroupProject Update an access group project
-//
-// Allows update of an access group project.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} (the `UpdateAccessGroupProject` operationId).
-func (c *Client) UpdateAccessGroupProject(ctx context.Context, accessGroupIdOrName string, projectId string, params *UpdateAccessGroupProjectParams, body UpdateAccessGroupProjectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAccessGroupProjectRequest(c.Server, accessGroupIdOrName, projectId, params, body)
 	if err != nil {
 		return nil, err
 	}

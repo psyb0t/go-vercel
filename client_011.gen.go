@@ -8,6 +8,680 @@ import (
 	"time"
 )
 
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs2 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs2 = string
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs3 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs3 = float32
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs4 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs4 = bool
+
+// UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs defines parameters for UpdateFlag.
+type UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs struct {
+	union json.RawMessage
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesOutcome0 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesOutcome0 struct {
+	Type      interface{} `json:"type"`
+	VariantId string      `json:"variantId"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesOutcome1 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesOutcome1 struct {
+	Base struct {
+		Attribute string      `json:"attribute"`
+		Kind      string      `json:"kind"`
+		Type      interface{} `json:"type"`
+	} `json:"base"`
+
+	// DefaultVariantId This variant will be used when the base attribute does not exist
+	DefaultVariantId string      `json:"defaultVariantId"`
+	Type             interface{} `json:"type"`
+
+	// Weights The distribution for each variant
+	Weights map[string]float32 `json:"weights"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesOutcome2 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesOutcome2 struct {
+	Base struct {
+		Attribute string      `json:"attribute"`
+		Kind      string      `json:"kind"`
+		Type      interface{} `json:"type"`
+	} `json:"base"`
+
+	// DefaultVariantId This variant will be used when the base attribute does not exist
+	DefaultVariantId string `json:"defaultVariantId"`
+
+	// FinalPromille Traffic for rollToVariant after all slots expire (0-100_000, where 1_000 = 1%). Defaults to 100_000 (100%). Set 50_000 to end at 50%.
+	FinalPromille *float32 `json:"finalPromille,omitempty"`
+
+	// RollFromVariantId The variant to roll away from
+	RollFromVariantId string `json:"rollFromVariantId"`
+
+	// RollToVariantId The variant to roll towards
+	RollToVariantId string `json:"rollToVariantId"`
+
+	// Slots Each slot defines a promille and how long it is served for. After all slots expire, finalPromille is served indefinitely (100% when omitted). The final percentage does not need its own slot.
+	Slots []struct {
+		// DurationMs How long this promille is served in ms before moving to the next slot.
+		DurationMs float32 `json:"durationMs"`
+
+		// Promille Promille of traffic for rollToVariant (0-100_000, where 1_000 = 1%)
+		Promille float32 `json:"promille"`
+	} `json:"slots"`
+
+	// StartTimestamp Epoch ms when the rollout begins
+	StartTimestamp float32     `json:"startTimestamp"`
+	Type           interface{} `json:"type"`
+}
+
+// UpdateFlagJSONBody_Environments_Rules_Outcome defines parameters for UpdateFlag.
+type UpdateFlagJSONBody_Environments_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// UpdateFlagJSONBodyState defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyState string
+
+// UpdateFlagJSONBodyVariantsValue0 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyVariantsValue0 = string
+
+// UpdateFlagJSONBodyVariantsValue1 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyVariantsValue1 = float32
+
+// UpdateFlagJSONBodyVariantsValue2 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyVariantsValue2 = bool
+
+// UpdateFlagJSONBodyVariantsValue3 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyVariantsValue3 = map[string]interface{}
+
+// UpdateFlagJSONBodyVariantsValue4 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyVariantsValue4 = []interface{}
+
+// UpdateFlagJSONBodyVariantsValue5 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyVariantsValue5 = string
+
+// UpdateFlagJSONBody_Variants_Value defines parameters for UpdateFlag.
+type UpdateFlagJSONBody_Variants_Value struct {
+	union json.RawMessage
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsActive defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsActive bool
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0 struct {
+	Type      UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0Type `json:"type"`
+	VariantId string                                                    `json:"variantId"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1 struct {
+	Base struct {
+		Attribute string                                                        `json:"attribute"`
+		Kind      string                                                        `json:"kind"`
+		Type      UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId string                                                    `json:"defaultVariantId"`
+	Type             UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1Type `json:"type"`
+	Weights          map[string]float32                                        `json:"weights"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1BaseType defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1BaseType string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2 struct {
+	Base struct {
+		Attribute string                                                        `json:"attribute"`
+		Kind      string                                                        `json:"kind"`
+		Type      UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId  string   `json:"defaultVariantId"`
+	FinalPromille     *float32 `json:"finalPromille,omitempty"`
+	RollFromVariantId string   `json:"rollFromVariantId"`
+	RollToVariantId   string   `json:"rollToVariantId"`
+	Slots             []struct {
+		DurationMs float32 `json:"durationMs"`
+		Promille   float32 `json:"promille"`
+	} `json:"slots"`
+	StartTimestamp float32                                                   `json:"startTimestamp"`
+	Type           UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3 struct {
+	Type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type string
+
+// UpdateFlag200JSONResponseBody_Environments_Fallthrough defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBody_Environments_Fallthrough struct {
+	union json.RawMessage
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsPausedOutcomeType defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsPausedOutcomeType string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsReuseActive defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsReuseActive bool
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmp defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmp string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase bool
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0 struct {
+	Type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1 struct {
+	Attribute string                                                           `json:"attribute"`
+	Kind      string                                                           `json:"kind"`
+	Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1Type string
+
+// UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Lhs defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Lhs struct {
+	union json.RawMessage
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs0 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs0 = string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs1 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs1 = float32
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2 struct {
+	Items []UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
+	Type  UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Type               `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items0 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items0 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value float32 `json:"value"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items1 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items1 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value string  `json:"value"`
+}
+
+// UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item struct {
+	union json.RawMessage
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3 struct {
+	Flags   string                                                           `json:"flags"`
+	Pattern string                                                           `json:"pattern"`
+	Type    UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs4 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs4 bool
+
+// UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs struct {
+	union json.RawMessage
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0 struct {
+	Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0Type `json:"type"`
+	VariantId string                                                     `json:"variantId"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1 struct {
+	Base struct {
+		Attribute string                                                         `json:"attribute"`
+		Kind      string                                                         `json:"kind"`
+		Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId string                                                     `json:"defaultVariantId"`
+	Type             UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1Type `json:"type"`
+	Weights          map[string]float32                                         `json:"weights"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1BaseType defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1BaseType string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2 struct {
+	Base struct {
+		Attribute string                                                         `json:"attribute"`
+		Kind      string                                                         `json:"kind"`
+		Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId  string   `json:"defaultVariantId"`
+	FinalPromille     *float32 `json:"finalPromille,omitempty"`
+	RollFromVariantId string   `json:"rollFromVariantId"`
+	RollToVariantId   string   `json:"rollToVariantId"`
+	Slots             []struct {
+		DurationMs float32 `json:"durationMs"`
+		Promille   float32 `json:"promille"`
+	} `json:"slots"`
+	StartTimestamp float32                                                    `json:"startTimestamp"`
+	Type           UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type string
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3 struct {
+	Type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type `json:"type"`
+}
+
+// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type string
+
+// UpdateFlag200JSONResponseBody_Environments_Rules_Outcome defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBody_Environments_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// UpdateFlag200JSONResponseBodyKind defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyKind string
+
+// UpdateFlag200JSONResponseBodyPermanent defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyPermanent bool
+
+// UpdateFlag200JSONResponseBodySeenInProduction defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodySeenInProduction bool
+
+// UpdateFlag200JSONResponseBodyState defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyState string
+
+// UpdateFlag200JSONResponseBodyTypeName defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyTypeName string
+
+// UpdateFlag200JSONResponseBodyVariantsValue0 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyVariantsValue0 = string
+
+// UpdateFlag200JSONResponseBodyVariantsValue1 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyVariantsValue1 = float32
+
+// UpdateFlag200JSONResponseBodyVariantsValue2 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyVariantsValue2 map[string]interface{}
+
+// UpdateFlag200JSONResponseBodyVariantsValue3 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyVariantsValue3 = []interface{}
+
+// UpdateFlag200JSONResponseBodyVariantsValue4 defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBodyVariantsValue4 bool
+
+// UpdateFlag200JSONResponseBody_Variants_Value defines parameters for UpdateFlag.
+type UpdateFlag200JSONResponseBody_Variants_Value struct {
+	union json.RawMessage
+}
+
+// ListFlagVersionsParams defines parameters for ListFlagVersions.
+type ListFlagVersionsParams struct {
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Pagination cursor
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// Environment Environment to filter by
+	Environment *string `form:"environment,omitempty" json:"environment,omitempty"`
+
+	// WithMetadata Whether to include metadata
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsActive defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsActive bool
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0 struct {
+	Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0Type `json:"type"`
+	VariantId string                                                                      `json:"variantId"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1 struct {
+	Base struct {
+		Attribute string                                                                          `json:"attribute"`
+		Kind      string                                                                          `json:"kind"`
+		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId string                                                                      `json:"defaultVariantId"`
+	Type             ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1Type `json:"type"`
+	Weights          map[string]float32                                                          `json:"weights"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1BaseType defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1BaseType string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2 struct {
+	Base struct {
+		Attribute string                                                                          `json:"attribute"`
+		Kind      string                                                                          `json:"kind"`
+		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId  string   `json:"defaultVariantId"`
+	FinalPromille     *float32 `json:"finalPromille,omitempty"`
+	RollFromVariantId string   `json:"rollFromVariantId"`
+	RollToVariantId   string   `json:"rollToVariantId"`
+	Slots             []struct {
+		DurationMs float32 `json:"durationMs"`
+		Promille   float32 `json:"promille"`
+	} `json:"slots"`
+	StartTimestamp float32                                                                     `json:"startTimestamp"`
+	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2BaseType defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2BaseType string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3 struct {
+	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type string
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough struct {
+	union json.RawMessage
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsPausedOutcomeType defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsPausedOutcomeType string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsReuseActive defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsReuseActive bool
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmp defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmp string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmpOptionsIgnoreCase defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmpOptionsIgnoreCase bool
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0 struct {
+	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1 struct {
+	Attribute string                                                                             `json:"attribute"`
+	Kind      string                                                                             `json:"kind"`
+	Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1Type string
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Lhs defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Lhs struct {
+	union json.RawMessage
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs0 = string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs1 = float32
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2 struct {
+	Items []ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
+	Type  ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Type                 `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items0 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value float32 `json:"value"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items1 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value string  `json:"value"`
+}
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs_2_Items_Item defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs_2_Items_Item struct {
+	union json.RawMessage
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3 struct {
+	Flags   string                                                                             `json:"flags"`
+	Pattern string                                                                             `json:"pattern"`
+	Type    ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs4 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs4 bool
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs struct {
+	union json.RawMessage
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0 struct {
+	Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0Type `json:"type"`
+	VariantId string                                                                       `json:"variantId"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1 struct {
+	Base struct {
+		Attribute string                                                                           `json:"attribute"`
+		Kind      string                                                                           `json:"kind"`
+		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId string                                                                       `json:"defaultVariantId"`
+	Type             ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type `json:"type"`
+	Weights          map[string]float32                                                           `json:"weights"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1BaseType defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1BaseType string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 struct {
+	Base struct {
+		Attribute string                                                                           `json:"attribute"`
+		Kind      string                                                                           `json:"kind"`
+		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType `json:"type"`
+	} `json:"base"`
+	DefaultVariantId  string   `json:"defaultVariantId"`
+	FinalPromille     *float32 `json:"finalPromille,omitempty"`
+	RollFromVariantId string   `json:"rollFromVariantId"`
+	RollToVariantId   string   `json:"rollToVariantId"`
+	Slots             []struct {
+		DurationMs float32 `json:"durationMs"`
+		Promille   float32 `json:"promille"`
+	} `json:"slots"`
+	StartTimestamp float32                                                                      `json:"startTimestamp"`
+	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 struct {
+	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type `json:"type"`
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type string
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataPermanent defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataPermanent bool
+
+// ListFlagVersions200JSONResponseBodyVersionsDataState defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataState string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 = string
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 = float32
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 map[string]interface{}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 = []interface{}
+
+// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 bool
+
+// ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value defines parameters for ListFlagVersions.
+type ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value struct {
+	union json.RawMessage
+}
+
+// ListFlagLabelsParams defines parameters for ListFlagLabels.
+type ListFlagLabelsParams struct {
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor The continuation cursor from the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// Search Case-insensitive substring search on the value and label.
+	Search       *string `form:"search,omitempty" json:"search,omitempty"`
+	EntityKind   string  `form:"entityKind" json:"entityKind"`
+	AttributeKey string  `form:"attributeKey" json:"attributeKey"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListFlagLabelCountsParams defines parameters for ListFlagLabelCounts.
+type ListFlagLabelCountsParams struct {
+	EntityKind *string `form:"entityKind,omitempty" json:"entityKind,omitempty"`
+	Limit      *int    `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor The continuation cursor from the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// LookupFlagLabelsJSONBody defines parameters for LookupFlagLabels.
+type LookupFlagLabelsJSONBody struct {
+	Items []struct {
+		AttributeKey string `json:"attributeKey"`
+		EntityKind   string `json:"entityKind"`
+		Value        string `json:"value"`
+	} `json:"items"`
+}
+
+// LookupFlagLabelsParams defines parameters for LookupFlagLabels.
+type LookupFlagLabelsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // GetSdkKeysParams defines parameters for GetSdkKeys.
 type GetSdkKeysParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -13569,6 +14243,9 @@ type ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus11 = string
 // ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 defines parameters for ListVercelCiInvocationAttempts.
 type ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus12 = string
 
+// ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus13 defines parameters for ListVercelCiInvocationAttempts.
+type ListVercelCiInvocationAttempts200JSONResponseBodyAttemptsStatus13 = string
+
 // ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status defines parameters for ListVercelCiInvocationAttempts.
 type ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status struct {
 	union json.RawMessage
@@ -13695,6 +14372,9 @@ type GetVercelCiInvocation200JSONResponseBodyInvocationStatus11 = string
 
 // GetVercelCiInvocation200JSONResponseBodyInvocationStatus12 defines parameters for GetVercelCiInvocation.
 type GetVercelCiInvocation200JSONResponseBodyInvocationStatus12 = string
+
+// GetVercelCiInvocation200JSONResponseBodyInvocationStatus13 defines parameters for GetVercelCiInvocation.
+type GetVercelCiInvocation200JSONResponseBodyInvocationStatus13 = string
 
 // GetVercelCiInvocation200JSONResponseBody_Invocation_Status defines parameters for GetVercelCiInvocation.
 type GetVercelCiInvocation200JSONResponseBody_Invocation_Status struct {
@@ -14133,6 +14813,9 @@ type GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus11 = string
 
 // GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus12 defines parameters for GetVercelCiInvocationTree.
 type GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus12 = string
+
+// GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus13 defines parameters for GetVercelCiInvocationTree.
+type GetVercelCiInvocationTree200JSONResponseBodyInvocationStatus13 = string
 
 // GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status defines parameters for GetVercelCiInvocationTree.
 type GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status struct {
@@ -18951,6 +19634,8 @@ type GetProjects200JSONResponseBody2 struct {
 				Targets []string `json:"targets"`
 			} `json:"typecheck,omitempty"`
 		} `json:"jobs,omitempty"`
+
+		// LastAliasRequest The last promote or rollback request for the project and its job status. Only populated by `GET /v9/projects/{idOrName}` when called with `rollbackInfo=true`; `null` in every other response, even if a request exists.
 		LastAliasRequest *struct {
 			FromDeploymentId *string `json:"fromDeploymentId"`
 
@@ -18961,6 +19646,8 @@ type GetProjects200JSONResponseBody2 struct {
 			ToDeploymentId       string                                                           `json:"toDeploymentId"`
 			Type                 GetProjects200JSONResponseBody2ProjectsLastAliasRequestType      `json:"type"`
 		} `json:"lastAliasRequest,omitempty"`
+
+		// LastRollbackTarget Legacy mirror of `lastAliasRequest` without `type`, kept for CLI compatibility. Only populated by `GET /v9/projects/{idOrName}` when called with `rollbackInfo=true`; `null` in every other response.
 		LastRollbackTarget *map[string]interface{} `json:"lastRollbackTarget,omitempty"`
 		LatestDeployments  *[]struct {
 			Alias         *[]string                                                                  `json:"alias,omitempty"`
@@ -19715,6 +20402,12 @@ type GetProjects200JSONResponseBody2 struct {
 
 			// ProjectFlags Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ProjectFlags *[]ACLAction `json:"projectFlags,omitempty"`
+
+			// ProjectFlagsOverride Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ProjectFlagsOverride *[]ACLAction `json:"projectFlagsOverride,omitempty"`
+
+			// ProjectFlagsOverrideProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			ProjectFlagsOverrideProduction *[]ACLAction `json:"projectFlagsOverrideProduction,omitempty"`
 
 			// ProjectFlagsProduction Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			ProjectFlagsProduction *[]ACLAction `json:"projectFlagsProduction,omitempty"`

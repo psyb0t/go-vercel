@@ -10,6 +10,578 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UserEventVia2Type defines model for UserEvent.Via.2.Type.
+type UserEventVia2Type string
+
+// UserEventVia3 Metadata for {@link viaIds}.
+type UserEventVia3 struct {
+	Email *string           `json:"email,omitempty"`
+	Id    string            `json:"id"`
+	Name  string            `json:"name"`
+	Type  UserEventVia3Type `json:"type"`
+}
+
+// UserEventVia3Type defines model for UserEvent.Via.3.Type.
+type UserEventVia3Type string
+
+// UserEventVia4 Metadata for {@link viaIds}.
+type UserEventVia4 struct {
+	Type UserEventVia4Type `json:"type"`
+}
+
+// UserEventVia4Type defines model for UserEvent.Via.4.Type.
+type UserEventVia4Type string
+
+// UserEvent_Via_Item defines model for UserEvent.via.Item.
+type UserEvent_Via_Item struct {
+	union json.RawMessage
+}
+
+// VcrImageDetail A single image with its tags, status and resolved Dockerfile layer history.
+type VcrImageDetail struct {
+	// Arch CPU architecture the manifest targets. Only present for single-platform manifests.
+	//
+	// Example: amd64
+	Arch *string `json:"arch,omitempty"`
+
+	// CreatedAt ISO 8601 timestamp of when the image was created.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	CreatedAt string `json:"createdAt"`
+
+	// Id Internal identifier of the image.
+	//
+	// Example: img_a1b2c3d4e5f6
+	Id string `json:"id"`
+
+	// Kind Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.
+	Kind   VcrImageDetailKind `json:"kind"`
+	Layers []VcrImageLayer    `json:"layers"`
+
+	// ManifestDigest SHA-256 digest of the image manifest.
+	//
+	// Example: sha256:2c4e8f3a1b9d0e5c7a6f4b2d8e1c9a0b3d5f7e9c1a2b4d6f8e0c2a4b6d8f0e2c
+	ManifestDigest string `json:"manifestDigest"`
+
+	// Platform Operating system the manifest targets. Only present for single-platform manifests.
+	//
+	// Example: linux
+	Platform *string `json:"platform,omitempty"`
+
+	// PushedBy Identifier of the actor that pushed the image.
+	PushedBy *string `json:"pushedBy,omitempty"`
+
+	// RepositoryId Identifier of the repository the image belongs to.
+	//
+	// Example: repo_a1b2c3d4e5f6
+	RepositoryId string `json:"repositoryId"`
+
+	// SizeInBytes Total size in bytes of the image's resources (manifest, config and layer blobs) stored by the registry.
+	SizeInBytes float32 `json:"sizeInBytes"`
+
+	// Status VHS-readiness status, or `null` for a multi-platform index.
+	Status *VcrImageDetailStatus `json:"status"`
+
+	// Tags Tags pointing at this image's manifest.
+	Tags []string `json:"tags"`
+}
+
+// VcrImageDetailKind Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.
+type VcrImageDetailKind string
+
+// VcrImageDetailStatus VHS-readiness status, or `null` for a multi-platform index.
+type VcrImageDetailStatus string
+
+// VcrImageLayer defines model for VcrImageLayer.
+type VcrImageLayer struct {
+	union json.RawMessage
+}
+
+// VcrImageLayer0 defines model for VcrImageLayer.0.
+type VcrImageLayer0 struct {
+	BaseImage           *string  `json:"baseImage"`
+	CollapsedDigests    []string `json:"collapsedDigests"`
+	CollapsedLayerCount float32  `json:"collapsedLayerCount"`
+	CreatedBy           *string  `json:"createdBy"`
+	Digest              *string  `json:"digest"`
+
+	// Operation Docker/OCI build instruction associated with an image layer.
+	Operation VcrImageLayer0Operation `json:"operation"`
+	SizeBytes *float32                `json:"sizeBytes"`
+	Type      VcrImageLayer0Type      `json:"type"`
+}
+
+// VcrImageLayer0Operation Docker/OCI build instruction associated with an image layer.
+type VcrImageLayer0Operation string
+
+// VcrImageLayer0Type defines model for VcrImageLayer.0.Type.
+type VcrImageLayer0Type string
+
+// VcrImageLayer1 defines model for VcrImageLayer.1.
+type VcrImageLayer1 struct {
+	Command   *string `json:"command"`
+	CreatedBy *string `json:"createdBy"`
+	Digest    *string `json:"digest"`
+
+	// Operation Docker/OCI build instruction associated with an image layer.
+	Operation VcrImageLayer1Operation `json:"operation"`
+	SizeBytes *float32                `json:"sizeBytes"`
+	Type      VcrImageLayer1Type      `json:"type"`
+}
+
+// VcrImageLayer1Operation Docker/OCI build instruction associated with an image layer.
+type VcrImageLayer1Operation string
+
+// VcrImageLayer1Type defines model for VcrImageLayer.1.Type.
+type VcrImageLayer1Type string
+
+// VcrImageLayer2 defines model for VcrImageLayer.2.
+type VcrImageLayer2 struct {
+	CreatedBy *string `json:"createdBy"`
+	Digest    *string `json:"digest"`
+	Env       *string `json:"env"`
+
+	// Operation Docker/OCI build instruction associated with an image layer.
+	Operation VcrImageLayer2Operation `json:"operation"`
+	SizeBytes *float32                `json:"sizeBytes"`
+	Type      VcrImageLayer2Type      `json:"type"`
+}
+
+// VcrImageLayer2Operation Docker/OCI build instruction associated with an image layer.
+type VcrImageLayer2Operation string
+
+// VcrImageLayer2Type defines model for VcrImageLayer.2.Type.
+type VcrImageLayer2Type string
+
+// VcrImageLayer3 defines model for VcrImageLayer.3.
+type VcrImageLayer3 struct {
+	CreatedBy *string `json:"createdBy"`
+	Digest    *string `json:"digest"`
+
+	// Operation Docker/OCI build instruction associated with an image layer.
+	Operation VcrImageLayer3Operation `json:"operation"`
+	SizeBytes *float32                `json:"sizeBytes"`
+	Type      VcrImageLayer3Type      `json:"type"`
+	Value     *string                 `json:"value"`
+}
+
+// VcrImageLayer3Operation Docker/OCI build instruction associated with an image layer.
+type VcrImageLayer3Operation string
+
+// VcrImageLayer3Type defines model for VcrImageLayer.3.Type.
+type VcrImageLayer3Type string
+
+// VcrImageList A paginated list of images for a repository.
+type VcrImageList struct {
+	Images []VcrImageListItem `json:"images"`
+
+	// NextCursor Cursor to fetch the next page of results, when more are available.
+	NextCursor *string `json:"nextCursor,omitempty"`
+}
+
+// VcrImageListItem An image enriched with its tags and VHS-readiness status, as returned when listing a repository's images.
+type VcrImageListItem struct {
+	// Arch CPU architecture the manifest targets. Only present for single-platform manifests.
+	//
+	// Example: amd64
+	Arch *string `json:"arch,omitempty"`
+
+	// CreatedAt ISO 8601 timestamp of when the image was created.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	CreatedAt string `json:"createdAt"`
+
+	// Id Internal identifier of the image.
+	//
+	// Example: img_a1b2c3d4e5f6
+	Id string `json:"id"`
+
+	// Kind Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.
+	Kind VcrImageListItemKind `json:"kind"`
+
+	// ManifestDigest SHA-256 digest of the image manifest.
+	//
+	// Example: sha256:2c4e8f3a1b9d0e5c7a6f4b2d8e1c9a0b3d5f7e9c1a2b4d6f8e0c2a4b6d8f0e2c
+	ManifestDigest string `json:"manifestDigest"`
+
+	// Platform Operating system the manifest targets. Only present for single-platform manifests.
+	//
+	// Example: linux
+	Platform *string `json:"platform,omitempty"`
+
+	// PushedBy Identifier of the actor that pushed the image.
+	PushedBy *string `json:"pushedBy,omitempty"`
+
+	// RepositoryId Identifier of the repository the image belongs to.
+	//
+	// Example: repo_a1b2c3d4e5f6
+	RepositoryId string `json:"repositoryId"`
+
+	// SizeInBytes Total size in bytes of the image's resources (manifest, config and layer blobs) stored by the registry.
+	SizeInBytes float32 `json:"sizeInBytes"`
+
+	// Status VHS-readiness status, or `null` for a multi-platform index.
+	Status *VcrImageListItemStatus `json:"status"`
+
+	// Tags Tags pointing at this image's manifest.
+	Tags []string `json:"tags"`
+}
+
+// VcrImageListItemKind Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.
+type VcrImageListItemKind string
+
+// VcrImageListItemStatus VHS-readiness status, or `null` for a multi-platform index.
+type VcrImageListItemStatus string
+
+// VcrRepository A Vercel Container Registry repository.
+type VcrRepository struct {
+	// CreatedAt ISO 8601 timestamp of when the repository was created.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	CreatedAt string `json:"createdAt"`
+
+	// Id Unique identifier of the repository.
+	//
+	// Example: repo_a1b2c3d4e5f6
+	Id string `json:"id"`
+
+	// Name Name of the repository.
+	//
+	// Example: my-app
+	Name string `json:"name"`
+
+	// ProjectId Identifier of the project the repository belongs to.
+	//
+	// Example: prj_a1b2c3d4e5f6
+	ProjectId string `json:"projectId"`
+
+	// Public Whether the repository is public. Images in public repositories can be pulled by anyone. Defaults to `false` (private).
+	//
+	// Example: false
+	Public VcrRepositoryPublic `json:"public"`
+
+	// UpdatedAt ISO 8601 timestamp of when the repository was last updated.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	UpdatedAt string `json:"updatedAt"`
+}
+
+// VcrRepositoryPublic Whether the repository is public. Images in public repositories can be pulled by anyone. Defaults to `false` (private).
+//
+// Example: false
+type VcrRepositoryPublic bool
+
+// VcrRepositoryList A paginated list of Vercel Container Registry repositories.
+type VcrRepositoryList struct {
+	// NextCursor Cursor to fetch the next page of results, when more are available.
+	NextCursor   *string         `json:"nextCursor,omitempty"`
+	Repositories []VcrRepository `json:"repositories"`
+}
+
+// VcrRepositoryPermission A team's access grant to a Vercel Container Registry repository.
+type VcrRepositoryPermission struct {
+	// CreatedAt ISO 8601 timestamp of when the permission was created.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	CreatedAt string `json:"createdAt"`
+
+	// RepositoryId Identifier of the repository the permission grants access to.
+	//
+	// Example: repo_a1b2c3d4e5f6
+	RepositoryId string `json:"repositoryId"`
+
+	// TeamId Identifier of the team that is granted access to the repository.
+	//
+	// Example: team_a1b2c3d4e5f6
+	TeamId string `json:"teamId"`
+
+	// TeamSlug Slug of the team that is granted access to the repository.
+	//
+	// Example: my-team
+	TeamSlug string `json:"teamSlug"`
+}
+
+// VcrRepositoryPermissionList A paginated list of Vercel Container Registry repository permissions.
+type VcrRepositoryPermissionList struct {
+	// NextCursor Cursor to fetch the next page of results, when more are available.
+	NextCursor  *string                   `json:"nextCursor,omitempty"`
+	Permissions []VcrRepositoryPermission `json:"permissions"`
+}
+
+// VcrTag A tag pointing at an image in a Vercel Container Registry repository, enriched with the backing image's metadata and VHS-readiness status.
+type VcrTag struct {
+	// Arch CPU architecture the manifest targets. Only present for single-platform manifests.
+	//
+	// Example: amd64
+	Arch *string `json:"arch,omitempty"`
+
+	// CreatedAt ISO 8601 timestamp of when the tag was created.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	CreatedAt string `json:"createdAt"`
+
+	// ImageId Internal identifier of the image the tag points at.
+	//
+	// Example: img_a1b2c3d4e5f6
+	ImageId string `json:"imageId"`
+
+	// Kind Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.
+	Kind VcrTagKind `json:"kind"`
+
+	// ManifestDigest SHA-256 digest of the image manifest the tag points at.
+	//
+	// Example: sha256:2c4e8f3a1b9d0e5c7a6f4b2d8e1c9a0b3d5f7e9c1a2b4d6f8e0c2a4b6d8f0e2c
+	ManifestDigest string `json:"manifestDigest"`
+
+	// Platform Operating system the manifest targets. Only present for single-platform manifests.
+	//
+	// Example: linux
+	Platform *string `json:"platform,omitempty"`
+
+	// PushedBy Identifier of the actor that pushed the image.
+	PushedBy *string `json:"pushedBy,omitempty"`
+
+	// SizeInBytes Total size in bytes of the image's resources (manifest, config and layer blobs) stored by the registry.
+	SizeInBytes float32 `json:"sizeInBytes"`
+
+	// Status VHS-readiness status, or `null` for a multi-platform index.
+	Status *VcrTagStatus `json:"status"`
+
+	// Tag The tag name.
+	//
+	// Example: latest
+	Tag string `json:"tag"`
+
+	// UpdatedAt ISO 8601 timestamp of when the tag was last updated.
+	//
+	// Example: 2026-06-30T10:00:00.000Z
+	UpdatedAt string `json:"updatedAt"`
+}
+
+// VcrTagKind Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.
+type VcrTagKind string
+
+// VcrTagStatus VHS-readiness status, or `null` for a multi-platform index.
+type VcrTagStatus string
+
+// ArchiveAiGatewayBudgetParams defines parameters for ArchiveAiGatewayBudget.
+type ArchiveAiGatewayBudgetParams struct {
+	// ScopeType The budget scope to archive.
+	ScopeType ArchiveAiGatewayBudgetParamsScopeType `form:"scopeType" json:"scopeType"`
+
+	// ProjectId Required when scopeType is \"project\".
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// UserId Required when scopeType is \"user\".
+	UserId *string `form:"userId,omitempty" json:"userId,omitempty"`
+
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.
+	Justification *string `form:"justification,omitempty" json:"justification,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ArchiveAiGatewayBudgetParamsScopeType defines parameters for ArchiveAiGatewayBudget.
+type ArchiveAiGatewayBudgetParamsScopeType string
+
+// UpsertAiGatewayBudgetJSONBody defines parameters for UpsertAiGatewayBudget.
+type UpsertAiGatewayBudgetJSONBody struct {
+	AlertThresholds *[]UpsertAiGatewayBudgetJSONBodyAlertThresholds `json:"alertThresholds,omitempty"`
+
+	// IncludeByokInQuota Whether BYOK usage counts toward this budget.
+	IncludeByokInQuota *bool `json:"includeByokInQuota,omitempty"`
+
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.
+	Justification *string `json:"justification,omitempty"`
+
+	// LimitAmount Budget limit in dollars.
+	LimitAmount float32 `json:"limitAmount"`
+
+	// ProjectId Required when scopeType is \"project\".
+	ProjectId     *string                                     `json:"projectId,omitempty"`
+	RefreshPeriod *UpsertAiGatewayBudgetJSONBodyRefreshPeriod `json:"refreshPeriod,omitempty"`
+	ScopeType     UpsertAiGatewayBudgetJSONBodyScopeType      `json:"scopeType"`
+
+	// UserId Required when scopeType is \"user\".
+	UserId *string `json:"userId,omitempty"`
+}
+
+// UpsertAiGatewayBudgetParams defines parameters for UpsertAiGatewayBudget.
+type UpsertAiGatewayBudgetParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpsertAiGatewayBudgetJSONBodyAlertThresholds defines parameters for UpsertAiGatewayBudget.
+type UpsertAiGatewayBudgetJSONBodyAlertThresholds float32
+
+// UpsertAiGatewayBudgetJSONBodyRefreshPeriod defines parameters for UpsertAiGatewayBudget.
+type UpsertAiGatewayBudgetJSONBodyRefreshPeriod string
+
+// UpsertAiGatewayBudgetJSONBodyScopeType defines parameters for UpsertAiGatewayBudget.
+type UpsertAiGatewayBudgetJSONBodyScopeType string
+
+// ArchiveAiGatewayBudgetDefaultParams defines parameters for ArchiveAiGatewayBudgetDefault.
+type ArchiveAiGatewayBudgetDefaultParams struct {
+	// ScopeType The budget default scope to delete.
+	ScopeType ArchiveAiGatewayBudgetDefaultParamsScopeType `form:"scopeType" json:"scopeType"`
+
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook. Only recorded when scopeType is set.
+	Justification *string `form:"justification,omitempty" json:"justification,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ArchiveAiGatewayBudgetDefaultParamsScopeType defines parameters for ArchiveAiGatewayBudgetDefault.
+type ArchiveAiGatewayBudgetDefaultParamsScopeType string
+
+// UpsertAiGatewayBudgetDefaultJSONBody defines parameters for UpsertAiGatewayBudgetDefault.
+type UpsertAiGatewayBudgetDefaultJSONBody struct {
+	AlertThresholds *[]UpsertAiGatewayBudgetDefaultJSONBodyAlertThresholds `json:"alertThresholds,omitempty"`
+
+	// Justification Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.
+	Justification *string `json:"justification,omitempty"`
+
+	// LimitAmount Default budget limit in dollars.
+	LimitAmount   float32                                            `json:"limitAmount"`
+	RefreshPeriod *UpsertAiGatewayBudgetDefaultJSONBodyRefreshPeriod `json:"refreshPeriod,omitempty"`
+	ScopeType     UpsertAiGatewayBudgetDefaultJSONBodyScopeType      `json:"scopeType"`
+}
+
+// UpsertAiGatewayBudgetDefaultParams defines parameters for UpsertAiGatewayBudgetDefault.
+type UpsertAiGatewayBudgetDefaultParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpsertAiGatewayBudgetDefaultJSONBodyAlertThresholds defines parameters for UpsertAiGatewayBudgetDefault.
+type UpsertAiGatewayBudgetDefaultJSONBodyAlertThresholds float32
+
+// UpsertAiGatewayBudgetDefaultJSONBodyRefreshPeriod defines parameters for UpsertAiGatewayBudgetDefault.
+type UpsertAiGatewayBudgetDefaultJSONBodyRefreshPeriod string
+
+// UpsertAiGatewayBudgetDefaultJSONBodyScopeType defines parameters for UpsertAiGatewayBudgetDefault.
+type UpsertAiGatewayBudgetDefaultJSONBodyScopeType string
+
+// ListAiGatewayBudgetDefaultsParams defines parameters for ListAiGatewayBudgetDefaults.
+type ListAiGatewayBudgetDefaultsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayBudgetsParams defines parameters for ListAiGatewayBudgets.
+type ListAiGatewayBudgetsParams struct {
+	// ScopeType Restrict the list to a single budget scope.
+	ScopeType *ListAiGatewayBudgetsParamsScopeType `form:"scopeType,omitempty" json:"scopeType,omitempty"`
+
+	// IncludeDefaultCovered Whether to include rows inherited from a budget default (`source: "default"`). Defaults to true.
+	IncludeDefaultCovered *ListAiGatewayBudgetsParamsIncludeDefaultCovered `form:"includeDefaultCovered,omitempty" json:"includeDefaultCovered,omitempty"`
+
+	// Limit Maximum number of budgets to return (capped at 200). Enables pagination.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Opaque cursor returned by a prior call as nextCursor.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListAiGatewayBudgetsParamsScopeType defines parameters for ListAiGatewayBudgets.
+type ListAiGatewayBudgetsParamsScopeType string
+
+// ListAiGatewayBudgetsParamsIncludeDefaultCovered defines parameters for ListAiGatewayBudgets.
+type ListAiGatewayBudgetsParamsIncludeDefaultCovered string
+
+// CreateAiGatewayByokCredentialJSONBody defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredentialJSONBody struct {
+	// Active Whether the credential is active and can be used
+	Active *bool `json:"active,omitempty"`
+
+	// Mappings Model mappings to create atomically with the credential (e.g. Azure deployments). One DynamoDB transaction holds the credential plus all mappings, so at most 99 mappings fit.
+	Mappings *[]struct {
+		// CustomModelId The customer's custom model ID (e.g., "my-finetuned-gpt-5")
+		CustomModelId string `json:"customModelId"`
+
+		// GatewayModelSlug The AI Gateway model slug (e.g., "openai/gpt-5.4")
+		GatewayModelSlug string `json:"gatewayModelSlug"`
+	} `json:"mappings,omitempty"`
+
+	// Name The developer-entered name for this credential
+	Name string `json:"name"`
+
+	// OwnerId The owner ID for this credential. Ignored for customer tokens, which always create in their own team.
+	OwnerId *string `json:"ownerId,omitempty"`
+
+	// ProviderSlug The provider slug this credential is for (e.g., "openai", "anthropic")
+	ProviderSlug string `json:"providerSlug"`
+
+	// UserId The ID of the user performing this action, used for Activity-log attribution.
+	UserId *string `json:"userId,omitempty"`
+
+	// ZeroDataRetention Whether the customer attested this external credential has a zero data retention policy
+	ZeroDataRetention *bool `json:"zeroDataRetention,omitempty"`
+}
+
+// CreateAiGatewayByokCredentialParams defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredentialParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAiGatewayByokCredential201JSONResponseBodyActive defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredential201JSONResponseBodyActive bool
+
+// CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention defines parameters for CreateAiGatewayByokCredential.
+type CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention bool
+
+// ListAiGatewayByokCredentialsParams defines parameters for ListAiGatewayByokCredentials.
+type ListAiGatewayByokCredentialsParams struct {
+	// OwnerId The owner ID to list credentials for. Ignored for customer tokens, which always list their own team.
+	OwnerId *string `form:"ownerId,omitempty" json:"ownerId,omitempty"`
+
+	// ProviderSlug Optional provider slug to filter credentials by
+	ProviderSlug *string `form:"providerSlug,omitempty" json:"providerSlug,omitempty"`
+
+	// IncludeDeleted Whether to include soft-deleted credentials
+	IncludeDeleted *ListAiGatewayByokCredentialsParamsIncludeDeleted `form:"includeDeleted,omitempty" json:"includeDeleted,omitempty"`
+
+	// Decrypt Not supported. Credential values are never returned.
+	Decrypt *ListAiGatewayByokCredentialsParamsDecrypt `form:"decrypt,omitempty" json:"decrypt,omitempty"`
+
+	// IncludeModelMappings Whether to include model mappings for each credential in the response
+	IncludeModelMappings *ListAiGatewayByokCredentialsParamsIncludeModelMappings `form:"includeModelMappings,omitempty" json:"includeModelMappings,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // ListAiGatewayByokCredentialsParamsIncludeDeleted defines parameters for ListAiGatewayByokCredentials.
 type ListAiGatewayByokCredentialsParamsIncludeDeleted string
 
@@ -2422,6 +2994,15 @@ type CreateConnectorAuthorizationRequestJSONBody struct {
 	Webhook              *string                                                                  `json:"webhook,omitempty"`
 }
 
+// CreateConnectorAuthorizationRequestParams defines parameters for CreateConnectorAuthorizationRequest.
+type CreateConnectorAuthorizationRequestParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // CreateConnectorAuthorizationRequestJSONBody_AuthorizationDetails_Item defines parameters for CreateConnectorAuthorizationRequest.
 type CreateConnectorAuthorizationRequestJSONBody_AuthorizationDetails_Item struct {
 	Type                 *string                `json:"type,omitempty"`
@@ -2653,6 +3234,15 @@ type GetConnectorTokenJSONBody struct {
 	Scopes               *[]string                                              `json:"scopes,omitempty"`
 	Subject              *GetConnectorTokenJSONBody_Subject                     `json:"subject,omitempty"`
 	ValidityBufferMs     *float32                                               `json:"validityBufferMs,omitempty"`
+}
+
+// GetConnectorTokenParams defines parameters for GetConnectorToken.
+type GetConnectorTokenParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
 
 // GetConnectorTokenJSONBody_AuthorizationDetails_Item defines parameters for GetConnectorToken.
@@ -3194,10 +3784,19 @@ type GetDrains200JSONResponseBodyDrains0 = []struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                                `json:"failures"`
-		State    GetDrains200JSONResponseBodyDrains0DeliveryStatsState  `json:"state"`
-		Window   GetDrains200JSONResponseBodyDrains0DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                               `json:"failures"`
+		State    GetDrains200JSONResponseBodyDrains0DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                                `json:"totalSuccessfulDeliveries"`
+		Window                    GetDrains200JSONResponseBodyDrains0DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                           `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                            `json:"disabledBy,omitempty"`
@@ -3461,10 +4060,19 @@ type GetDrains200JSONResponseBodyDrains1 = []struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                                `json:"failures"`
-		State    GetDrains200JSONResponseBodyDrains1DeliveryStatsState  `json:"state"`
-		Window   GetDrains200JSONResponseBodyDrains1DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                               `json:"failures"`
+		State    GetDrains200JSONResponseBodyDrains1DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                                `json:"totalSuccessfulDeliveries"`
+		Window                    GetDrains200JSONResponseBodyDrains1DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                           `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                            `json:"disabledBy,omitempty"`
@@ -3947,10 +4555,19 @@ type CreateDrain200JSONResponseBody0 struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                            `json:"failures"`
-		State    CreateDrain200JSONResponseBody0DeliveryStatsState  `json:"state"`
-		Window   CreateDrain200JSONResponseBody0DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                           `json:"failures"`
+		State    CreateDrain200JSONResponseBody0DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                            `json:"totalSuccessfulDeliveries"`
+		Window                    CreateDrain200JSONResponseBody0DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                       `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                        `json:"disabledBy,omitempty"`
@@ -4214,10 +4831,19 @@ type CreateDrain200JSONResponseBody1 struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                            `json:"failures"`
-		State    CreateDrain200JSONResponseBody1DeliveryStatsState  `json:"state"`
-		Window   CreateDrain200JSONResponseBody1DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                           `json:"failures"`
+		State    CreateDrain200JSONResponseBody1DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                            `json:"totalSuccessfulDeliveries"`
+		Window                    CreateDrain200JSONResponseBody1DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                       `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                        `json:"disabledBy,omitempty"`
@@ -4625,7 +5251,7 @@ type DeleteDrainParams struct {
 
 // GetDrainParams defines parameters for GetDrain.
 type GetDrainParams struct {
-	// IncludeDeliveryStats Include `deliveryStats` with the delivery health of the drain over the last 24 hours.
+	// IncludeDeliveryStats Include `deliveryStats` with the delivery health of the drain over the last 24 hours. Ignored for teams without drain delivery metrics.
 	IncludeDeliveryStats *bool `form:"includeDeliveryStats,omitempty" json:"includeDeliveryStats,omitempty"`
 
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -5059,10 +5685,19 @@ type UpdateDrain200JSONResponseBody0 struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                            `json:"failures"`
-		State    UpdateDrain200JSONResponseBody0DeliveryStatsState  `json:"state"`
-		Window   UpdateDrain200JSONResponseBody0DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                           `json:"failures"`
+		State    UpdateDrain200JSONResponseBody0DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                            `json:"totalSuccessfulDeliveries"`
+		Window                    UpdateDrain200JSONResponseBody0DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                       `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                        `json:"disabledBy,omitempty"`
@@ -5326,10 +5961,19 @@ type UpdateDrain200JSONResponseBody1 struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                            `json:"failures"`
-		State    UpdateDrain200JSONResponseBody1DeliveryStatsState  `json:"state"`
-		Window   UpdateDrain200JSONResponseBody1DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                           `json:"failures"`
+		State    UpdateDrain200JSONResponseBody1DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                            `json:"totalSuccessfulDeliveries"`
+		Window                    UpdateDrain200JSONResponseBody1DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                       `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                        `json:"disabledBy,omitempty"`
@@ -10520,10 +11164,19 @@ type GetAllLogDrains200JSONResponseBody1Drains0 = []struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                                       `json:"failures"`
-		State    GetAllLogDrains200JSONResponseBody1Drains0DeliveryStatsState  `json:"state"`
-		Window   GetAllLogDrains200JSONResponseBody1Drains0DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                                      `json:"failures"`
+		State    GetAllLogDrains200JSONResponseBody1Drains0DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                                       `json:"totalSuccessfulDeliveries"`
+		Window                    GetAllLogDrains200JSONResponseBody1Drains0DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                                  `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                                   `json:"disabledBy,omitempty"`
@@ -10787,10 +11440,19 @@ type GetAllLogDrains200JSONResponseBody1Drains1 = []struct {
 		// Attempts Finished deliveries in the window: delivered plus finally failed.
 		Attempts float32 `json:"attempts"`
 
-		// Failures Deliveries that finally failed in the window, after any automatic retries.
-		Failures float32                                                       `json:"failures"`
-		State    GetAllLogDrains200JSONResponseBody1Drains1DeliveryStatsState  `json:"state"`
-		Window   GetAllLogDrains200JSONResponseBody1Drains1DeliveryStatsWindow `json:"window"`
+		// Failures Deliveries that finally failed in the window.
+		Failures float32                                                      `json:"failures"`
+		State    GetAllLogDrains200JSONResponseBody1Drains1DeliveryStatsState `json:"state"`
+
+		// TotalFailedDeliveries Deliveries that finally failed in the window, after any automatic retries.
+		TotalFailedDeliveries float32 `json:"totalFailedDeliveries"`
+
+		// TotalRetriedDeliveries Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.
+		TotalRetriedDeliveries float32 `json:"totalRetriedDeliveries"`
+
+		// TotalSuccessfulDeliveries Deliveries delivered in the window, on the first try or after automatic retries.
+		TotalSuccessfulDeliveries float32                                                       `json:"totalSuccessfulDeliveries"`
+		Window                    GetAllLogDrains200JSONResponseBody1Drains1DeliveryStatsWindow `json:"window"`
 	} `json:"deliveryStats,omitempty"`
 	DisabledAt     *float32                                                  `json:"disabledAt,omitempty"`
 	DisabledBy     *string                                                   `json:"disabledBy,omitempty"`
@@ -13300,7 +13962,7 @@ type ListOrganizationTeamsParams struct {
 	// Cursor Pagination cursor.
 	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
 
-	// IncludeMemberCount When true, includes each team's member count in the response.
+	// IncludeMemberCount When true, includes each team's member count, including organization Directory Sync members. Counting Directory Sync members can add latency.
 	IncludeMemberCount *bool `form:"includeMemberCount,omitempty" json:"includeMemberCount,omitempty"`
 }
 
@@ -16988,6 +17650,9 @@ type PutProjectDaemonInstancesParams struct {
 	// Target The deployment target for the daemon configuration.
 	Target *PutProjectDaemonInstancesParamsTarget `form:"target,omitempty" json:"target,omitempty"`
 
+	// CustomEnvironmentId The ID of the custom environment of the daemon, instead of `target`.
+	CustomEnvironmentId *string `form:"customEnvironmentId,omitempty" json:"customEnvironmentId,omitempty"`
+
 	// TeamId The Team identifier to perform the request on behalf of.
 	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
 
@@ -17003,6 +17668,9 @@ type PutProjectDaemonInstances200JSONResponseBodyOk bool
 
 // RestartProjectDaemonInstanceParams defines parameters for RestartProjectDaemonInstance.
 type RestartProjectDaemonInstanceParams struct {
+	// CustomEnvironmentId The ID of the custom environment of the instance. Production instances are restarted when omitted.
+	CustomEnvironmentId *string `form:"customEnvironmentId,omitempty" json:"customEnvironmentId,omitempty"`
+
 	// TeamId The Team identifier to perform the request on behalf of.
 	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
 
@@ -19341,678 +20009,4 @@ type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs1 struct {
 	Flags   string      `json:"flags"`
 	Pattern string      `json:"pattern"`
 	Type    interface{} `json:"type"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs2 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs2 = string
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs3 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs3 = float32
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs4 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs4 = bool
-
-// UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs defines parameters for UpdateFlag.
-type UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesOutcome0 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesOutcome0 struct {
-	Type      interface{} `json:"type"`
-	VariantId string      `json:"variantId"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesOutcome1 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesOutcome1 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string      `json:"defaultVariantId"`
-	Type             interface{} `json:"type"`
-
-	// Weights The distribution for each variant
-	Weights map[string]float32 `json:"weights"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesOutcome2 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string `json:"defaultVariantId"`
-
-	// FinalPromille Traffic for rollToVariant after all slots expire (0-100_000, where 1_000 = 1%). Defaults to 100_000 (100%). Set 50_000 to end at 50%.
-	FinalPromille *float32 `json:"finalPromille,omitempty"`
-
-	// RollFromVariantId The variant to roll away from
-	RollFromVariantId string `json:"rollFromVariantId"`
-
-	// RollToVariantId The variant to roll towards
-	RollToVariantId string `json:"rollToVariantId"`
-
-	// Slots Each slot defines a promille and how long it is served for. After all slots expire, finalPromille is served indefinitely (100% when omitted). The final percentage does not need its own slot.
-	Slots []struct {
-		// DurationMs How long this promille is served in ms before moving to the next slot.
-		DurationMs float32 `json:"durationMs"`
-
-		// Promille Promille of traffic for rollToVariant (0-100_000, where 1_000 = 1%)
-		Promille float32 `json:"promille"`
-	} `json:"slots"`
-
-	// StartTimestamp Epoch ms when the rollout begins
-	StartTimestamp float32     `json:"startTimestamp"`
-	Type           interface{} `json:"type"`
-}
-
-// UpdateFlagJSONBody_Environments_Rules_Outcome defines parameters for UpdateFlag.
-type UpdateFlagJSONBody_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// UpdateFlagJSONBodyState defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyState string
-
-// UpdateFlagJSONBodyVariantsValue0 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyVariantsValue0 = string
-
-// UpdateFlagJSONBodyVariantsValue1 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyVariantsValue1 = float32
-
-// UpdateFlagJSONBodyVariantsValue2 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyVariantsValue2 = bool
-
-// UpdateFlagJSONBodyVariantsValue3 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyVariantsValue3 = map[string]interface{}
-
-// UpdateFlagJSONBodyVariantsValue4 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyVariantsValue4 = []interface{}
-
-// UpdateFlagJSONBodyVariantsValue5 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyVariantsValue5 = string
-
-// UpdateFlagJSONBody_Variants_Value defines parameters for UpdateFlag.
-type UpdateFlagJSONBody_Variants_Value struct {
-	union json.RawMessage
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsActive defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsActive bool
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0 struct {
-	Type      UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0Type `json:"type"`
-	VariantId string                                                    `json:"variantId"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough0Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1 struct {
-	Base struct {
-		Attribute string                                                        `json:"attribute"`
-		Kind      string                                                        `json:"kind"`
-		Type      UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                                                    `json:"defaultVariantId"`
-	Type             UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1Type `json:"type"`
-	Weights          map[string]float32                                        `json:"weights"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1BaseType defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1BaseType string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough1Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2 struct {
-	Base struct {
-		Attribute string                                                        `json:"attribute"`
-		Kind      string                                                        `json:"kind"`
-		Type      UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                   `json:"startTimestamp"`
-	Type           UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3 struct {
-	Type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type string
-
-// UpdateFlag200JSONResponseBody_Environments_Fallthrough defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBody_Environments_Fallthrough struct {
-	union json.RawMessage
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsPausedOutcomeType defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsPausedOutcomeType string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsReuseActive defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsReuseActive bool
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmp defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmp string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase bool
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0 struct {
-	Type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs0Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1 struct {
-	Attribute string                                                           `json:"attribute"`
-	Kind      string                                                           `json:"kind"`
-	Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsLhs1Type string
-
-// UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Lhs defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs0 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs0 = string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs1 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs1 = float32
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2 struct {
-	Items []UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Type               `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items0 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items1 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs2Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3 struct {
-	Flags   string                                                           `json:"flags"`
-	Pattern string                                                           `json:"pattern"`
-	Type    UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs3Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs4 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesConditionsRhs4 bool
-
-// UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBody_Environments_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0 struct {
-	Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0Type `json:"type"`
-	VariantId string                                                     `json:"variantId"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome0Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1 struct {
-	Base struct {
-		Attribute string                                                         `json:"attribute"`
-		Kind      string                                                         `json:"kind"`
-		Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                                                     `json:"defaultVariantId"`
-	Type             UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1Type `json:"type"`
-	Weights          map[string]float32                                         `json:"weights"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1BaseType defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1BaseType string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome1Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string                                                         `json:"attribute"`
-		Kind      string                                                         `json:"kind"`
-		Type      UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                    `json:"startTimestamp"`
-	Type           UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type string
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3 struct {
-	Type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type string
-
-// UpdateFlag200JSONResponseBody_Environments_Rules_Outcome defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBody_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// UpdateFlag200JSONResponseBodyKind defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyKind string
-
-// UpdateFlag200JSONResponseBodyPermanent defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyPermanent bool
-
-// UpdateFlag200JSONResponseBodySeenInProduction defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodySeenInProduction bool
-
-// UpdateFlag200JSONResponseBodyState defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyState string
-
-// UpdateFlag200JSONResponseBodyTypeName defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyTypeName string
-
-// UpdateFlag200JSONResponseBodyVariantsValue0 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyVariantsValue0 = string
-
-// UpdateFlag200JSONResponseBodyVariantsValue1 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyVariantsValue1 = float32
-
-// UpdateFlag200JSONResponseBodyVariantsValue2 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyVariantsValue2 map[string]interface{}
-
-// UpdateFlag200JSONResponseBodyVariantsValue3 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyVariantsValue3 = []interface{}
-
-// UpdateFlag200JSONResponseBodyVariantsValue4 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyVariantsValue4 bool
-
-// UpdateFlag200JSONResponseBody_Variants_Value defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBody_Variants_Value struct {
-	union json.RawMessage
-}
-
-// ListFlagVersionsParams defines parameters for ListFlagVersions.
-type ListFlagVersionsParams struct {
-	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor Pagination cursor
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// Environment Environment to filter by
-	Environment *string `form:"environment,omitempty" json:"environment,omitempty"`
-
-	// WithMetadata Whether to include metadata
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsActive defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsActive bool
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0 struct {
-	Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0Type `json:"type"`
-	VariantId string                                                                      `json:"variantId"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough0Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1 struct {
-	Base struct {
-		Attribute string                                                                          `json:"attribute"`
-		Kind      string                                                                          `json:"kind"`
-		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                                                                      `json:"defaultVariantId"`
-	Type             ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1Type `json:"type"`
-	Weights          map[string]float32                                                          `json:"weights"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1BaseType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1BaseType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough1Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2 struct {
-	Base struct {
-		Attribute string                                                                          `json:"attribute"`
-		Kind      string                                                                          `json:"kind"`
-		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                                     `json:"startTimestamp"`
-	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2BaseType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2BaseType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type string
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsPausedOutcomeType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsPausedOutcomeType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsReuseActive defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsReuseActive bool
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmp defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmp string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmpOptionsIgnoreCase defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsCmpOptionsIgnoreCase bool
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs0Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1 struct {
-	Attribute string                                                                             `json:"attribute"`
-	Kind      string                                                                             `json:"kind"`
-	Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsLhs1Type string
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Lhs defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs0 = string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs1 = float32
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2 struct {
-	Items []ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Type                 `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs_2_Items_Item defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3 struct {
-	Flags   string                                                                             `json:"flags"`
-	Pattern string                                                                             `json:"pattern"`
-	Type    ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs3Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs4 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesConditionsRhs4 bool
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0 struct {
-	Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0Type `json:"type"`
-	VariantId string                                                                       `json:"variantId"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome0Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1 struct {
-	Base struct {
-		Attribute string                                                                           `json:"attribute"`
-		Kind      string                                                                           `json:"kind"`
-		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                                                                       `json:"defaultVariantId"`
-	Type             ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type `json:"type"`
-	Weights          map[string]float32                                                           `json:"weights"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1BaseType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1BaseType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome1Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string                                                                           `json:"attribute"`
-		Kind      string                                                                           `json:"kind"`
-		Type      ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                                      `json:"startTimestamp"`
-	Type           ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2BaseType string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type string
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataPermanent defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataPermanent bool
-
-// ListFlagVersions200JSONResponseBodyVersionsDataState defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataState string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue0 = string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue1 = float32
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue2 map[string]interface{}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue3 = []interface{}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataVariantsValue4 bool
-
-// ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBody_Versions_Data_Variants_Value struct {
-	union json.RawMessage
-}
-
-// ListFlagLabelsParams defines parameters for ListFlagLabels.
-type ListFlagLabelsParams struct {
-	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor The continuation cursor from the previous response.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// Search Case-insensitive substring search on the value and label.
-	Search       *string `form:"search,omitempty" json:"search,omitempty"`
-	EntityKind   string  `form:"entityKind" json:"entityKind"`
-	AttributeKey string  `form:"attributeKey" json:"attributeKey"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagLabelCountsParams defines parameters for ListFlagLabelCounts.
-type ListFlagLabelCountsParams struct {
-	EntityKind *string `form:"entityKind,omitempty" json:"entityKind,omitempty"`
-	Limit      *int    `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor The continuation cursor from the previous response.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// LookupFlagLabelsJSONBody defines parameters for LookupFlagLabels.
-type LookupFlagLabelsJSONBody struct {
-	Items []struct {
-		AttributeKey string `json:"attributeKey"`
-		EntityKind   string `json:"entityKind"`
-		Value        string `json:"value"`
-	} `json:"items"`
-}
-
-// LookupFlagLabelsParams defines parameters for LookupFlagLabels.
-type LookupFlagLabelsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }

@@ -1821,6 +1821,9 @@ type ListVercelCiInvocations200JSONResponseBodyInvocationsStatus11 = string
 // ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 defines parameters for ListVercelCiInvocations.
 type ListVercelCiInvocations200JSONResponseBodyInvocationsStatus12 = string
 
+// ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13 defines parameters for ListVercelCiInvocations.
+type ListVercelCiInvocations200JSONResponseBodyInvocationsStatus13 = string
+
 // ListVercelCiInvocations200JSONResponseBody_Invocations_Status defines parameters for ListVercelCiInvocations.
 type ListVercelCiInvocations200JSONResponseBody_Invocations_Status struct {
 	union json.RawMessage
@@ -3233,6 +3236,9 @@ type GetTeamMembers200JSONResponseBody_Members_JoinedFrom_GitUserId struct {
 
 // GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin defines parameters for GetTeamMembers.
 type GetTeamMembers200JSONResponseBodyMembersJoinedFromOrigin string
+
+// GetTeamMembers200JSONResponseBodyMembersMembershipSource defines parameters for GetTeamMembers.
+type GetTeamMembers200JSONResponseBodyMembersMembershipSource string
 
 // GetTeamMembers200JSONResponseBodyMembersProjectsRole defines parameters for GetTeamMembers.
 type GetTeamMembers200JSONResponseBodyMembersProjectsRole string
@@ -4708,6 +4714,9 @@ type DeleteProjectParams struct {
 
 // GetProjectParams defines parameters for GetProject.
 type GetProjectParams struct {
+	// RollbackInfo Include the status of the last promote or rollback request in `lastAliasRequest` (and its legacy mirror `lastRollbackTarget`). When omitted or `false`, both fields are always `null` regardless of project state.
+	RollbackInfo *bool `form:"rollbackInfo,omitempty" json:"rollbackInfo,omitempty"`
+
 	// TeamId The Team identifier to perform the request on behalf of.
 	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
 
@@ -13199,25 +13208,25 @@ func (a UserEventPayload119) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload267. Returns the specified
+// Getter for additional properties for UserEventPayload268. Returns the specified
 // element and whether it was found
-func (a UserEventPayload267) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload268) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload267
-func (a *UserEventPayload267) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload268
+func (a *UserEventPayload268) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload267 to handle AdditionalProperties
-func (a *UserEventPayload267) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload268 to handle AdditionalProperties
+func (a *UserEventPayload268) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -13270,8 +13279,8 @@ func (a *UserEventPayload267) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload267 to handle AdditionalProperties
-func (a UserEventPayload267) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload268 to handle AdditionalProperties
+func (a UserEventPayload268) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -16898,22 +16907,22 @@ func (t *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) UnmarshalJSON(
 	return err
 }
 
-// AsConnectConnectorCreatedBy1Environment0 returns the union data inside the ConnectConnector_CreatedBy_1_Environment as a ConnectConnectorCreatedBy1Environment0
-func (t ConnectConnector_CreatedBy_1_Environment) AsConnectConnectorCreatedBy1Environment0() (ConnectConnectorCreatedBy1Environment0, error) {
-	var body ConnectConnectorCreatedBy1Environment0
+// AsConnectConnectorCreatedBy2Environment0 returns the union data inside the ConnectConnector_CreatedBy_2_Environment as a ConnectConnectorCreatedBy2Environment0
+func (t ConnectConnector_CreatedBy_2_Environment) AsConnectConnectorCreatedBy2Environment0() (ConnectConnectorCreatedBy2Environment0, error) {
+	var body ConnectConnectorCreatedBy2Environment0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorCreatedBy1Environment0 overwrites any union data inside the ConnectConnector_CreatedBy_1_Environment as the provided ConnectConnectorCreatedBy1Environment0
-func (t *ConnectConnector_CreatedBy_1_Environment) FromConnectConnectorCreatedBy1Environment0(v ConnectConnectorCreatedBy1Environment0) error {
+// FromConnectConnectorCreatedBy2Environment0 overwrites any union data inside the ConnectConnector_CreatedBy_2_Environment as the provided ConnectConnectorCreatedBy2Environment0
+func (t *ConnectConnector_CreatedBy_2_Environment) FromConnectConnectorCreatedBy2Environment0(v ConnectConnectorCreatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorCreatedBy1Environment0 performs a merge with any union data inside the ConnectConnector_CreatedBy_1_Environment, using the provided ConnectConnectorCreatedBy1Environment0
-func (t *ConnectConnector_CreatedBy_1_Environment) MergeConnectConnectorCreatedBy1Environment0(v ConnectConnectorCreatedBy1Environment0) error {
+// MergeConnectConnectorCreatedBy2Environment0 performs a merge with any union data inside the ConnectConnector_CreatedBy_2_Environment, using the provided ConnectConnectorCreatedBy2Environment0
+func (t *ConnectConnector_CreatedBy_2_Environment) MergeConnectConnectorCreatedBy2Environment0(v ConnectConnectorCreatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -16924,22 +16933,22 @@ func (t *ConnectConnector_CreatedBy_1_Environment) MergeConnectConnectorCreatedB
 	return err
 }
 
-// AsConnectConnectorCreatedBy1Environment1 returns the union data inside the ConnectConnector_CreatedBy_1_Environment as a ConnectConnectorCreatedBy1Environment1
-func (t ConnectConnector_CreatedBy_1_Environment) AsConnectConnectorCreatedBy1Environment1() (ConnectConnectorCreatedBy1Environment1, error) {
-	var body ConnectConnectorCreatedBy1Environment1
+// AsConnectConnectorCreatedBy2Environment1 returns the union data inside the ConnectConnector_CreatedBy_2_Environment as a ConnectConnectorCreatedBy2Environment1
+func (t ConnectConnector_CreatedBy_2_Environment) AsConnectConnectorCreatedBy2Environment1() (ConnectConnectorCreatedBy2Environment1, error) {
+	var body ConnectConnectorCreatedBy2Environment1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorCreatedBy1Environment1 overwrites any union data inside the ConnectConnector_CreatedBy_1_Environment as the provided ConnectConnectorCreatedBy1Environment1
-func (t *ConnectConnector_CreatedBy_1_Environment) FromConnectConnectorCreatedBy1Environment1(v ConnectConnectorCreatedBy1Environment1) error {
+// FromConnectConnectorCreatedBy2Environment1 overwrites any union data inside the ConnectConnector_CreatedBy_2_Environment as the provided ConnectConnectorCreatedBy2Environment1
+func (t *ConnectConnector_CreatedBy_2_Environment) FromConnectConnectorCreatedBy2Environment1(v ConnectConnectorCreatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorCreatedBy1Environment1 performs a merge with any union data inside the ConnectConnector_CreatedBy_1_Environment, using the provided ConnectConnectorCreatedBy1Environment1
-func (t *ConnectConnector_CreatedBy_1_Environment) MergeConnectConnectorCreatedBy1Environment1(v ConnectConnectorCreatedBy1Environment1) error {
+// MergeConnectConnectorCreatedBy2Environment1 performs a merge with any union data inside the ConnectConnector_CreatedBy_2_Environment, using the provided ConnectConnectorCreatedBy2Environment1
+func (t *ConnectConnector_CreatedBy_2_Environment) MergeConnectConnectorCreatedBy2Environment1(v ConnectConnectorCreatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -16950,12 +16959,12 @@ func (t *ConnectConnector_CreatedBy_1_Environment) MergeConnectConnectorCreatedB
 	return err
 }
 
-func (t ConnectConnector_CreatedBy_1_Environment) MarshalJSON() ([]byte, error) {
+func (t ConnectConnector_CreatedBy_2_Environment) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *ConnectConnector_CreatedBy_1_Environment) UnmarshalJSON(b []byte) error {
+func (t *ConnectConnector_CreatedBy_2_Environment) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -17012,6 +17021,32 @@ func (t *ConnectConnector_CreatedBy) MergeConnectConnectorCreatedBy1(v ConnectCo
 	return err
 }
 
+// AsConnectConnectorCreatedBy2 returns the union data inside the ConnectConnector_CreatedBy as a ConnectConnectorCreatedBy2
+func (t ConnectConnector_CreatedBy) AsConnectConnectorCreatedBy2() (ConnectConnectorCreatedBy2, error) {
+	var body ConnectConnectorCreatedBy2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConnectConnectorCreatedBy2 overwrites any union data inside the ConnectConnector_CreatedBy as the provided ConnectConnectorCreatedBy2
+func (t *ConnectConnector_CreatedBy) FromConnectConnectorCreatedBy2(v ConnectConnectorCreatedBy2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConnectConnectorCreatedBy2 performs a merge with any union data inside the ConnectConnector_CreatedBy, using the provided ConnectConnectorCreatedBy2
+func (t *ConnectConnector_CreatedBy) MergeConnectConnectorCreatedBy2(v ConnectConnectorCreatedBy2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t ConnectConnector_CreatedBy) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -17022,22 +17057,22 @@ func (t *ConnectConnector_CreatedBy) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsConnectConnectorUpdatedBy1Environment0 returns the union data inside the ConnectConnector_UpdatedBy_1_Environment as a ConnectConnectorUpdatedBy1Environment0
-func (t ConnectConnector_UpdatedBy_1_Environment) AsConnectConnectorUpdatedBy1Environment0() (ConnectConnectorUpdatedBy1Environment0, error) {
-	var body ConnectConnectorUpdatedBy1Environment0
+// AsConnectConnectorUpdatedBy2Environment0 returns the union data inside the ConnectConnector_UpdatedBy_2_Environment as a ConnectConnectorUpdatedBy2Environment0
+func (t ConnectConnector_UpdatedBy_2_Environment) AsConnectConnectorUpdatedBy2Environment0() (ConnectConnectorUpdatedBy2Environment0, error) {
+	var body ConnectConnectorUpdatedBy2Environment0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorUpdatedBy1Environment0 overwrites any union data inside the ConnectConnector_UpdatedBy_1_Environment as the provided ConnectConnectorUpdatedBy1Environment0
-func (t *ConnectConnector_UpdatedBy_1_Environment) FromConnectConnectorUpdatedBy1Environment0(v ConnectConnectorUpdatedBy1Environment0) error {
+// FromConnectConnectorUpdatedBy2Environment0 overwrites any union data inside the ConnectConnector_UpdatedBy_2_Environment as the provided ConnectConnectorUpdatedBy2Environment0
+func (t *ConnectConnector_UpdatedBy_2_Environment) FromConnectConnectorUpdatedBy2Environment0(v ConnectConnectorUpdatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorUpdatedBy1Environment0 performs a merge with any union data inside the ConnectConnector_UpdatedBy_1_Environment, using the provided ConnectConnectorUpdatedBy1Environment0
-func (t *ConnectConnector_UpdatedBy_1_Environment) MergeConnectConnectorUpdatedBy1Environment0(v ConnectConnectorUpdatedBy1Environment0) error {
+// MergeConnectConnectorUpdatedBy2Environment0 performs a merge with any union data inside the ConnectConnector_UpdatedBy_2_Environment, using the provided ConnectConnectorUpdatedBy2Environment0
+func (t *ConnectConnector_UpdatedBy_2_Environment) MergeConnectConnectorUpdatedBy2Environment0(v ConnectConnectorUpdatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17048,22 +17083,22 @@ func (t *ConnectConnector_UpdatedBy_1_Environment) MergeConnectConnectorUpdatedB
 	return err
 }
 
-// AsConnectConnectorUpdatedBy1Environment1 returns the union data inside the ConnectConnector_UpdatedBy_1_Environment as a ConnectConnectorUpdatedBy1Environment1
-func (t ConnectConnector_UpdatedBy_1_Environment) AsConnectConnectorUpdatedBy1Environment1() (ConnectConnectorUpdatedBy1Environment1, error) {
-	var body ConnectConnectorUpdatedBy1Environment1
+// AsConnectConnectorUpdatedBy2Environment1 returns the union data inside the ConnectConnector_UpdatedBy_2_Environment as a ConnectConnectorUpdatedBy2Environment1
+func (t ConnectConnector_UpdatedBy_2_Environment) AsConnectConnectorUpdatedBy2Environment1() (ConnectConnectorUpdatedBy2Environment1, error) {
+	var body ConnectConnectorUpdatedBy2Environment1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorUpdatedBy1Environment1 overwrites any union data inside the ConnectConnector_UpdatedBy_1_Environment as the provided ConnectConnectorUpdatedBy1Environment1
-func (t *ConnectConnector_UpdatedBy_1_Environment) FromConnectConnectorUpdatedBy1Environment1(v ConnectConnectorUpdatedBy1Environment1) error {
+// FromConnectConnectorUpdatedBy2Environment1 overwrites any union data inside the ConnectConnector_UpdatedBy_2_Environment as the provided ConnectConnectorUpdatedBy2Environment1
+func (t *ConnectConnector_UpdatedBy_2_Environment) FromConnectConnectorUpdatedBy2Environment1(v ConnectConnectorUpdatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorUpdatedBy1Environment1 performs a merge with any union data inside the ConnectConnector_UpdatedBy_1_Environment, using the provided ConnectConnectorUpdatedBy1Environment1
-func (t *ConnectConnector_UpdatedBy_1_Environment) MergeConnectConnectorUpdatedBy1Environment1(v ConnectConnectorUpdatedBy1Environment1) error {
+// MergeConnectConnectorUpdatedBy2Environment1 performs a merge with any union data inside the ConnectConnector_UpdatedBy_2_Environment, using the provided ConnectConnectorUpdatedBy2Environment1
+func (t *ConnectConnector_UpdatedBy_2_Environment) MergeConnectConnectorUpdatedBy2Environment1(v ConnectConnectorUpdatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17074,12 +17109,12 @@ func (t *ConnectConnector_UpdatedBy_1_Environment) MergeConnectConnectorUpdatedB
 	return err
 }
 
-func (t ConnectConnector_UpdatedBy_1_Environment) MarshalJSON() ([]byte, error) {
+func (t ConnectConnector_UpdatedBy_2_Environment) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *ConnectConnector_UpdatedBy_1_Environment) UnmarshalJSON(b []byte) error {
+func (t *ConnectConnector_UpdatedBy_2_Environment) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -17126,6 +17161,32 @@ func (t *ConnectConnector_UpdatedBy) FromConnectConnectorUpdatedBy1(v ConnectCon
 
 // MergeConnectConnectorUpdatedBy1 performs a merge with any union data inside the ConnectConnector_UpdatedBy, using the provided ConnectConnectorUpdatedBy1
 func (t *ConnectConnector_UpdatedBy) MergeConnectConnectorUpdatedBy1(v ConnectConnectorUpdatedBy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConnectConnectorUpdatedBy2 returns the union data inside the ConnectConnector_UpdatedBy as a ConnectConnectorUpdatedBy2
+func (t ConnectConnector_UpdatedBy) AsConnectConnectorUpdatedBy2() (ConnectConnectorUpdatedBy2, error) {
+	var body ConnectConnectorUpdatedBy2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConnectConnectorUpdatedBy2 overwrites any union data inside the ConnectConnector_UpdatedBy as the provided ConnectConnectorUpdatedBy2
+func (t *ConnectConnector_UpdatedBy) FromConnectConnectorUpdatedBy2(v ConnectConnectorUpdatedBy2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConnectConnectorUpdatedBy2 performs a merge with any union data inside the ConnectConnector_UpdatedBy, using the provided ConnectConnectorUpdatedBy2
+func (t *ConnectConnector_UpdatedBy) MergeConnectConnectorUpdatedBy2(v ConnectConnectorUpdatedBy2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17468,22 +17529,22 @@ func (t *ConnectConnectorCreateData) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsConnectConnectorCreateResultCreatedBy1Environment0 returns the union data inside the ConnectConnectorCreateResult_CreatedBy_1_Environment as a ConnectConnectorCreateResultCreatedBy1Environment0
-func (t ConnectConnectorCreateResult_CreatedBy_1_Environment) AsConnectConnectorCreateResultCreatedBy1Environment0() (ConnectConnectorCreateResultCreatedBy1Environment0, error) {
-	var body ConnectConnectorCreateResultCreatedBy1Environment0
+// AsConnectConnectorCreateResultCreatedBy2Environment0 returns the union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as a ConnectConnectorCreateResultCreatedBy2Environment0
+func (t ConnectConnectorCreateResult_CreatedBy_2_Environment) AsConnectConnectorCreateResultCreatedBy2Environment0() (ConnectConnectorCreateResultCreatedBy2Environment0, error) {
+	var body ConnectConnectorCreateResultCreatedBy2Environment0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorCreateResultCreatedBy1Environment0 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy_1_Environment as the provided ConnectConnectorCreateResultCreatedBy1Environment0
-func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) FromConnectConnectorCreateResultCreatedBy1Environment0(v ConnectConnectorCreateResultCreatedBy1Environment0) error {
+// FromConnectConnectorCreateResultCreatedBy2Environment0 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as the provided ConnectConnectorCreateResultCreatedBy2Environment0
+func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) FromConnectConnectorCreateResultCreatedBy2Environment0(v ConnectConnectorCreateResultCreatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorCreateResultCreatedBy1Environment0 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy_1_Environment, using the provided ConnectConnectorCreateResultCreatedBy1Environment0
-func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) MergeConnectConnectorCreateResultCreatedBy1Environment0(v ConnectConnectorCreateResultCreatedBy1Environment0) error {
+// MergeConnectConnectorCreateResultCreatedBy2Environment0 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment, using the provided ConnectConnectorCreateResultCreatedBy2Environment0
+func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) MergeConnectConnectorCreateResultCreatedBy2Environment0(v ConnectConnectorCreateResultCreatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17494,22 +17555,22 @@ func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) MergeConnectConne
 	return err
 }
 
-// AsConnectConnectorCreateResultCreatedBy1Environment1 returns the union data inside the ConnectConnectorCreateResult_CreatedBy_1_Environment as a ConnectConnectorCreateResultCreatedBy1Environment1
-func (t ConnectConnectorCreateResult_CreatedBy_1_Environment) AsConnectConnectorCreateResultCreatedBy1Environment1() (ConnectConnectorCreateResultCreatedBy1Environment1, error) {
-	var body ConnectConnectorCreateResultCreatedBy1Environment1
+// AsConnectConnectorCreateResultCreatedBy2Environment1 returns the union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as a ConnectConnectorCreateResultCreatedBy2Environment1
+func (t ConnectConnectorCreateResult_CreatedBy_2_Environment) AsConnectConnectorCreateResultCreatedBy2Environment1() (ConnectConnectorCreateResultCreatedBy2Environment1, error) {
+	var body ConnectConnectorCreateResultCreatedBy2Environment1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorCreateResultCreatedBy1Environment1 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy_1_Environment as the provided ConnectConnectorCreateResultCreatedBy1Environment1
-func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) FromConnectConnectorCreateResultCreatedBy1Environment1(v ConnectConnectorCreateResultCreatedBy1Environment1) error {
+// FromConnectConnectorCreateResultCreatedBy2Environment1 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as the provided ConnectConnectorCreateResultCreatedBy2Environment1
+func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) FromConnectConnectorCreateResultCreatedBy2Environment1(v ConnectConnectorCreateResultCreatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorCreateResultCreatedBy1Environment1 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy_1_Environment, using the provided ConnectConnectorCreateResultCreatedBy1Environment1
-func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) MergeConnectConnectorCreateResultCreatedBy1Environment1(v ConnectConnectorCreateResultCreatedBy1Environment1) error {
+// MergeConnectConnectorCreateResultCreatedBy2Environment1 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment, using the provided ConnectConnectorCreateResultCreatedBy2Environment1
+func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) MergeConnectConnectorCreateResultCreatedBy2Environment1(v ConnectConnectorCreateResultCreatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17520,12 +17581,12 @@ func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) MergeConnectConne
 	return err
 }
 
-func (t ConnectConnectorCreateResult_CreatedBy_1_Environment) MarshalJSON() ([]byte, error) {
+func (t ConnectConnectorCreateResult_CreatedBy_2_Environment) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *ConnectConnectorCreateResult_CreatedBy_1_Environment) UnmarshalJSON(b []byte) error {
+func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -17582,6 +17643,32 @@ func (t *ConnectConnectorCreateResult_CreatedBy) MergeConnectConnectorCreateResu
 	return err
 }
 
+// AsConnectConnectorCreateResultCreatedBy2 returns the union data inside the ConnectConnectorCreateResult_CreatedBy as a ConnectConnectorCreateResultCreatedBy2
+func (t ConnectConnectorCreateResult_CreatedBy) AsConnectConnectorCreateResultCreatedBy2() (ConnectConnectorCreateResultCreatedBy2, error) {
+	var body ConnectConnectorCreateResultCreatedBy2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConnectConnectorCreateResultCreatedBy2 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy as the provided ConnectConnectorCreateResultCreatedBy2
+func (t *ConnectConnectorCreateResult_CreatedBy) FromConnectConnectorCreateResultCreatedBy2(v ConnectConnectorCreateResultCreatedBy2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConnectConnectorCreateResultCreatedBy2 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy, using the provided ConnectConnectorCreateResultCreatedBy2
+func (t *ConnectConnectorCreateResult_CreatedBy) MergeConnectConnectorCreateResultCreatedBy2(v ConnectConnectorCreateResultCreatedBy2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t ConnectConnectorCreateResult_CreatedBy) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -17592,22 +17679,22 @@ func (t *ConnectConnectorCreateResult_CreatedBy) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsConnectConnectorCreateResultUpdatedBy1Environment0 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy_1_Environment as a ConnectConnectorCreateResultUpdatedBy1Environment0
-func (t ConnectConnectorCreateResult_UpdatedBy_1_Environment) AsConnectConnectorCreateResultUpdatedBy1Environment0() (ConnectConnectorCreateResultUpdatedBy1Environment0, error) {
-	var body ConnectConnectorCreateResultUpdatedBy1Environment0
+// AsConnectConnectorCreateResultUpdatedBy2Environment0 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as a ConnectConnectorCreateResultUpdatedBy2Environment0
+func (t ConnectConnectorCreateResult_UpdatedBy_2_Environment) AsConnectConnectorCreateResultUpdatedBy2Environment0() (ConnectConnectorCreateResultUpdatedBy2Environment0, error) {
+	var body ConnectConnectorCreateResultUpdatedBy2Environment0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorCreateResultUpdatedBy1Environment0 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy_1_Environment as the provided ConnectConnectorCreateResultUpdatedBy1Environment0
-func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) FromConnectConnectorCreateResultUpdatedBy1Environment0(v ConnectConnectorCreateResultUpdatedBy1Environment0) error {
+// FromConnectConnectorCreateResultUpdatedBy2Environment0 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as the provided ConnectConnectorCreateResultUpdatedBy2Environment0
+func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) FromConnectConnectorCreateResultUpdatedBy2Environment0(v ConnectConnectorCreateResultUpdatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorCreateResultUpdatedBy1Environment0 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy_1_Environment, using the provided ConnectConnectorCreateResultUpdatedBy1Environment0
-func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) MergeConnectConnectorCreateResultUpdatedBy1Environment0(v ConnectConnectorCreateResultUpdatedBy1Environment0) error {
+// MergeConnectConnectorCreateResultUpdatedBy2Environment0 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment, using the provided ConnectConnectorCreateResultUpdatedBy2Environment0
+func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) MergeConnectConnectorCreateResultUpdatedBy2Environment0(v ConnectConnectorCreateResultUpdatedBy2Environment0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17618,22 +17705,22 @@ func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) MergeConnectConne
 	return err
 }
 
-// AsConnectConnectorCreateResultUpdatedBy1Environment1 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy_1_Environment as a ConnectConnectorCreateResultUpdatedBy1Environment1
-func (t ConnectConnectorCreateResult_UpdatedBy_1_Environment) AsConnectConnectorCreateResultUpdatedBy1Environment1() (ConnectConnectorCreateResultUpdatedBy1Environment1, error) {
-	var body ConnectConnectorCreateResultUpdatedBy1Environment1
+// AsConnectConnectorCreateResultUpdatedBy2Environment1 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as a ConnectConnectorCreateResultUpdatedBy2Environment1
+func (t ConnectConnectorCreateResult_UpdatedBy_2_Environment) AsConnectConnectorCreateResultUpdatedBy2Environment1() (ConnectConnectorCreateResultUpdatedBy2Environment1, error) {
+	var body ConnectConnectorCreateResultUpdatedBy2Environment1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConnectConnectorCreateResultUpdatedBy1Environment1 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy_1_Environment as the provided ConnectConnectorCreateResultUpdatedBy1Environment1
-func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) FromConnectConnectorCreateResultUpdatedBy1Environment1(v ConnectConnectorCreateResultUpdatedBy1Environment1) error {
+// FromConnectConnectorCreateResultUpdatedBy2Environment1 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as the provided ConnectConnectorCreateResultUpdatedBy2Environment1
+func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) FromConnectConnectorCreateResultUpdatedBy2Environment1(v ConnectConnectorCreateResultUpdatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConnectConnectorCreateResultUpdatedBy1Environment1 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy_1_Environment, using the provided ConnectConnectorCreateResultUpdatedBy1Environment1
-func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) MergeConnectConnectorCreateResultUpdatedBy1Environment1(v ConnectConnectorCreateResultUpdatedBy1Environment1) error {
+// MergeConnectConnectorCreateResultUpdatedBy2Environment1 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment, using the provided ConnectConnectorCreateResultUpdatedBy2Environment1
+func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) MergeConnectConnectorCreateResultUpdatedBy2Environment1(v ConnectConnectorCreateResultUpdatedBy2Environment1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -17644,12 +17731,12 @@ func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) MergeConnectConne
 	return err
 }
 
-func (t ConnectConnectorCreateResult_UpdatedBy_1_Environment) MarshalJSON() ([]byte, error) {
+func (t ConnectConnectorCreateResult_UpdatedBy_2_Environment) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *ConnectConnectorCreateResult_UpdatedBy_1_Environment) UnmarshalJSON(b []byte) error {
+func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -17696,6 +17783,32 @@ func (t *ConnectConnectorCreateResult_UpdatedBy) FromConnectConnectorCreateResul
 
 // MergeConnectConnectorCreateResultUpdatedBy1 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy, using the provided ConnectConnectorCreateResultUpdatedBy1
 func (t *ConnectConnectorCreateResult_UpdatedBy) MergeConnectConnectorCreateResultUpdatedBy1(v ConnectConnectorCreateResultUpdatedBy1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConnectConnectorCreateResultUpdatedBy2 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy as a ConnectConnectorCreateResultUpdatedBy2
+func (t ConnectConnectorCreateResult_UpdatedBy) AsConnectConnectorCreateResultUpdatedBy2() (ConnectConnectorCreateResultUpdatedBy2, error) {
+	var body ConnectConnectorCreateResultUpdatedBy2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConnectConnectorCreateResultUpdatedBy2 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy as the provided ConnectConnectorCreateResultUpdatedBy2
+func (t *ConnectConnectorCreateResult_UpdatedBy) FromConnectConnectorCreateResultUpdatedBy2(v ConnectConnectorCreateResultUpdatedBy2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConnectConnectorCreateResultUpdatedBy2 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy, using the provided ConnectConnectorCreateResultUpdatedBy2
+func (t *ConnectConnectorCreateResult_UpdatedBy) MergeConnectConnectorCreateResultUpdatedBy2(v ConnectConnectorCreateResultUpdatedBy2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -19899,123 +20012,4 @@ func (t *GlobalConfigItemValue) MergeGlobalConfigItemValue4(v GlobalConfigItemVa
 func (t GlobalConfigItemValue) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
-}
-
-func (t *GlobalConfigItemValue) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsPropertyKey0 returns the union data inside the PropertyKey as a PropertyKey0
-func (t PropertyKey) AsPropertyKey0() (PropertyKey0, error) {
-	var body PropertyKey0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromPropertyKey0 overwrites any union data inside the PropertyKey as the provided PropertyKey0
-func (t *PropertyKey) FromPropertyKey0(v PropertyKey0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergePropertyKey0 performs a merge with any union data inside the PropertyKey, using the provided PropertyKey0
-func (t *PropertyKey) MergePropertyKey0(v PropertyKey0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsPropertyKey1 returns the union data inside the PropertyKey as a PropertyKey1
-func (t PropertyKey) AsPropertyKey1() (PropertyKey1, error) {
-	var body PropertyKey1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromPropertyKey1 overwrites any union data inside the PropertyKey as the provided PropertyKey1
-func (t *PropertyKey) FromPropertyKey1(v PropertyKey1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergePropertyKey1 performs a merge with any union data inside the PropertyKey, using the provided PropertyKey1
-func (t *PropertyKey) MergePropertyKey1(v PropertyKey1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsPropertyKey2 returns the union data inside the PropertyKey as a PropertyKey2
-func (t PropertyKey) AsPropertyKey2() (PropertyKey2, error) {
-	var body PropertyKey2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromPropertyKey2 overwrites any union data inside the PropertyKey as the provided PropertyKey2
-func (t *PropertyKey) FromPropertyKey2(v PropertyKey2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergePropertyKey2 performs a merge with any union data inside the PropertyKey, using the provided PropertyKey2
-func (t *PropertyKey) MergePropertyKey2(v PropertyKey2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t PropertyKey) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *PropertyKey) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsSegmentDataRulesConditionsLhs0 returns the union data inside the Segment_Data_Rules_Conditions_Lhs as a SegmentDataRulesConditionsLhs0
-func (t Segment_Data_Rules_Conditions_Lhs) AsSegmentDataRulesConditionsLhs0() (SegmentDataRulesConditionsLhs0, error) {
-	var body SegmentDataRulesConditionsLhs0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromSegmentDataRulesConditionsLhs0 overwrites any union data inside the Segment_Data_Rules_Conditions_Lhs as the provided SegmentDataRulesConditionsLhs0
-func (t *Segment_Data_Rules_Conditions_Lhs) FromSegmentDataRulesConditionsLhs0(v SegmentDataRulesConditionsLhs0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeSegmentDataRulesConditionsLhs0 performs a merge with any union data inside the Segment_Data_Rules_Conditions_Lhs, using the provided SegmentDataRulesConditionsLhs0
-func (t *Segment_Data_Rules_Conditions_Lhs) MergeSegmentDataRulesConditionsLhs0(v SegmentDataRulesConditionsLhs0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
 }

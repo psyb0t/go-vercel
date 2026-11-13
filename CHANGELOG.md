@@ -2,6 +2,14 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.28.0, 2026-11-13
+
+- Breaking: `CreateConnectorAuthorizationRequest`, `CreateConnectorAuthorizationRequestWithBody`, `GetConnectorToken` and `GetConnectorTokenWithBody` on `Client` take a new params argument (`*CreateConnectorAuthorizationRequestParams` or `*GetConnectorTokenParams`) after the second argument. The `...WithResponse` variants on `ClientWithResponses`, both client interfaces and the `NewCreateConnectorAuthorizationRequestRequest` and `NewGetConnectorTokenRequest` builders change the same way.
+- Breaking: the `CreatedBy` and `UpdatedBy` unions on `ConnectConnector` and `ConnectConnectorCreateResult` gain a third variant (`...CreatedBy2`, `...UpdatedBy2`, with `As`, `From` and `Merge` methods). The old `...CreatedBy0TypeUser`, `...CreatedBy1TypeProject` and `...CreatedBy1Environment*` types and constants are removed or renumbered, and `...TypeApp` and `...TypeUser` constants are added.
+- Breaking: about 2000 `UserEventPayload` types and members are removed or changed. Numbering shifted, so `UserEventPayload267` loses `Set`, `UnmarshalJSON`, `Pattern`, `ProjectName` and `AdditionalProperties`, and `Justification` becomes `*string`. It gains `HeaderName` and `Kind`.
+- Breaking: the anonymous struct types of `DeliveryStats` on `CreateDrain200JSONResponseBody0` and `...Body1`, of `JSON200` and `GetJSON200` on `CreateProjectResponse`, `DeleteProjectAvatarResponse` and `GetDrainResponse`, and the `Drains0` and `Drains1` types in `GetDrains` and `GetAllLogDrains` responses changed.
+- The generated client files are regenerated from OpenAPI spec 0.0.1, with new files for added types.
+
 ## v0.27.0, 2026-11-12
 
 - Breaking: removed `GetConfiguration200JSONResponseBody2`, its enum types and constants (`DisabledReason`, `InstallationType`, `Source`, `Status`, `Type`), and the methods `AsGetConfiguration200JSONResponseBody2`, `FromGetConfiguration200JSONResponseBody2` and `MergeGetConfiguration200JSONResponseBody2` on `GetConfiguration200JSONResponseBody`.
