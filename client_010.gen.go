@@ -10,6 +10,44 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UserEventVia0 Metadata for {@link viaIds}.
+type UserEventVia0 struct {
+	Avatar   string             `json:"avatar"`
+	Email    string             `json:"email"`
+	Slug     *string            `json:"slug,omitempty"`
+	Type     *UserEventVia0Type `json:"type,omitempty"`
+	Uid      string             `json:"uid"`
+	Username string             `json:"username"`
+}
+
+// UserEventVia0Type defines model for UserEvent.Via.0.Type.
+type UserEventVia0Type string
+
+// UserEventVia1 Metadata for {@link viaIds}.
+type UserEventVia1 struct {
+	// ClientId The OAuth 2.0 client ID, which may be a CIMD URL.
+	ClientId string `json:"clientId"`
+
+	// Id The backing Vercel App ID. When absent, defaults to `clientId`.
+	Id   *string           `json:"id,omitempty"`
+	Name string            `json:"name"`
+	Type UserEventVia1Type `json:"type"`
+}
+
+// UserEventVia1Type defines model for UserEvent.Via.1.Type.
+type UserEventVia1Type string
+
+// UserEventVia2 Metadata for {@link viaIds}.
+type UserEventVia2 struct {
+	Avatar *string `json:"avatar,omitempty"`
+
+	// Id The OAuth2 integration ID.
+	Id   string            `json:"id"`
+	Name string            `json:"name"`
+	Slug *string           `json:"slug,omitempty"`
+	Type UserEventVia2Type `json:"type"`
+}
+
 // UserEventVia2Type defines model for UserEvent.Via.2.Type.
 type UserEventVia2Type string
 
@@ -19974,39 +20012,4 @@ type UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs1 struct {
 // UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs defines parameters for UpdateFlag.
 type UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs struct {
 	union json.RawMessage
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0 struct {
-	Items []UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item `json:"items"`
-	Type  UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type               `json:"type"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items0 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items1 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item defines parameters for UpdateFlag.
-type UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item struct {
-	union json.RawMessage
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type string
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs1 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs1 struct {
-	Flags   string      `json:"flags"`
-	Pattern string      `json:"pattern"`
-	Type    interface{} `json:"type"`
 }

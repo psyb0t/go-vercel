@@ -8,6 +8,41 @@ import (
 	"time"
 )
 
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0 struct {
+	Items []UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item `json:"items"`
+	Type  UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type               `json:"type"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items0 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items0 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value float32 `json:"value"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items1 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items1 struct {
+	Label *string `json:"label,omitempty"`
+	Note  *string `json:"note,omitempty"`
+	Value string  `json:"value"`
+}
+
+// UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item defines parameters for UpdateFlag.
+type UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item struct {
+	union json.RawMessage
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type string
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs1 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs1 struct {
+	Flags   string      `json:"flags"`
+	Pattern string      `json:"pattern"`
+	Type    interface{} `json:"type"`
+}
+
 // UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs2 defines parameters for UpdateFlag.
 type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs2 = string
 

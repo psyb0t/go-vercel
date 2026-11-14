@@ -8,6 +8,36 @@ import (
 	"time"
 )
 
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypePerformance    UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType = "performance"
+	UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypePerformanceXl  UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType = "performance_xl"
+	UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypeStandard       UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType = "standard"
+	UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypeStandardLegacy UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType = "standard_legacy"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypePerformance:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypePerformanceXl:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypeStandard:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypeStandardLegacy:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailoverFalse UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover = false
+	UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailoverTrue  UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover = true
+)
+
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover enum.
 func (e UpdateProject200JSONResponseBodyResourceConfigFunctionZeroConfigFailover) Valid() bool {
 	switch e {
@@ -16684,12 +16714,18 @@ type UserEventPayload350 struct {
 
 // UserEventPayload351 The payload of the event, if requested.
 type UserEventPayload351 struct {
-	ProjectId string `json:"projectId"`
+	// BudgetId The budget that paused the project, for `BUDGET_REACHED`. Absent on older events.
+	BudgetId    *string                         `json:"budgetId,omitempty"`
+	BudgetScope *UserEventPayload351BudgetScope `json:"budgetScope,omitempty"`
+	ProjectId   string                          `json:"projectId"`
 
 	// ProjectName Display name for Activity links. Optional for events stored before it was published.
 	ProjectName *string                        `json:"projectName,omitempty"`
 	ReasonCode  *UserEventPayload351ReasonCode `json:"reasonCode,omitempty"`
 }
+
+// UserEventPayload351BudgetScope defines model for UserEvent.Payload.351.BudgetScope.
+type UserEventPayload351BudgetScope string
 
 // UserEventPayload351ReasonCode defines model for UserEvent.Payload.351.ReasonCode.
 type UserEventPayload351ReasonCode string
@@ -19973,41 +20009,3 @@ type UserEvent_Principal struct {
 //
 // Example: login
 type UserEventType string
-
-// UserEventVia0 Metadata for {@link viaIds}.
-type UserEventVia0 struct {
-	Avatar   string             `json:"avatar"`
-	Email    string             `json:"email"`
-	Slug     *string            `json:"slug,omitempty"`
-	Type     *UserEventVia0Type `json:"type,omitempty"`
-	Uid      string             `json:"uid"`
-	Username string             `json:"username"`
-}
-
-// UserEventVia0Type defines model for UserEvent.Via.0.Type.
-type UserEventVia0Type string
-
-// UserEventVia1 Metadata for {@link viaIds}.
-type UserEventVia1 struct {
-	// ClientId The OAuth 2.0 client ID, which may be a CIMD URL.
-	ClientId string `json:"clientId"`
-
-	// Id The backing Vercel App ID. When absent, defaults to `clientId`.
-	Id   *string           `json:"id,omitempty"`
-	Name string            `json:"name"`
-	Type UserEventVia1Type `json:"type"`
-}
-
-// UserEventVia1Type defines model for UserEvent.Via.1.Type.
-type UserEventVia1Type string
-
-// UserEventVia2 Metadata for {@link viaIds}.
-type UserEventVia2 struct {
-	Avatar *string `json:"avatar,omitempty"`
-
-	// Id The OAuth2 integration ID.
-	Id   string            `json:"id"`
-	Name string            `json:"name"`
-	Slug *string           `json:"slug,omitempty"`
-	Type UserEventVia2Type `json:"type"`
-}

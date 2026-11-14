@@ -2067,6 +2067,30 @@ func (e UserEventPayload348PasswordProtection1) Valid() bool {
 	}
 }
 
+// Defines values for UserEventPayload351BudgetScope.
+const (
+	UserEventPayload351BudgetScopeOrganization UserEventPayload351BudgetScope = "organization"
+	UserEventPayload351BudgetScopeProduct      UserEventPayload351BudgetScope = "product"
+	UserEventPayload351BudgetScopeProject      UserEventPayload351BudgetScope = "project"
+	UserEventPayload351BudgetScopeTeam         UserEventPayload351BudgetScope = "team"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload351BudgetScope enum.
+func (e UserEventPayload351BudgetScope) Valid() bool {
+	switch e {
+	case UserEventPayload351BudgetScopeOrganization:
+		return true
+	case UserEventPayload351BudgetScopeProduct:
+		return true
+	case UserEventPayload351BudgetScopeProject:
+		return true
+	case UserEventPayload351BudgetScopeTeam:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UserEventPayload351ReasonCode.
 const (
 	UserEventPayload351ReasonCodeBACKOFFICE    UserEventPayload351ReasonCode = "BACKOFFICE"
@@ -19982,25 +20006,3 @@ func (e CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal0T
 		return false
 	}
 }
-
-// Defines values for CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal1Type.
-const (
-	CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal1TypeApp CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal1Type = "app"
-)
-
-// Valid indicates whether the value is a known member of the CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal1Type enum.
-func (e CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal1Type) Valid() bool {
-	switch e {
-	case CreateSharedEnvVariable201JSONResponseBodyCreatedLastEditedByPrincipal1TypeApp:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for CreateSharedEnvVariable201JSONResponseBodyCreatedTarget.
-const (
-	CreateSharedEnvVariable201JSONResponseBodyCreatedTargetDevelopment CreateSharedEnvVariable201JSONResponseBodyCreatedTarget = "development"
-	CreateSharedEnvVariable201JSONResponseBodyCreatedTargetPreview     CreateSharedEnvVariable201JSONResponseBodyCreatedTarget = "preview"
-	CreateSharedEnvVariable201JSONResponseBodyCreatedTargetProduction  CreateSharedEnvVariable201JSONResponseBodyCreatedTarget = "production"
-)

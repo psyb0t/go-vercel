@@ -2,6 +2,13 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.28.1, 2026-11-14
+
+- Added `UserEventPayload351.BudgetId` and `UserEventPayload351.BudgetScope`.
+- Added the enum type `UserEventPayload351BudgetScope` with the constants `UserEventPayload351BudgetScopeOrganization`, `UserEventPayload351BudgetScopeProduct`, `UserEventPayload351BudgetScopeProject` and `UserEventPayload351BudgetScopeTeam`, and its `Valid` method.
+- Moved generated enum definitions between `client_NNN.gen.go` files, and added `client_011.gen.go`. No exported identifiers change because of this.
+- Generated from spec version 0.0.1.
+
 ## v0.28.0, 2026-11-13
 
 - Breaking: `CreateConnectorAuthorizationRequest`, `CreateConnectorAuthorizationRequestWithBody`, `GetConnectorToken` and `GetConnectorTokenWithBody` on `Client` take a new params argument (`*CreateConnectorAuthorizationRequestParams` or `*GetConnectorTokenParams`) after the second argument. The `...WithResponse` variants on `ClientWithResponses`, both client interfaces and the `NewCreateConnectorAuthorizationRequestRequest` and `NewGetConnectorTokenRequest` builders change the same way.
